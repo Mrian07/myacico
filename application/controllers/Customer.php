@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer extends CI_Controller {
+class Customer extends Web {
 	
 	public function __construct()
     {
@@ -22,17 +22,17 @@ class Customer extends CI_Controller {
 	
 	public function create()
     {	
-		$this->load->view('frontend/header');
-		$this->load->view('frontend/modules/customer/create/create.php');
-		$this->load->view('frontend/footer');
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/modules/customer/create/create.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
 
 	}
 	
 	public function signIn()
     {	
-		$this->load->view('frontend/header');
-		$this->load->view('frontend/modules/customer/sign_in/sign_in.php');
-		$this->load->view('frontend/footer');
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/modules/customer/sign_in/sign_in.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
 
 	}
 }
