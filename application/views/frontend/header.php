@@ -52,30 +52,31 @@
 	</div>
 </div>
 <div style="clear:both;"></div>
-
+<!--
 <div class="my-header-panel2">
+		
 	<div class="row">
-		<div class="col-sm-1">
-			<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80">');?>
+		<div class="col-sm-2">
+			<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80" style="margin-top:-10px">');?>
 			
 		</div>
-		<div class="col-sm-8">
+		<div class="col-sm-6">
 			
 			
-			<div class="row">    
-				<div class="col-xs-9 col-xs-offset-2">
 					<div class="input-group">
 						<div class="input-group-btn search-panel">
 							<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
-								<span id="search_concept">Filter by</span> <span class="caret"></span>
+								<span id="search_concept">All Categories</span> <span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu" role="menu">
-							  <li><a href="#contains">Contains</a></li>
-							  <li><a href="#its_equal">It's equal</a></li>
-							  <li><a href="#greather_than">Greather than ></a></li>
-							  <li><a href="#less_than">Less than < </a></li>
-							  <li class="divider"></li>
-							  <li><a href="#all">Anything</a></li>
+							  <li><a href="#contains">Computer</a></li>
+							  <li><a href="#its_equal">Gatget</a></li>
+							  <li><a href="#greather_than">Communication</a></li>
+							  <li><a href="#less_than">Audio & Visual</a></li>
+							  <li><a href="#greather_than">Mechanical & Electrical</a></li>
+							  <li><a href="#less_than">Hobby</a></li>
+							  <li><a href="#greather_than">Peralatan Rumah</a></li>
+							  <li><a href="#less_than">Perlengkapan Kantor</a></li>
 							</ul>
 						</div>
 						<input type="hidden" name="search_param" value="all" id="search_param">         
@@ -84,18 +85,71 @@
 							<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
 						</span>
 					</div>
-				</div>
-			</div>
+		
 			
 			
 		</div>
-		<div class="col-sm-3">
-			<?php echo anchor('customer/create/', 'Register');?>
-			<?php echo anchor('customer/signIn/', 'Sign In');?>
+		<div class="col-sm-4">
+			<div class="row">
+				<div class="col-sm-6">
+		
+			<i class="fa fa-user" aria-hidden="true"></i>
+			<?php echo anchor('customer/create/', $lang_daftar);?> /
+			<?php echo anchor('customer/signIn/', $lang_masuk);?>
+			
+				</div>
+				<div class="col-sm-6">
+				
+				</div>
+			</div>	
 		</div>
 	
+	</div>	
+</div>
+-->
+
+<div class="my-header-panel2">
+	<div class='logo'>
+		<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80">');?>
 	</div>		
-  
+	<div class='myserach'>
+
+				<div class="input-group">
+					<div class="input-group-btn search-panel">
+						<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
+							<span id="search_concept">All Categories</span> <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" role="menu">
+						  <li><a href="#contains">Computer</a></li>
+						  <li><a href="#its_equal">Gatget</a></li>
+						  <li><a href="#greather_than">Communication</a></li>
+						  <li><a href="#less_than">Audio & Visual</a></li>
+						  <li><a href="#greather_than">Mechanical & Electrical</a></li>
+						  <li><a href="#less_than">Hobby</a></li>
+						  <li><a href="#greather_than">Peralatan Rumah</a></li>
+						  <li><a href="#less_than">Perlengkapan Kantor</a></li>
+						</ul>
+					</div>
+					<input type="hidden" name="search_param" value="all" id="search_param">         
+					<input type="text" class="my-search-field" name="x" placeholder="Search term...">
+					<span class="input-group-btn">
+						<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
+					</span>
+				</div>
+
+	</div>
+	<div class='myreg'>
+		<i class="fa fa-user" aria-hidden="true"></i>
+		<?php echo anchor('customer/create/', $lang_daftar);?> / <?php echo anchor('customer/signIn/', $lang_masuk);?>
+	</div>
+	<div class='mybasket'>
+		<div class="dropdown-basket">
+		  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
+		  <div class="dropdown-basket-content">
+			<a href="#">Item Kosong</a>
+		  </div>
+		</div>
+	</div>	
 </div>
 <div style="clear:both;"></div>
 <div class="jumbotron text-center" style='background-color:#ffffff'>

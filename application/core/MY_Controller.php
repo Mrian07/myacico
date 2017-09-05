@@ -8,6 +8,27 @@ class MY_Controller extends CI_Controller
     }
 }
 
+class Web extends MY_Controller {
+
+    public function __construct() {
+        parent::__construct();
+		$this->load->language('header','indonesia');
+		
+		$this->lang();
+    }
+	
+	public function lang(){
+		
+		//Lang
+		$this->data['lang_daftar'] = $this->lang->line('daftar');
+		$this->data['lang_masuk'] = $this->lang->line('masuk');
+		
+		$this->data['title_web'] = "Myacico.com - Login Admin";
+		
+	}
+	
+}
+/*
 class LogInAdmin extends MY_Controller {
 
     public function __construct() {
@@ -24,7 +45,7 @@ class LogInAdmin extends MY_Controller {
 
     }
 	
-}
+}*/
 
 /* End of file MY_Controller.php */
 /* Location: ./application/core/MY_Controller.php */

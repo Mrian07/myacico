@@ -113,12 +113,35 @@ body {
 }
 
 .my-header-panel2{
-	background-color: #ffffff;
+	background:#f2f1f1 url(../../images/general/bg-header.png);
 	width:100%;
-	margin:10px;
-	clear: both;
+	height:100px;
 }
 
+.logo{ 
+	float: left;
+	padding:10px;
+}
+
+.myserach{ 
+	float: left;
+	width: 800px;
+	padding:20px;
+}
+
+.myreg{
+	float: left;
+	width: 200px;
+	padding:40px 0px 10px 0px;
+	font-size:15px;
+	text-align: center;
+}
+
+.mybasket{
+	float: left;
+	width: 200px;
+	padding:30px 0px 10px 0px;
+}
 
 /*Drop Lang*/
 
@@ -163,6 +186,49 @@ body {
     background-color: #3e8e41;
 }
 
+/*Drop Basket*/
+
+.dropbtn-basket {
+    background-color: #b97412;
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+	margin:0px;
+}
+
+.dropdown-basket {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-basket-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-basket-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-basket-content a:hover {background-color: #f1f1f1}
+
+.dropdown-basket:hover .dropdown-basket-content {
+    display: block;
+}
+
+.dropdown-basket:hover .dropbtn-basket {
+    background-color: #e79116;
+}
+
 /*Search*/
 .my-search{
 	/*background-color:#111111;
@@ -185,6 +251,10 @@ body {
     color: white;
 }
 
+.my-search:focus {
+    background-color: #4CAF50; 
+    color: white;
+}
 
 .my-search-button{
 	/*background-color:#111111;
@@ -222,6 +292,31 @@ body {
     padding: 17px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-	background: #e8e8e8;
+	background: #f2f1f1;
 	border:0px;
+}
+
+/*Link Reg & login*/
+
+/* unvisited link */
+.myreg a:link {
+    color: #111111;
+}
+
+/* visited link */
+.myreg a:visited {
+    color: green;
+}
+
+/* mouse over link */
+.myreg a:hover {
+	background: #15c2d2;
+	text-decoration: none;
+	padding:10px;
+	color: #ffffff;
+ }
+
+/* selected link */
+.myreg a:active {
+    color: blue;
 }
