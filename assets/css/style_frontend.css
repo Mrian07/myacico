@@ -125,7 +125,7 @@ body {
 
 .myserach{ 
 	float: left;
-	width: 800px;
+	width: 750px;
 	padding:20px;
 }
 
@@ -301,11 +301,13 @@ body {
 /* unvisited link */
 .myreg a:link {
     color: #111111;
+	text-decoration: none;
 }
 
 /* visited link */
 .myreg a:visited {
-    color: green;
+	color: #111111;
+	text-decoration: none;
 }
 
 /* mouse over link */
@@ -318,5 +320,36 @@ body {
 
 /* selected link */
 .myreg a:active {
-    color: blue;
+    color: #ebf66d;
+	text-decoration: none;
+}
+
+/*Home Banner*/
+.home-banner{
+	margin: 10px;
+	
+}
+
+.border-myacico{
+	border-style: solid;	
+	border-color: #c40202;
+	border-top: 0px;
+	border-bottom: 0px;
+	margin:0 auto;
+	width:400px;
+	height:100px;
+	/*background: #ebf66d;*/
+	text-align: center;
+	padding-top:15px;
+}
+
+.myacico-title{
+	font-family: arial;
+	font-size: 40px;
+	padding-top:20px;
+}
+
+.myacico-title-small{
+	font-style: italic;
+	font-size: 20px;
 }

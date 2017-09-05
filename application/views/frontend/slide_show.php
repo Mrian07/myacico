@@ -1,4 +1,4 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style='margin:0px; padding:0px'> 
   <!-- Indicators -->
   
   <ol class="carousel-indicators">
@@ -27,4 +27,4 @@
   <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> 
 
 </div>
-  1111
+  

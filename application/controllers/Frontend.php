@@ -59,7 +59,6 @@ class Frontend extends CI_Controller {
 		}else{
 	
 			$this->load->view('frontend/header');
-			$this->load->view('frontend/slide_show.php');
 			$this->load->view('frontend/form_login');
 			$this->load->view('frontend/footer');
 		

@@ -151,9 +151,4 @@
 		</div>
 	</div>	
 </div>
-<div style="clear:both;"></div>
-<div class="jumbotron text-center" style='background-color:#ffffff'>
 
-  <h1>Form Login My Admin</h1>
-  <p>Masukan username dan password Anda.</p> 
-</div>
