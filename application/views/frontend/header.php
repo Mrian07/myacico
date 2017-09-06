@@ -5,18 +5,19 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Strat Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
-		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
+		<!--<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 		<!-- End Bootstrap -->
 		
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--<link href="<?php echo base_url('assets/nav/css/bootstrap.min.css');?>" rel="stylesheet">-->
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/nav/css/bootsnav.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
 		
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
+		
 		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
 		<!--<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/favicon/'.$data_g["favicon"]);?>">-->
 		<!-- Font Awesome -->
@@ -29,6 +30,7 @@
     </head>
 
 <body>
+
 <div class="my-header-panel">
 	<div class="my-header-panel-sub1">
 		<div class="row">
@@ -48,9 +50,9 @@
 				Total Shopping Experience
 			</div>
 			<div class="col-sm-3">
-				<div class="dropdown">
+				<div class="dropdowns">
 				  <button class="dropbtn">Bahasa</button>
-				  <div class="dropdown-content">
+				  <div class="dropdowns-content">
 					<a href="#"><img src='<?php echo base_url('images/general/lang_bahasa.png');?>' border='0'> Indonesia</a>
 					<a href="#"><img src='<?php echo base_url('images/general/lang_english.png');?>' border='0'> Inggris</a>
 				  </div>
@@ -60,6 +62,8 @@
 	</div>
 </div>
 <div style="clear:both;"></div>
+
+
 <!--
 <div class="my-header-panel2">
 		

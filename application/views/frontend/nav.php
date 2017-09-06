@@ -2,7 +2,7 @@
     <nav class="navbar navbar-default bootsnav">
 
        
-        <div class="container">            
+         
 
 			<!-- Start Header Navigation -->
             <div class="navbar-header">
@@ -16,8 +16,8 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
-                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="active"><a href="#">Home1</a></li>
+                <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="active"><a href="#">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li class="dropdown megamenu-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Megamenu</a>
@@ -112,8 +112,7 @@
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
-        </div>   
-
+    
        
     </nav>
     <!-- End Navigation -->
