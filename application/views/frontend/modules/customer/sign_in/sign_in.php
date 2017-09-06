@@ -2,16 +2,16 @@
       <div class="login_wrapper">
         <div class="form login_form">
           <section class="login_content">
-            <form>
+            <form name="loginFm" method="post">
               <h1>Login Form</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" name="username" class="form-control" placeholder="Username" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" name="password" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
+                <button class="btn btn-default" type="submit">Login</button>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 
@@ -30,4 +30,28 @@
           </section>
         </div>
       </div>
-</div>
+</div> 
+<script type="text/javascript">
+var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+
+$(document).ready(function() {
+
+  $('form').submit(function(e){
+    e.preventDefault();
+
+    var apiurl = baseApiUrl + '/login';
+    var data = $(this).serialize();
+
+    // success handling
+    var success = function(r){
+      console.log('OK:', r);
+      alert(r.message);
+    };
+
+    $.post( apiurl, data, success, "json" );
+    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
+
+  });
+
+});
+</script>

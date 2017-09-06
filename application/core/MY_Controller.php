@@ -15,6 +15,7 @@ class Web extends MY_Controller {
 		$this->load->language('header','indonesia');
 		
 		$this->lang();
+        $this->asset();
     }
 	
 	public function lang(){
@@ -26,6 +27,11 @@ class Web extends MY_Controller {
 		$this->data['title_web'] = "Myacico.com - Login Admin";
 		
 	}
+
+    public function asset(){
+
+        $this->data['baseApiUrl'] = "http://192.168.1.103:8080/myacico-service/api";
+    }
 	
 }
 /*
