@@ -1,3 +1,5 @@
+
+
 <div class='btn-top'>
 	<a href="#" id='btnTop'>
 		<img src='<?php echo base_url('images/general/btn-top.png');?>' border='0' /></a>
@@ -80,8 +82,8 @@
 
 <!-- Bootsnavs -->
 <script src="<?php echo base_url('assets/nav/js/bootsnav.js');?>"></script>
-
-<script src="<?php echo base_url('assets_adminlte/plugins/jQuery/jQuery-2.1.4.min.js') ?>"></script>
+<!--
+<script src="<?php echo base_url('assets_adminlte/plugins/jQuery/jQuery-2.1.4.min.js') ?>"></script>-->
 <script>
 $("#btnTop").click(function() {
      $("html, body").animate({ scrollTop: 0 }, "slow");
