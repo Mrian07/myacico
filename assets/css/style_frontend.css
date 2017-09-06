@@ -11,6 +11,27 @@ body {
 	font-family: Verdana;
 	font-size: 12px;
 }
+/*
+h1 { 
+	font-family: Arial;
+    display: block;
+	font-size: 250%;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+}*/
+
+h3 span {
+    text-transform: uppercase;
+    color: #fff;
+    border-bottom: 1px solid #c40202;
+    font-size: 25px;
+    line-height: 45px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
 
 .header{
 	margin-top: 20px;
@@ -43,18 +64,22 @@ body {
 }
 
 .footer{
-	background: #b91b1b;
-	color:#ffffff;
+	background: #000000;
+	color:#f8f7f7;
 	display: block; 
 	height: 100%;
 	width: 100%;
 	margin-top: 20px;
-	border-top: 1px dashed #dddddd;
 	padding: 5px;
 	padding: 10px;
-	text-align: center;
 	font-family: arial;
-	margin-bottom:20px;
+	padding: 50px 0px 20px 0px;
+}
+
+.btn-top{
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom:-55px;
 }
 
 .w_false{
@@ -65,6 +90,7 @@ body {
 	font: normal 12px arial;
 	margin-bottom: 10px;
 	color:#000000;
+
 }
 
 /* enable absolute positioning */
@@ -366,4 +392,56 @@ body {
 	border-color: #cccccc;
 	border-left: 0px;
 	border-right: 0px;
+}
+
+/*SUBSCRIBE*/
+.my-sub-button{
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #c40202;
+	color:#d0d0d0;
+}
+
+.my-sub-field{
+	width: 100%;
+    padding: 9px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	background: #f2f1f1;
+	border:0px;
+	border-radius: 4px 0px 0px 4px;
+}
+
+.cpyright{
+	margin-top: 100px;
+	text-align: center;
+	color:#d0d0d0;
+	font-family: verdana;
+	font-size: 15px;
+}
+
+/*footer sosmet*/
+.sos ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.sos li {
+    float: left;
+	font-size:25px;
+}
+
+.sos li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.sos li a:hover {
+    background-color: #333;
 }

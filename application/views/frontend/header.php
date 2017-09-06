@@ -9,32 +9,21 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 		<!-- End Bootstrap -->
 		
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/nav/css/bootsnav.css');?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
+		
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />
+		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
 		<!--<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/favicon/'.$data_g["favicon"]);?>">-->
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="<?php echo base_url('assets_adminlte/font-awesome-4.5.0/css/font-awesome.min.css') ?>"/>
 		
-		<!-- Bullet Navigator Style -->
-		<!-- Help: https://www.jssor.com/development/slider-with-bullet-navigator.html -->
-		<style>
-			.jssorb051 .i {position:absolute;cursor:pointer;}
-			.jssorb051 .i .b {fill:#fff;fill-opacity:0.5;stroke:#000;stroke-width:400;stroke-miterlimit:10;stroke-opacity:0.5;}
-			.jssorb051 .i:hover .b {fill-opacity:.7;}
-			.jssorb051 .iav .b {fill-opacity: 1;}
-			.jssorb051 .i.idn {opacity:.3;}
-		</style>
-
-		<!--#region Arrow Navigator Skin -->
-		<!-- Help: https://www.jssor.com/development/slider-with-arrow-navigator.html -->
-		<style>
-			.jssora051 {display:block;position:absolute;cursor:pointer;}
-			.jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
-			.jssora051:hover {opacity:.8;}
-			.jssora051.jssora051dn {opacity:.5;}
-			.jssora051.jssora051ds {opacity:.3;pointer-events:none;}
-		</style>
+		<!-- CSS -->
+		
 		
         <title>Myacico - Myadmin</title>
     </head>
