@@ -16,7 +16,7 @@
 		<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
 		
         
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
 		
 		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
 		<!--<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/favicon/'.$data_g["favicon"]);?>">-->

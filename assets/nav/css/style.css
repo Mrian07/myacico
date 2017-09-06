@@ -14,11 +14,11 @@ body {
     position: relative;
     font-size:14px;
     line-height:24px;
-    color:#6f6f6f;
+    /*color:#6f6f6f;*/
 }
 
 a{
-    color: #6f6f6f;
+    /*color: #6f6f6f;*/
 }
 
 a,
@@ -420,6 +420,7 @@ nav.navbar-inverse.navbar-full .navbar-toggle{
 /*
 Color
 =========================== */
+
 nav.navbar.bootsnav ul.dropdown-menu.megamenu-content .content ul.menu-col li a:hover,
 .side .widget ul.link li a:hover,
 .side .widget ul.link li a:focus,
@@ -481,4 +482,12 @@ nav.navbar .share ul > li > a:focus{
 ul.cart-list > li.total > .btn:hover,
 ul.cart-list > li.total > .btn:focus{
     background-color: #dc3236 !important;
+}
+
+
+
+
+
+nav.navbar{
+	color: #ffffff;
 }
