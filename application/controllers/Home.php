@@ -23,8 +23,9 @@ class Home extends Web {
 	public function index()
     {	
 		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/slide_show.php');
-		$this->load->view('frontend/modules/home/home',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+	//	$this->load->view('frontend/slide_show.php',$this->data);
+	//	$this->load->view('frontend/modules/home/home',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
 	}
