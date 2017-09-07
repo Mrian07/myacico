@@ -1,4 +1,40 @@
 <div class="container">
+	<div class="row">
+	  <div class="col-sm-12">
+		<div class="my-border-title">
+			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> LOGIN AKUN</h3>
+		</div>
+	  </div>
+	</div> 
+	
+	<div class="row">
+		<div class="col-sm-3">
+		
+		</div>
+	  <div class="col-sm-6">
+		<div class='border-create'>
+		 <form name="signup" method="post">
+		  <div class="form-group">
+			<label>Email:</label>
+			<input type="email" name="email" class="form-control" required="" />
+		  </div>
+		  <div class="form-group">
+			<label>Password:</label>
+			<input type="password" name="password" class="form-control" required="" />
+		  </div>
+		  <input type="submit" class="btn btn-primary" value="Kirim">
+
+		</form> 
+		</div>
+	  </div>
+	  <div class="col-sm-3">
+		
+		</div>
+	</div>  
+	
+
+	
+	<!--
       <div class="login_wrapper">
         <div class="form login_form">
           <section class="login_content">
@@ -29,7 +65,7 @@
             </form>
           </section>
         </div>
-      </div>
+      </div>-->
 </div> 
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
