@@ -1,4 +1,9 @@
 <div class="container">
+	<div class="row">
+	  <div class="col-sm-12 my-border-title">
+		<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DAFTAR AKUN PRIBADI</h3>
+	  </div>
+	</div> 
     <div>
 
       <div class="login_wrapper">
@@ -20,7 +25,7 @@
                 <input type="password" id="password2" class="form-control" placeholder="Konfirmasi Kata Sandi" required="" />
               </div>
               <div>
-                <input type="submit" class="btn btn-default" value="Kirim">
+                <input type="submit" class="btn btn-primary" value="Kirim">
               </div>
 
               <div class="clearfix"></div>

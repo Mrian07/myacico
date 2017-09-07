@@ -462,13 +462,21 @@ h3 span {
 
 .my-title-page{
 	margin: 10px 0px 10px 0px;
-	font-size:20px;
+	font-size:15px;
 }
 
 .my-btn-create {
     padding: 10px;
 	text-align: center;
 	margin:20px 0px 5px 0px;
+}
+
+.my-btn-create a {
+   text-decoration: none;
+}
+
+.my-btn-create a:hover {
+   color: #fcf7a4;
 }
 
 .my-link-create {
@@ -485,4 +493,16 @@ h3 span {
     color: #FFF;
     padding: 8px 12px;
     text-decoration: none;
+}
+
+.my-link-create: hover {
+    background: #d7ff9d;
+    color: #FFF;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+.my-border-title{
+	border-bottom:1px dashed #afafaf;color:transparent;
+	margin-bottom:30px;
 }
