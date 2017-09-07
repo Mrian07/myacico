@@ -1,7 +1,9 @@
 <div class="container">
 	<div class="row">
-	  <div class="col-sm-12 my-border-title">
-		<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DAFTAR AKUN PRIBADI</h3>
+	  <div class="col-sm-12">
+		<div class="my-border-title">
+			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DAFTAR AKUN PRIBADI</h3>
+		</div>
 	  </div>
 	</div> 
 	
@@ -10,6 +12,7 @@
 		
 		</div>
 	  <div class="col-sm-6">
+		<div class='border-create'>
 		 <form name="signup" method="post">
 		  <div class="form-group">
 			<label>Nama:</label>
@@ -42,6 +45,7 @@
 
               </div>
 		</form> 
+		</div>
 	  </div>
 	  <div class="col-sm-3">
 		

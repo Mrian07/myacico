@@ -1,6 +1,18 @@
 <!-- Start Navigation -->
     <nav class="navbar navbar-default navbar-custom bootsnav">
 			
+			<!-- Start Top Search -->
+			<div class="top-search">
+				<div class="container">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-search"></i></span>
+						<input type="text" class="form-control" placeholder="Search">
+						<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+					</div>
+				</div>
+			</div>
+			<!-- End Top Search -->
+		
 			<!-- Start Atribute Navigation -->
             <div class="attr-nav">
                 <ul>
@@ -31,9 +43,10 @@
                             </li>
                         </ul>
                     </li>
-					<li>
+					<li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+					<!--<li>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					</li>
+					</li>-->
                 </ul>
             </div>
             <!-- End Atribute Navigation -->
@@ -44,7 +57,9 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                     <i class="fa fa-bars"></i>
                 </button>
-               <!-- <a class="navbar-brand" href="#brand"><img src="images/brand/logo-black.png" class="logo" alt=""></a>-->
+				
+				<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80">', array('class'=>'navbar-brand'));?>
+                <!--<a class="navbar-brand" href="#brand"><img src="images/brand/logo-black.png" class="logo" alt=""></a>-->
             </div>
             <!-- End Header Navigation -->
            
