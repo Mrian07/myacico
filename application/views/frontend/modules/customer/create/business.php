@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 my-border-title">
-    <h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DAFTAR AKUN PRIBADI</h3>
+    <h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DAFTAR AKUN BUSINESS</h3>
     </div>
   </div> 
   
