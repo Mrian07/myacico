@@ -23,7 +23,17 @@
 			<input type="password" name="password" class="form-control" required="" />
 		  </div>
 		  <input type="submit" class="btn btn-primary" value="Kirim">
+			<div class="clearfix"></div>
 
+              <div class="separator">
+                <p class="change_link">Lupa password ?
+					<?php echo anchor('customer/lostPassword/', 'Click disini');?>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+              </div>
 		</form> 
 		</div>
 	  </div>

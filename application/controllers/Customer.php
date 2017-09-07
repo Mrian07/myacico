@@ -53,6 +53,14 @@ class Customer extends Web {
 		$this->load->view('frontend/footer',$this->data);
 	}
 	
+	public function lostPassword()
+    {
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/customer/lost_password/lost_password.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	
 	public function signIn()
     {	
 		$this->load->view('frontend/header',$this->data);
