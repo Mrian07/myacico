@@ -23,14 +23,40 @@ class Customer extends Web {
 	public function create()
     {	
 		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/create/create.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
 	}
 	
+	public function personal()
+    {	
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/customer/create/personal.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	
+	public function business()
+    {	
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/customer/create/business.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	
+	public function government()
+    {	
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/customer/create/government.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	
 	public function signIn()
     {	
 		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/sign_in/sign_in.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
