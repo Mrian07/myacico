@@ -16,19 +16,19 @@
 		 <form name="signup" method="post">
 		  <div class="form-group">
 			<label>Nama:</label>
-			<input type="text" name="name" class="form-control" placeholder="Nama" required="" />
+			<input type="text" name="name" class="form-control" placeholder="" required="" />
 		  </div>
 		  <div class="form-group">
 			<label>Email:</label>
-			<input type="email" name="email" class="form-control" placeholder="Email" required="" />
+			<input type="email" name="email" class="form-control" placeholder="" required="" />
 		  </div>
 		  <div class="form-group">
 			<label>Password:</label>
-			<input type="password" name="password" class="form-control" placeholder="Kata Sandi" required="" />
+			<input type="password" name="password" class="form-control" placeholder="" required="" />
 		  </div>
 		  <div class="form-group">
 			<label>Ulangi Password:</label>
-			<input type="password" id="password2" class="form-control" placeholder="Ulangi Kata Sandi" required="" />
+			<input type="password" id="password2" class="form-control" placeholder="" required="" />
 		  </div>
 		  <input type="submit" class="btn btn-primary" value="Kirim">
 		  
@@ -37,7 +37,7 @@
               <div class="separator">
                 <p class="change_link">Already a member ?
                   <a href="#signin" class="to_register"> Log in </a>
-                  <input type="text" id="apiurl" class="form-control" placeholder="api url here" />
+                  <!--input type="text" id="apiurl" class="form-control" placeholder="api url here" /-->
                 </p>
 
                 <div class="clearfix"></div>
@@ -113,9 +113,9 @@ $(document).ready(function() {
       console.log('OK:', r.status);
     };
 
-    var cus_url = $('#apiurl').val();
+    //var cus_url = $('#apiurl').val();
 
-    if(cus_url != '')apiurl = cus_url;
+    //if(cus_url != '')apiurl = cus_url;
 
     // do validation
     if(fl.password.value!=$('#password2').val())alert('password not match!!!');
