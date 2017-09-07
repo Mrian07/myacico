@@ -1,5 +1,5 @@
 <!-- Start Navigation -->
-    <nav class="navbar navbar-default bootsnav">
+    <nav class="navbar navbar-default navbar-custom bootsnav">
 
        
          
