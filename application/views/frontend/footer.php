@@ -64,15 +64,13 @@
 
 			</div>	
 		</div>		
-		<div class='cpyright'>
+		
+	</div>
+	<div class='cpyright'>
 		Copyright &copy; 2017 PT. MyAcico Global Indonesia. All Rights Reserved.
-		<div>
-	</div>	
-	
-	
-	
+	</div>
 </div>
-
+		
 </body>
 
 <!-- START JAVASCRIPT -->
