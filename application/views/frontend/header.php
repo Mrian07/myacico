@@ -26,7 +26,7 @@
 		<!-- CSS -->
 		
 		
-        <title>Myacico - Myadmin</title>
+        <title><?php echo $title_web; ?></title>
     </head>
 
 <body>

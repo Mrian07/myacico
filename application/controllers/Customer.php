@@ -17,11 +17,12 @@ class Customer extends Web {
 
 	public function atribut(){
 		
-		$this->data['title_web'] = "Myacico.com - Login Admin";
+		
 	}
 	
 	public function create()
     {	
+		$this->data['title_web'] = "Myacico.com - Create Account";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/create/create.php',$this->data);
@@ -31,6 +32,7 @@ class Customer extends Web {
 	
 	public function personal()
     {	
+		$this->data['title_web'] = "Myacico.com - Create Account Personal";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/create/personal.php',$this->data);
@@ -39,6 +41,7 @@ class Customer extends Web {
 	
 	public function business()
     {	
+		$this->data['title_web'] = "Myacico.com - Create Account Business";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/create/business.php',$this->data);
@@ -47,6 +50,7 @@ class Customer extends Web {
 	
 	public function government()
     {	
+		$this->data['title_web'] = "Myacico.com - Create Account Government";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/create/government.php',$this->data);
@@ -55,6 +59,7 @@ class Customer extends Web {
 	
 	public function lostPassword()
     {
+		$this->data['title_web'] = "Myacico.com - Lupa Password";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/lost_password/lost_password.php',$this->data);
@@ -63,6 +68,7 @@ class Customer extends Web {
 	
 	public function signIn()
     {	
+		$this->data['title_web'] = "Myacico.com - Login";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/sign_in/sign_in.php',$this->data);
