@@ -52,11 +52,12 @@ nav.navbar.bootsnav{
 }
 
 nav.navbar.bootsnav ul.nav > li > a{
-    /*color: #6f6f6f;*/
-	color: #ffffff;
+    color: #6f6f6f;
+	/*color: #ffffff;*/
     background-color: transparent;
     outline: none;
     margin-bottom: -2px;
+	
 }
 
 nav.navbar.bootsnav ul.nav li.megamenu-fw > a:hover,

@@ -154,6 +154,7 @@
 		<i class="fa fa-user" aria-hidden="true"></i>
 		<?php echo anchor('customer/create/', $lang_daftar);?> / <?php echo anchor('customer/signIn/', $lang_masuk);?>
 	</div>
+	<!--
 	<div class='mybasket'>
 		<div class="dropdown-basket">
 		  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
@@ -161,6 +162,6 @@
 			<a href="#">Item Kosong</a>
 		  </div>
 		</div>
-	</div>	
+	</div>	-->
 </div>
 
