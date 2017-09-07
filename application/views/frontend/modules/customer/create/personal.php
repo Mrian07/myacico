@@ -4,6 +4,51 @@
 		<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DAFTAR AKUN PRIBADI</h3>
 	  </div>
 	</div> 
+	
+	<div class="row">
+		<div class="col-sm-3">
+		
+		</div>
+	  <div class="col-sm-6">
+		 <form name="signup" method="post">
+		  <div class="form-group">
+			<label>Nama:</label>
+			<input type="text" name="name" class="form-control" placeholder="Nama" required="" />
+		  </div>
+		  <div class="form-group">
+			<label>Email:</label>
+			<input type="email" name="email" class="form-control" placeholder="Email" required="" />
+		  </div>
+		  <div class="form-group">
+			<label>Password:</label>
+			<input type="password" name="password" class="form-control" placeholder="Kata Sandi" required="" />
+		  </div>
+		  <div class="form-group">
+			<label>Ulangi Password:</label>
+			<input type="password" id="password2" class="form-control" placeholder="Ulangi Kata Sandi" required="" />
+		  </div>
+		  <input type="submit" class="btn btn-primary" value="Kirim">
+		  
+		  <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">Already a member ?
+                  <a href="#signin" class="to_register"> Log in </a>
+                  <input type="text" id="apiurl" class="form-control" placeholder="api url here" />
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+              </div>
+		</form> 
+	  </div>
+	  <div class="col-sm-3">
+		
+		</div>
+	</div>  
+	
+	<!--
     <div>
 
       <div class="login_wrapper">
@@ -44,7 +89,7 @@
           </section>
         </div>
       </div>
-    </div>
+    </div>-->
 </div>
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';

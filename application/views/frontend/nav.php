@@ -52,7 +52,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><?php echo anchor('home/', '<span class="glyphicon glyphicon-home"></span>');?></li>
                     <li><a href="#">About Us</a></li>
                     <li class="dropdown megamenu-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Megamenu</a>
