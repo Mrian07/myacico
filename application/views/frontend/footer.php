@@ -32,7 +32,7 @@
 				All items in Myacico.com are guaranteed for 7 days, counted upon receipt of the goods.
 			</div>
 		</div>
-		<div class="row">
+		<div class="row my-foot-box">
 			<div class="col-sm-3">
 				<h3><span>COMPANY</span></h3>
 				Tentang Kami Syarat & Ketentuan Kebijakan Privasi Kebijakan Hak Cipta.
@@ -58,7 +58,7 @@
 				<img src='<?php echo base_url('images/general/logo_kurir_kecil.png');?>' border='0'/>
 			</div>
 		</div>	
-		<div class="row">
+		<div class="row my-foot-box">
 			<div class="col-sm-3">
 				<h3><span>PEMBAYARAN</span></h3>
 
