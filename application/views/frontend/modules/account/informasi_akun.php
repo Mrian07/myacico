@@ -12,55 +12,65 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-8">
-			isi akunnya
+    <div class="login_wrapper">
+      <div class="form login_form">
+        <section class="login_content">
+          <form name="loginFm" method="post">
+            <div class="form-group">
+              <label>Nama Depan*</label>
+              <input type="text" name="fname" class="form-control" placeholder="" required="" />
+            </div>
+            <div class="form-group">
+              <label>Nama Belakang*</label>
+              <input type="text" name="lname" class="form-control" placeholder="" required="" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" class="form-control" placeholder="" required="" />
+            </div>
+            <div class="form-group">
+              <a href="#" id="pwd_btm">Ubah Kata Sandi</a>
+            </div>
+              <span id="pwd_box">
+            <h4>Ubah Kata Sandi</h4>
+
+            <div class="form-group">
+              <label>Kata Sandi Saat Ini*</label>
+              <input type="password" name="password" class="form-control" placeholder="" required="" />
+            </div>
+            <div class="form-group">
+              <label>Kata Sandi Baru*</label>
+              <input type="password" name="password" class="form-control" placeholder="" required="" />
+            </div>
+            <div class="form-group">
+              <label>Konfirmasi Kata Sandi Baru*</label>
+              <input type="password" id="password2" class="form-control" placeholder="" required="" />
+            </div>
+              </span>
+            <div class="clearfix"></div>
+            <input type="submit" class="btn btn-primary" value="Simpan">
+
+          </form>
+        </section>
+      </div>
+    </div>
 		</div>
-
-	</div>  
-	
-
-	
-	<!--
-      <div class="login_wrapper">
-        <div class="form login_form">
-          <section class="login_content">
-            <form name="loginFm" method="post">
-              <h1>Login Form</h1>
-              <div>
-                <input type="text" name="username" class="form-control" placeholder="Username" required="" />
-              </div>
-              <div>
-                <input type="password" name="password" class="form-control" placeholder="Password" required="" />
-              </div>
-              <div>
-                <button class="btn btn-default" type="submit">Login</button>
-                <a class="reset_pass" href="#">Lost your password?</a>
-              </div>
-
-              <div class="clearfix"></div>
-
-              <div class="separator">
-                <p class="change_link">New to site?
-                  <a href="#signup" class="to_register"> Create Account </a>
-                </p>
-
-                <div class="clearfix"></div>
-                <br />
-
-              </div>
-            </form>
-          </section>
-        </div>
-      </div>-->
-</div> 
+	</div>
+</div>
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
 $(document).ready(function() {
+  $('#pwd_box').hide();
+  $('#pwd_btm').click(function(e){
+    e.preventDefault();
+    $('#pwd_box').slideToggle();
+  });
 
   $('form').submit(function(e){
     e.preventDefault();
 
-    var apiurl = baseApiUrl + '/login';
+    var apiurl = baseApiUrl + '/myaccount';
     var data = $(this).serialize();
 
     // success handling
