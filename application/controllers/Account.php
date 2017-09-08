@@ -30,5 +30,16 @@ class Account extends Web {
 
 	}
 	
+	public function informasiAkun()
+    {	
+		$this->data['title_web'] = "Myacico.com - Informasi Akun";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/informasi_akun.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+
+	}
+	
+	
 
 }

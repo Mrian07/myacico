@@ -2,7 +2,7 @@
 	<div class="row">
 	  <div class="col-sm-12">
 		<div class="my-border-title">
-			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DASHBOARD</h3>
+			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> INFORMASI AKUN</h3>
 		</div>
 	  </div>
 	</div> 
@@ -12,7 +12,7 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-8">
-			isi
+			isi akunnya
 		</div>
 
 	</div>  

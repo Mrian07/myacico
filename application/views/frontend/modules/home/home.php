@@ -198,7 +198,7 @@ ul.list-group:after {
 	</div>
 </div>
 <div class='border-myacico'>
-	<span class='myacico-title'>MYACICO FOR YOU</span>
+	<span class='myacico-title'><h3>MYACICO FOR YOU</h3></span>
 	<span class='myacico-title-small'>Our Official Store</span>
 </div>
 <hr>
