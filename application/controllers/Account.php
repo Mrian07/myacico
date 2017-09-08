@@ -40,6 +40,7 @@ class Account extends Web {
 		$this->load->view('frontend/footer',$this->data);
 
 	}
+	
 	public function berlanggananNewsletter()
     {
 		$this->data['title_web'] = "Myacico.com - Informasi Akun";
@@ -48,9 +49,46 @@ class Account extends Web {
 		$this->load->view('frontend/modules/account/info_login',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPasaran',$this->data);
 		$this->load->view('frontend/footer',$this->data);
-
 	}
 
+	public function bukuAlamat()
+    {
+		$this->data['title_web'] = "Myacico.com - Buku Alamat";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/info_login',$this->data);
+		$this->load->view('frontend/modules/account/riwayatStatusPasaran',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	
+	public function riwayatStatusPasaran()
+    {
+		$this->data['title_web'] = "Myacico.com - Riwayat Status Pasaran";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/info_login',$this->data);
+		$this->load->view('frontend/modules/account/riwayatStatusPasaran',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 
-
+	public function returnManagementAuthority()
+    {
+		$this->data['title_web'] = "Myacico.com - Return Management Authority";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/info_login',$this->data);
+		$this->load->view('frontend/modules/account/riwayatStatusPasaran',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	
+	public function Wishlist()
+    {
+		$this->data['title_web'] = "Myacico.com - Wishlist";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/info_login',$this->data);
+		$this->load->view('frontend/modules/account/riwayatStatusPasaran',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	
 }
