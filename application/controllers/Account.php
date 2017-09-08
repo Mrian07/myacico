@@ -81,7 +81,7 @@ class Account extends Web {
 		$this->load->view('frontend/footer',$this->data);
 	}
 	
-	public function Wishlist()
+	public function wishlist()
     {
 		$this->data['title_web'] = "Myacico.com - Wishlist";
 		$this->load->view('frontend/header',$this->data);
@@ -89,6 +89,11 @@ class Account extends Web {
 		$this->load->view('frontend/modules/account/info_login',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPasaran',$this->data);
 		$this->load->view('frontend/footer',$this->data);
+	}
+	
+	public function logout()
+    {
+		redirect('customer/logout');
 	}
 	
 }

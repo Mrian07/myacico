@@ -598,3 +598,12 @@ h3 span {
 	border-radius: 0px 0px 7px 7px;
 	padding:10px;
 }
+
+.my-alert{
+	background:#f9f8f8;
+	border:5px solid #e0e0e0;
+	border-top:0px;
+	border-right:0px;
+	border-bottom:0px;
+	padding:10px;
+}
