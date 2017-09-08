@@ -75,4 +75,9 @@ class Customer extends Web {
 		$this->load->view('frontend/footer',$this->data);
 
 	}
+	
+	public function logout()
+    {
+		echo"logout";
+	}
 }

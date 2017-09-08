@@ -24,8 +24,9 @@ class Account extends Web {
     {	
 		$this->data['title_web'] = "Myacico.com - Dashboard";
 		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/dashboard.php',$this->data);
+		$this->load->view('frontend/nav',$this->data);
+		$this->load->view('frontend/modules/account/info_login',$this->data);
+		$this->load->view('frontend/modules/account/dashboard',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
 	}
@@ -34,12 +35,15 @@ class Account extends Web {
     {	
 		$this->data['title_web'] = "Myacico.com - Informasi Akun";
 		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/informasi_akun.php',$this->data);
+		$this->load->view('frontend/nav',$this->data);
+		$this->load->view('frontend/modules/account/informasi_akun',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
 	}
 	
-	
+	public function logout()
+    {
+		redirect('customer/logout');
+	}
 
 }

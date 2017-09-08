@@ -470,6 +470,14 @@ h3 span {
 		font-family: "Arial";
 		font-size:13px;
 	}
+	
+	.my-menu-mobile{
+		display: block;
+	}
+	
+	.my-menu-desktop{
+		display: none;
+	}
 }
 
 @media screen and (max-width:500px) {
@@ -551,7 +559,7 @@ h3 span {
 .my-menu-desktop {
     margin: 0;
     padding: 0;
-    width: 125px;
+    width: 100%;
 }
 
 .my-menu-desktop li {
@@ -582,3 +590,11 @@ h3 span {
     font-weight: bold;
 }
 
+/*Info Login*/
+.info-login{
+	background:#f9f8f8;
+	border:1px solid #e0e0e0;
+	border-top:0px;
+	border-radius: 0px 0px 7px 7px;
+	padding:10px;
+}

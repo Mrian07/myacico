@@ -28,6 +28,8 @@
 		<li><?php echo anchor('account/returnManagementAuthority', 'Return Management Authority');?></li>
 		<li><?php echo anchor('account/berlanggananNewsletter', 'Berlangganan Newsletter');?></li>
 		<li><?php echo anchor('account/Wishlist', 'Wishlist');?></li>
+		<li class="divider"></li>
+		<li><?php echo anchor('account/logout', 'Logout');?></li>
       <!--<li class="dropdown-header">Dropdown header 1</li>-->
       
       <!--<li class="divider"></li>

@@ -29,11 +29,11 @@
               <input type="email" name="email" class="form-control" placeholder="" required="" />
             </div>
             <div class="form-group">
-              <a href="#" id="pwd_btm">Ubah Kata Sandi</a>
+              <a href="#" id="pwd_btm"><i>Ubah Kata Sandi</i></a>
             </div>
-              <span id="pwd_box">
-            <h4>Ubah Kata Sandi</h4>
-
+              <div id="pwd_box">
+            <h5>Ubah Kata Sandi</h5>
+			<hr>
             <div class="form-group">
               <label>Kata Sandi Saat Ini*</label>
               <input type="password" name="password" class="form-control" placeholder="" required="" />
@@ -46,7 +46,7 @@
               <label>Konfirmasi Kata Sandi Baru*</label>
               <input type="password" id="password2" class="form-control" placeholder="" required="" />
             </div>
-              </span>
+              </div>
             <div class="clearfix"></div>
             <input type="submit" class="btn btn-primary" value="Simpan">
 
