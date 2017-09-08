@@ -296,7 +296,7 @@
 <button type="button" class="btn btn-danger">Simpan</button>
 </div>
       </div>
-
+</div>
 
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
