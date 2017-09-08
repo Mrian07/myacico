@@ -12,70 +12,32 @@
 		
 		</div>
 	  <div class="col-sm-6">
-		<div class='border-create'>
-		 <form name="signup" method="post">
-		  <div class="form-group">
-			<label>Email:</label>
-			<input type="email" name="email" class="form-control" required="" />
+  		<div class='border-create'>
+		    <form name="signup" method="post">
+		      <div class="form-group">
+            <label>Email:</label>
+            <input type="email" name="email" class="form-control" required="" />
+		      </div>
+		      <div class="form-group">
+      			<label>Password:</label>
+      			<input type="password" name="password" class="form-control" required="" />
+    		  </div>
+    		  <input type="submit" class="btn btn-primary" value="Kirim">
+    			<div class="clearfix"></div>
+          <div class="separator">
+            <p class="change_link">Lupa password ?
+      				<?php echo anchor('customer/lostPassword/', 'Click disini');?>
+            </p>
+            <div class="clearfix"></div>
+            <br />
+          </div>
+    		</form> 
 		  </div>
-		  <div class="form-group">
-			<label>Password:</label>
-			<input type="password" name="password" class="form-control" required="" />
-		  </div>
-		  <input type="submit" class="btn btn-primary" value="Kirim">
-			<div class="clearfix"></div>
-
-              <div class="separator">
-                <p class="change_link">Lupa password ?
-					<?php echo anchor('customer/lostPassword/', 'Click disini');?>
-                </p>
-
-                <div class="clearfix"></div>
-                <br />
-
-              </div>
-		</form> 
-		</div>
 	  </div>
 	  <div class="col-sm-3">
 		
 		</div>
 	</div>  
-	
-
-	
-	<!--
-      <div class="login_wrapper">
-        <div class="form login_form">
-          <section class="login_content">
-            <form name="loginFm" method="post">
-              <h1>Login Form</h1>
-              <div>
-                <input type="text" name="username" class="form-control" placeholder="Username" required="" />
-              </div>
-              <div>
-                <input type="password" name="password" class="form-control" placeholder="Password" required="" />
-              </div>
-              <div>
-                <button class="btn btn-default" type="submit">Login</button>
-                <a class="reset_pass" href="#">Lost your password?</a>
-              </div>
-
-              <div class="clearfix"></div>
-
-              <div class="separator">
-                <p class="change_link">New to site?
-                  <a href="#signup" class="to_register"> Create Account </a>
-                </p>
-
-                <div class="clearfix"></div>
-                <br />
-
-              </div>
-            </form>
-          </section>
-        </div>
-      </div>-->
 </div> 
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
@@ -85,7 +47,7 @@ $(document).ready(function() {
   $('form').submit(function(e){
     e.preventDefault();
 
-    var apiurl = baseApiUrl + '/login';
+    var apiurl = baseApiUrl + '/aduser/login';
     var data = $(this).serialize();
 
     // success handling
