@@ -46,18 +46,15 @@
 	</div>
 	<div class="my-header-panel-sub2">
 		<div class="row">
-			<div class="col-sm-8">
+			<div class="col-sm-7">
 				Total Shopping Experience
 			</div>
 			
-			<div class="col-sm-4">
+			<div class="col-sm-5">
 				<div class="btn-group">
 				<div class="dropdowns">
-				  <button class="dropbtn">Hubungi Kami</button>
-				  <div class="dropdowns-content">
-					<a href="#"><img src='<?php echo base_url('images/general/lang_bahasa.png');?>' border='0'> Indonesia</a>
-					<a href="#"><img src='<?php echo base_url('images/general/lang_english.png');?>' border='0'> Inggris</a>
-				  </div>
+					<?php echo anchor('customer/contact', '<button class="dropbtn"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
+				  
 				</div>	
 				<div class="dropdowns">
 				  <button class="dropbtn">Bahasa</button>
