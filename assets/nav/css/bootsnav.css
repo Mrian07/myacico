@@ -526,8 +526,10 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     }
     
     nav.navbar.bootsnav ul.nav > li > a{
-        padding: 30px 15px;
-        font-weight: 600;
+        padding: 20px 15px;
+        font-weight: 200;
+		margin-top:-5px;
+		border-right: 1px solid #d8d5d5;
     }
     
     nav.navbar.bootsnav ul.nav > li.dropdown > a.dropdown-toggle:after{
