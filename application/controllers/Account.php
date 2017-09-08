@@ -57,7 +57,7 @@ class Account extends Web {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/info_login',$this->data);
-		$this->load->view('frontend/modules/account/riwayatStatusPasaran',$this->data);
+		$this->load->view('frontend/modules/account/bukuAlamat',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 	
