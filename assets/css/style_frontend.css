@@ -533,3 +533,39 @@ h3 span {
 	border-bottom:1px solid #c40202;
 	margin-bottom:20px;
 }
+
+/*Sidebar Menu*/
+
+#simple {
+    margin: 0;
+    padding: 0;
+    width: 125px;
+}
+
+#simple li {
+    background: linear-gradient(-45deg, #0044a1, #005ddc);
+    border-bottom: 1px solid #FFF;
+    list-style: none;
+    padding: 0.5em;
+    text-align: center;
+    width: 250px;
+}
+
+#simple li:hover {
+    background: linear-gradient(-45deg, #006cff, #5ca1ff);
+}
+
+#simple li a {
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+
+#simple li.active {
+    background: #FFF;
+}
+
+#simple li.active a {
+    color: #0044a1;
+    font-weight: bold;
+}
