@@ -81,7 +81,7 @@ class Customer extends Web {
 		$this->data['title_web'] = "Myacico.com - Login";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/customer/sign_in/logout.php',$this->data);
+		$this->load->view('frontend/modules/customer/logout/logout.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 }
