@@ -25,7 +25,6 @@ class Account extends Web {
 		$this->data['title_web'] = "Myacico.com - Dashboard";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/info_login',$this->data);
 		$this->load->view('frontend/modules/account/dashboard.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
@@ -41,7 +40,7 @@ class Account extends Web {
 		$this->load->view('frontend/footer',$this->data);
 
 	}
-	
+
 	public function berlanggananNewsletter()
     {
 		$this->data['title_web'] = "Myacico.com - Informasi Akun";
@@ -62,13 +61,13 @@ class Account extends Web {
 		$this->load->view('frontend/footer',$this->data);
 	}
 	
-	public function riwayatStatusPasaran()
+	public function riwayatStatusPesanan()
     {
 		$this->data['title_web'] = "Myacico.com - Riwayat Status Pasaran";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/info_login',$this->data);
-		$this->load->view('frontend/modules/account/riwayatStatusPasaran',$this->data);
+		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
@@ -81,20 +80,15 @@ class Account extends Web {
 		$this->load->view('frontend/modules/account/riwayatStatusPasaran',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-	
-	public function wishlist()
+
+	public function Wishlist()
     {
 		$this->data['title_web'] = "Myacico.com - Wishlist";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/info_login',$this->data);
-		$this->load->view('frontend/modules/account/riwayatStatusPasaran',$this->data);
+		$this->load->view('frontend/modules/account/Wishlist',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-	
-	public function logout()
-    {
-		redirect('customer/logout');
-	}
-	
+
 }
