@@ -451,6 +451,10 @@ h3 span {
 	display: none;
 }
 
+.my-menu-mobile{
+	display: none;
+}
+
 @media screen and (max-width:800px) {
 	.my-header-panel{
 		display: none;
@@ -476,6 +480,14 @@ h3 span {
 	
 	.attr-nav{
 		display: block;
+	}
+	
+	.my-menu-mobile{
+		display: block;
+	}
+	
+	.my-menu-desktop{
+		display: none;
 	}
 }
 
@@ -536,13 +548,13 @@ h3 span {
 
 /*Sidebar Menu*/
 
-#simple {
+.my-menu-desktop {
     margin: 0;
     padding: 0;
     width: 125px;
 }
 
-#simple li {
+.my-menu-desktop li {
     background: linear-gradient(-45deg, #0044a1, #005ddc);
     border-bottom: 1px solid #FFF;
     list-style: none;
@@ -551,21 +563,22 @@ h3 span {
     width: 250px;
 }
 
-#simple li:hover {
+.my-menu-desktop li:hover {
     background: linear-gradient(-45deg, #006cff, #5ca1ff);
 }
 
-#simple li a {
+.my-menu-desktop li a {
     color: white;
     display: block;
     text-decoration: none;
 }
 
-#simple li.active {
+.my-menu-desktop li.active {
     background: #FFF;
 }
 
-#simple li.active a {
+.my-menu-desktop li.active a {
     color: #0044a1;
     font-weight: bold;
 }
+
