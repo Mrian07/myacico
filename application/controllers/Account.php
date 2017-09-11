@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Account extends Web {
+class Account extends Account_private {
 
 	public function __construct()
     {
@@ -24,6 +24,7 @@ class Account extends Web {
 
 	public function index()
     {
+
 		$this->data['title_web'] = "Myacico.com - Dashboard";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
