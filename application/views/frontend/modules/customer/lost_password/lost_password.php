@@ -48,7 +48,7 @@ $(document).ready(function() {
 				content: 'Email tidak boleh kosong!',
 			});
 		}
-		  a
+		  aa
 	    e.preventDefault();
 
 	    var apiurl = baseApiUrl + '/login';
