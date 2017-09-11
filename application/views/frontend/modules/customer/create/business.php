@@ -12,65 +12,65 @@
     <div class="col-sm-6">
       <form name="signup" method="post">
         <div class="form-group">
-          <label>Nama Depan</label>
-          <input type="text" name="fname" class="form-control" placeholder="" required="" />
+          <label>Nama Depan*</label>
+          <input type="text" name="fname" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>Nama Belakang</label>
-          <input type="text" name="lname" class="form-control" placeholder="" required="" />
+          <label>Nama Belakang*</label>
+          <input type="text" name="lname" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" name="email" class="form-control" placeholder="" required="" />
+          <label>Email*</label>
+          <input type="email" name="email" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>Informasi Perusahaan</label>
-          <input type="text" name="cname" class="form-control" placeholder="" required="" />
+          <label>Informasi Perusahaan*</label>
+          <input type="text" name="cname" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>Type Perusahaan</label>
-          <select name="bname" class="form-control" placeholder="" required="" ></select>
+          <label>Type Perusahaan*</label>
+          <select name="bname" class="form-control mandatory" ></select>
         </div>
         <div class="form-group">
-          <label>Telephone</label>
-          <input type="text" name="telp" class="form-control" placeholder="" required="" />
+          <label>Telephone*</label>
+          <input type="text" name="telp" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>NPWP</label>
-          <input type="text" name="npwp" class="form-control" placeholder="" />
+          <label>NPWP*</label>
+          <input type="text" name="npwp" class="form-control mandatory" placeholder="" />
         </div>
         <div class="form-group">
-          <label>Alamat</label>
-          <input type="text" name="alamat1" class="form-control" placeholder="" required="" />
-          <input type="text" name="alamat2" class="form-control" placeholder="" />
+          <label>Alamat*</label>
+          <input type="text" name="alamat1" class="form-control mandatory" />
+          <input type="text" name="alamat2" class="form-control mandatory" placeholder="" />
         </div>
         <div class="form-group">
-          <label>Negara</label>
-          <select name="country" class="form-control" placeholder="" required="" ></select>
+          <label>Negara*</label>
+          <select name="country" class="form-control mandatory" ></select>
         </div>
         <div class="form-group">
-          <label>Provinsi</label>
-          <select name="province" class="form-control" placeholder="" required="" ></select>
+          <label>Provinsi*</label>
+          <select name="province" class="form-control mandatory" ></select>
         </div>
         <div class="form-group">
-          <label>Kota</label>
-          <input type="text" name="city" class="form-control" placeholder="" required="" />
+          <label>Kota*</label>
+          <input type="text" name="city" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>Kecamatan</label>
-          <input type="text" name="kecamatan" class="form-control" placeholder="" required="" />
+          <label>Kecamatan*</label>
+          <input type="text" name="kecamatan" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>Kodepos</label>
-          <input type="text" name="zip" class="form-control" placeholder="" required="" />
+          <label>Kodepos*</label>
+          <input type="text" name="zip" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>Kata Sandi</label>
-          <input type="password" name="password" class="form-control" placeholder="" required="" />
+          <label>Kata Sandi*</label>
+          <input type="password" name="password" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>Konfirmasi Kata Sandi</label>
-          <input type="password" id="password2" class="form-control" placeholder="" required="" />
+          <label>Konfirmasi Kata Sandi*</label>
+          <input type="password" id="password2" class="form-control" />
         </div>
         <div>
           <input type="submit" class="btn btn-default" value="Kirim">
@@ -96,7 +96,6 @@ var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
 $(document).ready(function() {
   $("form").submit(function(e){
-
     e.preventDefault();
     var apiurl = baseApiUrl + '/aduser/add';
     var fl=document.signup;
@@ -108,11 +107,14 @@ $(document).ready(function() {
       console.log('OK:', r.status);
     };
 
-    var cus_url = $('#apiurl').val();
-
-    if(cus_url != '')apiurl = cus_url;
-
     // do validation
+    $('.mandatory').each(function(){
+      if($(this).val()==''){
+        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
+        // onContentReady: function(){$(this).focus();}
+        return false;
+      }
+    });
     if(fl.password.value!=$('#password2').val())alert('password not match!!!');
 
     else $.post( apiurl, data, success, "json" );
