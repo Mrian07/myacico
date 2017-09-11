@@ -30,18 +30,38 @@
 	</div>  
 </div> 
 
-<button class="example1 btn btn-primary">example alert</button>
 <script type="text/javascript">
+var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
-$.alert({
-			title: 'Alert!',
-			content: 'Simple alert!',
-		});
 
-	$('.example1').on('click', function () {
-		$.alert({
-			title: 'Alert!',
-			content: 'Simple alert!',
-		});
+$(document).ready(function() {
+
+	$('form').submit(function(e){
+
+
+		var email = $("#email").val();
+
+		if(email==''){
+			$.alert({
+				title: 'Alert!',
+				content: 'Email tidak boleh kosong!',
+			});
+		}
+		  
+	    e.preventDefault();
+
+	    var apiurl = baseApiUrl + '/login';
+	    var data = $(this).serialize();
+
+	    // success handling
+	    var success = function(r){
+	      console.log('OK:', r);
+	      alert(r.message);
+	    };
+
+	    $.post( apiurl, data, success, "json" );
+	    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
+
 	});
+
 </script>
