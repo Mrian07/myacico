@@ -18,7 +18,6 @@ class Account extends web {
 	}
 
 	public function atribut(){
-
 		//$this->data['title_web'] = "Myacico.com - Account";
 	}
 
