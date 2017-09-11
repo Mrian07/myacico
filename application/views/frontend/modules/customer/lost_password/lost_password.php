@@ -38,10 +38,9 @@ $(document).ready(function() {
 
 	$('form').submit(function(e){
 
-
 		var email = $("#email").val();
 
-		if(email==''){
+		if(email==''){ 
 			$.alert({
 				title: 'Alert!',
 				content: 'Email tidak boleh kosong!',
