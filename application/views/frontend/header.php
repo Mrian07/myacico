@@ -27,7 +27,7 @@
 		<!-- CSS -->
 		
 		<!-- s: Alert -->
-		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/libs/bundled.css');?>" />-->
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/libs/bundled.css');?>" />
 		<script type="text/javascript" src="<?php echo base_url('assets/alert/libs/bundled.js');?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/alert/js/jquery-confirm.js');?>"></script>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/css/jquery-confirm.css');?>" />
