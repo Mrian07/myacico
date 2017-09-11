@@ -6,11 +6,11 @@
 		</div>
 		<p>Masukkan alamat email Anda di bawah ini. Anda akan menerima link untuk mereset password Anda.</p>
 	  </div>
-	</div> 
-	
+	</div>
+
 	<div class="row">
 		<div class="col-sm-3">
-		
+
 		</div>
 	  <div class="col-sm-6">
 		<div class='border-create'>
@@ -21,14 +21,14 @@
 		  </div>
 		  <input type="submit" class="btn btn-primary" value="Kirim">
 
-		</form> 
+		</form>
 		</div>
 	  </div>
 	  <div class="col-sm-3">
-		
+
 		</div>
-	</div>  
-</div> 
+	</div>
+</div>
 
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
@@ -46,7 +46,7 @@ $(document).ready(function() {
 				content: 'Email tidak boleh kosong!',
 			});
 		}
-		  
+		  aa
 	    e.preventDefault();
 
 	    var apiurl = baseApiUrl + '/login';
