@@ -5,40 +5,40 @@
 			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DAFTAR AKUN PRIBADI</h3>
 		</div>
 	  </div>
-	</div> 
-	
+	</div>
+
 	<div class="row">
 		<div class="col-sm-3">
-		
+
 		</div>
 	  <div class="col-sm-6">
 		<div class='border-create'>
 		 <form name="signup" method="post">
 		  <div class="form-group">
 			<label>Nama:</label>
-			<input type="text" name="name" class="form-control" placeholder="" required="" />
+			<input type="text" id="nama" name="name" class="form-control" placeholder="" />
 		  </div>
 		  <div class="form-group">
 			<label>Email:</label>
-			<input type="email" name="email" class="form-control" placeholder="" required="" />
+			<input type="email" id="email" name="email" class="form-control" placeholder="" />
 		  </div>
 		  <div class="form-group">
 			<label>Password:</label>
-			<input type="password" name="password" class="form-control" placeholder="" required="" />
+			<input type="password" id="password" name="password" class="form-control" placeholder=""  />
 		  </div>
 		  <div class="form-group">
 			<label>Ulangi Password:</label>
-			<input type="password" id="password2" class="form-control" placeholder="" required="" />
+			<input type="password" id="password2" id="password2" class="form-control" placeholder="" />
 		  </div>
 		  <input type="submit" class="btn btn-primary" value="Kirim"> Sudah mendaftar ? <?php echo anchor('customer/signIn', 'Log In'); ?>
-		</form> 
+		</form>
 		</div>
 	  </div>
 	  <div class="col-sm-3">
-		
+
 		</div>
-	</div>  
-	
+	</div>
+
 	<!--
     <div>
 
@@ -88,6 +88,47 @@ var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
 $(document).ready(function() {
   $("form").submit(function(e){
+		var apiurl = baseApiUrl + '/aduser/add';
+		var fl=document.signup;
+		var data = $(this).serialize();
+		var email = $("#email").val();
+			var nama = $("#nama").val();
+		var password = $("#password").val();
+var password2 = $("#password2").val();
+
+		// success handling
+		var success = function(r){
+			alert(r.message);
+			console.log('OK:', r.status);
+		};
+
+		if(nama==''){
+			$.alert({
+				title: 'Alert!',
+				content: 'nama tidak boleh kosong!',
+			});
+		}else
+		if(email==''){
+			$.alert({
+				title: 'Alert!',
+				content: 'email tidak boleh kosong!',
+			});
+		}else
+		if(password==''){
+			$.alert({
+				title: 'Alert!',
+				content: 'password tidak boleh kosong!',
+			});
+		}else
+
+
+
+	if(fl.password.value!=$('#password2')){
+		$.alert({
+			title: 'Alert!',
+			content: 'Password tidak sama!',
+		});
+	}
 
     e.preventDefault();
     var apiurl = baseApiUrl + '/aduser/add';
@@ -105,12 +146,12 @@ $(document).ready(function() {
     //if(cus_url != '')apiurl = cus_url;
 
     // do validation
-    if(fl.password.value!=$('#password2').val())alert('password not match!!!');
+   //if(fl.password.value!=$('#password2').val())alert('password not match!!!');
 
-    else{
-      $.post( apiurl, data, success, "json" );
+  //  else{
+    //  $.post( apiurl, data, success, "json" );
       //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
-    }
+  //  }
 
   });
 });
