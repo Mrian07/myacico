@@ -31,55 +31,39 @@
 </div> 
 
 
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
-
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
-function test(){
-	$.alert({
-		title: 'Alert!',
-		content: 'Email tidak boleh kosong!',
-	});  
-}
-
-$('form').submit(function(e){
-	  
-	test();
-	  
-	var email = $("#email").val();
-	
-	if(email==''){
-
-		
-	}
-	  
-    e.preventDefault();
-
-    var apiurl = baseApiUrl + '/login';
-    var data = $(this).serialize();
-
-    // success handling
-    var success = function(r){
-      console.log('OK:', r);
-      alert(r.message);
-    };
-
-    $.post( apiurl, data, success, "json" );
-    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
-
-  });
-
-
 
 $(document).ready(function() {
-	
-  	$.alert({
-			title: 'Alert!',
-			content: 'Email tidak boleh kosong!',
-		});  
+
+	$('form').submit(function(e){
+
+
+		var email = $("#email").val();
+
+		if(email==''){
+			$.alert({
+				title: 'Alert!',
+				content: 'Email tidak boleh kosong!',
+			});
+		}
+		  
+	    e.preventDefault();
+
+	    var apiurl = baseApiUrl + '/login';
+	    var data = $(this).serialize();
+
+	    // success handling
+	    var success = function(r){
+	      console.log('OK:', r);
+	      alert(r.message);
+	    };
+
+	    $.post( apiurl, data, success, "json" );
+	    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
+
+	});
 
 });
 </script>

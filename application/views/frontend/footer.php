@@ -75,13 +75,13 @@
 
 <!-- START JAVASCRIPT -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script-->
 <script src="<?php echo base_url('assets/nav/js/bootstrap.min.js');?>"></script>
 <!-- Bootsnavs -->
 <script src="<?php echo base_url('assets/nav/js/bootsnav.js');?>"></script>
 
 <!--
-<script src="<?php echo base_url('assets_adminlte/plugins/jQuery/jQuery-2.1.4.min.js') ?>"></script>-->
+<script src="<?php //echo base_url('assets_adminlte/plugins/jQuery/jQuery-2.1.4.min.js') ?>"></script>-->
 <script>
 $("#btnTop").click(function() {
      $("html, body").animate({ scrollTop: 0 }, "slow");
