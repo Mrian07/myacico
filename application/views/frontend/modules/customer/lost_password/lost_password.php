@@ -30,7 +30,6 @@
 	</div>
 </div>
 
-
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
@@ -65,5 +64,4 @@ $(document).ready(function() {
 
 	});
 
-});
 </script>
