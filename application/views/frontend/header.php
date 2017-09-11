@@ -3,6 +3,7 @@
 	<head>
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title><?php echo $title_web; ?></title>
 		<!-- Strat Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
@@ -16,7 +17,7 @@
 		<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
 		
         
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
+		
 		
 		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
 		<!--<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/favicon/'.$data_g["favicon"]);?>">-->
@@ -25,8 +26,15 @@
 		
 		<!-- CSS -->
 		
+		<!-- s: Alert -->
+		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/libs/bundled.css');?>" />-->
+		<script type="text/javascript" src="<?php echo base_url('assets/alert/libs/bundled.js');?>"></script>
+		<script type="text/javascript" src="<?php echo base_url('assets/alert/js/jquery-confirm.js');?>"></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/css/jquery-confirm.css');?>" />
+        <!-- e: Alert -->
 		
-        <title><?php echo $title_web; ?></title>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
+		
     </head>
 
 <body>

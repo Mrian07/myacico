@@ -17,7 +17,7 @@
 		 <form name="signup" method="post">
 		  <div class="form-group">
 			<label>Email:</label>
-			<input type="email" name="email" class="form-control" required="" />
+			<input type="email" id="email" name="email" class="form-control"/>
 		  </div>
 		  <input type="submit" class="btn btn-primary" value="Kirim">
 
@@ -28,17 +28,34 @@
 		
 		</div>
 	</div>  
-	
-
-	
-	
 </div> 
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
-$(document).ready(function() {
+function test(){
+	$.alert({
+		title: 'Alert!',
+		content: 'Email tidak boleh kosong!',
+	});  
+}
 
-  $('form').submit(function(e){
+$('form').submit(function(e){
+	  
+	test();
+	  
+	var email = $("#email").val();
+	
+	if(email==''){
+
+		
+	}
+	  
     e.preventDefault();
 
     var apiurl = baseApiUrl + '/login';
@@ -54,6 +71,15 @@ $(document).ready(function() {
     //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
 
   });
+
+
+
+$(document).ready(function() {
+	
+  	$.alert({
+			title: 'Alert!',
+			content: 'Email tidak boleh kosong!',
+		});  
 
 });
 </script>
