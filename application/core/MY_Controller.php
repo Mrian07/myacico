@@ -36,17 +36,17 @@ class Web extends MY_Controller {
 
 }
 
-class Account_private extends MY_Controller {
+class Account_private extends web {
 
     public function __construct() {
         parent::__construct();
 		$this->load->library('jwt');
 
-        //$this->asset();
+        //$this->auth();
 
     }
 
-    public function asset(){
+    public function auth(){
 
 		$secret = $this->config->config['jwt_secret'];
 
