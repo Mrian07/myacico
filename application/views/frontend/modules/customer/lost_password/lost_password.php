@@ -30,6 +30,7 @@
 	</div>
 </div>
 
+
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
@@ -46,7 +47,7 @@ $(document).ready(function() {
 				content: 'Email tidak boleh kosong!',
 			});
 		}
-		  aa
+//a
 	    e.preventDefault();
 
 	    var apiurl = baseApiUrl + '/login';
@@ -63,4 +64,5 @@ $(document).ready(function() {
 
 	});
 
+});
 </script>
