@@ -20,7 +20,7 @@
 		
 		
 		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
-		<!--<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/favicon/'.$data_g["favicon"]);?>">-->
+		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/general/favicon.ico');?>">
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="<?php echo base_url('assets_adminlte/font-awesome-4.5.0/css/font-awesome.min.css') ?>"/>
 		

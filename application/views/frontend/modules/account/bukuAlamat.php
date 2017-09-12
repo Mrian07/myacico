@@ -1,3 +1,6 @@
+
+
+
 <div class="container">
 	<div class="row">
 	  <div class="col-sm-12">
@@ -16,6 +19,8 @@
       <div class="form login_form">
         <section class="login_content">
         <h1>Daftar pesanan</h1>
+<a href="<?php echo site_url('account/TambahBukuAlamat') ?>"> <button type="button" class="btn btn-info">Go Here</button></a>
+
         </section>
       </div>
     </div>

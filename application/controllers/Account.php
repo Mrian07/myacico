@@ -19,7 +19,7 @@ class Account extends web {
 
 	public function atribut(){
 		//$this->data['title_web'] = "Myacico.com - Account";
-		
+
 		$this->data['active_dashboard'] = "";
 		$this->data['active_informasiAkun'] = "";
 		$this->data['active_bukuAlamat'] = "";
@@ -39,16 +39,16 @@ class Account extends web {
 		$this->load->view('frontend/footer',$this->data);
 
 	}
-	
+
 	public function test()
     {	$this->load->helper('cookie');
 		/*$cookie = array(
 				'name'   => 'remember_me',
-				'value'  => 'test',                            
-				'expire' => '300',                                                                                   
+				'value'  => 'test',
+				'expire' => '300',
 				'secure' => TRUE
 				);
-		set_cookie($cookie);     */      
+		set_cookie($cookie);     */
 
 	/*	$cookie = array(
 			'name'   => 'home_set',
@@ -58,29 +58,29 @@ class Account extends web {
 			'path'   => '/',
 			'prefix' => 'arjun_',
         );
- 
+
 		//set_cookie($cookie);
 		$this->input->set_cookie($cookie);
 		$this->input->get_cookie($cookie);
 	//	echo"ini"; print_r(get_cookie($cookie));*/
-	
-		set_cookie('cookie_name','cookie_value','3600'); 
-	
+
+		set_cookie('cookie_name','cookie_value','3600');
+
 	}
-	
+
 	public function test2()
     {	$this->load->helper('cookie');
 		echo get_cookie('cookie_name'); die();
 		echo"<pre>"; print_r($this->input->get_cookie($cookie));
 	}
-	
+
 	public function test3()
     {
-		delete_cookie('cookie_name'); 
+		delete_cookie('cookie_name');
 	}
-	
-	
-	
+
+
+
 	public function informasiAkun()
     {
 		$this->data['active_informasiAkun'] = "class='active'";
@@ -105,7 +105,7 @@ class Account extends web {
 	}
 
 	public function bukuAlamat()
-    {	
+    {
 		$this->data['active_bukuAlamat'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
@@ -114,7 +114,18 @@ class Account extends web {
 		$this->load->view('frontend/modules/account/bukuAlamat',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-	
+
+	public function TambahBukuAlamat()
+    {
+		$this->data['active_TambahBukuAlamat'] = "class='active'";
+		$this->data['title_web'] = "Myacico.com - Buku Alamat";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/info_login',$this->data);
+		$this->load->view('frontend/modules/account/TambahBukuAlamat',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
 	public function riwayatStatusPesanan()
     {
 		$this->data['active_riwayatStatusPesanan'] = "class='active'";
