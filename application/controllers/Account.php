@@ -147,5 +147,9 @@ class Account extends web {
 		$this->load->view('frontend/modules/account/Wishlist',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-
+	
+	public function logout()
+    {
+		redirect('customer/signIn');
+	}	
 }

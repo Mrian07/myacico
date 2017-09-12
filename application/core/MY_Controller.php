@@ -33,6 +33,42 @@ class Web extends MY_Controller {
         $this->data['baseApiUrl'] = "http://192.168.1.103:8080/myacico-service/api";
 
     }
+	
+	function sendMail($email_from,$nm_from,$email_to,$subject,$message){
+		
+		// load library email
+        $this->load->library('PHPMailerAutoload');
+        
+        $mail = new PHPMailer();
+		
+		/*
+		$mail->SMTPDebug = 2; // enables SMTP debug information (for testing)
+		// 1 = errors and messages
+		// 2 = messages only
+		*/
+        $mail->SMTPDebug = 0;
+        $mail->Debugoutput = 'html';
+        
+        // set smtp
+        $mail->isSMTP();
+		
+		$mail->SMTPSecure = 'tls';
+		$mail->SMTPAuth = true;
+		
+        $mail->Host = 'sipau2-16.nexcess.net';
+        $mail->Port = '587';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'support@myacico.com';
+		$mail->Password = 'TotalShoppingExperiences5';
+	
+        $mail->WordWrap = 50;  
+        // set email content
+        $mail->setFrom($email_from, $nm_from);
+        $mail->addAddress($email_to);
+        $mail->Subject = $subject;
+        $mail->Body = $message;
+        $mail->send();
+	}	
 
 }
 
