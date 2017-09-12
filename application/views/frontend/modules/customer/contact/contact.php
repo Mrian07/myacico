@@ -51,7 +51,7 @@ function myMap() {
     <label>Pesan*</label>
 			<textarea class="form-control" rows="5" id="pesan" name='pesan'></textarea>
 		</div>
-		  <input type="submit" class="btn btn-default" value="Kirim">
+		  <input type="submit" class="btn btn-primary" value="Kirim">
 	</form>
 	<br><br>
 

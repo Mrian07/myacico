@@ -35,6 +35,7 @@ class Account extends web {
 		$this->data['title_web'] = "Myacico.com - Dashboard";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/info_login',$this->data);
 		$this->load->view('frontend/modules/account/dashboard.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
