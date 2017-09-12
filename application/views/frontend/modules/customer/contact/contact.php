@@ -34,24 +34,24 @@ function myMap() {
 	<p>Silakan hubungi kami melalui kolom dibawah ini.</p>
 
 
-	<form>
+	  <form name="signup" method="post">
+      <div class="form-group">
+        <label>Nama Belakang*</label>
+        <input type="text" name="laname" class="form-control mandatory" />
+      </div>
 		<div class="form-group">
-			<label for="pwd">Nama:</label>
-			<input type="password" class="form-control" id="nama" name='nama'>
+			    <label>Email*</label>
+			   <input type="text" name="lasdname" class="form-control mandatory" />
 		</div>
 		<div class="form-group">
-			<label for="pwd">Email:</label>
-			<input type="password" class="form-control" id="email" name='email'>
+			    <label>Judul Pesan*</label>
+  <input type="text" name="asdlname" class="form-control mandatory" />
 		</div>
 		<div class="form-group">
-			<label for="pwd">Judul Pesan:</label>
-			<input type="password" class="form-control" id="judul" name='judul'>
-		</div>
-		<div class="form-group">
-			<label for="pwd">Pesan:</label>
+    <label>Pesan*</label>
 			<textarea class="form-control" rows="5" id="pesan" name='pesan'></textarea>
 		</div>
-		<button type="submit" class="btn btn-primary">Kirim</button>
+		  <input type="submit" class="btn btn-default" value="Kirim">
 	</form>
 	<br><br>
 
@@ -60,3 +60,35 @@ function myMap() {
  </div>
 
 </div>
+
+<script type="text/javascript">
+var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+
+$(document).ready(function() {
+  $("form").submit(function(e){
+    e.preventDefault();
+    var apiurl = baseApiUrl + '/aduser/add';
+    var fl=document.signup;
+    var data = $(this).serialize();
+
+    // success handling
+    var success = function(r){
+      alert(r.message);
+      console.log('OK:', r.status);
+    };
+
+    // do validation
+    $('.mandatory').each(function(){
+      if($(this).val()==''){
+        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
+        // onContentReady: function(){$(this).focus();}
+        return false;
+      }
+    });
+    if(fl.password.value!=$('#password2').val())alert('password not match!!!');
+
+    else $.post( apiurl, data, success, "json" );
+
+  });
+});
+</script>
