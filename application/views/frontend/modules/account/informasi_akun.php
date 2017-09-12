@@ -18,33 +18,33 @@
           <form name="loginFm" method="post">
             <div class="form-group">
               <label>Nama Depan*</label>
-              <input type="text" name="fname" class="form-control" placeholder="" required="" />
+              <input type="text" name="fname" class="form-control mandatory"/>
             </div>
             <div class="form-group">
               <label>Nama Belakang*</label>
-              <input type="text" name="lname" class="form-control" placeholder="" required="" />
+              <input type="text" name="lname" class="form-control mandatory"/>
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="email" name="email" class="form-control" placeholder="" required="" />
+              <input type="email" name="email" class="form-control mandatory"/>
             </div>
             <div class="form-group">
               <a href="#" id="pwd_btm"><i>Ubah Kata Sandi</i></a>
             </div>
               <div id="pwd_box">
             <h5>Ubah Kata Sandi</h5>
-			<hr>
+            <hr>
             <div class="form-group">
               <label>Kata Sandi Saat Ini*</label>
-              <input type="password" name="password" class="form-control" placeholder="" required="" />
+              <input type="password" name="old_password" class="form-control mandatory"/>
             </div>
             <div class="form-group">
               <label>Kata Sandi Baru*</label>
-              <input type="password" name="password" class="form-control" placeholder="" required="" />
+              <input type="password" name="new_password" class="form-control mandatory"/>
             </div>
             <div class="form-group">
               <label>Konfirmasi Kata Sandi Baru*</label>
-              <input type="password" id="password2" class="form-control" placeholder="" required="" />
+              <input type="password" id="new_password2" class="form-control mandatory"/>
             </div>
               </div>
             <div class="clearfix"></div>
@@ -79,7 +79,17 @@ $(document).ready(function() {
       alert(r.message);
     };
 
-    $.post( apiurl, data, success, "json" );
+    var form_ok = true;
+    $('.mandatory').each(function(){
+      if($(this).val()=='' && $(this).is(":visible")){
+        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
+        // onContentReady: function(){$(this).focus();}
+        form_ok = false;
+        return false;
+      }
+    });
+
+    if(form_ok) $.post( apiurl, data, success, "json" );
     //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
 
   });
