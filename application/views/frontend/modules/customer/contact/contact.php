@@ -1,5 +1,3 @@
-<div id="map" style="width:1600px;height:400px;background:yellow"></div>
-
 <script>
 function myMap() {
   var mapCanvas = document.getElementById("map");
@@ -10,7 +8,8 @@ function myMap() {
 }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.649842298437!2d106.81277131436264!3d-6.17760599552759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f68061654a55%3A0xaafcf85e4760d02a!2sPT.+Myacico+Global+Indonesia!5e0!3m2!1sen!2sid!4v1496997240232" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+
 
 
 <div class="container">
@@ -20,7 +19,7 @@ function myMap() {
 		<div class="my-border-title">
 			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> HUBUNGI KAMI</h3>
 		</div>
-		
+
 	  </div>
 	</div>
 
@@ -31,10 +30,10 @@ function myMap() {
       Petojo Selatan, Gambir,<br/> Pusat
       Jakarta Pusat 10160</h5>
      </div>
-	<div class="col-sm-8"> 
+	<div class="col-sm-8">
 	<p>Silakan hubungi kami melalui kolom dibawah ini.</p>
-	
-	
+
+
 	<form>
 		<div class="form-group">
 			<label for="pwd">Nama:</label>
@@ -59,5 +58,5 @@ function myMap() {
    </div>
 
  </div>
- 
-</div> 
+
+</div>
