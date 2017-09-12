@@ -19,45 +19,49 @@ function myMap() {
 		<div class="my-border-title">
 			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> HUBUNGI KAMI</h3>
 		</div>
-
 	  </div>
 	</div>
 
-  <div class="row">
-    <div class="col-sm-4"> <h4 style="color:red;">PT Myacico Global Indonesia</h4><br/>
-      <h5> Jl. Kesehatan No 60 O-P,<br/>
-      RT 2, RW 4
-      Petojo Selatan, Gambir,<br/> Pusat
-      Jakarta Pusat 10160</h5>
-     </div>
-	<div class="col-sm-8">
-	<p>Silakan hubungi kami melalui kolom dibawah ini.</p>
+	<div class="row">
+		<div class="col-sm-4"> <h4 style="color:red;">PT Myacico Global Indonesia</h4><br/>
+		<h5> Jl. Kesehatan No 60 O-P,<br/>
+		RT 2, RW 4
+		Petojo Selatan, Gambir,<br/> Pusat
+		Jakarta Pusat 10160</h5>
+		</div>
+		<div class="col-sm-8">
+			<p>Silakan hubungi kami melalui kolom dibawah ini.</p>
 
 
-	  <form name="signup" method="post">
-      <div class="form-group">
-        <label>Nama Belakang*</label>
-        <input type="text" name="laname" class="form-control mandatory" />
-      </div>
-		<div class="form-group">
-			    <label>Email*</label>
-			   <input type="text" name="lasdname" class="form-control mandatory" />
-		</div>
-		<div class="form-group">
-			    <label>Judul Pesan*</label>
-  <input type="text" name="asdlname" class="form-control mandatory" />
-		</div>
-		<div class="form-group">
-    <label>Pesan*</label>
+			<form name="signup" method="post">
+			<div class="form-group">
+			<label>Nama Anda*</label>
+			<input type="text" name="nama_anda" class="form-control mandatory" />
+			</div>
+			<div class="form-group">
+			<label>Email Anda*</label>
+			<input type="email" name="email_anda" class="form-control mandatory" />
+			</div>
+			<div class="form-group">
+			<label>Keperluan*</label>
+			<select name='keperluan' class="form-control mandatory">
+				<option value='Product Issue'>Product Issue</option>
+				<option value='Customer Relation'>Customer Relation</option>
+				<option value='Payment Issue'>Payment Issue</option>
+				<option value='Returns and Exchange'>Returns and Exchange</option>
+				<option value='Becoming a Partner'>Becoming a Partner</option>
+				<option value='Others'>Others</option>
+			</select>
+			</div>
+			<div class="form-group">
+			<label>Pesan*</label>
 			<textarea class="form-control" rows="5" id="pesan" name='pesan'></textarea>
+			</div>
+			<input type="submit" class="btn btn-primary" value="Kirim">
+			</form>
+			<br><br>
 		</div>
-		  <input type="submit" class="btn btn-primary" value="Kirim">
-	</form>
-	<br><br>
-
-   </div>
-
- </div>
+	</div>
 
 </div>
 
