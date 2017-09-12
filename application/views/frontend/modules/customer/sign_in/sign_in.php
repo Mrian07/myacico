@@ -22,7 +22,8 @@
       			<label>Password:</label>
       			<input type="password" id="password" name="password" class="form-control" />
     		  </div>
-    		  <input type="submit" class="btn btn-primary" value="Kirim">
+    		  <input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+          <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
     			<div class="clearfix"></div>
           <div class="separator">
             <p class="change_link">Lupa password ?
@@ -41,7 +42,6 @@
 </div>
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
-
 $(document).ready(function() {
 
   $('form').submit(function(e){
@@ -55,23 +55,27 @@ $(document).ready(function() {
 			$.alert({
 				title: 'Alert!',
 				content: 'email tidak boleh kosong!',
-			})
-		}else
-			if(password==''){
-				$.alert({
-					title: 'Alert!',
-					content: 'password tidak boleh kosong!',
-				})
-			};
-
-
+			});
+      return false;
+		}
+		if(password==''){
+			$.alert({
+				title: 'Alert!',
+				content: 'password tidak boleh kosong!',
+			});
+      return false;
+		};
 
     // success handling
     var success = function(r){
+      $('#spinner_img').hide();
+      $('#submit_btn').val('Kirim').removeClass('disabled');
       console.log('OK:', r);
       alert(r.message);
     };
 
+    $('#spinner_img').show();
+    $('#submit_btn').val('loading...').addClass('disabled');
     $.post( apiurl, data, success, "json" );
     //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
 
