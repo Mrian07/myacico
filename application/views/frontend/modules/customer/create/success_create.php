@@ -12,7 +12,7 @@
 	  </div>
 	  <div class="col-sm-6">
 		<div class='border-create'>
-			Pendaftaran Anda berhasil, silakan lakukan aktifasi account melalui url yang dikirim oleh sistem ke alamat email Anda.
+			Pendaftaran Anda berhasil, silakan lakukan aktifasi account melalui url yang dikirim oleh sistem ke alamat email Anda di <b><?php echo$email; ?></b>. 
 		</div>
 	  </div>
 	  <div class="col-sm-3">

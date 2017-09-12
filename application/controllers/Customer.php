@@ -22,6 +22,7 @@ class Customer extends Web {
 	
 	public function successCreate()
     {	
+		$this->data['email'] = $this->uri->segment(3);
 		$this->data['title_web'] = "Myacico.com - Create Account Personal";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);

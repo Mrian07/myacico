@@ -1,3 +1,10 @@
+<head>
+<style>
+    /*.carousel-control.right{ opacity:1 !important;color:red;}
+	.carousel-control.left{ opacity:1 !important;color:red;}*/
+</style>
+</head>
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel" style='margin:0px; padding:0px'> 
 
   <ol class="carousel-indicators">
