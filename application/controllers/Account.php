@@ -161,7 +161,9 @@ class Account extends web {
 	}
 	
 	public function logout()
-    {
+    {	
+		$data = array('cust_email' => '', 'cust_pass' => '', 'cust_login' => '');
+		$this->session->set_userdata($data);
 		redirect('customer/signIn');
 	}	
 }

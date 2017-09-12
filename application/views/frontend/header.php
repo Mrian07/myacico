@@ -178,7 +178,11 @@
 	
 	<div class='myreg'>
 		<i class="fa fa-user" aria-hidden="true"></i>
+		<?php if($this->session->userdata('cust_login')){ ?>
+		<?php echo anchor('account/', 'Profile Anda');?>
+		<?php }else{ ?>
 		<?php echo anchor('customer/create/', $lang_daftar);?> / <?php echo anchor('customer/signIn/', $lang_masuk);?>
+		<?php } ?>
 	</div>
 </div>
 

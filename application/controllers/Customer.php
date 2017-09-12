@@ -21,7 +21,7 @@ class Customer extends Web {
 	}
 	
 	public function successCreate()
-    {
+    {	
 		$this->data['title_web'] = "Myacico.com - Create Account Personal";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -92,6 +92,22 @@ class Customer extends Web {
 		$this->load->view('frontend/modules/customer/sign_in/sign_in.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
+	}
+	
+	public function SuccessSignIn()
+    {
+		$nama = $this->uri->segment(3);
+		//$password = $this->uri->segment(4);
+		//$nama = $this->uri->segment(4);
+	
+/*
+		$this->input->post('email');
+		$this->input->post('password');
+		$this->input->post('nama');
+	*/
+		$data = array('cust_name' => $nama, 'cust_login' => TRUE);
+		$this->session->set_userdata($data);
+		redirect('account');
 	}
 
 	public function logout()

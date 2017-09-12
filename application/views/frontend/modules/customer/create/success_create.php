@@ -13,7 +13,6 @@
 	  <div class="col-sm-6">
 		<div class='border-create'>
 			Pendaftaran Anda berhasil, silakan lakukan aktifasi account melalui url yang dikirim oleh sistem ke alamat email Anda.
-			<div class='my-btn-create'><?php echo anchor('customer/signIn/', 'Login click disini', array('class'=>'my-link-create'));?></div>
 		</div>
 	  </div>
 	  <div class="col-sm-3">
