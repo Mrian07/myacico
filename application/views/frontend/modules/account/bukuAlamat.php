@@ -18,8 +18,9 @@
     <div class="login_wrapper">
       <div class="form login_form">
         <section class="login_content">
-        <h1>Daftar pesanan</h1>
-<a href="<?php echo site_url('account/TambahBukuAlamat') ?>"> <button type="button" class="btn btn-info">Go Here</button></a>
+        <h1>Buku Alamat</h1>
+				<hr>
+<a href="<?php echo site_url('account/TambahBukuAlamat') ?>"> <button type="button" class="btn btn-link">Tambah Buku Alamat</button></a>
 
         </section>
       </div>
