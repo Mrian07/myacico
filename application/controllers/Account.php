@@ -19,11 +19,19 @@ class Account extends web {
 
 	public function atribut(){
 		//$this->data['title_web'] = "Myacico.com - Account";
+		
+		$this->data['active_dashboard'] = "";
+		$this->data['active_informasiAkun'] = "";
+		$this->data['active_bukuAlamat'] = "";
+		$this->data['active_riwayatStatusPesanan'] = "";
+		$this->data['active_returnManagementAuthority'] = "";
+		$this->data['active_berlanggananNewsletter'] = "";
+		$this->data['active_wishlist'] = "";
 	}
 
 	public function index()
     {
-
+		$this->data['active_dashboard'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Dashboard";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -75,6 +83,7 @@ class Account extends web {
 	
 	public function informasiAkun()
     {
+		$this->data['active_informasiAkun'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Informasi Akun";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -86,6 +95,7 @@ class Account extends web {
 
 	public function berlanggananNewsletter()
     {
+		$this->data['active_berlanggananNewsletter'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Informasi Akun";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -95,7 +105,8 @@ class Account extends web {
 	}
 
 	public function bukuAlamat()
-    {
+    {	
+		$this->data['active_bukuAlamat'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -106,6 +117,7 @@ class Account extends web {
 	
 	public function riwayatStatusPesanan()
     {
+		$this->data['active_riwayatStatusPesanan'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Riwayat Status Pasaran";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -116,6 +128,7 @@ class Account extends web {
 
 	public function returnManagementAuthority()
     {
+		$this->data['active_returnManagementAuthority'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Return Management Authority";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -126,6 +139,7 @@ class Account extends web {
 
 	public function Wishlist()
     {
+		$this->data['active_wishlist'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Wishlist";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
