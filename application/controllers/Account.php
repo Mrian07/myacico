@@ -133,7 +133,7 @@ class Account extends web {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/info_login',$this->data);
-		$this->load->view('frontend/modules/account/riwayatStatusPasaran',$this->data);
+		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
