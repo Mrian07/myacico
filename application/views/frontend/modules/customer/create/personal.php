@@ -28,9 +28,11 @@
 		  </div>
 		  <div class="form-group">
 			<label>Ulangi Password:</label>
-			<input type="password" id="password2" id="password2" class="form-control" placeholder="" />
+			<input type="password" id="password2" class="form-control" placeholder="" />
 		  </div>
-		  <input type="submit" class="btn btn-primary" value="Kirim"> Sudah mendaftar ? <?php echo anchor('customer/signIn', 'Log In'); ?>
+		  <input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+          <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+		  Sudah mendaftar ? <?php echo anchor('customer/signIn', 'Log In'); ?>
 		</form>
 		</div>
 	  </div>
@@ -39,68 +41,30 @@
 		</div>
 	</div>
 
-	<!--
-    <div>
-
-      <div class="login_wrapper">
-
-        <div id="register" class="form">
-          <section class="login_content">
-            <form name="signup" method="post">
-              <h1>Create Account</h1>
-              <div>
-                <input type="text" name="name" class="form-control" placeholder="Nama" required="" />
-              </div>
-              <div>
-                <input type="email" name="email" class="form-control" placeholder="Email" required="" />
-              </div>
-              <div>
-                <input type="password" name="password" class="form-control" placeholder="Kata Sandi" required="" />
-              </div>
-              <div>
-                <input type="password" id="password2" class="form-control" placeholder="Konfirmasi Kata Sandi" required="" />
-              </div>
-              <div>
-                <input type="submit" class="btn btn-primary" value="Kirim">
-              </div>
-
-              <div class="clearfix"></div>
-
-              <div class="separator">
-                <p class="change_link">Already a member ?
-                  <a href="#signin" class="to_register"> Log in </a>
-                  <input type="text" id="apiurl" class="form-control" placeholder="api url here" />
-                </p>
-
-                <div class="clearfix"></div>
-                <br />
-
-              </div>
-            </form>
-          </section>
-        </div>
-      </div>
-    </div>-->
 </div>
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
-//var apiurl = 'http://192.168.1.103:8080/myacico-service/api/aduser/add';
+var apiurl = baseApiUrl + '/aduser/add';
+var success = function(r){
+	console.log('OK:', r);
+	$('#spinner_img').hide();
+	$('#submit_btn').val('Kirim').removeClass('disabled');
+	$.alert({
+		title: 'Alert!',
+		content: r.message
+	});
+	if(r.status == 1) location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
+};
 
 $(document).ready(function() {
-  $("form").submit(function(e){
+	$("form").submit(function(e){
+	    e.preventDefault();
 		var apiurl = baseApiUrl + '/aduser/add';
-		var fl=document.signup;
 		var data = $(this).serialize();
 		var email = $("#email").val();
-			var nama = $("#nama").val();
+		var nama = $("#nama").val();
 		var password = $("#password").val();
-var password2 = $("#password2").val();
-
-		// success handling
-		var success = function(r){
-			alert(r.message);
-			console.log('OK:', r.status);
-		};
+		var password2 = $("#password2").val();
 
 		if(nama==''){
 			$.alert({
@@ -114,45 +78,23 @@ var password2 = $("#password2").val();
 				content: 'email tidak boleh kosong!',
 			});
 		}else
-		if(password==''){
+		if(password.length < 7){
 			$.alert({
 				title: 'Alert!',
-				content: 'password tidak boleh kosong!',
+				content: 'password minimal 7 karakter!',
 			});
 		}else
+		if(password != password2){
+			$.alert({
+				title: 'Alert!',
+				content: 'Password tidak sama!',
+			});
+		}else{
+			$('#spinner_img').show();
+			$('#submit_btn').val('loading...').addClass('disabled');
+			$.post( apiurl, data, success, "json" );
+		}
 
-
-
-	if(fl.password.value!=$('#password2')){
-		$.alert({
-			title: 'Alert!',
-			content: 'Password tidak sama!',
-		});
-	}
-
-    e.preventDefault();
-    var apiurl = baseApiUrl + '/aduser/add';
-    var fl=document.signup;
-    var data = $(this).serialize();
-
-    // success handling
-    var success = function(r){
-      alert(r.message);
-      console.log('OK:', r.status);
-    };
-
-    //var cus_url = $('#apiurl').val();
-
-    //if(cus_url != '')apiurl = cus_url;
-
-    // do validation
-   //if(fl.password.value!=$('#password2').val())alert('password not match!!!');
-
-  //  else{
-    //  $.post( apiurl, data, success, "json" );
-      //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
-  //  }
-
-  });
+	});
 });
 </script>
