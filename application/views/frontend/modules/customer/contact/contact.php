@@ -51,7 +51,7 @@ function myMap() {
     <label>Pesan*</label>
 			<textarea class="form-control" rows="5" id="pesan" name='pesan'></textarea>
 		</div>
-		  <input type="submit" class="btn btn-primary" value="Kirim">
+		  <input type="submit" class="btn btn-default" value="Kirim">
 	</form>
 	<br><br>
 
@@ -78,15 +78,19 @@ $(document).ready(function() {
     };
 
     // do validation
+      var form_ok = true;
     $('.mandatory').each(function(){
       if($(this).val()==''){
-        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' tidak boleh kosong!'});
+        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
         // onContentReady: function(){$(this).focus();}
+  form_ok =false;
         return false;
-      }else{
-		  alert('kirim');
-	  }
+      }
     });
+      if(form_ok==false) return false;
+    if(fl.password.value!=$('#password2').val())alert('password not match!!!');
+
+    else $.post( apiurl, data, success, "json" );
 
   });
 });
