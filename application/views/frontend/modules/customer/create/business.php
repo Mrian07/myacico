@@ -108,13 +108,16 @@ $(document).ready(function() {
     };
 
     // do validation
+    var form_ok = true;
     $('.mandatory').each(function(){
       if($(this).val()==''){
         $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
         // onContentReady: function(){$(this).focus();}
+        form_ok =false;
         return false;
       }
     });
+    if(form_ok==false) return false;
     if(fl.password.value!=$('#password2').val())alert('password not match!!!');
 
     else $.post( apiurl, data, success, "json" );
