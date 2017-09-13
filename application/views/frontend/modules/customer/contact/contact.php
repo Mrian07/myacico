@@ -10,8 +10,6 @@ function myMap() {
 
 <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.649842298437!2d106.81277131436264!3d-6.17760599552759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f68061654a55%3A0xaafcf85e4760d02a!2sPT.+Myacico+Global+Indonesia!5e0!3m2!1sen!2sid!4v1496997240232" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
 
-
-
 <div class="container">
 
 	<div class="row">
@@ -33,7 +31,7 @@ function myMap() {
 			<p>Silakan hubungi kami melalui kolom dibawah ini.</p>
 
 
-			<form name="signup" method="post">
+			<form action=''>
 			<div class="form-group">
 			<label>Nama Anda</label>
 			<input type="text" id="nama" name="nama" class="form-control mandatory" />
@@ -55,7 +53,7 @@ function myMap() {
 			</select>
 			</div>
 			<div class="form-group">
-			<label>Pesan*</label>
+			<label>Pesan</label>
 			<textarea class="form-control mandatory" rows="5" id="pesan" name='pesan'></textarea>
 			</div>
 			<input type="submit" class="btn btn-primary" id="submit_btn" value="Kirim">  <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
@@ -67,79 +65,46 @@ function myMap() {
 </div>
 
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
 $(document).ready(function() {
 	
-	$("form").submit(function(){
+	$("form").submit(function(e){
+		e.preventDefault();
 		// do validation
 		var form_ok = true;
-		$('.mandatory').each(function(){
-		if($(this).val()==''){
-		$.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' tidak boleh kosong!'});
-		// onContentReady: function(){$(this).focus();}
-		form_ok =false;
-		return false;
-		}
+			$('.mandatory').each(function(){
+			if($(this).val()==''){
+			$.alert({title:'Alert', content: $(this).prev().text()+ ' tidak boleh kosong!'});
+			// onContentReady: function(){$(this).focus();}
+			form_ok =false;
+			return false;
+			}
 		});
 		if(form_ok==false) return false;
 
 		$('#spinner_img').show();
-		$('#submit_btn').val('Loading...').addClass('disabled');
-		
+		$('#submit_btn').val('Loading...').addClass('disabled');		
+
 		var nama=$('#nama').val();
 		var email=$('#email').val();
 		var keperluan=$('#keperluan').val();
 		var pesan=$('#pesan').val();
-		var dataString = 'nama='+ nama +'email='+ email +'keperluan='+ keperluan +'pesan='+ pesan;
-
-		$.ajax
-		({
-			type: "POST",
-			url: "<?php echo site_url('customer/sentContact'); ?>",
-			data: dataString,
-			cache: false,
-			success: function(html)
-			{
-				alert('terkirim');
+		var data = $(this).serialize();
+		var url = "<?php echo site_url('customer/prosesContact'); ?>";
+		var success = function(html)
+		{	
+			if(html=='gagal'){
+				$.alert({title:'Alert', content: ' Pesan gagal terkirim silakan coba kembali!'});
+				$('#spinner_img').hide();
+				$('#submit_btn').val('Kirim').removeClass('disabled');
+				$('.mandatory').prop('disabled', false);
+			}else{
+				location.href="<?php echo site_url('customer/messageSent'); ?>";
 			}
-		});
+		}
 		
-	});	
-	
-	
-	/*
-  $("form").submit(function(e){
-    e.preventDefault();
-    var apiurl = baseApiUrl + '/aduser/add';
-    var fl=document.signup;
-    var data = $(this).serialize();
-
-    // success handling
-    var success = function(r){
-      alert(r.message);
-      console.log('OK:', r.status);
-    };
-
-    // do validation
-      var form_ok = true;
-    $('.mandatory').each(function(){
-      if($(this).val()==''){
-        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' tidak boleh kosong!'});
-        // onContentReady: function(){$(this).focus();}
-  form_ok =false;
-        return false;
-      }
-    });
-      if(form_ok==false) return false;
-	  
-	  $('#spinner_img').show();
-    $('#submit_btn').val('Loading...').addClass('disabled');
-	  
- //   if(fl.password.value!=$('#password2').val())alert('password not match!!!');
-
-  //  else $.post( apiurl, data, success, "json" );
-
-  });*/
+		$.post( url, data, success);
+		$('.mandatory').prop('disabled', true);
+  });
 });
 </script>

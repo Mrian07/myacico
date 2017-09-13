@@ -35,7 +35,6 @@ class Web extends MY_Controller {
     }
 	
 	function sendMail($email_from,$nm_from,$email_to,$subject,$message){
-		
 		// load library email
         $this->load->library('PHPMailerAutoload');
         
@@ -67,7 +66,13 @@ class Web extends MY_Controller {
         $mail->addAddress($email_to);
         $mail->Subject = $subject;
         $mail->Body = $message;
-        $mail->send();
+        if($mail->send()){
+			return true;
+		}else{
+			return false;
+		}
+		
+		
 	}	
 
 }

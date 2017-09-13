@@ -59,14 +59,40 @@ class Customer extends Web {
 	}
 
 	public function contact()
-		{
+	{
 		$this->data['title_web'] = "Myacico.com - Create Account Business";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/contact/contact.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
+	
+	public function prosesContact()
+	{	$nm_from = $this->input->post('nama');
+		$email_from = $this->input->post('email');
+		$subject = $this->input->post('keperluan');
+		$message = $this->input->post('pesan');
+		
+		$email_to='lalang@myacico.com';
+		
+		if($this->sendMail($email_from,$nm_from,$email_to,$subject,$message)==true)
+		{
+			echo "terkirim";
+		}else{
+			echo "gagal";
+		}
 
+	}
+	
+	public function messageSent()
+	{
+		$this->data['title_web'] = "Myacico.com - Create Account Business";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/customer/contact/success_contact.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	
 	public function government()
     {
 		$this->data['title_web'] = "Myacico.com - Create Account Government";
