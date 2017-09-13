@@ -30,7 +30,7 @@ class Web extends MY_Controller {
 
     public function asset(){
 
-        $this->data['baseApiUrl'] = "http://192.168.1.101:8080/myacico-service/api";
+        $this->data['baseApiUrl'] = "http://192.168.0.102:3030/myacico-service/api";
 
     }
 	
@@ -78,25 +78,31 @@ class Account_private extends web {
         parent::__construct();
 		$this->load->library('jwt');
 
-        //$this->auth();
+        $this->auth();
 
     }
 
     public function auth(){
 
 		$secret = $this->config->config['jwt_secret'];
+		//die(strtr(base64_encode($secret), '+/=', '._-'));
 
 		if(!isset($_COOKIE['x-auth'])) redirect('customer/signIn');
 
-		try {
+		else {
+			try {
 
-			$this->data['user'] = JWT::decode($_COOKIE['x-auth'], $secret);
+				$this->data['user'] = JWT::decode($_COOKIE['x-auth'], $secret);
 
-		} catch (Exception $e) {
+			} catch (Exception $e) {
+				print_r($e);die();
 
-			redirect('customer/signIn');
+				//redirect('customer/signIn/'.$e);
+
+			}
 
 		}
+
     }
 	
 }
