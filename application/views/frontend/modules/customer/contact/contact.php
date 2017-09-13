@@ -35,16 +35,17 @@ function myMap() {
 
 			<form name="signup" method="post">
 			<div class="form-group">
-			<label>Nama Anda*</label>
-			<input type="text" name="nama_anda" class="form-control mandatory" />
+			<label>Nama Anda</label>
+			<input type="text" id="nama" name="nama" class="form-control mandatory" />
 			</div>
 			<div class="form-group">
-			<label>Email Anda*</label>
-			<input type="email" name="email_anda" class="form-control mandatory" />
+			<label>Email Anda</label>
+			<input type="email" id="email" name="email" class="form-control mandatory" />
 			</div>
 			<div class="form-group">
-			<label>Keperluan*</label>
-			<select name='keperluan' class="form-control mandatory">
+			<label>Keperluan</label>
+			<select id='keperluan' name='keperluan' class="form-control mandatory">
+				<option value=''>-Pilih-</option>
 				<option value='Product Issue'>Product Issue</option>
 				<option value='Customer Relation'>Customer Relation</option>
 				<option value='Payment Issue'>Payment Issue</option>
@@ -55,9 +56,9 @@ function myMap() {
 			</div>
 			<div class="form-group">
 			<label>Pesan*</label>
-			<textarea class="form-control" rows="5" id="pesan" name='pesan'></textarea>
+			<textarea class="form-control mandatory" rows="5" id="pesan" name='pesan'></textarea>
 			</div>
-			<input type="submit" class="btn btn-primary" value="Kirim">
+			<input type="submit" class="btn btn-primary" id="submit_btn" value="Kirim">  <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 			</form>
 			<br><br>
 		</div>
@@ -69,6 +70,45 @@ function myMap() {
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
 $(document).ready(function() {
+	
+	$("form").submit(function(){
+		// do validation
+		var form_ok = true;
+		$('.mandatory').each(function(){
+		if($(this).val()==''){
+		$.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' tidak boleh kosong!'});
+		// onContentReady: function(){$(this).focus();}
+		form_ok =false;
+		return false;
+		}
+		});
+		if(form_ok==false) return false;
+
+		$('#spinner_img').show();
+		$('#submit_btn').val('Loading...').addClass('disabled');
+		
+		var nama=$('#nama').val();
+		var email=$('#email').val();
+		var keperluan=$('#keperluan').val();
+		var pesan=$('#pesan').val();
+		var dataString = 'nama='+ nama +'email='+ email +'keperluan='+ keperluan +'pesan='+ pesan;
+
+		$.ajax
+		({
+			type: "POST",
+			url: "<?php echo site_url('customer/sentContact'); ?>",
+			data: dataString,
+			cache: false,
+			success: function(html)
+			{
+				alert('terkirim');
+			}
+		});
+		
+	});	
+	
+	
+	/*
   $("form").submit(function(e){
     e.preventDefault();
     var apiurl = baseApiUrl + '/aduser/add';
@@ -85,17 +125,21 @@ $(document).ready(function() {
       var form_ok = true;
     $('.mandatory').each(function(){
       if($(this).val()==''){
-        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
+        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' tidak boleh kosong!'});
         // onContentReady: function(){$(this).focus();}
   form_ok =false;
         return false;
       }
     });
       if(form_ok==false) return false;
-    if(fl.password.value!=$('#password2').val())alert('password not match!!!');
+	  
+	  $('#spinner_img').show();
+    $('#submit_btn').val('Loading...').addClass('disabled');
+	  
+ //   if(fl.password.value!=$('#password2').val())alert('password not match!!!');
 
-    else $.post( apiurl, data, success, "json" );
+  //  else $.post( apiurl, data, success, "json" );
 
-  });
+  });*/
 });
 </script>

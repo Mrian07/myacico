@@ -75,7 +75,7 @@ $(document).ready(function() {
     };
 
     $('#spinner_img').show();
-    $('#submit_btn').val('loading...').addClass('disabled');
+    $('#submit_btn').val('Loading...').addClass('disabled');
     $.post( apiurl, data, success, "json" );
     //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
 
