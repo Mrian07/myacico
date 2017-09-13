@@ -114,7 +114,6 @@ $(document).ready(function() {
 		var url = "<?php echo site_url('home/switchLang'); ?>";
 		var success = function(html)
 		{	
-			//alert('berhasil ganti');
 			 location.reload();
 		}
 		
