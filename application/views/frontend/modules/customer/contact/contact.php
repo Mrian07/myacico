@@ -85,10 +85,10 @@ $(document).ready(function() {
 		$('#spinner_img').show();
 		$('#submit_btn').val('Loading...').addClass('disabled');		
 
-		var nama=$('#nama').val();
+		/*var nama=$('#nama').val();
 		var email=$('#email').val();
 		var keperluan=$('#keperluan').val();
-		var pesan=$('#pesan').val();
+		var pesan=$('#pesan').val();*/
 		var data = $(this).serialize();
 		var url = "<?php echo site_url('customer/prosesContact'); ?>";
 		var success = function(html)

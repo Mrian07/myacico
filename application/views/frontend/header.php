@@ -58,19 +58,20 @@
 				Total Shopping Experience
 			</div>
 			
-			<div class="col-sm-5">
+			<div class="col-sm-5"><?php $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; $url="'$actual_link'"; ?>
 				<div class="btn-group">
-				<div class="dropdowns">
-					<?php echo anchor('customer/contact', '<button class="dropbtn"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
-				  
-				</div>	
-				<div class="dropdowns">
-				  <button class="dropbtn">Bahasa</button>
-				  <div class="dropdowns-content">
-					<a href="#"><img src='<?php echo base_url('images/general/lang_bahasa.png');?>' border='0'> Indonesia</a>
-					<a href="#"><img src='<?php echo base_url('images/general/lang_english.png');?>' border='0'> Inggris</a>
-				  </div>
-				</div>
+					<div class="btncontact">
+						<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
+					  
+					</div>	
+					<div class="dropdowns">
+					  <button class="dropbtn">Bahasa</button>
+					  <div class="dropdowns-content">
+						<?php //echo anchor('home/lang/'.$url, '<img src="'.base_url('images/general/lang_bahasa.png').'" border="0"> Indonesia', array('id'=>'lang'));  echo anchor('home/lang/'.$url, '<img src="'.base_url('images/general/lang_english.png').'" border="0"> Inggris'); ?>
+						<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
+						<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
+					  </div>
+					</div>
 				</div>
 			</div>
 		</div>	

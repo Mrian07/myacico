@@ -105,5 +105,21 @@ $(document).ready(function() {
 		});
 	});
 </script>
+
+<script>
+	function langFunction($data){
+		
+		var lang = $data;
+		var data = 'lang='+ lang;
+		var url = "<?php echo site_url('home/switchLang'); ?>";
+		var success = function(html)
+		{	
+			//alert('berhasil ganti');
+			 location.reload();
+		}
+		
+		$.post( url, data, success);
+	}
+</script>
 		
 </html>

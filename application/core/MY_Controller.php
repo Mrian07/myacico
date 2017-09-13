@@ -12,7 +12,14 @@ class Web extends MY_Controller {
 
     public function __construct() {
         parent::__construct();
-		$this->load->language('header','indonesia');
+		$this->load->helper('cookie'); 
+		
+		$lang = get_cookie('lang');
+		if($lang=='en'){
+			$this->load->language('header','english');
+		}else{
+			$this->load->language('header','indonesia');
+		}
 		
 		$this->lang();
         $this->asset();
