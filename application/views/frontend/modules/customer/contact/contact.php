@@ -76,6 +76,7 @@ $(document).ready(function() {
 			if($(this).val()==''){
 			$.alert({title:'Alert', content: $(this).prev().text()+ ' tidak boleh kosong!'});
 			// onContentReady: function(){$(this).focus();}
+			//$(this).val().focus();
 			form_ok =false;
 			return false;
 			}

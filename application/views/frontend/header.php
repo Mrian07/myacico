@@ -65,7 +65,7 @@
 					  
 					</div>	
 					<div class="dropdowns">
-					  <button class="dropbtn">Bahasa</button>
+					  <button class="dropbtn"><i class="fa fa-flag" aria-hidden="true"></i> Bahasa</button>
 					  <div class="dropdowns-content">
 						<?php //echo anchor('home/lang/'.$url, '<img src="'.base_url('images/general/lang_bahasa.png').'" border="0"> Indonesia', array('id'=>'lang'));  echo anchor('home/lang/'.$url, '<img src="'.base_url('images/general/lang_english.png').'" border="0"> Inggris'); ?>
 						<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
