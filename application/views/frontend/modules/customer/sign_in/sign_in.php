@@ -42,12 +42,34 @@
 </div>
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+var success = function(r){
+  $('#spinner_img').hide();
+  $('#submit_btn').val('Kirim').removeClass('disabled');
+  console.log('OK:', r);
+  if(!r.token) return $.alert({
+    title: 'Alert!',
+    content: r.message
+  });
+  document.cookie='x-auth='+r.token+'; path=/';
+  //$.alert(r.message);
+  //$.post( '<?php echo base_url('account/SuccsessSignin/'); ?>', data, success, "json" );
+  location.href = '<?php echo base_url('account'); ?>';
+};
+var error = function(er){
+  $('#spinner_img').hide();
+  $('#submit_btn').val('Kirim').removeClass('disabled');
+  console.log('OK:', er);
+  $.alert({
+    title: 'Alert!',
+    content: 'koneksi tidak berhasil, silahkan coba lagi!',
+  });
+};
 $(document).ready(function() {
 
   $('form').submit(function(e){
     e.preventDefault();
 		var email = $("#email").val();
-			var password = $("#password").val();
+		var password = $("#password").val();
     var apiurl = baseApiUrl + '/aduser/login';
     var data = $(this).serialize();
 
@@ -66,18 +88,10 @@ $(document).ready(function() {
       return false;
 		};
 
-    // success handling
-    var success = function(r){
-      $('#spinner_img').hide();
-      $('#submit_btn').val('Kirim').removeClass('disabled');
-      console.log('OK:', r);
-      alert(r.message);
-    };
-
     $('#spinner_img').show();
-    $('#submit_btn').val('Loading...').addClass('disabled');
-    $.post( apiurl, data, success, "json" );
-    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
+    $('#submit_btn').val('loading...').addClass('disabled');
+    //$.post( apiurl, data, success, "json" );
+    $.ajax({ type:"POST", data:data, dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
 
   });
 

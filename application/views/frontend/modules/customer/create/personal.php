@@ -47,13 +47,23 @@ var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 var apiurl = baseApiUrl + '/aduser/add';
 var success = function(r){
 	console.log('OK:', r);
+	if(r.status == 1) return location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
 	$('#spinner_img').hide();
 	$('#submit_btn').val('Kirim').removeClass('disabled');
 	$.alert({
 		title: 'Alert!',
 		content: r.message
 	});
-	if(r.status == 1) location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
+};
+
+var error = function(er){
+  $('#spinner_img').hide();
+  $('#submit_btn').val('Kirim').removeClass('disabled');
+  console.log('OK:', er);
+  $.alert({
+    title: 'Alert!',
+    content: 'koneksi tidak berhasil, silahkan coba lagi!',
+  });
 };
 
 $(document).ready(function() {
@@ -92,7 +102,8 @@ $(document).ready(function() {
 		}else{
 			$('#spinner_img').show();
 			$('#submit_btn').val('loading...').addClass('disabled');
-			$.post( apiurl, data, success, "json" );
+			//$.post( apiurl, data, success, "json" );
+			$.ajax({ type:"POST", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
 		}
 
 	});
