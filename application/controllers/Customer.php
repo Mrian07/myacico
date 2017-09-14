@@ -129,32 +129,22 @@ class Customer extends Web {
 		$this->load->view('frontend/footer',$this->data);
 
 	}
-<<<<<<< HEAD
 
 	public function SuccessSignIn()
-=======
-	
-	/*public function SuccessSignIn()
->>>>>>> 1e5129e2549b62b7bbf7b8791329dc9145a44baa
     {
 		$nama = $this->uri->segment(3);
 		//$password = $this->uri->segment(4);
 		//$nama = $this->uri->segment(4);
-<<<<<<< HEAD
 
 /*
-=======
-	
-
->>>>>>> 1e5129e2549b62b7bbf7b8791329dc9145a44baa
 		$this->input->post('email');
 		$this->input->post('password');
 		$this->input->post('nama');
-	
+	*/
 		$data = array('cust_name' => $nama, 'cust_login' => TRUE);
 		$this->session->set_userdata($data);
 		redirect('account');
-	}*/
+	}
 
 	public function logout()
     {
