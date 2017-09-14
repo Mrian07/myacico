@@ -44,8 +44,8 @@
 		<div class="col-sm-2">
 			<div class='logo'>
 				<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80">');?>
-			</div>	
-		</div>		
+			</div>
+		</div>
 		<div class="col-sm-6">
 			<div class='myserach'>
 
@@ -66,7 +66,7 @@
 								  <li><a href="#less_than">Perlengkapan Kantor</a></li>
 								</ul>
 							</div>
-							<input type="hidden" name="search_param" value="all" id="search_param">         
+							<input type="hidden" name="search_param" value="all" id="search_param">
 							<input type="text" class="my-search-field" name="x" placeholder="Search term...">
 							<span class="input-group-btn">
 								<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
@@ -78,21 +78,22 @@
 		</div>
 
 		<div class="col-sm-4" style="background:#11093a; height:100px; padding-top:10px;">
-		
+
 			<div class="row">
 				<div class="col-sm-12">
-				
+
 					<div class="btn-group">
-						
-						
+
+
 						<div class="dropdown-basket">
 						  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
 						  <div class="dropdown-basket-content">
+								<?php echo anchor('customer/cart', 'cart');?>
 							<a href="#">Item Kosong</a>
 						  </div>
 						</div>
 
-						
+
 						<?php if(isset($user->name)){ ?>
 						<div class="dropdown">
 							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount Anda
@@ -103,7 +104,7 @@
 							<li><a href="#">Logout</a></li>
 							</ul>
 						</div>
-						
+
 						<?php }else{ ?>
 						<div class="dropdown-account">
 						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
@@ -114,11 +115,11 @@
 						</div>
 
 						<?php } ?>
-						
+
 						<div class="btncontact">
 							<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
-						  
-						</div>	
+
+						</div>
 						<div class="dropdown-lang">
 						  <button class="dropbtn-lang"><i class="fa fa-flag" aria-hidden="true"></i> Bahasa</button>
 						  <div class="dropdown-lang-content">
@@ -126,17 +127,17 @@
 							<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
 						  </div>
 						</div>
-							
+
 					</div>
 				</div>
-			</div>	
+			</div>
 			<div class="row">
 				<div class="col-sm-12" style='color:#ffffff; wight:bold;'>
 					Total Shopping Experience
 				</div>
-			</div>	
-		</div>	
-	</div>			
+			</div>
+		</div>
+	</div>
 </div>
 
 
@@ -146,8 +147,8 @@
 		<div class="col-sm-3">
 			<div class='logo'>
 				<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80">');?>
-			</div>	
-		</div>		
+			</div>
+		</div>
 		<div class="col-sm-5">
 			<div class='myserach'>
 
@@ -168,7 +169,7 @@
 								  <li><a href="#less_than">Perlengkapan Kantor</a></li>
 								</ul>
 							</div>
-							<input type="hidden" name="search_param" value="all" id="search_param">         
+							<input type="hidden" name="search_param" value="all" id="search_param">
 							<input type="text" class="my-search-field" name="x" placeholder="Search term...">
 							<span class="input-group-btn">
 								<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
@@ -180,13 +181,13 @@
 		</div>
 
 		<div class="col-sm-4" style="background:#11093a; height:100%; padding-top:10px;">
-		
+
 			<div class="row">
 				<div class="col-sm-12">
-				
+
 					<div class="btn-group">
-						
-						
+
+
 						<div class="dropdown-basket">
 						  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
 						  <div class="dropdown-basket-content">
@@ -194,7 +195,7 @@
 						  </div>
 						</div>
 
-						
+
 						<?php if(isset($user->name)){ ?>
 						<div class="dropdown">
 							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount Anda
@@ -205,7 +206,7 @@
 							<li><a href="#">Logout</a></li>
 							</ul>
 						</div>
-						
+
 						<?php }else{ ?>
 						<div class="dropdown-account">
 						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
@@ -216,11 +217,11 @@
 						</div>
 
 						<?php } ?>
-						
+
 						<div class="btncontact">
 							<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
-						  
-						</div>	
+
+						</div>
 						<div class="dropdown-lang">
 						  <button class="dropbtn-lang"><i class="fa fa-flag" aria-hidden="true"></i> Bahasa</button>
 						  <div class="dropdown-lang-content">
@@ -228,17 +229,17 @@
 							<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
 						  </div>
 						</div>
-							
+
 					</div>
 				</div>
-			</div>	
+			</div>
 			<div class="row">
 				<div class="col-sm-12" style='color:#ffffff; wight:bold;'>
 					Total Shopping Experience
 				</div>
-			</div>	
-		</div>	
-	</div>			
+			</div>
+		</div>
+	</div>
 </div>
 
 
