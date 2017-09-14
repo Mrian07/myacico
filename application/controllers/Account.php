@@ -35,7 +35,6 @@ class Account extends Account_private {
 		$this->data['title_web'] = "Myacico.com - Dashboard";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/info_login',$this->data);
 		$this->load->view('frontend/modules/account/dashboard.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
@@ -88,7 +87,6 @@ class Account extends Account_private {
 		$this->data['title_web'] = "Myacico.com - Informasi Akun";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/info_login',$this->data);
 		$this->load->view('frontend/modules/account/informasi_akun',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
@@ -100,7 +98,6 @@ class Account extends Account_private {
 		$this->data['title_web'] = "Myacico.com - Informasi Akun";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/info_login',$this->data);
 		$this->load->view('frontend/modules/account/berlanggananNewsletter',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
@@ -122,7 +119,6 @@ class Account extends Account_private {
 		$this->data['title_web'] = "Myacico.com - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/info_login',$this->data);
 		$this->load->view('frontend/modules/account/TambahBukuAlamat',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
@@ -144,7 +140,6 @@ class Account extends Account_private {
 		$this->data['title_web'] = "Myacico.com - Return Management Authority";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/info_login',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
@@ -155,7 +150,6 @@ class Account extends Account_private {
 		$this->data['title_web'] = "Myacico.com - Wishlist";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/info_login',$this->data);
 		$this->load->view('frontend/modules/account/Wishlist',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
