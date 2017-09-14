@@ -16,7 +16,7 @@ $("#logout").click(function(){
 	
 	$.confirm({
 		title: 'Confirm!',
-		content: 'Simple confirm!',
+		content: 'Anda yakin akan logout?',
 		buttons: {
 			confirm: function () {
 				//$.alert('Confirmed!');
