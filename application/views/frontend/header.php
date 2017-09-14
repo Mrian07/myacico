@@ -1,3 +1,6 @@
+<img src="<?php echo base_url('images/general/Bg-atas-acico.png'); ?>"
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -93,17 +96,17 @@
 								  <div class="col-sm-6">Rincian</div>
 								  <div class="col-sm-3">Hapus</div>
 								</div>
-								
-								
+
+
 								<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
-								
+
 						  </div>
 						</div>
 
 
 						<?php if(isset($user->name)){ ?>
-						
-						
+
+
 						<div class="dropdown-account">
 						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
 						  <div class="dropdown-account-content">
@@ -263,7 +266,7 @@
 <script type="text/javascript">
 
 $("#logout").click(function(){
-	
+
 	$.confirm({
 		title: 'Confirm!',
 		content: 'Anda yakin akan logout?',
