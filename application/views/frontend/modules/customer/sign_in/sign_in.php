@@ -15,22 +15,24 @@
   		<div class='border-create'>
 		    <form name="signup" method="post">
 		      <div class="form-group">
-            <label>Email:</label>
-            <input type="email" id="email" name="email" class="form-control"  />
+				<label>Email:</label>
+				<input type="email" id="email" name="email" class="form-control"  />
 		      </div>
 		      <div class="form-group">
       			<label>Password:</label>
       			<input type="password" id="password" name="password" class="form-control" />
     		  </div>
-    		  <input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
-          <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
-    			<div class="clearfix"></div>
-          <div class="separator">
-            <p class="change_link">Lupa password ?
-      				<?php echo anchor('customer/lostPassword/', 'Click disini');?>
-            </p>
-            <div class="clearfix"></div>
-            <br />
+			  <div class="row">
+				<div class="col-sm-6">
+					<input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+					<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+				</div>
+				<div class="col-sm-6" style='text-align: right'>
+					<p class="change_link">Lupa password ?
+						<?php echo anchor('customer/lostPassword/', 'Click disini');?>
+					</p>
+				</div>
+			</div>
           </div>
     		</form>
 		  </div>

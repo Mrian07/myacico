@@ -18,7 +18,7 @@
         </div>
 
         <div class="welcome-msg">
-        <p>Hello <?php echo $user->sub['name']; ?>, Dari Beranda Akun anda, anda bisa melihat tinjauan dari aktivitas akun yang ada sekarang dan memperbaharui informasi akun anda. Pilih tautan di bawah ini untuk melihat atau mengedit informasi</p><?php print_r($user->sub); ?>
+        <p>Hello <?php echo $user->sub; ?>, Dari Beranda Akun anda, anda bisa melihat tinjauan dari aktivitas akun yang ada sekarang dan memperbaharui informasi akun anda. Pilih tautan di bawah ini untuk melihat atau mengedit informasi</p><?php print_r($user->sub); ?>
       </div>
       <div class="box-account box-info">
         <div class="col2-set">

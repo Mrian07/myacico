@@ -30,9 +30,16 @@
 			<label>Ulangi Password:</label>
 			<input type="password" id="password2" class="form-control" placeholder="" />
 		  </div>
-		  <input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
-          <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
-		  Sudah mendaftar ? <?php echo anchor('customer/signIn', 'Log In'); ?>
+		  <div class="row">
+			<div class="col-sm-6">
+				<input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+				<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+			</div>
+			<div class="col-sm-6" style='text-align: right'>
+				Sudah mendaftar ? <?php echo anchor('customer/signIn', 'Log In'); ?>
+			</div>	
+		  </div>	
+		  
 		</form>
 		</div>
 	  </div>
