@@ -8,8 +8,8 @@ class Account extends Account_private {
 		parent::__construct();
         $this->load->helper('form');
         $this->load->library('form_validation');
-		$this->load->library('session');
-		$this->load->library('session');
+		/*$this->load->library('session');
+		$this->load->library('session');*/
 		$this->load->helper('cookie');
 	//	$this->load->model('Login_model', 'login', TRUE);
 

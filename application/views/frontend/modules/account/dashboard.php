@@ -18,7 +18,7 @@
         </div>
 
         <div class="welcome-msg">
-        <p>Hello <?php echo $user->sub; ?>, Dari Beranda Akun anda, anda bisa melihat tinjauan dari aktivitas akun yang ada sekarang dan memperbaharui informasi akun anda. Pilih tautan di bawah ini untuk melihat atau mengedit informasi</p><?php print_r($user->sub); ?>
+        <p>Hello <?php echo $user->name; ?>, Dari Beranda Akun anda, anda bisa melihat tinjauan dari aktivitas akun yang ada sekarang dan memperbaharui informasi akun anda. Pilih tautan di bawah ini untuk melihat atau mengedit informasi</p>
       </div>
       <div class="box-account box-info">
         <div class="col2-set">
@@ -33,8 +33,8 @@
               </div>
               <div class="box-content">
                 <p>
-                  <span class="capt">--nama--</span><br>
-                  --email--<br>
+                  <span class="capt"><?php echo $user->name; ?></span><br>
+                  <?php echo $user->email; ?><br>
                     <br>
                     <span class="space"></span>
                   <br>

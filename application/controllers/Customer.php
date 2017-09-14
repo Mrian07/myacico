@@ -121,21 +121,21 @@ class Customer extends Web {
 
 	}
 	
-	public function SuccessSignIn()
+	/*public function SuccessSignIn()
     {
 		$nama = $this->uri->segment(3);
 		//$password = $this->uri->segment(4);
 		//$nama = $this->uri->segment(4);
 	
-/*
+
 		$this->input->post('email');
 		$this->input->post('password');
 		$this->input->post('nama');
-	*/
+	
 		$data = array('cust_name' => $nama, 'cust_login' => TRUE);
 		$this->session->set_userdata($data);
 		redirect('account');
-	}
+	}*/
 
 	public function logout()
     {
