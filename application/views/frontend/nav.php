@@ -26,7 +26,7 @@
 
 <!-- Start Navigation -->
     <nav class="navbar navbar-default navbar-custom bootsnav">
-			
+
 			<!-- Start Top Search -->
 			<div class="top-search">
 				<div class="container">
@@ -38,14 +38,14 @@
 				</div>
 			</div>
 			<!-- End Top Search -->
-		
+
 			<!-- Start Atribute Navigation -->
             <div class="attr-nav">
                 <ul><!--
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >My Cart 
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >My Cart
                             <i class="fa fa-shopping-bag"></i>
-                            <span class="badge">3</span> 
+                            <span class="badge">3</span>
                         </a>
                         <ul class="dropdown-menu cart-list">
                             <li>
@@ -76,25 +76,25 @@
                 </ul>
             </div>
             <!-- End Atribute Navigation -->
-         
+
 
 			<!-- Start Header Navigation -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                     <i class="fa fa-bars"></i>
                 </button>
-				
+
 				<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80">', array('class'=>'navbar-brand'));?>
                 <!--<a class="navbar-brand" href="#brand"><img src="images/brand/logo-black.png" class="logo" alt=""></a>-->
             </div>
             <!-- End Header Navigation -->
-           
+
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="active"><?php echo anchor('home/', '<span class="glyphicon glyphicon-home"></span>');?></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><?php echo anchor('product/', 'Product');?></li>
                     <li class="dropdown megamenu-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Megamenu</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
@@ -138,7 +138,7 @@
                                                 <li><a href="#">Custom Menu</a></li>
                                             </ul>
                                         </div>
-                                    </div>    
+                                    </div>
                                     <div class="col-menu col-md-3">
                                         <h6 class="title">Title Menu Four</h6>
                                         <div class="content">
@@ -188,13 +188,10 @@
                     <li><a href="#">Contact Us</a></li>
                 </ul>
 
-				
-				
+
+
             </div><!-- /.navbar-collapse -->
-    
-       
+
+
     </nav>
     <!-- End Navigation -->
-	
-	
-	 
