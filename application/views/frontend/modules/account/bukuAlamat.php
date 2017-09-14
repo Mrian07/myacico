@@ -1,6 +1,3 @@
-
-
-
 <div class="container">
 	<div class="row">
 	  <div class="col-sm-12">
@@ -15,16 +12,7 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-    <div class="login_wrapper">
-      <div class="form login_form">
-        <section class="login_content">
-        <h1>Buku Alamat</h1>
-				<hr>
-<a href="<?php echo site_url('account/TambahBukuAlamat') ?>"> <button type="button" class="btn btn-link">Tambah Buku Alamat</button></a>
-
-        </section>
-      </div>
-    </div>
+			<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat', array('class'=>'btn btn-info'));?>
 		</div>
 	</div>
 </div>
