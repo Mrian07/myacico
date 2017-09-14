@@ -3,11 +3,11 @@
     <div class="col-sm-12 my-border-title">
     <h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DAFTAR AKUN BUSINESS</h3>
     </div>
-  </div> 
-  
+  </div>
+
   <div class="row">
     <div class="col-sm-3">
-    
+
     </div>
     <div class="col-sm-6">
       <form name="signup" method="post">
@@ -73,7 +73,8 @@
           <input type="password" id="password2" class="form-control" />
         </div>
         <div>
-          <input type="submit" class="btn btn-default" value="Kirim">
+          <input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+    			<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
         </div>
 
         <div class="clearfix"></div>
@@ -93,7 +94,6 @@
 </div>
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
-
 $(document).ready(function() {
   $("form").submit(function(e){
     e.preventDefault();
@@ -102,6 +102,7 @@ $(document).ready(function() {
     var data = $(this).serialize();
 
     // success handling
+
     var success = function(r){
       alert(r.message);
       console.log('OK:', r.status);
@@ -116,11 +117,25 @@ $(document).ready(function() {
         form_ok =false;
         return false;
       }
+
     });
+    var success = function(r){
+      $('#spinner_img').hide();
+      $('#submit_btn').val('Kirim').removeClass('disabled');
+      console.log('OK:', r);
+      alert(r.message);
+    };
+
+
     if(form_ok==false) return false;
     if(fl.password.value!=$('#password2').val())alert('password not match!!!');
 
-    else $.post( apiurl, data, success, "json" );
+    else {
+      $('#spinner_img').show();
+      $('#submit_btn').val('loading...').addClass('disabled');
+      $.post( apiurl, data, success, "json" );
+
+    }
 
   });
 });

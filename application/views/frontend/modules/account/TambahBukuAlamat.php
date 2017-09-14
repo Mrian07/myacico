@@ -25,58 +25,67 @@
 
 	  </div>
 	</div>
+	
+	<div class="row">
+		<div class="col-sm-3">
+			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
+		</div>
+		<div class="col-sm-9">
 
-  <form name="signup" method="post">
-    <div class="form-group">
-      <label>Nama Lengkap*</label>
-      <input type="text" name="laname" class="form-control mandatory" />
-    </div>
-    <div class="form-group">
-      <label>Alamat*</label>
-      <input type="text" name="laname" class="form-control mandatory" /><br/>
-        <input type="text" name="laname" class="form-control mandatory" />
-    </div>
-    <div class="form-group">
-      <label for="sel1">Kota*</label>
-      <select class="form-control" id="sel1">
-        <option>DKI Jakarta</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
-    </div>
-    <div class="form-group">
+		  <form name="signup" method="post">
+			<div class="form-group">
+			  <label>Nama Lengkap*</label>
+			  <input type="text" name="laname" class="form-control mandatory" />
+			</div>
+			<div class="form-group">
+			  <label>Alamat*</label>
+			  <input type="text" name="laname" class="form-control mandatory" /><br/>
+				<input type="text" name="laname" class="form-control mandatory" />
+			</div>
+			<div class="form-group">
+			  <label for="sel1">Kota*</label>
+			  <select class="form-control" id="sel1">
+				<option>DKI Jakarta</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+			  </select>
+			</div>
+			<div class="form-group">
 
-      <label for="sel2">Provinsi*</label>
-      <select class="form-control" id="sel2">
-        <option>DKI Jakarta</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
-    </div>
-    <div class="form-group">
+			  <label for="sel2">Provinsi*</label>
+			  <select class="form-control" id="sel2">
+				<option>DKI Jakarta</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+			  </select>
+			</div>
+			<div class="form-group">
 
-      <label for="sel3">Kecamatan*</label>
-      <select class="form-control" id="sel3">
-        <option>Jakarta</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Kode Post*</label>
-      <input type="text" name="laname" class="form-control mandatory" />
-    </div>
-    <hr>
-    <p class="back-link">
-      <a href="<?php echo site_url('account/bukuAlamat') ?>"><small>« </small> Kembali ke Alamat Buku</a>
-  &nbsp &nbsp &nbsp &nbsp
-  &nbsp &nbsp &nbsp <button type="submit" class="btn btn-info">Simpan Alamat</button>
-    </p>
+			  <label for="sel3">Kecamatan*</label>
+			  <select class="form-control" id="sel3">
+				<option>Jakarta</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+			  </select>
+			</div>
+			<div class="form-group">
+			  <label>Kode Post*</label>
+			  <input type="text" name="laname" class="form-control mandatory" />
+			</div>
+			<hr>
+			<p class="back-link">
+			  <a href="<?php echo site_url('account/bukuAlamat') ?>"><small>« </small> Kembali ke Alamat Buku</a>
+		  &nbsp &nbsp &nbsp &nbsp
+		  &nbsp &nbsp &nbsp <button type="submit" class="btn btn-info">Simpan Alamat</button>
+			</p>
 
-  </form>
+		  </form>
+
+		</div>
+	</div>
 </div>
 
 <script type="text/javascript">

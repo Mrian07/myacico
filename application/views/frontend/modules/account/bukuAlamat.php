@@ -14,7 +14,7 @@
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
-		<div class="col-sm-8">
+		<div class="col-sm-9">
     <div class="login_wrapper">
       <div class="form login_form">
         <section class="login_content">

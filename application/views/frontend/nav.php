@@ -1,3 +1,29 @@
+<ul class="nav nav-tabs my-tab-menu">
+   <!-- <li class="active"><a data-toggle="tab" href="#home"><span class="glyphicon glyphicon-home"></span> Home</a></li>-->
+    <li class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i>
+
+
+ Account
+		<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="#">Login</a></li>
+		  <li><a href="#">Daftar</a></li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-flag" aria-hidden="true"></i>
+ Bahasa
+		<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a></li>
+		  <li><a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a></li>
+		</ul>
+	</li>
+	<li><a data-toggle="tab" href="#home"><i class="fa fa-shopping-bag" aria-hidden="true"></i>
+ My Cart <span class="badge" style="background:#e6e831; color:#000000">3</span> </a></li>
+  </ul>
+
 <!-- Start Navigation -->
     <nav class="navbar navbar-default navbar-custom bootsnav">
 			
@@ -15,7 +41,7 @@
 		
 			<!-- Start Atribute Navigation -->
             <div class="attr-nav">
-                <ul>
+                <ul><!--
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" >My Cart 
                             <i class="fa fa-shopping-bag"></i>
@@ -42,7 +68,7 @@
                                 <a href="#" class="btn btn-default btn-cart">Cart</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
 					<li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
 					<!--<li>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -169,3 +195,6 @@
        
     </nav>
     <!-- End Navigation -->
+	
+	
+	 

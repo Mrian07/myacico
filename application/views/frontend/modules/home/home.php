@@ -179,19 +179,18 @@ ul.list-group:after {
 </style>
 
 
-
 <div class='home-banner'>
 	<div class="row">
-		<div class="col-sm-3">
-			<a href="#"><img u="image" width='100%' src='<?php echo base_url('images/banner/banner_kecil1.jpg');?>' border='0' /></a>
+		<div class="col-sm-3 col-xs-6 my-img-small">
+			<a href="#"><img u="image" width='100%' src='<?php echo base_url('images/banner/banner_kecil1.jpg');?>' border='0'/></a>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-3 col-xs-6 my-img-small">
 			<a href="#"><img u="image" width='100%' src='<?php echo base_url('images/banner/banner_kecil2.jpg');?>' border='0' /></a>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-3 col-xs-6 my-img-small">
 			<a href="#"><img u="image" width='100%' src='<?php echo base_url('images/banner/banner_kecil3.jpg');?>' border='0' /></a>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-3 col-xs-6 my-img-small">
 			<a href="#"><img u="image" width='100%' src='<?php echo base_url('images/banner/banner_kecil4.jpg');?>' border='0' /></a>
 		</div>
 

@@ -10,8 +10,6 @@ function myMap() {
 
 <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.649842298437!2d106.81277131436264!3d-6.17760599552759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f68061654a55%3A0xaafcf85e4760d02a!2sPT.+Myacico+Global+Indonesia!5e0!3m2!1sen!2sid!4v1496997240232" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
 
-
-
 <div class="container">
 
 	<div class="row">
@@ -19,79 +17,95 @@ function myMap() {
 		<div class="my-border-title">
 			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> HUBUNGI KAMI</h3>
 		</div>
-
 	  </div>
 	</div>
 
-  <div class="row">
-    <div class="col-sm-4"> <h4 style="color:red;">PT Myacico Global Indonesia</h4><br/>
-      <h5> Jl. Kesehatan No 60 O-P,<br/>
-      RT 2, RW 4
-      Petojo Selatan, Gambir,<br/> Pusat
-      Jakarta Pusat 10160</h5>
-     </div>
-	<div class="col-sm-8">
-	<p>Silakan hubungi kami melalui kolom dibawah ini.</p>
-
-
-	  <form name="signup" method="post">
-      <div class="form-group">
-        <label>Nama Belakang*</label>
-        <input type="text" name="laname" class="form-control mandatory" />
-      </div>
-		<div class="form-group">
-			    <label>Email*</label>
-			   <input type="text" name="lasdname" class="form-control mandatory" />
+	<div class="row">
+		<div class="col-sm-4"> <h4 style="color:red;">PT Myacico Global Indonesia</h4><br/>
+		<h5> Jl. Kesehatan No 60 O-P,<br/>
+		RT 2, RW 4
+		Petojo Selatan, Gambir,<br/> Pusat
+		Jakarta Pusat 10160</h5>
 		</div>
-		<div class="form-group">
-			    <label>Judul Pesan*</label>
-  <input type="text" name="asdlname" class="form-control mandatory" />
-		</div>
-		<div class="form-group">
-    <label>Pesan*</label>
-			<textarea class="form-control" rows="5" id="pesan" name='pesan'></textarea>
-		</div>
-		  <input type="submit" class="btn btn-primary" value="Kirim">
-	</form>
-	<br><br>
+		<div class="col-sm-8">
+			<p>Silakan hubungi kami melalui kolom dibawah ini.</p>
 
-   </div>
 
- </div>
+			<form action=''>
+			<div class="form-group">
+			<label>Nama Anda</label>
+			<input type="text" id="nama" name="nama" class="form-control mandatory" />
+			</div>
+			<div class="form-group">
+			<label>Email Anda</label>
+			<input type="email" id="email" name="email" class="form-control mandatory" />
+			</div>
+			<div class="form-group">
+			<label>Keperluan</label>
+			<select id='keperluan' name='keperluan' class="form-control mandatory">
+				<option value=''>-Pilih-</option>
+				<option value='Product Issue'>Product Issue</option>
+				<option value='Customer Relation'>Customer Relation</option>
+				<option value='Payment Issue'>Payment Issue</option>
+				<option value='Returns and Exchange'>Returns and Exchange</option>
+				<option value='Becoming a Partner'>Becoming a Partner</option>
+				<option value='Others'>Others</option>
+			</select>
+			</div>
+			<div class="form-group">
+			<label>Pesan</label>
+			<textarea class="form-control mandatory" rows="5" id="pesan" name='pesan'></textarea>
+			</div>
+			<input type="submit" class="btn btn-primary" id="submit_btn" value="Kirim">  <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+			</form>
+			<br><br>
+		</div>
+	</div>
 
 </div>
 
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
 $(document).ready(function() {
-  $("form").submit(function(e){
-    e.preventDefault();
-    var apiurl = baseApiUrl + '/aduser/add';
-    var fl=document.signup;
-    var data = $(this).serialize();
+	
+	$("form").submit(function(e){
+		e.preventDefault();
+		// do validation
+		var form_ok = true;
+			$('.mandatory').each(function(){
+			if($(this).val()==''){
+			$.alert({title:'Alert', content: $(this).prev().text()+ ' tidak boleh kosong!'});
+			// onContentReady: function(){$(this).focus();}
+			//$(this).val().focus();
+			form_ok =false;
+			return false;
+			}
+		});
+		if(form_ok==false) return false;
 
-    // success handling
-    var success = function(r){
-      alert(r.message);
-      console.log('OK:', r.status);
-    };
+		$('#spinner_img').show();
+		$('#submit_btn').val('Loading...').addClass('disabled');		
 
-    // do validation
-      var form_ok = true;
-    $('.mandatory').each(function(){
-      if($(this).val()==''){
-        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
-        // onContentReady: function(){$(this).focus();}
-  form_ok =false;
-        return false;
-      }
-    });
-      if(form_ok==false) return false;
-    if(fl.password.value!=$('#password2').val())alert('password not match!!!');
-
-    else $.post( apiurl, data, success, "json" );
-
+		/*var nama=$('#nama').val();
+		var email=$('#email').val();
+		var keperluan=$('#keperluan').val();
+		var pesan=$('#pesan').val();*/
+		var data = $(this).serialize();
+		var url = "<?php echo site_url('customer/prosesContact'); ?>";
+		var success = function(html)
+		{	
+			if(html=='gagal'){
+				$.alert({title:'Alert', content: ' Pesan gagal terkirim silakan coba kembali!'});
+				$('#spinner_img').hide();
+				$('#submit_btn').val('Kirim').removeClass('disabled');
+				$('.mandatory').prop('disabled', false);
+			}else{
+				location.href="<?php echo site_url('customer/messageSent'); ?>";
+			}
+		}
+		
+		$.post( url, data, success);
+		$('.mandatory').prop('disabled', true);
   });
 });
 </script>
