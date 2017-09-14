@@ -112,11 +112,20 @@ class Customer extends Web {
 	}
 
 	public function lostPassword()
-    {
+	{
 		$this->data['title_web'] = "Myacico.com - Lupa Password";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/lost_password/lost_password.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function resetPassword()
+	{
+		$this->data['title_web'] = "Myacico.com - Reset Password";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/customer/lost_password/reset_password.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
