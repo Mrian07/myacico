@@ -95,7 +95,7 @@
 								</div>
 								
 								
-								<?php echo anchor('customer/cart', 'cart');?>
+								<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
 								
 						  </div>
 						</div>
