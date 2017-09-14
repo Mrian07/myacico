@@ -9,23 +9,23 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
 		<!--<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 		<!-- End Bootstrap -->
-		
+
 		<!--<link href="<?php echo base_url('assets/nav/css/bootstrap.min.css');?>" rel="stylesheet">-->
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/nav/css/bootsnav.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
-		
-        
-		
-		
+
+
+
+
 		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
 		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/general/favicon.ico');?>">
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="<?php echo base_url('assets_adminlte/font-awesome-4.7.0/css/font-awesome.min.css') ?>"/>
-		
+
 		<!-- CSS -->
-		
+
 		<!-- s: Alert -->
 		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/libs/bundled.css');?>" />-->
 		<script type="text/javascript" src="<?php echo base_url('assets/alert/libs/bundled.js');?>"></script>
@@ -34,9 +34,9 @@
         <!-- e: Alert -->
 
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jwt-decode.min.js');?>"></script>
-		
+
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
-		
+
     </head>
 
 <body>
@@ -45,11 +45,11 @@
 	<div class="my-header-panel-sub1">
 		<div class="row">
 			<div class="col-sm-3">
-				<i class="fa fa-phone" aria-hidden="true"></i> (021) 589 99999 
+				<i class="fa fa-phone" aria-hidden="true"></i> (021) 589 99999
 			</div>
 			<div class="col-sm-9">
 		<i class="fa fa-clock-o" aria-hidden="true"></i>
-	 Mon - Sat [09:00 - 20:00] , Sun [10:00 - 18:00] ,  Open on Holiday 
+	 Mon - Sat [09:00 - 20:00] , Sun [10:00 - 18:00] ,  Open on Holiday
 
 			</div>
 		</div>
@@ -59,13 +59,13 @@
 			<div class="col-sm-7">
 				Total Shopping Experience
 			</div>
-			
+
 			<div class="col-sm-5"><?php $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; $url="'$actual_link'"; ?>
 				<div class="btn-group">
 					<div class="btncontact">
 						<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
-					  
-					</div>	
+
+					</div>
 					<div class="dropdowns">
 					  <button class="dropbtn"><i class="fa fa-flag" aria-hidden="true"></i> Bahasa</button>
 					  <div class="dropdowns-content">
@@ -76,22 +76,22 @@
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
 </div>
 <div style="clear:both;"></div>
 
 <!--
 <div class="my-header-panel2">
-		
+
 	<div class="row">
 		<div class="col-sm-2">
 			<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80" style="margin-top:-10px">');?>
-			
+
 		</div>
 		<div class="col-sm-6">
-			
-			
+
+
 					<div class="input-group">
 						<div class="input-group-btn search-panel">
 							<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
@@ -108,39 +108,39 @@
 							  <li><a href="#less_than">Perlengkapan Kantor</a></li>
 							</ul>
 						</div>
-						<input type="hidden" name="search_param" value="all" id="search_param">         
+						<input type="hidden" name="search_param" value="all" id="search_param">
 						<input type="text" class="my-search-field" name="x" placeholder="Search term...">
 						<span class="input-group-btn">
 							<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
 						</span>
 					</div>
-		
-			
-			
+
+
+
 		</div>
 		<div class="col-sm-4">
 			<div class="row">
 				<div class="col-sm-6">
-		
+
 			<i class="fa fa-user" aria-hidden="true"></i>
 			<?php echo anchor('customer/create/', $lang_daftar);?> /
 			<?php echo anchor('customer/signIn/', $lang_masuk);?>
-			
+
 				</div>
 				<div class="col-sm-6">
-				
+
 				</div>
-			</div>	
+			</div>
 		</div>
-	
-	</div>	
+
+	</div>
 </div>
 -->
 
 <div class="my-header-panel2">
 	<div class='logo'>
 		<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80">');?>
-	</div>		
+	</div>
 	<div class='myserach'>
 
 				<div class="input-group">
@@ -159,7 +159,7 @@
 						  <li><a href="#less_than">Perlengkapan Kantor</a></li>
 						</ul>
 					</div>
-					<input type="hidden" name="search_param" value="all" id="search_param">         
+					<input type="hidden" name="search_param" value="all" id="search_param">
 					<input type="text" class="my-search-field" name="x" placeholder="Search term...">
 					<span class="input-group-btn">
 						<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
@@ -167,17 +167,20 @@
 				</div>
 
 	</div>
-	
+
 
 	<div class='mybasket'>
 		<div class="dropdown-basket">
-		  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
+			<a href="<?php echo site_url('customer/cart') ?>"><button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+  Checkout <span class="badge">4</span></a>
+</button>
+		  <!-- <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0) </button> -->
 		  <div class="dropdown-basket-content">
-			<a href="#">Item Kosong</a>
+
 		  </div>
 		</div>
-	</div>	
-	
+	</div>
+
 	<div class='myreg'>
 		<i class="fa fa-user" aria-hidden="true"></i>
 		<?php if($this->session->userdata('cust_login')){ ?>
@@ -187,4 +190,3 @@
 		<?php } ?>
 	</div>
 </div>
-
