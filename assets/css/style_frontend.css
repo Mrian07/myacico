@@ -252,6 +252,16 @@ h3 span {
 .dropdown-basket:hover .dropbtn-basket {
     background-color: #e79116;
 }
+
+/*Cart*/
+
+.my-cart{
+	border:1px #cacaca solid;
+	margin:2px;
+	border-radius:5px;
+	padding:3px;
+}
+
 /*
 a .my-btn-chekout:hover{
 	background-color: #111111;
