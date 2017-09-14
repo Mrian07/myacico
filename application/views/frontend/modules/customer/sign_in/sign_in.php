@@ -13,7 +13,7 @@
 		</div>
 	  <div class="col-sm-6">
   		<div class='border-create'>
-		    <form name="signup" method="post">
+		    <form name="signin" method="post">
 		      <div class="form-group">
 				<label>Email:</label>
 				<input type="email" id="email" name="email" class="form-control"  />
@@ -53,8 +53,6 @@ var success = function(r){
     content: r.message
   });
   document.cookie='x-auth='+r.token+'; path=/';
-  //$.alert(r.message);
-  //$.post( '<?php echo base_url('account/SuccsessSignin/'); ?>', data, success, "json" );
   location.href = '<?php echo base_url('account'); ?>';
 };
 var error = function(er){
@@ -72,7 +70,7 @@ $(document).ready(function() {
     e.preventDefault();
 		var email = $("#email").val();
 		var password = $("#password").val();
-    var apiurl = baseApiUrl + '/aduser/login';
+    var apiurl = baseApiUrl + '/aduser/auth';
     var data = $(this).serialize();
 
 		if(email==''){
@@ -92,8 +90,13 @@ $(document).ready(function() {
 
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    //$.post( apiurl, data, success, "json" );
-    $.ajax({ type:"POST", data:data, dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
+    $.ajaxSetup({
+      error: error,
+      timeout: 30000,
+      contentType: "application/json; charset=UTF-8"
+    });
+    $.post( apiurl, '{"email":"arie@nendy.tk","password":"1234567"}', success, "json" );
+    //$.ajax({ type:"POST", header: {"Content-Type":"application/json"}, data:JSON.toString({"email":"arie@nendy.tk","password":"1234567"}), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
 
   });
 

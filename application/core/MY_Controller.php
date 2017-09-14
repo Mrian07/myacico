@@ -104,7 +104,7 @@ class Account_private extends web {
 		else {
 			try {
 
-				$this->data['user'] = json_decode(JWT::decode($_COOKIE['x-auth'], $secret)->sub);
+				$this->data['user'] = JWT::decode($_COOKIE['x-auth'], $secret)->UserData;
 
 			} catch (Exception $e) {
 				print_r($e);die();
