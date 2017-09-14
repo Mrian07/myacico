@@ -9,23 +9,20 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
 		<!--<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 		<!-- End Bootstrap -->
-		
+
 		<!--<link href="<?php echo base_url('assets/nav/css/bootstrap.min.css');?>" rel="stylesheet">-->
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/nav/css/bootsnav.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
-		
-        
-		
-		
+
 		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
 		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/general/favicon.ico');?>">
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="<?php echo base_url('assets_adminlte/font-awesome-4.7.0/css/font-awesome.min.css') ?>"/>
-		
+
 		<!-- CSS -->
-		
+
 		<!-- s: Alert -->
 		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/libs/bundled.css');?>" />-->
 		<script type="text/javascript" src="<?php echo base_url('assets/alert/libs/bundled.js');?>"></script>
@@ -34,157 +31,224 @@
         <!-- e: Alert -->
 
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jwt-decode.min.js');?>"></script>
-		
+
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
-		
+
     </head>
 
 <body>
 
 <div class="my-header-panel">
-	<div class="my-header-panel-sub1">
-		<div class="row">
-			<div class="col-sm-3">
-				<i class="fa fa-phone" aria-hidden="true"></i> (021) 589 99999 
-			</div>
-			<div class="col-sm-9">
-		<i class="fa fa-clock-o" aria-hidden="true"></i>
-	 Mon - Sat [09:00 - 20:00] , Sun [10:00 - 18:00] ,  Open on Holiday 
 
-			</div>
-		</div>
-	</div>
-	<div class="my-header-panel-sub2">
-		<div class="row">
-			<div class="col-sm-7">
-				Total Shopping Experience
-			</div>
-			
-			<div class="col-sm-5"><?php $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; $url="'$actual_link'"; ?>
-				<div class="btn-group">
-					<div class="btncontact">
-						<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
-					  
-					</div>	
-					<div class="dropdowns">
-					  <button class="dropbtn"><i class="fa fa-flag" aria-hidden="true"></i> Bahasa</button>
-					  <div class="dropdowns-content">
-						<?php //echo anchor('home/lang/'.$url, '<img src="'.base_url('images/general/lang_bahasa.png').'" border="0"> Indonesia', array('id'=>'lang'));  echo anchor('home/lang/'.$url, '<img src="'.base_url('images/general/lang_english.png').'" border="0"> Inggris'); ?>
-						<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
-						<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
-					  </div>
-					</div>
-				</div>
-			</div>
-		</div>	
-	</div>
-</div>
-<div style="clear:both;"></div>
-
-<!--
-<div class="my-header-panel2">
-		
 	<div class="row">
 		<div class="col-sm-2">
-			<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80" style="margin-top:-10px">');?>
-			
+			<div class='logo'>
+				<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80">');?>
+			</div>
 		</div>
 		<div class="col-sm-6">
-			
-			
-					<div class="input-group">
-						<div class="input-group-btn search-panel">
-							<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
-								<span id="search_concept">All Categories</span> <span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu" role="menu">
-							  <li><a href="#contains">Computer</a></li>
-							  <li><a href="#its_equal">Gatget</a></li>
-							  <li><a href="#greather_than">Communication</a></li>
-							  <li><a href="#less_than">Audio & Visual</a></li>
-							  <li><a href="#greather_than">Mechanical & Electrical</a></li>
-							  <li><a href="#less_than">Hobby</a></li>
-							  <li><a href="#greather_than">Peralatan Rumah</a></li>
-							  <li><a href="#less_than">Perlengkapan Kantor</a></li>
+			<div class='myserach'>
+
+
+						<div class="input-group">
+							<div class="input-group-btn search-panel">
+								<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
+									<span id="search_concept">All Categories</span> <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+								  <li><a href="#contains">Computer</a></li>
+								  <li><a href="#its_equal">Gatget</a></li>
+								  <li><a href="#greather_than">Communication</a></li>
+								  <li><a href="#less_than">Audio & Visual</a></li>
+								  <li><a href="#greather_than">Mechanical & Electrical</a></li>
+								  <li><a href="#less_than">Hobby</a></li>
+								  <li><a href="#greather_than">Peralatan Rumah</a></li>
+								  <li><a href="#less_than">Perlengkapan Kantor</a></li>
+								</ul>
+							</div>
+							<input type="hidden" name="search_param" value="all" id="search_param">
+							<input type="text" class="my-search-field" name="x" placeholder="Search term...">
+							<span class="input-group-btn">
+								<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
+							</span>
+						</div>
+				<b><i class="fa fa-phone" aria-hidden="true"></i> (021) 589 99999, <i class="fa fa-clock-o" aria-hidden="true"></i>
+			 Mon - Sat [09:00 - 20:00] , Sun [10:00 - 18:00] ,  Open on Holiday</b>
+			</div>
+		</div>
+
+		<div class="col-sm-4" style="background:#11093a; height:100px; padding-top:10px;">
+
+			<div class="row">
+				<div class="col-sm-12">
+
+					<div class="btn-group">
+
+
+						<div class="dropdown-basket">
+						  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
+						  <div class="dropdown-basket-content">
+								<?php echo anchor('customer/cart', 'cart');?>
+							<a href="#">Item Kosong</a>
+						  </div>
+						</div>
+
+
+						<?php if(isset($user->name)){ ?>
+						<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount Anda
+							<span class="caret"></span></button>
+							<ul class="dropdown-menu">
+							<li><?php echo anchor('account/', 'Profile Anda');?></li>
+							<li class="divider"></li>
+							<li><a href="#">Logout</a></li>
 							</ul>
 						</div>
-						<input type="hidden" name="search_param" value="all" id="search_param">         
-						<input type="text" class="my-search-field" name="x" placeholder="Search term...">
-						<span class="input-group-btn">
-							<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
-						</span>
+
+						<?php }else{ ?>
+						<div class="dropdown-account">
+						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
+						  <div class="dropdown-account-content">
+							<?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> '.$lang_daftar);?>
+							<?php echo anchor('customer/signIn/', '<i class="fa fa-sign-in" aria-hidden="true"></i> '.$lang_masuk);?>
+						  </div>
+						</div>
+
+						<?php } ?>
+
+						<div class="btncontact">
+							<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
+
+						</div>
+						<div class="dropdown-lang">
+						  <button class="dropbtn-lang"><i class="fa fa-flag" aria-hidden="true"></i> Bahasa</button>
+						  <div class="dropdown-lang-content">
+							<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
+							<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
+						  </div>
+						</div>
+
 					</div>
-		
-			
-			
-		</div>
-		<div class="col-sm-4">
+				</div>
+			</div>
 			<div class="row">
-				<div class="col-sm-6">
-		
-			<i class="fa fa-user" aria-hidden="true"></i>
-			<?php echo anchor('customer/create/', $lang_daftar);?> /
-			<?php echo anchor('customer/signIn/', $lang_masuk);?>
-			
+				<div class="col-sm-12" style='color:#ffffff; wight:bold;'>
+					Total Shopping Experience
 				</div>
-				<div class="col-sm-6">
-				
-				</div>
-			</div>	
+			</div>
 		</div>
-	
-	</div>	
+	</div>
 </div>
--->
+
 
 <div class="my-header-panel2">
-	<div class='logo'>
-		<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80">');?>
-	</div>		
-	<div class='myserach'>
 
-				<div class="input-group">
-					<div class="input-group-btn search-panel">
-						<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
-							<span id="search_concept">All Categories</span> <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu">
-						  <li><a href="#contains">Computer</a></li>
-						  <li><a href="#its_equal">Gatget</a></li>
-						  <li><a href="#greather_than">Communication</a></li>
-						  <li><a href="#less_than">Audio & Visual</a></li>
-						  <li><a href="#greather_than">Mechanical & Electrical</a></li>
-						  <li><a href="#less_than">Hobby</a></li>
-						  <li><a href="#greather_than">Peralatan Rumah</a></li>
-						  <li><a href="#less_than">Perlengkapan Kantor</a></li>
-						</ul>
-					</div>
-					<input type="hidden" name="search_param" value="all" id="search_param">         
-					<input type="text" class="my-search-field" name="x" placeholder="Search term...">
-					<span class="input-group-btn">
-						<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
-					</span>
-				</div>
-
-	</div>
-	
-
-	<div class='mybasket'>
-		<div class="dropdown-basket">
-		  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
-		  <div class="dropdown-basket-content">
-			<a href="#">Item Kosong</a>
-		  </div>
+	<div class="row">
+		<div class="col-sm-3">
+			<div class='logo'>
+				<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80">');?>
+			</div>
 		</div>
-	</div>	
-	
-	<div class='myreg'>
-		<i class="fa fa-user" aria-hidden="true"></i>
-		<?php if($this->session->userdata('cust_login')){ ?>
-		<?php echo anchor('account/', 'Profile Anda');?>
-		<?php }else{ ?>
-		<?php echo anchor('customer/create/', $lang_daftar);?> / <?php echo anchor('customer/signIn/', $lang_masuk);?>
-		<?php } ?>
+		<div class="col-sm-5">
+			<div class='myserach'>
+
+
+						<div class="input-group">
+							<div class="input-group-btn search-panel">
+								<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
+									<span id="search_concept">All Categories</span> <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+								  <li><a href="#contains">Computer</a></li>
+								  <li><a href="#its_equal">Gatget</a></li>
+								  <li><a href="#greather_than">Communication</a></li>
+								  <li><a href="#less_than">Audio & Visual</a></li>
+								  <li><a href="#greather_than">Mechanical & Electrical</a></li>
+								  <li><a href="#less_than">Hobby</a></li>
+								  <li><a href="#greather_than">Peralatan Rumah</a></li>
+								  <li><a href="#less_than">Perlengkapan Kantor</a></li>
+								</ul>
+							</div>
+							<input type="hidden" name="search_param" value="all" id="search_param">
+							<input type="text" class="my-search-field" name="x" placeholder="Search term...">
+							<span class="input-group-btn">
+								<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
+							</span>
+						</div>
+				<b><i class="fa fa-phone" aria-hidden="true"></i> (021) 589 99999, <i class="fa fa-clock-o" aria-hidden="true"></i>
+			 Mon - Sat [09:00 - 20:00] , Sun [10:00 - 18:00] ,  Open on Holiday</b>
+			</div>
+		</div>
+
+		<div class="col-sm-4" style="background:#11093a; height:100%; padding-top:10px;">
+
+			<div class="row">
+				<div class="col-sm-12">
+
+					<div class="btn-group">
+
+
+						<div class="dropdown-basket">
+						  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
+						  <div class="dropdown-basket-content">
+							<a href="#">Item Kosong</a>
+						  </div>
+						</div>
+
+
+						<?php if(isset($user->name)){ ?>
+						<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount Anda
+							<span class="caret"></span></button>
+							<ul class="dropdown-menu">
+							<li><?php echo anchor('account/', 'Profile Anda');?></li>
+							<li class="divider"></li>
+							<li><a href="#">Logout</a></li>
+							</ul>
+						</div>
+
+						<?php }else{ ?>
+						<div class="dropdown-account">
+						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
+						  <div class="dropdown-account-content">
+							<?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> '.$lang_daftar);?>
+							<?php echo anchor('customer/signIn/', '<i class="fa fa-sign-in" aria-hidden="true"></i> '.$lang_masuk);?>
+						  </div>
+						</div>
+
+						<?php } ?>
+
+						<div class="btncontact">
+							<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
+
+						</div>
+						<div class="dropdown-lang">
+						  <button class="dropbtn-lang"><i class="fa fa-flag" aria-hidden="true"></i> Bahasa</button>
+						  <div class="dropdown-lang-content">
+							<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
+							<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
+						  </div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12" style='color:#ffffff; wight:bold;'>
+					Total Shopping Experience
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
+
+<script>
+(function(){
+
+  $("#cart").on("click", function() {
+    $(".shopping-cart").fadeToggle( "fast");
+  });
+
+})();
+</script>
