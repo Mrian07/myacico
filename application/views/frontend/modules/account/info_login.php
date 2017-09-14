@@ -19,7 +19,7 @@ $("#logout").click(function(){
 		content: 'Anda yakin akan logout?',
 		buttons: {
 			confirm: function () {
-				//$.alert('Confirmed!');
+				document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 				$(location).attr('href', '<?php echo base_url("account/logout");?>')
 			},
 			cancel: function () {
