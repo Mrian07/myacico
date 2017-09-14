@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -9,7 +11,7 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
 		<!--<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 		<!-- End Bootstrap -->
-		
+
 		<!--<link href="<?php echo base_url('assets/nav/css/bootstrap.min.css');?>" rel="stylesheet">-->
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
@@ -20,9 +22,9 @@
 		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/general/favicon.ico');?>">
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="<?php echo base_url('assets_adminlte/font-awesome-4.7.0/css/font-awesome.min.css') ?>"/>
-		
+
 		<!-- CSS -->
-		
+
 		<!-- s: Alert -->
 		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/libs/bundled.css');?>" />-->
 		<script type="text/javascript" src="<?php echo base_url('assets/alert/libs/bundled.js');?>"></script>
@@ -31,14 +33,15 @@
         <!-- e: Alert -->
 
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jwt-decode.min.js');?>"></script>
-		
+
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
-		
+
     </head>
 
 <body>
 
 <div class="my-header-panel">
+
 	<div class="row">
 		<div class="col-sm-2">
 			<div class='logo'>
@@ -47,6 +50,7 @@
 		</div>		
 		<div class="col-sm-6">
 			<div class='myserach'>
+
 
 						<div class="input-group">
 							<div class="input-group-btn search-panel">
@@ -74,6 +78,7 @@
 			 Mon - Sat [09:00 - 20:00] , Sun [10:00 - 18:00] ,  Open on Holiday</b>
 			</div>
 		</div>
+
 		<div class="col-sm-4" style="background:#11093a; height:100px; padding-top:10px;">
 		
 			<div class="row">
@@ -123,22 +128,18 @@
 							<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
 						  </div>
 						</div>
-						
+							
 					</div>
-				
-				</div>	
-			</div>
+				</div>
+			</div>	
 			<div class="row">
 				<div class="col-sm-12" style='color:#ffffff; wight:bold;'>
 					Total Shopping Experience
 				</div>
-			</div>		
-
-		</div>
-	</div>
+			</div>	
+		</div>	
+	</div>			
 </div>
-<div style="clear:both;"></div>
-
 
 
 <div class="my-header-panel2">
@@ -151,6 +152,7 @@
 		</div>		
 		<div class="col-sm-5">
 			<div class='myserach'>
+
 
 						<div class="input-group">
 							<div class="input-group-btn search-panel">
@@ -178,6 +180,7 @@
 			 Mon - Sat [09:00 - 20:00] , Sun [10:00 - 18:00] ,  Open on Holiday</b>
 			</div>
 		</div>
+
 		<div class="col-sm-4" style="background:#11093a; height:100%; padding-top:10px;">
 		
 			<div class="row">
@@ -223,23 +226,30 @@
 						<div class="dropdown-lang">
 						  <button class="dropbtn-lang"><i class="fa fa-flag" aria-hidden="true"></i> Bahasa</button>
 						  <div class="dropdown-lang-content">
-							<?php //echo anchor('home/lang/'.$url, '<img src="'.base_url('images/general/lang_bahasa.png').'" border="0"> Indonesia', array('id'=>'lang'));  echo anchor('home/lang/'.$url, '<img src="'.base_url('images/general/lang_english.png').'" border="0"> Inggris'); ?>
 							<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
 							<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
 						  </div>
 						</div>
-						
+							
 					</div>
-				
-				</div>	
-			</div>
+				</div>
+			</div>	
 			<div class="row">
 				<div class="col-sm-12" style='color:#ffffff; wight:bold;'>
 					Total Shopping Experience
 				</div>
-			</div>		
-
-		</div>
-	</div>
+			</div>	
+		</div>	
+	</div>			
 </div>
 
+
+<script>
+(function(){
+
+  $("#cart").on("click", function() {
+    $(".shopping-cart").fadeToggle( "fast");
+  });
+
+})();
+</script>
