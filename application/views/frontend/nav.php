@@ -24,7 +24,7 @@
 		  <li><a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a></li>
 		</ul>
 	</li>
-	<li><a data-toggle="tab" href="#home"><i class="fa fa-shopping-bag" aria-hidden="true"></i>
+	<li><a href="#home" data-toggle="modal" data-target="#myCart"><i class="fa fa-shopping-bag" aria-hidden="true"></i>
  My Cart <span class="badge" style="background:#e6e831; color:#000000">3</span> </a></li>
   </ul>
 
@@ -199,3 +199,58 @@
 
     </nav>
     <!-- End Navigation -->
+	
+	
+	
+	<!-- Modal -->
+	<div id="myCart" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header" style='border:0px'>
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			
+		  </div>
+		  <div class="modal-body">
+			
+			<div class="my-cart" style='padding:10px;'>          
+				<table border='0' width='100%'>
+					<tbody>
+						<tr>
+						<td width='30%'><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></td>
+						<td width='60%'>Samsung galaxy<br>Rp.6.000.000</td>
+						<td width='10%'><button type="button" class="btn btn-link"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+						</tr>
+					</tbody>
+				</table>	
+			</div>	
+			
+			<div class="my-cart" style='padding:10px;'>          
+				<table border='0' width='100%'>
+					<tbody>
+						<tr>
+						<td width='30%'><img src="<?php echo base_url('images/demo/samsung2.jpg');?>" border="0" height="50" width="50"></td>
+						<td width='60%'>Samsung 8<br>Rp.1.000.000</td>
+						<td width='10%'><button type="button" class="btn btn-link"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+						</tr>
+					</tbody>
+				</table>	
+			</div>	
+		
+			<div class='my-total-cart'>
+			TOTAL : <b>Rp.7.000.000</b>
+			</div>
+			<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
+
+			
+			
+		  </div>
+		  <!--
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>-->
+		</div>
+
+	  </div>
+	</div>
