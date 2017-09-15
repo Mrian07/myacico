@@ -280,3 +280,5 @@ ul.list-group:after {
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/canon.png');?>"  alt="Smiley face" height="50" width="97"></li>
 
 						</ul></center>
+            <hr>
+            
