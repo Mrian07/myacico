@@ -10,7 +10,7 @@
 
  Account
 		<span class="caret"></span></a>
-		<ul class="dropdown-menu">
+		<ul class="dropdown-menu dropdown-menu-mobile">
 		  <li><a href="#">Login</a></li>
 		  <li><a href="#">Daftar</a></li>
 		</ul>
@@ -19,7 +19,7 @@
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-flag" aria-hidden="true"></i>
  Bahasa
 		<span class="caret"></span></a>
-		<ul class="dropdown-menu">
+		<ul class="dropdown-menu dropdown-menu-mobile">
 		  <li><a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a></li>
 		  <li><a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a></li>
 		</ul>
