@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Account extends Web {
+class Account extends Web_private {
 
 	public function __construct()
     {
