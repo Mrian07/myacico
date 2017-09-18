@@ -79,7 +79,7 @@ class Web extends MY_Controller {
 		//personal
 		$this->data['lang_field_persoanAatas'] = $this->lang->line('field_Create');
 		$this->data['lang_field_selamatDatang'] = $this->lang->line('field_selamat_datang');
-		$this->data['lang_pesan'] = $this->lang->line('field_pesan');
+		$this->data['lang_pesan'] = $this->lang->line('field_pesan2');
 		$this->data['btn_pesan_personal'] = $this->lang->line('btn_kirim_personal');
 		$this->data['field_sudahDaftar'] = $this->lang->line('field_daftar');
 		//end of personal
