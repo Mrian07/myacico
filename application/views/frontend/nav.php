@@ -10,7 +10,7 @@
 
  Account
 		<span class="caret"></span></a>
-		<ul class="dropdown-menu">
+		<ul class="dropdown-menu dropdown-menu-mobile">
 		  <li><a href="#">Login</a></li>
 		  <li><a href="#">Daftar</a></li>
 		</ul>
@@ -19,7 +19,7 @@
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-flag" aria-hidden="true"></i>
  Bahasa
 		<span class="caret"></span></a>
-		<ul class="dropdown-menu">
+		<ul class="dropdown-menu dropdown-menu-mobile">
 		  <li><a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a></li>
 		  <li><a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a></li>
 		</ul>
@@ -35,8 +35,29 @@
 			<div class="top-search">
 				<div class="container">
 					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-bookmark-o" aria-hidden="true"></i></span>					
+						<select class="form-control" style='background:#333333; border:0px; color:#ffffff'>
+							<option value=''>All Categories</option>
+							<option value='Computer'>Computer</option>
+							<option value='Gatget'>Gatget</option>
+							<option value='Communication'>Communication</option>
+							<option value='Audio & Visual'>Audio & Visual</option>
+							<option value='Mechanical & Electrical'>Mechanical & Electrical</option>
+							<option value='Hobby'>Hobby</option>
+							<option value='Peralatan Rumah'>Peralatan Rumah</option>
+							<option value='Perlengkapan Kantor'>Perlengkapan Kantor</option>
+						</select>
+						
+						<input type="hidden" name="search_param" value="all" id="search_param">
+						<!--<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>-->
+					</div>
+					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-search"></i></span>
 						<input type="text" class="form-control" placeholder="Search">
+						<!--<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>-->
+					</div>
+					<div class="input-group">
+						<button type="button" class="btn btn-success btn-sm">Go</button>
 						<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
 					</div>
 				</div>

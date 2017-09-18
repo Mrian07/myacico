@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Account extends Account_private {
+class Account extends Web {
 
 	public function __construct()
     {
@@ -108,7 +108,6 @@ class Account extends Account_private {
 		$this->data['title_web'] = "Myacico.com - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/info_login',$this->data);
 		$this->load->view('frontend/modules/account/bukuAlamat',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
@@ -129,7 +128,6 @@ class Account extends Account_private {
 		$this->data['title_web'] = "Myacico.com - Riwayat Status Pasaran";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/info_login',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
