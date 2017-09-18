@@ -83,6 +83,27 @@ h3 span {
 	font-size:13px;
 }
 
+.my-b-product{
+	/*margin:50px 0px 50px 0px;*/
+	padding: 20px 0px 20px 0px;
+	border-bottom: 1px #d7d7d7 solid; 
+}
+
+/*sidebar left*/
+#showprice{
+	border-top:1px #d7d7d7 solid;
+	border-bottom:1px #d7d7d7 solid;
+	padding:10px 0px 10px 0px;
+}
+
+#slider-price{
+	margin-bottom:10px;
+}
+
+.subshowprice{
+	padding:30px 0px 10px 0px;
+}
+
 .dropbtnaddcar {
     background-color: #c40202;
     color: white;
@@ -864,4 +885,45 @@ a .my-btn-chekout:hover{
 	border-right:0px;
 	border-bottom:0px;
 	padding:10px;
+}
+
+/*Sidebar Right Product*/
+.cart-sidebar-right{
+	background:#edf0ec;
+	border:5px solid #e0e0e0;
+	padding:10px;
+	box-shadow: 0 2px 5px 1px #ccc;
+	position: fixed; 
+	z-index: 999; 
+}
+
+.cart-sidebar-right .title{
+	border-bottom:5px solid #e0e0e0;
+	padding:10px;
+	margin-bottom:10px;
+}
+
+.menu_list {
+    width: 100%;
+}
+.menu_head {
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+    margin:1px;
+	margin-bottom:20px;
+    font-weight:bold;
+    background: url(plus.png) center right no-repeat;
+	border-bottom:1px solid #dddddd;
+}
+.menu_body {
+    display:none;
+}
+
+.plus{ 
+ background-image: url(../../images/general/math-add-icon.png);
+}
+
+.minus {
+ background-image: url(../../images/general/math-minus-icon.png);
 }
