@@ -54,6 +54,30 @@ $this->data['lang_Field_lpPassword'] = $this->lang->line('field_lp_password');
 $this->data['lang_Field_ClickMe'] = $this->lang->line('field_ClickMe');
 //end of signIn
 
+//personal
+$this->data['lang_field_persoanAatas'] = $this->lang->line('field_Create');
+$this->data['lang_field_selamatDatang'] = $this->lang->line('field_selamat_datang');
+$this->data['lang_pesan'] = $this->lang->line('field_pesan');
+$this->data['btn_pesan_personal'] = $this->lang->line('btn_kirim_personal');
+$this->data['field_sudahDaftar'] = $this->lang->line('field_daftar');
+//end of personal
+
+//bussines
+$this->data['lang_welcome'] = $this->lang->line('field_DaftarBisns');
+$this->data['lang_namaDepan'] = $this->lang->line('field_namadepan');
+$this->data['lang_namaBelakang1'] = $this->lang->line('field_namabelakang');
+$this->data['lang_CompanyInfo'] = $this->lang->line('field_CompanyInfo');
+$this->data['lang_comapnytype'] = $this->lang->line('field_Companytipe');
+$this->data['lang_addres'] = $this->lang->line('field_addres');
+$this->data['lang_Country'] = $this->lang->line('field_Contry');
+$this->data['lang_Provience'] = $this->lang->line('field_Provinsi');
+$this->data['lang_kota'] = $this->lang->line('field_city');
+$this->data['lang_Keca'] = $this->lang->line('field_kec');
+$this->data['lang_PostCode'] = $this->lang->line('field_PostCode');
+$this->data['lang_Passwpord'] = $this->lang->line('field_Passeword');
+$this->data['lang_Passwpord2'] = $this->lang->line('field_Passeword2');
+$this->data['lang_BtnSend'] = $this->lang->line('btn_login');
+//end of bussines
 
 		$this->data['title_web'] = "Myacico.com - Login Admin";
 
@@ -61,7 +85,7 @@ $this->data['lang_Field_ClickMe'] = $this->lang->line('field_ClickMe');
 
     public function asset(){
 
-        $this->data['baseApiUrl'] = "http://192.168.0.102:3030/myacico-service/api";
+        $this->data['baseApiUrl'] = "http://myacico.net:8080/myacico-service/api";
 
     }
 

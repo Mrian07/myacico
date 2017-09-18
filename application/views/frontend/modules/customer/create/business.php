@@ -12,11 +12,11 @@
     <div class="col-sm-6">
       <form name="signup" method="post">
         <div class="form-group">
-          <label>Nama Depan*</label>
+          <label><?php echo $lang_namaDepan; ?>*</label>
           <input type="text" name="fname" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>Nama Belakang*</label>
+            <label><?php echo $lang_namaBelakang1; ?>*</label>
           <input type="text" name="lname" class="form-control mandatory" />
         </div>
         <div class="form-group">
@@ -24,11 +24,11 @@
           <input type="email" name="email" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>Informasi Perusahaan*</label>
+      <label><?php echo $lang_CompanyInfo; ?>*</label>
           <input type="text" name="cname" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>Type Perusahaan*</label>
+      <label><?php echo $lang_comapnytype; ?>*</label>
           <select name="bname" class="form-control mandatory" ></select>
         </div>
         <div class="form-group">
@@ -40,42 +40,42 @@
           <input type="text" name="npwp" class="form-control mandatory"/>
         </div>
         <div class="form-group">
-          <label>Alamat*</label>
+          <label><?php echo $lang_addres; ?>*</label>
           <input type="text" name="alamat1" class="form-control mandatory" />
           <input type="text" name="alamat2" class="form-control mandatory" />
         </div>
         <div class="form-group" style="display:none" id="ditric_box">
-          <label>Kecamatan*</label>
+                <label><?php echo $lang_Keca; ?>*</label>
           <select name="kecamatan" id="ditric_sel" class="form-control mandatory"></select>
         </div>
         <div class="form-group" style="display:none" id="city_box">
-          <label>Kota*</label>
+            <label><?php echo $lang_kota; ?>*</label>
           <select name="city" id="city_sel" class="form-control mandatory"></select>
         </div>
         <div class="form-group">
-          <label>Kodepos*</label>
+        <label><?php echo $lang_PostCode; ?>*</label>
           <input type="text" name="zip" class="form-control mandatory" />
         </div>
         <div class="form-group" style="display: none;" id="region_box">
-          <label>Provinsi*</label>
+        <label><?php echo $lang_Provience; ?>*</label>
           <select name="province" id="region_sel" class="form-control mandatory"></select>
         </div>
         <div class="form-group">
-          <label>Negara*</label>
+        <label><?php echo $lang_Country; ?>*</label>
           <select name="country" id="country_sel" class="form-control mandatory" disabled >
             <option value="">--pilih--</option>
           </select>
         </div>
         <div class="form-group">
-          <label>Kata Sandi*</label>
+              <label><?php echo $lang_Passwpord; ?>*</label>
           <input type="password" name="password" class="form-control mandatory" />
         </div>
         <div class="form-group">
-          <label>Konfirmasi Kata Sandi*</label>
+                <label><?php echo $lang_Passwpord2; ?>*</label>
           <input type="password" id="password2" class="form-control" />
         </div>
         <div>
-          <input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+          <input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo $lang_BtnSend ?>">
     			<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
         </div>
 
