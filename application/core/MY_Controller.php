@@ -33,9 +33,21 @@ class Web extends MY_Controller {
 		$this->data['lang_masuk'] = $this->lang->line('masuk');
 		$this->data['lang_ket_daftar_personal'] = $this->lang->line('ket_daftar_personal');
 $this->data['lang_ket_daftar_akunBisnis'] = $this->lang->line('ket_daftar_akunBisnis');
+//button di daftar
 $this->data['lang_btn_personal'] = $this->lang->line('btn_daftar');
 $this->data['lang_btn_bisnis'] = $this->lang->line('btn_daftar_bisnis');
 $this->data['lang_btn_pemerintah'] = $this->lang->line('btn_daftar_pemerintah');
+// akhir dari button daftar
+
+//field di contact
+$this->data['lang_field_ContAtas'] = $this->lang->line('field_atas');
+$this->data['lang_field_ContNama'] = $this->lang->line('field_name');
+$this->data['lang_field_ContEmail'] = $this->lang->line('field_email');
+$this->data['lang_field_ContKeperluan'] = $this->lang->line('field_keperluan');
+$this->data['lang_field_ContMessage'] = $this->lang->line('field_pesan');
+$this->data['lang_btn_Kirim'] = $this->lang->line('btn_kirim');
+//akkhir dari field di contact
+
 		$this->data['title_web'] = "Myacico.com - Login Admin";
 
 	}
