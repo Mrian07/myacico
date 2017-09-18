@@ -64,6 +64,7 @@ var error = function(er){
     content: 'koneksi tidak berhasil, silahkan coba lagi!',
   });
 };
+    var data = {};
 $(document).ready(function() {
 
   $('form').submit(function(e){
@@ -71,7 +72,6 @@ $(document).ready(function() {
 		var email = $("#email").val();
 		var password = $("#password").val();
     var apiurl = baseApiUrl + '/aduser/auth';
-    var data = $(this).serialize();
 
 		if(email==''){
 			$.alert({
@@ -80,6 +80,7 @@ $(document).ready(function() {
 			});
       return false;
 		}
+    data.email=email;
 		if(password==''){
 			$.alert({
 				title: 'Alert!',
@@ -87,16 +88,18 @@ $(document).ready(function() {
 			});
       return false;
 		};
+    data.password=password;
 
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajaxSetup({
+    apiurl = 'http://192.168.1.101:8080/myacico-service/api/aduser/auth';
+    /*$.ajaxSetup({
       error: error,
       timeout: 30000,
       contentType: "application/json; charset=UTF-8"
     });
-    $.post( apiurl, '{"email":"arie@nendy.tk","password":"1234567"}', success, "json" );
-    //$.ajax({ type:"POST", header: {"Content-Type":"application/json"}, data:JSON.toString({"email":"arie@nendy.tk","password":"1234567"}), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
+    $.post( 'http://myacico.net:8080/myacico-service/api/aduser/auth', '{"email":"arie@nendy.tk","password":"1234567"}', success, "json" );*/
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
 
   });
 
