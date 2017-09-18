@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 my-border-title">
-    <h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DAFTAR AKUN BUSINESS</h3>
+    <h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_welcome; ?></h3>
     </div>
   </div>
 
@@ -13,7 +13,7 @@
       <form name="signup" method="post">
         <div class="form-group">
           <label><?php echo $lang_namaDepan; ?>*</label>
-          <input type="text" name="fname" class="form-control mandatory" />
+          <input type="text" name="fname" class="form-control mandatory" /></input>
         </div>
         <div class="form-group">
             <label><?php echo $lang_namaBelakang1; ?>*</label>
@@ -142,7 +142,7 @@ $(document).ready(function() {
     var apiurl = baseApiUrl + '/aduser/add';
     var fl=document.signup;
     var data = $(this).serialize();
-    return alert(data);
+    // return alert(data);
 
     // success handling
 

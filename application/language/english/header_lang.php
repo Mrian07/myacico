@@ -31,7 +31,7 @@ $lang['field_ClickMe'] = 'Click Here..';
 //customer personal
 $lang['field_Create'] = 'Create Account Personal';
 $lang['field_selamat_datang'] = 'Welcome';
-$lang['field_pesan'] = '
+$lang['field_pesan2'] = '
 With register and shopping at myacico.com you can get the following benefits:';
 $lang['btn_kirim_personal'] = 'Login';
 $lang['field_daftar'] = 'Already Have A Account ?';

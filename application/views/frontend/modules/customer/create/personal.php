@@ -1,20 +1,51 @@
+<style>
+p{
+margin-bottom: 5px;
+}
+.p1 {
+color: red;
+margin-left: 12px;
+margin-top: -11px;
+}
+
+</style>
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+
 <div class="container">
 	<div class="row">
 	  <div class="col-sm-12">
 		<div class="my-border-title">
-			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DAFTAR AKUN PRIBADI</h3>
+			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i><?php echo $lang_field_persoanAatas; ?></h3>
 		</div>
 	  </div>
 	</div>
-
 	<div class="row">
-		<div class="col-sm-3">
 
+		<div class="col-sm-3">
+<h4> <?php echo $lang_field_selamatDatang; ?> </h4>
+<p> <?php
+	echo $lang_pesan;
+ ?>
+ </p>
+ 	<p>
+		1.DELIVERY
+	</p>
+	<p class="p1">
+2x24 hours delivery on weekdays for all areas of JABODETABEK and free delivery to all area in Indonesia.
+	</p>
+	<p>
+		2. RETURN
+	</p>
+	<p class="p1">
+		Damage to goods caused by errors from the manufacturer of goods, can be exchanged within 7 working days or money back within 2x24 hours.
+	</p>
 		</div>
 	  <div class="col-sm-6">
+
 		<div class='border-create'>
 		 <form name="signup" method="post">
 		  <div class="form-group">
+
 			<label>Nama:</label>
 			<input type="text" id="nama" name="name" class="form-control" placeholder="" />
 		  </div>
@@ -32,14 +63,14 @@
 		  </div>
 		  <div class="row">
 			<div class="col-sm-6">
-				<input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+				<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo $btn_pesan_personal?>">
 				<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 			</div>
 			<div class="col-sm-6" style='text-align: right'>
-				Sudah mendaftar ? <?php echo anchor('customer/signIn', 'Log In'); ?>
-			</div>	
-		  </div>	
-		  
+				<?php echo $field_sudahDaftar; ?> <?php echo anchor('customer/signIn', 'Log In'); ?>
+			</div>
+		  </div>
+
 		</form>
 		</div>
 	  </div>
