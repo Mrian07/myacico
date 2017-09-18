@@ -20,7 +20,16 @@ $lang['field_pesan'] = 'Message';
 
 //button di contact
 $lang['btn_kirim'] = 'Send';
-//akhir dari button
+//akhir button contact
+
+//button di signIn
+$lang['btn_kirim1'] = 'Login';
+$lang['field_lp_password'] = 'Forget Your Password ?';
+$lang['field_ClickMe'] = 'Click Here..';
+
+
+//akhir button di signIn
+
 
 
 ?>

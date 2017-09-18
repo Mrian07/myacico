@@ -24,12 +24,12 @@
     		  </div>
 			  <div class="row">
 				<div class="col-sm-6">
-					<input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+					<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo $lang_btn_SignIn ?>">
 					<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 				</div>
 				<div class="col-sm-6" style='text-align: right'>
-					<p class="change_link">Lupa password ?
-						<?php echo anchor('customer/lostPassword/', 'Click disini');?>
+					<p class="change_link"><?php echo $lang_Field_lpPassword; ?>
+						<?php echo anchor('customer/lostPassword/', $lang_Field_ClickMe);?>
 					</p>
 				</div>
 			</div>

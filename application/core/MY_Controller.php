@@ -48,6 +48,13 @@ $this->data['lang_field_ContMessage'] = $this->lang->line('field_pesan');
 $this->data['lang_btn_Kirim'] = $this->lang->line('btn_kirim');
 //akkhir dari field di contact
 
+// signIn
+$this->data['lang_btn_SignIn'] = $this->lang->line('btn_kirim1');
+$this->data['lang_Field_lpPassword'] = $this->lang->line('field_lp_password');
+$this->data['lang_Field_ClickMe'] = $this->lang->line('field_ClickMe');
+//end of signIn
+
+
 		$this->data['title_web'] = "Myacico.com - Login Admin";
 
 	}

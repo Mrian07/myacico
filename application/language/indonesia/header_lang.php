@@ -22,6 +22,10 @@ $lang['field_pesan'] = 'Pesan Anda';
 
 //button di contact
 $lang['btn_kirim'] = 'Kirim';
+//akhir button contact
 
+//field di signIn
+$lang['btn_kirim1'] = 'Masuk';
+//akhir filed di signIn
 
 ?>
