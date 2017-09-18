@@ -71,7 +71,7 @@ $(document).ready(function() {
     e.preventDefault();
 		var email = $("#email").val();
 		var password = $("#password").val();
-    var apiurl = baseApiUrl + '/aduser/auth';
+    var apiurl = baseApiUrl + '/aduser/masuk';
 
 		if(email==''){
 			$.alert({
@@ -92,13 +92,6 @@ $(document).ready(function() {
 
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    apiurl = 'http://192.168.1.101:8080/myacico-service/api/aduser/auth';
-    /*$.ajaxSetup({
-      error: error,
-      timeout: 30000,
-      contentType: "application/json; charset=UTF-8"
-    });
-    $.post( 'http://myacico.net:8080/myacico-service/api/aduser/auth', '{"email":"arie@nendy.tk","password":"1234567"}', success, "json" );*/
     $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
 
   });
