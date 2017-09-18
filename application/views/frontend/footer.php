@@ -10,14 +10,15 @@
 			<div class="col-sm-3">
 				<h3><span>EMAIL NEWSLETTER</span></h3>
 				Sign up for MyAcico news & Special Offers
-				
-				<div class="input-group">   
+
+				<div class="input-group">
 					<input type="text" class="my-sub-field" name="x" placeholder="Search term...">
 					<span class="input-group-btn">
-						<button class="btn btn-default my-sub-button" type="button">SUBSCRIBE</button>
+						<button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button>
+						
 					</span>
 				</div>
-				
+
 			</div>
 			<div class="col-sm-3">
 				<h3><span>DELIVERY</span></h3>
@@ -43,7 +44,7 @@
 			</div>
 			<div class="col-sm-3">
 				<h3><span>IKUTI KAMI</span></h3>
-				
+
 				<div class='sos'>
 				<ul>
 				  <li><a class="active" href="#home"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -57,20 +58,20 @@
 				<h3><span>PENGIRIMAN</span></h3>
 				<img src='<?php echo base_url('images/general/logo_kurir_kecil.png');?>' border='0'/>
 			</div>
-		</div>	
+		</div>
 		<div class="row my-foot-box">
 			<div class="col-sm-3">
 				<h3><span>PEMBAYARAN</span></h3>
 
-			</div>	
-		</div>		
-		
+			</div>
+		</div>
+
 	</div>
 	<div class='cpyright'>
 		Copyright &copy; 2017 PT. MyAcico Global Indonesia. All Rights Reserved.
 	</div>
 </div>
-		
+
 </body>
 
 <!-- START JAVASCRIPT -->
@@ -93,9 +94,9 @@ $("#btnTop").click(function() {
 
 $(document).ready(function() {
 	$('#alertSubmit').show('slow').delay(5000).hide('slow');
-		
-});	
-</script>  
+
+});
+</script>
 
 <script>
 	$(document).ready(function(e){
@@ -111,17 +112,17 @@ $(document).ready(function() {
 
 <script>
 	function langFunction($data){
-		
+
 		var lang = $data;
 		var data = 'lang='+ lang;
 		var url = "<?php echo site_url('home/switchLang'); ?>";
 		var success = function(html)
-		{	
+		{
 			 location.reload();
 		}
-		
+
 		$.post( url, data, success);
 	}
 </script>
-		
+
 </html>

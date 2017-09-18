@@ -37,7 +37,7 @@
     </head>
 
 <body>
-
+<img src="<?php echo base_url('images/general/Bg-atas-acico.png'); ?>" border="0">
 <div class="my-header-panel">
 
 	<div class="row">
@@ -88,21 +88,36 @@
 						<div class="dropdown-basket">
 						  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
 						  <div class="dropdown-basket-content">
-								<?php echo anchor('customer/cart', 'cart');?>
-							<a href="#">Item Kosong</a>
+
+								<div class="row my-cart">
+								  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
+								  <div class="col-sm-7">Samsung galaxy<br>Rp.6.000.000</div>
+								  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+								</div>
+
+								<div class="row my-cart">
+								  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung2.jpg');?>" border="0" height="50" width="50"></div>
+								  <div class="col-sm-7">Samsung 8<br>Rp.1.000.000</div>
+								  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+								</div>
+								<div class='my-total-cart'>
+								TOTAL : <b>Rp.7.000.000</b>
+								</div>
+								<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
+
 						  </div>
 						</div>
 
 
 						<?php if(isset($user->name)){ ?>
-						<div class="dropdown">
-							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount Anda
-							<span class="caret"></span></button>
-							<ul class="dropdown-menu">
-							<li><?php echo anchor('account/', 'Profile Anda');?></li>
-							<li class="divider"></li>
-							<li><a href="#">Logout</a></li>
-							</ul>
+
+
+						<div class="dropdown-account">
+						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
+						  <div class="dropdown-account-content">
+							<?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
+							<?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('id'=>'logout'));?>
+						  </div>
 						</div>
 
 						<?php }else{ ?>
@@ -191,7 +206,23 @@
 						<div class="dropdown-basket">
 						  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
 						  <div class="dropdown-basket-content">
-							<a href="#">Item Kosong</a>
+
+								<div class="row my-cart">
+								  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
+								  <div class="col-sm-7">Samsung galaxy<br>Rp.6.000.000</div>
+								  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+								</div>
+
+								<div class="row my-cart">
+								  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung2.jpg');?>" border="0" height="50" width="50"></div>
+								  <div class="col-sm-7">Samsung 8<br>Rp.1.000.000</div>
+								  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+								</div>
+								<div class='my-total-cart'>
+								TOTAL : <b>Rp.7.000.000</b>
+								</div>
+								<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
+
 						  </div>
 						</div>
 
@@ -251,4 +282,25 @@
   });
 
 })();
+</script>
+
+<script type="text/javascript">
+
+$("#logout").click(function(){
+
+	$.confirm({
+		title: 'Confirm!',
+		content: 'Anda yakin akan logout?',
+		buttons: {
+			confirm: function () {
+				//$.alert('Confirmed!');
+				$(location).attr('href', '<?php echo base_url("account/logout");?>')
+			},
+			cancel: function () {
+				//$.alert('Canceled!');
+			}
+		}
+	});
+
+});
 </script>

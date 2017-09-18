@@ -28,20 +28,20 @@ function myMap() {
 		Jakarta Pusat 10160</h5>
 		</div>
 		<div class="col-sm-8">
-			<p>Silakan hubungi kami melalui kolom dibawah ini.</p>
-
+			<!-- <p>Silakan hubungi kami melalui kolom dibawah ini.</p> -->
+        <p> <?php echo $lang_field_ContAtas; ?>
 
 			<form action=''>
 			<div class="form-group">
-			<label>Nama Anda</label>
+			<label><?php echo $lang_field_ContNama; ?></label>
 			<input type="text" id="nama" name="nama" class="form-control mandatory" />
 			</div>
 			<div class="form-group">
-			<label>Email Anda</label>
+			<label><?php echo $lang_field_ContEmail; ?></label>
 			<input type="email" id="email" name="email" class="form-control mandatory" />
 			</div>
 			<div class="form-group">
-			<label>Keperluan</label>
+			<label><?php echo $lang_field_ContKeperluan; ?></label>
 			<select id='keperluan' name='keperluan' class="form-control mandatory">
 				<option value=''>-Pilih-</option>
 				<option value='Product Issue'>Product Issue</option>
@@ -53,10 +53,10 @@ function myMap() {
 			</select>
 			</div>
 			<div class="form-group">
-			<label>Pesan</label>
+			<label><?php echo $lang_field_ContMessage;?></label>
 			<textarea class="form-control mandatory" rows="5" id="pesan" name='pesan'></textarea>
 			</div>
-			<input type="submit" class="btn btn-primary" id="submit_btn" value="Kirim">  <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+			<input type="submit" class="btn btn-primary" id="submit_btn" value="<?php echo $lang_btn_Kirim; ?>">  <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 			</form>
 			<br><br>
 		</div>
@@ -67,7 +67,7 @@ function myMap() {
 <script type="text/javascript">
 
 $(document).ready(function() {
-	
+
 	$("form").submit(function(e){
 		e.preventDefault();
 		// do validation
@@ -84,7 +84,7 @@ $(document).ready(function() {
 		if(form_ok==false) return false;
 
 		$('#spinner_img').show();
-		$('#submit_btn').val('Loading...').addClass('disabled');		
+		$('#submit_btn').val('Loading...').addClass('disabled');
 
 		/*var nama=$('#nama').val();
 		var email=$('#email').val();
@@ -93,7 +93,7 @@ $(document).ready(function() {
 		var data = $(this).serialize();
 		var url = "<?php echo site_url('customer/prosesContact'); ?>";
 		var success = function(html)
-		{	
+		{
 			if(html=='gagal'){
 				$.alert({title:'Alert', content: ' Pesan gagal terkirim silakan coba kembali!'});
 				$('#spinner_img').hide();
@@ -103,7 +103,7 @@ $(document).ready(function() {
 				location.href="<?php echo site_url('customer/messageSent'); ?>";
 			}
 		}
-		
+
 		$.post( url, data, success);
 		$('.mandatory').prop('disabled', true);
   });
