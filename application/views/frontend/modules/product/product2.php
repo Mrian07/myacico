@@ -148,7 +148,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="images/57.png" alt=" " class="img-responsive" /></a>
+											<a href="<?php echo site_url('product/product3') ?>"><img src="<?php echo base_url('images/banner/57.png');?>"  alt=" " class="img-responsive" /></a>
 											<p>can - tuna for cats (400 gm)</p>
 											<h4>$8.00 <span>$10.00</span></h4>
 										</div>
