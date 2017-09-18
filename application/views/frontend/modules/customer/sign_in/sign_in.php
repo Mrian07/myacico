@@ -24,12 +24,12 @@
     		  </div>
 			  <div class="row">
 				<div class="col-sm-6">
-					<input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+					<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo $lang_btn_SignIn ?>">
 					<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 				</div>
 				<div class="col-sm-6" style='text-align: right'>
-					<p class="change_link">Lupa password ?
-						<?php echo anchor('customer/lostPassword/', 'Click disini');?>
+					<p class="change_link"><?php echo $lang_Field_lpPassword; ?>
+						<?php echo anchor('customer/lostPassword/', $lang_Field_ClickMe);?>
 					</p>
 				</div>
 			</div>
@@ -64,14 +64,14 @@ var error = function(er){
     content: 'koneksi tidak berhasil, silahkan coba lagi!',
   });
 };
+    var data = {};
 $(document).ready(function() {
 
   $('form').submit(function(e){
     e.preventDefault();
 		var email = $("#email").val();
 		var password = $("#password").val();
-    var apiurl = baseApiUrl + '/aduser/auth';
-    var data = $(this).serialize();
+    var apiurl = baseApiUrl + '/aduser/masuk';
 
 		if(email==''){
 			$.alert({
@@ -80,6 +80,7 @@ $(document).ready(function() {
 			});
       return false;
 		}
+    data.email=email;
 		if(password==''){
 			$.alert({
 				title: 'Alert!',
@@ -87,16 +88,11 @@ $(document).ready(function() {
 			});
       return false;
 		};
+    data.password=password;
 
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajaxSetup({
-      error: error,
-      timeout: 30000,
-      contentType: "application/json; charset=UTF-8"
-    });
-    $.post( apiurl, '{"email":"arie@nendy.tk","password":"1234567"}', success, "json" );
-    //$.ajax({ type:"POST", header: {"Content-Type":"application/json"}, data:JSON.toString({"email":"arie@nendy.tk","password":"1234567"}), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
 
   });
 
