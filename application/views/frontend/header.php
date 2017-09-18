@@ -29,6 +29,10 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/alert/js/jquery-confirm.js');?>"></script>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/css/jquery-confirm.css');?>" />
         <!-- e: Alert -->
+		
+		<!-- s: Slider Price -->
+		<link rel="stylesheet" href="<?php echo base_url('assets/sliderprice/jquery-ui.css');?>">
+		<!-- e: Slider Price -->
 
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jwt-decode.min.js');?>"></script>
 
