@@ -9,7 +9,7 @@
     <div class="row">
 	  <div class="col-sm-4">
 		<div class='border-create'>
-			Untuk pribadi yang ingin belanja di myacico.com
+			<?php echo $lang_ket_daftar_personal; ?>
 			<div class='my-btn-create'><?php echo anchor('customer/personal/', 'DAFTAR AKUN PERSONAL', array('class'=>'my-link-create'));?></div>
 		</div>
 	  </div>

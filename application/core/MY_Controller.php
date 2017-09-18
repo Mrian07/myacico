@@ -30,6 +30,7 @@ class Web extends MY_Controller {
 		//Lang
 		$this->data['lang_daftar'] = $this->lang->line('daftar');
 		$this->data['lang_masuk'] = $this->lang->line('masuk');
+		$this->data['lang_ket_daftar_personal'] = $this->lang->line('ket_daftar_personal');
 		
 		$this->data['title_web'] = "Myacico.com - Login Admin";
 		
