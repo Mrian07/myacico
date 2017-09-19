@@ -581,6 +581,7 @@
             data.forEach(function(m){
                 console.log(m);
                 var ul = $(document.createElement('div')).attr({"class":"dropdown-menu megamenu-content", role:"menu"});
+                ul.append('<img src="'+m.imageurl+'" style="float:right;width:200px"/>');
                 m.c2.forEach(function(m2){
                     ul.append('<div class="col-menu col-md-2"><a href="#">'+m2.name+'</a></div>');
                 });
