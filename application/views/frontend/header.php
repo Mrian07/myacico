@@ -4,6 +4,9 @@
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $title_web; ?></title>
+		
+		
+		
 		<!-- Strat Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
@@ -35,9 +38,17 @@
 		<!-- e: Slider Price -->
 
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jwt-decode.min.js');?>"></script>
-
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
 
+		<!-- s: Slider Product -->
+		<link rel="stylesheet" href="<?php echo base_url('assets/css/slider-product.css');?>">
+		<!-- e: Slider Product -->
+
+		
+
+		
+		
     </head>
 
 <body>
