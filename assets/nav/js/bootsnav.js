@@ -573,7 +573,25 @@
     
     // Initialize
     $(document).ready(function(){
-        bootsnav.initialize();
+        $.get("http://myacico.net:8080/myacico-service/api/category/list",
+        function(data){
+            console.log('getmenu:', data);
+            var mn = $('#navbar-menu').children();
+            mn.html('');
+            data.forEach(function(m){
+                console.log(m);
+                var ul = $(document.createElement('div')).attr({"class":"dropdown-menu megamenu-content", role:"menu"});
+                m.c2.forEach(function(m2){
+                    ul.append('<div class="col-menu col-md-2"><a href="#">'+m2.name+'</a></div>');
+                });
+                mn.append(
+                    $(document.createElement('li')).attr("class","dropdown megamenu-fw")
+                    .append('<a href="#" class="dropdown-toggle" data-toggle="dropdown">'+m.name+'</a>')
+                    .append(ul)
+                );
+            });
+            bootsnav.initialize();
+        });
     });
     
     // Reset on resize
