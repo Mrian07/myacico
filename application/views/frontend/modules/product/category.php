@@ -348,7 +348,7 @@ button {    margin-top: 6px;
 	
 	
 </div><!-------container----->
-
+<br><br>
 
 <script>
 $('#myCarousel').carousel({
