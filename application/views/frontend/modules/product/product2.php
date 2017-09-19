@@ -131,7 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="w3l_banner_nav_right">
 			<div class="w3l_banner_nav_right_banner9 w3l_banner_nav_right_banner_pet">
-				<h4>Your Pet Favourite Food</h4>
+				<h4>Smartphone Samsung</h4>
 				<p>Sint occaecat cupidatat non proident</p>
 				<a href="single.html">Shop Now</a>
 			</div>
