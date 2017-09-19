@@ -150,12 +150,13 @@ class Account extends Web_private {
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/Wishlist',$this->data);
 		$this->load->view('frontend/footer',$this->data);
+			// $this->load->view('frontend/footer',$this->data);
 	}
-	
+
 	public function logout()
-    {	
+    {
 		$data = array('cust_email' => '', 'cust_pass' => '', 'cust_login' => '');
 		$this->session->set_userdata($data);
 		redirect('customer/signIn');
-	}	
+	}
 }
