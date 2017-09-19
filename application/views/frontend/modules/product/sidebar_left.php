@@ -25,27 +25,54 @@
 	</div>
 	
 	<div id="pane" class="menu_list">
-		<p class="menu_head plus">Harga
+		<p class="menu_head plus">Sale
 		</p>
 		<div class="menu_body">
-			
-			
-			<div id="slider-price"></div>
-				<div class="row">
-					<div class="col-md-12 kiri">
-						<div class="input-group">
-						<span class="input-group-addon" id="basic-addon2">Rp</span>
-						<input id="slider-price-low" type="text" class="form-control" aria-describedby="basic-addon2">
-						</div>
-					</div>
-					<div class="col-md-12 kanan">
-						<div class="input-group">
-							<span class="input-group-addon" id="basic-addon2">Rp</span>
-							<input id="slider-price-high" type="text" class="form-control" aria-describedby="basic-addon2">
-						</div>
-					</div>
-				</div>
-			
+
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				On Sale
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				Not On Sale
+				</label>
+			</div>
+
+		</div>
+	</div>
+	
+	<div id="pane" class="menu_list">
+		<p class="menu_head plus">Brand
+		</p>
+		<div class="menu_body">
+
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				ADVAN
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				ASUS
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				LENOVO
+				</label>
+			</div>
 			
 		</div>
 	</div>
