@@ -120,6 +120,40 @@
                 <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="active"><?php echo anchor('home/', '<span class="glyphicon glyphicon-home"></span>');?></li>
                     <li><?php echo anchor('product/', 'Product');?></li>
+					<li><?php echo anchor('product/category', 'Category');?></li>
+					<li class="dropdown megamenu-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Megamenu One</a>
+                        <ul class="dropdown-menu megamenu-content" role="menu">
+                            <li>
+                                <div class="row">
+                                    <div class="row" style='color:#000000'>
+										<div class="col-menu col-md-2">
+											<img src="<?php echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100"><br>
+											Samsung
+										</div>
+										<div class="col-menu col-md-2">
+											Samsung
+										</div>
+										<div class="col-menu col-md-2">
+											Samsung
+										</div>
+										<div class="col-menu col-md-2">
+											Samsung
+										</div>
+										<div class="col-menu col-md-2">
+											Samsung
+										</div>
+										<div class="col-menu col-md-2">
+											Samsung
+										</div>
+										<div class="col-menu col-md-2">
+											Samsung
+										</div>
+									</div>	
+                                </div><!-- end row -->
+                            </li>
+                        </ul>
+                    </li>
                     <li class="dropdown megamenu-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Megamenu</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
