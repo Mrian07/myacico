@@ -252,6 +252,26 @@
 							<li><a href="#" id="logout">Logout</a></li>
 							</ul>
 						</div>
+<script type="text/javascript">
+$("#logout").click(function(e){
+    e.preventDefault();
+
+	$.confirm({
+		title: 'Confirm!',
+		content: 'Anda yakin akan logout?',
+		buttons: {
+			confirm: function () {
+				document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+				location.href='<?php echo base_url("customer/signIn");?>';
+			},
+			cancel: function () {
+				//$.alert('Canceled!');
+			}
+		}
+	});
+
+});
+</script>
 
 						<?php }else{ ?>
 						<div class="dropdown-account">
@@ -300,23 +320,6 @@
 </script>
 
 <script type="text/javascript">
-
-$("#logout").click(function(e){
-    e.preventDefault();
-
-	$.confirm({
-		title: 'Confirm!',
-		content: 'Anda yakin akan logout?',
-		buttons: {
-			confirm: function () {
-				document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-				location.href='<?php echo base_url("customer/signIn");?>';
-			},
-			cancel: function () {
-				//$.alert('Canceled!');
-			}
-		}
-	});
-
-});
+var base_url = '<?php echo base_url();?>';
+var api_base_url = 'http://myacico.net:8080/myacico-service/api';
 </script>
