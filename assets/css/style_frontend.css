@@ -74,7 +74,7 @@ h3 span {
 }
 
 .title-product a:hover{
-	color:#4b4b4b;	
+	color:#f44646;	
 	text-decoration: none;
 }
 
@@ -157,6 +157,47 @@ h3 span {
 
 .btnaddcart:hover .dropbtnaddcar {
     background-color: #950909;
+}
+
+
+.dropbtnpaycar {
+    background-color: #ffffff;
+	border: 1px solid #c40202;
+    color: #111111;
+    font-size: 12px;
+	margin-top:10px;
+	border-radius:50px;
+	width:100%;
+}
+
+.btnpaycart {
+	text-align:center;
+}
+
+.btnpaycart-content {
+    display: none;
+    position: absolute;
+    background-color: #ebd542;
+	/*border-color: 1px #ebd542 solid; */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.btnpaycart-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.btnpaycart:hover .btnpaycart-content {
+    display: block;
+}
+
+.btnpaycart:hover .dropbtnpaycar {
+    background-color: #950909;
+	color: #ffffff;
 }
 
 /*e: Product*/
@@ -916,8 +957,8 @@ a .my-btn-chekout:hover{
 
 /*Sidebar Right Product*/
 .cart-sidebar-right{
-	background:#edf0ec;
-	border:5px solid #e0e0e0;
+	background:#ffffff;
+	border:2px solid #e0e0e0;
 	padding:10px;
 	box-shadow: 0 2px 5px 1px #ccc;
 	position: fixed; 
