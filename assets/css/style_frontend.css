@@ -704,6 +704,10 @@ a .my-btn-chekout:hover{
 	display: none;
 }
 
+.sidebar-left-mobile{
+	display: none;
+}
+
 @media screen and (max-width:1024px) {
 	.my-header-panel{
 		display: none;
@@ -745,6 +749,14 @@ a .my-btn-chekout:hover{
 
 @media screen and (max-width:500px) {
 	
+	.sidebar-left-mobile{
+		display: block;
+	}
+	
+	.sidebar-left-desktop{
+		display: none;
+	}
+
 	.navbar-brand{
 		display: block;
 	}
