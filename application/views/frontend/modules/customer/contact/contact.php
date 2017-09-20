@@ -56,6 +56,14 @@ function myMap() {
 			<label><?php echo $lang_field_ContMessage;?></label>
 			<textarea class="form-control mandatory" rows="5" id="pesan" name='pesan'></textarea>
 			</div>
+			<div class="form-group">
+			<?php echo $image;?><br>
+			<label for="pwd">Security Code:</label>			 
+			<input type='text' size='10' class="form-control mandatory" name='secutity_code' id='secutity_code'/>
+			</div>
+			<p>
+			<?php echo form_error('secutity_code', '<p class="field_error">', '</p>');?>
+			</p>
 			<input type="submit" class="btn btn-primary" id="submit_btn" value="<?php echo $lang_btn_Kirim; ?>">  <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 			</form>
 			<br><br>
@@ -96,6 +104,11 @@ $(document).ready(function() {
 		{
 			if(html=='gagal'){
 				$.alert({title:'Alert', content: ' Pesan gagal terkirim silakan coba kembali!'});
+				$('#spinner_img').hide();
+				$('#submit_btn').val('Kirim').removeClass('disabled');
+				$('.mandatory').prop('disabled', false);
+			}else if(html=='gagal_captcha'){
+				$.alert({title:'Alert', content: ' Security Code yang Anda masukan salah !'});
 				$('#spinner_img').hide();
 				$('#submit_btn').val('Kirim').removeClass('disabled');
 				$('.mandatory').prop('disabled', false);

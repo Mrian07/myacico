@@ -68,7 +68,28 @@ class Customer extends Web {
 	}
 
 	public function contact()
-	{
+	{	$this->load->helper(array('captcha','url'));
+	
+		$random_number = substr(number_format(time() * rand(),0,'',''),0,6);
+		$vals = array(
+			'word' => $random_number,	
+			'img_path'	 => './captcha/',
+			'img_url'	 => base_url().'captcha/',
+			'img_width'	 => '200',
+			'img_height' => 32,
+			'border' => 0, 
+			'expiration' => 7200
+		);
+
+		// create captcha image
+		$cap = create_captcha($vals);
+
+		// store image html code in a variable
+		$this->data['image'] = $cap['image'];
+
+		// store the captcha word in a session
+		$this->session->set_userdata('mycaptcha', $cap['word']);
+	
 		$this->data['title_web'] = "Myacico.com - Create Account Business";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -81,16 +102,21 @@ class Customer extends Web {
 		$email_from = $this->input->post('email');
 		$subject = $this->input->post('keperluan');
 		$message = $this->input->post('pesan');
+		$secutity_code = $this->input->post('secutity_code');
 
 		$email_to='lalang@myacico.com';
-
-		if($this->sendMail($email_from,$nm_from,$email_to,$subject,$message)==true)
-		{
-			echo "terkirim";
+		
+		if((strtolower($secutity_code) == strtolower($this->session->userdata('mycaptcha')))){
+		
+			if($this->sendMail($email_from,$nm_from,$email_to,$subject,$message)==true)
+			{
+				echo "terkirim";
+			}else{
+				echo "gagal";
+			}
 		}else{
-			echo "gagal";
+			echo "gagal_captcha";
 		}
-
 	}
 
 	public function messageSent()
