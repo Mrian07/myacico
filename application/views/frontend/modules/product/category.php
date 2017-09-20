@@ -62,9 +62,9 @@
 
 
 		<div class="container">
-		<h4>NEW COLLECTION</h4>
-	<div class="row">
+	<div class="row" id="collection_box">
 
+      <h4>NEW COLLECTION</h4>
     	<!-- BEGIN PRODUCTS -->
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail">
@@ -248,6 +248,7 @@
 	</div>
 	
 	<hr size='1'>
+  <p id="tes"></p>
 	
 	<h4>Bestseller Products</h4>
 <!--<div class="col-md-12 col-md-offset-3" style='background:#dddddd'>-->
@@ -283,15 +284,8 @@
   <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
   <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
-
-
 	
-	
-	
-	
-</div><!-------container----->
-<br><br>
-
+</div>
 <script>
 $('#myCarousel').carousel({
   interval: 4000
@@ -313,4 +307,23 @@ $('.carousel .item').each(function(){
     next.children(':first-child').clone().appendTo($(this));
   }
 });
+  $.get(api_base_url+"/category/listc3?c2id=<?php echo $cat_id; ?>",
+  function(data){
+    console.log('get_cat:', data);
+    var box = $('#collection_box');
+    box.html('<h4>'+data.subName+'</h4>');
+    if(data.subValue.length == 0) return box.append('<p>Data tidak ditemukan</p>');
+
+    data.subValue.forEach(function(p){
+      //console.log(p);
+      box.append(
+        $(document.createElement('div')).attr("class","col-md-3 col-sm-6").append(
+          $(document.createElement('span')).attr("class","thumbnail").append(
+            '<img src="'+p.imageurl+'" alt="...">',
+            '<h4>'+p.name+'</h4>'
+          )
+        )
+      );
+    });
+  });
 </script>

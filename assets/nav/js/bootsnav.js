@@ -583,7 +583,7 @@
                 var ul = $(document.createElement('div')).attr({"class":"dropdown-menu megamenu-content", role:"menu"});
                 ul.append('<img src="'+m.imageurl+'" style="float:right;width:200px"/>');
                 m.c2.forEach(function(m2){
-                    ul.append('<div class="col-menu col-md-2"><a href="#">'+m2.name+'</a></div>');
+                    ul.append('<div class="col-menu col-md-2"><a href="'+base_url+'product/category/'+m2.categorySubId+'" title="'+m2.categorySubId+'">'+m2.name+'</a></div>');
                 });
                 mn.append(
                     $(document.createElement('li')).attr("class","dropdown megamenu-fw")
