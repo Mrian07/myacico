@@ -1,6 +1,18 @@
 
 
+<style>
+a{
+color:grey;
+display:inline-block;
 
+}
+a:hover{
+  color:red;
+  text-decoration: none;
+}
+
+
+</style>
 
 <ul class="nav nav-tabs my-tab-menu">
    <!-- <li class="active"><a data-toggle="tab" href="#home"><span class="glyphicon glyphicon-home"></span> Home</a></li>-->
@@ -35,7 +47,7 @@
 			<div class="top-search">
 				<div class="container">
 					<div class="input-group">
-						<span class="input-group-addon"><i class="fa fa-bookmark-o" aria-hidden="true"></i></span>					
+						<span class="input-group-addon"><i class="fa fa-bookmark-o" aria-hidden="true"></i></span>
 						<select class="form-control" style='background:#333333; border:0px; color:#ffffff'>
 							<option value=''>All Categories</option>
 							<option value='Computer'>Computer</option>
@@ -47,7 +59,7 @@
 							<option value='Peralatan Rumah'>Peralatan Rumah</option>
 							<option value='Perlengkapan Kantor'>Perlengkapan Kantor</option>
 						</select>
-						
+
 						<input type="hidden" name="search_param" value="all" id="search_param">
 						<!--<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>-->
 					</div>
@@ -149,7 +161,7 @@
 										<div class="col-menu col-md-2">
 											Samsung
 										</div>
-									</div>	
+									</div>
                                 </div><!-- end row -->
                             </li>
                         </ul>
@@ -254,9 +266,9 @@
 
     </nav>
     <!-- End Navigation -->
-	
-	
-	
+
+
+
 	<!-- Modal -->
 	<div id="myCart" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
@@ -265,11 +277,11 @@
 		<div class="modal-content">
 		  <div class="modal-header" style='border:0px'>
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
-			
+
 		  </div>
 		  <div class="modal-body">
-			
-			<div class="my-cart" style='padding:10px;'>          
+
+			<div class="my-cart" style='padding:10px;'>
 				<table border='0' width='100%'>
 					<tbody>
 						<tr>
@@ -278,10 +290,10 @@
 						<td width='10%'><button type="button" class="btn btn-link"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
 						</tr>
 					</tbody>
-				</table>	
-			</div>	
-			
-			<div class="my-cart" style='padding:10px;'>          
+				</table>
+			</div>
+
+			<div class="my-cart" style='padding:10px;'>
 				<table border='0' width='100%'>
 					<tbody>
 						<tr>
@@ -290,16 +302,16 @@
 						<td width='10%'><button type="button" class="btn btn-link"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
 						</tr>
 					</tbody>
-				</table>	
-			</div>	
-		
+				</table>
+			</div>
+
 			<div class='my-total-cart'>
 			TOTAL : <b>Rp.7.000.000</b>
 			</div>
 			<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
 
-			
-			
+
+
 		  </div>
 		  <!--
 		  <div class="modal-footer">
