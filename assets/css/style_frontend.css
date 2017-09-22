@@ -10,6 +10,7 @@ body {
 	color: #111111;
 	font-family: Verdana;
 	font-size: 12px;
+	font-family: sans-serif;
 }
 
 h3 span {
@@ -281,7 +282,7 @@ h3 span {
 
 .myserach{ 
 	float: left;
-	/*width: 57%;*/
+	width: 100%;
 	/*padding:20px;*/
 	margin-right:20px;
 }
@@ -559,7 +560,7 @@ a .my-btn-chekout:hover{
 
 .my-search-field{
 	width: 100%;
-    padding: 17px;
+    padding: 14px;
     margin: 8px 0;
     box-sizing: border-box;
 	background: #f2f1f1;
@@ -736,6 +737,59 @@ a .my-btn-chekout:hover{
 	/*color:#111111;*/
 	background-color: #000000;
 }
+
+/*DETAIL PRODUCT*/
+.my-detail-product{
+	margin:20px;
+}
+
+.detail-product{
+	margin-left:-40px;
+}
+
+.line-detail-product{
+	margin-bottom:25px;
+}
+
+.red-tx {
+    color: #c40202;
+}
+
+.my-product-tab{
+	padding:20px;
+	background:#dddddd;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #111;
+    cursor: default;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+/*	padding:10px;
+	font-size:20px;*/
+	border-radius:0px;
+	
+}
+
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.428571429;
+    border: 1px solid transparent;
+    border-radius: 0px;
+/*	padding:10px;
+	font-size:20px;*/
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+	margin-bottom:20px;
+}
+
+
+
+
+
 /*
 .dropdown-menu li a{
 	color:#111111;
@@ -789,6 +843,10 @@ a .my-btn-chekout:hover{
 }
 
 @media screen and (max-width:500px) {
+	
+	.detail-product{
+		margin-left:0px;
+	}
 	
 	.sidebar-left-mobile{
 		display: block;
@@ -1055,3 +1113,4 @@ a .my-btn-chekout:hover{
 .radio label input[type="radio"]:disabled + .cr {
     opacity: .5;
 }
+
