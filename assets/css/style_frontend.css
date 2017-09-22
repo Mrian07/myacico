@@ -786,7 +786,17 @@ a .my-btn-chekout:hover{
 	margin-bottom:20px;
 }
 
-
+.detail-add-wishlist{
+	width:100%;
+	font-size:13px;
+	background:#e7e7e7;
+	border-radius:5px;
+	text-align: center;
+	font-weight: bold;
+	color:#c40202;
+	padding:20px;
+	margin:10px 0px 10px 0px;
+}
 
 
 

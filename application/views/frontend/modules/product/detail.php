@@ -35,7 +35,7 @@
 	  
 	  
 	  </div>
-	  <div class="col-sm-6 detail-product">
+	  <div class="col-sm-5 detail-product">
 		<h5 class='title-product'>SAMSUNG Caramel [E1272] - White</h5>
 		<div class="row">
 			<div class="col-sm-6">
@@ -50,11 +50,24 @@
 		
 		
 	  </div>
-	  <div class="col-sm-2">.col-sm-2</div>
+	  <div class="col-sm-3" style='font-size:20px; text-align: center;'>
+		Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i> 
+		
+		
+		
+		<div class='detail-add-wishlist'>
+			<div class="btn-group">Quantity: <input type='text' value='1' class='form-control' style='width:50px'></div><br>
+			<div class="btnaddcart">
+			<?php echo anchor('customer/contact', '<button class="dropbtnaddcar">ADD TO CART</button>');?>
+			</div><br><br>
+			Add To Wishlist
+		</div>
+	  
+	  </div>
 	</div>
 	
 	
-	<ul class="nav nav-tabs">
+	<ul class="nav nav-tabs" style='font-size:17px;'>
 	  <li class="active"><a data-toggle="tab" href="#home">Rincian Barang</a></li>
 	  <li><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
 	</ul>
