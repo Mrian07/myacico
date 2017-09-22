@@ -1030,7 +1030,7 @@ a .my-btn-chekout:hover{
 	padding:10px;
 	box-shadow: 0 2px 5px 1px #ccc;
 	position: fixed; 
-	z-index: 999; 
+	z-index: 1; 
 }
 
 .cart-sidebar-right .title{

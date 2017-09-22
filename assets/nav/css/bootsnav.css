@@ -1476,3 +1476,13 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     }
 }
 
+/*Tambahan lalang*/
+#navbar-menu ul li a{
+	color:grey;
+	display:inline-block;
+}
+
+#navbar-menu ul li a:hover{
+  color:red;
+  text-decoration: none;
+}
