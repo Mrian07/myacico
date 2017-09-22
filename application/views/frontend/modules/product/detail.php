@@ -41,7 +41,7 @@
 			<div class="col-sm-6">
 			by <span class='red-tx'>SAMSUNG</span><br>
 			MA #SAMSSMAR00002007279 | MFR #<br>
-			Rp 499,000 Rp 399,000<br>
+			<span class='price'>Rp 499,000</span><br>
 			<br><br>
 			Save Rp 100,000 (21%)
 			</div>
@@ -67,7 +67,7 @@
 	</div>
 	
 	
-	<ul class="nav nav-tabs" style='font-size:17px;'>
+	<ul class="nav nav-tabs" style='font-size:17px; margin-bottom:20px;'>
 	  <li class="active"><a data-toggle="tab" href="#home">Rincian Barang</a></li>
 	  <li><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
 	</ul>
