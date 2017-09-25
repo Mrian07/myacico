@@ -4,9 +4,9 @@
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $title_web; ?></title>
-		
-		
-		
+
+
+
 		<!-- Strat Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
@@ -32,7 +32,7 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/alert/js/jquery-confirm.js');?>"></script>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/css/jquery-confirm.css');?>" />
         <!-- e: Alert -->
-		
+
 		<!-- s: Slider Price -->
 		<link rel="stylesheet" href="<?php echo base_url('assets/sliderprice/jquery-ui.css');?>">
 		<!-- e: Slider Price -->
@@ -45,10 +45,10 @@
 		<link rel="stylesheet" href="<?php echo base_url('assets/css/slider-product.css');?>">
 		<!-- e: Slider Product -->
 
-		
 
-		
-		
+
+
+
     </head>
 
 <body>
@@ -252,6 +252,26 @@
 							<li><a href="#" id="logout">Logout</a></li>
 							</ul>
 						</div>
+<script type="text/javascript">
+$("#logout").click(function(e){
+    e.preventDefault();
+
+	$.confirm({
+		title: 'Confirm!',
+		content: 'Anda yakin akan logout?',
+		buttons: {
+			confirm: function () {
+				document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+				location.href='<?php echo base_url("customer/signIn");?>';
+			},
+			cancel: function () {
+				//$.alert('Canceled!');
+			}
+		}
+	});
+
+});
+</script>
 
 						<?php }else{ ?>
 						<div class="dropdown-account">
@@ -288,8 +308,6 @@
 	</div>
 </div>
 
-<link href="<?php echo base_url('assets/css/jquery-ui.min.css');?>" rel="stylesheet">
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
 
 <script>
 (function(){
@@ -299,52 +317,6 @@
   });
 
 })();
-
-$(function(){
-	$( ".my-search-field" ).autocomplete({
-		source: function (request, response) {
-			$.get(api_base_url+"/product/productlist/"+request.term, function (data) {
-				console.log('res',data);
-				var arr = [];
-				data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id})})
-				response(arr);
-			});
-		},
-		select: function( event, ui ) {
-			this.value = ui.item.label;
-			console.log('change:',ui.item.value);
-			return false;
-		},
-		focus: function( event, ui ) {
-			//console.log('focus:',this);
-			return false;
-		},
-		minLength: 2
-	});
-});
-
-<?php if(isset($user->name)){ ?>
-
-$("#logout").click(function(e){
-    e.preventDefault();
-
-	$.confirm({
-		title: 'Confirm!',
-		content: 'Anda yakin akan logout?',
-		buttons: {
-			confirm: function () {
-				document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-				location.href='<?php echo base_url("customer/signIn");?>';
-			},
-			cancel: function () {
-				//$.alert('Canceled!');
-			}
-		}
-	});
-
-});
-<?php } ?>
-
 </script>
 
 <script type="text/javascript">
