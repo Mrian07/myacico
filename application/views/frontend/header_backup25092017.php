@@ -4,9 +4,9 @@
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $title_web; ?></title>
-
-
-
+		
+		
+		
 		<!-- Strat Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
@@ -32,7 +32,7 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/alert/js/jquery-confirm.js');?>"></script>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/css/jquery-confirm.css');?>" />
         <!-- e: Alert -->
-
+		
 		<!-- s: Slider Price -->
 		<link rel="stylesheet" href="<?php echo base_url('assets/sliderprice/jquery-ui.css');?>">
 		<!-- e: Slider Price -->
@@ -45,10 +45,10 @@
 		<link rel="stylesheet" href="<?php echo base_url('assets/css/slider-product.css');?>">
 		<!-- e: Slider Product -->
 
+		
 
-
-
-
+		
+		
     </head>
 
 <body>
@@ -92,85 +92,78 @@
 			</div>
 		</div>
 
-		<div class="col-sm-4" style="height:100px; padding-top:10px;">
-			
+		<div class="col-sm-4" style="background:#11093a; height:100px; padding-top:10px;">
+
 			<div class="row">
-				<div class="col-sm-3" style='color:#111111; font-weight:bold; margin-right:10px;'>
-					<div class="dropdown-lang">
-					  Bahasa <img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> <span class="caret"></span>
-					  <div class="dropdown-lang-content">
-						<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
-						<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
-					  </div>
-					</div>
-				</div>
-				<div class="col-sm-6" style='color:#111111; wight:bold; text-align:right; margin-right:10px;'>
-					<img src="<?php echo base_url('images/general/info-head.png');?>" border="0">
-				</div>
-			</div>
-			<div style='background:#11093a; margin-top:20px; height:50px; padding-left:10px; border-radius: 10px 0px 0px 0px;'>
-				<div class="row">	
-					<div class="col-sm-12" style='text-align:right;'>
+				<div class="col-sm-12">
 
-						<div class="btn-group" style='text-align:left;'>
-							<div class="btncontact">
-								<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-question-circle" aria-hidden="true"></i> Tentang Kami</button>');?>
-
-							</div>
-
-							<?php if(isset($user)){ ?>
+					<div class="btn-group">
 
 
-							<div class="dropdown-account">
-							  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
-							  <div class="dropdown-account-content">
-								<?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
-								<?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('id'=>'logout'));?>
-							  </div>
-							</div>
+						<div class="dropdown-basket">
+						  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
+						  <div class="dropdown-basket-content">
 
-							<?php }else{ ?>
-							<div class="dropdown-account">
-							  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
-							  <div class="dropdown-account-content">
-								<?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> '.$lang_daftar);?>
-								<?php echo anchor('customer/signIn/', '<i class="fa fa-sign-in" aria-hidden="true"></i> '.$lang_masuk);?>
-							  </div>
-							</div>
+								<div class="row my-cart">
+								  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
+								  <div class="col-sm-7">Samsung galaxy<br>Rp.6.000.000</div>
+								  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+								</div>
 
-							<?php } ?>
+								<div class="row my-cart">
+								  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung2.jpg');?>" border="0" height="50" width="50"></div>
+								  <div class="col-sm-7">Samsung 8<br>Rp.1.000.000</div>
+								  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+								</div>
+								<div class='my-total-cart'>
+								TOTAL : <b>Rp.7.000.000</b>
+								</div>
+								<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
 
-							<div class="btncontact">
-								<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
+						  </div>
+						</div>
 
-							</div>
-							
-							<div class="dropdown-basket">
-							  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0) <span class="caret"></span></button>
-							  <div class="dropdown-basket-content">
 
-									<div class="row my-cart">
-									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
-									  <div class="col-sm-7">Samsung galaxy<br>Rp.6.000.000</div>
-									  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
-									</div>
+						<?php if(isset($user)){ ?>
 
-									<div class="row my-cart">
-									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung2.jpg');?>" border="0" height="50" width="50"></div>
-									  <div class="col-sm-7">Samsung 8<br>Rp.1.000.000</div>
-									  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
-									</div>
-									<div class='my-total-cart'>
-									TOTAL : <b>Rp.7.000.000</b>
-									</div>
-									<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
 
-							  </div>
-							</div>
-							
+						<div class="dropdown-account">
+						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
+						  <div class="dropdown-account-content">
+							<?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
+							<?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('id'=>'logout'));?>
+						  </div>
+						</div>
+
+						<?php }else{ ?>
+						<div class="dropdown-account">
+						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
+						  <div class="dropdown-account-content">
+							<?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> '.$lang_daftar);?>
+							<?php echo anchor('customer/signIn/', '<i class="fa fa-sign-in" aria-hidden="true"></i> '.$lang_masuk);?>
+						  </div>
+						</div>
+
+						<?php } ?>
+
+						<div class="btncontact">
+							<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
 
 						</div>
+						<div class="dropdown-lang">
+						  <button class="dropbtn-lang"><i class="fa fa-flag" aria-hidden="true"></i> Bahasa</button>
+						  <div class="dropdown-lang-content">
+							<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
+							<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
+						  </div>
+						</div>
+
 					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12" style='color:#ffffff; wight:bold;'>
+					Total Shopping Experience
 				</div>
 			</div>
 		</div>
@@ -217,7 +210,7 @@
 			</div>
 		</div>
 
-		<div class="col-sm-4" style="height:100%; padding-top:10px;">
+		<div class="col-sm-4" style="background:#11093a; height:100%; padding-top:10px;">
 
 			<div class="row">
 				<div class="col-sm-12">
@@ -259,26 +252,6 @@
 							<li><a href="#" id="logout">Logout</a></li>
 							</ul>
 						</div>
-<script type="text/javascript">
-$("#logout").click(function(e){
-    e.preventDefault();
-
-	$.confirm({
-		title: 'Confirm!',
-		content: 'Anda yakin akan logout?',
-		buttons: {
-			confirm: function () {
-				document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-				location.href='<?php echo base_url("customer/signIn");?>';
-			},
-			cancel: function () {
-				//$.alert('Canceled!');
-			}
-		}
-	});
-
-});
-</script>
 
 						<?php }else{ ?>
 						<div class="dropdown-account">
@@ -315,6 +288,8 @@ $("#logout").click(function(e){
 	</div>
 </div>
 
+<link href="<?php echo base_url('assets/css/jquery-ui.min.css');?>" rel="stylesheet">
+<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
 
 <script>
 (function(){
@@ -324,6 +299,52 @@ $("#logout").click(function(e){
   });
 
 })();
+
+$(function(){
+	$( ".my-search-field" ).autocomplete({
+		source: function (request, response) {
+			$.get(api_base_url+"/product/productlist/"+request.term, function (data) {
+				console.log('res',data);
+				var arr = [];
+				data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id})})
+				response(arr);
+			});
+		},
+		select: function( event, ui ) {
+			this.value = ui.item.label;
+			console.log('change:',ui.item.value);
+			return false;
+		},
+		focus: function( event, ui ) {
+			//console.log('focus:',this);
+			return false;
+		},
+		minLength: 2
+	});
+});
+
+<?php if(isset($user->name)){ ?>
+
+$("#logout").click(function(e){
+    e.preventDefault();
+
+	$.confirm({
+		title: 'Confirm!',
+		content: 'Anda yakin akan logout?',
+		buttons: {
+			confirm: function () {
+				document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+				location.href='<?php echo base_url("customer/signIn");?>';
+			},
+			cancel: function () {
+				//$.alert('Canceled!');
+			}
+		}
+	});
+
+});
+<?php } ?>
+
 </script>
 
 <script type="text/javascript">
