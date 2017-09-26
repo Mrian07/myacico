@@ -1,6 +1,376 @@
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <style type="text/css">
+.btn-read {
+    background: transparent;
+    border-radius: 0;
+    border: 1px solid #ffffff;
+    color: #fff;
+}
+.section-box-one{
+    height: 250px;
+    background: radial-gradient(#6e6e6e,#2f2f2f);
+    background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
+    background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+}
+.thumbnail:hover{
+		opacity:1.00;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		transition: box-shadow 0.5s;
+
+		}
+.section-box-one figure {
+    position: absolute;
+    text-align: center;
+    padding: 19px;
+    width: 100%;
+    height: 100%;
+}
+.section-box-one img{
+    height: 100%;
+    position: absolute;
+    transition: ease-in-out .5s;
+    -webkit-transition: ease-in-out .5s;
+    -moz-transition: ease-in-out .5s;
+}
+.section-box-one:hover img{
+    transform: translate(100%, -100%);
+    -webkit-transform: translate(100%, -100%);
+    -moz-transform: translate(100%, -100%);
+}
+
+.section-box-two{
+    height: 250px;
+    background: radial-gradient(#6e6e6e,#2f2f2f);
+    background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
+    background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+}
+.section-box-two figure {
+    position: absolute;
+    text-align: center;
+    padding: 19px;
+    width: 100%;
+    height: 100%;
+}
+.section-box-two img{
+    height: 100%;
+    position: absolute;
+    transition: ease-in-out .5s;
+    -webkit-transition: ease-in-out .5s;
+    -moz-transition: ease-in-out .5s;
+}
+.section-box-two:hover img{
+    transform: translate(-100%, -100%);
+    -webkit-transform: translate(-100%, -100%);
+    -moz-transform: translate(-100%, -100%);
+}
+
+.section-box-three{
+    height: 250px;
+    background: radial-gradient(#6e6e6e,#2f2f2f);
+    background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
+    background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+}
+.section-box-three figure {
+    position: absolute;
+    text-align: center;
+    padding: 19px;
+    width: 100%;
+    height: 100%;
+}
+.section-box-three img{
+    height: 100%;
+    position: absolute;
+    transition: ease-in-out .5s;
+    -webkit-transition: ease-in-out .5s;
+    -moz-transition: ease-in-out .5s;
+}
+.section-box-three:hover img{
+    transform: translate(-100%, 100%);
+    -webkit-transform: translate(-100%, 100%);
+    -moz-transform: translate(-100%, 100%);
+}
+
+.section-box-four{
+    height: 250px;
+    background: radial-gradient(#6e6e6e,#2f2f2f);
+    background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
+    background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+}
+.section-box-four figure {
+    position: absolute;
+    text-align: center;
+    padding: 19px;
+    width: 100%;
+    height: 100%;
+}
+.section-box-four img{
+    height: 100%;
+    position: absolute;
+    transition: ease-in-out .5s;
+    -webkit-transition: ease-in-out .5s;
+    -moz-transition: ease-in-out .5s;
+}
+.section-box-four:hover img{
+    transform: translate(-100%,0);
+    -webkit-transform: translate(-100%,0);
+    -moz-transform: translate(-100%,0);
+}
+
+.section-box-five{
+    height: 250px;
+    background: radial-gradient(#6e6e6e,#2f2f2f);
+    background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
+    background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+}
+.section-box-five figure {
+    position: absolute;
+    text-align: center;
+    padding: 19px;
+    width: 100%;
+    height: 100%;
+}
+.section-box-five img{
+    height: 100%;
+    position: absolute;
+    transition: ease-in-out .5s;
+    -webkit-transition: ease-in-out .5s;
+    -moz-transition: ease-in-out .5s;
+}
+.section-box-five:hover img{
+    transform: translate(100%,0);
+    -webkit-transform: translate(100%,0);
+    -moz-transform: translate(100%,0);
+}
+
+.section-box-six{
+    height: 250px;
+    background: radial-gradient(#6e6e6e,#2f2f2f);
+    background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
+    background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+}
+.section-box-six figure {
+    position: absolute;
+    text-align: center;
+    padding: 19px;
+    width: 100%;
+    height: 100%;
+}
+.section-box-six img{
+    height: 100%;
+    position: absolute;
+    transition: ease-in-out .5s;
+    -webkit-transition: ease-in-out .5s;
+    -moz-transition: ease-in-out .5s;
+}
+.section-box-six:hover img{
+    transform: translate(0,-100%);
+    -webkit-transform: translate(0,-100%);
+    -moz-transform: translate(0,-100%);
+}
+
+.section-box-seven{
+    height: 250px;
+    background: radial-gradient(#6e6e6e,#2f2f2f);
+    background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
+    background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+}
+.section-box-seven figure {
+    position: absolute;
+    text-align: center;
+    padding: 19px;
+    width: 100%;
+    height: 100%;
+}
+.section-box-seven img{
+    height: 100%;
+    position: absolute;
+    transition: ease-in-out .5s;
+    -webkit-transition: ease-in-out .5s;
+    -moz-transition: ease-in-out .5s;
+}
+.section-box-seven:hover img{
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    opacity: 0;
+}
+
+.section-box-eight{
+    height: 250px;
+    background: radial-gradient(#6e6e6e,#2f2f2f);
+    background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
+    background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+    transform: rotateY(-180deg);
+    transition: ease-in-out .5s;
+}
+.section-box-eight:hover {
+    transform: rotateY(0deg);
+}
+.section-box-eight:hover img {
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    transition: ease-in-out .5s;
+}
+.section-box-eight figure {
+    position: absolute;
+    text-align: center;
+    padding: 19px;
+    width: 100%;
+    height: 100%;
+}
+.section-box-eight img{
+    height: 100%;
+    position: absolute;
+}
+
+.section-box-nine{
+    height: 250px;
+    background: radial-gradient(#6e6e6e,#2f2f2f);
+    background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
+    background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+}
+.section-box-nine figure {
+    position: absolute;
+    text-align: center;
+    padding: 19px;
+    width: 100%;
+    height: 100%;
+}
+.section-box-nine img{
+    height: 100%;
+    position: absolute;
+    transition: ease-in-out .5s;
+    -webkit-transition: ease-in-out .5s;
+    -moz-transition: ease-in-out .5s;
+}
+.section-box-nine:hover img{
+    transform: scale(3);
+    -webkit-transform: scale(3);
+    -moz-transform: scale(3);
+    opacity: 0;
+}
+
+.section-box-ten{
+    height: 250px;
+    background: radial-gradient(#6e6e6e,#2f2f2f);
+    background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
+    background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+}
+.section-box-ten figure {
+    position: absolute;
+    text-align: left;
+    padding: 10px 19px 19px 19px;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #fff;
+    background: rgba(0, 0, 0, 0.71);
+    bottom: -80%;
+    transition: ease-in-out .5s;
+}
+.section-box-ten:hover figure {
+    bottom: 0;
+}
+.section-box-ten figure h3{
+    margin: 0;
+    padding-bottom: 10px;
+}
+.section-box-ten img{
+    height: 100%;
+}
 
 
+.section-box-eleven{
+    height: 250px;
+    background: radial-gradient(#6e6e6e,#2f2f2f);
+    background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
+    background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+}
+.section-box-eleven figure {
+    position: absolute;
+    padding: 10px 15px;
+    width: 100%;
+    bottom: -25%;
+    transition: ease-in-out .5s;
+    background: rgba(0, 0, 0, 0.71);
+    border-top: 1px solid #fff;
+}
+.section-box-eleven:hover figure {
+    bottom: 0;
+}
+.section-box-eleven img{
+    height: 100%;
+}
+
+.section-box-twelve{
+    height: 250px;
+    background: radial-gradient(#6e6e6e,#2f2f2f);
+    background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
+    background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+    color: #fff;
+    position: relative;
+    overflow:hidden;
+}
+.section-box-twelve figure {
+    position: absolute;
+    text-align: center;
+    padding: 10px 19px 19px 19px;
+    width: 100%;
+    height: 100%;
+    transition: ease-in-out .5s;
+    opacity: 0;
+    transform: scale(2);
+}
+.section-box-twelve:hover figure {
+    opacity: 1;
+    transform: scale(1);
+    background: rgba(0, 0, 0, 0.71);
+}
+.section-box-twelve figure a{
+    color: #fff;
+    font-size: 3em;
+    top: 35%;
+    position: relative;
+}
+.section-box-twelve img{
+    height: 100%;
+}
 
 .pa-bottom {
   padding-bottom: 30px;
@@ -184,108 +554,6 @@ ul.list-group:after {
 </style>
 
 
-
-<div class='home-banner'>
-	<div class="row">
-		<div class="col-sm-3 col-xs-6 my-img-small">
-			<a href="#"><img u="image" width='100%' src='<?php echo base_url('images/banner/banner_kecil1.jpg');?>' border='0'/></a>
-		</div>
-		<div class="col-sm-3 col-xs-6 my-img-small">
-			<a href="#"><img u="image" width='100%' src='<?php echo base_url('images/banner/banner_kecil2.jpg');?>' border='0' /></a>
-		</div>
-		<div class="col-sm-3 col-xs-6 my-img-small">
-			<a href="#"><img u="image" width='100%' src='<?php echo base_url('images/banner/banner_kecil3.jpg');?>' border='0' /></a>
-		</div>
-		<div class="col-sm-3 col-xs-6 my-img-small">
-			<a href="#"><img u="image" width='100%' src='<?php echo base_url('images/banner/banner_kecil4.jpg');?>' border='0' /></a>
-		</div>
-
-	</div>
-</div>
-<div class='border-myacico'>
-	<span class='myacico-title'><h3>MYACICO FOR YOU</h3></span>
-	<span class='myacico-title-small'>Our Official Store</span>
-</div>
-<hr>
-
-
-<div class="container">
-<img src="<?php echo base_url('images/banner/backgroundBaruObi2.png');?>" class="img-responsive" width='100%'>
-</div>
-<center>
-<ul class="list-group">
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TL-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src='<?php echo base_url('images/banner/aaa01.png');?>'  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src='<?php echo base_url('images/banner/IP-small.png');?>'  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SD-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SY-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/MS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/FJ-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SG-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/LT-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/HX-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/small-iphon-icon.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/DI-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TC-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/WM-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/BP-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/XV-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/GA-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/XO-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/GT-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/HW-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/LS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/KA-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/AC-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/AS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/DL-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/PO-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/KI-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/LK-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SR-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SH-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SK-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/BG-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/lg_logo_white_250x.JPG');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/EM-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/NN-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/RI-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/cisco.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/IA-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/NS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TP-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/LV-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/teaserbox_894662862.jpg');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/nokia.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/ZM-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/EA-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/DG-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/VZ-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/MY-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/WS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/ML-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TT-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/WF-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/JB-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/NE-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/XA-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/JM-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TZ-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/KQ-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/KY-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SV-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/HM-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/EV-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/6BbKRrk7.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/playdoh.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/alife.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/razer-logo.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/madcatzlogo.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/bantex1.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/canon.png');?>"  alt="Smiley face" height="50" width="97"></li>
-
-						</ul></center>
             <hr>
             <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
 
@@ -365,9 +633,344 @@ ul.list-group:after {
       </div>
     </div>
   </div>
+<br>
+<hr>
 
-  <br><br> <br><br>
-  
+
+
+
+<br/>
+<center>
+<h3> Featured Product </h3>
+</center>
+<br>
+<div class="container">
+	<div class="row">
+    	<!-- BEGIN PRODUCTS -->
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No :gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No :gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No :gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No :gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No :gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No :gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No :gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail text-center">
+      			<img src="http://placehold.it/350x280" alt="...">
+      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No :gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > BID NOW</button>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
+
+
+
+
+  		<!-- END PRODUCTS -->
+	</div>
+</div>
+<hr>
+<center>
+
+  <h2> Our Brand </h2>
+</center>
+<div class="container">
+	<div class="row">
+    	<!-- BEGIN PRODUCTS -->
+
+<ul class="list-group" style="padding-left:82px;">
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TL-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src='<?php echo base_url('images/banner/aaa01.png');?>'  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src='<?php echo base_url('images/banner/IP-small.png');?>'  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SD-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SY-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/MS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/FJ-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SG-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/LT-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/HX-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/small-iphon-icon.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/DI-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TC-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/WM-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/BP-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/XV-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/GA-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/XO-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/GT-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/HW-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/LS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/KA-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/AC-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/AS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/DL-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/PO-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/KI-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/LK-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SR-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SH-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SK-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/BG-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/lg_logo_white_250x.JPG');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/EM-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/NN-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/RI-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/cisco.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/IA-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/NS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TP-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/LV-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/teaserbox_894662862.jpg');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/nokia.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/ZM-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/EA-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/DG-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/VZ-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/MY-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/WS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/ML-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TT-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/WF-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/JB-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/NE-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/XA-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/JM-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TZ-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/KQ-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/KY-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SV-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/HM-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/EV-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/6BbKRrk7.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/playdoh.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/alife.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/razer-logo.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/madcatzlogo.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/bantex1.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/canon.png');?>"  alt="Smiley face" height="50" width="97"></li>
+
+						</ul>
+          </div>
+
+      </div>
 <script>
 /*slider product New Collection */
 $(document).ready(function(){
