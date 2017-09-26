@@ -20,7 +20,7 @@ class Checkout extends Web {
 
 	}
 
-  public function cart()
+	public function cart()
 	{
 		$this->data['title_web'] = "Myacico.com - Create Account Business";
 		$this->load->view('frontend/header',$this->data);

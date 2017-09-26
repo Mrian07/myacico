@@ -97,7 +97,7 @@
 			<div class="row">
 				<div class="col-sm-3" style='color:#111111; font-weight:bold; margin-right:10px;'>
 					<div class="dropdown-lang">
-					  Bahasa <img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> <span class="caret"></span>
+					  Bahasa <?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?><span class="caret"></span>
 					  <div class="dropdown-lang-content">
 						<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
 						<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
@@ -146,7 +146,7 @@
 							</div>
 							
 							<div class="dropdown-basket">
-							  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0) <span class="caret"></span></button>
+							  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (2) <span class="caret"></span></button>
 							  <div class="dropdown-basket-content">
 
 									<div class="row my-cart">
