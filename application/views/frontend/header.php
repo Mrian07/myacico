@@ -51,17 +51,42 @@
 
     </head>
 
-<body>
-<img src="<?php echo base_url('images/general/Bg-atas-acico.png'); ?>" border="0">
-<div class="my-header-panel">
+<body style='font-weight: normal;'>
+<div class="my-header-panel3">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				 About us | Payment | Delivery | FAQ 
 
+			</div>
+			<div class="col-sm-8" style='text-align: right'>
+				<i class="fa fa-phone" aria-hidden="true"></i> (021) 589 99999, <i class="fa fa-clock-o" aria-hidden="true"></i>
+			 Mon - Sat [09:00 - 20:00] , Sun [10:00 - 18:00] ,  Open on Holiday
+				|
+				<div class="dropdown-lang">
+				  Bahasa <?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?> <span class="caret"></span>
+				  <div class="dropdown-lang-content">
+					<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
+					<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
+				  </div>
+				</div>
+			 
+			</div>
+		</div>	
+	</div>	
+</div>
+<div class="my-header-panel4">
+	<img src="<?php echo base_url('images/general/Bg-atas-acico.png'); ?>" border="0">
+</div>
+<div class="my-header-panel">
+	
 	<div class="row">
 		<div class="col-sm-2">
 			<div class='logo'>
-				<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80">');?>
+				<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
 			</div>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-7">
 			<div class='myserach'>
 
 
@@ -87,36 +112,25 @@
 								<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
 							</span>
 						</div>
-				<b><i class="fa fa-phone" aria-hidden="true"></i> (021) 589 99999, <i class="fa fa-clock-o" aria-hidden="true"></i>
-			 Mon - Sat [09:00 - 20:00] , Sun [10:00 - 18:00] ,  Open on Holiday</b>
+				
 			</div>
 		</div>
 
-		<div class="col-sm-4" style="height:100px; padding-top:10px;">
-			
-			<div class="row">
-				<div class="col-sm-3" style='color:#111111; font-weight:bold; margin-right:10px;'>
-					<div class="dropdown-lang">
-					  Bahasa <?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?><span class="caret"></span>
-					  <div class="dropdown-lang-content">
-						<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
-						<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
-					  </div>
-					</div>
+		<div class="col-sm-3" style="padding-top:10px;">
+		<!--	<div class="row">
+				<div class="col-sm-4" style='color:#111111; font-weight:bold; margin-right:10px;'>
+					
 				</div>
 				<div class="col-sm-6" style='color:#111111; wight:bold; text-align:right; margin-right:10px;'>
 					<img src="<?php echo base_url('images/general/info-head.png');?>" border="0">
 				</div>
-			</div>
-			<div style='background:#11093a; margin-top:20px; height:50px; padding-left:10px; border-radius: 10px 0px 0px 0px;'>
+			</div>-->
+			<div>
 				<div class="row">	
-					<div class="col-sm-12" style='text-align:right;'>
+					<div class="col-sm-12" style='text-align:right; '>
 
 						<div class="btn-group" style='text-align:left;'>
-							<div class="btncontact">
-								<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-question-circle" aria-hidden="true"></i> Tentang Kami</button>');?>
-
-							</div>
+						
 
 							<?php if(isset($user)){ ?>
 
@@ -181,12 +195,12 @@
 <div class="my-header-panel2">
 
 	<div class="row">
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<div class='logo'>
-				<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="80">');?>
+				<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
 			</div>
 		</div>
-		<div class="col-sm-5">
+		<div class="col-sm-6">
 			<div class='myserach'>
 
 
@@ -212,8 +226,7 @@
 								<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
 							</span>
 						</div>
-				<b><i class="fa fa-phone" aria-hidden="true"></i> (021) 589 99999, <i class="fa fa-clock-o" aria-hidden="true"></i>
-			 Mon - Sat [09:00 - 20:00] , Sun [10:00 - 18:00] ,  Open on Holiday</b>
+				
 			</div>
 		</div>
 
@@ -224,7 +237,52 @@
 
 					<div class="btn-group">
 
+						<?php if(isset($user->name)){ ?>
+						<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount Anda
+							<span class="caret"></span></button>
+							<ul class="dropdown-menu">
+							<li><?php echo anchor('account/', 'Profile Anda');?></li>
+							<li class="divider"></li>
+							<li><a href="#" id="logout">Logout</a></li>
+							</ul>
+						</div>
+						<script type="text/javascript">
+						$("#logout").click(function(e){
+							e.preventDefault();
 
+							$.confirm({
+								title: 'Confirm!',
+								content: 'Anda yakin akan logout?',
+								buttons: {
+									confirm: function () {
+										document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+										location.href='<?php echo base_url("customer/signIn");?>';
+									},
+									cancel: function () {
+										//$.alert('Canceled!');
+									}
+								}
+							});
+
+						});
+						</script>
+
+						<?php }else{ ?>
+						<div class="dropdown-account">
+						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
+						  <div class="dropdown-account-content">
+							<?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> '.$lang_daftar);?>
+							<?php echo anchor('customer/signIn/', '<i class="fa fa-sign-in" aria-hidden="true"></i> '.$lang_masuk);?>
+						  </div>
+						</div>
+
+						<?php } ?>
+
+						<div class="btncontact">
+							<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
+
+						</div>
 						<div class="dropdown-basket">
 						  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
 						  <div class="dropdown-basket-content">
@@ -246,62 +304,7 @@
 								<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
 
 						  </div>
-						</div>
-
-
-						<?php if(isset($user->name)){ ?>
-						<div class="dropdown">
-							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount Anda
-							<span class="caret"></span></button>
-							<ul class="dropdown-menu">
-							<li><?php echo anchor('account/', 'Profile Anda');?></li>
-							<li class="divider"></li>
-							<li><a href="#" id="logout">Logout</a></li>
-							</ul>
-						</div>
-<script type="text/javascript">
-$("#logout").click(function(e){
-    e.preventDefault();
-
-	$.confirm({
-		title: 'Confirm!',
-		content: 'Anda yakin akan logout?',
-		buttons: {
-			confirm: function () {
-				document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-				location.href='<?php echo base_url("customer/signIn");?>';
-			},
-			cancel: function () {
-				//$.alert('Canceled!');
-			}
-		}
-	});
-
-});
-</script>
-
-						<?php }else{ ?>
-						<div class="dropdown-account">
-						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
-						  <div class="dropdown-account-content">
-							<?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> '.$lang_daftar);?>
-							<?php echo anchor('customer/signIn/', '<i class="fa fa-sign-in" aria-hidden="true"></i> '.$lang_masuk);?>
-						  </div>
-						</div>
-
-						<?php } ?>
-
-						<div class="btncontact">
-							<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
-
-						</div>
-						<div class="dropdown-lang">
-						  <button class="dropbtn-lang"><i class="fa fa-flag" aria-hidden="true"></i> Bahasa</button>
-						  <div class="dropdown-lang-content">
-							<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
-							<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
-						  </div>
-						</div>
+						</div>	
 
 					</div>
 				</div>

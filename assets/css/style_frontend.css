@@ -254,6 +254,7 @@ h3 span {
 	background:#f2f1f1 url(../../images/general/bg-header.png);
 	width: 100%;
 	border-top: 2px #11093a solid; 
+	padding:0px 15px 0px 10px;
 }
 
 .my-header-panel-sub1{
@@ -281,6 +282,15 @@ h3 span {
 }
 
 .my-header-panel3{
+	width: 100%;
+	background:#e7eaf1;
+	border-bottom:1px #dbdde1 solid;
+	padding: 5px 0px 5px 0px;
+	font-family: arial;
+	font-size:10px;
+}
+
+.my-header-panel4{
 	background:#f2f1f1 url(../../images/general/Bg-atas-acico.png);
 	width: 100%;
 }
@@ -483,6 +493,7 @@ a .my-btn-chekout:hover{
 .dropdown-lang {
     position: relative;
     display: inline-block;
+	text-align: left;
 }
 
 .dropdown-lang-content {
