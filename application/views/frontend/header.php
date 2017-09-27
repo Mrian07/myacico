@@ -56,7 +56,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4">
-				 About us | Payment | Delivery | FAQ 
+				 About us | Payment | Delivery | FAQ
 
 			</div>
 			<div class="col-sm-8" style='text-align: right'>
@@ -70,16 +70,16 @@
 					<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
 				  </div>
 				</div>
-			 
+
 			</div>
-		</div>	
-	</div>	
+		</div>
+	</div>
 </div>
 <div class="my-header-panel4">
 	<img src="<?php echo base_url('images/general/Bg-atas-acico.png'); ?>" border="0">
 </div>
 <div class="my-header-panel">
-	
+
 	<div class="row">
 		<div class="col-sm-2">
 			<div class='logo'>
@@ -112,25 +112,25 @@
 								<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
 							</span>
 						</div>
-				
+
 			</div>
 		</div>
 
 		<div class="col-sm-3" style="padding-top:10px;">
 		<!--	<div class="row">
 				<div class="col-sm-4" style='color:#111111; font-weight:bold; margin-right:10px;'>
-					
+
 				</div>
 				<div class="col-sm-6" style='color:#111111; wight:bold; text-align:right; margin-right:10px;'>
 					<img src="<?php echo base_url('images/general/info-head.png');?>" border="0">
 				</div>
 			</div>-->
 			<div>
-				<div class="row">	
+				<div class="row">
 					<div class="col-sm-12" style='text-align:right; '>
 
 						<div class="btn-group" style='text-align:left;'>
-						
+
 
 							<?php if(isset($user)){ ?>
 
@@ -158,30 +158,60 @@
 								<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
 
 							</div>
-							
+
 							<div class="dropdown-basket">
 							  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (2) <span class="caret"></span></button>
 							  <div class="dropdown-basket-content">
-
+									<div class='my-cart-scroll'>
 									<div class="row my-cart">
 									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
 									  <div class="col-sm-7">Samsung galaxy<br>Rp.6.000.000</div>
-									  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+									  <div class="col-sm-2">
+											<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');?>
+										</div>
+									</div>
+
+									<div class="row my-cart">
+									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
+									  <div class="col-sm-7">Samsung galaxy<br>Rp.3.000.000</div>
+									  <div class="col-sm-2">
+											<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');?>
+										</div>
+									</div>
+
+									<div class="row my-cart">
+									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
+									  <div class="col-sm-7">Samsung galaxy<br>Rp.4.000.000</div>
+									  <div class="col-sm-2">
+											<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');?>
+										</div>
+									</div>
+
+									<div class="row my-cart">
+									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
+									  <div class="col-sm-7">Samsung galaxy<br>Rp.1.000.000</div>
+									  <div class="col-sm-2">
+											<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');?>
+										</div>
 									</div>
 
 									<div class="row my-cart">
 									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung2.jpg');?>" border="0" height="50" width="50"></div>
 									  <div class="col-sm-7">Samsung 8<br>Rp.1.000.000</div>
-									  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+									  <div class="col-sm-2">
+											<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');?>
+										</div>
 									</div>
+								</div>
 									<div class='my-total-cart'>
 									TOTAL : <b>Rp.7.000.000</b>
 									</div>
-									<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
+
+									<?php echo anchor('checkout', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
 
 							  </div>
 							</div>
-							
+
 
 						</div>
 					</div>
@@ -226,7 +256,7 @@
 								<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
 							</span>
 						</div>
-				
+
 			</div>
 		</div>
 
@@ -304,7 +334,7 @@
 								<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
 
 						  </div>
-						</div>	
+						</div>
 
 					</div>
 				</div>
