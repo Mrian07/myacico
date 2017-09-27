@@ -253,8 +253,7 @@ h3 span {
 	height:74px;*/
 	background:#f2f1f1 url(../../images/general/bg-header.png);
 	width: 100%;
-	border-top: 2px #11093a solid; 
-	padding:0px 15px 0px 10px;
+	border-top: 5px #11093a solid; 
 }
 
 .my-header-panel-sub1{
@@ -282,15 +281,6 @@ h3 span {
 }
 
 .my-header-panel3{
-	width: 100%;
-	background:#e7eaf1;
-	border-bottom:1px #dbdde1 solid;
-	padding: 5px 0px 5px 0px;
-	font-family: arial;
-	font-size:10px;
-}
-
-.my-header-panel4{
 	background:#f2f1f1 url(../../images/general/Bg-atas-acico.png);
 	width: 100%;
 }
@@ -329,7 +319,7 @@ h3 span {
 
 /*Hubungi Kami*/
 .dropbtncontact {
-    background-color: #11093a;
+    background-color: #2f81f0;
     color: white;
     padding: 10px;
     font-size: 12px;
@@ -364,25 +354,23 @@ h3 span {
 }
 
 .btncontact:hover .dropbtncontact {
-    background-color: #2c11b4;
+    background-color: #226acb;
 }
 /*Drop Basket*/
 
 .dropbtn-basket {
-    background-color: #11093a;
+    background-color: #b97412;
     color: white;
     padding: 10px;
     font-size: 12px;
     border: none;
     cursor: pointer;
 	margin:0px;
-	right: 0; left: auto;
 }
 
 .dropdown-basket {
     position: relative;
     display: inline-block;
-	right: 0; left: auto;
 }
 
 .dropdown-basket-content {
@@ -393,7 +381,6 @@ h3 span {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	padding:10px;
     z-index: 999999;
-	right: 0; left: auto;
 }
 
 .dropdown-basket-content a {
@@ -401,7 +388,6 @@ h3 span {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-	right: 0; left: auto;
 }
 
 .dropdown-basket-content a:hover {background-color: #1de130}
@@ -411,7 +397,7 @@ h3 span {
 }
 
 .dropdown-basket:hover .dropbtn-basket {
-    background-color: #2c11b4;
+    background-color: #e79116;
 }
 
 
@@ -436,7 +422,7 @@ a .my-btn-chekout:hover{
 /*Drop Account*/
 
 .dropbtn-account {
-    background-color: #11093a;
+    background-color: #a8a60b;
     color: white;
     padding: 10px;
     font-size: 12px;
@@ -473,7 +459,7 @@ a .my-btn-chekout:hover{
 }
 
 .dropdown-account:hover .dropbtn-account {
-    background-color: #2c11b4;
+    background-color: #c8c616;
 }
 
 
@@ -481,19 +467,18 @@ a .my-btn-chekout:hover{
 /*Drop Lang*/
 
 .dropbtn-lang {
-   /* background-color: #4CAF50;*/
+    background-color: #4CAF50;
     color: white;
     padding: 10px;
     font-size: 12px;
     border: none;
-   /* cursor: pointer;*/
+    cursor: pointer;
 	margin:0px;
 }
 
 .dropdown-lang {
     position: relative;
     display: inline-block;
-	text-align: left;
 }
 
 .dropdown-lang-content {
@@ -519,7 +504,7 @@ a .my-btn-chekout:hover{
 }
 
 .dropdown-lang:hover .dropbtn-lang {
-  /*  background-color: #3e8e41;*/
+    background-color: #3e8e41;
 }
 
 /*Search*/

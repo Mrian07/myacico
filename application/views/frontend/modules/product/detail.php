@@ -20,7 +20,7 @@
 		<div class="row">
 		  <div class="col-sm-5">
 			<div class="xzoom-container">
-			  <img class="xzoom" id="xzoom-magnific" style="maxWidth='400'" src="{{dat.imageurl[0]}}" xoriginal="{{dat.imageurl[0]}}" />
+			  <img class="xzoom" id="xzoom-magnific" width=400 src="{{dat.imageurl[0]}}" xoriginal="{{dat.imageurl[0]}}" />
 			  <div class="xzoom-thumbs">
 				<a ng-repeat="url in dat.imageurl" ng-href="{{url}}" on-finish-render="ngRepeatFinished">
 					<img class="xzoom-gallery" width="80" src="{{url}}" xpreview="{{url}}" title="">
@@ -40,7 +40,7 @@
 		<h5 class='title-product'>{{dat.name}}</h5>
 		<div class="row">
 			<div class="col-sm-6">
-			by <span class='red-tx'>SAMSUNG</span><br>
+			weight <span class='red-tx'>{{dat.weight}}</span><br>
 			{{dat.m_product_id}}<br>
 			<span class='price'>Rp {{dat.pricelist}}</span><br>
 			<br><br>

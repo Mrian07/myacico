@@ -20,6 +20,7 @@ class Web extends MY_Controller {
         $this->auth();
 
 		$lang = get_cookie('lang');
+		$this->data['lang'] = $lang;
 		if($lang=='en'){
 			$this->load->language('header','english');
 		}else{
