@@ -8,37 +8,58 @@
 	</div>
 
 	<div class="row">
-		<div class="col-sm-3">
-
-		</div>
-	  <div class="col-sm-6">
-  		<div class='border-create'>
-		    <form name="signin" method="post">
-		      <div class="form-group">
+		<div class="col-sm-6">
+		<div class='border-create'>
+			<form name="signin" method="post">
+				<div class="form-group">
 				<label>Email:</label>
 				<input type="email" id="email" name="email" class="form-control"  />
-		      </div>
-		      <div class="form-group">
-      			<label>Password:</label>
-      			<input type="password" id="password" name="password" class="form-control" />
-    		  </div>
-			  <div class="row">
-				<div class="col-sm-6">
-					<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo $lang_btn_SignIn ?>">
-					<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 				</div>
-				<div class="col-sm-6" style='text-align: right'>
-					<p class="change_link"><?php echo $lang_Field_lpPassword; ?>
-						<?php echo anchor('customer/lostPassword/', $lang_Field_ClickMe);?>
-					</p>
+				<div class="form-group">
+				<label>Password:</label>
+				<input type="password" id="password" name="password" class="form-control" />
 				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo $lang_btn_SignIn ?>">
+						<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+					</div>
+					<div class="col-sm-6" style='text-align: right'>
+						<p class="change_link"><?php echo $lang_Field_lpPassword; ?>
+							<?php echo anchor('customer/lostPassword/', $lang_Field_ClickMe);?>
+						</p>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		</div>
+		<div class="col-sm-6">
+			<div class='border-create'>
+				<h5>PENDAFTARAN</h5>
+				<div class="row">
+				  <div class="col-sm-12">
+						<hr>
+						<?php echo $lang_ket_daftar_personal; ?>
+						<div class='my-btn-create'><?php echo anchor('customer/personal/', $lang_btn_personal, array('class'=>'my-link-create'));?></div>
+				  </div>
+				</div>
+				<div class="row">	
+				  <div class="col-sm-12">
+						<hr>
+						<?php echo $lang_ket_daftar_akunBisnis;?>
+						<div class='my-btn-create'><?php echo anchor('customer/business/', $lang_btn_bisnis, array('class'=>'my-link-create'));?> </div>
+				  </div>
+				</div>
+				<div class="row">  
+				  <div class="col-sm-12">
+						<hr>
+						Untuk pemerintah yang ingin belanja di myacico.com.
+						<div class='my-btn-create'><?php echo anchor('customer/government/', $lang_btn_pemerintah, array('class'=>'my-link-create'));?></div>
+				  </div>
+				</div>
+				
 			</div>
-          </div>
-    		</form>
-		  </div>
-	  </div>
-	  <div class="col-sm-3">
-
 		</div>
 	</div>
 </div>

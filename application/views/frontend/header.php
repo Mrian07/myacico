@@ -200,7 +200,7 @@
 									TOTAL : <b>Rp.7.000.000</b>
 									</div>
 
-									<?php echo anchor('checkout', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
+									<?php echo anchor('cart', 'My Cart & Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
 
 							  </div>
 							</div>

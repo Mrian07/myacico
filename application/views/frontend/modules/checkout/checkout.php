@@ -29,5 +29,10 @@
 	  <div class="panel-body">Panel Content</div>
 	</div>
 </div>
+
 </div>
+
+
+<?php echo anchor('finish', 'Pesan Sekarang', array('class'=>'btn btn-success my-btn-chekout'));?>
+
 </div>
