@@ -63,76 +63,97 @@
       </div>
       </div>
     </div>
-
+<!--
     <div class="progress">
       <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
         <span class="sr-only">35% Complete (success)</span>
       </div>
       <span class="progress-completed"> 35%</span>
     </div>
-
-	<table id="cart" class="table table-hover table-condensed">
-    				<thead>
-						<tr>
-							<th style="width:50%">Product</th>
-							<th style="width:10%">Price</th>
-							<th style="width:8%">Quantity</th>
-							<th style="width:22%" class="text-center">Subtotal</th>
-							<th style="width:10%"></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td data-th="Product">
-								<div class="row">
-									<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
-									<div class="col-sm-10">
-										<h4 class="nomargin">Product 1</h4>
-										<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
-									</div>
-								</div>
-							</td>
-							<td data-th="Price">$1.99</td>
-							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="1">
-							</td>
-							<td data-th="Subtotal" class="text-center">1.99</td>
-							<td class="actions" data-th="">
-								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-							</td>
-						</tr>
-            <tr>
-							<td data-th="Product">
-								<div class="row">
-									<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
-									<div class="col-sm-10">
-										<h4 class="nomargin">Product 1</h4>
-										<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
-									</div>
-								</div>
-							</td>
-							<td data-th="Price">$1.99</td>
-							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="1">
-							</td>
-							<td data-th="Subtotal" class="text-center">1.99</td>
-							<td class="actions" data-th="">
-								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-							</td>
-						</tr>
-					</tbody>
-					<tfoot>
-						<tr class="visible-xs">
-							<td class="text-center"><strong>Total 1.99</strong></td>
-						</tr>
-						<tr>
-							<td><!--<a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>--></td>
-							<td colspan="2" class="hidden-xs"></td>
-							<td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
-							<td><?php echo anchor('checkout', 'Checkout <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success btn-block'));?></td>
-						</tr>
-					</tfoot>
-				</table>
+	-->
+	<div class="col-md-9">
+	
+		<table id="cart" class="table table-hover table-condensed">
+			<thead>
+				<tr>
+					<th style="width:50%">Product</th>
+					<th style="width:10%">Price</th>
+					<th style="width:8%">Quantity</th>
+					<th style="width:22%" class="text-center">Subtotal</th>
+					<th style="width:10%"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td data-th="Product">
+						<div class="row">
+							<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
+							<div class="col-sm-10">
+								<h4 class="nomargin">Product 1</h4>
+								<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+							</div>
+						</div>
+					</td>
+					<td data-th="Price">Rp.100.999</td>
+					<td data-th="Quantity">
+						<input type="number" class="form-control text-center" value="1">
+					</td>
+					<td data-th="Subtotal" class="text-center">1.99</td>
+					<td class="actions" data-th="">
+						<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+						<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+					</td>
+				</tr>
+				<tr>
+					<td data-th="Product">
+						<div class="row">
+							<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
+							<div class="col-sm-10">
+								<h4 class="nomargin">Product 1</h4>
+								<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+							</div>
+						</div>
+					</td>
+					<td data-th="Price">Rp.100.999</td>
+					<td data-th="Quantity">
+						<input type="number" class="form-control text-center" value="1">
+					</td>
+					<td data-th="Subtotal" class="text-center">1.99</td>
+					<td class="actions" data-th="">
+						<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+						<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr class="visible-xs">
+					<td class="text-center"><strong>Total 1.99</strong></td>
+				</tr>
+				<tr>
+					<!--<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>-->
+					<td colspan="3" class="hidden-xs">
+<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman.
+Ada biaya tambahan untuk beberapa pengiriman </td>
+					<td class="hidden-xs text-center"><strong>Total Rp 5.499.000</strong></td>
+					<td></td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>	
+	<div class="col-md-3">
+		<div class="panel panel-default">
+		  <div class="panel-body">
+				Subtotal	Rp 5.499.000<br>
+				<b>Grand Total	Rp 5.499.000</b><br><br>
+				<b>PUNYA KODE PROMO ?</b><br>
+				<div class="input-group">
+					<input type="text" class="form-control" name="x">
+					<span class="input-group-btn">
+						<button class="btn btn-warning">Enter</button>
+					</span>
+				</div>
+		  </div>
+		</div>
+		<?php echo anchor('checkout', 'Checkout <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success btn-block'));?>
+	</div>
 </div>
