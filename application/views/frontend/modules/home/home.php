@@ -1,8 +1,3 @@
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
-
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 <style type="text/css">
 .btn-read {
     background: transparent;
@@ -971,28 +966,32 @@ ul.list-group:after {
           </div>
 
       </div>
+
+<!-- s: Slider Product -->
+<link rel="stylesheet" href="<?php echo base_url('assets/css/slider-product.css');?>">
+<!-- e: Slider Product -->
+
 <script>
 /*slider product New Collection */
 $(document).ready(function(){
 
-$('#itemslider').carousel({ interval: 3000 });
+  $('#itemslider').carousel({ interval: 3000 });
 
-$('.carousel-showmanymoveone .item').each(function(){
-var itemToClone = $(this);
+  $('.carousel-showmanymoveone .item').each(function(){
+    var itemToClone = $(this);
 
-for (var i=1;i<6;i++) {
-itemToClone = itemToClone.next();
+    for (var i=1;i<6;i++) {
+      itemToClone = itemToClone.next();
 
-if (!itemToClone.length) {
-itemToClone = $(this).siblings(':first');
-}
+      if (!itemToClone.length) {
+      itemToClone = $(this).siblings(':first');
+    }
 
-itemToClone.children(':first-child').clone()
-.addClass("cloneditem-"+(i))
-.appendTo($(this));
-}
+    itemToClone.children(':first-child').clone()
+    .addClass("cloneditem-"+(i))
+    .appendTo($(this));
+    }
+  });
 });
-});
-
 
 </script>

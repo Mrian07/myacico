@@ -10,14 +10,19 @@
 		<!-- Strat Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
-		<!--<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
+		<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 		<!-- End Bootstrap -->
 
-		<!--<link href="<?php echo base_url('assets/nav/css/bootstrap.min.css');?>" rel="stylesheet">-->
+		<!-- s: jquery-ui -->
+		<link rel="stylesheet" href="<?php echo base_url('assets/css/jquery-ui.min.css');?>">
+		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
+		<!-- e: jquery-ui -->
+
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/nav/css/bootsnav.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
+		<script src="<?php echo base_url('assets/nav/js/bootsnav.js');?>"></script>
 
 		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
 		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/general/favicon.ico');?>">
@@ -27,27 +32,15 @@
 		<!-- CSS -->
 
 		<!-- s: Alert -->
-		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/libs/bundled.css');?>" />-->
-		<script type="text/javascript" src="<?php echo base_url('assets/alert/libs/bundled.js');?>"></script>
+		<!--<link rel="stylesheet" type="text/css" href="<?php //echo base_url('assets/alert/libs/bundled.css');?>" />-->
+		<!--script type="text/javascript" src="<?php //echo base_url('assets/alert/libs/bundled.js');?>"></script-->
 		<script type="text/javascript" src="<?php echo base_url('assets/alert/js/jquery-confirm.js');?>"></script>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/css/jquery-confirm.css');?>" />
         <!-- e: Alert -->
 
-		<!-- s: Slider Price -->
-		<link rel="stylesheet" href="<?php echo base_url('assets/sliderprice/jquery-ui.css');?>">
-		<!-- e: Slider Price -->
-
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jwt-decode.min.js');?>"></script>
 		<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
-
-		<!-- s: Slider Product -->
-		<link rel="stylesheet" href="<?php echo base_url('assets/css/slider-product.css');?>">
-		<!-- e: Slider Product -->
-
-
-
-
 
     </head>
 
@@ -83,7 +76,7 @@
 	<div class="row">
 		<div class="col-sm-2">
 			<div class='logo'>
-				<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
+				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
 			</div>
 		</div>
 		<div class="col-sm-7">
@@ -95,15 +88,15 @@
 								<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
 									<span id="search_concept">All Categories</span> <span class="caret"></span>
 								</button>
-								<ul class="dropdown-menu" role="menu">
-								  <li><a href="#contains">Computer</a></li>
-								  <li><a href="#its_equal">Gatget</a></li>
-								  <li><a href="#greather_than">Communication</a></li>
-								  <li><a href="#less_than">Audio & Visual</a></li>
-								  <li><a href="#greather_than">Mechanical & Electrical</a></li>
-								  <li><a href="#less_than">Hobby</a></li>
-								  <li><a href="#greather_than">Peralatan Rumah</a></li>
-								  <li><a href="#less_than">Perlengkapan Kantor</a></li>
+								<ul class="dropdown-menu cat_menu" role="menu">
+								  <li><a href="#1">Computer</a></li>
+								  <li><a href="#2">Gatget</a></li>
+								  <li><a href="#3">Communication</a></li>
+								  <li><a href="#4">Audio & Visual</a></li>
+								  <li><a href="#5">Mechanical & Electrical</a></li>
+								  <li><a href="#6">Hobby</a></li>
+								  <li><a href="#7">Peralatan Rumah</a></li>
+								  <li><a href="#8">Perlengkapan Kantor</a></li>
 								</ul>
 							</div>
 							<input type="hidden" name="search_param" value="all" id="search_param">
@@ -227,7 +220,7 @@
 	<div class="row">
 		<div class="col-sm-2">
 			<div class='logo'>
-				<?php echo anchor('home/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
+				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
 			</div>
 		</div>
 		<div class="col-sm-6">
@@ -239,7 +232,7 @@
 								<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
 									<span id="search_concept">All Categories</span> <span class="caret"></span>
 								</button>
-								<ul class="dropdown-menu" role="menu">
+								<ul class="dropdown-menu cat_menu" role="menu">
 								  <li><a href="#contains">Computer</a></li>
 								  <li><a href="#its_equal">Gatget</a></li>
 								  <li><a href="#greather_than">Communication</a></li>
@@ -357,6 +350,55 @@
   });
 
 })();
+
+$(function(){
+	$( ".my-search-field" ).autocomplete({
+		source: function (request, response) {
+			$.get(api_base_url+"/product/productlist/"+request.term, function (data) {
+				console.log('res',data);
+				var arr = [];
+				data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id})})
+				response(arr);
+			});
+		},
+		select: function( event, ui ) {
+			this.value = ui.item.label;
+			var cat = $('#search_param').val();
+			//console.log('change:',ui.item.value);
+			if(cat != 'all')location.href = base_url+'product/detail/'+cat+'/'+ui.item.value;
+			location.href = base_url+'product/detail/'+ui.item.value;
+			return false;
+		},
+		focus: function( event, ui ) {
+			//console.log('focus:',this);
+			return false;
+		},
+		minLength: 2
+	});
+});
+
+<?php if(isset($user->name)){ ?>
+
+$("#logout").click(function(e){
+    e.preventDefault();
+
+	$.confirm({
+		title: 'Confirm!',
+		content: 'Anda yakin akan logout?',
+		buttons: {
+			confirm: function () {
+				document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+				location.href='<?php echo base_url("customer/signIn");?>';
+			},
+			cancel: function () {
+				//$.alert('Canceled!');
+			}
+		}
+	});
+
+});
+<?php } ?>
+
 </script>
 
 <script type="text/javascript">

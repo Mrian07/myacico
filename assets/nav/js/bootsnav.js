@@ -573,13 +573,15 @@
     
     // Initialize
     $(document).ready(function(){
-        $.get("http://myacico.net:8080/myacico-service/api/category/list",
+        $.get(api_base_url+"/category/list",
         function(data){
-            console.log('getmenu:', data);
+            //console.log('getmenu:', data);
             var mn = $('#navbar-menu').children();
+            var cat_menu = $('.cat_menu');
             mn.html('');
+            cat_menu.html('');
             data.forEach(function(m){
-                console.log(m);
+                //console.log(m);
                 var ul = $(document.createElement('div')).attr({"class":"dropdown-menu megamenu-content", role:"menu"});
                 ul.append('<img src="'+m.imageurl+'" style="float:right;width:200px"/>');
                 m.c2.forEach(function(m2){
@@ -590,6 +592,7 @@
                     .append('<a href="#" class="dropdown-toggle" data-toggle="dropdown">'+m.name+'</a>')
                     .append(ul)
                 );
+                cat_menu.append('<li><a href="#'+m.categoryParentId+'">'+m.name+'</a></li>');
             });
             bootsnav.initialize();
         });
