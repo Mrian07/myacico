@@ -34,7 +34,27 @@
 
 }
 </style>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+.progress {
+    position: relative;
+	height: 25px;
+}
+.progress > .progress-type {
+	position: absolute;
+	left: 0px;
+	font-weight: 800;
+	padding: 3px 30px 2px 10px;
+	color: rgb(255, 255, 255);
+	background-color: rgba(25, 25, 25, 0.2);
+}
+.progress > .progress-completed {
+	position: absolute;
+	right: 0px;
+	font-weight: 800;
+	padding: 3px 10px 2px;
+}
+</style>
+
 <div class="container">
 	<div class="row">
       <div class="col-sm-12">
@@ -43,6 +63,14 @@
       </div>
       </div>
     </div>
+
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
+        <span class="sr-only">35% Complete (success)</span>
+      </div>
+      <span class="progress-completed"> 35%</span>
+    </div>
+
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
