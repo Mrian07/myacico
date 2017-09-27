@@ -575,11 +575,11 @@
     $(document).ready(function(){
         $.get("http://myacico.net:8080/myacico-service/api/category/list",
         function(data){
-            console.log('getmenu:', data);
+            //console.log('getmenu:', data);
             var mn = $('#navbar-menu').children();
             mn.html('');
             data.forEach(function(m){
-                console.log(m);
+                //console.log(m);
                 var ul = $(document.createElement('div')).attr({"class":"dropdown-menu megamenu-content", role:"menu"});
                 ul.append('<img src="'+m.imageurl+'" style="float:right;width:200px"/>');
                 m.c2.forEach(function(m2){

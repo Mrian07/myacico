@@ -1,13 +1,16 @@
-<script src="<?php echo base_url('assets/productpopup/js/vendor/jquery.js');?>"></script>
+<!--script src="<?php //echo base_url('assets/productpopup/js/vendor/jquery.js');?>"></script-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/dist/xzoom.min.js');?>"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/productpopup/css/xzoom.css');?>" media="all" /> 
 <link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url('assets/productpopup/magnific-popup/css/magnific-popup.css');?>" />
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/magnific-popup/js/magnific-popup.js');?>"></script>
 
-<div class='my-detail-product'>
+<div class='my-detail-product' ng-app="myApp"  ng-controller="detailCnt">
 	<div class="row line-detail-product">
 		<div class="col-sm-12">
-		Home / Kategori / List Produk / <b>SAMSUNG Caramel [E1272] - White </b>
+			<a href="<?php echo base_url('/');?>">home</a>
+			<a href="#{{cat.categoryId}}" ng-repeat="cat in dat.categoryBrdc">{{cat.categoryName}}</a>
+			<b>{{dat.name}}</b>
 		</div>
 	</div>
 	
@@ -17,35 +20,33 @@
 		<div class="row">
 		  <div class="col-sm-5">
 			<div class="xzoom-container">
-			  <img class="xzoom5" id="xzoom-magnific" src="<?php echo base_url('images/gallery/preview/01_b_car.jpg');?>" xoriginal="<?php echo base_url('images/gallery/original/01_b_car.jpg');?>" />
+			  <img class="xzoom" id="xzoom-magnific" style="maxWidth='400'" src="{{dat.imageurl[0]}}" xoriginal="{{dat.imageurl[0]}}" />
 			  <div class="xzoom-thumbs">
-				<a href="<?php echo base_url('images/gallery/original/01_b_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php echo base_url('images/gallery/thumbs/01_b_car.jpg');?>"  xpreview="<?php echo base_url('images/gallery/preview/01_b_car.jpg');?>" title="The description goes here"></a>
-				<a href="<?php echo base_url('images/gallery/original/02_o_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php echo base_url('images/gallery/preview/02_o_car.jpg');?>" title="The description goes here"></a>
-				<a href="<?php echo base_url('images/gallery/original/03_r_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php echo base_url('images/gallery/preview/03_r_car.jpg');?>" title="The description goes here"></a>
-				<a href="<?php echo base_url('images/gallery/original/04_g_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php echo base_url('images/gallery/preview/04_g_car.jpg');?>" title="The description goes here"></a>
+				<a ng-repeat="url in dat.imageurl" ng-href="{{url}}" on-finish-render="ngRepeatFinished">
+					<img class="xzoom-gallery" width="80" src="{{url}}" xpreview="{{url}}" title="">
+				</a>
+				<!--a href="<?php //echo base_url('images/gallery/original/02_o_car.jpg');?>">
+					<img class="xzoom-gallery" width="80" src="<?php //echo base_url('images/gallery/preview/02_o_car.jpg');?>" title="The description goes here">
+				</a-->
+				<!--a href="<?php //echo base_url('images/gallery/original/03_r_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/03_r_car.jpg');?>" title="The description goes here"></a>
+				<a href="<?php //echo base_url('images/gallery/original/04_g_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/04_g_car.jpg');?>" title="The description goes here"></a-->
 			  </div>
 			</div>        
 		  </div>
 		  <div class="col-sm-7"></div>
 		</div>
-	  
-	  
-	  
-	  
-	  
-	  
 	  </div>
 	  <div class="col-sm-5 detail-product">
-		<h5 class='title-product'>SAMSUNG Caramel [E1272] - White</h5>
+		<h5 class='title-product'>{{dat.name}}</h5>
 		<div class="row">
 			<div class="col-sm-6">
 			by <span class='red-tx'>SAMSUNG</span><br>
-			MA #SAMSSMAR00002007279 | MFR #<br>
-			<span class='price'>Rp 499,000</span><br>
+			{{dat.m_product_id}}<br>
+			<span class='price'>Rp {{dat.pricelist}}</span><br>
 			<br><br>
-			Save Rp 100,000 (21%)
+			Save Rp 100,000 ({{dat.discount}}%)
 			</div>
-			<div class="col-sm-6">Out of stock</div>
+			<div class="col-sm-6">Stock: {{dat.stock}}</div>
 		</div>
 		
 		
@@ -75,7 +76,7 @@
 	<div class="tab-content">
 	  <div id="home" class="tab-pane fade in active">
 		<h3>HOME</h3>
-		<p>Some content.</p>
+		<p>{{data}}</p>
 	  </div>
 	  <div id="menu1" class="tab-pane fade">
 		<h3>Menu 1</h3>
@@ -83,45 +84,99 @@
 	  </div>
 	</div>
 	
-	
-	<!--
-	<div class="tab_container">
-		<input id="tab1" type="radio" name="tabs" checked>
-		<label for="tab1"><span>Rinican Barang</span></label>
-
-		<input id="tab2" type="radio" name="tabs">
-		<label for="tab2"><span>Deskripsi</span></label>
-
-		
-
-		<section id="content1" class="tab-content">
-			<h3>Headline 1</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			
-		</section>
-
-		<section id="content2" class="tab-content">
-			<h3>Headline 2</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-		  
-		</section>
-
-		
-	</div>
-	-->
-	
-	
-	
-	
-	
-	
 </div>
 
-<script src="<?php echo base_url('assets/productpopup/js/setup.js');?>"></script>
+<!--script src="<?php //echo base_url('assets/productpopup/js/setup.js');?>"></script-->
+<script>
+function init_popup() {
+    $('.xzoom, .xzoom-gallery').xzoom({zoomWidth: 400, title: true, tint: '#333', Xoffset: 15});
+
+    //Integration with hammer.js
+    var isTouchSupported = 'ontouchstart' in window;
+
+    if (isTouchSupported) {
+        //If touch device
+        $('.xzoom').each(function(){
+            var xzoom = $(this).data('xzoom');
+            xzoom.eventunbind();
+        });
+        
+        $('.xzoom').each(function() {
+            var xzoom = $(this).data('xzoom');
+            $(this).hammer().on("tap", function(event) {
+                event.pageX = event.gesture.center.pageX;
+                event.pageY = event.gesture.center.pageY;
+                var s = 1, ls;
+
+                xzoom.eventmove = function(element) {
+                    element.hammer().on('drag', function(event) {
+                        event.pageX = event.gesture.center.pageX;
+                        event.pageY = event.gesture.center.pageY;
+                        xzoom.movezoom(event);
+                        event.gesture.preventDefault();
+                    });
+                }
+
+                xzoom.eventleave = function(element) {
+                    element.hammer().on('tap', function(event) {
+                        xzoom.closezoom();
+                    });
+                }
+                xzoom.openzoom(event);
+            });
+        });
+
+   
+    } else {
+        //If not touch device
+
+        //Integration with magnific popup plugin
+        $('#xzoom-magnific').bind('click', function(event) {
+            var xzoom = $(this).data('xzoom');
+            xzoom.closezoom();
+            var gallery = xzoom.gallery().cgallery;
+            var i, images = new Array();
+            for (i in gallery) {
+                images[i] = {src: gallery[i]};
+            }
+            $.magnificPopup.open({items: images, type:'image', gallery: {enabled: true}});
+            event.preventDefault();
+        });
+    }
+}
+var app = angular.module("myApp", []);
+app.directive('onFinishRender', function ($timeout) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attr) {
+            if (scope.$last === true) {
+                $timeout(function () {
+                    scope.$emit(attr.onFinishRender);
+                });
+            }
+        }
+    }
+});
+
+app.controller('detailCnt', function($scope, $http){
+	$scope.name = "SAMSUNG Caramel [E1272] - White";
+	$scope.sku = "MA #SAMSSMAR00002007279 | MFR #";
+	$scope.price = '499,000';
+	$scope.discount = '21';
+	$scope.stock = 'Out of stock';
+	$scope.get = function(){
+		$http.get(api_base_url+"/product/productlist/detail?id=<?php echo $pro_id; ?>")
+		.then(function(data, status, headers, config) {
+			$scope.data = JSON.stringify(data);
+			$scope.dat = data.data;
+		}, function(e){
+			console.log('error:',e);
+		});
+	}
+	$scope.get();
+	$scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+		console.log('finish render');
+		init_popup();
+	});
+});
+</script>

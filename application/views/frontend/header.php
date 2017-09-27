@@ -71,14 +71,14 @@
 									<span id="search_concept">All Categories</span> <span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" role="menu">
-								  <li><a href="#contains">Computer</a></li>
-								  <li><a href="#its_equal">Gatget</a></li>
-								  <li><a href="#greather_than">Communication</a></li>
-								  <li><a href="#less_than">Audio & Visual</a></li>
-								  <li><a href="#greather_than">Mechanical & Electrical</a></li>
-								  <li><a href="#less_than">Hobby</a></li>
-								  <li><a href="#greather_than">Peralatan Rumah</a></li>
-								  <li><a href="#less_than">Perlengkapan Kantor</a></li>
+								  <li><a href="#1">Computer</a></li>
+								  <li><a href="#2">Gatget</a></li>
+								  <li><a href="#3">Communication</a></li>
+								  <li><a href="#4">Audio & Visual</a></li>
+								  <li><a href="#5">Mechanical & Electrical</a></li>
+								  <li><a href="#6">Hobby</a></li>
+								  <li><a href="#7">Peralatan Rumah</a></li>
+								  <li><a href="#8">Perlengkapan Kantor</a></li>
 								</ul>
 							</div>
 							<input type="hidden" name="search_param" value="all" id="search_param">
@@ -312,7 +312,10 @@ $(function(){
 		},
 		select: function( event, ui ) {
 			this.value = ui.item.label;
-			console.log('change:',ui.item.value);
+			var cat = $('#search_param').val();
+			//console.log('change:',ui.item.value);
+			if(cat != 'all')location.href = base_url+'product/detail/'+cat+'/'+ui.item.value;
+			location.href = base_url+'product/detail/'+ui.item.value;
 			return false;
 		},
 		focus: function( event, ui ) {
