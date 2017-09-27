@@ -20,12 +20,12 @@ class Checkout extends Web {
 
 	}
 
-	public function cart()
+	public function index()
 	{
 		$this->data['title_web'] = "Myacico.com - Create Account Business";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/Checkout/cart.php',$this->data);
+		$this->load->view('frontend/modules/Checkout/checkout.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
