@@ -7,10 +7,7 @@ Image credits: unsplash.com
 */
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400,700);
 
-body {
-    font-family: 'Quicksand', sans-serif;
-    font-weight:700;
-}
+
 
 
 
@@ -217,18 +214,11 @@ h1{
 
 }
 
-
-
-
-
-
-
-
 </style>
 <div class="row">
   <div class="col-sm-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+
 
     <div id="first-slider">
         <div id="carousel-example-generic" class="carousel slide carousel-fade">
