@@ -18,6 +18,8 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
 		<!-- e: jquery-ui -->
 
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/nav/css/bootsnav.css');?>" rel="stylesheet">
