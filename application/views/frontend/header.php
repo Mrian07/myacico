@@ -18,6 +18,8 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
 		<!-- e: jquery-ui -->
 
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/nav/css/bootsnav.css');?>" rel="stylesheet">
@@ -44,7 +46,7 @@
 
     </head>
 
-<body style='font-weight: normal;'>
+<body style='font-weight: normal;' ng-app="myApp">
 <div class="my-header-panel3">
 	<div class="container">
 		<div class="row">
@@ -270,26 +272,6 @@
 							<li><a href="#" id="logout">Logout</a></li>
 							</ul>
 						</div>
-						<script type="text/javascript">
-						$("#logout").click(function(e){
-							e.preventDefault();
-
-							$.confirm({
-								title: 'Confirm!',
-								content: 'Anda yakin akan logout?',
-								buttons: {
-									confirm: function () {
-										document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-										location.href='<?php echo base_url("customer/signIn");?>';
-									},
-									cancel: function () {
-										//$.alert('Canceled!');
-									}
-								}
-							});
-
-						});
-						</script>
 
 						<?php }else{ ?>
 						<div class="dropdown-account">
@@ -341,8 +323,8 @@
 	</div>
 </div>
 
-
 <script>
+var app = angular.module("myApp", []);
 (function(){
 
   $("#cart").on("click", function() {
