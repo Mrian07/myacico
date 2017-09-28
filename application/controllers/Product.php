@@ -61,7 +61,7 @@ class Product extends Web {
 
 	public function detail()
     {
-		//$this->load->view('frontend/test',$this->data);
+		$this->data['pro_id']=$this->uri->segment(3);
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
