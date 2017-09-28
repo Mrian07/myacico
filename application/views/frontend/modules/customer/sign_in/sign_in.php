@@ -9,6 +9,7 @@
 
 	<div class="row">
 		<div class="col-sm-6">
+		<p>Masukan email dan password login Anda pada form dibawah ini.</p>
 		<div class='border-create'>
 			<form name="signin" method="post">
 				<div class="form-group">
@@ -35,11 +36,11 @@
 		
 		</div>
 		<div class="col-sm-6">
-			<div class='border-create'>
+			
 				<h5>PENDAFTARAN</h5>
+				<div class='border-create'>
 				<div class="row">
 				  <div class="col-sm-12">
-						<hr>
 						<?php echo $lang_ket_daftar_personal; ?>
 						<div class='my-btn-create'><?php echo anchor('customer/personal/', $lang_btn_personal, array('class'=>'my-link-create'));?></div>
 				  </div>

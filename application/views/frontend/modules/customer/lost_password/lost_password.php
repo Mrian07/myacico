@@ -19,8 +19,8 @@
 			<label>Email:</label>
 			<input type="email" id="email" name="email" class="form-control"/>
 		  </div>
-		  <input type="submit" class="btn btn-primary" value="Kirim">
-
+		  <input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+			<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 		</form>
 		</div>
 	  </div>
@@ -34,34 +34,47 @@
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
+var error = function(er){
+  $('#spinner_img').hide();
+  $('#submit_btn').val('Kirim').removeClass('disabled');
+  console.log('OK:', er);
+  $.alert({
+    title: 'Alert!',
+    content: 'koneksi tidak berhasil, silahkan coba lagi!',
+  });
+};
 
 $(document).ready(function() {
 
 	$('form').submit(function(e){
-
 		var email = $("#email").val();
 
-		if(email==''){ 
+		if(email==''){		
 			$.alert({
 				title: 'Alert!',
 				content: 'Email tidak boleh kosong!',
 			});
+		}else{
+			
+			$('#spinner_img').show();
+			$('#submit_btn').val('loading...').addClass('disabled');
+			e.preventDefault();
+
+			var apiurl = baseApiUrl + '/aduser/forgotpassword';
+			var data = $(this).serialize();
+
+			// success handling
+			var success = function(r){
+				$('#spinner_img').hide();
+				$('#submit_btn').val('Kirim').removeClass('disabled');
+				console.log('OK:', r);
+				alert(r.message);
+			};
+
+			//$.post( apiurl, data, success, "json" );
+			$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "email":email }) , url: apiurl, success: success, error: error });
+		
 		}
-//a
-	    e.preventDefault();
-
-	    var apiurl = baseApiUrl + '/login';
-	    var data = $(this).serialize();
-
-	    // success handling
-	    var success = function(r){
-	      console.log('OK:', r);
-	      alert(r.message);
-	    };
-
-	    $.post( apiurl, data, success, "json" );
-	    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
-
 	});
 
 });
