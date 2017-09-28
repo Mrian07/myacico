@@ -44,7 +44,7 @@
 
     </head>
 
-<body style='font-weight: normal;'>
+<body style='font-weight: normal;' ng-app="myApp">
 <div class="my-header-panel3">
 	<div class="container">
 		<div class="row">
@@ -270,26 +270,6 @@
 							<li><a href="#" id="logout">Logout</a></li>
 							</ul>
 						</div>
-						<script type="text/javascript">
-						$("#logout").click(function(e){
-							e.preventDefault();
-
-							$.confirm({
-								title: 'Confirm!',
-								content: 'Anda yakin akan logout?',
-								buttons: {
-									confirm: function () {
-										document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-										location.href='<?php echo base_url("customer/signIn");?>';
-									},
-									cancel: function () {
-										//$.alert('Canceled!');
-									}
-								}
-							});
-
-						});
-						</script>
 
 						<?php }else{ ?>
 						<div class="dropdown-account">
@@ -341,8 +321,8 @@
 	</div>
 </div>
 
-
 <script>
+var app = angular.module("myApp", []);
 (function(){
 
   $("#cart").on("click", function() {
