@@ -7,7 +7,7 @@
   </div>
 </div>
 <div class="row">
-<div class="col-md-12">
+<div class="col-md-8">
 	<div class="panel panel-default">
 	  <div class="panel-heading"><b>Alamat Pengiriman</b></div>
 	  <div class="panel-body">
@@ -22,17 +22,19 @@
 	</div>
 	<div class="panel panel-default">
 	  <div class="panel-heading"><b>Metode Pembayaran</b></div>
-	  <div class="panel-body">Panel Content</div>
+	  <div class="panel-body">Pilih metode pembayaran<br>
+	  <button type="button" class="btn btn-info">Ubah</button>
+	  </div>
 	</div>
 	<div class="panel panel-default">
 	  <div class="panel-heading"><b>Ulasan dan Kirim</b></div>
-	  <div class="panel-body">Panel Content</div>
+	  <div class="panel-body"><button type="button" class="btn btn-info">Ubah</button></div>
 	</div>
 </div>
 
 </div>
 
 
-<?php echo anchor('finish', 'Pesan Sekarang', array('class'=>'btn btn-success my-btn-chekout'));?>
+<?php echo anchor('finish', 'Pesan Sekarang <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success my-btn-chekout'));?>
 
 </div>
