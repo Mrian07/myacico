@@ -80,6 +80,9 @@ $(document).ready(function() {
 					content: 'Nama berhasil diubah',
 				});
 				
+				document.cookie='x-auth='+r.token+'; path=/';
+				location.href = '<?php echo base_url('account'); ?>';
+				
 			};
 
 			//$.post( apiurl, data, success, "json" );
