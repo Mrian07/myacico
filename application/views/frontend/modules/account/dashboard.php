@@ -13,10 +13,9 @@
 		</div>
 		<div class="col-sm-8">
       <div class="dashboard">
-        <div class="welcome-msg">
+	  <?php print_r($user); ?>
         <p>Hello <?php echo $user->name; ?>, Dari Beranda Akun anda, anda bisa melihat tinjauan dari aktivitas akun yang ada sekarang dan memperbaharui informasi akun anda. Pilih tautan di bawah ini untuk melihat atau mengedit informasi</p>
-      </div>
-
+		<hr>
 		<div class="row">
 			<div class="col-sm-6"><h5>Informasi Kontak</h5></div>
 			<div class="col-sm-6"><h5>Newsletters</h5></div>
@@ -24,8 +23,7 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="row">
-				  <div class="col-sm-6"><?php echo anchor('customer/government/', 'Ubah data');?></div>
-				  <div class="col-sm-6"><?php echo anchor('customer/government/', 'Ubah kata sandi');?></div>
+				  <div class="col-sm-12"><?php echo anchor('account/informasiAkun/', 'Ubah Data & Password');?></div>
 				</div>
 
 
