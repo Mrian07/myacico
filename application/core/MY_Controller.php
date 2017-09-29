@@ -160,7 +160,7 @@ class Web_private extends web {
     public function __construct() {
         parent::__construct();
 
-		if(!$this->logedin) redirect('customer/signIn');
+		if(!$this->logedin) redirect('customer/signIn?callback='.current_url());
     }
 
 }

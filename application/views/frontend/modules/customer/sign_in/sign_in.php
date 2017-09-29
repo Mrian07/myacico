@@ -69,13 +69,15 @@ var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 var success = function(r){
   $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
-  console.log('OK:', r);
+  //console.log('OK:', r);
   if(!r.token) return $.alert({
     title: 'Alert!',
     content: r.message
   });
-  document.cookie='x-auth='+r.token+'; path=/';
-  location.href = '<?php echo base_url('account'); ?>';
+  document.cookie='x-auth='+r.token+'; path='+base_path;
+  var cb = location.search.split('callback=');
+  if(cb.length > 1) location.href = cb[1].split(';').shift();
+  else location.href = '<?php echo base_url('account'); ?>';
 };
 var error = function(er){
   $('#spinner_img').hide();
