@@ -1,6 +1,6 @@
 <ul class='my-menu-desktop'>
     <li <?php echo$active_dashboard; ?>><?php echo anchor('account', 'Dashboard');?></li>
-    <li <?php echo$active_informasiAkun; ?>><?php echo anchor('account/informasiAkun', 'Informasi Akun');?></li>
+    <li <?php echo$active_informasiAkun; ?>><?php echo anchor('account/informasiAkun', 'Informasi Akun & Billing');?></li>
     <li <?php echo$active_bukuAlamat; ?>><?php echo anchor('account/bukuAlamat', 'Buku Alamat');?></li>
     <li <?php echo$active_riwayatStatusPesanan; ?>><?php echo anchor('account/riwayatStatusPesanan', 'Riwayat & Status Pesanan');?></li>
 	<li <?php echo$active_returnManagementAuthority; ?>><?php echo anchor('account/returnManagementAuthority', 'Return Management Authority');?></li>
@@ -22,7 +22,7 @@
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
 		<li><?php echo anchor('account', 'Dashboard');?></li>
-		<li><?php echo anchor('account/informasiAkun', 'Informasi Akun');?></li>
+		<li><?php echo anchor('account/informasiAkun', 'Informasi Akun & Billing');?></li>
 		<li><?php echo anchor('account/bukuAlamat', 'Buku Alamat');?></li>
 		<li><?php echo anchor('account/riwayatStatusPesanan', 'Riwayat & Status Pesanan');?></li>
 		<li><?php echo anchor('account/returnManagementAuthority', 'Return Management Authority');?></li>

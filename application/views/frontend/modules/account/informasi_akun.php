@@ -14,15 +14,15 @@
 		<div class="col-sm-9">
 		
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<div class="panel panel-default">
-					  <div class="panel-heading"><strong>Data Diri</strong></div>
+					  <div class="panel-heading"><strong>Data Akun</strong></div>
 					  <div class="panel-body"><?php echo $user->name; ?>, <?php echo $user->email; ?>
-					  <div class='my-btn-general'><?php echo anchor('customer/government/', 'Ubah', array('class'=>'my-link-general'));?></div>
+					  <div class='my-btn-general'><?php echo anchor('account/formAccount/', 'Ubah', array('class'=>'my-link-general'));?></div>
 					  </div>
 					</div>			
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<div class="panel panel-default">
 					  <div class="panel-heading"><strong>Ganti Password</strong></div>
 					  <div class="panel-body">Jika ingin mengganti password login click button dibawah ini.
@@ -30,6 +30,14 @@
 					  
 					  </div>
 					</div>		
+				</div>
+				<div class="col-sm-4">
+					<div class="panel panel-default">
+					  <div class="panel-heading"><strong>Data Billing</strong></div>
+					  <div class="panel-body">Belum ada data billing
+					  <div class='my-btn-general'><?php echo anchor('account/formBilling/', 'Ubah', array('class'=>'my-link-general'));?></div>
+					  </div>
+					</div>			
 				</div>
 			</div>	
 		</div>
