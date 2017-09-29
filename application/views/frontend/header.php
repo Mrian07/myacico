@@ -83,30 +83,28 @@
 		</div>
 		<div class="col-sm-7">
 			<div class='myserach'>
-
-
-						<div class="input-group">
-							<div class="input-group-btn search-panel">
-								<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
-									<span id="search_concept">All Categories</span> <span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu cat_menu" role="menu">
-								  <li><a href="#1">Computer</a></li>
-								  <li><a href="#2">Gatget</a></li>
-								  <li><a href="#3">Communication</a></li>
-								  <li><a href="#4">Audio & Visual</a></li>
-								  <li><a href="#5">Mechanical & Electrical</a></li>
-								  <li><a href="#6">Hobby</a></li>
-								  <li><a href="#7">Peralatan Rumah</a></li>
-								  <li><a href="#8">Perlengkapan Kantor</a></li>
-								</ul>
-							</div>
-							<input type="hidden" name="search_param" value="all" id="search_param">
-							<input type="text" class="my-search-field" name="x" placeholder="Search term...">
-							<span class="input-group-btn">
-								<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
-							</span>
-						</div>
+				<div class="input-group">
+					<div class="input-group-btn search-panel">
+						<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
+							<span id="search_concept">All Categories</span> <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu cat_menu" role="menu">
+						  <li><a href="#1">Computer</a></li>
+						  <li><a href="#2">Gatget</a></li>
+						  <li><a href="#3">Communication</a></li>
+						  <li><a href="#4">Audio & Visual</a></li>
+						  <li><a href="#5">Mechanical & Electrical</a></li>
+						  <li><a href="#6">Hobby</a></li>
+						  <li><a href="#7">Peralatan Rumah</a></li>
+						  <li><a href="#8">Perlengkapan Kantor</a></li>
+						</ul>
+					</div>
+					<input type="hidden" name="search_param" value="all" id="search_param">
+					<input type="text" class="my-search-field" name="x" placeholder="Search term...">
+					<span class="input-group-btn">
+						<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
+					</span>
+				</div>
 
 			</div>
 		</div>
@@ -133,7 +131,7 @@
 							<div class="dropdown-account">
 							  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
 							  <div class="dropdown-account-content">
-								<?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
+								<?php echo anchor('account', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
 								<?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('id'=>'logout'));?>
 							  </div>
 							</div>
@@ -154,11 +152,16 @@
 
 							</div>
 
-							<div class="dropdown-basket">
-							  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (2) <span class="caret"></span></button>
-							  <div class="dropdown-basket-content">
-									<div class='my-cart-scroll'>
-									<div class="row my-cart">
+							<div class="dropdown-basket" ng-controller="cartCnt">
+								<button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart ({{mycart.length}}) <span class="caret"></span></button>
+								<div class="dropdown-basket-content">
+									<div ng-show="mycart.length > 0" class='my-cart-scroll'>
+										<div class="row my-cart" ng-repeat="arr in mycart">
+											<div class="col-sm-3"><img src="{{arr.image_url}}" border="0" height="50" width="50"></div>
+											<div class="col-sm-7">{{arr.name}}<br>{{arr.price}}</div>
+											<div class="col-sm-2">{{arr.quantity}}</div>
+										</div>
+									<!--div class="row my-cart">
 									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
 									  <div class="col-sm-7">Samsung galaxy<br>Rp.6.000.000</div>
 									  <div class="col-sm-2">
@@ -188,26 +191,15 @@
 									  <div class="col-sm-2">
 											<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');?>
 										</div>
+									</div-->
 									</div>
-
-									<div class="row my-cart">
-									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung2.jpg');?>" border="0" height="50" width="50"></div>
-									  <div class="col-sm-7">Samsung 8<br>Rp.1.000.000</div>
-									  <div class="col-sm-2">
-											<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');?>
-										</div>
+									<div ng-show="mycart.length > 0">
+										<div class='my-total-cart'>TOTAL : <b>{{get_total()}}</b></div>
+										<?php echo anchor('cart', 'My Cart & Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
 									</div>
+									<div ng-show="mycart.length == 0"><center>Keranjang masih kosong</center></div>
 								</div>
-									<div class='my-total-cart'>
-									TOTAL : <b>Rp.7.000.000</b>
-									</div>
-
-									<?php echo anchor('cart', 'My Cart & Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
-
-							  </div>
 							</div>
-
-
 						</div>
 					</div>
 				</div>
@@ -289,12 +281,12 @@
 
 						</div>
 						<div class="dropdown-basket">
-						  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (0)</button>
+						  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart ({{mycart.length}})</button>
 						  <div class="dropdown-basket-content">
 
-								<div class="row my-cart">
-								  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
-								  <div class="col-sm-7">Samsung galaxy<br>Rp.6.000.000</div>
+								<div class="row my-cart" ng-repeat="arr in mycart">
+								  <div class="col-sm-3"><img src="{{arr.image_url}}" border="0" height="50" width="50"></div>
+								  <div class="col-sm-7">arr.name<br>arr.price</div>
 								  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
 								</div>
 
@@ -304,7 +296,7 @@
 								  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
 								</div>
 								<div class='my-total-cart'>
-								TOTAL : <b>Rp.7.000.000</b>
+								TOTAL : <b>{{total}}</b>
 								</div>
 								<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
 
@@ -325,13 +317,37 @@
 
 <script>
 var app = angular.module("myApp", []);
-(function(){
+app.factory('$mycart', function() {
+	var data = [];
+	var saved_cart = document.cookie.split('cart=');
+	if(saved_cart.length > 1){
+		data = JSON.parse(saved_cart[1].split(';').shift());
+		//console.log('cart on cookies found');
+	}
+    return {data:data};
+});
+app.controller('cartCnt', function($scope, $mycart){
+	$scope.mycart = $mycart.data;
+	$scope.del = function(i){
+		if(confirm('Sure? '))$scope.mycart.splice(i, 1);
+	}
+	$scope.get_total = function(){
+		var total = 0;
+		$scope.mycart.forEach(function(c){
+			total+=(c.price*c.quantity);
+		});
+		document.cookie = 'cart='+JSON.stringify($scope.mycart)+'; path='+base_path;
+		return total;
+	}
+});
+
+/*(function(){
 
   $("#cart").on("click", function() {
     $(".shopping-cart").fadeToggle( "fast");
   });
 
-})();
+})();*/
 
 $(function(){
 	$( ".my-search-field" ).autocomplete({
@@ -385,5 +401,6 @@ $("#logout").click(function(e){
 
 <script type="text/javascript">
 var base_url = '<?php echo base_url();?>';
+var base_path = base_url.split(location.host).pop();
 var api_base_url = 'http://myacico.net:8080/myacico-service/api';
 </script>

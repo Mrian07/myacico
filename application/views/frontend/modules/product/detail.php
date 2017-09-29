@@ -51,14 +51,12 @@
 	  </div>
 	  <div class="col-sm-3" style='font-size:20px; text-align: center;'>
 		Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i> 
-		
-		
-		
 		<div class='detail-add-wishlist'>
-			<div class="btn-group">Quantity: <input type='text' value='1' class='form-control' style='width:50px'></div><br>
+			<div class="btn-group">Quantity: <input type='text' class='form-control' style='width:50px' ng-model="quantity" ng-change="check_quantity()"></div><br>
 			<div class="btnaddcart">
-			<?php echo anchor('customer/contact', '<button class="dropbtnaddcar">ADD TO CART</button>');?>
-			</div><br><br>
+				<button class="dropbtnaddcar" ng-click="add_to_cart()">ADD TO CART</button>
+			</div>
+			<br><br>
 			Add To Wishlist
 		</div>
 	  
@@ -98,12 +96,29 @@ app.directive('onFinishRender', function ($timeout) {
     }
 });
 
-app.controller('detailCnt', function($scope, $http){
+app.controller('detailCnt', function($scope, $http, $mycart){
 	$scope.name = "SAMSUNG Caramel [E1272] - White";
 	$scope.sku = "MA #SAMSSMAR00002007279 | MFR #";
 	$scope.price = '499,000';
 	$scope.discount = '21';
 	$scope.stock = 'Out of stock';
+	$scope.quantity = 1;
+	$scope.add_to_cart = function(){
+		console.log('cur cart:', $mycart.data);
+		var cart = {
+			m_product_id:$scope.dat.m_product_id,
+			name:$scope.dat.name,
+			image_url:$scope.dat.imageurl[0],
+			price:$scope.dat.pricelist,
+			quantity:$scope.quantity
+		}
+		$mycart.data.push(cart);
+		document.cookie = 'cart='+JSON.stringify($mycart.data)+'; path='+base_path;
+		console.log('total cart:', $mycart.data);
+	}
+	$scope.check_quantity = function(){
+		if(isNaN($scope.quantity))$scope.quantity=1;
+	}
 	$scope.get = function(){
 		$http.get(api_base_url+"/product/productlist/detail?id=<?php echo $pro_id; ?>")
 		.then(function(data, status, headers, config) {
