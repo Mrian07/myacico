@@ -94,8 +94,8 @@
     </div>
   </div>
 </div>
+
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 $.ajaxSetup({
   error: function(){
     alert('service not available, please try again later');
@@ -107,7 +107,7 @@ $.ajaxSetup({
 function get_distric(){
   $("#ditric_box").slideDown();
   $("#ditric_sel").prop('disabled', true).html('<option value="">--pilih--</option>');
-  $.get("http://myacico.net:8080/myacico-service/api/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
+  $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
     r.forEach(function(o){
       $("#ditric_sel").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
     });
@@ -118,7 +118,7 @@ function get_distric(){
 function get_city(){
   $("#city_box").slideDown();
   $("#city_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_distric);
-  $.get( "http://myacico.net:8080/myacico-service/api/ccity/getlistccitybyidregion/"+$("#region_sel").val(), function(r){
+  $.get( api_base_url+"/ccity/getlistccitybyidregion/"+$("#region_sel").val(), function(r){
     r.forEach(function(o){
       $("#city_sel").append("<option value='"+o.c_city_id+"'>"+o.name+"</option>");
     });
@@ -129,7 +129,7 @@ function get_city(){
 function get_region(){
   $("#region_box").slideDown();
   $("#region_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_city);
-  $.get( "http://myacico.net:8080/myacico-service/api/cregion/getlistcregionbyidccountry/"+$("#country_sel").val(), function(r){
+  $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+$("#country_sel").val(), function(r){
     r.forEach(function(o){
       $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
     });
@@ -139,7 +139,7 @@ function get_region(){
 $(document).ready(function() {
   $("form").submit(function(e){
     e.preventDefault();
-    var apiurl = baseApiUrl + '/aduser/add';
+    var apiurl = api_base_url + '/aduser/add';
     var fl=document.signup;
     var data = $(this).serialize();
     // return alert(data);
@@ -179,7 +179,7 @@ $(document).ready(function() {
     }
   });
 
-  $.get("http://myacico.net:8080/myacico-service/api/ccountry/getlistccountry", function(r){
+  $.get(api_base_url+"/ccountry/getlistccountry", function(r){
     console.log(r);
     r.forEach(function(o){
       $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
