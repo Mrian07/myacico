@@ -13,7 +13,6 @@
 		</div>
 		<div class="col-sm-8">
       <div class="dashboard">
-	  <?php print_r($user); ?>
         <p>Hello <?php echo $user->name; ?>, Dari Beranda Akun anda, anda bisa melihat tinjauan dari aktivitas akun yang ada sekarang dan memperbaharui informasi akun anda. Pilih tautan di bawah ini untuk melihat atau mengedit informasi</p>
 		<hr>
 		<div class="row">

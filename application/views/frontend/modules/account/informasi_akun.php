@@ -14,19 +14,30 @@
 		<div class="col-sm-9">
 		
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<div class="panel panel-default">
-					  <div class="panel-heading"><strong>Data Diri</strong></div>
+					  <div class="panel-heading"><strong>Data Akun</strong></div>
 					  <div class="panel-body"><?php echo $user->name; ?>, <?php echo $user->email; ?>
-					  <br><br><button type="button" class="btn btn-default">Ubah</button>
+					  <div class='my-btn-general'><?php echo anchor('account/formAccount/', 'Ubah', array('class'=>'my-link-general'));?></div>
 					  </div>
 					</div>			
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<div class="panel panel-default">
 					  <div class="panel-heading"><strong>Ganti Password</strong></div>
-					  <div class="panel-body">Panel Content</div>
+					  <div class="panel-body">Jika ingin mengganti password login click button dibawah ini.
+					  <div class='my-btn-general'><?php echo anchor('account/formPassword/', 'Ubah', array('class'=>'my-link-general'));?></div>
+					  
+					  </div>
 					</div>		
+				</div>
+				<div class="col-sm-4">
+					<div class="panel panel-default">
+					  <div class="panel-heading"><strong>Data Billing</strong></div>
+					  <div class="panel-body">Belum ada data billing
+					  <div class='my-btn-general'><?php echo anchor('account/formBilling/', 'Ubah', array('class'=>'my-link-general'));?></div>
+					  </div>
+					</div>			
 				</div>
 			</div>	
 		</div>
@@ -36,38 +47,7 @@
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
 $(document).ready(function() {
-  $('#pwd_box').hide();
-  $('#pwd_btm').click(function(e){
-    e.preventDefault();
-    $('#pwd_box').slideToggle();
-  });
-
-  $('form').submit(function(e){
-    e.preventDefault();
-
-    var apiurl = baseApiUrl + '/myaccount';
-    var data = $(this).serialize();
-
-    // success handling
-    var success = function(r){
-      console.log('OK:', r);
-      alert(r.message);
-    };
-
-    var form_ok = true;
-    $('.mandatory').each(function(){
-      if($(this).val()=='' && $(this).is(":visible")){
-        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
-        // onContentReady: function(){$(this).focus();}
-        form_ok = false;
-        return false;
-      }
-    });
-
-    if(form_ok) $.post( apiurl, data, success, "json" );
-    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
-
-  });
-
+//  var hasil = document.cookie.split('x-auth=')[1].split(';').shift();
+ // alert(hasil);
 });
 </script>
