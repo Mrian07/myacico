@@ -1,104 +1,111 @@
-<style>
-.form-buttons p.back-link { float:left;
-  width:225px;
-  padding:2px 15px 0 0;
-  text-align:right;
-  color:red;
-  font-size: 16px;
-  color: #c40202;
-  text-decoration: none;
-}
-.my-account .buttons-set p.back-link a
-{
-
-}
-</style>
-
-
 <div class="container">
-
 	<div class="row">
 	  <div class="col-sm-12">
 		<div class="my-border-title">
 			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Tambah Buku Alamat Baru</h3>
 		</div>
-
 	  </div>
-	</div>
+	</div> 
 	
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-
-		  <form name="signup" method="post">
-			<div class="form-group">
-			  <label>Nama Lengkap*</label>
-			  <input type="text" name="laname" class="form-control mandatory" />
+			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
+			<p>Silakan lengkapi data billing Anda dibawah ini.</p>
+			<div class="panel panel-default">
+				<div class="panel-body">	
+				  <form name="signup" method="post">
+					
+					<div class="form-group">
+					  <label><?php echo $lang_addres; ?>*</label>
+					  <input type="text" name="alamat1" class="form-control mandatory" />
+					  <input type="text" name="alamat2" class="form-control mandatory" />
+					</div>
+					<div class="form-group" style="display:none" id="ditric_box">
+							<label><?php echo $lang_Keca; ?>*</label>
+					  <select name="kecamatan" id="ditric_sel" class="form-control mandatory"></select>
+					</div>
+					<div class="form-group" style="display:none" id="city_box">
+						<label><?php echo $lang_kota; ?>*</label>
+					  <select name="city" id="city_sel" class="form-control mandatory"></select>
+					</div>
+					<div class="form-group">
+					<label><?php echo $lang_PostCode; ?>*</label>
+					  <input type="text" name="zip" class="form-control mandatory" />
+					</div>
+					<div class="form-group" style="display: none;" id="region_box">
+					<label><?php echo $lang_Provience; ?>*</label>
+					  <select name="province" id="region_sel" class="form-control mandatory"></select>
+					</div>
+					<div class="form-group">
+					<label><?php echo $lang_Country; ?>*</label>
+					  <select name="country" id="country_sel" class="form-control mandatory" disabled >
+						<option value="">--pilih--</option>
+					  </select>
+					</div>
+					
+					
+					<div class="clearfix"></div>
+						<input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+				  </form>
+				</div>
 			</div>
-			<div class="form-group">
-			  <label>Alamat*</label>
-			  <input type="text" name="laname" class="form-control mandatory" /><br/>
-				<input type="text" name="laname" class="form-control mandatory" />
-			</div>
-			<div class="form-group">
-			  <label for="sel1">Kota*</label>
-			  <select class="form-control" id="sel1">
-				<option>DKI Jakarta</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-			  </select>
-			</div>
-			<div class="form-group">
-
-			  <label for="sel2">Provinsi*</label>
-			  <select class="form-control" id="sel2">
-				<option>DKI Jakarta</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-			  </select>
-			</div>
-			<div class="form-group">
-
-			  <label for="sel3">Kecamatan*</label>
-			  <select class="form-control" id="sel3">
-				<option>Jakarta</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-			  </select>
-			</div>
-			<div class="form-group">
-			  <label>Kode Post*</label>
-			  <input type="text" name="laname" class="form-control mandatory" />
-			</div>
-			<hr>
-			<p class="back-link">
-			  <a href="<?php echo site_url('account/bukuAlamat') ?>"><small>« </small> Kembali ke Alamat Buku</a>
-		  &nbsp &nbsp &nbsp &nbsp
-		  &nbsp &nbsp &nbsp <button type="submit" class="btn btn-info">Simpan Alamat</button>
-			</p>
-
-		  </form>
-
 		</div>
 	</div>
 </div>
-
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+$.ajaxSetup({
+  error: function(){
+    alert('service not available, please try again later');
+  },
+  timeout: 10000/*,
+  contentType: "application/json; charset=UTF-8"*/
+});
 
+function get_distric(){
+  $("#ditric_box").slideDown();
+  $("#ditric_sel").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
+    r.forEach(function(o){
+      $("#ditric_sel").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+    });
+    $("#ditric_sel").prop('disabled', false);
+  }, "json" );
+}
+
+function get_city(){
+  $("#city_box").slideDown();
+  $("#city_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_distric);
+  $.get( api_base_url+"/ccity/getlistccitybyidregion/"+$("#region_sel").val(), function(r){
+    r.forEach(function(o){
+      $("#city_sel").append("<option value='"+o.c_city_id+"'>"+o.name+"</option>");
+    });
+    $("#city_sel").prop('disabled', false).change(get_distric);
+  }, "json" );
+}
+
+function get_region(){
+  $("#region_box").slideDown();
+  $("#region_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_city);
+  $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+$("#country_sel").val(), function(r){
+    r.forEach(function(o){
+      $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
+    });
+    $("#region_sel").prop('disabled', false).change(get_city);
+  }, "json" );
+}
 $(document).ready(function() {
   $("form").submit(function(e){
     e.preventDefault();
-    var apiurl = baseApiUrl + '/aduser/add';
+    var apiurl = api_base_url + '/aduser/add';
     var fl=document.signup;
     var data = $(this).serialize();
+    // return alert(data);
 
     // success handling
+
     var success = function(r){
       alert(r.message);
       console.log('OK:', r.status);
@@ -113,12 +120,31 @@ $(document).ready(function() {
         form_ok =false;
         return false;
       }
+
     });
+    var success = function(r){
+      $('#spinner_img').hide();
+      $('#submit_btn').val('Kirim').removeClass('disabled');
+      console.log('OK:', r);
+      alert(r.message);
+    };
+
     if(form_ok==false) return false;
     if(fl.password.value!=$('#password2').val())alert('password not match!!!');
 
-    else $.post( apiurl, data, success, "json" );
-
+    else {
+      $('#spinner_img').show();
+      $('#submit_btn').val('loading...').addClass('disabled');
+      $.post( apiurl, data, success, "json" );
+    }
   });
+
+  $.get(api_base_url+"/ccountry/getlistccountry", function(r){
+    console.log(r);
+    r.forEach(function(o){
+      $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
+    });
+    $("#country_sel").prop('disabled', false).change(get_region);
+  }, "json" );
 });
 </script>
