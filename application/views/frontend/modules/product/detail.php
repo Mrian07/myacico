@@ -97,24 +97,19 @@ app.directive('onFinishRender', function ($timeout) {
 });
 
 app.controller('detailCnt', function($scope, $http, $mycart){
-	$scope.name = "SAMSUNG Caramel [E1272] - White";
-	$scope.sku = "MA #SAMSSMAR00002007279 | MFR #";
-	$scope.price = '499,000';
-	$scope.discount = '21';
-	$scope.stock = 'Out of stock';
 	$scope.quantity = 1;
 	$scope.add_to_cart = function(){
-		console.log('cur cart:', $mycart.data);
-		var cart = {
+		var exist = $mycart.data.filter(function (el) {
+			return el.m_product_id === $scope.dat.m_product_id;
+		});
+		if(exist.length == 0) $mycart.data.push({
 			m_product_id:$scope.dat.m_product_id,
 			name:$scope.dat.name,
 			image_url:$scope.dat.imageurl[0],
 			price:$scope.dat.pricelist,
 			quantity:$scope.quantity
-		}
-		$mycart.data.push(cart);
-		document.cookie = 'cart='+JSON.stringify($mycart.data)+'; path='+base_path;
-		console.log('total cart:', $mycart.data);
+		});
+		else exist[0].quantity-= -$scope.quantity;
 	}
 	$scope.check_quantity = function(){
 		if(isNaN($scope.quantity))$scope.quantity=1;
