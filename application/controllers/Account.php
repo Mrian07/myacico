@@ -152,6 +152,16 @@ class Account extends Web_private {
 		$this->load->view('frontend/footer',$this->data);
 			// $this->load->view('frontend/footer',$this->data);
 	}
+	
+	public function formPassword()
+    {
+		$this->data['active_returnManagementAuthority'] = "class='active'";
+		$this->data['title_web'] = "Myacico.com - Return Management Authority";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/form_password',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 
 	public function logout()
     {
