@@ -71,7 +71,13 @@ $(document).ready(function() {
 				$('#spinner_img').hide();
 				$('#submit_btn').val('Update').removeClass('disabled');
 				console.log('OK:', r);
-				alert(r.message);
+				//alert(r.message);
+				
+				$.alert({
+					title: 'Alert!',
+					content: 'Nama berhasil diubah',
+				});
+				
 			};
 
 			//$.post( apiurl, data, success, "json" );

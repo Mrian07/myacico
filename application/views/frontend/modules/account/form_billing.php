@@ -12,18 +12,15 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-			<p>Silakan isi nama akun yang baru jika ingin melakukan perubahan dan click button update.</p>
+			<p>Silakan lengkapi data billing Anda dibawah ini.</p>
 			<div class="panel panel-default">
 				<div class="panel-body">	
 				  <form name="loginFm" method="post">
 					<div class="form-group">
-					  <label>Nama</label>
+					  <label>Alamat</label>
 					  <input type="text" id="name" name="name" value='<?php echo $user->name; ?>' class="form-control mandatory"/>
 					</div>
-					<div class="form-group">
-					  <label>Email</label>
-					  <input type="text" name="email" value='<?php echo $user->email; ?>' class="form-control" disabled />
-					</div>
+					
 					<div class="clearfix"></div>
 						<input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 				  </form>
@@ -72,6 +69,9 @@ $(document).ready(function() {
 				$('#submit_btn').val('Update').removeClass('disabled');
 				console.log('OK:', r);
 				alert(r.message);
+				
+				
+				
 			};
 
 			//$.post( apiurl, data, success, "json" );
