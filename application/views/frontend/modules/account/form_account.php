@@ -1,3 +1,4 @@
+
 <div class="container">
 	<div class="row">
 	  <div class="col-sm-12">
@@ -12,6 +13,7 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
+			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
 			<p>Silakan isi nama akun yang baru jika ingin melakukan perubahan dan click button update.</p>
 			<div class="panel panel-default">
 				<div class="panel-body">	
