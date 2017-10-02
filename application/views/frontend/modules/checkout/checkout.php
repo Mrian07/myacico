@@ -40,7 +40,7 @@
 		</div>
 	  </div>
 	</div>
-	<div class="row">
+	<div class="row" ng-controller="cartCnt">
 		<div class="col-md-7">
 			<div class="panel panel-default">
 			  <div class="panel-heading"><b>Alamat Pengiriman</b></div>
@@ -102,8 +102,8 @@
 					<select class="form-control" id='payment_method' name='payment_method'>
 						<option value=''>-Pilih-</option>
 						<option value='01'>Transfer Bank</option>
-						<option value='02'>Ninja 250cc</option>
-						<option value='03'>Credit Cart</option>
+						<!--option value='02'>Ninja 250cc</option>
+						<option value='03'>Credit Cart</option-->
 					</select>
 					
 				  </div>
@@ -114,7 +114,7 @@
 					<table class="table">
 						<tr>
 							<td>
-								<input type='radio' name="bank" value='bca'>
+								<input type='radio' name="bank" value='1000000'>
 							</td>
 							<td>
 								BCA atas nama : PT. MYACICO GLOBAL INDONESIA<br>
@@ -124,7 +124,7 @@
 						</tr>	
 						<tr>
 							<td>
-								<input type='radio' name="bank" value='mandiri'>
+								<input type='radio' name="bank" value='1000002'>
 							</td>
 							<td>
 								Mandiri atas nama : MYACICO<br>
@@ -134,7 +134,7 @@
 						</tr>	
 						<tr>
 							<td>
-								<input type='radio' name="bank" value='bni'>
+								<input type='radio' name="bank" value='1000001'>
 							</td>
 							<td>
 								BNI atas nama : MYACICO<br>
@@ -144,22 +144,16 @@
 							</td>
 						</tr>	
 					</table>
-					
-
-					
-
-					
 				  </div>
-				  
-				  <button type="submit" class="btn btn-info">Update</button>
+				  <!--button type="submit" class="btn btn-info">Update</button-->
 				</form> 
 
 			  </div>
 			</div>
-			<div class="panel panel-default">
+			<!--div class="panel panel-default">
 			  <div class="panel-heading"><b>Ulasan dan Kirim</b></div>
 			  <div class="panel-body"><button type="button" class="btn btn-info">Ubah</button></div>
-			</div>
+			</div-->
 		</div>
 		<div class="col-md-5">
 			<div class="panel panel-default">
@@ -175,23 +169,23 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							<tr ng-repeat="arr in mycart">
 								<td data-th="Product">
 									<div class="row">
-										<div class="col-sm-12 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
+										<div class="col-sm-12 hidden-xs"><img src="{{arr.image_url}}" alt="{{arr.name}}-img" class="img-responsive"/></div>
 										
 									</div>
 								</td>
-								<td data-th="Price">Rp.100.999</td>
+								<td data-th="Price">{{toMoney(arr.price)}}</td>
 								<td data-th="Quantity" align='center'>
-									<span class="badge">1</span>
+									<span class="badge">{{arr.quantity}}</span>
 								</td>
-								<td data-th="Subtotal" class="text-center">Rp.100.999</td>
+								<td data-th="Subtotal" class="text-center">{{toMoney(arr.price * arr.quantity)}}</td>
 								<td class="actions" data-th="">
 									<button class="btn btn-info btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
 								</td>
 							</tr>
-							<tr>
+							<!--tr>
 								<td data-th="Product">
 									<div class="row">
 										<div class="col-sm-12 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
@@ -205,7 +199,7 @@
 								<td class="actions" data-th="">
 									<button class="btn btn-info btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
 								</td>
-							</tr>
+							</tr-->
 						</tbody>
 						<tfoot>
 							<tr class="visible-xs">
@@ -216,7 +210,7 @@
 								<td colspan="3" class="hidden-xs">
 								<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman.
 								Ada biaya tambahan untuk beberapa pengiriman </td>
-								<td class="hidden-xs text-center"><strong>Total <br>Rp 5.499.000</strong></td>
+								<td class="hidden-xs text-center"><strong>Total <br>{{get_total()}}</strong></td>
 								<td></td>
 							</tr>
 						</tfoot>

@@ -11,6 +11,7 @@
 			<b>{{dat.name}}</b>
 		</div>
 	</div>
+	<!-- aaa -->
 
 	<div class="row">
 	  <div class="col-sm-4">
@@ -40,7 +41,7 @@
 			<div class="col-sm-6">
 			weight <span class='red-tx'>{{dat.weight}}</span><br>
 			{{dat.m_product_id}}<br>
-			<span class='price'>Rp {{dat.pricelist}}</span><br>
+			<span class='price'>{{toMoney(dat.pricelist)}}</span><br>
 			<br><br>
 			Save Rp 100,000 ({{dat.discount}}%)
 			</div>
@@ -96,13 +97,11 @@ app.directive('onFinishRender', function ($timeout) {
     }
 });
 
-app.controller('detailCnt', function($scope, $http, $mycart){
-	$scope.name = "SAMSUNG Caramel [E1272] - White";
-	$scope.sku = "MA #SAMSSMAR00002007279 | MFR #";
-	$scope.price = '499,000';
-	$scope.discount = '21';
-	$scope.stock = 'Out of stock';
+
+app.controller('detailCnt', function($scope, $http, $mycart, toMoney){
+
 	$scope.quantity = 1;
+	$scope.toMoney = toMoney;
 	$scope.add_to_cart = function(){
 		console.log('cur cart:', $mycart.data);
 		var cart = {
