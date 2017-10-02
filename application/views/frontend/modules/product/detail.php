@@ -40,7 +40,7 @@
 			<div class="col-sm-6">
 			weight <span class='red-tx'>{{dat.weight}}</span><br>
 			{{dat.m_product_id}}<br>
-			<span class='price'>Rp {{dat.pricelist}}</span><br>
+			<span class='price'>{{toMoney(dat.pricelist)}}</span><br>
 			<br><br>
 			Save Rp 100,000 ({{dat.discount}}%)
 			</div>
@@ -96,8 +96,9 @@ app.directive('onFinishRender', function ($timeout) {
     }
 });
 
-app.controller('detailCnt', function($scope, $http, $mycart){
+app.controller('detailCnt', function($scope, $http, $mycart, toMoney){
 	$scope.quantity = 1;
+	$scope.toMoney = toMoney;
 	$scope.add_to_cart = function(){
 		var exist = $mycart.data.filter(function (el) {
 			return el.m_product_id === $scope.dat.m_product_id;
