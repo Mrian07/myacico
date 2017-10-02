@@ -4,7 +4,7 @@
 		echo form_open('frontend', $attributes);
 	?>
 	
-    <!-- pesan start -->
+    <!-- pesan starts -->
 	
 	<div class="row">
 		<div class="col-sm-4">

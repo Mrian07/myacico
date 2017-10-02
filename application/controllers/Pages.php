@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Checkout extends Web_private {
+class Pages extends Web {
 
 	public function __construct()
     {
@@ -20,15 +20,37 @@ class Checkout extends Web_private {
 
 	}
 
-	public function index()
+
+
+  public function AboutUs()
+  {
+    $this->data['title_web'] = "Myacico.com - Home";
+    $this->load->view('frontend/header',$this->data);
+    $this->load->view('frontend/nav.php',$this->data);
+
+    $this->load->view('frontend/modules/pages/aboutus.php',$this->data);
+    $this->load->view('frontend/footer',$this->data);
+  }
+
+	public function payment()
 	{
-		$this->data['title_web'] = "Myacico.com - Create Account Business";
+		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/checkout/checkout.php',$this->data);
+
+		$this->load->view('frontend/modules/pages/payment.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
+	public function faq()
+	{
+		$this->data['title_web'] = "Myacico.com - Home";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
 
+		$this->load->view('frontend/modules/pages/faq.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+// aaa
 	public function switchLang()
     {
 		$lang = $this->input->post('lang');

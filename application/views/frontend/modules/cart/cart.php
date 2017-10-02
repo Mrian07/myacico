@@ -93,11 +93,11 @@
 							</div>
 						</div>
 					</td>
-					<td data-th="Price">Rp. {{arr.price}}</td>
+					<td data-th="Price">{{toMoney(arr.price)}}</td>
 					<td data-th="Quantity">
 						<input type="number" class="form-control text-center" ng-model="arr.quantity">
 					</td>
-					<td data-th="Subtotal" class="text-center">Rp. {{arr.price * arr.quantity}}</td>
+					<td data-th="Subtotal" class="text-center">{{toMoney(arr.price * arr.quantity)}}</td>
 					<td class="actions" data-th="">
 						<button class="btn btn-info btn-sm"><span class="caret"></span> Alamat</button>
 						<button class="btn btn-danger btn-sm" ng-click="del(i)"><i class="fa fa-trash-o"></i></button>
@@ -136,7 +136,7 @@
 					<td colspan="3" class="hidden-xs">
 						<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman
 					</td>
-					<td class="hidden-xs text-center"><strong>Total Rp. {{get_total()}}</strong></td>
+					<td class="hidden-xs text-center"><strong>Total {{get_total()}}</strong></td>
 					<td></td>
 				</tr>
 			</tfoot>
@@ -145,8 +145,8 @@
 	<div class="col-md-3">
 		<div class="panel panel-default">
 		  <div class="panel-body">
-				Subtotal	Rp 5.499.000<br>
-				<b>Grand Total	Rp 5.499.000</b><br><br>
+				Subtotal	{{get_total()}}<br>
+				<b>Grand Total	{{get_total()}}</b><br><br>
 				<b>PUNYA KODE PROMO ?</b><br>
 				<div class="input-group">
 					<input type="text" class="form-control" name="x">

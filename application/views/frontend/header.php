@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -5,7 +6,11 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $title_web; ?></title>
 
-
+<style>
+a{
+	color:red;
+}
+</style>
 
 		<!-- Strat Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
@@ -51,7 +56,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4">
-				 About us | Payment | Delivery | FAQ
+				<?php echo anchor('pages/aboutus/', 'About Us');?> | 	<?php echo anchor('pages/payment/', 'Payment');?> | 	<?php echo anchor('pages/faq/', 'FAQ');?>
 
 			</div>
 			<div class="col-sm-8" style='text-align: right'>
@@ -158,7 +163,7 @@
 									<div ng-show="mycart.length > 0" class='my-cart-scroll'>
 										<div class="row my-cart" ng-repeat="arr in mycart">
 											<div class="col-sm-3"><img src="{{arr.image_url}}" border="0" height="50" width="50"></div>
-											<div class="col-sm-7">{{arr.name}}<br>{{arr.price}}</div>
+											<div class="col-sm-7">{{arr.name}}<br>{{toMoney(arr.price)}}</div>
 											<div class="col-sm-2">{{arr.quantity}}</div>
 										</div>
 									<!--div class="row my-cart">
@@ -317,6 +322,7 @@
 
 <script>
 var app = angular.module("myApp", []);
+
 app.factory('$mycart', function() {
 	var data = [];
 	var saved_cart = document.cookie.split('cart=');
@@ -324,20 +330,28 @@ app.factory('$mycart', function() {
 		data = JSON.parse(saved_cart[1].split(';').shift());
 		//console.log('cart on cookies found');
 	}
-    return {data:data};
+	return {data:data};
 });
-app.controller('cartCnt', function($scope, $mycart){
+
+app.factory('toMoney', function() {
+	return function(x){
+		return 'Rp. '+(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+	}
+});
+
+app.controller('cartCnt', function($scope, $mycart, toMoney){
 	$scope.mycart = $mycart.data;
 	$scope.del = function(i){
 		if(confirm('Sure? '))$scope.mycart.splice(i, 1);
 	}
+	$scope.toMoney = toMoney;
 	$scope.get_total = function(){
 		var total = 0;
 		$scope.mycart.forEach(function(c){
 			total+=(c.price*c.quantity);
 		});
 		document.cookie = 'cart='+JSON.stringify($scope.mycart)+'; path='+base_path;
-		return total;
+		return toMoney(total);
 	}
 });
 

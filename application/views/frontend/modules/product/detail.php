@@ -1,5 +1,5 @@
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/dist/xzoom.min.js');?>"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/productpopup/css/xzoom.css');?>" media="all" /> 
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/productpopup/css/xzoom.css');?>" media="all" />
 <link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url('assets/productpopup/magnific-popup/css/magnific-popup.css');?>" />
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/magnific-popup/js/magnific-popup.js');?>"></script>
 
@@ -11,10 +11,11 @@
 			<b>{{dat.name}}</b>
 		</div>
 	</div>
-	
+	<!-- aaa -->
+
 	<div class="row">
 	  <div class="col-sm-4">
-	  
+
 		<div class="row">
 		  <div class="col-sm-5">
 			<div class="xzoom-container">
@@ -29,7 +30,7 @@
 				<!--a href="<?php //echo base_url('images/gallery/original/03_r_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/03_r_car.jpg');?>" title="The description goes here"></a>
 				<a href="<?php //echo base_url('images/gallery/original/04_g_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/04_g_car.jpg');?>" title="The description goes here"></a-->
 			  </div>
-			</div>        
+			</div>
 		  </div>
 		  <div class="col-sm-7"></div>
 		</div>
@@ -40,17 +41,17 @@
 			<div class="col-sm-6">
 			weight <span class='red-tx'>{{dat.weight}}</span><br>
 			{{dat.m_product_id}}<br>
-			<span class='price'>Rp {{dat.pricelist}}</span><br>
+			<span class='price'>{{toMoney(dat.pricelist)}}</span><br>
 			<br><br>
 			Save Rp 100,000 ({{dat.discount}}%)
 			</div>
 			<div class="col-sm-6">Stock: {{dat.stock}}</div>
 		</div>
-		
-		
+
+
 	  </div>
 	  <div class="col-sm-3" style='font-size:20px; text-align: center;'>
-		Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i> 
+		Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
 		<div class='detail-add-wishlist'>
 			<div class="btn-group">Quantity: <input type='text' class='form-control' style='width:50px' ng-model="quantity" ng-change="check_quantity()"></div><br>
 			<div class="btnaddcart">
@@ -59,11 +60,11 @@
 			<br><br>
 			Add To Wishlist
 		</div>
-	  
+
 	  </div>
 	</div>
-	
-	
+
+
 	<ul class="nav nav-tabs" style='font-size:17px; margin-bottom:20px;'>
 	  <li class="active"><a data-toggle="tab" href="#home">Rincian Barang</a></li>
 	  <li><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
@@ -79,7 +80,7 @@
 		<p>Some content in menu 1.</p>
 	  </div>
 	</div>
-	
+
 </div>
 
 <script>
@@ -96,20 +97,23 @@ app.directive('onFinishRender', function ($timeout) {
     }
 });
 
-app.controller('detailCnt', function($scope, $http, $mycart){
+
+app.controller('detailCnt', function($scope, $http, $mycart, toMoney){
+
 	$scope.quantity = 1;
+	$scope.toMoney = toMoney;
 	$scope.add_to_cart = function(){
-		var exist = $mycart.data.filter(function (el) {
-			return el.m_product_id === $scope.dat.m_product_id;
-		});
-		if(exist.length == 0) $mycart.data.push({
+		console.log('cur cart:', $mycart.data);
+		var cart = {
 			m_product_id:$scope.dat.m_product_id,
 			name:$scope.dat.name,
 			image_url:$scope.dat.imageurl[0],
 			price:$scope.dat.pricelist,
 			quantity:$scope.quantity
-		});
-		else exist[0].quantity-= -$scope.quantity;
+		}
+		$mycart.data.push(cart);
+		document.cookie = 'cart='+JSON.stringify($mycart.data)+'; path='+base_path;
+		console.log('total cart:', $mycart.data);
 	}
 	$scope.check_quantity = function(){
 		if(isNaN($scope.quantity))$scope.quantity=1;
@@ -136,7 +140,7 @@ app.controller('detailCnt', function($scope, $http, $mycart){
 	            var xzoom = $(this).data('xzoom');
 	            xzoom.eventunbind();
 	        });
-	        
+
 	        $('.xzoom').each(function() {
 	            var xzoom = $(this).data('xzoom');
 	            $(this).hammer().on("tap", function(event) {
@@ -162,7 +166,7 @@ app.controller('detailCnt', function($scope, $http, $mycart){
 	            });
 	        });
 
-	   
+
 	    } else {
 	        //If not touch device
 

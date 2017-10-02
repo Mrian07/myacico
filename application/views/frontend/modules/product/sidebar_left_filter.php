@@ -1,9 +1,10 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<div id="<?php echo$pane; ?>" class="menu_list">
 		<p class="menu_head plus">Harga
 		</p>
 		<div class="menu_body">
-			
-			
+
+
 			<div id="<?php echo$sliderprice; ?>"></div>
 				<div class="row">
 					<div class="col-md-12 kiri">
@@ -19,11 +20,11 @@
 						</div>
 					</div>
 				</div>
-			
-			
+
+
 		</div>
 	</div>
-	
+
 	<div id="<?php echo$pane; ?>" class="menu_list">
 		<p class="menu_head plus">Sale
 		</p>
@@ -46,7 +47,9 @@
 
 		</div>
 	</div>
-	
+
+
+
 	<div id="<?php echo$pane; ?>" class="menu_list">
 		<p class="menu_head plus">Brand
 		</p>
@@ -54,7 +57,7 @@
 
 			<div class="checkbox">
 				<label>
-				<input type="checkbox" value="">
+				<input type="checkbox" value="" id="merk">
 				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
 				ADVAN
 				</label>
@@ -73,10 +76,10 @@
 				LENOVO
 				</label>
 			</div>
-			
+
 		</div>
 	</div>
-
+	
 <script>
 //slides the element with class "menu_body" when paragraph with class "menu_head" is clicked
 
@@ -87,17 +90,33 @@ $("#<?php echo$pane; ?> p.menu_head").click(function(){
 
 
 <script src="<?php echo base_url('assets/sliderprice/jquery-ui.js');?>"></script>
-         
 
-		 
+
+
         <!-- Jquery UI Range Script -->
         <script>
+				var fruits = ['asus', 'banana', 'grapes', 'mango', 'orange'];
+
+				/**
+				* Array filters items based on search criteria (query)
+				*/
+				function filterItems(query) {
+				return fruits.filter(function(el) {
+						return el.toLowerCase().indexOf(query.toLowerCase()) > -1;
+
+				})
+				}
+
+				console.log(filterItems('ap')); // ['apple', 'grapes']
+				console.log(filterItems('an')); // ['banana', 'mango', 'orange']
+
+				// test
             $(document).ready(function() {
                 var min_rent = 400,
                 max_rent = 1500;
                 $('#<?php echo$sliderpricelow; ?>').val(min_rent);
                 $('#<?php echo$sliderpricehigh; ?>').val(max_rent);
- 
+
                 $('#<?php echo$sliderprice; ?>').slider({
                     orientation: 'horizontal',
                     range: true,
@@ -112,7 +131,7 @@ $("#<?php echo$pane; ?> p.menu_head").click(function(){
                         $('#<?php echo$sliderpricehigh; ?>').val(ui.values[1]);
                     }
                 });
- 
+
                 $('#<?php echo$sliderpricelow; ?>').change(function () {
                     var low = $('#<?php echo$sliderpricelow; ?>').val(),
                     high = $('#<?php echo$sliderpricehigh; ?>').val();
@@ -120,7 +139,7 @@ $("#<?php echo$pane; ?> p.menu_head").click(function(){
                     $('#<?php echo$sliderpricelow; ?>').val(low);
                     $('#<?php echo$sliderprice; ?>').slider('values', 0, low);
                 });
- 
+
                 $('#<?php echo$sliderpricehigh; ?>').change(function () {
                     var low = $('#<?php echo$sliderpricelow; ?>').val(),
                     high = $('#<?php echo$sliderpricehigh; ?>').val();

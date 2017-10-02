@@ -1,22 +1,12 @@
 <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+
 <style>
 .price{
 		font-size: 30px;
     	margin: 0 auto;
     	color: #333;
 	}
-.product-stock{
-	color: green;
-	font-size:15px;
-  font-family: 'Abel';
-}
-.asd{
-	color: red;
-	font-size:15px;
-	font-family: 'Abel';
-	margin-bottom: 10px;
-	margin-top: -40px;
-}
+
 
 	.thumbnail{
 
@@ -39,6 +29,7 @@
 		}
 	}
 
+
 	span.thumbnail {
         border: 1px solid #c40202 !important;
     border-radius: 0px !important;
@@ -49,29 +40,14 @@
 }
 
 
-.container h4{margin-top:20px; margin-bottom:30px; color: grey; font-size: 20px; float: left; margin:-10px 20px 30px 500px;  font-family: 'Abel';}
+.container h4{ color: grey; font-size: 20px; font-family: 'Abel';}
 
 .right {
     float: right;
     border-bottom: 2px solid #0a5971;
 }
-h2{
-	color: black;
-	font-size: 15px;
-	margin:-5px 20px 40px 968px;
-}
-.btn-info {
-    color: #fff;
-    background-color: #19b4e2;
-    border-color: #19b4e2;
-	font-size:7px;
-	font-weight:600;
-}
-p{
-	font-size:8px;
-	color: green;
-		margin:0px 20px 40px 970px;
-}
+
+
 
 
 /*-------*/
@@ -91,9 +67,12 @@ p{
 
  echo "<br/>";
 ?>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <div class="row my-sort-product">
 	<div class="col-sm-9">
-		<?php echo "&nbspItems 1 to 10 of ".count($data).""; ?>
+		<?php echo "&nbspItems 1 to ".count($data).""; ?>
 
 	</div>
 	<div class="col-sm-3">
@@ -113,15 +92,18 @@ p{
 
 	</div>
 </div>
-<div class="container">
-<div class="row" id="title-product">
+
+
+<div class="product">
 </div>
+
+
 <!-- END PRODUCTS -->
-</div>
+
 
 <!-- <div class="row my-b-product">
 	<div class="col-sm-2"><img src="<?php echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100"></div>
-	<div class="col-sm-7"><h5 class='title-product'><?php echo anchor('product/detail', 'ASUS Zenfone Go [ZB500KL] [2/16GB] - Silver Blue');?></h5>
+		<div class="col-sm-7"><h5 class='title-product'><?php echo anchor('product/detail', 'ASUS Zenfone Go [ZB500KL] [2/16GB] - Silver Blue');?></h5>
 	</div>
 	<div class="col-sm-3"><span class='product-price'>Rp 1.399.000</span><br><span class='product-stock'>Stock sisa 3<br>Dikirim hari ini/besok<br></span>
 		<div class="btnaddcart">
@@ -159,47 +141,83 @@ p{
 <p id="tes"></p>
 
 <h4>Bestseller Products</h4>
+</html>
 
 <script type="text/javascript">
+var price = 1;
+var filter = {
+	category:'<?php echo $pro; ?>'
+}
+filter.price= $('#merk').val();
+$.get(api_base_url+"/product/productlist", filter,
 
-$.get(api_base_url+"/product/productlist?category=<?php echo $pro; ?>",
 function(data){
 console.log('data nya adalah:', data);
 	var box = $('#title-product');
+	var product = $('.product');
 
 
 	if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
 
 
 	data.forEach(function(p){
+product.append(
+
+	'<div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageurl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div><div class="col-sm-3"><span class="product-price"> Rp.'+p.pricelist+'</span><br><p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+'</p><p class="product-stock">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p><button class="dropbtnaddcar">ADD TO CART</button></div>'
+)
+
+
+
+
+		// product.append(
+		// 	"<div class='row my-b-product'><div class='col-sm-2'>gambar</div><div class='col-sm-7'>0</div><div class='col-sm-3'>1</div>"
+		// );
+// product.append(
+// 	"<div class='row my-b-product'><div class='col-sm-2'>gambar</div><div class='col-sm-7'><h5 class='title-product'>ASUS Zenfone Go [ZB500KL] [2/16GB] - Silver Blue</h5></div><div class='col-sm-3'><span class='product-price'>Rp 1.399.000</span><br><span class='product-stock'>Stock sisa 3<br>Dikirim hari ini/besok<br></span><div class='btnaddcart'><button class="dropbtnaddcar">ADD TO CART</button></div></div></div>"
+// );
+// product.append(
+// 		$(document.createElement('div')).attr("class","row my-b-product").append(
+// 		$(document.createElement('div')).attr("class","col-sm-2").append(
+// 			'<img src="<?php echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100">'
+// 			,
+// 			$(document.createElement('div')).attr("class","col-sm-7").append(
+// 			'<h5 class="title-product" align="center"><a href="'+base_url+'product/listItem/'+p.name+'">'+p.name+'</a></h5>',
+// 			$(document.createElement('div')).attr("class","col-sm-3").append(
+// 				'<span class="product-price">Rp 1.399.000</span><br><span class="product-stock">Stock sisa 3<br>Dikirim hari ini/besok<br></span><div class="btnaddcart"><button class="dropbtnaddcar">ADD TO CART</button></div>',
+// 			)
+// 	)
+//
+//
+// )
+//
+// )
+// );
 
 		box.append(
-
-
+				$(document.createElement('div')).attr("class","container").append(
 				$(document.createElement('div')).attr("class","row my-b-product").append(
-					$(document.createElement('div')).attr("class","col-sm-2").append(
-					$(document.createElement('div')).attr("class","title-product").append(
-						$(document.createElement('h5')).attr("class","title-product").append(
-							$(document.createElement('span')).attr("class","title-product").append(
-							$(document.createElement('div')).attr("class","col-sm-3").append(
-
-								$(document.createElement('span')).attr("class","product-stock").append(
-					'<img src="'+p.imageurl+'" alt="...">',
-
-					'<a href="'+base_url+'product/listItem/'+p.name+'"><h4 align="center">'+p.name+'</h4><br/></a>',
-					'<h2> Rp.'+p.pricelist+'</h2>',
-					'<p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+ '</p>',
-					'<p class="asd">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p>',
-			'<button class="btn btn-warning" style=" margin-left: 960px;">ADD TO CART</button>'
-
+				$(document.createElement('div')).attr("class","col-sm-2").append(
+				'<img src="'+p.imageurl+'" alt="..." style:border="0" height="100">',
+				$(document.createElement('div')).attr("class","col-sm-7").append(
+				'<h5 class="title-product" align="center"><a href="'+base_url+'product/listItem/'+p.name+'">'+p.name+'</a></h5>',
+				$(document.createElement('div')).attr("class","col-sm-3").append(
+				$(document.createElement('span')).attr("class","product-price").append(
+				'<span class="product-price"> Rp.'+p.pricelist+'</span>',
+				$(document.createElement('span')).attr("class","product-stock").append(
+				'<p class="product-stock" align="right">Stock&nbspSisa&nbsp'+p.stock+ '</p>',
+				'<p class="asd">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p>',
+				$(document.createElement('div')).attr("class","btnaddcart").append(
+				'<button class="btn btn-warning">ADD TO CART</button>'
 			)
-			)
-				)
-				)
-				)
-        )
-      )
-    );
+		)
+		)
+		)
+		)
+		)
+
+		)
+		)
+		);
   });
 });
 </script>

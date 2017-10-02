@@ -114,7 +114,7 @@ class Account extends Web_private {
 
 	public function TambahBukuAlamat()
     {
-		$this->data['active_TambahBukuAlamat'] = "class='active'";
+		$this->data['active_bukuAlamat'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
