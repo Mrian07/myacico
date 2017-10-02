@@ -28,7 +28,7 @@ class Pages extends Web {
     $this->load->view('frontend/header',$this->data);
     $this->load->view('frontend/nav.php',$this->data);
 
-    $this->load->view('frontend/modules/pages/aboutus.php',$this->data);
+    $this->load->view('frontend/modules/Pages/aboutus.php',$this->data);
     $this->load->view('frontend/footer',$this->data);
   }
 
@@ -38,7 +38,7 @@ class Pages extends Web {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
-		$this->load->view('frontend/modules/pages/payment.php',$this->data);
+		$this->load->view('frontend/modules/Pages/payment.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 	public function faq()
@@ -47,7 +47,7 @@ class Pages extends Web {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
-		$this->load->view('frontend/modules/pages/faq.php',$this->data);
+		$this->load->view('frontend/modules/Pages/faq.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 // aaa

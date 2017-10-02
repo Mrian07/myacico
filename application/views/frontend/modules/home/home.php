@@ -972,6 +972,7 @@ ul.list-group:after {
 <!-- e: Slider Product -->
 
 <script>
+
 /*slider product New Collection */
 $(document).ready(function(){
 
