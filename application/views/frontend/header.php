@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -5,7 +6,11 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $title_web; ?></title>
 
-
+<style>
+a{
+	color:red;
+}
+</style>
 
 		<!-- Strat Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
@@ -51,7 +56,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4">
-				 About us | Payment | Delivery | FAQ
+				<?php echo anchor('pages/aboutus/', 'About Us');?> | 	<?php echo anchor('pages/payment/', 'Payment');?> | 	<?php echo anchor('pages/faq/', 'FAQ');?>
 
 			</div>
 			<div class="col-sm-8" style='text-align: right'>

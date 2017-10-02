@@ -181,12 +181,12 @@ h1{
 /*       Slides backgrounds     */
 /********************************/
 #first-slider .slide1 {
-  background-image: url(https://s26.postimg.org/utf2flcnd/obi.png);
+  background-image: url(https://s1.postimg.org/9akw5u62vz/Artboard_1.jpg);
       background-size: cover;
     background-repeat: no-repeat;
 }
 #first-slider .slide2 {
-  background-image: url(https://s26.postimg.org/utf2flcnd/obi.png);
+  background-image: url(https://s1.postimg.org/2hzujdq5un/Artboard_2.jpg);
       background-size: cover;
     background-repeat: no-repeat;
 }
@@ -195,11 +195,7 @@ h1{
       background-size: cover;
     background-repeat: no-repeat;
 }
-#first-slider .slide4 {
-  background-image: url(https://s26.postimg.org/afyw8rvax/image.png);
-      background-size: cover;
-    background-repeat: no-repeat;
-}
+
 
 
 
@@ -267,19 +263,6 @@ h1{
                         </div>
                     </div></div>
                 </div>
-                <!-- Item 4 -->
-                <div class="item slide4">
-                    <div class="row"><div class="container">
-                        <div class="col-md-7 text-left">
-                            <!-- <h3 data-animation="animated bounceInDown" class="">We are creative</h3>
-                            <h4 data-animation="animated bounceInUp" class="">Get start your next awesome project</h4> -->
-                         </div>
-                        <div class="col-md-5 text-right">
-                            <img style="max-width: 200px;" data-animation="animated zoomInLeft" src="http://localhost/tes/images/general/Artboard 11.jpg" class="">
-                        </div>
-                    </div></div>
-                </div>
-                <!-- End Item 4 -->
 
             </div>
             <!-- End Wrapper for slides-->
@@ -301,16 +284,16 @@ h1{
     <div class="row">
       <div class="col-sm-12" style="background:white; margin-left:-2px; padding:0px;">
 
-      <img src="https://s26.postimg.org/qc8gsbdc9/image.png"  alt="Smiley face" width="50%" height="200">
-  <img src="https://s26.postimg.org/l4ndnuwqx/image.png"  alt="Smiley face" width="48%" height="200">
+      <img src="https://s1.postimg.org/4zblqmyx27/Artboard_3.jpg"  alt="Smiley face" width="50%" height="200">
+  <img src="https://s1.postimg.org/7u49wfhja7/Artboard_4.jpg"  alt="Smiley face" width="48%" height="200">
       </div>
 
 
   </div>
   <hr>
   <div class="row">
-  <div class="col-sm-12" style="background:black; margin-left:-2px; padding:0px;">
-<img src="https://s26.postimg.org/rxwgs8le1/image.png" alt="Smiley face" width="100%" height="185">
+  <div class="col-sm-12" style="margin-left:-2px; padding:0px;">
+<img src="https://s1.postimg.org/1j99yjva1r/Artboard_5.jpg" alt="Smiley face" width="100%" height="185">
 </div>
 </div>
 
