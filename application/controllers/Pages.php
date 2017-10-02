@@ -50,7 +50,7 @@ class Pages extends Web {
 		$this->load->view('frontend/modules/pages/faq.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-
+// aaa
 	public function switchLang()
     {
 		$lang = $this->input->post('lang');
