@@ -143,6 +143,7 @@
 <h4>Bestseller Products</h4>
 </html>
 
+
 <script type="text/javascript">
 var price = 1;
 var filter = {
