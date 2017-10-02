@@ -80,6 +80,8 @@ $(document).ready(function() {
 					content: 'Nama berhasil diubah',
 				});
 				
+				 document.cookie='x-auth='+r.newToken+'; path='+base_path;
+
 			};
 
 			//$.post( apiurl, data, success, "json" );
