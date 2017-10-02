@@ -20,7 +20,7 @@
 
     </center>
 			<p>
-
+<!-- asd -->
 BCA atas nama : PT. MYACICO GLOBAL INDONESIA
 Cabang : Tanah Abang 2
 Nomor rekening : 6540308797 <br/>
