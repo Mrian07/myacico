@@ -108,7 +108,7 @@ class Web extends MY_Controller {
 
     public function asset(){
 
-        $this->data['baseApiUrl'] = "http://myacico.net:8080/myacico-service/api";
+        $this->data['baseApiUrl'] = "http://api.myacico.net:8080/myacico-service/api";
 
     }
 

@@ -16,32 +16,4 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
-$(document).ready(function() {
-  $('#pwd_box').hide();
-  $('#pwd_btm').click(function(e){
-    e.preventDefault();
-    $('#pwd_box').slideToggle();
-  });
-
-  $('form').submit(function(e){
-    e.preventDefault();
-
-    var apiurl = baseApiUrl + '/myaccount';
-    var data = $(this).serialize();
-
-    // success handling
-    var success = function(r){
-      console.log('OK:', r);
-      alert(r.message);
-    };
-
-    $.post( apiurl, data, success, "json" );
-    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
-
-  });
-
-});
-</script>

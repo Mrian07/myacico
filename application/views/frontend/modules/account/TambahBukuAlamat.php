@@ -18,10 +18,20 @@
 				<div class="panel-body">	
 				  <form name="signup" method="post">
 					
+                                      <div class="form-group">
+					
+                                          <input type="hidden" id="bill" name="bill" value="N" />
+                                          <input type="hidden" id="ship" name="ship" value="Y" />
+                                          <input type="hidden" id="pay" name="pay" value="N" />
+                                          <input type="hidden" id="remit" name="remit" value="N" />
+                                          <input type="hidden" id="addn" name="addn" value="kontrakan" />
+                                          <input type="hidden" id="alamat3" name="alamat3" value="kelurahan duri kosambi" />
+					</div>
+                                      
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
-					  <input type="text" name="alamat1" class="form-control mandatory" />
-					  <input type="text" name="alamat2" class="form-control mandatory" />
+					  <input type="text" id = "alamat1"name="alamat1" class="form-control mandatory" />
+					  <input type="text" id = "alamat2" name="alamat2" class="form-control mandatory" />
 					</div>
 					<div class="form-group" style="display:none" id="ditric_box">
 							<label><?php echo $lang_Keca; ?>*</label>
@@ -33,7 +43,7 @@
 					</div>
 					<div class="form-group">
 					<label><?php echo $lang_PostCode; ?>*</label>
-					  <input type="text" name="zip" class="form-control mandatory" />
+					  <input type="text" id ="zip" name="zip" class="form-control mandatory" />
 					</div>
 					<div class="form-group" style="display: none;" id="region_box">
 					<label><?php echo $lang_Provience; ?>*</label>
@@ -96,21 +106,84 @@ function get_region(){
     $("#region_sel").prop('disabled', false).change(get_city);
   }, "json" );
 }
-$(document).ready(function() {
-  $("form").submit(function(e){
-    e.preventDefault();
-    var apiurl = api_base_url + '/aduser/add';
-    var fl=document.signup;
-    var data = $(this).serialize();
-    // return alert(data);
+var data = {};
 
+$(document).ready(function() {
+    $("form").submit(function(e){
+    e.preventDefault();
+    var token = document.cookie.split('x-auth=')[1].split(';').shift();
+    
+    var apiurl = api_base_url + '/aduser/addaddress?token='+token;
+    var alamat = $("#addn").val();
+     
+    var alamat1 = $("#alamat1").val();
+    var alamat2 = $("#alamat2").val();
+    var alamat3 = $("#alamat3").val();
+    var kecamatan = $("#ditric_sel").val();
+    var kota = $("#city").val();
+    var propinsi = $("#province").val();
+    var negara = $("#country").val();
+    var kode_pos = $("#zip").val();
+    var bill = $("#bill").val();
+    var ship = $("#ship").val();
+    var pay = $("#pay").val();
+    var remit = $("#remit").val();
+   
+    //var fl=document.signup;
+//    var data = $(this).serialize();
+//     return alert(data);die();
+    data.addressname = alamat;
+    data.address1 = alamat1;
+    data.address2 = alamat2;
+    data.address3 = alamat3;
+    data.postal = kode_pos;
+    data.c_district_id = kecamatan;
+    data.isbillto = bill;
+    data.isshipto = ship;
+    data.ispayfrom = pay;
+    data.isremitto = remit;
+   
+   // console.log(data);die();
+     var success = function(r){
+         $('#spinner_img').hide();
+  $('#submit_btn').val('Kirim').removeClass('disabled');
+         $.alert({
+     title: 'Alert!',
+     content: 'Alamat Baru Berhasil di tambahkan',
+    });
+//      alert(r.message);
+      console.log('OK:', r.status);
+        $("#addn").val(null);
+        $("#alamat1").val(null);
+        $("#alamat2").val(null);
+        $("#alamat3").val(null);
+        $("#ditric_sel").val(null);
+        $("#city").val(null);
+        $("#province").val(null);
+        $("#country").val(null);
+        $("#zip").val(null);
+        $("#bill").val(null);
+        $("#ship").val(null);
+        $("#pay").val(null);
+        $("#remit").val(null);
+        window.location.replace(base_url+"/account/bukuAlamat");
+
+    };
+    $('#spinner_img').show();
+    $('#submit_btn').val('loading...').addClass('disabled');
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
     // success handling
 
-    var success = function(r){
-      alert(r.message);
-      console.log('OK:', r.status);
-    };
-
+   
+var error = function(er){
+  $('#spinner_img').hide();
+  $('#submit_btn').val('Kirim').removeClass('disabled');
+  console.log('OK:', er);
+  $.alert({
+    title: 'Alert!',
+    content: 'koneksi tidak berhasil, silahkan coba lagi!',
+  });
+};
     // do validation
     var form_ok = true;
     $('.mandatory').each(function(){
@@ -122,21 +195,8 @@ $(document).ready(function() {
       }
 
     });
-    var success = function(r){
-      $('#spinner_img').hide();
-      $('#submit_btn').val('Kirim').removeClass('disabled');
-      console.log('OK:', r);
-      alert(r.message);
-    };
+   
 
-    if(form_ok==false) return false;
-    if(fl.password.value!=$('#password2').val())alert('password not match!!!');
-
-    else {
-      $('#spinner_img').show();
-      $('#submit_btn').val('loading...').addClass('disabled');
-      $.post( apiurl, data, success, "json" );
-    }
   });
 
   $.get(api_base_url+"/ccountry/getlistccountry", function(r){

@@ -1,0 +1,105 @@
+[33mbb8e995[m HEAD@{0}: commit: test push
+[33m9eedaf9[m HEAD@{1}: pull: Fast-forward
+[33m8ea1299[m HEAD@{2}: pull: Fast-forward
+[33m5de48fc[m HEAD@{3}: pull: Fast-forward
+[33m3dc3180[m HEAD@{4}: pull: Fast-forward
+[33m74cda70[m HEAD@{5}: pull: Fast-forward
+[33m39d579e[m HEAD@{6}: pull: Fast-forward
+[33m8845f9e[m HEAD@{7}: pull: Fast-forward
+[33m65da658[m HEAD@{8}: pull: Merge made by the 'recursive' strategy.
+[33mb8e2d5c[m HEAD@{9}: commit: List Items (Wahyu)
+[33mfbafb7d[m HEAD@{10}: pull: Fast-forward
+[33m53999e4[m HEAD@{11}: pull: Fast-forward
+[33mee625d4[m HEAD@{12}: commit: home
+[33me453274[m HEAD@{13}: pull: Merge made by the 'recursive' strategy.
+[33m67c9950[m HEAD@{14}: commit: Header banner
+[33mc866281[m HEAD@{15}: pull: Fast-forward
+[33m8dac122[m HEAD@{16}: commit: Nav Hover
+[33m2d95ad6[m HEAD@{17}: pull: Fast-forward
+[33m9658fe2[m HEAD@{18}: pull: Fast-forward
+[33m2faa299[m HEAD@{19}: pull: Fast-forward
+[33m8ce94b8[m HEAD@{20}: pull: Fast-forward
+[33m49b8fb8[m HEAD@{21}: pull: Fast-forward
+[33m37a8353[m HEAD@{22}: pull: Fast-forward
+[33m00b1efe[m HEAD@{23}: pull: Merge made by the 'recursive' strategy.
+[33mfea60bd[m HEAD@{24}: commit: wihslist and account
+[33m2b60301[m HEAD@{25}: commit: Slider Bawah dan Product
+[33mce834c2[m HEAD@{26}: commit: dashboard
+[33maf62c58[m HEAD@{27}: commit: My Controler
+[33m8fd8f33[m HEAD@{28}: pull: Merge made by the 'recursive' strategy.
+[33m97e2c57[m HEAD@{29}: commit: conflic resolve
+[33mfd4305e[m HEAD@{30}: pull: Fast-forward
+[33me4c3f8c[m HEAD@{31}: commit: Langguage Semua
+[33m232ef4d[m HEAD@{32}: pull: Fast-forward
+[33mab64450[m HEAD@{33}: commit: SignIn Language
+[33m9c9c8db[m HEAD@{34}: commit: Contact Us Language
+[33m690e64a[m HEAD@{35}: commit: Bahasa/Language
+[33mb094d5d[m HEAD@{36}: pull: Fast-forward
+[33mf1cc72c[m HEAD@{37}: commit (merge): wahyu
+[33m7dd98e1[m HEAD@{38}: commit: product dan product 3
+[33m4a0b921[m HEAD@{39}: pull: Merge made by the 'recursive' strategy.
+[33md73b739[m HEAD@{40}: commit: Product2 + Subscribe
+[33m22d4277[m HEAD@{41}: commit (merge): merge
+[33mf8fd954[m HEAD@{42}: commit: Bg Atas
+[33m864c9b5[m HEAD@{43}: commit: Prodcut Dan Checkout Layout
+[33meb499cf[m HEAD@{44}: pull: Fast-forward
+[33m66b95de[m HEAD@{45}: commit: header Cart
+[33m5df159e[m HEAD@{46}: pull: Fast-forward
+[33md8015c0[m HEAD@{47}: commit: Checkout
+[33m7c11b05[m HEAD@{48}: commit (merge): customer
+[33m1d6c7a5[m HEAD@{49}: commit: checkout
+[33mb001275[m HEAD@{50}: pull: Fast-forward
+[33m8626926[m HEAD@{51}: pull: Fast-forward
+[33m71c2f6b[m HEAD@{52}: pull: Fast-forward
+[33mbeeaa00[m HEAD@{53}: pull: Fast-forward
+[33m4dbac42[m HEAD@{54}: commit: Government
+[33m8c7baaf[m HEAD@{55}: commit: bussines
+[33me12dadc[m HEAD@{56}: pull: Fast-forward
+[33m096d450[m HEAD@{57}: pull: Fast-forward
+[33m78817fc[m HEAD@{58}: pull: Fast-forward
+[33m0cd649b[m HEAD@{59}: pull: Fast-forward
+[33m9b7c0f6[m HEAD@{60}: pull: Fast-forward
+[33m7d76269[m HEAD@{61}: commit: Edit buku Alamat
+[33mda022f3[m HEAD@{62}: pull: Fast-forward
+[33m48b944c[m HEAD@{63}: commit: Contactbaru
+[33mafcc196[m HEAD@{64}: pull: Merge made by the 'recursive' strategy.
+[33m1aba843[m HEAD@{65}: commit: Buku Alamat Dan Tambah buku Alamat
+[33m0ca95b3[m HEAD@{66}: commit: gif
+[33m3795733[m HEAD@{67}: pull: Fast-forward
+[33maf2b8c6[m HEAD@{68}: pull: Fast-forward
+[33m81a23a7[m HEAD@{69}: commit: contact us
+[33m8b22ced[m HEAD@{70}: pull: Fast-forward
+[33m5321e11[m HEAD@{71}: commit (merge): maps
+[33m8b9888c[m HEAD@{72}: commit: Maps
+[33m96e0f26[m HEAD@{73}: commit: Personal Dan Login
+[33m3c59923[m HEAD@{74}: commit: Personal
+[33m9e4621b[m HEAD@{75}: commit: validasi
+[33mf0c87e1[m HEAD@{76}: pull: Merge made by the 'recursive' strategy.
+[33m5c0cd67[m HEAD@{77}: commit: Footer Dan Header
+[33meb65c07[m HEAD@{78}: commit: header dan footer
+[33m9a775f4[m HEAD@{79}: pull: Fast-forward
+[33m4ae8724[m HEAD@{80}: pull: Fast-forward
+[33me15b042[m HEAD@{81}: pull: Fast-forward
+[33mc3f38ac[m HEAD@{82}: pull: Fast-forward
+[33m23f518e[m HEAD@{83}: pull: Fast-forward
+[33mc14393d[m HEAD@{84}: pull: Fast-forward
+[33mefa625d[m HEAD@{85}: pull: Merge made by the 'recursive' strategy.
+[33m444b006[m HEAD@{86}: commit: Contact Us
+[33m9550baf[m HEAD@{87}: commit: Wishlist
+[33m8d4f441[m HEAD@{88}: pull: Fast-forward
+[33m4990a7e[m HEAD@{89}: pull: Fast-forward
+[33m1db5d13[m HEAD@{90}: pull: Merge made by the 'recursive' strategy.
+[33m7e02ed3[m HEAD@{91}: commit: Newsletter
+[33mc3deccd[m HEAD@{92}: commit: Newsletter
+[33md80cbd5[m HEAD@{93}: pull: Fast-forward
+[33medb38a3[m HEAD@{94}: pull: Fast-forward
+[33m22a90d5[m HEAD@{95}: pull: Fast-forward
+[33me908252[m HEAD@{96}: pull: Fast-forward
+[33m99b74dc[m HEAD@{97}: pull: Fast-forward
+[33mc5c52fd[m HEAD@{98}: pull: Merge made by the 'recursive' strategy.
+[33m3b926c7[m HEAD@{99}: commit: Gambar Kotak-Kotak
+[33m1e27891[m HEAD@{100}: pull: Fast-forward
+[33m41f81e5[m HEAD@{101}: pull: Fast-forward
+[33mf44dd84[m HEAD@{102}: pull: Fast-forward
+[33m0f1928f[m HEAD@{103}: pull: Fast-forward
+[33m8e09c79[m HEAD@{104}: clone: from http://192.168.0.102/root/myacicoweb

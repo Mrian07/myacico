@@ -97,7 +97,11 @@ p {
 </style>
 
 <div class="container">
+<<<<<<< HEAD
 
+=======
+<!-- asd -->
+>>>>>>> 216c3fdacedd20535d45abb7cff759d9b43e2e69
   <div class="document">
 
     <h1>About Us !! </h1>

@@ -2,7 +2,11 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
 
+=======
+<!-- asd -->
+>>>>>>> 216c3fdacedd20535d45abb7cff759d9b43e2e69
 </head>
 <body>
 
