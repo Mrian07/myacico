@@ -14,7 +14,7 @@
 		<div class="col-sm-9">
 
 			<section class="login_content">
-			  <form name="upDate" method="post">
+			  <form name="loginFm" method="post">
 
 				<div class="form-group">
 				  <label>Kata Sandi Saat Ini*</label>
@@ -59,14 +59,15 @@
 
 		$(document).ready(function() {
 			$("form").submit(function(e){
-			    e.preventDefault();
 
-				var data = $(this).serialize();
+
+
 				var oldPassword = $("#oldPassword").val();
 				var newPassword = $("#newPassword").val();
 				var new_password2 = $("#new_password2").val();
 				var token	= document.cookie.split('x-auth=')[1].split(';').shift();
-var apiurl = baseApiUrl + '/aduser/changepassword?token='+token;
+
+
 				if(oldPassword==''){
 					$.alert({
 						title: 'Alert!',
@@ -82,6 +83,23 @@ var apiurl = baseApiUrl + '/aduser/changepassword?token='+token;
 					$('#spinner_img').show();
 					$('#submit_btn').val('loading...').addClass('disabled');
 					//$.post( apiurl, data, success, "json" );
+					e.preventDefault();
+var apiurl = baseApiUrl + '/aduser/changepassword?token='+token;
+var data = $(this).serialize();
+var success = function(r){
+	$('#spinner_img').hide();
+	$('#submit_btn').val('Passowrd').removeClass('disabled');
+	console.log('OK:', r);
+	//alert(r.message);
+
+	$.alert({
+		title: 'Alert!',
+		content: 'Password berhasil diubah',
+	});
+
+	 document.cookie='x-auth='+r.newToken+'; path='+base_path;
+
+};
 					$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "oldPassword":oldPassword,"newPassword":newPassword }) , url: apiurl, success: success, error: error });
 				}
 
