@@ -1,3 +1,11 @@
+	<style>
+	th, td {
+    padding: 15px;
+		font-size: 20px;
+    text-align: left;
+}
+	</style>
+
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/dist/xzoom.min.js');?>"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/productpopup/css/xzoom.css');?>" media="all" />
 <link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url('assets/productpopup/magnific-popup/css/magnific-popup.css');?>" />
@@ -73,7 +81,26 @@
 	<div class="tab-content">
 	  <div id="home" class="tab-pane fade in active">
 		<h3>HOME</h3>
-		<p>{{data}}</p>
+		<table class="table">
+			<tr>
+				<th> Brand </th>
+				<td> {{dat.name}} </td>
+
+			</tr>
+			<tr>
+				<th> Berat </th>
+				<td> {{dat.weight}} </td>
+			</tr>
+			<tr>
+				<th> Category </th>
+				<td> {{dat.category}}</td>
+			</tr>
+			<tr>
+				<th>  Harga </th>
+				<td> {{toMoney(dat.pricelist)}}</td>
+			</tr>
+		</table>
+{{data}}
 	  </div>
 	  <div id="menu1" class="tab-pane fade">
 		<h3>Menu 1</h3>
