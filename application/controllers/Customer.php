@@ -189,4 +189,13 @@ class Customer extends Web {
 		$this->load->view('frontend/modules/customer/logout/logout.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
+	
+	public function confirmation()
+	{
+		$this->data['title_web'] = "Myacico.com - Konfirmasi Pembayaran";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/customer/confirmation/confirmation.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 }

@@ -36,12 +36,16 @@
 					  <div class="panel-heading"><strong>Data Billing</strong></div>
 						<div class="rumah">
 						</div>
-                                          <div class='mybutton'></div>
+
+
+														              <div class='mybutton'></div>
+																					<div class='btn-tambah' style='display:none'>
 					  <div class="panel-body">Belum ada data billing, data billing saat checkout pembelian.
                                               <br><br>
                                                 <center>
-                                                <?php echo anchor('account/formAddBilling/', 'tambah', array('class'=>'my-link-general'));?>			
+                                                <?php echo anchor('account/formAddBilling/', 'tambah', array('class'=>'my-link-general'));?>
                                                 </center>
+																							</div>
 					  </div>
 					</div>
 				</div>
@@ -55,11 +59,13 @@ var baseApiUrl = '<?php// echo $baseApiUrl; ?>';
 
 
 $(document).ready(function() {
+
  var token = document.cookie.split('x-auth=')[1].split(';').shift();
  var filter =0;
- var apiurl = baseApiUrl + '/aduser/useraddress?addesstype=isbillto&token='+token;
+
+ var apiurl = baseApiUrl + '/aduser/getaddress?token='+token+'&addesstype=isbillto';
  console.log('halo',apiurl);
- $.get(api_base_url+'/aduser/useraddress?addesstype=isbillto&token='+token,
+	$.get(api_base_url+'/aduser/getaddress?token='+token+'&addesstype=isbillto',
  function(data){
  console.log('data nya adalah:', data);
 
@@ -67,7 +73,7 @@ $(document).ready(function() {
 	 var rumah = $('.rumah');
 var mybutton = $('.mybutton');
 	 if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
-
+	 if(data.length == 0) {$('.btn-tambah').show();}
 
 		data.forEach(function(p){
 			rumah.append(
@@ -75,7 +81,7 @@ var mybutton = $('.mybutton');
 				'<tr><td>'+p.addressname+'  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
 			)
 			mybutton.append(
-				'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.cbpartner_location_id+'" class="my-link-general">Ubah</a></div>'
+				'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
 			 //'<tr><td>July</td><td>Dooley</td><td>july@example.com</td></tr>'
 
 	 // '<table class="table"><tr><thead><td>'+p.addressname+'</td><thead></tr> </table>'

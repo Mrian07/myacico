@@ -28,7 +28,17 @@ class Checkout extends Web_private {
 		$this->load->view('frontend/modules/checkout/checkout.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-
+	
+	public function formAddBillingNew()
+	{
+		$this->data['title_web'] = "Myacico.com - Create Account Business";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/checkout/form_add_billing.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	
+	
 	public function switchLang()
     {
 		$lang = $this->input->post('lang');

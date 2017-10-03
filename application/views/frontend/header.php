@@ -56,7 +56,7 @@ a{
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4">
-				<?php echo anchor('pages/aboutus/', 'About Us');?> | 	<?php echo anchor('pages/payment/', 'Payment');?> | 	<?php echo anchor('pages/faq/', 'FAQ');?>
+				<?php echo anchor('pages/aboutus/', 'About Us');?> | 	<?php echo anchor('pages/payment/', 'Payment');?> | 	<?php echo anchor('pages/faq/', 'FAQ');?> | 	<?php echo anchor('customer/contact/', 'Hubungi Kami');?>
 
 			</div>
 			<div class="col-sm-8" style='text-align: right'>
@@ -86,7 +86,7 @@ a{
 				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
 			</div>
 		</div>
-		<div class="col-sm-7">
+		<div class="col-sm-6">
 			<div class='myserach'>
 				<div class="input-group">
 					<div class="input-group-btn search-panel">
@@ -114,7 +114,7 @@ a{
 			</div>
 		</div>
 
-		<div class="col-sm-3" style="padding-top:10px;">
+		<div class="col-sm-4" style="padding-top:10px;">
 		<!--	<div class="row">
 				<div class="col-sm-4" style='color:#111111; font-weight:bold; margin-right:10px;'>
 
@@ -153,7 +153,7 @@ a{
 							<?php } ?>
 
 							<div class="btncontact">
-								<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
+								<?php echo anchor('customer/confirmation', '<button class="dropbtncontact"><i class="fa fa-paper-plane" aria-hidden="true"></i> Konfirmasi</button>');?>
 
 							</div>
 
@@ -282,7 +282,7 @@ a{
 						<?php } ?>
 
 						<div class="btncontact">
-							<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-envelope" aria-hidden="true"></i> Hubungi Kami</button>');?>
+							<?php echo anchor('customer/confirmation', '<button class="dropbtncontact"><i class="fa fa-paper-plane" aria-hidden="true"></i> Konfirmasi</button>');?>
 
 						</div>
 						<div class="dropdown-basket">

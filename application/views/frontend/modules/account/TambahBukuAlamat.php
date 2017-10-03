@@ -1,11 +1,16 @@
-<div class="container">
-	<div class="row">
-	  <div class="col-sm-12">
-		<div class="my-border-title">
-			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Tambah Buku Alamat Baru</h3>
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-12">
+
+			<i class="fa fa-angle-right" aria-hidden="true"></i> TAMBAH BUKU ALAMAT
+
+		  </div>
 		</div>
-	  </div>
 	</div>
+</div>
+
+<div class="container">
 
 	<div class="row">
 		<div class="col-sm-3">
@@ -17,29 +22,41 @@
 
 			<div class="panel panel-default">
 				<div class="panel-body">
-				  <form name="signup" method="post">
-								<input type="hidden" id = "name"name="name"   />
-							 <input type="hidden" id = "phone1"name="phone1"   />
-							  <input type="hidden" id = "phone2"name="phone2" />
-
-                                      <div class="form-group">
-
-                                          <input type="hidden" id="bill" name="bill" value="N" />
-                                          <input type="hidden" id="ship" name="ship" value="Y" />
-                                          <input type="hidden" id="pay" name="pay" value="N" />
-                                          <input type="hidden" id="remit" name="remit" value="N" />
-                                          <input type="hidden" id="addn" name="addn" value="kontrakan" />
-                                          <input type="hidden" id="alamat3" name="alamat3" value="kelurahan duri kosambi" />
+				  <form name="test1" method="post">
+				  <input type="hidden" id="isbillto" name="isbillto" value="N" />
+				  <input type="hidden" id="isshipto" name="isshipto" value="Y" />
+				  <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
+				  <input type="hidden" id="isremitto" name="isremitto" value="N" />
+					<input type="hidden" id = "name"name="name"   />
+							 
+							  
+					<div class='row'>
+						<div class="col-sm-6">
+							<div class="form-group">
+							<label>Nama:</label>
+								<?php echo $user->name; ?>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+							<label>EMail:</label>
+								<?php echo $user->email; ?>
+							</div>
+						</div>
 					</div>
 
 					<div class="form-group">
+					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+					  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
+					</div>
+					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
-					  <input type="text" id = "alamat1"name="alamat1" class="form-control mandatory" />
-					  <input type="text" id = "alamat2" name="alamat2" class="form-control mandatory" />
+					  <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
+					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
 					</div>
 					<div class="form-group" style="display:none" id="ditric_box">
 							<label><?php echo $lang_Keca; ?>*</label>
-					  <select name="kecamatan" id="ditric_sel" class="form-control mandatory"></select>
+					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
 					</div>
 					<div class="form-group" style="display:none" id="city_box">
 						<label><?php echo $lang_kota; ?>*</label>
@@ -47,7 +64,15 @@
 					</div>
 					<div class="form-group">
 					<label><?php echo $lang_PostCode; ?>*</label>
-					  <input type="text" id ="zip" name="zip" class="form-control mandatory" />
+						<input type="text" id="postal" name="postal" class="form-control mandatory" />
+					</div>
+					<div class="form-group">
+					<label>Handphone*</label>
+						<input type="text" id = "phone"name="phone" class="form-control mandatory" />
+					</div>
+					<div class="form-group">
+					<label>Telepon</label>
+						<input type="text" id = "phone2"name="phone2" class="form-control"/>
 					</div>
 					<div class="form-group" style="display: none;" id="region_box">
 					<label><?php echo $lang_Provience; ?>*</label>
@@ -80,12 +105,12 @@ $.ajaxSetup({
 
 function get_distric(){
   $("#ditric_box").slideDown();
-  $("#ditric_sel").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
   $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
     r.forEach(function(o){
-      $("#ditric_sel").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+      $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
     });
-    $("#ditric_sel").prop('disabled', false);
+    $("#district_id").prop('disabled', false);
   }, "json" );
 }
 
@@ -119,10 +144,10 @@ $(document).ready(function() {
 	$.get(api_base_url+'/aduser/getinformationuser?token='+token,
 
 	function(data){
-	console.log('data nya adalah:', data);
+	// console.log('data nya adalah:', data);
 	console.log('test',token);
 		$("#name").val(data.name)
-	  $("#phone1").val(data.phone1);
+	  $("#phone").val(data.phone);
  		$("#phone2").val(data.phone2);
 
 
@@ -149,42 +174,54 @@ $(document).ready(function() {
 });
     $("form").submit(function(e){
     e.preventDefault();
+	  var apiurl = api_base_url +'/aduser/addaddress?token='+token;
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
-
-    var apiurl = api_base_url + '/aduser/addaddress?token='+token;
-    var alamat = $("#addn").val();
 		var name = $("#name").val();
-		var phone1 = $("#phone1").val();
+		var phone = $("#phone").val();
 		var phone2 = $("#phone2").val();
-    var alamat1 = $("#alamat1").val();
-    var alamat2 = $("#alamat2").val();
-    var alamat3 = $("#alamat3").val();
-    var kecamatan = $("#ditric_sel").val();
-    var kota = $("#city").val();
-    var propinsi = $("#province").val();
-    var negara = $("#country").val();
-    var kode_pos = $("#zip").val();
-    var bill = $("#bill").val();
-    var ship = $("#ship").val();
-    var pay = $("#pay").val();
-    var remit = $("#remit").val();
+    var address_name = $("#address_name").val();
+    var address1 = $("#address1").val();
+    var address2 = $("#address2").val();
+		  var address3 = $("#address3").val();
+    var address4 = $("#address4").val();
+		var postal = $("#postal").val();
+    var district_id = $("#district_id").val();
+    var isbillto = $("#isbillto").val();
+    var isshipto = $("#isshipto").val();
+    var ispayfrom = $("#ispayfrom").val();
+    var isremitto = $("#isremitto").val();
 
     //var fl=document.signup;
 //    var data = $(this).serialize();
 //     return alert(data);die();
-		data.name = name;
-		data.phone1 = phone1;
-		data.phone2 = phone2;
-    data.addressname = alamat;
-    data.address1 = alamat1;
-    data.address2 = alamat2;
-    data.address3 = alamat3;
-    data.postal = kode_pos;
-    data.c_district_id = kecamatan;
-    data.isbillto = bill;
-    data.isshipto = ship;
-    data.ispayfrom = pay;
-    data.isremitto = remit;
+data.name = 'ASD';
+data.phone = '1515';
+data.phone2 = '1515';
+data.address_name = 'jalann';
+data.address1 = 'address1';
+data.address2 = 'address2';
+		data.address3 = 'address3';
+data.address4 = 'address4';
+data.postal = 'postal';
+data.district_id = 'district_id';
+data.isbillto = 'Y';
+data.isshipto = 'Y';
+data.ispayfrom = 'Y';
+data.isremitto = 'Y';
+		// data.name = name;
+		// data.phone = phone;
+		// data.phone2 = phone2;
+    // data.address_name = address_name;
+    // data.address1 = address1;
+    // data.address2 = address2;
+		//     data.address3 = address3;
+		// data.address4 = address4;
+    // data.postal = postal;
+    // data.district_id = district_id;
+    // data.isbillto = isbillto;
+    // data.isshipto = isshipto;
+    // data.ispayfrom = ispayfrom;
+    // data.isremitto = isremitto;
 
    // console.log(data);die();
      var success = function(r){
@@ -196,29 +233,50 @@ $(document).ready(function() {
     });
 //      alert(r.message);
       console.log('OK:', r.status);
-        $("#addn").val(null);
-        $("#alamat1").val(null);
-        $("#alamat2").val(null);
-        $("#alamat3").val(null);
-        $("#ditric_sel").val(null);
-        $("#city").val(null);
-        $("#province").val(null);
-        $("#country").val(null);
-        $("#zip").val(null);
-        $("#bill").val(null);
-        $("#ship").val(null);
-        $("#pay").val(null);
-        $("#remit").val(null);
-				$("#name").val(null)
-				$("#phone1").val(null);
-				$("#phone2").val(null);
-        window.location.replace(base_url+"/account/bukuAlamat");
+			// $("#name").val(null);
+			// $("#phone").val(null);
+			// $("#phone2").val(null);
+			// $("#address_name").val(null);
+			// $("#address1").val(null);
+			// $("#address2").val(null);
+			// $("#address3").val(null);
+			// $("#address4").val(null);
+			// $("#postal").val(null);
+			// $("#district_id").val(null);
+			// $("#isbillto").val(null);
+			// $("#isshipto").val(null);
+			// $("#ispayfrom").val(null);
+		  // $("#isremitto").val(null);
+
+        window.location.replace(base_url+"/account/TambahBukuAlamat");
 
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
-    // success handling
+		console.log('ini data',data);
+		//die();
+		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({
+			"id":1000016,
+	 "name":"Andri Nia",
+	 "phone":"02111111",
+	 "phone2":"085645645",
+	 "address_name":"Rumah Kakak",
+	 "address1":"Jl Mangga No 1",
+	 "address2":"Blok D7",
+	 "address3":"RT/RW 07/07",
+	 "address4":"Kelurahan Gambir",
+	 "postal":"11750",
+	 "district_id":4095,
+	 "isbillto":"N",
+	 "isshipto":"Y",
+	 "ispayfrom":"N",
+	 "isremitto":"N"
+
+		}) , url: apiurl, success: success, error: error });
+
+		//$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
+
+		// success handling
 
 
 var error = function(er){
