@@ -24,8 +24,8 @@
 				<div class="panel-body">
 				  <form name="test1" method="post">
 								<input type="text" id = "name"name="name"   />
-							 <input type="text" id = "phone"name="phone"   />
-							  <input type="text" id = "phone2"name="phone2" />
+							 <input type="text" id = "phone"name="phone"  value='88888' />
+							  <input type="text" id = "phone2"name="phone2" value='9999'/>
 
                                       <div class="form-group">
 
@@ -54,7 +54,7 @@
 					</div>
 					<div class="form-group">
 					<label><?php echo $lang_PostCode; ?>*</label>
-					  <input type="text" id ="zip" name="zip" class="form-control mandatory" />
+					  <input type="text" id ="zip" name="zip" class="form-control mandatory" value='12222' />
 					</div>
 					<div class="form-group" style="display: none;" id="region_box">
 					<label><?php echo $lang_Provience; ?>*</label>
