@@ -54,15 +54,19 @@
 	padding: 3px 10px 2px;
 }
 </style>
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-12">
 
+			<i class="fa fa-angle-right" aria-hidden="true"></i> KERANJANG BELANJA ANDA
+
+		  </div>
+		</div>
+	</div>
+</div>
 <div class="container" ng-controller="cartCnt">
-	<div class="row">
-      <div class="col-sm-12">
-      <div class="my-border-title">
-        <h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Cart</h3>
-      </div>
-      </div>
-    </div>
+	
 
     <!--div class="progress">
       <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%">

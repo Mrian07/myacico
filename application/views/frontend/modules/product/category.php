@@ -12,9 +12,10 @@
 		transition: all 0.5s;
 		text-align:center;
 	}
-	.thumbnail:hover{
+	.thumbnail a:hover{
 		opacity:1.00;
 		box-shadow: 0px 0px 10px #4bc6ff;
+		text-decoration:none;
 	}
 	.line{
 		margin-bottom: 5px;
@@ -28,7 +29,7 @@
 
 	span.thumbnail {
         border: 1px solid #c40202 !important;
-    border-radius: 0px !important;
+    border-radius: 10px !important;
     -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
     -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
     box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
@@ -60,12 +61,13 @@
 .carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
 </style>
 
-
-		<div class="container">
-	<div class="row" id="collection_box">
+<div id="title">
 </div>
-		<!-- END PRODUCTS -->
+		<div class="container">
+		<div class="row" id="collection_box">
 	</div>
+		<!-- END PRODUCTS -->
+	
 
 	<hr size='1'>
   <p id="tes"></p>
@@ -106,6 +108,8 @@
 </div>
 
 </div>
+
+</div>
 <script>
 $('#myCarousel').carousel({
   interval: 4000
@@ -131,7 +135,8 @@ $('.carousel .item').each(function(){
   function(data){
     console.log('get_cat:', data);
     var box = $('#collection_box');
-    box.html('<h4>'+data.subName+'</h4>');
+	var title = $('#title');
+    title.html('<div class="my-bg-title"><div class="container"><div class="row"><div class="col-sm-12"><i class="fa fa-angle-right" aria-hidden="true"></i> '+data.subName+'</div></div></div></div>');
     if(data.subValue.length == 0) return box.append('<p>Data tidak ditemukan</p>');
 
     data.subValue.forEach(function(p){
@@ -139,8 +144,7 @@ $('.carousel .item').each(function(){
       box.append(
         $(document.createElement('div')).attr("class","col-md-3 col-sm-6").append(
           $(document.createElement('span')).attr("class","thumbnail").append(
-            '<img src="'+p.imageurl+'" alt="...">',
-            '<a href="'+base_url+'product/listItem/'+p.categoryId+'"><h4>'+p.name+'</h4></a>'
+            '<a href="'+base_url+'product/listItem/'+p.categoryId+'"><img src="'+p.imageurl+'" alt="..."><h4>'+p.name+'</h4></a>'
 
           )
         )
