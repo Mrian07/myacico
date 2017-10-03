@@ -1,11 +1,16 @@
-<div class="container">
-	<div class="row">
-	  <div class="col-sm-12">
-		<div class="my-border-title">
-			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Tambah Buku Alamat Baru</h3>
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-12">
+
+			<i class="fa fa-angle-right" aria-hidden="true"></i> TAMBAH BUKU ALAMAT
+
+		  </div>
 		</div>
-	  </div>
 	</div>
+</div>
+
+<div class="container">
 
 	<div class="row">
 		<div class="col-sm-3">
@@ -17,25 +22,27 @@
 
 			<div class="panel panel-default">
 				<div class="panel-body">
-				  <form name="signup" method="post">
+				  <form name="test1" method="post">
 								<input type="text" id = "name"name="name"   />
-							 <input type="text" id = "phone1"name="phone1"   />
+							 <input type="text" id = "phone"name="phone"   />
 							  <input type="text" id = "phone2"name="phone2" />
 
                                       <div class="form-group">
 
                                           <input type="text" id="isbillto" name="isbillto" value="N" />
-                                          <input type="text" id="ishipto" name="ishipto" value="Y" />
+                                          <input type="text" id="isshipto" name="isshipto" value="Y" />
                                           <input type="text" id="ispayfrom" name="ispayfrom" value="N" />
                                           <input type="text" id="isremitto" name="isremitto" value="N" />
-                                          <input type="text" id="addressname" name="addressname" value="kontrakan" />
+                                          <input type="text" id="address_name" name="address_name" value="kontrakan" />
                                           <input type="text" id="address4" name="address4" value="kelurahan duri kosambi" />
+																					  <input type="text" id="postal" name="postal" value="test" />
 					</div>
 
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
-					  <input type="text" id = "address1"name="address1" class="form-control mandatory" />
-					  <input type="text" id = "address2" name="address2" class="form-control mandatory" />
+					  <input type="text" id = "address1"name="address1" class="form-control mandatory" value="obi" />
+					  <input type="text" id = "address2" name="address2" class="form-control mandatory" value="obi2" />
+						<input type="text" id = "address3" name="address3" class="form-control mandatory" value="obi3" />
 					</div>
 					<div class="form-group" style="display:none" id="ditric_box">
 							<label><?php echo $lang_Keca; ?>*</label>
@@ -119,10 +126,10 @@ $(document).ready(function() {
 	$.get(api_base_url+'/aduser/getinformationuser?token='+token,
 
 	function(data){
-	console.log('data nya adalah:', data);
+	// console.log('data nya adalah:', data);
 	console.log('test',token);
 		$("#name").val(data.name)
-	  $("#phone1").val(data.phone1);
+	  $("#phone").val(data.phone);
  		$("#phone2").val(data.phone2);
 
 
@@ -149,39 +156,54 @@ $(document).ready(function() {
 });
     $("form").submit(function(e){
     e.preventDefault();
+	  var apiurl = api_base_url +'/aduser/addaddress?token='+token;
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
-
-    var apiurl = api_base_url + '/aduser/addaddress?token='+token;
 		var name = $("#name").val();
-		var phone1 = $("#phone1").val();
+		var phone = $("#phone").val();
 		var phone2 = $("#phone2").val();
-    var addressname = $("#addressname").val();
+    var address_name = $("#address_name").val();
     var address1 = $("#address1").val();
     var address2 = $("#address2").val();
+		  var address3 = $("#address3").val();
     var address4 = $("#address4").val();
 		var postal = $("#postal").val();
     var district_id = $("#district_id").val();
     var isbillto = $("#isbillto").val();
-    var ishipto = $("#ishipto").val();
+    var isshipto = $("#isshipto").val();
     var ispayfrom = $("#ispayfrom").val();
     var isremitto = $("#isremitto").val();
 
     //var fl=document.signup;
 //    var data = $(this).serialize();
 //     return alert(data);die();
-		data.name = name;
-		data.phone1 = phone1;
-		data.phone2 = phone2;
-    data.addressname = addressname;
-    data.address1 = address1;
-    data.address2 = address2;
-		data.address4 = address4;
-    data.postal = postal;
-    data.district_id = district_id;
-    data.isbillto = isbillto;
-    data.ishipto = ishipto;
-    data.ispayfrom = ispayfrom;
-    data.isremitto = isremitto;
+data.name = 'ASD';
+data.phone = '1515';
+data.phone2 = '1515';
+data.address_name = 'jalann';
+data.address1 = 'address1';
+data.address2 = 'address2';
+		data.address3 = 'address3';
+data.address4 = 'address4';
+data.postal = 'postal';
+data.district_id = 'district_id';
+data.isbillto = 'Y';
+data.isshipto = 'Y';
+data.ispayfrom = 'Y';
+data.isremitto = 'Y';
+		// data.name = name;
+		// data.phone = phone;
+		// data.phone2 = phone2;
+    // data.address_name = address_name;
+    // data.address1 = address1;
+    // data.address2 = address2;
+		//     data.address3 = address3;
+		// data.address4 = address4;
+    // data.postal = postal;
+    // data.district_id = district_id;
+    // data.isbillto = isbillto;
+    // data.isshipto = isshipto;
+    // data.ispayfrom = ispayfrom;
+    // data.isremitto = isremitto;
 
    // console.log(data);die();
      var success = function(r){
@@ -193,27 +215,50 @@ $(document).ready(function() {
     });
 //      alert(r.message);
       console.log('OK:', r.status);
-			$("#name").val(null);
-			$("#phone1").val(null);
-			$("#phone2").val(null);
-			$("#addressname").val(null);
-			$("#address1").val(null);
-			$("#address2").val(null);
-			$("#address4").val(null);
-			$("#postal").val(null);
-			$("#district_id").val(null);
-			$("#isbillto").val(null);
-			$("#ishipto").val(null);
-			$("#ispayfrom").val(null);
-		  $("#isremitto").val(null);
+			// $("#name").val(null);
+			// $("#phone").val(null);
+			// $("#phone2").val(null);
+			// $("#address_name").val(null);
+			// $("#address1").val(null);
+			// $("#address2").val(null);
+			// $("#address3").val(null);
+			// $("#address4").val(null);
+			// $("#postal").val(null);
+			// $("#district_id").val(null);
+			// $("#isbillto").val(null);
+			// $("#isshipto").val(null);
+			// $("#ispayfrom").val(null);
+		  // $("#isremitto").val(null);
 
-        window.location.replace(base_url+"/account/bukuAlamat");
+        window.location.replace(base_url+"/account/TambahBukuAlamat");
 
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
-    // success handling
+		console.log('ini data',data);
+		//die();
+		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({
+			"id":1000016,
+	 "name":"Andri Nia",
+	 "phone":"02111111",
+	 "phone2":"085645645",
+	 "address_name":"Rumah Kakak",
+	 "address1":"Jl Mangga No 1",
+	 "address2":"Blok D7",
+	 "address3":"RT/RW 07/07",
+	 "address4":"Kelurahan Gambir",
+	 "postal":"11750",
+	 "district_id":4095,
+	 "isbillto":"N",
+	 "isshipto":"Y",
+	 "ispayfrom":"N",
+	 "isremitto":"N"
+
+		}) , url: apiurl, success: success, error: error });
+
+		//$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
+
+		// success handling
 
 
 var error = function(er){

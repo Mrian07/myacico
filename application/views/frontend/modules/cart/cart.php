@@ -59,14 +59,14 @@
 		<div class="row">
 		  <div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> KERANJANG BELANJA ANDA
+			<i class="fa fa-angle-right" aria-hidden="true"></i> KERANJANG BELANJA ANDA 
 
 		  </div>
 		</div>
 	</div>
 </div>
 <div class="container" ng-controller="cartCnt">
-	
+
 
     <!--div class="progress">
       <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
@@ -75,7 +75,7 @@
       <span class="progress-completed"> 35%</span>
     </div-->
 	<div class="col-md-9">
-	
+
 		<table id="cart" class="table table-hover table-condensed">
 			<thead>
 				<tr>
@@ -145,7 +145,7 @@
 				</tr>
 			</tfoot>
 		</table>
-	</div>	
+	</div>
 	<div class="col-md-3">
 		<div class="panel panel-default">
 		  <div class="panel-body">
