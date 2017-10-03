@@ -62,7 +62,8 @@ $(document).ready(function() {
 
 	//var apiurl = baseApiUrl + '/aduser/useraddress?addesstype=isshipto&token='+token;
 	//console.log('halo',apiurl);
-	$.get(api_base_url+'/aduser/useraddress?addesstype=isshipto&token='+token,
+
+	$.get(api_base_url+'/aduser/getaddress?token='+token+'&addesstype=isshipto',
 
 	function(data){
 	console.log('data nya adalah:', data);
