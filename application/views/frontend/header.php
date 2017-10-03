@@ -86,7 +86,7 @@ a{
 				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
 			</div>
 		</div>
-		<div class="col-sm-7">
+		<div class="col-sm-6">
 			<div class='myserach'>
 				<div class="input-group">
 					<div class="input-group-btn search-panel">
@@ -114,7 +114,7 @@ a{
 			</div>
 		</div>
 
-		<div class="col-sm-3" style="padding-top:10px;">
+		<div class="col-sm-4" style="padding-top:10px;">
 		<!--	<div class="row">
 				<div class="col-sm-4" style='color:#111111; font-weight:bold; margin-right:10px;'>
 

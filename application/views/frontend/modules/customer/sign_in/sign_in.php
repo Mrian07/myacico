@@ -1,11 +1,23 @@
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-12">
+
+			<i class="fa fa-angle-right" aria-hidden="true"></i> LOGIN AKUN
+
+		  </div>
+		</div>
+	</div>
+</div>
+
 <div class="container">
-	<div class="row">
+	<!--<div class="row">
 	  <div class="col-sm-12">
 		<div class="my-border-title">
 			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> LOGIN AKUN</h3>
 		</div>
 	  </div>
-	</div>
+	</div>-->
 
 	<div class="row">
 		<div class="col-sm-6">
@@ -85,7 +97,7 @@ var error = function(er){
   console.log('OK:', er);
   $.alert({
     title: 'Alert!',
-    content: 'koneksi tidak berhasil, silahkan coba lagi!',
+    content: 'Koneksi tidak berhasil, silahkan coba lagi!',
   });
 };
     var data = {};
@@ -100,7 +112,7 @@ $(document).ready(function() {
 		if(email==''){
 			$.alert({
 				title: 'Alert!',
-				content: 'email tidak boleh kosong!',
+				content: 'Email tidak boleh kosong!',
 			});
       return false;
 		}
@@ -108,7 +120,7 @@ $(document).ready(function() {
 		if(password==''){
 			$.alert({
 				title: 'Alert!',
-				content: 'password tidak boleh kosong!',
+				content: 'Password tidak boleh kosong!',
 			});
       return false;
 		};
