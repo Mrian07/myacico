@@ -5,8 +5,8 @@
 			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Tambah Buku Alamat Baru</h3>
 		</div>
 	  </div>
-	</div> 
-	
+	</div>
+
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
@@ -14,12 +14,16 @@
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
 			<p>Silakan lengkapi data billing Anda dibawah ini.</p>
+
 			<div class="panel panel-default">
-				<div class="panel-body">	
+				<div class="panel-body">
 				  <form name="signup" method="post">
-					
+								<input type="hidden" id = "name"name="name"   />
+							 <input type="hidden" id = "phone1"name="phone1"   />
+							  <input type="hidden" id = "phone2"name="phone2" />
+
                                       <div class="form-group">
-					
+
                                           <input type="hidden" id="bill" name="bill" value="N" />
                                           <input type="hidden" id="ship" name="ship" value="Y" />
                                           <input type="hidden" id="pay" name="pay" value="N" />
@@ -27,7 +31,7 @@
                                           <input type="hidden" id="addn" name="addn" value="kontrakan" />
                                           <input type="hidden" id="alamat3" name="alamat3" value="kelurahan duri kosambi" />
 					</div>
-                                      
+
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
 					  <input type="text" id = "alamat1"name="alamat1" class="form-control mandatory" />
@@ -55,8 +59,8 @@
 						<option value="">--pilih--</option>
 					  </select>
 					</div>
-					
-					
+
+
 					<div class="clearfix"></div>
 						<input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 				  </form>
@@ -85,6 +89,8 @@ function get_distric(){
   }, "json" );
 }
 
+
+
 function get_city(){
   $("#city_box").slideDown();
   $("#city_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_distric);
@@ -109,13 +115,47 @@ function get_region(){
 var data = {};
 
 $(document).ready(function() {
+	var token = document.cookie.split('x-auth=')[1].split(';').shift();
+	$.get(api_base_url+'/aduser/getinformationuser?token='+token,
+
+	function(data){
+	console.log('data nya adalah:', data);
+	console.log('test',token);
+		$("#name").val(data.name)
+	  $("#phone1").val(data.phone1);
+ 		$("#phone2").val(data.phone2);
+
+
+		// var addressname = $('.addressname');
+		// var rumah = $('.rumah');
+
+
+		 //if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
+
+
+		//  data.forEach(function(p){
+		// 	 rumah.append(
+		 //
+		// 		 '<tr><td>'+p.addressname+'  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a href="'+api_base_url+'/aduser/deleteaddress?token='+token+'&addessid='+p.cbpartner_location_id+'"><h4>'+p.cbpartner_location_id+'</h4></a></td></tr>'
+		 //
+		 //
+		// 	 )
+
+
+
+
+
+
+});
     $("form").submit(function(e){
     e.preventDefault();
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
-    
+
     var apiurl = api_base_url + '/aduser/addaddress?token='+token;
     var alamat = $("#addn").val();
-     
+		var name = $("#name").val();
+		var phone1 = $("#phone1").val();
+		var phone2 = $("#phone2").val();
     var alamat1 = $("#alamat1").val();
     var alamat2 = $("#alamat2").val();
     var alamat3 = $("#alamat3").val();
@@ -128,10 +168,13 @@ $(document).ready(function() {
     var ship = $("#ship").val();
     var pay = $("#pay").val();
     var remit = $("#remit").val();
-   
+
     //var fl=document.signup;
 //    var data = $(this).serialize();
 //     return alert(data);die();
+		data.name = name;
+		data.phone1 = phone1;
+		data.phone2 = phone2;
     data.addressname = alamat;
     data.address1 = alamat1;
     data.address2 = alamat2;
@@ -142,7 +185,7 @@ $(document).ready(function() {
     data.isshipto = ship;
     data.ispayfrom = pay;
     data.isremitto = remit;
-   
+
    // console.log(data);die();
      var success = function(r){
          $('#spinner_img').hide();
@@ -166,6 +209,9 @@ $(document).ready(function() {
         $("#ship").val(null);
         $("#pay").val(null);
         $("#remit").val(null);
+				$("#name").val(null)
+				$("#phone1").val(null);
+				$("#phone2").val(null);
         window.location.replace(base_url+"/account/bukuAlamat");
 
     };
@@ -174,7 +220,7 @@ $(document).ready(function() {
     $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
     // success handling
 
-   
+
 var error = function(er){
   $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
@@ -195,7 +241,7 @@ var error = function(er){
       }
 
     });
-   
+
 
   });
 
