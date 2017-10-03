@@ -36,7 +36,7 @@
 					  <div class="panel-heading"><strong>Data Billing</strong></div>
 						<div class="rumah">
 						</div>
-					  <div class="panel-body">Belum ada data billing
+					  <div class="panel-body">Belum ada data billing, data billing saat checkout pembelian.
 					
 								<div class='mybutton'></div>
 
