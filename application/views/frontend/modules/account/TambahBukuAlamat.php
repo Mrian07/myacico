@@ -18,28 +18,28 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 				  <form name="signup" method="post">
-								<input type="hidden" id = "name"name="name"   />
-							 <input type="hidden" id = "phone1"name="phone1"   />
-							  <input type="hidden" id = "phone2"name="phone2" />
+								<input type="text" id = "name"name="name"   />
+							 <input type="text" id = "phone1"name="phone1"   />
+							  <input type="text" id = "phone2"name="phone2" />
 
                                       <div class="form-group">
 
-                                          <input type="hidden" id="bill" name="bill" value="N" />
-                                          <input type="hidden" id="ship" name="ship" value="Y" />
-                                          <input type="hidden" id="pay" name="pay" value="N" />
-                                          <input type="hidden" id="remit" name="remit" value="N" />
-                                          <input type="hidden" id="addn" name="addn" value="kontrakan" />
-                                          <input type="hidden" id="alamat3" name="alamat3" value="kelurahan duri kosambi" />
+                                          <input type="text" id="isbillto" name="isbillto" value="N" />
+                                          <input type="text" id="ishipto" name="ishipto" value="Y" />
+                                          <input type="text" id="ispayfrom" name="ispayfrom" value="N" />
+                                          <input type="text" id="isremitto" name="isremitto" value="N" />
+                                          <input type="text" id="addressname" name="addressname" value="kontrakan" />
+                                          <input type="text" id="address4" name="address4" value="kelurahan duri kosambi" />
 					</div>
 
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
-					  <input type="text" id = "alamat1"name="alamat1" class="form-control mandatory" />
-					  <input type="text" id = "alamat2" name="alamat2" class="form-control mandatory" />
+					  <input type="text" id = "address1"name="address1" class="form-control mandatory" />
+					  <input type="text" id = "address2" name="address2" class="form-control mandatory" />
 					</div>
 					<div class="form-group" style="display:none" id="ditric_box">
 							<label><?php echo $lang_Keca; ?>*</label>
-					  <select name="kecamatan" id="ditric_sel" class="form-control mandatory"></select>
+					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
 					</div>
 					<div class="form-group" style="display:none" id="city_box">
 						<label><?php echo $lang_kota; ?>*</label>
@@ -80,12 +80,12 @@ $.ajaxSetup({
 
 function get_distric(){
   $("#ditric_box").slideDown();
-  $("#ditric_sel").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
   $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
     r.forEach(function(o){
-      $("#ditric_sel").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+      $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
     });
-    $("#ditric_sel").prop('disabled', false);
+    $("#district_id").prop('disabled', false);
   }, "json" );
 }
 
@@ -152,22 +152,19 @@ $(document).ready(function() {
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
 
     var apiurl = api_base_url + '/aduser/addaddress?token='+token;
-    var alamat = $("#addn").val();
 		var name = $("#name").val();
 		var phone1 = $("#phone1").val();
 		var phone2 = $("#phone2").val();
-    var alamat1 = $("#alamat1").val();
-    var alamat2 = $("#alamat2").val();
-    var alamat3 = $("#alamat3").val();
-    var kecamatan = $("#ditric_sel").val();
-    var kota = $("#city").val();
-    var propinsi = $("#province").val();
-    var negara = $("#country").val();
-    var kode_pos = $("#zip").val();
-    var bill = $("#bill").val();
-    var ship = $("#ship").val();
-    var pay = $("#pay").val();
-    var remit = $("#remit").val();
+    var addressname = $("#addressname").val();
+    var address1 = $("#address1").val();
+    var address2 = $("#address2").val();
+    var address4 = $("#address4").val();
+		var postal = $("#postal").val();
+    var district_id = $("#district_id").val();
+    var isbillto = $("#isbillto").val();
+    var ishipto = $("#ishipto").val();
+    var ispayfrom = $("#ispayfrom").val();
+    var isremitto = $("#isremitto").val();
 
     //var fl=document.signup;
 //    var data = $(this).serialize();
@@ -175,16 +172,16 @@ $(document).ready(function() {
 		data.name = name;
 		data.phone1 = phone1;
 		data.phone2 = phone2;
-    data.addressname = alamat;
-    data.address1 = alamat1;
-    data.address2 = alamat2;
-    data.address3 = alamat3;
-    data.postal = kode_pos;
-    data.c_district_id = kecamatan;
-    data.isbillto = bill;
-    data.isshipto = ship;
-    data.ispayfrom = pay;
-    data.isremitto = remit;
+    data.addressname = addressname;
+    data.address1 = address1;
+    data.address2 = address2;
+		data.address4 = address4;
+    data.postal = postal;
+    data.district_id = district_id;
+    data.isbillto = isbillto;
+    data.ishipto = ishipto;
+    data.ispayfrom = ispayfrom;
+    data.isremitto = isremitto;
 
    // console.log(data);die();
      var success = function(r){
@@ -196,22 +193,20 @@ $(document).ready(function() {
     });
 //      alert(r.message);
       console.log('OK:', r.status);
-        $("#addn").val(null);
-        $("#alamat1").val(null);
-        $("#alamat2").val(null);
-        $("#alamat3").val(null);
-        $("#ditric_sel").val(null);
-        $("#city").val(null);
-        $("#province").val(null);
-        $("#country").val(null);
-        $("#zip").val(null);
-        $("#bill").val(null);
-        $("#ship").val(null);
-        $("#pay").val(null);
-        $("#remit").val(null);
-				$("#name").val(null)
-				$("#phone1").val(null);
-				$("#phone2").val(null);
+			$("#name").val(null);
+			$("#phone1").val(null);
+			$("#phone2").val(null);
+			$("#addressname").val(null);
+			$("#address1").val(null);
+			$("#address2").val(null);
+			$("#address4").val(null);
+			$("#postal").val(null);
+			$("#district_id").val(null);
+			$("#isbillto").val(null);
+			$("#ishipto").val(null);
+			$("#ispayfrom").val(null);
+		  $("#isremitto").val(null);
+
         window.location.replace(base_url+"/account/bukuAlamat");
 
     };
