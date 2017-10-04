@@ -74,6 +74,22 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
+          <table class="table">
+    	    <thead>
+
+    	      <tr>
+    	        <th>Alamat lengkap</th>
+    			     <th>Hapus</th>
+    	      </tr>
+
+    	    </thead>
+    			<tbody class="rumah">
+
+
+
+    		</tbody>
+    </table>
+
         <button type="button" class="btn btn-link">Link</button>
         </div>
         <div class="modal-footer">
@@ -85,8 +101,8 @@
   <!-- end Modal -->
 							<p><strong>DATA PENERIMA</strong></p>
 							<p>Tidak ada data penerima yang tersedia, silakan isi terlebih dulu.<p>
-							<p><?php echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>
-                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">Open Small Modal</button>
+							<!-- <p><?php // echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p> -->
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">Lihat Alamat</button>
 
 							<!--
 							<p><strong>DATA PENERIMA</strong></p>
@@ -244,7 +260,7 @@ $(document).ready(function()
 {
   var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var filter =0;
-  $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
+  $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isbillto',
   function(data){
 	console.log('data nya adalah:', data);
 	// console.log('test',token);
@@ -264,7 +280,7 @@ $(document).ready(function()
 
 
 
-				 '<tr><td>'+p.address_name+' '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
+				 '  <table class="table"><tr><td>'+p.address_name+' '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr></table>'
        )
 			 $("#hapus"+p.id).click(function(e){
 
