@@ -22,7 +22,7 @@ class Checkout extends Web_private {
 
 	public function index()
 	{
-		$this->data['title_web'] = "Myacico.com - Create Account Business";
+		$this->data['title_web'] = "Myacico.com - Checkout";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/checkout/checkout.php',$this->data);
@@ -31,13 +31,21 @@ class Checkout extends Web_private {
 	
 	public function formAddBillingNew()
 	{
-		$this->data['title_web'] = "Myacico.com - Create Account Business";
+		$this->data['title_web'] = "Myacico.com - Checkout / Add Billing";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/checkout/form_add_billing.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 	
+	public function formAddShippingNew()
+	{
+		$this->data['title_web'] = "Myacico.com - Checkout / Add Shipping";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/checkout/form_add_shipping.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 	
 	public function switchLang()
     {

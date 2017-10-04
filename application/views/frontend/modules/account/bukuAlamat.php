@@ -63,15 +63,16 @@ $(document).ready(function() {
 	//var apiurl = baseApiUrl + '/aduser/useraddress?addesstype=isshipto&token='+token;
 	//console.log('halo',apiurl);
 
-	$.get(api_base_url+'/aduser/getaddress?token='+token+'&addesstype=isshipto',
+		$.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
+	// $.get(api_base_url+'/aduser/useraddress?addesstype=isshipto&token='+token,
 
 	function(data){
 	console.log('data nya adalah:', data);
-	console.log('test',token);
+	// console.log('test',token);
 
 		var addressname = $('.addressname');
 		var rumah = $('.rumah');
-		var box = $('#title-product');
+
 
 		if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
 
@@ -80,17 +81,17 @@ $(document).ready(function() {
 			 rumah.append(
 
 
-				 '<tr><td>'+p.addressname+'  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a href="'+api_base_url+'/aduser/deleteaddress?token='+token+'&addessid='+p.cbpartner_location_id+'"><h4>'+p.cbpartner_location_id+'</h4></a></td></tr>'
+				 '<tr><td>'+p.address_name+'  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
 
 
 			 )
-		 $.ajax({ type:"POST", contentType: "application/json", url: api_base_url, success: success });
+		 //$.ajax({ type:"POST", contentType: "application/json", url: api_base_url, success: success });
 
 
 
 			 addressname.append(
 
-				'<tr><td>July</td><td>Dooley</td><td>july@example.com</td></tr>'
+
 
 
 
