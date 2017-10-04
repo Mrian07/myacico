@@ -25,6 +25,7 @@
 				<br/>
 			<table class="table">
 	    <thead>
+				 <label id="id" name="id">Nama</label>
 	      <tr>
 	        <th>Alamat lengkap</th>
 
@@ -72,6 +73,7 @@ $(document).ready(function() {
 
 		var addressname = $('.addressname');
 		var rumah = $('.rumah');
+		var id = $("#id").val();
 
 
 		if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
@@ -81,11 +83,14 @@ $(document).ready(function() {
 			 rumah.append(
 
 
-				 '<tr><td>'+p.address_name+'  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
+
+				 '<tr><td>'+p.addressname+'  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a href="'+api_base_url+'/aduser/deleteaddress?token='+token+'"><h4>'+p.id+'</h4></a></td></tr>'
 
 
 			 )
-		 //$.ajax({ type:"POST", contentType: "application/json", url: api_base_url, success: success });
+			 console.log("kampret", token);
+			 $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({"id":id}) , url: api_base_url, success: success, error: error });
+
 
 
 

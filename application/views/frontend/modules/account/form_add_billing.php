@@ -5,8 +5,8 @@
 			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DATA BILLING</h3>
 		</div>
 	  </div>
-	</div> 
-	
+	</div>
+
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
@@ -15,7 +15,7 @@
 			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
 			<p>Silakan lengkapi data billing Anda dibawah ini.</p>
 			<div class="panel panel-default">
-				<div class="panel-body">	
+				<div class="panel-body">
 				  <form name="signup" method="post">
                                       <input type="hidden" id = "name" name="name" value="<?php echo $user->name; ?>"   />
                                       <div class="form-group">
@@ -25,13 +25,14 @@
                                      <input type="text" id = "phone2" name="phone2" />
                                       </div>
 					<div class="form-group">
-					
+
                                           <input type="hidden" id="isbillto" name="isbillto" value="N" />
                                           <input type="hidden" id="isshipto" name="isshipto" value="Y" />
                                           <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
                                           <input type="hidden" id="isremitto" name="isremitto" value="N" />
                                           <input type="hidden" id="address_name" name="address_name" value="kontrakan" />
                                           <input type="hidden" id="address3" name="address3" value="kelurahan duri kosambi" />
+																					<input type="hidden" id="address4" name="address4" value="kelurahan duri 123" />
 					</div>
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
@@ -60,8 +61,8 @@
 						<option value="">--pilih--</option>
 					  </select>
 					</div>
-					
-					
+
+
 					<div class="clearfix"></div>
 						<input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 				  </form>
@@ -117,13 +118,14 @@ $(document).ready(function() {
     e.preventDefault();
     var data = $(this).serialize();
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
-    
+
     var apiurl = api_base_url +'/aduser/addaddress?token='+token;
 //    console.log(apiurl);
     var address_name = $("#address_name").val();
     var address1 = $("#address1").val();
     var address2 = $("#address2").val();
     var address3 = $("#address3").val();
+		  var address4 = $("#address4").val();
     var district_id = $("#ditric_sel").val();
     //var kota = $("#city").val();
     //var propinsi = $("#province").val();
@@ -188,8 +190,24 @@ $(document).ready(function() {
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
     //console.log('test'+data);
-    
-    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, timeout: 30000 });
+
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({
+			"name":name,
+			"phone":phone,
+			"phone2":phone2,
+			"address_name":address_name,
+			"address1":address1,
+			"address2":address2,
+			"address3":address3,
+			"address4":address4,
+			"postal":postal,
+			"district_id":district_id,
+			"isbillto":"Y",
+			"isshipto":"N",
+			"ispayfrom":"N",
+			"isremitto":"N"
+
+		}), dataType: "json", url: apiurl, success: success, timeout: 30000 });
 
     // do validation
     var form_ok = true;
@@ -202,10 +220,10 @@ $(document).ready(function() {
       }
 
     });
-    
+
 
     if(form_ok==false) return false;
-   
+
 
     else {
       $('#spinner_img').show();
