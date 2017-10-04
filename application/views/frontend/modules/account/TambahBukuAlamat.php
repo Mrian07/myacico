@@ -22,26 +22,48 @@
 
 			<div class="panel panel-default">
 				<div class="panel-body">
-				  <form name="signup" method="post">
-								<input type="text" id = "name"name="name"   />
-							 <input type="text" id = "phone"name="phone"   />
-							  <input type="text" id = "phone2"name="phone2" />
 
-                                      <div class="form-group">
+				  <form name="test1" method="post">
+				  <input type="hidden" id="isbillto" name="isbillto" value="N" />
+				  <input type="hidden" id="isshipto" name="isshipto" value="Y" />
+				  <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
+				  <input type="hidden" id="isremitto" name="isremitto" value="N" />
+					<input type="hidden" id = "name"name="name"   />
 
-                                          <input type="text" id="isbillto" name="isbillto" value="N" />
-                                          <input type="text" id="isshipto" name="isshipto" value="Y" />
-                                          <input type="text" id="ispayfrom" name="ispayfrom" value="N" />
-                                          <input type="text" id="isremitto" name="isremitto" value="N" />
-                                          <input type="text" id="address_name" name="address_name" value="kontrakan" />
-                                          <input type="text" id="address4" name="address4" value="kelurahan duri kosambi" />
+
+
+
+					<div class='row'>
+						<div class="col-sm-6">
+							<div class="form-group">
+							<label>Nama:</label>
+								<?php echo $user->name; ?>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+							<label>EMail:</label>
+								<?php echo $user->email; ?>
+							</div>
+						</div>
+
 					</div>
 
 					<div class="form-group">
+					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+					  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
+					</div>
+					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
-					  <input type="text" id = "address1"name="address1" class="form-control mandatory" value="obi" />
-					  <input type="text" id = "address2" name="address2" class="form-control mandatory" value="obi2" />
-						  <input type="text" id = "address3" name="address3" class="form-control mandatory" value="obi3" />
+
+
+
+
+					  <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
+					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
+						<input type="text" id = "address3" name="address3" class="form-control mandatory" />
+						<input type="text" id="address4" name="address4" class="form-control mandatory"  />
+
 					</div>
 					<div class="form-group" style="display:none" id="ditric_box">
 							<label><?php echo $lang_Keca; ?>*</label>
@@ -53,7 +75,15 @@
 					</div>
 					<div class="form-group">
 					<label><?php echo $lang_PostCode; ?>*</label>
-					  <input type="text" id ="zip" name="zip" class="form-control mandatory" />
+						<input type="text" id="postal" name="postal" class="form-control mandatory" />
+					</div>
+					<div class="form-group">
+					<label>Handphone*</label>
+						<input type="text" id = "phone"name="phone" class="form-control mandatory" />
+					</div>
+					<div class="form-group">
+					<label>Telepon</label>
+						<input type="text" id = "phone2"name="phone2" class="form-control"/>
 					</div>
 					<div class="form-group" style="display: none;" id="region_box">
 					<label><?php echo $lang_Provience; ?>*</label>
