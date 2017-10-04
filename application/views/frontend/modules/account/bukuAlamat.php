@@ -93,7 +93,7 @@ $(document).ready(function() {
 
 
 
-				 '<tr><td>'+p.addressname+'  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a class="btn btn-danger" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a><button type="button" id="hapus'+p.id+'" class="btn btn-link">Link</button></a></td></tr>'
+				 '<tr><td>'+p.address_name+'  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a class="btn btn-danger" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a><button type="button" id="hapus'+p.id+'" class="btn btn-link">Link</button></a></td></tr>'
 
 
 			 )
