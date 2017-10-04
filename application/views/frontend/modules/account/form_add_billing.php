@@ -7,10 +7,8 @@
 
 		  </div>
 		</div>
+	  </div>
 	</div>
-</div>
-
-<div class="container">
 
 	<div class="row">
 		<div class="col-sm-3">
@@ -22,32 +20,23 @@
 
 			<div class="panel panel-default">
 				<div class="panel-body">
-				  <form name="test1" method="post">
-				  <input type="hidden" id="isbillto" name="isbillto" value="N" />
-				  <input type="hidden" id="isshipto" name="isshipto" value="Y" />
-				  <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
-				  <input type="hidden" id="isremitto" name="isremitto" value="N" />
-                                  <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
-							 
-							  
-					<div class='row'>
-						<div class="col-sm-6">
-							<div class="form-group">
-							<label>Nama:</label>
-								<?php echo $user->name; ?>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-							<label>EMail:</label>
-								<?php echo $user->email; ?>
-							</div>
-						</div>
-					</div>
-
+				  <form name="signup" method="post">
+                                      <input type="hidden" id = "name" name="name" value="<?php echo $user->name; ?>"   />
+                                      <div class="form-group">
+					  <label><?php echo "Telepon 1:"; ?>*</label>
+                                      <input type="text" id = "phone" name="phone"   />
+                                      <label><?php echo "Telepon 2:"; ?>*</label>
+                                     <input type="text" id = "phone2" name="phone2" />
+                                      </div>
 					<div class="form-group">
-					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
-					  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
+
+                                          <input type="hidden" id="isbillto" name="isbillto" value="N" />
+                                          <input type="hidden" id="isshipto" name="isshipto" value="Y" />
+                                          <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
+                                          <input type="hidden" id="isremitto" name="isremitto" value="N" />
+                                          <input type="hidden" id="address_name" name="address_name" value="kontrakan" />
+                                          <input type="hidden" id="address3" name="address3" value="kelurahan duri kosambi" />
+																					<input type="hidden" id="address4" name="address4" value="kelurahan duri 123" />
 					</div>
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
@@ -141,23 +130,24 @@ var data = {};
 
 $(document).ready(function() {
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	
+
     $("form").submit(function(e){
     e.preventDefault();
    // var data = $(this).serialize();
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	  var apiurl = api_base_url +'/aduser/addaddress?token='+token;
-   
-		var name =  $("#name").val();
-		var phone = $("#phone").val();
-		var phone2 = $("#phone2").val();
+
+    var apiurl = api_base_url +'/aduser/addaddress?token='+token;
+//    console.log(apiurl);
     var address_name = $("#address_name").val();
     var address1 = $("#address1").val();
     var address2 = $("#address2").val();
-		  var address3 = $("#address3").val();
-    var address4 = $("#address4").val();
-		var postal = $("#postal").val();
-    var district_id = $("#district_id").val();
+    var address3 = $("#address3").val();
+		  var address4 = $("#address4").val();
+    var district_id = $("#ditric_sel").val();
+    //var kota = $("#city").val();
+    //var propinsi = $("#province").val();
+   // var negara = $("#country").val();
+    var postal = $("#postal").val();
     var isbillto = $("#isbillto").val();
     var isshipto = $("#isshipto").val();
     var ispayfrom = $("#ispayfrom").val();
@@ -225,13 +215,9 @@ data.isremitto = 'Y';
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-		console.log('ini data',token);
-		//die();
-$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data) , url: apiurl, success: success, error: error });
+    //console.log('test'+data);
 
-		//$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
-
-		// success handling
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, timeout: 30000 });
 
 
 var error = function(er){
@@ -254,6 +240,9 @@ var error = function(er){
       }
 
     });
+
+
+    if(form_ok==false) return false;
 
 
   });
