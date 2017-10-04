@@ -19,32 +19,19 @@
 			<table class="table table-striped">
 			<thead>
 			  <tr>
-				<th>Firstname</th>
-				<th>Lastname</th>
-				<th>Email</th>
+				<th>Tanggal Order</th>
+				<th>Total Pembayaran</th>
+				<th>Metode Pembayaran</th>
+				<th>Nomor Pesanan</th>
+				<th>Status</th>
+				<th>Detail</th>
+				<th>Konfirmasi</th>
 			  </tr>
 			</thead>
-			 <tbody>
-			  <tr>
-				<td>John</td>
-				<td>Doe</td>
-				<td>john@example.com</td>
-			  </tr>
-			  <tr>
-				<td>Mary</td>
-				<td>Moe</td>
-				<td>mary@example.com</td>
-			  </tr>
-			  <tr>
-				<td>July</td>
-				<td>Dooley</td>
-				<td>july@example.com</td>
-			  </tr>
+			 <tbody class='listOrder'>
+
 			</tbody>
 		  </table>
-	
-			<div class='listOrder'>
-			</div>
 		</div>
 	</div>
 </div>
@@ -58,9 +45,9 @@ $(document).ready(function() {
  var token = document.cookie.split('x-auth=')[1].split(';').shift();
  var filter =0;
 
- $.get(api_base_url+'/order/cart/detail?token='+token,
+ $.get(api_base_url+'/transaction/list?token='+token,
  function(data){
- console.log('data nya adalah:', data);
+ console.log('data nya adalah:', token);
 
 	var addressname = $('.addressname');
 	var listOrder = $('.listOrder');
@@ -70,7 +57,7 @@ $(document).ready(function() {
 	data.forEach(function(p){
 	listOrder.append(
 
-	'<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
+	'<tr><td>'+p.waktuTransaksi+'</td><td>'+p.grandTotal+'</td><td>'+p.paymentMethod+'</td><td>'+p.orderNumber+'</td><td>'+p.transactionStatus+'</td><td><button type="button" class="btn btn-info">Detail</button></td><td><button type="button" class="btn btn-warning">Konfirmasi</button></td></tr>'
 	)
 	mybutton.append(
 	'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
