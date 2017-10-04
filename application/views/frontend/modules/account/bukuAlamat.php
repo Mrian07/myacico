@@ -23,16 +23,13 @@
 				<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat', array('class'=>'btn btn-info'));?>
 				<br/>
 				<br/>
-				<div class="form-group">
-					<label>Nama</label>
-				<input type="text" id = "name"name="name"   />
-				</div>
+
 			<table class="table">
 	    <thead>
 
 	      <tr>
 	        <th>Alamat lengkap</th>
-
+			<th>Hapus</th>
 	      </tr>
 
 	    </thead>
@@ -93,7 +90,7 @@ $(document).ready(function() {
 
 
 
-				 '<tr><td>'+p.address_name+'  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a class="btn btn-danger" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a><button type="button" id="hapus'+p.id+'" class="btn btn-link">Link</button></a></td></tr>'
+				 '<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>'
 
 
 			 )
