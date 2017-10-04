@@ -58,35 +58,17 @@
 						<form>
 							<p><strong>DATA BILLING</strong></p>
 
-                <div class="rumah" id='biling-ready' style='display:none'></div>
-                <div class="billing-empty"  style='display:none'>
-  							<p>Tidak ada data billing yang tersedia, silakan1 isi terlebih dulu.asdasd
-                <p>
+							<div class="rumah" id='biling-ready' style='display:none'></div>
+							<div class="billing-empty"  style='display:none'>
+  							<p>Tidak ada data billing yang tersedia, silakan1 isi terlebih dulu.asdasd<p>
   							<p><?php echo anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default'));?></p>
-              </div>
+							</div>
 
 
-                <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-        <button type="button" class="btn btn-link">Link</button>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- end Modal -->
 							<p><strong>DATA PENERIMA</strong></p>
 							<p>Tidak ada data penerima yang tersedia, silakan isi terlebih dulu.<p>
-							<p><?php echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>
-                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">Open Small Modal</button>
+							<!--<p><?php //echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>-->
+							<p><?php echo anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>
 
 							<!--
 							<p><strong>DATA PENERIMA</strong></p>
@@ -238,74 +220,31 @@
 
 
 <script type="text/javascript">
-var baseApiUrl = '<?php// echo $baseApiUrl; ?>';
+	var baseApiUrl = '<?php// echo $baseApiUrl; ?>';
 
-$(document).ready(function()
-{
-  var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	var filter =0;
-  $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
-  function(data){
-	console.log('data nya adalah:', data);
-	// console.log('test',token);
+	$(document).ready(function()
+	{
+		var token = document.cookie.split('x-auth=')[1].split(';').shift();
+		var filter =0;
+	  $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
+	  function(data){
+		console.log('data nya adalah:', data);
+		// console.log('test',token);
 
-		var addressname = $('.addressname');
-		var rumah = $('.rumah');
-		var id = $("#id").val();
+			var addressname = $('.addressname');
+			var rumah = $('.rumah');
+			var id = $("#id").val();
 
-		$("#hapus").val(null);
-
-
-		if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
-	if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
-
-		 data.forEach(function(p){
-			 rumah.append(
+			$("#hapus").val(null);
 
 
+			if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
+			if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
 
-				 '<tr><td>'+p.address_name+' '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
-       )
-			 $("#hapus"+p.id).click(function(e){
-
-					var id = $("#id"+p.id).val();
-				  var apiurl1 = api_base_url +'/aduser/deleteaddress?token='+token;
-		  		e.preventDefault();
-		 			$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({"id":p.id}) , url: apiurl1 });
-
-		  	});
-			 console.log("kampret", token);
-
-
-
-
-
-			 addressname.append(
-
-
-
-
-
-		//"<body><div class='container'><h2><img src=''+p.addressname+''>+</h2><p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p><table class='table'><thead><tr><th>Firstname</th><th>Lastname</th><th>Email</th></tr></thead><tbody><tr><td>John</td><td>Doe</td><td>john@example.com</td></tr><tr><td>Mary</td><td>Moe</td><td>mary@example.com</td></tr></tbody></table></div></body>"
-//"<div class='container'><h2>'+p.addressname'</h2><p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p><table class='table'><thead><tr><th>Firstname</th><th>Lastname</th><th>Email</th></tr></thead><tbody><tr><td>John</td><td>Doe</td><td>john@example.com</td></tr><tr><td>Mary</td><td>Moe</td><td>mary@example.com</td></tr><tr><td>July</td><td>Dooley</td><td>july@example.com</td></tr></tbody></table></div>"
-		 //'<div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageurl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.addressname+'">'+p.addressname+'</a></h5></div><div class="col-sm-3"><span class="product-price"> Rp.'+p.pricelist+'</span><br><p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+'</p><p class="product-stock">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p><button class="dropbtnaddcar">ADD TO CART</button></div>'
-)
-
-});
-});
-
-	//$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "name":name}) , url: apiurl, success: success, error: error });
-
-
-
-
-
-
-
-			//$.post( apiurl, data, success, "json" );
-
-
-
+			 data.forEach(function(p){
+				 rumah.append('<p>'+p.address_name+', '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</p>')
+			});
+		});
 
 	});
 

@@ -47,6 +47,15 @@ class Checkout extends Web_private {
 		$this->load->view('frontend/footer',$this->data);
 	}
 	
+	public function dataShipping()
+	{
+		$this->data['title_web'] = "Myacico.com - Checkout / Show Shipping";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/checkout/data_shipping.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	
 	public function switchLang()
     {
 		$lang = $this->input->post('lang');
