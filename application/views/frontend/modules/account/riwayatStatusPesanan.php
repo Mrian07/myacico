@@ -16,42 +16,56 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-8">
-    <div class="login_wrapper">
-      <div class="form login_form">
-        <section class="login_content">
-        <h1>Daftar pesanan</h1>
-        </section>
-      </div>
-    </div>
+			<table class="table table-striped">
+			<thead>
+			  <tr>
+				<th>Tanggal Order</th>
+				<th>Total Pembayaran</th>
+				<th>Metode Pembayaran</th>
+				<th>Nomor Pesanan</th>
+				<th>Status</th>
+				<th>Detail</th>
+				<th>Konfirmasi</th>
+			  </tr>
+			</thead>
+			 <tbody class='listOrder'>
+
+			</tbody>
+		  </table>
 		</div>
 	</div>
 </div>
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+
 
 $(document).ready(function() {
-  $('#pwd_box').hide();
-  $('#pwd_btm').click(function(e){
-    e.preventDefault();
-    $('#pwd_box').slideToggle();
-  });
+	
 
-  $('form').submit(function(e){
-    e.preventDefault();
 
-    var apiurl = baseApiUrl + '/myaccount';
-    var data = $(this).serialize();
+ var token = document.cookie.split('x-auth=')[1].split(';').shift();
+ var filter =0;
 
-    // success handling
-    var success = function(r){
-      console.log('OK:', r);
-      alert(r.message);
-    };
+ $.get(api_base_url+'/transaction/list?token='+token,
+ function(data){
+ console.log('data nya adalah:', token);
 
-    $.post( apiurl, data, success, "json" );
-    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
+	var addressname = $('.addressname');
+	var listOrder = $('.listOrder');
+	if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
+	if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
 
-  });
+	data.forEach(function(p){
+	listOrder.append(
 
+	'<tr><td>'+p.waktuTransaksi+'</td><td>'+p.grandTotal+'</td><td>'+p.paymentMethod+'</td><td>'+p.orderNumber+'</td><td>'+p.transactionStatus+'</td><td><button type="button" class="btn btn-info">Detail</button></td><td><button type="button" class="btn btn-warning">Konfirmasi</button></td></tr>'
+	)
+	mybutton.append(
+	'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
+	)
+	});
+
+
+	});
 });
+
 </script>
