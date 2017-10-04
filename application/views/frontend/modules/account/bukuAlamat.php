@@ -20,7 +20,7 @@
 		</div>
 		<div class="col-sm-9">
 
-				<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat', array('class'=>'btn btn-info'));?>
+				<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat', array('class'=>'btn btn-link'));?>
 				<br/>
 				<br/>
 
@@ -29,6 +29,7 @@
 
 	      <tr>
 	        <th>Alamat lengkap</th>
+			<th>Edit</th>
 			<th>Hapus</th>
 	      </tr>
 
@@ -57,9 +58,9 @@
 
 
 
-var baseApiUrl = '<?php// echo $baseApiUrl; ?>';
+var base_url = '<?php echo base_url('account/editBukuAlamat') ?>';
 
-
+//var btn_edit = '<?php echo anchor('account/editBukuAlamat', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>', array('class'=>'btn btn-link'));?>'
 
 $(document).ready(function() {
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
@@ -90,7 +91,7 @@ $(document).ready(function() {
 
 
 
-				 '<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>'
+				 '<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a href="'+base_url+'/'+p.id+'" class="btn btn-link" aria-label="Delete"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>'
 
 
 			 )

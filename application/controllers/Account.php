@@ -111,6 +111,16 @@ class Account extends Web_private {
 		$this->load->view('frontend/modules/account/bukuAlamat',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
+	
+	public function editBukuAlamat()
+    {
+		$this->data['active_bukuAlamat'] = "class='active'";
+		$this->data['title_web'] = "Myacico.com - Buku Alamat";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/edit_buku_alamat',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 
 	public function TambahBukuAlamat()
     {
@@ -173,7 +183,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/footer',$this->data);
 	}
         
-        public function formAddBilling()
+    public function formAddBilling()
     {
 		$this->data['active_informasiAkun'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Return Management Authority";
