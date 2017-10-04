@@ -59,6 +59,12 @@
 							<p><strong>DATA BILLING</strong></p>
 							<p>Tidak ada data billing yang tersedia, silakan isi terlebih dulu.<p>
 							<p><?php echo anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default'));?></p>
+							
+							<p><strong>DATA PENERIMA</strong></p>
+							<p>Tidak ada data penerima yang tersedia, silakan isi terlebih dulu.<p>
+							<p><?php echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>
+							
+							<!--
 							<p><strong>DATA PENERIMA</strong></p>
 							<div class='row'>
 								<div class="col-sm-6">
@@ -125,14 +131,13 @@
 						  <div class="checkbox">
 							<label><input type="checkbox"> Simpan</label>
 						  </div>
-						  
+						  -->
 						 
 						</form>	  
 						  
 					</div>
 				</div>		
-				
-				<button type="button" class="btn btn-info">Ubah</button>
+
 			  </div>
 			</div>
 			<div class="panel panel-default">
