@@ -27,8 +27,8 @@
 				  <input type="hidden" id="isshipto" name="isshipto" value="Y" />
 				  <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
 				  <input type="hidden" id="isremitto" name="isremitto" value="N" />
-                                  <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
-					
+          <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
+
 					<div class="form-group">
 					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
 					  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
@@ -75,7 +75,9 @@
 				  </form>
 				</div>
 			</div>
+
 		</div>
+
 	</div>
 </div>
 <script type="text/javascript">
@@ -125,13 +127,13 @@ var data = {};
 
 $(document).ready(function() {
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	
+
     $("form").submit(function(e){
     e.preventDefault();
    // var data = $(this).serialize();
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	  var apiurl = api_base_url +'/aduser/addaddress?token='+token;
-   
+
         var name =  $("#name").val();
         var phone = $("#phone").val();
         var phone2 = $("#phone2").val();
