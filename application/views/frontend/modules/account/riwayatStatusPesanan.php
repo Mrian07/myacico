@@ -55,9 +55,22 @@ $(document).ready(function() {
 	if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
 
 	data.forEach(function(p){
+            //alert(p.waktuTransaksi));die();
+            //var tanggal = new DateTime(p.waktuTransaksi).toDateString("dd-mm-yyyy");
+          var tanggal = p.waktuTransaksi;
+          var tanggal = tanggal.split('-');
+          var time = tanggal[2].split(' ');
+          var jam = time[1].split(':');
+          var jam = jam[0]+':'+jam[1];
+          var hari = time[0];
+          var bulan =tanggal[1];
+          var tahun = tanggal[0];
+          var time = tanggal[2].split(' ');
+          var tanggal = hari+'-'+bulan+'-'+tahun+' '+jam;
+          
 	listOrder.append(
 
-	'<tr><td>'+p.waktuTransaksi+'</td><td>'+p.grandTotal+'</td><td>'+p.paymentMethod+'</td><td>'+p.orderNumber+'</td><td>'+p.transactionStatus+'</td><td><button type="button" class="btn btn-info">Detail</button></td><td><button type="button" class="btn btn-warning">Konfirmasi</button></td></tr>'
+	'<tr><td>'+ tanggal+'</td><td>'+p.grandTotal+'</td><td>'+p.paymentMethod+'</td><td>'+p.orderNumber+'</td><td>'+p.transactionStatus+'</td><td><button type="button" class="btn btn-info">Detail</button></td><td><button type="button" class="btn btn-warning">Konfirmasi</button></td></tr>'
 	)
 	mybutton.append(
 	'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'

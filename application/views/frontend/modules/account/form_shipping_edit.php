@@ -18,7 +18,7 @@
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
-			<p>Silakan lengkapi data billing Anda dibawah ini jika anda ingin mengubah alamat Billing.</p>
+			<p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima.</p>
 			<div class="panel panel-default">
 				<div class="panel-body">	
 				  <form name="signup" method="post">
@@ -192,7 +192,7 @@ data.id = id;
     data.address4 = "address4";
     data.postal = postal;
     data.district_id = district_id;
-    data.isbillto = 'Y';
+    data.isbillto = 'N';
     data.isshipto = 'Y';
     data.ispayfrom = 'N';
     data.isremitto = 'N';
