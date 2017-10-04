@@ -71,7 +71,7 @@
 
 
 					<div class="clearfix"></div>
-						<input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+						<input type="submit" id="submit_btn" class="btn btn-primary" value="Tambah"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 				  </form>
 				</div>
 			</div>
@@ -132,20 +132,20 @@ $(document).ready(function() {
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	  var apiurl = api_base_url +'/aduser/addaddress?token='+token;
    
-		var name =  $("#name").val();
-		var phone = $("#phone").val();
-		var phone2 = $("#phone2").val();
-    var address_name = $("#address_name").val();
-    var address1 = $("#address1").val();
-    var address2 = $("#address2").val();
-		  var address3 = $("#address3").val();
-    var address4 = $("#address4").val();
-		var postal = $("#postal").val();
-    var district_id = $("#district_id").val();
-    var isbillto = $("#isbillto").val();
-    var isshipto = $("#isshipto").val();
-    var ispayfrom = $("#ispayfrom").val();
-    var isremitto = $("#isremitto").val();
+        var name =  $("#name").val();
+        var phone = $("#phone").val();
+        var phone2 = $("#phone2").val();
+        var address_name = $("#address_name").val();
+        var address1 = $("#address1").val();
+        var address2 = $("#address2").val();
+        var address3 = $("#address3").val();
+        var address4 = $("#address4").val();
+        var postal = $("#postal").val();
+        var district_id = $("#district_id").val();
+        var isbillto = $("#isbillto").val();
+        var isshipto = $("#isshipto").val();
+        var ispayfrom = $("#ispayfrom").val();
+        var isremitto = $("#isremitto").val();
 
     //var fl=document.signup;
 //    var data = $(this).serialize();
