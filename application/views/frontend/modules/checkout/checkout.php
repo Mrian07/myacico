@@ -59,7 +59,7 @@
 							<p><strong>DATA BILLING</strong></p>
 
                 <div class="rumah" id='biling-ready' style='display:none'></div>
-                <div class="billing-empty"  style='display:none'>
+                <div class="billing-empty">
   							<p>Tidak ada data billing yang tersedia, silakan1 isi terlebih dulu.asdasd
                 <p>
   							<p><?php echo anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default'));?></p>
