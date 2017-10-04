@@ -73,45 +73,24 @@ $(document).ready(function() {
  function(data){
 // console.log('data nya adalah:', data);
 
-	 var addressname = $('.addressname');
-	 var rumah = $('.rumah');
+	var addressname = $('.addressname');
+	var rumah = $('.rumah');
 	var mybutton = $('.mybutton');
-	 if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
-		if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
+	if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
+	if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
 
-		data.forEach(function(p){
-			rumah.append(
+	data.forEach(function(p){
+	rumah.append(
 
-				'<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
-			)
-			mybutton.append(
-				'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.cbpartner_location_id+'" class="my-link-general">Ubah</a></div>'
-			 //'<tr><td>July</td><td>Dooley</td><td>july@example.com</td></tr>'
+	'<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
+	)
+	mybutton.append(
+	'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
+	)
+	});
 
-	 // '<table class="table"><tr><thead><td>'+p.addressname+'</td><thead></tr> </table>'
-		 //''+p.addressname+''
-	 //"<body><div class='container'><h2><img src=''+p.addressname+''>+</h2><p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p><table class='table'><thead><tr><th>Firstname</th><th>Lastname</th><th>Email</th></tr></thead><tbody><tr><td>John</td><td>Doe</td><td>john@example.com</td></tr><tr><td>Mary</td><td>Moe</td><td>mary@example.com</td></tr></tbody></table></div></body>"
-//"<div class='container'><h2>'+p.addressname'</h2><p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p><table class='table'><thead><tr><th>Firstname</th><th>Lastname</th><th>Email</th></tr></thead><tbody><tr><td>John</td><td>Doe</td><td>john@example.com</td></tr><tr><td>Mary</td><td>Moe</td><td>mary@example.com</td></tr><tr><td>July</td><td>Dooley</td><td>july@example.com</td></tr></tbody></table></div>"
-		//'<div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageurl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.addressname+'">'+p.addressname+'</a></h5></div><div class="col-sm-3"><span class="product-price"> Rp.'+p.pricelist+'</span><br><p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+'</p><p class="product-stock">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p><button class="dropbtnaddcar">ADD TO CART</button></div>'
-)
+
+	});
 });
-
-
-
-});
-
- //$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "name":name}) , url: apiurl, success: success, error: error });
-
-
-
-
-
-
-
-		 //$.post( apiurl, data, success, "json" );
-
-
-
- });
 
 </script>

@@ -96,17 +96,17 @@
 						</div>
 						<div class='row'>
 							<div class="col-sm-12">
-								<p>Silakan lengkapi data penerima dibawah ini dengan lengkap.</p>
+								<p>Silakan lengkapi data billing/ pengirim dibawah ini dengan lengkap.</p>
 							</div>
 						</div>	
 						
-						
 						<div class="form-group">
-						<label><?php echo $lang_addres; ?> 1*</label>
-						<input type="text" id = "alamat1"name="alamat1" class="form-control mandatory" />
+						  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+						  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
 						</div>
 						<div class="form-group">
-						<label><?php echo $lang_addres; ?> 2*</label>
+						<label><?php echo $lang_addres; ?>*</label>
+						<input type="text" id = "alamat1"name="alamat1" class="form-control mandatory" />
 						<input type="text" id = "alamat2" name="alamat2" class="form-control mandatory" />
 						</div>
 						<div class="form-group" style="display:none" id="ditric_box">
@@ -119,7 +119,15 @@
 						</div>
 						<div class="form-group">
 						<label><?php echo $lang_PostCode; ?>*</label>
-						<input type="text" id ="zip" name="zip" class="form-control mandatory" />
+						<input type="text" id ="postal" name="postal" class="form-control mandatory" />
+						</div>
+						<div class="form-group">
+						<label>Handphone*</label>
+							<input type="text" id = "phone"name="phone" class="form-control mandatory" />
+						</div>
+						<div class="form-group">
+						<label>Telepon</label>
+							<input type="text" id = "phone2"name="phone2" class="form-control"/>
 						</div>
 						<div class="form-group" style="display: none;" id="region_box">
 						<label><?php echo $lang_Provience; ?>*</label>
