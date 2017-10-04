@@ -38,10 +38,14 @@
 				<div class="col-sm-4">
 					<div class="panel panel-default">
 						<div class="panel-heading"><strong>Data Billing</strong></div>
-						<div class="rumah">
-						</div>
-						<div class='mybutton'></div>
-						<div class="panel-body">Belum ada data billing, data billing diperlukan saat checkout pembelian.
+						
+						<div class="panel-body" id='biling-ready' style='display:none'>
+							<div class="rumah">
+							</div>
+							<div class='mybutton'></div>
+						</div>	
+						
+						<div class="panel-body" id='biling-empty' style='display:none'>Belum ada data billing, data billing diperlukan saat checkout pembelian.
 						<br><br>
 						<center>
 						<?php echo anchor('account/formAddBilling/', 'tambah', array('class'=>'my-link-general'));?>			
@@ -53,26 +57,27 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
+
+<script type="text/javascript">
 
 
 $(document).ready(function() {
+	
+
+
  var token = document.cookie.split('x-auth=')[1].split(';').shift();
  var filter =0;
-// var apiurl = baseApiUrl + '/aduser/useraddress?addesstype=isbillto&token='+token;
- //console.log('halo',apiurl);
 
  $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isbillto',
  function(data){
- console.log('data nya adalah:', data);
+// console.log('data nya adalah:', data);
 
 	 var addressname = $('.addressname');
 	 var rumah = $('.rumah');
-var mybutton = $('.mybutton');
+	var mybutton = $('.mybutton');
 	 if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
-
+		if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
 
 		data.forEach(function(p){
 			rumah.append(
