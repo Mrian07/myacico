@@ -16,25 +16,29 @@
 		</div>
 		<div class="col-sm-8">
       <div class="dashboard">
-        <p>Hello <?php echo $user->name; ?>, Dari Beranda Akun anda, anda bisa melihat tinjauan dari aktivitas akun yang ada sekarang dan memperbaharui informasi akun anda. Pilih tautan di bawah ini untuk melihat atau mengedit informasi</p>
+        <p>Hello <b><?php echo $user->name; ?></b>, <br><br>Dari Beranda Akun anda, anda bisa melihat tinjauan dari aktivitas akun yang ada sekarang dan memperbaharui informasi akun anda. Pilih tautan di bawah ini untuk melihat atau mengedit informasi.</p>
 		<hr>
-		<div class="row">
-			<div class="col-sm-6"><h5>Informasi Kontak</h5></div>
-			<div class="col-sm-6"><h5>Newsletters</h5></div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6">
-				<div class="row">
-				  <div class="col-sm-12"><?php echo anchor('account/informasiAkun/', 'Ubah Data & Password');?></div>
-				</div>
-
-
-			</div>
-			<div class="col-sm-6">
-				Anda saat ini belum terdaftar<br>
-				<?php echo anchor('customer/government/', 'Daftar');?>
-			</div>
-		</div>
+		
+		<table class="table table-condensed">
+		<thead>
+		  <tr>
+			<th>Informasi Akun & Billing</th>
+			<th>Konfirmasi Pembayaran</th>
+			<th>Newsletters</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td><p>Informasi yang berkenaan dengan akun dan data pembayaran order Anda.</p>
+				<?php echo anchor('account/informasiAkun/', 'Ubah Data & Password');?></td>
+			<td><p>Anda bisa melakukan konfirmasi pembayaran pada halaman Riwayat dan Status Pesanan.</p>
+				<?php echo anchor('account/riwayatStatusPesanan/', 'Konfirmasi');?></td>
+			<td><p>Anda saat ini belum terdaftar.</p>
+				<?php echo anchor('customer/government/', 'Daftar');?></td>
+		  </tr>
+	
+		</tbody>
+	  </table>
 
 
 		</div>

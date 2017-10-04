@@ -58,6 +58,7 @@
 						<form>
 							<p><strong>DATA BILLING</strong></p>
 
+
                 <div class="rumah" id='biling-ready' style='display:none'></div>
                 <div class="billing-empty">
   							<p>Tidak ada data billing yang tersedia, silakan1 isi terlebih dulu.asdasd
@@ -103,6 +104,19 @@
 							<p>Tidak ada data penerima yang tersedia, silakan isi terlebih dulu.<p>
 							<!-- <p><?php // echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p> -->
                 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">Lihat Alamat</button>
+
+							<div class="rumah" id='biling-ready' style='display:none'></div>
+							<div class="billing-empty"  style='display:none'>
+  							<p>Tidak ada data billing yang tersedia, silakan1 isi terlebih dulu.asdasd<p>
+  							<p><?php echo anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default'));?></p>
+							</div>
+
+
+							<p><strong>DATA PENERIMA</strong></p>
+							<p>Tidak ada data penerima yang tersedia, silakan isi terlebih dulu.<p>
+							<!--<p><?php //echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>-->
+							<p><?php echo anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>
+
 
 							<!--
 							<p><strong>DATA PENERIMA</strong></p>
@@ -254,6 +268,7 @@
 
 
 <script type="text/javascript">
+<<<<<<< HEAD
 var baseApiUrl = '<?php// echo $baseApiUrl; ?>';
 
 $(document).ready(function()
@@ -311,14 +326,34 @@ $(document).ready(function()
 });
 
 	//$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "name":name}) , url: apiurl, success: success, error: error });
+=======
+	var baseApiUrl = '<?php// echo $baseApiUrl; ?>';
+>>>>>>> f355dc1f9632e673b55a19ed9aa2258068dba6ce
+
+	$(document).ready(function()
+	{
+		var token = document.cookie.split('x-auth=')[1].split(';').shift();
+		var filter =0;
+	  $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
+	  function(data){
+		console.log('data nya adalah:', data);
+		// console.log('test',token);
+
+			var addressname = $('.addressname');
+			var rumah = $('.rumah');
+			var id = $("#id").val();
+
+			$("#hapus").val(null);
 
 
+			if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
+			if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
 
+			 data.forEach(function(p){
+				 rumah.append('<p>'+p.address_name+', '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</p>')
+			});
+		});
 
-
-
-
-			//$.post( apiurl, data, success, "json" );
 
 
 
