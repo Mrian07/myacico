@@ -16,42 +16,69 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-8">
-    <div class="login_wrapper">
-      <div class="form login_form">
-        <section class="login_content">
-        <h1>Daftar pesanan</h1>
-        </section>
-      </div>
-    </div>
+			<table class="table table-striped">
+			<thead>
+			  <tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Email</th>
+			  </tr>
+			</thead>
+			 <tbody>
+			  <tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>john@example.com</td>
+			  </tr>
+			  <tr>
+				<td>Mary</td>
+				<td>Moe</td>
+				<td>mary@example.com</td>
+			  </tr>
+			  <tr>
+				<td>July</td>
+				<td>Dooley</td>
+				<td>july@example.com</td>
+			  </tr>
+			</tbody>
+		  </table>
+	
+			<div class='listOrder'>
+			</div>
 		</div>
 	</div>
 </div>
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+
 
 $(document).ready(function() {
-  $('#pwd_box').hide();
-  $('#pwd_btm').click(function(e){
-    e.preventDefault();
-    $('#pwd_box').slideToggle();
-  });
+	
 
-  $('form').submit(function(e){
-    e.preventDefault();
 
-    var apiurl = baseApiUrl + '/myaccount';
-    var data = $(this).serialize();
+ var token = document.cookie.split('x-auth=')[1].split(';').shift();
+ var filter =0;
 
-    // success handling
-    var success = function(r){
-      console.log('OK:', r);
-      alert(r.message);
-    };
+ $.get(api_base_url+'/order/cart/detail?token='+token,
+ function(data){
+ console.log('data nya adalah:', data);
 
-    $.post( apiurl, data, success, "json" );
-    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
+	var addressname = $('.addressname');
+	var listOrder = $('.listOrder');
+	if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
+	if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
 
-  });
+	data.forEach(function(p){
+	listOrder.append(
 
+	'<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
+	)
+	mybutton.append(
+	'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
+	)
+	});
+
+
+	});
 });
+
 </script>
