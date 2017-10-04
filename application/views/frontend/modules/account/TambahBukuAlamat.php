@@ -28,7 +28,7 @@
 				  <input type="hidden" id="isshipto" name="isshipto" value="Y" />
 				  <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
 				  <input type="hidden" id="isremitto" name="isremitto" value="N" />
-					<input type="hidden" id = "name"name="name"   />
+					<input type="text" id = "name"name="name"   />
 
 
 

@@ -23,9 +23,13 @@
 				<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat', array('class'=>'btn btn-info'));?>
 				<br/>
 				<br/>
+				<div class="form-group">
+					<label>Nama</label>
+				<input type="text" id = "name"name="name"   />
+				</div>
 			<table class="table">
 	    <thead>
-				 <label id="id" name="id">Nama</label>
+
 	      <tr>
 	        <th>Alamat lengkap</th>
 
@@ -53,6 +57,9 @@
  <script type="text/javascript">
 
 
+
+
+
 var baseApiUrl = '<?php// echo $baseApiUrl; ?>';
 
 
@@ -64,7 +71,7 @@ $(document).ready(function() {
 	//var apiurl = baseApiUrl + '/aduser/useraddress?addesstype=isshipto&token='+token;
 	//console.log('halo',apiurl);
 
-		$.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
+	$.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
 	// $.get(api_base_url+'/aduser/useraddress?addesstype=isshipto&token='+token,
 
 	function(data){
@@ -75,6 +82,8 @@ $(document).ready(function() {
 		var rumah = $('.rumah');
 		var id = $("#id").val();
 
+		$("#hapus").val(null);
+
 
 		if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
 
@@ -84,12 +93,20 @@ $(document).ready(function() {
 
 
 
-				 '<tr><td>'+p.addressname+'  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a href="'+api_base_url+'/aduser/deleteaddress?token='+token+'"><h4>'+p.id+'</h4></a></td></tr>'
+				 '<tr><td>'+p.addressname+'  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a class="btn btn-danger" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a><button type="button" id="hapus'+p.id+'" class="btn btn-link">Link</button></a></td></tr>'
 
 
 			 )
+			 $("#hapus"+p.id).click(function(e){
+
+					var id = $("#id"+p.id).val();
+				  var apiurl1 = api_base_url +'/aduser/deleteaddress?token='+token;
+		  		e.preventDefault();
+		 			$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({"id":p.id}) , url: apiurl1 });
+
+		  	});
 			 console.log("kampret", token);
-			 $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({"id":id}) , url: api_base_url, success: success, error: error });
+
 
 
 
@@ -117,6 +134,7 @@ $(document).ready(function() {
 
 
 			//$.post( apiurl, data, success, "json" );
+
 
 
 
