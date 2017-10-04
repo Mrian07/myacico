@@ -22,7 +22,7 @@
 
 			<div class="panel panel-default">
 				<div class="panel-body">
-				  <form name="test1" method="post">
+				  <form name="signup" method="post">
 								<input type="text" id = "name"name="name"   />
 							 <input type="text" id = "phone"name="phone"   />
 							  <input type="text" id = "phone2"name="phone2" />
@@ -35,14 +35,13 @@
                                           <input type="text" id="isremitto" name="isremitto" value="N" />
                                           <input type="text" id="address_name" name="address_name" value="kontrakan" />
                                           <input type="text" id="address4" name="address4" value="kelurahan duri kosambi" />
-																					  <input type="text" id="postal" name="postal" value="test" />
 					</div>
 
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
 					  <input type="text" id = "address1"name="address1" class="form-control mandatory" value="obi" />
 					  <input type="text" id = "address2" name="address2" class="form-control mandatory" value="obi2" />
-						<input type="text" id = "address3" name="address3" class="form-control mandatory" value="obi3" />
+						  <input type="text" id = "address3" name="address3" class="form-control mandatory" value="obi3" />
 					</div>
 					<div class="form-group" style="display:none" id="ditric_box">
 							<label><?php echo $lang_Keca; ?>*</label>
@@ -126,7 +125,7 @@ $(document).ready(function() {
 	$.get(api_base_url+'/aduser/getinformationuser?token='+token,
 
 	function(data){
-	// console.log('data nya adalah:', data);
+	console.log('data nya adalah:', data);
 	console.log('test',token);
 		$("#name").val(data.name)
 	  $("#phone").val(data.phone);
@@ -156,8 +155,9 @@ $(document).ready(function() {
 });
     $("form").submit(function(e){
     e.preventDefault();
-	  var apiurl = api_base_url +'/aduser/addaddress?token='+token;
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
+
+    var apiurl = api_base_url +'/aduser/addaddress?token='+token;
 		var name = $("#name").val();
 		var phone = $("#phone").val();
 		var phone2 = $("#phone2").val();
@@ -176,34 +176,20 @@ $(document).ready(function() {
     //var fl=document.signup;
 //    var data = $(this).serialize();
 //     return alert(data);die();
-data.name = 'ASD';
-data.phone = '1515';
-data.phone2 = '1515';
-data.address_name = 'jalann';
-data.address1 = 'address1';
-data.address2 = 'address2';
-		data.address3 = 'address3';
-data.address4 = 'address4';
-data.postal = 'postal';
-data.district_id = 'district_id';
-data.isbillto = 'Y';
-data.isshipto = 'Y';
-data.ispayfrom = 'Y';
-data.isremitto = 'Y';
-		// data.name = name;
-		// data.phone = phone;
-		// data.phone2 = phone2;
-    // data.address_name = address_name;
-    // data.address1 = address1;
-    // data.address2 = address2;
-		//     data.address3 = address3;
-		// data.address4 = address4;
-    // data.postal = postal;
-    // data.district_id = district_id;
-    // data.isbillto = isbillto;
-    // data.isshipto = isshipto;
-    // data.ispayfrom = ispayfrom;
-    // data.isremitto = isremitto;
+		data.name = name;
+		data.phone = phone;
+		data.phone2 = phone2;
+    data.address_name = address_name;
+    data.address1 = address1;
+    data.address2 = address2;
+		data.address3 = address3;
+		data.address4 = address4;
+    data.postal = postal;
+    data.district_id = district_id;
+    data.isbillto = isbillto;
+    data.isshipto = isshipto;
+    data.ispayfrom = ispayfrom;
+    data.isremitto = isremitto;
 
    // console.log(data);die();
      var success = function(r){
@@ -215,50 +201,45 @@ data.isremitto = 'Y';
     });
 //      alert(r.message);
       console.log('OK:', r.status);
-			// $("#name").val(null);
-			// $("#phone").val(null);
-			// $("#phone2").val(null);
-			// $("#address_name").val(null);
-			// $("#address1").val(null);
-			// $("#address2").val(null);
-			// $("#address3").val(null);
-			// $("#address4").val(null);
-			// $("#postal").val(null);
-			// $("#district_id").val(null);
-			// $("#isbillto").val(null);
-			// $("#isshipto").val(null);
-			// $("#ispayfrom").val(null);
-		  // $("#isremitto").val(null);
+			$("#name").val(null);
+			$("#phone").val(null);
+			$("#phone2").val(null);
+			$("#address_name").val(null);
+			$("#address1").val(null);
+			$("#address2").val(null);
+			$("#address3").val(null);
+			$("#address4").val(null);
+			$("#postal").val(null);
+			$("#district_id").val(null);
+			$("#isbillto").val(null);
+			$("#isshipto").val(null);
+			$("#ispayfrom").val(null);
+		  $("#isremitto").val(null);
 
-        window.location.replace(base_url+"/account/TambahBukuAlamat");
+        window.location.replace(base_url+"/account/bukuAlamat");
 
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-		console.log('ini data',data);
-		//die();
-		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({
-			"id":1000016,
-	 "name":"Andri Nia",
-	 "phone":"02111111",
-	 "phone2":"085645645",
-	 "address_name":"Rumah Kakak",
-	 "address1":"Jl Mangga No 1",
-	 "address2":"Blok D7",
-	 "address3":"RT/RW 07/07",
-	 "address4":"Kelurahan Gambir",
-	 "postal":"11750",
-	 "district_id":4095,
-	 "isbillto":"N",
-	 "isshipto":"Y",
-	 "ispayfrom":"N",
-	 "isremitto":"N"
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({
 
-		}) , url: apiurl, success: success, error: error });
+		"name":name,
+    "phone":phone,
+    "phone2":phone2,
+    "address_name":address_name,
+    "address1":address1,
+    "address2":address2,
+    "address3":address3,
+    "address4":address4,
+    "postal":postal,
+    "district_id":district_id,
+    "isbillto":"N",
+    "isshipto":"Y",
+    "ispayfrom":"N",
+    "isremitto":"N"
 
-		//$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
-
-		// success handling
+		}), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
+    // success handling
 
 
 var error = function(er){
