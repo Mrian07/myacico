@@ -32,51 +32,11 @@
         
                                     </div>
                                     
-                                      <input type="text" id="idTrans" name="idTrans" value="<?php echo $this->uri->segment(3);?>" />
-                                        <div class="form-group">
-					  <label>No Order</label>
-					  <input type="text" id="noOrder" name="nolOrder" class="form-control mandatory"/>
-					</div>
-					<div class="form-group">
-					  <label><?php echo $lang_addres; ?>*</label>
-					  <input type="text" id = "tanggalOrder"name="tanggalOrder" class="form-control mandatory"/>
-					  <input type="text" id = "imageurl" name="imageurl" class="form-control mandatory"/>
-					</div>
-					<div class="form-group" style="display:none" id="ditric_box">
-							<label><?php echo $lang_Keca; ?>*</label>
-					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
-					</div>
-					<div class="form-group" style="display:none" id="city_box">
-						<label><?php echo $lang_kota; ?>*</label>
-					  <select name="city" id="city_sel" class="form-control mandatory"></select>
-					</div>
-					<div class="form-group">
-					<label><?php echo $lang_PostCode; ?>*</label>
-						<input type="text" id="postal" name="postal" class="form-control mandatory" />
-					</div>
-					<div class="form-group">
-					<label>Handphone*</label>
-						<input type="text" id = "phone"name="phone" class="form-control mandatory" />
-					</div>
-					<div class="form-group">
-					<label>Telepon</label>
-						<input type="text" id = "phone2"name="phone2" class="form-control"/>
-					</div>
-					<div class="form-group" style="display: none;" id="region_box">
-					<label><?php echo $lang_Provience; ?>*</label>
-					  <select name="province" id="region_sel" class="form-control mandatory"></select>
-					</div>
-					<div class="form-group">
-					<label><?php echo $lang_Country; ?>*</label>
-					  <select name="country" id="country_sel" class="form-control mandatory" disabled >
-						<option value="">--pilih--</option>
-					  </select>
-					</div>
+                                      <input type="hidden" id="idTrans" name="idTrans" value="<?php echo $this->uri->segment(3);?>" />
+                                       
 
 
-                                      <div class="clearfix">
-                                          						
-                                      </div>
+                   
                                         
 				</div>
 			</div>
@@ -101,6 +61,9 @@ var idTrans = $('#idTrans').val();
 var idTrans = $('#idTrans').val();
 //console.log('data nya adalah:', data.items[0]);
 console.log('data nya adalah:', data);
+
+console.log('data nya adalah2:', data['items']);
+
 	var addressname = $('.addressname');
 	//var noOrder = $('.listOrder');
         var listOrder = $('.listOrder');
@@ -142,12 +105,14 @@ console.log('data nya adalah:', data);
 //             
 //          }
         transactionlist.append
-      ('<div> Tanggal Order:'+tanggal+'</br> Order ID:'+data.orderNumber+'</br> Status Pesanan: <b>'+data.transactionStatus+'</b></div>')
- 
-	listOrder.append
-        ('<div class="row"><div class="col-sm-6"><img src="'+gambar+'" alt="check Out" style="width:150px;height:100px;"></div><div class="col-sm-6"> Harga :Rp'+data.grandTotal+'</div></div>')
+      ('<div class="well"> Tanggal Order:'+tanggal+'</br> Order ID:'+data.orderNumber+'</br> Status Pesanan: <b>'+data.transactionStatus+'</b></div>')
 	
-//	});
+	data['items'].forEach(function(p){
+	
+	listOrder.append
+        ('<div class="row"><div class="col-sm-6"><img src="'+p.imageurl+'" alt="check Out" style="width:150px;height:100px;"></div><div class="col-sm-6"> Harga :Rp'+p.subtotal+'</div></div>')
+	
+	});
 
 
 	});

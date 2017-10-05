@@ -142,48 +142,9 @@ product.append(
 		}
 	});
 	
-	
-	
-	/*$.confirm({
-		title: 'Confirm!',
-		content: 'Anda yakin akan logout?',
-		buttons: {
-			confirm: function () {
-				document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-				location.href='<?php echo base_url("customer/signIn");?>';
-			},
-			cancel: function () {
-				//$.alert('Canceled!');
-			}
-		}
-	});*/
 
 	});
 
-
-		// product.append(
-		// 	"<div class='row my-b-product'><div class='col-sm-2'>gambar</div><div class='col-sm-7'>0</div><div class='col-sm-3'>1</div>"
-		// );
-// product.append(
-// 	"<div class='row my-b-product'><div class='col-sm-2'>gambar</div><div class='col-sm-7'><h5 class='title-product'>ASUS Zenfone Go [ZB500KL] [2/16GB] - Silver Blue</h5></div><div class='col-sm-3'><span class='product-price'>Rp 1.399.000</span><br><span class='product-stock'>Stock sisa 3<br>Dikirim hari ini/besok<br></span><div class='btnaddcart'><button class="dropbtnaddcar">ADD TO CART</button></div></div></div>"
-// );
-// product.append(
-// 		$(document.createElement('div')).attr("class","row my-b-product").append(
-// 		$(document.createElement('div')).attr("class","col-sm-2").append(
-// 			'<img src="<?php echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100">'
-// 			,
-// 			$(document.createElement('div')).attr("class","col-sm-7").append(
-// 			'<h5 class="title-product" align="center"><a href="'+base_url+'product/listItem/'+p.name+'">'+p.name+'</a></h5>',
-// 			$(document.createElement('div')).attr("class","col-sm-3").append(
-// 				'<span class="product-price">Rp 1.399.000</span><br><span class="product-stock">Stock sisa 3<br>Dikirim hari ini/besok<br></span><div class="btnaddcart"><button class="dropbtnaddcar">ADD TO CART</button></div>',
-// 			)
-// 	)
-//
-//
-// )
-//
-// )
-// );
 
 		box.append(
 				$(document.createElement('div')).attr("class","container").append(
