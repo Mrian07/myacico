@@ -72,7 +72,7 @@ function tanggal_time($tgl_time)
 	}	
 	return "$tanggal $bulan $tahun ".$get_date_time[1];
 }
-
+/*
 function money($money)
 {
 	$get_m = explode(",",$money);
@@ -82,8 +82,8 @@ function money($money)
 	return 0; 
 	}
 }
-
-function FormatCurrency($money)
+*/
+function money($money)
 {
 	if($money){
 	return number_format($money,0,',','.');

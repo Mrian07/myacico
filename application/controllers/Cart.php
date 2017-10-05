@@ -10,6 +10,7 @@ class Cart extends Web {
         $this->load->library('form_validation');
 		$this->load->library('session');
 		$this->load->library('cart');
+		$this->load->helper('app');
 		$this->load->helper('cookie');
 		
 	//	$this->load->model('Login_model', 'login', TRUE);
@@ -31,35 +32,6 @@ class Cart extends Web {
 		$this->load->view('frontend/footer',$this->data);
 	}
 	
-	function beli()
-	{ 
-		$data = array(
-				'id'      => 'sku_123ABC',
-				'qty'     => 1,
-				'price'   => 39.95,
-				'name'    => 'T-Shirt',
-				'options' => array('Size' => 'L', 'Color' => 'Red')
-		);
-
-		$this->cart->insert($data);
-		
-		
-		$data2 = array(
-				'user' => 'testing1234', 
-			);
-
-		$this->session->set_userdata($data2);
-		$jml = count($this->cart->contents());
-	//	$hasil = $this->cart->contents();
-	echo $jml."<p>";
-		print_r($data); die();
-		/*foreach ($this->cart->contents() as $items){
-			print_r($items);
-		
-		}*/
-		
-		redirect('cart/test');
-	}
 	
 	function addToCart()
 	{ 
@@ -69,7 +41,7 @@ class Cart extends Web {
 		$name = $this->input->post('name');
 		$imageurl = $this->input->post('imageurl');
 		$data = array(
-				'id'      => $id_unik,
+				'id'      => $m_product_id,
 				'id_product' => $m_product_id,
 				'name' => $name,
 				'qty'     => 1,
@@ -77,26 +49,58 @@ class Cart extends Web {
 				'image'    => $imageurl,
             );
 
-		$this->cart->insert($data); 
-		
-		
-		$data2 = array(
-				'user' => 'testing123', 
-			);
+		if($this->cart->insert($data)){
 
-		$this->session->set_userdata($data2);
+			$qty = 0;
+			foreach ($this->cart->contents() as $items): 	
+				$qty += $items['qty'];
+			endforeach; 
+			echo $qty;
+			
+		}else{
+			echo"gagal";
+		}	
 		
-	//	$hasil = $this->cart->contents();
-		print_r($data); die();
-		/*foreach ($this->cart->contents() as $items){
-			print_r($items);
-		
-		}*/
 	}
 	
-	function test()
+	function loadCart()
 	{ 
-		$this->load->view('frontend/modules/product/test.php');
+		$jml=count($this->cart->contents());
+		if($jml)
+		{ 
+	
+		echo"<div class='my-cart-scroll'>";
+
+		foreach ($this->cart->contents() as $items): 	
+		echo"<div class='row my-cart'>
+		  <div class='col-sm-3'><img src='".$items['image']."' border='0' height='50' width='50'></div>
+		  <div class='col-sm-7'>".$items['name']."<br>Rp.".money($items['price'])." (".$items['qty'].")Items<br></div>
+		  <div class='col-sm-2'><a href='#' onClick=\"dellItemCart('".$items['id']."','".$items['rowid']."','".$items['image']."','".$items['name']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a></div>
+		</div>";
+		endforeach; 
+		echo"
+		</div>
+		<div>
+			<div class='my-total-cart'>TOTAL : <b>".$this->cart->format_number($this->cart->total())."</b></div>".anchor('cart', 'My Cart & Checkout', array('class'=>'btn btn-success my-btn-chekout'))."
+		</div>";
+		}else{
+			echo"<center>Keranjang masih kosong</center>";
+		} 
+	}
+	
+	function removeItem() {
+		$rowid = $this->input->post('rowid');
+		$this->cart->update(array(
+			'rowid' => $rowid,
+			'qty' => 0
+		));
+		
+		$qty = 0;
+		foreach ($this->cart->contents() as $items): 	
+			$qty += $items['qty'];
+		endforeach; 
+		echo $qty;
+		
 	}
 	
 	function unik(){

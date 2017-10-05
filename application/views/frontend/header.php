@@ -158,51 +158,39 @@ a{
 							</div>
 
 							<div class="dropdown-basket" ng-controller="cartCnt">
-								<button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart ({{mycart.length}}) <span class="caret"></span></button>
+								<?php 
+								$totalItems = 0;
+								foreach ($this->cart->contents() as $items): 	
+									$totalItems += $items['qty'];
+								endforeach; 
+								?>
+								<button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (<span class='totalCart'><?php echo $totalItems; ?></span>) <span class="caret"></span></button>
 								<div class="dropdown-basket-content">
-									<div ng-show="mycart.length > 0" class='my-cart-scroll'>
-										<div class="row my-cart" ng-repeat="arr in mycart">
-											<div class="col-sm-3"><img src="{{arr.image_url}}" border="0" height="50" width="50"></div>
-											<div class="col-sm-7">{{arr.name}}<br>{{toMoney(arr.price)}}</div>
-											<div class="col-sm-2">{{arr.quantity}}</div>
-										</div>
-									<!--div class="row my-cart">
-									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
-									  <div class="col-sm-7">Samsung galaxy<br>Rp.6.000.000</div>
-									  <div class="col-sm-2">
-											<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');?>
-										</div>
-									</div>
-
+								
+									<?php 
+									if($totalItems)
+									{ ?>
+								
+									<div class='my-cart-scroll'>
+		
+									<?php foreach ($this->cart->contents() as $items): ?>	
 									<div class="row my-cart">
-									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
-									  <div class="col-sm-7">Samsung galaxy<br>Rp.3.000.000</div>
+									  <div class="col-sm-3"><img src="<?php echo $items['image'];?>" style='margin-bottom:10px'></div>
+									  <div class="col-sm-7"><?php echo $items['name'];?><br>Rp.<?php echo $items['price'];?> (<?php echo $items['qty'];?>)Items<br></div>
 									  <div class="col-sm-2">
-											<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');?>
+											<?php echo anchor('cart', '<i class="fa fa-trash" aria-hidden="true"></i>');?>
 										</div>
 									</div>
+									<?php endforeach; ?>
 
-									<div class="row my-cart">
-									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
-									  <div class="col-sm-7">Samsung galaxy<br>Rp.4.000.000</div>
-									  <div class="col-sm-2">
-											<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');?>
-										</div>
 									</div>
-
-									<div class="row my-cart">
-									  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung.jpg');?>" border="0" height="50" width="50"></div>
-									  <div class="col-sm-7">Samsung galaxy<br>Rp.1.000.000</div>
-									  <div class="col-sm-2">
-											<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');?>
-										</div>
-									</div-->
-									</div>
-									<div ng-show="mycart.length > 0">
-										<div class='my-total-cart'>TOTAL : <b>{{get_total()}}</b></div>
+									<div>
+										<div class='my-total-cart'>TOTAL : <b><?php echo $this->cart->format_number($this->cart->total()); ?></b></div>
 										<?php echo anchor('cart', 'My Cart & Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
 									</div>
-									<div ng-show="mycart.length == 0"><center>Keranjang masih kosong</center></div>
+									<?php }else{ ?>
+									<center>Keranjang masih kosong</center>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
@@ -413,7 +401,55 @@ $("#logout").click(function(e){
 
 </script>
 
+<!---modif lalang-->
 <script type="text/javascript">
+
+$(".dropbtn-basket").mouseover(function(){
+        //$(".dropdown-basket-content").css("background-color", "yellow");
+		
+	$.ajax
+	({
+		url: "<?php echo site_url('cart/loadCart'); ?>",
+		success:function(html){
+			$('.dropdown-basket-content').html(html);
+		}
+	});
+	
+		
+});
+
+function dellItemCart(id,rowid,img,name){
+	
+	$.confirm({
+		title: name,
+		content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
+		//content: '<p>Apakah item ini akan dihapus?</p>',
+		autoClose: 'cancel|10000',
+		closeIcon: true,
+		closeIconClass: 'fa fa-close',
+		buttons: {
+			confirm: function () {
+				var dataString = 'rowid='+ rowid;
+				$.ajax
+				({	type: "POST",
+					url: "<?php echo site_url('cart/removeItem'); ?>",
+					data: dataString,
+					success:function(data){
+						$(".totalCart").html(data);
+					}
+				});
+			},
+			cancel: function () {
+				//$.alert('Canceled!');
+			}
+		}
+		
+	});
+}
+
+
+
+
 var base_url = '<?php echo base_url();?>';
 var base_path = base_url.split(location.host).pop();
 var api_base_url = 'http://myacico.net:8080/myacico-service/api';

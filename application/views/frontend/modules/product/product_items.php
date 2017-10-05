@@ -1,65 +1,6 @@
-<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
-
-<style>
-.price{
-		font-size: 30px;
-    	margin: 0 auto;
-    	color: #333;
-	}
-
-
-	.thumbnail{
-
-		opacity:0.70;
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-		text-align:center;
-	}
-	.thumbnail:hover{
-		opacity:1.00;
-		box-shadow: 0px 0px 10px #4bc6ff;
-	}
-	.line{
-		margin-bottom: 5px;
-	}
-	@media screen and (max-width: 770px) {
-		.right{
-			float:left;
-			width: 100%;
-		}
-	}
-
-
-	span.thumbnail {
-        border: 1px solid #c40202 !important;
-    border-radius: 0px !important;
-    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-	padding: 10px;
-}
-
-
-.container h4{ color: grey; font-size: 20px; font-family: 'Abel';}
-
-.right {
-    float: right;
-    border-bottom: 2px solid #0a5971;
-}
-
-
-
-
-/*-------*/
-
-.carousel-inner .active.left { left: -25%; }
-.carousel-inner .next        { left:  25%; }
-.carousel-inner .prev		 { left: -25%; }
-.carousel-control 			 { width:  4%; }
-.carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
-</style>
 <?php
- $sumber = 'http://myacico.net:8080/myacico-service/api/product/productlist?category='.$pro;
+	$sumber = $baseApiUrl.'/product/productlist?category='.$pro;
+ //$sumber = 'http://myacico.net:8080/myacico-service/api/product/productlist?category='.$pro;
  $konten = file_get_contents($sumber);
  $data = json_decode($konten, true);
 
@@ -67,9 +8,6 @@
 
  echo "<br/>";
 ?>
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <div class="row my-sort-product">
 	<div class="col-sm-9">
 		<?php echo "&nbspItems 1 to ".count($data).""; ?>
@@ -134,13 +72,6 @@
 	</div>
 </div> -->
 
-<hr size='1'>
-<p id="tes"></p>
-
-<h4>Bestseller Products</h4>
-</html>
-
-
 <script type="text/javascript">
 
 
@@ -178,8 +109,36 @@ product.append(
 	type: "POST",
 	url: "<?php echo site_url('cart/addToCart'); ?>",
 	data: dataString,
-	success:function(html){
-			alert('keranjang berhasil ditambahkan');
+	success:function(data){
+			if(data!='gagal'){
+				
+				$(".totalCart").html(data);
+				$.confirm({
+					title: p.name,
+					content: '<img src="'+p.imageurl+'" style="margin-bottom:10px">'+'<p>1 Item berhasil ditambahkan<p>',
+					autoClose: 'close|3000',
+					buttons: {
+						close: function () {
+							//$.alert('action is canceled');
+						}
+					},
+					closeIcon: true,
+					closeIconClass: 'fa fa-close'
+				});
+			}else{
+				$.dialog({
+					title: p.name,
+					content: 'Item gagal ditambahkan!',
+					autoClose: 'close|3000',
+					buttons: {
+						close: function () {
+							//$.alert('action is canceled');
+						}
+					},
+					closeIcon: true,
+					closeIconClass: 'fa fa-close'
+				});
+			}
 		}
 	});
 	
