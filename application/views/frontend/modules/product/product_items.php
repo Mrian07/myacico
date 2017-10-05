@@ -134,15 +134,6 @@
 	</div>
 </div> -->
 
-
-<?php 
- echo"ini:";
-		foreach ($this->cart->contents() as $items){
-			print_r($items);
-		
-		}
-	?>
-
 <hr size='1'>
 <p id="tes"></p>
 
@@ -180,7 +171,7 @@ product.append(
     e.preventDefault();
 	
 	var jmlItem = $('#jmlItem').val();	
-	var dataString = 'm_product_id='+ p.m_product_id+'&pricelist='+ p.pricelist+'&imageurl='+ p.imageurl;
+	var dataString = 'm_product_id='+ p.m_product_id+'&pricelist='+ p.pricelist+'&imageurl='+ p.imageurl+'&name='+ p.name;
 
 	$.ajax
 	({

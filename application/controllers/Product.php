@@ -10,6 +10,7 @@ class Product extends Web {
         $this->load->library('form_validation');
 		$this->load->library('session');
 		$this->load->helper('cookie');
+		$this->load->library('cart');
 	//	$this->load->model('Login_model', 'login', TRUE);
 
 

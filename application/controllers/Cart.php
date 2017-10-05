@@ -9,7 +9,9 @@ class Cart extends Web {
         $this->load->helper('form');
         $this->load->library('form_validation');
 		$this->load->library('session');
+		$this->load->library('cart');
 		$this->load->helper('cookie');
+		
 	//	$this->load->model('Login_model', 'login', TRUE);
 
 
@@ -29,15 +31,47 @@ class Cart extends Web {
 		$this->load->view('frontend/footer',$this->data);
 	}
 	
+	function beli()
+	{ 
+		$data = array(
+				'id'      => 'sku_123ABC',
+				'qty'     => 1,
+				'price'   => 39.95,
+				'name'    => 'T-Shirt',
+				'options' => array('Size' => 'L', 'Color' => 'Red')
+		);
+
+		$this->cart->insert($data);
+		
+		
+		$data2 = array(
+				'user' => 'testing1234', 
+			);
+
+		$this->session->set_userdata($data2);
+		$jml = count($this->cart->contents());
+	//	$hasil = $this->cart->contents();
+	echo $jml."<p>";
+		print_r($data); die();
+		/*foreach ($this->cart->contents() as $items){
+			print_r($items);
+		
+		}*/
+		
+		redirect('cart/test');
+	}
+	
 	function addToCart()
 	{ 
 		$id_unik = $this->unik();
 		$price = $this->input->post('pricelist');
 		$m_product_id = $this->input->post('m_product_id');
+		$name = $this->input->post('name');
 		$imageurl = $this->input->post('imageurl');
 		$data = array(
-				'rowid'      => $id_unik,
+				'id'      => $id_unik,
 				'id_product' => $m_product_id,
+				'name' => $name,
 				'qty'     => 1,
 				'price'   => $price,
 				'image'    => $imageurl,
@@ -46,12 +80,23 @@ class Cart extends Web {
 		$this->cart->insert($data); 
 		
 		
-		$hasil = $this->cart->contents();
-		print_r($hasil); die();
+		$data2 = array(
+				'user' => 'testing123', 
+			);
+
+		$this->session->set_userdata($data2);
+		
+	//	$hasil = $this->cart->contents();
+		print_r($data); die();
 		/*foreach ($this->cart->contents() as $items){
 			print_r($items);
 		
 		}*/
+	}
+	
+	function test()
+	{ 
+		$this->load->view('frontend/modules/product/test.php');
 	}
 	
 	function unik(){
