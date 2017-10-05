@@ -203,7 +203,17 @@ class Account extends Web_private {
 		$this->load->view('frontend/modules/account/form_password',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-
+        public function formTransactionDetail()
+    {
+                $this->data['detId']=$this->uri->segment(3);
+		$this->data['active_informasiAkun'] = "class='active'";
+		$this->data['title_web'] = "Myacico.com - Return Management Authority";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/form_transaction_detail',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+ 
 	public function logout()
     {
 		$data = array('cust_email' => '', 'cust_pass' => '', 'cust_login' => '');

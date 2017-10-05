@@ -53,7 +53,7 @@ $(document).ready(function() {
 	var listOrder = $('.listOrder');
 	if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
 	if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
-
+console.log('ini data',data[0]);
 	data.forEach(function(p){
             //alert(p.waktuTransaksi));die();
             //var tanggal = new DateTime(p.waktuTransaksi).toDateString("dd-mm-yyyy");
@@ -70,11 +70,9 @@ $(document).ready(function() {
           
 	listOrder.append(
 
-	'<tr><td>'+ tanggal+'</td><td>'+p.grandTotal+'</td><td>'+p.paymentMethod+'</td><td>'+p.orderNumber+'</td><td>'+p.transactionStatus+'</td><td><button type="button" class="btn btn-info">Detail</button></td><td><button type="button" class="btn btn-warning">Konfirmasi</button></td></tr>'
+	'<tr><td>'+ tanggal+'</td><td>'+p.grandTotal+'</td><td>'+p.paymentMethod+'</td><td>'+p.orderNumber+'</td><td>'+p.transactionStatus+'</td><td><a href="'+base_url+'account/formTransactionDetail/'+p.idTransaksi+'" class="my-link-general">Detail</a></td><td><button type="button" class="btn btn-warning">Konfirmasi</button></td></tr>'
 	)
-	mybutton.append(
-	'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
-	)
+	
 	});
 
 
