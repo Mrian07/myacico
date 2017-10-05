@@ -15,7 +15,7 @@ class Web extends MY_Controller {
         parent::__construct();
 		$this->load->helper('cookie');
 		$this->load->library('jwt');
-
+		
         $this->logedin=false;
         $this->auth();
 

@@ -8,8 +8,11 @@ class Cart extends Web {
 		parent::__construct();
         $this->load->helper('form');
         $this->load->library('form_validation');
-				$this->load->library('session');
-				$this->load->helper('cookie');
+		$this->load->library('session');
+		$this->load->library('cart');
+		$this->load->helper('app');
+		$this->load->helper('cookie');
+		
 	//	$this->load->model('Login_model', 'login', TRUE);
 
 
@@ -20,13 +23,103 @@ class Cart extends Web {
 
 	}
 
-  public function index()
+	public function index()
 	{
 		$this->data['title_web'] = "Myacico.com - Create Account Business";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/cart/cart.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
+	}
+	
+	
+	function addToCart()
+	{ 
+		$id_unik = $this->unik();
+		$price = $this->input->post('pricelist');
+		$m_product_id = $this->input->post('m_product_id');
+		$name = $this->input->post('name');
+		$imageurl = $this->input->post('imageurl');
+		$data = array(
+				'id'      => $m_product_id,
+				'id_product' => $m_product_id,
+				'name' => $name,
+				'qty'     => 1,
+				'price'   => $price,
+				'image'    => $imageurl,
+            );
+
+		if($this->cart->insert($data)){
+
+			$qty = 0;
+			foreach ($this->cart->contents() as $items): 	
+				$qty += $items['qty'];
+			endforeach; 
+			echo $qty;
+			
+		}else{
+			echo"gagal";
+		}	
+		
+	}
+	
+	function loadCart()
+	{ 
+		$jml=count($this->cart->contents());
+		if($jml)
+		{ 
+	
+		echo"<div class='my-cart-scroll'>";
+
+		foreach ($this->cart->contents() as $items): 	
+		echo"<div class='row my-cart'>
+		  <div class='col-sm-3'><img src='".$items['image']."' border='0' height='50' width='50'></div>
+		  <div class='col-sm-7'>".$items['name']."<br>Rp.".money($items['price'])." (".$items['qty'].")Items<br></div>
+		  <div class='col-sm-2'><a href='#' onClick=\"dellItemCart('".$items['id']."','".$items['rowid']."','".$items['image']."','".$items['name']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a></div>
+		</div>";
+		endforeach; 
+		echo"
+		</div>
+		<div>
+			<div class='my-total-cart'>TOTAL : <b>".$this->cart->format_number($this->cart->total())."</b></div>".anchor('cart', 'My Cart & Checkout', array('class'=>'btn btn-success my-btn-chekout'))."
+		</div>";
+		}else{
+			echo"<center>Keranjang masih kosong</center>";
+		} 
+	}
+	
+	function removeItem() {
+		$rowid = $this->input->post('rowid');
+		$this->cart->update(array(
+			'rowid' => $rowid,
+			'qty' => 0
+		));
+		
+		$qty = 0;
+		foreach ($this->cart->contents() as $items): 	
+			$qty += $items['qty'];
+		endforeach; 
+		echo $qty;
+		
+	}
+	
+	function unik(){
+		$the_char = array(
+		 "1","2","3","4","5","6","7","8","9"
+		);
+		$max_elements = count($the_char) - 1;
+		srand((double)microtime()*1000000);
+		$c1 = $the_char[rand(0,$max_elements)];
+		$c2 = $the_char[rand(0,$max_elements)];
+		$c3 = $the_char[rand(0,$max_elements)]; 
+		$c4 = $the_char[rand(0,$max_elements)];
+		$c5 = $the_char[rand(0,$max_elements)];
+		$c6 = $the_char[rand(0,$max_elements)]; 
+		$c7 = $the_char[rand(0,$max_elements)];
+		$c8 = $the_char[rand(0,$max_elements)];
+		$c9 = $the_char[rand(0,$max_elements)]; 
+		$ranc = "$c1$c2$c3$c4$c5$c6$c7$c8$c9";
+		return $ranc;
 	}
 /*
 	public function switchLang()

@@ -76,6 +76,7 @@
 		</div>
 	</div>
 </div>
+
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 var success = function(r){
