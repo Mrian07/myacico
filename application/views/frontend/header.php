@@ -158,22 +158,22 @@ a{
 							</div>
 
 							<div class="dropdown-basket" ng-controller="cartCnt">
-								<?php 
+								<?php
 								$totalItems = 0;
-								foreach ($this->cart->contents() as $items): 	
+								foreach ($this->cart->contents() as $items):
 									$totalItems += $items['qty'];
-								endforeach; 
+								endforeach;
 								?>
 								<button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (<span class='totalCart'><?php echo $totalItems; ?></span>) <span class="caret"></span></button>
 								<div class="dropdown-basket-content">
-								
-									<?php 
+
+									<?php
 									if($totalItems)
 									{ ?>
-								
+
 									<div class='my-cart-scroll'>
-		
-									<?php foreach ($this->cart->contents() as $items): ?>	
+
+									<?php foreach ($this->cart->contents() as $items): ?>
 									<div class="row my-cart">
 									  <div class="col-sm-3"><img src="<?php echo $items['image'];?>" style='margin-bottom:10px'></div>
 									  <div class="col-sm-7"><?php echo $items['name'];?><br>Rp.<?php echo $items['price'];?> (<?php echo $items['qty'];?>)Items<br></div>
@@ -406,7 +406,7 @@ $("#logout").click(function(e){
 
 $(".dropbtn-basket").mouseover(function(){
         //$(".dropdown-basket-content").css("background-color", "yellow");
-		
+
 	$.ajax
 	({
 		url: "<?php echo site_url('cart/loadCart'); ?>",
@@ -414,12 +414,12 @@ $(".dropbtn-basket").mouseover(function(){
 			$('.dropdown-basket-content').html(html);
 		}
 	});
-	
-		
+
+
 });
 
 function dellItemCart(id,rowid,img,name){
-	
+
 	$.confirm({
 		title: name,
 		content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
@@ -443,7 +443,7 @@ function dellItemCart(id,rowid,img,name){
 				//$.alert('Canceled!');
 			}
 		}
-		
+
 	});
 }
 
@@ -452,5 +452,6 @@ function dellItemCart(id,rowid,img,name){
 
 var base_url = '<?php echo base_url();?>';
 var base_path = base_url.split(location.host).pop();
+var api_base_url2 = 'http://api.myacico.net:8080/myacico-service/';
 var api_base_url = 'http://myacico.net:8080/myacico-service/api';
 </script>

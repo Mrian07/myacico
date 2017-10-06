@@ -65,8 +65,9 @@
 			<div class="btnaddcart">
 				<button class="dropbtnaddcar" ng-click="add_to_cart()">ADD TO CART</button>
 			</div>
+
 			<br><br>
-			Add To Wishlist
+			<?php echo anchor('product/wishlist/'.$pro_id,'<i class="fa fa-plus-square" aria-hidden="true"></i> Add To Wishlist', array('class'=>'btn btn-link'));?>
 		</div>
 
 	  </div>
@@ -192,7 +193,6 @@ app.controller('detailCnt', function($scope, $http, $mycart, toMoney){
 	                xzoom.openzoom(event);
 	            });
 	        });
-
 
 	    } else {
 	        //If not touch device
