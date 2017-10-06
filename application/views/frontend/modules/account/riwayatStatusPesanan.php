@@ -67,11 +67,14 @@ console.log('ini data',data[0]);
           var tahun = tanggal[0];
           var time = tanggal[2].split(' ');
           var tanggal = hari+'-'+bulan+'-'+tahun+' '+jam;
-
+if(p.transactionStatus == 'paid')
+          {
+              var disable = 'disabled';
+          }
 	listOrder.append(
 
 
-	'<tr><td>'+ tanggal+'</td><td>'+p.grandTotal+'</td><td>'+p.paymentMethod+'</td><td>'+p.orderNumber+'</td><td>'+p.transactionStatus+'</td><td><a href="'+base_url+'account/formTransactionDetail/'+p.idTransaksi+'" class="btn btn-info">Detail</a></td><td><a href="'+base_url+'account/Konf/'+p.idTransaksi+'" class="btn btn-warning">Konfrimasi</a></td></tr>'
+	'<tr><td>'+ tanggal+'</td><td>'+p.grandTotal+'</td><td>'+p.paymentMethod+'</td><td>'+p.orderNumber+'</td><td>'+p.transactionStatus+'</td><td><a href="'+base_url+'account/formTransactionDetail/'+p.idTransaksi+'" class="btn btn-info">Detail</a></td><td><a href="'+base_url+'account/Konf/'+p.idTransaksi+'" class="btn btn-warning" '+disable+'>Konfrimasi</a></td></tr>'
 
 	)
 
