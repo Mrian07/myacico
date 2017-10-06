@@ -1,7 +1,7 @@
 <div class='my-bg-title'>
 	<div class="container">
 		<div class="row">
-		  <div class="col-sm-12">
+		  <div class="col-sm-9">
 
 			<i class="fa fa-angle-right" aria-hidden="true"></i> WISHLIST
 
@@ -14,36 +14,39 @@
 
 <div class="container">
 
- <!-- asdasd -->
+
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
-		<div class="container">
-  <h2> WISHLIST </h2>
-
-	<table class="table">
-		<thead>
-
-			<tr>
-			<th>Alamat lengkap</th>
-			<th>Ubah</th>
-			<th>Hapus</th>
-			</tr>
-
-		</thead>
-		<tbody class="rumah">
+		<div class="col-sm-9">
 
 
+		<br/>
+		<br/>
 
-		</tbody>
-</table>
+		<table class="table">
+			<thead>
+
+			  <tr>
+				<th>Wishlist</th>
+
+			  </tr>
+
+			</thead>
+			<tbody class="rumah">
+
+
+
+			</tbody>
+		</table>
+
 
 
 </div>
 
-      </div>
-</div>
+		</div>
+	</div>
 <!-- asdasd -->
 
 <script type="text/javascript">
@@ -87,7 +90,9 @@ console.log('a',token);
 		if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
 
 		 data.forEach(function(p){
-			 rumah.append('<tr><td>'+p.wishListDate+',  '+p.wishListDate+' '+p.wishListDate+' '+p.productID+' '+p.productID+' '+p.productID+' '+p.productID+' '+p.productID+'</td></tr>')
+			 rumah.append(
+		'<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageUrl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div></div>'
+	)
 			 $("#hapus"+p.id).click(function(e){
 
 				var id = $("#id"+p.id).val();

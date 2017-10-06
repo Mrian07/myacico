@@ -9,7 +9,7 @@
         <!-- Text input-->
         <label class="control-label" for="input01"> Text input</label>
         <div class="controls">
-            <input type="text" placeholder="placeholder" id="transid" class="input-xlarge" value=" <?php echo $konf; ?>" name="name">
+            <input type="text" placeholder="placeholder" id="transid" class="input-xlarge" value="<?php echo $konf; ?>" name="transid">
             <p class="help-block" style="display:none;">text_input</p>
 
         </div>
@@ -38,7 +38,7 @@
 $(document).ready(function() {
 $.ajaxSetup({
   error: function(){
-    alert('KAMPRET');
+    alert('test');
   },
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
