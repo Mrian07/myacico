@@ -33,9 +33,10 @@
                                     </div>
                                     
                                       <input type="hidden" id="idTrans" name="idTrans" value="<?php echo $this->uri->segment(3);?>" />
-                                       
+                                      
+                                    <div id="totaldetail" >
 
-
+                                    </div>
                    
                                         
 				</div>
@@ -59,10 +60,10 @@ var idTrans = $('#idTrans').val();
  function(data){
  
 var idTrans = $('#idTrans').val();
-//console.log('data nya adalah:', data.items[0]);
-console.log('data nya adalah:', data);
+//console.log('data nya adalah:', data.items[0]['shipmentAddress']);
+console.log('data nya adalah:', token);
 
-console.log('data nya adalah2:', data['items']);
+//console.log('data nya adalah2:', data['items']);
 
 	var addressname = $('.addressname');
 	//var noOrder = $('.listOrder');
@@ -75,6 +76,7 @@ console.log('data nya adalah2:', data['items']);
             //alert(p.waktuTransaksi));die();
             //var tanggal = new DateTime(p.waktuTransaksi).toDateString("dd-mm-yyyy");
           $("#noOrder").val(data.orderNumber);
+          $("#detailtotal").val(data.grandTotal);
           var tanggal = data.waktuTransaksi;
           var tanggal = tanggal.split('-');
           var time = tanggal[2].split(' ');
@@ -88,6 +90,9 @@ console.log('data nya adalah2:', data['items']);
           $("#tanggalOrder").val(tanggal);
           $("#imageurl").val(data.items[0]['imageurl']);
           var gambar = data.items[0]['imageurl'];
+        var reverse = data.grandTotal.toString().split('').reverse().join('');
+	var ribuan = reverse.match(/\d{1,3}/g);
+	var hasil = ribuan.join('.').split('').reverse().join('');
 //          alert(data.items[0]['imageurl']);
           //var a=data.items[];
           var stat = 1;
@@ -104,17 +109,22 @@ console.log('data nya adalah2:', data['items']);
 //             var items[i] = data.items[i];
 //             
 //          }
+    
         transactionlist.append
-      ('<div class="well"> Tanggal Order:'+tanggal+'</br> Order ID:'+data.orderNumber+'</br> Status Pesanan: <b>'+data.transactionStatus+'</b></div>')
-	
+      ('<div class="well"> Tanggal Order: '+tanggal+'</br> Order ID:'+data.orderNumber+'</br> Status Pesanan: <b>'+data.transactionStatus+'</b></br> Alamat Pengiriman: '+data.items[0]['shipmentAddress']+'</div>')
+//	$( "p" ).append( document.createTextNode(hasil));
+        $("#totaldetail").append('<hr>Total Harga : <b>Rp. '+hasil+'</b>')
+//    totalDetail.append('<div class="row"><div class="col-sm-6">Produk : <b>'+data.grandTotal+'</b></div></div>');
+
 	data['items'].forEach(function(p){
-	
+	var reverse = p.subtotal.toString().split('').reverse().join('');
+	var ribuan = reverse.match(/\d{1,3}/g);
+	var ribuan = ribuan.join('.').split('').reverse().join('');
 	listOrder.append
-        ('<div class="row"><div class="col-sm-6"><img src="'+p.imageurl+'" alt="check Out" style="width:150px;height:100px;"></div><div class="col-sm-6"> Harga :Rp'+p.subtotal+'</div></div>')
+        ('<div class="row"><div class="col-sm-6">Produk : <b>'+p.name+'</b></br><img src="'+p.imageurl+'" alt="check Out" style="width:100px;height:70px;"></div><div class="col-sm-6"> </br>Jumlah: '+p.qty+' </br>Harga :Rp. '+ribuan+'</div></div>')
 	
 	});
-
-
+      
 	});
 });
 
