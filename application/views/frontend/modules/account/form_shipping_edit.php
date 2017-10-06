@@ -29,6 +29,8 @@
                                         <input type="hidden" id="isshipto" name="isshipto" value="Y" />
                                         <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
                                         <input type="hidden" id="isremitto" name="isremitto" value="N" />
+                                        <input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
+
 					</div>
                                         <div class="form-group">
 					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
@@ -123,24 +125,26 @@ function get_region(){
 var data = {};
 $(document).ready(function() {
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
-    $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isbillto',
+    var idAdd = $('#idAdd').val();
+    $.get(api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token,
  function(data){
- 
+ console.log('data nya adalah:', data);
+
 	var addressname = $('.addressname');
 	var rumah = $('.rumah');
 	var mybutton = $('.mybutton');
 	if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
 	if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
  
-        $("#id").val(data[0]['id']);
-        $("#address_name").val(data[0]['address_name']);
-        $("#name").val(data[0]['name']);
-        $("#phone").val(data[0]['phone']);
-        $("#phone2").val(data[0]['phone2']);
-        $("#postal").val(data[0]['postal']);
-        $("#address1").val(data[0]['address1']);
-        $("#address2").val(data[0]['address2']);
-        console.log('data nya adalah:', data[0]['id']);
+        $("#id").val(data.id);
+        $("#address_name").val(data.address_name);
+        $("#name").val(data.name);
+        $("#phone").val(data.phone);
+        $("#phone2").val(data.phone2);
+        $("#postal").val(data.postal);
+        $("#address1").val(data.address1);
+        $("#address2").val(data.address2);
+//        console.log('data nya adalah:', data[0]['id']);
 	data.forEach(function(p){
       
   rumah.append(
