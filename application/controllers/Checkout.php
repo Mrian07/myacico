@@ -68,13 +68,20 @@ class Checkout extends Web_private {
          $this->load->view('Cookie_view');
       }
   */
-      public function display_cookie() {
-         echo get_cookie('lang');
-      //   $this->load->view('Cookie_view');
-      }
+	public function display_cookie() {
+		echo get_cookie('lang');
+	//   $this->load->view('Cookie_view');
+	}
 
-      public function deletecookie() {
-         delete_cookie('lang');
-     //    redirect('cookie/display');
-      }
+	public function deletecookie() {
+		delete_cookie('lang');
+	//    redirect('cookie/display');
+	}
+
+	public function pilihShipping() {
+		$id = $this->uri->segment(3);
+		$data = array('shipping_address_id' => $id);
+        $this->session->set_userdata($data);
+		redirect('checkout');
+	}	   
 }

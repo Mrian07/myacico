@@ -55,71 +55,88 @@ console.log('data nya adalah:', data);
 
 	product.append('<div class="row">')
 	data.forEach(function(p){
-product.append(
+	product.append(
 
-	'<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageurl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div><div class="col-sm-3"><span class="product-price"> Rp.'+p.pricelist+'</span><br><p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+'</p><p class="product-stock">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p><input type="hidden" id="jmlItem" value="1"><button class="dropbtnaddcar" id="addToCard'+p.m_product_id+'">ADD TO CART</button></div></div></div>'
-)
-
+		'<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageurl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div><div class="col-sm-3"><span class="product-price"> Rp.'+p.pricelist+'</span><br><p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+'</p><p class="product-stock">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p><input type="hidden" id="jmlItem" value="1"><button class="dropbtnaddcar" id="addToCard'+p.m_product_id+'">ADD TO CART</button></div></div></div>'
+	)
+	
+	//ADD TO CART
 	$("#addToCard"+p.m_product_id).click(function(e){
     e.preventDefault();
-	
+	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var jmlItem = $('#jmlItem').val();	
 	var dataString = 'm_product_id='+ p.m_product_id+'&pricelist='+ p.pricelist+'&imageurl='+ p.imageurl+'&name='+ p.name+'&stock='+p.stock+'&jmlItem='+jmlItem;
-
-	$.ajax
-	({
-	type: "POST",
-	url: "<?php echo site_url('cart/addToCart'); ?>",
-	data: dataString,
-	success:function(data){
-		
-			if(data=='stockkosong'){
-				$.dialog({
-					title: p.name,
-					content: 'Item gagal ditambahkan, jumlah melebihi stock yang ada!',
-					autoClose: 'close|3000',
-					buttons: {
-						close: function () {
-							//$.alert('action is canceled');
-						}
-					},
-					closeIcon: true,
-					closeIconClass: 'fa fa-close'
-				});
-			}else
-			if(data!='gagal'){
-				
-				$(".totalCart").html(data);
-				$.confirm({
-					title: p.name,
-					content: '<img src="'+p.imageurl+'" style="margin-bottom:10px">'+'<p>1 Item berhasil ditambahkan<p>',
-					autoClose: 'close|3000',
-					buttons: {
-						close: function () {
-							//$.alert('action is canceled');
-						}
-					},
-					closeIcon: true,
-					closeIconClass: 'fa fa-close'
-				});
-			}else{
-				$.dialog({
-					title: p.name,
-					content: 'Item gagal ditambahkan!',
-					autoClose: 'close|3000',
-					buttons: {
-						close: function () {
-							//$.alert('action is canceled');
-						}
-					},
-					closeIcon: true,
-					closeIconClass: 'fa fa-close'
-				});
-			}
-		}
-	});
 	
-
+	
+	if(token){
+		
+		/*var apiurl = api_base_url +'/order/cart/additem?token='+token;
+		
+		data.product_id = m_product_id;
+		data.phone = jmlItem;
+		data.phone2 = phone2;
+		data.address_name = address_name;
+		
+		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data) , url: apiurl, success: success, error: error });
+		*/
+	}else{
+	
+		$.ajax
+		({
+		type: "POST",
+		url: "<?php echo site_url('cart/addToCart'); ?>",
+		data: dataString,
+		success:function(data){
+			
+				if(data=='stockkosong'){
+					$.dialog({
+						title: p.name,
+						content: 'Item gagal ditambahkan, jumlah melebihi stock yang ada!',
+						autoClose: 'close|3000',
+						buttons: {
+							close: function () {
+								//$.alert('action is canceled');
+							}
+						},
+						closeIcon: true,
+						closeIconClass: 'fa fa-close'
+					});
+				}else
+				if(data!='gagal'){
+					
+					$(".totalCart").html(data);
+					$.confirm({
+						title: p.name,
+						content: '<img src="'+p.imageurl+'" style="margin-bottom:10px">'+'<p>1 Item berhasil ditambahkan<p>',
+						autoClose: 'close|3000',
+						buttons: {
+							close: function () {
+								//$.alert('action is canceled');
+							}
+						},
+						closeIcon: true,
+						closeIconClass: 'fa fa-close'
+					});
+				}else{
+					$.dialog({
+						title: p.name,
+						content: 'Item gagal ditambahkan!',
+						autoClose: 'close|3000',
+						buttons: {
+							close: function () {
+								//$.alert('action is canceled');
+							}
+						},
+						closeIcon: true,
+						closeIconClass: 'fa fa-close'
+					});
+				}
+			}
+		});
+	
+	}
+	
+	
 	});
 
 

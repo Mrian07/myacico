@@ -57,7 +57,6 @@
 
 						<form>
 							<p><strong>DATA BILLING</strong></p>
-
 							<div class="rumah" id='biling-ready' style='display:none'></div>
 							<div class="billing-empty"  style='display:none'>
   							<p>Tidak ada data billing yang tersedia, silakan1 isi terlebih dulu.asdasd<p>
@@ -229,22 +228,37 @@
 	  $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
 	  function(data){
 		console.log('data nya adalah:', data);
-		// console.log('test',token);
+		 console.log('test',token);
 
-			var addressname = $('.addressname');
 			var rumah = $('.rumah');
 			var id = $("#id").val();
 
-			$("#hapus").val(null);
-
-
 			if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
 			if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
+			
+			rumah.append('<p>'+data[0]['address_name']+', '+data[0]['address1']+' '+data[0]['address2']+' '+data[0]['address3']+' '+data[0]['address3']+' '+data[0]['address4']+' '+data[0]['cityname']+' '+data[0]['postal']+'</p>')
+			
+		});
+		
+		//DATA SHIPPING
+		/*var id = <?php echo $this->session->userdata('shipping_address_id'); ?>;
+		$.get($.get(api_base_url+'/aduser/getaddress/'+id+'?token='+token,
+		function(data){
+		console.log('data shipping:', token);
+		// console.log('test',token);
+
+			var shipping = $('.shipping');
+			var id = $("#id").val();
+
+
+			if(data.length == 0) return shipping.append('<p>Data tidak ditemukan</p>');
 
 			 data.forEach(function(p){
-				 rumah.append('<p>'+p.address_name+', '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</p>')
+				 shipping.append('<p>'+p.address_name+', '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</p>')
 			});
-		});
+		});*/
+		
+		
 
 	});
 
