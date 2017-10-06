@@ -70,15 +70,46 @@ console.log('data nya adalah:', data);
 	
 	if(token){
 		
-		/*var apiurl = api_base_url +'/order/cart/additem?token='+token;
+		var apiurl = api_base_url +'/order/cart/additem?token='+token;
 		
-		data.product_id = m_product_id;
-		data.phone = jmlItem;
-		data.phone2 = phone2;
-		data.address_name = address_name;
+		var m_product_id = p.m_product_id;
+		var qty = jmlItem;
+		var pricelist = p.pricelist;
+		var weight = p.weight;
 		
-		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data) , url: apiurl, success: success, error: error });
-		*/
+		var success = function(r){
+			
+			$.confirm({
+				title: p.name,
+				content: '<img src="'+p.imageurl+'" style="margin-bottom:10px">'+'<p>1 Item berhasil ditambahkan<p>',
+				autoClose: 'close|3000',
+				buttons: {
+					close: function () {
+						//$.alert('action is canceled');
+					}
+				},
+				closeIcon: true,
+				closeIconClass: 'fa fa-close'
+			});
+		};
+		
+		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
+			{
+				"productId":m_product_id,
+				"qty":qty,
+				"price":pricelist,
+				"weightPerItem":weight
+			}
+		) , url: apiurl, success: success, error: error });
+		
+		var error = function(er){
+		  console.log('OK:', er);
+		  $.alert({
+			title: 'Alert!',
+			content: 'koneksi tidak berhasil, silahkan coba lagi!',
+		  });
+		};
+		
 	}else{
 	
 		$.ajax
