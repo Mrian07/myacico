@@ -34,32 +34,49 @@ class Cart extends Web {
 	
 	
 	function addToCart()
-	{ 
-		$id_unik = $this->unik();
+	{ 	
+		//$id_unik = $this->unik();
 		$price = $this->input->post('pricelist');
-		$m_product_id = $this->input->post('m_product_id');
+		$id = $this->input->post('m_product_id');
 		$name = $this->input->post('name');
 		$imageurl = $this->input->post('imageurl');
+		
+		$stock = $this->input->post('stock');
+		$jmlItem = $this->input->post('jmlItem');
+		
+		$jmlQty=0;
+		foreach ($this->cart->contents() as $items): 	
+			if($id==$items['id']){
+				$jmlQty = $items['qty'];
+			}
+		endforeach; 
+	
+		if($stock>=($jmlQty+$jmlItem)){
+		
 		$data = array(
-				'id'      => $m_product_id,
-				'id_product' => $m_product_id,
+				'id'      => $id,
+				//'id_product' => $m_product_id,
 				'name' => $name,
-				'qty'     => 1,
+				'qty'     => $jmlItem,
 				'price'   => $price,
 				'image'    => $imageurl,
             );
+		
+			if($this->cart->insert($data)){
 
-		if($this->cart->insert($data)){
-
-			$qty = 0;
-			foreach ($this->cart->contents() as $items): 	
-				$qty += $items['qty'];
-			endforeach; 
-			echo $qty;
-			
+				$qty = 0;
+				foreach ($this->cart->contents() as $items): 	
+					$qty += $items['qty'];
+				endforeach; 
+				echo $qty;
+				
+			}else{
+				echo"gagal";
+			}	
+		
 		}else{
-			echo"gagal";
-		}	
+			echo"stockkosong";	
+		}
 		
 	}
 	

@@ -34,44 +34,6 @@
 
 <div class="product">
 </div>
-
-
-<!-- END PRODUCTS -->
-
-
-<!-- <div class="row my-b-product">
-	<div class="col-sm-2"><img src="<?php echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100"></div>
-		<div class="col-sm-7"><h5 class='title-product'><?php echo anchor('product/detail', 'ASUS Zenfone Go [ZB500KL] [2/16GB] - Silver Blue');?></h5>
-	</div>
-	<div class="col-sm-3"><span class='product-price'>Rp 1.399.000</span><br><span class='product-stock'>Stock sisa 3<br>Dikirim hari ini/besok<br></span>
-		<div class="btnaddcart">
-		<?php echo anchor('customer/contact', '<button class="dropbtnaddcar">ADD TO CART</button>');?>
-		</div>
-	</div>
-</div>
-
-<div class="row my-b-product">
-	<div class="col-sm-2"><img src="<?php echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100"></div>
-	<div class="col-sm-7"><h5 class='title-product'><?php echo anchor('product/detail', 'ASUS Zenfone Go [ZB500KL] [2/16GB] - Silver Blue');?></h5>
-	</div>
-	<div class="col-sm-3"><span class='product-price'>Rp 1.399.000</span><br><span class='product-stock'>Stock sisa 3<br>Dikirim hari ini/besok<br></span>
-		<div class="btnaddcart">
-		<?php echo anchor('customer/contact', '<button class="dropbtnaddcar">ADD TO CART</button>');?>
-		</div>
-	</div>
-</div>
-
-<div class="row my-b-product">
-	<div class="col-sm-2"><img src="<?php echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100"></div>
-	<div class="col-sm-7"><h5 class='title-product'><?php echo anchor('product/detail', 'ASUS Zenfone Go [ZB500KL] [2/16GB] - Silver Blue');?></h5>
-	</div>
-	<div class="col-sm-3"><span class='product-price'>Rp 1.399.000</span><br><span class='product-stock'>Stock sisa 3<br>Dikirim hari ini/besok<br></span>
-		<div class="btnaddcart">
-		<?php echo anchor('customer/contact', '<button class="dropbtnaddcar">ADD TO CART</button>');?>
-		</div>
-	</div>
-</div> -->
-
 <script type="text/javascript">
 
 
@@ -95,14 +57,14 @@ console.log('data nya adalah:', data);
 	data.forEach(function(p){
 product.append(
 
-	'<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageurl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div><div class="col-sm-3"><span class="product-price"> Rp.'+p.pricelist+'</span><br><p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+'</p><p class="product-stock">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p><button class="dropbtnaddcar" id="addToCard'+p.m_product_id+'">ADD TO CART</button></div></div></div>'
+	'<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageurl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div><div class="col-sm-3"><span class="product-price"> Rp.'+p.pricelist+'</span><br><p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+'</p><p class="product-stock">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p><input type="hidden" id="jmlItem" value="1"><button class="dropbtnaddcar" id="addToCard'+p.m_product_id+'">ADD TO CART</button></div></div></div>'
 )
 
 	$("#addToCard"+p.m_product_id).click(function(e){
     e.preventDefault();
 	
 	var jmlItem = $('#jmlItem').val();	
-	var dataString = 'm_product_id='+ p.m_product_id+'&pricelist='+ p.pricelist+'&imageurl='+ p.imageurl+'&name='+ p.name;
+	var dataString = 'm_product_id='+ p.m_product_id+'&pricelist='+ p.pricelist+'&imageurl='+ p.imageurl+'&name='+ p.name+'&stock='+p.stock+'&jmlItem='+jmlItem;
 
 	$.ajax
 	({
@@ -110,6 +72,21 @@ product.append(
 	url: "<?php echo site_url('cart/addToCart'); ?>",
 	data: dataString,
 	success:function(data){
+		
+			if(data=='stockkosong'){
+				$.dialog({
+					title: p.name,
+					content: 'Item gagal ditambahkan, jumlah melebihi stock yang ada!',
+					autoClose: 'close|3000',
+					buttons: {
+						close: function () {
+							//$.alert('action is canceled');
+						}
+					},
+					closeIcon: true,
+					closeIconClass: 'fa fa-close'
+				});
+			}else
 			if(data!='gagal'){
 				
 				$(".totalCart").html(data);
