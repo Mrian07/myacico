@@ -74,7 +74,7 @@
       </div>
       <span class="progress-completed"> 35%</span>
     </div-->
-	<div class="col-md-9">
+	<div class="col-md-9 listCart">
 
 		<table id="cart" class="table table-hover table-condensed">
 			<thead>
@@ -87,58 +87,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($this->cart->contents() as $items): ?>	
-				<tr>
-					<td data-th="Product">
-						<div class="row">
-							<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
-							<div class="col-sm-10">
-								<h4 class="nomargin">{{arr.name}}</h4>
-								<p>{{arr.detail}}</p>
-							</div>
-						</div>
-					</td>
-					<td data-th="Price">{{toMoney(arr.price)}}</td>
-					<td data-th="Quantity">
-						<input type="number" class="form-control text-center" ng-model="arr.quantity">
-					</td>
-					<td data-th="Subtotal" class="text-center">{{toMoney(arr.price * arr.quantity)}}</td>
-					<td class="actions" data-th="">
-						<button class="btn btn-danger btn-sm" ng-click="del(i)"><i class="fa fa-trash-o"></i></button>
-					</td>
-				</tr>
-				<?php endforeach; ?>
-				<!--tr>
-					<td data-th="Product">
-						<div class="row">
-							<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
-							<div class="col-sm-10">
-								<h4 class="nomargin">Product 1</h4>
-								<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
-							</div>
-						</div>
-					</td>
-					<td data-th="Price">Rp.100.999</td>
-					<td data-th="Quantity">
-						<input type="number" class="form-control text-center" value="1">
-					</td>
-					<td data-th="Subtotal" class="text-center">1.99</td>
-					<td class="actions" data-th="">
-						<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-						<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-					</td>
-				</tr-->
+				
+				
 			</tbody>
 			<tfoot>
-				<tr class="visible-xs">
-					<td class="text-center"><strong>Total 1.99</strong></td>
-				</tr>
 				<tr>
-					<!--<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>-->
+					<!--<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Update</a></td>-->
 					<td colspan="3" class="hidden-xs">
 						<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman
 					</td>
-					<td class="hidden-xs text-center"><strong>Total {{get_total()}}</strong></td>
+					<td class="hidden-xs text-center"><strong>Total Rp.<?php echo $this->cart->format_number($this->cart->total()); ?></strong></td>
 					<td></td>
 				</tr>
 			</tfoot>
@@ -147,8 +105,8 @@
 	<div class="col-md-3">
 		<div class="panel panel-default">
 		  <div class="panel-body">
-				Subtotal	{{get_total()}}<br>
-				<b>Grand Total	{{get_total()}}</b><br><br>
+				Subtotal Rp.<?php echo $this->cart->format_number($this->cart->total()); ?><br>
+				<b>Grand Total	<?php echo $this->cart->format_number($this->cart->total()); ?></b><br><br>
 				<b>PUNYA KODE PROMO ?</b><br>
 				<div class="input-group">
 					<input type="text" class="form-control" name="x">
@@ -161,3 +119,15 @@
 		<?php echo anchor('checkout', 'Checkout <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success btn-block'));?>
 	</div>
 </div>
+<script>
+$(document).ready(function() {
+	
+	$.ajax
+	({
+	url: "<?php echo site_url('cart/listCart'); ?>",
+	success:function(html){
+			$(".listCart").html(html);
+		}
+	});
+});
+</script>

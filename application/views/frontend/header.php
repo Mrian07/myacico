@@ -430,12 +430,22 @@ function dellItemCart(id,rowid,img,name){
 		buttons: {
 			confirm: function () {
 				var dataString = 'rowid='+ rowid;
+				//untuk cart yang di header
 				$.ajax
 				({	type: "POST",
 					url: "<?php echo site_url('cart/removeItem'); ?>",
 					data: dataString,
 					success:function(data){
 						$(".totalCart").html(data);
+					}
+				});
+				
+				//untuk cart yang di basket
+				$.ajax
+				({	
+					url: "<?php echo site_url('cart/listCart'); ?>",
+					success:function(data){
+						$(".listCart").html(data);
 					}
 				});
 			},
