@@ -87,7 +87,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="(i,arr) in mycart">
+				<?php foreach ($this->cart->contents() as $items): ?>	
+				<tr>
 					<td data-th="Product">
 						<div class="row">
 							<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
@@ -103,13 +104,10 @@
 					</td>
 					<td data-th="Subtotal" class="text-center">{{toMoney(arr.price * arr.quantity)}}</td>
 					<td class="actions" data-th="">
-						<button class="btn btn-info btn-sm"><span class="caret"></span> Alamat</button>
 						<button class="btn btn-danger btn-sm" ng-click="del(i)"><i class="fa fa-trash-o"></i></button>
 					</td>
 				</tr>
-				<tr ng-show="mycart.length == 0">
-					<td colspan="5">Keranjang masih kosong</td>
-				</tr>
+				<?php endforeach; ?>
 				<!--tr>
 					<td data-th="Product">
 						<div class="row">
