@@ -71,7 +71,7 @@ console.log('ini data',data[0]);
 	listOrder.append(
 
 
-	'<tr><td>'+ tanggal+'</td><td>'+p.grandTotal+'</td><td>'+p.paymentMethod+'</td><td>'+p.orderNumber+'</td><td>'+p.transactionStatus+'</td><td><a href="'+base_url+'account/formTransactionDetail/'+p.idTransaksi+'" class="my-link-general">Detail</a></td><td><a href="'+base_url+'account/Konf/'+p.idTransaksi+'" class="my-link-general">Detail</a></td></tr>'
+	'<tr><td>'+ tanggal+'</td><td>'+p.grandTotal+'</td><td>'+p.paymentMethod+'</td><td>'+p.orderNumber+'</td><td>'+p.transactionStatus+'</td><td><a href="'+base_url+'account/formTransactionDetail/'+p.idTransaksi+'" class="btn btn-info">Detail</a></td><td><a href="'+base_url+'account/Konf/'+p.idTransaksi+'" class="btn btn-warning">Konfrimasi</a></td></tr>'
 
 	)
 
