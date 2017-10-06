@@ -111,7 +111,20 @@ class Account extends Web_private {
 		$this->load->view('frontend/modules/account/bukuAlamat',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-	
+
+	public function konf()
+		{
+		$this->data['konf'] = $this->uri->segment(3);
+		$this->data['active_bukuAlamat'] = "class='active'";
+		$this->data['title_web'] = "Myacico.com - Buku Alamat";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/Konfrimasi.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+
+
 	public function editBukuAlamat()
     {
 		$this->data['id'] = $this->uri->segment(3);
@@ -163,7 +176,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/footer',$this->data);
 			// $this->load->view('frontend/footer',$this->data);
 	}
-	
+
 	public function formAccount()
     {
 		$this->data['active_informasiAkun'] = "class='active'";
@@ -173,7 +186,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/modules/account/form_account',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-	
+
 	public function formBilling()
     {
 		$this->data['active_informasiAkun'] = "class='active'";
@@ -183,7 +196,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/modules/account/form_billing',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-        
+
     public function formAddBilling()
     {
 		$this->data['active_informasiAkun'] = "class='active'";
@@ -193,7 +206,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/modules/account/form_add_billing',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-	
+
 	public function formPassword()
     {
 		$this->data['active_informasiAkun'] = "class='active'";
@@ -213,7 +226,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/modules/account/form_transaction_detail',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
- 
+
 	public function logout()
     {
 		$data = array('cust_email' => '', 'cust_pass' => '', 'cust_login' => '');

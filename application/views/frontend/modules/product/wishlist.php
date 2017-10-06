@@ -1,67 +1,29 @@
-<div class='my-bg-title'>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
+asdasdasd
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> BUKU ALAMAT
-
-			</div>
-		</div>
-	</div>
-</div>
+<?php  echo $wish_id; ?>
 
 
-<div class="container">
-
-
-	<div class="row">
-		<div class="col-sm-3">
-			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
-		</div>
-		<div class="col-sm-9">
-
-		<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat', array('class'=>'btn btn-link'));?>
-		<br/>
-		<br/>
-
-		<table class="table">
-			<thead>
-
-			  <tr>
-				<th>Alamat lengkap</th>
-				<th>Ubah</th>
-				<th>Hapus</th>
-			  </tr>
-
-			</thead>
-			<tbody class="rumah">
-
-
-
-			</tbody>
-		</table>
-
-
-
-</div>
-
-		</div>
-	</div>
-</div>
-
-
-<script type="text/javascript">
-
-var link_url = '<?php echo base_url('account/editBukuAlamat') ?>';
-
+<script>
+//
+//   $(document).ready(function() {
+// 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
+//
+//     $.get(api_base_url+'/product/addwishlist?token='+token+'&item_id=<?php $wishid ?>',
+//
+//   function(data){
+// })
+//   });
 $(document).ready(function() {
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var filter =0;
+  var a = '<?php echo $wish_id?>';
 
-	$.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
+  $.get(api_base_url+'/product/addwishlist?token='+token+'&item_id='+a,
+
 
 	function(data){
 	console.log('data nya adalah:', data);
+   console.log('datanya',token);
 	// console.log('test',token);
 
 
@@ -86,8 +48,7 @@ $(document).ready(function() {
 
 
 		});
+    });
 	});
-
-});
 
 </script>
