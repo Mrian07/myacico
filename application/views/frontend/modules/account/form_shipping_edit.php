@@ -42,12 +42,9 @@
 					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
 					</div>
 					<div class="form-group" style="display:none" id="ditric_box">
-                                            <div class="kecamatan">
-                                               <label><?php echo $lang_Keca; ?>*</label>
+                                              <label><?php echo $lang_Keca; ?>*</label>
                                                <select name="district_id" id="district_id" class="form-control mandatory"></select> 
-                                            </div>
-							
-					</div>
+                                        </div>
 					<div class="form-group" style="display:none" id="city_box">
 						<label><?php echo $lang_kota; ?>*</label>
 					  <select name="city" id="city_sel" class="form-control mandatory"></select>
@@ -77,9 +74,8 @@
 					
 					
 					<div class="clearfix"></div>
-                                        <div class="tombol">
                                             <input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
-                                        </div>
+                                       
 				  </form>
 				</div>
 			</div>

@@ -82,7 +82,10 @@ $.ajaxSetup({
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
 });
-
+$('#district_id').change(function () {
+        var end = this.value;
+      $('#submit_btn').removeAttr('disabled');
+    });
 function get_distric(){
   $("#ditric_box").slideDown();
   $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
@@ -117,6 +120,7 @@ function get_region(){
 }
 var data = {};
 $(document).ready(function() {
+    $('#submit_btn').attr('disabled','disabled');
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
     $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isbillto',
  function(data){
