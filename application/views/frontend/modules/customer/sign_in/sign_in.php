@@ -104,7 +104,7 @@ var error = function(er){
     var data = {};
 $(document).ready(function() {
 
-  $('form').submit(function(e){
+  $('form').submit(function(e){ 
     e.preventDefault();
 		var email = $("#email").val();
 		var password = $("#password").val();

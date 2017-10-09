@@ -166,7 +166,7 @@ a{
 								?>
 								<button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (<span class='totalCart'><?php echo $totalItems; ?></span>) <span class="caret"></span></button>
 								<div class="dropdown-basket-content">
-
+					
 									<?php
 									if($totalItems)
 									{ ?>
@@ -312,11 +312,12 @@ a{
 
 <script>
 //Buat ngecek jumlah keranjang
+/*
 $(document).ready(function() {
 	
 	totalCart();
 
-});
+});*/
 
 function totalCart(){
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
@@ -436,9 +437,8 @@ $("#logout").click(function(e){
 
 $(".dropbtn-basket").mouseover(function(){
 	
-	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	
-	if(token){
+	var cookie = document.cookie.split('x-auth=');
+	if(cookie.length > 1){
 		
 			$('.empty-item').hide();
 			listCartToken();

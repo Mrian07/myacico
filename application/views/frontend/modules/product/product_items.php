@@ -61,15 +61,14 @@ console.log('data nya adalah:', data);
 	)
 	
 	//ADD TO CART
-	$("#addToCard"+p.m_product_id).click(function(e){
+	$("#addToCard"+p.m_product_id).click(function(e){ 
     e.preventDefault();
-	var token = document.cookie.split('x-auth=')[1].split(';').shift();
+	var cookie = document.cookie.split('x-auth=');
 	var jmlItem = $('#jmlItem').val();	
 	var dataString = 'm_product_id='+ p.m_product_id+'&pricelist='+ p.pricelist+'&imageurl='+ p.imageurl+'&name='+ p.name+'&stock='+p.stock+'&jmlItem='+jmlItem;
 	
-	
-	if(token){
-		
+	if(cookie.length > 1){
+		var token = cookie[1].split(';').shift();
 		var apiurl = api_base_url +'/order/cart/additem?token='+token;
 		
 		var m_product_id = p.m_product_id;
@@ -115,7 +114,7 @@ console.log('data nya adalah:', data);
 		
 		
 	}else{
-	
+
 		$.ajax
 		({
 		type: "POST",
