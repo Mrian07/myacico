@@ -91,6 +91,9 @@ console.log('data nya adalah:', data);
 				closeIcon: true,
 				closeIconClass: 'fa fa-close'
 			});
+			
+			//Buat update cart, fungsi ini ada di file header.php
+			totalCart();
 		};
 		
 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
@@ -109,6 +112,7 @@ console.log('data nya adalah:', data);
 			content: 'koneksi tidak berhasil, silahkan coba lagi!',
 		  });
 		};
+		
 		
 	}else{
 	

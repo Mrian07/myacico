@@ -166,7 +166,7 @@ a{
 								?>
 								<button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (<span class='totalCart'><?php echo $totalItems; ?></span>) <span class="caret"></span></button>
 								<div class="dropdown-basket-content">
-
+									
 									<?php
 									if($totalItems)
 									{ ?>
@@ -188,13 +188,38 @@ a{
 										<div class='my-total-cart'>TOTAL : <b><?php// echo $this->cart->format_number($this->cart->total()); ?></b></div>
 										<?php // echo anchor('cart', 'My Cart & Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
 									</div>-->
+									
 									<?php }else{ ?>
-									<div class='empty-item'><center>Keranjang masih kosong</center></div>
+									<center>Keranjang masih kosong</center>
 									<?php } ?>
-									<div class='list-item'></div>
-									<div class='btn-chekout'></div>
+									
+									
 								</div>
+								
 							</div>
+							
+							
+							
+							
+							<div class="dropdown-basket-token" ng-controller="cartCnt">
+								<button class="dropbtn-basket-token"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (<span class='totalCart'>1222</span>) <span class="caret"></span></button>
+								<div class="dropdown-basket-content-token">
+									<!--<div class='my-cart-scroll'>
+										<div class='showListItem'>
+										
+										</div>
+									</div>
+									<div class='btnCartPop'>
+									
+									</div>-->
+								</div>
+								
+							</div>
+							
+							
+							
+							
+							
 						</div>
 					</div>
 				</div>
@@ -311,32 +336,6 @@ a{
 </div>
 
 <script>
-//Buat ngecek jumlah keranjang
-$(document).ready(function() {
-	
-	totalCart();
-
-});
-
-function totalCart(){
-	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	var qty = 0;
-	var qtyTotal = $('.totalCart');
-	
-	if(token){
-		
-		$.get( api_base_url+"/order/cart/detail?token="+token, 
-		function(r){
-			
-			r.forEach(function(p){
-				qty += p.qty;
-			});
-			qtyTotal.html(qty);
-		  }, "json" );
-	}
-}
-
-
 var app = angular.module("myApp", []);
 
 app.factory('$mycart', function() {
@@ -415,9 +414,7 @@ $("#logout").click(function(e){
 		content: 'Anda yakin akan logout?',
 		buttons: {
 			confirm: function () {
-			//	document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-				document.cookie = 'x-auth=' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
-				
+				document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 				location.href='<?php echo base_url("customer/signIn");?>';
 			},
 			cancel: function () {
@@ -434,19 +431,20 @@ $("#logout").click(function(e){
 <!---modif lalang-->
 <script type="text/javascript">
 
-$(".dropbtn-basket").mouseover(function(){
+var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	
-	var token = document.cookie.split('x-auth=')[1].split(';').shift();
+if(token){
 	
-	if(token){
-		
-			$('.empty-item').hide();
-			listCartToken();
+	$(".dropbtn-basket-token").mouseover(function(){
+
+		listCartToken();
 		  //$("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
-		
-			
-	}else{
-		
+	});
+	
+}else{
+	
+	$(".dropbtn-basket").mouseover(function(){
+
 		$.ajax
 		({
 			url: "<?php echo site_url('cart/loadCart'); ?>",
@@ -455,39 +453,49 @@ $(".dropbtn-basket").mouseover(function(){
 			}
 		});
 
-	}
-});
+	
+	});
+	
+}
+
+
+
 
 function listCartToken(){
+
+	var base_url = '<?php echo base_url();?>';
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	var list = $('.list-item');
-	var btn = $('.btn-chekout');
-	var qty = 0;
-	var totalBelanja = 0;
-	list.html(
+	
+	var list = $('.dropdown-basket-content-token');
+	//var list = $('.showListItem');
+	var btn = $('.btnCartPop');
+	
+	box.html(
 				''
 			);	
+	list.html(
+				'hallloo'
+			);		
 	$.get( api_base_url+"/order/cart/detail?token="+token, 
 	function(r){
-		
 		r.forEach(function(p){
-			qty += p.qty;
-			totalBelanja+=p.price;
-			//alert(qty);
+			//console.log('test'+p);
 			list.append(
-				'<div class="row my-cart" style="position:relative;"><div class="col-sm-3"><img src="'+p.imageurl+'" border="0" height="50" width="50"></div><div class="col-sm-7">'+p.name+'<br>Rp.'+p.price+' ('+p.qty+')Items<br></div><div class="col-sm-2"><a href="#" onClick="dellItemCartToken('+p.productId+',\''+p.imageurl+'\',\''+p.name+'\')"><i class="fa fa-trash" aria-hidden="true"></i></a></div></div>'
+				'<div class="row my-cart" style="position:relative;"><div class="col-sm-3"><img src="'+p.imageurl+'" border="0" height="50" width="50"></div><div class="col-sm-7">'+p.name+'<br>Rp.'+p.price+' ('+p.qty+')Items<br></div><div class="col-sm-2"><a href="#" onClick="dellItemCartToken('+p.itemCartId+')"><i class="fa fa-trash" aria-hidden="true"></i></a></div></div>'
 			);
-		});
-		//alert(qty);
+		},
 		
-
-		btn.html('');  
-		btn.append(
-				'<div style="position:relative;"><div class="my-total-cart">TOTAL : <b>'+totalBelanja+'</b></div><a href="'+base_url+'cart" class="btn btn-success my-btn-chekout">My Cart & Checkout</a></div>'
-			);  
 		
+		);
 	  }, "json" );
+	btn.html('');  
+	btn.append(
+				'<div style="position:relative;"><div class="my-total-cart">TOTAL : <b>999999</b></div><a href="'+base_url+'cart" class="btn btn-success my-btn-chekout">My Cart & Checkout</a></div>'
+			);
+}
 
+function dellItemCartToken(id){
+	alert('aaaaa');
 }
 
 function dellItemCart(id,rowid,img,name){
@@ -529,51 +537,7 @@ function dellItemCart(id,rowid,img,name){
 	});
 }
 
-function dellItemCartToken(id,img,name){
-	
-	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	var id = id;
-	var apiurl = api_base_url + '/order/cart/deleteitem?token='+token+'&idcartitem='+id;
-	
-	$.confirm({
-		title: name,
-		content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
-		//content: '<p>Apakah item ini akan dihapus?</p>',
-		autoClose: 'cancel|10000',
-		closeIcon: true,
-		closeIconClass: 'fa fa-close',
-		buttons: {
-			confirm: function () {
-				//untuk cart yang di header
-				$.ajax
-				({	type: "POST",
-					url: apiurl,
-					success:function(data){
-						totalCart();
-					}
-				});
-				
-			},
-			cancel: function () {
-				//$.alert('Canceled!');
-			}
-		}
 
-	});
-	
-
-	/*var success = function(r){ 
-	$('#spinner_img').hide();
-	$('#submit_btn').val('Kirim').removeClass('disabled');
-		 $.alert({
-		 title: 'Alert!',
-		 content: 'Item berhasil dihapus',
-		});
-		console.log('OK:', r.status);
-		window.location.replace(base_url+"/account/bukuAlamat");
-
-	};*/
-}
 
 
 var base_url = '<?php echo base_url();?>';
