@@ -46,7 +46,7 @@
 </div>
 
 <div class="container">
-	<div class="row" ng-controller="cartCnt">
+	<div class="row" ng-controller="cartCnt" method="post">
 		<div class="col-md-7">
 			<div class="panel panel-default">
 			  <div class="panel-heading"><b>Alamat Pengiriman</b></div>
@@ -71,9 +71,10 @@
                                                        <?php if($this->session->userdata('shipping_address_id') == NULL)
                                                        {?> 
 							<p>Tidak ada data penerima yang tersedia, silakan isi terlebih dulu.<p>
+                                                             <?php }?>
 							<!--<p><?php //echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>-->
 							<p><?php echo anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>
-                                                       <?php }?>
+                                                      
 							<!--
 							<p><strong>DATA PENERIMA</strong></p>
 							<div class='row'>
@@ -153,7 +154,7 @@
 			<div class="panel panel-default">
 			  <div class="panel-heading"><b>Metode Pembayaran</b></div>
 			  <div class="panel-body">
-				 <form>
+				 <form method="post">
 				  <div class="form-group">
 					<label for="email">Pilih Type Pembayaran:</label>
 					<select class="form-control" id='payment_method' name='payment_method'>
@@ -202,6 +203,8 @@
 						</tr>
 					</table>
 				  </div>
+                            <input type="submit" id="submit_btn" class="btn btn-primary" value="Finish"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+
 				  <!--button type="submit" class="btn btn-info">Update</button-->
 				</form>
 
@@ -215,10 +218,11 @@
 		<div class="col-md-5">
 			<?php $this->load->view('frontend/modules/checkout/checkout_cart',$this->data); ?>
 		</div>
+
 	</div>
 
-
-	<?php echo anchor('finish', 'Pesan Sekarang <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success my-btn-chekout'));?>
+ 
+	<?php //echo anchor('finish', 'Pesan Sekarang <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success my-btn-chekout'));?>
 
 </div>
 
@@ -229,7 +233,7 @@
 	$(document).ready(function()
 	{
 		var token = document.cookie.split('x-auth=')[1].split(';').shift();
-		var filter =0;
+		var filter =0;console.log('test',token);
 	  $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
 	  function(data){
 //		console.log('data nya adalah:', data);
@@ -248,11 +252,11 @@
 		//DATA SHIPPING
 		var id = <?php echo $this->session->userdata('shipping_address_id'); ?>;
                 var idAddShip = $("#idAddShip").val();
-                console.log('test',idAddShip);
+                //console.log('test',idAddShip);
 		$.get(api_base_url+'/aduser/getaddress/'+idAddShip+'?token='+token,
 		function(data){
 		//console.log('data shipping:', idAddShip);
-		 console.log('samuel',data);
+		 //console.log('samuel',data);
 
 			var shoping = $('#shoping');
 			var id = $("#id").val();
@@ -266,7 +270,51 @@
 //			});
 		});
 		
-		
+	$("form").submit(function(e){
+            var data = {};
+    e.preventDefault();
+    //var data = $(this).serialize();
+   // var token = document.cookie.split('x-auth=')[1].split(';').shift();
+    var apiurl = api_base_url + '/order/checkout?token='+token;
+console.log('OK:', apiurl);
+    data.grandtotal = "29999000";
+    data.paymentMethod = "Bank transfer";
+    data.billing_address_id = "1000067";
+    data.shipping_address_id = "1000067";
+    //data.courier_id = address_name;
+    data.isoncepickup = "Y";
+   
+    // return alert(data);
+
+    // success handling
+var error = function(er){
+  $('#spinner_img').hide();
+  $('#submit_btn').val('Kirim').removeClass('disabled');
+  console.log('OK:', er);
+  $.alert({
+    title: 'Alert!',
+    content: 'koneksi tidak berhasil, silahkan coba lagi!',
+  });
+};
+    var success = function(r){ 
+         $('#spinner_img').hide();
+  $('#submit_btn').val('Kirim').removeClass('disabled');
+         $.alert({
+     title: 'Alert!',
+     content: 'Alamat Baru Berhasil di tambahkan',
+    });
+//      alert(r.message);
+      console.log('OK:', r.status);
+window.location.replace(base_url+"/checkout/success");
+
+    };
+    $('#spinner_img').show();
+    $('#submit_btn').val('loading...').addClass('disabled');
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error:error, timeout: 30000 });
+
+    // do validation
+  
+  });
 
 	});
 
