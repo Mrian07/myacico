@@ -61,7 +61,7 @@ $(document).ready(function() {
 	$.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
 
 	function(data){
-	console.log('data nya adalah:', data);
+	console.log('data nya adalah:', token);
 	// console.log('test',token);
 
 
@@ -74,7 +74,7 @@ $(document).ready(function() {
 		if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
 
 		 data.forEach(function(p){
-			 rumah.append('<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a href="'+link_url+'/'+p.id+'" class="btn btn-link" aria-label="Ubah"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>')
+			 rumah.append('<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.city_name+' '+p.postal+'</td><td><a href="'+link_url+'/'+p.id+'" class="btn btn-link" aria-label="Ubah"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>')
 			 $("#hapus"+p.id).click(function(e){
 
 				var id = $("#id"+p.id).val();

@@ -18,7 +18,7 @@
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
-			<p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima.</p>
+			<p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima. </br> *harap isi kemabali negara, propinsi, kota, dan kecamatan. </p>
 			<div class="panel panel-default">
 				<div class="panel-body">	
 				  <form name="signup" method="post">
@@ -42,8 +42,11 @@
 					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
 					</div>
 					<div class="form-group" style="display:none" id="ditric_box">
-							<label><?php echo $lang_Keca; ?>*</label>
-					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
+                                            <div class="kecamatan">
+                                               <label><?php echo $lang_Keca; ?>*</label>
+                                               <select name="district_id" id="district_id" class="form-control mandatory"></select> 
+                                            </div>
+							
 					</div>
 					<div class="form-group" style="display:none" id="city_box">
 						<label><?php echo $lang_kota; ?>*</label>
@@ -74,7 +77,9 @@
 					
 					
 					<div class="clearfix"></div>
-						<input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+                                        <div class="tombol">
+                                            <input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+                                        </div>
 				  </form>
 				</div>
 			</div>
@@ -89,7 +94,10 @@ $.ajaxSetup({
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
 });
-
+$('#district_id').change(function () {
+        var end = this.value;
+      $('#submit_btn').removeAttr('disabled');
+    });
 function get_distric(){
   $("#ditric_box").slideDown();
   $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
@@ -124,6 +132,7 @@ function get_region(){
 }
 var data = {};
 $(document).ready(function() {
+    $('#submit_btn').attr('disabled','disabled');
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
     var idAdd = $('#idAdd').val();
     $.get(api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token,
