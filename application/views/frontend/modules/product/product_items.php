@@ -65,7 +65,7 @@ console.log('data nya adalah:', data);
     e.preventDefault();
 	var cookie = document.cookie.split('x-auth=');
 	var jmlItem = $('#jmlItem').val();	
-	var dataString = 'm_product_id='+ p.m_product_id+'&pricelist='+ p.pricelist+'&imageurl='+ p.imageurl+'&name='+ p.name+'&stock='+p.stock+'&jmlItem='+jmlItem;
+	
 	
 	if(cookie.length > 1){
 		var token = cookie[1].split(';').shift();
@@ -114,7 +114,8 @@ console.log('data nya adalah:', data);
 		
 		
 	}else{
-
+		var dataString = 'm_product_id='+ p.m_product_id+'&pricelist='+ p.pricelist+'&imageurl='+ p.imageurl+'&name='+ p.name+'&stock='+p.stock+'&jmlItem='+jmlItem+'&weight='+p.weight;
+		
 		$.ajax
 		({
 		type: "POST",

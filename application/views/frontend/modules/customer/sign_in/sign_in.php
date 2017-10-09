@@ -87,6 +87,34 @@ var success = function(r){
     title: 'Alert!',
     content: r.message
   });
+  
+  <?php
+	//Memasukan produk yang dibeli sebelum login ke api
+	foreach ($this->cart->contents() as $items):?>
+	var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
+		
+		var m_product_id = <?php echo $items['id']; ?>;
+		var qty = <?php echo $items['qty']; ?>;
+		var pricelist = <?php echo $items['price']; ?>;
+		var weight = <?php echo $items['weight']; ?>;
+		
+		var success = function(r){
+
+		};
+		
+		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
+			{
+				"productId":m_product_id,
+				"qty":qty,
+				"price":pricelist,
+				"weightPerItem":weight
+			}
+		) , url: apiurl, success: success, error: error });
+	<?php	
+	endforeach;
+	$this->cart->destroy();
+	?>
+  
   document.cookie='x-auth='+r.token+'; path='+base_path;
   var cb = location.search.split('callback=');
   if(cb.length > 1) location.href = cb[1].split(';').shift();
@@ -108,7 +136,7 @@ $(document).ready(function() {
     e.preventDefault();
 		var email = $("#email").val();
 		var password = $("#password").val();
-    var apiurl = baseApiUrl + '/aduser/masuk';
+		var apiurl = baseApiUrl + '/aduser/masuk';
 
 		if(email==''){
 			$.alert({
