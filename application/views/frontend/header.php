@@ -405,18 +405,44 @@ $("#logout").click(function(e){
 <script type="text/javascript">
 
 $(".dropbtn-basket").mouseover(function(){
-        //$(".dropdown-basket-content").css("background-color", "yellow");
+	
+	var token = document.cookie.split('x-auth=')[1].split(';').shift();
+	
+	if(token){
+		
+		
+			listCartToken();
+		  //$("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
+		
+			
+	}else{
+		
+		$.ajax
+		({
+			url: "<?php echo site_url('cart/loadCart'); ?>",
+			success:function(html){
+				$('.dropdown-basket-content').html(html);
+			}
+		});
 
-	$.ajax
-	({
-		url: "<?php echo site_url('cart/loadCart'); ?>",
-		success:function(html){
-			$('.dropdown-basket-content').html(html);
-		}
-	});
-
-
+	}
 });
+
+function listCartToken(){
+	var token = document.cookie.split('x-auth=')[1].split(';').shift();
+	var list = $('.dropdown-basket-content');
+	
+	$.get( api_base_url+"/order/cart/detail?token="+token, 
+	
+	function(r){
+		r.forEach(function(o){
+			list.append(
+				'halloo'
+			);
+		});
+	  }, "json" );
+
+}
 
 function dellItemCart(id,rowid,img,name){
 
