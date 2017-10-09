@@ -63,12 +63,17 @@
   							<p><?php echo anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default'));?></p>
 							</div>
 
+                                                        
+                                        <input type="hidden" id="idAddShip" name="idAddShip" value="<?php echo $this->session->userdata('shipping_address_id'); ?>" />
 
 							<p><strong>DATA PENERIMA</strong></p>
+                                                        <div id="shoping"></div>
+                                                       <?php if($this->session->userdata('shipping_address_id') == NULL)
+                                                       {?> 
 							<p>Tidak ada data penerima yang tersedia, silakan isi terlebih dulu.<p>
 							<!--<p><?php //echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>-->
 							<p><?php echo anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>
-
+                                                       <?php }?>
 							<!--
 							<p><strong>DATA PENERIMA</strong></p>
 							<div class='row'>
@@ -227,8 +232,8 @@
 		var filter =0;
 	  $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
 	  function(data){
-		console.log('data nya adalah:', data);
-		 console.log('test',token);
+//		console.log('data nya adalah:', data);
+//		 console.log('test',token);
 
 			var rumah = $('.rumah');
 			var id = $("#id").val();
@@ -241,22 +246,25 @@
 		});
 		
 		//DATA SHIPPING
-		/*var id = <?php echo $this->session->userdata('shipping_address_id'); ?>;
-		$.get($.get(api_base_url+'/aduser/getaddress/'+id+'?token='+token,
+		var id = <?php echo $this->session->userdata('shipping_address_id'); ?>;
+                var idAddShip = $("#idAddShip").val();
+                console.log('test',idAddShip);
+		$.get(api_base_url+'/aduser/getaddress/'+idAddShip+'?token='+token,
 		function(data){
-		console.log('data shipping:', token);
-		// console.log('test',token);
+		//console.log('data shipping:', idAddShip);
+		 console.log('samuel',data);
 
-			var shipping = $('.shipping');
+			var shoping = $('#shoping');
 			var id = $("#id").val();
 
 
-			if(data.length == 0) return shipping.append('<p>Data tidak ditemukan</p>');
+			if(data.length == 0) return shoping.append('<p>Data tidak ditemukan</p>');
 
-			 data.forEach(function(p){
-				 shipping.append('<p>'+p.address_name+', '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</p>')
-			});
-		});*/
+//			data.forEach(function(p){
+                           
+				 $('#shoping').append('<p>'+data.address_name+',' +data.address1+', '+data.address2+' '+data.address3+' '+data.address3+' '+data.address4+' '+data.cityname+' '+data.postal+'</p>')
+//			});
+		});
 		
 		
 
