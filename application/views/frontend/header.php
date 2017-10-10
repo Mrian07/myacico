@@ -525,6 +525,15 @@ function dellItemCart(id,rowid,img,name){
 						$(".listCart").html(data);
 					}
 				});
+				
+				//untuk cart yang di basket token
+				$.ajax
+				({
+				url: "<?php echo site_url('cart/listCartToken'); ?>",
+				success:function(html){
+						$(".listCart").html(html);
+					}
+				});
 			},
 			cancel: function () {
 				//$.alert('Canceled!');

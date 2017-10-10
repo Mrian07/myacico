@@ -132,6 +132,12 @@ class Cart extends Web {
 		";
 	}
 	
+	function listCartToken()
+	{ 
+		$this->load->view('frontend/modules/cart/cart_token.php');
+		
+	}
+	
 	function loadCart()
 	{ 
 		$jml=count($this->cart->contents());

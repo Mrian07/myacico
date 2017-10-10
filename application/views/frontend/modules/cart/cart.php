@@ -128,9 +128,16 @@ $(document).ready(function() {
 	
 	var cookie = document.cookie.split('x-auth=');
 	if(cookie.length > 1){
-	var token = cookie[1].split(';').shift();
-	var apiurl = api_base_url +'/order/cart/additem?token='+token;
-	
+		
+		$.ajax
+		({
+		url: "<?php echo site_url('cart/listCartToken'); ?>",
+		success:function(html){
+				$(".listCart").html(html);
+			}
+		});
+		
+
 	}else{
 		
 		$.ajax
@@ -142,5 +149,15 @@ $(document).ready(function() {
 		});
 	
 	}
+	
+	
+	
+			
+
+
+	
+	
+	
+	
 });
 </script>
