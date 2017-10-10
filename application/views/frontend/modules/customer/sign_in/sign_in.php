@@ -91,6 +91,7 @@ var success = function(r){
   <?php
 	//Memasukan produk yang dibeli sebelum login ke api
 	foreach ($this->cart->contents() as $items):?>
+	
 	var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
 		
 		var m_product_id = <?php echo $items['id']; ?>;
@@ -99,7 +100,7 @@ var success = function(r){
 		var weight = <?php echo $items['weight']; ?>;
 		
 		var success = function(r){
-
+			alert('terkirim');
 		};
 		
 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
@@ -112,9 +113,10 @@ var success = function(r){
 		) , url: apiurl, success: success, error: error });
 	<?php	
 	endforeach;
-	$this->cart->destroy();
+	//$this->cart->destroy();
+
 	?>
-  
+
   document.cookie='x-auth='+r.token+'; path='+base_path;
   var cb = location.search.split('callback=');
   if(cb.length > 1) location.href = cb[1].split(';').shift();
