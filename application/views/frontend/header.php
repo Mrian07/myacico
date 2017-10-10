@@ -472,7 +472,7 @@ function listCartToken(){
 			totalBelanja+=p.price;
 			//alert(qty);
 			list.append(
-				'<div class="row my-cart" style="position:relative;"><div class="col-sm-3"><img src="'+p.imageurl+'" border="0" height="50" width="50"></div><div class="col-sm-7">'+p.name+'<br>Rp.'+p.price+' ('+p.qty+')Items<br></div><div class="col-sm-2"><a href="#" onClick="dellItemCartToken('+p.productId+',\''+p.imageurl+'\',\''+p.name+'\')"><i class="fa fa-trash" aria-hidden="true"></i></a></div></div>'
+				'<div class="row my-cart" style="position:relative;"><div class="col-sm-3"><img src="'+p.imageurl+'" border="0" height="50" width="50"></div><div class="col-sm-7">'+p.name+'<br>Rp.'+p.price+' ('+p.qty+')Items<br></div><div class="col-sm-2"><a href="#" onClick="dellItemCartToken('+p.productId+',\''+p.imageurl+'\',\''+p.name+'\',\''+p.itemCartId+'\')"><i class="fa fa-trash" aria-hidden="true"></i></a></div></div>'
 			);
 		});
 		//alert(qty);
@@ -526,11 +526,11 @@ function dellItemCart(id,rowid,img,name){
 	});
 }
 
-function dellItemCartToken(id,img,name){
+function dellItemCartToken(id,img,name,idcart){
 	
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var id = id;
-	var apiurl = api_base_url + '/order/cart/deleteitem?token='+token+'&idcartitem='+id;
+	var apiurl = api_base_url + '/order/cart/deleteitem?token='+token+'&idcartitem='+idcart;
 	
 	$.confirm({
 		title: name,
