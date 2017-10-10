@@ -18,7 +18,7 @@
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
-			<p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima.</p>
+			<p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima. </br> *harap isi kemabali negara, propinsi, kota, dan kecamatan. </p>
 			<div class="panel panel-default">
 				<div class="panel-body">	
 				  <form name="signup" method="post">
@@ -29,6 +29,8 @@
                                         <input type="hidden" id="isshipto" name="isshipto" value="Y" />
                                         <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
                                         <input type="hidden" id="isremitto" name="isremitto" value="N" />
+                                        <input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
+
 					</div>
                                         <div class="form-group">
 					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
@@ -40,9 +42,9 @@
 					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
 					</div>
 					<div class="form-group" style="display:none" id="ditric_box">
-							<label><?php echo $lang_Keca; ?>*</label>
-					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
-					</div>
+                                              <label><?php echo $lang_Keca; ?>*</label>
+                                               <select name="district_id" id="district_id" class="form-control mandatory"></select> 
+                                        </div>
 					<div class="form-group" style="display:none" id="city_box">
 						<label><?php echo $lang_kota; ?>*</label>
 					  <select name="city" id="city_sel" class="form-control mandatory"></select>
@@ -72,7 +74,8 @@
 					
 					
 					<div class="clearfix"></div>
-						<input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+                                            <input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+                                       
 				  </form>
 				</div>
 			</div>
@@ -87,7 +90,10 @@ $.ajaxSetup({
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
 });
-
+$('#district_id').change(function () {
+        var end = this.value;
+      $('#submit_btn').removeAttr('disabled');
+    });
 function get_distric(){
   $("#ditric_box").slideDown();
   $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
@@ -122,25 +128,28 @@ function get_region(){
 }
 var data = {};
 $(document).ready(function() {
+    $('#submit_btn').attr('disabled','disabled');
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
-    $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isbillto',
+    var idAdd = $('#idAdd').val();
+    $.get(api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token,
  function(data){
- 
+ console.log('data nya adalah:', data);
+
 	var addressname = $('.addressname');
 	var rumah = $('.rumah');
 	var mybutton = $('.mybutton');
 	if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
 	if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
  
-        $("#id").val(data[0]['id']);
-        $("#address_name").val(data[0]['address_name']);
-        $("#name").val(data[0]['name']);
-        $("#phone").val(data[0]['phone']);
-        $("#phone2").val(data[0]['phone2']);
-        $("#postal").val(data[0]['postal']);
-        $("#address1").val(data[0]['address1']);
-        $("#address2").val(data[0]['address2']);
-        console.log('data nya adalah:', data[0]['id']);
+        $("#id").val(data.id);
+        $("#address_name").val(data.address_name);
+        $("#name").val(data.name);
+        $("#phone").val(data.phone);
+        $("#phone2").val(data.phone2);
+        $("#postal").val(data.postal);
+        $("#address1").val(data.address1);
+        $("#address2").val(data.address2);
+//        console.log('data nya adalah:', data[0]['id']);
 	data.forEach(function(p){
       
   rumah.append(

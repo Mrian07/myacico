@@ -36,13 +36,16 @@ class Cart extends Web {
 	function addToCart()
 	{ 	
 		//$id_unik = $this->unik();
-		$price = $this->input->post('pricelist');
+		
 		$id = $this->input->post('m_product_id');
 		$name = $this->input->post('name');
+		$jmlItem = $this->input->post('jmlItem');
+		$price = $this->input->post('pricelist');
 		$imageurl = $this->input->post('imageurl');
+		$weight = $this->input->post('weight');
 		
 		$stock = $this->input->post('stock');
-		$jmlItem = $this->input->post('jmlItem');
+		
 		
 		$jmlQty=0;
 		foreach ($this->cart->contents() as $items): 	
@@ -60,6 +63,7 @@ class Cart extends Web {
 				'qty'     => $jmlItem,
 				'price'   => $price,
 				'image'    => $imageurl,
+				'weight'    => $weight,
             );
 		
 			if($this->cart->insert($data)){
