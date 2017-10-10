@@ -11,7 +11,7 @@ class Cart extends Web {
 		$this->load->library('session');
 		$this->load->library('cart');
 		$this->load->helper('app');
-		$this->load->helper('cookie');
+	//	$this->load->helper('cookie');
 		
 	//	$this->load->model('Login_model', 'login', TRUE);
 
