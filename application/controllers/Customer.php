@@ -182,7 +182,7 @@ class Customer extends Web {
 	}
 
 	public function logout()
-    {
+    {	
 		$this->data['title_web'] = "Myacico.com - Login";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);

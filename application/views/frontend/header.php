@@ -131,10 +131,9 @@ a{
 
 
 							<?php if(isset($user)){ ?>
-
-
+							
 							<div class="dropdown-account">
-							  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
+							  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account<span class="caret"></span></button>
 							  <div class="dropdown-account-content">
 								<?php echo anchor('account', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
 								<?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('id'=>'logout'));?>
@@ -416,9 +415,7 @@ $("#logout").click(function(e){
 		content: 'Anda yakin akan logout?',
 		buttons: {
 			confirm: function () {
-			//	document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-				document.cookie = 'x-auth=' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
-				
+				document.cookie='x-auth=; path='+base_path+';expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 				location.href='<?php echo base_url("customer/signIn");?>';
 			},
 			cancel: function () {
