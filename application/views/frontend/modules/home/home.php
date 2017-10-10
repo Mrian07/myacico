@@ -924,7 +924,7 @@ ul.list-group:after {
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SH-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SK-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/BG-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/lg_logo_white_250x.JPG');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/lg_logo_white_250x.jpg');?>"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/EM-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/NN-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/RI-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
