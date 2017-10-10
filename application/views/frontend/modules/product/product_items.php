@@ -1,3 +1,6 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+
 <?php
 	$sumber = $baseApiUrl.'/product/productlist?category='.$pro;
  //$sumber = 'http://myacico.net:8080/myacico-service/api/product/productlist?category='.$pro;
@@ -35,8 +38,32 @@
 <div class="product">
 </div>
 <script type="text/javascript">
+function formatNumber (num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+}
+function currencyFormat (num) {
+    return "Rp." + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+}
 
+function currencyFormatDE (num) {
+    return num
+       .toFixed(2) // always two decimal digits
+       .replace(".", ",") // replace decimal point character with ,
+       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") // use . as a separator
+}
 
+console.info(formatNumber(2665));      // 2,665
+console.info(formatNumber(102665));    // 102,665
+console.info(formatNumber(111102665)); // 111,102,665
+var myNumeral = numeral(1000);
+
+var value = myNumeral.value();
+// 1000
+
+var myNumeral2 = numeral('1,000');
+
+var value2 = myNumeral2.value();
+console.log('data1', value2);
 
 var price = 1;
 var filter = {
@@ -57,27 +84,29 @@ console.log('data nya adalah:', data);
 	data.forEach(function(p){
 	product.append(
 
-		'<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageurl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div><div class="col-sm-3"><span class="product-price"> Rp.'+p.pricelist+'</span><br><p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+'</p><p class="product-stock">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p><input type="hidden" id="jmlItem" value="1"><button class="dropbtnaddcar" id="addToCard'+p.m_product_id+'">ADD TO CART</button></div></div></div>'
+		'<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageurl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div><div class="col-sm-3"><span class="product-price"> Rp. '+(formatNumber(p.pricelist))+'</span><br><p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+'</p><p class="product-stock">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p><input type="hidden" id="jmlItem" value="1"><button class="dropbtnaddcar" id="addToCard'+p.m_product_id+'">ADD TO CART</button></div></div></div>'
+
+
 	)
-	
+
 	//ADD TO CART
-	$("#addToCard"+p.m_product_id).click(function(e){ 
+	$("#addToCard"+p.m_product_id).click(function(e){
     e.preventDefault();
 	var cookie = document.cookie.split('x-auth=');
-	var jmlItem = $('#jmlItem').val();	
-	
-	
+	var jmlItem = $('#jmlItem').val();
+
+
 	if(cookie.length > 1){
 		var token = cookie[1].split(';').shift();
 		var apiurl = api_base_url +'/order/cart/additem?token='+token;
-		
+
 		var m_product_id = p.m_product_id;
 		var qty = jmlItem;
 		var pricelist = p.pricelist;
 		var weight = p.weight;
-		
+
 		var success = function(r){
-			
+
 			$.confirm({
 				title: p.name,
 				content: '<img src="'+p.imageurl+'" style="margin-bottom:10px">'+'<p>1 Item berhasil ditambahkan<p>',
@@ -90,11 +119,11 @@ console.log('data nya adalah:', data);
 				closeIcon: true,
 				closeIconClass: 'fa fa-close'
 			});
-			
+
 			//Buat update cart, fungsi ini ada di file header.php
 			totalCart();
 		};
-		
+
 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
 			{
 				"productId":m_product_id,
@@ -103,7 +132,7 @@ console.log('data nya adalah:', data);
 				"weightPerItem":weight
 			}
 		) , url: apiurl, success: success, error: error });
-		
+
 		var error = function(er){
 		  console.log('OK:', er);
 		  $.alert({
@@ -111,18 +140,18 @@ console.log('data nya adalah:', data);
 			content: 'koneksi tidak berhasil, silahkan coba lagi!',
 		  });
 		};
-		
-		
+
+
 	}else{
 		var dataString = 'm_product_id='+ p.m_product_id+'&pricelist='+ p.pricelist+'&imageurl='+ p.imageurl+'&name='+ p.name+'&stock='+p.stock+'&jmlItem='+jmlItem+'&weight='+p.weight;
-		
+
 		$.ajax
 		({
 		type: "POST",
 		url: "<?php echo site_url('cart/addToCart'); ?>",
 		data: dataString,
 		success:function(data){
-			
+
 				if(data=='stockkosong'){
 					$.dialog({
 						title: p.name,
@@ -138,7 +167,7 @@ console.log('data nya adalah:', data);
 					});
 				}else
 				if(data!='gagal'){
-					
+
 					$(".totalCart").html(data);
 					$.confirm({
 						title: p.name,
@@ -168,10 +197,10 @@ console.log('data nya adalah:', data);
 				}
 			}
 		});
-	
+
 	}
-	
-	
+
+
 	});
 
 
@@ -201,9 +230,9 @@ console.log('data nya adalah:', data);
 		)
 		);
   });
-  
+
   product.append('</div>')
-  
+
 });
 
 

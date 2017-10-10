@@ -97,11 +97,11 @@ p {
 </style>
 
 <div class="container">
-<<<<<<< HEAD
 
-=======
+
+
 <!-- asd -->
->>>>>>> 216c3fdacedd20535d45abb7cff759d9b43e2e69
+
   <div class="document">
 
     <h1>About Us !! </h1>
@@ -152,10 +152,7 @@ p {
 <h3 style="background-color:#FFD181; border-radius: 25px; color:white; margin-left:90px;" > •&nbspHarga Terjangkau</h3>
   </center>
     <img src="https://s26.postimg.org/jr4dkik95/111.png" style="float:left;" width="500px">
-<h3 style="color:white; margin:19px; "> Visi Dan Misi</h3>
 
-      <h2 style="color:black; margin:19px;"> Visi</h2>
-      <p> Untuk menjadi pusat pelayanan bagi pelanggan dan juga menjadi pempimpin global dalam IT dengan pasar untuk teknologi tinggi </p>
 
   </div>
 </div>

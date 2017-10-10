@@ -67,7 +67,7 @@
 		<div class="row" id="collection_box">
 	</div>
 		<!-- END PRODUCTS -->
-	
+
 
 	<hr size='1'>
   <p id="tes"></p>
