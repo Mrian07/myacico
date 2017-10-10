@@ -124,4 +124,12 @@ $(document).ready(function() {
 	}
 </script>
 
+<script>
+//Buat ngecek jumlah keranjang
+$(document).ready(function() {
+	
+	totalCart();
+
+});
+</script>
 </html>
