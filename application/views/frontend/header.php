@@ -482,9 +482,17 @@ function listCartToken(){
 		btn.append(
 				'<div style="position:relative;"><div class="my-total-cart">TOTAL : <b>'+totalBelanja+'</b></div><a href="'+base_url+'cart" class="btn btn-success my-btn-chekout">My Cart & Checkout</a></div>'
 			);  
-		
-	  }, "json" );
+			
+			
+			if(totalBelanja==0){ 
+				list.html(
+					''
+				);	
+				btn.html('<center>Keranjang masih kosong</center>');  
+			}
 
+	  }, "json" );
+		
 }
 
 function dellItemCart(id,rowid,img,name){
