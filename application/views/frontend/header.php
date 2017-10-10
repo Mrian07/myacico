@@ -526,14 +526,6 @@ function dellItemCart(id,rowid,img,name){
 					}
 				});
 				
-				//untuk cart yang di basket token
-				$.ajax
-				({
-				url: "<?php echo site_url('cart/listCartToken'); ?>",
-				success:function(html){
-						$(".listCart").html(html);
-					}
-				});
 			},
 			cancel: function () {
 				//$.alert('Canceled!');
@@ -564,6 +556,16 @@ function dellItemCartToken(id,img,name,idcart){
 					url: apiurl,
 					success:function(data){
 						totalCart();
+					}
+				});
+				
+				
+				//untuk cart yang di basket token
+				$.ajax
+				({
+				url: "<?php echo site_url('cart/listCartToken'); ?>",
+				success:function(html){
+						$(".listCart").html(html);
 					}
 				});
 				
