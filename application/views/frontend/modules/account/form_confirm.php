@@ -25,37 +25,7 @@
 }
 
   </style>
-  <!-- <form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 
-<div class="container">
-
-  	<div class="row">
-
-<div class="col-sm-3">
-
-    <div class="form-group">
-      <div class="col-sm-9">
-
-        <label>Upload Image</label>
-        <div class="input-group">
-            <span class="input-group-btn">
-              <input type="hidden" placeholder="placeholder" id="transid" class="input-xlarge" value="<?php echo $konf; ?>" name="transid">
-                <span class="btn btn-default btn-file">
-
-                    Browse…<input class="input-file" id="file" type="file" name="file">
-                </span>
-            </span>
-            <input type="text" class="form-control" readonly>
-        </div>
-        <img id='img-upload'/>
-
-                       <button class="btn btn-success">Upload</button>
-    </div>
-        </div>
-      </div>
-  </div>
-  </div>
-</form> -->
 <div class='my-bg-title'>
 	<div class="container">
 		<div class="row">
@@ -69,30 +39,40 @@
 </div>
 <div class="container">
 
-
+	
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-      <form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
-            <label>Upload Image</label>
-              <div class="input-group">
-                <form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
-                    <span class="input-group-btn">
-                        <input type="hidden" placeholder="placeholder" id="transid" class="input-xlarge" value="<?php echo $konf; ?>" name="transid">
-                          <span class="btn btn-default btn-file">
-                              Browse…<input class="input-file" id="file" type="file" name="file">
-                            </span>
-                    </span>
-                    <input type="text" class="form-control" readonly>
-                </div>
-                <img id='img-upload'/>
+			<p>Silakan upload bukti transfer pembayaran Anda pada form dibawah ini.</p>
+			<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					 <label>Upload Image</label>
+				</div>
+				<div class="panel-body">
+				
+					<div class="input-group">
+						<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
+						<span class="input-group-btn">
+						<input type="hidden" placeholder="placeholder" id="transid" class="input-xlarge" value="<?php echo $konf; ?>" name="transid">
+						<span class="btn btn-default btn-file">
+						Browse…<input class="input-file" id="file" type="file" name="file">
+						</span>
+						</span>
+						<input type="text" class="form-control" readonly>
+					</div><br>
+					
+					<img id='img-upload'/>
 
                                <button class="btn btn-success">Upload</button>
-                  <div class="form-group">
+					  <div class="form-group">
 
-                </div>
+					</div>
+				</div>	
+			</div>	
 		</div>
 	</div>
 </div>
