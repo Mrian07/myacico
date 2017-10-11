@@ -9,13 +9,13 @@ $(document).ready(function() {
 	
 	listCartItem.html('');
 	
-	listCartItem.html(
-				'<table id="cart" class="table table-hover table-condensed"><thead><tr><th style="width:40%">Product</th><th style="width:10%">Price</th><th style="width:8%">Quantity</th><th style="width:22%" class="text-center">Subtotal</th><th style="width:20%"></th></tr></thead><tbody>'
-			);
+	
 		
 	$.get( api_base_url+"/order/cart/detail?token="+token, 
 	function(r){
-		//alert(token); die();
+		listCartItem.html(
+				'<table id="cart" class="table table-hover table-condensed"><thead><tr><th style="width:40%">Product</th><th style="width:10%">Price</th><th style="width:8%">Quantity</th><th style="width:22%" class="text-center">Subtotal</th><th style="width:20%"></th></tr></thead><tbody>'
+			);
 		
 		r.forEach(function(p){
 			qty += p.qty;
@@ -25,7 +25,7 @@ $(document).ready(function() {
 		});
 	
 		listCartItem.append(
-				'</tbody><tfoot><tr><td colspan="3" class="hidden-xs"><b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman</td><td class="hidden-xs text-center"><strong>Total Rp.'+subtotal+'</strong></td><td></td></tr></tfoot></table>'
+				'</tbody><tfoot><tr><td colspan="3" class="hidden-xs"><b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman</td><td class="hidden-xs text-center" width="200"><strong>Total Rp.'+subtotal+'</strong></td><td></td></tr></tfoot></table>'
 			);  
 			
 
