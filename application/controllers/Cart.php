@@ -104,10 +104,6 @@ class Cart extends Web {
 		
 		$total_qty = $this->cart->total_items();
 		
-		/*foreach ($this->cart->contents() as $items): 	
-			$qty += $items['qty'];
-		endforeach; */
-		
 		echo $total_qty;
 	}
 	
