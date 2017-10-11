@@ -167,27 +167,8 @@ a{
 								<div class="dropdown-basket-content">
 
 									<?php
-									if($totalItems)
+									if($totalItems==0)
 									{ ?>
-									<!--
-									<div class='my-cart-scroll'>
-
-									<?php// foreach ($this->cart->contents() as $items): ?>
-									<div class="row my-cart">
-									  <div class="col-sm-3"><img src="<?php //echo $items['image'];?>" style='margin-bottom:10px'></div>
-									  <div class="col-sm-7"><?php// echo $items['name'];?><br>Rp.<?php // echo $items['price'];?> (<?php //echo $items['qty'];?>)Items<br><?php //echo $items['rowid'];?></div>
-									  <div class="col-sm-2">
-											<?php// echo anchor('cart', '<i class="fa fa-trash" aria-hidden="true"></i>');?>
-										</div>
-									</div>
-									<?php// endforeach; ?>
-
-									</div>
-									<div>
-										<div class='my-total-cart'>TOTAL : <b><?php// echo $this->cart->format_number($this->cart->total()); ?></b></div>
-										<?php // echo anchor('cart', 'My Cart & Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
-									</div>-->
-									<?php }else{ ?>
 									<div class='empty-item'><center>Keranjang masih kosong</center></div>
 									<?php } ?>
 									<div class='list-item'></div>
