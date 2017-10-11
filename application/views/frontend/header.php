@@ -131,7 +131,7 @@ a{
 
 
 							<?php if(isset($user)){ ?>
-							
+
 							<div class="dropdown-account">
 							  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account<span class="caret"></span></button>
 							  <div class="dropdown-account-content">
@@ -165,7 +165,7 @@ a{
 								?>
 								<button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (<span class='totalCart'><?php echo $totalItems; ?></span>) <span class="caret"></span></button>
 								<div class="dropdown-basket-content">
-					
+
 									<?php
 									if($totalItems)
 									{ ?>
@@ -313,7 +313,7 @@ a{
 //Buat ngecek jumlah keranjang
 /*
 $(document).ready(function() {
-	
+
 	totalCart();
 
 });*/
@@ -322,12 +322,12 @@ function totalCart(){
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var qty = 0;
 	var qtyTotal = $('.totalCart');
-	
+
 	if(token){
-		
-		$.get( api_base_url+"/order/cart/detail?token="+token, 
+
+		$.get( api_base_url+"/order/cart/detail?token="+token,
 		function(r){
-			
+
 			r.forEach(function(p){
 				qty += p.qty;
 			});
@@ -433,17 +433,17 @@ $("#logout").click(function(e){
 <script type="text/javascript">
 
 $(".dropbtn-basket").mouseover(function(){
-	
+
 	var cookie = document.cookie.split('x-auth=');
 	if(cookie.length > 1){
-		
+
 			$('.empty-item').hide();
 			listCartToken();
 		  //$("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
-		
-			
+
+
 	}else{
-		
+
 		$.ajax
 		({
 			url: "<?php echo site_url('cart/loadCart'); ?>",
@@ -463,10 +463,10 @@ function listCartToken(){
 	var totalBelanja = 0;
 	list.html(
 				''
-			);	
-	$.get( api_base_url+"/order/cart/detail?token="+token, 
+			);
+	$.get( api_base_url+"/order/cart/detail?token="+token,
 	function(r){
-		
+
 		r.forEach(function(p){
 			qty += p.qty;
 			totalBelanja+=p.price;
@@ -476,23 +476,23 @@ function listCartToken(){
 			);
 		});
 		//alert(qty);
-		
 
-		btn.html('');  
+
+		btn.html('');
 		btn.append(
 				'<div style="position:relative;"><div class="my-total-cart">TOTAL : <b>'+totalBelanja+'</b></div><a href="'+base_url+'cart" class="btn btn-success my-btn-chekout">My Cart & Checkout</a></div>'
-			);  
-			
-			
-			if(totalBelanja==0){ 
+			);
+
+
+			if(totalBelanja==0){
 				list.html(
 					''
-				);	
-				btn.html('<center>Keranjang masih kosong</center>');  
+				);
+				btn.html('<center>Keranjang masih kosong</center>');
 			}
 
 	  }, "json" );
-		
+
 }
 
 function dellItemCart(id,rowid,img,name){
@@ -516,16 +516,16 @@ function dellItemCart(id,rowid,img,name){
 						$(".totalCart").html(data);
 					}
 				});
-				
+
 				//untuk cart yang di basket
 				$.ajax
-				({	
+				({
 					url: "<?php echo site_url('cart/listCart'); ?>",
 					success:function(data){
 						$(".listCart").html(data);
 					}
 				});
-				
+
 			},
 			cancel: function () {
 				//$.alert('Canceled!');
@@ -536,11 +536,11 @@ function dellItemCart(id,rowid,img,name){
 }
 
 function dellItemCartToken(id,img,name,idcart){
-	
+
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var id = id;
 	var apiurl = api_base_url + '/order/cart/deleteitem?token='+token+'&idcartitem='+idcart;
-	
+
 	$.confirm({
 		title: name,
 		content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
@@ -558,8 +558,8 @@ function dellItemCartToken(id,img,name,idcart){
 						totalCart();
 					}
 				});
-				
-				
+
+
 				//untuk cart yang di basket token
 				$.ajax
 				({
@@ -568,7 +568,7 @@ function dellItemCartToken(id,img,name,idcart){
 						$(".listCart").html(html);
 					}
 				});
-				
+
 			},
 			cancel: function () {
 				//$.alert('Canceled!');
@@ -576,9 +576,9 @@ function dellItemCartToken(id,img,name,idcart){
 		}
 
 	});
-	
 
-	/*var success = function(r){ 
+
+	/*var success = function(r){
 	$('#spinner_img').hide();
 	$('#submit_btn').val('Kirim').removeClass('disabled');
 		 $.alert({
@@ -594,6 +594,7 @@ function dellItemCartToken(id,img,name,idcart){
 
 var base_url = '<?php echo base_url();?>';
 var base_path = base_url.split(location.host).pop();
+// var login_base_url_api = 'acc.myacico.co.id/myacico-service';
 var api_base_url2 = 'http://api.myacico.net:8080/myacico-service/';
 var api_base_url = 'http://myacico.net:8080/myacico-service/api';
 </script>
