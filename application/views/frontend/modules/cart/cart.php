@@ -75,7 +75,10 @@
       <span class="progress-completed"> 35%</span>
     </div-->
 	<div class="col-md-9 listCart">
-
+	<div class="alert alert-warning" style='border-radius:0px; border:0px; border-left:5px solid #dbd19e; '>
+	<center>Keranjang belanja masih kosong tidak ada produk yang dipesan</center>
+	</div>
+<!---
 		<table id="cart" class="table table-hover table-condensed">
 			<thead>
 				<tr>
@@ -93,6 +96,7 @@
 			<tfoot>
 				<tr>
 					<!--<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Update</a></td>-->
+					<!--
 					<td colspan="3" class="hidden-xs">
 						<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman
 					</td>
@@ -100,7 +104,7 @@
 					<td></td>
 				</tr>
 			</tfoot>
-		</table>
+		</table>-->
 	</div>
 	<div class="col-md-3">
 		<div class="panel panel-default">
@@ -122,12 +126,38 @@
 <script>
 $(document).ready(function() {
 	
-	$.ajax
-	({
-	url: "<?php echo site_url('cart/listCart'); ?>",
-	success:function(html){
-			$(".listCart").html(html);
-		}
-	});
+	var cookie = document.cookie.split('x-auth=');
+	if(cookie.length > 1){
+		
+		$.ajax
+		({
+		url: "<?php echo site_url('cart/listCartToken'); ?>",
+		success:function(html){
+				$(".listCart").html(html);
+			}
+		});
+		
+
+	}else{
+		
+		$.ajax
+		({
+		url: "<?php echo site_url('cart/listCart'); ?>",
+		success:function(html){
+				$(".listCart").html(html);
+			}
+		});
+	
+	}
+	
+	
+	
+			
+
+
+	
+	
+	
+	
 });
 </script>

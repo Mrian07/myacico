@@ -131,10 +131,9 @@ a{
 
 
 							<?php if(isset($user)){ ?>
-
-
+							
 							<div class="dropdown-account">
-							  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
+							  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account<span class="caret"></span></button>
 							  <div class="dropdown-account-content">
 								<?php echo anchor('account', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
 								<?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('id'=>'logout'));?>
@@ -416,9 +415,7 @@ $("#logout").click(function(e){
 		content: 'Anda yakin akan logout?',
 		buttons: {
 			confirm: function () {
-			//	document.cookie='x-auth=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-				document.cookie = 'x-auth=' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
-				
+				document.cookie='x-auth=; path='+base_path+';expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 				location.href='<?php echo base_url("customer/signIn");?>';
 			},
 			cancel: function () {
@@ -475,7 +472,7 @@ function listCartToken(){
 			totalBelanja+=p.price;
 			//alert(qty);
 			list.append(
-				'<div class="row my-cart" style="position:relative;"><div class="col-sm-3"><img src="'+p.imageurl+'" border="0" height="50" width="50"></div><div class="col-sm-7">'+p.name+'<br>Rp.'+p.price+' ('+p.qty+')Items<br></div><div class="col-sm-2"><a href="#" onClick="dellItemCartToken('+p.productId+',\''+p.imageurl+'\',\''+p.name+'\')"><i class="fa fa-trash" aria-hidden="true"></i></a></div></div>'
+				'<div class="row my-cart" style="position:relative;"><div class="col-sm-3"><img src="'+p.imageurl+'" border="0" height="50" width="50"></div><div class="col-sm-7">'+p.name+'<br>Rp.'+p.price+' ('+p.qty+')Items<br></div><div class="col-sm-2"><a href="#" onClick="dellItemCartToken('+p.productId+',\''+p.imageurl+'\',\''+p.name+'\',\''+p.itemCartId+'\')"><i class="fa fa-trash" aria-hidden="true"></i></a></div></div>'
 			);
 		});
 		//alert(qty);
@@ -485,9 +482,17 @@ function listCartToken(){
 		btn.append(
 				'<div style="position:relative;"><div class="my-total-cart">TOTAL : <b>'+totalBelanja+'</b></div><a href="'+base_url+'cart" class="btn btn-success my-btn-chekout">My Cart & Checkout</a></div>'
 			);  
-		
-	  }, "json" );
+			
+			
+			if(totalBelanja==0){ 
+				list.html(
+					''
+				);	
+				btn.html('<center>Keranjang masih kosong</center>');  
+			}
 
+	  }, "json" );
+		
 }
 
 function dellItemCart(id,rowid,img,name){
@@ -520,6 +525,7 @@ function dellItemCart(id,rowid,img,name){
 						$(".listCart").html(data);
 					}
 				});
+				
 			},
 			cancel: function () {
 				//$.alert('Canceled!');
@@ -529,11 +535,11 @@ function dellItemCart(id,rowid,img,name){
 	});
 }
 
-function dellItemCartToken(id,img,name){
+function dellItemCartToken(id,img,name,idcart){
 	
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var id = id;
-	var apiurl = api_base_url + '/order/cart/deleteitem?token='+token+'&idcartitem='+id;
+	var apiurl = api_base_url + '/order/cart/deleteitem?token='+token+'&idcartitem='+idcart;
 	
 	$.confirm({
 		title: name,
@@ -550,6 +556,16 @@ function dellItemCartToken(id,img,name){
 					url: apiurl,
 					success:function(data){
 						totalCart();
+					}
+				});
+				
+				
+				//untuk cart yang di basket token
+				$.ajax
+				({
+				url: "<?php echo site_url('cart/listCartToken'); ?>",
+				success:function(html){
+						$(".listCart").html(html);
 					}
 				});
 				

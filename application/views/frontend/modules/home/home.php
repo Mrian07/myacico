@@ -570,51 +570,51 @@ ul.list-group:after {
 
             <div class="item active">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="https://s12.postimg.org/655583bx9/item_1_180x200.png" class="img-responsive center-block"></a>
-                <h4 class="text-center">MAYORAL SUKNJA</h4>
-                <h5 class="text-center">4000,00 RSD</h5>
+                <a href="#"><img src="https://s1.postimg.org/37hzhxv1y7/asus1.png" class="img-responsive center-block"></a>
+                <h4 class="text-center">Asus ROG</h4>
+                <h5 class="text-center">Rp. 15.000.000</h5>
               </div>
             </div>
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="https://s12.postimg.org/41uq0fc4d/item_2_180x200.png" class="img-responsive center-block"></a>
-                <h4 class="text-center">MAYORAL KOŠULJA</h4>
-                <h5 class="text-center">4000,00 RSD</h5>
+                <a href="#"><img src="https://s1.postimg.org/37uqw487f3/123f.png" class="img-responsive center-block"></a>
+                <h4 class="text-center">Asus Laptop</h4>
+                <h5 class="text-center">Rp. 8.000.000</h5>
               </div>
             </div>
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="https://s12.postimg.org/dawwajl0d/item_3_180x200.png" class="img-responsive center-block"></a>
+                <a href="#"><img src="https://s1.postimg.org/9fiwag36gf/asus.png" class="img-responsive center-block"></a>
                 <span class="badge">10%</span>
-                <h4 class="text-center">PANTALONE TERI 2</h4>
-                <h5 class="text-center">4000,00 RSD</h5>
-                <h6 class="text-center">5000,00 RSD</h6>
+                <h4 class="text-center">Aneka Laptop Asus Discount Up To 10%</h4>
+                <h5 class="text-center">Rp. 4000.000</h5>
+                <h6 class="text-center">- Rp. 8000.000</h6>
               </div>
             </div>
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="https://s12.postimg.org/5w7ki5z4t/item_4_180x200.png" class="img-responsive center-block"></a>
-                <h4 class="text-center">CVETNA HALJINA</h4>
-                <h5 class="text-center">4000,00 RSD</h5>
+                <a href="#"><img src="https://s1.postimg.org/419wkd0egv/lenovo1.png" class="img-responsive center-block"></a>
+                <h4 class="text-center">Lenovo Gaming Laptop </h4>
+                <h5 class="text-center">Rp. 15.000.000</h5>
               </div>
             </div>
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="https://s12.postimg.org/e2zk9qp7h/item_5_180x200.png" class="img-responsive center-block"></a>
-                <h4 class="text-center">MAJICA FOTO</h4>
-                <h5 class="text-center">4000,00 RSD</h5>
+                <a href="#"><img src="https://s1.postimg.org/2khsulh6of/msi.png" class="img-responsive center-block"></a>
+                <h4 class="text-center">MSI Laptop gaming</h4>
+                  <h5 class="text-center">Rp. 15.000.000</h5>
               </div>
             </div>
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="https://s12.postimg.org/46yha3jfh/item_6_180x200.png" class="img-responsive center-block"></a>
-                <h4 class="text-center">MAJICA MAYORAL</h4>
-                <h5 class="text-center">4000,00 RSD</h5>
+                <a href="#"><img src="https://s1.postimg.org/37uqw487f3/123f.png" class="img-responsive center-block"></a>
+                <h4 class="text-center">ASUS</h4>
+                  <h5 class="text-center">Rp. 15.000.000</h5>
               </div>
             </div>
 
@@ -644,8 +644,8 @@ ul.list-group:after {
     	<!-- BEGIN PRODUCTS -->
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
-      			<img src="http://placehold.it/350x280" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<img src="https://s1.postimg.org/3wpady8fdr/asus_Rog.png" alt="...">
+      			<h4 class="text-danger">Asus ROG</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -665,7 +665,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -673,8 +673,8 @@ ul.list-group:after {
   		</div>
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
-      			<img src="http://placehold.it/350x280" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
+      			<h4 class="text-danger">Asus ROG</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -694,7 +694,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -702,8 +702,8 @@ ul.list-group:after {
   		</div>
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
-      			<img src="http://placehold.it/350x280" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<img src="https://s1.postimg.org/32yruq14an/auah.png" alt="...">
+      			<h4 class="text-danger">MSI Gaming</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -723,7 +723,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -731,8 +731,8 @@ ul.list-group:after {
   		</div>
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
-      			<img src="http://placehold.it/350x280" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<img src="https://s1.postimg.org/4gy2cxnecf/msiggaming.png" alt="...">
+      			<h4 class="text-danger">Lenovo Gaming</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -752,7 +752,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -760,8 +760,8 @@ ul.list-group:after {
   		</div>
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
-      			<img src="http://placehold.it/350x280" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<img src="https://s1.postimg.org/55rbwyghz3/lenovo.png" alt="...">
+      			<h4 class="text-danger">Lenovo y520</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -781,7 +781,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -789,8 +789,8 @@ ul.list-group:after {
   		</div>
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
-      			<img src="http://placehold.it/350x280" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<img src="https://s1.postimg.org/4rxnk90cen/msi.png" alt="...">
+      			<h4 class="text-danger">MSI GS43VR</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -810,7 +810,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -818,8 +818,8 @@ ul.list-group:after {
   		</div>
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
-      			<img src="http://placehold.it/350x280" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
+      			<h4 class="text-danger">Asus Gaming</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -839,7 +839,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -847,8 +847,8 @@ ul.list-group:after {
   		</div>
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
-      			<img src="http://placehold.it/350x280" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
+      			<h4 class="text-danger">Asus Gaming Laptop</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -868,7 +868,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -924,7 +924,7 @@ ul.list-group:after {
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SH-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SK-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/BG-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/lg_logo_white_250x.JPG');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/lg_logo_white_250x.jpg');?>"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/EM-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/NN-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/RI-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
