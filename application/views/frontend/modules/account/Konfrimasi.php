@@ -101,7 +101,7 @@
 $(document).ready( function() {
   $.ajaxSetup({
     error: function(){
-      alert('test');
+      alert('Image Berhasil Di Upload');
     },
     timeout: 10000/*,
     contentType: "application/json; charset=UTF-8"*/

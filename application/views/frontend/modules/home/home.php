@@ -665,7 +665,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -674,7 +674,7 @@ ul.list-group:after {
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
       			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<h4 class="text-danger">Asus ROG</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -694,7 +694,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -703,7 +703,7 @@ ul.list-group:after {
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
       			<img src="https://s1.postimg.org/32yruq14an/auah.png" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<h4 class="text-danger">MSI Gaming</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -723,7 +723,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -732,7 +732,7 @@ ul.list-group:after {
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
       			<img src="https://s1.postimg.org/4gy2cxnecf/msiggaming.png" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<h4 class="text-danger">Lenovo Gaming</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -752,7 +752,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -761,7 +761,7 @@ ul.list-group:after {
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
       			<img src="https://s1.postimg.org/55rbwyghz3/lenovo.png" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<h4 class="text-danger">Lenovo y520</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -781,7 +781,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -790,7 +790,7 @@ ul.list-group:after {
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
       			<img src="https://s1.postimg.org/4rxnk90cen/msi.png" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<h4 class="text-danger">MSI GS43VR</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -810,7 +810,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -819,7 +819,7 @@ ul.list-group:after {
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
       			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<h4 class="text-danger">Asus Gaming</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -839,7 +839,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
@@ -848,7 +848,7 @@ ul.list-group:after {
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
       			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
-      			<h4 class="text-danger">Toyota Fortuner</h4>
+      			<h4 class="text-danger">Asus Gaming Laptop</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -868,7 +868,7 @@ ul.list-group:after {
       					<button type="button" class="btn btn-link">Add to Wishlist</button>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > BID NOW</button>
+      					<button class="btn btn-danger right" > Buy Now</button>
       				</div>
 
       			</div>
