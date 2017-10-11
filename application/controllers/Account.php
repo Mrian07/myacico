@@ -112,19 +112,6 @@ class Account extends Web_private {
 		$this->load->view('frontend/footer',$this->data);
 	}
 
-	public function konf()
-		{
-		$this->data['konf'] = $this->uri->segment(3);
-		$this->data['active_bukuAlamat'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Buku Alamat";
-		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/Konfrimasi.php',$this->data);
-		$this->load->view('frontend/footer',$this->data);
-	}
-
-
-
 	public function editBukuAlamat()
     {
 		$this->data['id'] = $this->uri->segment(3);
@@ -153,6 +140,17 @@ class Account extends Web_private {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	
+	public function confirm()
+		{
+		$this->data['konf'] = $this->uri->segment(3);
+		$this->data['active_riwayatStatusPesanan'] = "class='active'";
+		$this->data['title_web'] = "Myacico.com - Buku Alamat";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/form_confirm.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 

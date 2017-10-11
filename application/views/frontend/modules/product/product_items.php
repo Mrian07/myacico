@@ -82,9 +82,17 @@ console.log('data nya adalah:', data);
 
 	product.append('<div class="row">')
 	data.forEach(function(p){
+		if(p.stock > 1 )
+		          {
+		              var disable = 'disabled';
+		          }
 	product.append(
 
-		'<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageurl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div><div class="col-sm-3"><span class="product-price"> Rp. '+(formatNumber(p.pricelist))+'</span><br><p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+'</p><p class="product-stock">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p><input type="hidden" id="jmlItem" value="1"><button class="dropbtnaddcar" id="addToCard'+p.m_product_id+'">ADD TO CART</button><button class="dropbtnaddcar" id="addToCard'+p.m_product_id+'">ADD TO CART</button></div></div></div>'
+<<<<<<< HEAD
+		'<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageurl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div><div class="col-sm-3"><span class="product-price"> Rp. '+(formatNumber(p.pricelist))+'</span><br><p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+'</p><p class="product-stock">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p><input type="hidden" id="jmlItem" value="1"><button class="dropbtnaddcar" id="addToCard'+p.m_product_id+'">ADD TO CART</button></div></div></div>'
+=======
+		'<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageurl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div><div class="col-sm-3"><span class="product-price"> Rp. '+(formatNumber(p.pricelist))+'</span><br><p class="product-stock">Stock&nbspSisa&nbsp'+p.stock+'</p><p class="product-stock">Product&nbspAkan&nbspdikirim&nbsphari&nbspini&nbsp<br/>atau&nbspbesok</p><input type="hidden" id="jmlItem" value="1"><button class="dropbtnaddcar" id="addToCard'+p.m_product_id+'">ADD TO CART</button><td><a href="'+base_url+'product/wishlist/'+p.m_product_id+'" class="btn btn-link" '+disable+'>Add To Wishlist</a></td></div></div></div>'
+>>>>>>> 7f1882c81f2cfff924f7e35e06741888cc265147
 
 
 	)
