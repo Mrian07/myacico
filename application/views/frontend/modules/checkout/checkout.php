@@ -231,6 +231,12 @@
 	var baseApiUrl = '<?php// echo $baseApiUrl; ?>';
         var namaBank = null;
         var pMethod = null;
+        var billId = null;
+        var idDistriship = null;
+        var qty = 0;
+	var totalBelanja = 0;
+	var subtotal = 0;
+        var fee = 0;
         //var idDistrict = null;
 	$(document).ready(function()
 	{
@@ -244,18 +250,18 @@
 
 			var rumah = $('.rumah');
 			var idBill =$("#idBill").val(data[0]['id']);
-                        
+                        var idBill = data[0]['id'];
 			if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
 			if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
 			
 			rumah.append('<p>'+data[0]['address_name']+', '+data[0]['address1']+' '+data[0]['address2']+' '+data[0]['address3']+' '+data[0]['address3']+' '+data[0]['address4']+' '+data[0]['cityname']+' '+data[0]['postal']+'</p>')
-			
+			idBilling(idBill);
 		});
 		
 		//DATA SHIPPING
 		var id = <?php echo $this->session->userdata('shipping_address_id'); ?>;
                 var idAddShip = $("#idAddShip").val();
-                //console.log('test',idAddShip);
+//                console.log('test',idAddShip);
 		$.get(api_base_url+'/aduser/getaddress/'+idAddShip+'?token='+token,
 		function(data){
 		//console.log('data shipping:', idAddShip);
@@ -263,14 +269,12 @@
 
 			var shoping = $('#shoping');
 			//var id = $("#id").val();
-                       var idDis = data['district_id'];
-                       
+                       var idDis = data.district_id;
+                       idDistriship = idDis;
+                       shipingFee(idDistriship);
+//                       console.log('test',idDistriship);
                      var idDistrict=  $('#idDistri').val(idDis);
-//                     console.log('Rate nya adalah:', idDis);
-//                      alert('test33',idDis);
-                      //var idDistrict = parseInt(idDistri.val());
-//                      $('#idDistri').val(idDistrict);
-                     
+
 			if(data.length == 0) return shoping.append('<p>Data tidak ditemukan</p>');
 
 //			data.forEach(function(p){
@@ -278,38 +282,42 @@
 				 $('#shoping').append('<p>'+data.address_name+',' +data.address1+', '+data.address2+' '+data.address3+' '+data.address3+' '+data.address4+' '+data.cityname+' '+data.postal+'</p>')
 //			});
 		});
-              
+             $.get( api_base_url+"/order/cart/detail?token="+token, 
+	function(r){
 		
-	$("form").submit(function(e){
-           
-    e.preventDefault();
-     $.get(api_base_url+'/freight/rates/jne?to_district_id='+idDistrict,
-	  function(shipingFee){
-             var fee = shipingFee.freightAmt;
-             alert(fee);
-		console.log('Rate nya adalah:', shipingFee);
-//		 console.log('test',token);
-
-			
+		r.forEach(function(p){
+			qty += p.qty;
+			totalBelanja+=p.price;
+			subtotal=p.qty*p.price;
 		});
+	//console.log('total nya adalah:', subtotal);
+	  });
+	 
+	$("form").submit(function(e){
+//           
             var data = {};
-    
+    e.preventDefault();
     //var data = $(this).serialize(); freightAmt
    // var token = document.cookie.split('x-auth=')[1].split(';').shift();
-    var apiurl = api_base_url + '/order/checkout?token='+token;
-//console.log('OK:', apiurl);
    
-    data.grandtotal = "29999000";
+               
+    var apiurl = api_base_url + '/order/checkout?token='+token;
+//var a =shipingFee();
+var total = parseInt(subtotal + fee);
+//console.log('shipping:', fee);
+//console.log('sub nya adalah:', subtotal);
+//console.log('total nya adalah:', total);
+    data.grandtotal = total;
     data.paymentMethod = pMethod;
     data.code = namaBank;
-    data.billing_address_id = idBill;
+    data.billing_address_id = billId;
     data.shipping_address_id = idAddShip;
     //data.courier_id = address_name;
     data.isoncepickup = "Y";
-    console.log('OK:', data);
+//    console.log('OK:', data);
 //   code
-//courier
-//courier_amount
+    data.courier ="JNE";
+    data.courier_amount= fee;
     
 
     // success handling
@@ -327,10 +335,10 @@ var error = function(er){
   $('#submit_btn').val('Kirim').removeClass('disabled');
          $.alert({
      title: 'Alert!',
-     content: 'Alamat Baru Berhasil di tambahkan',
+     content: 'Transaksi Baru Berhasil',
     });
 //      alert(r.message);
-      console.log('OK:', r.status);
+//      console.log('OK:', r.status);
 window.location.replace(base_url+"/checkout/success");
 
     };
@@ -359,8 +367,22 @@ window.location.replace(base_url+"/checkout/success");
              namaBank = $('input[name="bank"]:checked').val();
             //alert(namaBank);
         }
-        function idDistri(idDistrict){
-             //namaBank = $('input[name="bank"]:checked').val();
-            alert('test',idDistrict.val());
+       
+        function idBilling(idBill){
+            billId =idBill.toString();
+            //alert('test',billId.val());
+            return  billId;
         }
+        function shipingFee(idDistriship)
+        {
+             
+            $.get(api_base_url+'/freight/rates/jne?to_district_id='+idDistriship,
+	  function(shipingFee){
+           fee = shipingFee.freightAmt;
+             //alert('shipping Fee:',shipingFee);
+		
+//		
+		});	
+        }
+       
 </script>
