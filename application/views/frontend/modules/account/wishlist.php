@@ -88,27 +88,7 @@ div.desc {
 
 		<br/>
 		<br/>
-		<br/><br/><br/>
-
-    <!-- Plans -->
-    <section id="plans">
-        <div class="container">
-            <div class="row">
-
-                <!-- item -->
-
-                <!-- /item -->
-
-                <!-- item -->
-
-                <!-- /item -->
-
-                <!-- item -->
-
-                <!-- /item -->
-							</div>
-    </section>
-    <!-- /Plans -->
+		<br/><br/>
 		<table class="table">
 			<thead>
 
@@ -184,15 +164,8 @@ console.log('a',token);
 
 		 data.forEach(function(p){
 			 rumah.append(
-				 '      <div class="col-md-4 text-center">
-									 <div class="panel panel-danger panel-pricing">
-											 <div class="panel-heading">
-													 <i class="fa fa-desktop"></i>
-													 <h3>Plan 1</h3>
-											 </div>
-											 <div class="panel-body text-center">
-													 <p><strong>$100 / Month</strong></p></div><ul class="list-group text-center"><li class="list-group-item"><i class="fa fa-check"></i> Personal use</li><li class="list-group-item"><i class="fa fa-check"></i> Unlimited projects</li><li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li></ul><div class="panel-footer"><a class="btn btn-lg btn-block btn-danger" href="#">BUY NOW!</a></div></div></div>'
-				 '	<div class="gallery"><img src="'+p.imageUrl+'" alt="..."width="300" height="100"><center><a href="'+base_url+'product/detail/'+p.productID+'">'+p.name+'</a></center><div class="desc"><a href="'+api_base_url+'/product/deletewishlist?token='+token+'&item_id='+p.productID+'">hapus</a></div></div>'
+				 '<div class="col-md-4 text-center"><div class="panel panel-danger panel-pricing"><div class="panel-heading"><img src="'+p.imageUrl+'" alt="..."width="100" height="100"><h3><a href="'+base_url+'product/detail/'+p.productID+'">'+p.name+'</a><br/><br/><a href="'+api_base_url+'/product/deletewishlist?token='+token+'&item_id='+p.productID+'">hapus</a></h3></div></div></div>'
+				 //'<div class="gallery"><img src="'+p.imageUrl+'" alt="..."width="300" height="100"><center><a href="'+base_url+'product/detail/'+p.productID+'">'+p.name+'</a></center><div class="desc"><a href="'+api_base_url+'/product/deletewishlist?token='+token+'&item_id='+p.productID+'">hapus</a></div></div>'
 		// '<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageUrl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div></div>'
 	)
 
