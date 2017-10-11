@@ -87,11 +87,12 @@ var success = function(r){
     title: 'Alert!',
     content: r.message
   });
-  
+  var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
   <?php
 	//Memasukan produk yang dibeli sebelum login ke api
+  
 	foreach ($this->cart->contents() as $items):?>
-	var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
+	
 		
 		var m_product_id = <?php echo $items['id']; ?>;
 		var qty = <?php echo $items['qty']; ?>;
@@ -109,10 +110,10 @@ var success = function(r){
 				"price":pricelist,
 				"weightPerItem":weight
 			}
-		) , url: apiurl, success: success, error: error });
+		) , url: apiurl, success: success });
 	<?php	
 	endforeach;
-	$this->cart->destroy();
+//	$this->cart->destroy();
 	?>
   
   document.cookie='x-auth='+r.token+'; path='+base_path;
