@@ -63,9 +63,9 @@
   							<p><?php echo anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default'));?></p>
 							</div>
 
-                                                        
                                         <input type="hidden" id="idAddShip" name="idAddShip" value="<?php echo $this->session->userdata('shipping_address_id'); ?>" />
-
+                                        <input type="hidden" id = "idBill" name="idBill" />
+                                         <input type="hidden" id = "idDistri" name="idDistri" />
 							<p><strong>DATA PENERIMA</strong></p>
                                                         <div id="shoping"></div>
                                                        <?php if($this->session->userdata('shipping_address_id') == NULL)
@@ -167,7 +167,7 @@
 				  </div>
 
 				  <!-- TRANSFER BANK -->
-				  <div id='transfer_bank' style='display:none'>
+				  <div id='transfer_bank' onclick='bank()' style='display:none'>
 					Mohon dilakukan pembayaran ke :
 					<table class="table">
 						<tr>
@@ -229,19 +229,22 @@
 
 <script type="text/javascript">
 	var baseApiUrl = '<?php// echo $baseApiUrl; ?>';
-
+        var namaBank = null;
+        var pMethod = null;
+        //var idDistrict = null;
 	$(document).ready(function()
 	{
 		var token = document.cookie.split('x-auth=')[1].split(';').shift();
-		var filter =0;console.log('test',token);
+		var filter =0;
+          
 	  $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
 	  function(data){
-//		console.log('data nya adalah:', data);
+		//console.log('data nya adalah:', data[0]);
 //		 console.log('test',token);
 
 			var rumah = $('.rumah');
-			var id = $("#id").val();
-
+			var idBill =$("#idBill").val(data[0]['id']);
+                        
 			if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
 			if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
 			
@@ -256,12 +259,18 @@
 		$.get(api_base_url+'/aduser/getaddress/'+idAddShip+'?token='+token,
 		function(data){
 		//console.log('data shipping:', idAddShip);
-		 //console.log('samuel',data);
+		 //console.log('samuel',data['district_id']);
 
 			var shoping = $('#shoping');
-			var id = $("#id").val();
-
-
+			//var id = $("#id").val();
+                       var idDis = data['district_id'];
+                       
+                     var idDistrict=  $('#idDistri').val(idDis);
+//                     console.log('Rate nya adalah:', idDis);
+//                      alert('test33',idDis);
+                      //var idDistrict = parseInt(idDistri.val());
+//                      $('#idDistri').val(idDistrict);
+                     
 			if(data.length == 0) return shoping.append('<p>Data tidak ditemukan</p>');
 
 //			data.forEach(function(p){
@@ -269,22 +278,39 @@
 				 $('#shoping').append('<p>'+data.address_name+',' +data.address1+', '+data.address2+' '+data.address3+' '+data.address3+' '+data.address4+' '+data.cityname+' '+data.postal+'</p>')
 //			});
 		});
+              
 		
 	$("form").submit(function(e){
-            var data = {};
+           
     e.preventDefault();
-    //var data = $(this).serialize();
+     $.get(api_base_url+'/freight/rates/jne?to_district_id='+idDistrict,
+	  function(shipingFee){
+             var fee = shipingFee.freightAmt;
+             alert(fee);
+		console.log('Rate nya adalah:', shipingFee);
+//		 console.log('test',token);
+
+			
+		});
+            var data = {};
+    
+    //var data = $(this).serialize(); freightAmt
    // var token = document.cookie.split('x-auth=')[1].split(';').shift();
     var apiurl = api_base_url + '/order/checkout?token='+token;
-console.log('OK:', apiurl);
+//console.log('OK:', apiurl);
+   
     data.grandtotal = "29999000";
-    data.paymentMethod = "Bank transfer";
-    data.billing_address_id = "1000067";
-    data.shipping_address_id = "1000067";
+    data.paymentMethod = pMethod;
+    data.code = namaBank;
+    data.billing_address_id = idBill;
+    data.shipping_address_id = idAddShip;
     //data.courier_id = address_name;
     data.isoncepickup = "Y";
-   
-    // return alert(data);
+    console.log('OK:', data);
+//   code
+//courier
+//courier_amount
+    
 
     // success handling
 var error = function(er){
@@ -322,11 +348,19 @@ window.location.replace(base_url+"/checkout/success");
 	$("#payment_method").change(function()
 	{
 		var pay=$('#payment_method').val();
+                pMethod = 'Transfer';
 		if(pay=="01"){
 			$("#transfer_bank").show();
 		}else{
 			$("#transfer_bank").hide();
 		}
 	});
-
+        function bank(){
+             namaBank = $('input[name="bank"]:checked').val();
+            //alert(namaBank);
+        }
+        function idDistri(idDistrict){
+             //namaBank = $('input[name="bank"]:checked').val();
+            alert('test',idDistrict.val());
+        }
 </script>
