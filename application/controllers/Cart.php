@@ -86,50 +86,21 @@ class Cart extends Web {
 	
 	function listCart()
 	{ 
-		echo"<table id='cart' class='table table-hover table-condensed'>
-				<thead>
-					<tr>
-						<th style='width:40%'>Product</th>
-						<th style='width:10%'>Price</th>
-						<th style='width:8%'>Quantity</th>
-						<th style='width:22%' class='text-center'>Subtotal</th>
-						<th style='width:20%'></th>
-					</tr>
-				</thead>
-				<tbody>";
-		foreach ($this->cart->contents() as $items): 	
-				echo"<tr>
-						<td data-th='Product'>
-							<div class='row'>
-								<div class='col-sm-2 hidden-xs'><img src='".$items['image']."' border='0' height='50' width='50'></div>
-								<div class='col-sm-10'>
-									<h4 class='nomargin'>".$items['name']."</h4>
-								</div>
-							</div>
-						</td>
-						<td data-th='Price'>".money($items['price'])."</td>
-						<td data-th='Quantity'>
-							<input type='number' class='form-control text-center' value='".$items['qty']."'>
-						</td>
-						<td data-th='Subtotal' class='text-center'>".$this->cart->format_number($items['subtotal'])."</td>
-						<td class='actions' data-th=''>
-							<a href='#' onClick=\"dellItemCart('".$items['id']."','".$items['rowid']."','".$items['image']."','".$items['name']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a>
-						</td>
-					</tr>";
-		endforeach; 
-		echo"
-			</tbody>
-				<tfoot>
-					<tr>
-						<td colspan='3' class='hidden-xs'>
-							<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman
-						</td>
-						<td class='hidden-xs text-center'><strong>Total Rp.".$this->cart->format_number($this->cart->total())."</strong></td>
-						<td></td>
-					</tr>
-				</tfoot>
-			</table>	
-		";
+		$this->load->view('frontend/modules/cart/cart_ci.php');
+	}
+	
+	function updateCart()
+	{ 
+		$rowid = $this->input->post('rowid');
+		$qty = $this->input->post('qty');
+		
+		$data = array(
+				'rowid' => $rowid,
+				'qty'   => $qty
+		);
+
+		$this->cart->update($data);
+		echo"sukses";
 	}
 	
 	function listCartToken()
@@ -149,14 +120,14 @@ class Cart extends Web {
 		foreach ($this->cart->contents() as $items): 	
 		echo"<div class='row my-cart'>
 		  <div class='col-sm-3'><img src='".$items['image']."' border='0' height='50' width='50'></div>
-		  <div class='col-sm-7'>".$items['name']."<br>Rp.".money($items['price'])." (".$items['qty'].")Items<br></div>
+		  <div class='col-sm-7'><b>".$items['name']."</b><br>Rp.".money($items['price'])." <i>(".$items['qty'].")Items</i><br></div>
 		  <div class='col-sm-2'><a href='#' onClick=\"dellItemCart('".$items['id']."','".$items['rowid']."','".$items['image']."','".$items['name']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a></div>
 		</div>";
 		endforeach; 
 		echo"
 		</div>
 		<div>
-			<div class='my-total-cart'>TOTAL : <b>".$this->cart->format_number($this->cart->total())."</b></div>".anchor('cart', 'My Cart & Checkout', array('class'=>'btn btn-success my-btn-chekout'))."
+			<div class='my-total-cart'>TOTAL : <b>Rp.".money($this->cart->total())."</b></div>".anchor('cart', 'My Cart & Checkout', array('class'=>'btn btn-success my-btn-chekout'))."
 		</div>";
 		}else{
 			echo"<center>Keranjang masih kosong</center>";

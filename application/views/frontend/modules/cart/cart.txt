@@ -1,8 +1,6 @@
 <style>
 .table>tbody>tr>td, .table>tfoot>tr>td{
     vertical-align: middle;
-	font-size:13px;
-	padding:15px;
 }
 @media screen and (max-width: 600px) {
     table#cart tbody td .form-control{
@@ -37,7 +35,6 @@
 }
 </style>
 <style>
-<!--
 .progress {
     position: relative;
 	height: 25px;
@@ -55,7 +52,7 @@
 	right: 0px;
 	font-weight: 800;
 	padding: 3px 10px 2px;
-}-->
+}
 </style>
 <div class='my-bg-title'>
 	<div class="container">
@@ -77,10 +74,10 @@
       </div>
       <span class="progress-completed"> 35%</span>
     </div-->
-	<div class="col-md-12 listCart">
-		<div class="alert alert-warning" style='border-radius:0px; border:0px; border-left:5px solid #dbd19e; '>
-		<center>Keranjang belanja masih kosong tidak ada produk yang dipesan</center>
-		</div>
+	<div class="col-md-9 listCart">
+	<div class="alert alert-warning" style='border-radius:0px; border:0px; border-left:5px solid #dbd19e; '>
+	<center>Keranjang belanja masih kosong tidak ada produk yang dipesan</center>
+	</div>
 <!---
 		<table id="cart" class="table table-hover table-condensed">
 			<thead>
@@ -110,7 +107,22 @@
 		</table>-->
 	</div>
 	
-
+	<div class="col-md-3">
+		<div class="panel panel-default">
+		  <div class="panel-body">
+				Subtotal Rp.<?php echo $this->cart->format_number($this->cart->total()); ?><br>
+				<b>Grand Total	<?php echo $this->cart->format_number($this->cart->total()); ?></b><br><br>
+				<b>PUNYA KODE PROMO ?</b><br>
+				<div class="input-group">
+					<input type="text" class="form-control" name="x">
+					<span class="input-group-btn">
+						<button class="btn btn-warning">Enter</button>
+					</span>
+				</div>
+		  </div>
+		</div>
+		<?php echo anchor('checkout', 'Checkout <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success btn-block'));?>
+	</div>
 </div>
 <script>
 $(document).ready(function() {
@@ -138,6 +150,13 @@ $(document).ready(function() {
 		});
 	
 	}
+	
+	
+	
+			
+
+
+	
 	
 	
 	
