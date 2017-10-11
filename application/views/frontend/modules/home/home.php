@@ -961,7 +961,9 @@ ul.list-group:after {
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/madcatzlogo.png');?>"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/bantex1.png');?>"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/canon.png');?>"  alt="Smiley face" height="50" width="97"></li>
-
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SS-small.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/evercoss.png');?>"  alt="Smiley face" height="50" width="97"></li>
+<!-- asd -->
 						</ul>
           </div>
 

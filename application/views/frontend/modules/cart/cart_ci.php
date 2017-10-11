@@ -35,7 +35,6 @@ echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 								}
 								echo"
 							</select>
-							<!--<input type='number' class='form-control text-center' value='".$items['qty']."'>-->
 						</td>
 						<td data-th='Subtotal' class='text-center'>Rp.".money($items['subtotal'])."</td>
 						<td class='actions' data-th=''>
@@ -58,7 +57,7 @@ echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 						<td class='text-center'>
 						<!--Subtotal Rp.".money($this->cart->total())."<br>
 						Potongan Rp.0<br><br>-->
-						<strong>Grand Total Rp.".money($this->cart->total())."</strong></td>
+						<strong>Grand Total Rp.".money($this->cart->total())." - ".$this->cart->total_items()."</strong></td>
 						<td>
 							".anchor('checkout', 'Checkout <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success btn-block'))."
 						</td>
@@ -83,12 +82,14 @@ echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 				url: "<?php echo site_url('cart/updateCart'); ?>",
 				data: dataString,
 				success:function(html){
-					
+	
+						var qtyTotal = html;
 						$.ajax
 						({
 						url: "<?php echo site_url('cart/listCart'); ?>",
 						success:function(html){
 								$(".listCart").html(html);
+								$('.totalCart').html(qtyTotal);
 							}
 						});
 
