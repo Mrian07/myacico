@@ -302,18 +302,27 @@ $(document).ready(function() {
 function totalCart(){
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var qty = 0;
-	var qtyTotal = $('.totalCart');
+	//var qtyTotal = $('.totalCart');
 
 	if(token){
 
-		$.get( api_base_url+"/order/cart/detail?token="+token,
+		/*$.get( api_base_url+"/order/cart/detail?token="+token,
 		function(r){
 
 			r.forEach(function(p){
 				qty += p.qty;
 			});
 			qtyTotal.html(qty);
-		  }, "json" );
+		  }, "json" );*/
+		  
+		$.ajax
+		({
+		url: "<?php echo site_url('cart/totalQtyToken'); ?>",
+		success:function(html){
+				$(".totalCart").html(html);
+			}
+		});
+		  
 	}
 }
 
@@ -583,6 +592,7 @@ function dellItemCartToken(id,img,name,idcart){
 var base_url = '<?php echo base_url();?>';
 var base_path = base_url.split(location.host).pop();
 // var login_base_url_api = 'acc.myacico.co.id/myacico-service';
-var api_base_url2 = 'http://api.myacico.net:8080/myacico-service/';
-var api_base_url = 'http://myacico.net:8080/myacico-service/api';
+var api_base_url2 = 'http://api.myacico.co.id/myacico-service';
+//var api_base_url = 'http://myacico.net:8080/myacico-service/api';
+var api_base_url = 'http://api.myacico.co.id/myacico-service';
 </script>

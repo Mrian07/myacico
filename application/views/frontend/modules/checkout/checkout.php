@@ -216,7 +216,23 @@
 			</div-->
 		</div>
 		<div class="col-md-5">
-			<?php $this->load->view('frontend/modules/checkout/checkout_cart',$this->data); ?>
+			<?php 
+			$this->data['token'] = $_COOKIE['x-auth'];
+			$token = $_COOKIE['x-auth'];
+			$api = "order/cart/detail?token=".$token;
+			//echo $api; 
+			$sumber = api_base_url($api);
+			$konten = file_get_contents($sumber);
+			$this->data['hasil'] = json_decode($konten, true);
+			//echo"<pre>"; print_r($hasil); 
+			
+			if(json_decode($konten, true)){
+				$this->load->view('frontend/modules/checkout/checkout_cart',$this->data); 
+			}else{
+				echo"<center>Keranjang masih kosong</center>";
+			}
+			
+			?>
 		</div>
 
 	</div>
