@@ -111,34 +111,39 @@
 <script>
 
 	function getvaltoken(qty){
-		
+		var token = document.cookie.split('x-auth=')[1].split(';').shift();
 		var jml = qty.value;
 		var jm = jml.split('-');
 		var qty = jm[0];
 		var itemCartId = jm[1];
-				
-		var dataString = 'itemCartId='+itemCartId+'&qty='+qty;
-		
+		var data = {};		
 		var apiurl = api_base_url +'/order/cart/updateitem';
 		
-		data.itemCartId = itemCartId;
-		data.qty = qty;
+		$.ajax
+		({  
+		type: "POST",
+		url: apiurl,
+		data:JSON.stringify({
+			"qty":qty, 
+			"itemCartId":itemCartId
+		}) ,
+		contentType: "application/json",
+		headers: {"token":token},
+		success:function(data){
 		
-		
-		var success = function(r){
-			$(".listCart").html(html);
-			$('.totalCart').html(qtyTotal);
-		};
-		
-		var error = function(er){
-		  $.alert({
-			title: 'Alert!',
-			content: 'koneksi tidak berhasil, silahkan coba lagi!',
-		  });
-		};
-		
-		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data) , headers: {"token":token}, url: apiurl, success: success, error: error });
-
+				var qtyTotal = qty;
+				$.ajax
+				({
+				url: "<?php echo site_url('cart/listCartToken'); ?>",
+				
+				success:function(html){
+						$(".listCart").html(html);
+						$('.totalCart').html(qtyTotal);
+					}
+				});
+			
+			}
+		});
 		
 	}
 
