@@ -67,7 +67,7 @@
 						</td>
 						<td data-th='Price'>Rp.".money($items['price'])."</td>
 						<td data-th='Quantity'>
-							<select id='qty' name='qty' onchange='getval(this);' class='form-control'>";
+							<select id='qty' name='qty' onchange='getvaltoken(this);' class='form-control'>";
 								$val =1;
 								while($val<=100){
 									if($items['qty']==$val){
@@ -107,3 +107,39 @@
 	</table>
 	
 </table>
+
+<script>
+
+	function getvaltoken(qty){
+		
+		var jml = qty.value;
+		var jm = jml.split('-');
+		var qty = jm[0];
+		var itemCartId = jm[1];
+				
+		var dataString = 'itemCartId='+itemCartId+'&qty='+qty;
+		
+		var apiurl = api_base_url +'/order/cart/updateitem';
+		
+		data.itemCartId = itemCartId;
+		data.qty = qty;
+		
+		
+		var success = function(r){
+			$(".listCart").html(html);
+			$('.totalCart').html(qtyTotal);
+		};
+		
+		var error = function(er){
+		  $.alert({
+			title: 'Alert!',
+			content: 'koneksi tidak berhasil, silahkan coba lagi!',
+		  });
+		};
+		
+		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data) , headers: {"token":token}, url: apiurl, success: success, error: error });
+
+		
+	}
+
+</script>
