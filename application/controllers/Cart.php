@@ -156,6 +156,21 @@ class Cart extends Web {
 		} 
 	}
 	
+	function loadCartToken()
+	{ 
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "order/cart/detail?token=".$token;
+		$sumber = api_base_url($api);
+		$konten = file_get_contents($sumber);
+		$this->data['hasil'] = json_decode($konten, true);
+		if($hasil = json_decode($konten, true)){
+			$this->load->view('frontend/modules/cart/list_cart_token.php',$this->data);
+		}else{
+			echo"<center>Keranjang masih kosong</center>";
+		}
+	}
+	
 	function removeItem() {
 		$rowid = $this->input->post('rowid');
 		$this->cart->update(array(

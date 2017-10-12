@@ -418,10 +418,17 @@ $(".dropbtn-basket").mouseover(function(){
 	var cookie = document.cookie.split('x-auth=');
 	if(cookie.length > 1){
 
-			$('.empty-item').hide();
+	/*		$('.empty-item').hide();
 			listCartToken();
-		  //$("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
-
+		 
+*/
+		$.ajax
+		({
+			url: "<?php echo site_url('cart/loadCartToken'); ?>",
+			success:function(html){
+				$('.dropdown-basket-content').html(html);
+			}
+		});
 
 	}else{
 
