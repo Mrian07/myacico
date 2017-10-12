@@ -260,8 +260,8 @@ console.log('data nya adalah:', data);
 
 	if(cookie.length > 1){
 		var token = cookie[1].split(';').shift();
-		var apiurl = api_base_url +'/order/cart/additem?token='+token;
-
+		//var apiurl = api_base_url +'/order/cart/additem?token='+token;
+		var apiurl = api_base_url +'/order/cart/additem';
 		var m_product_id = p.m_product_id;
 		var qty = jmlItem;
 		var pricelist = p.pricelist;
@@ -293,7 +293,7 @@ console.log('data nya adalah:', data);
 				"price":pricelist,
 				"weightPerItem":weight
 			}
-		) , url: apiurl, success: success, error: error });
+		) , url: apiurl, headers: {"token":token}, success: success, error: error });
 
 		var error = function(er){
 		  console.log('OK:', er);

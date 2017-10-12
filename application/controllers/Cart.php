@@ -116,13 +116,50 @@ class Cart extends Web {
 		echo $total_qty;
 	}
 	
-	function listCartToken()
-	{ 	
+	function totalQtyToken()
+	{ 
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
-		$api = "order/cart/detail?token=".$token;
-		$sumber = api_base_url($api);
-		$konten = file_get_contents($sumber);
+		$api = "order/cart/detail";
+		$url = api_base_url($api);
+		
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+		
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+	
+		$hasil = json_decode($konten, true);
+		
+		$qty = 0;
+		foreach($hasil as $items){
+			$qty +=$items['qty'];
+		}
+		
+		echo $qty;
+		
+	}	
+	
+	function listCartToken()
+	{ 	
+	
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "order/cart/detail";
+		$url = api_base_url($api);
+		
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+		
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+	
 		$this->data['hasil'] = json_decode($konten, true);
 		if($hasil = json_decode($konten, true)){
 			$this->load->view('frontend/modules/cart/cart_token.php',$this->data);
@@ -160,9 +197,17 @@ class Cart extends Web {
 	{ 
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
-		$api = "order/cart/detail?token=".$token;
-		$sumber = api_base_url($api);
-		$konten = file_get_contents($sumber);
+		$api = "order/cart/detail";
+		$url = api_base_url($api);
+		
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+		
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
 		$this->data['hasil'] = json_decode($konten, true);
 		if($hasil = json_decode($konten, true)){
 			$this->load->view('frontend/modules/cart/list_cart_token.php',$this->data);
