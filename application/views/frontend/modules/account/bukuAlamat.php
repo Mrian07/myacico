@@ -56,10 +56,11 @@ var link_url = '<?php echo base_url('account/editBukuAlamat') ?>';
 
 $(document).ready(function() {
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	var filter =0;
 
-	$.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
+	var api2 = api_base_url +'/aduser/getaddress?addresstype=isshipto';
 
+	//$.get(api_base_url+'/aduser/getaddress?addresstype=isshipto',
+(
 	function(data){
 	console.log('data nya adalah:', token);
 	// console.log('test',token);
@@ -78,16 +79,18 @@ $(document).ready(function() {
 			 $("#hapus"+p.id).click(function(e){
 
 				var id = $("#id"+p.id).val();
-				var apiurl1 = api_base_url +'/aduser/deleteaddress?token='+token;
+				//var apiurl1 = api_base_url +'/aduser/deleteaddress?token='+token;
 		  		e.preventDefault();
-		 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({"id":p.id}) , url: apiurl1 });
+				// 	$.ajax({ type:"POST", contentType: "application/json",  headers:{"token":"token"}, data:JSON.stringify({"id":p.id}) , url: apiurl1 });
 
 		  	});
 
 
 		});
-	});
 
+	});
+		$.ajax({ type:"GET", contentType: "application/json",  headers:{"token":token}, url: api2 });
+	// console.log('da1',token);
 });
 
 </script>

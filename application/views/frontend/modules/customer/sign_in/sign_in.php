@@ -113,7 +113,7 @@ var success = function(r){
 		) , url: apiurl, success: success });
 	<?php
 	endforeach;
-	$this->cart->destroy();
+//	$this->cart->destroy();
 	?>
 
   document.cookie='x-auth='+r.token+'; path='+base_path;
@@ -137,8 +137,7 @@ $(document).ready(function() {
     e.preventDefault();
 		var email = $("#email").val();
 		var password = $("#password").val();
-
-		var apiurl = login;
+		var apiurl = baseApiUrl + '/aduser/masuk';
 
 		if(email==''){
 			$.alert({
