@@ -1,4 +1,10 @@
 <?php
+function api_base_url($param)
+{
+	$url = "http://myacico.net:8080/myacico-service/api/".$param;
+	return $url;
+}
+
 function tanggal($tanggal)
 {
 	$get_tanggal=explode(" ",$tanggal);
@@ -103,4 +109,6 @@ function getUrl($id)
 {
 	return strtr($id,array('.' => '+', '-' => '=', '~' => '/'));
 }
+
+
 	

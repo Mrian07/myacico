@@ -86,7 +86,16 @@ class Cart extends Web {
 	
 	function listCart()
 	{ 
-		$this->load->view('frontend/modules/cart/cart_ci.php');
+		$qty = 0;
+		foreach ($this->cart->contents() as $items): 	
+			$qty += $items['qty'];
+		endforeach; 
+
+		if($qty){
+			$this->load->view('frontend/modules/cart/cart_ci.php');
+		}else{
+			echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'>Keranjang belanja masih kosong tidak ada produk yang dipesan</div>";
+		}
 	}
 	
 	function updateCart()
@@ -108,9 +117,18 @@ class Cart extends Web {
 	}
 	
 	function listCartToken()
-	{ 
-		$this->load->view('frontend/modules/cart/cart_token.php');
-		
+	{ 	
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "order/cart/detail?token=".$token;
+		$sumber = api_base_url($api);
+		$konten = file_get_contents($sumber);
+		$this->data['hasil'] = json_decode($konten, true);
+		if($hasil = json_decode($konten, true)){
+			$this->load->view('frontend/modules/cart/cart_token.php',$this->data);
+		}else{
+			echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'>Keranjang belanja masih kosong tidak ada produk yang dipesan</div>";
+		}
 	}
 	
 	function loadCart()
