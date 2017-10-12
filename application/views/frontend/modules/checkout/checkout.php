@@ -216,13 +216,22 @@
 			</div-->
 		</div>
 		<div class="col-md-5">
-			<?php 
+			<?php 			
 			$this->data['token'] = $_COOKIE['x-auth'];
 			$token = $_COOKIE['x-auth'];
-			$api = "order/cart/detail?token=".$token;
-			//echo $api; 
-			$sumber = api_base_url($api);
-			$konten = file_get_contents($sumber);
+			$api = "order/cart/detail";
+			$url = api_base_url($api);
+			
+			$options = ["http" => [
+			"method" => "GET",
+			"header" => ["token: " . $token,
+			"Content-Type: application/json"],
+			]];
+			
+			$context = stream_context_create($options);
+			$konten = file_get_contents($url, false, $context);
+			
+			
 			$this->data['hasil'] = json_decode($konten, true);
 			//echo"<pre>"; print_r($hasil); 
 			
