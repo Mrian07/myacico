@@ -32,7 +32,7 @@ class Web extends MY_Controller {
     }
 
     public function auth(){
-
+	
 		$secret = $this->config->config['jwt_secret'];
 		//die(strtr(base64_encode($secret), '+/=', '._-'));
 

@@ -113,7 +113,7 @@ var success = function(r){
 		) , url: apiurl, success: success });
 	<?php
 	endforeach;
-//	$this->cart->destroy();
+	$this->cart->destroy();
 	?>
 
   document.cookie='x-auth='+r.token+'; path='+base_path;
