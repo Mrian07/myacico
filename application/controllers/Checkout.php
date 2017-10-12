@@ -9,6 +9,7 @@ class Checkout extends Web_private {
         $this->load->helper('form');
         $this->load->library('form_validation');
 		$this->load->library('session');
+		$this->load->helper('app');
 	//	$this->load->helper('cookie');
 	//	$this->load->model('Login_model', 'login', TRUE);
 

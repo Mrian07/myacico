@@ -32,7 +32,7 @@ class Web extends MY_Controller {
     }
 
     public function auth(){
-
+	
 		$secret = $this->config->config['jwt_secret'];
 		//die(strtr(base64_encode($secret), '+/=', '._-'));
 
@@ -108,7 +108,8 @@ class Web extends MY_Controller {
 
     public function asset(){
 
-        $this->data['baseApiUrl'] = "http://api.myacico.net:8080/myacico-service/api";
+        //$this->data['baseApiUrl'] = "http://api.myacico.net:8080/myacico-service/api";
+		$this->data['baseApiUrl'] = "http://api.myacico.co.id/myacico-service";
 
     }
 

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 my-border-title">
-    <h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DAFTAR AKUN GOVERNMENT</h3>
+    <h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_welcome; ?></h3>
     </div>
   </div>
 
@@ -13,7 +13,7 @@
       <form name="signup" method="post">
         <div class="form-group">
           <label><?php echo $lang_namaDepan; ?>*</label>
-          <input type="text" name="fname" class="form-control mandatory" />
+          <input type="text" name="fname" class="form-control mandatory" /></input>
         </div>
         <div class="form-group">
             <label><?php echo $lang_namaBelakang1; ?>*</label>
@@ -45,9 +45,17 @@
           <input type="text" name="alamat2" class="form-control mandatory" />
         </div>
         <div class="form-group" style="display:none" id="ditric_box">
-                <label><?php echo $lang_Keca; ?>*</label>
-          <select name="kecamatan" id="ditric_sel" class="form-control mandatory"></select>
-        </div>
+<label><?php echo $lang_Keca; ?>*</label>
+<select name="district_id" id="district_id" class="form-control mandatory"></select>
+</div>
+       <div class="form-group" style="display:none" id="village_box">
+<label><?php echo $lang_Keca; ?>*</label>
+<select name="village_id" id="village_id" class="form-control mandatory"></select>
+</div>
+            <div class="form-group" style="display:none"  id="village_box">
+    <label>Kelurahaan*</label>
+    <select name="village_id" id="village_id" class="form-control mandatory"></select>
+    </div>
         <div class="form-group" style="display:none" id="city_box">
             <label><?php echo $lang_kota; ?>*</label>
           <select name="city" id="city_sel" class="form-control mandatory"></select>
@@ -56,6 +64,10 @@
         <label><?php echo $lang_PostCode; ?>*</label>
           <input type="text" name="zip" class="form-control mandatory" />
         </div>
+        <div class="form-group" style="display:none" id="city_box">
+<label><?php echo $lang_kota; ?>*</label>
+<select name="city" id="city_sel" class="form-control mandatory"></select>
+</div>
         <div class="form-group" style="display: none;" id="region_box">
         <label><?php echo $lang_Provience; ?>*</label>
           <select name="province" id="region_sel" class="form-control mandatory"></select>
@@ -75,8 +87,8 @@
           <input type="password" id="password2" class="form-control" />
         </div>
         <div>
-          <input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
-          <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+          <input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo $lang_BtnSend ?>">
+    			<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
         </div>
 
         <div class="clearfix"></div>
@@ -94,8 +106,8 @@
     </div>
   </div>
 </div>
+
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 $.ajaxSetup({
   error: function(){
     alert('service not available, please try again later');
@@ -103,22 +115,36 @@ $.ajaxSetup({
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
 });
-
-function get_distric(){
-  $("#ditric_box").slideDown();
-  $("#ditric_sel").prop('disabled', true).html('<option value="">--pilih--</option>');
-  $.get("http://myacico.net:8080/myacico-service/api/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
-    r.forEach(function(o){
-      $("#ditric_sel").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+$('#district_id').change(function () {
+        var end = this.value;
+      $('#submit_btn').removeAttr('disabled');
     });
-    $("#ditric_sel").prop('disabled', false);
-  }, "json" );
-}
+    function get_village(){
+      $("#village_box").slideDown();
+      $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+        r.forEach(function(o){
+          $("#village_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+        });
+        $("#village_id").prop('disabled', false);
+      }, "json" );
+    }
+    function get_distric(){
+      $("#ditric_box").slideDown();
+      $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+      $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
+        r.forEach(function(o){
+          $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+        });
+        $("#district_id").prop('disabled', false).change(get_village);;
+      }, "json" );
+    }
+
 
 function get_city(){
   $("#city_box").slideDown();
   $("#city_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_distric);
-  $.get( "http://myacico.net:8080/myacico-service/api/ccity/getlistccitybyidregion/"+$("#region_sel").val(), function(r){
+  $.get( api_base_url+"/ccity/getlistccitybyidregion/"+$("#region_sel").val(), function(r){
     r.forEach(function(o){
       $("#city_sel").append("<option value='"+o.c_city_id+"'>"+o.name+"</option>");
     });
@@ -129,7 +155,7 @@ function get_city(){
 function get_region(){
   $("#region_box").slideDown();
   $("#region_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_city);
-  $.get( "http://myacico.net:8080/myacico-service/api/cregion/getlistcregionbyidccountry/"+$("#country_sel").val(), function(r){
+  $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+$("#country_sel").val(), function(r){
     r.forEach(function(o){
       $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
     });
@@ -139,10 +165,10 @@ function get_region(){
 $(document).ready(function() {
   $("form").submit(function(e){
     e.preventDefault();
-    var apiurl = baseApiUrl + '/aduser/add';
+    var apiurl = api_base_url + '/aduser/add';
     var fl=document.signup;
     var data = $(this).serialize();
-    return alert(data);
+    // return alert(data);
 
     // success handling
 
@@ -179,7 +205,7 @@ $(document).ready(function() {
     }
   });
 
-  $.get("http://myacico.net:8080/myacico-service/api/ccountry/getlistccountry", function(r){
+  $.get(api_base_url+"/ccountry/getlistccountry", function(r){
     console.log(r);
     r.forEach(function(o){
       $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");

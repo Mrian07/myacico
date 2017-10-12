@@ -302,18 +302,27 @@ $(document).ready(function() {
 function totalCart(){
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var qty = 0;
-	var qtyTotal = $('.totalCart');
+	//var qtyTotal = $('.totalCart');
 
 	if(token){
 
-		$.get( api_base_url+"/order/cart/detail?token="+token,
+		/*$.get( api_base_url+"/order/cart/detail?token="+token,
 		function(r){
 
 			r.forEach(function(p){
 				qty += p.qty;
 			});
 			qtyTotal.html(qty);
-		  }, "json" );
+		  }, "json" );*/
+		  
+		$.ajax
+		({
+		url: "<?php echo site_url('cart/totalQtyToken'); ?>",
+		success:function(html){
+				$(".totalCart").html(html);
+			}
+		});
+		  
 	}
 }
 
@@ -418,10 +427,17 @@ $(".dropbtn-basket").mouseover(function(){
 	var cookie = document.cookie.split('x-auth=');
 	if(cookie.length > 1){
 
-			$('.empty-item').hide();
+	/*		$('.empty-item').hide();
 			listCartToken();
-		  //$("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
-
+		 
+*/
+		$.ajax
+		({
+			url: "<?php echo site_url('cart/loadCartToken'); ?>",
+			success:function(html){
+				$('.dropdown-basket-content').html(html);
+			}
+		});
 
 	}else{
 
@@ -435,7 +451,7 @@ $(".dropbtn-basket").mouseover(function(){
 
 	}
 });
-
+/*
 function listCartToken(){
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var list = $('.list-item');
@@ -474,7 +490,7 @@ function listCartToken(){
 
 	  }, "json" );
 
-}
+}*/
 
 function dellItemCart(id,rowid,img,name){
 
@@ -519,8 +535,7 @@ function dellItemCart(id,rowid,img,name){
 function dellItemCartToken(id,img,name,idcart){
 
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	var id = id;
-	var apiurl = api_base_url + '/order/cart/deleteitem?token='+token+'&idcartitem='+idcart;
+	var apiurl = api_base_url + '/order/cart/deleteitem?idcartitem='+idcart;
 
 	$.confirm({
 		title: name,
@@ -535,6 +550,7 @@ function dellItemCartToken(id,img,name,idcart){
 				$.ajax
 				({	type: "POST",
 					url: apiurl,
+					headers:{ "token":token},
 					success:function(data){
 						totalCart();
 					}
@@ -575,7 +591,10 @@ function dellItemCartToken(id,img,name,idcart){
 
 var base_url = '<?php echo base_url();?>';
 var base_path = base_url.split(location.host).pop();
+
+var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
 // var login_base_url_api = 'acc.myacico.co.id/myacico-service';
-var api_base_url2 = 'http://api.myacico.net:8080/myacico-service/';
-var api_base_url = 'http://myacico.net:8080/myacico-service/api';
+var api_base_url2 = 'http://api.myacico.co.id/myacico-service';
+//var api_base_url = 'http://myacico.net:8080/myacico-service/api';
+var api_base_url = 'http://api.myacico.co.id/myacico-service';
 </script>

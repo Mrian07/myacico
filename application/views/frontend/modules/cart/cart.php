@@ -78,36 +78,7 @@
       <span class="progress-completed"> 35%</span>
     </div-->
 	<div class="col-md-12 listCart">
-		<div class="alert alert-warning" style='border-radius:0px; border:0px; border-left:5px solid #dbd19e; '>
-		<center>Keranjang belanja masih kosong tidak ada produk yang dipesan</center>
-		</div>
-<!---
-		<table id="cart" class="table table-hover table-condensed">
-			<thead>
-				<tr>
-					<th style="width:40%">Product</th>
-					<th style="width:10%">Price</th>
-					<th style="width:8%">Quantity</th>
-					<th style="width:22%" class="text-center">Subtotal</th>
-					<th style="width:20%"></th>
-				</tr>
-			</thead>
-			<tbody>
-				
-				
-			</tbody>
-			<tfoot>
-				<tr>
-					<!--<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Update</a></td>-->
-					<!--
-					<td colspan="3" class="hidden-xs">
-						<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman
-					</td>
-					<td class="hidden-xs text-center"><strong>Total Rp.<?php echo $this->cart->format_number($this->cart->total()); ?></strong></td>
-					<td></td>
-				</tr>
-			</tfoot>
-		</table>-->
+
 	</div>
 	
 
