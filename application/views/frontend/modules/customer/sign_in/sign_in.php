@@ -45,10 +45,10 @@
 				</div>
 			</form>
 		</div>
-		
+
 		</div>
 		<div class="col-sm-6">
-			
+
 				<h5>PENDAFTARAN</h5>
 				<div class='border-create'>
 				<div class="row">
@@ -57,21 +57,21 @@
 						<div class='my-btn-create'><?php echo anchor('customer/personal/', $lang_btn_personal, array('class'=>'my-link-create'));?></div>
 				  </div>
 				</div>
-				<div class="row">	
+				<div class="row">
 				  <div class="col-sm-12">
 						<hr>
 						<?php echo $lang_ket_daftar_akunBisnis;?>
 						<div class='my-btn-create'><?php echo anchor('customer/business/', $lang_btn_bisnis, array('class'=>'my-link-create'));?> </div>
 				  </div>
 				</div>
-				<div class="row">  
+				<div class="row">
 				  <div class="col-sm-12">
 						<hr>
 						Untuk pemerintah yang ingin belanja di myacico.com.
 						<div class='my-btn-create'><?php echo anchor('customer/government/', $lang_btn_pemerintah, array('class'=>'my-link-create'));?></div>
 				  </div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
@@ -90,19 +90,19 @@ var success = function(r){
   var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
   <?php
 	//Memasukan produk yang dibeli sebelum login ke api
-  
+
 	foreach ($this->cart->contents() as $items):?>
-	
-		
+
+
 		var m_product_id = <?php echo $items['id']; ?>;
 		var qty = <?php echo $items['qty']; ?>;
 		var pricelist = <?php echo $items['price']; ?>;
 		var weight = <?php echo $items['weight']; ?>;
-		
+
 		var success = function(r){
 
 		};
-		
+
 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
 			{
 				"productId":m_product_id,
@@ -111,11 +111,11 @@ var success = function(r){
 				"weightPerItem":weight
 			}
 		) , url: apiurl, success: success });
-	<?php	
+	<?php
 	endforeach;
 	$this->cart->destroy();
 	?>
-  
+
   document.cookie='x-auth='+r.token+'; path='+base_path;
   var cb = location.search.split('callback=');
   if(cb.length > 1) location.href = cb[1].split(';').shift();
@@ -133,11 +133,12 @@ var error = function(er){
     var data = {};
 $(document).ready(function() {
 
-  $('form').submit(function(e){ 
+  $('form').submit(function(e){
     e.preventDefault();
 		var email = $("#email").val();
 		var password = $("#password").val();
-		var apiurl = baseApiUrl + '/aduser/masuk';
+
+		var apiurl = login;
 
 		if(email==''){
 			$.alert({
