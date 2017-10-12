@@ -45,9 +45,17 @@
           <input type="text" name="alamat2" class="form-control mandatory" />
         </div>
         <div class="form-group" style="display:none" id="ditric_box">
-                <label><?php echo $lang_Keca; ?>*</label>
-          <select name="kecamatan" id="ditric_sel" class="form-control mandatory"></select>
-        </div>
+<label><?php echo $lang_Keca; ?>*</label>
+<select name="district_id" id="district_id" class="form-control mandatory"></select>
+</div>
+       <div class="form-group" style="display:none" id="village_box">
+<label><?php echo $lang_Keca; ?>*</label>
+<select name="village_id" id="village_id" class="form-control mandatory"></select>
+</div>
+            <div class="form-group" style="display:none"  id="village_box">
+    <label>Kelurahaan*</label>
+    <select name="village_id" id="village_id" class="form-control mandatory"></select>
+    </div>
         <div class="form-group" style="display:none" id="city_box">
             <label><?php echo $lang_kota; ?>*</label>
           <select name="city" id="city_sel" class="form-control mandatory"></select>
@@ -56,6 +64,10 @@
         <label><?php echo $lang_PostCode; ?>*</label>
           <input type="text" name="zip" class="form-control mandatory" />
         </div>
+        <div class="form-group" style="display:none" id="city_box">
+<label><?php echo $lang_kota; ?>*</label>
+<select name="city" id="city_sel" class="form-control mandatory"></select>
+</div>
         <div class="form-group" style="display: none;" id="region_box">
         <label><?php echo $lang_Provience; ?>*</label>
           <select name="province" id="region_sel" class="form-control mandatory"></select>
@@ -103,17 +115,31 @@ $.ajaxSetup({
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
 });
-
-function get_distric(){
-  $("#ditric_box").slideDown();
-  $("#ditric_sel").prop('disabled', true).html('<option value="">--pilih--</option>');
-  $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
-    r.forEach(function(o){
-      $("#ditric_sel").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+$('#district_id').change(function () {
+        var end = this.value;
+      $('#submit_btn').removeAttr('disabled');
     });
-    $("#ditric_sel").prop('disabled', false);
-  }, "json" );
-}
+    function get_village(){
+      $("#village_box").slideDown();
+      $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+        r.forEach(function(o){
+          $("#village_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+        });
+        $("#village_id").prop('disabled', false);
+      }, "json" );
+    }
+    function get_distric(){
+      $("#ditric_box").slideDown();
+      $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+      $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
+        r.forEach(function(o){
+          $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+        });
+        $("#district_id").prop('disabled', false).change(get_village);;
+      }, "json" );
+    }
+
 
 function get_city(){
   $("#city_box").slideDown();
