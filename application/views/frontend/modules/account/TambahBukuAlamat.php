@@ -126,10 +126,12 @@ function get_village(){
   $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
     r.forEach(function(o){
-      $("#village_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+      $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
+       
     });
     $("#village_id").prop('disabled', false);
   }, "json" );
+ 
 }
 function get_distric(){
   $("#ditric_box").slideDown();
@@ -158,7 +160,7 @@ function get_city(){
 function get_region(){
   $("#region_box").slideDown();
   $("#region_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_city);
-  $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+$("#country_sel").val(), function(r){
+  $.get(api_base_url+"/cregion/getlistcregionbyidccountry/"+$("#country_sel").val(), function(r){
     r.forEach(function(o){
       $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
     });
@@ -216,6 +218,7 @@ $(document).ready(function() {
     var address4 = $("#address4").val();
 		var postal = $("#postal").val();
     var district_id = $("#district_id").val();
+    var village_id = $("#village_id").val();
     var isbillto = $("#isbillto").val();
     var isshipto = $("#isshipto").val();
     var ispayfrom = $("#ispayfrom").val();
@@ -238,8 +241,8 @@ $(document).ready(function() {
     data.isshipto = isshipto;
     data.ispayfrom = ispayfrom;
     data.isremitto = isremitto;
-
-   // console.log(data);die();
+data.village_id = village_id;
+    
      var success = function(r){
          $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
@@ -248,7 +251,7 @@ $(document).ready(function() {
      content: 'Alamat Baru Berhasil di tambahkan',
     });
 //      alert(r.message);
-      console.log('OK:', r.status);
+      //console.log('OK:', r.status);
 			$("#name").val(null);
 			$("#phone").val(null);
 			$("#phone2").val(null);
@@ -263,8 +266,8 @@ $(document).ready(function() {
 			$("#isshipto").val(null);
 			$("#ispayfrom").val(null);
 		  $("#isremitto").val(null);
-
-        window.location.replace(base_url+"/account/bukuAlamat");
+console.log('datanya: ',district_id);
+//        window.location.replace(base_url+"/account/bukuAlamat");
 
     };
     $('#spinner_img').show();
@@ -284,7 +287,8 @@ $(document).ready(function() {
     "isbillto":"N",
     "isshipto":"Y",
     "ispayfrom":"N",
-    "isremitto":"N"
+    "isremitto":"N",
+    "village_id":village_id
 
 		}), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
     // success handling
