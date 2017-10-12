@@ -442,7 +442,7 @@ $(".dropbtn-basket").mouseover(function(){
 
 	}
 });
-
+/*
 function listCartToken(){
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var list = $('.list-item');
@@ -481,7 +481,7 @@ function listCartToken(){
 
 	  }, "json" );
 
-}
+}*/
 
 function dellItemCart(id,rowid,img,name){
 
