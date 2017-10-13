@@ -191,7 +191,6 @@ div.desc {
 
 
 		<div class="rumah"></div>
-
 	<br>
 	<br>
 
@@ -213,70 +212,153 @@ div.desc {
 <!-- asdasd -->
 
 <script type="text/javascript">
-// $(document).ready(function() {
-// 			var token = document.cookie.split('x-auth=')[1].split(';').shift();
-// 			console.log('a',token);
-// 			  $.get(api_base_url+'/product/getwishlist?token='+token,
-// 			});
-// });
 
+var link_url = '<?php echo base_url('account/editBukuAlamat') ?>';
 
-//
-//   $(document).ready(function() {
-// 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-//
-//     $.get(api_base_url+'/product/addwishlist?token='+token+'&item_id=<?php $wishid ?>',
-//
-//   function(data){
-// })
-//   });
 $(document).ready(function() {
-	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	var filter =0;
-	var asd =   $.get(api_base_url+'/product/deletewishlist?token='+token)
-	console.log('s',asd);
-console.log('a',token);
+    var token = document.cookie.split('x-auth=')[1].split(';').shift();
 
-    $.get(api_base_url+'/product/getwishlist?token='+token,
+    var api2 = api_base_url +'/product/getwishlist?token=';
 
+    //$.get(api_base_url+'/aduser/getaddress?addresstype=isshipto',
 
-	function(data){
+    $.ajax({
+        type:"GET",
+        headers:{"token":token},
+        //beforeSend: getAdd(),
+        success: function(data){
+            var addressname = $('.addressname');
+     var rumah = $('.rumah');
+$("#hapus").val(null);
+            data.forEach(function(p){
+     rumah.append(
+         '<div class="col-md-4"><div class="product-item"><div class="pi-img-wrapper"><img src="'+p.imageUrl+'" alt="..." height="100" class="img-responsive" alt="Berry Lace Dress"><div></div></div><h3><a href="'+base_url+'product/detail/'+p.productID+'">'+p.name+'</a></h3><div class="pi-price">'+p.wishListDate+'</div><a href="'+api_base_url+'/product/deletewishlist?token='+token+'&item_id='+p.productID+'" class="btn add2cart">Hapus</a></div></div>'
+        )
 
-
-	// console.log('test',token);
-
-
-		var rumah = $('.rumah');
-		var id = $("#id").val();
-
-		$("#hapus").val(null);
-
-
-		if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
-
-		 data.forEach(function(p){
-			 rumah.append(
-				 '<div class="col-md-4"><div class="product-item"><div class="pi-img-wrapper"><img src="'+p.imageUrl+'" alt="..." height="100" class="img-responsive" alt="Berry Lace Dress"><div></div></div><h3><a href="'+base_url+'product/detail/'+p.productID+'">'+p.name+'</a></h3><div class="pi-price">'+p.wishListDate+'</div><a href="'+api_base_url+'/product/deletewishlist?token='+token+'&item_id='+p.productID+'" class="btn add2cart">Hapus</a></div></div>'
-				//'<div class="col-md-4 text-center"><div class="panel panel-danger panel-pricing"><div class="panel-heading"><img src="'+p.imageUrl+'" alt="..."width="100" height="100"><h3><a href="'+base_url+'product/detail/'+p.productID+'">'+p.name+'</a><br/><br/><a href="'+api_base_url+'/product/deletewishlist?token='+token+'&item_id='+p.productID+'">hapus</a></h3></div></div></div>'
-				 //'<div class="gallery"><img src="'+p.imageUrl+'" alt="..."width="300" height="100"><center><a href="'+base_url+'product/detail/'+p.productID+'">'+p.name+'</a></center><div class="desc"><a href="'+api_base_url+'/product/deletewishlist?token='+token+'&item_id='+p.productID+'">hapus</a></div></div>'
-		// '<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageUrl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div></div>'
-	)
-
-	console.log('asdasd',data)
-			 $("#hapus"+p.id).click(function(e){
-
-				var id = $("#id"+p.id).val();
-				var apiurl1 = api_base_url +'/aduser/deleteaddress?token='+token;
-		  		e.preventDefault();
-		 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({"id":p.id}) , url: apiurl1 });
-
-		  	});
+     });
+            },
+        dataType: "json",
+        url: api2});
 
 
-		});
-    });
-	});
 
+//
+// $.ajax({ type:"GET", dataType:"JSON", success: function(data){
+//  console.log('data nya adalah:', token);
+//  // console.log('test',token);
+//
+//
+//      var rumah = $('.rumah');
+//      var id = $("#id").val();
+//
+//      $("#hapus").val(null);
+//
+//
+//      data.forEach(function(p){
+//          rumah.append('<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.city_name+' '+p.postal+'</td><td><a href="'+link_url+'/'+p.id+'" class="btn btn-link" aria-label="Ubah"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>')
+            // $("#hapus"+p.id).click(function(e){
+            //
+            //  var id = $("#id"+p.id).val();
+            //
+            //
+            //  //var apiurl1 = api_base_url +'/aduser/deleteaddress?token='+token;
+            //   e.preventDefault();
+            //
+            //  //  $.ajax({ type:"POST", contentType: "application/json",  headers:{"token":"token"}, data:JSON.stringify({"id":p.id}) , url: apiurl1 });
+            //
+            //  });
+//
+//
+//   });
+//
+//
+//  },url: api2, headers:{"token":token}
+//
+//  });
 
+ // $.ajax({
+ //  type : "GET",
+ //  contentType: "application/json",
+ //   url: api2,
+ //   beforeSend: function(xhr) {
+ //     xhr.setRequestHeader("token", "token");
+ //   },
+ //   success: function(data) {
+ //   }
+ // });
+    console.log('da1',token);
+    console.log('asd',api2);
+
+});
 
 </script>
+
+
+// <script type="text/javascript">
+// // $(document).ready(function() {
+// // 			var token = document.cookie.split('x-auth=')[1].split(';').shift();
+// // 			console.log('a',token);
+// // 			  $.get(api_base_url+'/product/getwishlist?token='+token,
+// // 			});
+// // });
+
+
+// //
+// //   $(document).ready(function() {
+// // 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
+// //
+// //     $.get(api_base_url+'/product/addwishlist?token='+token+'&item_id=<?php $wishid ?>',
+// //
+// //   function(data){
+// // })
+// //   });
+// $(document).ready(function() {
+// 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
+// 	var filter =0;
+// 	var asd =   $.get(api_base_url+'/product/deletewishlist?token='+token)
+// 	console.log('s',asd);
+// console.log('a',token);
+
+//     $.get(api_base_url+'/product/getwishlist?token='+token,
+
+
+// 	function(data){
+
+
+// 	// console.log('test',token);
+
+
+// 		var rumah = $('.rumah');
+// 		var id = $("#id").val();
+
+// 		$("#hapus").val(null);
+
+
+// 		if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
+
+// 		 data.forEach(function(p){
+// 			 rumah.append(
+// 				 '<div class="col-md-4"><div class="product-item"><div class="pi-img-wrapper"><img src="'+p.imageUrl+'" alt="..." height="100" class="img-responsive" alt="Berry Lace Dress"><div></div></div><h3><a href="'+base_url+'product/detail/'+p.productID+'">'+p.name+'</a></h3><div class="pi-price">'+p.wishListDate+'</div><a href="'+api_base_url+'/product/deletewishlist?token='+token+'&item_id='+p.productID+'" class="btn add2cart">Hapus</a></div></div>'
+// 				//'<div class="col-md-4 text-center"><div class="panel panel-danger panel-pricing"><div class="panel-heading"><img src="'+p.imageUrl+'" alt="..."width="100" height="100"><h3><a href="'+base_url+'product/detail/'+p.productID+'">'+p.name+'</a><br/><br/><a href="'+api_base_url+'/product/deletewishlist?token='+token+'&item_id='+p.productID+'">hapus</a></h3></div></div></div>'
+// 				 //'<div class="gallery"><img src="'+p.imageUrl+'" alt="..."width="300" height="100"><center><a href="'+base_url+'product/detail/'+p.productID+'">'+p.name+'</a></center><div class="desc"><a href="'+api_base_url+'/product/deletewishlist?token='+token+'&item_id='+p.productID+'">hapus</a></div></div>'
+// 		// '<div class="col-sm-6"><div class="row my-b-product"><div class="col-sm-2"><img src="'+p.imageUrl+'" alt="..." style:border="0" height="100"></div><div class="col-sm-7"><h5 class="title-product" align="center"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a></h5></div></div>'
+// 	)
+
+// 	console.log('asdasd',data)
+// 			 $("#hapus"+p.id).click(function(e){
+
+// 				var id = $("#id"+p.id).val();
+// 				var apiurl1 = api_base_url +'/aduser/deleteaddress?token='+token;
+// 		  		e.preventDefault();
+// 		 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({"id":p.id}) , url: apiurl1 });
+
+// 		  	});
+
+
+// 		});
+//     });
+// 	});
+
+
+
+// </script>

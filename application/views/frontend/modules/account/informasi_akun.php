@@ -81,7 +81,7 @@ var link_url = '<?php echo base_url('account/editBukuAlamat') ?>';
 $(document).ready(function() {
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 
-	var api2 = api_base_url +'/aduser/getaddress?addresstype=issbilto';
+	var api2 = api_base_url +'/aduser/getaddress?addresstype=isbillto';
 
 	//$.get(api_base_url+'/aduser/getaddress?addresstype=isshipto',
 
