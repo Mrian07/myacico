@@ -79,10 +79,17 @@
                                          <input type="hidden" id = "idDistri" name="idDistri" />
 							<p><strong>DATA PENERIMA</strong></p>
                                                         <div id="shoping"></div>
-                                                       <?php if($this->session->userdata('shipping_address_id') == NULL)
-                                                       {?> 
-							<p>Tidak ada data penerima yang tersedia, silakan isi terlebih dulu.<p>
-                                                             <?php }?>
+                                                       <?php if($alamat_shipping)
+                                                       {
+                                                           echo"<p>". $alamat_shipping."</p>";
+                                                       }
+                                                       else{
+                                                         echo "<p>Tidak ada data penerima yang tersedia, silakan isi terlebih dulu.<p>";
+
+                                                       }
+                                                       ?> 
+							
+                                                             
 							<!--<p><?php //echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>-->
 							<p><?php echo anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>
                                                       
@@ -281,21 +288,7 @@
           
           
           var apiGet= api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto';
-$.ajax({
-    type:"GET", 
-    headers:{"token":token}, 
-    //beforeSend: getAdd(),
-    success: function(data){
-        var rumah = $('.rumah');
-        var idBill =$("#idBill").val(data[0]['id']);
-        var idBill = data[0];
-       console.log("Test",idBill);
-        rumah.append('<p>'+data['address_name']+', '+data['address1']+' '+data['address2']+' '+data['address3']+' '+data['address3']+' '+data['address4']+' '+data['city_name']+' '+data['postal']+'</p>')
-        //idBilling(idBill);
 
-        },
-    dataType: "json", 
-    url: apiGet});
           /* lawas
 	  $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
 	  function(data){
@@ -313,6 +306,7 @@ $.ajax({
 		});
 		*/
 		//DATA SHIPPING
+                
 		/*var id = <?php echo $this->session->userdata('shipping_address_id'); ?>;
                 var idAddShip = $("#idAddShip").val();
 //                console.log('test',idAddShip);
