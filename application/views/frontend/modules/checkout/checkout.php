@@ -79,7 +79,7 @@
                                          <input type="hidden" id = "idDistri" name="idDistri" />
 							<p><strong>DATA PENERIMA</strong></p>
                                                         <div id="shoping"></div>
-                                                       <?php if($alamat_shipping)
+                                                       <?php if($this->session->userdata('shipping_address_id'))
                                                        {
                                                            echo"<p>". $alamat_shipping."</p>";
                                                        }
