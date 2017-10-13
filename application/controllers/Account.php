@@ -129,7 +129,7 @@ class Account extends Web_private {
 		if($hasil = json_decode($konten, true)){
 			$this->load->view('frontend/modules/account/list_buku_alamat',$this->data);
 		}else{
-			echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'>Keranjang belanja masih kosong tidak ada produk yang dipesan</div>";
+			echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'>List buku alamat masih kosong</div>";
 		}
 	}
 

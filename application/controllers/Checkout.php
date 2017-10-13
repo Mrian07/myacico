@@ -37,9 +37,25 @@ class Checkout extends Web_private {
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 		$hasil = json_decode($konten, true);
+               
 		//Data Billing
 		foreach($hasil as $items){
 			$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['address2']." ".$items['city_name']." ".$items['postal'];
+		}
+                
+		if($this->session->userdata('shipping_address_id'))
+		{
+				
+		   $api = "aduser/getaddress/".$this->session->userdata('shipping_address_id');
+		   $url = api_base_url($api);
+
+		   
+		   $konten2 = file_get_contents($url, false, $context);
+		   $hasil_ship = json_decode($konten2, true);
+		  
+		   //Data Shipping
+		   $this->data['alamat_shipping'] =$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['address2']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
+
 		}
 		
 		$this->data['title_web'] = "Myacico.com - Checkout";
