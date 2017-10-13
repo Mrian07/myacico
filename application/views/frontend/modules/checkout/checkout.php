@@ -268,6 +268,26 @@
 		var token = document.cookie.split('x-auth=')[1].split(';').shift();
 		var filter =0;
           
+          
+          var apiGet= api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto';
+$.ajax({
+    type:"GET", 
+    headers:{"token":token}, 
+    //beforeSend: getAdd(),
+    success: function(data){
+        var rumah = $('.rumah');console.log("Test",data);
+        var idBill =$("#idBill").val(data[0]['id']);
+        var idBill = data[0]['id'];
+        if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
+        if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
+
+        rumah.append('<p>'+data[0]['address_name']+', '+data[0]['address1']+' '+data[0]['address2']+' '+data[0]['address3']+' '+data[0]['address3']+' '+data[0]['address4']+' '+data[0]['cityname']+' '+data[0]['postal']+'</p>')
+        idBilling(idBill);
+
+        },
+    dataType: "json", 
+    url: apiGet});
+          /* lawas
 	  $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
 	  function(data){
 		//console.log('data nya adalah:', data[0]);
@@ -282,7 +302,7 @@
 			rumah.append('<p>'+data[0]['address_name']+', '+data[0]['address1']+' '+data[0]['address2']+' '+data[0]['address3']+' '+data[0]['address3']+' '+data[0]['address4']+' '+data[0]['cityname']+' '+data[0]['postal']+'</p>')
 			idBilling(idBill);
 		});
-		
+		*/
 		//DATA SHIPPING
 		var id = <?php echo $this->session->userdata('shipping_address_id'); ?>;
                 var idAddShip = $("#idAddShip").val();

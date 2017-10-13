@@ -74,7 +74,7 @@
 					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
 					</div>
                                        <div class="form-group" style="display:none" id="village_box">
-							<label><?php echo $lang_Keca; ?>*</label>
+							<label><?php echo "Kelurahan"; ?>*</label>
 					  <select name="village_id" id="village_id" class="form-control mandatory"></select>
 					</div>
 					<div class="form-group">
@@ -117,7 +117,7 @@ $.ajaxSetup({
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
 });
-$('#district_id').change(function () {
+$('#village_id').change(function () {
         var end = this.value;
       $('#submit_btn').removeAttr('disabled');
     });
@@ -160,63 +160,54 @@ function get_city(){
 function get_region(){
   $("#region_box").slideDown();
   $("#region_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_city);
-  $.get(api_base_url+"/cregion/getlistcregionbyidccountry/"+$("#country_sel").val(), function(r){
+  $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+$("#country_sel").val(), function(r){
     r.forEach(function(o){
       $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
     });
     $("#region_sel").prop('disabled', false).change(get_city);
   }, "json" );
 }
+$.get(api_base_url+"/ccountry/getlistccountry", function(r){
+    console.log(r);
+    r.forEach(function(o){
+      $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
+    });
+    $("#country_sel").prop('disabled', false).change(get_region);
+  }, "json" );
+  
 var data = {};
 
 $(document).ready(function() {
     $('#submit_btn').attr('disabled','disabled');
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	$.get(api_base_url+'/aduser/getinformationuser?token='+token,
-
-	function(data){
-	console.log('data nya adalah:', data);
-	console.log('test',token);
-		$("#name").val(data.name)
-	  $("#phone").val(data.phone);
- 		$("#phone2").val(data.phone2);
-
-
-		// var addressname = $('.addressname');
-		// var rumah = $('.rumah');
-
-
-		 //if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
-
-
-		//  data.forEach(function(p){
-		// 	 rumah.append(
-		 //
-		// 		 '<tr><td>'+p.addressname+'  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a href="'+api_base_url+'/aduser/deleteaddress?token='+token+'&addessid='+p.cbpartner_location_id+'"><h4>'+p.cbpartner_location_id+'</h4></a></td></tr>'
-		 //
-		 //
-		// 	 )
-
-
-
-
-
-
-});
+        
+        var apiGet= api_base_url+'/aduser/getinformationuser?token='+token;
+$.ajax({
+    type:"GET", 
+    headers:{"token":token}, 
+    success: function(data){
+        $("#name").val(data.name)
+        $("#phone").val(data.phone);
+        $("#phone2").val(data.phone2);
+        
+        },
+    dataType: "json", 
+    url: apiGet});
+	
     $("form").submit(function(e){
     e.preventDefault();
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
 
-    var apiurl = api_base_url +'/aduser/addaddress?token='+token;
-		var name = $("#name").val();
-		var phone = $("#phone").val();
-		var phone2 = $("#phone2").val();
+    var apiurl = api_base_url +'/aduser/addaddress';
+    var name = $("#name").val();
+    var phone = $("#phone").val();
+    var phone2 = $("#phone2").val();
     var address_name = $("#address_name").val();
     var address1 = $("#address1").val();
     var address2 = $("#address2").val();
-		  var address3 = $("#address3").val();
+    var address3 = $("#address3").val();
     var address4 = $("#address4").val();
-		var postal = $("#postal").val();
+    var postal = $("#postal").val();
     var district_id = $("#district_id").val();
     var village_id = $("#village_id").val();
     var isbillto = $("#isbillto").val();
@@ -227,21 +218,21 @@ $(document).ready(function() {
     //var fl=document.signup;
 //    var data = $(this).serialize();
 //     return alert(data);die();
-		data.name = name;
-		data.phone = phone;
-		data.phone2 = phone2;
-    data.address_name = address_name;
-    data.address1 = address1;
-    data.address2 = address2;
-		data.address3 = address3;
-		data.address4 = address4;
-    data.postal = postal;
-    data.district_id = district_id;
-    data.isbillto = isbillto;
-    data.isshipto = isshipto;
-    data.ispayfrom = ispayfrom;
-    data.isremitto = isremitto;
-data.village_id = village_id;
+        data.name = name;
+        data.phone = phone;
+        data.phone2 = phone2;
+        data.address_name = address_name;
+        data.address1 = address1;
+        data.address2 = address2;
+        data.address3 = address3;
+        data.address4 = address4;
+        data.postal = postal;
+        data.district_id = district_id;
+        data.isbillto = isbillto;
+        data.isshipto = isshipto;
+        data.ispayfrom = ispayfrom;
+        data.isremitto = isremitto;
+        data.village_id = village_id;
     
      var success = function(r){
          $('#spinner_img').hide();
@@ -266,31 +257,13 @@ data.village_id = village_id;
 			$("#isshipto").val(null);
 			$("#ispayfrom").val(null);
 		  $("#isremitto").val(null);
-console.log('datanya: ',district_id);
-//        window.location.replace(base_url+"/account/bukuAlamat");
+console.log('datanya: ',data);
+        window.location.replace(base_url+"/account/bukuAlamat");
 
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajax({ type:"POST", contentType: "application/json", headers:{"token":token}, data:JSON.stringify({
-
-		"name":name,
-    "phone":phone,
-    "phone2":phone2,
-    "address_name":address_name,
-    "address1":address1,
-    "address2":address2,
-    "address3":address3,
-    "address4":address4,
-    "postal":postal,
-    "district_id":district_id,
-    "isbillto":"N",
-    "isshipto":"Y",
-    "ispayfrom":"N",
-    "isremitto":"N",
-    "village_id":village_id
-
-		}), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
+    $.ajax({ type:"POST", contentType: "application/json", headers:{"token":token}, data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
     // success handling
 
 
@@ -318,12 +291,6 @@ var error = function(er){
 
   });
 
-  $.get(api_base_url+"/ccountry/getlistccountry", function(r){
-    console.log(r);
-    r.forEach(function(o){
-      $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
-    });
-    $("#country_sel").prop('disabled', false).change(get_region);
-  }, "json" );
+  
 });
 </script>
