@@ -57,22 +57,6 @@
 		</div>
 	</div>
 </div>
-<table class="table">
-	<thead>
-
-		<tr>
-		<th>Alamat lengkap</th>
-		<th>Ubah</th>
-		<th>Hapus</th>
-		</tr>
-
-	</thead>
-	<tbody class="rumah">
-
-
-
-	</tbody>
-</table>
 
 <script type="text/javascript">
 
