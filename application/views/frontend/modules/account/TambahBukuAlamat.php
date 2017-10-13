@@ -74,7 +74,7 @@
 					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
 					</div>
                                        <div class="form-group" style="display:none" id="village_box">
-							<label><?php echo $lang_Keca; ?>*</label>
+							<label><?php echo "Kelurahan"; ?>*</label>
 					  <select name="village_id" id="village_id" class="form-control mandatory"></select>
 					</div>
 					<div class="form-group">
@@ -181,15 +181,11 @@ $(document).ready(function() {
     $('#submit_btn').attr('disabled','disabled');
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
         
-        var apiGet= api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token;
+        var apiGet= api_base_url+'/aduser/getinformationuser?token='+token;
 $.ajax({
     type:"GET", 
     headers:{"token":token}, 
-    //beforeSend: getAdd(),
     success: function(data){
-        var addressname = $('.addressname');
-	var rumah = $('.rumah');
-	var mybutton = $('.mybutton');
         $("#name").val(data.name)
         $("#phone").val(data.phone);
         $("#phone2").val(data.phone2);
@@ -202,16 +198,16 @@ $.ajax({
     e.preventDefault();
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
 
-    var apiurl = api_base_url +'/aduser/addaddress?token='+token;
-		var name = $("#name").val();
-		var phone = $("#phone").val();
-		var phone2 = $("#phone2").val();
+    var apiurl = api_base_url +'/aduser/addaddress';
+    var name = $("#name").val();
+    var phone = $("#phone").val();
+    var phone2 = $("#phone2").val();
     var address_name = $("#address_name").val();
     var address1 = $("#address1").val();
     var address2 = $("#address2").val();
-		  var address3 = $("#address3").val();
+    var address3 = $("#address3").val();
     var address4 = $("#address4").val();
-		var postal = $("#postal").val();
+    var postal = $("#postal").val();
     var district_id = $("#district_id").val();
     var village_id = $("#village_id").val();
     var isbillto = $("#isbillto").val();
@@ -222,21 +218,21 @@ $.ajax({
     //var fl=document.signup;
 //    var data = $(this).serialize();
 //     return alert(data);die();
-		data.name = name;
-		data.phone = phone;
-		data.phone2 = phone2;
-    data.address_name = address_name;
-    data.address1 = address1;
-    data.address2 = address2;
-		data.address3 = address3;
-		data.address4 = address4;
-    data.postal = postal;
-    data.district_id = district_id;
-    data.isbillto = isbillto;
-    data.isshipto = isshipto;
-    data.ispayfrom = ispayfrom;
-    data.isremitto = isremitto;
-data.village_id = village_id;
+        data.name = name;
+        data.phone = phone;
+        data.phone2 = phone2;
+        data.address_name = address_name;
+        data.address1 = address1;
+        data.address2 = address2;
+        data.address3 = address3;
+        data.address4 = address4;
+        data.postal = postal;
+        data.district_id = district_id;
+        data.isbillto = isbillto;
+        data.isshipto = isshipto;
+        data.ispayfrom = ispayfrom;
+        data.isremitto = isremitto;
+        data.village_id = village_id;
     
      var success = function(r){
          $('#spinner_img').hide();
@@ -262,12 +258,12 @@ data.village_id = village_id;
 			$("#ispayfrom").val(null);
 		  $("#isremitto").val(null);
 console.log('datanya: ',data);
-//        window.location.replace(base_url+"/account/bukuAlamat");
+        window.location.replace(base_url+"/account/bukuAlamat");
 
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajax({ type:"POST", dataType: "json", headers:{"token":token}, data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
+    $.ajax({ type:"POST", contentType: "application/json", headers:{"token":token}, data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
     // success handling
 
 
