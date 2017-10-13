@@ -275,14 +275,12 @@ $.ajax({
     headers:{"token":token}, 
     //beforeSend: getAdd(),
     success: function(data){
-        var rumah = $('.rumah');console.log("Test",data);
+        var rumah = $('.rumah');
         var idBill =$("#idBill").val(data[0]['id']);
-        var idBill = data[0]['id'];
-        if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
-        if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
-
+        var idBill = data[0]['address1'];
+       console.log("Test",idBill);
         rumah.append('<p>'+data[0]['address_name']+', '+data[0]['address1']+' '+data[0]['address2']+' '+data[0]['address3']+' '+data[0]['address3']+' '+data[0]['address4']+' '+data[0]['cityname']+' '+data[0]['postal']+'</p>')
-        idBilling(idBill);
+        //idBilling(idBill);
 
         },
     dataType: "json", 
@@ -304,7 +302,7 @@ $.ajax({
 		});
 		*/
 		//DATA SHIPPING
-		var id = <?php echo $this->session->userdata('shipping_address_id'); ?>;
+		/*var id = <?php echo $this->session->userdata('shipping_address_id'); ?>;
                 var idAddShip = $("#idAddShip").val();
 //                console.log('test',idAddShip);
 		$.get(api_base_url+'/aduser/getaddress/'+idAddShip+'?token='+token,
@@ -337,7 +335,7 @@ $.ajax({
 		});
 	//console.log('total nya adalah:', subtotal);
 	  });
-	 
+	 */
 	$("form").submit(function(e){
 //           
             var data = {};
