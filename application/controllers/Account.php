@@ -8,11 +8,7 @@ class Account extends Web_private {
 		parent::__construct();
         $this->load->helper('form');
         $this->load->library('form_validation');
-		/*$this->load->library('session');
-		$this->load->library('session');*/
-	//	$this->load->helper('cookie');
-	//	$this->load->model('Login_model', 'login', TRUE);
-
+		$this->load->helper('app');
 
 		$this->atribut();
 	}
@@ -108,8 +104,33 @@ class Account extends Web_private {
 		$this->data['title_web'] = "Myacico.com - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/bukuAlamat',$this->data);
+		$this->load->view('frontend/modules/account/buku_alamat',$this->data);
 		$this->load->view('frontend/footer',$this->data);
+	}
+	
+	public function listBukuAlamat()
+    {	
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "aduser/getaddress?addresstype=isshipto";
+		$url = api_base_url($api);
+		
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+		
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+
+		$this->data['hasil'] = json_decode($konten, true);
+
+		if($hasil = json_decode($konten, true)){
+			$this->load->view('frontend/modules/account/list_buku_alamat',$this->data);
+		}else{
+			echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'>Keranjang belanja masih kosong tidak ada produk yang dipesan</div>";
+		}
 	}
 
 	public function editBukuAlamat()

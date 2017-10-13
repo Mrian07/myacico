@@ -1,0 +1,44 @@
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+
+			<i class="fa fa-angle-right" aria-hidden="true"></i> BUKU ALAMAT
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3">
+			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
+		</div>
+		<div class="col-sm-9">
+
+		<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat');?>
+		<br/>
+		<br/>
+	
+		<div class='listBukuAlamat'></div>
+		</div>
+	</div>
+	
+</div>
+
+<script>
+$(document).ready(function() {
+
+	$.ajax
+	({
+	url: "<?php echo site_url('account/listBukuAlamat'); ?>",
+	success:function(html){
+			$(".listBukuAlamat").html(html);
+		}
+	});
+	
+	
+});
+</script>
