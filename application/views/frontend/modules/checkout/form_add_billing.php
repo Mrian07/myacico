@@ -62,9 +62,9 @@
 			  </div>
 			  <div class="panel-body">
 
+						<p>Masukan data billing dengan lengkap pada form dibawah ini.</p>
+						
 
-          			<div class="panel panel-default">
-          				<div class="panel-body">
           				  <form name="test1" method="post">
           				  <input type="hidden" id="isbillto" name="isbillto" value="N" />
           				  <input type="hidden" id="isshipto" name="isshipto" value="Y" />
@@ -116,15 +116,39 @@
           					<div class="clearfix"></div>
           						<input type="submit" id="submit_btn" class="btn btn-primary" value="Tambah"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
           				  </form>
-          				</div>
-          			</div>
+         
 
 			  </div>
 			</div>
 
 		</div>
 		<div class="col-md-5">
-			<?php $this->load->view('frontend/modules/checkout/checkout_cart',$this->data); ?>
+			<?php 			
+			$this->data['token'] = $_COOKIE['x-auth'];
+			$token = $_COOKIE['x-auth'];
+			$api = "order/cart/detail";
+			$url = api_base_url($api);
+			
+			$options = ["http" => [
+			"method" => "GET",
+			"header" => ["token: " . $token,
+			"Content-Type: application/json"],
+			]];
+			
+			$context = stream_context_create($options);
+			$konten = file_get_contents($url, false, $context);
+			
+			
+			$this->data['hasil'] = json_decode($konten, true);
+			//echo"<pre>"; print_r($hasil); 
+			
+			if(json_decode($konten, true)){
+				$this->load->view('frontend/modules/checkout/checkout_cart',$this->data); 
+			}else{
+				echo"<center>Keranjang masih kosong</center>";
+			}
+			
+			?>
 		</div>
 	</div>
 

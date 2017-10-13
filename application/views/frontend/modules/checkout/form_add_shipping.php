@@ -60,10 +60,9 @@
 					</div>
 				</div>
 			  </div>
-			  <div class="panel-body">
+	
+				 <div class="panel-body">
 
-				<div class="row">
-					<div class="col-md-12">
 
 						<form name="signup" method="post">
 						<input type="hidden" id = "name"name="name"   />
@@ -80,15 +79,10 @@
 						<input type="hidden" id="alamat3" name="alamat3" value="kelurahan duri kosambi" />
 						</div>
             <div class="row">
-              <div class="col-sm-3">
-                <?php // $this->load->view('frontend/modules/account/sidebar_menu'); ?>
-              </div>
-              <div class="col-sm-9">
-                <p><?php echo anchor('account/informasiAkun', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
+              <div class="col-sm-12">
+
                 <p>Silakan lengkapi data billing Anda dibawah ini.</p>
 
-                <div class="panel panel-default">
-                  <div class="panel-body">
                     <form name="test1" method="post">
                     <input type="hidden" id="isbillto" name="isbillto" value="N" />
                     <input type="hidden" id="isshipto" name="isshipto" value="Y" />
@@ -142,19 +136,41 @@
                     </form>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+     
+
+			</div>
 
 
-
-			  </div>
 			</div>
 
 		</div>
 		<div class="col-md-5">
-			<?php $this->load->view('frontend/modules/checkout/checkout_cart',$this->data); ?>
+			<?php 			
+			$this->data['token'] = $_COOKIE['x-auth'];
+			$token = $_COOKIE['x-auth'];
+			$api = "order/cart/detail";
+			$url = api_base_url($api);
+			
+			$options = ["http" => [
+			"method" => "GET",
+			"header" => ["token: " . $token,
+			"Content-Type: application/json"],
+			]];
+			
+			$context = stream_context_create($options);
+			$konten = file_get_contents($url, false, $context);
+			
+			
+			$this->data['hasil'] = json_decode($konten, true);
+			//echo"<pre>"; print_r($hasil); 
+			
+			if(json_decode($konten, true)){
+				$this->load->view('frontend/modules/checkout/checkout_cart',$this->data); 
+			}else{
+				echo"<center>Keranjang masih kosong</center>";
+			}
+			
+			?>
 		</div>
 	</div>
 

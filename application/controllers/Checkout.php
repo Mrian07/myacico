@@ -37,7 +37,7 @@ class Checkout extends Web_private {
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 		$hasil = json_decode($konten, true);
-               
+
 		//Data Billing
 		foreach($hasil as $items){
 			$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['address2']." ".$items['city_name']." ".$items['postal'];
