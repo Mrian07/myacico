@@ -277,9 +277,9 @@ $.ajax({
     success: function(data){
         var rumah = $('.rumah');
         var idBill =$("#idBill").val(data[0]['id']);
-        var idBill = data[0]['address1'];
+        var idBill = data[0];
        console.log("Test",idBill);
-        rumah.append('<p>'+data[0]['address_name']+', '+data[0]['address1']+' '+data[0]['address2']+' '+data[0]['address3']+' '+data[0]['address3']+' '+data[0]['address4']+' '+data[0]['cityname']+' '+data[0]['postal']+'</p>')
+        rumah.append('<p>'+data['address_name']+', '+data['address1']+' '+data['address2']+' '+data['address3']+' '+data['address3']+' '+data['address4']+' '+data['city_name']+' '+data['postal']+'</p>')
         //idBilling(idBill);
 
         },
