@@ -25,9 +25,9 @@ class Checkout extends Web_private {
 	{
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
-		$api = "aduser/getaddress?addresstype=isshipto";
+		$api = "aduser/getaddress?addresstype=isbillto";
 		$url = api_base_url($api);
-		
+
 		$options = ["http" => [
 		"method" => "GET",
 		"header" => ["token: " . $token,
