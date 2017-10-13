@@ -100,7 +100,7 @@ var success = function(r){
 	 document.cookie='x-auth='+r.newToken+'; path='+base_path;
 
 };
-					$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "oldPassword":oldPassword,"newPassword":newPassword }) , url: apiurl, success: success, error: error });
+					$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "oldPassword":oldPassword,"newPassword":newPassword }) , headers:{"token":token}, url: apiurl, success: success, error: error });
 				}
 
 			});

@@ -85,7 +85,7 @@ $(document).ready(function() {
 			};
 
 			//$.post( apiurl, data, success, "json" );
-			$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "name":name}) , url: apiurl, success: success, error: error });
+			$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "name":name}) , headers:{"token":token}, url: apiurl, success: success, error: error });
 		
 		}
 	});

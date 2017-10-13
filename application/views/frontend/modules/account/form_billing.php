@@ -1,83 +1,92 @@
+<div class='my-bg-title'>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+      <i class="fa fa-angle-right" aria-hidden="true"></i> UBAH BUKU ALAMAT
+
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container">
-	<div class="row">
-	  <div class="col-sm-12">
-		<div class="my-border-title">
-			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DATA BILLING</h3>
-		</div>
-	  </div>
-	</div> 
-	
-	<div class="row">
-		<div class="col-sm-3">
-			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
-		</div>
-		<div class="col-sm-9">
-			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
-			<p>Silakan lengkapi data billing Anda dibawah ini jika anda ingin mengubah alamat Billing.</p>
-			<div class="panel panel-default">
-				<div class="panel-body">	
-				  <form name="signup" method="post">
-					<div class="form-group">
-					<input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
+asdasd
+  
+  <div class="row">
+    <div class="col-sm-3">
+      <?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
+    </div>
+    <div class="col-sm-9">
+      <p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
+      <p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima. </br> *harap isi kemabali negara, propinsi, kota, dan kecamatan. </p>
+      <div class="panel panel-default">
+        <div class="panel-body">  
+          <form name="signup" method="post">
+          <div class="form-group">
+          <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
                                         <input type="hidden" id = "id" name="id" />
-                                          <input type="hidden" id="isbillto" name="isbillto" value="N" />
-                                        <input type="hidden" id="isshipto" name="isshipto" value="Y" />
+                                          <input type="hidden" id="isbillto" name="isbillto" value="Y" />
+                                        <input type="hidden" id="isshipto" name="isshipto" value="N" />
                                         <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
                                         <input type="hidden" id="isremitto" name="isremitto" value="N" />
-					</div>
+                                        <input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
+
+          </div>
                                         <div class="form-group">
-					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
-					  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
-					</div>
-					<div class="form-group">
-					  <label><?php echo $lang_addres; ?>*</label>
-					  <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
-					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
-					</div>
-					
-					<div class="form-group" style="display:none" id="city_box">
-						<label><?php echo $lang_kota; ?>*</label>
-					  <select name="city" id="city_sel" class="form-control mandatory"></select>
-					</div>
+            <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+            <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
+          </div>
+          <div class="form-group">
+            <label><?php echo $lang_addres; ?>*</label>
+            <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
+            <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
+                                          <input type="text" id = "address3" name="address3" class="form-control mandatory" />
+            <input type="text" id="address4" name="address4" class="form-control mandatory"  />
+                                        </div>
+          <div class="form-group" style="display:none" id="city_box">
+            <label><?php echo $lang_kota; ?>*</label>
+            <select name="city" id="city_sel" class="form-control mandatory"></select>
+          </div>
                                         <div class="form-group" style="display:none" id="ditric_box">
-							<label><?php echo $lang_Keca; ?>*</label>
-					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
-					</div>
+              <label><?php echo $lang_Keca; ?>*</label>
+            <select name="district_id" id="district_id" class="form-control mandatory"></select>
+          </div>
                                        <div class="form-group" style="display:none" id="village_box">
-							<label><?php echo "Kelurahan"; ?>*</label>
-					  <select name="village_id" id="village_id" class="form-control mandatory"></select>
-					</div>
-					<div class="form-group">
-					<label><?php echo $lang_PostCode; ?>*</label>
-					  <input type="text" id="postal" name="postal" class="form-control mandatory" />
-					</div>
+              <label><?php echo "kelurahan"; ?>*</label>
+            <select name="village_id" id="village_id" class="form-control mandatory"></select>
+          </div>
+          <div class="form-group">
+          <label><?php echo $lang_PostCode; ?>*</label>
+            <input type="text" id="postal" name="postal" class="form-control mandatory" />
+          </div>
                                       <div class="form-group">
-					<label>Handphone*</label>
-						<input type="text" id = "phone"name="phone" class="form-control mandatory" />
-					</div>
-					<div class="form-group">
-					<label>Telepon</label>
-						<input type="text" id = "phone2"name="phone2" class="form-control"/>
-					</div>
-					<div class="form-group" style="display: none;" id="region_box">
-					<label><?php echo $lang_Provience; ?>*</label>
-					  <select name="province" id="region_sel" class="form-control mandatory"></select>
-					</div>
-					<div class="form-group">
-					<label><?php echo $lang_Country; ?>*</label>
-					  <select name="country" id="country_sel" class="form-control mandatory" disabled >
-						<option value="">--pilih--</option>
-					  </select>
-					</div>
-					
-					
-					<div class="clearfix"></div>
-						<input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
-				  </form>
-				</div>
-			</div>
-		</div>
-	</div>
+          <label>Handphone*</label>
+            <input type="text" id = "phone"name="phone" class="form-control mandatory" />
+          </div>
+          <div class="form-group">
+          <label>Telepon</label>
+            <input type="text" id = "phone2"name="phone2" class="form-control"/>
+          </div>
+          <div class="form-group" style="display: none;" id="region_box">
+          <label><?php echo $lang_Provience; ?>*</label>
+            <select name="province" id="region_sel" class="form-control mandatory"></select>
+          </div>
+          <div class="form-group">
+          <label><?php echo $lang_Country; ?>*</label>
+            <select name="country" id="country_sel" class="form-control mandatory" disabled >
+            <option value="">--pilih--</option>
+            </select>
+          </div>
+          
+          
+          <div class="clearfix"></div>
+                                            <input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+                                       
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <script type="text/javascript">
 $.ajaxSetup({
@@ -91,7 +100,6 @@ $('#village_id').change(function () {
         var end = this.value;
       $('#submit_btn').removeAttr('disabled');
     });
-
 function get_village(){
   $("#village_box").slideDown();
   $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
@@ -102,7 +110,6 @@ function get_village(){
     $("#village_id").prop('disabled', false);
   }, "json" );
 }
-    
 function get_distric(){
   $("#ditric_box").slideDown();
   $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
@@ -135,28 +142,24 @@ function get_region(){
     $("#region_sel").prop('disabled', false).change(get_city);
   }, "json" );
 }
-$.get(api_base_url+"/ccountry/getlistccountry", function(r){
-    console.log(r);
-    r.forEach(function(o){
-      $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
-    });
-    $("#country_sel").prop('disabled', false).change(get_region);
-  }, "json" );
-  
 var data = {};
 $(document).ready(function() {
     $('#submit_btn').attr('disabled','disabled');
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
-    var apiGet= api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token;
+    var idAdd = $('#idAdd').val();
+//    $http.get('www.google.com/someapi', {
+//    headers: {'Authorization': 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='}
+//});
+ var apiGet= api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token;
 $.ajax({
     type:"GET", 
     headers:{"token":token}, 
     //beforeSend: getAdd(),
     success: function(data){
         var addressname = $('.addressname');
-	var rumah = $('.rumah');
-	var mybutton = $('.mybutton');
-	$("#id").val(data.id);
+  var rumah = $('.rumah');
+  var mybutton = $('.mybutton');
+  $("#id").val(data.id);
         $("#address_name").val(data.address_name);
         $("#name").val(data.name);
         $("#phone").val(data.phone);
@@ -168,17 +171,51 @@ $.ajax({
       
   rumah.append(
 
-	'<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
-	)
-	mybutton.append(
-	'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
-	)
-	});
+  '<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
+  )
+  mybutton.append(
+  '<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
+  )
+  });
         
         },
     dataType: "json", 
     url: apiGet});
-    
+
+   /* 
+        $.get(api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token,
+ function(data){
+ console.log('data nya adalah:', data);
+        
+  var addressname = $('.addressname');
+  var rumah = $('.rumah');
+  var mybutton = $('.mybutton');
+  if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
+  if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
+ 
+        $("#id").val(data.id);
+        $("#address_name").val(data.address_name);
+        $("#name").val(data.name);
+        $("#phone").val(data.phone);
+        $("#phone2").val(data.phone2);
+        $("#postal").val(data.postal);
+        $("#address1").val(data.address1);
+        $("#address2").val(data.address2);
+//        console.log('data nya adalah:', data[0]['id']);
+  data.forEach(function(p){
+      
+  rumah.append(
+
+  '<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
+  )
+  mybutton.append(
+  '<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
+  )
+  });
+
+
+  });
+    */
   $("form").submit(function(e){
     e.preventDefault();
     //var data = $(this).serialize();
@@ -196,6 +233,7 @@ $.ajax({
         var address4 = $("#address4").val();
         var postal = $("#postal").val();
         var district_id = $("#district_id").val();
+        var village_id = $("#village_id").val();
         var isbillto = $("#isbillto").val();
         var isshipto = $("#isshipto").val();
         var ispayfrom = $("#ispayfrom").val();
@@ -212,14 +250,15 @@ data.id = id;
     data.address_name = address_name;
     data.address1 = address1;
     data.address2 = address2;
-    data.address3 = "address3";
-    data.address4 = "address4";
+    data.address3 = address3;
+    data.address4 = address4;
     data.postal = postal;
     data.district_id = district_id;
     data.isbillto = 'Y';
-    data.isshipto = 'Y';
+    data.isshipto = 'N';
     data.ispayfrom = 'N';
     data.isremitto = 'N';
+    data.village_id = village_id;
     // return alert(data);
 
     // success handling
@@ -251,6 +290,7 @@ data.id = id;
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
+   // $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, timeout: 30000 });
     $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), headers:{"token":token}, dataType: "json", url: apiurl, success: success, timeout: 30000 });
 
     // do validation
@@ -276,6 +316,12 @@ data.id = id;
     }
   });
 
-  
+  $.get(api_base_url+"/ccountry/getlistccountry", function(r){
+    console.log(r);
+    r.forEach(function(o){
+      $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
+    });
+    $("#country_sel").prop('disabled', false).change(get_region);
+  }, "json" );
 });
 </script>
