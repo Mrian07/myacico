@@ -67,7 +67,7 @@
 						</td>
 						<td data-th='Price'>Rp.".money($items['price'])."</td>
 						<td data-th='Quantity'>
-							<select id='qty' name='qty' onchange='getval(this);' class='form-control'>";
+							<select id='qty' name='qty' onchange='getvaltoken(this);' class='form-control'>";
 								$val =1;
 								while($val<=100){
 									if($items['qty']==$val){
@@ -107,3 +107,44 @@
 	</table>
 	
 </table>
+
+<script>
+
+	function getvaltoken(qty){
+		var token = document.cookie.split('x-auth=')[1].split(';').shift();
+		var jml = qty.value;
+		var jm = jml.split('-');
+		var qty = jm[0];
+		var itemCartId = jm[1];
+		var data = {};		
+		var apiurl = api_base_url +'/order/cart/updateitem';
+		
+		$.ajax
+		({  
+		type: "POST",
+		url: apiurl,
+		data:JSON.stringify({
+			"qty":qty, 
+			"itemCartId":itemCartId
+		}) ,
+		contentType: "application/json",
+		headers: {"token":token},
+		success:function(data){
+		
+				var qtyTotal = qty;
+				$.ajax
+				({
+				url: "<?php echo site_url('cart/listCartToken'); ?>",
+				
+				success:function(html){
+						$(".listCart").html(html);
+						$('.totalCart').html(qtyTotal);
+					}
+				});
+			
+			}
+		});
+		
+	}
+
+</script>
