@@ -78,7 +78,7 @@
       <span class="progress-completed"> 35%</span>
     </div-->
 	<div class="col-md-12 listCart">
-		<center><img src='<?php echo base_url('images/general/loading2.gif');?>' border='0'><br>Loading...</center>
+		<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>
 	</div>
 	
 
