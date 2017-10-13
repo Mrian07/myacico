@@ -22,7 +22,8 @@
 		<br/>
 		<br/>
 	
-		<div class='listBukuAlamat'></div>
+		<div class='listBukuAlamat'><center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center></div>
+			
 		</div>
 	</div>
 	

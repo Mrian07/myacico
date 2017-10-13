@@ -18,11 +18,30 @@ class Checkout extends Web_private {
 	}
 
 	public function atribut(){
-
+		
 	}
 
 	public function index()
 	{
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "aduser/getaddress?addresstype=isshipto";
+		$url = api_base_url($api);
+		
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+		
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+		$hasil = json_decode($konten, true);
+		//Data Billing
+		foreach($hasil as $items){
+			$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['address2']." ".$items['city_name']." ".$items['postal'];
+		}
+		
 		$this->data['title_web'] = "Myacico.com - Checkout";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);

@@ -57,12 +57,23 @@
 
 						<form>
 							<p><strong>DATA BILLING</strong></p>
+							
+							
+							<?php 
+							if($alamat_billing){
+								echo"<p>". $alamat_billing."</p>";
+							}else{
+								echo anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default'));
+							}?>
+							
+							<!--
+							
 							<div class="rumah" id='biling-ready' style='display:none'></div>
 							<div class="billing-empty"  style='display:none'>
   							<p>Tidak ada data billing yang tersedia, silakan1 isi terlebih dulu.asdasd<p>
-  							<p><?php echo anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default'));?></p>
+  							<p><?php// echo anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default'));?></p>
 							</div>
-
+-->
                                         <input type="hidden" id="idAddShip" name="idAddShip" value="<?php echo $this->session->userdata('shipping_address_id'); ?>" />
                                         <input type="hidden" id = "idBill" name="idBill" />
                                          <input type="hidden" id = "idDistri" name="idDistri" />

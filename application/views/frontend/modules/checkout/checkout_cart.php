@@ -28,21 +28,27 @@
 								</td>
 							</tr>
 							<?php $total +=$items['subtotal'];
-		endforeach; ?>
+							endforeach; ?>
 						</tbody>
 						<tfoot>
 							<tr class="visible-xs">
-								<td class="text-center" colspan="5"><strong>Total2 <?php echo money($total); ?></strong></td>
+								<td class="text-center" colspan="5"><strong>Total Rp.<?php echo money($total); ?></strong></td>
 							</tr>
-							<tr class="visible-xs">
+							<!--<tr class="visible-xs">
 								<td colspan="5"><b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman</td>
 							</tr>
 							<tr>
-								<!--<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>-->
 								<td colspan="3" class="hidden-xs">
 								<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman.
 								Ada biaya tambahan untuk beberapa pengiriman </td>
-								<td colspan="2" class="hidden-xs text-center"><strong>Total <br><?php echo money($total); ?></strong></td>
+								<td colspan="2" class="hidden-xs text-center"><strong>Total Rp.<?php echo money($total); ?></strong></td>
+							</tr>-->
+							<tr>
+								<td colspan="3" class="hidden-xs"></td>
+								<td class="hidden-xs" colspan="5"><strong>Total Rp.<?php echo money($total); ?></strong></td>
+							</tr>
+							<tr>
+								<td colspan="5"><b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman</td>
 							</tr>
 						</tfoot>
 					</table>
