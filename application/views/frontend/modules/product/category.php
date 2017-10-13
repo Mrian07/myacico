@@ -144,7 +144,7 @@ $('.carousel .item').each(function(){
       box.append(
         $(document.createElement('div')).attr("class","col-md-3 col-sm-6").append(
           $(document.createElement('span')).attr("class","thumbnail").append(
-            '<a href="'+base_url+'product/listItem/'+p.categoryId+'"><img src="'+p.imageurl+'" alt="..."><h4>'+p.name+'</h4></a>'
+            '<a href="'+base_url+'product/listItem/'+p.categoryId+'"><img src="'+p.imageurl+'" alt="..."><h5>'+p.name+'</h5></a>'
 
           )
         )

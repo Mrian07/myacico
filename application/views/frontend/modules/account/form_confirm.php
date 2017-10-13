@@ -90,7 +90,7 @@ $(document).ready( function() {
     $("form").submit(function(e){
     e.preventDefault();
    // var data = $(this).serialize();
-    var token = document.cookie.split('x-auth=')[1].split(';').shift();
+
 
 
 
@@ -149,15 +149,17 @@ $(document).ready( function() {
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
+        var token = document.cookie.split('x-auth=')[1].split(';').shift();
     console.log('ini data',token);
-    var apiurl = api_base_url2 +'OrderCompletion?token='+token;
+    var apiurl = api_base_url +'/OrderCompletion?token='+token;
     var form = $('form')[0]; // You need to use standard javascript object here
     var formData = new FormData(form);
-
+//$.ajax({ type:"POST",  data: formData,  processData: false, contentType: false,  headers:{"token":token}, url: apiurl });
     $.ajax({
     url: apiurl,
     data: formData,
     type: 'POST',
+
     contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
     processData: false, // NEEDED, DON'T OMIT THIS
     // ... Other options like success and etc
