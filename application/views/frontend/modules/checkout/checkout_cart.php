@@ -16,10 +16,7 @@
 							foreach($hasil as $items):?>
 							<tr>
 								<td data-th="Product">
-									<div class="row">
-										<div class="col-sm-12 hidden-xs"><img src="<?php echo $items['imageurl']; ?>" alt="<?php echo $items['name']; ?>" class="img-responsive"/></div>
-										
-									</div>
+									<img src="<?php echo $items['imageurl']; ?>" alt="<?php echo $items['name']; ?>" class="img-responsive" width='100'/>
 								</td>
 								<td data-th="Price">Rp.<?php echo money($items['price']); ?></td>
 								<td data-th="Qty" align='center'>
@@ -27,7 +24,7 @@
 								</td>
 								<td data-th="Subtotal" class="text-center">Rp.<?php echo money($items['subtotal']); ?></td>
 								<td class="actions" data-th="">
-									<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>', array('class'=>'btn btn-info btn-sm')); ?>
+									<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'); ?>
 								</td>
 							</tr>
 							<?php $total +=$items['subtotal'];
@@ -35,15 +32,17 @@
 						</tbody>
 						<tfoot>
 							<tr class="visible-xs">
-								<td class="text-center"><strong>Total <?php echo money($total); ?></strong></td>
+								<td class="text-center" colspan="5"><strong>Total2 <?php echo money($total); ?></strong></td>
+							</tr>
+							<tr class="visible-xs">
+								<td colspan="5"><b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman</td>
 							</tr>
 							<tr>
 								<!--<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>-->
 								<td colspan="3" class="hidden-xs">
 								<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman.
 								Ada biaya tambahan untuk beberapa pengiriman </td>
-								<td class="hidden-xs text-center"><strong>Total <br><?php echo money($total); ?></strong></td>
-								<td></td>
+								<td colspan="2" class="hidden-xs text-center"><strong>Total <br><?php echo money($total); ?></strong></td>
 							</tr>
 						</tfoot>
 					</table>

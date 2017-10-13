@@ -44,7 +44,7 @@
 					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
 					</div>
                                        <div class="form-group" style="display:none" id="village_box">
-							<label><?php echo $lang_Keca; ?>*</label>
+							<label><?php echo "Kelurahan"; ?>*</label>
 					  <select name="village_id" id="village_id" class="form-control mandatory"></select>
 					</div>
 					<div class="form-group">
@@ -87,7 +87,7 @@ $.ajaxSetup({
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
 });
-$('#district_id').change(function () {
+$('#village_id').change(function () {
         var end = this.value;
       $('#submit_btn').removeAttr('disabled');
     });
@@ -97,7 +97,7 @@ function get_village(){
   $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
     r.forEach(function(o){
-      $("#village_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+      $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
     });
     $("#village_id").prop('disabled', false);
   }, "json" );
@@ -135,29 +135,36 @@ function get_region(){
     $("#region_sel").prop('disabled', false).change(get_city);
   }, "json" );
 }
+$.get(api_base_url+"/ccountry/getlistccountry", function(r){
+    console.log(r);
+    r.forEach(function(o){
+      $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
+    });
+    $("#country_sel").prop('disabled', false).change(get_region);
+  }, "json" );
+  
 var data = {};
 $(document).ready(function() {
     $('#submit_btn').attr('disabled','disabled');
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
-    $.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isbillto',
- function(data){
- 
-	var addressname = $('.addressname');
+    var apiGet= api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token;
+$.ajax({
+    type:"GET", 
+    headers:{"token":token}, 
+    //beforeSend: getAdd(),
+    success: function(data){
+        var addressname = $('.addressname');
 	var rumah = $('.rumah');
 	var mybutton = $('.mybutton');
-	if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
-	if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
- 
-        $("#id").val(data[0]['id']);
-        $("#address_name").val(data[0]['address_name']);
-        $("#name").val(data[0]['name']);
-        $("#phone").val(data[0]['phone']);
-        $("#phone2").val(data[0]['phone2']);
-        $("#postal").val(data[0]['postal']);
-        $("#address1").val(data[0]['address1']);
-        $("#address2").val(data[0]['address2']);
-        console.log('data nya adalah:', data[0]['id']);
-	data.forEach(function(p){
+	$("#id").val(data.id);
+        $("#address_name").val(data.address_name);
+        $("#name").val(data.name);
+        $("#phone").val(data.phone);
+        $("#phone2").val(data.phone2);
+        $("#postal").val(data.postal);
+        $("#address1").val(data.address1);
+        $("#address2").val(data.address2);
+        data.forEach(function(p){
       
   rumah.append(
 
@@ -167,9 +174,10 @@ $(document).ready(function() {
 	'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
 	)
 	});
-
-
-	});
+        
+        },
+    dataType: "json", 
+    url: apiGet});
     
   $("form").submit(function(e){
     e.preventDefault();
@@ -268,12 +276,6 @@ data.id = id;
     }
   });
 
-  $.get(api_base_url+"/ccountry/getlistccountry", function(r){
-    console.log(r);
-    r.forEach(function(o){
-      $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
-    });
-    $("#country_sel").prop('disabled', false).change(get_region);
-  }, "json" );
+  
 });
 </script>
