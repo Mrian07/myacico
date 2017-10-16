@@ -92,7 +92,7 @@
                                                              
 							<!--<p><?php //echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>-->
 							<p><?php echo anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>
-                                                      
+                                                   
 							<!--
 							<p><strong>DATA PENERIMA</strong></p>
 							<div class='row'>
@@ -175,12 +175,13 @@
 				 <form method="post">
 				  <div class="form-group">
 					<label for="email">Pilih Type Pembayaran:</label>
-					<select class="form-control" id='payment_method' name='payment_method'>
+<!--					<select class="form-control" id='payment_method' name='payment_method'>
 						<option value=''>-Pilih-</option>
 						<option value='01'>Transfer Bank</option>
-						<!--option value='02'>Ninja 250cc</option>
-						<option value='03'>Credit Cart</option-->
-					</select>
+						option value='02'>Ninja 250cc</option>
+						<option value='03'>Credit Cart</option
+					</select>-->
+                                        <select name="payment_method" id="payment_method" class="form-control mandatory"></select>
 
 				  </div>
 
@@ -276,15 +277,40 @@
         var billId = null;
         var idDistriship = null;
         var qty = 0;
-		var totalBelanja = 0;
-		var subtotal = 0;
+        var totalBelanja = 0;
+        var subtotal = 0;
         var fee = 0;
         //var idDistrict = null;
+  /*     
+        function get_method(){
+        $("#payment_method").slideDown();
+        $("#payment_method").prop('disabled', true).html('<option value="">--pilih--</option>');
+        $.get(api_base_url+"/payment/method", function(r){
+          r.forEach(function(o){
+            $("#payment_method").append("<option value='"+o.value+"'>"+o.name+"</option>");
+          });
+          $("#payment_method").prop('disabled', false);
+        }, "json" );
+      }
+      */
 	$(document).ready(function()
 	{
 		var token = document.cookie.split('x-auth=')[1].split(';').shift();
 		var filter =0;
-          
+                var api_method= api_base_url+'/payment/method';
+          $.ajax({
+        type: "GET",
+        url:api_method,
+        dataType: "json",
+        success: function (data) {
+            console.log('sam',data);
+           data.forEach(function(p){
+               var div_data="<option value="+data.value+">"+data.name+"</option>";
+               $(div_data).appendTo('#payment_method'); 
+           });
+            }
+      });
+    
           
           var apiGet= api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto';
 
@@ -304,7 +330,7 @@
 		//console.log('sub nya adalah:', subtotal);
 		//console.log('total nya adalah:', total);
 			data.grandtotal = total;
-			data.paymentMethod = pMethod;
+			data.paymentMethod = pMethod;//c Ato R
 			data.code = namaBank;
 			data.billing_address_id = billId;
 			data.shipping_address_id = idAddShip;
