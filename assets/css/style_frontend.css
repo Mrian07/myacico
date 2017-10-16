@@ -883,10 +883,6 @@ a .my-btn-chekout:hover{
 	margin:20px;
 }
 
-.detail-product{
-	margin-left:-40px;
-}
-
 .line-detail-product{
 	margin-bottom:25px;
 }
@@ -992,10 +988,6 @@ a .my-btn-chekout:hover{
 }
 
 @media screen and (max-width:500px) {
-
-	.detail-product{
-		margin-left:0px;
-	}
 
 	.sidebar-left-mobile{
 		display: block;

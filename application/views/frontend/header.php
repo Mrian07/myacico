@@ -306,18 +306,8 @@ $(document).ready(function() {
 function totalCart(){
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var qty = 0;
-	//var qtyTotal = $('.totalCart');
 
 	if(token){
-
-		/*$.get( api_base_url+"/order/cart/detail?token="+token,
-		function(r){
-
-			r.forEach(function(p){
-				qty += p.qty;
-			});
-			qtyTotal.html(qty);
-		  }, "json" );*/
 
 		$.ajax
 		({
@@ -379,7 +369,7 @@ $(function(){
 			$.get(api_base_url+"/product/productlist/"+request.term, function (data) {
 				console.log('res',data);
 				var arr = [];
-				data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id})})
+				data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id, label:d.name, value:d.m_product_id})})
 				response(arr);
 			});
 		},
