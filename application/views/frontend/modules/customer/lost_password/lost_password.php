@@ -1,18 +1,23 @@
-<div class="container">
-	<div class="row">
-	  <div class="col-sm-12">
-		<div class="my-border-title">
-			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> LUPA PASSWORD</h3>
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-12">
+
+			<i class="fa fa-angle-right" aria-hidden="true"></i> LUPA PASSWORD
+
+		  </div>
 		</div>
-		<p>Masukkan alamat email Anda di bawah ini. Anda akan menerima link untuk mereset password Anda.</p>
-	  </div>
 	</div>
+</div>
+<div class="container">
+
 
 	<div class="row">
 		<div class="col-sm-3">
 
 		</div>
 	  <div class="col-sm-6">
+			<p>Masukkan alamat email Anda di bawah ini. Anda akan menerima link untuk mereset password Anda.</p>
 		<div class='border-create'>
 		 <form name="signup" method="post">
 		  <div class="form-group">
@@ -49,13 +54,13 @@ $(document).ready(function() {
 	$('form').submit(function(e){
 		var email = $("#email").val();
 
-		if(email==''){		
+		if(email==''){
 			$.alert({
 				title: 'Alert!',
 				content: 'Email tidak boleh kosong!',
 			});
 		}else{
-			
+
 			$('#spinner_img').show();
 			$('#submit_btn').val('loading...').addClass('disabled');
 			e.preventDefault();
@@ -73,7 +78,7 @@ $(document).ready(function() {
 
 			//$.post( apiurl, data, success, "json" );
 			$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "email":email }) , url: apiurl, success: success, error: error });
-		
+
 		}
 	});
 
