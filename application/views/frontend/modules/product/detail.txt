@@ -20,7 +20,6 @@
 		</div>
 	</div>
 	<!-- aaa -->
-	
 
 	<div class="row">
 	  <div class="col-sm-4">
@@ -28,29 +27,14 @@
 		<div class="row">
 		  <div class="col-sm-5">
 			<div class="xzoom-container">
-			  <img class="xzoom" id="xzoom-magnific" width=400 src="<?php echo $img; ?>" xoriginal="<?php echo $img; ?>" />
+			  <img class="xzoom" id="xzoom-magnific" width=400 src="{{dat.imageurl[0]}}" xoriginal="{{dat.imageurl[0]}}" />
 			  <div class="xzoom-thumbs">
-				<!--<a ng-repeat="url in dat.imageurl" ng-href="{{url}}" on-finish-render="ngRepeatFinished">
+				<a ng-repeat="url in dat.imageurl" ng-href="{{url}}" on-finish-render="ngRepeatFinished">
 					<img class="xzoom-gallery" width="80" src="{{url}}" xpreview="{{url}}" title="">
-				</a>-->
-				 <a href="<?php echo $img;?>">
-					<img class="xzoom-gallery" width="80" src="<?php echo $img;?>"  xpreview="<?php echo $img;?>" title="">
 				</a>
-				<?php if($img1){?>
-				<a href="<?php echo $img1;?>">
-					<img class="xzoom-gallery" width="80" src="<?php echo $img1;?>" title="">
-				</a>
-				<?php } ?>
-				<?php if($img2){?>
-				<a href="<?php echo $img2;?>">
-					<img class="xzoom-gallery" width="80" src="<?php echo $img2;?>" title="">
-				</a>
-				<?php } ?>
-				<?php if($img3){?>
-				<a href="<?php echo $img3;?>">
-					<img class="xzoom-gallery" width="80" src="<?php echo $img3;?>" title="">
-				</a>
-				<?php } ?>
+				<!--a href="<?php //echo base_url('images/gallery/original/02_o_car.jpg');?>">
+					<img class="xzoom-gallery" width="80" src="<?php //echo base_url('images/gallery/preview/02_o_car.jpg');?>" title="The description goes here">
+				</a-->
 				<!--a href="<?php //echo base_url('images/gallery/original/03_r_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/03_r_car.jpg');?>" title="The description goes here"></a>
 				<a href="<?php //echo base_url('images/gallery/original/04_g_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/04_g_car.jpg');?>" title="The description goes here"></a-->
 			  </div>
@@ -60,14 +44,16 @@
 		</div>
 	  </div>
 	  <div class="col-sm-5 detail-product">
-		<h5 class='title-product'><?php echo $name; ?></h5>
+		<h5 class='title-product'>{{dat.name}}</h5>
 		<div class="row">
 			<div class="col-sm-6">
-			<span class='price'>Rp.<?php echo money($pricelist);  ?></span><br>
-			weight <span class='red-tx'><?php echo $weight; ?></span><br>
-			
+			weight <span class='red-tx'>{{dat.weight}}</span><br>
+			{{dat.m_product_id}}<br>
+			<span class='price'>{{toMoney(dat.pricelist)}}</span><br>
+			<br><br>
+			Save Rp 100,000 ({{dat.discount}}%)
 			</div>
-			<div class="col-sm-6">Stock: <?php echo $stock;  ?></div>
+			<div class="col-sm-6">Stock: {{dat.stock}}</div>
 		</div>
 
 
@@ -75,14 +61,14 @@
 	  <div class="col-sm-3" style='font-size:20px; text-align: center;'>
 		Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
 		<div class='detail-add-wishlist'>
-			<div class="btn-group">Quantity: <input type='number' class='form-control' id='jmlItem' style='width:70px' value='1'></div><br>
+			<div class="btn-group">Quantity: <input type='text' class='form-control' style='width:50px' ng-model="quantity" ng-change="check_quantity()"></div><br>
 			<div class="btnaddcart">
-				<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
+				<button class="dropbtnaddcar" ng-click="add_to_cart()">ADD TO CART</button>
 			</div>
 
 			<br><br>
-			<a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')" class='btn btn-link'><i class="fa fa-plus-square" aria-hidden="true"></i> Add To Wishlist<a/>
-			</div>
+			<?php echo anchor('product/wishlist/'.$pro_id,'<i class="fa fa-plus-square" aria-hidden="true"></i> Add To Wishlist', array('class'=>'btn btn-link'));?>
+		</div>
 
 	  </div>
 	</div>
@@ -96,26 +82,26 @@
 	<div class="tab-content">
 	  <div id="home" class="tab-pane fade in active">
 		<h3>HOME</h3>
-		<table class="table table-striped">
+		<table class="table">
 			<tr>
 				<th> Brand </th>
-				<td> <?php echo $name; ?> </td>
+				<td> {{dat.name}} </td>
 
 			</tr>
 			<tr>
 				<th> Berat </th>
-				<td> <?php echo $weight; ?> </td>
+				<td> {{dat.weight}} </td>
 			</tr>
 			<tr>
 				<th> Category </th>
-				<td> <?php echo $category; ?></td>
+				<td> {{dat.category}}</td>
 			</tr>
 			<tr>
 				<th>  Harga </th>
-				<td> Rp.<?php echo money($pricelist);  ?></td>
+				<td> {{toMoney(dat.pricelist)}}</td>
 			</tr>
 		</table>
-		
+{{data}}
 	  </div>
 	  <div id="menu1" class="tab-pane fade">
 		<h3>Menu 1</h3>
@@ -124,150 +110,8 @@
 	</div>
 
 </div>
-<script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/foundation.min.js');?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/setup.js');?>"></script>
 
 <script>
-var token = document.cookie.split('x-auth=')[1].split(';').shift();
-function addWishlist(id,name,imageurl){
-	var dataString = 'id='+ id;
-
-	if(token){
-
-	$.ajax
-		({
-		type: "POST",
-		url: "<?php echo site_url('product/addWishlist'); ?>",
-		data: dataString,
-		success:function(data){
-
-				if(data==1){
-
-					$.confirm({
-						title: name,
-						content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>Item berhasil ditambahkan kedalam wishlist<p>',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}else{
-					$.dialog({
-						title: name,
-						content: 'Item gagal ditambahkan!',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}
-			}
-		});
-		
-	}else{
-		
-		$.dialog({
-			title: 'Alert!',
-			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
-			autoClose: 'close|3000',
-			buttons: {
-				close: function () {
-					//$.alert('action is canceled');
-				}
-			},
-			closeIcon: true,
-			closeIconClass: 'fa fa-close'
-		});
-	}
-}
-
-function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
-	
-	var jmlItem = $('#jmlItem').val();
-	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
-	
-	if(jmlItem<=0){
-		$.dialog({
-			title: 'Alert!',
-			content: 'Silakan masukan jumlah item dengan benar',
-			autoClose: 'close|3000',
-			buttons: {
-				close: function () {
-					//$.alert('action is canceled');
-				}
-			},
-			closeIcon: true,
-			closeIconClass: 'fa fa-close'
-		});
-		
-	}else{
-
-		$.ajax
-		({
-		type: "POST",
-		url: "<?php echo site_url('cart/addToCart'); ?>",
-		data: dataString,
-		success:function(data){
-
-				if(data=='stockkosong'){
-					$.dialog({
-						title: name,
-						content: 'Item gagal ditambahkan, jumlah melebihi stock yang ada!',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}else
-				if(data!='gagal'){
-
-					$(".totalCart").html(data);
-					$.confirm({
-						title: name,
-						content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}else{
-					$.dialog({
-						title: name,
-						content: 'Item gagal ditambahkan!',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}
-			}
-		});
-	
-	}
-}
-
-
-/*
 app.directive('onFinishRender', function ($timeout) {
     return {
         restrict: 'A',
@@ -367,5 +211,5 @@ app.controller('detailCnt', function($scope, $http, $mycart, toMoney){
 	        });
 	    }
 	});
-});*/
+});
 </script>
