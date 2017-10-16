@@ -53,7 +53,7 @@ a{
 
 <body style='font-weight: normal;' ng-app="myApp">
 <div class="my-header-panel3">
-	
+
 		<div class="row">
 			<div class="col-sm-3">
 				<div style='padding:10px;'>
@@ -63,7 +63,7 @@ a{
 			<div class="col-sm-8">
 				<div style='padding:10px;'>
 				Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA, <i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
-			 Senen - Jumat [09:00 - 17:00]  
+			 Senen - Jumat [09:00 - 17:00]
 				</div>
 			</div>
 			<div class="col-sm-1" style='text-align: right'>
@@ -596,13 +596,12 @@ function dellItemCartToken(id,img,name,idcart){
 var base_url = '<?php echo base_url();?>';
 var base_path = base_url.split(location.host).pop();
 
-var login = 'http://	acc.myacico.co.id/myacico-account/account/masuk';
+var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
 // var login_base_url_api = 'acc.myacico.co.id/myacico-service';
 
 
-
-var api_base_url2 = 'http://api.myacico.co.id/myacico-service';
+//
+//var api_base_url2 = <?php echo $baseApiUrl; ?>;
 //var api_base_url = 'http://myacico.net:8080/myacico-service/api';
-
-var api_base_url = 'http://api.myacico.co.id/myacico-service';
+var api_base_url = "<?php echo $baseApiUrl; ?>";
 </script>
