@@ -1,15 +1,23 @@
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-12">
+
+			<i class="fa fa-angle-right" aria-hidden="true"></i> DAFTAR AKUN PEMERINTAH
+
+		  </div>
+		</div>
+	</div>
+</div>
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12 my-border-title">
-    <h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_welcome; ?></h3>
-    </div>
-  </div>
+
 
   <div class="row">
     <div class="col-sm-3">
 
     </div>
     <div class="col-sm-6">
+      <div class='border-create'>
       <form name="signup" method="post">
         <div class="form-group">
           <label><?php echo $lang_namaDepan; ?>*</label>
@@ -86,23 +94,19 @@
                 <label><?php echo $lang_Passwpord2; ?>*</label>
           <input type="password" id="password2" class="form-control" />
         </div>
-        <div>
+
+        <div class="row">
+  			<div class="col-sm-6">
           <input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo $lang_BtnSend ?>">
     			<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
-        </div>
+  			</div>
+  			<div class="col-sm-6" style='text-align: right'>
+  				<?php echo $field_sudahDaftar; ?> <?php echo anchor('customer/signIn', 'Log In'); ?>
+  			</div>
+  		  </div>        
 
-        <div class="clearfix"></div>
-
-        <div class="separator">
-          <p class="change_link">Already a member ?
-            <a href="#signin" class="to_register"> Log in </a>
-          </p>
-
-          <div class="clearfix"></div>
-          <br />
-
-        </div>
       </form>
+      </div>
     </div>
   </div>
 </div>
