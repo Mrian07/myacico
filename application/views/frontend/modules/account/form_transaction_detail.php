@@ -21,24 +21,19 @@
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
-			<p>Silakan lengkapi data billing Anda dibasdasdaaasawah ini.asd</p>
-			<input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
+		
 			<div class="panel panel-default">
+				<input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
 				<div class="panel-body">
                                     <div class="transactionlist">
-        
-                                    </div>
-                                     <div class="listOrder">
-        
-                                    </div>
+        	<div id="test"></div>
+                                    </div
+>                                  
                                     
                                       <input type="hidden" id="idTrans" name="idTrans" value="<?php echo $this->uri->segment(3);?>" />
-                                      
-                                    <div id="totaldetail" >
-
-                                    </div>
+                 
                    
-                                        
+         
 				</div>
 			</div>
 
@@ -46,219 +41,173 @@
 
 	</div>
 </div>
+
 <script type="text/javascript">
-
-
 var link_url = '<?php echo base_url('account/editBukuAlamat') ?>';
-
-$(document).ready(function() {
-	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-
-	var api2 = api_base_url+'/transaction/'+idTrans+'?token='+token;
-
-	//$.get(api_base_url+'/aduser/getaddress?addresstype=isshipto',
-
-	$.ajax({
-	    type:"GET",
-	    headers:{"token":token},
-	    //beforeSend: getAdd(),
-	    success: function(data){
-
-				    	var idTrans = $('#idTrans').val();
-			//console.log('data nya adalah:', data.items[0]['shipmentAddress']);
-			console.log('data nya adalah:', token);
-
-			//console.log('data nya adalah2:', data['items']);
-
-				var addressname = $('.addressname');
-				//var noOrder = $('.listOrder');
-			        var listOrder = $('.listOrder');
-			        var transactionlist = $('.transactionlist');
-
-	 		var rumah = $('.rumah');
-			$("#hapus").val(null);
-	        data.forEach(function(p){
-	        	            //alert(p.waktuTransaksi));die();
-            //var tanggal = new DateTime(p.waktuTransaksi).toDateString("dd-mm-yyyy");
-          $("#noOrder").val(data.orderNumber);
-          $("#detailtotal").val(data.grandTotal);
-          var tanggal = data.waktuTransaksi;
-          var tanggal = tanggal.split('-');
-          var time = tanggal[2].split(' ');
-          var jam = time[1].split(':');
-          var jam = jam[0]+':'+jam[1];
-          var hari = time[0];
-          var bulan =tanggal[1];
-          var tahun = tanggal[0];
-          var time = tanggal[2].split(' ');
-          var tanggal = hari+'-'+bulan+'-'+tahun+', '+jam;
-          $("#tanggalOrder").val(tanggal);
-          $("#imageurl").val(data.items[0]['imageurl']);
-          var gambar = data.items[0]['imageurl'];
-        var reverse = data.grandTotal.toString().split('').reverse().join('');
-	var ribuan = reverse.match(/\d{1,3}/g);
-	var hasil = ribuan.join('.').split('').reverse().join('');
-	// var a=data.items[];
-          var stat = 1;
-          var i = 0;
-			 transactionlist.append
-      ('<div class="well"> Tanggal Order: '+tanggal+'</br> Order ID:'+data.orderNumber+'</br> Status Pesanan: <b>'+data.transactionStatus+'</b></br> Alamat Pengiriman: '+data.items[0]['shipmentAddress']+'</div>')
+        var namaBank = null;
+        var pMethod = null;
+        var billId = null;
+        var idDistriship = null;
+        var qty = 0;
+        var totalBelanja = 0;
+        var subtotal = 0;
+        var fee = 0;
+        //var idDistrict = null;
+  /*     
+        function get_method(){
+        $("#payment_method").slideDown();
+        $("#payment_method").prop('disabled', true).html('<option value="">--pilih--</option>');
+        $.get(api_base_url+"/payment/method", function(r){
+          r.forEach(function(o){
+            $("#payment_method").append("<option value='"+o.value+"'>"+o.name+"</option>");
+          });
+          $("#payment_method").prop('disabled', false);
+        }, "json" );
+      }
+      */
+	$(document).ready(function()
+	{
+		var token = document.cookie.split('x-auth=')[1].split(';').shift();
+		var filter =0;
+		var idTrans = $('#idTrans').val();
+   var api_method= api_base_url+'/transaction/list?id='+idTrans;
+         	function currencyFormat (num) {
+    return "Rp." + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+}
+function formatNumber (num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+}      
 		
-       $("#totaldetail").append('<hr>Total Harga : <b>Rp. '+hasil+'</b>')
-		// 	 $("#hapus"+p.id).click(function(e){
+          $.ajax({
+        type: "GET",
+        url:api_method,
+        headers:{"token":token}, 
+        dataType: "json",
+        success: function (data) {
+        		console.log('asd',data.code);
+        		console.log('token1',data.code.items);
+        		console.log('lol',data.items[0]['name'])
+        		$('#test').append(
+        			'<table class="table table-striped"><thead><tr><th>Nama Barang</th><th>Invoice Number</th><th>Order Number</th><th>Payment Method</th><th>Image</th><th>Jumlah Harga</th></tr></thead><tbody><tr><td>'+data.items[0]['name']+'</td><td>'+data.invoiceNumber+'</td><td>'+data.orderNumber+'</td><td>'+data.paymentMethod+'</td><td><img class="group list-group-image" src="'+data.items[0]['imageurl']+'" alt="..." style:border="0" height="100"></td><td>Rp.'+(formatNumber(data.grandTotal))+'</td></tr></tbody></table>'
+        			// '<h1>'+data.code+'</h1>',
+        			// '<h1>'+data.invoiceNumber+'</h1>',
+        			// '<h1>'+data.items[0]['name']+'</h1>',
+        			// '<img class="group list-group-image" src="'+data.items[0]['imageurl']+'" alt="..." style:border="0" height="100">',
+        			// 	''+(currencyFormat(data.grandTotal))+'',
 
-		// 	var id = $("#id"+p.id).val();
+        			// 	'<img class="group list-group-image" src="'+data.imageurl+'" alt="..." style:border="0" height="100">'
+        			)
+            console.log('sam',data);
+           data.forEach(function(p){
+       
+           	transactionlist.append
 
+      (
 
-		// var apiurl1 = api_base_url +'/aduser/deleteaddress?token='+token;
-		// 	e.preventDefault();
+'<div class="well"> Tanggal Order: '+tanggal+'</br> Order ID:'+data.orderNumber+'</br> Status Pesanan: <b>'+data.transactionStatus+'</b></br> Alamat Pengiriman: '+data.items[0]['shipmentAddress']+'</div>')
 
-		//  	$.ajax({ type:"POST", contentType: "application/json",  headers:{"token":token}, data:JSON.stringify({"id":p.id}) , url: apiurl1 });
-
-		// });
-	data['items'].forEach(function(p){
-	var reverse = p.subtotal.toString().split('').reverse().join('');
-	var ribuan = reverse.match(/\d{1,3}/g);
-	var ribuan = ribuan.join('.').split('').reverse().join('');
-	listOrder.append
-        ('<div class="row"><div class="col-sm-6">Produk : <b>'+p.name+'</b></br><img src="'+p.imageurl+'" alt="check Out" style="width:100px;height:70px;"></div><div class="col-sm-6"> </br>Jumlah: '+p.qty+' </br>Harga :Rp. '+ribuan+'</div></div>')
-	
-	});
-	 });
-	        },
-	    dataType: "json",
-	    url: api2});
-
-
-
-//
-// $.ajax({ type:"GET", dataType:"JSON", success: function(data){
-// 	console.log('data nya adalah:', token);
-// 	// console.log('test',token);
-//
-//
-// 		var rumah = $('.rumah');
-// 		var id = $("#id").val();
-//
-// 		$("#hapus").val(null);
-//
-//
-// 		data.forEach(function(p){
-// 			rumah.append('<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.city_name+' '+p.postal+'</td><td><a href="'+link_url+'/'+p.id+'" class="btn btn-link" aria-label="Ubah"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>')
-			// $("#hapus"+p.id).click(function(e){
-			//
-			//  var id = $("#id"+p.id).val();
-			//
-			//
-			//  //var apiurl1 = api_base_url +'/aduser/deleteaddress?token='+token;
-			// 	 e.preventDefault();
-			//
-			//  // 	$.ajax({ type:"POST", contentType: "application/json",  headers:{"token":"token"}, data:JSON.stringify({"id":p.id}) , url: apiurl1 });
-			//
-			//  });
-//
-//
-// 	 });
-//
-//
-//  },url: api2, headers:{"token":token}
-//
-//  });
-
- // $.ajax({
- //  type : "GET",
- //  contentType: "application/json",
- //   url: api2,
- //   beforeSend: function(xhr) {
- //     xhr.setRequestHeader("token", "token");
- //   },
- //   success: function(data) {
- //   }
- // });
-	console.log('da1',token);
-	console.log('asd',api2);
-
-});
-
-
-
-// $(document).ready(function() {
-	
-
-
-//  var token = document.cookie.split('x-auth=')[1].split(';').shift();
-//  var filter =0;
-// var idTrans = $('#idTrans').val();
-//  $.get(api_base_url+'/transaction/'+idTrans+'?token='+token,
-//  function(data){
- 
-// var idTrans = $('#idTrans').val();
-// //console.log('data nya adalah:', data.items[0]['shipmentAddress']);
-// console.log('data nya adalah:', token);
-
-// //console.log('data nya adalah2:', data['items']);
-
-// 	var addressname = $('.addressname');
-// 	//var noOrder = $('.listOrder');
-//         var listOrder = $('.listOrder');
-//         var transactionlist = $('.transactionlist');
-// 	if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
-// 	if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
-// //console.log('ini data',data[1]);
-// //	data.forEach(function(p){
-//             //alert(p.waktuTransaksi));die();
-//             //var tanggal = new DateTime(p.waktuTransaksi).toDateString("dd-mm-yyyy");
-//           $("#noOrder").val(data.orderNumber);
-//           $("#detailtotal").val(data.grandTotal);
-//           var tanggal = data.waktuTransaksi;
-//           var tanggal = tanggal.split('-');
-//           var time = tanggal[2].split(' ');
-//           var jam = time[1].split(':');
-//           var jam = jam[0]+':'+jam[1];
-//           var hari = time[0];
-//           var bulan =tanggal[1];
-//           var tahun = tanggal[0];
-//           var time = tanggal[2].split(' ');
-//           var tanggal = hari+'-'+bulan+'-'+tahun+', '+jam;
-//           $("#tanggalOrder").val(tanggal);
-//           $("#imageurl").val(data.items[0]['imageurl']);
-//           var gambar = data.items[0]['imageurl'];
-//         var reverse = data.grandTotal.toString().split('').reverse().join('');
-// 	var ribuan = reverse.match(/\d{1,3}/g);
-// 	var hasil = ribuan.join('.').split('').reverse().join('');
-// //          alert(data.items[0]['imageurl']);
-         // var a=data.items[];
-         //  var stat = 1;
-         //  var i = 0;
-//          console.log('test',a);
-//          while(stat){
-//              if(data.items[var i])
-//              {
-//                  console.log('test',data.items[var i]);
-//              }
-//              else{
-//                  stat = 2;
-//              }
-//             var items[i] = data.items[i];
-//             
-//          }
+               var div_data="<option value="+data.value+">"+data.name+"</option>";
+               $(div_data).appendTo('#payment_method'); 
+           });
+            }
+      });
     
-//         transactionlist.append
-//       ('<div class="well"> Tanggal Order: '+tanggal+'</br> Order ID:'+data.orderNumber+'</br> Status Pesanan: <b>'+data.transactionStatus+'</b></br> Alamat Pengiriman: '+data.items[0]['shipmentAddress']+'</div>')
-// //	$( "p" ).append( document.createTextNode(hasil));
-//         $("#totaldetail").append('<hr>Total Harga : <b>Rp. '+hasil+'</b>')
-// //    totalDetail.append('<div class="row"><div class="col-sm-6">Produk : <b>'+data.grandTotal+'</b></div></div>');
+          
+          var apiGet= api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto';
 
-// 	data['items'].forEach(function(p){
-// 	var reverse = p.subtotal.toString().split('').reverse().join('');
-// 	var ribuan = reverse.match(/\d{1,3}/g);
-// 	var ribuan = ribuan.join('.').split('').reverse().join('');
-// 	listOrder.append
-//         ('<div class="row"><div class="col-sm-6">Produk : <b>'+p.name+'</b></br><img src="'+p.imageurl+'" alt="check Out" style="width:100px;height:70px;"></div><div class="col-sm-6"> </br>Jumlah: '+p.qty+' </br>Harga :Rp. '+ribuan+'</div></div>')
+
+	$("form").submit(function(e){
+//           
+        var data = {};
+		e.preventDefault();
+    //var data = $(this).serialize(); freightAmt
+   // var token = document.cookie.split('x-auth=')[1].split(';').shift();
+   
+               
+		var apiurl = api_base_url + '/order/checkout?token='+token;
+		//var a =shipingFee();
+		var total = parseInt(subtotal + fee);
+		//console.log('shipping:', fee);
+		//console.log('sub nya adalah:', subtotal);
+		//console.log('total nya adalah:', total);
+			data.grandtotal = total;
+			data.paymentMethod = pMethod;//c Ato R
+			data.code = namaBank;
+			data.billing_address_id = billId;
+			data.shipping_address_id = idAddShip;
+			//data.courier_id = address_name;
+			data.isoncepickup = "Y";
+		//    console.log('OK:', data);
+		//   code
+			data.courier ="JNE";
+			data.courier_amount= fee;
+    
+
+    // success handling
+	var error = function(er){
+	  $('#spinner_img').hide();
+	  $('#submit_btn').val('Kirim').removeClass('disabled');
+	  console.log('OK:', er);
+	  $.alert({
+		title: 'Alert!',
+		content: 'koneksi tidak berhasil, silahkan coba lagi!',
+	  });
+	};
+    var success = function(r){ 
+         $('#spinner_img').hide();
+  $('#submit_btn').val('Kirim').removeClass('disabled');
+         $.alert({
+     title: 'Alert!',
+     content: 'Transaksi Baru Berhasil',
+    });
+//      alert(r.message);
+//      console.log('OK:', r.status);
+	window.location.replace(base_url+"/checkout/success");
+
+    };
+    $('#spinner_img').show();
+    $('#submit_btn').val('loading...').addClass('disabled');
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error:error, timeout: 30000 });
+
+    // do validation
+  
+  });
+
+	});
+
+
+	$("#payment_method").change(function()
+	{
+		var pay=$('#payment_method').val();
+                pMethod = 'Transfer';
+		if(pay=="01"){
+			$("#transfer_bank").show();
+		}else{
+			$("#transfer_bank").hide();
+		}
+	});
 	
-// 	});
-      
-// 	});
-// });
+	function bank(){
+		 namaBank = $('input[name="bank"]:checked').val();
+		//alert(namaBank);
+	}
+   
+	function idBilling(idBill){
+		billId =idBill.toString();
+		//alert('test',billId.val());
+		return  billId;
+	}
+	function shipingFee(idDistriship)
+	{
+		 
+		$.get(api_base_url+'/freight/rates/jne?to_district_id='+idDistriship,
+		function(shipingFee){
+		   fee = shipingFee.freightAmt;
+			 //alert('shipping Fee:',shipingFee);
+			
+		});	
+	}
+       
+</script>
 
 </script>

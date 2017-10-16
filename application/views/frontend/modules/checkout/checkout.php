@@ -11,7 +11,7 @@
 		width:36%;
 		margin:1.5em 0;
 	}
-
+a
 	.actions .btn-info{
 		float:left;
 	}
