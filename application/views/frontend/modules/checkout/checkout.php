@@ -182,44 +182,15 @@
 						<option value='03'>Credit Cart</option
 					</select>-->
                                         <select name="payment_method" id="payment_method" class="form-control mandatory"></select>
+                                      
 
 				  </div>
 
 				  <!-- TRANSFER BANK -->
-				  <div id='transfer_bank' onclick='bank()' style='display:none'>
+				  <div id='transfer_bank' onclick='bank()'>
 					Mohon dilakukan pembayaran ke :
-					<table class="table">
-						<tr>
-							<td>
-								<input type='radio' name="bank" value='1000000'>
-							</td>
-							<td>
-								BCA atas nama : PT. MYACICO GLOBAL INDONESIA<br>
-								Cabang : Tanah Abang 2<br>
-								Nomor rekening : 6540308797
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type='radio' name="bank" value='1000002'>
-							</td>
-							<td>
-								Mandiri atas nama : MYACICO<br>
-								Cabang : mangga Dua Square<br>
-								Nomor rekening : 120-0099271996
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type='radio' name="bank" value='1000001'>
-							</td>
-							<td>
-								BNI atas nama : MYACICO<br>
-								Cabang : Caringin<br>
-								Nomor rekening : 099-2719967
-
-							</td>
-						</tr>
+					<table name="bank" id="bank" class="table">
+                                           						
 					</table>
 				  </div>
                             <input type="submit" id="submit_btn" class="btn btn-primary" value="Finish"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
@@ -281,37 +252,42 @@
         var subtotal = 0;
         var fee = 0;
         //var idDistrict = null;
-  /*     
-        function get_method(){
-        $("#payment_method").slideDown();
-        $("#payment_method").prop('disabled', true).html('<option value="">--pilih--</option>');
-        $.get(api_base_url+"/payment/method", function(r){
-          r.forEach(function(o){
-            $("#payment_method").append("<option value='"+o.value+"'>"+o.name+"</option>");
-          });
-          $("#payment_method").prop('disabled', false);
-        }, "json" );
+     
+        function get_bank(){
+            if($("#payment_method").val() != 'C')
+            {
+               // $("#bank").slideDown();
+                $("#bank").prop('disabled', true);
+                $.get(api_base_url+"/payment/myacicoaccount", function(r){
+                  r.forEach(function(o){
+                      console.log('sam',o.code);
+                    //$("#bank").append("<tr value='"+o.code+"'>"+o.account_name+"</tr>");
+                  
+//        $("#bank").append('<tr><td>'+o.code+',  '+o.account_name+' '+o.bank_name+' '+o.account_number+'</td></tr>')
+        $("#bank").append('<tr><td><input type="radio" name="bank" value='+o.code+' </td><td></br>Nama Bank : '+o.bank_name+' </br>Atas Nama : '+o.account_name+' </br>Nomor rekening : '+o.account_number+' </td></tr>')
+
+                  });
+                  $("#bank").prop('disabled', false);
+                }, "json" );
+                
+            }
+         /* 
+        */
       }
-      */
+      
 	$(document).ready(function()
 	{
 		var token = document.cookie.split('x-auth=')[1].split(';').shift();
 		var filter =0;
                 var api_method= api_base_url+'/payment/method';
-          $.ajax({
-        type: "GET",
-        url:api_method,
-        dataType: "json",
-        success: function (data) {
-            console.log('sam',data);
-           data.forEach(function(p){
-               var div_data="<option value="+data.value+">"+data.name+"</option>";
-               $(div_data).appendTo('#payment_method'); 
-           });
-            }
-      });
-    
-          
+                $.get(api_base_url+"/payment/method", function(r){
+                console.log(r);
+                r.forEach(function(o){
+                  $("#payment_method").append("<option value='"+o.value+"'>"+o.name+"</option>");
+                });
+                $("#payment_method").prop('disabled', false).change(get_bank);
+              }, "json" );
+     
           var apiGet= api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto';
 
 
@@ -375,20 +351,9 @@
 	});
 
 
-	$("#payment_method").change(function()
-	{
-		var pay=$('#payment_method').val();
-                pMethod = 'Transfer';
-		if(pay=="01"){
-			$("#transfer_bank").show();
-		}else{
-			$("#transfer_bank").hide();
-		}
-	});
-	
 	function bank(){
 		 namaBank = $('input[name="bank"]:checked').val();
-		//alert(namaBank);
+		alert(namaBank);
 	}
    
 	function idBilling(idBill){
