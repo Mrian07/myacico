@@ -21,8 +21,9 @@
 
 	<div class="row">
 		<div class="col-sm-6">
-		<p>Masukan email dan password login Anda pada form dibawah ini.</p>
+		<h5>LOGIN</h5>
 		<div class='border-create'>
+				<p>Masukan email dan password login Anda pada form dibawah ini.</p>
 			<form name="signin" method="post">
 				<div class="form-group">
 				<label>Email:</label>

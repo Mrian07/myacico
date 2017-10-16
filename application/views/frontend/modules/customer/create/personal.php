@@ -11,14 +11,19 @@ margin-top: -11px;
 </style>
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 
-<div class="container">
-	<div class="row">
-	  <div class="col-sm-12">
-		<div class="my-border-title">
-			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i><?php echo $lang_field_persoanAatas; ?></h3>
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-12">
+
+			<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_field_persoanAatas; ?>
+
+		  </div>
 		</div>
-	  </div>
 	</div>
+</div>
+
+<div class="container">
 	<div class="row">
 
 		<div class="col-sm-3">

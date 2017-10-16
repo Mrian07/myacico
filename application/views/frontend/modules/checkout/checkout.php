@@ -60,10 +60,10 @@
 							
 							
 							<?php 
-							if($alamat_billing){
+							if(isset($alamat_billing)){
 								echo"<p>". $alamat_billing."</p>";
 							}else{
-								echo anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default'));
+								echo"<p>". anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default')); echo"</p>";
 							}?>
 							
 							<!--

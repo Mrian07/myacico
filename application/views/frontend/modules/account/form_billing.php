@@ -10,7 +10,6 @@
   </div>
 </div>
 <div class="container">
-asdasd
   
   <div class="row">
     <div class="col-sm-3">
@@ -24,12 +23,12 @@ asdasd
           <form name="signup" method="post">
           <div class="form-group">
           <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
-                                        <input type="hidden" id = "id" name="id" />
-                                          <input type="hidden" id="isbillto" name="isbillto" value="Y" />
-                                        <input type="hidden" id="isshipto" name="isshipto" value="N" />
-                                        <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
-                                        <input type="hidden" id="isremitto" name="isremitto" value="N" />
-                                        <input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
+			<input type="hidden" id = "id" name="id" />
+			<input type="hidden" id="isbillto" name="isbillto" value="Y" />
+			<input type="hidden" id="isshipto" name="isshipto" value="N" />
+			<input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
+			<input type="hidden" id="isremitto" name="isremitto" value="N" />
+			<input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
 
           </div>
                                         <div class="form-group">

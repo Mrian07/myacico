@@ -25,9 +25,9 @@ class Checkout extends Web_private {
 	{
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
-		$api = "aduser/getaddress?addresstype=isshipto";
+		$api = "aduser/getaddress?addresstype=isbillto";
 		$url = api_base_url($api);
-		
+
 		$options = ["http" => [
 		"method" => "GET",
 		"header" => ["token: " . $token,
@@ -37,7 +37,7 @@ class Checkout extends Web_private {
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 		$hasil = json_decode($konten, true);
-               
+
 		//Data Billing
 		foreach($hasil as $items){
 			$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['address2']." ".$items['city_name']." ".$items['postal'];

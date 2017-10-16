@@ -38,19 +38,18 @@
 				<div class="col-sm-4">
 					<div class="panel panel-default">
 						<div class="panel-heading"><strong>Data Billing</strong></div>
-
-						<div class="panel-body" id='biling-ready' style='display:none'>
-				<div class="rumah"></div>
-							</div>
-							<div class='mybutton'></div>
-						</div>
-
-						<div class="panel-body" id='biling-empty' style='display:none'>Belum ada data billing, data billing diperlukan saat checkout pembelian.
-						<br><br>
-						<center>
-						<?php echo anchor('account/formAddBilling/', 'tambah', array('class'=>'my-link-general'));?>
-						</center>
-						</div>
+						<div class="panel-body">
+						<?php 
+						if(isset($alamat_billing)){
+							echo $alamat_billing;
+							echo "<br><center><div class='my-btn-general'>";
+							echo anchor('account/formBilling/'.$id_billing, 'Ubah', array('class'=>'my-link-general')); echo"</div></center>";
+						}else{
+							echo"Belum ada data billing, data billing diperlukan saat checkout pembelian.
+						<br><br><center><div class='my-btn-general'>";
+							echo anchor('account/formAddBilling/', 'Tambah', array('class'=>'my-link-general')); echo"</div></center>";
+						}?>	
+						</div>	
 					</div>
 				</div>
 			</div>
@@ -59,7 +58,7 @@
 </div>
 
 <script type="text/javascript">
-
+/*
 var link_url = '<?php echo base_url('account/editBukuAlamat') ?>';
 
 $(document).ready(function() {
@@ -67,7 +66,6 @@ $(document).ready(function() {
 
 	var api2 = api_base_url +'/aduser/getaddress?addresstype=isbillto';
 
-	//$.get(api_base_url+'/aduser/getaddress?addresstype=isshipto',
 
 	$.ajax({
 	    type:"GET",
@@ -95,54 +93,10 @@ $(document).ready(function() {
 
 
 
-//
-// $.ajax({ type:"GET", dataType:"JSON", success: function(data){
-// 	console.log('data nya adalah:', token);
-// 	// console.log('test',token);
-//
-//
-// 		var rumah = $('.rumah');
-// 		var id = $("#id").val();
-//
-// 		$("#hapus").val(null);
-//
-//
-// 		data.forEach(function(p){
-// 			rumah.append('<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.city_name+' '+p.postal+'</td><td><a href="'+link_url+'/'+p.id+'" class="btn btn-link" aria-label="Ubah"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>')
-			// $("#hapus"+p.id).click(function(e){
-			//
-			//  var id = $("#id"+p.id).val();
-			//
-			//
-			//  //var apiurl1 = api_base_url +'/aduser/deleteaddress?token='+token;
-			// 	 e.preventDefault();
-			//
-			//  // 	$.ajax({ type:"POST", contentType: "application/json",  headers:{"token":"token"}, data:JSON.stringify({"id":p.id}) , url: apiurl1 });
-			//
-			//  });
-//
-//
-// 	 });
-//
-//
-//  },url: api2, headers:{"token":token}
-//
-//  });
-
- // $.ajax({
- //  type : "GET",
- //  contentType: "application/json",
- //   url: api2,
- //   beforeSend: function(xhr) {
- //     xhr.setRequestHeader("token", "token");
- //   },
- //   success: function(data) {
- //   }
- // });
 	console.log('da1',token);
 	console.log('asd',api2);
 
-});
+});*/
 
 </script>
 
