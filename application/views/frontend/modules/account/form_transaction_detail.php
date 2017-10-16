@@ -21,7 +21,7 @@
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
-			<p>Silakan lengkapi data billing Anda dibasdasdsawah ini.</p>
+			<p>Silakan lengkapi data billing Anda dibasdasdaaasawah ini.asd</p>
 
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -63,11 +63,43 @@ $(document).ready(function() {
 	    headers:{"token":token},
 	    //beforeSend: getAdd(),
 	    success: function(data){
-	        var addressname = $('.addressname');
+
+				    	var idTrans = $('#idTrans').val();
+			//console.log('data nya adalah:', data.items[0]['shipmentAddress']);
+			console.log('data nya adalah:', token);
+
+			//console.log('data nya adalah2:', data['items']);
+
+				var addressname = $('.addressname');
+				//var noOrder = $('.listOrder');
+			        var listOrder = $('.listOrder');
+			        var transactionlist = $('.transactionlist');
+
 	 		var rumah = $('.rumah');
 			$("#hapus").val(null);
 	        data.forEach(function(p){
-			 rumah.append('<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.city_name+' '+p.postal+'</td><td><a href="'+link_url+'/'+p.id+'" class="btn btn-link" aria-label="Ubah"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>')
+	        	            //alert(p.waktuTransaksi));die();
+            //var tanggal = new DateTime(p.waktuTransaksi).toDateString("dd-mm-yyyy");
+          $("#noOrder").val(data.orderNumber);
+          $("#detailtotal").val(data.grandTotal);
+          var tanggal = data.waktuTransaksi;
+          var tanggal = tanggal.split('-');
+          var time = tanggal[2].split(' ');
+          var jam = time[1].split(':');
+          var jam = jam[0]+':'+jam[1];
+          var hari = time[0];
+          var bulan =tanggal[1];
+          var tahun = tanggal[0];
+          var time = tanggal[2].split(' ');
+          var tanggal = hari+'-'+bulan+'-'+tahun+', '+jam;
+          $("#tanggalOrder").val(tanggal);
+          $("#imageurl").val(data.items[0]['imageurl']);
+          var gambar = data.items[0]['imageurl'];
+        var reverse = data.grandTotal.toString().split('').reverse().join('');
+	var ribuan = reverse.match(/\d{1,3}/g);
+	var hasil = ribuan.join('.').split('').reverse().join('');
+			 rumah.append(
+			 	'<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.city_name+' '+p.postal+'</td><td><a href="'+link_url+'/'+p.id+'" class="btn btn-link" aria-label="Ubah"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>')
 			 $("#hapus"+p.id).click(function(e){
 
 			var id = $("#id"+p.id).val();
