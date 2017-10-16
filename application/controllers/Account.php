@@ -24,6 +24,7 @@ class Account extends Web_private {
 		$this->data['active_berlanggananNewsletter'] = "";
 		$this->data['active_wishlist'] = "";
 	}
+	
 
 	public function index()
     {
