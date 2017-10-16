@@ -26,10 +26,9 @@
 <script type="text/javascript">
 
 function dellBukuAlamat(id,address1){
-
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var apiurl = api_base_url + '/aduser/deleteaddress';
-
+	
 	$.confirm({
 		title: 'Alert!',
 		content: 'Alamat ('+address1+') akan dihapus?',
@@ -43,6 +42,7 @@ function dellBukuAlamat(id,address1){
 				({	type: "POST",
 					url: apiurl,
 					headers:{ "token":token},
+					data: '{"id": "' + id+ '"}',
 					success:function(data){
 						$(".listBukuAlamat").html(html);
 					}
