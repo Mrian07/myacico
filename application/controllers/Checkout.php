@@ -27,7 +27,7 @@ class Checkout extends Web_private {
 		$token = $_COOKIE['x-auth'];
 		$api = "aduser/getaddress?addresstype=isbillto";
 		$url = api_base_url($api);
-
+                
 		$options = ["http" => [
 		"method" => "GET",
 		"header" => ["token: " . $token,
@@ -42,10 +42,10 @@ class Checkout extends Web_private {
 		foreach($hasil as $items){
 			$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['address2']." ".$items['city_name']." ".$items['postal'];
 		}
-                
+                // Shipping Address ~Samuel
 		if($this->session->userdata('shipping_address_id'))
-		{
-				
+		{ 
+                   
 		   $api = "aduser/getaddress/".$this->session->userdata('shipping_address_id');
 		   $url = api_base_url($api);
 
@@ -57,7 +57,27 @@ class Checkout extends Web_private {
 		   $this->data['alamat_shipping'] =$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['address2']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
 
 		}
-		
+                // trans method ~Samuel A Rinaldi
+                /*
+                $api_method = "payment/method";
+                $url_method = api_base_url($api_method);
+                $options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+                $context_method = stream_context_create($options);
+                $konten3 = file_get_contents($url_method, false, $context_method);
+		$hasil_trans = json_decode($konten3, true);
+                foreach($hasil_trans as $items){
+                $this->data['transaction_method'] = "<option value='".$items['value']."'>".$items['name']."</option>";
+                
+                
+                }
+//                print_r('test</pre>'.$this->data['transaction_method']);
+//                die();
+                */
+		// End trans method
 		$this->data['title_web'] = "Myacico.com - Checkout";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);

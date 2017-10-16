@@ -172,6 +172,7 @@ $(document).ready(function() {
         var address4 = $("#address4").val();
         var postal = $("#postal").val();
         var district_id = $("#district_id").val();
+        var village_id = $("#village_id").val();
         var isbillto = $("#isbillto").val();
         var isshipto = $("#isshipto").val();
         var ispayfrom = $("#ispayfrom").val();
@@ -190,6 +191,7 @@ data.address3 = "address3";
 data.address4 = "address4";
 data.postal = postal;
 data.district_id = district_id;
+data.village_id = village_id;
 data.isbillto = 'Y';
 data.isshipto = 'Y';
 data.ispayfrom = 'Y';
@@ -241,7 +243,7 @@ data.isremitto = 'Y';
     $('#submit_btn').val('loading...').addClass('disabled');
 		console.log('ini data',token);
 		//die();
-$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data) , url: apiurl, success: success, error: error });
+$.ajax({ type:"POST", contentType: "application/json", headers:{"token":token}, data:JSON.stringify(data) , url: apiurl, success: success, error: error });
 
 		//$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
 

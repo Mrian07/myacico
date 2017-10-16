@@ -22,7 +22,7 @@
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
 			<p>Silakan lengkapi data billing Anda dibasdasdaaasawah ini.asd</p>
-
+			<input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
 			<div class="panel panel-default">
 				<div class="panel-body">
                                     <div class="transactionlist">
@@ -98,19 +98,32 @@ $(document).ready(function() {
         var reverse = data.grandTotal.toString().split('').reverse().join('');
 	var ribuan = reverse.match(/\d{1,3}/g);
 	var hasil = ribuan.join('.').split('').reverse().join('');
-			 rumah.append(
-			 	'<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.city_name+' '+p.postal+'</td><td><a href="'+link_url+'/'+p.id+'" class="btn btn-link" aria-label="Ubah"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>')
-			 $("#hapus"+p.id).click(function(e){
+	// var a=data.items[];
+          var stat = 1;
+          var i = 0;
+			 transactionlist.append
+      ('<div class="well"> Tanggal Order: '+tanggal+'</br> Order ID:'+data.orderNumber+'</br> Status Pesanan: <b>'+data.transactionStatus+'</b></br> Alamat Pengiriman: '+data.items[0]['shipmentAddress']+'</div>')
+		
+       $("#totaldetail").append('<hr>Total Harga : <b>Rp. '+hasil+'</b>')
+		// 	 $("#hapus"+p.id).click(function(e){
 
-			var id = $("#id"+p.id).val();
+		// 	var id = $("#id"+p.id).val();
 
 
-		var apiurl1 = api_base_url +'/aduser/deleteaddress?token='+token;
-			e.preventDefault();
+		// var apiurl1 = api_base_url +'/aduser/deleteaddress?token='+token;
+		// 	e.preventDefault();
 
-		 	$.ajax({ type:"POST", contentType: "application/json",  headers:{"token":token}, data:JSON.stringify({"id":p.id}) , url: apiurl1 });
+		//  	$.ajax({ type:"POST", contentType: "application/json",  headers:{"token":token}, data:JSON.stringify({"id":p.id}) , url: apiurl1 });
 
-		});
+		// });
+	data['items'].forEach(function(p){
+	var reverse = p.subtotal.toString().split('').reverse().join('');
+	var ribuan = reverse.match(/\d{1,3}/g);
+	var ribuan = ribuan.join('.').split('').reverse().join('');
+	listOrder.append
+        ('<div class="row"><div class="col-sm-6">Produk : <b>'+p.name+'</b></br><img src="'+p.imageurl+'" alt="check Out" style="width:100px;height:70px;"></div><div class="col-sm-6"> </br>Jumlah: '+p.qty+' </br>Harga :Rp. '+ribuan+'</div></div>')
+	
+	});
 	 });
 	        },
 	    dataType: "json",
@@ -214,21 +227,21 @@ $(document).ready(function() {
 // 	var ribuan = reverse.match(/\d{1,3}/g);
 // 	var hasil = ribuan.join('.').split('').reverse().join('');
 // //          alert(data.items[0]['imageurl']);
-//           //var a=data.items[];
-//           var stat = 1;
-//           var i = 0;
-// //          console.log('test',a);
-// //          while(stat){
-// //              if(data.items[var i])
-// //              {
-// //                  console.log('test',data.items[var i]);
-// //              }
-// //              else{
-// //                  stat = 2;
-// //              }
-// //             var items[i] = data.items[i];
-// //             
-// //          }
+         // var a=data.items[];
+         //  var stat = 1;
+         //  var i = 0;
+//          console.log('test',a);
+//          while(stat){
+//              if(data.items[var i])
+//              {
+//                  console.log('test',data.items[var i]);
+//              }
+//              else{
+//                  stat = 2;
+//              }
+//             var items[i] = data.items[i];
+//             
+//          }
     
 //         transactionlist.append
 //       ('<div class="well"> Tanggal Order: '+tanggal+'</br> Order ID:'+data.orderNumber+'</br> Status Pesanan: <b>'+data.transactionStatus+'</b></br> Alamat Pengiriman: '+data.items[0]['shipmentAddress']+'</div>')
