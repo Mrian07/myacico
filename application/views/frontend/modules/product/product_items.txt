@@ -121,36 +121,31 @@ font-size: 20px;
     </div>
     <div id="products" class="row list-group">
 
-			<!---<div class="product">
-			</div>-->
-        <?php foreach($hasil as $data){?>
-		
-		 <div class="item  col-xs-3 col-lg-3">
+			<div class="product">
+			</div>
+        </div>
+
+        <!-- <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
-                <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $data['imageurl']; ?>" alt="" />
+                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
                 <div class="caption">
-                    <h4 class="group inner list-group-item-heading"><a href="<?php echo base_url('product/detail/'.$data['m_product_id']);?>"><?php echo $data['name']; ?></a>  </h4>
+                    <h4 class="group inner list-group-item-heading">
+                        Product title</h4>
                     <p class="group inner list-group-item-text">
                         Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                         sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-						<center>
-						<p class="lead">
-                                Rp.<?php echo money($data['pricelist']); ?></p>
-								
-								
-						<h4><a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="asd fa fa-heart" aria-hidden="true"></i></a></h4>
-						<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1'><br>
-						<button class="dropbtnaddcar" onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$data['imageurl'];?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight'];?>')">ADD TO CART</button>
-						
-		
-						 </center>
-
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                $21.000</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-		
-		<?php } ?>
-       <!---
         <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
                 <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
@@ -171,10 +166,9 @@ font-size: 20px;
                     </div>
                 </div>
             </div>
-        </div> 
-		-->
+        </div> -->
 
-		</div>
+
 
 
 
@@ -183,155 +177,6 @@ font-size: 20px;
 
 
 <script type="text/javascript">
-var token = document.cookie.split('x-auth=')[1].split(';').shift();
-function addWishlist(id,name,imageurl){
-	var dataString = 'id='+ id;
-
-	if(token){
-
-	$.ajax
-		({
-		type: "POST",
-		url: "<?php echo site_url('product/addWishlist'); ?>",
-		data: dataString,
-		success:function(data){
-
-				if(data==1){
-
-					$.confirm({
-						title: name,
-						content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>Item berhasil ditambahkan kedalam wishlist<p>',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}else{
-					$.dialog({
-						title: name,
-						content: 'Item gagal ditambahkan!',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}
-			}
-		});
-		
-	}else{
-		
-		$.dialog({
-			title: 'Alert!',
-			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
-			autoClose: 'close|3000',
-			buttons: {
-				close: function () {
-					//$.alert('action is canceled');
-				}
-			},
-			closeIcon: true,
-			closeIconClass: 'fa fa-close'
-		});
-	}
-}
-
-
-function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
-	
-	var jmlItem = $('#jmlItem').val();
-	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
-	
-	if(jmlItem<=0){
-		$.dialog({
-			title: 'Alert!',
-			content: 'Silakan masukan jumlah item dengan benar',
-			autoClose: 'close|3000',
-			buttons: {
-				close: function () {
-					//$.alert('action is canceled');
-				}
-			},
-			closeIcon: true,
-			closeIconClass: 'fa fa-close'
-		});
-		
-	}else{
-
-		$.ajax
-		({
-		type: "POST",
-		url: "<?php echo site_url('cart/addToCart'); ?>",
-		data: dataString,
-		success:function(data){
-
-				if(data=='stockkosong'){
-					$.dialog({
-						title: name,
-						content: 'Item gagal ditambahkan, jumlah melebihi stock yang ada!',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}else
-				if(data!='gagal'){
-
-					$(".totalCart").html(data);
-					$.confirm({
-						title: name,
-						content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}else{
-					$.dialog({
-						title: name,
-						content: 'Item gagal ditambahkan!',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}
-			}
-		});
-	
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
 $(document).ready(function() {
     $('#list').click(function(){event.preventDefault();$('#products .item').addClass('list-group-item');});
     $('#grid').click(function(){event.preventDefault();$('#products .item').removeClass('list-group-item');});

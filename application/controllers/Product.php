@@ -23,6 +23,19 @@ class Product extends Web {
 	public function listItem()
 	{
 		$this->data['pro']=$this->uri->segment(3);
+		$id_cat=$this->uri->segment(3);
+		$api = "product/productlist?category=".$id_cat;
+		$url = api_base_url($api);
+                
+		$options = ["http" => [
+		"method" => "GET",
+		]];
+		
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+		$this->data['hasil'] = json_decode($konten, true);
+		
+		
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -111,17 +124,7 @@ class Product extends Web {
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 		$hasil = json_decode($konten, true);
-		echo $hasil['status'];
-
-		/*$this->data['wish_id']=$this->uri->segment(3);
-		$this->data['title_web'] = "Myacico.com - Home";
-		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		// $this->load->view('frontend/slide_show.php',$this->data);
-		$this->load->view('frontend/modules/product/wishlist.php',$this->data);
-
-		$this->load->view('frontend/footer',$this->data);*/
-		
+		echo $hasil['status'];	
 	}
 
 	public function product2()
