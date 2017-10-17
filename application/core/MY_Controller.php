@@ -110,7 +110,7 @@ class Web extends MY_Controller {
 
         //$this->data['baseApiUrl'] = "http://api.myacico.net:8080/myacico-service/api";
 		$this->data['baseApiUrl'] = "http://api.myacico.co.id/myacico-service";
-
+		$this->data['baseApiUrl2'] = "http://acc.myacico.co.id/myacico-account/account";
     }
 
 	function sendMail($email_from,$nm_from,$email_to,$subject,$message){

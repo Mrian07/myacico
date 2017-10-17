@@ -36,9 +36,15 @@
           <input type="text" name="cname" class="form-control mandatory" />
         </div>
         <div class="form-group">
-      <label><?php echo $lang_comapnytype; ?>*</label>
-          <select name="bname" class="form-control mandatory" ></select>
+        <label><?php echo $lang_comapnytype; ?>*</label>
+          <select name="bisnis" id="Bisnis_sel" class="form-control mandatory" >
+            <option value="">--pilih--</option>
+          </select>
         </div>
+<!--         <div class="form-group">
+      <label><?php echo $lang_comapnytype; ?>*</label>
+       <select name="bisnis" id="Bisnis_sel" class="form-control mandatory" >
+        </div> -->
         <div class="form-group">
           <label>Telephone*</label>
           <input type="text" name="telp" class="form-control mandatory" />
@@ -57,7 +63,7 @@
 <select name="district_id" id="district_id" class="form-control mandatory"></select>
 </div>
        <div class="form-group" style="display:none" id="village_box">
-<label><?php echo $lang_Keca; ?>*</label>
+<label>Kelurahaan*</label>
 <select name="village_id" id="village_id" class="form-control mandatory"></select>
 </div>
             <div class="form-group" style="display:none"  id="village_box">
@@ -167,47 +173,97 @@ function get_region(){
   }, "json" );
 }
 $(document).ready(function() {
-  $("form").submit(function(e){
+  $('form').submit(function(e){
     e.preventDefault();
-    var apiurl = api_base_url + '/aduser/add';
-    var fl=document.signup;
-    var data = $(this).serialize();
-    // return alert(data);
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var password = $("#password").val();
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var password = $("#password").val();
+    name
+    email
+    password
+    tax_id
+    company_name
+    phone
+    address
+    address2
+    postal
+    village_id
+    business_type_id
+    data.name = name;
+    data.email = email;
+    data.password = password;
 
-    // success handling
+    var apiurl = baseApiUrl + '/create';
 
-    var success = function(r){
-      alert(r.message);
-      console.log('OK:', r.status);
-    };
 
-    // do validation
-    var form_ok = true;
-    $('.mandatory').each(function(){
-      if($(this).val()==''){
-        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
-        // onContentReady: function(){$(this).focus();}
-        form_ok =false;
-        return false;
-      }
-
-    });
-    var success = function(r){
-      $('#spinner_img').hide();
-      $('#submit_btn').val('Kirim').removeClass('disabled');
-      console.log('OK:', r);
-      alert(r.message);
-    };
-
-    if(form_ok==false) return false;
-    if(fl.password.value!=$('#password2').val())alert('password not match!!!');
-
-    else {
-      $('#spinner_img').show();
-      $('#submit_btn').val('loading...').addClass('disabled');
-      $.post( apiurl, data, success, "json" );
+    if(email==''){
+      $.alert({
+        title: 'Alert!',
+        content: 'Email tidak boleh kosong!',
+      });
+      return false;
     }
+
+    if(password==''){
+      $.alert({
+        title: 'Alert!',
+        content: 'Password tidak boleh kosong!',
+      });
+      return false;
+    };
+
+
+    $('#spinner_img').show();
+    $('#submit_btn').val('loading...').addClass('disabled');
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl });
+
   });
+ //  $("form").submit(function(e){
+ //    e.preventDefault();
+ //    var apiurl = api_base_url + '/account/create/b2b';
+   
+ //    var fl=document.signup;
+ //    var data = $(this).serialize();
+ //    // return alert(data);
+
+ //    // success handling
+ // var asd = 'asdasdasd';
+ //    alert('asd');
+ //    var success = function(r){
+ //      alert(r.message);
+ //      console.log('OK:', r.status);
+ //    };
+
+ //    // do validation
+ //    var form_ok = true;
+ //    $('.mandatory').each(function(){
+ //      if($(this).val()==''){
+ //        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
+ //        // onContentReady: function(){$(this).focus();}
+ //        form_ok =false;
+ //        return false;
+ //      }
+
+ //    });
+ //    var success = function(r){
+ //      $('#spinner_img').hide();
+ //      $('#submit_btn').val('Kirim').removeClass('disabled');
+ //      console.log('OK:', r);
+ //      alert(r.message);
+ //    };
+
+ //    if(form_ok==false) return false;
+ //    if(fl.password.value!=$('#password2').val())alert('password not match!!!');
+
+ //    else {
+ //      $('#spinner_img').show();
+ //      $('#submit_btn').val('loading...').addClass('disabled');
+ //      $.post( apiurl, data, success, "json" );
+ //    }
+ //  });
 
   $.get(api_base_url+"/ccountry/getlistccountry", function(r){
     console.log(r);
@@ -216,5 +272,12 @@ $(document).ready(function() {
     });
     $("#country_sel").prop('disabled', false).change(get_region);
   }, "json" );
+    $.get(api_base_url+"/businesstype/getall", function(r){
+    console.log(r);
+    r.forEach(function(o){
+      $("#Bisnis_sel").append("<option value='"+o.businessTypeId+"'>"+o.name+"</option>");
+    });
+  
+  }, "json" );
 });
-</script>
+</script>a
