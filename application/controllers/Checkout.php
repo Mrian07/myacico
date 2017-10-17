@@ -55,7 +55,7 @@ class Checkout extends Web_private {
 		  
 		   //Data Shipping
 		   $this->data['alamat_shipping'] =$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['address2']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
-
+                    $this->data['id_kelurahan'] = $hasil_ship['village_id'];
 		}
                 // trans method ~Samuel A Rinaldi
                 /*

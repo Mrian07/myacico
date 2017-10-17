@@ -193,6 +193,12 @@ a
                                            						
 					</table>
 				  </div>
+                                  <div>
+					Jasa Pengiriman :
+					<table name="courier" id="courier" class="table">
+                                           						
+					</table>
+				  </div>
                             <input type="submit" id="submit_btn" class="btn btn-primary" value="Finish"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 
 				  <!--button type="submit" class="btn btn-info">Update</button-->
@@ -251,8 +257,9 @@ a
         var totalBelanja = 0;
         var subtotal = 0;
         var fee = 0;
+        var idkel = <?php echo $id_kelurahan;?>
         //var idDistrict = null;
-     
+     //alert(idkel);
         function get_bank(){
             if($("#payment_method").val() != 'C')
             {
@@ -280,6 +287,7 @@ a
 		var token = document.cookie.split('x-auth=')[1].split(';').shift();
 		var filter =0;
                 var api_method= api_base_url+'/payment/method';
+                /*
                 $.get(api_base_url+"/payment/method", function(r){
                 console.log(r);
                 r.forEach(function(o){
@@ -287,9 +295,9 @@ a
                 });
                 $("#payment_method").prop('disabled', false).change(get_bank);
               }, "json" );
-     
+              */
+     courier();
           var apiGet= api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto';
-
 
 	$("form").submit(function(e){
 //           
@@ -361,15 +369,20 @@ a
 		//alert('test',billId.val());
 		return  billId;
 	}
-	function shipingFee(idDistriship)
+	function courier()
 	{
 		 
-		$.get(api_base_url+'/freight/rates/jne?to_district_id='+idDistriship,
-		function(shipingFee){
-		   fee = shipingFee.freightAmt;
-			 //alert('shipping Fee:',shipingFee);
-			
-		});	
+          $.get(api_base_url+'/freight/rates/jne?to_village_id='+idkel,function(r){
+                  r.forEach(function(o){
+                      console.log('sam',o.shipperId);
+                       $("#courier").append('<tr><td><input type="radio" name="courier" value='+o.shipperId+' </td><td></br>Penyedia Jasa : '+o.shipperName+' </br></td></tr>')
+
+                  });
+                  $("#courier").prop('disabled', false);
+                }, "json" );
+                
+		
+               
 	}
        
 </script>
