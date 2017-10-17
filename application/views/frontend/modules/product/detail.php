@@ -11,19 +11,28 @@
 <link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url('assets/productpopup/magnific-popup/css/magnific-popup.css');?>" />
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/magnific-popup/js/magnific-popup.js');?>"></script>
 
-<div class='my-detail-product' ng-controller="detailCnt">
-	<div class="row line-detail-product">
-		<div class="col-sm-12">
-			<a href="<?php echo base_url('/');?>">home</a>
-			<a href="#{{cat.categoryId}}" ng-repeat="cat in dat.categoryBrdc">{{cat.categoryName}}</a>
-			<b>{{dat.name}}</b>
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-12">
+
+			<i class="fa fa-angle-right" aria-hidden="true"></i> DETAIL PRODUCT
+
+		  </div>
 		</div>
 	</div>
+</div>
+
+
+<div class="container">
+
+<div class='my-detail-product' ng-controller="detailCnt">
+
 	<!-- aaa -->
 	
 
 	<div class="row">
-	  <div class="col-sm-4">
+	  <div class="col-sm-5">
 
 		<div class="row">
 		  <div class="col-sm-5">
@@ -59,16 +68,13 @@
 		  <div class="col-sm-7"></div>
 		</div>
 	  </div>
-	  <div class="col-sm-5 detail-product">
+	  <div class="col-sm-4 detail-product">
 		<h5 class='title-product'><?php echo $name; ?></h5>
-		<div class="row">
-			<div class="col-sm-6">
+
 			<span class='price'>Rp.<?php echo money($pricelist);  ?></span><br>
 			weight <span class='red-tx'><?php echo $weight; ?></span><br>
 			
-			</div>
-			<div class="col-sm-6">Stock: <?php echo $stock;  ?></div>
-		</div>
+			Stock: <?php echo $stock;  ?>
 
 
 	  </div>
@@ -124,6 +130,10 @@
 	</div>
 
 </div>
+
+
+</div>
+
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/foundation.min.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/setup.js');?>"></script>
 

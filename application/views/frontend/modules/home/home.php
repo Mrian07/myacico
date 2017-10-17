@@ -559,7 +559,7 @@ ul.list-group:after {
 }
 
 </style>
-
+<div class='container'>
 
             <hr>
             <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
@@ -1095,6 +1095,8 @@ ul.list-group:after {
           </div>
 
       </div>
+
+</div>	  
 
 <!-- s: Slider Product -->
 <link rel="stylesheet" href="<?php echo base_url('assets/css/slider-product.css');?>">
