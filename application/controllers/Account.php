@@ -126,7 +126,7 @@ class Account extends Web_private {
 		$this->data['title_web'] = "Myacico.com - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/bukuAlamat',$this->data);
+		$this->load->view('frontend/modules/account/buku_alamat',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 	
@@ -211,7 +211,7 @@ class Account extends Web_private {
     {
 		$this->data['active_wishlist'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Wishlist";
-		$this->load->view('frontend/header',$this->data);
+		// $this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/wishlist',$this->data);
 		$this->load->view('frontend/footer',$this->data);
