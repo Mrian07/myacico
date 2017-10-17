@@ -39,7 +39,17 @@
             <label><?php echo $lang_addres; ?>*</label>
             <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
             <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
-                                        </div>
+            </div>
+          <div class="form-group">
+          <label><?php echo $lang_Country; ?>*</label>
+            <select name="country" id="country_sel" class="form-control mandatory" disabled >
+            <option value="">--pilih--</option>
+            </select>
+          </div>
+          <div class="form-group" style="display: none;" id="region_box">
+          <label><?php echo $lang_Provience; ?>*</label>
+            <select name="province" id="region_sel" class="form-control mandatory"></select>
+          </div>
           <div class="form-group" style="display:none" id="city_box">
             <label><?php echo $lang_kota; ?>*</label>
             <select name="city" id="city_sel" class="form-control mandatory"></select>
@@ -64,20 +74,8 @@
           <label>Telepon</label>
             <input type="text" id = "phone2"name="phone2" class="form-control"/>
           </div>
-          <div class="form-group" style="display: none;" id="region_box">
-          <label><?php echo $lang_Provience; ?>*</label>
-            <select name="province" id="region_sel" class="form-control mandatory"></select>
-          </div>
-          <div class="form-group">
-          <label><?php echo $lang_Country; ?>*</label>
-            <select name="country" id="country_sel" class="form-control mandatory" disabled >
-            <option value="">--pilih--</option>
-            </select>
-          </div>
-          
-          
           <div class="clearfix"></div>
-                                            <input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+             <input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
                                        
           </form>
         </div>
@@ -297,6 +295,8 @@ data.id = id;
 
   $.get(api_base_url+"/ccountry/getlistccountry", function(r){
     console.log(r);
+    $("#country_sel").prop('disabled', true).html('<option value="209">--pilih--</option>');
+//    $("#country_sel").prop('disabled', true).html('<option value="">Indonesia</option>');
     r.forEach(function(o){
       $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
     });
