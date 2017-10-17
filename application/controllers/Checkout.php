@@ -41,8 +41,10 @@ class Checkout extends Web_private {
 		//Data Billing
 		foreach($hasil as $items){
 			$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['address2']." ".$items['city_name']." ".$items['postal'];
+			$this->data['billing_address_id'] = $items['id'];
 		}
-                // Shipping Address ~Samuel
+
+        // Shipping Address ~Samuel
 		if($this->session->userdata('shipping_address_id'))
 		{ 
                    
@@ -55,34 +57,93 @@ class Checkout extends Web_private {
 		  
 		   //Data Shipping
 		   $this->data['alamat_shipping'] =$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['address2']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
-                    $this->data['id_kelurahan'] = $hasil_ship['village_id'];
+           $this->data['id_kelurahan'] = $hasil_ship['village_id'];
+		   $this->data['shipping_address_id'] = $hasil_ship['id'];
 		}
-                // trans method ~Samuel A Rinaldi
-                /*
-                $api_method = "payment/method";
-                $url_method = api_base_url($api_method);
-                $options = ["http" => [
-		"method" => "GET",
-		"header" => ["token: " . $token,
-		"Content-Type: application/json"],
-		]];
-                $context_method = stream_context_create($options);
-                $konten3 = file_get_contents($url_method, false, $context_method);
-		$hasil_trans = json_decode($konten3, true);
-                foreach($hasil_trans as $items){
-                $this->data['transaction_method'] = "<option value='".$items['value']."'>".$items['name']."</option>";
-                
-                
-                }
-//                print_r('test</pre>'.$this->data['transaction_method']);
-//                die();
-                */
+		
+        //Metode Pembayaran
+		$apiMethod = "payment/method";
+		$urlMethod = api_base_url($apiMethod);
+		$kontenMethod = file_get_contents($urlMethod);
+		$this->data['hasilMethod'] = json_decode($kontenMethod, true);
+		//$hasilMethod = json_decode($kontenMethod, true);
+		//echo"<pre>"; print_r($hasilMethod); die();
 		// End trans method
 		$this->data['title_web'] = "Myacico.com - Checkout";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/checkout/checkout.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
+	}
+	
+	public function paymentTransfer()
+	{
+		$api = "payment/myacicoaccount";
+		$url = api_base_url($api);
+                
+		$konten = file_get_contents($url);
+		$this->data['hasil'] = json_decode($konten, true);
+		$this->load->view('frontend/modules/checkout/list_payment.php',$this->data);
+
+	}
+	
+	public function listShipping()
+	{	
+		$idkel = $this->input->post('idkel');
+		$api = "freight/shipment/rates?to_village_id=".$idkel;
+		$url = api_base_url($api);
+                
+		$konten = file_get_contents($url);
+		$this->data['hasil'] = json_decode($konten, true);
+		$hasil = json_decode($konten, true);
+		$this->data['id_kelurahan'] = $idkel;
+		$this->load->view('frontend/modules/checkout/list_shipping.php',$this->data);
+	}
+	
+	public function getDataShipping()
+	{	
+		$idkel = $this->input->post('idkel');
+		$total_weight = $this->input->post('total_weight');
+		$id = $this->input->post('shipperId');
+		
+		$api = "freight/shipment/rates?to_village_id=".$idkel."&total_weight=".$total_weight."&id=".$id;
+		$url = api_base_url($api);
+                
+		$konten = file_get_contents($url);
+		//$this->data['hasil'] = json_decode($konten, true);
+		$hasil = json_decode($konten, true);
+		
+		header('Content-Type: application/json');
+		echo json_encode( $hasil );
+
+		//$this->load->view('frontend/modules/checkout/list_shipping.php',$this->data);
+	}
+	
+	public function finishByTransfer()
+	{	
+		$grandtotal = $this->input->post('grandtotal');
+		$paymentMethod = $this->input->post('paymentMethod');
+		$code = $this->input->post('code');
+
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+                
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+		
+		$context = stream_context_create($options);
+
+		$api = "order/checkout";
+		$url = api_base_url($api);
+                
+		$konten = file_get_contents($url, false, $context);
+		$this->data['hasil'] = json_decode($konten, true);
+		$hasil = json_decode($konten, true);
+		echo"<pre>"; print_r($hasil);
+	//	$this->load->view('frontend/modules/checkout/list_shipping.php',$this->data);
 	}
 	
 	public function formAddBillingNew()

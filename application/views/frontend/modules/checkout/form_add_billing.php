@@ -124,30 +124,7 @@
 		</div>
 		<div class="col-md-5">
 			<?php 			
-			$this->data['token'] = $_COOKIE['x-auth'];
-			$token = $_COOKIE['x-auth'];
-			$api = "order/cart/detail";
-			$url = api_base_url($api);
-			
-			$options = ["http" => [
-			"method" => "GET",
-			"header" => ["token: " . $token,
-			"Content-Type: application/json"],
-			]];
-			
-			$context = stream_context_create($options);
-			$konten = file_get_contents($url, false, $context);
-			
-			
-			$this->data['hasil'] = json_decode($konten, true);
-			//echo"<pre>"; print_r($hasil); 
-			
-			if(json_decode($konten, true)){
-				$this->load->view('frontend/modules/checkout/checkout_cart',$this->data); 
-			}else{
-				echo"<center>Keranjang masih kosong</center>";
-			}
-			
+				$this->load->view('frontend/modules/checkout/checkout_cart'); 
 			?>
 		</div>
 	</div>
