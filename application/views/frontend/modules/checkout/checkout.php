@@ -287,16 +287,26 @@ a
 		var token = document.cookie.split('x-auth=')[1].split(';').shift();
 		var filter =0;
                 var api_method= api_base_url+'/payment/method';
-                /*
-                $.get(api_base_url+"/payment/method", function(r){
+                
+            $.get(api_base_url+"/payment/method", function(r){
                 console.log(r);
                 r.forEach(function(o){
                   $("#payment_method").append("<option value='"+o.value+"'>"+o.name+"</option>");
                 });
                 $("#payment_method").prop('disabled', false).change(get_bank);
               }, "json" );
-              */
-     courier();
+//              Kurir ~Samuel Adhi Rinaldi
+            $.get(api_base_url+'/freight/shipment/rates?to_village_id='+idkel,function(r){
+                  r.forEach(function(o){
+//                      console.log('sam',o.shipperId);alert(idkel);
+                       $("#courier").append('<tr><td><input type="radio" name="courier" value='+o.shipperId+' </td><td></br>Penyedia Jasa : '+o.shipperName+' </br>Biaya Kirim : '+o.amount+' </br>Estimasi : +/-'+o.estimationDay+' Hari kerja</td></tr>')
+
+                  });
+                  $("#courier").prop('disabled', false);
+                }, "json" );
+                
+              
+//            courier();
           var apiGet= api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto';
 
 	$("form").submit(function(e){
@@ -372,15 +382,7 @@ a
 	function courier()
 	{
 		 
-          $.get(api_base_url+'/freight/rates/jne?to_village_id='+idkel,function(r){
-                  r.forEach(function(o){
-                      console.log('sam',o.shipperId);
-                       $("#courier").append('<tr><td><input type="radio" name="courier" value='+o.shipperId+' </td><td></br>Penyedia Jasa : '+o.shipperName+' </br></td></tr>')
-
-                  });
-                  $("#courier").prop('disabled', false);
-                }, "json" );
-                
+          
 		
                
 	}
