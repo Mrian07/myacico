@@ -1,3 +1,26 @@
+<?php 			
+	$this->data['token'] = $_COOKIE['x-auth'];
+	$token = $_COOKIE['x-auth'];
+	$api = "order/cart/detail";
+	$url = api_base_url($api);
+	
+	$options = ["http" => [
+	"method" => "GET",
+	"header" => ["token: " . $token,
+	"Content-Type: application/json"],
+	]];
+	
+	$context = stream_context_create($options);
+	$konten = file_get_contents($url, false, $context);
+	
+	
+	$hasil = json_decode($konten, true);
+	//echo"<pre>"; print_r($hasil); 
+	
+	if(json_decode($konten, true)){
+		
+?>
+
 <div class="panel panel-default">
 				<div class="panel-body">
 					<table class="table table-hover table-condensed">
@@ -13,6 +36,7 @@
 						<tbody>
 							<?php
 							$total = 0;
+							$totalWeight=0;
 							foreach($hasil as $items):?>
 							<tr>
 								<td data-th="Product">
@@ -27,7 +51,9 @@
 									<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'); ?>
 								</td>
 							</tr>
-							<?php $total +=$items['subtotal'];
+							<?php 
+							$totalWeight +=$items['totalWeight'];
+							$total +=$items['subtotal'];
 							endforeach; ?>
 						</tbody>
 						<tfoot>
@@ -45,7 +71,10 @@
 							</tr>-->
 							<tr>
 								<td colspan="3" class="hidden-xs"></td>
-								<td class="hidden-xs" colspan="5"><strong>Total Rp.<?php echo money($total); ?></strong></td>
+								<td class="hidden-xs" colspan="5">
+								<input type='hidden' id='SubtotalOrder' value='<?php echo $total; ?>'>
+								<input type='hidden' id='weightTotalOrder' value='<?php echo $totalWeight; ?>'>
+								<strong>Total Rp.<?php echo money($total); ?></strong></td>
 							</tr>
 							<tr>
 								<td colspan="5"><b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman</td>
@@ -54,3 +83,7 @@
 					</table>
 				</div>	
 			</div>
+			
+	<?php }else{ echo"<center>Keranjang masih kosong</center>"; } ?>			
+	
+	
