@@ -9,13 +9,13 @@
 		</div>
 	</div>
 </div>
-<div class="container">
+<div class="container ">
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
-		<div class="col-sm-8">
-      <div class="dashboard">
+		<div class="col-sm-9 dashboard">
+      
         <p>Hello <b><?php echo $user->name; ?></b>, <br><br>Dari Beranda Akun anda, anda bisa melihat tinjauan dari aktivitas akun yang ada sekarang dan memperbaharui informasi akun anda. Pilih tautan di bawah ini untuk melihat atau mengedit informasi.</p>
 		<hr>
 		
@@ -41,7 +41,7 @@
 	  </table>
 
 
-		</div>
+	
 	</div>
 </div>
 </div>
