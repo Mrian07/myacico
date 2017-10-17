@@ -129,7 +129,7 @@ font-size: 20px;
             <div class="thumbnail">
                 <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $data['imageurl']; ?>" alt="" />
                 <div class="caption">
-                    <h4 class="group inner list-group-item-heading"><a href="<?php echo base_url('product/detail/'.$data['m_product_id']);?>"><?php echo $data['name']; ?></a>  </h4>
+                    <h4 class="group inner list-group-item-heading" style='text-align:center;'><a href="<?php echo base_url('product/detail/'.$data['m_product_id']);?>"><?php echo $data['name']; ?></a>  </h4>
                     <p class="group inner list-group-item-text">
                         Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                         sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
