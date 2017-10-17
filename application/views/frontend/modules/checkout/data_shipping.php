@@ -88,7 +88,7 @@ var base_url = '<?php echo base_url('checkout/pilihShipping') ?>';
 $(document).ready(function() {
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var filter =0;
-        var apiGet= api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto';
+        var apiGet= api_base_url+'/aduser/getaddress?token='+token;
 $.ajax({
     type:"GET", 
     headers:{"token":token}, 

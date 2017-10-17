@@ -93,74 +93,7 @@ a
 							<!--<p><?php //echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>-->
 							<p><?php echo anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>
                                                    
-							<!--
-							<p><strong>DATA PENERIMA</strong></p>
-							<div class='row'>
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="email">Nama:</label>
-										<input class="form-control" type='text' name='name' value=''>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="email">Email:</label>
-										<input class="form-control" type='text' name='email' value=''>
-									</div>
-								</div>
-							</div>
-							<div class='row'>
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="email">Telepon 1:</label>
-										<input class="form-control" type='text' name='name' value=''>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="email">Telepon 2:</label>
-										<input class="form-control" type='text' name='name' value=''>
-									</div>
-								</div>
-							</div>
-
-							<div class='row'>
-								<div class="col-sm-12">
-									<div class="form-group">
-										<label for="email">Alamat 1:</label>
-										<input class="form-control" type='text' name='address1' value=''>
-									</div>
-								</div>
-							</div>
-							<div class='row'>
-								<div class="col-sm-12">
-									<div class="form-group">
-										<label for="email">Alamat 2:</label>
-										<input class="form-control" type='text' name='address2' value=''>
-									</div>
-								</div>
-							</div>
-
-						  <div class="form-group">
-							<label for="email">Kota:</label>
-							<input class="form-control" type='text' name='name' value=''>
-						  </div>
-						  <div class="form-group">
-							<label for="email">Propinsi:</label>
-							<input class="form-control" type='text' name='name' value=''>
-						  </div>
-						  <div class="form-group">
-							<label for="email">Kodepos:</label>
-							<input class="form-control" type='text' name='name' value=''>
-						  </div>
-						  <div class="form-group">
-							<label for="email">Telepon:</label>
-							<input class="form-control" type='text' name='name' value=''>
-						  </div>
-						  <div class="checkbox">
-							<label><input type="checkbox"> Simpan</label>
-						  </div>
-						  -->
+							
 
 						</form>
 
