@@ -22,7 +22,7 @@
 	<div class="row">
 		<div class="col-sm-6">
 		<h5>LOGIN</h5>
-		<div class='border-create'>
+		<div class='border-create' style='background:#ffffff'>
 				<p>Masukan email dan password login Anda pada form dibawah ini.</p>
 			<form name="signin" method="post">
 				<div class="form-group">
