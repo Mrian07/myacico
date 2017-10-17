@@ -198,7 +198,7 @@ var __slice = [].slice;
 
       _results = [];
       for (_i = 1, _ref = this.options.numStars; 1 <= _ref ? _i <= _ref : _i >= _ref; 1 <= _ref ? _i++ : _i--) {
-        _results.push(this.$el.append("<span class='glyphicon .glyphicon-heart-empty'></span>"));
+        _results.push(this.$el.append("<span class='glyphicon .glyphicon-star-empty'></span>"));
       }
       return _results;
     };
@@ -218,16 +218,16 @@ var __slice = [].slice;
       rating || (rating = this.options.rating);
       if (rating) {
         for (i = _i = 0, _ref = rating - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
-          this.$el.find('span').eq(i).removeClass('glyphicon-heart-empty').addClass('glyphicon-heart');
+          this.$el.find('span').eq(i).removeClass('glyphicon-star-empty').addClass('glyphicon-star');
         }
       }
       if (rating && rating < 5) {
         for (i = _j = rating; rating <= 4 ? _j <= 4 : _j >= 4; i = rating <= 4 ? ++_j : --_j) {
-          this.$el.find('span').eq(i).removeClass('glyphicon-heart').addClass('glyphicon-heart-empty');
+          this.$el.find('span').eq(i).removeClass('glyphicon-star').addClass('glyphicon-star-empty');
         }
       }
       if (!rating) {
-        return this.$el.find('span').removeClass('glyphicon-heart').addClass('glyphicon-heart-empty');
+        return this.$el.find('span').removeClass('glyphicon-star').addClass('glyphicon-star-empty');
       }
     };
 

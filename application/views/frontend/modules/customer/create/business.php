@@ -21,7 +21,7 @@
       <form name="signup" method="post">
         <div class="form-group">
           <label><?php echo $lang_namaDepan; ?>*</label>
-          <input type="text" name="fname" class="form-control mandatory" /></input>
+          <input type="text" name="name" id="name" class="form-control mandatory" /></input>
         </div>
         <div class="form-group">
             <label><?php echo $lang_namaBelakang1; ?>*</label>
@@ -29,48 +29,51 @@
         </div>
         <div class="form-group">
           <label>Email*</label>
-          <input type="email" name="email" class="form-control mandatory" />
+          <input type="email" id="email" name="email" class="form-control mandatory" />
         </div>
         <div class="form-group">
       <label><?php echo $lang_CompanyInfo; ?>*</label>
-          <input type="text" name="cname" class="form-control mandatory" />
+          <input type="text" id="company_name" name="company_name" class="form-control mandatory" />
         </div>
         <div class="form-group">
-      <label><?php echo $lang_comapnytype; ?>*</label>
-          <select name="bname" class="form-control mandatory" ></select>
+        <label><?php echo $lang_comapnytype; ?>*</label>
+          <select name="businessTypeId" id="businessTypeId" class="form-control mandatory" >
+            <option value="">--pilih--</option>
+          </select>
         </div>
+<!--         <div class="form-group">
+      <label><?php echo $lang_comapnytype; ?>*</label>
+       <select name="bisnis" id="Bisnis_sel" class="form-control mandatory" >
+        </div> -->
         <div class="form-group">
           <label>Telephone*</label>
-          <input type="text" name="telp" class="form-control mandatory" />
+          <input type="text" name="phone" id="phone" class="form-control mandatory" />
         </div>
         <div class="form-group">
           <label>NPWP*</label>
-          <input type="text" name="npwp" class="form-control mandatory"/>
+          <input type="text" id="tax_id" name="tax_id" class="form-control mandatory"/>
         </div>
         <div class="form-group">
           <label><?php echo $lang_addres; ?>*</label>
-          <input type="text" name="alamat1" class="form-control mandatory" />
-          <input type="text" name="alamat2" class="form-control mandatory" />
+          <input type="text" id="address" name="address" class="form-control mandatory" />
+          <input type="text" id="address2" name="address2" class="form-control mandatory" />
         </div>
         <div class="form-group" style="display:none" id="ditric_box">
 <label><?php echo $lang_Keca; ?>*</label>
 <select name="district_id" id="district_id" class="form-control mandatory"></select>
 </div>
        <div class="form-group" style="display:none" id="village_box">
-<label><?php echo $lang_Keca; ?>*</label>
+<label>Kelurahaan*</label>
 <select name="village_id" id="village_id" class="form-control mandatory"></select>
 </div>
-            <div class="form-group" style="display:none"  id="village_box">
-    <label>Kelurahaan*</label>
-    <select name="village_id" id="village_id" class="form-control mandatory"></select>
-    </div>
+
         <div class="form-group" style="display:none" id="city_box">
             <label><?php echo $lang_kota; ?>*</label>
           <select name="city" id="city_sel" class="form-control mandatory"></select>
         </div>
         <div class="form-group">
         <label><?php echo $lang_PostCode; ?>*</label>
-          <input type="text" name="zip" class="form-control mandatory" />
+          <input type="text" name="postal" id="postal" class="form-control mandatory" />
         </div>
         <div class="form-group" style="display:none" id="city_box">
 <label><?php echo $lang_kota; ?>*</label>
@@ -88,11 +91,11 @@
         </div>
         <div class="form-group">
               <label><?php echo $lang_Passwpord; ?>*</label>
-          <input type="password" name="password" class="form-control mandatory" />
+          <input type="password" id="password" name="password" class="form-control mandatory" />
         </div>
         <div class="form-group">
                 <label><?php echo $lang_Passwpord2; ?>*</label>
-          <input type="password" id="password2" class="form-control" />
+          <input type="password" id="password2" name="password2" class="form-control" />
         </div>
 
         <div class="row">
@@ -128,7 +131,8 @@ $('#district_id').change(function () {
       $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
       $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
         r.forEach(function(o){
-          $("#village_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+          $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
+                console.log('asdasd',o.c_village_id);
         });
         $("#village_id").prop('disabled', false);
       }, "json" );
@@ -167,47 +171,102 @@ function get_region(){
   }, "json" );
 }
 $(document).ready(function() {
-  $("form").submit(function(e){
+  $('form').submit(function(e){
     e.preventDefault();
-    var apiurl = api_base_url + '/aduser/add';
-    var fl=document.signup;
-    var data = $(this).serialize();
-    // return alert(data);
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var password = $("#password").val();
+    var tax_id = $("#tax_id").val();
+    var company_name = $("#company_name").val();
+    var phone = $("#phone").val();
+       var address = $("#address").val();
+    var address2 = $("#address2").val();
+    var postal = $("#postal").val();
+    var village_id = $("#village_id").val();
+    var businessTypeId = $("#businessTypeId").val();
+var data = {};
+ 
+    data.name = name;
+    data.email = email;
+    data.password = password;
+        data.tax_id = tax_id;
+            data.company_name = company_name;
+                data.phone = phone;
+                    data.address = address;
+                        data.address2 = address2;
+                            data.postal = postal;
+                                data.village_id = village_id;
+                                data.businessTypeId = businessTypeId;
 
-    // success handling
+                                var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
+    var apiurl = baseApiUrl + '/create/b2b';  
 
-    var success = function(r){
-      alert(r.message);
-      console.log('OK:', r.status);
-    };
 
-    // do validation
-    var form_ok = true;
-    $('.mandatory').each(function(){
-      if($(this).val()==''){
-        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
-        // onContentReady: function(){$(this).focus();}
-        form_ok =false;
-        return false;
-      }
-
-    });
-    var success = function(r){
-      $('#spinner_img').hide();
-      $('#submit_btn').val('Kirim').removeClass('disabled');
-      console.log('OK:', r);
-      alert(r.message);
-    };
-
-    if(form_ok==false) return false;
-    if(fl.password.value!=$('#password2').val())alert('password not match!!!');
-
-    else {
-      $('#spinner_img').show();
-      $('#submit_btn').val('loading...').addClass('disabled');
-      $.post( apiurl, data, success, "json" );
+    if(email==''){
+      $.alert({
+        title: 'Alert!',
+        content: 'Email tidak boleh kosong!',
+      });
+      return false;
     }
+
+    if(password==''){
+      $.alert({
+        title: 'Alert!',
+        content: 'Password tidak boleh kosong!',
+      });
+      return false;
+    };
+
+
+    $('#spinner_img').show();
+    $('#submit_btn').val('loading...').addClass('disabled');
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl });
+
   });
+ //  $("form").submit(function(e){
+ //    e.preventDefault();
+ //    var apiurl = api_base_url + '/account/create/b2b';
+   
+ //    var fl=document.signup;
+ //    var data = $(this).serialize();
+ //    // return alert(data);
+
+ //    // success handling
+ // var asd = 'asdasdasd';
+ //    alert('asd');
+ //    var success = function(r){
+ //      alert(r.message);
+ //      console.log('OK:', r.status);
+ //    };
+
+ //    // do validation
+ //    var form_ok = true;
+ //    $('.mandatory').each(function(){
+ //      if($(this).val()==''){
+ //        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
+ //        // onContentReady: function(){$(this).focus();}
+ //        form_ok =false;
+ //        return false;
+ //      }
+
+ //    });
+ //    var success = function(r){
+ //      $('#spinner_img').hide();
+ //      $('#submit_btn').val('Kirim').removeClass('disabled');
+ //      console.log('OK:', r);
+ //      alert(r.message);
+ //    };
+
+ //    if(form_ok==false) return false;
+ //    if(fl.password.value!=$('#password2').val())alert('password not match!!!');
+
+ //    else {
+ //      $('#spinner_img').show();
+ //      $('#submit_btn').val('loading...').addClass('disabled');
+ //      $.post( apiurl, data, success, "json" );
+ //    }
+ //  });
 
   $.get(api_base_url+"/ccountry/getlistccountry", function(r){
     console.log(r);
@@ -216,5 +275,13 @@ $(document).ready(function() {
     });
     $("#country_sel").prop('disabled', false).change(get_region);
   }, "json" );
+    $.get(api_base_url+"/businesstype/getall", function(r){
+    console.log(r);
+    r.forEach(function(o){
+      $("#businessTypeId").append("<option value='"+o.businessTypeId+"'>"+o.name+"</option>");
+
+    });
+  
+  }, "json" );
 });
-</script>
+</script>a

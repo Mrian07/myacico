@@ -49,11 +49,10 @@ margin-top: -11px;
 
 		<div class='border-create'>
 		 <form name="signup" method="post">
-		  <div class="form-group">
-
-			<label>Nama:</label>
-			<input type="text" id="nama" name="name" class="form-control" placeholder="" />
-		  </div>
+		<div class="form-group">
+		<label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+		<input type="text" id="name" name="name" class="form-control mandatory"/>
+		</div>
 		  <div class="form-group">
 			<label>Email:</label>
 			<input type="email" id="email" name="email" class="form-control" placeholder="" />
@@ -86,69 +85,118 @@ margin-top: -11px;
 
 </div>
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
-var apiurl = baseApiUrl + '/aduser/add';
-var success = function(r){
-	console.log('OK:', r);
-	if(r.status == 1) return location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
-	$('#spinner_img').hide();
-	$('#submit_btn').val('Kirim').removeClass('disabled');
-	$.alert({
-		title: 'Alert!',
-		content: r.message
-	});
-};
+var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
 
-var error = function(er){
-  $('#spinner_img').hide();
-  $('#submit_btn').val('Kirim').removeClass('disabled');
-  console.log('OK:', er);
-  $.alert({
-    title: 'Alert!',
-    content: 'koneksi tidak berhasil, silahkan coba lagi!',
-  });
-};
-
+var apiurl = baseApiUrl + '/create';
+var data = {};
 $(document).ready(function() {
-	$("form").submit(function(e){
-	    e.preventDefault();
-		var apiurl = baseApiUrl + '/aduser/add';
-		var data = $(this).serialize();
-		var email = $("#email").val();
-		var nama = $("#nama").val();
-		var password = $("#password").val();
-		var password2 = $("#password2").val();
 
-		if(nama==''){
-			$.alert({
-				title: 'Alert!',
-				content: 'nama tidak boleh kosong!',
-			});
-		}else
+  $('form').submit(function(e){
+    e.preventDefault();
+    var name = $("#name").val();
+		var email = $("#email").val();
+		var password = $("#password").val();
+		data.name = name;
+    data.email = email;
+    data.password = password;
+
+		var apiurl = baseApiUrl + '/create';
+
+
 		if(email==''){
 			$.alert({
 				title: 'Alert!',
-				content: 'email tidak boleh kosong!',
+				content: 'Email tidak boleh kosong!',
 			});
-		}else
-		if(password.length < 7){
-			$.alert({
-				title: 'Alert!',
-				content: 'password minimal 7 karakter!',
-			});
-		}else
-		if(password != password2){
-			$.alert({
-				title: 'Alert!',
-				content: 'Password tidak sama!',
-			});
-		}else{
-			$('#spinner_img').show();
-			$('#submit_btn').val('loading...').addClass('disabled');
-			//$.post( apiurl, data, success, "json" );
-			$.ajax({ type:"POST", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
+      return false;
 		}
 
-	});
-});
+		if(password==''){
+			$.alert({
+				title: 'Alert!',
+				content: 'Password tidak boleh kosong!',
+			});
+      return false;
+		};
+
+
+    $('#spinner_img').show();
+    $('#submit_btn').val('loading...').addClass('disabled');
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl });
+
+  });
+  });
+// var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
+
+// var apiurl = baseApiUrl + '/create';
+// var success = function(r){
+// 	console.log('OK:', r);
+// 	if(r.status == 1) return location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
+// 	$('#spinner_img').hide();
+// 	$('#submit_btn').val('Kirim').removeClass('disabled');
+// 	$.alert({
+// 		title: 'Alert!',
+// 		content: r.message
+// 	});
+// };
+
+// var error = function(er){
+//   $('#spinner_img').hide();
+//   $('#submit_btn').val('Kirim').removeClass('disabled');
+//   console.log('OK:', er);
+//   $.alert({
+//     title: 'Alert!',
+//     content: 'koneksi tidak berhasil, silahkan coba lagi!',
+//   });
+// };
+
+
+// 	$("form").submit(function(e){
+// 	    e.preventDefault();
+// 		var apiurl = baseApiUrl + '/create';
+// 		var data = $(this).serialize();
+		
+// 		var nama = $("#nama").val();
+// 		var email = $("#email").val();
+// 		var password = $("#password").val();
+// 		var password2 = $("#password2").val();
+
+
+// 		if(nama==''){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'nama tidak boleh kosong!',
+// 			});
+// 		}else
+// 		if(email==''){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'email tidak boleh kosong!',
+// 			});
+// 		}else
+// 		if(password.length < 7){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'password minimal 7 karakter!',
+// 			});
+// 		}else
+// 		if(password != password2){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'Password tidak sama!',
+// 			});
+// 		}else{
+// 			$('#spinner_img').show();
+// 			$('#submit_btn').val('loading...').addClass('disabled');
+// 			//$.post( apiurl, data, success, "json" );
+// 			//$.ajax({ type:"POST", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
+// 			 //$.ajax({ type:"POST", contentType: "application/json", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
+// 			  $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, timeout: 30000 });
+// 		}
+
+// 		console.log('data',data);
+
+// 	});
+
+
 </script>

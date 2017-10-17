@@ -65,10 +65,6 @@
 
 
 						<form name="signup" method="post">
-						<input type="hidden" id = "name"name="name"   />
-						<input type="hidden" id = "phone1"name="phone1"   />
-						<input type="hidden" id = "phone2"name="phone2" />
-
 						<div class="form-group">
 
 						<input type="hidden" id="bill" name="bill" value="N" />
@@ -99,13 +95,28 @@
                       <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
                       <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
                     </div>
-                    <div class="form-group" style="display:none" id="ditric_box">
-                        <label><?php echo $lang_Keca; ?>*</label>
-                      <select name="district_id" id="district_id" class="form-control mandatory"></select>
+                    
+                    <div class="form-group">
+                    <label><?php echo $lang_Country; ?>*</label>
+                      <select name="country" id="country_sel" class="form-control mandatory" disabled >
+                      <option value="">--pilih--</option>
+                      </select>
+                    </div>
+                    <div class="form-group" style="display: none;" id="region_box">
+                    <label><?php echo $lang_Provience; ?>*</label>
+                      <select name="province" id="region_sel" class="form-control mandatory"></select>
                     </div>
                     <div class="form-group" style="display:none" id="city_box">
                       <label><?php echo $lang_kota; ?>*</label>
                       <select name="city" id="city_sel" class="form-control mandatory"></select>
+                    </div>
+                    <div class="form-group" style="display:none" id="ditric_box">
+                        <label><?php echo $lang_Keca; ?>*</label>
+                      <select name="district_id" id="district_id" class="form-control mandatory"></select>
+                    </div>
+                    <div class="form-group" style="display:none" id="village_box">
+                        <label><?php echo "kelurahan"; ?>*</label>
+                      <select name="village_id" id="village_id" class="form-control mandatory"></select>
                     </div>
                     <div class="form-group">
                     <label><?php echo $lang_PostCode; ?>*</label>
@@ -119,18 +130,7 @@
                     <label>Telepon</label>
                       <input type="text" id = "phone2"name="phone2" class="form-control"/>
                     </div>
-                    <div class="form-group" style="display: none;" id="region_box">
-                    <label><?php echo $lang_Provience; ?>*</label>
-                      <select name="province" id="region_sel" class="form-control mandatory"></select>
-                    </div>
-                    <div class="form-group">
-                    <label><?php echo $lang_Country; ?>*</label>
-                      <select name="country" id="country_sel" class="form-control mandatory" disabled >
-                      <option value="">--pilih--</option>
-                      </select>
-                    </div>
-
-
+                   
                     <div class="clearfix"></div>
                       <input type="submit" id="submit_btn" class="btn btn-primary" value="Tambah"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
                     </form>
@@ -161,19 +161,30 @@ $.ajaxSetup({
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
 });
-
+$('#village_id').change(function () {
+        var end = this.value;
+      $('#submit_btn').removeAttr('disabled');
+    });
+function get_village(){
+  $("#village_box").slideDown();
+  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+    r.forEach(function(o){
+      $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
+    });
+    $("#village_id").prop('disabled', false);
+  }, "json" );
+}
 function get_distric(){
   $("#ditric_box").slideDown();
-  $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_village);
   $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
     r.forEach(function(o){
       $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
     });
-    $("#district_id").prop('disabled', false);
+    $("#district_id").prop('disabled', false).change(get_village);;
   }, "json" );
 }
-
-
 
 function get_city(){
   $("#city_box").slideDown();
@@ -200,12 +211,12 @@ var data = {};
 
 $(document).ready(function() {
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-
+$('#submit_btn').attr('disabled','disabled');
     $("form").submit(function(e){
     e.preventDefault();
    // var data = $(this).serialize();
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	  var apiurl = api_base_url +'/aduser/addaddress?token='+token;
+	  var apiurl = api_base_url +'/aduser/addaddress?';
 
         var name =  $("#name").val();
         var phone = $("#phone").val();
@@ -213,10 +224,8 @@ $(document).ready(function() {
         var address_name = $("#address_name").val();
         var address1 = $("#address1").val();
         var address2 = $("#address2").val();
-        var address3 = $("#address3").val();
-        var address4 = $("#address4").val();
         var postal = $("#postal").val();
-        var district_id = $("#district_id").val();
+        var village_id = $("#village_id").val();
         var isbillto = $("#isbillto").val();
         var isshipto = $("#isshipto").val();
         var ispayfrom = $("#ispayfrom").val();
@@ -231,29 +240,14 @@ data.phone2 = phone2;
 data.address_name = address_name;
 data.address1 = address1;
 data.address2 = address2;
-data.address3 = "address3";
-data.address4 = "address4";
 data.postal = postal;
 data.district_id = district_id;
+data.village_id = village_id;
 data.isbillto = 'Y';
 data.isshipto = 'Y';
 data.ispayfrom = 'Y';
 data.isremitto = 'Y';
-		// data.name = name;
-		// data.phone = phone;
-		// data.phone2 = phone2;
-    // data.address_name = address_name;
-    // data.address1 = address1;
-    // data.address2 = address2;
-		//     data.address3 = address3;
-		// data.address4 = address4;
-    // data.postal = postal;
-    // data.district_id = district_id;
-    // data.isbillto = isbillto;
-    // data.isshipto = isshipto;
-    // data.ispayfrom = ispayfrom;
-    // data.isremitto = isremitto;
-
+	
     //return alert(data.phone);die();
      var success = function(r){
          $('#spinner_img').hide();
@@ -279,14 +273,14 @@ data.isremitto = 'Y';
 			// $("#ispayfrom").val(null);
 		  // $("#isremitto").val(null);
 
-        window.location.replace(base_url+"/account/informasiAkun");
+        window.location.replace(base_url+"checkout/dataShipping");
 
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
 		console.log('ini data',token);
 		//die();
-$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data) , url: apiurl, success: success, error: error });
+$.ajax({ type:"POST", contentType: "application/json", headers:{"token":token}, data:JSON.stringify(data) , url: apiurl, success: success});
 
 		//$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
 
@@ -319,9 +313,12 @@ var error = function(er){
 
   $.get(api_base_url+"/ccountry/getlistccountry", function(r){
     console.log(r);
+    $("#country_sel").prop('disabled', true).html('<option value="209">--pilih--</option>');
+//    $("#country_sel").prop('disabled', true).html('<option value="">Indonesia</option>');
     r.forEach(function(o){
       $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
     });
+    //alert($("#country_sel").val());
     $("#country_sel").prop('disabled', false).change(get_region);
   }, "json" );
 });
