@@ -110,11 +110,18 @@ $(document).ready(function() {
 			});
       return false;
 		}
-
-		if(password==''){
+			if(password2==''){
 			$.alert({
 				title: 'Alert!',
-				content: 'Password tidak boleh kosong!',
+				content: 'password2 tidak boleh kosong!',
+			});
+      return false;
+		}
+
+		if(password.length < 7){
+			$.alert({
+				title: 'Alert!',
+				content: 'Password Kurang dari 7!',
 			});
       return false;
 		};
