@@ -21,7 +21,7 @@
       <form name="signup" method="post">
         <div class="form-group">
           <label><?php echo $lang_namaDepan; ?>*</label>
-          <input type="text" name="fname" class="form-control mandatory" /></input>
+          <input type="text" name="name" id="name" class="form-control mandatory" /></input>
         </div>
         <div class="form-group">
             <label><?php echo $lang_namaBelakang1; ?>*</label>
@@ -29,15 +29,15 @@
         </div>
         <div class="form-group">
           <label>Email*</label>
-          <input type="email" name="email" class="form-control mandatory" />
+          <input type="email" id="email" name="email" class="form-control mandatory" />
         </div>
         <div class="form-group">
       <label><?php echo $lang_CompanyInfo; ?>*</label>
-          <input type="text" name="cname" class="form-control mandatory" />
+          <input type="text" id="company_name" name="company_name" class="form-control mandatory" />
         </div>
         <div class="form-group">
         <label><?php echo $lang_comapnytype; ?>*</label>
-          <select name="bisnis" id="Bisnis_sel" class="form-control mandatory" >
+          <select name="businessTypeId" id="businessTypeId" class="form-control mandatory" >
             <option value="">--pilih--</option>
           </select>
         </div>
@@ -47,16 +47,16 @@
         </div> -->
         <div class="form-group">
           <label>Telephone*</label>
-          <input type="text" name="telp" class="form-control mandatory" />
+          <input type="text" name="phone" id="phone" class="form-control mandatory" />
         </div>
         <div class="form-group">
           <label>NPWP*</label>
-          <input type="text" name="npwp" class="form-control mandatory"/>
+          <input type="text" id="tax_id" name="tax_id" class="form-control mandatory"/>
         </div>
         <div class="form-group">
           <label><?php echo $lang_addres; ?>*</label>
-          <input type="text" name="alamat1" class="form-control mandatory" />
-          <input type="text" name="alamat2" class="form-control mandatory" />
+          <input type="text" id="address" name="address" class="form-control mandatory" />
+          <input type="text" id="address2" name="address2" class="form-control mandatory" />
         </div>
         <div class="form-group" style="display:none" id="ditric_box">
 <label><?php echo $lang_Keca; ?>*</label>
@@ -66,17 +66,14 @@
 <label>Kelurahaan*</label>
 <select name="village_id" id="village_id" class="form-control mandatory"></select>
 </div>
-            <div class="form-group" style="display:none"  id="village_box">
-    <label>Kelurahaan*</label>
-    <select name="village_id" id="village_id" class="form-control mandatory"></select>
-    </div>
+
         <div class="form-group" style="display:none" id="city_box">
             <label><?php echo $lang_kota; ?>*</label>
           <select name="city" id="city_sel" class="form-control mandatory"></select>
         </div>
         <div class="form-group">
         <label><?php echo $lang_PostCode; ?>*</label>
-          <input type="text" name="zip" class="form-control mandatory" />
+          <input type="text" name="postal" id="postal" class="form-control mandatory" />
         </div>
         <div class="form-group" style="display:none" id="city_box">
 <label><?php echo $lang_kota; ?>*</label>
@@ -94,11 +91,11 @@
         </div>
         <div class="form-group">
               <label><?php echo $lang_Passwpord; ?>*</label>
-          <input type="password" name="password" class="form-control mandatory" />
+          <input type="password" id="password" name="password" class="form-control mandatory" />
         </div>
         <div class="form-group">
                 <label><?php echo $lang_Passwpord2; ?>*</label>
-          <input type="password" id="password2" class="form-control" />
+          <input type="password" id="password2" name="password2" class="form-control" />
         </div>
 
         <div class="row">
@@ -134,7 +131,8 @@ $('#district_id').change(function () {
       $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
       $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
         r.forEach(function(o){
-          $("#village_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+          $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
+                console.log('asdasd',o.c_village_id);
         });
         $("#village_id").prop('disabled', false);
       }, "json" );
@@ -178,25 +176,30 @@ $(document).ready(function() {
     var name = $("#name").val();
     var email = $("#email").val();
     var password = $("#password").val();
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var password = $("#password").val();
-    name
-    email
-    password
-    tax_id
-    company_name
-    phone
-    address
-    address2
-    postal
-    village_id
-    business_type_id
+    var tax_id = $("#tax_id").val();
+    var company_name = $("#company_name").val();
+    var phone = $("#phone").val();
+       var address = $("#address").val();
+    var address2 = $("#address2").val();
+    var postal = $("#postal").val();
+    var village_id = $("#village_id").val();
+    var businessTypeId = $("#businessTypeId").val();
+var data = {};
+ 
     data.name = name;
     data.email = email;
     data.password = password;
+        data.tax_id = tax_id;
+            data.company_name = company_name;
+                data.phone = phone;
+                    data.address = address;
+                        data.address2 = address2;
+                            data.postal = postal;
+                                data.village_id = village_id;
+                                data.businessTypeId = businessTypeId;
 
-    var apiurl = baseApiUrl + '/create';
+                                var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
+    var apiurl = baseApiUrl + '/create/b2b';  
 
 
     if(email==''){
@@ -275,7 +278,8 @@ $(document).ready(function() {
     $.get(api_base_url+"/businesstype/getall", function(r){
     console.log(r);
     r.forEach(function(o){
-      $("#Bisnis_sel").append("<option value='"+o.businessTypeId+"'>"+o.name+"</option>");
+      $("#businessTypeId").append("<option value='"+o.businessTypeId+"'>"+o.name+"</option>");
+
     });
   
   }, "json" );
