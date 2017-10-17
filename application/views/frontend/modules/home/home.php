@@ -559,7 +559,7 @@ ul.list-group:after {
 }
 
 </style>
-
+<div>
 
             <hr>
             <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
@@ -887,7 +887,122 @@ ul.list-group:after {
     		</span>
   		</div>
 
+		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail text-center">
+      			<img src="https://s1.postimg.org/55rbwyghz3/lenovo.png" alt="...">
+      			<h4 class="text-danger">Lenovo y520</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No :gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
 
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > Buy Now</button>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail text-center">
+      			<img src="https://s1.postimg.org/4rxnk90cen/msi.png" alt="...">
+      			<h4 class="text-danger">MSI GS43VR</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No :gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > Buy Now</button>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail text-center">
+      			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
+      			<h4 class="text-danger">Asus Gaming</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No :gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > Buy Now</button>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail text-center">
+      			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
+      			<h4 class="text-danger">Asus Gaming Laptop</h4>
+      			<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+      			<p>Uttar Pradesh (North Zone)</p>
+      			<p>Registration No :gaadiexpert.com</p>
+      			<p>Auction End in 5 days</p>
+
+
+
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<button type="button" class="btn btn-link">Add to Wishlist</button>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<button class="btn btn-danger right" > Buy Now</button>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
 
 
   		<!-- END PRODUCTS -->
