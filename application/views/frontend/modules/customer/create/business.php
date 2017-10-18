@@ -37,7 +37,7 @@
         </div>
         <div class="form-group">
         <label><?php echo $lang_comapnytype; ?>*</label>
-          <select name="businessTypeId" id="businessTypeId" class="form-control mandatory" >
+          <select name="business_type_id" id="business_type_id" class="form-control mandatory" >
             <option value="">--pilih--</option>
           </select>
         </div>
@@ -187,7 +187,7 @@ $(document).ready(function() {
     var address2 = $("#address2").val();
     var postal = $("#postal").val();
     var village_id = $("#village_id").val();
-    var businessTypeId = $("#businessTypeId").val();
+    var business_type_id = $("#business_type_id").val();
     var file =  $("#file").val();
 var data = {};
  
@@ -202,7 +202,7 @@ var data = {};
                         data.address2 = address2;
                             data.postal = postal;
                                 data.village_id = village_id;
-                                data.businessTypeId = businessTypeId;
+                                data.business_type_id = business_type_id;
 
                                 var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
     var apiurl = baseApiUrl + '/create/b2b'; 
@@ -287,8 +287,8 @@ var data = {};
     $.get(api_base_url+"/businesstype/getall", function(r){
     console.log(r);
     r.forEach(function(o){
-      $("#businessTypeId").append("<option value='"+o.businessTypeId+"'>"+o.name+"</option>");
-      console.log('test',businessTypeId);
+      $("#business_type_id").append("<option value='"+o.businessTypeId+"'>"+o.name+"</option>");
+      console.log('test',business_type_id);
     });
   
   }, "json" );
