@@ -136,14 +136,21 @@ if(name==''){
 				title: 'Alert!',
 				content: 'Password tidak sama!',
 			});
-                        return false;
-	  
+                    
+	      return false;
 		};
+		    var success = function(r){
+      $('#spinner_img').hide();
+      $('#submit_btn').val('Kirim').removeClass('disabled');
+      console.log('OK:', r);
+      alert(r.message);
+          return false;
+    };
 
 
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl });
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success:success });
 
   });
   });
