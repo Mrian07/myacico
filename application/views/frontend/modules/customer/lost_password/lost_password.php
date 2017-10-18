@@ -37,7 +37,7 @@
 
 
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
 
 var error = function(er){
   $('#spinner_img').hide();
@@ -65,7 +65,7 @@ $(document).ready(function() {
 			$('#submit_btn').val('loading...').addClass('disabled');
 			e.preventDefault();
 
-			var apiurl = baseApiUrl + '/aduser/forgotpassword';
+			var apiurl = baseApiUrl + '/forgotpassword';
 			var data = $(this).serialize();
 
 			// success handling
