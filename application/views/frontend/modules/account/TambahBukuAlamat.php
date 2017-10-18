@@ -61,8 +61,7 @@
 
 					  <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
 					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
-						<input type="text" id = "address3" name="address3" class="form-control mandatory" />
-						<input type="text" id="address4" name="address4" class="form-control mandatory"  />
+
 
 					</div>
                                         <div class="form-group">

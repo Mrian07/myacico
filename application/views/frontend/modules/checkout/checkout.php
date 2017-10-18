@@ -56,45 +56,33 @@ a
 					<div class="col-md-12">
 
 						<form>
-							<p><strong>DATA BILLING</strong></p>
-							
-							
+							<p><strong>DATA BILLING</strong></p>							
 							<?php 
 							if(isset($alamat_billing)){
-								echo"<p>". $alamat_billing."</p>";
+								echo"<p>". $alamat_billing."</p>
+								<input type='text' value='". $billing_address_id."' id='billing_address_id'>
+								";
 							}else{
 								echo"<p>". anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default')); echo"</p>";
 							}?>
 							
-							<!--
-							
-							<div class="rumah" id='biling-ready' style='display:none'></div>
-							<div class="billing-empty"  style='display:none'>
-  							<p>Tidak ada data billing yang tersedia, silakan1 isi terlebih dulu.asdasd<p>
-  							<p><?php// echo anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default'));?></p>
-							</div>
--->
-                                        <input type="hidden" id="idAddShip" name="idAddShip" value="<?php echo $this->session->userdata('shipping_address_id'); ?>" />
-                                        <input type="hidden" id = "idBill" name="idBill" />
-                                         <input type="hidden" id = "idDistri" name="idDistri" />
+
+							<!--<input type="hidden" id="idAddShip" name="idAddShip" value="<?php echo $this->session->userdata('shipping_address_id'); ?>" />
+							<input type="hidden" id = "idBill" name="idBill" />
+							<input type="hidden" id = "idDistri" name="idDistri" />-->
 							<p><strong>DATA PENERIMA</strong></p>
-                                                        <div id="shoping"></div>
-                                                       <?php if($this->session->userdata('shipping_address_id'))
-                                                       {
-                                                           echo"<p>". $alamat_shipping."</p>";
-                                                       }
-                                                       else{
-                                                         echo "<p>Tidak ada data penerima yang tersedia, silakan isi terlebih dulu.<p>";
+						   <?php if($this->session->userdata('shipping_address_id'))
+						   {
+							   echo"<p>".anchor('checkout/dataShipping/', $alamat_shipping)."</p>
+							   <input type='text' value='". $shipping_address_id."' id='shipping_address_id'>
+							   ";
+						   }
+						   else{
+							 echo "<p>Tidak ada data penerima yang tersedia, silakan isi terlebih dulu.<p>";
+							 echo "<p>".anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-default'))."</p>";
 
-                                                       }
-                                                       ?> 
-							
-                                                             
-							<!--<p><?php //echo anchor('checkout/formAddShippingNew/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>-->
-							<p><?php echo anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-default'));?></p>
-                                                   
-							
-
+						   }
+						   ?> 
 						</form>
 
 					</div>
@@ -105,219 +93,115 @@ a
 			<div class="panel panel-default">
 			  <div class="panel-heading"><b>Metode Pembayaran</b></div>
 			  <div class="panel-body">
-				 <form method="post">
 				  <div class="form-group">
 					<label for="email">Pilih Type Pembayaran:</label>
-<!--					<select class="form-control" id='payment_method' name='payment_method'>
-						<option value=''>-Pilih-</option>
-						<option value='01'>Transfer Bank</option>
-						option value='02'>Ninja 250cc</option>
-						<option value='03'>Credit Cart</option
-					</select>-->
-                                        <select name="payment_method" id="payment_method" class="form-control mandatory"></select>
-                                      
-
+					<input type="text" id="typeVal">
+					<select id='payment_method' name='payment_method' onchange='paymentType(this.value)' class='form-control'>
+						<?php
+							echo "<option value=''>-Pilih-</option>";
+							foreach($hasilMethod as $data){?>
+								<option value='<?php echo$data['value'];?>'><?php echo$data['name'];?></option>
+							<?php }
+						?>
+					</select>
+                    <div class='listPayment'></div>                  
+					  
 				  </div>
-
-				  <!-- TRANSFER BANK -->
-				  <div id='transfer_bank' onclick='bank()'>
-					Mohon dilakukan pembayaran ke :
-					<table name="bank" id="bank" class="table">
-                                           						
-					</table>
-				  </div>
-                                  <div>
-					Jasa Pengiriman :
-					<table name="courier" id="courier" class="table">
-                                           						
-					</table>
-				  </div>
-                            <input type="submit" id="submit_btn" class="btn btn-primary" value="Finish"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
-
-				  <!--button type="submit" class="btn btn-info">Update</button-->
-				</form>
+			  </div>
+			</div>
+			
+			<div class="panel panel-default">
+			  <div class="panel-heading"><b>Metode Pengiriman</b></div>
+			  <div class="panel-body">
+				<div class='listShipping'></div>   
 
 			  </div>
 			</div>
-			<!--div class="panel panel-default">
-			  <div class="panel-heading"><b>Ulasan dan Kirim</b></div>
-			  <div class="panel-body"><button type="button" class="btn btn-info">Ubah</button></div>
-			</div-->
+			
+			
 		</div>
 		<div class="col-md-5">
-			<?php 			
-			$this->data['token'] = $_COOKIE['x-auth'];
-			$token = $_COOKIE['x-auth'];
-			$api = "order/cart/detail";
-			$url = api_base_url($api);
-			
-			$options = ["http" => [
-			"method" => "GET",
-			"header" => ["token: " . $token,
-			"Content-Type: application/json"],
-			]];
-			
-			$context = stream_context_create($options);
-			$konten = file_get_contents($url, false, $context);
-			
-			
-			$this->data['hasil'] = json_decode($konten, true);
-			//echo"<pre>"; print_r($hasil); 
-			
-			if(json_decode($konten, true)){
-				$this->load->view('frontend/modules/checkout/checkout_cart',$this->data); 
-			}else{
-				echo"<center>Keranjang masih kosong</center>";
-			}
-			
+			<?php 
+				$this->load->view('frontend/modules/checkout/checkout_cart'); 
 			?>
 		</div>
 
 	</div>
 
- 
-	<?php //echo anchor('finish', 'Pesan Sekarang <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success my-btn-chekout'));?>
+	<?php echo anchor('', 'FINISH <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success my-btn-chekout', 'onclick'=>'return finish();'));?>
 
 </div>
 
-
 <script type="text/javascript">
-        var namaBank = null;
-        var pMethod = null;
-        var billId = null;
-        var idDistriship = null;
-        var qty = 0;
-        var totalBelanja = 0;
-        var subtotal = 0;
-        var fee = 0;
-        var idkel = <?php echo $id_kelurahan;?>
-        //var idDistrict = null;
-     //alert(idkel);
-        function get_bank(){
-            if($("#payment_method").val() != 'C')
-            {
-               // $("#bank").slideDown();
-                $("#bank").prop('disabled', true);
-                $.get(api_base_url+"/payment/myacicoaccount", function(r){
-                  r.forEach(function(o){
-                      console.log('sam',o.code);
-                    //$("#bank").append("<tr value='"+o.code+"'>"+o.account_name+"</tr>");
-                  
-//        $("#bank").append('<tr><td>'+o.code+',  '+o.account_name+' '+o.bank_name+' '+o.account_number+'</td></tr>')
-        $("#bank").append('<tr><td><input type="radio" name="bank" value='+o.code+' </td><td></br>Nama Bank : '+o.bank_name+' </br>Atas Nama : '+o.account_name+' </br>Nomor rekening : '+o.account_number+' </td></tr>')
 
-                  });
-                  $("#bank").prop('disabled', false);
-                }, "json" );
-                
-            }
-         /* 
-        */
-      }
-      
-	$(document).ready(function()
-	{
-		var token = document.cookie.split('x-auth=')[1].split(';').shift();
-		var filter =0;
-                var api_method= api_base_url+'/payment/method';
-                
-            $.get(api_base_url+"/payment/method", function(r){
-                console.log(r);
-                r.forEach(function(o){
-                  $("#payment_method").append("<option value='"+o.value+"'>"+o.name+"</option>");
-                });
-                $("#payment_method").prop('disabled', false).change(get_bank);
-              }, "json" );
-//              Kurir ~Samuel Adhi Rinaldi
-            $.get(api_base_url+'/freight/shipment/rates?to_village_id='+idkel,function(r){
-                  r.forEach(function(o){
-//                      console.log('sam',o.shipperId);alert(idkel);
-                       $("#courier").append('<tr><td><input type="radio" name="courier" value='+o.shipperId+' </td><td></br>Penyedia Jasa : '+o.shipperName+' </br>Biaya Kirim : '+o.amount+' </br>Estimasi : +/-'+o.estimationDay+' Hari kerja</td></tr>')
+$(document).ready(function()
+{	
+	var idkel = <?php echo $id_kelurahan;?>;
+	var dataString = 'idkel='+idkel;
 
-                  });
-                  $("#courier").prop('disabled', false);
-                }, "json" );
-                
-              
-//            courier();
-          var apiGet= api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto';
+	$.ajax
+		({
+		type: "POST",	
+		url: "<?php echo site_url('checkout/listShipping'); ?>",
+		data: dataString,
+		success:function(html){
+				$(".listShipping").html(html);
+			}
+		});	
+	
+});
 
-	$("form").submit(function(e){
-//           
-        var data = {};
-		e.preventDefault();
-    //var data = $(this).serialize(); freightAmt
-   // var token = document.cookie.split('x-auth=')[1].split(';').shift();
-   
-               
-		var apiurl = api_base_url + '/order/checkout?token='+token;
-		//var a =shipingFee();
-		var total = parseInt(subtotal + fee);
-		//console.log('shipping:', fee);
-		//console.log('sub nya adalah:', subtotal);
-		//console.log('total nya adalah:', total);
-			data.grandtotal = total;
-			data.paymentMethod = pMethod;//c Ato R
-			data.code = namaBank;
-			data.billing_address_id = billId;
-			data.shipping_address_id = idAddShip;
-			//data.courier_id = address_name;
-			data.isoncepickup = "Y";
-		//    console.log('OK:', data);
-		//   code
-			data.courier ="JNE";
-			data.courier_amount= fee;
-    
+function paymentType(payment_method){
 
-    // success handling
-	var error = function(er){
-	  $('#spinner_img').hide();
-	  $('#submit_btn').val('Kirim').removeClass('disabled');
-	  console.log('OK:', er);
-	  $.alert({
-		title: 'Alert!',
-		content: 'koneksi tidak berhasil, silahkan coba lagi!',
-	  });
-	};
-    var success = function(r){ 
-         $('#spinner_img').hide();
-  $('#submit_btn').val('Kirim').removeClass('disabled');
-         $.alert({
-     title: 'Alert!',
-     content: 'Transaksi Baru Berhasil',
-    });
-//      alert(r.message);
-//      console.log('OK:', r.status);
-	window.location.replace(base_url+"/checkout/success");
-
-    };
-    $('#spinner_img').show();
-    $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error:error, timeout: 30000 });
-
-    // do validation
-  
-  });
-
-	});
-
-
-	function bank(){
-		 namaBank = $('input[name="bank"]:checked').val();
-		alert(namaBank);
+	if(payment_method=='R'){
+		$('#typeVal').val(payment_method);
+		$.ajax
+		({
+		url: "<?php echo site_url('checkout/paymentTransfer'); ?>",
+		success:function(html){
+				$(".listPayment").html(html);
+			}
+		});
+	}else{
+		$(".listPayment").html('');
 	}
-   
-	function idBilling(idBill){
-		billId =idBill.toString();
-		//alert('test',billId.val());
-		return  billId;
-	}
-	function courier()
-	{
-		 
-          
+}
+
+function finish(){
+	
+	var grandtotal= $('#grandtotal').val();
+	var paymentMethod=$('#typeVal').val();
+	var soncepickup = 'Y';
+	var billing_address_id= $('#billing_address_id').val();
+	var shipping_address_id=$('#shipping_address_id').val();
+	var code =$('#metVal').val();
+	var courier =$('#courier').val();
+	var courier_amount =$('#courier_amount').val();
+	
+	alert(grandtotal);
+	alert(paymentMethod);
+	alert(soncepickup);
+	alert(billing_address_id);
+	alert(shipping_address_id);
+	alert(code);
+	alert(courier);
+	alert(courier_amount);
+	
+	return false;
+	/*if(typeVal=='R'){
 		
-               
-	}
-       
+		var dataString = 'grandtotal='+grandtotal+'&paymentMethod='+paymentMethod+'&code='+code;
+		$.ajax
+			({
+			type: "POST",	
+			url: "<?php echo site_url('checkout/finishByTransfer'); ?>",
+			data: dataString,
+			success:function(html){
+					alert(html);
+					//$(".listShipping").html(html);
+				}
+			});
+	
+	}*/
+}
 </script>

@@ -50,7 +50,7 @@ margin-top: -11px;
 		<div class='border-create'>
 		 <form name="signup" method="post">
 		<div class="form-group">
-		<label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+		<label>Name:</label>
 		<input type="text" id="name" name="name" class="form-control mandatory"/>
 		</div>
 		  <div class="form-group">
@@ -67,7 +67,7 @@ margin-top: -11px;
 		  </div>
 		  <div class="row">
 			<div class="col-sm-6">
-				<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo $btn_pesan_personal?>">
+				<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo "Daftar"?>">
 				<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 			</div>
 			<div class="col-sm-6" style='text-align: right'>
@@ -101,8 +101,15 @@ $(document).ready(function() {
     data.password = password;
 
 		var apiurl = baseApiUrl + '/create';
+		
 
-
+if(name==''){
+			$.alert({
+				title: 'Alert!',
+				content: 'Nama tidak boleh kosong!',
+			});
+      return false;
+		}
 		if(email==''){
 			$.alert({
 				title: 'Alert!',
@@ -110,13 +117,27 @@ $(document).ready(function() {
 			});
       return false;
 		}
-
-		if(password==''){
+			if(password2==''){
 			$.alert({
 				title: 'Alert!',
-				content: 'Password tidak boleh kosong!',
+				content: 'password2 tidak boleh kosong!',
 			});
       return false;
+		}
+
+		if(password.length < 3){
+			$.alert({
+				title: 'Alert!',
+				content: 'Password Kurang dari 7!',
+			});
+      return false;
+		}else
+		if(password != password2){
+			$.alert({
+				title: 'Alert!',
+				content: 'Password tidak sama!',
+			});
+	  
 		};
 
 
