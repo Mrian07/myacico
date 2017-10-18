@@ -14,8 +14,6 @@ class Account extends Web_private {
 	}
 
 	public function atribut(){
-		//$this->data['title_web'] = "Myacico.com - Account";
-
 		$this->data['active_dashboard'] = "";
 		$this->data['active_informasiAkun'] = "";
 		$this->data['active_bukuAlamat'] = "";
@@ -186,6 +184,32 @@ class Account extends Web_private {
 		$this->load->view('frontend/footer',$this->data);
 	}
 	
+	public function listRiwayatStatusPesanan()
+    {	
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "transaction/list";
+		$url = api_base_url($api);
+		
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+		
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+
+		$this->data['hasil'] = json_decode($konten, true);
+
+		if($hasil = json_decode($konten, true)){
+			$this->load->view('frontend/modules/account/list_riwayat_status_pesanan',$this->data);
+		}else{
+			echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'>List riwayat status pesanan masih kosong</div>";
+		}
+	}
+
+	
 	public function confirm()
 		{
 		$this->data['konf'] = $this->uri->segment(3);
@@ -257,10 +281,11 @@ class Account extends Web_private {
 		$this->load->view('frontend/modules/account/form_password',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-        public function formTransactionDetail()
+	
+    public function formTransactionDetail()
     {
-                $this->data['detId']=$this->uri->segment(3);
-		$this->data['active_informasiAkun'] = "class='active'";
+        $this->data['detId']=$this->uri->segment(3);
+		$this->data['active_riwayatStatusPesanan'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Return Management Authority";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);

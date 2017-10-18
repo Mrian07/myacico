@@ -18,9 +18,7 @@
 		</div>
 		<div class="col-sm-9">
 
-		<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat');?>
-		<br/>
-		<br/>
+		
 	
 		<div class='listBukuAlamat'><center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center></div>
 			
@@ -39,7 +37,6 @@ $(document).ready(function() {
 			$(".listBukuAlamat").html(html);
 		}
 	});
-	
 	
 });
 </script>

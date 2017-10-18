@@ -1,24 +1,29 @@
-<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat');?>
-		<br/>
-		<br/>
 <p>Dibawah ini adalah daftar buku alamat penerima pesanan. Anda bisa menambahkan alamat baru atau mengubah alamat sebelumnya dengan alamat yang lain.</p>
 <div class="panel panel-default">
 <table class="table">
 	<thead>
 
 	  <tr>
-		<th>Alamat lengkap</th>
-		<th>Ubah</th>
-		<th>Hapus</th>
+		<th>Tanggal Order</th>
+		<th>Total Pembayaran</th>
+		<th>Metode Pembayaran</th>
+		<th>Nomor Pesanan</th>
+		<th>Status</th>
+		<th>Detail</th>
+		<th>Konfirmasi</th>
 	  </tr>
 
 	</thead>
 	<tbody>
 		<?php foreach($hasil as $items): ?>
 			<tr>
-				<td><?php echo $items['address_name'].", ".$items['address1']." ".$items['address2']." ".$items['city_name']." ".$items['postal']; ?></td>
-				<td><?php echo anchor('account/editBukuAlamat/'.$items['id'], '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>', array('class'=>'btn btn-link'));?></td>
-				<td><a href='#' onClick="dellBukuAlamat('<?php echo $items['id']; ?>','<?php echo $items['address1']; ?>')" class='btn btn-link'><i class='fa fa-trash' aria-hidden='true'></i></a></td>
+				<td><?php echo tanggal_time($items['waktuTransaksi']);?></td>
+				<td><?php echo $items['grandTotal'];?></td>
+				<td><?php echo $items['paymentMethod'];?></td>
+				<td><?php echo $items['orderNumber'];?></td>
+				<td><?php echo $items['transactionStatus'];?></td>
+				<td><?php echo anchor('account/formTransactionDetail/'.$items['idTransaksi'], 'Detail', array('class'=>'btn btn-info'));?></td>
+				<td><?php echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));?></td>
 			</tr>
 		<?php endforeach; ?>
 
