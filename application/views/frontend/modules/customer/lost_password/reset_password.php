@@ -1,18 +1,23 @@
-<div class="container">
-	<div class="row">
-	  <div class="col-sm-12">
-		<div class="my-border-title">
-			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> RESET PASSWORD</h3>
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-12">
+
+			<i class="fa fa-angle-right" aria-hidden="true"></i> RESET PASSWORD
+
+		  </div>
 		</div>
-		<p>Silahkan masukkan password baru Anda.</p>
-	  </div>
 	</div>
+</div>
+<div class="container">
+	
 
 	<div class="row">
 		<div class="col-sm-3">
-
+ <input type="hidden" id="surel" name="surel" value="<?php echo $_SERVER['QUERY_STRING'];?>" />
 		</div>
 	  <div class="col-sm-6">
+              <p>Silahkan masukkan password baru Anda.</p>
 		<div class='border-create'>
 		 <form name="signup" method="post">
 		  <div class="form-group">
@@ -40,44 +45,51 @@
 
 
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
 
 
 $(document).ready(function() {
-
+    var data = {};
+    var url =$('#surel').val();
+    var res = url.split("key=");
+                  
+                   // var kunci = 
+console.log('sam',res[1]);
 	$('form').submit(function(e){
 
 	    e.preventDefault();
 
-		var email = $("#password").val();
-		var email2 = $("#password2").val();
-
-		if(email.length < 7){ 
+		var password = $("#password").val();
+		var password2 = $("#password2").val();
+                var key = $('#surel').val();
+		if(password.length < 7){ 
 			$.alert({
 				title: 'Alert!',
-				content: 'Email minimal 7 karakter!',
+				content: 'Password minimal 7 karakter!',
 			});
 		}
-		else if(email != email2){ 
+		else if(password != password2){ 
 			$.alert({
 				title: 'Alert!',
-				content: 'Email konfirmasi tidak sama!',
+				content: 'Password konfirmasi tidak sama!',
 			});
 		}
 		else{
 
-		    var apiurl = baseApiUrl + '/aduser/reset';
-		    var data = $(this).serialize();
-
+		    var apiurl = baseApiUrl + '/forgotpassword';
+                    
+		    //var data = $(this).serialize();
+                    data.key = res[1];
+                    data.password = password;
 		    // success handling
 		    var success = function(r){
 		      console.log('OK:', r);
 		      alert(r.message);
 		    };
 
-		    $.post( apiurl, data, success, "json" );
+//		    $.post( apiurl, data, success, "json" );
 		    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
-
+$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, timeout: 30000 });
 		}
 
 	});

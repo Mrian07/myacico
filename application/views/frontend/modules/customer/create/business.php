@@ -18,7 +18,7 @@
     <div class="col-sm-6">
       <div class='border-create'>
 
-      <form name="signup" method="post">
+      <form name="signup" method="post" novalidate="novalidate" enctype="multipart/form-data">
         <div class="form-group">
           <label><?php echo $lang_namaDepan; ?>*</label>
           <input type="text" name="name" id="name" class="form-control mandatory" /></input>
@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
           <label>Email*</label>
-          <input type="email" id="email" name="email" class="form-control mandatory" />
+          <input type="email" id="email" name="email" class="form-control mandatory" value="@gmail.com" />
         </div>
         <div class="form-group">
       <label><?php echo $lang_CompanyInfo; ?>*</label>
@@ -96,6 +96,10 @@
         <div class="form-group">
                 <label><?php echo $lang_Passwpord2; ?>*</label>
           <input type="password" id="password2" name="password2" class="form-control" />
+        </div>
+                <div class="form-group">
+                <label>Upload Gambar*</label>
+         Browse…<input class="input-file" id="file" type="file" name="file">
         </div>
 
         <div class="row">
@@ -184,12 +188,14 @@ $(document).ready(function() {
     var postal = $("#postal").val();
     var village_id = $("#village_id").val();
     var businessTypeId = $("#businessTypeId").val();
+    var file =  $("#file").val();
 var data = {};
  
     data.name = name;
     data.email = email;
     data.password = password;
         data.tax_id = tax_id;
+         data.file = file;
             data.company_name = company_name;
                 data.phone = phone;
                     data.address = address;
@@ -199,7 +205,9 @@ var data = {};
                                 data.businessTypeId = businessTypeId;
 
                                 var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
-    var apiurl = baseApiUrl + '/create/b2b';  
+    var apiurl = baseApiUrl + '/create/b2b'; 
+     var form = $('form')[0]; // You need to use standard javascript object here
+    var formData = new FormData(form); 
 
 
     if(email==''){
@@ -221,7 +229,8 @@ var data = {};
 
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl });
+    $.ajax({ type:"POST", contentType: "application/json",data: formData, contentType: false,
+    processData: false, dataType: "json", url: apiurl });
 
   });
  //  $("form").submit(function(e){
@@ -279,7 +288,7 @@ var data = {};
     console.log(r);
     r.forEach(function(o){
       $("#businessTypeId").append("<option value='"+o.businessTypeId+"'>"+o.name+"</option>");
-
+      console.log('test',businessTypeId);
     });
   
   }, "json" );
