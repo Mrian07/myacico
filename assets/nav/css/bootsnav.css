@@ -529,7 +529,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         padding: 20px 15px;
         font-weight: 200;
 		margin-top:0px;
-		border-right: 1px solid #d8d5d5;
+		/*border-right: 1px solid #d8d5d5;*/
     }
     
     nav.navbar.bootsnav ul.nav > li.dropdown > a.dropdown-toggle:after{

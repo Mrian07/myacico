@@ -211,7 +211,7 @@ function finish(){
 		
 		//$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data) , url: apiurl, success: success, error: error });
 		
-		var dataString = {
+		/*var dataString = {
 			'grandtotal': grandtotal,
 			'paymentMethod': paymentMethod,
 			'billing_address_id': billing_address_id,
@@ -221,7 +221,7 @@ function finish(){
 			'courier': courier,
 			'courier_amount': courier_amount,
 		}
-		
+		*/
 		data.grandtotal = grandtotal;
 		data.paymentMethod = paymentMethod;
 		data.billing_address_id = billing_address_id;
@@ -229,12 +229,7 @@ function finish(){
 		data.soncepickup = soncepickup;
 		data.code = code;
 		data.courier = courier;
-		data.courier = courier;
-		data.village_id = village_id;
-		data.isbillto = 'Y';
-		data.isshipto = 'Y';
-		data.ispayfrom = 'Y';
-		data.isremitto = 'Y';
+		data.courier_amount = courier_amount;
 		
 		$.ajax
 			({
@@ -243,9 +238,9 @@ function finish(){
 			data: JSON.stringify(data),
 			headers:{"token":token},
 			url: "<?php echo api_base_url('order/checkout'); ?>",
-			success:function(html){
-					alert(html);
-					console.log('ini:'+html);
+			success:function(hasil){
+					alert(hasil.status);
+					console.log('ini:'+hasil);
 					//$(".listShipping").html(html);
 					
 				//	return false;

@@ -1,3 +1,4 @@
+<?php if($user->role=='B2C'){ ?>
 <ul class='my-menu-desktop'>
     <li <?php echo$active_dashboard; ?>><?php echo anchor('account', 'Dashboard');?></li>
     <li <?php echo$active_informasiAkun; ?>><?php echo anchor('account/informasiAkun', 'Informasi Akun & Billing');?></li>
@@ -37,6 +38,10 @@
       
     </ul>
 </div>
+<?php }elseif($user->role=='B2B'){ ?>
 
+menu b2b
+
+<?php } ?>
 
 <script src="<?php echo base_url('assets/js/sidebar_select_menu.js');?>"></script>
