@@ -97,6 +97,7 @@ $(document).ready(function() {
     var name = $("#name").val();
 		var email = $("#email").val();
 		var password = $("#password").val();
+                var password2 = $("#password2").val();
 		data.name = name;
     data.email = email;
     data.password = password;
@@ -123,7 +124,7 @@ if(name==''){
     }
 
 
-		if(password.length < 3){
+		if(password.length < 7){
 			$.alert({
 				title: 'Alert!',
 				content: 'Password Kurang dari 7!',
@@ -135,6 +136,7 @@ if(name==''){
 				title: 'Alert!',
 				content: 'Password tidak sama!',
 			});
+                        return false;
 	  
 		};
 
