@@ -63,6 +63,12 @@ a
 			</div>
 		  </div>
 		  <div class="form-group">
+			<label class="control-label col-sm-4" for="email">Nomor Invoice:</label>
+			<div class="col-sm-8">
+			  <p class="form-control-static"><?php echo $field->invoiceNumber; ?></p>
+			</div>
+		  </div>
+		  <div class="form-group">
 			<label class="control-label col-sm-4" for="email">Metode Pembayaran:</label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->paymentMethod; ?></p>
@@ -71,7 +77,11 @@ a
 		  <div class="form-group">
 			<label class="control-label col-sm-4" for="email">Metode Pembayaran:</label>
 			<div class="col-sm-8">
-			  <p class="form-control-static"><?php echo $field->paymentMethod; ?></p>
+			  <p class="form-control-static"><?php echo $field->paymentMethod; if($field->paymentMethod=='Bank Transfer'){
+				 echo"<br><i>".$field->accountNameTo;
+				 echo"<br>".$field->accountNumberTo;
+				 echo"<br>".$field->bankNameTo."</i>";
+				  }?></p>
 			</div>
 		  </div>
 		  <div class="form-group">
@@ -93,8 +103,41 @@ a
 	  <div class="col-sm-6">
 	  
 		<div class="panel panel-default">
-		  <div class="panel-heading"><b>Pembayaran Transfer Ke</b></div>
-		  <div class="panel-body"></div>
+		  <div class="panel-heading"><b>Detail Cart</b></div>
+		  <div class="panel-body">
+			
+			<table class="table table-hover table-condensed">
+				<thead>
+					<tr>
+						<th style="width:50%">Product</th>
+						<th style="width:8%">Qty</th>
+						<th style="width:22%" class="text-center">Subtotal</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					foreach($field->items as $key => $data):?>
+					<tr>
+						<td data-th="Product">
+							<img src="<?php echo $data->imageurl; ?>" alt="<?php echo $data->name; ?>" class="img-responsive" width='100'/>
+						</td>
+						<td data-th="Qty" align='center'>
+							<span class="badge"><?php echo $data->qty; ?></span>
+						</td>
+						<td data-th="Subtotal" class="text-center">Rp.<?php echo money($data->subtotal); ?></td>
+					</tr>
+					<?php 
+					endforeach; ?>
+				</tbody>
+			</table>
+			 <div class="form-group"><h5>
+				<label class="control-label col-sm-6" for="email">Total Pembayaran:</label>
+				<div class="col-sm-6">
+				  <p class="form-control-static">Rp.<?php echo money($field->grandTotal); ?></p>
+				</div>
+			  </div>
+				</h5>
+		  </div>
 		</div>  
 	  </div>
 	</div> 
