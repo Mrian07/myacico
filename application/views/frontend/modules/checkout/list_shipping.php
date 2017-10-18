@@ -1,6 +1,6 @@
-<input type="text" id="grandtotal">
-<input type="text" id="courier">
-<input type="text" id="courier_amount">
+<input type="hidden" id="grandtotal">
+<input type="hidden" id="courier">
+<input type="hidden" id="courier_amount">
 <?php foreach($hasil as $data){ ?>
 		<div class="panel panel-default" style='background:#edecec; margin-bottom:10px;' id=''>
 		<table border='0' cellpadding='5'>

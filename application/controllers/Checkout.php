@@ -66,9 +66,8 @@ class Checkout extends Web_private {
 		$urlMethod = api_base_url($apiMethod);
 		$kontenMethod = file_get_contents($urlMethod);
 		$this->data['hasilMethod'] = json_decode($kontenMethod, true);
-		//$hasilMethod = json_decode($kontenMethod, true);
-		//echo"<pre>"; print_r($hasilMethod); die();
-		// End trans method
+		
+		$this->data['token'] = $_COOKIE['x-auth'];
 		$this->data['title_web'] = "Myacico.com - Checkout";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -120,10 +119,15 @@ class Checkout extends Web_private {
 	}
 	
 	public function finishByTransfer()
-	{	
+	{			
 		$grandtotal = $this->input->post('grandtotal');
 		$paymentMethod = $this->input->post('paymentMethod');
+		$billing_address_id = $this->input->post('billing_address_id');
+		$shipping_address_id = $this->input->post('shipping_address_id');
+		$soncepickup = $this->input->post('soncepickup');
 		$code = $this->input->post('code');
+		$courier = $this->input->post('courier');
+		$courier_amount = $this->input->post('courier_amount');
 
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
