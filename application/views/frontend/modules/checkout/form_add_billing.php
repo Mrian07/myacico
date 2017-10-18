@@ -283,7 +283,7 @@ data.isremitto = 'Y';
     $('#submit_btn').val('loading...').addClass('disabled');
 		console.log('ini data',token);
 		//die();
-$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data) , url: apiurl, success: success, error: error });
+$.ajax({ type:"POST", contentType: "application/json", headers:{"token":token}, data:JSON.stringify(data) , url: apiurl, success: success, error: error });
 
 		//$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
 

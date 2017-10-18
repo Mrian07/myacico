@@ -139,7 +139,7 @@ font-size: 20px;
 								
 								
 						<h4><a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="asd fa fa-heart" aria-hidden="true"></i></a></h4>
-						<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1'><br>
+						<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='0'><br>
 						<button class="dropbtnaddcar" onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$data['imageurl'];?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight'];?>')">ADD TO CART</button>
 						
 		
