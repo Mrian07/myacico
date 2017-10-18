@@ -119,7 +119,7 @@ if(name==''){
     var atpos = x.indexOf("@");
     var dotpos = x.lastIndexOf(".");
     if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-        alert("Not a valid e-mail address");
+        alert("Email Tidak Benar");
         return false;
     }
 
@@ -139,6 +139,7 @@ if(name==''){
                     
 	      return false;
 		};
+		// comment baru
 		    var success = function(r){
       $('#spinner_img').hide();
       $('#submit_btn').val('Kirim').removeClass('disabled');
@@ -146,6 +147,7 @@ if(name==''){
       alert(r.message);
           return false;
     };
+
 
 
     $('#spinner_img').show();

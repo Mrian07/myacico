@@ -24,7 +24,7 @@
 		<h5>LOGIN</h5>
 		<div class='border-create' style='background:#ffffff'>
 				<p>Masukan email dan password login Anda pada form dibawah ini.</p>
-			<form name="signin" method="post">
+			<form name="myForm" method="post">
 				<div class="form-group">
 				<label>Email:</label>
 				<input type="email" id="email" name="email" class="form-control"  />
@@ -140,13 +140,14 @@ $(document).ready(function() {
 		var password = $("#password").val();
 		var apiurl = baseApiUrl + '/aduser/masuk';
 
-		if(email==''){
-			$.alert({
-				title: 'Alert!',
-				content: 'Email tidak boleh kosong!',
-			});
-      return false;
-		}
+		var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Masukan Email Yang Benar");
+        return false;
+    }
+
     data.email=email;
 		if(password==''){
 			$.alert({
