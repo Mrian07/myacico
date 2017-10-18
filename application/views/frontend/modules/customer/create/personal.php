@@ -125,7 +125,7 @@ if(name==''){
       return false;
 		}
 
-		if(password.length < 3){
+		if(password.length < 7){
 			$.alert({
 				title: 'Alert!',
 				content: 'Password Kurang dari 7!',
@@ -137,6 +137,7 @@ if(name==''){
 				title: 'Alert!',
 				content: 'Password tidak sama!',
 			});
+                        return false;
 	  
 		};
 
