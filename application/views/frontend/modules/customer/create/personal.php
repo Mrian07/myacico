@@ -121,13 +121,7 @@ if(name==''){
         alert("Not a valid e-mail address");
         return false;
     }
-			if(password2==''){
-			$.alert({
-				title: 'Alert!',
-				content: 'password2 tidak boleh kosong!',
-			});
-      return false;
-		}
+
 
 		if(password.length < 3){
 			$.alert({
