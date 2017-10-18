@@ -60,7 +60,7 @@ a
 							<?php 
 							if(isset($alamat_billing)){
 								echo"<p>". $alamat_billing."</p>
-								<input type='text' value='". $billing_address_id."' id='billing_address_id'>
+								<input type='hidden' value='". $billing_address_id."' id='billing_address_id'>
 								";
 							}else{
 								echo"<p>". anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default')); echo"</p>";
@@ -74,7 +74,7 @@ a
 						   <?php if($this->session->userdata('shipping_address_id'))
 						   {
 							   echo"<p>".anchor('checkout/dataShipping/', $alamat_shipping)."</p>
-							   <input type='text' value='". $shipping_address_id."' id='shipping_address_id'>
+							   <input type='hidden' value='". $shipping_address_id."' id='shipping_address_id'>
 							   ";
 						   }
 						   else{
@@ -95,7 +95,7 @@ a
 			  <div class="panel-body">
 				  <div class="form-group">
 					<label for="email">Pilih Type Pembayaran:</label>
-					<input type="text" id="typeVal">
+					<input type="hidden" id="typeVal">
 					<select id='payment_method' name='payment_method' onchange='paymentType(this.value)' class='form-control'>
 						<?php
 							echo "<option value=''>-Pilih-</option>";
@@ -127,8 +127,8 @@ a
 		</div>
 
 	</div>
-
-	<?php echo anchor('', 'FINISH <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success my-btn-chekout', 'onclick'=>'return finish();'));?>
+	<button class='btn btn-success my-btn-chekout' onclick='finish()'>FINISH <i class="fa fa-angle-right"></i></button>
+	<?php // echo anchor('', 'FINISH <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success my-btn-chekout', 'onclick'=>'return finish();'));?>
 
 </div>
 
@@ -168,7 +168,7 @@ function paymentType(payment_method){
 }
 
 function finish(){
-	
+	var token= '<?php echo $token; ?>';
 	var grandtotal= $('#grandtotal').val();
 	var paymentMethod=$('#typeVal').val();
 	var soncepickup = 'Y';
@@ -177,30 +177,86 @@ function finish(){
 	var code =$('#metVal').val();
 	var courier =$('#courier').val();
 	var courier_amount =$('#courier_amount').val();
+	var data = {};
 	
-	alert(grandtotal);
-	alert(paymentMethod);
-	alert(soncepickup);
-	alert(billing_address_id);
-	alert(shipping_address_id);
-	alert(code);
-	alert(courier);
-	alert(courier_amount);
+	if(billing_address_id==''){
+		$.alert({
+			title: 'Alert!',
+			content: 'Data billing tidak boleh kosong',
+		});
+	}else if(shipping_address_id==''){
+		$.alert({
+			title: 'Alert!',
+			content: 'Data penerima tidak boleh kosong',
+		});
+	}else if(paymentMethod==''){
+		$.alert({
+			title: 'Alert!',
+			content: 'Silakan pilih metode pembayaran',
+		});
+	}else if(paymentMethod=='R' && code==''){
+		$.alert({
+			title: 'Alert!',
+			content: 'Silakan pilih bank transfer',
+		});
 	
-	return false;
-	/*if(typeVal=='R'){
+	}else if(courier==''){
+		 $.alert({
+			title: 'Alert!',
+			content: 'Silakan pilih metode pengiriman',
+		});
+	}else {
+
+		//var dataString = 'grandtotal='+grandtotal+'&paymentMethod='+paymentMethod+'&billing_address_id='+billing_address_id+'&shipping_address_id='+shipping_address_id+'&soncepickup='+soncepickup+'&code='+code+'&courier='+courier+'&courier_amount='+courier_amount;
 		
-		var dataString = 'grandtotal='+grandtotal+'&paymentMethod='+paymentMethod+'&code='+code;
+		//$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data) , url: apiurl, success: success, error: error });
+		
+		var dataString = {
+			'grandtotal': grandtotal,
+			'paymentMethod': paymentMethod,
+			'billing_address_id': billing_address_id,
+			'shipping_address_id': shipping_address_id,
+			'soncepickup': soncepickup,
+			'code': code,
+			'courier': courier,
+			'courier_amount': courier_amount,
+		}
+		
+		data.grandtotal = grandtotal;
+		data.paymentMethod = paymentMethod;
+		data.billing_address_id = billing_address_id;
+		data.shipping_address_id = shipping_address_id;
+		data.soncepickup = soncepickup;
+		data.code = code;
+		data.courier = courier;
+		data.courier = courier;
+		data.village_id = village_id;
+		data.isbillto = 'Y';
+		data.isshipto = 'Y';
+		data.ispayfrom = 'Y';
+		data.isremitto = 'Y';
+		
 		$.ajax
 			({
 			type: "POST",	
-			url: "<?php echo site_url('checkout/finishByTransfer'); ?>",
-			data: dataString,
+			contentType: "application/json",
+			data: JSON.stringify(data),
+			headers:{"token":token},
+			url: "<?php echo api_base_url('order/checkout'); ?>",
 			success:function(html){
 					alert(html);
+					console.log('ini:'+html);
 					//$(".listShipping").html(html);
+					
+				//	return false;
 				}
 			});
+	}
+	//alert('masuk222'); 
+	//return false;
+	/*if(typeVal=='R'){
+		
+		
 	
 	}*/
 }

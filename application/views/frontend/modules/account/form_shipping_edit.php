@@ -40,8 +40,7 @@ asdasd
 					  <label><?php echo $lang_addres; ?>*</label>
 					  <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
 					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
-                                          <input type="text" id = "address3" name="address3" class="form-control mandatory" />
-					  <input type="text" id="address4" name="address4" class="form-control mandatory"  />
+
                                         </div>
                                       <div class="form-group">
 					<label><?php echo $lang_Country; ?>*</label>
@@ -173,7 +172,7 @@ $.ajax({
       
   rumah.append(
 
-	'<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
+	'<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.cityname+' '+p.postal+'</td></tr>'
 	)
 	mybutton.append(
 	'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
@@ -231,8 +230,6 @@ $.ajax({
         var address_name = $("#address_name").val();
         var address1 = $("#address1").val();
         var address2 = $("#address2").val();
-        var address3 = $("#address3").val();
-        var address4 = $("#address4").val();
         var postal = $("#postal").val();
         var district_id = $("#district_id").val();
         var village_id = $("#village_id").val();
@@ -252,8 +249,6 @@ data.id = id;
     data.address_name = address_name;
     data.address1 = address1;
     data.address2 = address2;
-    data.address3 = address3;
-    data.address4 = address4;
     data.postal = postal;
     data.district_id = district_id;
     data.isbillto = 'N';

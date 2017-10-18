@@ -48,14 +48,15 @@ margin-top: -11px;
 	  <div class="col-sm-6">
 
 		<div class='border-create'>
-		 <form name="signup" method="post">
+		 <form name="myForm" method="post">
 		<div class="form-group">
 		<label>Name:</label>
 		<input type="text" id="name" name="name" class="form-control mandatory"/>
 		</div>
 		  <div class="form-group">
 			<label>Email:</label>
-			<input type="email" id="email" name="email" class="form-control" placeholder="" />
+					<input type="text" id="email" name="email" class="form-control mandatory"/>
+	
 		  </div>
 		  <div class="form-group">
 			<label>Password:</label>
@@ -101,7 +102,10 @@ $(document).ready(function() {
     data.password = password;
 
 		var apiurl = baseApiUrl + '/create';
-		
+		function validateForm() {
+
+
+}
 
 if(name==''){
 			$.alert({
@@ -110,13 +114,13 @@ if(name==''){
 			});
       return false;
 		}
-		if(email==''){
-			$.alert({
-				title: 'Alert!',
-				content: 'Email tidak boleh kosong!',
-			});
-      return false;
-		}
+		    var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
 			if(password2==''){
 			$.alert({
 				title: 'Alert!',

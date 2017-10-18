@@ -1,6 +1,6 @@
 <br>
 Mohon dilakukan pembayaran ke :<br>
-<input type="text" id="metVal">
+<input type="hidden" id="metVal">
 <?php foreach($hasil as $data){ ?>
 		<div class="panel panel-default" style='background:#edecec;margin-bottom:10px; '>
 		<table border='0' cellpadding='5'>
