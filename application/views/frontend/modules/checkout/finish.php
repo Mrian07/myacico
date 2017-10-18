@@ -93,7 +93,10 @@ a
 		   <div class="form-group">
 			<label class="control-label col-sm-4" for="email">Tanggal Transaksi:</label>
 			<div class="col-sm-8">
-			  <p class="form-control-static"><?php echo $field->waktuTransaksi; ?></p>
+			  <p class="form-control-static"><?php 
+			  echo tanggal_time($field->waktuTransaksi);
+			 // $tgl = explode(" ",$field->waktuTransaksi);
+			 // echo tanggal($tgl[0]); echo",".;?> </p>
 			</div>
 		  </div>
 		  </form>
