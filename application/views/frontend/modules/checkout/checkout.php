@@ -177,7 +177,7 @@ function finish(){
 	var code =$('#metVal').val();
 	var courier =$('#courier').val();
 	var courier_amount =$('#courier_amount').val();
-	
+	var data = {};
 	
 	if(billing_address_id==''){
 		$.alert({
@@ -222,11 +222,25 @@ function finish(){
 			'courier_amount': courier_amount,
 		}
 		
+		data.grandtotal = grandtotal;
+		data.paymentMethod = paymentMethod;
+		data.billing_address_id = billing_address_id;
+		data.shipping_address_id = shipping_address_id;
+		data.soncepickup = soncepickup;
+		data.code = code;
+		data.courier = courier;
+		data.courier = courier;
+		data.village_id = village_id;
+		data.isbillto = 'Y';
+		data.isshipto = 'Y';
+		data.ispayfrom = 'Y';
+		data.isremitto = 'Y';
+		
 		$.ajax
 			({
 			type: "POST",	
 			contentType: "application/json",
-			data: JSON.stringify(dataString),
+			data: JSON.stringify(data),
 			headers:{"token":token},
 			url: "<?php echo api_base_url('order/checkout'); ?>",
 			success:function(html){
