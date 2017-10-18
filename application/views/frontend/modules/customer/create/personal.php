@@ -154,10 +154,12 @@ var success = function(r){
 //     title: 'Alert!',
 //     content: 'Email Verifikasi Akan di kirimkan ke Email '+email,
 //    });
-//      alert(r.message);
+      alert(r.message);
       console.log('OK:', r.status);
-			
-        window.location.replace(base_url+"customer/successCreate/success_create");
+		if(r.status === '1'){
+                            window.location.replace(base_url+"customer/successCreate/success_create");
+
+                }	
 
     };
     $('#spinner_img').show();
