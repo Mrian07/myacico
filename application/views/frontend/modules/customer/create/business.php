@@ -58,36 +58,31 @@
           <input type="text" id="address" name="address" class="form-control mandatory" />
           <input type="text" id="address2" name="address2" class="form-control mandatory" />
         </div>
-        <div class="form-group" style="display:none" id="ditric_box">
-<label><?php echo $lang_Keca; ?>*</label>
-<select name="district_id" id="district_id" class="form-control mandatory"></select>
-</div>
-       <div class="form-group" style="display:none" id="village_box">
-<label>Kelurahaan*</label>
-<select name="village_id" id="village_id" class="form-control mandatory"></select>
-</div>
-
-        <div class="form-group" style="display:none" id="city_box">
-            <label><?php echo $lang_kota; ?>*</label>
-          <select name="city" id="city_sel" class="form-control mandatory"></select>
-        </div>
-        <div class="form-group">
-        <label><?php echo $lang_PostCode; ?>*</label>
-          <input type="text" name="postal" id="postal" class="form-control mandatory" />
-        </div>
-        <div class="form-group" style="display:none" id="city_box">
-<label><?php echo $lang_kota; ?>*</label>
-<select name="city" id="city_sel" class="form-control mandatory"></select>
-</div>
-        <div class="form-group" style="display: none;" id="region_box">
-        <label><?php echo $lang_Provience; ?>*</label>
-          <select name="province" id="region_sel" class="form-control mandatory"></select>
-        </div>
-        <div class="form-group">
+         <div class="form-group">
         <label><?php echo $lang_Country; ?>*</label>
           <select name="country" id="country_sel" class="form-control mandatory" disabled >
             <option value="">--pilih--</option>
           </select>
+        </div>
+        <div class="form-group" style="display: none;" id="region_box">
+            <label><?php echo $lang_Provience; ?>*</label>
+          <select name="province" id="region_sel" class="form-control mandatory"></select>
+        </div>
+        <div class="form-group" style="display:none" id="city_box">
+            <label><?php echo $lang_kota; ?>*</label>
+          <select name="city" id="city_sel" class="form-control mandatory"></select>
+        </div>
+        <div class="form-group" style="display:none" id="ditric_box">
+        <label><?php echo $lang_Keca; ?>*</label>
+        <select name="district_id" id="district_id" class="form-control mandatory"></select>
+        </div>
+       <div class="form-group" style="display:none" id="village_box">
+        <label>Kelurahaan*</label>
+        <select name="village_id" id="village_id" class="form-control mandatory"></select>
+        </div>
+        <div class="form-group">
+        <label><?php echo $lang_PostCode; ?>*</label>
+          <input type="text" name="postal" id="postal" class="form-control mandatory" />
         </div>
         <div class="form-group">
               <label><?php echo $lang_Passwpord; ?>*</label>
@@ -126,7 +121,7 @@ $.ajaxSetup({
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
 });
-$('#district_id').change(function () {
+$('#village_id').change(function () {
         var end = this.value;
       $('#submit_btn').removeAttr('disabled');
     });
@@ -176,6 +171,7 @@ function get_region(){
 }
 $(document).ready(function() {
   $('form').submit(function(e){
+    $('#submit_btn').attr('disabled','disabled');
     e.preventDefault();
     var name = $("#name").val();
     var email = $("#email").val();
