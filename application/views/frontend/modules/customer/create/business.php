@@ -89,10 +89,10 @@
         <label>Kelurahaan*</label>
         <select name="village_id" id="village_id" class="form-control mandatory"></select>
         </div>
-<!--         <div class="form-group">
+         <div class="form-group">
         <label><?php echo $lang_PostCode; ?>*</label>
-          <input type="text" name="postal" id="postal" class="form-control mandatory" />
-        </div> -->
+          <select type="text" name="postal" id="postal_id" class="form-control mandatory" ></select>
+        </div> 
         <div class="form-group">
               <label><?php echo $lang_Passwpord; ?>*</label>
           <input type="password" id="password" name="password" class="form-control mandatory" />
@@ -144,7 +144,7 @@ $('#village_id').change(function () {
           $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
                 console.log('asdasd',o.c_village_id);
         });
-        $("#village_id").prop('disabled', false);
+        $("#village_id").prop('disabled', false).change(get_postal);
       }, "json" );
     }
 
@@ -195,7 +195,7 @@ $('#postal_id').change(function () {
       $("#postal_id").prop('disabled', true).html('<option value="">--pilih--</option>');
       $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
         r.forEach(function(o){
-          $("#postal_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
+          $("#postal_id").append("<option value='"+o.c_village_id+"'>"+o.postal+"</option>");
                 console.log('23',o.postal);
         });
         $("#postal_id").prop('disabled', false);
