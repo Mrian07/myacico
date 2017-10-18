@@ -83,17 +83,7 @@
 			
 			Stock: <?php echo $stock;  ?>
 
-			
-			<div class="row lead">
-			   <!--  <p>Also you can give a default rating by adding attribute data-rating</p> -->
-			   <center>
 
-				<div id="hearts-existing" class="starrr" data-rating='4'></div>
-
-				You gave a rating of <span id="count-existing">4</span> heart(s)
-				</center>
-			</div>
-			
 	  </div>
 	  <div class="col-sm-3" style='font-size:20px; text-align: center;'>
 		Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
@@ -104,12 +94,25 @@
 			</div>
 
 			<br><br>
-			<a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')" class='btn btn-link'> <i class="fa fa-plus-square" aria-hidden="true"></i> Add To Wishlist</a>
+			<a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')" class='btn btn-link'><i class="fa fa-plus-square" aria-hidden="true"></i> Add To Wishlist<a/>
 			</div>
 
 	  </div>
 	</div>
+<div class="container">
 
+
+    
+    <div class="row lead">
+       <!--  <p>Also you can give a default rating by adding attribute data-rating</p> -->
+       <center>
+
+        <div id="hearts-existing" class="starrr" data-rating='4'></div>
+
+        You gave a rating of <span id="count-existing">4</span> heart(s)
+        </center>
+    </div>
+</div>
 
 
 
@@ -152,7 +155,7 @@
 
 
 </div>
-<br><br>
+
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/foundation.min.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/setup.js');?>"></script>
 
