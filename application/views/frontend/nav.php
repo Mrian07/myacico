@@ -116,7 +116,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="active"><?php echo anchor('home/', '<span class="glyphicon glyphicon-home"></span>');?></li>
+					<li><?php echo anchor('#', '<i>Loading Menu...</i>');?></li>
+					<!--
+					<li class="active"><?php echo anchor('home/', '<span class="glyphicon glyphicon-home"></span>');?></li>
                     <li><?php echo anchor('product/', 'Product');?></li>
 					<li><?php echo anchor('product/category', 'Category');?></li>
 					<li class="dropdown megamenu-fw">
@@ -148,7 +150,7 @@
 											Samsung
 										</div>
 									</div>
-                                </div><!-- end row -->
+                                </div>
                             </li>
                         </ul>
                     </li>
@@ -169,7 +171,7 @@
                                                 <li><a href="#">Custom Menu</a></li>
                                             </ul>
                                         </div>
-                                    </div><!-- end col-3 -->
+                                    </div>
                                     <div class="col-menu col-md-3">
                                         <h6 class="title">Title Menu Two</h6>
                                         <div class="content">
@@ -182,7 +184,7 @@
                                                 <li><a href="#">Custom Menu</a></li>
                                             </ul>
                                         </div>
-                                    </div><!-- end col-3 -->
+                                    </div>
                                     <div class="col-menu col-md-3">
                                         <h6 class="title">Title Menu Three</h6>
                                         <div class="content">
@@ -208,8 +210,8 @@
                                                 <li><a href="#">Custom Menu</a></li>
                                             </ul>
                                         </div>
-                                    </div><!-- end col-3 -->
-                                </div><!-- end row -->
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </li>
@@ -242,7 +244,7 @@
                         </ul>
                     </li>
                     <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Contact Us</a></li>-->
                 </ul>
 
 
