@@ -195,7 +195,7 @@ $('#postal_id').change(function () {
       $("#postal_id").prop('disabled', true).html('<option value="">--pilih--</option>');
       $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
         r.forEach(function(o){
-          $("#postal_id").append("<option value='"+o.c_village_id+"'>"+o.postal+"</option>");
+          $("#postal_id").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
                 console.log('23',o.postal);
         });
         $("#postal_id").prop('disabled', false);
