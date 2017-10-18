@@ -77,7 +77,10 @@ function tanggal_time($tgl_time)
 	}elseif($bulan=="12"){
 		$bulan="Desember";
 	}	
-	return "$tanggal $bulan $tahun ".$get_date_time[1];
+	
+	$time = explode(".",$get_date_time[1]);
+	
+	return "$tanggal $bulan $tahun ".$time[0]." WIB";
 }
 /*
 function money($money)
