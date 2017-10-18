@@ -76,7 +76,7 @@ console.log('sam',res[1]);
 		}
 		else{
 
-		    var apiurl = baseApiUrl + '/forgotpassword';
+		    var apiurl = baseApiUrl + '/forgotpassword/reset';
                     
 		    //var data = $(this).serialize();
                     data.key = res[1];
@@ -85,6 +85,10 @@ console.log('sam',res[1]);
 		    var success = function(r){
 		      console.log('OK:', r);
 		      alert(r.message);
+                      if(r.status === '1'){
+                            window.location.replace(base_url+"customer/signIn");
+
+                }	
 		    };
 
 //		    $.post( apiurl, data, success, "json" );
