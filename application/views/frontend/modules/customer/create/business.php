@@ -76,14 +76,23 @@
         <label><?php echo $lang_Keca; ?>*</label>
         <select name="district_id" id="district_id" class="form-control mandatory"></select>
         </div>
-       <div class="form-group" style="display:none" id="village_box">
+                  <div class="form-group" style="display:none" id="village_box1">
+        <label>asdasd*</label>
+        <select name="village_id1" id="village_id1" class="form-control mandatory"></select>
+        </div>
+
+        <div class="form-group" style="display:none" id="village_box">
         <label>Kelurahaan*</label>
         <select name="village_id" id="village_id" class="form-control mandatory"></select>
         </div>
-        <div class="form-group">
+          <div class="form-group" style="display:none" id="village_box">
+        <label>Kelurahaan*</label>
+        <select name="village_id" id="village_id" class="form-control mandatory"></select>
+        </div>
+<!--         <div class="form-group">
         <label><?php echo $lang_PostCode; ?>*</label>
           <input type="text" name="postal" id="postal" class="form-control mandatory" />
-        </div>
+        </div> -->
         <div class="form-group">
               <label><?php echo $lang_Passwpord; ?>*</label>
           <input type="password" id="password" name="password" class="form-control mandatory" />
@@ -125,7 +134,9 @@ $('#village_id').change(function () {
         var end = this.value;
       $('#submit_btn').removeAttr('disabled');
     });
-    function get_village(){
+
+
+        function get_village(){
       $("#village_box").slideDown();
       $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
       $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
@@ -136,6 +147,23 @@ $('#village_id').change(function () {
         $("#village_id").prop('disabled', false);
       }, "json" );
     }
+
+    $('#village_id1').change(function () {
+        var end = this.value;
+      $('#submit_btn').removeAttr('disabled');
+    });
+       function get_village1(){
+      $("#village_box1").slideDown();
+      $("#village_id1").prop('disabled', true).html('<option value="">--pilih--</option>');
+      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+        r.forEach(function(o){
+          $("#village_id1").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
+                console.log('asdasd3',o.c_village_id);
+        });
+  
+      }, "json" );
+    }
+
     function get_distric(){
       $("#ditric_box").slideDown();
       $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
@@ -158,6 +186,25 @@ function get_city(){
     $("#city_sel").prop('disabled', false).change(get_distric);
   }, "json" );
 }
+$('#postal_id').change(function () {
+        var end = this.value;
+      $('#submit_btn').removeAttr('disabled');
+    });
+        function get_postal(){
+      $("#postal_box").slideDown();
+      $("#postal_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+        r.forEach(function(o){
+          $("#postal_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
+                console.log('23',o.postal);
+        });
+        $("#postal_id").prop('disabled', false);
+      }, "json" );
+    }
+  
+
+
+
 
 function get_region(){
   $("#region_box").slideDown();
@@ -181,7 +228,7 @@ $(document).ready(function() {
     var phone = $("#phone").val();
        var address = $("#address").val();
     var address2 = $("#address2").val();
-    var postal = $("#postal").val();
+    var postal_id = $("#postal_id").val();
     var village_id = $("#village_id").val();
     var business_type_id = $("#business_type_id").val();
     var file =  $("#file").val();
@@ -196,7 +243,7 @@ var data = {};
                 data.phone = phone;
                     data.address = address;
                         data.address2 = address2;
-                            data.postal = postal;
+                            data.postal_id = postal_id;
                                 data.village_id = village_id;
                                 data.business_type_id = business_type_id;
 
