@@ -24,7 +24,7 @@
 		<h5>LOGIN</h5>
 		<div class='border-create' style='background:#ffffff'>
 				<p>Masukan email dan password login Anda pada form dibawah ini.</p>
-			<form name="signin" method="post">
+			<form name="myForm" method="post">
 				<div class="form-group">
 				<label>Email:</label>
 				<input type="email" id="email" name="email" class="form-control"  />
@@ -144,7 +144,7 @@ $(document).ready(function() {
     var atpos = x.indexOf("@");
     var dotpos = x.lastIndexOf(".");
     if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-        alert("Not a valid e-mail address");
+        alert("Masukan Email Yang Benar");
         return false;
     }
 
