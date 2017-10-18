@@ -97,6 +97,10 @@
                 <label><?php echo $lang_Passwpord2; ?>*</label>
           <input type="password" id="password2" name="password2" class="form-control" />
         </div>
+                <div class="form-group">
+                <label>Upload Gambar*</label>
+         Browse…<input class="input-file" id="file" type="file" name="file">
+        </div>
 
         <div class="row">
   			<div class="col-sm-6">
