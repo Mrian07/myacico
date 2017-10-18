@@ -26,7 +26,7 @@
 </div>
 
 
-<div class="container">
+<div class="container" style='background:#ffffff'>
 
 <div class='my-detail-product' ng-controller="detailCnt">
 
