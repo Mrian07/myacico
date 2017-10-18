@@ -120,24 +120,29 @@ class Cart extends Web {
 		$api = "order/cart/detail";
 		$url = api_base_url($api);
 		
-		$options = ["http" => [
-		"method" => "GET",
-		"header" => ["token: " . $token,
-		"Content-Type: application/json"],
-		]];
 		
-		$context = stream_context_create($options);
-		$konten = file_get_contents($url, false, $context);
-	
-		$hasil = json_decode($konten, true);
+		if($token){
 		
-		$qty = 0;
-		foreach($hasil as $items){
-			$qty +=$items['qty'];
+			$options = ["http" => [
+			"method" => "GET",
+			"header" => ["token: " . $token,
+			"Content-Type: application/json"],
+			]];
+			
+			$context = stream_context_create($options);
+			$konten = file_get_contents($url, false, $context);
+		
+			$hasil = json_decode($konten, true);
+			
+			$qty = 0;
+			foreach($hasil as $items){
+				$qty +=$items['qty'];
+			}
+			
+			echo $qty;
+		}else{
+			echo 0;
 		}
-		
-		echo $qty;
-		
 	}	
 	
 	function listCartToken()

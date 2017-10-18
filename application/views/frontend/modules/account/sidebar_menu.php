@@ -40,7 +40,15 @@
 </div>
 <?php }elseif($user->role=='B2B'){ ?>
 
-menu b2b
+<ul class='my-menu-desktop'>
+    <li <?php echo$active_dashboard; ?>><?php echo anchor('account', 'Dashboard');?></li>
+    <li <?php echo$active_informasiAkun; ?>><?php echo anchor('account/informasiAkun', 'Informasi Akun & Billing');?></li>
+    <li <?php echo$active_bukuAlamat; ?>><?php echo anchor('account/bukuAlamat', 'Buku Alamat');?></li>
+    <li <?php echo$active_riwayatStatusPesanan; ?>><?php echo anchor('account/riwayatStatusPesanan', 'Riwayat & Status Pesanan');?></li>
+	<li <?php echo$active_returnManagementAuthority; ?>><?php echo anchor('account/returnManagementAuthority', 'Return Management Authority');?></li>
+    <li <?php echo$active_berlanggananNewsletter; ?>><?php echo anchor('account/berlanggananNewsletter', 'Berlangganan Newsletter');?></li>
+    <li <?php echo$active_wishlist; ?>><?php echo anchor('account/wishlist', 'Wishlist');?></li>
+</ul>
 
 <?php } ?>
 

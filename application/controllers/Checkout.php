@@ -177,7 +177,7 @@ class Checkout extends Web_private {
 		$this->load->view('frontend/footer',$this->data);
 	}
         
-        public function success()
+    public function success()
 	{
 		$this->data['title_web'] = "Myacico.com - Checkout";
 		$this->load->view('frontend/header',$this->data);
@@ -214,4 +214,13 @@ class Checkout extends Web_private {
         $this->session->set_userdata($data);
 		redirect('checkout');
 	}	   
+	
+	public function finish()
+	{ 
+		$this->data['title_web'] = "Myacico.com - Checkout";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/checkout/finish.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 }
