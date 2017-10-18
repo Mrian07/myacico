@@ -350,59 +350,109 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 		
 	}else{
 
-		$.ajax
-		({
-		type: "POST",
-		url: "<?php echo site_url('cart/addToCart'); ?>",
-		data: dataString,
-		success:function(data){
-
-				if(data=='stockkosong'){
-					$.dialog({
-						title: name,
-						content: 'Item gagal ditambahkan, jumlah melebihi stock yang ada!',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}else
-				if(data!='gagal'){
-
-					$(".totalCart").html(data);
-					$.confirm({
-						title: name,
-						content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}else{
-					$.dialog({
-						title: name,
-						content: 'Item gagal ditambahkan!',
-						autoClose: 'close|3000',
-						buttons: {
-							close: function () {
-								//$.alert('action is canceled');
-							}
-						},
-						closeIcon: true,
-						closeIconClass: 'fa fa-close'
-					});
-				}
-			}
-		});
 	
+		var cookie = document.cookie.split('x-auth=');
+		if(cookie.length > 1){ 
+			var token = cookie[1].split(';').shift();
+			var apiurl = api_base_url +'/order/cart/additem';
+			var m_product_id = m_product_id;
+			var qty = jmlItem;
+			var pricelist = pricelist;
+			var weight = weight;
+
+			var success = function(r){
+
+				$.confirm({
+					title: name,
+					content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>1 Item berhasil ditambahkan<p>',
+					autoClose: 'close|3000',
+					buttons: {
+						close: function () {
+							//$.alert('action is canceled');
+						}
+					},
+					closeIcon: true,
+					closeIconClass: 'fa fa-close'
+				});
+
+				//Buat update cart, fungsi ini ada di file header.php
+				totalCart();
+			};
+
+			$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
+				{
+					"productId":m_product_id,
+					"qty":qty,
+					"price":pricelist,
+					"weightPerItem":weight
+				}
+			) , url: apiurl, headers: {"token":token}, success: success, error: error });
+
+			var error = function(er){
+			  console.log('OK:', er);
+			  $.alert({
+				title: 'Alert!',
+				content: 'koneksi tidak berhasil, silahkan coba lagi!',
+			  });
+			};
+
+
+		}else{
+	
+	
+			$.ajax
+			({
+			type: "POST",
+			url: "<?php echo site_url('cart/addToCart'); ?>",
+			data: dataString,
+			success:function(data){
+
+					if(data=='stockkosong'){
+						$.dialog({
+							title: name,
+							content: 'Item gagal ditambahkan, jumlah melebihi stock yang ada!',
+							autoClose: 'close|3000',
+							buttons: {
+								close: function () {
+									//$.alert('action is canceled');
+								}
+							},
+							closeIcon: true,
+							closeIconClass: 'fa fa-close'
+						});
+					}else
+					if(data!='gagal'){
+
+						$(".totalCart").html(data);
+						$.confirm({
+							title: name,
+							content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
+							autoClose: 'close|3000',
+							buttons: {
+								close: function () {
+									//$.alert('action is canceled');
+								}
+							},
+							closeIcon: true,
+							closeIconClass: 'fa fa-close'
+						});
+					}else{
+						$.dialog({
+							title: name,
+							content: 'Item gagal ditambahkan!',
+							autoClose: 'close|3000',
+							buttons: {
+								close: function () {
+									//$.alert('action is canceled');
+								}
+							},
+							closeIcon: true,
+							closeIconClass: 'fa fa-close'
+						});
+					}
+				}
+			});
+		}
 	}
 }
 
