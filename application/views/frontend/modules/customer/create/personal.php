@@ -148,26 +148,11 @@ if(name==''){
           return false;
     };
 
-var success = function(r){
-         $('#spinner_img').hide();
-  $('#submit_btn').val('Kirim').removeClass('disabled');
-//         $.alert({
-//     title: 'Alert!',
-//     content: 'Email Verifikasi Akan di kirimkan ke Email '+email,
-//    });
-      alert(r.message);
-      console.log('OK:', r.status);
-		if(r.status === '1'){
-                            window.location.replace(base_url+"customer/successCreate/success_create");
 
-                }	
 
-    };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-
-    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl,success: success });
-
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success:success });
 
   });
   });
