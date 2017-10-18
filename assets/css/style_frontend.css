@@ -337,11 +337,12 @@ h3 span {
 	font-family: arial;
 	font-size:12px;
 	font-weight: bold;
-	margin-bottom:5px;
+	margin-bottom:0px;
 }
 
 .my-header-panel4{
-	background:#f2f1f1 url(../../images/general/Bg-atas-acico.png);
+	background:#ffffff;
+	/*background:#f2f1f1 url(../../images/general/Bg-atas-acico.png);*/
 	width: 100%;
 }
 

@@ -565,7 +565,7 @@ ul.list-group:after {
             <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
 
 
-
+<div class="container">
   <!--Item slider text-->
       <center>
         <h3> New Collection </h3>
@@ -573,7 +573,7 @@ ul.list-group:after {
       </center>
 
   <!-- Item slider-->
-  <div class="container-fluid">
+  <div class="container-fluid" style='background:#ffffff; padding-top:10px;'>
 
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12">
@@ -602,7 +602,7 @@ ul.list-group:after {
                 <span class="badge">10%</span>
                 <h4 class="text-center">Aneka Laptop Asus Discount Up To 10%</h4>
                 <h5 class="text-center">Rp. 4000.000</h5>
-                <h6 class="text-center">- Rp. 8000.000</h6>
+               <!-- <h6 class="text-center">- Rp. 8000.000</h6>-->
               </div>
             </div>
 
@@ -643,7 +643,7 @@ ul.list-group:after {
 <br>
 <hr>
 
-
+</div>
 
 
 <br/>
