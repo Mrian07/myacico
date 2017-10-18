@@ -120,7 +120,6 @@ class Cart extends Web {
 		$api = "order/cart/detail";
 		$url = api_base_url($api);
 		
-		
 		if($token){
 		
 			$options = ["http" => [
@@ -202,17 +201,24 @@ class Cart extends Web {
 		$api = "order/cart/detail";
 		$url = api_base_url($api);
 		
-		$options = ["http" => [
-		"method" => "GET",
-		"header" => ["token: " . $token,
-		"Content-Type: application/json"],
-		]];
+		if($token){
 		
-		$context = stream_context_create($options);
-		$konten = file_get_contents($url, false, $context);
-		$this->data['hasil'] = json_decode($konten, true);
-		if($hasil = json_decode($konten, true)){
-			$this->load->view('frontend/modules/cart/list_cart_token.php',$this->data);
+			$options = ["http" => [
+			"method" => "GET",
+			"header" => ["token: " . $token,
+			"Content-Type: application/json"],
+			]];
+			
+			
+			$context = stream_context_create($options);
+			$konten = file_get_contents($url, false, $context);
+			$this->data['hasil'] = json_decode($konten, true);
+			if($hasil = json_decode($konten, true)){
+				$this->load->view('frontend/modules/cart/list_cart_token.php',$this->data);
+			}else{
+				echo"<center>Keranjang masih kosong</center>";
+			}
+		
 		}else{
 			echo"<center>Keranjang masih kosong</center>";
 		}
