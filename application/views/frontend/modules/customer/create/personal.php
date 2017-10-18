@@ -97,6 +97,7 @@ $(document).ready(function() {
     var name = $("#name").val();
 		var email = $("#email").val();
 		var password = $("#password").val();
+                var password2 = $("#password2").val();
 		data.name = name;
     data.email = email;
     data.password = password;
@@ -121,15 +122,9 @@ if(name==''){
         alert("Not a valid e-mail address");
         return false;
     }
-			if(password2==''){
-			$.alert({
-				title: 'Alert!',
-				content: 'password2 tidak boleh kosong!',
-			});
-      return false;
-		}
 
-		if(password.length < 3){
+
+		if(password.length < 7){
 			$.alert({
 				title: 'Alert!',
 				content: 'Password Kurang dari 7!',
@@ -141,13 +136,21 @@ if(name==''){
 				title: 'Alert!',
 				content: 'Password tidak sama!',
 			});
-	  
+                    
+	      return false;
 		};
+		    var success = function(r){
+      $('#spinner_img').hide();
+      $('#submit_btn').val('Kirim').removeClass('disabled');
+      console.log('OK:', r);
+      alert(r.message);
+          return false;
+    };
 
 
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl });
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success:success });
 
   });
   });
