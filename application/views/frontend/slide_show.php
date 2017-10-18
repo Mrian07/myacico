@@ -211,6 +211,7 @@ h1{
 }
 
 </style>
+<div class="container">
 <div class="row">
   <div class="col-sm-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -282,7 +283,7 @@ h1{
   <div class="col-sm-4">
 
     <div class="row">
-      <div class="col-sm-12" style="background:white; margin-left:-2px; padding:0px;">
+      <div class="col-sm-12" style="background:#f1f1f1; margin-left:-2px; padding:0px;">
 
       <img src="https://s1.postimg.org/4zblqmyx27/Artboard_3.jpg"  alt="Smiley face" width="50%" height="200">
   <img src="https://s1.postimg.org/7u49wfhja7/Artboard_4.jpg"  alt="Smiley face" width="48%" height="200">
@@ -300,7 +301,7 @@ h1{
 
   </div>
 </div>
-
+</div>
 <script type="text/javascript">
 (function( $ ) {
 

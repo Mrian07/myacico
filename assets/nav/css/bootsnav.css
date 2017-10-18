@@ -1486,3 +1486,12 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
   color:red;
   text-decoration: none;
 }
+
+.menu-utama{
+	background: #e5e5e5;
+	color: #ffffff;
+	background:#6f6f6f url(../../../images/general/bg-menu.jpg);
+	border: 10px 10px 10px 10px #6f6f6f solid;	
+	font-family: "Arial";
+	font-size:15px;
+}
