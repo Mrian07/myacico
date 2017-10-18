@@ -97,6 +97,7 @@ $(document).ready(function() {
     var name = $("#name").val();
 		var email = $("#email").val();
 		var password = $("#password").val();
+                var password2 = $("#password2").val();
 		data.name = name;
     data.email = email;
     data.password = password;
