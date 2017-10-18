@@ -125,6 +125,13 @@ $(document).ready(function() {
 			});
       return false;
 		};
+		if(password != password2){
+			$.alert({
+				title: 'Alert!',
+				content: 'Password tidak sama!',
+			});
+			return false;
+		} 
 
 
     $('#spinner_img').show();
