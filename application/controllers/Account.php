@@ -78,6 +78,7 @@ class Account extends Web_private {
 
 	public function informasiAkun()
     {
+		
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
 		$api = "aduser/getaddress?addresstype=isbillto";
@@ -255,11 +256,20 @@ class Account extends Web_private {
 
 	public function formBilling()
     {
+		$type = $this->typeLogin();
+		
+		
+		
 		$this->data['active_informasiAkun'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Return Management Authority";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/form_billing',$this->data);
+		
+		if($type->role=='B2B'){
+			$this->load->view('frontend/modules/account/form_billing_b2b',$this->data);
+		}else{
+			$this->load->view('frontend/modules/account/form_billing',$this->data);
+		}
 		$this->load->view('frontend/footer',$this->data);
 	}
 
