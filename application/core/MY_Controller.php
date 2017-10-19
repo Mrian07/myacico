@@ -30,7 +30,7 @@ class Web extends MY_Controller {
 		$this->lang();
         $this->asset();
     }
-
+	
     public function auth(){
 	
 		$secret = $this->config->config['jwt_secret'];
@@ -48,6 +48,11 @@ class Web extends MY_Controller {
 		}
 
     }
+	
+	public function typeLogin(){
+		$secret = $this->config->config['jwt_secret'];
+		return JWT::decode($_COOKIE['x-auth'], $secret)->UserData;
+	}
 
 	public function lang(){
 
