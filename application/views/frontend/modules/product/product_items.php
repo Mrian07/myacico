@@ -405,7 +405,9 @@ console.info(formatNumber(2665));      // 2,665
 console.info(formatNumber(102665));    // 102,665
 console.info(formatNumber(111102665)); // 111,102,665
 var myNumeral = numeral(1000);
+var pro = "<?php echo $pro; ?>";
 
+console.log('asd13',pro);
 var value = myNumeral.value();
 // 1000
 
