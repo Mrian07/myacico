@@ -49,14 +49,14 @@ a
 	<div class="row" ng-controller="cartCnt" method="post">
 		<div class="col-md-7">
 			<div class="panel panel-default">
-			  <div class="panel-heading"><b>Alamat Pengiriman</b></div>
+			  <div class="panel-heading"><b>DATA PENGIRIM & PENERIMA</b></div>
 			  <div class="panel-body">
 
 				<div class="row">
 					<div class="col-md-12">
 
 						<form>
-							<p><strong>DATA BILLING</strong></p>							
+							<p><strong>Data Billing</strong></p>							
 							<?php 
 							if(isset($alamat_billing)){
 								echo"<p>". $alamat_billing."</p>
@@ -70,7 +70,7 @@ a
 							<!--<input type="hidden" id="idAddShip" name="idAddShip" value="<?php echo $this->session->userdata('shipping_address_id'); ?>" />
 							<input type="hidden" id = "idBill" name="idBill" />
 							<input type="hidden" id = "idDistri" name="idDistri" />-->
-							<p><strong>DATA PENERIMA</strong></p>
+							<p><strong>Data Penerima</strong></p>
 						   <?php if($this->session->userdata('shipping_address_id'))
 						   {
 							   echo"<p>".anchor('checkout/dataShipping/', $alamat_shipping)."</p>
@@ -78,8 +78,8 @@ a
 							   ";
 						   }
 						   else{
-							 echo "<p>Tidak ada data penerima yang tersedia, silakan isi terlebih dulu.<p>";
-							 echo "<p>".anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-default'))."</p>";
+							 echo "<p>Tidak ada data penerima yang tersedia, silakan update data penerima terlebih dulu.<p>";
+							 echo "<p>".anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-info btn-sm'))."</p>";
 
 						   }
 						   ?> 
@@ -91,7 +91,7 @@ a
 			  </div>
 			</div>
 			<div class="panel panel-default">
-			  <div class="panel-heading"><b>Metode Pembayaran</b></div>
+			  <div class="panel-heading"><b>METODE PEMBAYARAN</b></div>
 			  <div class="panel-body">
 				  <div class="form-group">
 					<label for="email">Pilih Type Pembayaran:</label>
@@ -111,9 +111,9 @@ a
 			</div>
 			
 			<div class="panel panel-default">
-			  <div class="panel-heading"><b>Metode Pengiriman</b></div>
+			  <div class="panel-heading"><b>METODE PENGIRIMAN</b></div>
 			  <div class="panel-body">
-				<div class='listShipping'></div>   
+				<div class='listShipping'>Silakan update data penerima diatas terlebih dulu.</div>   
 
 			  </div>
 			</div>
