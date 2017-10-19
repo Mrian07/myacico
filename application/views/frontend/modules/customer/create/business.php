@@ -269,7 +269,7 @@ var data = {};
       return false;
     };
 
-
+    die();
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
     $.ajax({ type:"POST", contentType: "application/json",data: formData, contentType: false,

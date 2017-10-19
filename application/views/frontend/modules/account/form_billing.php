@@ -64,10 +64,10 @@
               <label><?php echo "kelurahan"; ?>*</label>
             <select name="village_id" id="village_id" class="form-control mandatory"></select>
           </div>
-          <div class="form-group">
-          <label><?php echo $lang_PostCode; ?>*</label>
-            <input type="text" id="postal" name="postal" class="form-control mandatory" />
-          </div>
+         <div class="form-group">
+        <label><?php echo $lang_PostCode; ?>*</label>
+          <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
+        </div>
                                       <div class="form-group">
           <label>Handphone*</label>
             <input type="text" id = "phone"name="phone" class="form-control mandatory" />
@@ -97,6 +97,10 @@ $('#village_id').change(function () {
         var end = this.value;
       $('#submit_btn').removeAttr('disabled');
     });
+$('#postal').change(function () {
+        var end = this.value;
+      $('#submit_btn').removeAttr('disabled');
+    });
 function get_village(){
   $("#village_box").slideDown();
   $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
@@ -104,7 +108,7 @@ function get_village(){
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
     });
-    $("#village_id").prop('disabled', false);
+       $("#village_id").prop('disabled', false).change(get_postal);
   }, "json" );
 }
 function get_distric(){
@@ -141,6 +145,19 @@ function get_region(){
     $("#region_sel").prop('disabled', false).change(get_city);
   }, "json" );
 }
+
+       function get_postal(){
+      $("#postal_box").slideDown();
+      $("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+        r.forEach(function(o){
+          $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+                console.log('23',o.postal);
+        });
+        $("#postal").prop('disabled', false);
+      }, "json" );
+    }
+
 var data = {};
 $(document).ready(function() {
     $('#submit_btn').attr('disabled','disabled');

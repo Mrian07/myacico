@@ -81,9 +81,9 @@
 							</tr>
 						</tfoot>
 					</table>
+					
 				</div>	
 			</div>
 			
 	<?php }else{ echo"<center>Keranjang masih kosong</center>"; } ?>			
-	
 	
