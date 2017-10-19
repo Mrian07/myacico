@@ -37,9 +37,11 @@ $(document).on("change","input[type=radio][name=shipperId]",function(){
 			
 			var totalOngkir = data.amount*total_weight;
 			$('#courier_amount').val(totalOngkir);
+			$('#totalOngkir').html(totalOngkir);
 			$('#courier').val(data.shipperName);
 			var grandtotal = $('#SubtotalOrder').val()+totalOngkir;
 			$('#grandtotal').val(grandtotal);
+			$('#grandtotalall').val(grandtotal);
 		}
 	});
 	

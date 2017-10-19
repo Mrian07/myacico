@@ -124,10 +124,14 @@ a
 			<?php 
 				$this->load->view('frontend/modules/checkout/checkout_cart'); 
 			?>
+			<h5>ONGKOS KIRIM: Rp.<span id='totalOngkir'>0</span></h5>
+			<h5>TOTAL PEMBAYARAN: Rp.<span id='grandtotalall'>0</span></h5>
+			<button class='btn btn-success my-btn-chekout' onclick='finish()'>FINISH ORDER <i class="fa fa-angle-right"></i></button>
 		</div>
-
+		
+		
 	</div>
-	<button class='btn btn-success my-btn-chekout' onclick='finish()'>FINISH <i class="fa fa-angle-right"></i></button>
+	
 	<?php // echo anchor('', 'FINISH <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success my-btn-chekout', 'onclick'=>'return finish();'));?>
 
 </div>
@@ -136,6 +140,9 @@ a
 
 $(document).ready(function()
 {	
+	var totaltrans = $('#SubtotalOrder').val();
+	$('#grandtotalall').html(addPeriod(totaltrans));
+
 	var idkel = <?php echo $id_kelurahan;?>;
 	var dataString = 'idkel='+idkel;
 
@@ -238,5 +245,19 @@ function finish(){
 			});
 	}
 
+}
+
+//Number buat konversi ke rupiah
+function addPeriod(nStr)
+{
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + '.' + '$2');
+    }
+    return x1 + x2;
 }
 </script>

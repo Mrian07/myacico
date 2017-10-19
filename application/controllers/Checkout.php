@@ -235,6 +235,7 @@ class Checkout extends Web_private {
                 
 		$konten = file_get_contents($url, false, $context);
 		$this->data['field'] = json_decode($konten);
+
 		$this->data['title_web'] = "Myacico.com - Checkout";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);

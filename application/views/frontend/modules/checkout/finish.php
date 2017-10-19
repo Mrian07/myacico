@@ -53,7 +53,7 @@ a
 	<div class="row">
 	  <div class="col-sm-6">
 		<div class="panel panel-default">
-		  <div class="panel-heading"><b>Detail Order</b></div>
+		  <div class="panel-heading"><b>DETAIL ORDER</b></div>
 		  <div class="panel-body">
 		  <form class="form-horizontal">
 		  <div class="form-group">
@@ -104,9 +104,20 @@ a
 		</div>  
 	  </div>
 	  <div class="col-sm-6">
+		
+		<div class="panel panel-default">
+		  <div class="panel-heading"><b>PENGIRIM</b></div>
+		  <div class="panel-body"><b><?php echo $field->billing_name; ?></b>,<br><?php echo $field->billing_address; ?></div>
+		</div>  
+		
+		<div class="panel panel-default">
+		  <div class="panel-heading"><b>PENERIMA</b></div>
+		  <div class="panel-body"><b><?php echo $field->shipping_name; ?></b>,<br><?php echo $field->shipping_address; ?></div>
+		</div>  
+		  
 	  
 		<div class="panel panel-default">
-		  <div class="panel-heading"><b>Detail Cart</b></div>
+		  <div class="panel-heading"><b>DETAIL CART</b></div>
 		  <div class="panel-body">
 			
 			<table class="table table-hover table-condensed">
