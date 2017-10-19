@@ -52,32 +52,36 @@ a{
     </head>
 
 <body style='font-weight: normal;' ng-app="myApp">
-<div class="my-header-panel3">
-		<div class='container'>
-		<div class="row">
-			<div class="col-sm-3">
-				<div style='padding:10px;'>
-				<?php echo anchor('pages/aboutus/', 'About Us');?> | 	<?php echo anchor('pages/payment/', 'Payment');?> | 	<?php echo anchor('pages/faq/', 'FAQ');?>
-				</div>
-			</div>
-			<div class="col-sm-8">
-				<div style='padding:10px;'>
-				Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA, <i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
-			 Senen - Jumat [09:00 - 17:00]
-				</div>
-			</div>
-			<div class="col-sm-1" style='text-align: right'>
-				<div class="dropdown-lang" style='border:1px solid #aeaeab; border-radius:5px; background:#f1f3f6; padding:5px; right: 0; left: auto;'>
-				  <?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?> <span class="caret"></span>
-				  <div class="dropdown-lang-content">
-					<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
-					<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
-				  </div>
-				</div>
-			</div>
+<!--<div class="my-header-panel3">-->
+<div class='container'>
+
+
+	<ul class='my-menu-header'>
+		<li class='my-menu-header-sub'>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</li>
+		<li class='my-menu-header-sub'><b><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
+		Senen - Jumat [09:00 - 17:00]</b></li>
+		<li class='my-menu-header-sub'><?php echo anchor('pages/aboutus/', 'About Us');?></li>
+		<li class='my-menu-header-sub'><?php echo anchor('pages/payment/', 'Payment');?></li>
+		<li><?php echo anchor('pages/faq/', 'FAQ');?></li>
+
+
+		<li style="float: right;">
+		<div class="dropdown-lang" style='border:0px solid #aeaeab; border-radius:5px; background:#f1f3f6; padding:0px; right: 0; left: auto; '>
+		<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?> <span class="caret"></span>
+		<div class="dropdown-lang-content">
+		<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
+		<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
 		</div>
 		</div>
+		</li>
+
+
+	</ul>
+
 </div>
+		
+<!--</div>-->
+
 <div class="my-header-panel4">
 	<div class='container' style='background:#ffffff url(../../images/general/Bg-atas-acico.png);'>
 		<img src="<?php echo base_url('images/general/Bg-atas-acico.png'); ?>" border="0">
