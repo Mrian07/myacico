@@ -218,6 +218,8 @@ $('#submit_btn').attr('disabled','disabled');
         var isshipto = $("#isshipto").val();
         var ispayfrom = $("#ispayfrom").val();
         var isremitto = $("#isremitto").val();
+		var village_id = $("#village_id").val();
+		
 
     //var fl=document.signup;
 //    var data = $(this).serialize();
@@ -236,6 +238,7 @@ data.isbillto = 'Y';
 data.isshipto = 'Y';
 data.ispayfrom = 'Y';
 data.isremitto = 'Y';
+data.village_id = village_id;
 		// data.name = name;
 		// data.phone = phone;
 		// data.phone2 = phone2;
@@ -276,7 +279,7 @@ data.isremitto = 'Y';
 			// $("#ispayfrom").val(null);
 		  // $("#isremitto").val(null);
 
-        window.location.replace(base_url+"/account/informasiAkun");
+        window.location.replace(base_url+"/checkout");
 
     };
     $('#spinner_img').show();
