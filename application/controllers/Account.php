@@ -94,6 +94,7 @@ class Account extends Web_private {
 		$hasil = json_decode($konten, true);
 
 		//Data Billing
+
 		foreach($hasil as $items){
 			$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['address2']." ".$items['city_name']." ".$items['postal'];
 			$this->data['id_billing'] =$items['id'];
