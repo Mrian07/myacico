@@ -301,7 +301,7 @@ h3 span {
 	height:74px;*/
 	background:#f2f1f1 url(../../images/general/bg-header.png);
 	width: 100%;
-	border-top: 2px #11093a solid;
+	border-top: 1px #757575 solid;
 	padding:0px 15px 0px 10px;
 }
 
@@ -851,25 +851,22 @@ a .my-btn-chekout:hover{
 
 /*my-menu-header*/
 
+
+
 ul {
     list-style-type: none;
-    margin: 0;
+	 margin: 0;
     padding: 0;
-    overflow: hidden;
-	list-style-type: none;
 }
-
-
 
 .my-menu-header li {
     float: left;
 	font-size:11px;
 	color: #494a4c;
-	padding:5px;
+	padding:8px;
 	/*font-weight: bold;*/
 	list-style: none;
 	list-style-type: none;
-	
 }
 
 .my-menu-header-sub {

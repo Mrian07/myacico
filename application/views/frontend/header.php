@@ -53,6 +53,7 @@ a{
 
 <body style='font-weight: normal;' ng-app="myApp">
 <!--<div class="my-header-panel3">-->
+
 <div class='container'>
 
 
@@ -79,10 +80,11 @@ a{
 	</ul>
 
 </div>
+
 		
 <!--</div>-->
 
-<div class="my-header-panel4">
+<div class="my-header-panel4" style='border-top: 1px #dadbdd solid;'>
 	<div class='container' style='background:#ffffff url(<?php echo base_url('images/general/Bg-atas-acico.png'); ?>); height:55px'>
 		
 	</div>	
