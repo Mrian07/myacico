@@ -851,13 +851,12 @@ a .my-btn-chekout:hover{
 
 /*my-menu-header*/
 
-.my-menu-header ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-	text-align: right;
-	list-style: none;
+	list-style-type: none;
 }
 
 
@@ -866,10 +865,11 @@ a .my-btn-chekout:hover{
     float: left;
 	font-size:11px;
 	color: #494a4c;
-	padding-left:10px;
 	padding:5px;
 	/*font-weight: bold;*/
 	list-style: none;
+	list-style-type: none;
+	
 }
 
 .my-menu-header-sub {
