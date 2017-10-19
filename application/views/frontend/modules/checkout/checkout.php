@@ -66,10 +66,6 @@ a
 								echo"<p>". anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default')); echo"</p>";
 							}?>
 							
-
-							<!--<input type="hidden" id="idAddShip" name="idAddShip" value="<?php echo $this->session->userdata('shipping_address_id'); ?>" />
-							<input type="hidden" id = "idBill" name="idBill" />
-							<input type="hidden" id = "idDistri" name="idDistri" />-->
 							<p><strong>Data Penerima</strong></p>
 						   <?php if($this->session->userdata('shipping_address_id'))
 						   {
