@@ -850,6 +850,7 @@ a .my-btn-chekout:hover{
 }
 
 /*my-menu-header*/
+
 .my-menu-header ul {
     list-style-type: none;
     margin: 0;
@@ -857,13 +858,9 @@ a .my-btn-chekout:hover{
     overflow: hidden;
 	text-align: right;
 	list-style: none;
-
-    font-weight: bold;
-    margin-bottom: 10px;
-    float: left; /* Clear floats */
-    width: 100%;
-
 }
+
+
 
 .my-menu-header li {
     float: left;
@@ -876,8 +873,8 @@ a .my-btn-chekout:hover{
 }
 
 .my-menu-header-sub {
-    border-right:1px solid #dadbdd;
-	margin-right: 5px;
+    border-left:1px solid #dadbdd;
+	margin-left: 5px;
 }
 
 /*tab menu*/
