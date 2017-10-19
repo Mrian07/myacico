@@ -89,6 +89,8 @@ a
 			<div class="panel panel-default">
 			  <div class="panel-heading"><b>METODE PEMBAYARAN</b></div>
 			  <div class="panel-body">
+				<?php if($this->session->userdata('shipping_address_id'))
+					{?>
 				  <div class="form-group">
 					<label for="email">Pilih Type Pembayaran:</label>
 					<input type="hidden" id="typeVal">
@@ -103,6 +105,7 @@ a
                     <div class='listPayment'></div>                  
 					  
 				  </div>
+					<?php }else{echo"Silakan update data penerima diatas terlebih dulu.";} ?>  
 			  </div>
 			</div>
 			
@@ -154,10 +157,11 @@ $(document).ready(function()
 	
 });
 
-function paymentType(payment_method){
-
+function paymentType(payment_method)
+{
+	$('#typeVal').val(payment_method);	
 	if(payment_method=='R'){
-		$('#typeVal').val(payment_method);
+	//	$('#typeVal').val(payment_method);
 		$.ajax
 		({
 		url: "<?php echo site_url('checkout/paymentTransfer'); ?>",
@@ -174,7 +178,7 @@ function finish(){
 	var token= '<?php echo $token; ?>';
 	var grandtotal= $('#grandtotal').val();
 	var paymentMethod=$('#typeVal').val();
-	var soncepickup = 'Y';
+	var isoncepickup = 'Y';
 	var billing_address_id= $('#billing_address_id').val();
 	var shipping_address_id=$('#shipping_address_id').val();
 	var code =$('#metVal').val();
@@ -182,7 +186,7 @@ function finish(){
 	var courier_amount =$('#courier_amount').val();
 	var data = {};
 	var baseApiUrl = '<?php echo $baseApiUrl; ?>';
-	
+
 	if(billing_address_id==''){
 		$.alert({
 			title: 'Alert!',
@@ -215,7 +219,7 @@ function finish(){
 		data.paymentMethod = paymentMethod;
 		data.billing_address_id = billing_address_id;
 		data.shipping_address_id = shipping_address_id;
-		data.soncepickup = soncepickup;
+		data.isoncepickup = isoncepickup;
 		data.code = code;
 		data.courier = courier;
 		data.courier_amount = courier_amount;
@@ -228,6 +232,9 @@ function finish(){
 			headers:{"token":token},
 			url: "<?php echo api_base_url('order/checkout'); ?>",
 			success:function(hasil){
+				
+				console.log(hasil); die();
+				
 					if(hasil.status=='1'){
 						window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 					}else{

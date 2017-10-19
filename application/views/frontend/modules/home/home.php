@@ -1093,9 +1093,12 @@ ul.list-group:after {
 <!-- asd -->
 						</ul>
           </div>
+          
+        
+         
 
       </div>
-
+  <img src=" https://s1.postimg.org/1lnc8xtx73/banners_2_13.png" width="100%" alt="...">
 <!-- s: Slider Product -->
 <link rel="stylesheet" href="<?php echo base_url('assets/css/slider-product.css');?>">
 <!-- e: Slider Product -->

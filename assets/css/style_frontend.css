@@ -301,7 +301,7 @@ h3 span {
 	height:74px;*/
 	background:#f2f1f1 url(../../images/general/bg-header.png);
 	width: 100%;
-	border-top: 2px #11093a solid;
+	border-top: 1px #757575 solid;
 	padding:0px 15px 0px 10px;
 }
 
@@ -335,8 +335,8 @@ h3 span {
 	border-bottom:1px #dbdde1 solid;
 	padding: 5px 0px 5px 0px;
 	font-family: arial;
-	font-size:12px;
-	font-weight: bold;
+	font-size:11px;
+	color: #b9babc;
 	margin-bottom:0px;
 }
 
@@ -847,6 +847,31 @@ a .my-btn-chekout:hover{
 
 .my-menu-mobile{
 	display: none;
+}
+
+/*my-menu-header*/
+
+
+
+ul {
+    list-style-type: none;
+	 margin: 0;
+    padding: 0;
+}
+
+.my-menu-header li {
+    float: left;
+	font-size:11px;
+	color: #494a4c;
+	padding:8px;
+	/*font-weight: bold;*/
+	list-style: none;
+	list-style-type: none;
+}
+
+.my-menu-header-sub {
+    border-left:1px solid #dadbdd;
+	margin-left: 5px;
 }
 
 /*tab menu*/
