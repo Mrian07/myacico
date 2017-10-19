@@ -174,7 +174,7 @@ a{
 									$totalItems += $items['qty'];
 								endforeach;
 								?>
-								<button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart (<span class='totalCart'><?php echo $totalItems; ?></span>) <span class="caret"></span></button>
+								<button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
 								<div class="dropdown-basket-content">
 
 									<?php
