@@ -136,16 +136,33 @@ function get_city(){
 }
 
 function get_region(){
-  $("#region_box").slideDown();
+  
     var negara = $('#country_sel').val();
- 
-  $("#region_sel").prop('disabled', true).unbind("change", get_city);
+    //var negara =209;
+    var negara_api = api_base_url+"/cregion/getlistcregionbyidccountry/"+negara;
+  //$("#region_sel").prop('disabled', true).unbind("change", get_city);
+  /*
   $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
     r.forEach(function(o){
       $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
     });
     $("#region_sel").prop('disabled', false).change(get_city);
   }, "json" );
+  */
+  $.ajax({
+    type:"GET", 
+       //beforeSend: getAdd(),
+    success: function(data){
+        console.log('sam',data);
+        $("#region_box").slideDown();
+        data.forEach(function(o){
+      $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
+    });
+    $("#region_sel").prop('disabled', false).change(get_city);
+        
+        },
+    dataType: "json", 
+    url: negara_api});
 }
 
 var data = {};
