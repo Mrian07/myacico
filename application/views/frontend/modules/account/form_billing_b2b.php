@@ -41,14 +41,16 @@
             <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
             </div>
           <div class="form-group">
-          <label><?php echo $lang_Country; ?>*</label>
-            <select name="country" id="country_sel" class="form-control mandatory" disabled >
-            <option value="">--pilih--</option>
+            <label><?php echo $lang_Country; ?>*</label>
+              <select name="country" id="country_sel" class="form-control mandatory" disabled >
+                    <option value="209" selected="selected">Indonesia</option>
+              </select>
+            </div>
+          <div class="form-group" id="region_box" onclick="get_region()">
+            <label><?php echo $lang_Provience; ?>*</label>
+            <select name="province" id="region_sel" class="form-control mandatory">
+                <option value="">--Pilih--</option>
             </select>
-          </div>
-          <div class="form-group" style="display: none;" id="region_box">
-          <label><?php echo $lang_Provience; ?>*</label>
-            <select name="province" id="region_sel" class="form-control mandatory"></select>
           </div>
           <div class="form-group" style="display:none" id="city_box">
             <label><?php echo $lang_kota; ?>*</label>
@@ -129,8 +131,10 @@ function get_city(){
 
 function get_region(){
   $("#region_box").slideDown();
-  $("#region_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_city);
-  $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+$("#country_sel").val(), function(r){
+    var negara = $('#country_sel').val();
+ 
+  $("#region_sel").prop('disabled', true).unbind("change", get_city);
+  $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
     r.forEach(function(o){
       $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
     });
@@ -295,7 +299,7 @@ data.id = id;
 
   $.get(api_base_url+"/ccountry/getlistccountry", function(r){
     console.log(r);
-    $("#country_sel").prop('disabled', true).html('<option value="209">--pilih--</option>');
+    //$("#country_sel").prop('disabled', true).html('<option value="209" selected="selected">Indonesia</option>');
 //    $("#country_sel").prop('disabled', true).html('<option value="">Indonesia</option>');
     r.forEach(function(o){
       $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
