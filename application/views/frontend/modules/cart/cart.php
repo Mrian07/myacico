@@ -36,27 +36,6 @@
 
 }
 </style>
-<style>
-<!--
-.progress {
-    position: relative;
-	height: 25px;
-}
-.progress > .progress-type {
-	position: absolute;
-	left: 0px;
-	font-weight: 800;
-	padding: 3px 30px 2px 10px;
-	color: rgb(255, 255, 255);
-	background-color: rgba(25, 25, 25, 0.2);
-}
-.progress > .progress-completed {
-	position: absolute;
-	right: 0px;
-	font-weight: 800;
-	padding: 3px 10px 2px;
-}-->
-</style>
 <div class='my-bg-title'>
 	<div class="container">
 		<div class="row">
@@ -70,13 +49,6 @@
 </div>
 <div class="container" ng-controller="cartCnt">
 
-
-    <!--div class="progress">
-      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
-        <span class="sr-only">35% Complete (success)</span>
-      </div>
-      <span class="progress-completed"> 35%</span>
-    </div-->
 	<div class="col-md-12 listCart">
 		<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>
 	</div>
