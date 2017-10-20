@@ -381,7 +381,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 
 
-
+/*
 $(document).ready(function() {
     $('#list').click(function(){event.preventDefault();$('#products .item').addClass('list-group-item');});
     $('#grid').click(function(){event.preventDefault();$('#products .item').removeClass('list-group-item');});
@@ -465,6 +465,6 @@ console.log('data nya adalah:', data);
 
 });
 
-
+*/
 
 </script>

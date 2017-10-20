@@ -23,8 +23,14 @@ class Product extends Web {
 	public function listItem()
 	{
 		$this->data['pro']=$this->uri->segment(3);
+		
 		$id_cat=$this->uri->segment(3);
-		$api = "product/productlist?category=".$id_cat;
+		$ob=$this->uri->segment(4);
+		if($ob){
+			$api = "product/productlist?category=".$id_cat."&ob=".$ob;
+		}else{
+			$api = "product/productlist?category=".$id_cat;
+		}
 		$url = api_base_url($api);
                 
 		$options = ["http" => [
@@ -44,6 +50,7 @@ class Product extends Web {
 
 		$this->load->view('frontend/footer',$this->data);
 	}
+	
 
 	public function index()
     {

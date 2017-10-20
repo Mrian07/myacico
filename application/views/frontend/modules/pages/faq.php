@@ -9,9 +9,20 @@
 </head>
 <body>
 
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-12">
+
+			<i class="fa fa-angle-right" aria-hidden="true"></i> FAQ
+
+		  </div>
+		</div>
+	</div>
+</div>
+
 <div class="container">
-  <h2>FAQ</h2>
-<HR>
+
   <div class="panel panel-default">
     <div class="panel-body" data-toggle="collapse" data-target="#demo">Bagaimana cara mengatur akun perusahaan?
        </div>
