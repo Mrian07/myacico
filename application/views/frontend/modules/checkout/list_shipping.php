@@ -36,11 +36,13 @@ $(document).on("change","input[type=radio][name=shipperId]",function(){
 	cache : false,
 	success:function(data){
 			
-			var totalOngkir = data.amount*total_weight;
+			var totalOngkir = parseInt(data.amount*total_weight);
 			$('#courier_amount').val(totalOngkir);
 			$('#totalOngkir').html(totalOngkir);
 			$('#courier').val(data.shipperName);
-			var grandtotal = $('#SubtotalOrder').val()+totalOngkir;
+			
+			var SubtotalOrder = parseInt($('#SubtotalOrder').val());
+			var grandtotal = SubtotalOrder+totalOngkir;
 			$('#grandtotal').val(grandtotal);
 			$('#grandtotalall').val(grandtotal);
 		}

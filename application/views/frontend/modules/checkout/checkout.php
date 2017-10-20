@@ -232,11 +232,14 @@ function finish(){
 		headers:{"token":token},
 		url: "<?php echo api_base_url('order/checkout'); ?>",
 		success:function(hasil){
-			
-			console.log(hasil); die();
-			
+			alert(hasil.token); die();
 				if(hasil.status=='1'){
-					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
+					if(paymentMethod=='R'){
+						window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
+					}else{
+						
+						window.location.replace("<?php echo site_url('checkout/paymentCredit/'); ?>"+hasil.idTransaksi);
+					}
 				}else{
 					$.alert({
 						title: 'Alert!',
