@@ -99,11 +99,6 @@ class Checkout extends Web_private {
 		$this->load->view('frontend/modules/checkout/list_shipping.php',$this->data);
 	}
 	
-	public function paymentCredit()
-	{	
-		$this->load->view('frontend/modules/checkout/payment_credit.php',$this->data);
-	}
-	
 	public function getDataShipping()
 	{	
 		$idkel = $this->input->post('idkel');
@@ -248,5 +243,11 @@ class Checkout extends Web_private {
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/checkout/finish.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
+	}
+	
+	public function finishCard()
+	{	
+		$token = $this->uri->segment(3);
+		$this->load->view('frontend/modules/checkout/payment_credit.php?c='.$token,$this->data);
 	}
 }

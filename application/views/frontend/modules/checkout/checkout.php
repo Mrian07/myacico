@@ -232,14 +232,10 @@ function finish(){
 		headers:{"token":token},
 		url: "<?php echo api_base_url('order/checkout'); ?>",
 		success:function(hasil){
-			alert(hasil.token); die();
-				if(hasil.status=='1'){
-					if(paymentMethod=='R'){
-						window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
-					}else{
-						
-						window.location.replace("<?php echo site_url('checkout/paymentCredit/'); ?>"+hasil.idTransaksi);
-					}
+				if(hasil.status=='1' && paymentMethod=='R'){
+					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
+				}else if(hasil.token!='' && paymentMethod=='C'){
+					window.location.replace("<?php echo site_url('payment/creditcard.php/?c='); ?>"+hasil.token);
 				}else{
 					$.alert({
 						title: 'Alert!',
