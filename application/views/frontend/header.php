@@ -118,7 +118,7 @@ a{
 					<input type="hidden" name="search_param" value="all" id="search_param">
 					<input type="text" class="my-search-field" name="x" placeholder="Search term...">
 					<span class="input-group-btn">
-						<button class="btn btn-default my-search-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
+						<button class="btn btn-default my-search-button" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
 					</span>
 				</div>
 
