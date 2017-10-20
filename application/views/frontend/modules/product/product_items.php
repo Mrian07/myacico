@@ -139,7 +139,7 @@ font-size: 20px;
 								
 								
 						<h4><a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="asd fa fa-heart" aria-hidden="true"></i></a></h4>
-						<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br>
+                                                <input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'><br>
 						<button class="dropbtnaddcar" onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$data['imageurl'];?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight'];?>')">ADD TO CART</button>
 						
 		
@@ -247,7 +247,7 @@ function addWishlist(id,name,imageurl){
 
 function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
-	var jmlItem = $('#jmlItem').val();
+	var jmlItem = $('#jmlItem'+m_product_id).val();
 	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
 	
 	if(jmlItem<=0){
@@ -279,7 +279,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 				$.confirm({
 					title: name,
-					content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>1 Item berhasil ditambahkan<p>',
+					content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
 					autoClose: 'close|3000',
 					buttons: {
 						close: function () {

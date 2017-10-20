@@ -368,7 +368,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 				$.confirm({
 					title: name,
-					content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>1 Item berhasil ditambahkan<p>',
+					content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
 					autoClose: 'close|3000',
 					buttons: {
 						close: function () {
