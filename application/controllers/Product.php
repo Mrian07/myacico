@@ -67,6 +67,21 @@ class Product extends Web {
 	public function category()
 	{
 		$this->data['cat_id']=$this->uri->segment(3);
+
+		$cat_id=$this->uri->segment(3);
+		$api = "category/listc3?c2id=".$cat_id;
+		$url = api_base_url($api);
+		
+		$options = ["http" => [
+		"method" => "GET",
+		]];
+		
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+	
+		$this->data['hasil'] = json_decode($konten, true);
+
+		
 		//$this->load->view('frontend/test',$this->data);
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
