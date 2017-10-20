@@ -9,6 +9,7 @@
 			<input type="radio" id="shipperId" name="shipperId" value='<?php echo$data['shipperId']; ?>'>
 		</td>
 		<td>
+			<img src='https://storage.googleapis.com/myacico/image/kurir/<?php echo$data['shipperId']; ?>.png' border='0'><br>
 			Penyedia Jasa : <?php echo$data['shipperName']; ?><br>
 			Estimasi : +/- <?php echo$data['estimationDay']; ?> Hari kerja<br>
 			Biaya Kirim: Rp.<?php echo money($data['amount']); ?>
