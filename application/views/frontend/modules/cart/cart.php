@@ -47,7 +47,7 @@
 		</div>
 	</div>
 </div>
-<div class="container" ng-controller="cartCnt">
+<div class="container" style='background:#ffffff;  padding-top:20px; margin-bottom:20px;border: 1px #dddddd solid;'>
 
 	<div class="col-md-12 listCart">
 		<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>
