@@ -203,7 +203,8 @@ class Account extends Web_private {
 		$konten = file_get_contents($url, false, $context);
 
 		$this->data['hasil'] = json_decode($konten, true);
-
+		$hasil = json_decode($konten, true);
+		
 		if($hasil = json_decode($konten, true)){
 			$this->load->view('frontend/modules/account/list_riwayat_status_pesanan',$this->data);
 		}else{
