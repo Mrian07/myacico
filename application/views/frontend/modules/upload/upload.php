@@ -1,4 +1,8 @@
-  <style>
+<?php 
+    $voc = $_GET['company'];
+    $voc = str_replace("_"," ",$voc);
+?> 
+<style>
 
   .btn-file {
   position: relative;
@@ -48,6 +52,7 @@
 			
 
 			<p>Data Anda Sudah Kami periksa dan sudah kami verifikasi, Tetapi Document Anda Salah.</p>
+                        <input type="text" id = "voc" class="form-control" value ="<?php echo $voc;?>" readonly>
 			<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 			
 			<div class="panel panel-default">
@@ -55,7 +60,8 @@
 					 <label>Upload Image</label>
 				</div>
 				<div class="panel-body">
-				
+				voc
+                                
 					<div class="input-group">
 						<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 						
@@ -84,6 +90,9 @@
 $(document).ready( function() {
      var url =$('#surel').val();
     var res = url.split("key=");
+    //var urlStrings = window.location.hash.substring(2).split("company=");
+    var voc = <?php echo $_GET['company='];?>
+    //$('#voc').val(voc);
   $.ajaxSetup({
     error: function(){
       alert('Image Berhasil Di Upload');
@@ -95,35 +104,31 @@ $(document).ready( function() {
     $("form").submit(function(e){
     var file =  $("#file").val();
 //        parsing key=
-        var transid = $("#transid").val();
-        
-
-    //var fl=document.signup;
-  //    var data = $(this).serialize();
-  //     return alert(data);die();
-  data.file = file;
-  data.transid = transid;
-  data.key = res[1];
-  console.log('datanyanih',data);
+    
   
+  console.log('datanyanih: ',data);
+  var error = function(r){
+         $('#spinner_img').hide();
+  $('#submit_btn').val('Kirim').removeClass('disabled');
+  
+        alert(r.message);
+
+    };
      var success = function(r){
          $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
-  //         $.alert({
-  //     title: 'Alert!',
-  //     content: 'Alamat Baru Berhasil di tambahkan',
-  //    });
-  //      alert(r.message);
+ 
       console.log('OK:', r.status);
       $("#file").val(null);
-      $("#transid").val(null);
-      window.location.replace(base_url+"/account/informasiAkun");
+      //$("#transid").val(null);
+      window.location.replace(base_url+"/upload/upload_success");
 
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
         var token = document.cookie.split('x-auth=')[1].split(';').shift();
-    console.log('ini data',token);
+   data.file = file;
+    data.key = res[1];
     var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
     var apiurl = baseApiUrl +'/create/b2b/reuploadtaxid';
     var form = $('form')[0]; // You need to use standard javascript object here
@@ -136,6 +141,8 @@ $(document).ready( function() {
     dataType: "json",
     contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
     processData: false, // NEEDED, DON'T OMIT THIS
+    success: success,
+    error: error,
     // ... Other options like success and etc
   });
     // $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({

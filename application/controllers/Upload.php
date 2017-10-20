@@ -22,5 +22,15 @@ class Upload extends Web {
 		$this->load->view('frontend/footer',$this->data);
 
 	}
+        public function success()
+    {
+		$this->data['active_dashboard'] = "class='active'";
+		$this->data['title_web'] = "Myacico.com - Dashboard";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/upload/upload_success.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+
+	}
 
 }
