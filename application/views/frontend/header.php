@@ -384,7 +384,7 @@ $(function(){
 			var cat = $('#search_param').val();
 
 			if(cat=='all'){
-alert('salah');
+
 				$.get(api_base_url+"/product/productlist/"+request.term, function (data) {
 					console.log('res',data);
 					var arr = [];
@@ -406,10 +406,13 @@ alert('salah');
 		},
 		select: function( event, ui ) {
 			this.value = ui.item.label;
-			var cat = $('#search_param').val();
+			// var cat = $('#search_param').val();
 			//console.log('change:',ui.item.value);
-			if(cat != 'all'){location.href = base_url+'product/detail/'+cat+'/'+ui.item.value;}else{
-			location.href = base_url+'product/detail/'+ui.item.value;}
+			// if(cat != 'all'){
+			// 	location.href = base_url+'product/detail/'+cat+'/'+ui.item.value;
+			// }else{
+				location.href = base_url+'product/detail/'+ui.item.value;
+			// }
 			return false;
 		},
 		focus: function( event, ui ) {
