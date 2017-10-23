@@ -48,8 +48,8 @@ a
 <div class="container">
 	<h3>TERIMA KASIH</h3>
 	<p>Order Anda telah berhasil diproses.</p>
-	
-	
+
+
 	<div class="row">
 	  <div class="col-sm-6">
 		<div class="panel panel-default">
@@ -83,7 +83,7 @@ a
 		   <div class="form-group">
 			<label class="control-label col-sm-4" for="email">Tanggal Transaksi:</label>
 			<div class="col-sm-8">
-			  <p class="form-control-static"><?php 
+			  <p class="form-control-static"><?php
 			  echo tanggal_time($field->waktuTransaksi);
 			 // $tgl = explode(" ",$field->waktuTransaksi);
 			 // echo tanggal($tgl[0]); echo",".;?> </p>
@@ -91,25 +91,25 @@ a
 		  </div>
 		  </form>
 		  </div>
-		</div>  
+		</div>
 	  </div>
 	  <div class="col-sm-6">
-		
+
 		<div class="panel panel-default">
 		  <div class="panel-heading"><b>PENGIRIM</b></div>
 		  <div class="panel-body"><b><?php echo $field->billing_name; ?></b>,<br><?php echo $field->billing_address; ?></div>
-		</div>  
-		
+		</div>
+
 		<div class="panel panel-default">
 		  <div class="panel-heading"><b>PENERIMA</b></div>
 		  <div class="panel-body"><b><?php echo $field->shipping_name; ?></b>,<br><?php echo $field->shipping_address; ?></div>
-		</div>  
-		  
-	  
+		</div>
+
+
 		<div class="panel panel-default">
 		  <div class="panel-heading"><b>DETAIL CART</b></div>
 		  <div class="panel-body">
-			
+
 			<table class="table table-hover table-condensed">
 				<thead>
 					<tr>
@@ -130,23 +130,39 @@ a
 						</td>
 						<td data-th="Subtotal" class="text-center">Rp.<?php echo money($data->subtotal); ?></td>
 					</tr>
-					<?php 
+					<?php
 					endforeach; ?>
 				</tbody>
 			</table>
-			 <div class="form-group"><h5>
-				<label class="control-label col-sm-6" for="email">Total Pembayaran:</label>
-				<div class="col-sm-6">
-				  <p class="form-control-static">Rp.<?php echo money($field->grandTotal); ?></p>
-				</div>
-			  </div>
-				</h5>
+
 		  </div>
-		</div>  
+
+
+		</div>
+
+    <div class="panel panel-default">
+    <h5>
+
+      <form class="form-horizontal">
+      <div class="form-group">
+      <label class="control-label col-sm-5" for="email">Ongkos Kirim:</label>
+      <div class="col-sm-7">
+        <p class="form-control-static">Rp.<?php echo money($field->courier_amount); ?></p>
+      </div>
+      </div>
+     <div class="form-group">
+      <label class="control-label col-sm-5" for="email">Total Pembayaran:</label>
+      <div class="col-sm-7">
+        <p class="form-control-static">Rp.<?php echo money($field->grandTotal); ?></p>
+      </div>
+      </div>
+    </form>
+      </h5>
+    </div>
+
+
 	  </div>
-	</div> 
+	</div>
 
 
 </div>
-
-

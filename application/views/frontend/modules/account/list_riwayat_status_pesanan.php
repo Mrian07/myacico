@@ -10,7 +10,7 @@
 		<th>Nomor Pesanan</th>
 		<th>Status</th>
 		<th>Detail</th>
-		<th>Konfirmasi</th>
+		<th>Konfirmasi/ Credit Cart</th>
 	  </tr>
 
 	</thead>
@@ -27,7 +27,7 @@
 					if($items['paymentMethod']=='Bank Transfer'){
 						echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
 					}else{
-						echo anchor('account/pay/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
+						echo anchor('account/pay/'.$items['idTransaksi'], 'Pay By Credit Cart', array('class'=>'btn btn-warning'));
 					}
 				?></td>
 			</tr>
