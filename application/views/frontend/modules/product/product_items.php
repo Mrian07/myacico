@@ -193,11 +193,11 @@ font-size: 20px;
 
     </div>
 </div>
-
+<?php echo $pro_id; ?>
 <script type="text/javascript">
 
 function filter(id){
-  window.location.replace("<?php echo site_url('product/listItem/'.$data['m_product_id'].'/'); ?>"+id.value);
+  window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'); ?>"+id.value);
 }
 
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
