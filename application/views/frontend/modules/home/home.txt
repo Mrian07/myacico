@@ -558,75 +558,22 @@ ul.list-group:after {
     float: left;
 }
 
-/*Produc slide*/
-.carousel-inner .active.left { left: -25%; }
-.carousel-inner .next        { left:  25%; }
-.carousel-inner .prev		 { left: -25%; }
-.carousel-control 			 { width:  4%; }
-.carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
 </style>
 <div>
 
-
+            <hr>
             <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
 
 
 <div class="container">
   <!--Item slider text-->
-
-
-
-
-
-        <div style='border:1px solid #e6e6e6; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151'>
-          <i class="fa fa-dot-circle-o" aria-hidden="true"></i> New Collection
-        </div>
-      <div class="carousel slide" id="myCarouselProduct" style='background:#ffffff; padding:10px;'>
-    	  <div class="carousel-inner">
-          <?php
-          $jmlslide2=count($dathome['level_2']);
-          $n=1;
-          foreach($dathome['level_2'] as $key => $itemslide2){
-            if($n=="$jmlslide2"){
-              $active='active';
-            }else{
-              $active='';
-            }
-            ?>
-      		<div class="item <?php echo $active; ?>">
-      		  <div class="col-xs-3"><a href="#"><img src="<?php echo $itemslide2['imageurl']; ?>" class="img-responsive"></a></div>
-      		</div>
-        <?php $n++;  } ?>
-    		<!-- <div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/e477e4/fff&amp;text=2" class="img-responsive"></a></div>
-    		</div>
-    		<div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=3" class="img-responsive"></a></div>
-    		</div>
-    		<div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f4f4f4&amp;text=4" class="img-responsive"></a></div>
-    		</div>
-    		<div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f566f5/333&amp;text=5" class="img-responsive"></a></div>
-    		</div>
-    		<div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f477f4/fff&amp;text=6" class="img-responsive"></a></div>
-    		</div>
-    		<div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=7" class="img-responsive"></a></div>
-    		</div>
-    		<div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/fcfcfc/333&amp;text=8" class="img-responsive"></a></div>
-    		</div> -->
-
-    	  </div>
-    	  <a class="left carousel-control" href="#myCarouselProduct" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-    	  <a class="right carousel-control" href="#myCarouselProduct" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-    	</div>
-
+      <center>
+        <h3> New Collection </h3>
+        <hr>
+      </center>
 
   <!-- Item slider-->
-  <!-- <div class="container-fluid" style='background:#ffffff; padding-top:10px;'>
+  <div class="container-fluid" style='background:#ffffff; padding-top:10px;'>
 
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12">
@@ -657,10 +604,10 @@ ul.list-group:after {
                 <a href="#"><div class="lvl23">
                     </div></a>
                 <!-- <span class="badge">10%</span> -->
-                <!-- <h4 class="text-center"><div class="lvl23p"></div></h4>
-                <h5 class="text-center">Rp.<div class="lvl23h"></div></h5> -->
+                <h4 class="text-center"><div class="lvl23p"></div></h4>
+                <h5 class="text-center">Rp.<div class="lvl23h"></div></h5>
                <!-- <h6 class="text-center">- Rp. 8000.000</h6>-->
-              <!-- </div>
+              </div>
             </div>
 
             <div class="item">
@@ -699,17 +646,19 @@ ul.list-group:after {
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
+<br>
+<hr>
 
-
-
-
-
-<div style='border-bottom:1px dashed #7e7a7a; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
-  <i class="fa fa-dot-circle-o" aria-hidden="true"></i> Featured Product
 </div>
 
 
+<br/>
+<center>
+<h3> Featured Product </h3>
+</center>
+<br>
+<div class="container">
 	<div class="row">
     	<!-- BEGIN PRODUCTS -->
   		<div class="col-md-3 col-sm-6">
@@ -1069,19 +1018,17 @@ ul.list-group:after {
 
   		<!-- END PRODUCTS -->
 	</div>
+</div>
+<hr>
+<center>
 
-
-
-  <div style='border-bottom: 1px dashed #7e7a7a; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px;'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> Our Brand
-  </div>
-
-
-
-	<div style='text-align: center; padding:15px 0px 15px 0px; border-radius:0px 0px 10px 0px; margin-bottom:20px;'>
+  <h2> Our Brand </h2>
+</center>
+<div class="container">
+	<div class="row">
     	<!-- BEGIN PRODUCTS -->
 
-<ul class="list-group" style="padding-left:60px;">
+<ul class="list-group" style="padding-left:82px;">
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TL-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/aaa01.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src='<?php echo base_url('images/banner/IP-small.png');?>' class="asd1"  alt="Smiley face" height="50" width="97"></li>
@@ -1159,10 +1106,10 @@ ul.list-group:after {
           </div>
 
 
-<img src=" https://s1.postimg.org/1lnc8xtx73/banners_2_13.png" width="100%" alt="...">
+
   </div>
 
-
+  <img src=" https://s1.postimg.org/1lnc8xtx73/banners_2_13.png" width="100%" alt="...">
 <!-- s: Slider Product -->
 <link rel="stylesheet" href="<?php echo base_url('assets/css/slider-product.css');?>">
 <!-- e: Slider Product -->
@@ -1351,31 +1298,6 @@ $(document).ready(function(){
     .appendTo($(this));
     }
   });
-});
-
-</script>
-
-<script>
-// slide produk
-$('#myCarouselProduct').carousel({
-  interval: 4000
-})
-
-$('.carousel .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
-
-  for (var i=0;i<2;i++) {
-    next=next.next();
-    if (!next.length) {
-    	next = $(this).siblings(':first');
-  	}
-
-    next.children(':first-child').clone().appendTo($(this));
-  }
 });
 
 </script>
