@@ -149,7 +149,7 @@ font-size: 20px;
               <?php if($cektoken){ ?>
               <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist fa fa-heart" aria-hidden="true"></i></a>
             <?php }else{?>
-              <i class="color-wishlist-disabled fa fa-heart" aria-hidden="true"></i>
+              <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist-disabled fa fa-heart" aria-hidden="true"></i></a>
             <?php } ?>
             </h4>
                                                 <input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'><br>
