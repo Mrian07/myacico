@@ -61,10 +61,10 @@ a{
 		<li style='background:#d8d7d7;'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b></li>
 		<li style='background:#e7e7e7;'><b><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
 		Senen - Jumat [09:00 - 17:00]</b></li>
-		
 
 
-		<li class='my-menu-header-sub' style="float: right;">Bahasa 
+
+		<li class='my-menu-header-sub' style="float: right;">Bahasa
 			<div class="dropdown-lang" style='border:0px solid #aeaeab; border-radius:5px; background:#f1f3f6; padding:0px; right: 0; left: auto; '>
 			<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?> <span class="caret"></span>
 			<div class="dropdown-lang-content">
@@ -81,13 +81,13 @@ a{
 
 </div>
 </div>
-		
+
 <!--</div>-->
 
 <div class="my-header-panel4" style='border-top: 1px #dadbdd solid;'>
 	<div class='container' style='background:#ffffff url(<?php echo base_url('images/general/Bg-atas-acico.png'); ?>); height:55px'>
-		
-	</div>	
+
+	</div>
 </div>
 <div class="my-header-panel">
 	<div class='container'>
@@ -104,7 +104,8 @@ a{
 						<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
 							<span id="search_concept">All Categories</span> <span class="caret"></span>
 						</button>
-						<ul class="dropdown-menu cat_menu" role="menu">
+						<!-- <ul class="dropdown-menu cat_menu" role="menu"> -->
+						<ul class="dropdown-menu" role="menu">
 						  <li><a href="#1">Computer</a></li>
 						  <li><a href="#2">Gatget</a></li>
 						  <li><a href="#3">Communication</a></li>
