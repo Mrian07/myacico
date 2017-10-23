@@ -1,3 +1,9 @@
+<style>
+.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+</style>
 <p>Dibawah ini adalah daftar buku alamat penerima pesanan. Anda bisa menambahkan alamat baru atau mengubah alamat sebelumnya dengan alamat yang lain.</p>
 <div class="panel panel-default">
 <table class="table">
@@ -15,7 +21,7 @@
 
 	</thead>
 	<tbody>
-		<?php foreach($hasil as $items): ?>
+		<?php foreach($hasil as $items):	?>
 			<tr>
 				<td><?php echo tanggal_time($items['waktuTransaksi']);?></td>
 				<td>Rp.<?php echo money($items['grandTotal']);?></td>
@@ -25,9 +31,21 @@
 				<td><?php echo anchor('account/formTransactionDetail/'.$items['idTransaksi'], 'Detail', array('class'=>'btn btn-info'));?></td>
 				<td><?php
 					if($items['paymentMethod']=='Bank Transfer'){
-						echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
+						if($items['transactionStatus']=='PAID'){
+							echo anchor('#', 'Konfirmasi', array('class'=>'btn btn-warning disabled'));
+						}else{
+							echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
+						}
 					}else{
-						echo anchor('account/pay/'.$items['idTransaksi'], 'Pay By Credit Cart', array('class'=>'btn btn-warning'));
+
+						if($items['transactionStatus']=='PAID'){
+							echo anchor('#', 'Paid', array('class'=>'btn btn-warning disabled'));
+						}else{
+							echo anchor('checkout/paymentByCreditCard/'.$items['idTransaksi'].'/'.$items['token'], 'Pay By Credit Cart', array('class'=>'btn btn-warning'));
+						}
+
+
+
 					}
 				?></td>
 			</tr>
