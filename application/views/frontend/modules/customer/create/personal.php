@@ -56,7 +56,7 @@ margin-top: -11px;
 		  <div class="form-group">
 			<label>Email:</label>
 					<input type="text" id="email" name="email" class="form-control mandatory"/>
-	
+
 		  </div>
 		  <div class="form-group">
 			<label>Password:</label>
@@ -136,16 +136,17 @@ if(name==''){
 				title: 'Alert!',
 				content: 'Password tidak sama!',
 			});
-                    
+
 	      return false;
 		};
 		// comment baru
 		    var success = function(r){
       $('#spinner_img').hide();
       $('#submit_btn').val('Kirim').removeClass('disabled');
-      console.log('OK:', r);
-      alert(r.message);
-          return false;
+      // console.log('OK:', r);
+      //alert(r.message);
+      //    return false;
+			window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
     };
 
 
@@ -185,7 +186,7 @@ if(name==''){
 // 	    e.preventDefault();
 // 		var apiurl = baseApiUrl + '/create';
 // 		var data = $(this).serialize();
-		
+
 // 		var nama = $("#nama").val();
 // 		var email = $("#email").val();
 // 		var password = $("#password").val();

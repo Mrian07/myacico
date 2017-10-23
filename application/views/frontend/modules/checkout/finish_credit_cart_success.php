@@ -75,16 +75,6 @@ a
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Metode Pembayaran:</label>
-			<div class="col-sm-8">
-			  <p class="form-control-static"><?php echo $field->paymentMethod; if($field->paymentMethod=='Bank Transfer'){
-				 echo"<br><i>".$field->accountNameTo;
-				 echo"<br>".$field->accountNumberTo;
-				 echo"<br>".$field->bankNameTo."</i>";
-				  }?></p>
-			</div>
-		  </div>
-		  <div class="form-group">
 			<label class="control-label col-sm-4" for="email">Status:</label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->transactionStatus; ?></p>
@@ -146,7 +136,10 @@ a
 			</table>
 
 		  </div>
+
+
 		</div>
+
     <div class="panel panel-default">
     <h5>
 
@@ -165,9 +158,11 @@ a
       </div>
     </form>
       </h5>
+    </div>
+
+
 	  </div>
-  </div>
 	</div>
 
+
 </div>
-<br><br>

@@ -22,7 +22,7 @@ class Account extends Web_private {
 		$this->data['active_berlanggananNewsletter'] = "";
 		$this->data['active_wishlist'] = "";
 	}
-	
+
 
 	public function index()
     {
@@ -78,7 +78,7 @@ class Account extends Web_private {
 
 	public function informasiAkun()
     {
-		
+
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
 		$api = "aduser/getaddress?addresstype=isbillto";
@@ -89,7 +89,7 @@ class Account extends Web_private {
 		"header" => ["token: " . $token,
 		"Content-Type: application/json"],
 		]];
-		
+
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 		$hasil = json_decode($konten, true);
@@ -100,7 +100,7 @@ class Account extends Web_private {
 			$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['address2']." ".$items['city_name']." ".$items['postal'];
 			$this->data['id_billing'] =$items['id'];
 		}
-		
+
 		$this->data['active_informasiAkun'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Informasi Akun";
 		$this->load->view('frontend/header',$this->data);
@@ -129,20 +129,20 @@ class Account extends Web_private {
 		$this->load->view('frontend/modules/account/buku_alamat',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-	
+
 	public function listBukuAlamat()
-    {	
+    {
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
 		$api = "aduser/getaddress?addresstype";
 		$url = api_base_url($api);
-		
+
 		$options = ["http" => [
 		"method" => "GET",
 		"header" => ["token: " . $token,
 		"Content-Type: application/json"],
 		]];
-		
+
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 
@@ -185,25 +185,26 @@ class Account extends Web_private {
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-	
+
 	public function listRiwayatStatusPesanan()
-    {	
+    {
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
 		$api = "transaction/list";
 		$url = api_base_url($api);
-		
+
 		$options = ["http" => [
 		"method" => "GET",
 		"header" => ["token: " . $token,
 		"Content-Type: application/json"],
 		]];
-		
+
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 
 		$this->data['hasil'] = json_decode($konten, true);
-
+		$hasil = json_decode($konten, true);
+	//	echo"<pre>"; print_r($hasil); die();
 		if($hasil = json_decode($konten, true)){
 			$this->load->view('frontend/modules/account/list_riwayat_status_pesanan',$this->data);
 		}else{
@@ -211,7 +212,7 @@ class Account extends Web_private {
 		}
 	}
 
-	
+
 	public function confirm()
 		{
 		$this->data['konf'] = $this->uri->segment(3);
@@ -257,14 +258,14 @@ class Account extends Web_private {
 	public function formBilling()
     {
 		$type = $this->typeLogin();
-		
-		
-		
+
+
+
 		$this->data['active_informasiAkun'] = "class='active'";
 		$this->data['title_web'] = "Myacico.com - Return Management Authority";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		
+
 		if($type->role=='B2B'){
 			$this->load->view('frontend/modules/account/form_billing_b2b',$this->data);
 		}else{
@@ -292,16 +293,32 @@ class Account extends Web_private {
 		$this->load->view('frontend/modules/account/form_password',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-	
+
     public function formTransactionDetail()
     {
-        $this->data['detId']=$this->uri->segment(3);
-		$this->data['active_riwayatStatusPesanan'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Return Management Authority";
-		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/form_transaction_detail',$this->data);
-		$this->load->view('frontend/footer',$this->data);
+			$id=$this->uri->segment(3);
+			$this->data['token'] = $_COOKIE['x-auth'];
+			$token = $_COOKIE['x-auth'];
+			$api = "transaction/list?id=".$id;
+			$url = api_base_url($api);
+
+			$options = ["http" => [
+			"method" => "GET",
+			"header" => ["token: " . $token,
+			"Content-Type: application/json"],
+			]];
+
+			$context = stream_context_create($options);
+			$konten = file_get_contents($url, false, $context);
+
+			$this->data['hasil'] = json_decode($konten, true);
+
+			$this->data['active_riwayatStatusPesanan'] = "class='active'";
+			$this->data['title_web'] = "Myacico.com - Return Management Authority";
+			$this->load->view('frontend/header',$this->data);
+			$this->load->view('frontend/nav.php',$this->data);
+			$this->load->view('frontend/modules/account/form_transaction_detail',$this->data);
+			$this->load->view('frontend/footer',$this->data);
 	}
 
 	public function logout()

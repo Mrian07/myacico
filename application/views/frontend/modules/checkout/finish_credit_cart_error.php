@@ -46,10 +46,11 @@ a
 </div>
 
 <div class="container">
-	<h3>TERIMA KASIH</h3>
-	<p>Order Anda telah berhasil diproses.</p>
-
-
+	<h3>PEMBAYARAN GAGAL</h3>
+	<p>Pembayaran menggunakan credit card telah digagalkan, Anda bisa mencoba malakukan pembayaran kembali untuk order anda menggunakan credit card melalui halaman <b>Riwayat Status Pesanan</b> pada Account Anda.</p>
+	<p>
+	<?php echo anchor('account/riwayatStatusPesanan', 'Click disini untuk melihat riwayat status pesanan', array('class'=>'btn btn-primary btn-sm'));?>
+	</p>
 	<div class="row">
 	  <div class="col-sm-6">
 		<div class="panel panel-default">
@@ -72,16 +73,6 @@ a
 			<label class="control-label col-sm-4" for="email">Metode Pembayaran:</label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->paymentMethod; ?></p>
-			</div>
-		  </div>
-		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Metode Pembayaran:</label>
-			<div class="col-sm-8">
-			  <p class="form-control-static"><?php echo $field->paymentMethod; if($field->paymentMethod=='Bank Transfer'){
-				 echo"<br><i>".$field->accountNameTo;
-				 echo"<br>".$field->accountNumberTo;
-				 echo"<br>".$field->bankNameTo."</i>";
-				  }?></p>
 			</div>
 		  </div>
 		  <div class="form-group">
@@ -147,6 +138,7 @@ a
 
 		  </div>
 		</div>
+
     <div class="panel panel-default">
     <h5>
 
@@ -165,9 +157,10 @@ a
       </div>
     </form>
       </h5>
+    </div>
+    
 	  </div>
-  </div>
 	</div>
 
+
 </div>
-<br><br>

@@ -31,7 +31,7 @@ class Customer extends Web {
 
 	public function successCreate()
     {
-		//$this->data['email'] = $this->uri->segment(3);
+		$this->data['email'] = $this->uri->segment(3);
 		$this->data['title_web'] = "Myacico.com - Create Account Personal";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -69,15 +69,15 @@ class Customer extends Web {
 
 	public function contact()
 	{	$this->load->helper(array('captcha','url'));
-	
+
 		$random_number = substr(number_format(time() * rand(),0,'',''),0,6);
 		$vals = array(
-			'word' => $random_number,	
+			'word' => $random_number,
 			'img_path'	 => './captcha/',
 			'img_url'	 => base_url().'captcha/',
 			'img_width'	 => '200',
 			'img_height' => 32,
-			'border' => 0, 
+			'border' => 0,
 			'expiration' => 7200
 		);
 
@@ -89,7 +89,7 @@ class Customer extends Web {
 
 		// store the captcha word in a session
 		$this->session->set_userdata('mycaptcha', $cap['word']);
-	
+
 		$this->data['title_web'] = "Myacico.com - Create Account Business";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -105,9 +105,9 @@ class Customer extends Web {
 		$secutity_code = $this->input->post('secutity_code');
 
 		$email_to='lalang@myacico.com';
-		
+
 		if((strtolower($secutity_code) == strtolower($this->session->userdata('mycaptcha')))){
-		
+
 			if($this->sendMail($email_from,$nm_from,$email_to,$subject,$message)==true)
 			{
 				echo "terkirim";
@@ -182,14 +182,14 @@ class Customer extends Web {
 	}
 
 	public function logout()
-    {	
+    {
 		$this->data['title_web'] = "Myacico.com - Login";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/logout/logout.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-	
+
 	public function confirmation()
 	{
 		$this->data['title_web'] = "Myacico.com - Konfirmasi Pembayaran";

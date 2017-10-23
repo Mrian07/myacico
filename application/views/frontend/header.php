@@ -53,7 +53,7 @@ a{
 
 <body style='font-weight: normal;' ng-app="myApp">
 <!--<div class="my-header-panel3">-->
-
+<div style='background:#f3f3f3'>
 <div class='container'>
 
 
@@ -61,10 +61,10 @@ a{
 		<li style='background:#d8d7d7;'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b></li>
 		<li style='background:#e7e7e7;'><b><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
 		Senen - Jumat [09:00 - 17:00]</b></li>
-		
 
 
-		<li class='my-menu-header-sub' style="float: right;">Bahasa 
+
+		<li class='my-menu-header-sub' style="float: right;">Bahasa
 			<div class="dropdown-lang" style='border:0px solid #aeaeab; border-radius:5px; background:#f1f3f6; padding:0px; right: 0; left: auto; '>
 			<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?> <span class="caret"></span>
 			<div class="dropdown-lang-content">
@@ -80,14 +80,14 @@ a{
 	</ul>
 
 </div>
+</div>
 
-		
 <!--</div>-->
 
 <div class="my-header-panel4" style='border-top: 1px #dadbdd solid;'>
 	<div class='container' style='background:#ffffff url(<?php echo base_url('images/general/Bg-atas-acico.png'); ?>); height:55px'>
-		
-	</div>	
+
+	</div>
 </div>
 <div class="my-header-panel">
 	<div class='container'>
@@ -104,15 +104,19 @@ a{
 						<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
 							<span id="search_concept">All Categories</span> <span class="caret"></span>
 						</button>
-						<ul class="dropdown-menu cat_menu" role="menu">
-						  <li><a href="#1">Computer</a></li>
-						  <li><a href="#2">Gatget</a></li>
-						  <li><a href="#3">Communication</a></li>
-						  <li><a href="#4">Audio & Visual</a></li>
-						  <li><a href="#5">Mechanical & Electrical</a></li>
-						  <li><a href="#6">Hobby</a></li>
-						  <li><a href="#7">Peralatan Rumah</a></li>
-						  <li><a href="#8">Perlengkapan Kantor</a></li>
+						<!-- <ul class="dropdown-menu cat_menu" role="menu"> -->
+						<ul class="dropdown-menu mycategory-search" role="menu">
+							<?php foreach($catsearch as $datacat){
+								echo"<li><a href='#".$datacat['m_product_category_id']."'>".$datacat['name']."</a></li>";
+							}?>
+						  <!-- <li><a href="#1000003">Computer</a></li>
+						  <li><a href="#1000017">Gatget</a></li>
+						  <li><a href="#1000010">Communication</a></li>
+						  <li><a href="#1000018">Audio & Visual</a></li>
+						  <li><a href="#1000019">Mechanical & Electrical</a></li>
+						  <li><a href="#1000020">Hobby</a></li>
+						  <li><a href="#1000021">Peralatan Rumah</a></li>
+						  <li><a href="#1000022">Perlengkapan Kantor</a></li> -->
 						</ul>
 					</div>
 					<input type="hidden" name="search_param" value="all" id="search_param">
@@ -214,14 +218,17 @@ a{
 									<span id="search_concept">All Categories</span> <span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu cat_menu" role="menu">
-								  <li><a href="#contains">Computer</a></li>
+									<?php foreach($catsearch as $datacat){
+										echo"<li><a href='#contains'>".$datacat['name']."</a></li>";
+									}?>
+								  <!-- <li><a href="#contains">Computer</a></li>
 								  <li><a href="#its_equal">Gatget</a></li>
 								  <li><a href="#greather_than">Communication</a></li>
 								  <li><a href="#less_than">Audio & Visual</a></li>
 								  <li><a href="#greather_than">Mechanical & Electrical</a></li>
 								  <li><a href="#less_than">Hobby</a></li>
 								  <li><a href="#greather_than">Peralatan Rumah</a></li>
-								  <li><a href="#less_than">Perlengkapan Kantor</a></li>
+								  <li><a href="#less_than">Perlengkapan Kantor</a></li> -->
 								</ul>
 							</div>
 							<input type="hidden" name="search_param" value="all" id="search_param">
@@ -374,19 +381,38 @@ app.controller('cartCnt', function($scope, $mycart, toMoney){
 $(function(){
 	$( ".my-search-field" ).autocomplete({
 		source: function (request, response) {
-			$.get(api_base_url+"/product/productlist/"+request.term, function (data) {
-				console.log('res',data);
-				var arr = [];
-				data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id, label:d.name, value:d.m_product_id})})
-				response(arr);
-			});
+			var cat = $('#search_param').val();
+
+			if(cat=='all'){
+
+				$.get(api_base_url+"/product/productlist/"+request.term, function (data) {
+					console.log('res',data);
+					var arr = [];
+					data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id, label:d.name, value:d.m_product_id})})
+					response(arr);
+				});
+
+			}else{
+
+				$.get(api_base_url+"/product/productlist/"+cat+"/"+request.term, function (data) {
+					console.log('res',data);
+					var arr = [];
+					data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id, label:d.name, value:d.m_product_id})})
+					response(arr);
+				});
+
+			}
+
 		},
 		select: function( event, ui ) {
 			this.value = ui.item.label;
-			var cat = $('#search_param').val();
+			// var cat = $('#search_param').val();
 			//console.log('change:',ui.item.value);
-			if(cat != 'all')location.href = base_url+'product/detail/'+cat+'/'+ui.item.value;
-			location.href = base_url+'product/detail/'+ui.item.value;
+			// if(cat != 'all'){
+			// 	location.href = base_url+'product/detail/'+cat+'/'+ui.item.value;
+			// }else{
+				location.href = base_url+'product/detail/'+ui.item.value;
+			// }
 			return false;
 		},
 		focus: function( event, ui ) {

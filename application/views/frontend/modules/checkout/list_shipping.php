@@ -9,6 +9,7 @@
 			<input type="radio" id="shipperId" name="shipperId" value='<?php echo$data['shipperId']; ?>'>
 		</td>
 		<td>
+			<img src='https://storage.googleapis.com/myacico/image/kurir/<?php echo$data['shipperId']; ?>.png' border='0'><br>
 			Penyedia Jasa : <?php echo$data['shipperName']; ?><br>
 			Estimasi : +/- <?php echo$data['estimationDay']; ?> Hari kerja<br>
 			Biaya Kirim: Rp.<?php echo money($data['amount']); ?>
@@ -35,11 +36,13 @@ $(document).on("change","input[type=radio][name=shipperId]",function(){
 	cache : false,
 	success:function(data){
 			
-			var totalOngkir = data.amount*total_weight;
+			var totalOngkir = parseInt(data.amount*total_weight);
 			$('#courier_amount').val(totalOngkir);
 			$('#totalOngkir').html(totalOngkir);
 			$('#courier').val(data.shipperName);
-			var grandtotal = $('#SubtotalOrder').val()+totalOngkir;
+			
+			var SubtotalOrder = parseInt($('#SubtotalOrder').val());
+			var grandtotal = SubtotalOrder+totalOngkir;
 			$('#grandtotal').val(grandtotal);
 			$('#grandtotalall').val(grandtotal);
 		}

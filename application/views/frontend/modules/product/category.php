@@ -60,52 +60,68 @@
 .carousel-control 			 { width:  4%; }
 .carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
 </style>
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-12">
 
-<div id="title">
-</div>
-		<div class="container">
-		<div class="row" id="collection_box">
+			<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo strtoupper($hasil['subName']); ?>
+
+		  </div>
+		</div>
 	</div>
-		<!-- END PRODUCTS -->
+</div>
 
+<div class="container">
+	<div class="row">
+		<?php 
+		foreach($hasil['subValue'] as $key => $data){
 
-	<hr size='1'>
-  <p id="tes"></p>
+			?>
+		
+			<div class="col-md-3 col-sm-6">
+				<span class='thumbnail'>
+				<a href="<?php echo base_url('product/listItem/'.$data['categoryId']);?>"><img src="<?php echo $data['imageurl']; ?>" alt="..."><h5><?php echo $data['name']; ?></h5></a>
+				</span>
+			</div>
+		<?php } ?>
+	</div>
+	<!-- END PRODUCTS -->
 
 	<h4>Bestseller Products</h4>
-<!--<div class="col-md-12 col-md-offset-3" style='background:#dddddd'>-->
+	<!--<div class="col-md-12 col-md-offset-3" style='background:#dddddd'>-->
 
-<div class="carousel slide" id="myCarousel">
-  <div class="carousel-inner">
-    <div class="item active">
-      <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/e499e4/fff&amp;text=1" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/e477e4/fff&amp;text=2" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=3" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f4f4f4&amp;text=4" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f566f5/333&amp;text=5" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f477f4/fff&amp;text=6" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=7" class="img-responsive"></a></div>
-    </div>
-    <div class="item">
-      <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/fcfcfc/333&amp;text=8" class="img-responsive"></a></div>
-    </div>
+	<div class="carousel slide" id="myCarousel">
+	  <div class="carousel-inner">
+		<div class="item active">
+		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/e499e4/fff&amp;text=1" class="img-responsive"></a></div>
+		</div>
+		<div class="item">
+		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/e477e4/fff&amp;text=2" class="img-responsive"></a></div>
+		</div>
+		<div class="item">
+		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=3" class="img-responsive"></a></div>
+		</div>
+		<div class="item">
+		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f4f4f4&amp;text=4" class="img-responsive"></a></div>
+		</div>
+		<div class="item">
+		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f566f5/333&amp;text=5" class="img-responsive"></a></div>
+		</div>
+		<div class="item">
+		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f477f4/fff&amp;text=6" class="img-responsive"></a></div>
+		</div>
+		<div class="item">
+		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=7" class="img-responsive"></a></div>
+		</div>
+		<div class="item">
+		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/fcfcfc/333&amp;text=8" class="img-responsive"></a></div>
+		</div>
 
-  </div>
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-</div>
+	  </div>
+	  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+	  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+	</div>
 
 </div>
 
@@ -131,6 +147,8 @@ $('.carousel .item').each(function(){
     next.children(':first-child').clone().appendTo($(this));
   }
 });
+
+
   $.get(api_base_url+"/category/listc3?c2id=<?php echo $cat_id; ?>",
   function(data){
     console.log('get_cat:', data);

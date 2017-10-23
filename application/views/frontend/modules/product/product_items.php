@@ -12,8 +12,11 @@
 .thumbnail>img, .thumbnail a>img{
 height: 100px;
 }
-.asd{
+.color-wishlist{
 	color:#FE4365;
+}
+.color-wishlist-disabled{
+	color:#dddddd;
 }
 .yu{
   color: red;
@@ -96,13 +99,12 @@ font-size: 20px;
 
 		<div class="form-group">
 		<label for="usr">Urutkan:</label>
-		<select name="urutkan" class="form-control">
-		<option value='relevance'>Relevance</option>
-		<option value='produk terlaris'>Produk Terlaris</option>
-		<option value=''>Nama: A Ke Z</option>
-		<option value=''>Nama: Z Ke A</option>
-		<option value=''>Harga: Rendah Ke Tinggi</option>
-		<option value=''>Harga: Tinggi Ke Rendah</option>
+		<select name="urutkan" class="form-control" onchange='filter(this)'>
+		<option value='5'>Produk Terbaru</option>
+		<option value='1'>Nama: A Ke Z</option>
+		<option value='2'>Nama: Z Ke A</option>
+		<option value='3'>Harga: Rendah Ke Tinggi</option>
+		<option value='4'>Harga: Tinggi Ke Rendah</option>
 		</select>
 		</div>
 
@@ -123,33 +125,44 @@ font-size: 20px;
 
 			<!---<div class="product">
 			</div>-->
-        <?php foreach($hasil as $data){?>
-		
+
+        <?php foreach($hasil as $data){
+          if(isset($data['imageurl'])){
+          ?>
+
 		 <div class="item  col-xs-3 col-lg-3">
             <div class="thumbnail">
                 <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $data['imageurl']; ?>" alt="" />
                 <div class="caption">
-                    <h4 class="group inner list-group-item-heading" style='text-align:center;'><a href="<?php echo base_url('product/detail/'.$data['m_product_id']);?>"><?php echo $data['name']; ?></a>  </h4>
+                    <h5 class="group inner list-group-item-heading" style='text-align:center;'><a href="<?php echo base_url('product/detail/'.$data['m_product_id']);?>"><?php echo $data['name']; ?></a>  </h5><br>
                     <p class="group inner list-group-item-text">
                         Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                         sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                        <div class="panel panel-default">
+            <div class="panel-body">
 						<center>
 						<p class="lead">
                                 Rp.<?php echo money($data['pricelist']); ?></p>
-								
-								
-						<h4><a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="asd fa fa-heart" aria-hidden="true"></i></a></h4>
-						<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='0'><br>
+
+
+						<h4>
+              <?php if($cektoken){ ?>
+              <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist fa fa-heart" aria-hidden="true"></i></a>
+            <?php }else{?>
+              <i class="color-wishlist-disabled fa fa-heart" aria-hidden="true"></i>
+            <?php } ?>
+            </h4>
+                                                <input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'><br>
 						<button class="dropbtnaddcar" onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$data['imageurl'];?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight'];?>')">ADD TO CART</button>
-						
-		
+
+          </div></div>
 						 </center>
 
                 </div>
             </div>
         </div>
-		
-		<?php } ?>
+
+		<?php } } ?>
        <!---
         <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
@@ -171,7 +184,7 @@ font-size: 20px;
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
 		-->
 
 		</div>
@@ -181,8 +194,12 @@ font-size: 20px;
     </div>
 </div>
 
-
 <script type="text/javascript">
+
+function filter(id){
+  window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'); ?>"+id.value);
+}
+
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
 function addWishlist(id,name,imageurl){
 	var dataString = 'id='+ id;
@@ -226,9 +243,9 @@ function addWishlist(id,name,imageurl){
 				}
 			}
 		});
-		
+
 	}else{
-		
+
 		$.dialog({
 			title: 'Alert!',
 			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
@@ -247,9 +264,9 @@ function addWishlist(id,name,imageurl){
 
 function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
-	var jmlItem = $('#jmlItem').val();
+	var jmlItem = $('#jmlItem'+m_product_id).val();
 	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
-	
+
 	if(jmlItem<=0){
 		$.dialog({
 			title: 'Alert!',
@@ -263,11 +280,11 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 			closeIcon: true,
 			closeIconClass: 'fa fa-close'
 		});
-		
+
 	}else{
 
 		var cookie = document.cookie.split('x-auth=');
-		if(cookie.length > 1){ 
+		if(cookie.length > 1){
 			var token = cookie[1].split(';').shift();
 			var apiurl = api_base_url +'/order/cart/additem';
 			var m_product_id = m_product_id;
@@ -279,7 +296,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 				$.confirm({
 					title: name,
-					content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>1 Item berhasil ditambahkan<p>',
+					content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
 					autoClose: 'close|3000',
 					buttons: {
 						close: function () {
@@ -366,8 +383,8 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 					}
 				}
 			});
-		
-	
+
+
 		}
 	}
 }
@@ -448,7 +465,7 @@ console.log('data nya adalah:', data);
 	product.append(
 
 			'<div class="item  col-xs-4 col-lg-4"><div class="thumbnail"><img class="group list-group-image" src="'+p.imageurl+'" alt="..." style:border="0" height="100"><div class="caption"><h4 class="group inner list-group-item-heading"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a>  <a href="'+base_url+'product/wishlist/'+p.m_product_id+'" data-toggle="tooltip" title="Add To Wishlist!"><i class="asd fa fa-heart" aria-hidden="true"></i></a>  </h4><p class="group inner list-group-item-text">'+tidakTsd+'</p> asd <div class="row"><div class="col-xs-12 col-md-6"><p class="lead">Rp.'+(formatNumber(p.pricelist))+'</p></div><div class="col-xs-12 col-md-6"><input type="hidden" id="jmlItem" value="1"><button class="dropbtnaddcar" '+disable+' id="addToCard'+p.m_product_id+'">ADD TO CART</button></div></div></div></div></div>'
-			
+
 
 
 

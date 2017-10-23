@@ -13,26 +13,27 @@ class Web extends MY_Controller {
 
     public function __construct() {
         parent::__construct();
-		$this->load->helper('cookie');
-		$this->load->library('jwt');
-		
+        $this->load->helper('cookie');
+        $this->load->library('jwt');
+
         $this->logedin=false;
         $this->auth();
 
-		$lang = get_cookie('lang');
-		$this->data['lang'] = $lang;
-		if($lang=='en'){
-			$this->load->language('header','english');
-		}else{
-			$this->load->language('header','indonesia');
-		}
+        $lang = get_cookie('lang');
+        $this->data['lang'] = $lang;
+        if($lang=='en'){
+        $this->load->language('header','english');
+        }else{
+        $this->load->language('header','indonesia');
+        }
 
-		$this->lang();
+        $this->lang();
         $this->asset();
+        $this->categorySearch();
     }
-	
+
     public function auth(){
-	
+
 		$secret = $this->config->config['jwt_secret'];
 		//die(strtr(base64_encode($secret), '+/=', '._-'));
 
@@ -48,7 +49,7 @@ class Web extends MY_Controller {
 		}
 
     }
-	
+
 	public function typeLogin(){
 		$secret = $this->config->config['jwt_secret'];
 		return JWT::decode($_COOKIE['x-auth'], $secret)->UserData;
@@ -116,6 +117,14 @@ class Web extends MY_Controller {
         //$this->data['baseApiUrl'] = "http://api.myacico.net:8080/myacico-service/api";
 		$this->data['baseApiUrl'] = "http://api.myacico.co.id/myacico-service";
 		$this->data['baseApiUrl2'] = "http://acc.myacico.co.id/myacico-account/account";
+
+    }
+
+    public function categorySearch(){
+  		$url = "http://api.myacico.co.id/myacico-service/category";
+
+  		$konten = file_get_contents($url);
+  		$this->data['catsearch'] = json_decode($konten, true);
 
     }
 

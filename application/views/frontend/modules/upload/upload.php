@@ -1,4 +1,8 @@
-  <style>
+<?php 
+    $voc = $_GET['company'];
+    $voc = str_replace("_"," ",$voc);
+?> 
+<style>
 
   .btn-file {
   position: relative;
@@ -32,7 +36,7 @@
 			<div class="col-sm-12">
 
 			<i class="fa fa-angle-right" aria-hidden="true"></i> UPLOAD IMAGE
-
+<input type="hidden" id="surel" name="surel" value="<?php echo $_SERVER['QUERY_STRING'];?>" />
 			</div>
 		</div>
 	</div>
@@ -48,6 +52,7 @@
 			
 
 			<p>Data Anda Sudah Kami periksa dan sudah kami verifikasi, Tetapi Document Anda Salah.</p>
+                        <input type="text" id = "voc" class="form-control" value ="<?php echo $voc;?>" readonly>
 			<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 			
 			<div class="panel panel-default">
@@ -55,7 +60,8 @@
 					 <label>Upload Image</label>
 				</div>
 				<div class="panel-body">
-				
+				voc
+                                
 					<div class="input-group">
 						<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 						
@@ -82,6 +88,11 @@
 
 <script>
 $(document).ready( function() {
+     var url =$('#surel').val();
+    var res = url.split("key=");
+    //var urlStrings = window.location.hash.substring(2).split("company=");
+    var voc = <?php echo $_GET['company='];?>
+    //$('#voc').val(voc);
   $.ajaxSetup({
     error: function(){
       alert('Image Berhasil Di Upload');
@@ -91,70 +102,35 @@ $(document).ready( function() {
   });
   var data = {};
     $("form").submit(function(e){
-    e.preventDefault();
-   // var data = $(this).serialize();
+    var file =  $("#file").val();
+//        parsing key=
+    
+  
+  console.log('datanyanih: ',data);
+  var error = function(r){
+         $('#spinner_img').hide();
+  $('#submit_btn').val('Kirim').removeClass('disabled');
+  
+        alert(r.message);
 
-
-
-
-        var file =  $("#file").val();
-        var transid = $("#transid").val();
-
-
-    //var fl=document.signup;
-  //    var data = $(this).serialize();
-  //     return alert(data);die();
-  data.file = file;
-  data.transid = transid;
-  console.log('datanyanih',data);
-    // data.name = name;
-    // data.phone = phone;
-    // data.phone2 = phone2;
-    // data.address_name = address_name;
-    // data.address1 = address1;
-    // data.address2 = address2;
-    //     data.address3 = address3;
-    // data.address4 = address4;
-    // data.postal = postal;
-    // data.district_id = district_id;
-    // data.isbillto = isbillto;
-    // data.isshipto = isshipto;
-    // data.ispayfrom = ispayfrom;
-    // data.isremitto = isremitto;
-
-    //return alert(data.phone);die();
+    };
      var success = function(r){
          $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
-  //         $.alert({
-  //     title: 'Alert!',
-  //     content: 'Alamat Baru Berhasil di tambahkan',
-  //    });
-  //      alert(r.message);
+ 
       console.log('OK:', r.status);
       $("#file").val(null);
-      $("#transid").val(null);
-      // $("#phone2").val(null);
-      // $("#address_name").val(null);
-      // $("#address1").val(null);
-      // $("#address2").val(null);
-      // $("#address3").val(null);
-      // $("#address4").val(null);
-      // $("#postal").val(null);
-      // $("#district_id").val(null);
-      // $("#isbillto").val(null);
-      // $("#isshipto").val(null);
-      // $("#ispayfrom").val(null);
-      // $("#isremitto").val(null);
-
-        window.location.replace(base_url+"/account/informasiAkun");
+      //$("#transid").val(null);
+      window.location.replace(base_url+"/upload/upload_success");
 
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
         var token = document.cookie.split('x-auth=')[1].split(';').shift();
-    console.log('ini data',token);
-    var apiurl = api_base_url +'/OrderCompletion?token='+token;
+   data.file = file;
+    data.key = res[1];
+    var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
+    var apiurl = baseApiUrl +'/create/b2b/reuploadtaxid';
     var form = $('form')[0]; // You need to use standard javascript object here
     var formData = new FormData(form);
 //$.ajax({ type:"POST",  data: formData,  processData: false, contentType: false,  headers:{"token":token}, url: apiurl });
@@ -162,9 +138,11 @@ $(document).ready( function() {
     url: apiurl,
     data: formData,
     type: 'POST',
-
+    dataType: "json",
     contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
     processData: false, // NEEDED, DON'T OMIT THIS
+    success: success,
+    error: error,
     // ... Other options like success and etc
   });
     // $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({

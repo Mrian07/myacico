@@ -225,27 +225,28 @@ function finish(){
 		data.courier_amount = courier_amount;
 		
 		$.ajax
-			({
-			type: "POST",	
-			contentType: "application/json",
-			data: JSON.stringify(data),
-			headers:{"token":token},
-			url: "<?php echo api_base_url('order/checkout'); ?>",
-			success:function(hasil){
-				
-				console.log(hasil); die();
-				
-					if(hasil.status=='1'){
-						window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
-					}else{
-						$.alert({
-							title: 'Alert!',
-							content: 'Proses gagal silakan dicoba kembali',
-						});
-					}
-
+		({
+		type: "POST",	
+		contentType: "application/json",
+		data: JSON.stringify(data),
+		headers:{"token":token},
+		url: "<?php echo api_base_url('order/checkout'); ?>",
+		success:function(hasil){
+				if(hasil.status=='1' && paymentMethod=='R'){
+					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
+				}else if(hasil.token!='' && paymentMethod=='C'){
+					window.location.replace("<?php echo site_url('checkout/paymentByCreditCard/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
+					
+					//window.location.replace("<?php echo site_url('payment/creditcard.php/?c='); ?>"+hasil.token);
+				}else{
+					$.alert({
+						title: 'Alert!',
+						content: 'Proses gagal silakan dicoba kembali',
+					});
 				}
-			});
+
+			}
+		});
 	}
 
 }

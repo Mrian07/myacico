@@ -98,7 +98,7 @@
 	  <div class="col-sm-3" style='font-size:20px; text-align: center;'>
 		Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
 		<div class='detail-add-wishlist'>
-			<div class="btn-group">Quantity: <input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='0'></div><br>
+			<div class="btn-group">Quantity: <input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'></div><br>
 			<div class="btnaddcart">
 				<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
 			</div>
@@ -368,7 +368,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 				$.confirm({
 					title: name,
-					content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>1 Item berhasil ditambahkan<p>',
+					content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
 					autoClose: 'close|3000',
 					buttons: {
 						close: function () {
