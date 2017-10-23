@@ -18,25 +18,31 @@
 		<?php foreach($hasil as $items): ?>
 			<tr>
 				<td><?php echo tanggal_time($items['waktuTransaksi']);?></td>
-				<td><?php echo $items['grandTotal'];?></td>
+				<td>Rp.<?php echo money($items['grandTotal']);?></td>
 				<td><?php echo $items['paymentMethod'];?></td>
 				<td><?php echo $items['orderNumber'];?></td>
 				<td><?php echo $items['transactionStatus'];?></td>
 				<td><?php echo anchor('account/formTransactionDetail/'.$items['idTransaksi'], 'Detail', array('class'=>'btn btn-info'));?></td>
-				<td><?php echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));?></td>
+				<td><?php
+					if($items['paymentMethod']=='Bank Transfer'){
+						echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
+					}else{
+						echo anchor('account/pay/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
+					}
+				?></td>
 			</tr>
 		<?php endforeach; ?>
 
 
 	</tbody>
-</table>	
+</table>
 </div>
 <script type="text/javascript">
 
 function dellBukuAlamat(id,address1){
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var apiurl = api_base_url + '/aduser/deleteaddress';
-	
+
 	$.confirm({
 		title: 'Alert!',
 		content: 'Alamat ('+address1+') akan dihapus?',
