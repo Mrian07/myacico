@@ -117,7 +117,7 @@ class Product extends Web {
 		$this->data['m_product_id'] = $hasil['m_product_id'];
 		$this->data['name'] = $hasil['name'];
 		$this->data['pricelist'] = $hasil['pricelist'];
-		$this->data['sku'] = $hasil['sku'];
+		//$this->data['sku'] = $hasil['sku'];
 		$this->data['stock'] = $hasil['stock'];
 		$this->data['volume'] = $hasil['volume'];
 		$this->data['weight'] = $hasil['weight'];

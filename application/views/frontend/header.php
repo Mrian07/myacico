@@ -105,15 +105,18 @@ a{
 							<span id="search_concept">All Categories</span> <span class="caret"></span>
 						</button>
 						<!-- <ul class="dropdown-menu cat_menu" role="menu"> -->
-						<ul class="dropdown-menu" role="menu">
-						  <li><a href="#1">Computer</a></li>
-						  <li><a href="#2">Gatget</a></li>
-						  <li><a href="#3">Communication</a></li>
-						  <li><a href="#4">Audio & Visual</a></li>
-						  <li><a href="#5">Mechanical & Electrical</a></li>
-						  <li><a href="#6">Hobby</a></li>
-						  <li><a href="#7">Peralatan Rumah</a></li>
-						  <li><a href="#8">Perlengkapan Kantor</a></li>
+						<ul class="dropdown-menu mycategory-search" role="menu">
+							<?php foreach($catsearch as $datacat){
+								echo"<li><a href='#".$datacat['m_product_category_id']."'>".$datacat['name']."</a></li>";
+							}?>
+						  <!-- <li><a href="#1000003">Computer</a></li>
+						  <li><a href="#1000017">Gatget</a></li>
+						  <li><a href="#1000010">Communication</a></li>
+						  <li><a href="#1000018">Audio & Visual</a></li>
+						  <li><a href="#1000019">Mechanical & Electrical</a></li>
+						  <li><a href="#1000020">Hobby</a></li>
+						  <li><a href="#1000021">Peralatan Rumah</a></li>
+						  <li><a href="#1000022">Perlengkapan Kantor</a></li> -->
 						</ul>
 					</div>
 					<input type="hidden" name="search_param" value="all" id="search_param">
@@ -215,14 +218,17 @@ a{
 									<span id="search_concept">All Categories</span> <span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu cat_menu" role="menu">
-								  <li><a href="#contains">Computer</a></li>
+									<?php foreach($catsearch as $datacat){
+										echo"<li><a href='#contains'>".$datacat['name']."</a></li>";
+									}?>
+								  <!-- <li><a href="#contains">Computer</a></li>
 								  <li><a href="#its_equal">Gatget</a></li>
 								  <li><a href="#greather_than">Communication</a></li>
 								  <li><a href="#less_than">Audio & Visual</a></li>
 								  <li><a href="#greather_than">Mechanical & Electrical</a></li>
 								  <li><a href="#less_than">Hobby</a></li>
 								  <li><a href="#greather_than">Peralatan Rumah</a></li>
-								  <li><a href="#less_than">Perlengkapan Kantor</a></li>
+								  <li><a href="#less_than">Perlengkapan Kantor</a></li> -->
 								</ul>
 							</div>
 							<input type="hidden" name="search_param" value="all" id="search_param">
@@ -375,19 +381,35 @@ app.controller('cartCnt', function($scope, $mycart, toMoney){
 $(function(){
 	$( ".my-search-field" ).autocomplete({
 		source: function (request, response) {
-			$.get(api_base_url+"/product/productlist/"+request.term, function (data) {
-				console.log('res',data);
-				var arr = [];
-				data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id, label:d.name, value:d.m_product_id})})
-				response(arr);
-			});
+			var cat = $('#search_param').val();
+
+			if(cat=='all'){
+alert('salah');
+				$.get(api_base_url+"/product/productlist/"+request.term, function (data) {
+					console.log('res',data);
+					var arr = [];
+					data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id, label:d.name, value:d.m_product_id})})
+					response(arr);
+				});
+
+			}else{
+
+				$.get(api_base_url+"/product/productlist/"+cat+"/"+request.term, function (data) {
+					console.log('res',data);
+					var arr = [];
+					data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id, label:d.name, value:d.m_product_id})})
+					response(arr);
+				});
+
+			}
+
 		},
 		select: function( event, ui ) {
 			this.value = ui.item.label;
 			var cat = $('#search_param').val();
 			//console.log('change:',ui.item.value);
-			if(cat != 'all')location.href = base_url+'product/detail/'+cat+'/'+ui.item.value;
-			location.href = base_url+'product/detail/'+ui.item.value;
+			if(cat != 'all'){location.href = base_url+'product/detail/'+cat+'/'+ui.item.value;}else{
+			location.href = base_url+'product/detail/'+ui.item.value;}
 			return false;
 		},
 		focus: function( event, ui ) {
