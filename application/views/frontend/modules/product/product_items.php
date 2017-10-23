@@ -123,8 +123,11 @@ font-size: 20px;
 
 			<!---<div class="product">
 			</div>-->
-        <?php foreach($hasil as $data){?>
-		
+
+        <?php foreach($hasil as $data){
+          if(isset($data['imageurl'])){
+          ?>
+
 		 <div class="item  col-xs-3 col-lg-3">
             <div class="thumbnail">
                 <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $data['imageurl']; ?>" alt="" />
@@ -136,20 +139,20 @@ font-size: 20px;
 						<center>
 						<p class="lead">
                                 Rp.<?php echo money($data['pricelist']); ?></p>
-								
-								
+
+
 						<h4><a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="asd fa fa-heart" aria-hidden="true"></i></a></h4>
                                                 <input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'><br>
 						<button class="dropbtnaddcar" onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$data['imageurl'];?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight'];?>')">ADD TO CART</button>
-						
-		
+
+
 						 </center>
 
                 </div>
             </div>
         </div>
-		
-		<?php } ?>
+
+		<?php } } ?>
        <!---
         <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
@@ -171,7 +174,7 @@ font-size: 20px;
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
 		-->
 
 		</div>
@@ -226,9 +229,9 @@ function addWishlist(id,name,imageurl){
 				}
 			}
 		});
-		
+
 	}else{
-		
+
 		$.dialog({
 			title: 'Alert!',
 			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
@@ -249,7 +252,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 	var jmlItem = $('#jmlItem'+m_product_id).val();
 	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
-	
+
 	if(jmlItem<=0){
 		$.dialog({
 			title: 'Alert!',
@@ -263,11 +266,11 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 			closeIcon: true,
 			closeIconClass: 'fa fa-close'
 		});
-		
+
 	}else{
 
 		var cookie = document.cookie.split('x-auth=');
-		if(cookie.length > 1){ 
+		if(cookie.length > 1){
 			var token = cookie[1].split(';').shift();
 			var apiurl = api_base_url +'/order/cart/additem';
 			var m_product_id = m_product_id;
@@ -366,8 +369,8 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 					}
 				}
 			});
-		
-	
+
+
 		}
 	}
 }
@@ -448,7 +451,7 @@ console.log('data nya adalah:', data);
 	product.append(
 
 			'<div class="item  col-xs-4 col-lg-4"><div class="thumbnail"><img class="group list-group-image" src="'+p.imageurl+'" alt="..." style:border="0" height="100"><div class="caption"><h4 class="group inner list-group-item-heading"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a>  <a href="'+base_url+'product/wishlist/'+p.m_product_id+'" data-toggle="tooltip" title="Add To Wishlist!"><i class="asd fa fa-heart" aria-hidden="true"></i></a>  </h4><p class="group inner list-group-item-text">'+tidakTsd+'</p> asd <div class="row"><div class="col-xs-12 col-md-6"><p class="lead">Rp.'+(formatNumber(p.pricelist))+'</p></div><div class="col-xs-12 col-md-6"><input type="hidden" id="jmlItem" value="1"><button class="dropbtnaddcar" '+disable+' id="addToCard'+p.m_product_id+'">ADD TO CART</button></div></div></div></div></div>'
-			
+
 
 
 
