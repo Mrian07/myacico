@@ -12,8 +12,11 @@
 .thumbnail>img, .thumbnail a>img{
 height: 100px;
 }
-.asd{
+.color-wishlist{
 	color:#FE4365;
+}
+.color-wishlist-disabled{
+	color:#dddddd;
 }
 .yu{
   color: red;
@@ -132,20 +135,28 @@ font-size: 20px;
             <div class="thumbnail">
                 <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $data['imageurl']; ?>" alt="" />
                 <div class="caption">
-                    <h4 class="group inner list-group-item-heading" style='text-align:center;'><a href="<?php echo base_url('product/detail/'.$data['m_product_id']);?>"><?php echo $data['name']; ?></a>  </h4>
+                    <h5 class="group inner list-group-item-heading" style='text-align:center;'><a href="<?php echo base_url('product/detail/'.$data['m_product_id']);?>"><?php echo $data['name']; ?></a>  </h5><br>
                     <p class="group inner list-group-item-text">
                         Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                         sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                        <div class="panel panel-default">
+            <div class="panel-body">
 						<center>
 						<p class="lead">
                                 Rp.<?php echo money($data['pricelist']); ?></p>
 
 
-						<h4><a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="asd fa fa-heart" aria-hidden="true"></i></a></h4>
+						<h4>
+              <?php if($cektoken){ ?>
+              <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist fa fa-heart" aria-hidden="true"></i></a>
+            <?php }else{?>
+              <i class="color-wishlist-disabled fa fa-heart" aria-hidden="true"></i>
+            <?php } ?>
+            </h4>
                                                 <input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'><br>
 						<button class="dropbtnaddcar" onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$data['imageurl'];?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight'];?>')">ADD TO CART</button>
 
-
+          </div></div>
 						 </center>
 
                 </div>

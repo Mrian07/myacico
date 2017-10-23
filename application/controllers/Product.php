@@ -23,7 +23,7 @@ class Product extends Web {
 	public function listItem()
 	{
 		$this->data['pro']=$this->uri->segment(3);
-		
+
 		$id_cat=$this->uri->segment(3);
 		$ob=$this->uri->segment(4);
 		if($ob){
@@ -32,16 +32,21 @@ class Product extends Web {
 			$api = "product/productlist?category=".$id_cat;
 		}
 		$url = api_base_url($api);
-                
+
 		$options = ["http" => [
 		"method" => "GET",
 		]];
-		
+
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 		$this->data['hasil'] = json_decode($konten, true);
-		
-		
+		if(isset($_COOKIE['x-auth'])){
+			$this->data['cektoken'] = '1';
+		}else{
+			$this->data['cektoken'] = '0';
+		}
+
+
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -50,7 +55,7 @@ class Product extends Web {
 
 		$this->load->view('frontend/footer',$this->data);
 	}
-	
+
 
 	public function index()
     {
@@ -71,17 +76,17 @@ class Product extends Web {
 		$cat_id=$this->uri->segment(3);
 		$api = "category/listc3?c2id=".$cat_id;
 		$url = api_base_url($api);
-		
+
 		$options = ["http" => [
 		"method" => "GET",
 		]];
-		
+
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
-	
+
 		$this->data['hasil'] = json_decode($konten, true);
 
-		
+
 		//$this->load->view('frontend/test',$this->data);
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
@@ -98,16 +103,16 @@ class Product extends Web {
 		$pro_id=$this->uri->segment(3);
 		$api = "product/productlist/detail?id=".$pro_id;
 		$url = api_base_url($api);
-		
+
 		$options = ["http" => [
 		"method" => "GET",
 		]];
-		
+
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
-	
+
 		$hasil = json_decode($konten, true);
-		
+
 		$this->data['category'] = $hasil['category'];
 		$this->data['m_product_id'] = $hasil['m_product_id'];
 		$this->data['name'] = $hasil['name'];
@@ -116,7 +121,7 @@ class Product extends Web {
 		$this->data['stock'] = $hasil['stock'];
 		$this->data['volume'] = $hasil['volume'];
 		$this->data['weight'] = $hasil['weight'];
-		
+
 		$this->data['img'] = $hasil['imageurl'][0];
 		$this->data['img1'] = $hasil['imageurl'][1];
 		$this->data['img2'] = $hasil['imageurl'][2];
@@ -142,11 +147,11 @@ class Product extends Web {
 		"header" => ["token: " . $token,
 		"Content-Type: application/json"],
 		]];
-		
+
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 		$hasil = json_decode($konten, true);
-		echo $hasil['status'];	
+		echo $hasil['status'];
 	}
 
 	public function product2()
