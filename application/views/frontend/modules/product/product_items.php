@@ -99,13 +99,12 @@ font-size: 20px;
 
 		<div class="form-group">
 		<label for="usr">Urutkan:</label>
-		<select name="urutkan" class="form-control">
-		<option value='relevance'>Relevance</option>
-		<option value='produk terlaris'>Produk Terlaris</option>
-		<option value=''>Nama: A Ke Z</option>
-		<option value=''>Nama: Z Ke A</option>
-		<option value=''>Harga: Rendah Ke Tinggi</option>
-		<option value=''>Harga: Tinggi Ke Rendah</option>
+		<select name="urutkan" class="form-control" onchange='filter(this)'>
+		<option value='5'>Produk Terbaru</option>
+		<option value='1'>Nama: A Ke Z</option>
+		<option value='2'>Nama: Z Ke A</option>
+		<option value='3'>Harga: Rendah Ke Tinggi</option>
+		<option value='4'>Harga: Tinggi Ke Rendah</option>
 		</select>
 		</div>
 
@@ -195,8 +194,12 @@ font-size: 20px;
     </div>
 </div>
 
-
 <script type="text/javascript">
+
+function filter(id){
+  window.location.replace("<?php echo site_url('product/listItem/'.$data['m_product_id'].'/'); ?>"+id.value);
+}
+
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
 function addWishlist(id,name,imageurl){
 	var dataString = 'id='+ id;
