@@ -146,9 +146,18 @@ font-size: 20px;
 
 
 						<h4>
-              <?php if($cektoken){ ?>
+              <?php if($cektoken){
+                  if($data['isWishList'] =='Y')
+                  {
+              ?>
               <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist fa fa-heart" aria-hidden="true"></i></a>
-            <?php }else{?>
+            <?php }else{
+           ?>
+             <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist fa fa-heart"  style="font-size:25px;color:grey;" aria-hidden="true"></i></a>
+            
+            <?php } 
+            
+            }else{?>
               <i class="color-wishlist-disabled fa fa-heart" aria-hidden="true"></i>
             <?php } ?>
             </h4>
