@@ -582,51 +582,58 @@ ul.list-group:after {
 
             <div class="item active">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="https://s1.postimg.org/37hzhxv1y7/asus1.png" class="img-responsive center-block"></a>
-                <h4 class="text-center">Asus ROG</h4>
-                <h5 class="text-center">Rp. 15.000.000</h5>
+
+                <a href="#">    <div class="lvl20">
+                    </div></a>
+                <h4 class="text-center"> <div class="lvl20p"></div></h4>
+                <h5 class="text-center">Rp. <div class="lvl20h"></div></h5>
               </div>
             </div>
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="https://s1.postimg.org/37uqw487f3/123f.png" class="img-responsive center-block"></a>
-                <h4 class="text-center">Asus Laptop</h4>
-                <h5 class="text-center">Rp. 8.000.000</h5>
+                <a href="#"><div class="lvl21">
+                    </div></a>
+                <h4 class="text-center"><div class="lvl21p"></div></h4>
+                <h5 class="text-center">Rp. <div class="lvl21h"></div></h5>
               </div>
             </div>
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="https://s1.postimg.org/9fiwag36gf/asus.png" class="img-responsive center-block"></a>
-                <span class="badge">10%</span>
-                <h4 class="text-center">Aneka Laptop Asus Discount Up To 10%</h4>
-                <h5 class="text-center">Rp. 4000.000</h5>
+                <a href="#"><div class="lvl23">
+                    </div></a>
+                <!-- <span class="badge">10%</span> -->
+                <h4 class="text-center"><div class="lvl23p"></div></h4>
+                <h5 class="text-center">Rp.<div class="lvl23h"></div></h5>
                <!-- <h6 class="text-center">- Rp. 8000.000</h6>-->
               </div>
             </div>
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="https://s1.postimg.org/419wkd0egv/lenovo1.png" class="img-responsive center-block"></a>
-                <h4 class="text-center">Lenovo Gaming Laptop </h4>
-                <h5 class="text-center">Rp. 15.000.000</h5>
+                <a href="#"><div class="lvl24">
+                    </div></a>
+                <h4 class="text-center"><div class="lvl24p"></div> </h4>
+                <h5 class="text-center">Rp. <div class="lvl24h"></div></h5>
               </div>
             </div>
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="https://s1.postimg.org/2khsulh6of/msi.png" class="img-responsive center-block"></a>
-                <h4 class="text-center">MSI Laptop gaming</h4>
-                  <h5 class="text-center">Rp. 15.000.000</h5>
+                <a href="#"><div class="lvl25">
+                    </div></a>
+                <h4 class="text-center"><div class="lvl25p"></div> </h4>
+                <h5 class="text-center">Rp. <div class="lvl25h"></div></h5>
               </div>
             </div>
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="https://s1.postimg.org/37uqw487f3/123f.png" class="img-responsive center-block"></a>
-                <h4 class="text-center">ASUS</h4>
-                  <h5 class="text-center">Rp. 15.000.000</h5>
+                <a href="#"><div class="lvl26">
+                    </div></a>
+                <h4 class="text-center"><div class="lvl26p"></div> </h4>
+                <h5 class="text-center">Rp. <div class="lvl26h"></div></h5>
               </div>
             </div>
 
@@ -656,8 +663,10 @@ ul.list-group:after {
     	<!-- BEGIN PRODUCTS -->
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
-      			<img src="https://s1.postimg.org/3wpady8fdr/asus_Rog.png" alt="...">
-      			<h4 class="text-danger">Asus ROG</h4>
+          <div class="lvl3">
+              </div>
+      			<h4 class="text-danger"><div class="lvl3n">
+                      </div></h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -665,9 +674,9 @@ ul.list-group:after {
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star-empty"></span>
                 </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No :gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
+          <h5 class="text-center"><div class="lvl3h"></div></h5>
+
+
 
 
 
@@ -683,35 +692,37 @@ ul.list-group:after {
       			</div>
     		</span>
   		</div>
-  		<div class="col-md-3 col-sm-6">
-    		<span class="thumbnail text-center">
-      			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
-      			<h4 class="text-danger">Asus ROG</h4>
-      			<div class="ratings">
+      <div class="col-md-3 col-sm-6">
+        <span class="thumbnail text-center">
+          <div class="lvl3">
+              </div>
+            <h4 class="text-danger"><div class="lvl31n">
+                      </div></h4>
+            <div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star-empty"></span>
                 </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No :gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
+          <h5 class="text-center"><div class="lvl31h"></div></h5>
 
 
 
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > Buy Now</button>
-      				</div>
 
-      			</div>
-    		</span>
-  		</div>
+
+            <hr class="line">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <button type="button" class="btn btn-link">Add to Wishlist</button>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <button class="btn btn-danger right" > Buy Now</button>
+              </div>
+
+            </div>
+        </span>
+      </div>
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
       			<img src="https://s1.postimg.org/32yruq14an/auah.png" alt="...">
@@ -1093,11 +1104,11 @@ ul.list-group:after {
 <!-- asd -->
 						</ul>
           </div>
-          
-        
-         
 
-      </div>
+
+
+  </div>
+
   <img src=" https://s1.postimg.org/1lnc8xtx73/banners_2_13.png" width="100%" alt="...">
 <!-- s: Slider Product -->
 <link rel="stylesheet" href="<?php echo base_url('assets/css/slider-product.css');?>">
@@ -1105,6 +1116,168 @@ ul.list-group:after {
 
 <script>
 
+$(document).ready(function() {
+
+
+    var api2 = api_base_url +'/home/view';
+
+    //$.get(api_base_url+'/aduser/getaddress?addresstype=isshipto',
+
+    $.ajax({
+        type:"GET",
+
+        //beforeSend: getAdd(),
+        success: function(data){
+          console.log('data2',data.level_1)
+					console.log('data23',data.level_1[1])
+						console.log('data untuk level 2',data.level_2)
+            console.log('data untuk level 22',data)
+            console.log('data untuk level 2i',data.level_2[0])
+            function formatNumber (num) {
+                return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+            }
+            function currencyFormat (num) {
+                return "Rp." + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+            }
+
+            function currencyFormatDE (num) {
+                return num
+                   .toFixed(2) // always two decimal digits
+                   .replace(".", ",") // replace decimal point character with ,
+                   .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") // use . as a separator
+            }
+
+						var lvl20 = $('.lvl20');
+            var lvl20p = $('.lvl20p');
+              var lvl20h = $('.lvl20h');
+            lvl20.append(
+            '<img src="'+data.level_2[0].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+            )
+            lvl20p.append(
+              '<p>'+data.level_2[0].name+'</p>'
+            )
+            lvl20h.append(
+              '<p>Rp.'+(formatNumber(data.level_2[0].pricelist))+'</p>'
+            )
+
+            var lvl21 = $('.lvl21');
+            var lvl21p = $('.lvl21p');
+              var lvl21h = $('.lvl21h');
+              lvl21.append(
+              '<img src="'+data.level_2[1].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+              )
+              lvl21p.append(
+                '<p>'+data.level_2[1].name+'</p>'
+              )
+            lvl21h.append(
+                '<p>Rp.'+(formatNumber(data.level_2[1].pricelist))+'</p>'
+              )
+
+              var lvl23 = $('.lvl23');
+              var lvl23p = $('.lvl23p');
+                var lvl23h = $('.lvl23h');
+                console.log('data23', data.level_2[2])
+                lvl23.append(
+                '<img src="'+data.level_2[2].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+                )
+                lvl23p.append(
+                  '<p>'+data.level_2[2].name+'</p>'
+                )
+              lvl23h.append(
+                  '<p>Rp.'+(formatNumber(data.level_2[2].pricelist))+'</p>'
+                )
+
+                var lvl24 = $('.lvl24');
+                var lvl24p = $('.lvl24p');
+                  var lvl24h = $('.lvl24h');
+
+                  lvl24.append(
+                  '<img src="'+data.level_2[3].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+                  )
+                  lvl24p.append(
+                    '<p>'+data.level_2[3].name+'</p>'
+                  )
+                lvl24h.append(
+                    '<p>Rp.'+(formatNumber(data.level_2[3].pricelist))+'</p>'
+                  )
+
+                  var lvl25 = $('.lvl25');
+                  var lvl25p = $('.lvl25p');
+                    var lvl25h = $('.lvl25h');
+
+                    lvl25.append(
+                    '<img src="'+data.level_2[4].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+                    )
+                    lvl25p.append(
+                      '<p>'+data.level_2[4].name+'</p>'
+                    )
+                  lvl25h.append(
+                      '<p>Rp.'+(formatNumber(data.level_2[4].pricelist))+'</p>'
+                    )
+
+                    var lvl26 = $('.lvl26');
+                    var lvl26p = $('.lvl26p');
+                      var lvl26h = $('.lvl26h');
+
+                      lvl26.append(
+                      '<img src="'+data.level_2[5].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+                      )
+                      lvl26p.append(
+                        '<p>'+data.level_2[5].name+'</p>'
+                      )
+                    lvl26h.append(
+                        '<p>Rp.'+(formatNumber(data.level_2[5].pricelist))+'</p>'
+                      )
+
+                      var lvl3 = $('.lvl3');
+                      var lvl3n = $('.lvl3n');
+                        var lvl3h = $('.lvl3h');
+
+                        lvl3.append(
+                        '<img src="'+data.level_3[0].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+                        )
+                        lvl3n.append(
+                          '<p>'+data.level_3[0].name+'</p>'
+                        )
+                      lvl3h.append(
+                          '<p>Rp.'+(formatNumber(data.level_3[0].pricelist))+'</p>'
+                        )
+
+                        var lvl31 = $('.lvl31');
+                        var lvl31n = $('.lvl31n');
+                          var lvl31h = $('.lvl31h');
+
+                          lvl31.append(
+                          '<img src="'+data.level_3[1].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+                          )
+                          lvl31n.append(
+                            '<p>'+data.level_3[1].name+'</p>'
+                          )
+                        lvl31h.append(
+                            '<p>Rp.'+(formatNumber(data.level_3[1].pricelist))+'</p>'
+                          )
+
+
+
+     var rumah = $('.rumah');
+
+$("#hapus").val(null);
+            data.level_1.forEach(function(p){
+     rumah.append(
+			 '<p>'+p.imageurl+'</p>'
+         //'<div class="item slide1"><div class="row"><div class="container"><div class="col-md-3 text-right"><img src="'+p.imageurl+'"  class="img-responsive" alt="Berry Lace Dress"></div><div class="col-md-9 text-left"></div></div></div></div>'
+      //<div class="col-md-4"><div class="product-item"><div class="pi-img-wrapper"><img src="'+p.imageurl+'" alt="..." height="100" class="img-responsive" alt="Berry Lace Dress"><div></div></div><h3><a href="'+base_url+'product/detail/'+p.alias+'">'+p.name+'</a></h3><div class="pi-price">'+p.alias+'</div></div></div>'
+        )
+
+     });
+            },
+        dataType: "json",
+        url: api2});
+
+
+    console.log('asd',api2);
+
+});
 /*slider product New Collection */
 $(document).ready(function(){
 
