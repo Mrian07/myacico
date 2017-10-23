@@ -193,7 +193,7 @@ font-size: 20px;
 
     </div>
 </div>
-<?php echo $pro_id; ?>
+
 <script type="text/javascript">
 
 function filter(id){
