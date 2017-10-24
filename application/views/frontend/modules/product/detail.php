@@ -104,7 +104,7 @@
 			</div>
 
 			<br><br>
-			<a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')" class='btn btn-link'> <i class="fa fa-plus-square" aria-hidden="true"></i> Add To Wishlist</a>
+			<a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')" class='btn btn-link'> <i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Add To Wishlist</a>
 			</div>
 
 	  </div>

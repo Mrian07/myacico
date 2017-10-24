@@ -158,7 +158,9 @@ font-size: 20px;
             <?php } 
             
             }else{?>
-              <i class="color-wishlist-disabled fa fa-heart" aria-hidden="true"></i>
+             
+              <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist-disabled fa fa-heart"  style="font-size:25px;color:grey;" aria-hidden="true"></i></a>
+
             <?php } ?>
             </h4>
                                                 <input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'><br>
@@ -260,8 +262,10 @@ function addWishlist(id,name,imageurl){
 			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
 			autoClose: 'close|3000',
 			buttons: {
+                             
 				close: function () {
-					//$.alert('action is canceled');
+                                 window.location = "http://www.google.com";
+//					$.alert('action is canceled');
 				}
 			},
 			closeIcon: true,
