@@ -21,9 +21,13 @@ class Product extends Web {
 
 
 	public function listItem()
-	{
+	{       $token = null;
+                $adaToken =0;
 		$this->data['pro']=$this->uri->segment(3);
-
+                if(isset($_COOKIE['x-auth'])){
+                    $token = $_COOKIE['x-auth'];
+                    $adaToken =1;
+                }
 		$id_cat=$this->uri->segment(3);
 		$ob=$this->uri->segment(4);
 		if($ob){
@@ -31,22 +35,29 @@ class Product extends Web {
 		}else{
 			$api = "product/productlist?category=".$id_cat;
 		}
+                $api2 = "product/productlist/".$id_cat;
 		$url = api_base_url($api);
-
+                $url2 = api_base_url($api2);
 		$options = ["http" => [
 		"method" => "GET",
+                   "header" => ["token: " . $token,
+                        "Content-Type: application/json"],  
 		]];
 
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
+                
 		$this->data['hasil'] = json_decode($konten, true);
-		if(isset($_COOKIE['x-auth'])){
+              //  die(print_r($this->data['hasil']['isWishList']));
+		if($adaToken == 1){
 			$this->data['cektoken'] = '1';
+                        //$this->data['wish'] 
+                     
 		}else{
 			$this->data['cektoken'] = '0';
 		}
 
-
+//die(print_r($this->data['hasil']));
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
