@@ -594,7 +594,12 @@ ul.list-group:after {
             }
             ?>
       		<div class="item <?php echo $active; ?>">
-      		  <div class="col-xs-3"><a href="#"><img src="<?php echo $itemslide2['imageurl']; ?>" class="img-responsive"></a></div>
+      		  <div class="col-xs-3"><a href="#"><img src="<?php echo $itemslide2['imageurl']; ?>" class="img-responsive"></a>
+              <span class="badge">10%</span> -->
+              <h4 class="text-center"><div class="lvl23p"></div></h4>
+              <h5 class="text-center">Rp.<div class="lvl23h"></div></h5>
+              <h6 class="text-center">- Rp. 8000.000</h6>
+            </div>
       		</div>
         <?php $n++;  } ?>
     		<!-- <div class="item">
