@@ -262,7 +262,11 @@ function addWishlist(id,name,imageurl){
 			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
 			autoClose: 'close|3000',
 			buttons: {
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 6e3766bc5f4bd69bb270705d1e1888b317d3c9fe
 				close: function () {
                                  window.location = "http://www.google.com";
 //					$.alert('action is canceled');
