@@ -154,11 +154,11 @@ font-size: 20px;
             <?php }else{
            ?>
              <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist fa fa-heart"  style="font-size:25px;color:grey;" aria-hidden="true"></i></a>
-            
-            <?php } 
-            
+
+            <?php }
+
             }else{?>
-             
+
               <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist-disabled fa fa-heart"  style="font-size:25px;color:grey;" aria-hidden="true"></i></a>
 
             <?php } ?>
@@ -261,10 +261,7 @@ function addWishlist(id,name,imageurl){
 			title: 'Alert!',
 			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
 			autoClose: 'close|3000',
-			buttons: {                            
-				close: function () {
-                                
-				}
+
 			},
 			closeIcon: true,
 			closeIconClass: 'fa fa-close'
