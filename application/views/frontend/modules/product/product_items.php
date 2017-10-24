@@ -213,7 +213,7 @@ function filter(id){
 
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
 function addWishlist(id,name,imageurl){
-	var dataString = 'id='+ id;
+	var dataString = 'id='+id;
 
 	if(token){
 
@@ -242,7 +242,7 @@ function addWishlist(id,name,imageurl){
 					$.dialog({
 						title: name,
 						content: 'Item gagal ditambahkan!',
-						autoClose: 'close|3000',
+						autoClose: 'close|50000',
 						buttons: {
 							close: function () {
 								//$.alert('action is canceled');
@@ -256,21 +256,35 @@ function addWishlist(id,name,imageurl){
 		});
 
 	}else{
-
+/*
 		$.dialog({
 			title: 'Alert!',
 			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
 			autoClose: 'close|3000',
-			buttons: {
-                             
+			buttons: {                            
 				close: function () {
-                                 window.location = "http://www.google.com";
-//					$.alert('action is canceled');
+                                
 				}
 			},
 			closeIcon: true,
 			closeIconClass: 'fa fa-close'
 		});
+*/
+
+        $.ajax({
+                type: "POST",
+		url: "<?php echo site_url('customer/signin'); ?>",
+		data: dataString,
+                success:function(data){ 
+                    console.log('oooo',data);
+                    $.alert({
+			title: 'Alert!',
+			content: 'Test Aja',
+		});
+                 window.location.replace(base_url+"customer/signin/"+id);
+                }
+        
+        })
 	}
 }
 

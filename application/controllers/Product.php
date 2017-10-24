@@ -57,7 +57,6 @@ class Product extends Web {
 			$this->data['cektoken'] = '0';
 		}
 
-//die(print_r($this->data['hasil']));
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -147,18 +146,21 @@ class Product extends Web {
 
 	public function addWishlist()
 	{
-		$id = $this->input->post('id');
+		$id = $this->input->post('id'); 
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
 		$api = "product/addwishlist?item_id=".$id;
 		$url = api_base_url($api);
-
+                if($token){
 		$options = ["http" => [
 		"method" => "GET",
 		"header" => ["token: " . $token,
 		"Content-Type: application/json"],
 		]];
-
+                }
+                else{
+                  // signIn();
+                }
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 		$hasil = json_decode($konten, true);
