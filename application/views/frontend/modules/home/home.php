@@ -578,7 +578,7 @@ ul.list-group:after {
 
 
 
-        <div style='border:1px solid #e6e6e6; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151'>
+        <div style='border:1px solid #e6e6e6; background:#e9e8e8; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151'>
           <i class="fa fa-dot-circle-o" aria-hidden="true"></i> New Collection
         </div>
       <div class="carousel slide" id="myCarouselProduct" style='background:#ffffff; padding:10px;'>
@@ -721,7 +721,7 @@ ul.list-group:after {
 
 
 
-<div style='border-bottom:1px dashed #7e7a7a; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+<div style='border-bottom:1px dashed #7e7a7a; background:#e9e8e8; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
   <i class="fa fa-dot-circle-o" aria-hidden="true"></i> Featured Product
 </div>
 
@@ -1131,7 +1131,7 @@ ul.list-group:after {
 
 
 
-  <div style='border-bottom: 1px dashed #7e7a7a; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px;'>
+  <div style='background:#e9e8e8; border-bottom: 1px dashed #7e7a7a; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> Our Brand
   </div>
 
