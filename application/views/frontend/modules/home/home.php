@@ -774,6 +774,43 @@ ul.list-group:after {
             </div>
         </span>
       </div>
+
+
+      <!-- <?php
+      foreach($dathome['level_3'] as $key => $itemslide2){ ?>
+
+        <div class="col-md-3 col-sm-6">
+      		<span class="thumbnail text-center">
+              <a href="#"><img src="<?php echo $itemslide2['imageurl']; ?>" class="img-responsive"></a>
+        			<img src="https://s1.postimg.org/32yruq14an/auah.png" alt="...">
+        			<h4 class="text-danger">MSI Gaming</h4>
+        			<div class="ratings">
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star-empty"></span>
+                  </div>
+        			<p>Uttar Pradesh (North Zone)</p>
+        			<p>Registration No :gaadiexpert.com</p>
+        			<p>Auction End in 5 days</p>
+
+
+
+        			<hr class="line">
+        			<div class="row">
+        				<div class="col-md-6 col-sm-6">
+        					<button type="button" class="btn btn-link">Add to Wishlist</button>
+        				</div>
+        				<div class="col-md-6 col-sm-6">
+        					<button class="btn btn-danger right" > Buy Now</button>
+        				</div>
+
+        			</div>
+      		</span>
+    		</div>
+
+      <?php } ?> -->
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
       			<img src="https://s1.postimg.org/32yruq14an/auah.png" alt="...">
