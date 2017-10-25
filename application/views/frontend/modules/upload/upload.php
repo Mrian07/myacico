@@ -51,7 +51,7 @@
 		<div class="col-sm-9">
 			
 
-			<p>Data Anda Sudah Kami periksa dan sudah kami verifikasi, Tetapi Document Anda Salah.</p>
+			<p>Data Anda Sudah Kami periksa dan sudah kami verifikasi, Tetapi Document Anda Salah2.</p>
                         <input type="text" id = "voc" class="form-control" value ="<?php echo $voc;?>" readonly>
 			<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 			
@@ -60,9 +60,7 @@
 					 <label>Upload Image</label>
 				</div>
 				<div class="panel-body">
-				voc
-                                
-					<div class="input-group">
+				<div class="input-group">
 						<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 						
 						<span class="input-group-btn">
