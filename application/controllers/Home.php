@@ -21,6 +21,11 @@ class Home extends Web {
 
 	}
 
+	public function maintenance()
+  {
+		$this->load->view('frontend/maintenance.php');
+	}
+
 	public function index()
     {
 

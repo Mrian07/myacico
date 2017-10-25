@@ -578,12 +578,12 @@ ul.list-group:after {
 
 
 
-        <div style='border:1px solid #e6e6e6; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151'>
+        <div style='border:1px solid #e6e6e6; background:#e9e8e8; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151'>
           <i class="fa fa-dot-circle-o" aria-hidden="true"></i> New Collection
         </div>
       <div class="carousel slide" id="myCarouselProduct" style='background:#ffffff; padding:10px;'>
     	  <div class="carousel-inner">
-          <?php
+          <?php //echo"<pre>"; print_r($dathome['level_2']);
           $jmlslide2=count($dathome['level_2']);
           $n=1;
           foreach($dathome['level_2'] as $key => $itemslide2){
@@ -593,8 +593,26 @@ ul.list-group:after {
               $active='';
             }
             ?>
+
       		<div class="item <?php echo $active; ?>">
-      		  <div class="col-xs-3"><a href="#"><img src="<?php echo $itemslide2['imageurl']; ?>" class="img-responsive"></a></div>
+      		  <div class="col-xs-3"><a href="#"><img src="<?php echo $itemslide2['imageurl']; ?>" class="img-responsive"></a>
+              <h6 class="text-center" style='color: #4b4b4b'><?php echo $itemslide2['name']; ?></h6>
+              <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
+              <div class="ratings" style='text-align: center; color:#d98c13;'>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star-empty"></span>
+                  </div>
+				  <br>
+				  <center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide2['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
+              <hr>
+              <center><div class="btn-group">
+               <button type="button" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy</button>
+               <button type="button" class="btn btn-warning"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+             </div></center>
+            </div>
       		</div>
         <?php $n++;  } ?>
     		<!-- <div class="item">
@@ -705,14 +723,14 @@ ul.list-group:after {
 
 
 
-<div style='border-bottom:1px dashed #7e7a7a; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+<div style='border-bottom:1px dashed #7e7a7a; background:#e9e8e8; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
   <i class="fa fa-dot-circle-o" aria-hidden="true"></i> Featured Product
 </div>
 
 
 	<div class="row">
     	<!-- BEGIN PRODUCTS -->
-  		<div class="col-md-3 col-sm-6">
+  		<!-- <div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
           <div class="lvl3">
               </div>
@@ -773,32 +791,38 @@ ul.list-group:after {
 
             </div>
         </span>
-      </div>
+      </div> -->
 
 
-      <!-- <?php
-      foreach($dathome['level_3'] as $key => $itemslide2){ ?>
+
+
+
+      <?php
+      foreach($dathome['level_3'] as $key => $itemslide3){ ?>
 
         <div class="col-md-3 col-sm-6">
       		<span class="thumbnail text-center">
-              <a href="#"><img src="<?php echo $itemslide2['imageurl']; ?>" class="img-responsive"></a>
-        			<img src="https://s1.postimg.org/32yruq14an/auah.png" alt="...">
-        			<h4 class="text-danger">MSI Gaming</h4>
-        			<div class="ratings">
+              <a href="#"><img src="<?php echo $itemslide3['imageurl']; ?>" style="height:200px"></a>
+        			<!-- <img src="https://s1.postimg.org/32yruq14an/auah.png" alt="..."> -->
+        			<h6 style='color: #4b4b4b'><?php echo $itemslide3['name']; ?></h6>
+              <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></h5>
+        			<div class="ratings" style='text-align: center; color:#d98c13;'>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star-empty"></span>
-                  </div>
-        			<p>Uttar Pradesh (North Zone)</p>
-        			<p>Registration No :gaadiexpert.com</p>
-        			<p>Auction End in 5 days</p>
-
-
-
+                  </div><br>
+					<center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide3['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
         			<hr class="line">
-        			<div class="row">
+
+              <center><div class="btn-group">
+               <button type="button" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy</button>
+               <button type="button" class="btn btn-warning"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+             </div></center>
+
+
+        			<!-- <div class="row">
         				<div class="col-md-6 col-sm-6">
         					<button type="button" class="btn btn-link">Add to Wishlist</button>
         				</div>
@@ -806,12 +830,12 @@ ul.list-group:after {
         					<button class="btn btn-danger right" > Buy Now</button>
         				</div>
 
-        			</div>
+        			</div> -->
       		</span>
     		</div>
 
-      <?php } ?> -->
-  		<div class="col-md-3 col-sm-6">
+      <?php } ?>
+  		<!-- <div class="col-md-3 col-sm-6">
     		<span class="thumbnail text-center">
       			<img src="https://s1.postimg.org/32yruq14an/auah.png" alt="...">
       			<h4 class="text-danger">MSI Gaming</h4>
@@ -1101,7 +1125,7 @@ ul.list-group:after {
 
       			</div>
     		</span>
-  		</div>
+  		</div> -->
 
 
   		<!-- END PRODUCTS -->
@@ -1109,7 +1133,7 @@ ul.list-group:after {
 
 
 
-  <div style='border-bottom: 1px dashed #7e7a7a; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px;'>
+  <div style='background:#e9e8e8; border-bottom: 1px dashed #7e7a7a; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> Our Brand
   </div>
 

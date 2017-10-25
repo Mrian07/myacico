@@ -125,6 +125,10 @@ class Web extends MY_Controller {
 
   		$konten = file_get_contents($url);
   		$this->data['catsearch'] = json_decode($konten, true);
+      $catsearch = json_decode($konten, true);
+      if($catsearch==''){
+        redirect('maintenance');
+      }
 
     }
 
