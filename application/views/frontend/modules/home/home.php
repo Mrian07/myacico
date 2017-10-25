@@ -605,6 +605,8 @@ ul.list-group:after {
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star-empty"></span>
                   </div>
+				  <br>
+				  <center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide2['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
               <hr>
               <center><div class="btn-group">
                <button type="button" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy</button>
@@ -810,8 +812,8 @@ ul.list-group:after {
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star-empty"></span>
-                  </div>
-
+                  </div><br>
+					<center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide3['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
         			<hr class="line">
 
               <center><div class="btn-group">
