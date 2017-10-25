@@ -14,6 +14,65 @@ body {
 	background: #f1f1f1;
 }
 
+/*btn bootstrap*/
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #8064A2;
+    border-color: #8064A2;
+}
+
+.btn-danger,
+.btn-danger:active,
+.btn-danger:visited,
+.btn-danger:focus {
+    background-color: #e31717;
+		border-radius: 0px;
+		border: 0px;
+}
+.btn-danger:hover{
+		background-color: #f30d0d;
+}
+
+.btn-default,
+.btn-default:active,
+.btn-default:visited,
+.btn-default:focus {
+    background-color: #d1cece;
+    border-radius: 0px;
+		border: 0px;
+}
+.btn-default:hover{
+		background-color: #e2dede;
+}
+
+.btn-warning,
+.btn-warning:active,
+.btn-warning:visited,
+.btn-warning:focus {
+    background-color: #d9840c;
+    border-radius: 0px;
+		border: 0px;
+}
+.btn-warning:hover{
+		background-color: #f39a1d;
+}
+
+.btn-success,
+.btn-success:active,
+.btn-success:visited,
+.btn-success:focus {
+    background-color: #0e800e;
+    border-radius: 0px;
+		border: 0px;
+}
+.btn-success:hover{
+		background-color: #129512;
+}
+/*btn bootstrap*/
+
 .dashboard{
 	background:#ffffff;
 	padding-top:10px;
@@ -1281,4 +1340,3 @@ ul {
 .radio label input[type="radio"]:disabled + .cr {
     opacity: .5;
 }
-

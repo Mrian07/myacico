@@ -49,8 +49,8 @@ a{
 		<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
 
-		
-		
+
+
 		<style type="text/css">
 	#search_keyword_id
 	{
@@ -75,9 +75,9 @@ a{
 	.show_result
 	{
 		font-family:tahoma;
-		padding:5px; 
+		padding:5px;
 		border-bottom:1px #CDCDCD dashed;
-		font-size:12px; 
+		font-size:12px;
 		z-index: 289;
 	}
 	.show_result:hover
@@ -157,7 +157,7 @@ a{
 					<input type="text" name="search" id="search" autocomplete="off" class="my-search-field">
 					<!--<div id="result"></div>-->
 					<div class="productSrc" style='diplay:none'></div>
-					
+
 					<!--<input type="text" class="my-search-field" name="x" placeholder="Search term..."> -->
 
 					<span class="input-group-btn">
@@ -349,16 +349,20 @@ a{
 </div>
 
 <script type="text/javascript">
-	
+
 	function btnSearch(){
 		var searchID = $('#searchID').val();
 		location.href = base_url+'product/detail/'+searchID;
 	}
-	
+
 	function money(x){
 		return 'Rp. '+(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
 	}
-	
+
+	$('.show_result').on('mouseout',function(){
+		$('.show_result').hide();
+	});
+
 	$(document).ready(function() {
 
 		$("#search").keyup(function() {
@@ -368,61 +372,61 @@ a{
 			var search_value = $(this).val();
 			var datas		 = 'search='+search_value;
 			var productSrc = $('.productSrc');
-			
+
 			if ( search_value == '' ) {$(".productSrc").hide();}
-			
+
 			if(cat=='all'){
 				productSrc.html('');
-				
+
 					$.ajax({
 						url: api_base_url+'/product/productlist/'+search_value,
 						data: datas,
 						success: function(data) {
 							data.forEach(function(p){
 								productSrc.append(
-								
+
 								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='80'></td><td>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
-								
-								
+
+
 								);
 
 							});
-	
+
 						}
 					});
-			
-			
+
+
 			}else{
-				
+
 				productSrc.html('');
-		
+
 					$.ajax({
 						url: api_base_url+'/product/productlist/'+cat+'/'+search_value,
 						data: datas,
 						success: function(data) {
-		
-							
+
+
 								data.forEach(function(p){
 									productSrc.append(
-									
+
 									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td> <span>"+p.name+"</span><h3>"+money(p.pricelist)+"</h3></td></tr></table></div>"
-									
-									
+
+
 									);
 									//alert(p.name);
 								});
 							//$("#result").html(data).show();
 						}
 					});
-		
+
 			}
-			
+
 			return false;
 		});
 
 	});
 	function showData(name,id)
-	{	
+	{
 		$("#search").val(name);
 		$("#searchID").val(id);
 		$("#result").hide();
