@@ -574,16 +574,13 @@ ul.list-group:after {
 <div class="container">
   <!--Item slider text-->
 
-
-
-
-
         <div style='border:1px solid #e6e6e6; background:#e9e8e8; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151'>
           <i class="fa fa-dot-circle-o" aria-hidden="true"></i> New Collection
         </div>
       <div class="carousel slide" id="myCarouselProduct" style='background:#ffffff; padding:10px;'>
     	  <div class="carousel-inner">
-          <?php //echo"<pre>"; print_r($dathome['level_2']);
+          <?php
+
           $jmlslide2=count($dathome['level_2']);
           $n=1;
           foreach($dathome['level_2'] as $key => $itemslide2){
@@ -595,7 +592,7 @@ ul.list-group:after {
             ?>
 
       		<div class="item <?php echo $active; ?>">
-      		  <div class="col-xs-3"><a href="#"><img src="<?php echo $itemslide2['imageurl']; ?>" class="img-responsive"></a>
+      		  <div class="col-xs-3"><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>" class="img-responsive"></a>
               <h6 class="text-center" style='color: #4b4b4b'><?php echo $itemslide2['name']; ?></h6>
               <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
               <div class="ratings" style='text-align: center; color:#d98c13;'>
@@ -606,36 +603,17 @@ ul.list-group:after {
                       <span class="glyphicon glyphicon-star-empty"></span>
                   </div>
 				  <br>
-				  <center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide2['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
+				  <center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
               <hr>
               <center><div class="btn-group">
-               <button type="button" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy</button>
+               <button type="button" class="btn btn-success"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
+                 '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy</button>
                <button type="button" class="btn btn-warning"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
              </div></center>
             </div>
       		</div>
         <?php $n++;  } ?>
-    		<!-- <div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/e477e4/fff&amp;text=2" class="img-responsive"></a></div>
-    		</div>
-    		<div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=3" class="img-responsive"></a></div>
-    		</div>
-    		<div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f4f4f4&amp;text=4" class="img-responsive"></a></div>
-    		</div>
-    		<div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f566f5/333&amp;text=5" class="img-responsive"></a></div>
-    		</div>
-    		<div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f477f4/fff&amp;text=6" class="img-responsive"></a></div>
-    		</div>
-    		<div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=7" class="img-responsive"></a></div>
-    		</div>
-    		<div class="item">
-    		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/fcfcfc/333&amp;text=8" class="img-responsive"></a></div>
-    		</div> -->
+
 
     	  </div>
     	  <a class="left carousel-control" href="#myCarouselProduct" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
@@ -729,81 +707,13 @@ ul.list-group:after {
 
 
 	<div class="row">
-    	<!-- BEGIN PRODUCTS -->
-  		<!-- <div class="col-md-3 col-sm-6">
-    		<span class="thumbnail text-center">
-          <div class="lvl3">
-              </div>
-      			<h4 class="text-danger"><div class="lvl3n">
-                      </div></h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-          <h5 class="text-center"><div class="lvl3h"></div></h5>
-
-
-
-
-
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > Buy Now</button>
-      				</div>
-
-      			</div>
-    		</span>
-  		</div>
-      <div class="col-md-3 col-sm-6">
-        <span class="thumbnail text-center">
-          <div class="lvl3">
-              </div>
-            <h4 class="text-danger"><div class="lvl31n">
-                      </div></h4>
-            <div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-          <h5 class="text-center"><div class="lvl31h"></div></h5>
-
-
-
-
-
-            <hr class="line">
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <button type="button" class="btn btn-link">Add to Wishlist</button>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <button class="btn btn-danger right" > Buy Now</button>
-              </div>
-
-            </div>
-        </span>
-      </div> -->
-
-
-
-
-
       <?php
+
       foreach($dathome['level_3'] as $key => $itemslide3){ ?>
 
         <div class="col-md-3 col-sm-6">
       		<span class="thumbnail text-center">
-              <a href="#"><img src="<?php echo $itemslide3['imageurl']; ?>" style="height:200px"></a>
-        			<!-- <img src="https://s1.postimg.org/32yruq14an/auah.png" alt="..."> -->
+              <a href="<?php echo base_url('product/detail/'.$itemslide3['product_id']);?>"><img src="<?php echo $itemslide3['imageurl']; ?>" style="height:200px"></a>
         			<h6 style='color: #4b4b4b'><?php echo $itemslide3['name']; ?></h6>
               <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></h5>
         			<div class="ratings" style='text-align: center; color:#d98c13;'>
@@ -817,316 +727,16 @@ ul.list-group:after {
         			<hr class="line">
 
               <center><div class="btn-group">
-               <button type="button" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy</button>
+                 <button type="button" class="btn btn-success" onClick="addToCart('<?php echo$itemslide3['product_id'];?>','<?php echo$itemslide3['pricelist'];?>','<?php echo$itemslide3['imageurl'];?>',
+                   '<?php echo$itemslide3['name'];?>','<?php echo$itemslide3['stock']; ?>','<?php echo $itemslide3['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy</button>
                <button type="button" class="btn btn-warning"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
              </div></center>
 
 
-        			<!-- <div class="row">
-        				<div class="col-md-6 col-sm-6">
-        					<button type="button" class="btn btn-link">Add to Wishlist</button>
-        				</div>
-        				<div class="col-md-6 col-sm-6">
-        					<button class="btn btn-danger right" > Buy Now</button>
-        				</div>
-
-        			</div> -->
       		</span>
     		</div>
 
       <?php } ?>
-  		<!-- <div class="col-md-3 col-sm-6">
-    		<span class="thumbnail text-center">
-      			<img src="https://s1.postimg.org/32yruq14an/auah.png" alt="...">
-      			<h4 class="text-danger">MSI Gaming</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No :gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
-
-
-
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > Buy Now</button>
-      				</div>
-
-      			</div>
-    		</span>
-  		</div>
-  		<div class="col-md-3 col-sm-6">
-    		<span class="thumbnail text-center">
-      			<img src="https://s1.postimg.org/4gy2cxnecf/msiggaming.png" alt="...">
-      			<h4 class="text-danger">Lenovo Gaming</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No :gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
-
-
-
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > Buy Now</button>
-      				</div>
-
-      			</div>
-    		</span>
-  		</div>
-  		<div class="col-md-3 col-sm-6">
-    		<span class="thumbnail text-center">
-      			<img src="https://s1.postimg.org/55rbwyghz3/lenovo.png" alt="...">
-      			<h4 class="text-danger">Lenovo y520</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No :gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
-
-
-
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > Buy Now</button>
-      				</div>
-
-      			</div>
-    		</span>
-  		</div>
-  		<div class="col-md-3 col-sm-6">
-    		<span class="thumbnail text-center">
-      			<img src="https://s1.postimg.org/4rxnk90cen/msi.png" alt="...">
-      			<h4 class="text-danger">MSI GS43VR</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No :gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
-
-
-
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > Buy Now</button>
-      				</div>
-
-      			</div>
-    		</span>
-  		</div>
-  		<div class="col-md-3 col-sm-6">
-    		<span class="thumbnail text-center">
-      			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
-      			<h4 class="text-danger">Asus Gaming</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No :gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
-
-
-
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > Buy Now</button>
-      				</div>
-
-      			</div>
-    		</span>
-  		</div>
-  		<div class="col-md-3 col-sm-6">
-    		<span class="thumbnail text-center">
-      			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
-      			<h4 class="text-danger">Asus Gaming Laptop</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No :gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
-
-
-
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > Buy Now</button>
-      				</div>
-
-      			</div>
-    		</span>
-  		</div>
-
-		<div class="col-md-3 col-sm-6">
-    		<span class="thumbnail text-center">
-      			<img src="https://s1.postimg.org/55rbwyghz3/lenovo.png" alt="...">
-      			<h4 class="text-danger">Lenovo y520</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No :gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
-
-
-
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > Buy Now</button>
-      				</div>
-
-      			</div>
-    		</span>
-  		</div>
-  		<div class="col-md-3 col-sm-6">
-    		<span class="thumbnail text-center">
-      			<img src="https://s1.postimg.org/4rxnk90cen/msi.png" alt="...">
-      			<h4 class="text-danger">MSI GS43VR</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No :gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
-
-
-
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > Buy Now</button>
-      				</div>
-
-      			</div>
-    		</span>
-  		</div>
-  		<div class="col-md-3 col-sm-6">
-    		<span class="thumbnail text-center">
-      			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
-      			<h4 class="text-danger">Asus Gaming</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No :gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
-
-
-
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > Buy Now</button>
-      				</div>
-
-      			</div>
-    		</span>
-  		</div>
-  		<div class="col-md-3 col-sm-6">
-    		<span class="thumbnail text-center">
-      			<img src="https://s1.postimg.org/1at1lnr44f/123123.png" alt="...">
-      			<h4 class="text-danger">Asus Gaming Laptop</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>Uttar Pradesh (North Zone)</p>
-      			<p>Registration No :gaadiexpert.com</p>
-      			<p>Auction End in 5 days</p>
-
-
-
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<button type="button" class="btn btn-link">Add to Wishlist</button>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-danger right" > Buy Now</button>
-      				</div>
-
-      			</div>
-    		</span>
-  		</div> -->
-
 
   		<!-- END PRODUCTS -->
 	</div>
@@ -1438,5 +1048,137 @@ $('.carousel .item').each(function(){
     next.children(':first-child').clone().appendTo($(this));
   }
 });
+
+
+
+ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
+//function addToCart(q,w,e,r,t,y){
+
+console.log('ini'+m_product_id+','+pricelist+','+imageurl+','+name+','+stock+','+weight);
+	var jmlItem = $('#jmlItem'+m_product_id).val();
+	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
+
+	if(jmlItem<=0){
+		$.dialog({
+			title: 'Alert!',
+			content: '<img src="'+imageurl+'" style="margin-bottom:10px"><p>Silakan masukan jumlah item dengan benar</p>',
+			autoClose: 'close|3000',
+			buttons: {
+				close: function () {
+					//$.alert('action is canceled');
+				}
+			},
+			closeIcon: true,
+			closeIconClass: 'fa fa-close'
+		});
+
+	}else{
+
+		var cookie = document.cookie.split('x-auth=');
+		if(cookie.length > 1){
+			var token = cookie[1].split(';').shift();
+			var apiurl = api_base_url +'/order/cart/additem';
+			var m_product_id = m_product_id;
+			var qty = jmlItem;
+			var pricelist = pricelist;
+			var weight = weight;
+
+			var success = function(r){
+
+				$.confirm({
+					title: name,
+					content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
+					autoClose: 'close|3000',
+					buttons: {
+						close: function () {
+							//$.alert('action is canceled');
+						}
+					},
+					closeIcon: true,
+					closeIconClass: 'fa fa-close'
+				});
+
+				//Buat update cart, fungsi ini ada di file header.php
+				totalCart();
+			};
+
+			$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
+				{
+					"productId":m_product_id,
+					"qty":qty,
+					"price":pricelist,
+					"weightPerItem":weight
+				}
+			) , url: apiurl, headers: {"token":token}, success: success, error: error });
+
+			var error = function(er){
+			  console.log('OK:', er);
+			  $.alert({
+				title: 'Alert!',
+				content: 'koneksi tidak berhasil, silahkan coba lagi!',
+			  });
+			};
+
+
+		}else{
+
+			$.ajax
+			({
+			type: "POST",
+			url: "<?php echo site_url('cart/addToCart'); ?>",
+			data: dataString,
+			success:function(data){
+
+					if(data=='stockkosong'){
+						$.dialog({
+							title: name,
+							content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>Item gagal ditambahkan, jumlah melebihi stock yang ada!</p>',
+							autoClose: 'close|3000',
+							buttons: {
+								close: function () {
+									//$.alert('action is canceled');
+								}
+							},
+							closeIcon: true,
+							closeIconClass: 'fa fa-close'
+						});
+					}else
+					if(data!='gagal'){
+
+						$(".totalCart").html(data);
+						$.confirm({
+							title: name,
+							content: '<img src="'+imageurl+'" style="margin-bottom:10px"><p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
+							autoClose: 'close|3000',
+							buttons: {
+								close: function () {
+									//$.alert('action is canceled');
+								}
+							},
+							closeIcon: true,
+							closeIconClass: 'fa fa-close'
+						});
+					}else{
+						$.dialog({
+							title: name,
+							content: '<img src="'+imageurl+'" style="margin-bottom:10px"><p>Item gagal ditambahkan!</p>',
+							autoClose: 'close|3000',
+							buttons: {
+								close: function () {
+									//$.alert('action is canceled');
+								}
+							},
+							closeIcon: true,
+							closeIconClass: 'fa fa-close'
+						});
+					}
+				}
+			});
+
+
+		}
+	}
+}
+
 
 </script>
