@@ -38,15 +38,15 @@
 	</div>
 </div>
 <div class="container">
-
-	
+<input type="hidden" id = "idtrans" name="idtrans"  value="<?php echo $this->data['konf'];?>" />
+<input type="hidden" id = "ck" name="ck"  value="" />
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
-
+                        <div class="buktiTrans"></div>
 			<p>Silakan upload bukti transfer pembayaran Anda pada form dibawah ini.</p>
 			<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 			
@@ -57,6 +57,7 @@
 				<div class="panel-body">
 				
 					<div class="input-group">
+                                            
 						<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 						<span class="input-group-btn">
 						<input type="hidden" placeholder="placeholder" id="transid" class="input-xlarge" value="<?php echo $konf; ?>" name="transid">
@@ -85,9 +86,11 @@ $(document).ready( function() {
     error: function(){
       alert('Image Berhasil Di Upload');
     },
-    timeout: 10000/*,
-    contentType: "application/json; charset=UTF-8"*/
+   
+    timeout: 10000/*, account/confirm/
+    contentType: "application/json; charset=UTF-8"*/ 
   });
+   
   var data = {};
     $("form").submit(function(e){
     e.preventDefault();
@@ -218,5 +221,34 @@ $(document).on('change', '.btn-file :file', function() {
 		    readURL(this);
 		});
 	});
-
+ var transid=$("#transid").val();
+    var token = document.cookie.split('x-auth=')[1].split(';').shift();
+    var apiGet = api_base_url +"/transaction/file/"+transid+"?key="+token;
+    var apiGet2 = api_base_url +"/transaction/file/"+transid;
+    
+   
+  $.ajax({
+    type:"GET", 
+    headers:{"token":token},
+//    dataType: "image/png",
+   // contentType: "image/png",
+    //beforeSend: getAdd(),
+    success: function(r,s,j){
+       console.log('data:',j['status']);
+       var response = j['status'];
+       if(response === 200)
+       {
+        $(".buktiTrans").append("<div><h6>Berikut adalah Bukti transfer: </br></div><a href='"+apiGet+"' target='_blank'><img class='group list-group-image' src='"+apiGet+"' alt='...' style:border='0' height='100'></a>");
+       }
+       else{
+           (".buktiTrans").append("");
+       }
+//        
+        },
+       error: function(error, data) {
+      console.log('asd',data);
+//      console.log('error');
+    },
+    url: apiGet});
+  
 </script>
