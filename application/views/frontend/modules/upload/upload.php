@@ -48,7 +48,7 @@
 		<div class="col-sm-3">
 		
 		</div>
-		<div class="col-sm-9">
+		<div class="col-sm-6">
 			
 
 			<p>Data Anda Sudah Kami periksa dan sudah kami verifikasi, Tetapi Document Anda Salah2.</p>
@@ -81,6 +81,9 @@
 				</div>	
 			</div>	
 		</div>
+            <div class="col-sm-3">
+		
+	  </div>
 	</div>
 </div>
 
