@@ -35,7 +35,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> UPLOAD IMAGE: $voc
+			<i class="fa fa-angle-right" aria-hidden="true"></i> UPLOAD IMAGE: <?php echo $voc;?>
 <input type="hidden" id="surel" name="surel" value="<?php echo $_SERVER['QUERY_STRING'];?>" />
 			</div>
 		</div>
