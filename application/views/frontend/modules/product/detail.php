@@ -36,7 +36,7 @@
 <div class='my-detail-product' ng-controller="detailCnt">
 
 	<!-- aaa -->
-	
+
 
 	<div class="row">
 	  <div class="col-sm-5">
@@ -75,39 +75,51 @@
 		  <div class="col-sm-7"></div>
 		</div>
 	  </div>
-	  <div class="col-sm-4 detail-product">
+	  <div class="col-sm-7 detail-product">
 		<h5 class='title-product'><?php echo $name; ?></h5>
 
 			<span class='price'>Rp.<?php echo money($pricelist);  ?></span><br>
 			weight <span class='red-tx'><?php echo $weight; ?></span><br>
-			
+
 			Stock: <?php echo $stock;  ?>
 
-			
-			<div class="row lead">
-			   <!--  <p>Also you can give a default rating by adding attribute data-rating</p> -->
+			<div class="ratings" style='text-align: center; color:#d98c13;'>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star-empty"></span>
+			</div><br>
+
+			<!-- <div class="row lead">
 			   <center>
 
 				<div id="hearts-existing" class="starrr" data-rating='4'></div>
 
 				You gave a rating of <span id="count-existing">4</span> heart(s)
 				</center>
-			</div>
-			
-	  </div>
-	  <div class="col-sm-3" style='font-size:20px; text-align: center;'>
-		Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
-		<div class='detail-add-wishlist'>
-			<div class="btn-group">Quantity: <input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'></div><br>
-			<div class="btnaddcart">
-				<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
-			</div>
+			</div> -->
 
-			<br><br>
-			<a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')" class='btn btn-link'> <i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Add To Wishlist</a>
-			</div>
+
+			Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
+
+			<div class='detail-add-wishlist'><center>
+				Quantity: <input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br><br>
+				<!-- <div class="btnaddcart">
+					<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
+				</div> -->
+
+
+				<!-- <a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')" class='btn btn-link'> <i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Add To Wishlist</a> -->
+					<div class="btn-group">
+						<button type="button" class="btn btn-success"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+						<button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')"><i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Wishlist</button>
+					</div>
+				</div>
+			</center>
 
 	  </div>
+
 	</div>
 
 
@@ -140,7 +152,7 @@
 				<td> Rp.<?php echo money($pricelist);  ?></td>
 			</tr>
 		</table>
-		
+
 	  </div>
 	  <div id="menu1" class="tab-pane fade">
 		<h3>Menu 1</h3>
@@ -263,11 +275,11 @@ $(function() {
 });
 
 $( document ).ready(function() {
-      
+
   $('#hearts').on('starrr:change', function(e, value){
     $('#count').html(value);
   });
-  
+
   $('#hearts-existing').on('starrr:change', function(e, value){
     $('#count-existing').html(value);
   });
@@ -315,9 +327,9 @@ function addWishlist(id,name,imageurl){
 				}
 			}
 		});
-		
+
 	}else{
-		
+
 		$.dialog({
 			title: 'Alert!',
 			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
@@ -334,10 +346,10 @@ function addWishlist(id,name,imageurl){
 }
 
 function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
-	
+
 	var jmlItem = $('#jmlItem').val();
 	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
-	
+
 	if(jmlItem<=0){
 		$.dialog({
 			title: 'Alert!',
@@ -351,12 +363,12 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 			closeIcon: true,
 			closeIconClass: 'fa fa-close'
 		});
-		
+
 	}else{
 
-	
+
 		var cookie = document.cookie.split('x-auth=');
-		if(cookie.length > 1){ 
+		if(cookie.length > 1){
 			var token = cookie[1].split(';').shift();
 			var apiurl = api_base_url +'/order/cart/additem';
 			var m_product_id = m_product_id;
@@ -402,8 +414,8 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 
 		}else{
-	
-	
+
+
 			$.ajax
 			({
 			type: "POST",

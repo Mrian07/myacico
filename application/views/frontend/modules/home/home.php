@@ -607,7 +607,7 @@ ul.list-group:after {
               <hr>
               <center><div class="btn-group">
                <button type="button" class="btn btn-success"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
-                 '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy</button>
+                 '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
                <button type="button" class="btn btn-warning"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
              </div></center>
             </div>
@@ -728,7 +728,7 @@ ul.list-group:after {
 
               <center><div class="btn-group">
                  <button type="button" class="btn btn-success" onClick="addToCart('<?php echo$itemslide3['product_id'];?>','<?php echo$itemslide3['pricelist'];?>','<?php echo$itemslide3['imageurl'];?>',
-                   '<?php echo$itemslide3['name'];?>','<?php echo$itemslide3['stock']; ?>','<?php echo $itemslide3['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy</button>
+                   '<?php echo$itemslide3['name'];?>','<?php echo$itemslide3['stock']; ?>','<?php echo $itemslide3['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
                <button type="button" class="btn btn-warning"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
              </div></center>
 
