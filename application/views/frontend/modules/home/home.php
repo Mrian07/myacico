@@ -751,9 +751,17 @@ ul.list-group:after {
 
 	<div style='text-align: center; padding:15px 0px 15px 0px; border-radius:0px 0px 10px 0px; margin-bottom:20px;'>
     	<!-- BEGIN PRODUCTS -->
+  <center>
+<ul class="list-group" style="padding-left:0px;">
 
-<ul class="list-group" style="padding-left:60px;">
-<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TL-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+  <?php $bloop = 0; foreach($dathome['level_4'] as $datBrand){
+    if($bloop <10){
+    ?>
+    <li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="Smiley face" height="100" width="195"></li>
+  <?php } $bloop++; } ?>
+
+
+<!-- <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TL-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/aaa01.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src='<?php echo base_url('images/banner/IP-small.png');?>' class="asd1"  alt="Smiley face" height="50" width="97"></li>
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SD-small.png');?>" class="asd1"  alt="Smiley face" height="50" width="97"></li>
@@ -827,6 +835,9 @@ ul.list-group:after {
 <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/evercoss.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
 <!-- asd -->
 						</ul>
+
+            <?php echo anchor('brand','More Brand', array('class'=>'btn btn-default btn-block')); ?>
+         </center>
           </div>
 
 
