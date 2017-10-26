@@ -606,9 +606,9 @@ ul.list-group:after {
 				  <center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
               <hr>
               <center><div class="btn-group">
-               <button type="button" class="btn btn-success"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
+               <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
                  '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-               <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
              </div></center>
             </div>
       		</div>
@@ -727,9 +727,9 @@ ul.list-group:after {
         			<hr class="line">
 
               <center><div class="btn-group">
-                 <button type="button" class="btn btn-success" onClick="addToCart('<?php echo$itemslide3['product_id'];?>','<?php echo$itemslide3['pricelist'];?>','<?php echo$itemslide3['imageurl'];?>',
+                 <button type="button" class="btn btn-danger" onClick="addToCart('<?php echo$itemslide3['product_id'];?>','<?php echo$itemslide3['pricelist'];?>','<?php echo$itemslide3['imageurl'];?>',
                    '<?php echo$itemslide3['name'];?>','<?php echo$itemslide3['stock']; ?>','<?php echo $itemslide3['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-               <button type="button" class="btn btn-warning"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+               <button type="button" class="btn btn-success"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
              </div></center>
 
 
@@ -1062,7 +1062,7 @@ $('.carousel .item').each(function(){
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
 function addWishlist(id,name,imageurl){
 	var dataString = 'id='+id;
-        
+
 	if(token){
 
 	$.ajax
@@ -1104,18 +1104,18 @@ function addWishlist(id,name,imageurl){
 		});
 
 	}else{
-            
+
 
         $.ajax({
                 type: "POST",
 		url: "<?php echo site_url('customer/signin'); ?>",
 		data: dataString,
-                success:function(data){ 
+                success:function(data){
                     console.log('oooo',data);
-                   
+
                  window.location.replace(base_url+"customer/signin/"+id);
                 }
-        
+
         });
 	}
 }

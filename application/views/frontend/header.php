@@ -289,7 +289,7 @@ a{
 
 						<?php if(isset($user->name)){ ?>
 						<div class="dropdown">
-							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount Anda
+							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount
 							<span class="caret"></span></button>
 							<ul class="dropdown-menu">
 							<li><?php echo anchor('account/', 'Profile Anda');?></li>
@@ -334,10 +334,72 @@ a{
 						</div>
 
 					</div>
+
 				</div>
 			</div>
+
+
 		</div>
+
 	</div>
+</div>
+
+<!--Mobile-->
+
+<div class="my-menu-sub-mobile">
+  <div class="container">
+
+    <div class="btn-group" style='text-align:left; color:#111111;'>
+
+      <?php if(isset($user->name)){ ?>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+        <li><?php echo anchor('account/', 'Profile Anda');?></li>
+        <li class="divider"></li>
+        <li><a href="#" id="logout">Logout</a></li>
+        </ul>
+      </div>
+
+      <?php }else{ ?>
+      <div class="dropdown-account">
+        <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
+        <div class="dropdown-account-content">
+        <?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> '.$lang_daftar);?>
+        <?php echo anchor('customer/signIn/', '<i class="fa fa-sign-in" aria-hidden="true"></i> '.$lang_masuk);?>
+        </div>
+      </div>
+
+      <?php } ?>
+
+      <div class="btncontact">
+        <?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-paper-plane" aria-hidden="true"></i> Hubungi Kami</button>');?>
+
+      </div>
+      <div class="dropdown-basket" ng-controller="cartCnt">
+        <?php
+        $totalItems = 0;
+        foreach ($this->cart->contents() as $items):
+          $totalItems += $items['qty'];
+        endforeach;
+        ?>
+        <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
+        <div class="dropdown-basket-content">
+
+          <?php
+          if($totalItems==0)
+          { ?>
+          <div class='empty-item'><center>Keranjang masih kosong</center></div>
+          <?php } ?>
+          <div class='list-item'></div>
+          <div class='btn-chekout'></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>
 
 <script type="text/javascript">
