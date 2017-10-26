@@ -1,0 +1,108 @@
+
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/slider/sliderResponsive.css');?>" />
+<style>
+
+#slider2 {
+    max-width: 30%;
+    margin-right: 20px;
+}
+
+.row2Wrap {
+    display: flex;
+}
+
+.content {
+    padding: 50px;
+    margin-bottom: 100px;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+h1, h2, h3 {
+    font-family: 'Crimson Text', sans-serif;
+    font-weight: 100;
+}
+body {
+    font: 15px 'Titillium Web', Arial, sans-serif;
+    height: 100%;
+    color: #aaa;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    padding: 10px 15vw;
+}
+</style>
+
+
+<div class="container">
+<!-- Slider 1 -->
+<div class="slider" id="slider1">
+    <!-- Slides -->
+    <div style="background-image:url(https://unsplash.it/1920/1200?image=839)"></div>
+    <div style="background-image:url(https://unsplash.it/1920/1200?image=838)"></div>
+    <div style="background-image:url(https://unsplash.it/1920/1200?image=836)"></div>
+    <div style="background-image:url(https://unsplash.it/1920/1200?image=826)"></div>
+    <div style="background-image:url(https://unsplash.it/1920/1200?image=822)"></div>
+    <!-- The Arrows -->
+    <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
+    <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
+    <!-- Title Bar -->
+    <span class="titleBar">
+        <h1>This Slider has all default settings.</h1>
+    </span>
+</div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="<?php echo base_url('assets/slider/sliderResponsive.js');?>"></script>
+<script>
+$(document).ready(function() {
+
+  $("#slider1").sliderResponsive({
+  // Using default everything
+    // slidePause: 5000,
+    // fadeSpeed: 800,
+    // autoPlay: "on",
+    // showArrows: "off",
+    // hideDots: "off",
+    // hoverZoom: "on",
+    // titleBarTop: "off"
+  });
+
+  $("#slider2").sliderResponsive({
+    fadeSpeed: 300,
+    autoPlay: "off",
+    showArrows: "on",
+    hideDots: "on"
+  });
+
+  $("#slider3").sliderResponsive({
+    hoverZoom: "off",
+    hideDots: "on"
+  });
+
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
