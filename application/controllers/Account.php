@@ -191,6 +191,7 @@ class Account extends Web_private {
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
 		$api = "transaction/list";
+                
 		$url = api_base_url($api);
 
 		$options = ["http" => [
@@ -198,13 +199,31 @@ class Account extends Web_private {
 		"header" => ["token: " . $token,
 		"Content-Type: application/json"],
 		]];
+                
 
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 
 		$this->data['hasil'] = json_decode($konten, true);
-		$hasil = json_decode($konten, true);
-	//	echo"<pre>"; print_r($hasil); die();
+		$hasil = json_decode($konten, true); 
+//                $options2 = ["http" => [
+//		"method" => "GET",
+//		"headers" => ["token: " .$token,
+//		"Content-Type: image/png"],
+//		]];
+              /*
+                $idtrans= $hasil[0]['idTransaksi'];
+                $api2 = "transaction/file/".$idtrans;
+                $url2 = api_base_url($api2);
+                $context2 = stream_context_create($options2);
+		$konten2 = file_get_contents($url2, false, $context2);
+//                echo"<img class='group list-group-image' src='$konten2' alt='...' style:border='0' height='100'>";
+                $hasil2 = json_decode($konten2, true); 
+            */
+
+//                die(print_r($konten2));
+//		echo"<pre>"; print_r($konten2); die();
+                
 		if($hasil = json_decode($konten, true)){
 			$this->load->view('frontend/modules/account/list_riwayat_status_pesanan',$this->data);
 		}else{
@@ -215,13 +234,31 @@ class Account extends Web_private {
 
 	public function confirm()
 		{
-		$this->data['konf'] = $this->uri->segment(3);
-		$this->data['active_riwayatStatusPesanan'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Buku Alamat";
-		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/account/form_confirm.php',$this->data);
-		$this->load->view('frontend/footer',$this->data);
+
+			$this->data['token'] = $_COOKIE['x-auth'];
+			$token = $_COOKIE['x-auth'];
+			$api = "transaction/list";
+			$url = api_base_url($api);
+
+			$options = ["http" => [
+			"method" => "GET",
+			"header" => ["token: " . $token,
+			"Content-Type: application/json"],
+			]];
+
+			$context = stream_context_create($options);
+			$konten = file_get_contents($url, false, $context);
+
+			$this->data['hasil'] = json_decode($konten, true);
+			$hasil = json_decode($konten, true);
+
+			$this->data['konf'] = $this->uri->segment(3);
+			$this->data['active_riwayatStatusPesanan'] = "class='active'";
+			$this->data['title_web'] = "Myacico.com - Buku Alamat";
+			$this->load->view('frontend/header',$this->data);
+			$this->load->view('frontend/nav.php',$this->data);
+			$this->load->view('frontend/modules/account/form_confirm.php',$this->data);
+			$this->load->view('frontend/footer',$this->data);
 	}
 
 	public function returnManagementAuthority()

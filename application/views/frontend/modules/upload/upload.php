@@ -1,7 +1,7 @@
-<?php 
+<?php
     $voc = $_GET['company'];
     $voc = str_replace("_"," ",$voc);
-?> 
+?>
 <style>
 
   .btn-file {
@@ -35,7 +35,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> UPLOAD IMAGE
+			<i class="fa fa-angle-right" aria-hidden="true"></i> UPLOAD : <?php echo $voc;?>
 <input type="hidden" id="surel" name="surel" value="<?php echo $_SERVER['QUERY_STRING'];?>" />
 			</div>
 		</div>
@@ -43,46 +43,50 @@
 </div>
 <div class="container">
 
-	
+
 	<div class="row">
 		<div class="col-sm-3">
-		
-		</div>
-		<div class="col-sm-9">
-			
 
-			<p>Data Anda Sudah Kami periksa dan sudah kami verifikasi, Tetapi Document Anda Salah.</p>
-                        <input type="text" id = "voc" class="form-control" value ="<?php echo $voc;?>" readonly>
+		</div>
+		<div class="col-sm-6">
+
+
+			<p>Data Anda Sudah Kami periksa dan sudah kami verifikasi, Tetapi Document Anda Salah2.</p>
+
 			<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
-			
+
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					 <label>Upload Image</label>
 				</div>
 				<div class="panel-body">
-				voc
-                                
-					<div class="input-group">
+				<div class="input-group">
 						<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
-						
+
 						<span class="input-group-btn">
-						
+
 						<span class="btn btn-default btn-file">
 						Browse…<input class="input-file" id="file" type="file" name="file">
 						</span>
 						</span>
 						<input type="text" class="form-control" readonly>
 					</div>
-					
-					<img id='img-upload'/>
 
+					<img id='img-upload'/>
+</br>
                                <button class="btn btn-success">Upload</button>
 					  <div class="form-group">
 
 					</div>
-				</div>	
-			</div>	
+				</div>
+			</div>
 		</div>
+    <div class="col-sm-3">
+
+		</div>
+            <div class="col-sm-3">
+
+	  </div>
 	</div>
 </div>
 
@@ -104,20 +108,20 @@ $(document).ready( function() {
     $("form").submit(function(e){
     var file =  $("#file").val();
 //        parsing key=
-    
-  
+
+
   console.log('datanyanih: ',data);
   var error = function(r){
          $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
-  
+
         alert(r.message);
 
     };
      var success = function(r){
          $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
- 
+
       console.log('OK:', r.status);
       $("#file").val(null);
       //$("#transid").val(null);

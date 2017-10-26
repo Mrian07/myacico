@@ -49,9 +49,48 @@ a{
 		<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
 
+
+
+		<style type="text/css">
+	#search_keyword_id
+	{
+		width:500px;
+		/*border:solid 1px #CDCDCD;*/
+		padding:10px;
+		font-size:12px;
+	}
+	.productSrc
+	{
+		position:absolute;
+		width:600px;
+		display:none;
+		margin-top:-1px;
+		border-top:0px;
+		overflow:hidden;
+		border-left:1px  #CDCDCD solid;
+		border-right:1px  #CDCDCD solid;
+		background-color: white;
+		z-index: 289;
+	}
+	.show_result
+	{
+		font-family:tahoma;
+		padding:5px;
+		border-bottom:1px #CDCDCD dashed;
+		font-size:12px;
+		z-index: 289;
+	}
+	.show_result:hover
+	{
+		background:#e9e9e8;
+		color:#000000;
+		cursor:pointer;
+	}
+</style>
     </head>
 
 <body style='font-weight: normal;' ng-app="myApp">
+
 <!--<div class="my-header-panel3">-->
 <div style='background:#f3f3f3'>
 <div class='container'>
@@ -98,7 +137,8 @@ a{
 			</div>
 		</div>
 		<div class="col-sm-6">
-			<div class='myserach'>
+			<div class='myserach' ng-app="myApps">
+				<div ng-controller = "searchCtrl">
 				<div class="input-group">
 					<div class="input-group-btn search-panel">
 						<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
@@ -106,26 +146,25 @@ a{
 						</button>
 						<!-- <ul class="dropdown-menu cat_menu" role="menu"> -->
 						<ul class="dropdown-menu mycategory-search" role="menu">
+							<li><a href='#all'>All Categories</a></li>
 							<?php foreach($catsearch as $datacat){
 								echo"<li><a href='#".$datacat['m_product_category_id']."'>".$datacat['name']."</a></li>";
 							}?>
-						  <!-- <li><a href="#1000003">Computer</a></li>
-						  <li><a href="#1000017">Gatget</a></li>
-						  <li><a href="#1000010">Communication</a></li>
-						  <li><a href="#1000018">Audio & Visual</a></li>
-						  <li><a href="#1000019">Mechanical & Electrical</a></li>
-						  <li><a href="#1000020">Hobby</a></li>
-						  <li><a href="#1000021">Peralatan Rumah</a></li>
-						  <li><a href="#1000022">Perlengkapan Kantor</a></li> -->
 						</ul>
 					</div>
 					<input type="hidden" name="search_param" value="all" id="search_param">
-					<input type="text" class="my-search-field" name="x" placeholder="Search term...">
+					<input type="hidden" name="searchID" id="searchID">
+					<input type="text" name="search" id="search" autocomplete="off" class="my-search-field">
+					<!--<div id="result"></div>-->
+					<div class="productSrc" style='diplay:none'></div>
+
+					<!--<input type="text" class="my-search-field" name="x" placeholder="Search term..."> -->
+
 					<span class="input-group-btn">
-						<button class="btn btn-default my-search-button" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+						<button class="btn btn-default my-search-button" type="button" onclick='btnSearch()'><i class="fa fa-search" aria-hidden="true"></i></button>
 					</span>
 				</div>
-
+			</div>
 			</div>
 		</div>
 
@@ -309,6 +348,92 @@ a{
 	</div>
 </div>
 
+<script type="text/javascript">
+
+	function btnSearch(){
+		var searchID = $('#searchID').val();
+		location.href = base_url+'product/detail/'+searchID;
+	}
+
+	function money(x){
+		return 'Rp. '+(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+	}
+
+	$('.show_result').on('mouseout',function(){
+		$('.show_result').hide();
+	});
+
+	$(document).ready(function() {
+
+		$("#search").keyup(function() {
+			var cat = $('#search_param').val();
+			$(".productSrc").show();
+
+			var search_value = $(this).val();
+			var datas		 = 'search='+search_value;
+			var productSrc = $('.productSrc');
+
+			if ( search_value == '' ) {$(".productSrc").hide();}
+
+			if(cat=='all'){
+				productSrc.html('');
+
+					$.ajax({
+						url: api_base_url+'/product/productlist/'+search_value,
+						data: datas,
+						success: function(data) {
+							data.forEach(function(p){
+								productSrc.append(
+
+								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='80'></td><td>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
+
+
+								);
+
+							});
+
+						}
+					});
+
+
+			}else{
+
+				productSrc.html('');
+
+					$.ajax({
+						url: api_base_url+'/product/productlist/'+cat+'/'+search_value,
+						data: datas,
+						success: function(data) {
+
+
+								data.forEach(function(p){
+									productSrc.append(
+
+									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td> <span>"+p.name+"</span><h3>"+money(p.pricelist)+"</h3></td></tr></table></div>"
+
+
+									);
+									//alert(p.name);
+								});
+							//$("#result").html(data).show();
+						}
+					});
+
+			}
+
+			return false;
+		});
+
+	});
+	function showData(name,id)
+	{
+		$("#search").val(name);
+		$("#searchID").val(id);
+		$("#result").hide();
+		$(".productSrc").hide();
+	}
+</script>
+
 <script>
 //Buat ngecek jumlah keranjang
 /*
@@ -368,59 +493,6 @@ app.controller('cartCnt', function($scope, $mycart, toMoney){
 		document.cookie = 'cart='+JSON.stringify($scope.mycart)+'; path='+base_path;
 		return toMoney(total);
 	}
-});
-
-/*(function(){
-
-  $("#cart").on("click", function() {
-    $(".shopping-cart").fadeToggle( "fast");
-  });
-
-})();*/
-
-$(function(){
-	$( ".my-search-field" ).autocomplete({
-		source: function (request, response) {
-			var cat = $('#search_param').val();
-
-			if(cat=='all'){
-
-				$.get(api_base_url+"/product/productlist/"+request.term, function (data) {
-					console.log('res',data);
-					var arr = [];
-					data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id, label:d.name, value:d.m_product_id})})
-					response(arr);
-				});
-
-			}else{
-
-				$.get(api_base_url+"/product/productlist/"+cat+"/"+request.term, function (data) {
-					console.log('res',data);
-					var arr = [];
-					data.forEach(function(d){arr.push({label:d.name, value:d.m_product_id, label:d.name, value:d.m_product_id})})
-					response(arr);
-				});
-
-			}
-
-		},
-		select: function( event, ui ) {
-			this.value = ui.item.label;
-			// var cat = $('#search_param').val();
-			//console.log('change:',ui.item.value);
-			// if(cat != 'all'){
-			// 	location.href = base_url+'product/detail/'+cat+'/'+ui.item.value;
-			// }else{
-				location.href = base_url+'product/detail/'+ui.item.value;
-			// }
-			return false;
-		},
-		focus: function( event, ui ) {
-			//console.log('focus:',this);
-			return false;
-		},
-		minLength: 2
-	});
 });
 
 <?php if(isset($user->name)){ ?>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends Web {
+class Brand extends Web {
 
 	public function __construct()
     {
@@ -40,8 +40,8 @@ class Home extends Web {
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/slide_show.php',$this->data);
-		$this->load->view('frontend/modules/home/home',$this->data);
+		$this->load->view('frontend/slide_show1.php',$this->data);
+		$this->load->view('frontend/modules/brand/brand.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 

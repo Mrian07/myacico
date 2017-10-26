@@ -156,7 +156,15 @@ class Customer extends Web {
 	}
 
 	public function signIn()
-    {
+    {         
+            $catId = $this->uri->segment(3);
+          
+//    die(); dpt nihid itemnya
+//            if($catId){
+//                echo $catId;
+//            }
+            
+            echo "<script> console.log('$catId');</script>";
 		$this->data['title_web'] = "Myacico.com - Login";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);

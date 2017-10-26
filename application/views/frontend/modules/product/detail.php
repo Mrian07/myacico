@@ -75,7 +75,7 @@
 		  <div class="col-sm-7"></div>
 		</div>
 	  </div>
-	  <div class="col-sm-4 detail-product">
+	  <div class="col-sm-7 detail-product">
 		<h5 class='title-product'><?php echo $name; ?></h5>
 <p style="color:red"><?php echo $sku3; ?></p>
 			<span class='price'>Rp.<?php echo money($pricelist);  ?></span><br>
@@ -85,13 +85,24 @@
 
 
 			<div class="row lead">
-			   <!--  <p>Also you can give a default rating by adding attribute data-rating</p> -->
+
+			<div class="ratings" style='text-align: center; color:#d98c13;'>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star-empty"></span>
+			</div><br>
+
+			<!-- <div class="row lead">
+>>>>>>> 010ef1c94856c10f02130a98aa0f9221551dbd0a
 			   <center>
 
 				<div id="hearts-existing" class="starrr" data-rating='4'></div>
 
 				You gave a rating of <span id="count-existing">4</span> heart(s)
 				</center>
+
 			</div>
 
 	  </div>
@@ -103,11 +114,29 @@
 				<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
 			</div>
 
-			<br><br>
-			<a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')" class='btn btn-link'> <i class="fa fa-plus-square" aria-hidden="true"></i> Add To Wishlist</a>
-			</div>
+			</div> -->
+
+
+
+			Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
+
+			<div class='detail-add-wishlist'><center>
+				Quantity: <input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br><br>
+				<!-- <div class="btnaddcart">
+					<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
+				</div> -->
+
+
+				<!-- <a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')" class='btn btn-link'> <i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Add To Wishlist</a> -->
+					<div class="btn-group">
+						<button type="button" class="btn btn-success"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+						<button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')"><i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Wishlist</button>
+					</div>
+				</div>
+			</center>
 
 	  </div>
+
 	</div>
 
 
@@ -275,8 +304,7 @@
 	</div>
 
 </div>
-
-
+</div>
 </div>
 <br><br>
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/foundation.min.js');?>"></script>
@@ -464,7 +492,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 	var jmlItem = $('#jmlItem').val();
 	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
-console.log(dataString)
+// dsasdadas
 	if(jmlItem<=0){
 		$.dialog({
 			title: 'Alert!',

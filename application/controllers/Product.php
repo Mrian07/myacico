@@ -21,9 +21,13 @@ class Product extends Web {
 
 
 	public function listItem()
-	{
+	{       $token = null;
+                $adaToken =0;
 		$this->data['pro']=$this->uri->segment(3);
-
+                if(isset($_COOKIE['x-auth'])){
+                    $token = $_COOKIE['x-auth'];
+                    $adaToken =1;
+                }
 		$id_cat=$this->uri->segment(3);
 		$ob=$this->uri->segment(4);
 		if($ob){
@@ -31,21 +35,27 @@ class Product extends Web {
 		}else{
 			$api = "product/productlist?category=".$id_cat;
 		}
+                $api2 = "product/productlist/".$id_cat;
 		$url = api_base_url($api);
-
+                $url2 = api_base_url($api2);
 		$options = ["http" => [
 		"method" => "GET",
+                   "header" => ["token: " . $token,
+                        "Content-Type: application/json"],
 		]];
 
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
+
 		$this->data['hasil'] = json_decode($konten, true);
-		if(isset($_COOKIE['x-auth'])){
+              //  die(print_r($this->data['hasil']['isWishList']));
+		if($adaToken == 1){
 			$this->data['cektoken'] = '1';
+                        //$this->data['wish']
+
 		}else{
 			$this->data['cektoken'] = '0';
 		}
-
 
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
@@ -113,6 +123,50 @@ class Product extends Web {
 
 		$hasil = json_decode($konten, true);
 
+
+
+				if(isset($hasil['specification'][0]['attribute'])){
+					$this->data['specification'] = $hasil['specification'][0]['attribute'];
+					$this->data['value'] = $hasil['specification'][0]['value'];
+				}else{
+					$hasil['specification'][0]['attribute'] ='';
+						$hasil['specification'][0]['value'] ='';
+				}
+
+				if(isset($hasil['specification'][1]['attribute'])){
+					$this->data['attribute'] = $hasil['specification'][1]['attribute'];
+					$this->data['attribute3'] = $hasil['specification'][1]['value'];
+				}else{
+					$hasil['specification'][1]['attribute'] ='';
+						$hasil['specification'][1]['value'] ='';
+				}
+				if(isset($hasil['specification'][2]['attribute'])){
+					$this->data['attribute4'] = $hasil['specification'][2]['attribute'];
+					$this->data['value1'] = $hasil['specification'][2]['value'];
+				}else{
+					$hasil['specification'][2]['attribute'] ='';
+						$hasil['specification'][2]['value'] ='';
+				}
+				if(isset($hasil['specification'][3]['attribute'])){
+					$this->data['attribute5'] = $hasil['specification'][3]['attribute'];
+					$this->data['value2'] = $hasil['specification'][3]['value'];
+				}else{
+					$hasil['specification'][3]['attribute'] ='';
+						$hasil['specification'][3]['value'] ='';
+				}
+				if(isset($hasil['specification'][4]['attribute'])){
+					$this->data['attribute6'] = $hasil['specification'][4]['attribute'];
+					$this->data['value3'] = $hasil['specification'][4]['value'];
+				}else{
+					$hasil['specification'][4]['attribute'] ='';
+						$hasil['specification'][4]['value'] ='';
+				}
+
+		$this->data['description'] = $hasil['description'];
+		$this->data['highlight'] = $hasil['highlight'];
+			$this->data['sku3'] = $hasil['sku'];
+
+
 		$this->data['category'] = $hasil['category'];
 		$this->data['m_product_id'] = $hasil['m_product_id'];
 		$this->data['name'] = $hasil['name'];
@@ -141,13 +195,16 @@ class Product extends Web {
 		$token = $_COOKIE['x-auth'];
 		$api = "product/addwishlist?item_id=".$id;
 		$url = api_base_url($api);
-
+                if($token){
 		$options = ["http" => [
 		"method" => "GET",
 		"header" => ["token: " . $token,
 		"Content-Type: application/json"],
 		]];
-
+                }
+                else{
+                  // signIn();
+                }
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 		$hasil = json_decode($konten, true);

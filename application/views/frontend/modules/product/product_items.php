@@ -146,10 +146,21 @@ font-size: 20px;
 
 
 						<h4>
-              <?php if($cektoken){ ?>
+              <?php if($cektoken){
+                  if($data['isWishList'] =='Y')
+                  {
+              ?>
               <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist fa fa-heart" aria-hidden="true"></i></a>
-            <?php }else{?>
-              <i class="color-wishlist-disabled fa fa-heart" aria-hidden="true"></i>
+            <?php }else{
+           ?>
+             <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist fa fa-heart"  style="font-size:25px;color:grey;" aria-hidden="true"></i></a>
+
+            <?php }
+
+            }else{?>
+
+              <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist-disabled fa fa-heart"  style="font-size:25px;color:grey;" aria-hidden="true"></i></a>
+
             <?php } ?>
             </h4>
                                                 <input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'><br>
@@ -202,7 +213,7 @@ function filter(id){
 
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
 function addWishlist(id,name,imageurl){
-	var dataString = 'id='+ id;
+	var dataString = 'id='+id;
 
 	if(token){
 
@@ -231,7 +242,7 @@ function addWishlist(id,name,imageurl){
 					$.dialog({
 						title: name,
 						content: 'Item gagal ditambahkan!',
-						autoClose: 'close|3000',
+						autoClose: 'close|50000',
 						buttons: {
 							close: function () {
 								//$.alert('action is canceled');
@@ -245,19 +256,32 @@ function addWishlist(id,name,imageurl){
 		});
 
 	}else{
-
+/*
 		$.dialog({
 			title: 'Alert!',
 			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
 			autoClose: 'close|3000',
-			buttons: {
-				close: function () {
-					//$.alert('action is canceled');
-				}
+
 			},
 			closeIcon: true,
 			closeIconClass: 'fa fa-close'
 		});
+*/
+
+        $.ajax({
+                type: "POST",
+		url: "<?php echo site_url('customer/signin'); ?>",
+		data: dataString,
+                success:function(data){ 
+                    console.log('oooo',data);
+                    $.alert({
+			title: 'Alert!',
+			content: 'Test Aja',
+		});
+                 window.location.replace(base_url+"customer/signin/"+id);
+                }
+        
+        })
 	}
 }
 
