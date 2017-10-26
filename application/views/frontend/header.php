@@ -346,8 +346,8 @@ a{
 
 <!--Mobile-->
 
-
-  <div class="container" style='text-align:center; background:#ffffff'>
+<div class="my-menu-sub-mobile">
+  <div class="container">
 
     <div class="btn-group" style='text-align:left; color:#111111;'>
 
@@ -400,7 +400,7 @@ a{
     </div>
 
   </div>
-
+</div>
 
 <script type="text/javascript">
 

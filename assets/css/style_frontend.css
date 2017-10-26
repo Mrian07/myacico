@@ -933,30 +933,11 @@ ul {
 	margin-left: 5px;
 }
 
-/*tab menu*/
-
-/*.my-tab-menu{
-	background:#ff190c;
-	color: #ffffff;
-	border-bottom: 0px;
-	border-bottom: 3px solid #a71911;
+.my-menu-sub-mobile{
+		text-align:center;
+		background:#ffffff
 }
 
-.my-tab-menu li a{
-	color: #ffffff;
-	border-radius:0px;
-
-}
-
-.my-tab-menu li a:hover{
-	color: #ffffff;
-	background:#fc5855;
-
-}
-
-.my-tab-menu{
-	display: none;
-}*/
 
 .open>a:hover, .nav .open>a:focus {
     background-color: #eee;
@@ -1036,6 +1017,10 @@ ul {
 	display: none;
 }
 
+.my-menu-sub-mobile{
+	display: none;
+}
+
 @media screen and (max-width:1024px) {
 	.my-header-panel{
 		display: none;
@@ -1070,7 +1055,7 @@ ul {
 		display: none;
 	}
 
-	.my-tab-menu{
+	.my-menu-sub-mobile{
 		display: none;
 	}
 }
@@ -1101,7 +1086,7 @@ ul {
 		display: none;
 	}
 
-	.my-tab-menu{
+	.my-menu-sub-mobile{
 		display: block;
 	}
 
