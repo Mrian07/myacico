@@ -760,7 +760,7 @@ ul.list-group:after {
 
 						</ul>
 
-            <?php echo anchor('brand','More Brand', array('class'=>'btn btn-default btn-block')); ?>
+            <?php echo anchor('brand','<b>MORE BRAND</b>', array('class'=>'btn btn-default btn-block')); ?>
          </center>
           </div>
 

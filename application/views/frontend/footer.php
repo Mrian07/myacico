@@ -69,7 +69,7 @@
 		<center>
 		<button data-toggle="collapse" data-target="#demo" class='btn-link'>LINK LAINNYA</button>
 		<div id="demo" class="collapse" style='margin-top:20px; border-radius:5px; padding:20px; border:1px solid #312e2e; color:#5b5b5b; background:#0f0f0f;'>
-		Lorem ipsum dolor text....
+		Coming soon...
 		</div>
 	</center>
 
