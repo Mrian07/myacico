@@ -80,6 +80,7 @@
 
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+var wishlist ='<?php echo$this->uri->segment(3); ?>';
 var success = function(r){
   $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
@@ -101,7 +102,15 @@ var success = function(r){
 		var weight = <?php echo $items['weight']; ?>;
 
 		var success = function(r){
-
+                    //SAM
+                    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
+			{
+				"productId":m_product_id,
+				"qty":qty,
+				"price":pricelist,
+				"weightPerItem":weight
+			}
+		) , url: apiurl, success: success });
 		};
 
 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(

@@ -118,7 +118,7 @@ $(document).ready( function() {
 //      $("#transid").val(null);
     
 alert('Image Berhasil Di Upload');
-        window.location.replace(base_url+"/account/confirm/"+$("#transid").val());
+        window.location.replace(base_url+"account/confirm/"+$("#transid").val());
 
     };
     $('#spinner_img').show();

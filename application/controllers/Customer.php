@@ -159,10 +159,11 @@ class Customer extends Web {
     {         
             $catId = $this->uri->segment(3);
           
-//    die();
-            if($catId){
-                echo $catId;
-            }
+//    die(); dpt nihid itemnya
+//            if($catId){
+//                echo $catId;
+//            }
+            
             echo "<script> console.log('$catId');</script>";
 		$this->data['title_web'] = "Myacico.com - Login";
 		$this->load->view('frontend/header',$this->data);
