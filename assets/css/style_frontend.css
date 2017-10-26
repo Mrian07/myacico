@@ -14,16 +14,33 @@ body {
 	background: #f1f1f1;
 }
 
+.btn-link,
+.btn-link:active,
+.btn-link:visited,
+.btn-link:focus {
+    background-color: #1a6aa4;
+		border-radius: 0px;
+		border: 0px;
+
+		border:1px solid #c40202; background:#000000; padding:10px; font-size:20px; border-radius:5px; color:#ffffff;
+		text-decoration: none;
+}
+.btn-link:hover{
+		color:#c6c1c1;
+		background-color: #a40101;
+		text-decoration: none;
+}
+
 /*btn bootstrap*/
 .btn-primary,
 .btn-primary:active,
 .btn-primary:visited,
-.btn-danger:focus {
-    background-color: #1978bd;
+.btn-primary:focus {
+    background-color: #1a6aa4;
 		border-radius: 0px;
 		border: 0px;
 }
-.btn-danger:hover{
+.btn-primary:hover{
 		background-color: #1785d4;
 }
 
