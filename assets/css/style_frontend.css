@@ -28,12 +28,12 @@ body {
 .btn-danger:active,
 .btn-danger:visited,
 .btn-danger:focus {
-    background-color: #e31717;
+    background-color: #e30c0c;
 		border-radius: 0px;
 		border: 0px;
 }
 .btn-danger:hover{
-		background-color: #f30d0d;
+		background-color: #ff0000;
 }
 
 .btn-default,
@@ -64,12 +64,12 @@ body {
 .btn-success:active,
 .btn-success:visited,
 .btn-success:focus {
-    background-color: #0e800e;
+    background-color: #006600;
     border-radius: 0px;
 		border: 0px;
 }
 .btn-success:hover{
-		background-color: #129512;
+		background-color: #017801;
 }
 /*btn bootstrap*/
 
@@ -933,30 +933,11 @@ ul {
 	margin-left: 5px;
 }
 
-/*tab menu*/
-
-.my-tab-menu{
-	background:#ff190c;
-	color: #ffffff;
-	border-bottom: 0px;
-	border-bottom: 3px solid #a71911;
+.my-menu-sub-mobile{
+		text-align:center;
+		background:#ffffff
 }
 
-.my-tab-menu li a{
-	color: #ffffff;
-	border-radius:0px;
-
-}
-
-.my-tab-menu li a:hover{
-	color: #ffffff;
-	background:#fc5855;
-
-}
-
-.my-tab-menu{
-	display: none;
-}
 
 .open>a:hover, .nav .open>a:focus {
     background-color: #eee;
@@ -993,8 +974,6 @@ ul {
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-bottom-color: transparent;
-/*	padding:10px;
-	font-size:20px;*/
 	border-radius:0px;
 
 }
@@ -1004,8 +983,7 @@ ul {
     line-height: 1.428571429;
     border: 1px solid transparent;
     border-radius: 0px;
-/*	padding:10px;
-	font-size:20px;*/
+
 }
 
 .nav-tabs {
@@ -1036,6 +1014,10 @@ ul {
 }
 
 .sidebar-left-mobile{
+	display: none;
+}
+
+.my-menu-sub-mobile{
 	display: none;
 }
 
@@ -1073,7 +1055,7 @@ ul {
 		display: none;
 	}
 
-	.my-tab-menu{
+	.my-menu-sub-mobile{
 		display: none;
 	}
 }
@@ -1104,7 +1086,7 @@ ul {
 		display: none;
 	}
 
-	.my-tab-menu{
+	.my-menu-sub-mobile{
 		display: block;
 	}
 

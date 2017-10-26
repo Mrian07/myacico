@@ -81,10 +81,12 @@
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 var wishlist ='<?php echo$this->uri->segment(3); ?>';
+
 var success = function(r){
   $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
   //console.log('OK:', r);
+           
   if(!r.token) return $.alert({
     title: 'Alert!',
     content: r.message
@@ -102,15 +104,7 @@ var success = function(r){
 		var weight = <?php echo $items['weight']; ?>;
 
 		var success = function(r){
-                    //SAM
-                    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
-			{
-				"productId":m_product_id,
-				"qty":qty,
-				"price":pricelist,
-				"weightPerItem":weight
-			}
-		) , url: apiurl, success: success });
+                   
 		};
 
 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
@@ -128,6 +122,13 @@ var success = function(r){
 
   document.cookie='x-auth='+r.token+'; path='+base_path;
   var cb = location.search.split('callback=');
+  //SAM
+   //alert(wishlist);
+    if(wishlist)
+{
+    window.location.replace(base_url+"product/detail/"+wishlist);
+    die();
+}        
   if(cb.length > 1) location.href = cb[1].split(';').shift();
   else location.href = '<?php echo base_url('account'); ?>';
 };

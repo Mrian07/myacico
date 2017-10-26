@@ -1,6 +1,9 @@
-<ul class="nav nav-tabs my-tab-menu">
+
+
+
+<!-- <ul class="nav nav-tabs my-tab-menu"> -->
    <!-- <li class="active"><a data-toggle="tab" href="#home"><span class="glyphicon glyphicon-home"></span> Home</a></li>-->
-    <li class="dropdown">
+    <!-- <li class="dropdown">
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i>
 
 
@@ -22,9 +25,9 @@
 	</li>
 	<li><a href="#home" data-toggle="modal" data-target="#myCart"><i class="fa fa-shopping-bag" aria-hidden="true"></i>
  My Cart <span style="background:#e6e831; border-radius:10px; padding:3px 7px 3px 7px; color:#000000;"><small>3</small></span> </a></li>
-  </ul>
-  
-<div class='menu-utama'  style='border-bottom:1px solid #dadbdd;'> 
+  </ul> -->
+
+<div class='menu-utama'  style='border-bottom:1px solid #dadbdd;'>
 	<div class='container'>
 <!-- Start Navigation -->
     <nav class="navbar navbar-default navbar-custom bootsnav">

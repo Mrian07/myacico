@@ -145,26 +145,46 @@ font-size: 20px;
                                 Rp.<?php echo money($data['pricelist']); ?></p>
 
 
-						<h4>
-              <?php if($cektoken){
+		<h4>
+
+            </h4>
+                                                <input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'><br>
+
+
+            <center>
+              <div class="btn-group">
+                <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$data['imageurl'];?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+
+                <?php if($cektoken){
                   if($data['isWishList'] =='Y')
                   {
               ?>
-              <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist fa fa-heart" aria-hidden="true"></i></a>
+<<<<<<< HEAD
+               <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
             <?php }else{
            ?>
-             <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist fa fa-heart"  style="font-size:25px;color:grey;" aria-hidden="true"></i></a>
+               <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart" style="font-size:15px;color:grey;" aria-hidden="true"></i> Wishlist</button>
+=======
+               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+            <?php }else{
+           ?>
+               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+>>>>>>> 601d24a310252e880d0c7f4c9f529d0d20f386af
 
             <?php }
 
             }else{?>
 
-              <a href='#' onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"  title="Add To Wishlist!"><i class="color-wishlist-disabled fa fa-heart"  style="font-size:25px;color:grey;" aria-hidden="true"></i></a>
+<<<<<<< HEAD
+               <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart" style="font-size:15px;color:grey;" aria-hidden="true"></i> Wishlist</button>
+=======
+               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+>>>>>>> 601d24a310252e880d0c7f4c9f529d0d20f386af
 
             <?php } ?>
-            </h4>
-                                                <input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'><br>
-						<button class="dropbtnaddcar" onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$data['imageurl'];?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight'];?>')">ADD TO CART</button>
+
+             </div>
+           </center>
 
           </div></div>
 						 </center>
@@ -272,15 +292,12 @@ function addWishlist(id,name,imageurl){
                 type: "POST",
 		url: "<?php echo site_url('customer/signin'); ?>",
 		data: dataString,
-                success:function(data){ 
+                success:function(data){
                     console.log('oooo',data);
-                    $.alert({
-			title: 'Alert!',
-			content: 'Test Aja',
-		});
+
                  window.location.replace(base_url+"customer/signin/"+id);
                 }
-        
+
         })
 	}
 }

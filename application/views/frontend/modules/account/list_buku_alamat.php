@@ -14,13 +14,16 @@
 
 	</thead>
 	<tbody>
-		<?php foreach($hasil as $items): ?>
+		<?php
+                $i=0;
+                    foreach($hasil as $items): ?>
 			<tr>
 				<td><?php echo $items['address_name'].", ".$items['address1']." ".$items['address2']." ".$items['city_name']." ".$items['postal']; ?></td>
 				<td><?php echo anchor('account/editBukuAlamat/'.$items['id'], '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>', array('class'=>'btn btn-link'));?></td>
 				<td><a href='#' onClick="dellBukuAlamat('<?php echo $items['id']; ?>','<?php echo $items['address1']; ?>')" class='btn btn-link'><i class='fa fa-trash' aria-hidden='true'></i></a></td>
 			</tr>
-		<?php endforeach; ?>
+		<?php if ($i++ == 9) break;
+                endforeach; ?>
 
 
 	</tbody>
