@@ -26,7 +26,7 @@ class Brand extends Web {
 		$this->load->view('frontend/maintenance.php');
 	}
 
-	public function brand()
+	public function index()
     {
 
 		//Slide slide_show
@@ -40,8 +40,8 @@ class Brand extends Web {
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/slide_show.php',$this->data);
-		$this->load->view('frontend/modules/brand/brand',$this->data);
+		$this->load->view('frontend/slide_show1.php',$this->data);
+		$this->load->view('frontend/modules/brand/brand.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
