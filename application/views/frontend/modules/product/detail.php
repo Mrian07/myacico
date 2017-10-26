@@ -133,13 +133,14 @@
 						<button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
             <?php 
                 //if($cektoken){}
-                  if($data['isWishList'] =='Y')
+           
+                  if($isWishList =='Y')
                   {
               ?>
-               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
+               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
             <?php }else{
            ?>
-               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
 
             <?php }
             ?>
@@ -444,13 +445,14 @@ function addWishlist(id,name,imageurl){
 	var dataString = 'id='+ id;
 
 	if(token){
-
 	$.ajax
 		({
 		type: "POST",
+                headers:{"token":token},
 		url: "<?php echo site_url('product/addWishlist'); ?>",
 		data: dataString,
 		success:function(data){
+
 
 				if(data==1){
 
@@ -484,19 +486,17 @@ function addWishlist(id,name,imageurl){
 		});
 
 	}else{
+$.ajax({
+                type: "POST",
+		url: "<?php echo site_url('customer/signin'); ?>",
+		data: dataString,
+                success:function(data){
+                    console.log('oooo',data);
 
-		$.dialog({
-			title: 'Alert!',
-			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
-			autoClose: 'close|3000',
-			buttons: {
-				close: function () {
-					//$.alert('action is canceled');
-				}
-			},
-			closeIcon: true,
-			closeIconClass: 'fa fa-close'
-		});
+                 window.location.replace(base_url+"customer/signin/"+id);
+                }
+
+        });
 	}
 }
 
