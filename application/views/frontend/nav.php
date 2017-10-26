@@ -23,8 +23,8 @@
 	<li><a href="#home" data-toggle="modal" data-target="#myCart"><i class="fa fa-shopping-bag" aria-hidden="true"></i>
  My Cart <span style="background:#e6e831; border-radius:10px; padding:3px 7px 3px 7px; color:#000000;"><small>3</small></span> </a></li>
   </ul>
-  
-<div class='menu-utama'  style='border-bottom:1px solid #dadbdd;'> 
+
+<div class='menu-utama'  style='border-bottom:1px solid #dadbdd;'>
 	<div class='container'>
 <!-- Start Navigation -->
     <nav class="navbar navbar-default navbar-custom bootsnav">

@@ -164,7 +164,15 @@ font-size: 20px;
             <?php } ?>
             </h4>
                                                 <input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'><br>
-						<button class="dropbtnaddcar" onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$data['imageurl'];?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight'];?>')">ADD TO CART</button>
+
+
+            <center>
+              <div class="btn-group">
+                <button type="button" class="btn btn-success"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$data['imageurl'];?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+
+               <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+             </div>
+           </center>
 
           </div></div>
 						 </center>
@@ -272,7 +280,7 @@ function addWishlist(id,name,imageurl){
                 type: "POST",
 		url: "<?php echo site_url('customer/signin'); ?>",
 		data: dataString,
-                success:function(data){ 
+                success:function(data){
                     console.log('oooo',data);
                     $.alert({
 			title: 'Alert!',
@@ -280,7 +288,7 @@ function addWishlist(id,name,imageurl){
 		});
                  window.location.replace(base_url+"customer/signin/"+id);
                 }
-        
+
         })
 	}
 }

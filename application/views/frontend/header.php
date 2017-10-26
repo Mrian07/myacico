@@ -313,35 +313,27 @@ a{
 							<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-paper-plane" aria-hidden="true"></i> Hubungi Kami</button>');?>
 
 						</div>
-						<div class="dropdown-basket">
-						  <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart ({{mycart.length}})</button>
-						  <div class="dropdown-basket-content">
+						<div class="dropdown-basket" ng-controller="cartCnt">
+							<?php
+							$totalItems = 0;
+							foreach ($this->cart->contents() as $items):
+								$totalItems += $items['qty'];
+							endforeach;
+							?>
+							<button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
+							<div class="dropdown-basket-content">
 
-								<div class="row my-cart" ng-repeat="arr in mycart">
-								  <div class="col-sm-3"><img src="{{arr.image_url}}" border="0" height="50" width="50"></div>
-								  <div class="col-sm-7">arr.name<br>arr.price</div>
-								  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
-								</div>
-
-								<div class="row my-cart">
-								  <div class="col-sm-3"><img src="<?php echo base_url('images/demo/samsung2.jpg');?>" border="0" height="50" width="50"></div>
-								  <div class="col-sm-7">Samsung 8<br>Rp.1.000.000</div>
-								  <div class="col-sm-2"><button type="button" class="btn btn-link"><i class="fa fa-times" aria-hidden="true"></i></button></div>
-								</div>
-								<div class='my-total-cart'>
-								TOTAL : <b>{{total}}</b>
-								</div>
-								<?php echo anchor('checkout/cart', 'Checkout', array('class'=>'btn btn-success my-btn-chekout'));?>
-
-						  </div>
+								<?php
+								if($totalItems==0)
+								{ ?>
+								<div class='empty-item'><center>Keranjang masih kosong</center></div>
+								<?php } ?>
+								<div class='list-item'></div>
+								<div class='btn-chekout'></div>
+							</div>
 						</div>
 
 					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12" style='color:#ffffff; wight:bold;'>
-					Total Shopping Experience
 				</div>
 			</div>
 		</div>
