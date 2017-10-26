@@ -608,7 +608,7 @@ ul.list-group:after {
               <center><div class="btn-group">
                <button type="button" class="btn btn-success"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
                  '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-               <button type="button" class="btn btn-warning"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+               <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
              </div></center>
             </div>
       		</div>
@@ -1059,8 +1059,66 @@ $('.carousel .item').each(function(){
     next.children(':first-child').clone().appendTo($(this));
   }
 });
+var token = document.cookie.split('x-auth=')[1].split(';').shift();
+function addWishlist(id,name,imageurl){
+	var dataString = 'id='+id;
+        
+	if(token){
 
+	$.ajax
+		({
+		type: "POST",
+		url: "<?php echo site_url('product/addWishlist'); ?>",
+		data: dataString,
+		success:function(data){
 
+				if(data==1){
+
+					$.confirm({
+						title: name,
+						content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>Item berhasil ditambahkan kedalam wishlist<p>',
+						autoClose: 'close|3000',
+						buttons: {
+							close: function () {
+								//$.alert('action is canceled');
+							}
+						},
+						closeIcon: true,
+						closeIconClass: 'fa fa-close'
+					});
+				}else{
+					$.dialog({
+						title: name,
+						content: 'Item gagal ditambahkan!',
+						autoClose: 'close|50000',
+						buttons: {
+							close: function () {
+								//$.alert('action is canceled');
+							}
+						},
+						closeIcon: true,
+						closeIconClass: 'fa fa-close'
+					});
+				}
+			}
+		});
+
+	}else{
+            
+
+        $.ajax({
+                type: "POST",
+		url: "<?php echo site_url('customer/signin'); ?>",
+		data: dataString,
+                success:function(data){ 
+                    console.log('oooo',data);
+                   
+                 window.location.replace(base_url+"customer/signin/"+id);
+                }
+        
+        });
+	}
+}
 
  function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 //function addToCart(q,w,e,r,t,y){
