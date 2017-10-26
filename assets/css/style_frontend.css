@@ -1021,6 +1021,10 @@ ul {
 	display: none;
 }
 
+/*.new-collection-mobile {
+    display:none;
+}*/
+
 @media screen and (max-width:1024px) {
 	.my-header-panel{
 		display: none;
@@ -1116,6 +1120,14 @@ ul {
 	font-style: italic;
 	font-size: 15px;
 }
+
+	/*.new-collection-mobile {
+			display:block;
+	}
+
+	.new-collection-desktop {
+	    display:none;
+	}*/
 }
 
 /*Create Account*/
@@ -1254,6 +1266,8 @@ ul {
 .menu_body {
     display:none;
 }
+
+
 
 .plus{
  background-image: url(../../images/general/math-add-icon.png);
