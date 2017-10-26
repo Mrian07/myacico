@@ -28,12 +28,12 @@ body {
 .btn-danger:active,
 .btn-danger:visited,
 .btn-danger:focus {
-    background-color: #e31717;
+    background-color: #ff0000;
 		border-radius: 0px;
 		border: 0px;
 }
 .btn-danger:hover{
-		background-color: #f30d0d;
+		background-color: #fd5454;
 }
 
 .btn-default,
@@ -64,12 +64,12 @@ body {
 .btn-success:active,
 .btn-success:visited,
 .btn-success:focus {
-    background-color: #0e800e;
+    background-color: #006600;
     border-radius: 0px;
 		border: 0px;
 }
 .btn-success:hover{
-		background-color: #129512;
+		background-color: #017801;
 }
 /*btn bootstrap*/
 
@@ -935,7 +935,7 @@ ul {
 
 /*tab menu*/
 
-.my-tab-menu{
+/*.my-tab-menu{
 	background:#ff190c;
 	color: #ffffff;
 	border-bottom: 0px;
@@ -956,7 +956,7 @@ ul {
 
 .my-tab-menu{
 	display: none;
-}
+}*/
 
 .open>a:hover, .nav .open>a:focus {
     background-color: #eee;
@@ -993,8 +993,6 @@ ul {
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-bottom-color: transparent;
-/*	padding:10px;
-	font-size:20px;*/
 	border-radius:0px;
 
 }
@@ -1004,8 +1002,7 @@ ul {
     line-height: 1.428571429;
     border: 1px solid transparent;
     border-radius: 0px;
-/*	padding:10px;
-	font-size:20px;*/
+
 }
 
 .nav-tabs {
