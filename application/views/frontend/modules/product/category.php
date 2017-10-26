@@ -88,8 +88,7 @@
 	</div>
 	<!-- END PRODUCTS -->
 
-	<h4>Bestseller Products</h4>
-	<!--<div class="col-md-12 col-md-offset-3" style='background:#dddddd'>-->
+	<!-- <h4>Bestseller Products</h4>
 
 	<div class="carousel slide" id="myCarousel">
 	  <div class="carousel-inner">
@@ -121,7 +120,7 @@
 	  </div>
 	  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
 	  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-	</div>
+	</div> -->
 
 </div>
 
