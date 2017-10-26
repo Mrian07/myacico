@@ -36,7 +36,7 @@
 <div class='my-detail-product' ng-controller="detailCnt">
 
 	<!-- aaa -->
-	
+
 
 	<div class="row">
 	  <div class="col-sm-5">
@@ -77,13 +77,13 @@
 	  </div>
 	  <div class="col-sm-4 detail-product">
 		<h5 class='title-product'><?php echo $name; ?></h5>
-
+<p style="color:red"><?php echo $sku3; ?></p>
 			<span class='price'>Rp.<?php echo money($pricelist);  ?></span><br>
 			weight <span class='red-tx'><?php echo $weight; ?></span><br>
-			
+
 			Stock: <?php echo $stock;  ?>
 
-			
+
 			<div class="row lead">
 			   <!--  <p>Also you can give a default rating by adding attribute data-rating</p> -->
 			   <center>
@@ -93,7 +93,7 @@
 				You gave a rating of <span id="count-existing">4</span> heart(s)
 				</center>
 			</div>
-			
+
 	  </div>
 	  <div class="col-sm-3" style='font-size:20px; text-align: center;'>
 		Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
@@ -116,6 +116,7 @@
 	<ul class="nav nav-tabs" style='font-size:17px; margin-bottom:20px; border-top:0px'>
 	  <li class="active"><a data-toggle="tab" href="#home">Rincian Barang</a></li>
 	  <li><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
+		<li><a data-toggle="tab" href="#menu2">Highlight</a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -125,6 +126,7 @@
 			<tr>
 				<th> Brand </th>
 				<td> <?php echo $name; ?> </td>
+
 
 			</tr>
 			<tr>
@@ -139,12 +141,136 @@
 				<th>  Harga </th>
 				<td> Rp.<?php echo money($pricelist);  ?></td>
 			</tr>
+			<tr>
+
+				<th> <?php
+				if(!empty($specification)){
+							echo $specification;
+
+				}else{
+				$specification = '';
+				}
+
+
+				 ?>  </th>
+				<td><?php
+				if(!empty($value)){
+							echo $value;
+
+				}else{
+				$value = '';
+				}
+
+
+				 ?></td>
+			</tr>
+			<tr>
+				<th> <?php
+				if(!empty($attribute)){
+							echo $attribute;
+
+				}else{
+				$attribute = '';
+				}
+
+
+				 ?>  </th>
+				<td>
+
+					<?php
+					if(!empty($attribute3)){
+								echo $attribute3;
+
+					}else{
+					$attribute3 = '';
+					}
+
+
+					 ?>  </th>
+					</td>
+			</tr>
+			<tr>
+				<th> <?php
+
+				if(!empty($attribute4)){
+							echo $attribute4;
+
+				}else{
+				$attribute4 = '';
+				}
+
+
+?>
+
+				 </th>
+				<td> <?php
+				if(!empty($value1)){
+							echo $value1;
+
+				}else{
+				$value1 = '';
+				}
+
+				 ?>
+
+
+				</td>
+			</tr>
+			<tr>
+				<th> <?php
+				if(!empty($attribute5)){
+							echo $attribute5;
+
+				}else{
+				$attribute5 = '';
+				}
+
+
+				 ?>  </th>
+				<td>
+				<?php
+
+								if(!empty($value2)){
+											echo $value2;
+
+								}else{
+						$value2 = '';
+								}
+				 ?>
+				</td>
+			</tr>
+			<tr>
+				<th><?php
+
+				if(!empty($attribute6)){
+							echo $attribute6;
+
+				}else{
+		$attribute6 = '';
+				}
+
+
+				 ?>  </th>
+				<td><?php
+
+								if(!empty($value3)){
+											echo $value3;
+
+								}else{
+						$value3 = '';
+								}
+				 ?></td>
+			</tr>
 		</table>
-		
+
 	  </div>
 	  <div id="menu1" class="tab-pane fade">
-		<h3>Menu 1</h3>
-		<p>Some content in menu 1.</p>
+		<h3>Description</h3>
+		<p><?php echo $description;  ?></p>
+	  </div>
+		<div id="menu2" class="tab-pane fade">
+		<h3>Highlight</h3>
+		<p><?php echo $highlight;  ?></p>
 	  </div>
 	</div>
 
@@ -263,16 +389,17 @@ $(function() {
 });
 
 $( document ).ready(function() {
-      
+
   $('#hearts').on('starrr:change', function(e, value){
     $('#count').html(value);
   });
-  
+
   $('#hearts-existing').on('starrr:change', function(e, value){
     $('#count-existing').html(value);
   });
 });
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
+console.log('token',token)
 function addWishlist(id,name,imageurl){
 	var dataString = 'id='+ id;
 
@@ -315,9 +442,9 @@ function addWishlist(id,name,imageurl){
 				}
 			}
 		});
-		
+
 	}else{
-		
+
 		$.dialog({
 			title: 'Alert!',
 			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
@@ -334,10 +461,10 @@ function addWishlist(id,name,imageurl){
 }
 
 function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
-	
+
 	var jmlItem = $('#jmlItem').val();
 	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
-	
+console.log(dataString)
 	if(jmlItem<=0){
 		$.dialog({
 			title: 'Alert!',
@@ -351,12 +478,12 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 			closeIcon: true,
 			closeIconClass: 'fa fa-close'
 		});
-		
+
 	}else{
 
-	
+
 		var cookie = document.cookie.split('x-auth=');
-		if(cookie.length > 1){ 
+		if(cookie.length > 1){
 			var token = cookie[1].split(';').shift();
 			var apiurl = api_base_url +'/order/cart/additem';
 			var m_product_id = m_product_id;
@@ -402,8 +529,8 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 
 		}else{
-	
-	
+
+
 			$.ajax
 			({
 			type: "POST",
