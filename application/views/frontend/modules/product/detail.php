@@ -114,8 +114,18 @@
 					<div class="btn-group">
 
 						<button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-						<button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')"><i class="color-wishlist fa fa-heart" style="color:#000000;" aria-hidden="true"></i> Wishlist</button>
+            <?php 
+                //if($cektoken){}
+                  if($data['isWishList'] =='Y')
+                  {
+              ?>
+               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
+            <?php }else{
+           ?>
+               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
 
+            <?php }
+            ?>
 					</div>
 				</div>
 			</center>
