@@ -16,12 +16,15 @@ body {
 
 /*btn bootstrap*/
 .btn-primary,
-.btn-primary:hover,
 .btn-primary:active,
 .btn-primary:visited,
-.btn-primary:focus {
-    background-color: #8064A2;
-    border-color: #8064A2;
+.btn-danger:focus {
+    background-color: #1978bd;
+		border-radius: 0px;
+		border: 0px;
+}
+.btn-danger:hover{
+		background-color: #1785d4;
 }
 
 .btn-danger,
