@@ -77,11 +77,14 @@
 	  </div>
 	  <div class="col-sm-7 detail-product">
 		<h5 class='title-product'><?php echo $name; ?></h5>
-
+<p style="color:red"><?php echo $sku3; ?></p>
 			<span class='price'>Rp.<?php echo money($pricelist);  ?></span><br>
 			weight <span class='red-tx'><?php echo $weight; ?></span><br>
 
 			Stock: <?php echo $stock;  ?>
+
+
+			<div class="row lead">
 
 			<div class="ratings" style='text-align: center; color:#d98c13;'>
 					<span class="glyphicon glyphicon-star"></span>
@@ -92,13 +95,27 @@
 			</div><br>
 
 			<!-- <div class="row lead">
+>>>>>>> 010ef1c94856c10f02130a98aa0f9221551dbd0a
 			   <center>
 
 				<div id="hearts-existing" class="starrr" data-rating='4'></div>
 
 				You gave a rating of <span id="count-existing">4</span> heart(s)
 				</center>
+
+			</div>
+
+	  </div>
+	  <div class="col-sm-3" style='font-size:20px; text-align: center;'>
+		Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
+		<div class='detail-add-wishlist'>
+			<div class="btn-group">Quantity: <input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'></div><br>
+			<div class="btnaddcart">
+				<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
+			</div>
+
 			</div> -->
+
 
 
 			Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
@@ -140,6 +157,7 @@
 	<ul class="nav nav-tabs" style='font-size:17px; margin-bottom:20px; border-top:0px'>
 	  <li class="active"><a data-toggle="tab" href="#home">Rincian Barang</a></li>
 	  <li><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
+		<li><a data-toggle="tab" href="#menu2">Highlight</a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -149,6 +167,7 @@
 			<tr>
 				<th> Brand </th>
 				<td> <?php echo $name; ?> </td>
+
 
 			</tr>
 			<tr>
@@ -163,18 +182,141 @@
 				<th>  Harga </th>
 				<td> Rp.<?php echo money($pricelist);  ?></td>
 			</tr>
+			<tr>
+
+				<th> <?php
+				if(!empty($specification)){
+							echo $specification;
+
+				}else{
+				$specification = '';
+				}
+
+
+				 ?>  </th>
+				<td><?php
+				if(!empty($value)){
+							echo $value;
+
+				}else{
+				$value = '';
+				}
+
+
+				 ?></td>
+			</tr>
+			<tr>
+				<th> <?php
+				if(!empty($attribute)){
+							echo $attribute;
+
+				}else{
+				$attribute = '';
+				}
+
+
+				 ?>  </th>
+				<td>
+
+					<?php
+					if(!empty($attribute3)){
+								echo $attribute3;
+
+					}else{
+					$attribute3 = '';
+					}
+
+
+					 ?>  </th>
+					</td>
+			</tr>
+			<tr>
+				<th> <?php
+
+				if(!empty($attribute4)){
+							echo $attribute4;
+
+				}else{
+				$attribute4 = '';
+				}
+
+
+?>
+
+				 </th>
+				<td> <?php
+				if(!empty($value1)){
+							echo $value1;
+
+				}else{
+				$value1 = '';
+				}
+
+				 ?>
+
+
+				</td>
+			</tr>
+			<tr>
+				<th> <?php
+				if(!empty($attribute5)){
+							echo $attribute5;
+
+				}else{
+				$attribute5 = '';
+				}
+
+
+				 ?>  </th>
+				<td>
+				<?php
+
+								if(!empty($value2)){
+											echo $value2;
+
+								}else{
+						$value2 = '';
+								}
+				 ?>
+				</td>
+			</tr>
+			<tr>
+				<th><?php
+
+				if(!empty($attribute6)){
+							echo $attribute6;
+
+				}else{
+		$attribute6 = '';
+				}
+
+
+				 ?>  </th>
+				<td><?php
+
+								if(!empty($value3)){
+											echo $value3;
+
+								}else{
+						$value3 = '';
+								}
+				 ?></td>
+			</tr>
 		</table>
 
 	  </div>
 	  <div id="menu1" class="tab-pane fade">
-		<h3>Menu 1</h3>
-		<p>Some content in menu 1.</p>
+		<h3>Description</h3>
+		<p><?php echo $description;  ?></p>
+	  </div>
+		<div id="menu2" class="tab-pane fade">
+		<h3>Highlight</h3>
+		<p><?php echo $highlight;  ?></p>
 	  </div>
 	</div>
 
 </div>
-
-
+</div>
 </div>
 <br><br>
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/foundation.min.js');?>"></script>
@@ -297,6 +439,7 @@ $( document ).ready(function() {
   });
 });
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
+console.log('token',token)
 function addWishlist(id,name,imageurl){
 	var dataString = 'id='+ id;
 
@@ -361,7 +504,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 	var jmlItem = $('#jmlItem').val();
 	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
-
+// dsasdadas
 	if(jmlItem<=0){
 		$.dialog({
 			title: 'Alert!',
