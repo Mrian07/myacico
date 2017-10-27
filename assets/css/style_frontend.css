@@ -1041,6 +1041,10 @@ ul {
 	display: none;
 }
 
+.my-menu-header-mobile{
+	display: none;
+}
+
 /*.new-collection-mobile {
     display:none;
 }*/
@@ -1058,6 +1062,18 @@ ul {
 @media screen and (max-width:800px) {
 	.my-header-panel{
 		display: none;
+	}
+
+	.my-menu-header-desktop{
+		display: none;
+	}
+
+	.my-menu-header-mobile{
+		background:#111111;
+		display: block;
+		padding:10px;
+		color:#dddddd;
+		text-align: center;
 	}
 
 	.my-header-panel2{
@@ -1085,6 +1101,8 @@ ul {
 }
 
 @media screen and (max-width:500px) {
+
+
 
 	.sidebar-left-mobile{
 		display: block;

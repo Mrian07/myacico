@@ -49,44 +49,42 @@ a{
 		<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
 
-
-
 		<style type="text/css">
-	#search_keyword_id
-	{
-		width:500px;
-		/*border:solid 1px #CDCDCD;*/
-		padding:10px;
-		font-size:12px;
-	}
-	.productSrc
-	{
-		position:absolute;
-		width:600px;
-		display:none;
-		margin-top:-1px;
-		border-top:0px;
-		overflow:hidden;
-		border-left:1px  #CDCDCD solid;
-		border-right:1px  #CDCDCD solid;
-		background-color: white;
-		z-index: 289;
-	}
-	.show_result
-	{
-		font-family:tahoma;
-		padding:5px;
-		border-bottom:1px #CDCDCD dashed;
-		font-size:12px;
-		z-index: 289;
-	}
-	.show_result:hover
-	{
-		background:#e9e9e8;
-		color:#000000;
-		cursor:pointer;
-	}
-</style>
+			#search_keyword_id
+			{
+				width:500px;
+				/*border:solid 1px #CDCDCD;*/
+				padding:10px;
+				font-size:12px;
+			}
+			.productSrc
+			{
+				position:absolute;
+				width:600px;
+				display:none;
+				margin-top:-1px;
+				border-top:0px;
+				overflow:hidden;
+				border-left:1px  #CDCDCD solid;
+				border-right:1px  #CDCDCD solid;
+				background-color: white;
+				z-index: 289;
+			}
+			.show_result
+			{
+				font-family:tahoma;
+				padding:5px;
+				border-bottom:1px #CDCDCD dashed;
+				font-size:12px;
+				z-index: 289;
+			}
+			.show_result:hover
+			{
+				background:#e9e9e8;
+				color:#000000;
+				cursor:pointer;
+			}
+		</style>
     </head>
 
 <body style='font-weight: normal;' ng-app="myApp">
@@ -97,8 +95,8 @@ a{
 
 
 	<ul class='my-menu-header'>
-		<li style='background:#d8d7d7;'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b></li>
-		<li style='background:#e7e7e7;'><b><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
+		<li style='background:#d8d7d7;' class='my-menu-header-desktop'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b></li>
+		<li style='background:#e7e7e7;' class='my-menu-header-desktop'><b><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
 		Senen - Jumat [09:00 - 17:00]</b></li>
 
 
@@ -120,6 +118,9 @@ a{
 
 </div>
 </div>
+
+<div class='my-menu-header-mobile'>Belanja murah di myacico.com! <br>Gratis pengiriman untuk area JAKARTA<br><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i> Senen - Jumat [09:00 - 17:00]</div>
+
 
 <!--</div>-->
 
@@ -260,14 +261,6 @@ a{
 									<?php foreach($catsearch as $datacat){
 										echo"<li><a href='#contains'>".$datacat['name']."</a></li>";
 									}?>
-								  <!-- <li><a href="#contains">Computer</a></li>
-								  <li><a href="#its_equal">Gatget</a></li>
-								  <li><a href="#greather_than">Communication</a></li>
-								  <li><a href="#less_than">Audio & Visual</a></li>
-								  <li><a href="#greather_than">Mechanical & Electrical</a></li>
-								  <li><a href="#less_than">Hobby</a></li>
-								  <li><a href="#greather_than">Peralatan Rumah</a></li>
-								  <li><a href="#less_than">Perlengkapan Kantor</a></li> -->
 								</ul>
 							</div>
 							<input type="hidden" name="search_param" value="all" id="search_param">
@@ -380,7 +373,7 @@ a{
           $totalItems += $items['qty'];
         endforeach;
         ?>
-        <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
+        <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
         <div class="dropdown-basket-content">
 
           <?php
