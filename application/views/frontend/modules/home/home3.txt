@@ -558,10 +558,18 @@ ul.list-group:after {
     float: left;
 }
 
+/*Produc slide*/
+.carousel-inner .active.left { left: -25%; }
+.carousel-inner .next        { left:  25%; }
+.carousel-inner .prev		 { left: -25%; }
+.carousel-control 			 { width:  4%; }
+.carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
+
+
 
 </style>
 
-<!-- Owl Carousel Assets slide image collection -->
+<!-- Owl Carousel Assets -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.carousel.css');?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.theme.css');?>" />
 <div>
@@ -571,10 +579,59 @@ ul.list-group:after {
 
 
 <div class="container">
+  <!--Item slider text-->
 
-  <div style='border:1px solid #e6e6e6; background:#e9e8e8; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> New Collection
-  </div>
+        <div style='border:1px solid #e6e6e6; background:#e9e8e8; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151'>
+          <i class="fa fa-dot-circle-o" aria-hidden="true"></i> New Collection
+        </div>
+      <div class="carousel slide new-collection-desktop" id="myCarouselProduct"  style='background:#ffffff; padding:10px;'>
+    	  <div class="carousel-inner">
+          <?php
+
+          $jmlslide2=count($dathome['level_2']);
+          $n=1;
+          foreach($dathome['level_2'] as $key => $itemslide2){
+            if($n=="$jmlslide2"){
+              $active='active';
+            }else{
+              $active='';
+            }
+            ?>
+
+      		<div class="item <?php echo $active; ?>">
+      		  <div class="col-xs-3"><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>" class="img-responsive"></a>
+              <h6 class="text-center" style='color: #4b4b4b'><?php echo $itemslide2['name']; ?></h6>
+              <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
+              <div class="ratings" style='text-align: center; color:#d98c13;'>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star-empty"></span>
+                  </div>
+				  <br>
+				  <center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
+              <hr>
+              <center><div class="btn-group">
+               <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
+                 '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+             </div></center>
+            </div>
+      		</div>
+        <?php $n++;  } ?>
+
+
+    	  </div>
+    	  <a class="left carousel-control" href="#myCarouselProduct" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+    	  <a class="right carousel-control" href="#myCarouselProduct" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+    	</div>
+
+
+
+
+
+
             <div class="span12" style='background:#ffffff; padding:10px;'>
 
               <div id="owl-demo" class="owl-carousel">
@@ -607,7 +664,7 @@ ul.list-group:after {
                       <center><div class="btn-group">
                        <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
                          '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-                       <button type="button" class="btn btn-primary" onClick="addWishlist('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+                       <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
                      </div></center>
 
 
@@ -755,12 +812,86 @@ ul.list-group:after {
   <?php $bloop = 0; foreach($dathome['level_4'] as $datBrand){
     if($bloop <10){
     ?>
-    <li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="Smiley face" height="80%" width="195"></li>
+    <li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="Smiley face" height="100" width="195"></li>
   <?php } $bloop++; } ?>
 
+
+<!-- <li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TL-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/aaa01.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src='<?php echo base_url('images/banner/IP-small.png');?>' class="asd1"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SD-small.png');?>" class="asd1"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SY-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/MS-small.png');?>" class="asd1"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/FJ-small.png');?>" class="asd1"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TS-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SG-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/LT-small.png');?>" class="asd1"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/HX-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/small-iphon-icon.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/DI-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TC-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/WM-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/BP-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/XV-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/GA-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/XO-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/GT-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/HW-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/LS-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/KA-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/AC-small.png');?>" class="asd1"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/AS-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/DL-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/PO-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/KI-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/LK-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SR-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SH-small.png');?>" class="asd1"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SK-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/BG-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/lg_logo_white_250x.jpg');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/EM-small.png');?>" class="asd1"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/NN-small.png');?>" class="asd1"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/RI-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/cisco.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/IA-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/NS-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TP-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/LV-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/teaserbox_894662862.jpg');?>" class="asd1"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/nokia.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/ZM-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/EA-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/DG-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/VZ-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/MY-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/WS-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/ML-small.png');?>" class="asd1"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TT-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/WF-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/JB-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/NE-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/XA-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/JM-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/TZ-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/KQ-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/KY-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SV-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/HM-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/EV-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/6BbKRrk7.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/playdoh.png');?>" class="asd1"  alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/alife.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/razer-logo.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/madcatzlogo.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/bantex1.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/canon.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/SS-small.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<li class="list-group-item img-responsive"><img src="<?php echo base_url('images/banner/evercoss.png');?>" class="asd1" alt="Smiley face" height="50" width="97"></li>
+<!-- asd -->
 						</ul>
 
-            <?php echo anchor('brand','<b>MORE BRAND</b>', array('class'=>'btn btn-default btn-block')); ?>
+            <?php echo anchor('brand','More Brand', array('class'=>'btn btn-default btn-block')); ?>
          </center>
           </div>
 

@@ -14,14 +14,34 @@ body {
 	background: #f1f1f1;
 }
 
+.btn-link,
+.btn-link:active,
+.btn-link:visited,
+.btn-link:focus {
+    background-color: #1a6aa4;
+		border-radius: 0px;
+		border: 0px;
+
+		border:1px solid #c40202; background:#000000; padding:10px; font-size:20px; border-radius:5px; color:#ffffff;
+		text-decoration: none;
+}
+.btn-link:hover{
+		color:#c6c1c1;
+		background-color: #a40101;
+		text-decoration: none;
+}
+
 /*btn bootstrap*/
 .btn-primary,
-.btn-primary:hover,
 .btn-primary:active,
 .btn-primary:visited,
 .btn-primary:focus {
-    background-color: #8064A2;
-    border-color: #8064A2;
+    background-color: #1a6aa4;
+		border-radius: 0px;
+		border: 0px;
+}
+.btn-primary:hover{
+		background-color: #1785d4;
 }
 
 .btn-danger,
@@ -1021,6 +1041,10 @@ ul {
 	display: none;
 }
 
+/*.new-collection-mobile {
+    display:none;
+}*/
+
 @media screen and (max-width:1024px) {
 	.my-header-panel{
 		display: none;
@@ -1116,6 +1140,14 @@ ul {
 	font-style: italic;
 	font-size: 15px;
 }
+
+	/*.new-collection-mobile {
+			display:block;
+	}
+
+	.new-collection-desktop {
+	    display:none;
+	}*/
 }
 
 /*Create Account*/
@@ -1254,6 +1286,8 @@ ul {
 .menu_body {
     display:none;
 }
+
+
 
 .plus{
  background-image: url(../../images/general/math-add-icon.png);
