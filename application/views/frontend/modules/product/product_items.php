@@ -96,7 +96,44 @@ font-size: 20px;
         width: 100%;
     }
 }
+.jumbotron-billboard .img {
+    margin-bottom: 0px;
+    opacity: 0.5;
+    color: #fff;
+    background: #000 url("https://myacico.com/media/bannerslider/lel1.jpg") center center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
 
+
+  position:absolute;
+  top:0;left:0;
+  z-index:1;
+}
+.jumbotron-billboard2 .img {
+    margin-bottom: 0px;
+    opacity: 0.5;
+    color: #fff;
+    background: #000 url("https://s1.postimg.org/40i0xfe8sf/banner_atas.png") center center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+
+
+  position:absolute;
+  top:0;left:0;
+  z-index:1;
+}
+h1.po1{
+  color: White;
+}
+.jumbotron {position:relative;padding:50px;}
+.jumbotron .container {z-index:2;
+ position:relative;
+  z-index:2;
+}
 </style>
 
 <?php
@@ -109,6 +146,182 @@ font-size: 20px;
 
  echo "<br/>";
 ?>
+
+
+    <?php
+
+    if ($pro == 1000003)  {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Laptop Gaming</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+  } else if ($pro == 1000038) {
+
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Laptop 2 in  1</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+  } else if ($pro == 1000015) {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Laptop Apple</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+
+  }  else if ($pro == 1000431)  {
+    echo "<div class='w3l_banner_nav_right_banner7'>
+
+    </div>";
+  } else if ($pro == 1000009) {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Laptop Bisnis</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+  }else if($pro == 1000231) {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Toner Printer</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+  } else if($pro == 1000235) {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Printer Inkjet</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+  } else if($pro == 1000236) {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Printer All In One</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+ } else if($pro == 1000237){
+   echo "<div class='jumbotron jumbotron-billboard'>
+     <div class='img'></div>
+       <div class='container'>
+           <div class='row'>
+               <div class='col-lg-12'>
+                   <h1 class='po1'>Printer Laser</h1>
+                   <br/>
+                   <p>
+
+                   </p>
+
+               </div>
+           </div>
+       </div>
+   </div>";
+  } else if ($pro == 1000473) {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Laptop Consumer</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+  }  else {
+
+    echo "<div class='jumbotron jumbotron-billboard2'>
+      <div class='img'></div>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+        <br/>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+    }
+
+
+     ?>
+
 <div class="row my-sort-product">
 	<div class="col-sm-9">
 		<?php echo "&nbspItems 1 to ".count($data).""; ?>
@@ -154,9 +367,7 @@ font-size: 20px;
                 <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $data['imageurl']; ?>" alt="" />
                 <div class="caption">
                     <h5 class="group inner list-group-item-heading" style='text-align:center;'><a href="<?php echo base_url('product/detail/'.$data['m_product_id']);?>"><?php echo $data['name']; ?></a>  </h5><br>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+
                         <div class="panel panel-default">
             <div class="panel-body">
 						<center>
@@ -185,7 +396,7 @@ font-size: 20px;
            ?>
 
 
-            
+
 
 
                <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
