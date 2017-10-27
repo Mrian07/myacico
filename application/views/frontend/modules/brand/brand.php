@@ -18,7 +18,7 @@ ul.list-group:after {
   <?php foreach($dathome['level_4'] as $datBrand){
 
     ?>
-    <li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="No Image Found" height="70%" width="195"></li>
+    <li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="No Image Found" height="100%" width="195"></li>
   <?php  } ?>
 
 						</ul>

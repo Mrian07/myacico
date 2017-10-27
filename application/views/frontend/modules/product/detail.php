@@ -3,6 +3,7 @@
     padding: 15px;
 		font-size: 20px;
     text-align: left;
+		font-family: 'Montserrat', sans-serif;
 }
 #hearts { font-size: 140px; color: #F4044F;}
 #hearts-existing { color: #87bad7;}
@@ -12,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/productpopup/css/xzoom.css');?>" media="all" />
 <link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url('assets/productpopup/magnific-popup/css/magnific-popup.css');?>" />
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/magnific-popup/js/magnific-popup.js');?>"></script>
-
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <div class='my-bg-title'>
 	<div class="container">
 		<div class="row">
