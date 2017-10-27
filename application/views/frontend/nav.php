@@ -1,8 +1,9 @@
 <style type="text/css">
+
 .productSrcMobile
 {
 position:absolute;
-width:340px;
+width:310px;
 display:none;
 margin-top:-1px;
 border-top:0px;
@@ -14,7 +15,7 @@ z-index: 289;
 color:#000000;
 }
 
-.show_result
+.show_result_mobile
 {
 font-family:tahoma;
 padding:5px;
@@ -23,7 +24,7 @@ font-size:10px;
 z-index: 289;
 }
 
-.show_result:hover
+.show_result_mobile:hover
 {
 background:#e9e9e8;
 color:#000000;
@@ -83,8 +84,6 @@ cursor:pointer;
 						<input type="text" name="search" id="search-mobile" autocomplete="off" class="my-search-field form-control">
 						<!--<div id="result"></div>-->
 						<div class="productSrcMobile" style='diplay:none'></div>
-
-
 						<!--<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>-->
 					</div>
 					<div class="input-group">
@@ -149,40 +148,74 @@ cursor:pointer;
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
-					<li><?php echo anchor('#', '<i>Loading Menu...</i>');?></li>
-					<!--
-					<li class="active"><?php echo anchor('home/', '<span class="glyphicon glyphicon-home"></span>');?></li>
-                    <li><?php echo anchor('product/', 'Product');?></li>
-					<li><?php echo anchor('product/category', 'Category');?></li>
-					<li class="dropdown megamenu-fw">
+
+									<!-- <li><?php echo anchor('#', '<i>Loading Menu...</i>');?></li> -->
+									<?php foreach($hasilNav as $dataNav){ ?>
+									<li class="dropdown megamenu-fw nav-show-desktop">
+										<?php echo anchor('#', $dataNav['name'], array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
+										<ul class="dropdown-menu megamenu-content" role="menu">
+											<li>
+												<div class="row">
+													<div class="row" style='color:#000000'>
+															<div class="col-menu col-md-2"><img src="<?php echo$dataNav['imageurl']; ?>" style="float:right;width:130px"/></div>
+															<?php foreach($dataNav['c2'] as $dataNavChild){ ?>
+																<div class="col-menu col-md-2">
+																	<?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId']), $dataNavChild['name']);?>
+																</div>
+															<?php } ?>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+
+									<li class="dropdown megamenu-fw nav-show-mobile">
+											<?php echo anchor('#', $dataNav['name'], array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
+											<ul class="dropdown-menu">
+													<?php foreach($dataNav['c2'] as $dataNavChild){ ?>
+													<li><?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId']), $dataNavChild['name']);?></li>
+												<?php } ?>
+											</ul>
+									</li>
+
+									<?php } ?>
+
+
+
+
+
+									<!-- <li class="active"><?php //echo anchor('home/', '<span class="glyphicon glyphicon-home"></span>');?></li>
+				                    <li><?php //echo anchor('product/', 'Product');?></li>
+									<li><?php //echo anchor('product/category', 'Category');?></li> -->
+									<!-- <li class="dropdown megamenu-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Megamenu One</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
                                     <div class="row" style='color:#000000'>
-										<div class="col-menu col-md-2">
-											<img src="<?php echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100"><br>
-											Samsung
-										</div>
-										<div class="col-menu col-md-2">
-											Samsung
-										</div>
-										<div class="col-menu col-md-2">
-											Samsung
-										</div>
-										<div class="col-menu col-md-2">
-											Samsung
-										</div>
-										<div class="col-menu col-md-2">
-											Samsung
-										</div>
-										<div class="col-menu col-md-2">
-											Samsung
-										</div>
-										<div class="col-menu col-md-2">
-											Samsung
-										</div>
-									</div>
+																				<div class="col-menu col-md-2">
+																					<img src="<?php// echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100"><br>
+																					Samsung
+																				</div>
+																				<div class="col-menu col-md-2">
+																					Samsung
+																				</div>
+																				<div class="col-menu col-md-2">
+																					Samsung
+																				</div>
+																				<div class="col-menu col-md-2">
+																					Samsung
+																				</div>
+																				<div class="col-menu col-md-2">
+																					Samsung
+																				</div>
+																				<div class="col-menu col-md-2">
+																					Samsung
+																				</div>
+																				<div class="col-menu col-md-2">
+																					Samsung
+																				</div>
+																			</div>
                                 </div>
                             </li>
                         </ul>
@@ -277,8 +310,8 @@ cursor:pointer;
                         </ul>
                     </li>
                     <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact Us</a></li>-->
-                </ul>
+                    <li><a href="#">Contact Us</a></li>
+                </ul> -->
 
 
 
@@ -290,7 +323,7 @@ cursor:pointer;
 
 	</div>
 </div>
-	
+
 
 	<script type="text/javascript">
 
@@ -303,8 +336,8 @@ cursor:pointer;
 		return 'Rp. '+(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
 	}
 
-	$('.show_result').on('mouseout',function(){
-		$('.show_result').hide();
+	$('.show_result_mobile').on('mouseout',function(){
+		$('.show_result_mobile').hide();
 	});
 
 	$(document).ready(function() {
@@ -330,7 +363,7 @@ cursor:pointer;
 							data.forEach(function(p){
 								productSrcMobile.append(
 
-								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='2'>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
+								"<div class=\"show_result_mobile\" onclick=\"showDataMobile('"+p.name+"','"+p.m_product_id+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='80'></td><td><font size='2'>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
 
 
 								);
@@ -354,11 +387,9 @@ cursor:pointer;
 								data.forEach(function(p){
 									productSrcMobile.append(
 
-									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='2'>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
-
+									"<div class=\"show_result_mobile\" onclick=\"showDataMobile('"+p.name+"','"+p.m_product_id+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='80'></td><td><font size='2'>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
 
 									);
-									//alert(p.name);
 								});
 							//$("#result-mobile").html(data).show();
 						}
@@ -370,11 +401,13 @@ cursor:pointer;
 		});
 
 	});
-	function showData(name,id)
+	function showDataMobile(name,id)
 	{
-		$("#search-mobile").val(name);
-		$("#searchID-mobile").val(id);
-		$("#result-mobile").hide();
-		$(".productSrcMobile").hide();
+		var url = base_url+'/product/detail/'+id;
+		window.location.href = url;
+		// $("#search-mobile").val(name);
+		// $("#searchID-mobile").val(id);
+		// $("#result-mobile").hide();
+		// $(".productSrcMobile").hide();
 	}
 </script>

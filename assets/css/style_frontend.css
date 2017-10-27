@@ -1045,6 +1045,10 @@ ul {
 	display: none;
 }
 
+li.nav-show-mobile{
+	display: none;
+}
+
 /*.new-collection-mobile {
     display:none;
 }*/
@@ -1102,6 +1106,13 @@ ul {
 
 @media screen and (max-width:500px) {
 
+	li.nav-show-desktop{
+		display: none;
+	}
+
+	li.nav-show-mobile{
+		display: block;
+	}
 
 
 	.sidebar-left-mobile{
@@ -1304,8 +1315,6 @@ ul {
 .menu_body {
     display:none;
 }
-
-
 
 .plus{
  background-image: url(../../images/general/math-add-icon.png);
