@@ -1,8 +1,9 @@
 <style type="text/css">
+
 .productSrcMobile
 {
 position:absolute;
-width:340px;
+width:310px;
 display:none;
 margin-top:-1px;
 border-top:0px;
@@ -14,7 +15,7 @@ z-index: 289;
 color:#000000;
 }
 
-.show_result
+.show_result_mobile
 {
 font-family:tahoma;
 padding:5px;
@@ -23,7 +24,7 @@ font-size:10px;
 z-index: 289;
 }
 
-.show_result:hover
+.show_result_mobile:hover
 {
 background:#e9e9e8;
 color:#000000;
@@ -290,7 +291,7 @@ cursor:pointer;
 
 	</div>
 </div>
-	
+
 
 	<script type="text/javascript">
 
@@ -303,8 +304,8 @@ cursor:pointer;
 		return 'Rp. '+(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
 	}
 
-	$('.show_result').on('mouseout',function(){
-		$('.show_result').hide();
+	$('.show_result_mobile').on('mouseout',function(){
+		$('.show_result_mobile').hide();
 	});
 
 	$(document).ready(function() {
@@ -330,7 +331,7 @@ cursor:pointer;
 							data.forEach(function(p){
 								productSrcMobile.append(
 
-								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='2'>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
+								"<div class=\"show_result_mobile\" onclick=\"showDataMobile('"+p.name+"','"+p.m_product_id+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='80'></td><td><font size='2'>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
 
 
 								);
@@ -354,7 +355,7 @@ cursor:pointer;
 								data.forEach(function(p){
 									productSrcMobile.append(
 
-									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='2'>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
+									"<div class=\"show_result_mobile\" onclick=\"showDataMobile('"+p.name+"','"+p.m_product_id+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='80'></td><td><font size='2'>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
 
 
 									);
@@ -370,7 +371,7 @@ cursor:pointer;
 		});
 
 	});
-	function showData(name,id)
+	function showDataMobile(name,id)
 	{
 		$("#search-mobile").val(name);
 		$("#searchID-mobile").val(id);
