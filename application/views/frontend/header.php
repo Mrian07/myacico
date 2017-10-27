@@ -286,7 +286,6 @@ a{
 				<div class="col-sm-12">
 
 					<div class="btn-group">
-
 						<?php if(isset($user->name)){ ?>
 						<div class="dropdown">
 							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount
@@ -377,7 +376,7 @@ a{
         <?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-paper-plane" aria-hidden="true"></i> Hubungi Kami</button>');?>
 
       </div>
-      <div class="dropdown-basket" ng-controller="cartCnt">
+      <div class="dropdown-basket" ng-controller="cartCnt"> 
         <?php
         $totalItems = 0;
         foreach ($this->cart->contents() as $items):
