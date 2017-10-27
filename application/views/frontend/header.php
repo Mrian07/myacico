@@ -470,10 +470,12 @@ a{
 	});
 	function showData(name,id)
 	{
-		$("#search").val(name);
-		$("#searchID").val(id);
-		$("#result").hide();
-		$(".productSrc").hide();
+		var url = base_url+'/product/detail/'+id;
+		window.location.href = url;
+		// $("#search").val(name);
+		// $("#searchID").val(id);
+		// $("#result").hide();
+		// $(".productSrc").hide();
 	}
 </script>
 
