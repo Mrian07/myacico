@@ -494,6 +494,7 @@ function addWishlist(id,name,imageurl){
 						},
 						closeIcon: true,
 						closeIconClass: 'fa fa-close'
+            
 					});
 				}
 			}
