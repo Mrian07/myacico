@@ -187,10 +187,10 @@ a{
 							<?php if(isset($user)){ ?>
 
 							<div class="dropdown-account">
-							  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account<span class="caret"></span></button>
+							  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
 							  <div class="dropdown-account-content">
 								<?php echo anchor('account', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
-								<?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('id'=>'logout'));?>
+								<?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('class'=>'logout'));?>
 							  </div>
 							</div>
 
@@ -287,19 +287,17 @@ a{
 
 					<div class="btn-group">
 						<?php if(isset($user->name)){ ?>
-						<div class="dropdown">
-							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount
-							<span class="caret"></span></button>
-							<ul class="dropdown-menu">
-							<li><?php echo anchor('account/', 'Profile Anda');?></li>
-							<li class="divider"></li>
-							<li><a href="#" id="logout">Logout</a></li>
-							</ul>
+						<div class="dropdown-account">
+							<button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
+							<div class="dropdown-account-content">
+							<?php echo anchor('account', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
+							<?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('class'=>'logout'));?>
+							</div>
 						</div>
 
 						<?php }else{ ?>
 						<div class="dropdown-account">
-						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
+						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
 						  <div class="dropdown-account-content">
 							<?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> '.$lang_daftar);?>
 							<?php echo anchor('customer/signIn/', '<i class="fa fa-sign-in" aria-hidden="true"></i> '.$lang_masuk);?>
@@ -351,19 +349,18 @@ a{
     <div class="btn-group" style='text-align:left; color:#111111;'>
 
       <?php if(isset($user->name)){ ?>
-      <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount
+      <div class="dropdown-account">
+        <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Acount
         <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-        <li><?php echo anchor('account/', 'Profile Anda');?></li>
-        <li class="divider"></li>
-        <li><a href="#" id="logout">Logout</a></li>
-        </ul>
+				<div class="dropdown-account-content">
+        <?php echo anchor('account/', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
+        <?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('class'=>'logout'));?>
+        </div>
       </div>
 
       <?php }else{ ?>
       <div class="dropdown-account">
-        <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
+        <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
         <div class="dropdown-account-content">
         <?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> '.$lang_daftar);?>
         <?php echo anchor('customer/signIn/', '<i class="fa fa-sign-in" aria-hidden="true"></i> '.$lang_masuk);?>
@@ -376,7 +373,7 @@ a{
         <?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-paper-plane" aria-hidden="true"></i> Hubungi Kami</button>');?>
 
       </div>
-      <div class="dropdown-basket" ng-controller="cartCnt"> 
+      <div class="dropdown-basket" ng-controller="cartCnt">
         <?php
         $totalItems = 0;
         foreach ($this->cart->contents() as $items):
@@ -438,7 +435,7 @@ a{
 							data.forEach(function(p){
 								productSrc.append(
 
-								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='80'></td><td>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
+								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
 
 
 								);
@@ -462,7 +459,7 @@ a{
 								data.forEach(function(p){
 									productSrc.append(
 
-									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td> <span>"+p.name+"</span><h3>"+money(p.pricelist)+"</h3></td></tr></table></div>"
+									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
 
 
 									);
@@ -550,7 +547,7 @@ app.controller('cartCnt', function($scope, $mycart, toMoney){
 
 <?php if(isset($user->name)){ ?>
 
-$("#logout").click(function(e){
+$(".logout").click(function(e){
     e.preventDefault();
 
 	$.confirm({

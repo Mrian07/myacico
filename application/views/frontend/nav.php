@@ -1,4 +1,35 @@
+<style type="text/css">
+.productSrcMobile
+{
+position:absolute;
+width:340px;
+display:none;
+margin-top:-1px;
+border-top:0px;
+overflow:hidden;
+border-left:1px  #CDCDCD solid;
+border-right:1px  #CDCDCD solid;
+background-color: white;
+z-index: 289;
+color:#000000;
+}
 
+.show_result
+{
+font-family:tahoma;
+padding:5px;
+border-bottom:1px #CDCDCD dashed;
+font-size:10px;
+z-index: 289;
+}
+
+.show_result:hover
+{
+background:#e9e9e8;
+color:#000000;
+cursor:pointer;
+}
+</style>
 
 
 <!-- <ul class="nav nav-tabs my-tab-menu"> -->
@@ -37,28 +68,27 @@
 				<div class="container">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-bookmark-o" aria-hidden="true"></i></span>
-						<select class="form-control" style='background:#333333; border:0px; color:#ffffff'>
+						<select class="form-control" style='background:#333333; border:0px; color:#ffffff' id="key_param">
 							<option value=''>All Categories</option>
-							<option value='Computer'>Computer</option>
-							<option value='Gatget'>Gatget</option>
-							<option value='Communication'>Communication</option>
-							<option value='Audio & Visual'>Audio & Visual</option>
-							<option value='Mechanical & Electrical'>Mechanical & Electrical</option>
-							<option value='Hobby'>Hobby</option>
-							<option value='Peralatan Rumah'>Peralatan Rumah</option>
-							<option value='Perlengkapan Kantor'>Perlengkapan Kantor</option>
+							<?php foreach($catsearch as $datacat){
+								echo"<option value='".$datacat['m_product_category_id']."'>".$datacat['name']."</option>";
+							}?>
 						</select>
-
-						<input type="hidden" name="search_param" value="all" id="search_param">
 						<!--<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>-->
 					</div>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-search"></i></span>
-						<input type="text" class="form-control" placeholder="Search">
+						<!-- <input type="text" class="form-control" placeholder="Search"> -->
+						<input type="hidden" name="searchID-mobile" id="searchID-mobile">
+						<input type="text" name="search" id="search-mobile" autocomplete="off" class="my-search-field form-control">
+						<!--<div id="result"></div>-->
+						<div class="productSrcMobile" style='diplay:none'></div>
+
+
 						<!--<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>-->
 					</div>
 					<div class="input-group">
-						<button type="button" class="btn btn-success btn-sm">Go</button>
+						<button type="button" class="btn btn-success btn-sm" onclick='btnSearch()'>Go</button>
 						<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
 					</div>
 				</div>
@@ -312,3 +342,91 @@
 
 	  </div>
 	</div>
+
+
+	<script type="text/javascript">
+
+	function btnSearch(){
+		var searchID = $('#searchID-mobile').val();
+		location.href = base_url+'product/detail/'+searchID;
+	}
+
+	function money(x){
+		return 'Rp. '+(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+	}
+
+	$('.show_result').on('mouseout',function(){
+		$('.show_result').hide();
+	});
+
+	$(document).ready(function() {
+
+		$("#search-mobile").keyup(function() {
+
+			var cat = $('#key_param').val();
+			$(".productSrcMobile").show();
+
+			var search_value = $(this).val();
+			var datas		 = 'search='+search_value;
+			var productSrcMobile = $('.productSrcMobile');
+
+			if ( search_value == '' ) {$(".productSrcMobile").hide();}
+
+			if(cat==''){
+				productSrcMobile.html('');
+
+					$.ajax({
+						url: api_base_url+'/product/productlist/'+search_value,
+						data: datas,
+						success: function(data) {
+							data.forEach(function(p){
+								productSrcMobile.append(
+
+								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='2'>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
+
+
+								);
+
+							});
+
+						}
+					});
+
+
+			}else{
+
+				productSrcMobile.html('');
+
+					$.ajax({
+						url: api_base_url+'/product/productlist/'+cat+'/'+search_value,
+						data: datas,
+						success: function(data) {
+
+
+								data.forEach(function(p){
+									productSrcMobile.append(
+
+									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='2'>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
+
+
+									);
+									//alert(p.name);
+								});
+							//$("#result-mobile").html(data).show();
+						}
+					});
+
+			}
+
+			return false;
+		});
+
+	});
+	function showData(name,id)
+	{
+		$("#search-mobile").val(name);
+		$("#searchID-mobile").val(id);
+		$("#result-mobile").hide();
+		$(".productSrcMobile").hide();
+	}
+</script>
