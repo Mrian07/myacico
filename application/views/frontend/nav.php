@@ -84,8 +84,6 @@ cursor:pointer;
 						<input type="text" name="search" id="search-mobile" autocomplete="off" class="my-search-field form-control">
 						<!--<div id="result"></div>-->
 						<div class="productSrcMobile" style='diplay:none'></div>
-
-
 						<!--<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>-->
 					</div>
 					<div class="input-group">
@@ -150,40 +148,74 @@ cursor:pointer;
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
-					<li><?php echo anchor('#', '<i>Loading Menu...</i>');?></li>
-					<!--
-					<li class="active"><?php echo anchor('home/', '<span class="glyphicon glyphicon-home"></span>');?></li>
-                    <li><?php echo anchor('product/', 'Product');?></li>
-					<li><?php echo anchor('product/category', 'Category');?></li>
-					<li class="dropdown megamenu-fw">
+
+									<!-- <li><?php echo anchor('#', '<i>Loading Menu...</i>');?></li> -->
+									<?php foreach($hasilNav as $dataNav){ ?>
+									<li class="dropdown megamenu-fw nav-show-desktop">
+										<?php echo anchor('#', $dataNav['name'], array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
+										<ul class="dropdown-menu megamenu-content" role="menu">
+											<li>
+												<div class="row">
+													<div class="row" style='color:#000000'>
+															<div class="col-menu col-md-2"><img src="<?php echo$dataNav['imageurl']; ?>" style="float:right;width:130px"/></div>
+															<?php foreach($dataNav['c2'] as $dataNavChild){ ?>
+																<div class="col-menu col-md-2">
+																	<?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId']), $dataNavChild['name']);?>
+																</div>
+															<?php } ?>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+
+									<li class="dropdown megamenu-fw nav-show-mobile">
+											<?php echo anchor('#', $dataNav['name'], array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
+											<ul class="dropdown-menu">
+													<?php foreach($dataNav['c2'] as $dataNavChild){ ?>
+													<li><?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId']), $dataNavChild['name']);?></li>
+												<?php } ?>
+											</ul>
+									</li>
+
+									<?php } ?>
+
+
+
+
+
+									<!-- <li class="active"><?php //echo anchor('home/', '<span class="glyphicon glyphicon-home"></span>');?></li>
+				                    <li><?php //echo anchor('product/', 'Product');?></li>
+									<li><?php //echo anchor('product/category', 'Category');?></li> -->
+									<!-- <li class="dropdown megamenu-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Megamenu One</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
                                     <div class="row" style='color:#000000'>
-										<div class="col-menu col-md-2">
-											<img src="<?php echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100"><br>
-											Samsung
-										</div>
-										<div class="col-menu col-md-2">
-											Samsung
-										</div>
-										<div class="col-menu col-md-2">
-											Samsung
-										</div>
-										<div class="col-menu col-md-2">
-											Samsung
-										</div>
-										<div class="col-menu col-md-2">
-											Samsung
-										</div>
-										<div class="col-menu col-md-2">
-											Samsung
-										</div>
-										<div class="col-menu col-md-2">
-											Samsung
-										</div>
-									</div>
+																				<div class="col-menu col-md-2">
+																					<img src="<?php// echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100"><br>
+																					Samsung
+																				</div>
+																				<div class="col-menu col-md-2">
+																					Samsung
+																				</div>
+																				<div class="col-menu col-md-2">
+																					Samsung
+																				</div>
+																				<div class="col-menu col-md-2">
+																					Samsung
+																				</div>
+																				<div class="col-menu col-md-2">
+																					Samsung
+																				</div>
+																				<div class="col-menu col-md-2">
+																					Samsung
+																				</div>
+																				<div class="col-menu col-md-2">
+																					Samsung
+																				</div>
+																			</div>
                                 </div>
                             </li>
                         </ul>
@@ -278,8 +310,8 @@ cursor:pointer;
                         </ul>
                     </li>
                     <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact Us</a></li>-->
-                </ul>
+                    <li><a href="#">Contact Us</a></li>
+                </ul> -->
 
 
 
@@ -357,9 +389,7 @@ cursor:pointer;
 
 									"<div class=\"show_result_mobile\" onclick=\"showDataMobile('"+p.name+"','"+p.m_product_id+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='80'></td><td><font size='2'>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
 
-
 									);
-									//alert(p.name);
 								});
 							//$("#result-mobile").html(data).show();
 						}

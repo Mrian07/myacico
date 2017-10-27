@@ -327,8 +327,6 @@ a{
 
 				</div>
 			</div>
-
-
 		</div>
 
 	</div>
@@ -395,7 +393,7 @@ a{
 
 	function btnSearch(){
 		var searchID = $('#searchID').val();
-		location.href = base_url+'product/detail/'+searchID;
+		location.href = base_url+'product/listItem/'+searchID;
 	}
 
 	function money(x){
