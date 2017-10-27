@@ -95,8 +95,8 @@ a{
 
 
 	<ul class='my-menu-header'>
-		<li style='background:#d8d7d7;'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b></li>
-		<li style='background:#e7e7e7;'><b><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
+		<li style='background:#d8d7d7;' class='my-menu-header-desktop'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b></li>
+		<li style='background:#e7e7e7;' class='my-menu-header-desktop'><b><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
 		Senen - Jumat [09:00 - 17:00]</b></li>
 
 
@@ -118,6 +118,9 @@ a{
 
 </div>
 </div>
+
+<div class='my-menu-header-mobile'>Belanja murah di myacico.com! <br>Gratis pengiriman untuk area JAKARTA<br><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i> Senen - Jumat [09:00 - 17:00]</div>
+
 
 <!--</div>-->
 
