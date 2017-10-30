@@ -134,6 +134,7 @@ h1.po1{
  position:relative;
   z-index:2;
 }
+
 </style>
 
 <?php
@@ -331,7 +332,7 @@ if($saw==Null)
 <div class="row my-sort-product">
 	<div class="col-sm-9">
 		<?php echo "&nbspItems 1 to ".count($data).""; ?>
-          
+
 	</div>
 	<div class="col-sm-3">
 
@@ -431,7 +432,7 @@ if($saw==Null)
 
                 </div>
             </div>
-                     
+
         </div>
 
 		<?php } } ?>
@@ -464,7 +465,7 @@ if($saw==Null)
 
 
     </div>
- 
+
 <div class="text-center">
     <ul class="pagination">
    <li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
@@ -476,8 +477,8 @@ if($saw==Null)
    <li class=next><a href=# aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>
     </ul>
 </div>
-  
-</ul> 
+
+</ul>
 </div>
 
 <script type="text/javascript">
@@ -487,14 +488,15 @@ $(document).ready(function() {
     $('#list').click(function(){event.preventDefault();$('#products .item').addClass('list-group-item');});
     $('#grid').click(function(){event.preventDefault();$('#products .item').removeClass('list-group-item');});
 		$('[data-toggle="tooltip"]').tooltip();
+
 });
 
 function filter(id){
  //  console.log('sam',$('#sort_id').val(id.value));
   window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'); ?>"+id.value);
-  
+
 }
-$('.pagination').on('click', 'li:not(.prev):not(.next)', function() { 
+$('.pagination').on('click', 'li:not(.prev):not(.next)', function() {
     $('.pagination li').removeClass('active');
     $(this).not('.prev,.next').addClass('active');
 });
