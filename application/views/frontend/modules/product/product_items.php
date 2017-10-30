@@ -85,15 +85,21 @@ font-size: 20px;
  //$sumber = 'http://myacico.net:8080/myacico-service/api/product/productlist?category='.$pro;
  $konten = file_get_contents($sumber);
  $data = json_decode($konten, true);
-
- //echo $data[1]["nama_lokasi"];
+$saw=$this->uri->segment(4);
+if($saw==Null)
+{
+    $sort_id ="all";
+}else{
+    $sort_id = $saw;
+}
+//echo $data[1]["nama_lokasi"];
 
  echo "<br/>";
 ?>
 <div class="row my-sort-product">
 	<div class="col-sm-9">
 		<?php echo "&nbspItems 1 to ".count($data).""; ?>
-
+          
 	</div>
 	<div class="col-sm-3">
 
@@ -176,6 +182,7 @@ font-size: 20px;
 
                 </div>
             </div>
+                     
         </div>
 
 		<?php } } ?>
@@ -208,12 +215,48 @@ font-size: 20px;
 
 
     </div>
+ 
+<div class="text-center">
+    <ul class="pagination">
+   <li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
+  <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/').'1'; ?>"  value="1">1</a></li>
+  <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/').'2'; ?>" value="2">2</a></li>
+  <li><a href="#" value="3">3</a></li>
+  <li><a href="#" value="4">4</a></li>
+  <li><a href="#" value="5">5</a></li>
+   <li class=next><a href=# aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>
+    </ul>
+</div>
+  
+</ul> 
 </div>
 
 <script type="text/javascript">
 
 function filter(id){
+ //  console.log('sam',$('#sort_id').val(id.value));
   window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'); ?>"+id.value);
+  
+}
+$('.pagination').on('click', 'li:not(.prev):not(.next)', function() { 
+    $('.pagination li').removeClass('active');
+    $(this).not('.prev,.next').addClass('active');
+});
+$('.pagination').on('click', 'li.prev', function() {
+    $('li.active').removeClass('active').prev().addClass('active');
+});
+
+$('.pagination').on('click', 'li.next', function() {
+    $('li.active').removeClass('active').next().addClass('active');
+});
+//    nuOfpage dari total item / (perpage=> 10)
+function drawPagination(numOfPages) {
+    $('#pag_nav ul').empty();
+    $('#pag_nav ul').append('<li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>');
+   for (var i = 1; i <= numOfPages; i++) {
+      $('#pag_nav ul').append('<li><a href=#>' + i + '</a></li>');
+   }
+   $('#pag_nav ul').append('<li class=next><a href=# aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>');
 }
 
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
