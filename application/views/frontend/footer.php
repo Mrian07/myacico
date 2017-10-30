@@ -15,7 +15,7 @@
 					<input type="text" class="my-sub-field" name="x" placeholder="Search term...">
 					<span class="input-group-btn">
 						<button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button>
-						
+
 					</span>
 				</div>
 
@@ -65,6 +65,13 @@
 
 			</div>
 		</div>
+		<br><br>
+		<center>
+		<button data-toggle="collapse" data-target="#demo" class='btn-link'>LINK LAINNYA</button>
+		<div id="demo" class="collapse" style='margin-top:20px; border-radius:5px; padding:20px; border:1px solid #312e2e; color:#5b5b5b; background:#0f0f0f;'>
+		Coming soon...
+		</div>
+	</center>
 
 	</div>
 	<div class='cpyright'>
@@ -127,7 +134,7 @@ $(document).ready(function() {
 <script>
 //Buat ngecek jumlah keranjang
 $(document).ready(function() {
-	
+
 	totalCart();
 
 });

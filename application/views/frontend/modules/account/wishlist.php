@@ -226,17 +226,32 @@ $(document).ready(function() {
         type:"GET",
         headers:{"token":token},
         //beforeSend: getAdd(),
+
         success: function(data){
             var addressname = $('.addressname');
      var rumah = $('.rumah');
+
 $("#hapus").val(null);
             data.forEach(function(p){
      rumah.append(
-         '<div class="col-md-4"><div class="product-item"><div class="pi-img-wrapper"><img src="'+p.imageUrl+'" alt="..." height="100" class="img-responsive" alt="Berry Lace Dress"><div></div></div><h3><a href="'+base_url+'product/detail/'+p.productID+'">'+p.name+'</a></h3><div class="pi-price">'+p.wishListDate+'</div><a href="'+api_base_url+'/product/deletewishlist?token='+token+'&item_id='+p.productID+'" class="btn add2cart">Hapus</a></div></div>'
+         '<div class="col-md-4"><div class="product-item"><div class="pi-img-wrapper"><img src="'+p.imageUrl+'" alt="..." height="100" class="img-responsive" alt="Berry Lace Dress"><div></div></div><h3><a href="'+base_url+'product/detail/'+p.productID+'">'+p.name+'</a></h3><div class="pi-price">'+p.wishListDate+'</div><a id="hapus'+p.productID+'" class="btn add2cart">Hapus</a></div></div>'
         )
+        $("#hapus"+p.productID).click(function(e){
+
+         var id = $("#productID"+p.productID).val();
+
+
+         var apiurl1 = api_base_url +'/product/deletewishlist?item_id='+p.productID;
+           e.preventDefault();
+
+           $.ajax({ type:"GET", contentType: "application/json",  headers:{"token":token}, data:JSON.stringify({"productID":p.productID}) , url: apiurl1 });
+           alert('Wishlist Item Anda Berhasil Dihapus');
+            location.reload();
+         });
 
      });
-            },
+              },
+
         dataType: "json",
         url: api2});
 
@@ -247,4 +262,3 @@ $("#hapus").val(null);
 });
 
 </script>
-

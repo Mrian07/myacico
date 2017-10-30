@@ -30,6 +30,7 @@ class Web extends MY_Controller {
         $this->lang();
         $this->asset();
         $this->categorySearch();
+        $this->navigation();
     }
 
     public function auth(){
@@ -111,6 +112,15 @@ class Web extends MY_Controller {
 		$this->data['title_web'] = "Myacico.com - Login Admin";
 
 	}
+
+    public function navigation(){
+      $url = "http://api.myacico.co.id/myacico-service/category/list";
+  		$konten = file_get_contents($url, false);
+  		$hasilNav = json_decode($konten, true);
+      $this->data['hasilNav'] = $hasilNav;
+
+    // echo"<pre>"; print_r($hasilNav); die();
+    }
 
     public function asset(){
 

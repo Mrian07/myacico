@@ -41,13 +41,13 @@ class Pages extends Web {
 		$this->load->view('frontend/modules/pages/payment.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-	
+
 	public function faq()
 	{
 		$id=$this->uri->segment(3);
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
+
 		if($id){
 			$this->load->view('frontend/modules/pages/faq_detail.php',$this->data);
 		}else{

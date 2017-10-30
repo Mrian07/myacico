@@ -49,44 +49,42 @@ a{
 		<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_frontend.css');?>" />
 
-
-
 		<style type="text/css">
-	#search_keyword_id
-	{
-		width:500px;
-		/*border:solid 1px #CDCDCD;*/
-		padding:10px;
-		font-size:12px;
-	}
-	.productSrc
-	{
-		position:absolute;
-		width:600px;
-		display:none;
-		margin-top:-1px;
-		border-top:0px;
-		overflow:hidden;
-		border-left:1px  #CDCDCD solid;
-		border-right:1px  #CDCDCD solid;
-		background-color: white;
-		z-index: 289;
-	}
-	.show_result
-	{
-		font-family:tahoma;
-		padding:5px;
-		border-bottom:1px #CDCDCD dashed;
-		font-size:12px;
-		z-index: 289;
-	}
-	.show_result:hover
-	{
-		background:#e9e9e8;
-		color:#000000;
-		cursor:pointer;
-	}
-</style>
+			#search_keyword_id
+			{
+				width:500px;
+				/*border:solid 1px #CDCDCD;*/
+				padding:10px;
+				font-size:12px;
+			}
+			.productSrc
+			{
+				position:absolute;
+				width:600px;
+				display:none;
+				margin-top:-1px;
+				border-top:0px;
+				overflow:hidden;
+				border-left:1px  #CDCDCD solid;
+				border-right:1px  #CDCDCD solid;
+				background-color: white;
+				z-index: 289;
+			}
+			.show_result
+			{
+				font-family:tahoma;
+				padding:5px;
+				border-bottom:1px #CDCDCD dashed;
+				font-size:12px;
+				z-index: 289;
+			}
+			.show_result:hover
+			{
+				background:#e9e9e8;
+				color:#000000;
+				cursor:pointer;
+			}
+		</style>
     </head>
 
 <body style='font-weight: normal;' ng-app="myApp">
@@ -97,8 +95,8 @@ a{
 
 
 	<ul class='my-menu-header'>
-		<li style='background:#d8d7d7;'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b></li>
-		<li style='background:#e7e7e7;'><b><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
+		<li style='background:#d8d7d7;' class='my-menu-header-desktop'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b></li>
+		<li style='background:#e7e7e7;' class='my-menu-header-desktop'><b><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
 		Senen - Jumat [09:00 - 17:00]</b></li>
 
 
@@ -120,6 +118,9 @@ a{
 
 </div>
 </div>
+
+<div class='my-menu-header-mobile'>Belanja murah di myacico.com! <br>Gratis pengiriman untuk area JAKARTA<br><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i> Senen - Jumat [09:00 - 17:00]</div>
+
 
 <!--</div>-->
 
@@ -187,10 +188,10 @@ a{
 							<?php if(isset($user)){ ?>
 
 							<div class="dropdown-account">
-							  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account<span class="caret"></span></button>
+							  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
 							  <div class="dropdown-account-content">
 								<?php echo anchor('account', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
-								<?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('id'=>'logout'));?>
+								<?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('class'=>'logout'));?>
 							  </div>
 							</div>
 
@@ -260,14 +261,6 @@ a{
 									<?php foreach($catsearch as $datacat){
 										echo"<li><a href='#contains'>".$datacat['name']."</a></li>";
 									}?>
-								  <!-- <li><a href="#contains">Computer</a></li>
-								  <li><a href="#its_equal">Gatget</a></li>
-								  <li><a href="#greather_than">Communication</a></li>
-								  <li><a href="#less_than">Audio & Visual</a></li>
-								  <li><a href="#greather_than">Mechanical & Electrical</a></li>
-								  <li><a href="#less_than">Hobby</a></li>
-								  <li><a href="#greather_than">Peralatan Rumah</a></li>
-								  <li><a href="#less_than">Perlengkapan Kantor</a></li> -->
 								</ul>
 							</div>
 							<input type="hidden" name="search_param" value="all" id="search_param">
@@ -286,21 +279,18 @@ a{
 				<div class="col-sm-12">
 
 					<div class="btn-group">
-
 						<?php if(isset($user->name)){ ?>
-						<div class="dropdown">
-							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount
-							<span class="caret"></span></button>
-							<ul class="dropdown-menu">
-							<li><?php echo anchor('account/', 'Profile Anda');?></li>
-							<li class="divider"></li>
-							<li><a href="#" id="logout">Logout</a></li>
-							</ul>
+						<div class="dropdown-account">
+							<button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
+							<div class="dropdown-account-content">
+							<?php echo anchor('account', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
+							<?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('class'=>'logout'));?>
+							</div>
 						</div>
 
 						<?php }else{ ?>
 						<div class="dropdown-account">
-						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
+						  <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
 						  <div class="dropdown-account-content">
 							<?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> '.$lang_daftar);?>
 							<?php echo anchor('customer/signIn/', '<i class="fa fa-sign-in" aria-hidden="true"></i> '.$lang_masuk);?>
@@ -337,8 +327,6 @@ a{
 
 				</div>
 			</div>
-
-
 		</div>
 
 	</div>
@@ -352,19 +340,18 @@ a{
     <div class="btn-group" style='text-align:left; color:#111111;'>
 
       <?php if(isset($user->name)){ ?>
-      <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Acount
+      <div class="dropdown-account">
+        <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Acount
         <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-        <li><?php echo anchor('account/', 'Profile Anda');?></li>
-        <li class="divider"></li>
-        <li><a href="#" id="logout">Logout</a></li>
-        </ul>
+				<div class="dropdown-account-content">
+        <?php echo anchor('account/', '<i class="fa fa-registered" aria-hidden="true"></i> Profile Anda');?>
+        <?php echo anchor('#', '<i class="fa fa-sign-in" aria-hidden="true"></i> Logout', array('class'=>'logout'));?>
+        </div>
       </div>
 
       <?php }else{ ?>
       <div class="dropdown-account">
-        <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
+        <button class="dropbtn-account"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></button>
         <div class="dropdown-account-content">
         <?php echo anchor('customer/create/', '<i class="fa fa-registered" aria-hidden="true"></i> '.$lang_daftar);?>
         <?php echo anchor('customer/signIn/', '<i class="fa fa-sign-in" aria-hidden="true"></i> '.$lang_masuk);?>
@@ -384,7 +371,7 @@ a{
           $totalItems += $items['qty'];
         endforeach;
         ?>
-        <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
+        <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
         <div class="dropdown-basket-content">
 
           <?php
@@ -406,7 +393,7 @@ a{
 
 	function btnSearch(){
 		var searchID = $('#searchID').val();
-		location.href = base_url+'product/detail/'+searchID;
+		location.href = base_url+'product/listItem/'+searchID;
 	}
 
 	function money(x){
@@ -439,7 +426,7 @@ a{
 							data.forEach(function(p){
 								productSrc.append(
 
-								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='80'></td><td>"+p.name+"<br><b>"+money(p.pricelist)+"</b></td></tr></table></div>"
+								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
 
 
 								);
@@ -463,7 +450,7 @@ a{
 								data.forEach(function(p){
 									productSrc.append(
 
-									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td> <span>"+p.name+"</span><h3>"+money(p.pricelist)+"</h3></td></tr></table></div>"
+									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
 
 
 									);
@@ -481,10 +468,12 @@ a{
 	});
 	function showData(name,id)
 	{
-		$("#search").val(name);
-		$("#searchID").val(id);
-		$("#result").hide();
-		$(".productSrc").hide();
+		var url = base_url+'/product/detail/'+id;
+		window.location.href = url;
+		// $("#search").val(name);
+		// $("#searchID").val(id);
+		// $("#result").hide();
+		// $(".productSrc").hide();
 	}
 </script>
 
@@ -551,7 +540,7 @@ app.controller('cartCnt', function($scope, $mycart, toMoney){
 
 <?php if(isset($user->name)){ ?>
 
-$("#logout").click(function(e){
+$(".logout").click(function(e){
     e.preventDefault();
 
 	$.confirm({

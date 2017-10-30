@@ -3,6 +3,7 @@
     padding: 15px;
 		font-size: 20px;
     text-align: left;
+		font-family: 'Montserrat', sans-serif;
 }
 #hearts { font-size: 140px; color: #F4044F;}
 #hearts-existing { color: #87bad7;}
@@ -12,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/productpopup/css/xzoom.css');?>" media="all" />
 <link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url('assets/productpopup/magnific-popup/css/magnific-popup.css');?>" />
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/magnific-popup/js/magnific-popup.js');?>"></script>
-
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <div class='my-bg-title'>
 	<div class="container">
 		<div class="row">
@@ -41,47 +42,43 @@
 	<div class="row">
 	  <div class="col-sm-5">
 
-		<div class="row">
-		  <div class="col-sm-5">
-			<div class="xzoom-container">
-			  <img class="xzoom" id="xzoom-magnific" width=400 src="<?php echo $img; ?>" xoriginal="<?php echo $img; ?>" />
-			  <div class="xzoom-thumbs">
-				<!--<a ng-repeat="url in dat.imageurl" ng-href="{{url}}" on-finish-render="ngRepeatFinished">
-					<img class="xzoom-gallery" width="80" src="{{url}}" xpreview="{{url}}" title="">
-				</a>-->
-				 <a href="<?php echo $img;?>">
-					<img class="xzoom-gallery" width="80" src="<?php echo $img;?>"  xpreview="<?php echo $img;?>" title="">
-				</a>
-				<?php if($img1){?>
-				<a href="<?php echo $img1;?>">
-					<img class="xzoom-gallery" width="80" src="<?php echo $img1;?>" title="">
-				</a>
-				<?php } ?>
-				<?php if($img2){?>
-				<a href="<?php echo $img2;?>">
-					<img class="xzoom-gallery" width="80" src="<?php echo $img2;?>" title="">
-				</a>
-				<?php } ?>
-				<?php if($img3){?>
-				<a href="<?php echo $img3;?>">
-					<img class="xzoom-gallery" width="80" src="<?php echo $img3;?>" title="">
-				</a>
-				<?php } ?>
-				<!--a href="<?php //echo base_url('images/gallery/original/03_r_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/03_r_car.jpg');?>" title="The description goes here"></a>
-				<a href="<?php //echo base_url('images/gallery/original/04_g_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/04_g_car.jpg');?>" title="The description goes here"></a-->
-			  </div>
-			</div>
-		  </div>
-		  <div class="col-sm-7"></div>
-		</div>
+
+					<div class="xzoom-container">
+					  <img class="xzoom" id="xzoom-magnific" width=400 src="<?php echo $img; ?>" xoriginal="<?php echo $img; ?>" />
+					  <div class="xzoom-thumbs">
+						<!--<a ng-repeat="url in dat.imageurl" ng-href="{{url}}" on-finish-render="ngRepeatFinished">
+							<img class="xzoom-gallery" width="80" src="{{url}}" xpreview="{{url}}" title="">
+						</a>-->
+						 <a href="<?php echo $img;?>">
+							<img class="xzoom-gallery" width="80" src="<?php echo $img;?>"  xpreview="<?php echo $img;?>" title="">
+						</a>
+						<?php if($img1){?>
+						<a href="<?php echo $img1;?>">
+							<img class="xzoom-gallery" width="80" src="<?php echo $img1;?>" title="">
+						</a>
+						<?php } ?>
+						<?php if($img2){?>
+						<a href="<?php echo $img2;?>">
+							<img class="xzoom-gallery" width="80" src="<?php echo $img2;?>" title="">
+						</a>
+						<?php } ?>
+						<?php if($img3){?>
+						<a href="<?php echo $img3;?>">
+							<img class="xzoom-gallery" width="80" src="<?php echo $img3;?>" title="">
+						</a>
+						<?php } ?>
+						<!--a href="<?php //echo base_url('images/gallery/original/03_r_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/03_r_car.jpg');?>" title="The description goes here"></a>
+						<a href="<?php //echo base_url('images/gallery/original/04_g_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/04_g_car.jpg');?>" title="The description goes here"></a-->
+					  </div>
+					</div>
+
 	  </div>
 	  <div class="col-sm-7 detail-product">
-		<h5 class='title-product'><?php echo $name; ?></h5>
-<p style="color:red"><?php echo $sku3; ?></p>
-			<span class='price'>Rp.<?php echo money($pricelist);  ?></span><br>
-			weight <span class='red-tx'><?php echo $weight; ?></span><br>
-
-			Stock: <?php echo $stock;  ?>
+		<h4 class='title-product'><?php echo $name; ?></h4>
+		<p style="color:red"><?php echo $sku3; ?></p>
+			<span class='price'><b>Rp.<?php echo money($pricelist);  ?></b></span><br>
+			<!-- <b>Berat: <span class='red-tx'><?php echo $weight; ?></span></b><br> -->
+			<span style="color: green; font-weight:bold">Stock: Tersedia</span>
 
 
 			<div class="row lead">
@@ -95,7 +92,6 @@
 			</div><br>
 
 			<!-- <div class="row lead">
->>>>>>> 010ef1c94856c10f02130a98aa0f9221551dbd0a
 			   <center>
 
 				<div id="hearts-existing" class="starrr" data-rating='4'></div>
@@ -117,11 +113,11 @@
 			</div> -->
 
 
-
-			Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
+			<center>
+			Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i></center>
 
 			<div class='detail-add-wishlist'><center>
-				Quantity: <input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br><br>
+				<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br><br>
 				<!-- <div class="btnaddcart">
 					<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
 				</div> -->
@@ -131,9 +127,9 @@
 					<div class="btn-group">
 
 						<button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-            <?php 
+            <?php
                 //if($cektoken){}
-           
+
                   if($isWishList =='Y')
                   {
               ?>

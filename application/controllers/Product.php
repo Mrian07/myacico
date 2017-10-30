@@ -21,19 +21,19 @@ class Product extends Web {
 
 
 	public function listItem()
-	{       $token = null;
-                $adaToken =0;
+	{
+		$token = null;
+    $adaToken =0;
 		$this->data['pro']=$this->uri->segment(3);
-                if(isset($_COOKIE['x-auth'])){
-                    $token = $_COOKIE['x-auth'];
-                    $adaToken =1;
-                }
+    if(isset($_COOKIE['x-auth'])){
+        $token = $_COOKIE['x-auth'];
+        $adaToken =1;
+    }
 		$id_cat=$this->uri->segment(3);
 		$ob=$this->uri->segment(4);
                 $page=$this->uri->segment(5);
                 //$pg = intval($_GET['page']);
                 
-               
 		if($ob != 'all' && $page == True){
 			$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
 		}elseif($page){
@@ -44,14 +44,12 @@ class Product extends Web {
                 {
                     $api = "product/productlist?category=".$id_cat."&itemperpage=8";
                 }
-//                die(print_r("sam ".$api));
-                $api2 = "product/productlist/".$id_cat;
-		$url = api_base_url($api);
+
                 $url2 = api_base_url($api2);
 		$options = ["http" => [
-		"method" => "GET",
-                   "header" => ["token: " . $token,
-                        "Content-Type: application/json"],
+								"method" => "GET",
+	              "header" => ["token: " . $token,
+	              "Content-Type: application/json"],
 		]];
 
 		$context = stream_context_create($options);

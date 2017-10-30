@@ -4,6 +4,18 @@
 body{
     font-family: 'Quicksand', sans-serif;
 }
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
 .gal-container{
 	padding: 12px;
 }
@@ -154,7 +166,7 @@ footer a,footer a:hover{
     <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
       <div class="box">
         <a href="#" data-toggle="modal" data-target="#11">
-          <img src="http://nabeel.co.in/files/bootsnipp/gallery/11.jpg">
+          <img src="https://s1.postimg.org/3w7m9jvoan/banner_top.png" class="img-responsive">
         </a>
         <div class="modal fade" id="11" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
