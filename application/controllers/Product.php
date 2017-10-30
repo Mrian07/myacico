@@ -45,17 +45,10 @@ class Product extends Web {
     }
 		$id_cat=$this->uri->segment(3);
 		$ob=$this->uri->segment(4);
-<<<<<<< HEAD
-		if($ob){
-			$api = "product/productlist?category=".$id_cat."&ob=".$ob;
-		}else{
-			$api = "product/productlist?category=".$id_cat;
-		}
-    $api2 = "product/productall/".$id_cat;
-=======
+
                 $page=$this->uri->segment(5);
                 //$pg = intval($_GET['page']);
-                
+
 		if($ob != 'all' && $page == True){
 			$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
 		}elseif($page){
@@ -68,7 +61,7 @@ class Product extends Web {
                 }
 //                die(print_r("sam ".$api));
                 $api2 = "product/productlist/".$id_cat;
->>>>>>> d13d78835af29d1c31235530c82aeaf4d5c034e9
+
 		$url = api_base_url($api);
                 $url2 = api_base_url($api2);
 		$options = ["http" => [
