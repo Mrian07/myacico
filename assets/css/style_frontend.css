@@ -606,6 +606,104 @@ h3 span {
 }
 
 
+/*Drop Basket*/
+
+.dropbtn-basket-mobile {
+    background-color: #11093a;
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+	margin:0px;
+	right: 0; left: auto;
+}
+
+.dropdown-basket-mobile {
+    position: relative;
+    display: inline-block;
+	right: 0; left: auto;
+}
+
+.dropdown-basket-mobile-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 280px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding:10px;
+    z-index: 999999;
+	right: 0; left: auto;
+}
+
+.dropdown-basket-mobile-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+	right: 0; left: auto;
+}
+
+.dropdown-basket-mobile-content a:hover {background-color: #1de130}
+
+.dropdown-basket-mobile:hover .dropdown-basket-mobile-content {
+    display: block;
+}
+
+.dropdown-basket-mobile:hover .dropbtn-basket-mobile {
+    background-color: #2c11b4;
+}
+
+
+/*Drop Basket Token*/
+
+.dropbtn-basket-mobile-token {
+    background-color: #11093a;
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+	margin:0px;
+	right: 0; left: auto;
+}
+
+.dropdown-basket-mobile-token {
+    position: relative;
+    display: inline-block;
+		right: 0; left: auto;
+}
+
+.dropdown-basket-mobile-content-token {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 280px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding:10px;
+    z-index: 999999;
+	right: 0; left: auto;
+}
+
+.dropdown-basket-mobile-content-token a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+	right: 0; left: auto;
+}
+
+.dropdown-basket-mobile-content-token a:hover {background-color: #1de130}
+
+.dropdown-basket-mobile-token:hover .dropdown-basket-mobile-content-token {
+    display: block;
+}
+
+.dropdown-basket-mobile-token:hover .dropbtn-basket-mobile-token {
+    background-color: #2c11b4;
+}
+
+
 /*Cart*/
 
 .my-cart{
@@ -1117,6 +1215,28 @@ li.nav-show-mobile{
 }
 
 @media screen and (max-width:500px) {
+/*
+	.dropdown-basket-content {
+	    display: none;
+	    position: absolute;
+	    background-color: #ffffff;
+	    min-width: 280px;
+	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		padding:10px;
+	    z-index: 999999;
+		right: 0; left: auto;
+	}
+
+	.dropdown-basket-content-token {
+	    display: none;
+	    position: absolute;
+	    background-color: #ffffff;
+	    min-width: 280px;
+	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		padding:10px;
+	    z-index: 999999;
+		right: 0; left: auto;
+	}*/
 
 	li.nav-show-desktop{
 		display: none;
