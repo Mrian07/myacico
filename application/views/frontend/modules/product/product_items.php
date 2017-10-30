@@ -373,8 +373,9 @@ if($saw==Null)
             <div class="thumbnail">
                 <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $data['imageurl']; ?>" alt="" />
                 <div class="caption">
+                    <div  style='height:80px'>
                     <h5 class="group inner list-group-item-heading" style='text-align:center;'><a href="<?php echo base_url('product/detail/'.$data['m_product_id']);?>"><?php echo $data['name']; ?></a>  </h5><br>
-
+                    </div>
                         <div class="panel panel-default">
             <div class="panel-body">
 						<center>
