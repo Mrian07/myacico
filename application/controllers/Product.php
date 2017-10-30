@@ -31,12 +31,21 @@ class Product extends Web {
     }
 		$id_cat=$this->uri->segment(3);
 		$ob=$this->uri->segment(4);
-		if($ob){
-			$api = "product/productlist?category=".$id_cat."&ob=".$ob;
-		}else{
-			$api = "product/productlist?category=".$id_cat;
-		}
-    $api2 = "product/productlist/".$id_cat;
+                $page=$this->uri->segment(5);
+                //$pg = intval($_GET['page']);
+                
+		if($ob != 'all' && $page == True){
+			$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
+		}elseif($page){
+                    $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&page=".$page;
+                }elseif($ob != 'all'){
+			$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob;
+                }else
+                {
+                    $api = "product/productlist?category=".$id_cat."&itemperpage=8";
+                }
+//                die(print_r("sam ".$api));
+                $api2 = "product/productlist/".$id_cat;
 		$url = api_base_url($api);
                 $url2 = api_base_url($api2);
 		$options = ["http" => [
