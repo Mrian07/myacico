@@ -75,7 +75,7 @@
 	  </div>
 	  <div class="col-sm-7 detail-product">
 		<h4 class='title-product'><?php echo $name; ?></h4>
-		<p style="color:red"><?php echo $sku3; ?></p>
+		<p style="color:red"><?php echo $sku; ?></p>
 			<span class='price'><b>Rp.<?php echo money($pricelist);  ?></b></span><br>
 			<!-- <b>Berat: <span class='red-tx'><?php echo $weight; ?></span></b><br> -->
 			<span style="color: green; font-weight:bold">Stock: Tersedia</span>
