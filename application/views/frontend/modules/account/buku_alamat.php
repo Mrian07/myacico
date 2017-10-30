@@ -11,20 +11,20 @@
 </div>
 
 
-<div class="container">
+<div class="container my-container-white">
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
 
-		
-	
+
+
 		<div class='listBukuAlamat'><center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center></div>
-			
+
 		</div>
 	</div>
-	
+
 </div>
 
 <script>
@@ -37,6 +37,6 @@ $(document).ready(function() {
 			$(".listBukuAlamat").html(html);
 		}
 	});
-	
+
 });
 </script>

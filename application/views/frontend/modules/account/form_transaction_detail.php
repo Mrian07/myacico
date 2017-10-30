@@ -10,7 +10,7 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container my-container-white">
 	<div class="row">
 		<div class="col-sm-3">
                     <input type="hidden" id = "idtrans" name="idtrans"  value="<?php echo $hasil['idTransaksi'];?>" />
@@ -41,17 +41,17 @@
 //    var apiGet = api_base_url +"/transaction/file/"+idTrans;
     console.log('data1',apiGet);
 $.ajax({
-    type:"GET", 
+    type:"GET",
     headers:{"token":token},
 //    dataType: "image/png",
    // contentType: "image/png",
     //beforeSend: getAdd(),
     success: function(data){
        console.log('data:',data);
-       
+
 //$('.buktiTrans').html('<img src="data:image/png;base64,' + encodedResponse + '" />');
       $(".buktiTrans").append("<div><h6>Berikut adalah Bukti transfer: </br></div><a href='"+apiGet+"' target='_blank'><img class='group list-group-image' src='"+apiGet+"' alt='...' style:border='0' height='100'></a>");
-//        
+//
         },
        error: function(error, data) {
       console.log('asd',data);

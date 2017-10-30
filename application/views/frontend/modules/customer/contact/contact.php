@@ -15,14 +15,14 @@ function myMap() {
 		<div class="row">
 		  <div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> HUBUNGI KAMI 
+			<i class="fa fa-angle-right" aria-hidden="true"></i> HUBUNGI KAMI
 
 		  </div>
 		</div>
 	</div>
 </div>
 
-<div class="container">
+<div class="container my-container-white">
 
 	<div class="row">
 		<div class="col-sm-4"> <h4 style="color:red;">PT Myacico Global Indonesia</h4><br/>
@@ -62,7 +62,7 @@ function myMap() {
 			</div>
 			<div class="form-group">
 			<?php echo $image;?><br>
-			<label for="pwd">Security Code:</label>			 
+			<label for="pwd">Security Code:</label>
 			<input type='text' size='10' class="form-control mandatory" name='secutity_code' id='secutity_code'/>
 			</div>
 			<p>

@@ -45,7 +45,7 @@ a
 	</div>
 </div>
 
-<div class="container">
+<div class="container my-container-transparan">
 	<div class="row" ng-controller="cartCnt" method="post">
 		<div class="col-md-7">
 			<div class="panel panel-default">
@@ -56,8 +56,8 @@ a
 					<div class="col-md-12">
 
 						<form>
-							<p><strong>Data Billing</strong></p>							
-							<?php 
+							<p><strong>Data Billing</strong></p>
+							<?php
 							if(isset($alamat_billing)){
 								echo"<p>". $alamat_billing."</p>
 								<input type='hidden' value='". $billing_address_id."' id='billing_address_id'>
@@ -65,7 +65,7 @@ a
 							}else{
 								echo"<p>". anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default')); echo"</p>";
 							}?>
-							
+
 							<p><strong>Data Penerima</strong></p>
 						   <?php if($this->session->userdata('shipping_address_id'))
 						   {
@@ -78,7 +78,7 @@ a
 							 echo "<p>".anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-info btn-sm'))."</p>";
 
 						   }
-						   ?> 
+						   ?>
 						</form>
 
 					</div>
@@ -102,35 +102,61 @@ a
 							<?php }
 						?>
 					</select>
-                    <div class='listPayment'></div>                  
-					  
+                    <div class='listPayment'></div>
+
 				  </div>
-					<?php }else{echo"Silakan update data penerima diatas terlebih dulu.";} ?>  
+					<?php }else{echo"Silakan update data penerima diatas terlebih dulu.";} ?>
 			  </div>
 			</div>
-			
+
 			<div class="panel panel-default">
 			  <div class="panel-heading"><b>METODE PENGIRIMAN</b></div>
 			  <div class="panel-body">
-				<div class='listShipping'>Silakan update data penerima diatas terlebih dulu.</div>   
+				<div class='listShipping'>Silakan update data penerima diatas terlebih dulu.</div>
 
 			  </div>
 			</div>
-			
-			
+
+
 		</div>
 		<div class="col-md-5">
-			<?php 
-				$this->load->view('frontend/modules/checkout/checkout_cart'); 
-			?>
+			<?php
+				$this->load->view('frontend/modules/checkout/checkout_cart');
+
+
+      	$this->data['token'] = $_COOKIE['x-auth'];
+      	$token = $_COOKIE['x-auth'];
+      	$api = "order/cart/detail";
+      	$url = api_base_url($api);
+
+      	$options = ["http" => [
+      	"method" => "GET",
+      	"header" => ["token: " . $token,
+      	"Content-Type: application/json"],
+      	]];
+
+      	$context = stream_context_create($options);
+      	$konten = file_get_contents($url, false, $context);
+
+
+      	$hasil = json_decode($konten, true);
+
+
+
+        $total = 0;
+        $totalWeight=0;
+        foreach($hasil as $items){
+          $total +=$items['subtotal'];
+        }?>
+
 			<h5>ONGKOS KIRIM: Rp.<span id='totalOngkir'>0</span></h5>
-			<h5>TOTAL PEMBAYARAN: Rp.<span id='grandtotalall'>0</span></h5>
+			<h5>TOTAL PEMBAYARAN: Rp.<span id='grandtotalall'><?php echo money($total); ?></span></h5>
 			<button class='btn btn-success my-btn-chekout' onclick='finish()'>FINISH ORDER <i class="fa fa-angle-right"></i></button>
 		</div>
-		
-		
+
+
 	</div>
-	
+
 	<?php // echo anchor('', 'FINISH <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success my-btn-chekout', 'onclick'=>'return finish();'));?>
 
 </div>
@@ -138,7 +164,7 @@ a
 <script type="text/javascript">
 
 $(document).ready(function()
-{	
+{
 	var totaltrans = $('#SubtotalOrder').val();
 	$('#grandtotalall').html(addPeriod(totaltrans));
 
@@ -147,19 +173,19 @@ $(document).ready(function()
 
 	$.ajax
 		({
-		type: "POST",	
+		type: "POST",
 		url: "<?php echo site_url('checkout/listShipping'); ?>",
 		data: dataString,
 		success:function(html){
 				$(".listShipping").html(html);
 			}
-		});	
-	
+		});
+
 });
 
 function paymentType(payment_method)
 {
-	$('#typeVal').val(payment_method);	
+	$('#typeVal').val(payment_method);
 	if(payment_method=='R'){
 	//	$('#typeVal').val(payment_method);
 		$.ajax
@@ -207,7 +233,7 @@ function finish(){
 			title: 'Alert!',
 			content: 'Silakan pilih bank transfer',
 		});
-	
+
 	}else if(courier==''){
 		 $.alert({
 			title: 'Alert!',
@@ -223,10 +249,10 @@ function finish(){
 		data.code = code;
 		data.courier = courier;
 		data.courier_amount = courier_amount;
-		
+
 		$.ajax
 		({
-		type: "POST",	
+		type: "POST",
 		contentType: "application/json",
 		data: JSON.stringify(data),
 		headers:{"token":token},
@@ -236,7 +262,7 @@ function finish(){
 					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 				}else if(hasil.token!='' && paymentMethod=='C'){
 					window.location.replace("<?php echo site_url('checkout/paymentByCreditCard/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
-					
+
 					//window.location.replace("<?php echo site_url('payment/creditcard.php/?c='); ?>"+hasil.token);
 				}else{
 					$.alert({

@@ -9,39 +9,26 @@
 		</div>
 	</div>
 </div>
-<div class="container ">
+<div class="container my-container-white">
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9 dashboard">
-      
+
         <p>Hello <b><?php echo $user->name; ?></b>, <br><br>Dari Beranda Akun anda, anda bisa melihat tinjauan dari aktivitas akun yang ada sekarang dan memperbaharui informasi akun anda. Pilih tautan di bawah ini untuk melihat atau mengedit informasi.</p>
 		<hr>
-		
-		<table class="table table-condensed">
-		<thead>
-		  <tr>
-			<th>Informasi Akun & Billing</th>
-			<th>Konfirmasi Pembayaran</th>
-			<th>Newsletters</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-			<td><p>Informasi yang berkenaan dengan akun dan data pembayaran order Anda.</p>
-				<?php echo anchor('account/informasiAkun/', 'Ubah Data & Password');?></td>
-			<td><p>Anda bisa melakukan konfirmasi pembayaran pada halaman Riwayat dan Status Pesanan.</p>
-				<?php echo anchor('account/riwayatStatusPesanan/', 'Konfirmasi');?></td>
-			<td><p>Anda saat ini belum terdaftar.</p>
-				<?php echo anchor('customer/government/', 'Daftar');?></td>
-		  </tr>
-	
-		</tbody>
-	  </table>
 
+		<h4>Informasi Akun & Billing</h4>
+		<p>Informasi yang berkenaan dengan akun dan data pembayaran order Anda.</p>
+		<p><?php echo anchor('account/informasiAkun/', 'Ubah Data & Password');?></p>
+		<h4>Konfirmasi Pembayaran</h4>
+		<p>Anda bisa melakukan konfirmasi pembayaran pada halaman Riwayat dan Status Pesanan.</p>
+		<p><?php echo anchor('account/riwayatStatusPesanan/', 'Konfirmasi');?><p/>
+		<h4>Newsletters</h4>
+		<p>Anda saat ini belum terdaftar.</p>
+		<p><?php echo anchor('customer/government/', 'Daftar');?></p>
 
-	
 	</div>
 </div>
 </div>

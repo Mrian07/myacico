@@ -9,8 +9,8 @@
     </div>
   </div>
 </div>
-<div class="container">
-  
+<div class="container my-container-white">
+
   <div class="row">
     <div class="col-sm-3">
       <?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
@@ -19,7 +19,7 @@
       <p><?php echo anchor('account/informasiAkun', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali' , array('class'=>'btn btn-primary btn-sm'));?></p>
       <p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima. </br> *harap isi kemabali negara, propinsi, kota, dan kecamatan. </p>
       <div class="panel panel-default">
-        <div class="panel-body">  
+        <div class="panel-body">
           <form name="signup" method="post">
           <div class="form-group">
           <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
@@ -78,7 +78,7 @@
           </div>
           <div class="clearfix"></div>
              <input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
-                                       
+
           </form>
         </div>
       </div>
@@ -136,7 +136,7 @@ function get_city(){
 function get_region(){
   $("#region_box").slideDown();
     var negara = $('#country_sel').val();
- 
+
   $("#region_sel").prop('disabled', true).unbind("change", get_city);
   $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
     r.forEach(function(o){
@@ -168,8 +168,8 @@ $(document).ready(function() {
 //});
  var apiGet= api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token;
 $.ajax({
-    type:"GET", 
-    headers:{"token":token}, 
+    type:"GET",
+    headers:{"token":token},
     //beforeSend: getAdd(),
     success: function(data){
         var addressname = $('.addressname');
@@ -184,7 +184,7 @@ $.ajax({
         $("#address1").val(data.address1);
         $("#address2").val(data.address2);
         data.forEach(function(p){
-      
+
   rumah.append(
 
   '<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
@@ -193,22 +193,22 @@ $.ajax({
   '<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
   )
   });
-        
+
         },
-    dataType: "json", 
+    dataType: "json",
     url: apiGet});
 
-   /* 
+   /*
         $.get(api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token,
  function(data){
  console.log('data nya adalah:', data);
-        
+
   var addressname = $('.addressname');
   var rumah = $('.rumah');
   var mybutton = $('.mybutton');
   if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
   if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
- 
+
         $("#id").val(data.id);
         $("#address_name").val(data.address_name);
         $("#name").val(data.name);
@@ -219,7 +219,7 @@ $.ajax({
         $("#address2").val(data.address2);
 //        console.log('data nya adalah:', data[0]['id']);
   data.forEach(function(p){
-      
+
   rumah.append(
 
   '<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
@@ -252,7 +252,7 @@ $.ajax({
         var isshipto = $("#isshipto").val();
         var ispayfrom = $("#ispayfrom").val();
         var isremitto = $("#isremitto").val();
-   
+
     //var fl=document.signup;
 //    var data = $(this).serialize();
 //     return alert(data);die();
@@ -275,7 +275,7 @@ data.id = id;
 
     // success handling
 
-    var success = function(r){ 
+    var success = function(r){
          $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
         $.alert({
@@ -302,7 +302,7 @@ data.id = id;
       }
 
     });
-    
+
 
     if(form_ok==false) return false;
     if(fl.password.value!=$('#password2').val())alert('password not match!!!');

@@ -1,13 +1,18 @@
+<div class='my-bg-title'>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-12">
 
-<div class="container">
-	<div class="row">
-	  <div class="col-sm-12">
-		<div class="my-border-title">
-			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DATA AKUN</h3>
+			<i class="fa fa-angle-right" aria-hidden="true"></i> DATA AKUN
+
+		  </div>
 		</div>
-	  </div>
-	</div> 
-	
+	</div>
+</div>
+
+
+<div class="container my-container-white">
+
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
@@ -16,7 +21,7 @@
 			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
 			<p>Silakan isi nama akun yang baru jika ingin melakukan perubahan dan click button update.</p>
 			<div class="panel panel-default">
-				<div class="panel-body">	
+				<div class="panel-body">
 				  <form name="loginFm" method="post">
 					<div class="form-group">
 					  <label>Nama</label>
@@ -51,16 +56,16 @@ $(document).ready(function() {
 
 	$('form').submit(function(e){
 		var name = $("#name").val();
-		var token = document.cookie.split('x-auth=')[1].split(';').shift();	
+		var token = document.cookie.split('x-auth=')[1].split(';').shift();
 
-		if(name==''){		
+		if(name==''){
 			$.alert({
 				title: 'Alert!',
 				content: 'Nama tidak boleh kosong!',
 			});
 			$("#name").val("<?php echo $user->name; ?>");
 		}else{
-			
+
 			$('#spinner_img').show();
 			$('#submit_btn').val('loading...').addClass('disabled');
 			e.preventDefault();
@@ -74,19 +79,19 @@ $(document).ready(function() {
 				$('#submit_btn').val('Update').removeClass('disabled');
 				console.log('OK:', r);
 				//alert(r.message);
-				
+
 				$.alert({
 					title: 'Alert!',
 					content: 'Nama berhasil diubah',
 				});
-				
+
 				 document.cookie='x-auth='+r.newToken+'; path='+base_path;
 
 			};
 
 			//$.post( apiurl, data, success, "json" );
 			$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "name":name}) , headers:{"token":token}, url: apiurl, success: success, error: error });
-		
+
 		}
 	});
 

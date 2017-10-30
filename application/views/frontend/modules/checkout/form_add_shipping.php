@@ -45,7 +45,7 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container my-container-transparan">
 	<div class="row" ng-controller="cartCnt">
 		<div class="col-md-7">
 			<div class="panel panel-default">
@@ -60,7 +60,7 @@
 					</div>
 				</div>
 			  </div>
-	
+
 				 <div class="panel-body">
 
 
@@ -95,7 +95,7 @@
                       <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
                       <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
                     </div>
-                    
+
                     <div class="form-group">
                     <label><?php echo $lang_Country; ?>*</label>
                       <select name="country" id="country_sel" class="form-control mandatory" disabled >
@@ -132,13 +132,13 @@
                     <label>Telepon</label>
                       <input type="text" id = "phone2"name="phone2" class="form-control"/>
                     </div>
-                   
+
                     <div class="clearfix"></div>
                       <input type="submit" id="submit_btn" class="btn btn-primary" value="Tambah"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
                     </form>
                   </div>
                 </div>
-     
+
 
 			</div>
 
@@ -147,8 +147,8 @@
 
 		</div>
 		<div class="col-md-5">
-			<?php 			
-				$this->load->view('frontend/modules/checkout/checkout_cart'); 
+			<?php
+				$this->load->view('frontend/modules/checkout/checkout_cart');
 			?>
 		</div>
 	</div>
@@ -202,7 +202,7 @@ function get_city(){
 function get_region(){
   $("#region_box").slideDown();
     var negara = $('#country_sel').val();
- 
+
   $("#region_sel").prop('disabled', true).unbind("change", get_city);
   $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
     r.forEach(function(o){
@@ -251,7 +251,7 @@ data.isbillto = 'Y';
 data.isshipto = 'Y';
 data.ispayfrom = 'Y';
 data.isremitto = 'Y';
-	
+
     //return alert(data.phone);die();
      var success = function(r){
          $('#spinner_img').hide();

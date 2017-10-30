@@ -45,7 +45,7 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container my-container-transparan">
 	<div class="row" ng-controller="cartCnt">
 		<div class="col-md-7">
 			<div class="panel panel-default">
@@ -63,7 +63,7 @@
 			  <div class="panel-body">
 
 						<p>Masukan data billing dengan lengkap pada form dibawah ini.</p>
-						
+
 
           				  <form name="test1" method="post">
           				  <input type="hidden" id="isbillto" name="isbillto" value="N" />
@@ -117,22 +117,22 @@
           					<label>Telepon</label>
           						<input type="text" id = "phone2"name="phone2" class="form-control"/>
           					</div>
-          					
-          					
+
+
 
 
           					<div class="clearfix"></div>
           						<input type="submit" id="submit_btn" class="btn btn-primary" value="Tambah"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
           				  </form>
-         
+
 
 			  </div>
 			</div>
 
 		</div>
 		<div class="col-md-5">
-			<?php 			
-				$this->load->view('frontend/modules/checkout/checkout_cart'); 
+			<?php
+				$this->load->view('frontend/modules/checkout/checkout_cart');
 			?>
 		</div>
 	</div>
@@ -188,7 +188,7 @@ function get_city(){
 function get_region(){
   $("#region_box").slideDown();
     var negara = $('#country_sel').val();
- 
+
   $("#region_sel").prop('disabled', true).unbind("change", get_city);
   $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
     r.forEach(function(o){
@@ -223,7 +223,7 @@ $('#submit_btn').attr('disabled','disabled');
         var ispayfrom = $("#ispayfrom").val();
         var isremitto = $("#isremitto").val();
 		var village_id = $("#village_id").val();
-		
+
 
     //var fl=document.signup;
 //    var data = $(this).serialize();
