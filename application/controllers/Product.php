@@ -45,12 +45,30 @@ class Product extends Web {
     }
 		$id_cat=$this->uri->segment(3);
 		$ob=$this->uri->segment(4);
+<<<<<<< HEAD
 		if($ob){
 			$api = "product/productlist?category=".$id_cat."&ob=".$ob;
 		}else{
 			$api = "product/productlist?category=".$id_cat;
 		}
     $api2 = "product/productall/".$id_cat;
+=======
+                $page=$this->uri->segment(5);
+                //$pg = intval($_GET['page']);
+                
+		if($ob != 'all' && $page == True){
+			$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
+		}elseif($page){
+                    $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&page=".$page;
+                }elseif($ob != 'all'){
+			$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob;
+                }else
+                {
+                    $api = "product/productlist?category=".$id_cat."&itemperpage=8";
+                }
+//                die(print_r("sam ".$api));
+                $api2 = "product/productlist/".$id_cat;
+>>>>>>> d13d78835af29d1c31235530c82aeaf4d5c034e9
 		$url = api_base_url($api);
                 $url2 = api_base_url($api2);
 		$options = ["http" => [
@@ -139,6 +157,14 @@ class Product extends Web {
 		$hasil = json_decode($konten, true);
 //die(print_r($hasil['isWishList']));
 
+if(isset($hasil['sku'])){
+	$this->data['sku'] = $hasil['sku'];
+
+}else{
+	$hasil['sku'] ='';
+
+}
+
 
 				if(isset($hasil['specification'][0]['attribute'])){
 					$this->data['specification'] = $hasil['specification'][0]['attribute'];
@@ -179,7 +205,7 @@ class Product extends Web {
 
 		$this->data['description'] = $hasil['description'];
 		$this->data['highlight'] = $hasil['highlight'];
-		$this->data['sku3'] = $hasil['sku'];
+		$this->data['sku'] = $hasil['sku'];
 
                 $this->data['isWishList']=$hasil['isWishList'];
 		$this->data['category'] = $hasil['category'];
