@@ -44,7 +44,9 @@ class Product extends Web {
                 {
                     $api = "product/productlist?category=".$id_cat."&itemperpage=8";
                 }
-
+//                die(print_r("sam ".$api));
+                $api2 = "product/productlist/".$id_cat;
+		$url = api_base_url($api);
                 $url2 = api_base_url($api2);
 		$options = ["http" => [
 								"method" => "GET",
