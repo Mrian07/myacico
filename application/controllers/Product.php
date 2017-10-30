@@ -19,6 +19,20 @@ class Product extends Web {
 
 	}
 
+	public function alllistItem()
+	{
+		$id=$this->uri->segment(3);
+		$this->data['pro']=$this->uri->segment(3);
+		$api = "product/productall/".$id;
+		$url = api_base_url($api);
+		$konten = file_get_contents($url, false);
+		$this->data['hasil'] = json_decode($konten, true);
+		$this->data['title_web'] = "Myacico.com - Home";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/product/product_items_all.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 
 	public function listItem()
 	{
@@ -36,7 +50,7 @@ class Product extends Web {
 		}else{
 			$api = "product/productlist?category=".$id_cat;
 		}
-    $api2 = "product/productlist/".$id_cat;
+    $api2 = "product/productall/".$id_cat;
 		$url = api_base_url($api);
                 $url2 = api_base_url($api2);
 		$options = ["http" => [

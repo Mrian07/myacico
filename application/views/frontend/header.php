@@ -155,14 +155,14 @@ a{
 					</div>
 					<input type="hidden" name="search_param" value="all" id="search_param">
 					<input type="hidden" name="searchID" id="searchID">
-					<input type="text" name="search" id="search" autocomplete="off" class="my-search-field">
+					<input type="text" name="search" id="searchDesk" autocomplete="off" class="my-search-field">
 					<!--<div id="result"></div>-->
 					<div class="productSrc" style='diplay:none'></div>
 
 					<!--<input type="text" class="my-search-field" name="x" placeholder="Search term..."> -->
 
 					<span class="input-group-btn">
-						<button class="btn btn-default my-search-button" type="button" onclick='btnSearch()'><i class="fa fa-search" aria-hidden="true"></i></button>
+						<button class="btn btn-default my-search-button" type="button" onclick='btnSearchDesk()'><i class="fa fa-search" aria-hidden="true"></i></button>
 					</span>
 				</div>
 			</div>
@@ -391,9 +391,9 @@ a{
 
 <script type="text/javascript">
 
-	function btnSearch(){
-		var searchID = $('#searchID').val();
-		location.href = base_url+'product/listItem/'+searchID;
+	function btnSearchDesk(){
+		var searchDesk = $('#searchDesk').val();
+		location.href = base_url+'product/alllistItem/'+searchDesk;
 	}
 
 	function money(x){
@@ -406,7 +406,7 @@ a{
 
 	$(document).ready(function() {
 
-		$("#search").keyup(function() {
+		$("#searchDesk").keyup(function() {
 			var cat = $('#search_param').val();
 			$(".productSrc").show();
 
