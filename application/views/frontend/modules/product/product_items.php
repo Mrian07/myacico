@@ -378,6 +378,14 @@ if($saw==Null)
                         <div class="panel panel-default">
             <div class="panel-body">
 						<center>
+              <?php
+              //if($cektoken){}
+                if($data['stock'] < 1)
+         echo "<div class='yu'>Stock : Tidak Tersedia</div>";
+                else{
+                 echo "<div class='yu1'>Stock :  Tersedia</div>";
+                }
+            ?>
 						<p class="lead">
                                 Rp.<?php echo money($data['pricelist']); ?></p>
 
@@ -401,6 +409,8 @@ if($saw==Null)
                <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
             <?php }else{
            ?>
+
+
 
 
 
@@ -473,6 +483,13 @@ if($saw==Null)
 
 <script type="text/javascript">
 
+
+$(document).ready(function() {
+    $('#list').click(function(){event.preventDefault();$('#products .item').addClass('list-group-item');});
+    $('#grid').click(function(){event.preventDefault();$('#products .item').removeClass('list-group-item');});
+		$('[data-toggle="tooltip"]').tooltip();
+});
+
 function filter(id){
  //  console.log('sam',$('#sort_id').val(id.value));
   window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'); ?>"+id.value);
@@ -538,7 +555,7 @@ function addWishlist(id,name,imageurl){
 						},
 						closeIcon: true,
 						closeIconClass: 'fa fa-close'
-            
+
 					});
 				}
 			}
@@ -705,15 +722,8 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 
 
-
-
-
 /*
-$(document).ready(function() {
-    $('#list').click(function(){event.preventDefault();$('#products .item').addClass('list-group-item');});
-    $('#grid').click(function(){event.preventDefault();$('#products .item').removeClass('list-group-item');});
-		$('[data-toggle="tooltip"]').tooltip();
-});
+
 function formatNumber (num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
 }

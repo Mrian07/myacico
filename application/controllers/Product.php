@@ -134,6 +134,14 @@ class Product extends Web {
 		$hasil = json_decode($konten, true);
 //die(print_r($hasil['isWishList']));
 
+if(isset($hasil['sku'])){
+	$this->data['sku'] = $hasil['sku'];
+
+}else{
+	$hasil['sku'] ='';
+
+}
+
 
 				if(isset($hasil['specification'][0]['attribute'])){
 					$this->data['specification'] = $hasil['specification'][0]['attribute'];
@@ -174,7 +182,7 @@ class Product extends Web {
 
 		$this->data['description'] = $hasil['description'];
 		$this->data['highlight'] = $hasil['highlight'];
-		$this->data['sku3'] = $hasil['sku'];
+		$this->data['sku'] = $hasil['sku'];
 
                 $this->data['isWishList']=$hasil['isWishList'];
 		$this->data['category'] = $hasil['category'];
