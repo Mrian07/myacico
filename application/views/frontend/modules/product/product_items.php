@@ -470,12 +470,15 @@ if($saw==Null)
 <div class="text-center">
     <ul class="pagination">
    <li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
-  <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/').'1'; ?>"  value="1">1</a></li>
-  <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/').'2'; ?>" value="2">2</a></li>
-  <li><a href="#" value="3">3</a></li>
-  <li><a href="#" value="4">4</a></li>
-  <li><a href="#" value="5">5</a></li>
-   <li class=next><a href=# aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>
+   <?php 
+    $i=1;    
+   //die(print_r($max_page));
+        for($i;$i<=$max_page;$i++){
+   ?>
+  <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
+  
+        <?php }?>
+   <li class=next><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$i+=1); ?>" aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>
     </ul>
 </div>
 
