@@ -95,12 +95,8 @@ a{
 
 
 	<ul class='my-menu-header'>
-		<!-- <li style='background:#d8d7d7;' class='my-menu-header-desktop'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b></li>
-		<li style='background:#e7e7e7;' class='my-menu-header-desktop'><b><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
-		Senen - Jumat [09:00 - 17:00]</b></li> -->
-		<li class='my-menu-header-desktop'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA,</b> <i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
-		Senen - Jumat [09:00 - 17:00]</li>
-
+		<li class='my-menu-header-desktop'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b> <i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
+		Senen - Jumat [09:00 - 17:00]</b></li>
 		<li class='my-menu-header-sub' style="float: right;">Bahasa
 			<div class="dropdown-lang" style='border:0px solid #aeaeab; border-radius:5px; background:#f1f3f6; padding:0px; right: 0; left: auto; '>
 			<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?> <span class="caret"></span>
@@ -110,7 +106,7 @@ a{
 			</div>
 			</div>
 		</li>
-		<li class='my-menu-header-sub' style="float: right;"><?php echo anchor('customer/contact', 'Hubungi Kami');?></li>
+		<li class='my-menu-header-sub' style="float: right;"><?php echo anchor('customer/contact/', 'Hubungi Kami');?></li>
 		<li class='my-menu-header-sub' style="float: right;"><?php echo anchor('pages/aboutus/', 'About Us');?></li>
 		<li class='my-menu-header-sub' style="float: right;"><?php echo anchor('pages/payment/', 'Payment');?></li>
 		<li style="float: right;"><?php echo anchor('pages/faq/', 'FAQ');?></li>
@@ -175,6 +171,9 @@ a{
 				<div class="col-sm-4" style='color:#111111; font-weight:bold; margin-right:10px;'>
 
 				</div>
+				<div class="col-sm-6" style='color:#111111; wight:bold; text-align:right; margin-right:10px;'>
+					<img src="<?php echo base_url('images/general/info-head.png');?>" border="0">
+				</div>
 			</div>-->
 			<div>
 				<div class="row">
@@ -203,6 +202,7 @@ a{
 							</div>
 
 							<?php } ?>
+
 
 							<div class="dropdown-basket">
 								<?php
@@ -241,7 +241,7 @@ a{
 				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
 			</div>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-8">
 			<div class='myserach'>
 
 
@@ -266,7 +266,7 @@ a{
 			</div>
 		</div>
 
-		<div class="col-sm-4" style="height:100%; padding-top:10px;">
+		<div class="col-sm-2" style="height:100%; padding-top:10px;">
 
 			<div class="row">
 				<div class="col-sm-12">
@@ -292,10 +292,6 @@ a{
 
 						<?php } ?>
 
-						<!-- <div class="btncontact">
-							<?php //echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-paper-plane" aria-hidden="true"></i> Hubungi Kami</button>');?>
-
-						</div> -->
 						<div class="dropdown-basket" ng-controller="cartCnt">
 							<?php
 							$totalItems = 0;
@@ -309,7 +305,7 @@ a{
 								<?php
 								if($totalItems==0)
 								{ ?>
-								<div class='empty-item'><center><img src='<?php echo base_url('images/general/Bg-atas-acico.png'); ?>' border='0'><br>Keranjang belanja masih kosong tidak ada produk yang dipesan</center></div>
+								<div class='empty-item'><center><img src='<?php echo base_url('images/general/empty.jpg'); ?>' border='0'><br>Keranjang masih kosong</center></div>
 								<?php } ?>
 								<div class='list-item'></div>
 								<div class='btn-chekout'></div>
@@ -366,7 +362,7 @@ a{
           <?php
           if($totalItems==0)
           { ?>
-          <div class='empty-item'><center>Keranjang masih kosong</center></div>
+          <div class='empty-item'><center><img src='<?php echo base_url('images/general/empty.jpg'); ?>' border='0'><br> Keranjang masih kosong</center></div>
           <?php } ?>
           <div class='list-item'></div>
           <div class='btn-chekout'></div>
@@ -394,14 +390,6 @@ a{
 	});
 
 	$(document).ready(function() {
-
-	var container = $("#searchDesk");
-
-	 // if the target of the click isn't the container nor a descendant of the container
-	 if (!container.is(e.target) && container.has(e.target).length === 0)
-	 {
-			 container.hide();
-	 }
 
 		$("#searchDesk").keyup(function() {
 			var cat = $('#search_param').val();
