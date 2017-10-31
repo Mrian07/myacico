@@ -23,46 +23,65 @@ class Product extends Web {
 	{
 		$id=$this->uri->segment(3);
 		$this->data['pro']=$this->uri->segment(3);
-		
-		$api = "product/productall/".$id;
+  $page=$this->uri->segment(5);
+		$api = "product/productall/".$page;
+
 		$url = api_base_url($api);
 
+
 		$konten = file_get_contents($url, false);
+
+		  $api_max = "product/productall/".$id."?itemperpage=8"."&page=".$page."&show=pagecount";
+		  $url2 = api_base_url($api_max);
+			// die($url2);
+
+
+		$options = ["http" => [
+					"method" => "GET",
+					"Content-Type: application/json",
+				],
+		];
+									// looking maximum page
+
+		$context = stream_context_create($options);
+									$konten2 = file_get_contents($url2, false, $context);
+		// die($konten2);
+		$this->data['max_page'] =json_decode($konten2)->pageCount;
 		$this->data['hasil'] = json_decode($konten, true);
-		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
+
 		$this->load->view('frontend/modules/product/product_items_all.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
 	public function listItem()
-	{
-		$token = null;
+ {
+  $token = null;
     $adaToken =0;
-		$this->data['pro']=$this->uri->segment(3);
+  $this->data['pro']=$this->uri->segment(3);
     if(isset($_COOKIE['x-auth'])){
         $token = $_COOKIE['x-auth'];
         $adaToken =1;
     }
-		$id_cat=$this->uri->segment(3);
-		$ob=$this->uri->segment(4);
+  $id_cat=$this->uri->segment(3);
+  $ob=$this->uri->segment(4);
 
                 $page=$this->uri->segment(5);
                 //$pg = intval($_GET['page']);
 
-		if($ob != 'all' && $page == True){
+  							if($ob != 'all' && $page == True){
                     $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
                     $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page."&show=pagecount";
 
-                        
+
                 }elseif($page){
                     $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&page=".$page;
                     $api_max = "product/productlist?category=".$id_cat."&page=".$page."&show=pagecount";
 
                 }elseif($ob != 'all'){
-                    
-			$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob;
+
+   $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob;
                         $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&show=pagecount";
                 }else
                 {
@@ -73,41 +92,40 @@ class Product extends Web {
 //                die(print_r("sam ".$konten2));
 //                die(print_r("sam ".$api));
                 $api2 = "product/productlist/".$id_cat;
-		$url = api_base_url($api);            
+  $url = api_base_url($api);
                 $url2 = api_base_url($api_max);
 
-		$options = ["http" => [
-								"method" => "GET",
-	              "header" => ["token: " . $token,
-	              "Content-Type: application/json"],
-		]];
-                // looking maximum page 
-               
-		$context = stream_context_create($options);
+  $options = ["http" => [
+        "method" => "GET",
+               "header" => ["token: " . $token,
+               "Content-Type: application/json"],
+  ]];
+                // looking maximum page
+
+  $context = stream_context_create($options);
                 $konten2 = file_get_contents($url2, false, $context);
-		$konten = file_get_contents($url, false, $context);
+  $konten = file_get_contents($url, false, $context);
                  //die(print_r("sam ".json_decode($konten2)->pageCount));
                 $this->data['max_page'] =json_decode($konten2)->pageCount;
                 //die(print_r($this->data['max_page']));
-		$this->data['hasil'] = json_decode($konten, true);
+  $this->data['hasil'] = json_decode($konten, true);
 //                die(print_r(get_headers($url)));
-		if($adaToken == 1){
-			$this->data['cektoken'] = '1';
+  if($adaToken == 1){
+   $this->data['cektoken'] = '1';
                         //$this->data['wish']
 
-		}else{
-			$this->data['cektoken'] = '0';
-		}
+  }else{
+   $this->data['cektoken'] = '0';
+  }
 
-		$this->data['title_web'] = "Myacico.com - Home";
-		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		// $this->load->view('frontend/slide_show.php',$this->data);
-		$this->load->view('frontend/modules/product/product.php',$this->data);
+  $this->data['title_web'] = "Myacico.com - Home";
+  $this->load->view('frontend/header',$this->data);
+  $this->load->view('frontend/nav.php',$this->data);
+  // $this->load->view('frontend/slide_show.php',$this->data);
+  $this->load->view('frontend/modules/product/product.php',$this->data);
 
-		$this->load->view('frontend/footer',$this->data);
-	}
-
+  $this->load->view('frontend/footer',$this->data);
+ }
 
 	public function index()
     {

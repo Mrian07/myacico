@@ -146,6 +146,7 @@ h1.po1{
  $konten2 = file_get_contents($sumber2);
  $data = json_decode($konten, true);
  $data2 = json_decode($konten2, true);
+ $saw1=$this->uri->segment(5);
 
  $saw=$this->uri->segment(4);
  if($saw==Null)
@@ -470,17 +471,23 @@ h1.po1{
 <div class="text-center">
     <ul class="pagination">
    <li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
-  <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/').'1'; ?>"  value="1">1</a></li>
-  <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/').'2'; ?>" value="2">2</a></li>
+   <?php
+    $i=1;
+   //die(print_r($max_page));
+        for($i;$i<=$max_page;$i++){
+   ?>
+  <li><a href="<?php echo site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
 
-   <li class=next><a href=# aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>
+        <?php }?>
+   <li class=next><a href="<?php echo site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$i+=1); ?>" aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>
     </ul>
 </div>
+
 
 <script type="text/javascript">
 
 function filter(id){
-  window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'); ?>"+id.value);
+  window.location.replace("<?php echo site_url('product/alllistItem/'.$pro.'/'); ?>"+id.value);
 }
 
 var token = document.cookie.split('x-auth=')[1].split(';').shift();

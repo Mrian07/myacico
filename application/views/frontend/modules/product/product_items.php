@@ -470,13 +470,13 @@ if($saw==Null)
 <div class="text-center">
     <ul class="pagination">
    <li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
-   <?php 
-    $i=1;    
+   <?php
+    $i=1;
    //die(print_r($max_page));
         for($i;$i<=$max_page;$i++){
    ?>
   <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
-  
+
         <?php }?>
    <li class=next><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$i+=1); ?>" aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>
     </ul>
