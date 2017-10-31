@@ -60,7 +60,7 @@ a{
 			.productSrc
 			{
 				position:absolute;
-				width:600px;
+				width:628px;
 				display:none;
 				margin-top:-1px;
 				border-top:0px;
@@ -375,6 +375,9 @@ a{
 </div>
 
 <script type="text/javascript">
+	$('body').click(function() {
+		 $('.show_result').hide();
+	});
 
 	function btnSearchDesk(){
 		var searchDesk = $('#searchDesk').val();
@@ -388,6 +391,8 @@ a{
 	$('.show_result').on('mouseout',function(){
 		$('.show_result').hide();
 	});
+
+
 
 	$(document).ready(function() {
 

@@ -327,6 +327,9 @@ cursor:pointer;
 
 
 	<script type="text/javascript">
+	$('body').click(function() {
+		 $('.show_result_mobile').hide();
+	});
 
 	function btnSearch(){
 		var search = $('#search-mobile').val();
