@@ -23,8 +23,10 @@ class Product extends Web {
 	{
 		$id=$this->uri->segment(3);
 		$this->data['pro']=$this->uri->segment(3);
+
 		$api = "product/productall/".$id;
 		$url = api_base_url($api);
+
 		$konten = file_get_contents($url, false);
 		$this->data['hasil'] = json_decode($konten, true);
 		$this->data['title_web'] = "Myacico.com - Home";

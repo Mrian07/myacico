@@ -7,19 +7,7 @@
 <div class="footer">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-3">
-				<h3><span>EMAIL NEWSLETTER</span></h3>
-				Sign up for MyAcico news & Special Offers
 
-				<div class="input-group">
-					<input type="text" class="my-sub-field" name="x" placeholder="Search term...">
-					<span class="input-group-btn">
-						<button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button>
-
-					</span>
-				</div>
-
-			</div>
 			<div class="col-sm-3">
 				<h3><span>DELIVERY</span></h3>
 				2x24 hours delivery on weekdays for all areas of JABODETABEK and free delivery to all area in Indonesia.
@@ -47,10 +35,10 @@
 
 				<div class='sos'>
 				<ul>
-				  <li><a class="active" href="#home"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				  <li><a href="#news"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				  <li><a href="#contact"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				  <li><a href="#about"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+				  <li><a class="active" href="https://www.facebook.com/MyacicoID/?ref=aymt_homepage_panel"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				  <li><a href="https://twitter.com/myacicoid"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				  <li><a href="https://www.instagram.com/myacico.id/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+				  <li><a href="https://www.youtube.com/channel/UCT6wkP8xyhEgDZzrbuWBQRg"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
 				</ul>
 				</div>
 			</div>
