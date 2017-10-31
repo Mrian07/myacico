@@ -35,30 +35,44 @@ class Product extends Web {
                 //$pg = intval($_GET['page']);
                 
 		if($ob != 'all' && $page == True){
-			$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
-		}elseif($page){
+                    $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
+                    $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page."&show=pagecount";
+
+                        
+                }elseif($page){
                     $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&page=".$page;
+                    $api_max = "product/productlist?category=".$id_cat."&page=".$page."&show=pagecount";
+
                 }elseif($ob != 'all'){
+                    
 			$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob;
+                        $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&show=pagecount";
                 }else
                 {
                     $api = "product/productlist?category=".$id_cat."&itemperpage=8";
+                    $api_max = "product/productlist?category=".$id_cat."&show=pagecount";
+
                 }
+//                die(print_r("sam ".$konten2));
 //                die(print_r("sam ".$api));
                 $api2 = "product/productlist/".$id_cat;
-		$url = api_base_url($api);
-                $url2 = api_base_url($api2);
+		$url = api_base_url($api);            
+                $url2 = api_base_url($api_max);
 		$options = ["http" => [
 								"method" => "GET",
 	              "header" => ["token: " . $token,
 	              "Content-Type: application/json"],
 		]];
-
+                // looking maximum page 
+               
 		$context = stream_context_create($options);
+                $konten2 = file_get_contents($url2, false, $context);
 		$konten = file_get_contents($url, false, $context);
-
+                 //die(print_r("sam ".json_decode($konten2)->pageCount));
+                $this->data['max_page'] =json_decode($konten2)->pageCount;
+                //die(print_r($this->data['max_page']));
 		$this->data['hasil'] = json_decode($konten, true);
-              //  die(print_r($this->data['hasil']['isWishList']));
+//                die(print_r(get_headers($url)));
 		if($adaToken == 1){
 			$this->data['cektoken'] = '1';
                         //$this->data['wish']
