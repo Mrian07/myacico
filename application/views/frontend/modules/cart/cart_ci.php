@@ -10,8 +10,8 @@ echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 					</tr>
 				</thead>
 				<tbody>";
-				
-		foreach ($this->cart->contents() as $items): 	
+
+		foreach ($this->cart->contents() as $items):
 				echo"<tr>
 						<td data-th='Product'>
 							<div class='row'>
@@ -40,16 +40,16 @@ echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 						<td class='actions' data-th=''>
 							<a href='#' onClick=\"dellItemCart('".$items['id']."','".$items['rowid']."','".$items['image']."','".$items['name']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a>
 						</td>
-						
+
 					</tr>";
-		endforeach; 
+		endforeach;
 		echo"
 			</tbody>
 				<tfoot>
-					
+
 					<tr>
 						<td colspan='3'>
-						
+
 							<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman
 							<!--<a href='#' class='btn btn-warning'><i class='fa fa-info-circle' aria-hidden='true'></i>
  ANDA PUNYA KODE PROMO CLICK DISINI</a>-->
@@ -68,21 +68,21 @@ echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 		<script>
 
 			function getval(qty){
-				
+
 				var jml = qty.value;
 				var jm = jml.split('-');
 				var qty = jm[0];
 				var rowid = jm[1];
-						
+
 				var dataString = 'rowid='+rowid+'&qty='+qty;
-				
+
 				$.ajax
-				({ 
+				({
 				type: "POST",
 				url: "<?php echo site_url('cart/updateCart'); ?>",
 				data: dataString,
 				success:function(html){
-	
+
 						var qtyTotal = html;
 						$.ajax
 						({
@@ -98,5 +98,3 @@ echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 			}
 
 		</script>
-		
-	

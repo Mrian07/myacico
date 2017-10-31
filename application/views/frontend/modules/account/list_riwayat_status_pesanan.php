@@ -5,56 +5,55 @@
 }
 </style>
 <p>Dibawah ini adalah daftar buku alamat penerima pesanan. Anda bisa menambahkan alamat baru atau mengubah alamat sebelumnya dengan alamat yang lain.</p>
-<div class="panel panel-default">
-<table class="table">
-	<thead>
+<div class="row"  style='width: 100%; margin:0 auto;'>
+    <div id="no-more-tables">
+        <table class="col-md-12 table-bordered table-striped table-condensed cf">
+        	<thead class="cf">
 
-	  <tr>
-		<th>Tanggal Order</th>
-		<th>Total Pembayaran</th>
-		<th>Metode Pembayaran</th>
-		<th>Nomor Pesanan</th>
-		<th>Status</th>
-		<th>Detail</th>
-		<th>Konfirmasi/ Credit Cart</th>
-	  </tr>
+        	  <tr>
+        		<th>Tanggal Order</th>
+        		<th>Total Pembayaran</th>
+        		<th>Metode Pembayaran</th>
+        		<th>Nomor Pesanan</th>
+        		<th>Status</th>
+        		<th>Detail</th>
+        		<th>Konfirmasi/ Credit Cart</th>
+        	  </tr>
 
-	</thead>
-	<tbody>
-		<?php foreach($hasil as $items):	?>
-			<tr>
-				<td><?php echo tanggal_time($items['waktuTransaksi']);?></td>
-				<td>Rp.<?php echo money($items['grandTotal']);?></td>
-				<td><?php echo $items['paymentMethod'];?></td>
-				<td><?php echo $items['orderNumber'];?></td>
-				<td><?php echo $items['transactionStatus'];?></td>
-				<td><?php echo anchor('account/formTransactionDetail/'.$items['idTransaksi'], 'Detail', array('class'=>'btn btn-info'));?></td>
-				<td><?php
-					if($items['paymentMethod']=='Bank Transfer'){
-						if($items['transactionStatus']=='PAID'){
-							echo anchor('#', 'Konfirmasi', array('class'=>'btn btn-warning disabled'));
-						}else{
-							echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
-						}
-					}else{
+        	</thead>
+        	<tbody>
+        		<?php foreach($hasil as $items):	?>
+        			<tr>
+        				<td data-title="Tanggal Order"><?php echo tanggal_time($items['waktuTransaksi']);?></td>
+        				<td data-title="Total Pembayaran">Rp.<?php echo money($items['grandTotal']);?></td>
+        				<td data-title="Metode Pembayaran"><?php echo $items['paymentMethod'];?></td>
+        				<td data-title="Nomor Pesanan"><?php echo $items['orderNumber'];?></td>
+        				<td data-title="Status"><?php echo $items['transactionStatus'];?></td>
+        				<td data-title="Detail"><?php echo anchor('account/formTransactionDetail/'.$items['idTransaksi'], 'Detail', array('class'=>'btn btn-info'));?></td>
+        				<td data-title="Konfirmasi/ Credit Cart"><?php
+        					if($items['paymentMethod']=='Bank Transfer'){
+        						if($items['transactionStatus']=='PAID'){
+        							echo anchor('#', 'Konfirmasi', array('class'=>'btn btn-warning disabled'));
+        						}else{
+        							echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
+        						}
+        					}else{
 
-						if($items['transactionStatus']=='PAID'){
-							echo anchor('#', 'Paid', array('class'=>'btn btn-warning disabled'));
-						}else{
-							echo anchor('checkout/paymentByCreditCard/'.$items['idTransaksi'].'/'.$items['token'], 'Pay By Credit Cart', array('class'=>'btn btn-warning'));
-						}
-
-
-
-					}
-				?></td>
-			</tr>
-		<?php endforeach; ?>
+        						if($items['transactionStatus']=='PAID'){
+        							echo anchor('#', 'Paid', array('class'=>'btn btn-warning disabled'));
+        						}else{
+        							echo anchor('checkout/paymentByCreditCard/'.$items['idTransaksi'].'/'.$items['token'], 'Pay By Credit Cart', array('class'=>'btn btn-warning'));
+        						}
+        					}
+        				?></td>
+        			</tr>
+        		<?php endforeach; ?>
 
 
-	</tbody>
-</table>
-</div>
+        	</tbody>
+        </table>
+  </div>
+</div><br><br>
 <script type="text/javascript">
 
 function dellBukuAlamat(id,address1){

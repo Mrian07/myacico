@@ -155,14 +155,14 @@ a{
 					</div>
 					<input type="hidden" name="search_param" value="all" id="search_param">
 					<input type="hidden" name="searchID" id="searchID">
-					<input type="text" name="search" id="search" autocomplete="off" class="my-search-field">
+					<input type="text" name="search" id="searchDesk" autocomplete="off" class="my-search-field">
 					<!--<div id="result"></div>-->
 					<div class="productSrc" style='diplay:none'></div>
 
 					<!--<input type="text" class="my-search-field" name="x" placeholder="Search term..."> -->
 
 					<span class="input-group-btn">
-						<button class="btn btn-default my-search-button" type="button" onclick='btnSearch()'><i class="fa fa-search" aria-hidden="true"></i></button>
+						<button class="btn btn-default my-search-button" type="button" onclick='btnSearchDesk()'><i class="fa fa-search" aria-hidden="true"></i></button>
 					</span>
 				</div>
 			</div>
@@ -211,7 +211,7 @@ a{
 
 							</div>
 
-							<div class="dropdown-basket" ng-controller="cartCnt">
+							<div class="dropdown-basket">
 								<?php
 								$totalItems = 0;
 								foreach ($this->cart->contents() as $items):
@@ -364,15 +364,15 @@ a{
         <?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-paper-plane" aria-hidden="true"></i> Hubungi Kami</button>');?>
 
       </div>
-      <div class="dropdown-basket" ng-controller="cartCnt">
+      <div class="dropdown-basket-mobile">
         <?php
         $totalItems = 0;
         foreach ($this->cart->contents() as $items):
           $totalItems += $items['qty'];
         endforeach;
         ?>
-        <button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
-        <div class="dropdown-basket-content">
+        <button class="dropbtn-basket-mobile"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
+        <div class="dropdown-basket-mobile-content">
 
           <?php
           if($totalItems==0)
@@ -391,9 +391,9 @@ a{
 
 <script type="text/javascript">
 
-	function btnSearch(){
-		var searchID = $('#searchID').val();
-		location.href = base_url+'product/listItem/'+searchID;
+	function btnSearchDesk(){
+		var searchDesk = $('#searchDesk').val();
+		location.href = base_url+'product/alllistItem/'+searchDesk;
 	}
 
 	function money(x){
@@ -406,7 +406,7 @@ a{
 
 	$(document).ready(function() {
 
-		$("#search").keyup(function() {
+		$("#searchDesk").keyup(function() {
 			var cat = $('#search_param').val();
 			$(".productSrc").show();
 
@@ -565,6 +565,7 @@ $(".logout").click(function(e){
 <!---modif lalang-->
 <script type="text/javascript">
 
+//Desktop
 $(".dropbtn-basket").mouseover(function(){
 
 	var cookie = document.cookie.split('x-auth=');
@@ -589,6 +590,33 @@ $(".dropbtn-basket").mouseover(function(){
 			url: "<?php echo site_url('cart/loadCart'); ?>",
 			success:function(html){
 				$('.dropdown-basket-content').html(html);
+			}
+		});
+
+	}
+});
+
+//Mobile
+$(".dropbtn-basket-mobile").mouseover(function(){
+
+	var cookie = document.cookie.split('x-auth=');
+	if(cookie.length > 1){
+
+		$.ajax
+		({
+			url: "<?php echo site_url('cart/loadCartTokenMobile'); ?>",
+			success:function(html){
+				$('.dropdown-basket-mobile-content').html(html);
+			}
+		});
+
+	}else{
+
+		$.ajax
+		({
+			url: "<?php echo site_url('cart/loadCartMobile'); ?>",
+			success:function(html){
+				$('.dropdown-basket-mobile-content').html(html);
 			}
 		});
 

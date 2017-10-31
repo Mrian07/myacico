@@ -19,6 +19,22 @@ class Product extends Web {
 
 	}
 
+	public function alllistItem()
+	{
+		$id=$this->uri->segment(3);
+		$this->data['pro']=$this->uri->segment(3);
+
+		$api = "product/productall/".$id;
+		$url = api_base_url($api);
+
+		$konten = file_get_contents($url, false);
+		$this->data['hasil'] = json_decode($konten, true);
+		$this->data['title_web'] = "Myacico.com - Home";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/product/product_items_all.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 
 	public function listItem()
 	{
@@ -31,9 +47,10 @@ class Product extends Web {
     }
 		$id_cat=$this->uri->segment(3);
 		$ob=$this->uri->segment(4);
+
                 $page=$this->uri->segment(5);
                 //$pg = intval($_GET['page']);
-                
+
 		if($ob != 'all' && $page == True){
                     $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
                     $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page."&show=pagecount";
@@ -58,6 +75,7 @@ class Product extends Web {
                 $api2 = "product/productlist/".$id_cat;
 		$url = api_base_url($api);            
                 $url2 = api_base_url($api_max);
+
 		$options = ["http" => [
 								"method" => "GET",
 	              "header" => ["token: " . $token,

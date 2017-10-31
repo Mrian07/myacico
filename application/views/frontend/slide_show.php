@@ -43,10 +43,31 @@ h1, h2, h3 {
     padding-right:0;
     padding-left:0;
 }
+.city {
+    width: 100px;
+    height: 100px;
+}
 
 .padding-1{
     padding-right:0;
     padding-left:0;
+}
+.image_full{
+   display:block;
+  }
+
+ .image_mobile{
+  display:none;
+ }
+
+@media (max-width: 640px) and (min-width: 320px){
+  .image_full{
+   display:none;
+  }
+
+  .image_mobile{
+   display:block;
+  }
 }
 </style>
 
@@ -68,7 +89,7 @@ h1, h2, h3 {
               $active='';
             }
             ?>
-              <div style="background-image:url(<?php echo $itemslide['imageurl']; ?>)"></div>
+              <div style="background-image:url(<?php echo $itemslide['imageurl']; ?>)" class="img-responsive"></div>
             <?php $n++; } ?>
 
           <!-- The Arrows -->

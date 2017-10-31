@@ -6,13 +6,14 @@ position:absolute;
 width:310px;
 display:none;
 margin-top:-1px;
-border-top:0px;
+border-top:10px;
 overflow:hidden;
 border-left:1px  #CDCDCD solid;
 border-right:1px  #CDCDCD solid;
 background-color: white;
 z-index: 289;
 color:#000000;
+margin-top:38px;
 }
 
 .show_result_mobile
@@ -328,8 +329,8 @@ cursor:pointer;
 	<script type="text/javascript">
 
 	function btnSearch(){
-		var searchID = $('#searchID-mobile').val();
-		location.href = base_url+'product/detail/'+searchID;
+		var search = $('#search-mobile').val();
+		location.href = base_url+'product/alllistItem/'+search;
 	}
 
 	function money(x){
