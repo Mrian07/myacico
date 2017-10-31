@@ -23,7 +23,7 @@ class Product extends Web {
 	{
 		$id=$this->uri->segment(3);
 		$this->data['pro']=$this->uri->segment(3);
-
+		
 		$api = "product/productall/".$id;
 		$url = api_base_url($api);
 
