@@ -10,7 +10,7 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container my-container-white">
 
 	<div class="row">
 		<div class="col-sm-3">
@@ -100,8 +100,8 @@
 					<label>Telepon</label>
 						<input type="text" id = "phone2"name="phone2" class="form-control"/>
 					</div>
-					
-					
+
+
 
 
 					<div class="clearfix"></div>
@@ -130,11 +130,11 @@ function get_village(){
   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
-       
+
     });
     $("#village_id").prop('disabled', false).change(get_postal);
   }, "json" );
- 
+
 }
 function get_distric(){
   $("#ditric_box").slideDown();
@@ -179,7 +179,7 @@ function get_city(){
 function get_region(){
   $("#region_box").slideDown();
     var negara = $('#country_sel').val();
- 
+
   $("#region_sel").prop('disabled', true).unbind("change", get_city);
   $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
     r.forEach(function(o){
@@ -197,26 +197,26 @@ $.get(api_base_url+"/ccountry/getlistccountry", function(r){
     });
     $("#country_sel").prop('disabled', false).change(get_region);
   }, "json" );
-  
+
 var data = {};
 
 $(document).ready(function() {
     $('#submit_btn').attr('disabled','disabled');
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-        
+
         var apiGet= api_base_url+'/aduser/getinformationuser?token='+token;
 $.ajax({
-    type:"GET", 
-    headers:{"token":token}, 
+    type:"GET",
+    headers:{"token":token},
     success: function(data){
         $("#name").val(data.name)
         $("#phone").val(data.phone);
         $("#phone2").val(data.phone2);
-        
+
         },
-    dataType: "json", 
+    dataType: "json",
     url: apiGet});
-	
+
     $("form").submit(function(e){
     e.preventDefault();
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
@@ -256,7 +256,7 @@ $.ajax({
         data.ispayfrom = ispayfrom;
         data.isremitto = isremitto;
         data.village_id = village_id;
-    
+
      var success = function(r){
          $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
@@ -314,6 +314,6 @@ var error = function(er){
 
   });
 
-  
+
 });
 </script>

@@ -37,7 +37,7 @@
 		</div>
 	</div>
 </div>
-<div class="container">
+<div class="container my-container-white">
 <input type="hidden" id = "idtrans" name="idtrans"  value="<?php echo $this->data['konf'];?>" />
 <input type="hidden" id = "ck" name="ck"  value="" />
 	<div class="row">
@@ -49,15 +49,15 @@
                         <div class="buktiTrans"></div>
 			<p>Silakan upload bukti transfer pembayaran Anda pada form dibawah ini.</p>
 			<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
-			
+
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					 <label>Upload Image</label>
 				</div>
 				<div class="panel-body">
-				
+
 					<div class="input-group">
-                                            
+
 						<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 						<span class="input-group-btn">
 						<input type="hidden" placeholder="placeholder" id="transid" class="input-xlarge" value="<?php echo $konf; ?>" name="transid">
@@ -67,15 +67,15 @@
 						</span>
 						<input type="text" class="form-control" readonly>
 					</div><br>
-					
+
 					<img id='img-upload'/>
 
                                <button class="btn btn-success">Upload</button>
 					  <div class="form-group">
 
 					</div>
-				</div>	
-			</div>	
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -86,11 +86,11 @@ $(document).ready( function() {
     error: function(){
       alert('Image Berhasil Di Upload');
     },
-   
+
     timeout: 10000/*, account/confirm/
-    contentType: "application/json; charset=UTF-8"*/ 
+    contentType: "application/json; charset=UTF-8"*/
   });
-   
+
   var data = {};
     $("form").submit(function(e){
     e.preventDefault();
@@ -108,15 +108,15 @@ $(document).ready( function() {
   //     return alert(data);die();
   data.file = file;
   data.transid = transid;
-  
+
      var success = function(r){
          $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
-  
+
       console.log('OK:', r.status);
 //      $("#file").val(null);
 //      $("#transid").val(null);
-    
+
 alert('Image Berhasil Di Upload');
         window.location.replace(base_url+"account/confirm/"+$("#transid").val());
 
@@ -139,7 +139,7 @@ alert('Image Berhasil Di Upload');
     processData: false, // NEEDED, DON'T OMIT THIS
     // ... Other options like success and etc
   });
-  
+
   });
 
 $(document).on('change', '.btn-file :file', function() {
@@ -180,10 +180,10 @@ $(document).on('change', '.btn-file :file', function() {
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
     var apiGet = api_base_url +"/transaction/file/"+transid+"?key="+token;
     var apiGet2 = api_base_url +"/transaction/file/"+transid;
-    
-   
+
+
   $.ajax({
-    type:"GET", 
+    type:"GET",
     headers:{"token":token},
 //    dataType: "image/png",
    // contentType: "image/png",
@@ -198,12 +198,12 @@ $(document).on('change', '.btn-file :file', function() {
        else{
            (".buktiTrans").append("");
        }
-//        
+//
         },
        error: function(error, data) {
       console.log('asd',data);
 //      console.log('error');
     },
     url: apiGet});
-  
+
 </script>

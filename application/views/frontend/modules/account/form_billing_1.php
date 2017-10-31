@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container my-container-white">
 	<div class="row">
 	  <div class="col-sm-12">
 		<div class="my-border-title">
 			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> DATA BILLING</h3>
 		</div>
 	  </div>
-	</div> 
-	
+	</div>
+
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
@@ -15,9 +15,9 @@
 			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
 			<p>Silakan lengkapi data billing Anda dibawah ini.</p>
 			<div class="panel panel-default">
-				<div class="panel-body">	
+				<div class="panel-body">
 				  <form name="signup" method="post">
-					
+
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
 					  <input type="text" name="alamat1" class="form-control mandatory" />
@@ -45,8 +45,8 @@
 						<option value="">--pilih--</option>
 					  </select>
 					</div>
-					
-					
+
+
 					<div class="clearfix"></div>
 						<input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 				  </form>

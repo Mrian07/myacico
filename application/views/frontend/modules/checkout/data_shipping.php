@@ -10,7 +10,7 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container my-container-transparan">
 	<div class="row" ng-controller="cartCnt">
 		<div class="col-md-7">
 			<div class="panel panel-default">
@@ -21,12 +21,12 @@
 					</div>
 					<div class="col-md-4" style='text-align: right'>
 						<?php echo anchor('checkout', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali');?>
-						
+
 					</div>
-				</div>	
+				</div>
 			  </div>
 			  <div class="panel-body">
-				<?php echo anchor('checkout/formAddShippingNew', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat', array('class'=>'btn btn-link'));?>
+				<?php echo anchor('checkout/formAddShippingNew', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat', array('class'=>'btn btn-info'));?>
 				<br/>
 				<br/>
 				<table class="table">
@@ -44,17 +44,17 @@
 
 					</tbody>
 				</table>
-				
+
 
 			  </div>
 			</div>
 
 		</div>
 		<div class="col-md-5">
-			<?php 			
-				$this->load->view('frontend/modules/checkout/checkout_cart'); 
+			<?php
+				$this->load->view('frontend/modules/checkout/checkout_cart');
 			?>
-		</div>	
+		</div>
 	</div>
 </div>
 
@@ -67,8 +67,8 @@ $(document).ready(function() {
 	var filter =0;
         var apiGet= api_base_url+'/aduser/getaddress?token='+token;
 $.ajax({
-    type:"GET", 
-    headers:{"token":token}, 
+    type:"GET",
+    headers:{"token":token},
     //beforeSend: getAdd(),
     success: function(data){
         var rumah = $('.rumah');
@@ -78,7 +78,7 @@ $.ajax({
 
 console.log('sam',data);
 		if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
-		
+
 		 data.forEach(function(p){
 			 rumah.append('<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+','+p.city_name+', '+p.postal+'</td><td><a href="'+base_url+'/'+p.id+'" class="btn btn-warning" aria-label="Pilih">Pilih</a></td></tr>')
 			/* $("#hapus"+p.id).click(function(e){
@@ -92,9 +92,9 @@ console.log('sam',data);
 
 
 		});
-        
+
         },
-    dataType: "json", 
+    dataType: "json",
     url: apiGet});
 /*
 	$.get(api_base_url+'/aduser/getaddress?token='+token+'&addresstype=isshipto',
@@ -111,7 +111,7 @@ console.log('sam',data);
 
 
 		if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
-		
+
 		 data.forEach(function(p){
 			 rumah.append('<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td><td><a href="'+base_url+'/'+p.id+'" class="btn btn-warning" aria-label="Pilih">Pilih</a></td></tr>')
 			 $("#hapus"+p.id).click(function(e){
@@ -130,4 +130,3 @@ console.log('sam',data);
 });
 
 </script>
-

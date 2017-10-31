@@ -72,7 +72,7 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container my-container-transparan">
 	<div class="row">
 		<?php
 		foreach($hasil['subValue'] as $key => $data){

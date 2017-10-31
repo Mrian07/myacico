@@ -10,7 +10,7 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container my-container-white">
 
 	<div class="row">
 		<div class="col-sm-3">
@@ -62,7 +62,7 @@
 							<label><?php echo "Kelurahan"; ?>*</label>
 					  <select name="village_id" id="village_id" class="form-control mandatory"></select>
 					</div>
-					
+
 					<div class="form-group">
 					<label><?php echo $lang_PostCode; ?>*</label>
 						<input type="text" id="postal" name="postal" class="form-control mandatory" />
@@ -75,7 +75,7 @@
 					<label>Telepon</label>
 						<input type="text" id = "phone2"name="phone2" class="form-control"/>
 					</div>
-					
+
 					<div class="clearfix"></div>
 						<input type="submit" id="submit_btn" class="btn btn-primary" value="Tambah"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 				  </form>
@@ -110,7 +110,7 @@ function get_village(){
     $("#village_id").prop('disabled', false);
   }, "json" );
 }
-    
+
 function get_distric(){
   $("#ditric_box").slideDown();
   $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
@@ -137,7 +137,7 @@ function get_city(){
 function get_region(){
   $("#region_box").slideDown();
     var negara = $('#country_sel').val();
- 
+
   $("#region_sel").prop('disabled', true).unbind("change", get_city);
   $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
     r.forEach(function(o){
@@ -155,7 +155,7 @@ $.get(api_base_url+"/ccountry/getlistccountry", function(r){
     });
     $("#country_sel").prop('disabled', false).change(get_region);
   }, "json" );
-  
+
 var data = {};
 
 $(document).ready(function() {
@@ -279,6 +279,6 @@ var error = function(er){
 
   });
 
-  
+
 });
 </script>
