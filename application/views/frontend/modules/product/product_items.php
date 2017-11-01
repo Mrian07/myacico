@@ -377,7 +377,7 @@ if($saw==Null)
                 <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $data['imageurl']; ?>" alt="" />
                 <div class="caption">
                     <div  style='height:80px'>
-                    <h5 class="group inner list-group-item-heading" style='text-align:center;'><a href="<?php echo base_url('product/detail/'.$data['m_product_id']);?>"><?php echo $data['name']; ?></a>  </h5><br>
+                    <h5 class="group inner list-group-item-heading" style='text-align:center;'><a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a>  </h5><br>
                     </div>
                         <div class="panel panel-default">
             <div class="panel-body">
@@ -473,7 +473,7 @@ if($saw==Null)
 <div class="text-center">
     <ul class="pagination">
    <!--<li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>-->
-  
+
        <?php
          //die(print_r("sam".$curr));
         if($curr == null)
@@ -486,25 +486,25 @@ if($saw==Null)
        if($curr > 1){
            $prevCr=$curr;
            $prev =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$prevCr-=1);
-          
+
             echo "<li class=prev><a href=$prev aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>";
        }
-    $i=1;    
+    $i=1;
    //die(print_r($max_page));
         for($i;$i<=$max_page;$i++){
    ?>
   <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
-  
+
         <?php }
         if($curr < $max_page){
              $nextCr=$curr;
           $next =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$nextCr+=$curr2);
-          
+
            //die(print_r("sam".$curr));
             echo "<li class=next><a href=$next aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>";
        }
         ?>
-  
+
    <!--<li class=next><a href="<?php// echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$i+=1); ?>" aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>-->
     </ul>
 </div>
@@ -528,7 +528,7 @@ function filter(id){
 
 }
 $('.pagination').on('click', 'li:not(.prev):not(.next)', function() {
-   
+
     $('.pagination li').removeClass('active');
     $(this).not('.prev,.next').addClass('active');
 });

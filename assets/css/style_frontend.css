@@ -1,7 +1,5 @@
 /*!
  * Author: Lalang Gumirang
- * Website: lalangdesign.com
- * email: lalang.gumirang@yahoo.com
  */
 
 body {
@@ -254,11 +252,6 @@ h3 span {
 	border: 1px #d7d7d7 solid;
 	border-radius:10px;
 	margin:20px 0px 0px 0px;
-}
-
-.my-sort-product{
-	padding: 20px 0px 20px 0px;
-	border-bottom: 1px #d7d7d7 solid;
 }
 
 /*sidebar left*/

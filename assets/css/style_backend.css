@@ -1,7 +1,5 @@
 /*!
  * Author: Lalang Gumirang
- * Website: lalangdesign.com
- * email: lalang.gumirang@yahoo.com
  */
 
 body {
@@ -63,7 +61,7 @@ img {
 	font: bold 20px arial;
 	color: #e1e0e0;
 	margin-top:5px;
-	
+
 }
 
 .logout2{
@@ -83,7 +81,7 @@ img {
 
 .footer{
 	background: #f9f8a8;
-	display: block; 
+	display: block;
 	height: 100%;
 	width: 100%;
 	margin-top: 20px;
@@ -102,7 +100,7 @@ img {
 	padding: 5px;
 	text-shadow:1px 1px 0px #2e2f2f;
 	color:#ffffff;
-	font-size:20px;	
+	font-size:20px;
 	font-family: Tahoma;
 	border-bottom: 1px dashed #c0c0c0;
 	padding: 5px;
@@ -112,7 +110,7 @@ img {
 .title_field{
 	padding: 10px;
 	margin:0px auto;
-	background-color:#c0c0c0;  
+	background-color:#c0c0c0;
 	border-radius: 5px 5px 0px 0px;
 	background: -webkit-linear-gradient(#1bc0ff, #64daf7); /* For Safari 5.1 to 6.0 */
 	background: -o-linear-gradient(#1bc0ff, #64daf7); /* For Opera 11.1 to 12.0 */
@@ -125,7 +123,7 @@ img {
 	padding: 10px;
 	margin:0px auto;
 	background-color:#f3f3f3;
-	border-bottom: solid 5px #c0c0c0;    
+	border-bottom: solid 5px #c0c0c0;
 	font: 11px TAHOMA;
 	margin-bottom: 10px;
 }
@@ -175,7 +173,7 @@ img {
 }
 .navbar-default .navbar-text {
   color: #343435;
-  
+
 }
 .navbar-default .navbar-nav > li > a {
   color: #343435;
@@ -269,66 +267,66 @@ table{
 /*Table Responsive*/
 
 @media only screen and (max-width: 800px) {
-    
+
     /* Force table to not be like tables anymore */
-	#no-more-tables table, 
-	#no-more-tables thead, 
-	#no-more-tables tbody, 
-	#no-more-tables th, 
-	#no-more-tables td, 
-	#no-more-tables tr { 
-		display: block; 
+	#no-more-tables table,
+	#no-more-tables thead,
+	#no-more-tables tbody,
+	#no-more-tables th,
+	#no-more-tables td,
+	#no-more-tables tr {
+		display: block;
 	}
- 
+
 	/* Hide table headers (but not display: none;, for accessibility) */
-	#no-more-tables thead tr { 
+	#no-more-tables thead tr {
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
 	}
- 
+
 	#no-more-tables tr { border-bottom: 2px solid #ccc; margin-bottom: 10px; }
- 
-	#no-more-tables td { 
+
+	#no-more-tables td {
 		/* Behave  like a "row" */
 		border: none;
-		border-bottom: 1px solid #eee; 
+		border-bottom: 1px solid #eee;
 		position: relative;
-		padding-left: 50%; 
+		padding-left: 50%;
 		white-space: normal;
 		text-align:left;
 	}
- 
-	#no-more-tables td:before { 
+
+	#no-more-tables td:before {
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
 		top: 6px;
 		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
+		width: 45%;
+		padding-right: 10px;
 		white-space: nowrap;
 		text-align:left;
 		font-weight: bold;
 	}
- 
+
 	/*
 	Label the data
 	*/
 	#no-more-tables td:before { content: attr(data-title); }
-	
+
 	.b_tree{
 		font-size: 9px;
 	}
-	
+
 	.logout1{
 		display: none;
 	}
-	
+
 	.logout2{
 		display: inherit;
 	}
-	
+
 	.title_header{
 		text-align: center;
 		margin-bottom: 10px;
@@ -342,27 +340,27 @@ table{
 	.photo_member {
 		margin-left: 80px;
 	}
-	
+
 	.b_tree{
 		font-size: 8px;
 	}
-	
+
 	.img_responsive{
 		width:100%;
 	}
-	
+
 	.img_banner{
 		width:100%;
 	}
-	
+
 	.logout1{
 	display: none;
 	}
-	
+
 	.logout2{
 		display: inherit;
 	}
-	
+
 	.title_header{
 		text-align: center;
 		margin-bottom: 10px;
