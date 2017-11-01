@@ -76,12 +76,11 @@
 	<div class="row">
 		<?php
 		foreach($hasil['subValue'] as $key => $data){
-
 			?>
 
 			<div class="col-md-3 col-sm-6">
 				<span class='thumbnail'>
-				<a href="<?php echo base_url('product/listItem/'.$data['categoryId']);?>"><img src="<?php echo $data['imageurl']; ?>" alt="..."><h5><?php echo $data['name']; ?></h5></a>
+				<a href="<?php echo base_url('product/listItem/'.$data['categoryId'].'/'.$data['alias']);?>"><img src="<?php echo $data['imageurl']; ?>" alt="..."><h5><?php echo $data['name']; ?></h5></a>
 				</span>
 			</div>
 		<?php } ?>

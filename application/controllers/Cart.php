@@ -190,7 +190,7 @@ class Cart extends Web {
 			<div class='my-total-cart'>TOTAL : <b>Rp.".money($this->cart->total())."</b></div>".anchor('cart', 'My Cart & Checkout', array('class'=>'btn btn-success','style'=>'color:#ffffff'))."
 		</div>";
 		}else{
-			echo"<center>Keranjang masih kosong</center>";
+			echo"<center><img src='".base_url('images/general/empty.jpg')."' border='0'><br>Keranjang masih kosong</center>";
 		}
 	}
 
