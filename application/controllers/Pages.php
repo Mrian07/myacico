@@ -53,6 +53,7 @@ class Pages extends Web {
 		}else{
 			$this->load->view('frontend/modules/pages/faq.php',$this->data);
 		}
+	
 		$this->load->view('frontend/footer',$this->data);
 	}
 
