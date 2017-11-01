@@ -1,7 +1,5 @@
 /*!
  * Author: Lalang Gumirang
- * Website: lalangdesign.com
- * email: lalang.gumirang@yahoo.com
  */
 
 body {
@@ -60,7 +58,7 @@ h3 span {
 .footer{
 	background: #000000;
 	color:#f8f7f7;
-	display: block; 
+	display: block;
 	height: 100%;
 	width: 100%;
 	margin-top: 20px;
@@ -76,12 +74,12 @@ h3 span {
 }
 
 .title-product a{
-	color:#4b4b4b;	
+	color:#4b4b4b;
 	text-decoration: none;
 }
 
 .title-product a:hover{
-	color:#f44646;	
+	color:#f44646;
 	text-decoration: none;
 }
 
@@ -103,12 +101,12 @@ h3 span {
 .my-b-product{
 	/*margin:50px 0px 50px 0px;*/
 	padding: 20px 0px 20px 0px;
-	border-bottom: 1px #d7d7d7 solid; 
+	border-bottom: 1px #d7d7d7 solid;
 }
 
 .my-sort-product{
 	padding: 20px 0px 20px 0px;
-	border-bottom: 1px #d7d7d7 solid; 
+	border-bottom: 1px #d7d7d7 solid;
 }
 
 /*sidebar left*/
@@ -227,8 +225,8 @@ h3 span {
 }
 
 /* enable absolute positioning */
-.inner-addon { 
-    position: relative; 
+.inner-addon {
+    position: relative;
 }
 
 /* style icon */
@@ -253,7 +251,7 @@ h3 span {
 	height:74px;*/
 	background:#f2f1f1 url(../../images/general/bg-header.png);
 	width: 100%;
-	border-top: 5px #11093a solid; 
+	border-top: 5px #11093a solid;
 }
 
 .my-header-panel-sub1{
@@ -263,7 +261,7 @@ h3 span {
 	color:#d0d0d0;
 	width: 50%;
 	float: left;
-	
+
 }
 
 .my-header-panel-sub2{
@@ -277,7 +275,7 @@ h3 span {
 .my-header-panel2{
 	background:#f2f1f1 url(../../images/general/bg-header.png);
 	width: 100%;
-	border-top: 5px #11093a solid; 
+	border-top: 5px #11093a solid;
 }
 
 .my-header-panel3{
@@ -285,13 +283,13 @@ h3 span {
 	width: 100%;
 }
 
-.logo{ 
+.logo{
 	float: left;
 	padding:10px;
 	width: 16%;
 }
 
-.myserach{ 
+.myserach{
 	float: left;
 	width: 100%;
 	/*padding:20px;*/
@@ -520,17 +518,17 @@ a .my-btn-chekout:hover{
 }
 
 .my-search:hover {
-    background-color: #4c4e51; 
+    background-color: #4c4e51;
     color: white;
 }
 /*
 .my-search:active {
-    background-color: #4CAF50; 
+    background-color: #4CAF50;
     color: white;
 }
 
 .my-search:focus {
-    background-color: #4CAF50; 
+    background-color: #4CAF50;
     color: white;
 }*/
 
@@ -545,8 +543,8 @@ a .my-btn-chekout:hover{
 	/*background-color:#111111;
 	color:#d0d0d0;
 	padding:13px;*/
-	
-	
+
+
     padding: 16px 20px;
     border: none;
     border-radius: 4px;
@@ -555,7 +553,7 @@ a .my-btn-chekout:hover{
 }
 
 .my-search:hover {
-    background-color: #4c4e51; 
+    background-color: #4c4e51;
     color: white;
 }
 
@@ -563,8 +561,8 @@ a .my-btn-chekout:hover{
 	/*background-color:#111111;
 	color:#d0d0d0;
 	padding:13px;*/
-	
-	
+
+
     padding: 16px 20px;
     border: none;
     border-radius: 4px;
@@ -583,7 +581,7 @@ a .my-btn-chekout:hover{
 
 /*Link Reg & login*/
 
-/* unvisited link 
+/* unvisited link
 .myreg a:link {
     color: #111111;
 	text-decoration: none;
@@ -609,11 +607,11 @@ a .my-btn-chekout:hover{
 /*Home Banner*/
 .home-banner{
 	margin: 10px;
-	
+
 }
 
 .border-myacico{
-	border-style: solid;	
+	border-style: solid;
 	border-color: #c40202;
 	border-top: 0px;
 	border-bottom: 0px;
@@ -644,7 +642,7 @@ a .my-btn-chekout:hover{
 	margin-bottom:40px;
 	padding:20px;
 	border: 1px;
-	border-style: solid;	
+	border-style: solid;
 	border-color: #cccccc;
 	border-left: 0px;
 	border-right: 0px;
@@ -728,13 +726,13 @@ a .my-btn-chekout:hover{
 .my-tab-menu li a{
 	color: #ffffff;
 	border-radius:0px;
-	
+
 }
 
 .my-tab-menu li a:hover{
 	color: #ffffff;
 	background:#fc5855;
-	
+
 }
 
 .my-tab-menu{
@@ -783,7 +781,7 @@ a .my-btn-chekout:hover{
 /*	padding:10px;
 	font-size:20px;*/
 	border-radius:0px;
-	
+
 }
 
 .nav-tabs>li>a {
@@ -830,7 +828,7 @@ a .my-btn-chekout:hover{
 	.my-header-panel{
 		display: none;
 	}
-	
+
 	.my-header-panel2{
 		display: block;
 	}
@@ -840,41 +838,41 @@ a .my-btn-chekout:hover{
 	.my-header-panel{
 		display: none;
 	}
-	
+
 	.my-header-panel2{
 		display: none;
 	}
-	
+
 	#navbar-menu{
 		background: #ffffff;
 		color:# 000000;
 		font-family: "Arial";
 		font-size:13px;
 	}
-	
+
 	.my-menu-mobile{
 		display: block;
 	}
-	
+
 	.my-menu-desktop{
 		display: none;
 	}
-	
+
 	.my-tab-menu{
 		display: none;
 	}
 }
 
 @media screen and (max-width:500px) {
-	
+
 	.detail-product{
 		margin-left:0px;
 	}
-	
+
 	.sidebar-left-mobile{
 		display: block;
 	}
-	
+
 	.sidebar-left-desktop{
 		display: none;
 	}
@@ -882,25 +880,25 @@ a .my-btn-chekout:hover{
 	.navbar-brand{
 		display: block;
 	}
-	
+
 	.attr-nav{
 		display: block;
 	}
-	
+
 	.my-menu-mobile{
 		display: block;
 	}
-	
+
 	.my-menu-desktop{
 		display: none;
 	}
-	
+
 	.my-tab-menu{
 		display: block;
 	}
-	
+
 	.border-myacico{
-	border-style: solid;	
+	border-style: solid;
 	border-color: #c40202;
 	border-top: 0px;
 	border-bottom: 0px;
@@ -954,7 +952,7 @@ a .my-btn-chekout:hover{
 }
 
 .my-link-create {
-	margin:20px 0px 5px 0px;	
+	margin:20px 0px 5px 0px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
@@ -1042,8 +1040,8 @@ a .my-btn-chekout:hover{
 	border:2px solid #e0e0e0;
 	padding:10px;
 	box-shadow: 0 2px 5px 1px #ccc;
-	position: fixed; 
-	z-index: 1; 
+	position: fixed;
+	z-index: 1;
 }
 
 .cart-sidebar-right .title{
@@ -1069,7 +1067,7 @@ a .my-btn-chekout:hover{
     display:none;
 }
 
-.plus{ 
+.plus{
  background-image: url(../../images/general/math-add-icon.png);
 }
 
@@ -1078,7 +1076,7 @@ a .my-btn-chekout:hover{
 }
 
 /*chekbook*/
-.checkbox label:after, 
+.checkbox label:after,
 .radio label:after {
     content: '';
     display: table;
@@ -1136,4 +1134,3 @@ a .my-btn-chekout:hover{
 .radio label input[type="radio"]:disabled + .cr {
     opacity: .5;
 }
-
