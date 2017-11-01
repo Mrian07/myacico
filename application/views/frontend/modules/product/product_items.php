@@ -469,16 +469,38 @@ if($saw==Null)
 
 <div class="text-center">
     <ul class="pagination">
-   <li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
-   <?php 
+   <!--<li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>-->
+  
+       <?php
+        $curr = (int)$this->uri->segment(5);
+        if($curr == null)
+        {
+            $curr2+=2;
+        }else {
+            $curr2+=2;
+        }
+        //die(print_r("sam".$curr));
+       if($curr > 1){
+           $next =  site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$curr+=1);
+           //die(print_r("sam".$curr));
+            echo "<li class=prev><a href=$curr aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>";
+       }
     $i=1;    
    //die(print_r($max_page));
         for($i;$i<=$max_page;$i++){
    ?>
   <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
   
-        <?php }?>
-   <li class=next><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$i+=1); ?>" aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>
+        <?php }
+        if($curr < $max_page){
+          $next =  site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$curr+=1);
+          
+           //die(print_r("sam".$curr));
+            echo "<li class=next><a href=$next aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>";
+       }
+        ?>
+  
+   <!--<li class=next><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$i+=1); ?>" aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>-->
     </ul>
 </div>
 
@@ -501,10 +523,14 @@ function filter(id){
 
 }
 $('.pagination').on('click', 'li:not(.prev):not(.next)', function() {
+   
     $('.pagination li').removeClass('active');
     $(this).not('.prev,.next').addClass('active');
 });
 $('.pagination').on('click', 'li.prev', function() {
+    // alert(<?php echo (int)$this->uri->segment(5);?>);
+     var prev = $('.prev');
+     prev.append();
     $('li.active').removeClass('active').prev().addClass('active');
 });
 
@@ -512,6 +538,7 @@ $('.pagination').on('click', 'li.next', function() {
     $('li.active').removeClass('active').next().addClass('active');
 });
 //    nuOfpage dari total item / (perpage=> 10)
+/*
 function drawPagination(numOfPages) {
     $('#pag_nav ul').empty();
     $('#pag_nav ul').append('<li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>');
@@ -520,7 +547,7 @@ function drawPagination(numOfPages) {
    }
    $('#pag_nav ul').append('<li class=next><a href=# aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>');
 }
-
+*/
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
 function addWishlist(id,name,imageurl){
 	var dataString = 'id='+id;
