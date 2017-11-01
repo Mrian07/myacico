@@ -24,8 +24,23 @@ class Product extends Web {
 		$id=$this->uri->segment(3);
 		$this->data['pro']=$this->uri->segment(3);
   $page=$this->uri->segment(5);
-		$api = "product/productall/".$page;
+	  $page2=$this->uri->segment(4);
+// die($id);
 
+// if($id){$page=$id;}else{
+// $page=$page;
+// }
+//
+// if($page ==0 ){
+// 	$page =1;
+// }
+if($page){
+	$api = "product/productall/".$page;
+}else{
+	$api = "product/productall/".$id;
+}
+
+// echo"$api"; die();
 		$url = api_base_url($api);
 
 
@@ -41,6 +56,7 @@ class Product extends Web {
 					"Content-Type: application/json",
 				],
 		];
+
 									// looking maximum page
 
 		$context = stream_context_create($options);
@@ -48,6 +64,7 @@ class Product extends Web {
 		// die($konten2);
 		$this->data['max_page'] =json_decode($konten2)->pageCount;
 		$this->data['hasil'] = json_decode($konten, true);
+
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
