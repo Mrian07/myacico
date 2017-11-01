@@ -337,7 +337,7 @@ h1.po1{
 
 <div class="row my-sort-product">
 	<div class="col-sm-9">
-		<?php echo "asd ".count($data).""; ?>
+
 
 
 	</div>
@@ -368,7 +368,7 @@ h1.po1{
         </div>
     </div>
     <div id="products" class="row list-group">
-        Rp.<?php echo money($data2['pageCount']); ?></p>
+
 			<!---<div class="product">
 			</div>-->
 
@@ -485,7 +485,12 @@ h1.po1{
 
 
 <script type="text/javascript">
+$(document).ready(function() {
+    $('#list').click(function(){event.preventDefault();$('#products .item').addClass('list-group-item');});
+    $('#grid').click(function(){event.preventDefault();$('#products .item').removeClass('list-group-item');});
+		$('[data-toggle="tooltip"]').tooltip();
 
+});
 function filter(id){
   window.location.replace("<?php echo site_url('product/alllistItem/'.$pro.'/'); ?>"+id.value);
 }
