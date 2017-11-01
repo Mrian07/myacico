@@ -173,7 +173,7 @@ footer a,footer a:hover{
             <div class="modal-content">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
               <div class="modal-body">
-                <img src="http://nabeel.co.in/files/bootsnipp/gallery/11.jpg">
+                <img src="https://s1.postimg.org/3w7m9jvoan/banner_top.png">
               </div>
                 <div class="col-md-12 description">
                   <h4>This is the leventh one on my Gallery</h4>
@@ -186,14 +186,14 @@ footer a,footer a:hover{
     <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
       <div class="box">
         <a href="#" data-toggle="modal" data-target="#12">
-          <img src="http://nabeel.co.in/files/bootsnipp/gallery/12.jpg">
+          <img src="https://s1.postimg.org/59huis1xzj/medium_bannerzz.png">
         </a>
         <div class="modal fade" id="12" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
               <div class="modal-body">
-                <img src="http://nabeel.co.in/files/bootsnipp/gallery/12.jpg">
+                <img src="https://s1.postimg.org/59huis1xzj/medium_bannerzz.png">
               </div>
                 <div class="col-md-12 description">
                   <h4>This is the 12th one on my Gallery</h4>
@@ -213,7 +213,7 @@ footer a,footer a:hover{
             <div class="modal-content">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
               <div class="modal-body">
-                <img src="http://nabeel.co.in/files/bootsnipp/gallery/13.jpg">
+                <img src="https://s1.postimg.org/7ledx3jdnj/123123.png">
               </div>
                 <div class="col-md-12 description">
                   <h4>This is the 13th one on my Gallery</h4>
