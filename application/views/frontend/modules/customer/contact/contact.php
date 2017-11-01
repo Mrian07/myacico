@@ -62,7 +62,7 @@ function myMap() {
 			</div>
 			<div class="form-group">
 			<?php echo $image;?><br>
-			<label for="pwd">Security Code:</label>
+			<label for="pwd">Security Code123213:</label>
 			<input type='text' size='10' class="form-control mandatory" name='secutity_code' id='secutity_code'/>
 			</div>
 			<p>
