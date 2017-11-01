@@ -142,7 +142,7 @@ h1.po1{
  //$sumber = 'http://myacico.net:8080/myacico-service/api/product/productlist?category='.$pro;
  $konten = file_get_contents($sumber);
  $data = json_decode($konten, true);
-$saw=$this->uri->segment(4);
+$saw=$this->uri->segment(5);
 if($saw==Null)
 {
     $sort_id ="all";
@@ -472,12 +472,12 @@ if($saw==Null)
    <!--<li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>-->
   
        <?php
-        $curr = (int)$this->uri->segment(5);
+        $curr = (int)$this->uri->segment(6);
         if($curr == null)
         {
-            $curr2+=2;
+            $curr2=2;
         }else {
-            $curr2+=2;
+            $curr2=2;
         }
         //die(print_r("sam".$curr));
        if($curr > 1){
@@ -519,7 +519,7 @@ $(document).ready(function() {
 
 function filter(id){
  //  console.log('sam',$('#sort_id').val(id.value));
-  window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'); ?>"+id.value);
+  window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'.$alias.'/'); ?>"+id.value);
 
 }
 $('.pagination').on('click', 'li:not(.prev):not(.next)', function() {
