@@ -65,12 +65,11 @@ class Product extends Web {
         $adaToken =1;
     }
   $id_cat=$this->uri->segment(3);
-  $ob=$this->uri->segment(4);
+  $ob=$this->uri->segment(5);
 
-                $page=$this->uri->segment(5);
+                $page=$this->uri->segment(6);
                 //$pg = intval($_GET['page']);
-
-  							if($ob != 'all' && $page == True){
+            if($ob != 'all' && $page == True){
                     $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
                     $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page."&show=pagecount";
 
@@ -117,7 +116,8 @@ class Product extends Web {
   }else{
    $this->data['cektoken'] = '0';
   }
-
+  
+   $this->data['alias'] = $this->uri->segment(4);
   $this->data['title_web'] = "Myacico.com - Home";
   $this->load->view('frontend/header',$this->data);
   $this->load->view('frontend/nav.php',$this->data);
