@@ -1,3 +1,6 @@
+<?php
+$curr = (int)$this->uri->segment(6);
+?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -472,35 +475,37 @@ if($saw==Null)
    <!--<li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>-->
   
        <?php
-        $curr = (int)$this->uri->segment(6);
+         //die(print_r("sam".$curr));
         if($curr == null)
         {
             $curr2=2;
         }else {
-            $curr2=2;
+            $curr2=1;
         }
-        //die(print_r("sam".$curr));
+//        die(print_r("sam".$curr));
        if($curr > 1){
-           $next =  site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$curr+=1);
-           //die(print_r("sam".$curr));
-            echo "<li class=prev><a href=$curr aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>";
+           $prevCr=$curr;
+           $prev =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$prevCr-=1);
+          
+            echo "<li class=prev><a href=$prev aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>";
        }
     $i=1;    
    //die(print_r($max_page));
         for($i;$i<=$max_page;$i++){
    ?>
-  <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
+  <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
   
         <?php }
         if($curr < $max_page){
-          $next =  site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$curr+=1);
+             $nextCr=$curr;
+          $next =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$nextCr+=$curr2);
           
            //die(print_r("sam".$curr));
             echo "<li class=next><a href=$next aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>";
        }
         ?>
   
-   <!--<li class=next><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$i+=1); ?>" aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>-->
+   <!--<li class=next><a href="<?php// echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$i+=1); ?>" aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>-->
     </ul>
 </div>
 
@@ -527,16 +532,7 @@ $('.pagination').on('click', 'li:not(.prev):not(.next)', function() {
     $('.pagination li').removeClass('active');
     $(this).not('.prev,.next').addClass('active');
 });
-$('.pagination').on('click', 'li.prev', function() {
-    // alert(<?php echo (int)$this->uri->segment(5);?>);
-     var prev = $('.prev');
-     prev.append();
-    $('li.active').removeClass('active').prev().addClass('active');
-});
 
-$('.pagination').on('click', 'li.next', function() {
-    $('li.active').removeClass('active').next().addClass('active');
-});
 //    nuOfpage dari total item / (perpage=> 10)
 /*
 function drawPagination(numOfPages) {
