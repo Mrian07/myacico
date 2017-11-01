@@ -416,7 +416,7 @@ a{
 							data.forEach(function(p){
 								productSrc.append(
 
-								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
 
 
 								);
@@ -456,9 +456,9 @@ a{
 		});
 
 	});
-	function showData(name,id)
+	function showData(name,id,alias)
 	{
-		var url = base_url+'/product/detail/'+id;
+		var url = base_url+'/product/detail/'+id+'/'+alias;
 		window.location.href = url;
 		// $("#search").val(name);
 		// $("#searchID").val(id);
