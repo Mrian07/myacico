@@ -186,7 +186,7 @@ footer a,footer a:hover{
     <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
       <div class="box">
         <a href="#" data-toggle="modal" data-target="#12">
-          <img src="http://nabeel.co.in/files/bootsnipp/gallery/12.jpg">
+          <img src="https://s1.postimg.org/59huis1xzj/medium_bannerzz.png">
         </a>
         <div class="modal fade" id="12" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
