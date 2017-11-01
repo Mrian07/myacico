@@ -272,7 +272,20 @@ left: 35%;
 </style>
 
 <section style="background:#efefe9;">
+  <div class='my-bg-title'>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+        <i class="fa fa-angle-right" aria-hidden="true"></i> FAQ
+
+        </div>
+      </div>
+    </div>
+  </div>
         <div class="container">
+
+
             <div class="row">
                 <div class="board">
                     <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
@@ -304,7 +317,7 @@ left: 35%;
                          </span>
                      </a></li>
 
-                
+
 
                      </ul></div>
 
