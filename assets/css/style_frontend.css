@@ -14,6 +14,19 @@ body {
 	background: #f1f1f1;
 }
 
+.my-container-white{
+	background-color: #ffffff;
+	padding-top:20px;
+	padding-bottom:20px;
+	margin-bottom:10px;
+	border-radius:0px 0px 10px 10px;
+}
+
+.my-container-transparan{
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
 .btn-link,
 .btn-link:active,
 .btn-link:visited,
@@ -114,7 +127,7 @@ body {
 	background:#c40202;
 	color:#ffffff;
 	padding:20px 0px 20px 0px;
-	margin-bottom:20px;
+	margin-bottom:0px;
 	font-size:20px;
 }
 
@@ -197,7 +210,7 @@ h3 span {
 	background: #000000;
 	color:#f8f7f7;
 	display: block;
-	margin-top: 20px;
+	margin-top: 0px;
 	font-family: arial;
 	padding: 50px 0px 0px 0px;
 }
@@ -349,7 +362,7 @@ h3 span {
 .btn-top{
 	margin: 0 auto;
 	text-align: center;
-	margin-bottom:-55px;
+	margin-bottom:-35px;
 }
 
 .w_false{
@@ -515,8 +528,10 @@ h3 span {
     font-size: 12px;
     border: none;
     cursor: pointer;
-	margin:0px;
-	right: 0; left: auto;
+		margin:0px;
+		right: 0; left: auto;
+		border-radius:5px 5px 0px 0px;
+		border-bottom: 5px solid #11093a;
 }
 
 .dropdown-basket {
@@ -531,9 +546,10 @@ h3 span {
     background-color: #ffffff;
     min-width: 350px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	padding:10px;
+		padding:10px;
     z-index: 999999;
-	right: 0; left: auto;
+		right: 0; left: auto;
+
 }
 
 .dropdown-basket-content a {
@@ -564,8 +580,10 @@ h3 span {
     font-size: 12px;
     border: none;
     cursor: pointer;
-	margin:0px;
-	right: 0; left: auto;
+		margin:0px;
+		right: 0; left: auto;
+		border-radius:5px 5px 0px 0px;
+		border-bottom: 5px solid #11093a;
 }
 
 .dropdown-basket-token {
@@ -613,8 +631,10 @@ h3 span {
     font-size: 12px;
     border: none;
     cursor: pointer;
-	margin:0px;
-	right: 0; left: auto;
+		margin:0px;
+		right: 0; left: auto;
+		border-radius:5px 5px 0px 0px;
+		border-bottom: 5px solid #11093a;
 }
 
 .dropdown-basket-mobile {
@@ -662,8 +682,10 @@ h3 span {
     font-size: 12px;
     border: none;
     cursor: pointer;
-	margin:0px;
-	right: 0; left: auto;
+		margin:0px;
+		right: 0; left: auto;
+		border-radius:5px 5px 0px 0px;
+		border-bottom: 5px solid #11093a;
 }
 
 .dropdown-basket-mobile-token {
@@ -744,12 +766,15 @@ a .my-btn-chekout:hover{
     font-size: 12px;
     border: none;
     cursor: pointer;
-	margin:0px;
+		margin:0px;
+		border-radius:5px 5px 0px 0px;
+		border-bottom: 5px solid #11093a;
 }
 
 .dropdown-account {
     position: relative;
     display: inline-block;
+
 }
 
 .dropdown-account-content {
@@ -1047,13 +1072,15 @@ ul {
 }
 
 .my-menu-header li {
-    float: left;
-	font-size:11px;
-	color: #494a4c;
-	padding:8px;
-	/*font-weight: bold;*/
-	list-style: none;
-	list-style-type: none;
+		float: left;
+		font-size:12px;
+		/*font-family: verdana;*/
+		color: #494a4c;
+		padding:8px;
+		/*font-weight: bold;*/
+		list-style: none;
+		list-style-type: none;
+		text-shadow: 1px 0px #dbd9d9;
 }
 
 .my-menu-header-sub {

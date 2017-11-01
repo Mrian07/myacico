@@ -9,7 +9,7 @@
 		</div>
 	</div>
 </div>
-<div class="container">
+<div class="container my-container-white">
 
 	<div class="row">
 		<div class="col-sm-3">

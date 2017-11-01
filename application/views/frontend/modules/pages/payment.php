@@ -10,46 +10,26 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container my-container-white">
 
 	<div class="row">
-		<div class="col-sm-3">
-
+		<div class="col-sm-4">
+			<h4>BCA</h4>
+			Atas nama : PT. MYACICO GLOBAL INDONESIA<br>
+			Cabang : Tanah Abang 2<br>
+			Nomor rekening : 6540308797 <br/>
 		</div>
-	  <div class="col-sm-6">
-		<div class='border-create'>
-		 <form name="signup" method="post">
-		  <div class="form-group">
-        <center>
-
-    </center>
-			<p>
-
-<!-- asd -->
-
-BCA atas nama : PT. MYACICO GLOBAL INDONESIA
-Cabang : Tanah Abang 2
-Nomor rekening : 6540308797 <br/>
-</p>
-	<p>
-Mandiri atas nama : MYACICO
-Cabang : mangga Dua Square
-Nomor rekening : 120-0099271996<br/>
-</p>
-<p>
-BNI atas nama : MYACICO
-Cabang : Caringin
-Nomor rekening : 099-2719967<br/>
-
-      </p>
-		  </div>
-		  <!-- <input type="submit" id="submit" class="btn btn-primary" value="Kirim"> -->
-
-		</form>
+		<div class="col-sm-4">
+			<h4>MANDIRI</h4>
+			Atas nama : MYACICO<br>
+			Cabang : mangga Dua Square<br>
+			Nomor rekening : 120-0099271996<br/>
 		</div>
+	  <div class="col-sm-4">
+			<h4>BNI</h4>
+			Atas nama : MYACICO<br>
+			Cabang : Caringin<br>
+			Nomor rekening : 099-2719967<br/>
 	  </div>
-	  <div class="col-sm-3">
-
-		</div>
 	</div>
 </div>

@@ -138,10 +138,23 @@ h1.po1{
 
 <?php
 	$sumber = $baseApiUrl.'/product/productall/'.$pro;
+  $sumber2 = $baseApiUrl.'/product/productall/'.$pro."?page=1"."&show="."pagecount";
+
+
  //$sumber = 'http://myacico.net:8080/myacico-service/api/product/productlist?category='.$pro;
  $konten = file_get_contents($sumber);
+ $konten2 = file_get_contents($sumber2);
  $data = json_decode($konten, true);
+ $data2 = json_decode($konten2, true);
+ $saw1=$this->uri->segment(5);
 
+ $saw=$this->uri->segment(4);
+ if($saw==Null)
+ {
+     $sort_id ="all";
+ }else{
+     $sort_id = $saw;
+ }
  //echo $data[1]["nama_lokasi"];
 
  echo "<br/>";
@@ -324,7 +337,8 @@ h1.po1{
 
 <div class="row my-sort-product">
 	<div class="col-sm-9">
-		<?php echo "&nbspItems 1 to ".count($data).""; ?>
+		<?php echo "asd ".count($data).""; ?>
+
 
 	</div>
 	<div class="col-sm-3">
@@ -354,7 +368,7 @@ h1.po1{
         </div>
     </div>
     <div id="products" class="row list-group">
-
+        Rp.<?php echo money($data2['pageCount']); ?></p>
 			<!---<div class="product">
 			</div>-->
 
@@ -371,13 +385,14 @@ h1.po1{
                       <a href="<?php echo base_url('product/detail/'.$data['m_product_id']);?>"><?php echo $data['name']; ?></a>  </h5>
                     </div>
 
-    
+
 
                         <div class="panel panel-default">
             <div class="panel-body">
 						<center>
 						<p class="lead">
                                 Rp.<?php echo money($data['pricelist']); ?></p>
+
 
 
 		<h4>
@@ -453,11 +468,26 @@ h1.po1{
 
     </div>
 </div>
+<div class="text-center">
+    <ul class="pagination">
+   <li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
+   <?php
+    $i=1;
+   //die(print_r($max_page));
+        for($i;$i<=$max_page;$i++){
+   ?>
+  <li><a href="<?php echo site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
+
+        <?php }?>
+   <li class=next><a href="<?php echo site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$i+=1); ?>" aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>
+    </ul>
+</div>
+
 
 <script type="text/javascript">
 
 function filter(id){
-  window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'); ?>"+id.value);
+  window.location.replace("<?php echo site_url('product/alllistItem/'.$pro.'/'); ?>"+id.value);
 }
 
 var token = document.cookie.split('x-auth=')[1].split(';').shift();

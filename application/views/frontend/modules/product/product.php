@@ -14,7 +14,8 @@
 	// echo $hasil[0]['m_product_id'];
 	// echo"<pre>"; print_r($hasil[0]);
 	//
-	 $this->load->view('frontend/modules/product/product_items',$this->data); ?>
+	 $this->load->view('frontend/modules/product/product_items',$this->data);
+	  ?>
 </div>
 <!--
 <div class="row my-conten-product">

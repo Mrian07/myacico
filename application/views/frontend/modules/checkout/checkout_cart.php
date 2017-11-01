@@ -1,23 +1,23 @@
-<?php 			
+<?php
 	$this->data['token'] = $_COOKIE['x-auth'];
 	$token = $_COOKIE['x-auth'];
 	$api = "order/cart/detail";
 	$url = api_base_url($api);
-	
+
 	$options = ["http" => [
 	"method" => "GET",
 	"header" => ["token: " . $token,
 	"Content-Type: application/json"],
 	]];
-	
+
 	$context = stream_context_create($options);
 	$konten = file_get_contents($url, false, $context);
-	
-	
+
+
 	$hasil = json_decode($konten, true);
-	
+
 	if(json_decode($konten, true)){
-		
+
 ?>
 
 
@@ -52,7 +52,7 @@
 						<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'); ?>
 					</td>
 				</tr>
-				<?php 
+				<?php
 				$totalWeight +=$items['totalWeight'];
 				$total +=$items['subtotal'];
 				endforeach; ?>
@@ -82,9 +82,8 @@
 				</tr>
 			</tfoot>
 		</table>
-		
-	</div>	
+
+	</div>
 
 </div>
-<?php }else{ echo"<center>Keranjang masih kosong</center>"; } ?>			
-	
+<?php }else{ echo"<center>Keranjang masih kosong</center>"; } ?>

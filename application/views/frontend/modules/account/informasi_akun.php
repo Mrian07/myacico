@@ -10,7 +10,7 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container my-container-white">
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
@@ -39,7 +39,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading"><strong>Data Billing</strong></div>
 						<div class="panel-body">
-						<?php 
+						<?php
 						if(isset($alamat_billing)){
 							echo $alamat_billing;
 							echo "<br><center><div class='my-btn-general'>";
@@ -48,8 +48,8 @@
 							echo"Belum ada data billing, data billing diperlukan saat checkout pembelian.
 						<br><br><center><div class='my-btn-general'>";
 							echo anchor('account/formAddBilling/', 'Tambah', array('class'=>'my-link-general')); echo"</div></center>";
-						}?>	
-						</div>	
+						}?>
+						</div>
 					</div>
 				</div>
 			</div>
