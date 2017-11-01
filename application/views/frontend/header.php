@@ -60,7 +60,7 @@ a{
 			.productSrc
 			{
 				position:absolute;
-				width:600px;
+				width:628px;
 				display:none;
 				margin-top:-1px;
 				border-top:0px;
@@ -95,12 +95,8 @@ a{
 
 
 	<ul class='my-menu-header'>
-		<li style='background:#d8d7d7;' class='my-menu-header-desktop'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b></li>
-		<li style='background:#e7e7e7;' class='my-menu-header-desktop'><b><i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
+		<li class='my-menu-header-desktop'><b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b> <i class="fa fa-phone" aria-hidden="true"></i> +(62) 21 - 3502099, <i class="fa fa-clock-o" aria-hidden="true"></i>
 		Senen - Jumat [09:00 - 17:00]</b></li>
-
-
-
 		<li class='my-menu-header-sub' style="float: right;">Bahasa
 			<div class="dropdown-lang" style='border:0px solid #aeaeab; border-radius:5px; background:#f1f3f6; padding:0px; right: 0; left: auto; '>
 			<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?> <span class="caret"></span>
@@ -110,6 +106,7 @@ a{
 			</div>
 			</div>
 		</li>
+		<li class='my-menu-header-sub' style="float: right;"><?php echo anchor('customer/contact/', 'Hubungi Kami');?></li>
 		<li class='my-menu-header-sub' style="float: right;"><?php echo anchor('pages/aboutus/', 'About Us');?></li>
 		<li class='my-menu-header-sub' style="float: right;"><?php echo anchor('pages/payment/', 'Payment');?></li>
 		<li style="float: right;"><?php echo anchor('pages/faq/', 'FAQ');?></li>
@@ -137,7 +134,7 @@ a{
 				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
 			</div>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-8" style="padding-left:0px; ">
 			<div class='myserach' ng-app="myApps">
 				<div ng-controller = "searchCtrl">
 				<div class="input-group">
@@ -169,7 +166,7 @@ a{
 			</div>
 		</div>
 
-		<div class="col-sm-4" style="padding-top:10px;">
+		<div class="col-sm-2" style="padding-top:10px; padding-left:0px; padding-right:0px">
 		<!--	<div class="row">
 				<div class="col-sm-4" style='color:#111111; font-weight:bold; margin-right:10px;'>
 
@@ -206,10 +203,6 @@ a{
 
 							<?php } ?>
 
-							<div class="btncontact">
-								<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-paper-plane" aria-hidden="true"></i> Hubungi Kami</button>');?>
-
-							</div>
 
 							<div class="dropdown-basket">
 								<?php
@@ -218,13 +211,13 @@ a{
 									$totalItems += $items['qty'];
 								endforeach;
 								?>
-								<button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
+								<button class="dropbtn-basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
 								<div class="dropdown-basket-content">
 
 									<?php
 									if($totalItems==0)
 									{ ?>
-									<div class='empty-item'><center>Keranjang masih kosong</center></div>
+									<div class='empty-item'><center><img src='<?php echo base_url('images/general/empty.jpg'); ?>' border='0'><br>Keranjang masih kosong</center></div>
 									<?php } ?>
 									<div class='list-item'></div>
 									<div class='btn-chekout'></div>
@@ -248,7 +241,7 @@ a{
 				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
 			</div>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-8">
 			<div class='myserach'>
 
 
@@ -273,7 +266,7 @@ a{
 			</div>
 		</div>
 
-		<div class="col-sm-4" style="height:100%; padding-top:10px;">
+		<div class="col-sm-2" style="height:100%; padding-top:10px;">
 
 			<div class="row">
 				<div class="col-sm-12">
@@ -299,10 +292,6 @@ a{
 
 						<?php } ?>
 
-						<div class="btncontact">
-							<?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-paper-plane" aria-hidden="true"></i> Hubungi Kami</button>');?>
-
-						</div>
 						<div class="dropdown-basket" ng-controller="cartCnt">
 							<?php
 							$totalItems = 0;
@@ -316,7 +305,7 @@ a{
 								<?php
 								if($totalItems==0)
 								{ ?>
-								<div class='empty-item'><center>Keranjang masih kosong</center></div>
+								<div class='empty-item'><center><img src='<?php echo base_url('images/general/empty.jpg'); ?>' border='0'><br>Keranjang masih kosong</center></div>
 								<?php } ?>
 								<div class='list-item'></div>
 								<div class='btn-chekout'></div>
@@ -360,10 +349,6 @@ a{
 
       <?php } ?>
 
-      <div class="btncontact">
-        <?php echo anchor('customer/contact', '<button class="dropbtncontact"><i class="fa fa-paper-plane" aria-hidden="true"></i> Hubungi Kami</button>');?>
-
-      </div>
       <div class="dropdown-basket-mobile">
         <?php
         $totalItems = 0;
@@ -371,13 +356,13 @@ a{
           $totalItems += $items['qty'];
         endforeach;
         ?>
-        <button class="dropbtn-basket-mobile"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
+        <button class="dropbtn-basket-mobile"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge totalCart" style='background:#daf309; color:#000000;'><?php echo $totalItems; ?></span> <span class="caret"></span></button>
         <div class="dropdown-basket-mobile-content">
 
           <?php
           if($totalItems==0)
           { ?>
-          <div class='empty-item'><center>Keranjang masih kosong</center></div>
+          <div class='empty-item'><center><img src='<?php echo base_url('images/general/empty.jpg'); ?>' border='0'><br> Keranjang masih kosong</center></div>
           <?php } ?>
           <div class='list-item'></div>
           <div class='btn-chekout'></div>
@@ -390,6 +375,9 @@ a{
 </div>
 
 <script type="text/javascript">
+	$('body').click(function() {
+		 $('.show_result').hide();
+	});
 
 	function btnSearchDesk(){
 		var searchDesk = $('#searchDesk').val();
@@ -403,6 +391,8 @@ a{
 	$('.show_result').on('mouseout',function(){
 		$('.show_result').hide();
 	});
+
+
 
 	$(document).ready(function() {
 

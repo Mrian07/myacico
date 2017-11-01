@@ -47,7 +47,7 @@ class Pages extends Web {
 		$id=$this->uri->segment(3);
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
-
+    $this->load->view('frontend/nav.php',$this->data);
 		if($id){
 			$this->load->view('frontend/modules/pages/faq_detail.php',$this->data);
 		}else{

@@ -52,8 +52,8 @@ cursor:pointer;
  Bahasa
 		<span class="caret"></span></a>
 		<ul class="dropdown-menu dropdown-menu-mobile">
-		  <li><a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a></li>
-		  <li><a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a></li>
+		  <li><a href="#" onclick="langFunction('id')"><img src="<?php //echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a></li>
+		  <li><a href="#" onclick="langFunction('en')"><img src="<?php //echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a></li>
 		</ul>
 	</li>
 	<li><a href="#home" data-toggle="modal" data-target="#myCart"><i class="fa fa-shopping-bag" aria-hidden="true"></i>
@@ -145,7 +145,6 @@ cursor:pointer;
             </div>
             <!-- End Header Navigation -->
 
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
@@ -161,7 +160,7 @@ cursor:pointer;
 															<div class="col-menu col-md-2"><img src="<?php echo$dataNav['imageurl']; ?>" style="float:right;width:130px"/></div>
 															<?php foreach($dataNav['c2'] as $dataNavChild){ ?>
 																<div class="col-menu col-md-2">
-																	<?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId']), $dataNavChild['name']);?>
+																	<?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $dataNavChild['name']);?>
 																</div>
 															<?php } ?>
 													</div>
@@ -174,7 +173,7 @@ cursor:pointer;
 											<?php echo anchor('#', $dataNav['name'], array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
 											<ul class="dropdown-menu">
 													<?php foreach($dataNav['c2'] as $dataNavChild){ ?>
-													<li><?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId']), $dataNavChild['name']);?></li>
+													<li>1<?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $dataNavChild['name']);?></li>
 												<?php } ?>
 											</ul>
 									</li>
@@ -327,6 +326,9 @@ cursor:pointer;
 
 
 	<script type="text/javascript">
+	$('body').click(function() {
+		 $('.show_result_mobile').hide();
+	});
 
 	function btnSearch(){
 		var search = $('#search-mobile').val();

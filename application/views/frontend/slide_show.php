@@ -71,7 +71,8 @@ h1, h2, h3 {
 }
 </style>
 
-<div style='background:#dad8d8'>
+<!-- <div style='background:#dad8d8'> -->
+<div style='background:#ffffff; padding:10px;'>
 <div class="container">
   <div class="row">
     <div class="col-sm-8 padding-0">
