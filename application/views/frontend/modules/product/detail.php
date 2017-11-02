@@ -89,7 +89,7 @@
 
 			<div class="row lead">
                             <div id="rateYo"></div>
- 
+
   <script src="jquery.js"></script>
   <script src="jquery.rateyo.js"></script>
 <!--			<div class="ratings" style='text-align: center; color:#d98c13;'>
@@ -99,7 +99,7 @@
 					<span class="glyphicon glyphicon-star"></span>
 					<span class="glyphicon glyphicon-star-empty"></span>
 			</div>-->
-                            
+
                             <br>
 
 			<!-- <div class="row lead">
@@ -332,11 +332,11 @@
 
 <script>
     $(function () {
- 
+
   $("#rateYo").rateYo({
     starWidth: "40px"
   });
- 
+
 });
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
@@ -455,6 +455,8 @@ $( document ).ready(function() {
 });
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
 console.log('token',token)
+	// var apiurl = api_base_url +'/order/cart/additem';
+var apiBintang = api_base_url +'product/productlist/detail?id='<?php echo $pro_id; ?>;
 function addWishlist(id,name,imageurl){
 	var dataString = 'id='+ id;
 
