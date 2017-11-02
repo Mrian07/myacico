@@ -66,9 +66,9 @@
 					  <select name="village_id" id="village_id" class="form-control mandatory"></select>
 					</div>
 					<div class="form-group">
-					<label><?php echo $lang_PostCode; ?>*</label>
-					  <input type="text" id="postal" name="postal" class="form-control mandatory" />
-					</div>
+				 <label><?php echo $lang_PostCode; ?>*</label>
+					 <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
+				 </div>
                                       <div class="form-group">
 					<label>Handphone*</label>
 						<input type="text" id = "phone"name="phone" class="form-control mandatory" />
@@ -90,8 +90,7 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-    var mya=0;
+<script>
 $.ajaxSetup({
   error: function(){
     alert('service not available, please try again later');
@@ -103,6 +102,22 @@ $('#village_id').change(function () {
         var end = this.value;
       $('#submit_btn').removeAttr('disabled');
     });
+$('#postal').change(function () {
+        var end = this.value;
+      $('#submit_btn').removeAttr('disabled');
+    });
+    function get_region(){
+      $("#region_box").slideDown();
+        var negara = $('#country_sel').val();
+
+      $("#region_sel").prop('disabled', true).unbind("change", get_city);
+      $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
+        r.forEach(function(o){
+          $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
+        });
+        $("#region_sel").prop('disabled', false).change(get_city);
+      }, "json" );
+    }
 function get_village(){
   $("#village_box").slideDown();
   $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
@@ -110,12 +125,12 @@ function get_village(){
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
     });
-    $("#village_id").prop('disabled', false);
+       $("#village_id").prop('disabled', false).change(get_postal);
   }, "json" );
 }
 function get_distric(){
   $("#ditric_box").slideDown();
-  $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_village);
+  $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
   $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
     r.forEach(function(o){
       $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
@@ -135,35 +150,19 @@ function get_city(){
   }, "json" );
 }
 
-function get_region(){
 
-    var negara = $('#country_sel').val();
-    //var negara =209;
-    var negara_api = api_base_url+"/cregion/getlistcregionbyidccountry/"+negara;
-  //$("#region_sel").prop('disabled', true).unbind("change", get_city);
-  /*
-  $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
-    r.forEach(function(o){
-      $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
-    });
-    $("#region_sel").prop('disabled', false).change(get_city);
-  }, "json" );
-  */
-  $.ajax({
-    type:"GET",
-       //beforeSend: getAdd(),
-    success: function(data){
-        console.log('sam',data);
-        $("#region_box").slideDown();
-        data.forEach(function(o){
-      $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
-    });
-    $("#region_sel").prop('disabled', false).change(get_city);
 
-        },
-    dataType: "json",
-    url: negara_api});
-}
+       function get_postal(){
+      $("#postal_box").slideDown();
+      $("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+        r.forEach(function(o){
+          $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+                console.log('23',o.postal);
+        });
+        $("#postal").prop('disabled', false);
+      }, "json" );
+    }
 
 var data = {};
 $(document).ready(function() {
@@ -180,9 +179,9 @@ $.ajax({
     //beforeSend: getAdd(),
     success: function(data){
         var addressname = $('.addressname');
-	var rumah = $('.rumah');
-	var mybutton = $('.mybutton');
-	$("#id").val(data.id);
+  var rumah = $('.rumah');
+  var mybutton = $('.mybutton');
+  $("#id").val(data.id);
         $("#address_name").val(data.address_name);
         $("#name").val(data.name);
         $("#phone").val(data.phone);
@@ -194,12 +193,12 @@ $.ajax({
 
   rumah.append(
 
-	'<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.cityname+' '+p.postal+'</td></tr>'
-	)
-	mybutton.append(
-	'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
-	)
-	});
+  '<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
+  )
+  mybutton.append(
+  '<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
+  )
+  });
 
         },
     dataType: "json",
@@ -210,11 +209,11 @@ $.ajax({
  function(data){
  console.log('data nya adalah:', data);
 
-	var addressname = $('.addressname');
-	var rumah = $('.rumah');
-	var mybutton = $('.mybutton');
-	if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
-	if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
+  var addressname = $('.addressname');
+  var rumah = $('.rumah');
+  var mybutton = $('.mybutton');
+  if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
+  if(data.length == 0) { $('#biling-empty').show();  }else{ $('#biling-ready').show(); }
 
         $("#id").val(data.id);
         $("#address_name").val(data.address_name);
@@ -225,19 +224,19 @@ $.ajax({
         $("#address1").val(data.address1);
         $("#address2").val(data.address2);
 //        console.log('data nya adalah:', data[0]['id']);
-	data.forEach(function(p){
+  data.forEach(function(p){
 
   rumah.append(
 
-	'<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
-	)
-	mybutton.append(
-	'<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
-	)
-	});
+  '<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.address3+' '+p.address3+' '+p.address4+' '+p.cityname+' '+p.postal+'</td></tr>'
+  )
+  mybutton.append(
+  '<div class="my-btn-general"><a href="'+base_url+'account/formBilling/'+p.id+'" class="my-link-general">Ubah</a></div>'
+  )
+  });
 
 
-	});
+  });
     */
   $("form").submit(function(e){
     e.preventDefault();
@@ -273,8 +272,8 @@ data.id = id;
     data.address2 = address2;
     data.postal = postal;
     data.district_id = district_id;
-    data.isbillto = 'N';
-    data.isshipto = 'Y';
+    data.isbillto = 'Y';
+    data.isshipto = 'N';
     data.ispayfrom = 'N';
     data.isremitto = 'N';
     data.village_id = village_id;
@@ -285,31 +284,17 @@ data.id = id;
     var success = function(r){
          $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
-         $.alert({
-     title: 'Alert!',
-     content: 'Alamat Baru Berhasil di tambahkan',
-    });
+        $.alert({
+			title: 'Alert!',
+			content: 'Alamat Baru Berhasil di tambahkan',
+		});
 //      alert(r.message);
       console.log('OK:', r.status);
-//        $("#addn").val(null);
-//        $("#alamat1").val(null);
-//        $("#alamat2").val(null);
-//        $("#alamat3").val(null);
-//        $("#ditric_sel").val(null);
-//        $("#city").val(null);
-//        $("#province").val(null);
-//        $("#country").val(null);
-//        $("#zip").val(null);
-//        $("#bill").val(null);
-//        $("#ship").val(null);
-//        $("#pay").val(null);
-//        $("#remit").val(null);
-        window.location.replace(base_url+"/account/bukuAlamat");
+        window.location.replace(base_url+"/account/informasiAkun");
 
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-   // $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, timeout: 30000 });
     $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), headers:{"token":token}, dataType: "json", url: apiurl, success: success, timeout: 30000 });
 
     // do validation
@@ -337,7 +322,7 @@ data.id = id;
 
   $.get(api_base_url+"/ccountry/getlistccountry", function(r){
     console.log(r);
-    //$("#country_sel").prop('disabled', true).html('<option value="209" selected="selected">Indonesia</option>');
+//    $("#country_sel").prop('disabled', true).html('<option value="209">--pilih--</option>');
 //    $("#country_sel").prop('disabled', true).html('<option value="">Indonesia</option>');
     r.forEach(function(o){
       $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");

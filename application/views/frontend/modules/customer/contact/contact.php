@@ -61,7 +61,9 @@ function myMap() {
 			<textarea class="form-control mandatory" rows="5" id="pesan" name='pesan'></textarea>
 			</div>
 			<div class="form-group">
+
 			<?php echo $image;?><br>
+
 			<label for="pwd">Security Code:</label>
 			<input type='text' size='10' class="form-control mandatory" name='secutity_code' id='secutity_code'/>
 			</div>

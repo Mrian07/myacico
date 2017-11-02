@@ -43,11 +43,11 @@
           <div class="form-group">
             <label><?php echo $lang_Country; ?>*</label>
               <select name="country" id="country_sel" class="form-control mandatory" disabled >
-                    <option value="209" selected="selected">Indonesia</option>
+                    <option value="" selected="selected">12</option>
               </select>
             </div>
-          <div class="form-group" id="region_box" onclick="get_region()">
-            <label><?php echo $lang_Provience; ?>*</label>
+          <div class="form-group" id="region_box">
+            <label>asdlaskdka213*</label>
             <select name="province" id="region_sel" class="form-control mandatory">
                 <option value="">--Pilih--</option>
             </select>
@@ -101,6 +101,18 @@ $('#postal').change(function () {
         var end = this.value;
       $('#submit_btn').removeAttr('disabled');
     });
+    function get_region(){
+      $("#region_box").slideDown();
+        var negara = $('#country_sel').val();
+
+      $("#region_sel").prop('disabled', true).unbind("change", get_city);
+      $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
+        r.forEach(function(o){
+          $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
+        });
+        $("#region_sel").prop('disabled', false).change(get_city);
+      }, "json" );
+    }
 function get_village(){
   $("#village_box").slideDown();
   $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
@@ -133,18 +145,7 @@ function get_city(){
   }, "json" );
 }
 
-function get_region(){
-  $("#region_box").slideDown();
-    var negara = $('#country_sel').val();
 
-  $("#region_sel").prop('disabled', true).unbind("change", get_city);
-  $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
-    r.forEach(function(o){
-      $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
-    });
-    $("#region_sel").prop('disabled', false).change(get_city);
-  }, "json" );
-}
 
        function get_postal(){
       $("#postal_box").slideDown();
