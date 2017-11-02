@@ -1,13 +1,229 @@
 /*!
  * Author: Lalang Gumirang
  */
- 
-body {
-	/*background:#ff0000;*/
+
+ /* Template-specific stuff
+  *
+  * Customizations just for the template; these are not necessary for anything
+  * with disabling the responsiveness.
+  */
+
+ /* Account for fixed navbar */
+
+
+ body,
+ .navbar-fixed-top,
+ .navbar-fixed-bottom {
+   min-width: 970px;
+	background:#ffffff;
 	margin: 0px;
 	color: #111111;
 	font-family: Verdana;
 	font-size: 12px;
 	font-family: sans-serif;
-	background: #f1f1f1;
 }
+
+/* Don't let the lead text change font-size. */
+.lead {
+  font-size: 16px;
+}
+
+/* Finesse the page header spacing */
+.page-header {
+  margin-bottom: 30px;
+}
+.page-header .lead {
+  margin-bottom: 10px;
+}
+
+
+ /* Non-responsive overrides
+  *
+  * Utilize the following CSS to disable the responsive-ness of the container,
+  * grid system, and navbar.
+  */
+
+ /* Reset the container */
+ /*.container {
+   width: 970px;
+   max-width: none !important;
+   padding:0px;
+ }*/
+
+ /* Demonstrate the grids */
+
+ /*.col-xs-4{
+   padding-top: 15px;
+   padding-bottom: 15px;
+
+   background-color: rgba(86,61,124,.15);
+   border: 1px solid #ddd;
+   border: 1px solid rgba(86,61,124,.2);
+ }*/
+
+
+
+
+.myserach{
+	float: left;
+	width: 100%;
+	/*padding:20px;*/
+	margin-right:20px;
+}
+
+/*btn bootstrap*/
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #1a6aa4;
+		border-radius: 0px;
+		border: 0px;
+}
+.btn-primary:hover{
+		background-color: #1785d4;
+}
+
+.btn-danger,
+.btn-danger:active,
+.btn-danger:visited,
+.btn-danger:focus {
+    background-color: #e30c0c;
+		border-radius: 0px;
+		border: 0px;
+}
+.btn-danger:hover{
+		background-color: #ff0000;
+}
+
+.btn-default,
+.btn-default:active,
+.btn-default:visited,
+.btn-default:focus {
+    background-color: #d1cece;
+    border-radius: 0px;
+		border: 0px;
+}
+.btn-default:hover{
+		background-color: #e2dede;
+}
+
+.btn-warning,
+.btn-warning:active,
+.btn-warning:visited,
+.btn-warning:focus {
+    background-color: #d9840c;
+    border-radius: 0px;
+		border: 0px;
+}
+.btn-warning:hover{
+		background-color: #f39a1d;
+}
+
+.btn-success,
+.btn-success:active,
+.btn-success:visited,
+.btn-success:focus {
+    background-color: #006600;
+    border-radius: 0px;
+		border: 0px;
+}
+.btn-success:hover{
+		background-color: #017801;
+}
+
+.btn-info,
+.btn-info:active,
+.btn-info:visited,
+.btn-info:focus {
+    background-color: #4cacc9;
+    border-radius: 0px;
+		border: 0px;
+}
+.btn-info:hover{
+		background-color: #5bc0de;
+}
+
+/*btn bootstrap*/
+
+	#search_keyword_id
+	{
+		width:500px;
+
+		padding:10px;
+		font-size:12px;
+	}
+	.productSrc
+	{
+		position:absolute;
+		width:628px;
+		display:none;
+		margin-top:-1px;
+		border-top:0px;
+		overflow:hidden;
+		border-left:1px  #CDCDCD solid;
+		border-right:1px  #CDCDCD solid;
+		background-color: white;
+		z-index: 289;
+	}
+	.show_result
+	{
+		font-family:tahoma;
+		padding:5px;
+		border-bottom:1px #CDCDCD dashed;
+		font-size:12px;
+		z-index: 289;
+	}
+	.show_result:hover
+	{
+		background:#e9e9e8;
+		color:#000000;
+		cursor:pointer;
+	}
+
+	.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default{
+		color: #333;
+	    background-color: #111111;
+	    border-color: #adadad;
+		color:#d0d0d0;
+	}
+
+	/*Search*/
+	.my-search{
+		/*background-color:#111111;
+		color:#d0d0d0;
+		padding:13px;*/
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px 0px 0px 4px;
+    background-color: #111111;
+    color:#d0d0d0;
+	}
+
+	.my-search:hover {
+	    background-color: #4c4e51;
+	    color: white;
+	}
+
+	.my-search-button{
+	    padding: 17px 20px;
+	    border: none;
+	    border-radius: 4px;
+	    background: #c40202 url("../../images/general/red-emboss.jpg");
+		color:#d0d0d0;
+	}
+
+  .my-search-button:hover{
+    background: #111111;
+  }
+
+	.my-search-field{
+		width: 100%;
+		padding: 14px;
+		margin: 8px 0;
+		box-sizing: border-box;
+		/*background: #f2f1f1;*/
+		border-top:1px solid #dddddd;
+		border-bottom:1px solid #dddddd;
+    border-left:0px;
+	}

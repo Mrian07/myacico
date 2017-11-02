@@ -138,8 +138,8 @@ a{
 			<div class='myserach' ng-app="myApps">
 				<div ng-controller = "searchCtrl">
 				<div class="input-group">
-					<div class="input-group-btn search-panel">
-						<button type="button" class="btn btn-default dropdown-toggle my-search" data-toggle="dropdown">
+					<div class="input-group-btn search-panel" style='background:#000000'>
+						<button type="button" class="dropdown-toggle my-search" data-toggle="dropdown" >
 							<span id="search_concept">All Categories</span> <span class="caret"></span>
 						</button>
 						<!-- <ul class="dropdown-menu cat_menu" role="menu"> -->
