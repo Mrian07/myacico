@@ -74,6 +74,7 @@ class Customer extends Web {
 		$vals = array(
 			'word' => $random_number,
 			'img_path' => './captcha/',
+		
 			'img_url'	 => base_url().'captcha/',
 			'img_width'	 => '200',
 			'img_height' => 32,
