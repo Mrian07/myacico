@@ -8,6 +8,12 @@
 #hearts { font-size: 140px; color: #F4044F;}
 #hearts-existing { color: #87bad7;}
 	</style>
+        <!--Star-->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/dist/xzoom.min.js');?>"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/productpopup/css/xzoom.css');?>" media="all" />
@@ -82,14 +88,19 @@
 
 
 			<div class="row lead">
-
-			<div class="ratings" style='text-align: center; color:#d98c13;'>
+                            <div id="rateYo"></div>
+ 
+  <script src="jquery.js"></script>
+  <script src="jquery.rateyo.js"></script>
+<!--			<div class="ratings" style='text-align: center; color:#d98c13;'>
 					<span class="glyphicon glyphicon-star"></span>
 					<span class="glyphicon glyphicon-star"></span>
 					<span class="glyphicon glyphicon-star"></span>
 					<span class="glyphicon glyphicon-star"></span>
 					<span class="glyphicon glyphicon-star-empty"></span>
-			</div><br>
+			</div>-->
+                            
+                            <br>
 
 			<!-- <div class="row lead">
 			   <center>
@@ -320,6 +331,13 @@
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/setup.js');?>"></script>
 
 <script>
+    $(function () {
+ 
+  $("#rateYo").rateYo({
+    starWidth: "40px"
+  });
+ 
+});
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
 
