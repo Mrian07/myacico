@@ -46,6 +46,7 @@
 
 
 	<div class="row">
+
 	  <div class="col-sm-5">
 
 
@@ -76,19 +77,102 @@
 						<!--a href="<?php //echo base_url('images/gallery/original/03_r_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/03_r_car.jpg');?>" title="The description goes here"></a>
 						<a href="<?php //echo base_url('images/gallery/original/04_g_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/04_g_car.jpg');?>" title="The description goes here"></a-->
 					  </div>
+
 					</div>
 
+
+
 	  </div>
-	  <div class="col-sm-7 detail-product">
-		<h4 class='title-product'><?php echo $name; ?></h4>
-		<p style="color:red"><?php echo $sku; ?></p>
-			<span class='price'><b>Rp.<?php echo money($pricelist);  ?></b></span><br>
+	  <div class="col-sm-6 detail-product">
+			<div class="col-sm-6" style="background-color:white;">
+				<h4 class='title-product'><?php echo $name; ?></h4>
+
+				<p style="color:red"><?php echo $sku; ?></p>
+					<span class='price'><b>Rp.<?php echo money($pricelist);  ?></b></span><br>
+					<span style="color: green; font-weight:bold">Stock: Tersedia</span>
+			</div>
+			<div class="col-sm-6" style="background-color:white;">
+				<h4>Rating breakdown</h4>
+				<center>
+				<div id="rateYo"></div>
+			</center>
+								<div class="pull-left">
+									<div class="pull-left" style="width:35px; line-height:1;">
+										<div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
+									</div>
+									<div class="pull-left" style="width:180px;">
+										<div class="progress" style="height:9px; margin:8px 0;">
+										  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+											<span class="sr-only">80% Complete (danger)</span>
+										  </div>
+										</div>
+									</div>
+									<div class="pull-right" style="margin-left:10px;">1</div>
+								</div>
+								<div class="pull-left">
+									<div class="pull-left" style="width:35px; line-height:1;">
+										<div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
+									</div>
+									<div class="pull-left" style="width:180px;">
+										<div class="progress" style="height:9px; margin:8px 0;">
+										  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+											<span class="sr-only">80% Complete (danger)</span>
+										  </div>
+										</div>
+									</div>
+									<div class="pull-right" style="margin-left:10px;">1</div>
+								</div>
+								<div class="pull-left">
+									<div class="pull-left" style="width:35px; line-height:1;">
+										<div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
+									</div>
+									<div class="pull-left" style="width:180px;">
+										<div class="progress" style="height:9px; margin:8px 0;">
+										  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+											<span class="sr-only">80% Complete (danger)</span>
+										  </div>
+										</div>
+									</div>
+									<div class="pull-right" style="margin-left:10px;">0</div>
+								</div>
+								<div class="pull-left">
+									<div class="pull-left" style="width:35px; line-height:1;">
+										<div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
+									</div>
+									<div class="pull-left" style="width:180px;">
+										<div class="progress" style="height:9px; margin:8px 0;">
+										  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+											<span class="sr-only">80% Complete (danger)</span>
+										  </div>
+										</div>
+									</div>
+									<div class="pull-right" style="margin-left:10px;">0</div>
+								</div>
+								<div class="pull-left">
+									<div class="pull-left" style="width:35px; line-height:1;">
+										<div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
+									</div>
+									<div class="pull-left" style="width:180px;">
+										<div class="progress" style="height:9px; margin:8px 0;">
+										  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+											<span class="sr-only">80% Complete (danger)</span>
+										  </div>
+										</div>
+									</div>
+									<div class="pull-right" style="margin-left:10px;">0</div>
+								</div>
+							</div>
+						</div>
+
+			</div>
+
 			<!-- <b>Berat: <span class='red-tx'><?php echo $weight; ?></span></b><br> -->
-			<span style="color: green; font-weight:bold">Stock: Tersedia</span>
+
+
 
 
 			<div class="row lead">
-                            <div id="rateYo"></div>
+
 
   <script src="jquery.js"></script>
   <script src="jquery.rateyo.js"></script>
@@ -190,6 +274,11 @@
 				<th>  Harga </th>
 				<td> Rp.<?php echo money($pricelist);  ?></td>
 			</tr>
+			<tr>
+				<th>  Harga </th>
+				<td> Rp.<?php echo money($rate);  ?></td>
+			</tr>
+			<?php echo $rate; ?>
 			<tr>
 
 				<th> <?php
@@ -334,7 +423,9 @@
     $(function () {
 
   $("#rateYo").rateYo({
-    starWidth: "40px"
+		  rating: 2.5,
+		  readOnly: true
+
   });
 
 });
@@ -404,6 +495,7 @@ var __slice = [].slice;
       if (rating) {
         for (i = _i = 0, _ref = rating - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
           this.$el.find('span').eq(i).removeClass('glyphicon-star-empty').addClass('glyphicon-star');
+
         }
       }
       if (rating && rating < 5) {
@@ -455,8 +547,6 @@ $( document ).ready(function() {
 });
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
 console.log('token',token)
-	// var apiurl = api_base_url +'/order/cart/additem';
-var apiBintang = api_base_url +'product/productlist/detail?id='<?php echo $pro_id; ?>;
 function addWishlist(id,name,imageurl){
 	var dataString = 'id='+ id;
 
@@ -466,6 +556,7 @@ function addWishlist(id,name,imageurl){
 		type: "POST",
                 headers:{"token":token},
 		url: "<?php echo site_url('product/addWishlist'); ?>",
+
 		data: dataString,
 		success:function(data){
 
@@ -541,6 +632,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 		var cookie = document.cookie.split('x-auth=');
 		if(cookie.length > 1){
 			var token = cookie[1].split(';').shift();
+
 			var apiurl = api_base_url +'/order/cart/additem';
 			var m_product_id = m_product_id;
 			var qty = jmlItem;
