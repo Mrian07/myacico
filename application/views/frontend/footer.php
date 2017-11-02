@@ -9,6 +9,7 @@
 		<div class="row">
 
 			<div class="col-sm-3">
+
 				<h3><span>DELIVERY</span></h3>
 				2x24 hours delivery on weekdays for all areas of JABODETABEK and free delivery to all area in Indonesia.
 			</div>
@@ -19,6 +20,14 @@
 			<div class="col-sm-3">
 				<h3><span>EMAIL NEWSLETTER</span></h3>
 				All items in Myacico.com are guaranteed for 7 days, counted upon receipt of the goods.
+			</div>
+      <div class="col-sm-3">
+				<h3><span>Pembayaran</span></h3>
+        <div class='sos'>
+					<ul>
+            <li><a class="active" href="https://www.facebook.com/MyacicoID/?ref=aymt_homepage_panel"><img src="https://s1.postimg.org/76vagdbu33/bca_24px_1105429_easyicon.net.png"></a></li>
+          </ul>
+        </div>
 			</div>
 		</div>
 		<div class="row my-foot-box">
@@ -47,12 +56,7 @@
 				<img src='<?php echo base_url('images/general/logo_kurir_kecil.png');?>' border='0'/>
 			</div>
 		</div>
-		<div class="row my-foot-box">
-			<div class="col-sm-3">
-				<h3><span>PEMBAYARAN</span></h3>
 
-			</div>
-		</div>
 		<br><br>
 		<center>
 		<button data-toggle="collapse" data-target="#demo" class='btn-link'>LINK LAINNYA</button>
@@ -90,6 +94,7 @@ $(document).ready(function() {
 	$('#alertSubmit').show('slow').delay(5000).hide('slow');
 
 });
+
 </script>
 
 <script>

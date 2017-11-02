@@ -406,7 +406,7 @@ cursor:pointer;
 	});
 	function showDataMobile(name,id)
 	{
-		var url = base_url+'/product/detail/'+id;
+		var url = base_url+'/product/detail/'+id+'/';
 		window.location.href = url;
 		// $("#search-mobile").val(name);
 		// $("#searchID-mobile").val(id);
