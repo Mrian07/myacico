@@ -140,7 +140,7 @@ if($page){
   $this->load->view('frontend/nav.php',$this->data);
   // $this->load->view('frontend/slide_show.php',$this->data);
   $this->load->view('frontend/modules/product/product.php',$this->data);
-
+$this->load->view('frontend/sidenav',$this->data);
   $this->load->view('frontend/footer',$this->data);
  }
 
@@ -152,7 +152,7 @@ if($page){
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
 		$this->load->view('frontend/modules/product/product.php',$this->data);
-
+$this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
@@ -180,7 +180,7 @@ if($page){
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
 		$this->load->view('frontend/modules/product/category.php',$this->data);
-
+$this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
@@ -269,7 +269,7 @@ if(isset($hasil['sku'])){
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/product/detail.php',$this->data);
-
+$this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
@@ -304,7 +304,7 @@ if(isset($hasil['sku'])){
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
 		$this->load->view('frontend/modules/product/product2.php',$this->data);
-
+$this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
