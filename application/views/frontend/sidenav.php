@@ -44,7 +44,7 @@
 <div id="mySidenav" class="sidenav">
   <a target="_blank" href="https://www.youtube.com/channel/UCT6wkP8xyhEgDZzrbuWBQRg" id="youtube"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
   <a target="_blank" href="https://plus.google.com/109226501209243616006" id="gplus"><i class="fa fa-google-plus-square fa-lg" aria-hidden="true"></i></a>
-  <a target="_blank" href="https://www.instagram.com/?hl=en" id="ig"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+  <a target="_blank" href="https://www.instagram.com/myacico.id/" id="ig"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
   <a target="_blank" href="https://www.facebook.com/MyacicoID/" id="fb"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>
 </div>
 
