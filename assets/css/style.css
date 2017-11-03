@@ -227,3 +227,120 @@
 		border-bottom:1px solid #dddddd;
     border-left:0px;
 	}
+
+  .my-btn-brand{
+    border: 1px solid #111111;
+    padding:10px;
+    color:#111111;
+    font-size:20px;
+    background:#ffffff;
+  }
+
+  .my-btn-brand:hover{
+    color:#dddddd;
+    background:#252424;
+    text-decoration: none;
+  }
+
+
+  .btn-nav-head{
+    border: 1px solid #716f6f;
+    padding:5px;
+    color:#ffffff;
+    font-size:12px;
+    background:#808080;
+    text-decoration: none;
+  }
+
+  .btn-nav-head:hover {
+    color:#dddddd;
+    background:#000000;
+    text-decoration: none;
+  }
+
+  .btn-nav-red{
+    color: #d90000;
+    text-decoration: none;
+  }
+
+  .btn-nav-red:hover{
+    color: #fd9898;
+    text-decoration: none;
+  }
+
+  .btn-top{
+  	margin: 0 auto;
+  	text-align: center;
+  	margin-bottom:-35px;
+  }
+
+  .footer{
+  	background: #000000;
+  	color:#f8f7f7;
+  	display: block;
+  	margin-top: 0px;
+  	font-family: arial;
+  	padding: 50px 0px 0px 0px;
+  }
+
+  h3 span {
+      text-transform: uppercase;
+      color: #fff;
+      border-bottom: 1px solid #c40202;
+      font-size: 25px;
+      line-height: 45px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+  }
+
+  /*footer sosmet*/
+  .sos ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+  }
+
+  .sos li {
+      float: left;
+  	font-size:25px;
+  }
+
+  .sos li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+
+  .sos li a:hover {
+      background-color: #333;
+  }
+
+  .btn-link,
+  .btn-link:active,
+  .btn-link:visited,
+  .btn-link:focus {
+      background-color: #1a6aa4;
+  		border-radius: 0px;
+  		border: 0px;
+
+  		border:1px solid #c40202; background:#000000; padding:10px; font-size:20px; border-radius:5px; color:#ffffff;
+  		text-decoration: none;
+  }
+  .btn-link:hover{
+  		color:#c6c1c1;
+  		background-color: #a40101;
+  		text-decoration: none;
+  }
+
+  .cpyright{
+  	margin-top: 100px;
+  	text-align: center;
+  	color:#d0d0d0;
+  	font-family: verdana;
+  	font-size: 10px;
+  	background-color: #2a2a2a;
+  	padding:10px;
+  }

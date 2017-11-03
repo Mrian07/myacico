@@ -91,13 +91,12 @@ cursor:pointer;
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
-                                    <div class="row" style='color:#000000'>
+                                    <div class="row">
 																				<div class="col-menu col-md-2">
-																					<img src="<?php// echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100"><br>
-																					Samsung
+																					<img src="<?php// echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100">
 																				</div>
 																				<div class="col-menu col-md-2">
-																					Samsung
+																					<a href='#'>Samsung</a>
 																				</div>
 																				<div class="col-menu col-md-2">
 																					Samsung

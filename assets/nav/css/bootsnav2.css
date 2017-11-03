@@ -612,7 +612,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         padding: 0 30px;
         margin: 0 -0.5px;
         border-left: solid 1px #f0f0f0;
-        border-right: solid 1px #f0f0f0;
+        /*border-right: solid 1px #f0f0f0;*/
     }
 
     nav.navbar.bootsnav ul.dropdown-menu.megamenu-content .col-menu:first-child{
@@ -1484,6 +1484,20 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
 
 #navbar-menu ul li a:hover{
   color:#eee10e;
+  text-decoration: none;
+}
+
+#navbar-menu .megamenu-fw ul li{
+	color:#111111;
+}
+
+#navbar-menu .megamenu-fw ul li a{
+	color:#111111;
+	display:inline-block;
+}
+
+#navbar-menu .megamenu-fw ul li a:hover{
+  color:#d10000;
   text-decoration: none;
 }
 

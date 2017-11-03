@@ -47,7 +47,6 @@ a{
 
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jwt-decode.min.js');?>"></script>
 		<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
-
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css');?>" />
 
 		<style type="text/css">
@@ -88,14 +87,16 @@ a{
 		</style>
     </head>
 
-<body style='font-weight: normal' >
+<body style='font-weight: normal;' ng-app="myApp">
 
   <div class='container'>
 		<div style='margin-bottom:20px; margin-top:10px'>
 	    <img src='<?php echo base_url('images/general/img-head1.jpg');?>' border='0'>
 		</div>
 
-    <button class='btn-nav-head'>Blog</button> <button class='btn-nav-head'>Produk Terbaru</button> <button class='btn-nav-head'>Cara Belanja</button> <button class='btn-nav-head'>Customer Service</button>
+    <?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?> <?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?> <?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
+		<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
+		<?php echo anchor('page/faq','Faq', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/payment','Payment', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/aboutus','About Us', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/contact','Hubungi Kami', array('class'=>'btn-nav-head')); ?>
     <div class='row'>
       <div class="col-xs-8">
   			<div class='myserach' ng-app="myApps">
@@ -129,11 +130,20 @@ a{
   			</div>
   			</div>
   		</div>
+			<?php
+			$totalItems = 0;
+			foreach ($this->cart->contents() as $items):
+				$totalItems += $items['qty'];
+			endforeach;
+			?>
+			<span class="badge" style='margin-left:-90px; margin-top: 10px; position: absolute; font-size:15px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
       <div class="col-xs-4">
         <div class='row' style='padding-top:10px'>
           <div class="col-xs-2" style='font-size:50px; color:#b2b2b2; '><i class="fa fa-user" aria-hidden="true"></i></div>
-          <div class="col-xs-6" style='font-size:24px; color:#b2b2b2; padding-left:3px; '>Selamat Datang<br><b><font color='red'>Login</font></b> / <b><font color='red'>Daftar</font></b></div>
-          <div class="col-xs-3"><img src="<?php echo base_url('images/general/cart.png'); ?>" border="0"></div>
+          <div class="col-xs-6" style='font-size:24px; color:#b2b2b2; padding-left:3px; '>Selamat Datang<br><b>
+
+						<font color='red'><?php echo anchor('customer/signIn','Login', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create','Daftar', array('class'=>'btn-nav-red')); ?></font></b></div>
+          <div class="col-xs-3" style='margin-top:8px; '><img src="<?php echo base_url('images/general/cart.png'); ?>" border="0"></div>
         </div>
         <!-- <table border='0' width='100%'><tr><td style='font-size:65px; text-align: center; color:#b2b2b2'></td><td style='font-size:20px; font-weight:bold; text-align: center; color:#b2b2b2'>Selamat Datang<br><font color='red'>Login</font> / <font color='red'>Daftar</font></td><td><img src="
           <?php// echo base_url('images/general/cart.png'); ?>" border="0"></td></tr></table> -->
@@ -153,26 +163,6 @@ a{
       <div class="col-xs-6">One third</div>
     </div> -->
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   <!-- s header -->

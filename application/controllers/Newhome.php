@@ -30,17 +30,19 @@ class Newhome extends Web {
     {
 
 			//Slide slide_show
-			// $api = "home/view";
-			// $url = api_base_url($api);
-			//
-			// $konten = file_get_contents($url);
-			// $this->data['dathome'] = json_decode($konten, true);
+			$api = "home/view";
+			$url = api_base_url($api);
+
+			$konten = file_get_contents($url);
+			$this->data['dathome'] = json_decode($konten, true);
 
 			//$this->load->view('frontend/test',$this->data);
 			$this->data['title_web'] = "Myacico.com - Home";
 			$this->load->view('frontend/header2',$this->data);
 			$this->load->view('frontend/nav2',$this->data);
-			$this->load->view('frontend/footer2',$this->data);
+			$this->load->view('frontend/slide_show.php',$this->data);
+			$this->load->view('frontend/modules/home/home2',$this->data);
+			$this->load->view('frontend/footer',$this->data);
 	}
 
 	public function switchLang()
