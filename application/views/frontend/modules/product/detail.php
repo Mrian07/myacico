@@ -274,11 +274,8 @@
 				<th>  Harga </th>
 				<td> Rp.<?php echo money($pricelist);  ?></td>
 			</tr>
-			<tr>
-				<th>  Harga </th>
-				<td> Rp.<?php echo money($rate);  ?></td>
-			</tr>
-			<?php echo $rate; ?>
+
+			
 			<tr>
 
 				<th> <?php
