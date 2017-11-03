@@ -31,6 +31,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/dashboard.php',$this->data);
+                $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
 	}
@@ -173,6 +174,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/TambahBukuAlamat',$this->data);
+                $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
@@ -183,6 +185,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
+                $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
@@ -229,6 +232,7 @@ class Account extends Web_private {
 		}else{
 			echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'>List riwayat status pesanan masih kosong</div>";
 		}
+                $this->load->view('frontend/sidenav',$this->data);
 	}
 
 
@@ -258,6 +262,7 @@ class Account extends Web_private {
 			$this->load->view('frontend/header',$this->data);
 			$this->load->view('frontend/nav.php',$this->data);
 			$this->load->view('frontend/modules/account/form_confirm.php',$this->data);
+                        $this->load->view('frontend/sidenav',$this->data);
 			$this->load->view('frontend/footer',$this->data);
 	}
 
@@ -269,6 +274,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
 		$this->load->view('frontend/footer',$this->data);
+                $this->load->view('frontend/sidenav',$this->data);
 	}
 
 	public function Wishlist()
@@ -279,6 +285,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/wishlist',$this->data);
 		$this->load->view('frontend/footer',$this->data);
+                $this->load->view('frontend/sidenav',$this->data);
 			// $this->load->view('frontend/footer',$this->data);
 	}
 
@@ -301,6 +308,7 @@ class Account extends Web_private {
 
 			$this->data['hasil'] = json_decode($konten, true);
 			$hasil = json_decode($konten, true);
+                        $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/modules/account/wishlist_item',$this->data);
 
 			// $this->load->view('frontend/footer',$this->data);
@@ -313,6 +321,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_account',$this->data);
+                $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
@@ -332,7 +341,9 @@ class Account extends Web_private {
 		}else{
 			$this->load->view('frontend/modules/account/form_billing',$this->data);
 		}
+                $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
+                
 	}
 
     public function formAddBilling()
@@ -342,6 +353,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_add_billing',$this->data);
+                $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
@@ -380,6 +392,7 @@ class Account extends Web_private {
 			$this->load->view('frontend/nav.php',$this->data);
 			$this->load->view('frontend/modules/account/form_transaction_detail',$this->data);
 			$this->load->view('frontend/footer',$this->data);
+                        $this->load->view('frontend/sidenav',$this->data);
 	}
 
 	public function logout()
