@@ -125,13 +125,13 @@ class Web extends MY_Controller {
     public function asset(){
 
         //$this->data['baseApiUrl'] = "http://api.myacico.net:8080/myacico-service/api";
-		$this->data['baseApiUrl'] = "https://api.myacico.co.id/myacico-service";
+		$this->data['baseApiUrl'] = "http://api.myacico.co.id/myacico-service";
 		$this->data['baseApiUrl2'] = "https://acc.myacico.co.id/myacico-account/account";
 
     }
 
     public function categorySearch(){
-  		$url = "http://api.myacico.co.id/myacico-service/category";
+  		$url = "https://api.myacico.co.id/myacico-service/category";
 
   		$konten = file_get_contents($url);
   		$this->data['catsearch'] = json_decode($konten, true);
