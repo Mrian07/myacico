@@ -32,7 +32,6 @@
     top: 420px;
     background-color: #555;
 }
-
 #fb {
     top: 480px;
     background-color: #555
@@ -47,8 +46,6 @@
   <a target="_blank" href="https://www.instagram.com/myacico.id/" id="ig"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
   <a target="_blank" href="https://www.facebook.com/MyacicoID/" id="fb"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>
 </div>
-
-
 </body>
 <script>
     // load Branch
