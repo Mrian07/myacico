@@ -42,6 +42,7 @@ class Newhome extends Web {
 			$this->load->view('frontend/nav2',$this->data);
 			$this->load->view('frontend/slide_show.php',$this->data);
 			$this->load->view('frontend/modules/home/home2',$this->data);
+			$this->load->view('frontend/sidenav',$this->data);
 			$this->load->view('frontend/footer',$this->data);
 	}
 

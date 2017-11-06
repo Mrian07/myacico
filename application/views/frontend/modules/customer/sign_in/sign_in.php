@@ -1,23 +1,8 @@
-<div class='my-bg-title'>
-	<div class="container">
-		<div class="row">
-		  <div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> LOGIN AKUN
 
-		  </div>
-		</div>
-	</div>
-</div>
 
-<div class="container">
-	<!--<div class="row">
-	  <div class="col-sm-12">
-		<div class="my-border-title">
-			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> LOGIN AKUN</h3>
-		</div>
-	  </div>
-	</div>-->
+<div class="container my-container-transparan">
+
 
 	<div class="row">
 		<div class="col-sm-6">
@@ -50,26 +35,26 @@
 		</div>
 		<div class="col-sm-6">
 
-				<h5>PENDAFTARAN</h5>
+				<h5>PENDAFTARAN BARU</h5>
 				<div class='border-create'>
 				<div class="row">
 				  <div class="col-sm-12">
 						<?php echo $lang_ket_daftar_personal; ?>
-						<div class='my-btn-create'><?php echo anchor('customer/personal/', $lang_btn_personal, array('class'=>'my-link-create'));?></div>
+						<div class='my-btn-create'><?php echo anchor('customer/personal/', $lang_btn_personal, array('class'=>'btn btn-primary'));?></div>
 				  </div>
 				</div>
 				<div class="row">
 				  <div class="col-sm-12">
 						<hr>
 						<?php echo $lang_ket_daftar_akunBisnis;?>
-						<div class='my-btn-create'><?php echo anchor('customer/business/', $lang_btn_bisnis, array('class'=>'my-link-create'));?> </div>
+						<div class='my-btn-create'><?php echo anchor('customer/business/', $lang_btn_bisnis, array('class'=>'btn btn-primary'));?> </div>
 				  </div>
 				</div>
 				<div class="row">
 				  <div class="col-sm-12">
 						<hr>
 						Untuk pemerintah yang ingin belanja di myacico.com.
-						<div class='my-btn-create'><?php echo anchor('customer/government/', $lang_btn_pemerintah, array('class'=>'my-link-create'));?></div>
+						<div class='my-btn-create'><?php echo anchor('customer/government/', $lang_btn_pemerintah, array('class'=>'btn btn-primary'));?></div>
 				  </div>
 				</div>
 
@@ -86,7 +71,7 @@ var success = function(r){
   $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
   //console.log('OK:', r);
-           
+
   if(!r.token) return $.alert({
     title: 'Alert!',
     content: r.message
@@ -104,7 +89,7 @@ var success = function(r){
 		var weight = <?php echo $items['weight']; ?>;
 
 		var success = function(r){
-                   
+
 		};
 
 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
@@ -128,7 +113,7 @@ var success = function(r){
 {
     window.location.replace(base_url+"product/detail/"+wishlist);
     die();
-}        
+}
   if(cb.length > 1) location.href = cb[1].split(';').shift();
   else location.href = '<?php echo base_url('account'); ?>';
 };

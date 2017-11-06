@@ -1,15 +1,4 @@
-<div class='my-bg-title'>
-	<div class="container">
-		<div class="row">
-		  <div class="col-sm-12">
-
-			<i class="fa fa-angle-right" aria-hidden="true"></i> DAFTAR AKUN PEMERINTAH
-
-		  </div>
-		</div>
-	</div>
-</div>
-<div class="container">
+<div class="container my-container-transparan">
 
 
   <div class="row">
@@ -103,7 +92,7 @@
   			<div class="col-sm-6" style='text-align: right'>
   				<?php echo $field_sudahDaftar; ?> <?php echo anchor('customer/signIn', 'Log In'); ?>
   			</div>
-  		  </div>        
+  		  </div>
 
       </form>
       </div>

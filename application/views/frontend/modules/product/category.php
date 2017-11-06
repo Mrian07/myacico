@@ -60,17 +60,13 @@
 .carousel-control 			 { width:  4%; }
 .carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
 </style>
-<div class='my-bg-title'>
+
 	<div class="container">
-		<div class="row">
-		  <div class="col-sm-12">
-
+		<div class='my-bg-title'>
 			<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo strtoupper($hasil['subName']); ?>
-
 		  </div>
-		</div>
 	</div>
-</div>
+
 
 <div class="container my-container-transparan">
 	<div class="row">

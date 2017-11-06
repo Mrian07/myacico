@@ -260,7 +260,7 @@ if(isset($hasil['sku'])){
 		$this->data['stock'] = $hasil['stock'];
 		$this->data['volume'] = $hasil['volume'];
 		$this->data['weight'] = $hasil['weight'];
-
+			$this->data['rate'] = $hasil['rate'];
 		$this->data['img'] = $hasil['imageurl'][0];
 		$this->data['img1'] = $hasil['imageurl'][1];
 		$this->data['img2'] = $hasil['imageurl'][2];

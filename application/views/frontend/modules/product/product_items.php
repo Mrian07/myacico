@@ -144,6 +144,7 @@ h1.po1{
 	$sumber = $baseApiUrl.'/product/productlist?category='.$pro;
  //$sumber = 'http://myacico.net:8080/myacico-service/api/product/productlist?category='.$pro;
  $konten = file_get_contents($sumber);
+
  $data = json_decode($konten, true);
 $saw=$this->uri->segment(5);
 if($saw==Null)

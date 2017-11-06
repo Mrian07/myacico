@@ -1,15 +1,5 @@
-<div class='my-bg-title'>
-	<div class="container">
-		<div class="row">
-		  <div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_welcome; ?>
-
-		  </div>
-		</div>
-	</div>
-</div>
-<div class="container">
+<div class="container my-container-transparan">
 
   <div class="row">
     <div class="col-sm-3">
@@ -92,7 +82,7 @@
          <div class="form-group">
         <label><?php echo $lang_PostCode; ?>*</label>
           <select type="text" name="postal" id="postal_id" class="form-control mandatory" ></select>
-        </div> 
+        </div>
         <div class="form-group">
               <label><?php echo $lang_Passwpord; ?>*</label>
           <input type="password" id="password" name="password" class="form-control mandatory" />
@@ -160,7 +150,7 @@ $('#village_id').change(function () {
           $("#village_id1").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
                 console.log('asdasd3',o.c_village_id);
         });
-  
+
       }, "json" );
     }
 
@@ -201,7 +191,7 @@ $('#postal_id').change(function () {
         $("#postal_id").prop('disabled', false);
       }, "json" );
     }
-  
+
 
 
 
@@ -233,7 +223,7 @@ $(document).ready(function() {
     var business_type_id = $("#business_type_id").val();
     var file =  $("#file").val();
 var data = {};
- 
+
     data.name = name;
     data.email = email;
     data.password = password;
@@ -248,9 +238,9 @@ var data = {};
                                 data.business_type_id = business_type_id;
 
                                 var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
-    var apiurl = baseApiUrl + '/create/b2b'; 
+    var apiurl = baseApiUrl + '/create/b2b';
      var form = $('form')[0]; // You need to use standard javascript object here
-    var formData = new FormData(form); 
+    var formData = new FormData(form);
 
 
     if(email==''){
@@ -279,7 +269,7 @@ var data = {};
  //  $("form").submit(function(e){
  //    e.preventDefault();
  //    var apiurl = api_base_url + '/account/create/b2b';
-   
+
  //    var fl=document.signup;
  //    var data = $(this).serialize();
  //    // return alert(data);
@@ -333,7 +323,7 @@ var data = {};
       $("#business_type_id").append("<option value='"+o.businessTypeId+"'>"+o.name+"</option>");
       console.log('test',business_type_id);
     });
-  
+
   }, "json" );
 });
 </script>a

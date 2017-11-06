@@ -73,7 +73,8 @@ class Customer extends Web {
 		$random_number = substr(number_format(time() * rand(),0,'',''),0,6);
 		$vals = array(
 			'word' => $random_number,
-			'img_path'	 => './captcha/',
+			'img_path' => './captcha/',
+		
 			'img_url'	 => base_url().'captcha/',
 			'img_width'	 => '200',
 			'img_height' => 32,

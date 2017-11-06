@@ -1,14 +1,12 @@
-<div class='my-bg-title'>
+
 	<div class="container">
-		<div class="row">
-		  <div class="col-sm-12">
+		<div class='my-bg-title'>
 
 			<i class="fa fa-angle-right" aria-hidden="true"></i> LIST PRODUCT
 
-		  </div>
 		</div>
 	</div>
-</div>
+
 <div class="container">
 	<?php
 	// echo $hasil[0]['m_product_id'];

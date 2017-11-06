@@ -572,74 +572,135 @@ ul.list-group:after {
 
 <div class="container">
 
+  <div style='border:1px solid #e6e6e6; background:#e9e8e8; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151'>
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> New Collection
+  </div>
+            <div class="span12" style='background:#ffffff; padding:10px;'>
 
-  <!-- <div class="row">
-    <div class="col-xs-4" style='padding-right: 2px'><img src='<?php echo base_url('images/demo/banner-1.jpg');?>' border='0' width='100%' height='167'></div>
-    <div class="col-xs-4" style='padding-left: 5px; padding-right:5px'><img src='<?php echo base_url('images/demo/banner-2.jpg');?>' border='0' width='100%' height='167'></div>
-    <div class="col-xs-4" style='padding-left: 2px'><img src='<?php echo base_url('images/demo/banner-3.jpg');?>' border='0' width='100%' height='167'></div>
+              <div id="owl-demo" class="owl-carousel">
+                <?php
+
+                $jmlslide2=count($dathome['level_2']);
+                $n=1;
+                foreach($dathome['level_2'] as $key => $itemslide2){
+                  if($n=="$jmlslide2"){
+                    $active='active';
+                  }else{
+                    $active='';
+                  }
+                  ?>
+                <div class="item">
+
+                  <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  class="img-responsive"></a>
+                      <h6 class="text-center" style='color: #4b4b4b'><?php echo $itemslide2['name']; ?></h6>
+                      <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
+                      <div class="ratings" style='text-align: center; color:#d98c13;'>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star-empty"></span>
+                          </div>
+                  <br>
+                  <center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
+                      <hr>
+                      <center><div class="btn-group">
+                       <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
+                         '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+                       <button type="button" class="btn btn-primary" onClick="addWishlist('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+                     </div></center>
+
+
+
+                </div>
+                <?php $n++;  } ?>
+              </div>
+
+            </div>
+
+
+  <!-- Item slider-->
+  <!-- <div class="container-fluid" style='background:#ffffff; padding-top:10px;'>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="carousel carousel-showmanymoveone slide" id="itemslider">
+          <div class="carousel-inner">
+
+            <div class="item active">
+              <div class="col-xs-12 col-sm-6 col-md-2">
+
+                <a href="#">    <div class="lvl20">
+                    </div></a>
+                <h4 class="text-center"> <div class="lvl20p"></div></h4>
+                <h5 class="text-center">Rp. <div class="lvl20h"></div></h5>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <a href="#"><div class="lvl21">
+                    </div></a>
+                <h4 class="text-center"><div class="lvl21p"></div></h4>
+                <h5 class="text-center">Rp. <div class="lvl21h"></div></h5>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <a href="#"><div class="lvl23">
+                    </div></a>
+                <!-- <span class="badge">10%</span> -->
+                <!-- <h4 class="text-center"><div class="lvl23p"></div></h4>
+                <h5 class="text-center">Rp.<div class="lvl23h"></div></h5> -->
+               <!-- <h6 class="text-center">- Rp. 8000.000</h6>-->
+              <!-- </div>
+            </div>
+
+            <div class="item">
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <a href="#"><div class="lvl24">
+                    </div></a>
+                <h4 class="text-center"><div class="lvl24p"></div> </h4>
+                <h5 class="text-center">Rp. <div class="lvl24h"></div></h5>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <a href="#"><div class="lvl25">
+                    </div></a>
+                <h4 class="text-center"><div class="lvl25p"></div> </h4>
+                <h5 class="text-center">Rp. <div class="lvl25h"></div></h5>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <a href="#"><div class="lvl26">
+                    </div></a>
+                <h4 class="text-center"><div class="lvl26p"></div> </h4>
+                <h5 class="text-center">Rp. <div class="lvl26h"></div></h5>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="slider-control">
+          <a class="left carousel-control" href="#itemslider" data-slide="prev"><img src="https://s12.postimg.org/uj3ffq90d/arrow_left.png" alt="Left" class="img-responsive"></a>
+          <a class="right carousel-control" href="#itemslider" data-slide="next"><img src="https://s12.postimg.org/djuh0gxst/arrow_right.png" alt="Right" class="img-responsive"></a>
+        </div>
+        </div>
+      </div>
+    </div>
   </div> -->
 
-  <div class="row" style='width:1155px'>
-    <div class="col-xs-4"><img src='<?php echo base_url('images/demo/banner-1.jpg');?>' border='0' width='370'></div>
-    <div class="col-xs-4"><img src='<?php echo base_url('images/demo/banner-2.jpg');?>' border='0' width='370'></div>
-    <div class="col-xs-4"><img src='<?php echo base_url('images/demo/banner-3.jpg');?>' border='0' width='370'></div>
-  </div>
-
-  <div class="row" style='margin-top:10px; margin-bottom:10px'>
-    <div class="col-xs-12"><img src='<?php echo base_url('images/demo/banner-4.jpg');?>' border='0' width='100%'></div>
-  </div>
-
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> NEW COLLECTION
-  </div>
-  <div class="span12" style='background:#ffffff; padding:10px;'>
-
-    <div id="owl-demo" class="owl-carousel">
-      <?php
-
-      $jmlslide2=count($dathome['level_2']);
-      $n=1;
-      foreach($dathome['level_2'] as $key => $itemslide2){
-        if($n=="$jmlslide2"){
-          $active='active';
-        }else{
-          $active='';
-        }
-        ?>
-      <div class="item">
-
-        <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  class="img-responsive"></a>
-            <h6 class="text-center" style='color: #4b4b4b'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-        <br>
-        <center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
-            <hr>
-            <center><div class="btn-group">
-             <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
-               '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-             <button type="button" class="btn btn-primary" onClick="addWishlist('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
-           </div></center>
-
-
-
-      </div>
-      <?php $n++;  } ?>
-    </div>
-
-  </div>
 
 
 
 
-<div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
-  <i class="fa fa-dot-circle-o" aria-hidden="true"></i> FEATURED PRODUCT
+<div style='border-bottom:1px dashed #7e7a7a; background:#e9e8e8; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <i class="fa fa-dot-circle-o" aria-hidden="true"></i> Featured Product
 </div>
 
 
@@ -678,221 +739,14 @@ ul.list-group:after {
   		<!-- END PRODUCTS -->
 	</div>
 
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> GADGET DAN AKSESORIS HANDPHONE
-  </div>
-  <div class="row">
-    <div class="col-xs-6"><img src='<?php echo base_url('images/demo/banner-a1.jpg');?>' border='0' width='100%' height='200'></div>
-    <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-a2.jpg');?>' border='0' width='100%' height='200'></div>
-    <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-a3.jpg');?>' border='0' width='100%' height='200'></div>
-  </div>
-
-  <div class="span12" style='background:#fde8ef; padding:10px; margin-top:10px'>
-
-    <div class="promo-front owl-carousel">
-      <?php
-
-      $jmlslide2=count($dathome['level_2']);
-      $n=1;
-      foreach($dathome['level_2'] as $key => $itemslide2){
-        if($n=="$jmlslide2"){
-          $active='active';
-        }else{
-          $active='';
-        }
-        ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:300px'>
-
-        <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  class="img-responsive"></a>
-            <h6 class="text-center" style='color: #4b4b4b'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-            </div>
-      </div>
-      <?php $n++;  } ?>
-    </div>
-
-  </div>
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> KOMPUTER & LAPTOP
-  </div>
-  <div class="row">
-    <div class="col-xs-6"><img src='<?php echo base_url('images/demo/banner-b1.jpg');?>' border='0' width='100%' height='200'></div>
-    <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-b2.jpg');?>' border='0' width='100%' height='200'></div>
-    <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-b3.jpg');?>' border='0' width='100%' height='200'></div>
-  </div>
-
-  <div class="span12" style='background:#f0e6fe; padding:10px; margin-top:10px'>
-
-    <div class="promo-front owl-carousel">
-      <?php
-
-      $jmlslide2=count($dathome['level_2']);
-      $n=1;
-      foreach($dathome['level_2'] as $key => $itemslide2){
-        if($n=="$jmlslide2"){
-          $active='active';
-        }else{
-          $active='';
-        }
-        ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:300px'>
-
-        <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  class="img-responsive"></a>
-            <h6 class="text-center" style='color: #4b4b4b'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-            </div>
-      </div>
-      <?php $n++;  } ?>
-    </div>
-
+  <div style='background:#e9e8e8; border-bottom: 1px dashed #7e7a7a; padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px;'>
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> Our Brand
   </div>
 
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PERALATAN RUMAH TANGGA
-  </div>
-  <div class="row">
-    <div class="col-xs-6"><img src='<?php echo base_url('images/demo/banner-c1.jpg');?>' border='0' width='100%' height='200'></div>
-    <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-c2.jpg');?>' border='0' width='100%' height='200'></div>
-    <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-c3.jpg');?>' border='0' width='100%' height='200'></div>
-  </div>
-
-  <div class="span12" style='background:#f1fae7; padding:10px; margin-top:10px'>
-
-    <div class="promo-front owl-carousel">
-      <?php
-
-      $jmlslide2=count($dathome['level_2']);
-      $n=1;
-      foreach($dathome['level_2'] as $key => $itemslide2){
-        if($n=="$jmlslide2"){
-          $active='active';
-        }else{
-          $active='';
-        }
-        ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:300px'>
-
-        <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  class="img-responsive"></a>
-            <h6 class="text-center" style='color: #4b4b4b'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-            </div>
-      </div>
-      <?php $n++;  } ?>
-    </div>
-
-  </div>
-
-
-
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> HOBI
-  </div>
-  <div class="row">
-    <div class="col-xs-6"><img src='<?php echo base_url('images/demo/banner-d1.jpg');?>' border='0' width='100%' height='200'></div>
-    <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-d2.jpg');?>' border='0' width='100%' height='200'></div>
-    <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-d3.jpg');?>' border='0' width='100%' height='200'></div>
-  </div>
-
-  <div class="span12" style='background:#fde3e0; padding:10px; margin-top:10px'>
-
-    <div class="promo-front owl-carousel">
-      <?php
-
-      $jmlslide2=count($dathome['level_2']);
-      $n=1;
-      foreach($dathome['level_2'] as $key => $itemslide2){
-        if($n=="$jmlslide2"){
-          $active='active';
-        }else{
-          $active='';
-        }
-        ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:300px'>
-
-        <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  class="img-responsive"></a>
-            <h6 class="text-center" style='color: #4b4b4b'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-            </div>
-      </div>
-      <?php $n++;  } ?>
-    </div>
-
-  </div>
-
-
-
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> AUDIO & VISUAL
-  </div>
-  <div class="row">
-    <div class="col-xs-6"><img src='<?php echo base_url('images/demo/banner-e1.jpg');?>' border='0' width='100%' height='200'></div>
-    <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-e2.jpg');?>' border='0' width='100%' height='200'></div>
-    <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-e3.jpg');?>' border='0' width='100%' height='200'></div>
-  </div>
-
-  <div class="span12" style='background:#f1e0fd; padding:10px; margin-top:10px'>
-
-    <div class="promo-front owl-carousel">
-      <?php
-
-      $jmlslide2=count($dathome['level_2']);
-      $n=1;
-      foreach($dathome['level_2'] as $key => $itemslide2){
-        if($n=="$jmlslide2"){
-          $active='active';
-        }else{
-          $active='';
-        }
-        ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:300px'>
-
-        <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  class="img-responsive"></a>
-            <h6 class="text-center" style='color: #4b4b4b'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-            </div>
-      </div>
-      <?php $n++;  } ?>
-    </div>
-
-  </div>
-
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PILIH DAN KLIK BRAND FAVORIT ANDA
-  </div>
 	<div style='text-align: center; padding:15px 0px 15px 0px; border-radius:0px 0px 10px 0px; margin-bottom:20px;'>
     	<!-- BEGIN PRODUCTS -->
   <center>
@@ -905,8 +759,8 @@ ul.list-group:after {
   <?php } $bloop++; } ?>
 
 						</ul>
-<BR>
-            <?php echo anchor('brand','LIHAT SEMUA <i class="fa fa-arrow-right" aria-hidden="true"></i>', array('class'=>'my-btn-brand')); ?>
+
+            <?php echo anchor('brand','<b>MORE BRAND</b>', array('class'=>'btn btn-default btn-block')); ?>
          </center>
           </div>
 
@@ -1343,31 +1197,6 @@ console.log('ini'+m_product_id+','+pricelist+','+imageurl+','+name+','+stock+','
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
         items : 4,
-        itemsDesktop : [1199,3],
-        itemsDesktopSmall : [979,3]
-      });
-
-    });
-    </script>
-
-
-    <style>
-    .promo-front .item{
-        margin: 3px;
-    }
-    .promo-front .item img{
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-    </style>
-
-
-    <script>
-    $(document).ready(function() {
-      $(".promo-front").owlCarousel({
-        autoPlay: 3000,
-        items : 6,
         itemsDesktop : [1199,3],
         itemsDesktopSmall : [979,3]
       });
