@@ -114,7 +114,7 @@ class Web extends MY_Controller {
 	}
 
     public function navigation(){
-      $url = "http://api.myacico.co.id/myacico-service/category/list";
+      $url = "https://api.myacico.co.id/myacico-service/category/list";
   		$konten = file_get_contents($url, false);
   		$hasilNav = json_decode($konten, true);
       $this->data['hasilNav'] = $hasilNav;
@@ -131,7 +131,7 @@ class Web extends MY_Controller {
     }
 
     public function categorySearch(){
-  		$url = "http://api.myacico.co.id/myacico-service/category";
+  		$url = "https://api.myacico.co.id/myacico-service/category";
 
   		$konten = file_get_contents($url);
   		$this->data['catsearch'] = json_decode($konten, true);

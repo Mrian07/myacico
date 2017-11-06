@@ -1,14 +1,12 @@
-<div class='my-bg-title'>
-	<div class="container">
-		<div class="row">
-		  <div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> DASHBOARD
+<div class="container">
+	<div class='my-bg-title'>
 
-		  </div>
-		</div>
+		<i class="fa fa-angle-right" aria-hidden="true"></i> DASHBOARD
+
 	</div>
 </div>
+
 <div class="container my-container-white">
 	<div class="row">
 		<div class="col-sm-3">
@@ -21,13 +19,13 @@
 
 		<h4>Informasi Akun & Billing</h4>
 		<p>Informasi yang berkenaan dengan akun dan data pembayaran order Anda.</p>
-		<p><?php echo anchor('account/informasiAkun/', 'Ubah Data & Password');?></p>
+		<p><?php echo anchor('account/informasiAkun/', 'Ubah Data & Password', array('class'=>'btn btn-default'));?></p>
 		<h4>Konfirmasi Pembayaran</h4>
 		<p>Anda bisa melakukan konfirmasi pembayaran pada halaman Riwayat dan Status Pesanan.</p>
-		<p><?php echo anchor('account/riwayatStatusPesanan/', 'Konfirmasi');?><p/>
+		<p><?php echo anchor('account/riwayatStatusPesanan/', 'Konfirmasi', array('class'=>'btn btn-default'));?><p/>
 		<h4>Newsletters</h4>
 		<p>Anda saat ini belum terdaftar.</p>
-		<p><?php echo anchor('customer/government/', 'Daftar');?></p>
+		<p><?php echo anchor('customer/government/', 'Daftar', array('class'=>'btn btn-default'));?></p>
 
 	</div>
 </div>
