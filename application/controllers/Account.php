@@ -232,7 +232,7 @@ class Account extends Web_private {
 		}else{
 			echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'>List riwayat status pesanan masih kosong</div>";
 		}
-                $this->load->view('frontend/sidenav',$this->data);
+                
 	}
 
 

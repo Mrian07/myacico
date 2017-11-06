@@ -17,7 +17,7 @@
         		<th>Nomor Pesanan</th>
         		<th>Status</th>
         		<th>Detail</th>
-        		<th>Konfirmasi/ Credit Cart</th>
+        		<th>Konfirmasi/ Credit Card</th>
         	  </tr>
 
         	</thead>
@@ -30,7 +30,7 @@
         				<td data-title="Nomor Pesanan"><?php echo $items['orderNumber'];?></td>
         				<td data-title="Status"><?php echo $items['transactionStatus'];?></td>
         				<td data-title="Detail"><?php echo anchor('account/formTransactionDetail/'.$items['idTransaksi'], 'Detail', array('class'=>'btn btn-info'));?></td>
-        				<td data-title="Konfirmasi/ Credit Cart"><?php
+        				<td data-title="Konfirmasi/ Credit Card"><?php
         					if($items['paymentMethod']=='Bank Transfer'){
         						if($items['transactionStatus']=='PAID'){
         							echo anchor('#', 'Konfirmasi', array('class'=>'btn btn-warning disabled'));
@@ -42,7 +42,7 @@
         						if($items['transactionStatus']=='PAID'){
         							echo anchor('#', 'Paid', array('class'=>'btn btn-warning disabled'));
         						}else{
-        							echo anchor('checkout/paymentByCreditCard/'.$items['idTransaksi'].'/'.$items['token'], 'Pay By Credit Cart', array('class'=>'btn btn-warning'));
+        							echo anchor('checkout/paymentByCreditCard/'.$items['idTransaksi'].'/'.$items['token'], 'Pay By Credit Card', array('class'=>'btn btn-warning'));
         						}
         					}
         				?></td>
