@@ -270,17 +270,13 @@
 
 </style>
 
-<div class='my-bg-title'>
-	<div class="container">
-		<div class="row">
-		  <div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> BERLANGGANAN NEWSLETTER 
-
-		  </div>
-		</div>
-	</div>
+<div class="container">
+  <div class='my-bg-title'>
+    <i class="fa fa-angle-right" aria-hidden="true"></i> BERLANGGANAN NEWSLETTER 
+  </div>
 </div>
+
 
 <div class="container">
  <!-- asdasd -->

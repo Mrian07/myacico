@@ -1,11 +1,11 @@
 
-	<div class="container">
-		<div class='my-bg-title'>
+<div class="container">
+	<div class='my-bg-title'>
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> DASHBOARD
+		<i class="fa fa-angle-right" aria-hidden="true"></i> DASHBOARD
 
-		</div>
 	</div>
+</div>
 
 <div class="container my-container-white">
 	<div class="row">

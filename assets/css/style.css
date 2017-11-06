@@ -519,3 +519,31 @@
 .dropdown-basket:hover .dropbtn-basket {
     background-color: #ffffff;
 }
+
+/*Cart*/
+
+.my-cart{
+	border:1px #cacaca solid;
+	margin:2px;
+	border-radius:5px;
+	padding:3px;
+}
+
+.my-cart a{
+	color: #428bca;
+	font-size:16px;
+}
+
+.my-cart a:hover{
+	background: #ffffff;
+	color: #afd7f9;
+}
+
+.my-cart-scroll{
+		height: 250px;
+	 	overflow:auto;
+}
+
+.my-total-cart{
+	margin:10px 0px 10px 0px;
+}
