@@ -4,6 +4,11 @@
 	<head>
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="myacico" content="app-id=com.myacico.ios, app-argument=myacico://">
+
+<meta property="al:ios:app_name" content="myacico">
+<meta property="al:ios:app_store_id" content="com.myacico.ios">
+<meta property="al:ios:url" content="https://dev.myacico.co.id">
 		<title><?php echo $title_web; ?></title>
 
 <style>

@@ -73,7 +73,8 @@ class Customer extends Web {
 		$random_number = substr(number_format(time() * rand(),0,'',''),0,6);
 		$vals = array(
 			'word' => $random_number,
-			'img_path'	 => './captcha/',
+			'img_path' => './captcha/',
+
 			'img_url'	 => base_url().'captcha/',
 			'img_width'	 => '200',
 			'img_height' => 32,
@@ -103,10 +104,9 @@ class Customer extends Web {
 		$subject = $this->input->post('keperluan');
 		$message = $this->input->post('pesan');
 		$secutity_code = $this->input->post('secutity_code');
-
-		$email_to='lalang@myacico.com';
-
-		if((strtolower($secutity_code) == strtolower($this->session->userdata('mycaptcha')))){
+		$email_to='wahyu.suit@myacico.com';
+		echo "$email_from,$nm_from,$email_to,$subject,$message";
+		// if((strtolower($secutity_code) == strtolower($this->session->userdata('mycaptcha')))){
 
 			if($this->sendMail($email_from,$nm_from,$email_to,$subject,$message)==true)
 			{
@@ -114,9 +114,9 @@ class Customer extends Web {
 			}else{
 				echo "gagal";
 			}
-		}else{
-			echo "gagal_captcha";
-		}
+		// }else{
+		// 	echo "gagal_captcha";
+		// }
 	}
 
 	public function messageSent()
@@ -156,14 +156,14 @@ class Customer extends Web {
 	}
 
 	public function signIn()
-    {         
+    {
             $catId = $this->uri->segment(3);
-          
+
 //    die(); dpt nihid itemnya
 //            if($catId){
 //                echo $catId;
 //            }
-            
+
             echo "<script> console.log('$catId');</script>";
 		$this->data['title_web'] = "Myacico.com - Login";
 		$this->load->view('frontend/header',$this->data);
