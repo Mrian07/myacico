@@ -22,7 +22,7 @@ function myMap() {
 	</div>
 </div>
 
-<div class="container my-container-white">
+<div class="container">
 
 	<div class="row">
 		<div class="col-sm-4"> <h4 style="color:red;">PT Myacico Global Indonesia</h4><br/>
@@ -35,7 +35,7 @@ function myMap() {
 			<!-- <p>Silakan hubungi kami melalui kolom dibawah ini.</p> -->
         <p> <?php echo $lang_field_ContAtas; ?>
 
-			<form action=''>
+			<form id="kontakt_form">
 			<div class="form-group">
 			<label><?php echo $lang_field_ContNama; ?></label>
 			<input type="text" id="nama" name="nama" class="form-control mandatory" />
@@ -61,22 +61,88 @@ function myMap() {
 			<textarea class="form-control mandatory" rows="5" id="pesan" name='pesan'></textarea>
 			</div>
 			<div class="form-group">
+        <div id="recaptcha" class="g-recaptcha" data-sitekey="6LfyBTcUAAAAAClnuZ-aWVDrx6fAz4KTRLP1DUZz"        data-callback="vcc"></div>
 
-			<?php echo $image;?><br>
-
+        <span class="msg-error"></span>
+        <br/>
+        <input id="sbt" type="submit" class="btn btn-primary" value="Kirim"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+			<!-- <?php echo $image;?><br>
 			<label for="pwd">Security Code:</label>
-			<input type='text' size='10' class="form-control mandatory" name='secutity_code' id='secutity_code'/>
+			<input type='text' size='10' class="form-control mandatory" name='secutity_code' id='secutity_code'/> -->
 			</div>
 			<p>
 			<?php echo form_error('secutity_code', '<p class="field_error">', '</p>');?>
 			</p>
-			<input type="submit" class="btn btn-primary" id="submit_btn" value="<?php echo $lang_btn_Kirim; ?>">  <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+			<!-- <input type="submit" class="btn btn-primary" id="sbt" value="<?php // echo $lang_btn_Kirim; ?>">  <img src="<?php // echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none"> -->
 			</form>
 			<br><br>
 		</div>
 	</div>
 
 </div>
+
+<script>
+ var vcc = function(g_recaptcha_response) {
+ var $captcha = $( '#recaptcha' );
+
+ $( '.msg-error' ).text('');
+    $captcha.removeClass( "error" );
+ };
+</script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+
+<script>
+$(document).ready(function(){
+		$('#sbt').click(function(){
+			$("#kontakt_form").submit(function(){
+ 			//[0] - numer wiersza w tablicy
+    if($(this).serializeArray()[0].value != "")
+    				{
+              if(html=='gagal'){
+        				$.alert({title:'Alert', content: ' Pesan gagal terkirim silakan coba kembali!'});
+        				$('#spinner_img').hide();
+        				$('#submit_btn').val('Kirim').removeClass('disabled');
+        				$('.mandatory').prop('disabled', false);
+        			}else if(html=='gagal_captcha'){
+        				$.alert({title:'Alert', content: ' Security Code yang Anda masukan salah !'});
+        				$('#spinner_img').hide();
+        				$('#submit_btn').val('Kirim').removeClass('disabled');
+        				$('.mandatory').prop('disabled', false);
+        			}else{
+                	alert('Success / Formularz został wysłany');
+        				location.href="<?php echo site_url('customer/messageSent'); ?>";
+        			}
+
+          // form submit return true
+ 					return true;
+ 				}
+
+ 				else
+				{
+        // form submit return false
+ 					return false;
+ 				}
+			});
+    	$captcha = $( '#recaptcha' );
+      response = grecaptcha.getResponse();
+
+  if (response.length === 0) {
+    $( '.msg-error').text( "Gagal captcha" );
+    if( !$captcha.hasClass( "error" ) ){
+      $captcha.addClass( "error" );
+    }
+  } else {
+    $( '.msg-error' ).text('');
+    $captcha.removeClass( "error" );
+    // form submit return true
+   	 return true;
+  }
+	});
+ });
+
+</script>
+
 
 <script type="text/javascript">
 
