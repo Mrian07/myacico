@@ -254,6 +254,9 @@ if(isset($hasil['sku'])){
                 $this->data['isWishList']=$hasil['isWishList'];
 		$this->data['category'] = $hasil['category'];
 		$this->data['m_product_id'] = $hasil['m_product_id'];
+                $this->data['rate'] = $hasil['rate'];
+                $this->data['rating'] = $hasil['rating'];
+//                die(print_r($this->data['rating']));
 		$this->data['name'] = $hasil['name'];
 		$this->data['pricelist'] = $hasil['pricelist'];
 		//$this->data['sku'] = $hasil['sku'];
