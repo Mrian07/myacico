@@ -98,7 +98,10 @@ a{
 		<?php echo anchor('page/faq','Faq', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/payment','Payment', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/aboutus','About Us', array('class'=>'btn-nav-head')); ?>
 		<?php echo anchor('customer/contact','Hubungi Kami', array('class'=>'btn-nav-head')); ?>
     <div class='row'>
-      <div class="col-xs-8">
+			<div class="col-xs-2">
+				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
+			</div>
+      <div class="col-xs-6" >
   			<div class='myserach' ng-app="myApps">
   				<div ng-controller = "searchCtrl">
   				<div class="input-group">
