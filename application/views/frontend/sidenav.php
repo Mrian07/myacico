@@ -48,10 +48,7 @@
   <a target="_blank" href="https://www.facebook.com/MyacicoID/" id="fb"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>
 </div>
 
-<div style="margin-right:80px;">
-  <h2>Hoverable Sidenav Buttons</h2>
-  <p>Hover over the buttons in the left side navigation to open them.</p>
-</div>
+
      
 </body>
 </html> 

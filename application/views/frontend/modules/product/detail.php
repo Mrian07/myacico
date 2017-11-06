@@ -224,7 +224,10 @@
 						<button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
             <?php
                 //if($cektoken){}
-
+             
+//                    $rating = strpos($rating, 'star3');
+//
+//die(print_r("sam".$rating));
                   if($isWishList =='Y')
                   {
               ?>
@@ -420,10 +423,11 @@
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/setup.js');?>"></script>
 
 <script>
+   var rate = "<?php  echo $rate;?>";
     $(function () {
 
   $("#rateYo").rateYo({
-		  rating: 2.5,
+		  rating: rate,
 		  readOnly: true
 
   });
