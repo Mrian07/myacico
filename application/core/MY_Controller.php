@@ -131,7 +131,7 @@ class Web extends MY_Controller {
     }
 
     public function categorySearch(){
-  		$url = "https://api.myacico.co.id/myacico-service/category";
+  		$url = "http://api.myacico.co.id/myacico-service/category";
 
   		$konten = file_get_contents($url);
   		$this->data['catsearch'] = json_decode($konten, true);
