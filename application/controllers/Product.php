@@ -49,8 +49,6 @@ if($page){
 		  $api_max = "product/productall/".$id."?itemperpage=8"."&page=".$page."&show=pagecount";
 		  $url2 = api_base_url($api_max);
 			// die($url2);
-
-
 		$options = ["http" => [
 					"method" => "GET",
 					"Content-Type: application/json",
@@ -60,16 +58,27 @@ if($page){
 									// looking maximum page
 
 		$context = stream_context_create($options);
-									$konten2 = file_get_contents($url2, false, $context);
+		$konten2 = file_get_contents($url2, false, $context);
 		// die($konten2);
+                
+                     
+                 
 		$this->data['max_page'] =json_decode($konten2)->pageCount;
 		$this->data['hasil'] = json_decode($konten, true);
-
+                if($this->data['hasil'])
+                 {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-
 		$this->load->view('frontend/modules/product/product_items_all.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
+                 }
+                 else{
+                     $this->data['notFound'] = "Kami tidak menemukan hasil pencarian untuk  ".'"'."<i><b>".$id.'"'."</b></i>";
+                    $this->load->view('frontend/header',$this->data);
+                    $this->load->view('frontend/nav.php',$this->data);
+                    $this->load->view('frontend/modules/product/product_not_found.php',$this->data);
+                    $this->load->view('frontend/footer',$this->data);
+                 }
 	}
 
 	public function listItem()
