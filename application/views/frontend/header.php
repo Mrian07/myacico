@@ -3,7 +3,7 @@
 <html lang="en">
 	<head>
 	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 		<title><?php echo $title_web; ?></title>
 
 <style>
@@ -97,7 +97,7 @@ a{
 		<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
 		<?php echo anchor('page/faq','Faq', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/payment','Payment', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/aboutus','About Us', array('class'=>'btn-nav-head')); ?>
 		<?php echo anchor('customer/contact','Hubungi Kami', array('class'=>'btn-nav-head')); ?>
-    <div class='row'>
+    <div class='row' style='width:1155px'>
 			<div class="col-xs-2">
 				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
 			</div>
