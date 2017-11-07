@@ -209,20 +209,7 @@ $this->load->view('frontend/sidenav',$this->data);
                 //$komen[0]['user']
                  $this->data['komen']=$komen;
                
-		if($komen)
-                {
-                    foreach($komen as $value)
-                    {
-//                        $this->data['coment_date']=$value['created'];
-//                        $this->data['coment_title']=$value['title'];
-//                        $this->data['coment_isi']=$value['review'];
-                        $this->data['coment_rate']=$value['star'];
-//                        $this->data['coment_user']=$value['user'];
-                        //$this->data['komen']=$value;
-                       //print_r($this->data['coment_user']);
-                        //echo $value[0];
-                    }
-                }
+		
 //die(print_r($hasil['isWishList']));
 
 if(isset($hasil['sku'])){
@@ -288,10 +275,43 @@ if(isset($hasil['sku'])){
 		$this->data['volume'] = $hasil['volume'];
 		$this->data['weight'] = $hasil['weight'];
 			$this->data['rate'] = $hasil['rate'];
-		$this->data['img'] = $hasil['imageurl'][0];
+		// jika gambar tidak ada 
+
+
+		 $this->data['img'] = $hasil['imageurl'][0];
+		 	if(isset($hasil['img1'][1]['imageurl'])){
+				$this->data['img1'] = $hasil['imageurl'][1];
+				
+				}else{
+					$hasil['imageurl'][1] ='';
+				
+				}
 		$this->data['img1'] = $hasil['imageurl'][1];
+			 	if(isset($hasil['img2'][2]['imageurl'])){
+				$this->data['img2'] = $hasil['imageurl'][2];
+				
+				}else{
+					$hasil['imageurl'][2] ='';
+				
+				}
 		$this->data['img2'] = $hasil['imageurl'][2];
+			if(isset($hasil['img1'][2]['imageurl'])){
+				$this->data['img1'] = $hasil['imageurl'][2];
+				
+				}else{
+					$hasil['imageurl'][2] ='';
+				
+				}
 		$this->data['img3'] = $hasil['imageurl'][3];
+	if(isset($hasil['img3'][3]['imageurl'])){
+				$this->data['img3'] = $hasil['imageurl'][3];
+				
+				}else{
+					$hasil['imageurl'][3] ='';
+				
+				}
+
+		// akhir dari jika gambar tidak ada 
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
