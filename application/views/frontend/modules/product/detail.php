@@ -422,19 +422,19 @@
                         $coment_title=$value['title'];
                         $coment_isi=$value['review'];
                         $coment_rate =$value['star'];
-                        echo "<script>"
-                        . " $(function () {
-                        $('#rateKoms').rateYo({
-                                        rating: $coment_rate,
-                                        readOnly: true
-                        });
-                      });"
-                                . "</script>";
-                        
+//                        echo "<script>"
+//                        . " $(function () {
+//                        $('#rateKoms').rateYo({
+//                                        rating: $coment_rate,
+//                                        readOnly: true
+//                        });
+//                      });"
+//                                . "</script>";
+//                        
                         $coment_user=$value['user'];
                         //echo "<input type='hiden' class='form-control' id='rateKom' style='width:70px' value='$coment_rate[$ik]'>";
                         echo $coment_title." "."<div id='rateKoms'></div><br>".$coment_isi."<br> Oleh ".$coment_user."<br>";
-                        //$ik++;
+                        $ik++;
                         //$this->data['komen']=$value;
                        //print_r($this->data['coment_user']);
                         //echo $value[0];
@@ -464,6 +464,13 @@
   });
 
 });
+
+$(function () {
+                        $('#rateKoms').rateYo({
+                                        rating: star_rate,
+                                        readOnly: true
+                        });
+                      });
  
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
