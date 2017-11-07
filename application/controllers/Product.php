@@ -302,15 +302,15 @@ if(isset($hasil['sku'])){
 					$hasil['imageurl'][2] ='';
 				
 				}
-		$this->data['img3'] = $hasil['imageurl'][3];
-	if(isset($hasil['img3'][3]['imageurl'])){
+	
+		if(isset($hasil['img3'][3]['imageurl'])){
 				$this->data['img3'] = $hasil['imageurl'][3];
 				
 				}else{
 					$hasil['imageurl'][3] ='';
 				
 				}
-
+	$this->data['img3'] = $hasil['imageurl'][3];
 		// akhir dari jika gambar tidak ada 
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
