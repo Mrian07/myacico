@@ -93,10 +93,29 @@ a{
 	    <img src='<?php echo base_url('images/general/img-head1.jpg');?>' border='0'>
 		</div>
 
+
+		<div class='row' style='width:1155px'>
+			<div class="col-xs-10">
+
     <?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?> <?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?> <?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
 		<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
 		<?php echo anchor('page/faq','Faq', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/payment','Payment', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/aboutus','About Us', array('class'=>'btn-nav-head')); ?>
 		<?php echo anchor('customer/contact','Hubungi Kami', array('class'=>'btn-nav-head')); ?>
+
+			</div>
+			<div class="col-xs-2" style='text-align:right'>
+
+		<div class="dropdown-lang" style='border:0px solid #aeaeab; border-radius:5px; background:#f1f3f6; padding:5px; right: 0; left: auto; '>
+			<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?> <span class="caret"></span>
+			<div class="dropdown-lang-content">
+			<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
+			<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
+			</div>
+		</div>
+
+				</div>
+			</div>
+
     <div class='row' style='width:1155px'>
 			<div class="col-xs-2">
 				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
@@ -232,64 +251,157 @@ a{
 
   	$(document).ready(function() {
 
-  		$("#searchDesk").keyup(function() {
-  			var cat = $('#search_param').val();
-  			$(".productSrc").show();
 
-  			var search_value = $(this).val();
-  			var datas		 = 'search='+search_value;
-  			var productSrc = $('.productSrc');
+			function debounce(fn, delay) {
+			  var timer = null;
+			  return function () {
+			    var context = this, args = arguments;
+			    clearTimeout(timer);
+			    timer = setTimeout(function () {
+			      fn.apply(context, args);
+			    }, delay);
+			  };
+			}
 
-  			if ( search_value == '' ) {$(".productSrc").hide();}
-
-  			if(cat=='all'){
-  				productSrc.html('');
-
-  					$.ajax({
-  						url: api_base_url+'/product/productlist/'+search_value,
-  						data: datas,
-  						success: function(data) {
-  							data.forEach(function(p){
-  								productSrc.append(
-
-  								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+			$('#searchDesk').keypress(debounce(function (event) {
 
 
-  								);
+					var cat = $('#search_param').val();
+					$(".productSrc").show();
 
-  							});
+					var search_value = $(this).val();
+					var datas		 = 'search='+search_value;
+					var productSrc = $('.productSrc');
 
-  						}
-  					});
+					if ( search_value == '' ) {$(".productSrc").hide();}
 
+					if(cat=='all'){
+						productSrc.html('');
 
-  			}else{
+						$.ajax({
+							url: api_base_url+'/product/productlist/'+search_value,
+							data: datas,
+							success: function(data) {
+								data.forEach(function(p){
+									productSrc.append(
 
-  				productSrc.html('');
-
-  					$.ajax({
-  						url: api_base_url+'/product/productlist/'+cat+'/'+search_value,
-  						data: datas,
-  						success: function(data) {
-
-
-  								data.forEach(function(p){
-  									productSrc.append(
-
-  									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
 
 
-  									);
-  									//alert(p.name);
-  								});
-  							//$("#result").html(data).show();
-  						}
-  					});
+									);
 
-  			}
+								});
 
-  			return false;
-  		});
+							}
+						});
+
+
+
+
+
+					}else{
+
+						productSrc.html('');
+
+							$.ajax({
+								url: api_base_url+'/product/productlist/'+cat+'/'+search_value,
+								data: datas,
+								success: function(data) {
+
+
+										data.forEach(function(p){
+											productSrc.append(
+
+											"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+
+
+											);
+											//alert(p.name);
+										});
+									//$("#result").html(data).show();
+								}
+							});
+
+					}
+
+					return false;
+
+
+
+
+}, 250));
+
+
+
+
+
+  		// $("#searchDesk").keyup(function() {
+  		// 	var cat = $('#search_param').val();
+  		// 	$(".productSrc").show();
+			//
+  		// 	var search_value = $(this).val();
+  		// 	var datas		 = 'search='+search_value;
+  		// 	var productSrc = $('.productSrc');
+			//
+  		// 	if ( search_value == '' ) {$(".productSrc").hide();}
+			//
+  		// 	if(cat=='all'){
+  		// 		productSrc.html('');
+			// 			var delayTimer;
+			// 			clearTimeout(delayTimer);
+			// 			delayTimer = setTimeout(function() {
+			//
+			// 				$.ajax({
+			// 					url: api_base_url+'/product/productlist/'+search_value,
+			// 					data: datas,
+			// 					success: function(data) {
+			// 						data.forEach(function(p){
+			// 							productSrc.append(
+			//
+			// 							"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+			//
+			//
+			// 							);
+			//
+			// 						});
+			//
+			// 					}
+			// 				});
+			//
+			//
+			// 	    }, 250);
+			//
+			//
+			//
+			//
+			//
+  		// 	}else{
+			//
+  		// 		productSrc.html('');
+			//
+  		// 			$.ajax({
+  		// 				url: api_base_url+'/product/productlist/'+cat+'/'+search_value,
+  		// 				data: datas,
+  		// 				success: function(data) {
+			//
+			//
+  		// 						data.forEach(function(p){
+  		// 							productSrc.append(
+			//
+  		// 							"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+			//
+			//
+  		// 							);
+  		// 							//alert(p.name);
+  		// 						});
+  		// 					//$("#result").html(data).show();
+  		// 				}
+  		// 			});
+			//
+  		// 	}
+			//
+  		// 	return false;
+  		// });
 
   	});
   	function showData(name,id,alias)

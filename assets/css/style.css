@@ -23,6 +23,55 @@
 	font-family: sans-serif;
 }
 
+/*Drop Lang*/
+
+.dropbtn-lang {
+   /* background-color: #4CAF50;*/
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+	margin:0px;
+	right: 0; left: auto;
+}
+
+.dropdown-lang {
+    position: relative;
+    display: inline-block;
+	text-align: left;
+	right: 0; left: auto;
+}
+
+.dropdown-lang-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999999;
+	right: 0; left: auto;
+}
+
+.dropdown-lang-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+	right: 0; left: auto;
+}
+
+.dropdown-lang-content a:hover {background-color: #f1f1f1}
+
+.dropdown-lang:hover .dropdown-lang-content {
+    display: block;
+}
+
+.dropdown-lang:hover .dropbtn-lang {
+  /*  background-color: #3e8e41;*/
+}
+
+
+
 /* Don't let the lead text change font-size. */
 .lead {
   font-size: 16px;
@@ -47,6 +96,16 @@ a:hover.my-info {
    padding:5px;
    text-decoration: none;
    font-weight:bold;
+}
+
+.link-nmp a{
+  color: #4b4b4b;
+  text-decoration: none;
+}
+
+.link-nmp a:hover{
+  color:#c8c6c6;
+  text-decoration: none;
 }
 
  /* Non-responsive overrides

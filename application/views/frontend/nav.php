@@ -34,11 +34,6 @@ cursor:pointer;
 
 
 
-
-
-
-
-
 .collapse{
   height:10px;
 }
