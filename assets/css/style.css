@@ -39,6 +39,7 @@
 a.my-info{
   color: #40413e;
   text-decoration: none;
+  font-size: 14px;
 }
 
 a:hover.my-info {
@@ -363,7 +364,7 @@ a:hover.my-info {
 
   .sos li {
       float: left;
-      font-size:25px;
+      font-size:18px;
       background: #ff0000;
       margin-left:5px;
       margin-bottom:5px;
