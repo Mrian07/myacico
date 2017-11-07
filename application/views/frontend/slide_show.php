@@ -104,19 +104,11 @@ h1, h2, h3 {
 
     </div>
     <div class="col-sm-4 padding-1">
-      <!-- <div class="row">
-        <div class="col-sm-12" style="background:#f1f1f1; margin-left:-2px; padding:0px;">
-
-        <img src="https://s1.postimg.org/4zblqmyx27/Artboard_3.jpg"  alt="Smiley face" width="50%" height="200">
-    <img src="https://s1.postimg.org/7u49wfhja7/Artboard_4.jpg"  alt="Smiley face" width="48%" height="200">
-        </div>
 
 
-    </div> -->
-
-      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="https://s1.postimg.org/2m0533n5en/Iphone.png" alt="Smiley face" width="100%" height="160"></div>
-      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="https://s1.postimg.org/1mk1pxk6j3/cctv.png" alt="Smiley face" width="100%" height="160"></div>
-      <!-- <div style='margin-left:5px;'><img src="https://s1.postimg.org/6g8wm25b1r/ps4.png" alt="Smiley face" width="100%" height="170"></div> -->
+      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="https://s1.postimg.org/2m0533n5en/Iphone.png" width="100%" height="160"></div>
+      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="https://s1.postimg.org/1mk1pxk6j3/cctv.png" width="100%" height="160"></div>
+      <!-- <div style='margin-left:5px;'><img src="https://s1.postimg.org/6g8wm25b1r/ps4.png" width="100%" height="170"></div> -->
 
 
   </div>
