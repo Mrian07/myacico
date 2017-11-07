@@ -36,6 +36,17 @@
   margin-bottom: 10px;
 }
 
+a.my-info{
+  color: #40413e;
+  text-decoration: none;
+}
+
+a:hover.my-info {
+   background:#f1f1f1;
+   padding:5px;
+   text-decoration: none;
+   font-weight:bold;
+}
 
  /* Non-responsive overrides
   *
@@ -250,6 +261,7 @@
     font-size:12px;
     background:#808080;
     text-decoration: none;
+    border-radius:5px;
   }
 
   .btn-nav-head:hover {
@@ -276,27 +288,70 @@
   .btn-top{
   	margin: 0 auto;
   	text-align: center;
-  	margin-bottom:-35px;
+  	margin-bottom:-55px;
+    margin-top:30px;
   }
 
   .footer{
-  	background: #000000;
-  	color:#f8f7f7;
+  	background: #ffffff;
+  	color:#40413e;
   	display: block;
   	margin-top: 0px;
   	font-family: arial;
   	padding: 50px 0px 0px 0px;
+    border-top:5px solid #b2b2b2;
+    margin-top:20px;
   }
 
   h3 span {
       text-transform: uppercase;
-      color: #fff;
-      border-bottom: 1px solid #c40202;
+      color: #151414;
+      border-bottom: 4px solid #ff0707;
       font-size: 25px;
       line-height: 45px;
       font-family: 'Open Sans', sans-serif;
       font-weight: 300;
   }
+
+  /*SUBSCRIBE*/
+  .my-sub-button{
+      padding: 8px 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #c40202;
+  	  color:#ffffff;
+  }
+
+  .my-sub-field{
+  	width: 100%;
+      padding: 6px 18px;
+      margin: 8px 0;
+      box-sizing: border-box;
+  	background: #f2f1f1;
+  	border:0px;
+  	border-radius: 4px 0px 0px 4px;
+  }
+
+  /*footer garansi*/
+  .garansi ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      margin-top:20px;
+  }
+
+  .garansi li {
+      float: left;
+      font-size:12px;
+      display: block;
+      text-align: center;
+      width:220px;
+      text-decoration: none;
+      padding-left:10px;
+      padding-right:10px;
+  }
+
 
   /*footer sosmet*/
   .sos ul {
@@ -308,19 +363,56 @@
 
   .sos li {
       float: left;
-  	font-size:25px;
+      font-size:25px;
+      background: #ff0000;
+      margin-left:5px;
+      margin-bottom:5px;
   }
 
   .sos li a {
       display: block;
-      color: white;
+      color: #ffffff;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
+
   }
 
   .sos li a:hover {
-      background-color: #333;
+      background-color: #c32c2c;
+  }
+
+
+  /*footer payment*/
+  .pay ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      margin-top:20px;
+  }
+
+  .pay li {
+      float: left;
+      font-size:12px;
+      display: block;
+      text-decoration: none;
+  }
+
+  /*footer payment*/
+  .ship ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      margin-top:20px;
+  }
+
+  .ship li {
+      float: left;
+      font-size:12px;
+      display: block;
+      text-decoration: none;
   }
 
   .btn-link,
@@ -341,13 +433,14 @@
   }
 
   .cpyright{
-  	margin-top: 100px;
+  	margin-top: 10px;
   	text-align: center;
-  	color:#d0d0d0;
+  	color:#111111;
   	font-family: verdana;
-  	font-size: 10px;
-  	background-color: #2a2a2a;
+  	font-size: 13px;
+  	background-color: #c6c4c4;
   	padding:10px;
+    font-weight: bold;
   }
 
   .my-bg-title{
@@ -547,3 +640,177 @@
 .my-total-cart{
 	margin:10px 0px 10px 0px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*s: mematikan responsive bootstrap*/
+
+.container {
+	width: 1169px !important;
+}
+
+@media (min-width: 1px) {
+  .container {
+    max-width: 1169px;
+  }
+  .col-lg-1,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12 {
+    float: left;
+  }
+  .col-lg-1 {
+    width: 8.333333333333332%;
+  }
+  .col-lg-2 {
+    width: 16.666666666666664%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-4 {
+    width: 33.33333333333333%;
+  }
+  .col-lg-5 {
+    width: 41.66666666666667%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-7 {
+    width: 58.333333333333336%;
+  }
+  .col-lg-8 {
+    width: 66.66666666666666%;
+  }
+  .col-lg-9 {
+    width: 75%;
+  }
+  .col-lg-10 {
+    width: 83.33333333333334%;
+  }
+  .col-lg-11 {
+    width: 91.66666666666666%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+  .col-lg-push-1 {
+    left: 8.333333333333332%;
+  }
+  .col-lg-push-2 {
+    left: 16.666666666666664%;
+  }
+  .col-lg-push-3 {
+    left: 25%;
+  }
+  .col-lg-push-4 {
+    left: 33.33333333333333%;
+  }
+  .col-lg-push-5 {
+    left: 41.66666666666667%;
+  }
+  .col-lg-push-6 {
+    left: 50%;
+  }
+  .col-lg-push-7 {
+    left: 58.333333333333336%;
+  }
+  .col-lg-push-8 {
+    left: 66.66666666666666%;
+  }
+  .col-lg-push-9 {
+    left: 75%;
+  }
+  .col-lg-push-10 {
+    left: 83.33333333333334%;
+  }
+  .col-lg-push-11 {
+    left: 91.66666666666666%;
+  }
+  .col-lg-pull-1 {
+    right: 8.333333333333332%;
+  }
+  .col-lg-pull-2 {
+    right: 16.666666666666664%;
+  }
+  .col-lg-pull-3 {
+    right: 25%;
+  }
+  .col-lg-pull-4 {
+    right: 33.33333333333333%;
+  }
+  .col-lg-pull-5 {
+    right: 41.66666666666667%;
+  }
+  .col-lg-pull-6 {
+    right: 50%;
+  }
+  .col-lg-pull-7 {
+    right: 58.333333333333336%;
+  }
+  .col-lg-pull-8 {
+    right: 66.66666666666666%;
+  }
+  .col-lg-pull-9 {
+    right: 75%;
+  }
+  .col-lg-pull-10 {
+    right: 83.33333333333334%;
+  }
+  .col-lg-pull-11 {
+    right: 91.66666666666666%;
+  }
+  .col-lg-offset-1 {
+    margin-left: 8.333333333333332%;
+  }
+  .col-lg-offset-2 {
+    margin-left: 16.666666666666664%;
+  }
+  .col-lg-offset-3 {
+    margin-left: 25%;
+  }
+  .col-lg-offset-4 {
+    margin-left: 33.33333333333333%;
+  }
+  .col-lg-offset-5 {
+    margin-left: 41.66666666666667%;
+  }
+  .col-lg-offset-6 {
+    margin-left: 50%;
+  }
+  .col-lg-offset-7 {
+    margin-left: 58.333333333333336%;
+  }
+  .col-lg-offset-8 {
+    margin-left: 66.66666666666666%;
+  }
+  .col-lg-offset-9 {
+    margin-left: 75%;
+  }
+  .col-lg-offset-10 {
+    margin-left: 83.33333333333334%;
+  }
+  .col-lg-offset-11 {
+    margin-left: 91.66666666666666%;
+  }
+}
+
+/*e: mematikan responsive bootstrap*/

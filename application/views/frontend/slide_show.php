@@ -60,7 +60,7 @@ h1, h2, h3 {
   display:none;
  }
 
-@media (max-width: 640px) and (min-width: 320px){
+/*@media (max-width: 640px) and (min-width: 320px){
   .image_full{
    display:none;
   }
@@ -68,14 +68,14 @@ h1, h2, h3 {
   .image_mobile{
    display:block;
   }
-}
+}*/
 </style>
 
 <!-- <div style='background:#dad8d8'> -->
-<div style='background:#ffffff; padding:10px;'>
+
 <div class="container">
   <div class="row">
-    <div class="col-sm-8" style='padding-right: 0 !important; margin: 0 !important;'>
+    <div class="col-xs-8" style='padding-right: 0 !important; margin: 0 !important;'>
       <!-- Slider 1 -->
       <div class="slider" id="slider1">
           <!-- Slides -->
@@ -103,7 +103,7 @@ h1, h2, h3 {
       </div>
 
     </div>
-    <div class="col-sm-4 padding-1">
+    <div class="col-xs-4 padding-1">
 
 
       <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="https://s1.postimg.org/2m0533n5en/Iphone.png" width="100%" height="160"></div>
@@ -114,7 +114,7 @@ h1, h2, h3 {
   </div>
 </div>
 </div>
-</div>
+
 
 
 <script src="<?php echo base_url('assets/slider/sliderResponsive.js');?>"></script>

@@ -608,16 +608,16 @@ ul.list-group:after {
         ?>
       <div class="item">
 
-        <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  class="img-responsive"></a>
-            <h6 class="text-center" style='color: #4b4b4b'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
+        <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>" ></a>
+          <h6 class="text-center" style='color: #4b4b4b'><?php echo $itemslide2['name']; ?></h6>
+          <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
+          <div class="ratings" style='text-align: center; color:#d98c13;'>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+          </div>
         <br>
         <center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
             <hr>
@@ -911,7 +911,7 @@ ul.list-group:after {
           </div>
 
 
-<img src=" https://s1.postimg.org/1lnc8xtx73/banners_2_13.png" width="100%" alt="...">
+
   </div>
 
 
@@ -1342,7 +1342,7 @@ console.log('ini'+m_product_id+','+pricelist+','+imageurl+','+name+','+stock+','
     $(document).ready(function() {
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
-        items : 4,
+        items : 5,
         itemsDesktop : [1199,3],
         itemsDesktopSmall : [979,3]
       });
