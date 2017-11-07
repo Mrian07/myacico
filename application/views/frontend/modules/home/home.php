@@ -608,9 +608,10 @@ ul.list-group:after {
         ?>
       <div class="item">
 
-      <center>  <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>" class='img-slide'></a>
-      </center>
-          <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
+      <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+        <center><img src="<?php echo $itemslide2['imageurl']; ?>" class='img-slide'></center></a>
+
+          <h6 class="text-center link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></h6>
           <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
           <div class="ratings" style='text-align: center; color:#d98c13;'>
               <span class="glyphicon glyphicon-star"></span>
@@ -650,7 +651,7 @@ ul.list-group:after {
         <div class="col-md-3 col-sm-6">
       		<span class="thumbnail text-center">
               <a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><img src="<?php echo $itemslide3['imageurl']; ?>" style="height:200px"></a>
-        			<h6 style='color: #4b4b4b; height:50px'><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></h6>
+        			<h6 class="link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></h6>
               <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></h5>
         			<div class="ratings" style='text-align: center; color:#d98c13;'>
                       <span class="glyphicon glyphicon-star"></span>
@@ -700,10 +701,10 @@ ul.list-group:after {
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:300px'>
+      <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
 
-        <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
-        </center>
+          <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
+
             <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
             <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
             <div class="ratings" style='text-align: center; color:#d98c13;'>

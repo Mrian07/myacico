@@ -49,6 +49,16 @@ a:hover.my-info {
    font-weight:bold;
 }
 
+.link-nmp a{
+  color: #4b4b4b;
+  text-decoration: none;
+}
+
+.link-nmp a:hover{
+  color:#c8c6c6;
+  text-decoration: none;
+}
+
  /* Non-responsive overrides
   *
   * Utilize the following CSS to disable the responsive-ness of the container,
