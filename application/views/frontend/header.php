@@ -251,64 +251,157 @@ a{
 
   	$(document).ready(function() {
 
-  		$("#searchDesk").keyup(function() {
-  			var cat = $('#search_param').val();
-  			$(".productSrc").show();
 
-  			var search_value = $(this).val();
-  			var datas		 = 'search='+search_value;
-  			var productSrc = $('.productSrc');
+			function debounce(fn, delay) {
+			  var timer = null;
+			  return function () {
+			    var context = this, args = arguments;
+			    clearTimeout(timer);
+			    timer = setTimeout(function () {
+			      fn.apply(context, args);
+			    }, delay);
+			  };
+			}
 
-  			if ( search_value == '' ) {$(".productSrc").hide();}
-
-  			if(cat=='all'){
-  				productSrc.html('');
-
-  					$.ajax({
-  						url: api_base_url+'/product/productlist/'+search_value,
-  						data: datas,
-  						success: function(data) {
-  							data.forEach(function(p){
-  								productSrc.append(
-
-  								"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+			$('#searchDesk').keypress(debounce(function (event) {
 
 
-  								);
+					var cat = $('#search_param').val();
+					$(".productSrc").show();
 
-  							});
+					var search_value = $(this).val();
+					var datas		 = 'search='+search_value;
+					var productSrc = $('.productSrc');
 
-  						}
-  					});
+					if ( search_value == '' ) {$(".productSrc").hide();}
 
+					if(cat=='all'){
+						productSrc.html('');
 
-  			}else{
+						$.ajax({
+							url: api_base_url+'/product/productlist/'+search_value,
+							data: datas,
+							success: function(data) {
+								data.forEach(function(p){
+									productSrc.append(
 
-  				productSrc.html('');
-
-  					$.ajax({
-  						url: api_base_url+'/product/productlist/'+cat+'/'+search_value,
-  						data: datas,
-  						success: function(data) {
-
-
-  								data.forEach(function(p){
-  									productSrc.append(
-
-  									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
 
 
-  									);
-  									//alert(p.name);
-  								});
-  							//$("#result").html(data).show();
-  						}
-  					});
+									);
 
-  			}
+								});
 
-  			return false;
-  		});
+							}
+						});
+
+
+
+
+
+					}else{
+
+						productSrc.html('');
+
+							$.ajax({
+								url: api_base_url+'/product/productlist/'+cat+'/'+search_value,
+								data: datas,
+								success: function(data) {
+
+
+										data.forEach(function(p){
+											productSrc.append(
+
+											"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+
+
+											);
+											//alert(p.name);
+										});
+									//$("#result").html(data).show();
+								}
+							});
+
+					}
+
+					return false;
+
+
+
+
+}, 250));
+
+
+
+
+
+  		// $("#searchDesk").keyup(function() {
+  		// 	var cat = $('#search_param').val();
+  		// 	$(".productSrc").show();
+			//
+  		// 	var search_value = $(this).val();
+  		// 	var datas		 = 'search='+search_value;
+  		// 	var productSrc = $('.productSrc');
+			//
+  		// 	if ( search_value == '' ) {$(".productSrc").hide();}
+			//
+  		// 	if(cat=='all'){
+  		// 		productSrc.html('');
+			// 			var delayTimer;
+			// 			clearTimeout(delayTimer);
+			// 			delayTimer = setTimeout(function() {
+			//
+			// 				$.ajax({
+			// 					url: api_base_url+'/product/productlist/'+search_value,
+			// 					data: datas,
+			// 					success: function(data) {
+			// 						data.forEach(function(p){
+			// 							productSrc.append(
+			//
+			// 							"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+			//
+			//
+			// 							);
+			//
+			// 						});
+			//
+			// 					}
+			// 				});
+			//
+			//
+			// 	    }, 250);
+			//
+			//
+			//
+			//
+			//
+  		// 	}else{
+			//
+  		// 		productSrc.html('');
+			//
+  		// 			$.ajax({
+  		// 				url: api_base_url+'/product/productlist/'+cat+'/'+search_value,
+  		// 				data: datas,
+  		// 				success: function(data) {
+			//
+			//
+  		// 						data.forEach(function(p){
+  		// 							productSrc.append(
+			//
+  		// 							"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+			//
+			//
+  		// 							);
+  		// 							//alert(p.name);
+  		// 						});
+  		// 					//$("#result").html(data).show();
+  		// 				}
+  		// 			});
+			//
+  		// 	}
+			//
+  		// 	return false;
+  		// });
 
   	});
   	function showData(name,id,alias)
