@@ -43,7 +43,13 @@
 			</div>
       <div class="col-xs-3">
 				<h3><span>EMAIL NEWSLETTER</span></h3>
-        Berlangganan untuk mendapatkan penawaran spesial dan berita dari MyACICO.com
+        Berlangganan untuk mendapatkan penawaran spesial dan berita dari MyACICO.com<br>
+				<div class="input-group">
+					<input type="text" class="my-sub-field" name="x" placeholder="Search term...">
+					<span class="input-group-btn">
+						<button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button>
+					</span>
+				</div>
 			</div>
 		</div>
 		<br><br>

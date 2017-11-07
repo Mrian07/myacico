@@ -302,6 +302,25 @@
       font-weight: 300;
   }
 
+  /*SUBSCRIBE*/
+  .my-sub-button{
+      padding: 8px 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #c40202;
+  	  color:#ffffff;
+  }
+
+  .my-sub-field{
+  	width: 100%;
+      padding: 6px 18px;
+      margin: 8px 0;
+      box-sizing: border-box;
+  	background: #f2f1f1;
+  	border:0px;
+  	border-radius: 4px 0px 0px 4px;
+  }
+
   /*footer garansi*/
   .garansi ul {
       list-style-type: none;
