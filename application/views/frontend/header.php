@@ -93,10 +93,29 @@ a{
 	    <img src='<?php echo base_url('images/general/img-head1.jpg');?>' border='0'>
 		</div>
 
+
+		<div class='row' style='width:1155px'>
+			<div class="col-xs-10">
+
     <?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?> <?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?> <?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
 		<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
 		<?php echo anchor('page/faq','Faq', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/payment','Payment', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/aboutus','About Us', array('class'=>'btn-nav-head')); ?>
 		<?php echo anchor('customer/contact','Hubungi Kami', array('class'=>'btn-nav-head')); ?>
+
+			</div>
+			<div class="col-xs-2" style='text-align:right'>
+
+		<div class="dropdown-lang" style='border:0px solid #aeaeab; border-radius:5px; background:#f1f3f6; padding:5px; right: 0; left: auto; '>
+			<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?> <span class="caret"></span>
+			<div class="dropdown-lang-content">
+			<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
+			<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
+			</div>
+		</div>
+
+				</div>
+			</div>
+
     <div class='row' style='width:1155px'>
 			<div class="col-xs-2">
 				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
