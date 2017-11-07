@@ -414,16 +414,27 @@
              <div id="komen" class="tab-pane fade">
 		<h3>komeng</h3>
 		<p><?php $ik=0;
-                //die(print_r($komen[0]['star']));
+//                die(print_r(coment_rate));
                 foreach($komen as $value)
                     {
+                   
                         $coment_date=$value['created'];
                         $coment_title=$value['title'];
                         $coment_isi=$value['review'];
-                        $coment_rate[$ik]=$value['star'];
+                        $coment_rate =$value['star'];
+                        echo "<script>"
+                        . " $(function () {
+                        $('#rateKoms').rateYo({
+                                        rating: $coment_rate,
+                                        readOnly: true
+                        });
+                      });"
+                                . "</script>";
+                        
                         $coment_user=$value['user'];
-                        echo $coment_title." "."<div id='rateKom'></div><br>".$coment_isi."<br> Oleh ".$coment_user."<br>";
-                        $ik++;
+                        //echo "<input type='hiden' class='form-control' id='rateKom' style='width:70px' value='$coment_rate[$ik]'>";
+                        echo $coment_title." "."<div id='rateKoms'></div><br>".$coment_isi."<br> Oleh ".$coment_user."<br>";
+                        //$ik++;
                         //$this->data['komen']=$value;
                        //print_r($this->data['coment_user']);
                         //echo $value[0];
@@ -443,7 +454,7 @@
 
 <script>
    var rate = "<?php  echo $rate;?>";
-   
+   var star_rate = "<?php  echo $ik;?>";
     $(function () {
 
   $("#rateYo").rateYo({
@@ -453,15 +464,7 @@
   });
 
 });
-  $(function () {
-
-  $("#rateKom").rateYo({
-		  rating: rateK,
-		  readOnly: true
-
-  });
-
-});
+ 
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
 

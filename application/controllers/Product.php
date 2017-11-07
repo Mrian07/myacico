@@ -206,22 +206,23 @@ $this->load->view('frontend/sidenav',$this->data);
                 $konten_komen = file_get_contents($url_komen, false, $context);
                 $komen = json_decode($konten_komen, true);
                 //echo "<pre>";die(print_r($komen[0]['user']));
+                //$komen[0]['user']
                  $this->data['komen']=$komen;
-               /*
+               
 		if($komen)
                 {
                     foreach($komen as $value)
                     {
-                        $this->data['coment_date']=$value['created'];
-                        $this->data['coment_title']=$value['title'];
-                        $this->data['coment_isi']=$value['review'];
+//                        $this->data['coment_date']=$value['created'];
+//                        $this->data['coment_title']=$value['title'];
+//                        $this->data['coment_isi']=$value['review'];
                         $this->data['coment_rate']=$value['star'];
-                        $this->data['coment_user']=$value['user'];
+//                        $this->data['coment_user']=$value['user'];
                         //$this->data['komen']=$value;
                        //print_r($this->data['coment_user']);
                         //echo $value[0];
                     }
-                }*/
+                }
 //die(print_r($hasil['isWishList']));
 
 if(isset($hasil['sku'])){

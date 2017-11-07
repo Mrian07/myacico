@@ -206,7 +206,14 @@ a{
 
   	function btnSearchDesk(){
   		var searchDesk = $('#searchDesk').val();
+                if(searchDesk){
   		location.href = base_url+'product/alllistItem/'+searchDesk;
+            }else{
+              $.alert({
+            title: 'Peringatan',
+            content: 'kolom pencarian tidak boleh kosong',
+          });
+            }
   	}
 
   	function money(x){
