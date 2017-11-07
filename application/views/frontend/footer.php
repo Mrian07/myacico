@@ -25,7 +25,7 @@
 			<div class="col-xs-3">
 				<h3><span>INFORMASI</span></h3>
 				<?php echo anchor('#','Tentang Kami', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Blog MyACICO.com', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('#','Blog MyACICO.co.id', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Syarat & Ketentuan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Karir', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Kebajikan Privasi', array('class'=>'my-info')); ?><br>
@@ -54,7 +54,7 @@
 			</div>
       <div class="col-xs-3">
 				<h3><span>EMAIL NEWSLETTER</span></h3>
-        Berlangganan untuk mendapatkan penawaran spesial dan berita dari MyACICO.com<br>
+        Berlangganan untuk mendapatkan penawaran spesial dan berita dari MyACICO.co.id<br>
 				<div class="input-group">
 					<input type="text" class="my-sub-field" name="x" placeholder="Search term...">
 					<span class="input-group-btn">
