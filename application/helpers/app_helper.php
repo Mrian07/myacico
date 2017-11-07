@@ -2,7 +2,7 @@
 function api_base_url($param)
 {
 	//$url = "http://myacico.net:8080/myacico-service/api/".$param;
-	$url = "http://api.myacico.co.id/myacico-service/".$param;
+	$url = "https://api.myacico.co.id/myacico-service/".$param;
 	return $url;
 }
 

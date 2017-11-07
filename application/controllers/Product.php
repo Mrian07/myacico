@@ -189,16 +189,39 @@ $this->load->view('frontend/sidenav',$this->data);
 		$this->data['pro_id']=$this->uri->segment(3);
 		$pro_id=$this->uri->segment(3);
 		$api = "product/productlist/detail?id=".$pro_id;
-		$url = api_base_url($api);
-
+                $url = api_base_url($api);
+//              KOMENG CUY ~Samuel  utk page &page=1&itemperpage=1
+                $api_komen = "product/listreview?productid=".$pro_id;
+		$url_komen = api_base_url($api_komen);
+                
+                
 		$options = ["http" => [
 		"method" => "GET",
 		]];
 
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
-
-		$hasil = json_decode($konten, true);
+                $hasil = json_decode($konten, true);
+//                Komen
+                $konten_komen = file_get_contents($url_komen, false, $context);
+                $komen = json_decode($konten_komen, true);
+                //echo "<pre>";die(print_r($komen[0]['user']));
+                 $this->data['komen']=$komen;
+               /*
+		if($komen)
+                {
+                    foreach($komen as $value)
+                    {
+                        $this->data['coment_date']=$value['created'];
+                        $this->data['coment_title']=$value['title'];
+                        $this->data['coment_isi']=$value['review'];
+                        $this->data['coment_rate']=$value['star'];
+                        $this->data['coment_user']=$value['user'];
+                        //$this->data['komen']=$value;
+                       //print_r($this->data['coment_user']);
+                        //echo $value[0];
+                    }
+                }*/
 //die(print_r($hasil['isWishList']));
 
 if(isset($hasil['sku'])){
