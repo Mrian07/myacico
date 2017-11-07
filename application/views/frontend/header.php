@@ -136,15 +136,19 @@ a{
 
 
       <div class="col-xs-4">
-        <div class='row' style='padding-top:10px'>
-          <div class="col-xs-2" style='font-size:50px; color:#b2b2b2; '><i class="fa fa-user" aria-hidden="true"></i></div>
-          <div class="col-xs-6" style='font-size:24px; color:#b2b2b2; padding-left:3px; '>Selamat Datang<br>
-						<?php if(isset($user)){ ?>
-							<b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
-							<b><font color='red'><?php echo anchor('#', 'Logout', array('class'=>'logout btn-nav-red'));?></font></b>
-						<?php }else{ ?>
-							<b><font color='red'><?php echo anchor('customer/signIn','Login', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create','Daftar', array('class'=>'btn-nav-red')); ?></font></b>
-						<?php } ?>
+        <div class='row' style='padding-top:10px;'>
+					<div class="col-xs-9">
+						<div class='row' style='background:#efebeb; margin-top:-3px; padding:3px 0px 3px 0px; border-radius:5px'>
+		          <div class="col-xs-3" style='font-size:40px; color:#444242; '><i class="fa fa-user" aria-hidden="true"></i></div>
+		          <div class="col-xs-9" style='font-size:18px; color:#444242; padding-left:3px;'>Selamat Datang<br>
+								<?php if(isset($user)){ ?>
+									<b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
+									<b><font color='red'><?php echo anchor('#', 'Logout', array('class'=>'logout btn-nav-red'));?></font></b>
+								<?php }else{ ?>
+									<b><font color='red'><?php echo anchor('customer/signIn','Login', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create','Daftar', array('class'=>'btn-nav-red')); ?></font></b>
+								<?php } ?>
+							</div>
+						</div>
 					</div>
 					<div class="col-xs-3" style='margin-top:8px; '>
 						<div class="dropdown-basket">
