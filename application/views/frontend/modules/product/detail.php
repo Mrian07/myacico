@@ -253,6 +253,7 @@
 	  <li class="active"><a data-toggle="tab" href="#home">Rincian Barang</a></li>
 	  <li><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
 		<li><a data-toggle="tab" href="#menu2">Highlight</a></li>
+                <li><a data-toggle="tab" href="#komen">Komen</a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -406,9 +407,41 @@
 		<h3>Description</h3>
 		<p><?php echo $description;  ?></p>
 	  </div>
-		<div id="menu2" class="tab-pane fade">
+          <div id="menu2" class="tab-pane fade">
 		<h3>Highlight</h3>
 		<p><?php echo $highlight;  ?></p>
+	  </div>
+             <div id="komen" class="tab-pane fade">
+		<h3>komeng</h3>
+		<p><?php $ik=0;
+//                die(print_r(coment_rate));
+                foreach($komen as $value)
+                    {
+                   
+                        $coment_date=$value['created'];
+                        $coment_title=$value['title'];
+                        $coment_isi=$value['review'];
+                        $coment_rate =$value['star'];
+                        echo "<script>"
+                        . " $(function () {
+                        $('#rateKoms').rateYo({
+                                        rating: $coment_rate,
+                                        readOnly: true
+                        });
+                      });"
+                                . "</script>";
+                        
+                        $coment_user=$value['user'];
+                        //echo "<input type='hiden' class='form-control' id='rateKom' style='width:70px' value='$coment_rate[$ik]'>";
+                        echo $coment_title." "."<div id='rateKoms'></div><br>".$coment_isi."<br> Oleh ".$coment_user."<br>";
+                        //$ik++;
+                        //$this->data['komen']=$value;
+                       //print_r($this->data['coment_user']);
+                        //echo $value[0];
+                    }
+                
+                
+                ?></p>
 	  </div>
 	</div>
 
@@ -421,6 +454,7 @@
 
 <script>
    var rate = "<?php  echo $rate;?>";
+   var star_rate = "<?php  echo $ik;?>";
     $(function () {
 
   $("#rateYo").rateYo({
@@ -430,6 +464,7 @@
   });
 
 });
+ 
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
 

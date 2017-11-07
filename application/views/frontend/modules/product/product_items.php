@@ -333,37 +333,48 @@ if($saw==Null)
 
      ?>
 
-<div class="row my-sort-product">
-	<div class="col-sm-9">
-		<?php echo "&nbspItems 1 to ".count($data).""; ?>
 
-	</div>
-	<div class="col-sm-3">
-
-		<div class="form-group">
-		<label for="usr">Urutkan:</label>
-		<select name="urutkan" class="form-control" onchange='filter(this)'>
-		<option value='5'>Produk Terbaru</option>
-		<option value='1'>Nama: A Ke Z</option>
-		<option value='2'>Nama: Z Ke A</option>
-		<option value='3'>Harga: Rendah Ke Tinggi</option>
-		<option value='4'>Harga: Tinggi Ke Rendah</option>
-		</select>
-		</div>
-
-
-	</div>
-</div>
 
 <div class="container">
+    
     <div class="well well-sm">
+       <div class="col-sm-8">
         <strong>Category Title</strong>
+        
         <div class="btn-group">
             <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
             </span> List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
                 class="glyphicon glyphicon-th"></span> Grid</a>
+               
         </div>
+       </div>
+        <div class="col-sm-4">
+        <div class="row">
+        <div class="col-sm-3">
+            <strong>Urutkan: </strong>
+        </div>
+        <div class="col-sm-9">
+             <div class="row my-sort-product">
+
+                          <select name="urutkan" class="form-control" onchange='filter(this)'>
+                          <option value='5'>Produk Terbaru</option>
+                          <option value='1'>Nama: A Ke Z</option>
+                          <option value='2'>Nama: Z Ke A</option>
+                          <option value='3'>Harga: Rendah Ke Tinggi</option>
+                          <option value='4'>Harga: Tinggi Ke Rendah</option>
+                          </select>
+
+
+
+              </div>
+            </div>
+        </div>
+        
+               
+      </div>
+        <div style="clear:both"></div>
     </div>
+    
     <div id="products" class="row list-group">
 
 			<!---<div class="product">

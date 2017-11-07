@@ -34,11 +34,6 @@ cursor:pointer;
 
 
 
-
-
-
-
-
 .collapse{
   height:10px;
 }
@@ -49,9 +44,10 @@ cursor:pointer;
 
 </style>
 
+
 	<div class='container'>
 <!-- Start Navigation -->
-    <nav class="navbar navbar-default navbar-custom bootsnav">
+    <nav class="navbar navbar-default navbar-custom bootsnav" style='width:1140px'>
 			<!-- Start Header Navigation -->
             <!-- End Header Navigation -->
 
