@@ -179,7 +179,7 @@ a{
 							?>
 							<button class="dropbtn-basket">
 								<img src="<?php echo base_url('images/general/cart.png'); ?>" border="0"><br>
-								<span class="badge" style='margin-left:-5px; margin-top: -50px; position: absolute; font-size:15px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
+								<span class="badge totalCart" style='margin-left:-5px; margin-top: -50px; position: absolute; font-size:15px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
 							</button>
 								<div class="dropdown-basket-content">
 									<?php
