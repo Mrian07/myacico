@@ -206,7 +206,7 @@ function get_region(){
   // $("#country_sel").prop('disabled', false).change(get_region);
 //alert(negara);
   $("#region_sel").prop('disabled', true).unbind("change", get_city);
-  
+
   $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
     r.forEach(function(o){
       $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
