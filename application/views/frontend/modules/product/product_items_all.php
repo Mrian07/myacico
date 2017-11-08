@@ -402,12 +402,17 @@ h1.po1{
 			</div>-->
 
         <?php foreach($hasil as $data){
-          if(isset($data['imageurl'])){
+         if(isset($data['imageurl'])){
+               $img_url= $data['imageurl'];
+          }
+          else{
+               $img_url= null;
+          }
           ?>
 
 		 <div class="item  col-xs-3 col-lg-3">
             <div class="thumbnail">
-                <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $data['imageurl']; ?>" alt="" />
+                <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $img_url; ?>" alt="" />
                 <div class="caption">
                     <div  style='height:80px'>
                     <h5 class="group inner list-group-item-heading" style='text-align:center;'>
@@ -432,7 +437,7 @@ h1.po1{
 
             <center>
               <div class="btn-group">
-                <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$data['imageurl'];?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+                <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
 
                 <?php
                 //if($cektoken){}
@@ -440,7 +445,7 @@ h1.po1{
                   {
               ?>
 
-               <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
+               <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
             <?php }else{
            ?>
 
@@ -448,7 +453,7 @@ h1.po1{
 
 
 
-               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$data['imageurl'];?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
+               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
 
 
 
@@ -466,7 +471,11 @@ h1.po1{
             </div>
         </div>
 
-		<?php } } ?>
+		<?php 
+                
+            //} 
+            
+            } ?>
        <!---
         <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
