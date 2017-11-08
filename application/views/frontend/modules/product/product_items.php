@@ -336,16 +336,16 @@ if($saw==Null)
 
 
 <div class="container">
-    
+
     <div class="well well-sm">
        <div class="col-sm-8">
         <strong>Category Title</strong>
-        
+
         <div class="btn-group">
             <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
             </span> List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
                 class="glyphicon glyphicon-th"></span> Grid</a>
-               
+
         </div>
        </div>
         <div class="col-sm-4">
@@ -369,12 +369,12 @@ if($saw==Null)
               </div>
             </div>
         </div>
-        
-               
+
+
       </div>
         <div style="clear:both"></div>
     </div>
-    
+
     <div id="products" class="row list-group">
 
 			<!---<div class="product">
@@ -503,9 +503,16 @@ if($saw==Null)
        }
     $i=1;
    //die(print_r($max_page));
+
         for($i;$i<=$max_page;$i++){
-   ?>
-  <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
+
+          if($i=="5"){
+            echo"<li class='disabled'><span>...</span></li>";
+          }else{?>
+            <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
+        <?php  }
+            ?>
+
 
         <?php }
         if($curr < $max_page){

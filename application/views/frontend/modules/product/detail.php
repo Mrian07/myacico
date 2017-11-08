@@ -20,15 +20,10 @@
 <link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url('assets/productpopup/magnific-popup/css/magnific-popup.css');?>" />
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/magnific-popup/js/magnific-popup.js');?>"></script>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<div class='my-bg-title'>
-	<div class="container">
-		<div class="row">
-		  <div class="col-sm-12">
 
+<div class="container">
+	<div class='my-bg-title'>
 			<i class="fa fa-angle-right" aria-hidden="true"></i> DETAIL PRODUCT
-
-		  </div>
-		</div>
 	</div>
 </div>
 
@@ -83,19 +78,49 @@
 
 
 	  </div>
-	  <div class="col-sm-6 detail-product">
+	  <div class="col-sm-7 detail-product">
 			<div class="col-sm-6" style="background-color:white;">
 				<h4 class='title-product'><?php echo $name; ?></h4>
 
 				<p style="color:red"><?php echo $sku; ?></p>
 					<span class='price'><b>Rp.<?php echo money($pricelist);  ?></b></span><br>
 					<span style="color: green; font-weight:bold">Stock: Tersedia</span>
+
+					<br><br>
+					<center>
+					Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
+
+					<div class='detail-add-wishlist'>
+						<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br><br>
+						<!-- <div class="btnaddcart">
+							<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
+						</div> -->
+
+
+						<!-- <a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')" class='btn btn-link'> <i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Add To Wishlist</a> -->
+							<div class="btn-group">
+
+								<button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+								<?php
+											if($isWishList =='Y')
+											{
+									?>
+									 <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
+								<?php }else{
+							 ?>
+									 <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+
+								<?php }
+								?>
+							</div>
+						</div>
+					</center>
+
+
 			</div>
 			<div class="col-sm-6" style="background-color:white;">
 				<h4>Rating breakdown</h4>
-				<center>
-				<div id="rateYo"></div>
-			</center>
+				<center><div id="rateYo"></div></center>
 								<div class="pull-left">
 									<div class="pull-left" style="width:35px; line-height:1;">
 										<div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
@@ -161,8 +186,14 @@
 									</div>
 									<div class="pull-right" style="margin-left:10px;"><?php echo$rating['star1'];?></div>
 								</div>
-							</div>
-						</div>
+				</div>
+
+
+
+
+
+
+			</div>
 
 			</div>
 
@@ -208,39 +239,7 @@
 			</div> -->
 
 
-			<center>
-			Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i></center>
 
-			<div class='detail-add-wishlist'><center>
-				<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br><br>
-				<!-- <div class="btnaddcart">
-					<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
-				</div> -->
-
-
-				<!-- <a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')" class='btn btn-link'> <i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Add To Wishlist</a> -->
-					<div class="btn-group">
-
-						<button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-            <?php
-                //if($cektoken){}
-
-//                    $rating = strpos($rating, 'star3');
-//
-//die(print_r("sam".$rating['star5']));
-                  if($isWishList =='Y')
-                  {
-              ?>
-               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
-            <?php }else{
-           ?>
-               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
-
-            <?php }
-            ?>
-					</div>
-				</div>
-			</center>
 
 	  </div>
 
