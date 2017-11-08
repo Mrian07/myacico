@@ -126,7 +126,3 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
-<!-- asdasdas -->
-<!-- test -->
