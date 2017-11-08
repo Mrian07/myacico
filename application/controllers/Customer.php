@@ -104,7 +104,7 @@ class Customer extends Web {
 		$message = $this->input->post('pesan');
 		$secutity_code = $this->input->post('secutity_code');
 
-		$email_to='it.d@myacico.com';
+		$email_to='itd@myacico.co.id';
 
 		if((strtolower($secutity_code) == strtolower($this->session->userdata('mycaptcha')))){
 
