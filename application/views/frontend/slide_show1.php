@@ -162,7 +162,7 @@ footer a,footer a:hover{
 
 
 
-
+<div class="container">
     <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
       <div class="box">
         <a href="#" data-toggle="modal" data-target="#11">
@@ -214,7 +214,7 @@ footer a,footer a:hover{
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
               <div class="modal-body">
                 <img src="https://s1.postimg.org/7ledx3jdnj/123123.png">
-          
+
               </div>
                 <div class="col-md-12 description">
                   <h4>This is the 13th one on my Gallery</h4>
@@ -225,8 +225,9 @@ footer a,footer a:hover{
       </div>
     </div>
 
+          
 
-
+  </div>
   </div>
 </section>
 <footer>
