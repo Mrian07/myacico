@@ -157,7 +157,7 @@ a{
       <div class="col-xs-4">
         <div class='row' style='padding-top:10px;'>
 					<div class="col-xs-9">
-						<div class='row' style='background:#efebeb; margin-top:-3px; padding:3px 0px 3px 0px; border-radius:5px'>
+						<div class='row' style='background:#ffff; margin-top:-3px; padding:3px 0px 3px 0px; border-radius:5px'>
 		          <div class="col-xs-3" style='font-size:40px; color:#444242; '><i class="fa fa-user" aria-hidden="true"></i></div>
 		          <div class="col-xs-9" style='font-size:18px; color:#444242; padding-left:3px;'>Selamat Datang<br>
 								<?php if(isset($user)){ ?>

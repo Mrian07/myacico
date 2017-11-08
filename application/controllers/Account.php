@@ -173,6 +173,7 @@ class Account extends Web_private {
 		$this->data['title_web'] = "Myacico.com - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
+
 		$this->load->view('frontend/modules/account/TambahBukuAlamat',$this->data);
                 $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
@@ -230,9 +231,9 @@ class Account extends Web_private {
 		if($hasil = json_decode($konten, true)){
 			$this->load->view('frontend/modules/account/list_riwayat_status_pesanan',$this->data);
 		}else{
-			echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'>List riwayat status pesanan masih kosong</div>";
+			echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'>List riwayat status pesanan masih kosong Silahkan Belanja <a href='https://dev.myacico.co.id/'>Visit Home</a></div>";
 		}
-                
+
 	}
 
 
@@ -343,7 +344,7 @@ class Account extends Web_private {
 		}
                 $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
-                
+
 	}
 
     public function formAddBilling()

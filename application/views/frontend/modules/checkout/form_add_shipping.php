@@ -33,15 +33,10 @@
 }
 </style>
 
-<div class='my-bg-title'>
-	<div class="container">
-		<div class="row">
-		  <div class="col-sm-12">
 
+<div class="container">
+	<div class='my-bg-title'>
 			<i class="fa fa-angle-right" aria-hidden="true"></i> CHECKOUT / PENERIMA
-
-		  </div>
-		</div>
 	</div>
 </div>
 
