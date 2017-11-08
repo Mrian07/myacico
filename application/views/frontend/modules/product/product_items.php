@@ -494,7 +494,7 @@ if($saw==Null)
 
 
     </div>
-
+    <div class="demo" id="demo">asa</div>
 <div class="text-center">
     <ul class="pagination">
    <!--<li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>-->
@@ -545,6 +545,11 @@ if($saw==Null)
 </div>
 
 <script type="text/javascript">
+   new Pagination({
+       parent: '.demo',
+       totalPage:10,
+       align: 'center'
+   };
 
 
 $(document).ready(function() {
