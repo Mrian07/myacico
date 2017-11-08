@@ -38,7 +38,7 @@
 		<div class="row">
 		  <div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> CHECKOUT / BILLING
+			<i class="fa fa-angle-right" aria-hidden="true"></i> CHECKOUT / PENERIMA
 
 		  </div>
 		</div>
@@ -52,7 +52,7 @@
 			  <div class="panel-heading">
 			  <div class="row">
 					<div class="col-md-8">
-						<b>Data Billing/ Pengirim</b>
+						<b>Data Billing/ Penerima</b>
 					</div>
 					<div class="col-md-4" style='text-align: right'>
 						<?php echo anchor('checkout', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali');?>
@@ -60,73 +60,89 @@
 					</div>
 				</div>
 			  </div>
-			  <div class="panel-body">
 
-						<p>Masukan data billing dengan lengkap pada form dibawah ini.</p>
+				 <div class="panel-body">
 
 
-          				  <form name="test1" method="post">
-          				  <input type="hidden" id="isbillto" name="isbillto" value="N" />
-          				  <input type="hidden" id="isshipto" name="isshipto" value="Y" />
-          				  <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
-          				  <input type="hidden" id="isremitto" name="isremitto" value="N" />
-                                            <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
+						<form name="signup" method="post">
+						<div class="form-group">
 
-          					<div class="form-group">
-          					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
-          					  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
-          					</div>
-          					<div class="form-group">
-          					  <label><?php echo $lang_addres; ?>*</label>
-          					  <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
-          					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
-          					</div>
-                                            <div class="form-group">
-					<label><?php echo $lang_Country; ?>*</label>
-					  <select name="country" id="country_sel" class="form-control mandatory" disabled >
-						<option value="209" selected="selected">Indonesia</option>
-					  </select>
-					</div>
-                                      <div class="form-group" id="region_box" onclick="get_region()">
+						<input type="hidden" id="bill" name="bill" value="N" />
+						<input type="hidden" id="ship" name="ship" value="Y" />
+						<input type="hidden" id="pay" name="pay" value="N" />
+						<input type="hidden" id="remit" name="remit" value="N" />
+						<input type="hidden" id="addn" name="addn" value="kontrakan" />
+						<input type="hidden" id="alamat3" name="alamat3" value="kelurahan duri kosambi" />
+						</div>
+            <div class="row">
+              <div class="col-sm-12">
+
+                <p>Silakan lengkapi data billing Anda dibawah ini.</p>
+
+                    <form name="test1" method="post">
+                    <input type="hidden" id="isbillto" name="isbillto" value="N" />
+                    <input type="hidden" id="isshipto" name="isshipto" value="Y" />
+                    <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
+                    <input type="hidden" id="isremitto" name="isremitto" value="N" />
+                    <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
+
+                    <div class="form-group">
+                      <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+                      <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
+                    </div>
+                    <div class="form-group">
+                      <label><?php echo $lang_addres; ?>*</label>
+                      <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
+                      <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
+                    </div>
+
+                    <div class="form-group">
+                    <label><?php echo $lang_Country; ?>*</label>
+                    <select name="country" id="country_sel" class="form-control mandatory">
+			<option value="209" selected="selected">Indonesia</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="region_box">
 					<label><?php echo $lang_Provience; ?>*</label>
                                         <select name="province" id="region_sel" class="form-control mandatory">
-                                            <option value="">--Pilih--</option>
+                                         <option value="" selected="selected">--Pilih--</option>
                                         </select>
                                       </div>
-                                            <div class="form-group" style="display:none" id="city_box">
-          						<label><?php echo $lang_kota; ?>*</label>
-          					  <select name="city" id="city_sel" class="form-control mandatory"></select>
-          					</div>
-          					<div class="form-group" style="display:none" id="ditric_box">
-          							<label><?php echo $lang_Keca; ?>*</label>
-          					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
-          					</div>
-          					 <div class="form-group" style="display:none" id="village_box">
-                                                    <label><?php echo "kelurahan"; ?>*</label>
-                                                  <select name="village_id" id="village_id" class="form-control mandatory"></select>
-                                                </div>
-          					<div class="form-group">
-          					<label><?php echo $lang_PostCode; ?>*</label>
-          						<input type="text" id="postal" name="postal" class="form-control mandatory" />
-          					</div>
-          					<div class="form-group">
-          					<label>Handphone*</label>
-          						<input type="text" id = "phone"name="phone" class="form-control mandatory" />
-          					</div>
-          					<div class="form-group">
-          					<label>Telepon</label>
-          						<input type="text" id = "phone2"name="phone2" class="form-control"/>
-          					</div>
+                    <div class="form-group" style="display:none" id="city_box">
+                      <label><?php echo $lang_kota; ?>*</label>
+                      <select name="city" id="city_sel" class="form-control mandatory"></select>
+                    </div>
+                    <div class="form-group" style="display:none" id="ditric_box">
+                        <label><?php echo $lang_Keca; ?>*</label>
+                      <select name="district_id" id="district_id" class="form-control mandatory"></select>
+                    </div>
+                    <div class="form-group" style="display:none" id="village_box">
+                        <label><?php echo "kelurahan"; ?>*</label>
+                      <select name="village_id" id="village_id" class="form-control mandatory"></select>
+                    </div>
+                    <div class="form-group" style="display:none" id="postal_box">
+             <label><?php echo $lang_PostCode; ?>*</label>
+               <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
+             </div>
+                    <div class="form-group">
+                    <label>Handphone*</label>
+                      <input type="text" id = "phone"name="phone" class="form-control mandatory" />
+                    </div>
+                    <div class="form-group">
+                    <label>Telepon</label>
+                      <input type="text" id = "phone2"name="phone2" class="form-control"/>
+                    </div>
+
+                    <div class="clearfix"></div>
+                      <input type="submit" id="submit_btn" class="btn btn-primary" value="Tambah"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+                    </form>
+                  </div>
+                </div>
 
 
+			</div>
 
 
-          					<div class="clearfix"></div>
-          						<input type="submit" id="submit_btn" class="btn btn-primary" value="Tambah"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
-          				  </form>
-
-
-			  </div>
 			</div>
 
 		</div>
@@ -139,7 +155,8 @@
 
 
 </div>
-<script type="text/javascript">
+<script>
+ var negara= 209;
 $.ajaxSetup({
   error: function(){
     alert('service not available, please try again later');
@@ -172,8 +189,6 @@ function get_distric(){
   }, "json" );
 }
 
-
-
 function get_city(){
   $("#city_box").slideDown();
   $("#city_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_distric);
@@ -201,9 +216,11 @@ $('#postal_id').change(function () {
   }
 function get_region(){
   $("#region_box").slideDown();
-    var negara = $('#country_sel').val();
-
+  // var negara = $('#country_sel').val();
+  // $("#country_sel").prop('disabled', false).change(get_region);
+//alert(negara);
   $("#region_sel").prop('disabled', true).unbind("change", get_city);
+
   $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
     r.forEach(function(o){
       $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
@@ -211,6 +228,8 @@ function get_region(){
     $("#region_sel").prop('disabled', false).change(get_city);
   }, "json" );
 }
+
+
 var data = {};
 
 $(document).ready(function() {
@@ -220,7 +239,7 @@ $('#submit_btn').attr('disabled','disabled');
     e.preventDefault();
    // var data = $(this).serialize();
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	  var apiurl = api_base_url +'/aduser/addaddress?token='+token;
+	  var apiurl = api_base_url +'/aduser/addaddress?';
 
         var name =  $("#name").val();
         var phone = $("#phone").val();
@@ -228,16 +247,12 @@ $('#submit_btn').attr('disabled','disabled');
         var address_name = $("#address_name").val();
         var address1 = $("#address1").val();
         var address2 = $("#address2").val();
-        var address3 = $("#address3").val();
-        var address4 = $("#address4").val();
         var postal = $("#postal").val();
-        var district_id = $("#district_id").val();
+        var village_id = $("#village_id").val();
         var isbillto = $("#isbillto").val();
         var isshipto = $("#isshipto").val();
         var ispayfrom = $("#ispayfrom").val();
         var isremitto = $("#isremitto").val();
-		var village_id = $("#village_id").val();
-
 
     //var fl=document.signup;
 //    var data = $(this).serialize();
@@ -248,29 +263,13 @@ data.phone2 = phone2;
 data.address_name = address_name;
 data.address1 = address1;
 data.address2 = address2;
-data.address3 = "address3";
-data.address4 = "address4";
 data.postal = postal;
 data.district_id = district_id;
+data.village_id = village_id;
 data.isbillto = 'Y';
 data.isshipto = 'Y';
 data.ispayfrom = 'Y';
 data.isremitto = 'Y';
-data.village_id = village_id;
-		// data.name = name;
-		// data.phone = phone;
-		// data.phone2 = phone2;
-    // data.address_name = address_name;
-    // data.address1 = address1;
-    // data.address2 = address2;
-		//     data.address3 = address3;
-		// data.address4 = address4;
-    // data.postal = postal;
-    // data.district_id = district_id;
-    // data.isbillto = isbillto;
-    // data.isshipto = isshipto;
-    // data.ispayfrom = ispayfrom;
-    // data.isremitto = isremitto;
 
     //return alert(data.phone);die();
      var success = function(r){
@@ -297,14 +296,14 @@ data.village_id = village_id;
 			// $("#ispayfrom").val(null);
 		  // $("#isremitto").val(null);
 
-        window.location.replace(base_url+"/checkout");
+        window.location.replace(base_url+"checkout/dataShipping");
 
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
 		console.log('ini data',token);
 		//die();
-$.ajax({ type:"POST", contentType: "application/json", headers:{"token":token}, data:JSON.stringify(data) , url: apiurl, success: success, error: error });
+$.ajax({ type:"POST", contentType: "application/json", headers:{"token":token}, data:JSON.stringify(data) , url: apiurl, success: success});
 
 		//$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
 
@@ -334,15 +333,27 @@ var error = function(er){
 
 
   });
-
-  $.get(api_base_url+"/ccountry/getlistccountry", function(r){
+$.get(api_base_url+"/ccountry/getlistccountry", function(r){
     console.log(r);
-//    $("#country_sel").prop('disabled', true).html('<option value="209">--pilih--</option>');
+//    $("#country_sel").prop('disabled', true).html('<option value="209" selected="selected">Indonesia</option>');
 //    $("#country_sel").prop('disabled', true).html('<option value="">Indonesia</option>');
+//    $("#country_sel").prop('disabled', true).on("load", get_region);
     r.forEach(function(o){
       $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
     });
-    $("#country_sel").prop('disabled', false).change(get_region);
+    $("#country_sel").prop('disabled', true).change(get_region(this));
   }, "json" );
+ /*
+ $("#country_sel").change(function(){
+    negara =$("#country_sel").val();
+        //alert(negara);
+    });
+  $.get(api_base_url+"/cregion/getlistcregionbyidccountry/"+$("#country_sel").val(), function(r){
+    r.forEach(function(o){
+      $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
+    });
+    $("#region_sel").prop('disabled', false).change(get_city);
+  }, "json" );
+ */
 });
 </script>
