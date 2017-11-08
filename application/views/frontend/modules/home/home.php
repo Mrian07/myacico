@@ -1198,8 +1198,12 @@ function addWishlist(id,name,imageurl){
  function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 //function addToCart(q,w,e,r,t,y){
 
+
+
+
 console.log('ini'+m_product_id+','+pricelist+','+imageurl+','+name+','+stock+','+weight);
-	var jmlItem = $('#jmlItem'+m_product_id).val();
+	//var jmlItem = $('#jmlItem'+m_product_id).val();
+  var jmlItem = 1;
 	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
 
 	if(jmlItem<=0){
@@ -1218,6 +1222,7 @@ console.log('ini'+m_product_id+','+pricelist+','+imageurl+','+name+','+stock+','
 
 	}else{
 
+    //Jika sudah login
 		var cookie = document.cookie.split('x-auth=');
 		if(cookie.length > 1){
 			var token = cookie[1].split(';').shift();
