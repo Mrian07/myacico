@@ -1,6 +1,4 @@
-<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat');?>
-		<br/>
-		<br/>
+
 <p>Dibawah ini adalah daftar buku alamat penerima pesanan. Anda bisa menambahkan alamat baru atau mengubah alamat sebelumnya dengan alamat yang lain.</p>
 <div class="panel panel-default">
 <table class="table">
