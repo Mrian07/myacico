@@ -39,10 +39,10 @@
 
 <div class="container">
 	<div class='my-bg-title'>
-		<i class="fa fa-angle-right" aria-hidden="true"></i> KERANJANG BELANJA ANDA 
+		<i class="fa fa-angle-right" aria-hidden="true"></i> KERANJANG BELANJA ANDA
 	</div>
 </div>
-<div class="container" style='background:#ffffff;  padding-top:20px; margin-bottom:20px;border: 1px #dddddd solid;'>
+<div class="container" style='background:#ffffff;  padding-top:20px; margin-bottom:20px;'>
 
 	<div class="col-md-12 listCart">
 		<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>
