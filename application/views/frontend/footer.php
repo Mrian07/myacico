@@ -24,21 +24,21 @@
 		<div class="row">
 			<div class="col-xs-3">
 				<h3><span>INFORMASI</span></h3>
-				<?php echo anchor('#','Tentang Kami', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/AboutUs','Tentang Kami', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Blog MyACICO.co.id', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Syarat & Ketentuan', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/SyaratDnKetentuan','Syarat & Ketentuan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Karir', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Kebajikan Privasi', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Kebijakan Hak Cipta', array('class'=>'my-info')); ?>
+				<?php echo anchor('Pages/kebijakanPrivasi','Kebajikan Privasi', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/hakCipta','Kebijakan Hak Cipta', array('class'=>'my-info')); ?>
 			</div>
 			<div class="col-xs-3">
 				<h3><span>BANTUAN</span></h3>
-				<?php echo anchor('#','FAQ', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/faq','FAQ', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Cara Berbelanja', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Pengembalian Dan Pembatalan', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Garansi Dan Jaminan', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/Pengembalian','Pengembalian Dan Pembatalan', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/Jaminan','Garansi Dan Jaminan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Status Pesanan', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Hubungi Kami', array('class'=>'my-info')); ?>
+				<?php echo anchor('Customer/contact','Hubungi Kami', array('class'=>'my-info')); ?>
 			</div>
 			<div class="col-xs-3">
 				<h3><span>IKUTI KAMI</span></h3>
