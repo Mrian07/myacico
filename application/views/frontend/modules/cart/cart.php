@@ -36,15 +36,10 @@
 
 }
 </style>
-<div class='my-bg-title'>
-	<div class="container">
-		<div class="row">
-		  <div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> KERANJANG BELANJA ANDA 
-
-		  </div>
-		</div>
+<div class="container">
+	<div class='my-bg-title'>
+		<i class="fa fa-angle-right" aria-hidden="true"></i> KERANJANG BELANJA ANDA 
 	</div>
 </div>
 <div class="container" style='background:#ffffff;  padding-top:20px; margin-bottom:20px;border: 1px #dddddd solid;'>
@@ -52,15 +47,15 @@
 	<div class="col-md-12 listCart">
 		<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>
 	</div>
-	
+
 
 </div>
 <script>
 $(document).ready(function() {
-	
+
 	var cookie = document.cookie.split('x-auth=');
 	if(cookie.length > 1){
-		
+
 		$.ajax
 		({
 		url: "<?php echo site_url('cart/listCartToken'); ?>",
@@ -68,10 +63,10 @@ $(document).ready(function() {
 				$(".listCart").html(html);
 			}
 		});
-		
+
 
 	}else{
-		
+
 		$.ajax
 		({
 		url: "<?php echo site_url('cart/listCart'); ?>",
@@ -79,10 +74,10 @@ $(document).ready(function() {
 				$(".listCart").html(html);
 			}
 		});
-	
+
 	}
-	
-	
-	
+
+
+
 });
 </script>
