@@ -108,6 +108,7 @@
 	</div>
 </div>
 <script type="text/javascript">
+    var negara =209;
 $.ajaxSetup({
   error: function(){
     alert('service not available, please try again later');
@@ -246,6 +247,7 @@ $.ajax({
         data.address3 = address3;
         data.address4 = address4;
         data.postal = postal;
+        data.c_country_id = negara;
         data.district_id = district_id;
         data.isbillto = isbillto;
         data.isshipto = isshipto;
