@@ -48,7 +48,7 @@ class Checkout extends Web_private {
 		if($this->session->userdata('shipping_address_id'))
 		{
 
-		   $api = "aduser/getaddress/".$this->session->userdata('shipping_address_id');
+		   $api = "aduser/getaddress?id=".$this->session->userdata('shipping_address_id');
 		   $url = api_base_url($api);
 
 
@@ -59,6 +59,7 @@ class Checkout extends Web_private {
 		   $this->data['alamat_shipping'] =$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['address2']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
            $this->data['id_kelurahan'] = $hasil_ship['village_id'];
 		   $this->data['shipping_address_id'] = $hasil_ship['id'];
+//                   print_r($api); die();
 		}
 
         //Metode Pembayaran
