@@ -1,17 +1,17 @@
 <div class="container">
 	<div class="row">
-	  <div class="col-sm-12">
-		<div class="my-border-title">
-			<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> SUCCESS</h3>
+		<div class="col-sm-12">
+			<div class="my-border-title">
+				<h3 class='my-title-page'><i class="fa fa-dot-circle-o" aria-hidden="true"></i> SUCCESS</h3>
+			</div>
 		</div>
-	  </div>
-            <div class="col-sm-8">
-                <div class="listOrder">
-                    
-                </div>
+		<div class="col-sm-8">
+			<div class="listOrder">
+
+			</div>
 		</div>
 	</div>
-   
+
 </div>
 <script type="text/javascript">
 
