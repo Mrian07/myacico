@@ -36,18 +36,18 @@
 					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
 
                                         </div>
-                                      <div class="form-group">
-					<label><?php echo $lang_Country; ?>*</label>
-					  <select name="country" id="country_sel" class="form-control mandatory" disabled >
-						<option value="209" selected="selected">Indonesia</option>
-					  </select>
-					</div>
-                                      <div class="form-group" id="region_box" onclick="get_region()">
-					<label><?php echo $lang_Provience; ?>*</label>
-                                        <select name="province" id="region_sel" class="form-control mandatory">
-                                            <option value="">--Pilih--</option>
-                                        </select>
-                                      </div>
+																				<div class="form-group">
+																				<label><?php echo $lang_Country; ?>*</label>
+																				<select name="country" id="country_sel" class="form-control mandatory">
+															<option value="209" selected="selected">Indonesia</option>
+																						</select>
+																				</div>
+																				<div class="form-group" id="region_box">
+															<label><?php echo $lang_Provience; ?>*</label>
+																														<select name="province" id="region_sel" class="form-control mandatory">
+																														 <option value="" selected="selected">--Pilih--</option>
+																														</select>
+																													</div>
 					<div class="form-group" style="display:none" id="city_box">
 						<label><?php echo $lang_kota; ?>*</label>
 					  <select name="city" id="city_sel" class="form-control mandatory"></select>
@@ -315,14 +315,15 @@ data.id = id;
     }
   });
 
-  $.get(api_base_url+"/ccountry/getlistccountry", function(r){
-    console.log(r);
-//    $("#country_sel").prop('disabled', true).html('<option value="209">--pilih--</option>');
-//    $("#country_sel").prop('disabled', true).html('<option value="">Indonesia</option>');
-    r.forEach(function(o){
-      $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
-    });
-    $("#country_sel").prop('disabled', false).change(get_region);
-  }, "json" );
+	$.get(api_base_url+"/ccountry/getlistccountry", function(r){
+	    console.log(r);
+	//    $("#country_sel").prop('disabled', true).html('<option value="209" selected="selected">Indonesia</option>');
+	//    $("#country_sel").prop('disabled', true).html('<option value="">Indonesia</option>');
+	//    $("#country_sel").prop('disabled', true).on("load", get_region);
+	    r.forEach(function(o){
+	      $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
+	    });
+	    $("#country_sel").prop('disabled', true).change(get_region(this));
+	  }, "json" );
 });
 </script>
