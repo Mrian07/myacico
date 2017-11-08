@@ -60,9 +60,9 @@ if($page){
 		$context = stream_context_create($options);
 		$konten2 = file_get_contents($url2, false, $context);
 		// die($konten2);
-                
-                     
-                 
+
+
+
 		$this->data['max_page'] =json_decode($konten2)->pageCount;
 		$this->data['hasil'] = json_decode($konten, true);
                 if($this->data['hasil'])
@@ -202,8 +202,8 @@ $this->load->view('frontend/sidenav',$this->data);
 //              KOMENG CUY ~Samuel  utk page &page=1&itemperpage=1
                 $api_komen = "product/listreview?productid=".$pro_id;
 		$url_komen = api_base_url($api_komen);
-                
-                
+
+
 		$options = ["http" => [
 		"method" => "GET",
 		]];
@@ -217,8 +217,8 @@ $this->load->view('frontend/sidenav',$this->data);
                 //echo "<pre>";die(print_r($komen[0]['user']));
                 //$komen[0]['user']
                  $this->data['komen']=$komen;
-               
-		
+
+
 //die(print_r($hasil['isWishList']));
 
 if(isset($hasil['sku'])){
@@ -284,43 +284,51 @@ if(isset($hasil['sku'])){
 		$this->data['volume'] = $hasil['volume'];
 		$this->data['weight'] = $hasil['weight'];
 			$this->data['rate'] = $hasil['rate'];
-		// jika gambar tidak ada 
+		// jika gambar tidak ada
 
 
-		 $this->data['img'] = $hasil['imageurl'][0];
+
+
+			if(isset($hasil['imageurl'][0])){
+					$this->data['img'] = $hasil['imageurl'][0];
+			}else{
+					$this->data['img'] = "";
+			}
+
 		 	if(isset($hasil['img1'][1]['imageurl'])){
 				$this->data['img1'] = $hasil['imageurl'][1];
-				
+
 				}else{
 					$hasil['imageurl'][1] ='';
-				
+
 				}
 		$this->data['img1'] = $hasil['imageurl'][1];
 			 	if(isset($hasil['img2'][2]['imageurl'])){
 				$this->data['img2'] = $hasil['imageurl'][2];
-				
+
 				}else{
 					$hasil['imageurl'][2] ='';
-				
+
 				}
 		$this->data['img2'] = $hasil['imageurl'][2];
 			if(isset($hasil['img1'][2]['imageurl'])){
 				$this->data['img1'] = $hasil['imageurl'][2];
-				
+
 				}else{
 					$hasil['imageurl'][2] ='';
-				
+
 				}
-	
+
 		if(isset($hasil['img3'][3]['imageurl'])){
 				$this->data['img3'] = $hasil['imageurl'][3];
-				
+
 				}else{
 					$hasil['imageurl'][3] ='';
-				
+
 				}
 	$this->data['img3'] = $hasil['imageurl'][3];
-		// akhir dari jika gambar tidak ada 
+
+		// akhir dari jika gambar tidak ada
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
