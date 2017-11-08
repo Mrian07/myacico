@@ -224,7 +224,7 @@
 						<button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
             <?php
                 //if($cektoken){}
-             
+
 //                    $rating = strpos($rating, 'star3');
 //
 //die(print_r("sam".$rating['star5']));
@@ -279,7 +279,7 @@
 				<td> Rp.<?php echo money($pricelist);  ?></td>
 			</tr>
 
-			
+
 			<tr>
 
 				<th> <?php
@@ -414,33 +414,33 @@
              <div id="komen" class="tab-pane fade">
 		<h3>komeng</h3>
 		<p><?php $ik=0;
-//                die(print_r(coment_rate));
+								$no=1;
                 foreach($komen as $value)
                     {
-                   
+
                         $coment_date=$value['created'];
                         $coment_title=$value['title'];
                         $coment_isi=$value['review'];
                         $coment_rate =$value['star'];
-                        echo "<script>"
-                        . " $(function () {
-                        $('#rateKoms').rateYo({
-                                        rating: $coment_rate,
-                                        readOnly: true
-                        });
-                      });"
-                                . "</script>";
-                        
+												?>
+                        <script>
+                        $(function () {
+												var no = '<?php echo $no; ?>'
+												var rateV = '<?php echo $coment_rate; ?>';
+                        $('#rateKoms'+no).rateYo({
+	                              // rating: $coment_rate,
+																rating: rateV,
+	                              readOnly: true
+	                        });
+	                      });
+                        </script>
+												<?php
                         $coment_user=$value['user'];
-                        //echo "<input type='hiden' class='form-control' id='rateKom' style='width:70px' value='$coment_rate[$ik]'>";
-                        echo $coment_title." "."<div id='rateKoms'></div><br>".$coment_isi."<br> Oleh ".$coment_user."<br>";
-                        //$ik++;
-                        //$this->data['komen']=$value;
-                       //print_r($this->data['coment_user']);
-                        //echo $value[0];
+                        echo $coment_title." "."<div id='rateKoms".$no."'></div><br>".$coment_isi."<br> Oleh ".$coment_user."<br>";
+												$no++;
                     }
-                
-                
+
+
                 ?></p>
 	  </div>
 	</div>
@@ -464,7 +464,7 @@
   });
 
 });
- 
+
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
 
