@@ -190,7 +190,18 @@ function paymentType(payment_method)
 				$(".listPayment").html(html);
 			}
 		});
-	}else{
+	}else if(payment_method=='O'){
+	//	$('#typeVal').val(payment_method);
+       
+		$.ajax
+		({
+		url: "<?php echo site_url('checkout/paymentOnline'); ?>",
+		success:function(html){
+				$(".listPayment").html(html);
+			}
+		});
+	}
+        else{
 		$(".listPayment").html('');
 	}
 }
@@ -253,10 +264,15 @@ function finish(){
 		headers:{"token":token},
 		url: "<?php echo api_base_url('order/checkout'); ?>",
 		success:function(hasil){
+                    console.log("sad",hasil.token);die();
 				if(hasil.status=='1' && paymentMethod=='R'){
 					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 				}else if(hasil.token!='' && paymentMethod=='C'){
 					window.location.replace("<?php echo site_url('checkout/paymentByCreditCard/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
+
+					//window.location.replace("<?php echo site_url('payment/creditcard.php/?c='); ?>"+hasil.token);
+				}else if(hasil.token!='' && paymentMethod=='O'){
+					window.location.replace("<?php echo site_url('checkout/paymentByOnline/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
 
 					//window.location.replace("<?php echo site_url('payment/creditcard.php/?c='); ?>"+hasil.token);
 				}else{
