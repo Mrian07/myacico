@@ -422,11 +422,11 @@
                         $coment_title=$value['title'];
                         $coment_isi=$value['review'];
                         $coment_rate =$value['star'];
-			?>
+												?>
                         <script>
                         $(function () {
-                        var no = '<?php echo $no; ?>'
-                        var rateV = '<?php echo $coment_rate; ?>';
+												var no = '<?php echo $no; ?>'
+												var rateV = '<?php echo $coment_rate; ?>';
                         $('#rateKoms'+no).rateYo({
 	                              // rating: $coment_rate,
 																rating: rateV,
@@ -434,11 +434,10 @@
 	                        });
 	                      });
                         </script>
-			<?php
+												<?php
                         $coment_user=$value['user'];
-
                         echo $coment_title." "."<div id='rateKoms".$no."'></div><br>".$coment_isi."<br> Oleh ".$coment_user."<br>";
-
+												$no++;
                     }
 
 
@@ -465,6 +464,7 @@
   });
 
 });
+
 
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
