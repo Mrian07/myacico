@@ -941,7 +941,7 @@ ul.list-group:after {
 
 						</ul>
 <BR>
-            <?php echo anchor('brand','LIHAT SEMUA <i class="fa fa-arrow-right" aria-hidden="true"></i>', array('class'=>'my-btn-brand')); ?>
+            <?php echo anchor('brand','LIHAT SEMUA <span style="font-size:24px;"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>', array('class'=>'my-btn-brand')); ?>
          </center>
           </div>
 

@@ -213,7 +213,7 @@
 
 		<br><br>
 		<center>
-		<button data-toggle="collapse" data-target="#demo" class='my-btn-brand'>LIHAT SEMUA <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+		<button data-toggle="collapse" data-target="#demo" class='my-btn-brand'>LIHAT SEMUA <span style='font-size:24px;'><i class="fa fa-angle-double-right" aria-hidden="true"></i></span></button>
 		<div id="demo" class="collapse" style='margin-top:20px; text-align:left; border-radius:5px; padding:20px; border:1px solid #c6c4c4; color:#5b5b5b; background:#f7f6f6;'>
 
 			<b>myacico.co.id, E-commerce Terlengkap & Terpercaya Dengan Beragam Produk Pilihan Serta Promo Menarik</b><br> Sebagai Toko Online baru di Indonesia, myacico.co.id yang memiliki slogan “Total Shopping Experience” hadir dengan delapan kategori pilihan untuk memenuhi kebutuhan Anda, mulai dari kebutuhan komputer, gadget, komunikasi, audio dan visual, mekanikal-elektrikal, hobi, perlengkapan rumah dan perlengkapan kantor. Bagi Anda yang memiliki kebutuhan laptop bisnis, laptop gaming, laptop murah, smartphone selfie, dan smartphone murah,  Toko Online myacico.co.id dapat memenuhi kebutuhan Anda denga menghadirkan berbagai varian laptop dan gadget terbaru dan terpopuler di kategori laptop & kategori gadget. Selain itu, Online Shop myacico.co.id juga menghadirkan kategori Komunikasi, Audio-Visual dan Hobi untuk memberikan pilihan produk lifestyle kekinian.<br><br>
