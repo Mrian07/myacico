@@ -381,7 +381,7 @@ if($saw==Null)
 			</div>-->
 
         <?php foreach($hasil as $data){
-           
+
             //die(print_r($data['imageurl']));
           if(isset($data['imageurl'])){
                $img_url= $data['imageurl'];
@@ -393,9 +393,9 @@ if($saw==Null)
 
 		 <div class="item  col-xs-3 col-lg-3">
             <div class="thumbnail">
-               
+
                 <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $img_url; ?>" alt="" />
-              
+
                 <div class="caption">
                     <div  style='height:80px'>
                     <h5 class="group inner list-group-item-heading" style='text-align:center;'><a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a>  </h5><br>
@@ -423,8 +423,9 @@ if($saw==Null)
 
             <center>
               <div class="btn-group">
-                <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-
+                <!-- <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button> -->
+                <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>',
+                    '<?php echo$data['name'];?>','<?php echo$data['stock']; ?>','<?php  echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
                 <?php
                 //if($cektoken){}
                   if($data['isWishList'] =='Y')
@@ -460,10 +461,10 @@ if($saw==Null)
 
         </div>
 
-		<?php 
-                
-            //} 
-                
+		<?php
+
+            //}
+
             } ?>
        <!---
         <div class="item  col-xs-4 col-lg-4">
@@ -494,7 +495,7 @@ if($saw==Null)
 
 
     </div>
-    <div class="demo" id="demo">asa</div>
+  
 <div class="text-center">
     <ul class="pagination">
    <!--<li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>-->
@@ -543,44 +544,218 @@ if($saw==Null)
 
 </ul>
 </div>
+<script>
 
-<script type="text/javascript">
-   new Pagination({
-       parent: '.demo',
-       totalPage:10,
-       align: 'center'
-   };
-
+<script>
 
 $(document).ready(function() {
-    $('#list').click(function(){event.preventDefault();$('#products .item').addClass('list-group-item');});
-    $('#grid').click(function(){event.preventDefault();$('#products .item').removeClass('list-group-item');});
-		$('[data-toggle="tooltip"]').tooltip();
+
+
+    var api2 = api_base_url +'/home/view';
+
+    //$.get(api_base_url+'/aduser/getaddress?addresstype=isshipto',
+
+    $.ajax({
+        type:"GET",
+
+        //beforeSend: getAdd(),
+        success: function(data){
+          console.log('data2',data.level_1)
+					console.log('data23',data.level_1[1])
+						console.log('data untuk level 2',data.level_2)
+            console.log('data untuk level 22',data)
+            console.log('data untuk level 2i',data.level_2[0])
+            function formatNumber (num) {
+                return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+            }
+            function currencyFormat (num) {
+                return "Rp." + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+            }
+
+            function currencyFormatDE (num) {
+                return num
+                   .toFixed(2) // always two decimal digits
+                   .replace(".", ",") // replace decimal point character with ,
+                   .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") // use . as a separator
+            }
+
+						var lvl20 = $('.lvl20');
+            var lvl20p = $('.lvl20p');
+              var lvl20h = $('.lvl20h');
+            lvl20.append(
+            '<img src="'+data.level_2[0].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+            )
+            lvl20p.append(
+              '<p>'+data.level_2[0].name+'</p>'
+            )
+            lvl20h.append(
+              '<p>Rp.'+(formatNumber(data.level_2[0].pricelist))+'</p>'
+            )
+
+            var lvl21 = $('.lvl21');
+            var lvl21p = $('.lvl21p');
+              var lvl21h = $('.lvl21h');
+              lvl21.append(
+              '<img src="'+data.level_2[1].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+              )
+              lvl21p.append(
+                '<p>'+data.level_2[1].name+'</p>'
+              )
+            lvl21h.append(
+                '<p>Rp.'+(formatNumber(data.level_2[1].pricelist))+'</p>'
+              )
+
+              var lvl23 = $('.lvl23');
+              var lvl23p = $('.lvl23p');
+                var lvl23h = $('.lvl23h');
+                console.log('data23', data.level_2[2])
+                lvl23.append(
+                '<img src="'+data.level_2[2].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+                )
+                lvl23p.append(
+                  '<p>'+data.level_2[2].name+'</p>'
+                )
+              lvl23h.append(
+                  '<p>Rp.'+(formatNumber(data.level_2[2].pricelist))+'</p>'
+                )
+
+                var lvl24 = $('.lvl24');
+                var lvl24p = $('.lvl24p');
+                  var lvl24h = $('.lvl24h');
+
+                  lvl24.append(
+                  '<img src="'+data.level_2[3].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+                  )
+                  lvl24p.append(
+                    '<p>'+data.level_2[3].name+'</p>'
+                  )
+                lvl24h.append(
+                    '<p>Rp.'+(formatNumber(data.level_2[3].pricelist))+'</p>'
+                  )
+
+                  var lvl25 = $('.lvl25');
+                  var lvl25p = $('.lvl25p');
+                    var lvl25h = $('.lvl25h');
+
+                    lvl25.append(
+                    '<img src="'+data.level_2[4].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+                    )
+                    lvl25p.append(
+                      '<p>'+data.level_2[4].name+'</p>'
+                    )
+                  lvl25h.append(
+                      '<p>Rp.'+(formatNumber(data.level_2[4].pricelist))+'</p>'
+                    )
+
+                    var lvl26 = $('.lvl26');
+                    var lvl26p = $('.lvl26p');
+                      var lvl26h = $('.lvl26h');
+
+                      lvl26.append(
+                      '<img src="'+data.level_2[5].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+                      )
+                      lvl26p.append(
+                        '<p>'+data.level_2[5].name+'</p>'
+                      )
+                    lvl26h.append(
+                        '<p>Rp.'+(formatNumber(data.level_2[5].pricelist))+'</p>'
+                      )
+
+                      var lvl3 = $('.lvl3');
+                      var lvl3n = $('.lvl3n');
+                        var lvl3h = $('.lvl3h');
+
+                        lvl3.append(
+                        '<img src="'+data.level_3[0].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+                        )
+                        lvl3n.append(
+                          '<p>'+data.level_3[0].name+'</p>'
+                        )
+                      lvl3h.append(
+                          '<p>Rp.'+(formatNumber(data.level_3[0].pricelist))+'</p>'
+                        )
+
+                        var lvl31 = $('.lvl31');
+                        var lvl31n = $('.lvl31n');
+                          var lvl31h = $('.lvl31h');
+
+                          lvl31.append(
+                          '<img src="'+data.level_3[1].imageurl+'" class="img-responsive center-block" alt="No Images Found">'
+                          )
+                          lvl31n.append(
+                            '<p>'+data.level_3[1].name+'</p>'
+                          )
+                        lvl31h.append(
+                            '<p>Rp.'+(formatNumber(data.level_3[1].pricelist))+'</p>'
+                          )
+
+
+
+     var rumah = $('.rumah');
+
+$("#hapus").val(null);
+            data.level_1.forEach(function(p){
+     rumah.append(
+			 '<p>'+p.imageurl+'</p>'
+         //'<div class="item slide1"><div class="row"><div class="container"><div class="col-md-3 text-right"><img src="'+p.imageurl+'"  class="img-responsive" alt="Berry Lace Dress"></div><div class="col-md-9 text-left"></div></div></div></div>'
+      //<div class="col-md-4"><div class="product-item"><div class="pi-img-wrapper"><img src="'+p.imageurl+'" alt="..." height="100" class="img-responsive" alt="Berry Lace Dress"><div></div></div><h3><a href="'+base_url+'product/detail/'+p.alias+'">'+p.name+'</a></h3><div class="pi-price">'+p.alias+'</div></div></div>'
+        )
+
+     });
+            },
+        dataType: "json",
+        url: api2});
+
+
+    console.log('asd',api2);
 
 });
+/*slider product New Collection */
+$(document).ready(function(){
 
-function filter(id){
- //  console.log('sam',$('#sort_id').val(id.value));
-  window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'.$alias.'/'); ?>"+id.value);
+  $('#itemslider').carousel({ interval: 3000 });
 
-}
-$('.pagination').on('click', 'li:not(.prev):not(.next)', function() {
+  $('.carousel-showmanymoveone .item').each(function(){
+    var itemToClone = $(this);
 
-    $('.pagination li').removeClass('active');
-    $(this).not('.prev,.next').addClass('active');
+    for (var i=1;i<6;i++) {
+      itemToClone = itemToClone.next();
+
+      if (!itemToClone.length) {
+      itemToClone = $(this).siblings(':first');
+    }
+
+    itemToClone.children(':first-child').clone()
+    .addClass("cloneditem-"+(i))
+    .appendTo($(this));
+    }
+  });
 });
 
-//    nuOfpage dari total item / (perpage=> 10)
-/*
-function drawPagination(numOfPages) {
-    $('#pag_nav ul').empty();
-    $('#pag_nav ul').append('<li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>');
-   for (var i = 1; i <= numOfPages; i++) {
-      $('#pag_nav ul').append('<li><a href=#>' + i + '</a></li>');
-   }
-   $('#pag_nav ul').append('<li class=next><a href=# aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>');
-}
-*/
+</script>
+
+<script>
+// slide produk
+$('#myCarouselProduct').carousel({
+  interval: 4000
+})
+
+$('.carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+
+  for (var i=0;i<2;i++) {
+    next=next.next();
+    if (!next.length) {
+    	next = $(this).siblings(':first');
+  	}
+
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
 function addWishlist(id,name,imageurl){
 	var dataString = 'id='+id;
@@ -620,24 +795,13 @@ function addWishlist(id,name,imageurl){
 						},
 						closeIcon: true,
 						closeIconClass: 'fa fa-close'
-
 					});
 				}
 			}
 		});
 
 	}else{
-/*
-		$.dialog({
-			title: 'Alert!',
-			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
-			autoClose: 'close|3000',
 
-			},
-			closeIcon: true,
-			closeIconClass: 'fa fa-close'
-		});
-*/
 
         $.ajax({
                 type: "POST",
@@ -649,20 +813,21 @@ function addWishlist(id,name,imageurl){
                  window.location.replace(base_url+"customer/signin/"+id);
                 }
 
-        })
+        });
 	}
 }
 
+ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
+//function addToCart(q,w,e,r,t,y){
 
-function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
-
+console.log('ini'+m_product_id+','+pricelist+','+imageurl+','+name+','+stock+','+weight);
 	var jmlItem = $('#jmlItem'+m_product_id).val();
 	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
 
 	if(jmlItem<=0){
 		$.dialog({
 			title: 'Alert!',
-			content: 'Silakan masukan jumlah item dengan benar',
+			content: '<img src="'+imageurl+'" style="margin-bottom:10px"><p>Silakan masukan jumlah item dengan benar</p>',
 			autoClose: 'close|3000',
 			buttons: {
 				close: function () {
@@ -733,7 +898,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 					if(data=='stockkosong'){
 						$.dialog({
 							title: name,
-							content: 'Item gagal ditambahkan, jumlah melebihi stock yang ada!',
+							content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>Item gagal ditambahkan, jumlah melebihi stock yang ada!</p>',
 							autoClose: 'close|3000',
 							buttons: {
 								close: function () {
@@ -749,7 +914,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 						$(".totalCart").html(data);
 						$.confirm({
 							title: name,
-							content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
+							content: '<img src="'+imageurl+'" style="margin-bottom:10px"><p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
 							autoClose: 'close|3000',
 							buttons: {
 								close: function () {
@@ -762,7 +927,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 					}else{
 						$.dialog({
 							title: name,
-							content: 'Item gagal ditambahkan!',
+							content: '<img src="'+imageurl+'" style="margin-bottom:10px"><p>Item gagal ditambahkan!</p>',
 							autoClose: 'close|3000',
 							buttons: {
 								close: function () {
@@ -782,91 +947,59 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 }
 
 
-
-
-
-
-
-/*
-
-function formatNumber (num) {
-    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
-}
-function currencyFormat (num) {
-    return "Rp." + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
-}
-
-function currencyFormatDE (num) {
-    return num
-       .toFixed(2) // always two decimal digits
-       .replace(".", ",") // replace decimal point character with ,
-       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") // use . as a separator
-}
-
-console.info(formatNumber(2665));      // 2,665
-console.info(formatNumber(102665));    // 102,665
-console.info(formatNumber(111102665)); // 111,102,665
-var myNumeral = numeral(1000);
-var pro = "<?php echo $pro; ?>";
-
-console.log('asd13',pro);
-var value = myNumeral.value();
-// 1000
-
-var myNumeral2 = numeral('1,000');
-
-var value2 = myNumeral2.value();
-console.log('data1', value2);
-
-var price = 1;
-var filter = {
-	category:'<?php echo $pro; ?>'
-}
-filter.price= $('#merk').val();
-$.get(api_base_url+"/product/productlist", filter,
-
-function(data){
-console.log('data nya adalah:', data);
-	var box = $('#title-product');
-	var product = $('.product');
-
-
-	if(data.length == 0) return box.append('<p>Data tidak ditemukan</p>');
-
-	product.append('<div class="row">')
-	data.forEach(function(p){
-
-		if(p.stock < 1  )
-		          {
-		              var disable = 'disabled';
-                  var tidakTsd = '<div class="yu">Stock : Tidak Tersedia</div>';
-
-		          }else{
-                var tidakTsd = '<div class="yu1">Stock : Tersedia</div>';
-              }
-
-							// asd
-
-	product.append(
-
-			'<div class="item  col-xs-4 col-lg-4"><div class="thumbnail"><img class="group list-group-image" src="'+p.imageurl+'" alt="..." style:border="0" height="100"><div class="caption"><h4 class="group inner list-group-item-heading"><a href="'+base_url+'product/detail/'+p.m_product_id+'">'+p.name+'</a>  <a href="'+base_url+'product/wishlist/'+p.m_product_id+'" data-toggle="tooltip" title="Add To Wishlist!"><i class="asd fa fa-heart" aria-hidden="true"></i></a>  </h4><p class="group inner list-group-item-text">'+tidakTsd+'</p> asd <div class="row"><div class="col-xs-12 col-md-6"><p class="lead">Rp.'+(formatNumber(p.pricelist))+'</p></div><div class="col-xs-12 col-md-6"><input type="hidden" id="jmlItem" value="1"><button class="dropbtnaddcar" '+disable+' id="addToCard'+p.m_product_id+'">ADD TO CART</button></div></div></div></div></div>'
-
-
-
-
-
-
-
-	)
-
-
-
-  });
-
-  product.append('</div>')
-
-});
-
-*/
-
 </script>
+
+
+<!-- Demo -->
+    <script src="<?php echo base_url('assets/owl-carousel/owl.carousel.js');?>"></script>
+
+    <style>
+    #owl-demo .item{
+        margin: 3px;
+        /*text-align:center;*/
+    }
+    #owl-demo .item img{
+        display: block;
+        width: auto;
+        height: 150px;
+
+    }
+    </style>
+
+
+    <script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+        autoPlay: 3000,
+        items : 5,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+      });
+
+    });
+    </script>
+
+
+    <style>
+    .promo-front .item{
+        margin: 3px;
+    }
+    .promo-front .item img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    </style>
+
+
+    <script>
+    $(document).ready(function() {
+      $(".promo-front").owlCarousel({
+        autoPlay: 3000,
+        items : 6,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+      });
+
+    });
+    </script>
