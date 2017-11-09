@@ -10,13 +10,13 @@
 
 		<div class='garansi'>
 			<ul>
-				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' /><br><br><b>Jaminan Pengiriman</b><br>Kami akan mengembalikan uang Anda secara penuh, jika barang tidak terkirim.</li>
-				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon2.png');?>' border='0' /><br><br><b>Perlindungan Konsumen</b><br>
-				Kami akan mengembalikan uang Anda secara penuh, jika barang tidak sesuai dengan deskripsi atau kualitas buruk.</li>
+				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' /><br><br><b>Gratis Pengiriman</b><br>Kami akan mengirimkan pesanan anda secara cuma-cuma untuk area Jakarta</li>
+				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon2.png');?>' border='0' /><br><br><b>Keamanan Pembayaran</b><br>
+				Kami akan memastikan kerahasiaan informasi pembayaran Anda.</li>
 
-				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon3.png');?>' border='0' /><br><br><b>Pembayaran Aman</b><br>Kami menghadirkan pilihan metode pembayaran yang aman dan bervariasi</li>
-				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' /><br><br><b>Respon Cepat</b><br>Pertanyaan akan ditanggapi dalam waktu 24 jam.</li>
-				<li><img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' /><br><br><b>Jaminan Keaslian</b><br>Kami menjadmin produk yang kami jual 100% bukan barang palsu.</li>
+				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon3.png');?>' border='0' /><br><br><b>Kemudahan Transaksi</b><br>Anda bisa melakukan transaksi dengan mudah melalui berbagai metode pembayaran</li>
+				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' /><br><br><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</li>
+				<li><img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' /><br><br><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</li>
 			</ul>
 		</div>
 		<br><br>
@@ -33,10 +33,7 @@
 			</div>
 			<div class="col-xs-2">
 				<b>Bantuan</b><br>
-				<?php echo anchor('Pages/faq','FAQ', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Cara Berbelanja', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('Pages/Pengembalian','Pengembalian Dan Pembatalan', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('Pages/Jaminan','Garansi Dan Jaminan', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/faq','G/Jaminan','Garansi Dan Jaminan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Status Pesanan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Customer/contact','Hubungi Kami', array('class'=>'my-info')); ?>
 			</div>
