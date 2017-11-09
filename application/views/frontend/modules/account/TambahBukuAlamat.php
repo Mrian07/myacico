@@ -43,7 +43,11 @@
 						</div>
 
 					</div>
+                                        <div class="form-group">
+                                        <label>Atas Nama:</label>
+                                        <input type="text" id="atas_name" name="name" class="form-control mandatory"/>
 
+                                        </div>
 					<div class="form-group">
 					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
 					  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
@@ -55,7 +59,8 @@
 
 
 					  <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
-					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
+					  <label>Alamat Lain:</label>
+                                          <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
 
 
 					</div>
@@ -206,7 +211,7 @@ $.ajax({
     type:"GET",
     headers:{"token":token},
     success: function(data){
-        $("#name").val(data.name)
+        //$("#name").val(data.name)
         $("#phone").val(data.phone);
         $("#phone2").val(data.phone2);
 
@@ -219,7 +224,7 @@ $.ajax({
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
 
     var apiurl = api_base_url +'/aduser/addaddress';
-    var name = $("#name").val();
+    var name = $("#atas_name").val();
     var phone = $("#phone").val();
     var phone2 = $("#phone2").val();
     var address_name = $("#address_name").val();

@@ -411,7 +411,7 @@
 		<p><?php echo $highlight;  ?></p>
 	  </div>
              <div id="komen" class="tab-pane fade">
-		<h3>komeng</h3>
+		<h3>Kometar</h3>
 		<p><?php $ik=0;
 								$no=1;
                 foreach($komen as $value)
