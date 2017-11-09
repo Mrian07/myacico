@@ -253,7 +253,7 @@
 	  <li><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
           <li class="active"><a data-toggle="tab" href="#menu2">Spesifkasi</a></li>
 		<li><a data-toggle="tab" href="#menu3">Highlight</a></li>
-                <li><a data-toggle="tab" href="#komen">Komen</a></li>
+                <li><a data-toggle="tab" href="#komen">Ulasan</a></li>
 	</ul>
 
 	<div class="tab-content">
