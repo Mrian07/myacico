@@ -730,7 +730,7 @@ ul.list-group:after {
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-b3.jpg');?>' border='0' width='100%' height='200'></div>
   </div>
 
-  <div class="span12" style='background:#F8B03F; padding:10px; margin-top:10px'>
+  <div class="span12" style='background:#fad8a4; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel">
       <?php
@@ -774,7 +774,7 @@ ul.list-group:after {
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-c3.jpg');?>' border='0' width='100%' height='200'></div>
   </div>
 
-  <div class="span12" style='background:#9EC021; padding:10px; margin-top:10px'>
+  <div class="span12" style='background:#f1fae7; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel">
       <?php
@@ -818,7 +818,7 @@ ul.list-group:after {
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-d3.jpg');?>' border='0' width='100%' height='200'></div>
   </div>
 
-  <div class="span12" style='background:#E54633; padding:10px; margin-top:10px'>
+  <div class="span12" style='background:#fde3e0; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel">
       <?php
@@ -862,7 +862,7 @@ ul.list-group:after {
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-e3.jpg');?>' border='0' width='100%' height='200'></div>
   </div>
 
-  <div class="span12" style='background:#652D90; padding:10px; margin-top:10px'>
+  <div class="span12" style='background:#f1e0fd; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel">
       <?php
