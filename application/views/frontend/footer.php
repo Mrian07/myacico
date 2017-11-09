@@ -214,7 +214,7 @@
 		<br><br>
 		<center>
 		<button data-toggle="collapse" data-target="#demo" class='my-btn-brand'>LIHAT SEMUA <span style='font-size:24px;'><i class="fa fa-angle-double-right" aria-hidden="true"></i></span></button>
-		<div id="demo" class="collapse" style='margin-top:20px; text-align:left; border-radius:5px; padding:20px; border:1px solid #c6c4c4; color:#5b5b5b; background:#f7f6f6;'>
+		<div id="demo" class="collapse" style='margin-top:20px; text-align:left; border-radius:5px; padding:20px; color:#111111; '>
 
 			<b>myacico.co.id, E-commerce Terlengkap & Terpercaya Dengan Beragam Produk Pilihan Serta Promo Menarik</b><br> Sebagai Toko Online baru di Indonesia, myacico.co.id yang memiliki slogan “Total Shopping Experience” hadir dengan delapan kategori pilihan untuk memenuhi kebutuhan Anda, mulai dari kebutuhan komputer, gadget, komunikasi, audio dan visual, mekanikal-elektrikal, hobi, perlengkapan rumah dan perlengkapan kantor. Bagi Anda yang memiliki kebutuhan laptop bisnis, laptop gaming, laptop murah, smartphone selfie, dan smartphone murah,  Toko Online myacico.co.id dapat memenuhi kebutuhan Anda denga menghadirkan berbagai varian laptop dan gadget terbaru dan terpopuler di kategori laptop & kategori gadget. Selain itu, Online Shop myacico.co.id juga menghadirkan kategori Komunikasi, Audio-Visual dan Hobi untuk memberikan pilihan produk lifestyle kekinian.<br><br>
 		Bagi Anda yang membutuhkan produk-produk maknikal-elektrikal, Toko Online MyACICO membantu Anda untuk memiliki perlengkapan mekanik-elektrik secara mudah dengan penawaran produk mekanikal terlengkap, mulai dari produk Bor, Genset, dan Gerinda. Berbagai produk perlengkapan rumah tangga juga hadir di Online Shop myacico.co.id, mulai dari produk elektronik rumah tangga,  seperti AC, perlatan dapur, kulkas, kompor, perlengkapan menjahit, perlengkapan mencuci, perlengkapan sanitasi, peralatan kebersihan dan barang konsumsi rumah tangga. Ditambah dengan varian perlengkapan kantor mulai dari  mebel kantor, perlengkapan seni, pengarsipan dokumen, buku, printer label, smart access, aksesoris meja kantor, kalkulator, mesin absen, kertas, shredder , mesin jilid & laminasi, papan tulis dan peralatan kasir. Ayo belanja online kebutuhan sehari-hari Anda di online shop myacico.co.id dengan kategori terlengkap dan terpecaya. Rasakan “Total Shopping Experience” Anda dengan menjelajahi kategori dengan ribuan produk pilihan di online shop myacico.co.id!
@@ -235,7 +235,7 @@
 
 
 	</div>
-	<div class='cpyright'>
+	<div class='copyright'>
 		Copyright &copy; 2017 PT. MyAcico Global Indonesia. All Rights Reserved.
 	</div>
 </div>

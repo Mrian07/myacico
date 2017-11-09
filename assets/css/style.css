@@ -521,13 +521,12 @@ a:hover.my-info {
   		text-decoration: none;
   }
 
-  .cpyright{
+  .copyright{
   	margin-top: 10px;
   	text-align: center;
   	color:#111111;
-  	font-family: verdana;
-  	font-size: 13px;
-  	background-color: #c6c4c4;
+  	font-family: arial;
+  	font-size: 14px;
   	padding:10px;
     font-weight: bold;
   }
