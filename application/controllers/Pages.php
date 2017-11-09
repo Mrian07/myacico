@@ -31,6 +31,54 @@ class Pages extends Web {
     $this->load->view('frontend/modules/pages/aboutus.php',$this->data);
     $this->load->view('frontend/footer',$this->data);
   }
+	public function SyaratDnKetentuan()
+	{
+		$this->data['title_web'] = "Myacico.com - Home";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+
+		$this->load->view('frontend/modules/pages/syarat.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function kebijakanPrivasi()
+	{
+		$this->data['title_web'] = "Myacico.com - Home";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+
+		$this->load->view('frontend/modules/pages/kebijakanprivas.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function Pengembalian()
+	{
+		$this->data['title_web'] = "Myacico.com - Home";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+
+		$this->load->view('frontend/modules/pages/pengembalian.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	public function Jaminan()
+	{
+		$this->data['title_web'] = "Myacico.com - Home";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+
+		$this->load->view('frontend/modules/pages/jaminan.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function hakCipta()
+	{
+		$this->data['title_web'] = "Myacico.com - Home";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+
+		$this->load->view('frontend/modules/pages/hakcipta.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 
 	public function payment()
 	{
@@ -53,7 +101,7 @@ class Pages extends Web {
 		}else{
 			$this->load->view('frontend/modules/pages/faq.php',$this->data);
 		}
-	
+
 		$this->load->view('frontend/footer',$this->data);
 	}
 

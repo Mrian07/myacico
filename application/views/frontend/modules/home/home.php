@@ -664,7 +664,7 @@ ul.list-group:after {
         			<hr class="line">
 
               <center><div class="btn-group">
-                 <button type="button" class="btn btn-danger" onClick="addToCart('<?php echo$itemslide3['product_id'];?>','<?php echo$itemslide3['pricelist'];?>','<?php echo$itemslide3['imageurl'];?>',
+               <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
                    '<?php echo$itemslide3['name'];?>','<?php echo$itemslide3['stock']; ?>','<?php echo $itemslide3['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
                <button type="button" class="btn btn-success"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
              </div></center>
@@ -1198,8 +1198,12 @@ function addWishlist(id,name,imageurl){
  function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 //function addToCart(q,w,e,r,t,y){
 
+
+
+
 console.log('ini'+m_product_id+','+pricelist+','+imageurl+','+name+','+stock+','+weight);
-	var jmlItem = $('#jmlItem'+m_product_id).val();
+	//var jmlItem = $('#jmlItem'+m_product_id).val();
+  var jmlItem = 1;
 	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
 
 	if(jmlItem<=0){
@@ -1218,6 +1222,7 @@ console.log('ini'+m_product_id+','+pricelist+','+imageurl+','+name+','+stock+','
 
 	}else{
 
+    //Jika sudah login
 		var cookie = document.cookie.split('x-auth=');
 		if(cookie.length > 1){
 			var token = cookie[1].split(';').shift();
