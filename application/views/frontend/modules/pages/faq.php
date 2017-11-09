@@ -167,7 +167,7 @@ a:hover, a:focus {
             <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
                 <div class="content">
                   <i class="fa fa-money fa-5x"></i>
-                    <h4 class="title"><h4 class="title"><?php echo anchor('Pages/Pemb','Pembayaran'); ?></h4></h4>
+                    <h4 class="title"><h4 class="title"><?php echo anchor('Pages/Pemb','Pengembalian'); ?></h4></h4>
                     <!-- <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p> -->
                 </div>
             </div> <!-- end card -->

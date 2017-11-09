@@ -623,11 +623,11 @@ ul.list-group:after {
         <br>
         <center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
             <hr>
-            <center><div class="btn-group">
+            <center>
              <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
-               '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+               '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button><br/>
              <button type="button" class="btn btn-primary" onClick="addWishlist('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
-           </div></center>
+        </center>
 
       </div>
       <?php $n++;  } ?>
