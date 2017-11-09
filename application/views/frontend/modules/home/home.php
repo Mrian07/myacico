@@ -936,7 +936,7 @@ ul.list-group:after {
   <?php $bloop = 0; foreach($dathome['level_4'] as $datBrand){
     if($bloop <16){
     ?>
-    <li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="Smiley face" height="80%" width="100"></li>
+    <li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="Smiley face" height="80%" width="110"></li>
   <?php } $bloop++; } ?>
 
 						</ul>
