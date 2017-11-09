@@ -35,14 +35,18 @@ class Cart extends Web {
 		//$id_unik = $this->unik();
 
 		$id = $this->input->post('m_product_id');
-		$name = $this->input->post('name');
+		//$name = $this->input->post('name');
+		$name = preg_replace('#[^A-Za-z0-9\ ]+#', '',  $this->input->post('name'));
+		// $name = $this->input->post('name');
+		// $name = str_replace("[","-", $name);
+		// $name = str_replace("]","-", $name);
+
 		$jmlItem = $this->input->post('jmlItem');
 		$price = $this->input->post('pricelist');
 		$imageurl = $this->input->post('imageurl');
 		$weight = $this->input->post('weight');
 
 		$stock = $this->input->post('stock');
-
 
 		$jmlQty=0;
 		foreach ($this->cart->contents() as $items):
@@ -51,12 +55,13 @@ class Cart extends Web {
 			}
 		endforeach;
 
-		if($stock>=($jmlQty+$jmlItem)){
+		//note:sementara stock kosong biarkan masuk keranjang
+		//if($stock>=($jmlQty+$jmlItem)){
 
 		$data = array(
 				'id'      => $id,
 				//'id_product' => $m_product_id,
-				'name' => $name,
+				'name' => "$name",
 				'qty'     => $jmlItem,
 				'price'   => $price,
 				'image'    => $imageurl,
@@ -75,9 +80,9 @@ class Cart extends Web {
 				echo"gagal";
 			}
 
-		}else{
-			echo"stockkosong";
-		}
+		// }else{
+		// 	echo"stockkosong";
+		// }
 
 	}
 

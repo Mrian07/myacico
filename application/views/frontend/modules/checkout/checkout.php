@@ -190,7 +190,18 @@ function paymentType(payment_method)
 				$(".listPayment").html(html);
 			}
 		});
-	}else{
+	}else if(payment_method=='O'){
+	//	$('#typeVal').val(payment_method);
+       //alert(payment_method);
+		$.ajax
+		({
+		url: "<?php echo site_url('checkout/paymentOnline'); ?>",
+		success:function(html){
+				$(".listPayment").html(html);
+			}
+		});
+	}
+        else{
 		$(".listPayment").html('');
 	}
 }
@@ -207,7 +218,7 @@ function finish(){
 	var courier_amount =$('#courier_amount').val();
 	var data = {};
 	var baseApiUrl = '<?php echo $baseApiUrl; ?>';
-
+//alert(code);die();
 	if(billing_address_id==''){
 		$.alert({
 			title: 'Alert!',
@@ -223,7 +234,7 @@ function finish(){
 			title: 'Alert!',
 			content: 'Silakan pilih metode pembayaran',
 		});
-	}else if(paymentMethod=='R' && code==''){
+	}else if(paymentMethod=='R' && code==''|| paymentMethod=='0' && code==''){
 		$.alert({
 			title: 'Alert!',
 			content: 'Silakan pilih bank transfer',
@@ -244,7 +255,8 @@ function finish(){
 		data.code = code;
 		data.courier = courier;
 		data.courier_amount = courier_amount;
-
+//                alert(code);
+//console.log("sad",data);die();
 		$.ajax
 		({
 		type: "POST",
@@ -253,10 +265,15 @@ function finish(){
 		headers:{"token":token},
 		url: "<?php echo api_base_url('order/checkout'); ?>",
 		success:function(hasil){
+                    
 				if(hasil.status=='1' && paymentMethod=='R'){
 					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 				}else if(hasil.token!='' && paymentMethod=='C'){
 					window.location.replace("<?php echo site_url('checkout/paymentByCreditCard/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
+
+					//window.location.replace("<?php echo site_url('payment/creditcard.php/?c='); ?>"+hasil.token);
+				}else if(hasil.token!='' && paymentMethod=='O'){
+					window.location.replace("<?php echo site_url('checkout/paymentByOnline/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
 
 					//window.location.replace("<?php echo site_url('payment/creditcard.php/?c='); ?>"+hasil.token);
 				}else{
