@@ -258,11 +258,11 @@
 
 	<div class="tab-content">
 	  <div id="menu1" class="tab-pane fade">
-		<h3>Description</h3>
+		
 		<p><?php echo $description;  ?></p>
 	  </div>
           <div id="menu2" class="tab-pane fade in active">
-		<h3>HOME</h3>
+		
 		<table class="table table-striped">
 			<tr>
 				<th> Brand </th>
@@ -408,11 +408,11 @@
 
 	  </div>
           <div id="menu3" class="tab-pane fade">
-		<h3>Highlight</h3>
+		
 		<p><?php echo $highlight;  ?></p>
 	  </div>
              <div id="komen" class="tab-pane fade">
-		<h3>Kometar</h3>
+		
 		<p><?php $ik=0;
 								$no=1;
                 foreach($komen as $value)
