@@ -614,14 +614,14 @@ ul.list-group:after {
           <h6 class="text-center link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></h6>
           <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
           <div class="ratings" style='text-align: center; color:#d98c13;'>
+              <!-- <span class="glyphicon glyphicon-star"></span>
               <span class="glyphicon glyphicon-star"></span>
               <span class="glyphicon glyphicon-star"></span>
               <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star-empty"></span>
+              <span class="glyphicon glyphicon-star-empty"></span> -->
           </div>
         <br>
-        <center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
+        <center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
             <hr>
             <center><div class="btn-group">
              <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
@@ -654,13 +654,13 @@ ul.list-group:after {
         			<h6 class="link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></h6>
               <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></h5>
         			<div class="ratings" style='text-align: center; color:#d98c13;'>
+                      <!-- <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star-empty"></span>
+                      <span class="glyphicon glyphicon-star-empty"></span> -->
                   </div><br>
-					<center><input type='number' class='form-control' id='jmlItem<?php echo$itemslide3['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
+					<center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide3['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
         			<hr class="line">
 
               <center><div class="btn-group">
@@ -687,7 +687,7 @@ ul.list-group:after {
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-a3.jpg');?>' border='0' width='100%' height='200'></div>
   </div>
 
-  <div class="span12" style='background:#fde8ef; padding:10px; margin-top:10px'>
+  <div class="span12" style='background:#91C9EA; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel">
       <?php
@@ -730,7 +730,7 @@ ul.list-group:after {
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-b3.jpg');?>' border='0' width='100%' height='200'></div>
   </div>
 
-  <div class="span12" style='background:#f0e6fe; padding:10px; margin-top:10px'>
+  <div class="span12" style='background:#F8B03F; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel">
       <?php
@@ -774,7 +774,7 @@ ul.list-group:after {
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-c3.jpg');?>' border='0' width='100%' height='200'></div>
   </div>
 
-  <div class="span12" style='background:#f1fae7; padding:10px; margin-top:10px'>
+  <div class="span12" style='background:#9EC021; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel">
       <?php
@@ -818,7 +818,7 @@ ul.list-group:after {
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-d3.jpg');?>' border='0' width='100%' height='200'></div>
   </div>
 
-  <div class="span12" style='background:#fde3e0; padding:10px; margin-top:10px'>
+  <div class="span12" style='background:#E54633; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel">
       <?php
@@ -862,7 +862,7 @@ ul.list-group:after {
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-e3.jpg');?>' border='0' width='100%' height='200'></div>
   </div>
 
-  <div class="span12" style='background:#f1e0fd; padding:10px; margin-top:10px'>
+  <div class="span12" style='background:#652D90; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel">
       <?php
@@ -1354,7 +1354,7 @@ console.log('ini'+m_product_id+','+pricelist+','+imageurl+','+name+','+stock+','
     $(document).ready(function() {
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
-        items : 5,
+        items : 6,
         itemsDesktop : [1199,3],
         itemsDesktopSmall : [979,3]
       });
