@@ -10,16 +10,59 @@
 
 		<div class='garansi'>
 			<ul>
-				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon1.jpg');?>' border='0' /><br><br><b>Perlindungan Konsumen</b><br>
+				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' /><br><br><b>Jaminan Pengiriman</b><br>Kami akan mengembalikan uang Anda secara penuh, jika barang tidak terkirim.</li>
+				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon2.png');?>' border='0' /><br><br><b>Perlindungan Konsumen</b><br>
 				Kami akan mengembalikan uang Anda secara penuh, jika barang tidak sesuai dengan deskripsi atau kualitas buruk.</li>
-				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon2.jpg');?>' border='0' /><br><br><b>Jaminan Pengiriman</b><br>Kami akan mengembalikan uang Anda secara penuh, jika barang tidak terkirim.</li>
-				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon3.jpg');?>' border='0' /><br><br><b>Pembayaran Aman</b><br>Kami menghadirkan pilihan metode pembayaran yang aman dan bervariasi</li>
-				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon4.jpg');?>' border='0' /><br><br><b>Respon Cepat</b><br>Pertanyaan akan ditanggapi dalam waktu 24 jam.</li>
-				<li><img src='<?php echo base_url('images/general/f-icon5.jpg');?>' border='0' /><br><br><b>Jaminan Keaslian</b><br>Kami menjadmin produk yang kami jual 100% bukan barang palsu.</li>
+
+				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon3.png');?>' border='0' /><br><br><b>Pembayaran Aman</b><br>Kami menghadirkan pilihan metode pembayaran yang aman dan bervariasi</li>
+				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' /><br><br><b>Respon Cepat</b><br>Pertanyaan akan ditanggapi dalam waktu 24 jam.</li>
+				<li><img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' /><br><br><b>Jaminan Keaslian</b><br>Kami menjadmin produk yang kami jual 100% bukan barang palsu.</li>
 			</ul>
 		</div>
 		<br><br>
 
+		<div class="row">
+			<div class="col-xs-2">
+				<b>Informasi</b><br>
+				<?php echo anchor('Pages/AboutUs','Tentang Kami', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('#','Blog MyACICO.co.id', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/SyaratDnKetentuan','Syarat & Ketentuan', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('#','Karir', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/kebijakanPrivasi','Kebajikan Privasi', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/hakCipta','Kebijakan Hak Cipta', array('class'=>'my-info')); ?>
+			</div>
+			<div class="col-xs-2">
+				<b>Bantuan</b><br>
+				<?php echo anchor('Pages/faq','FAQ', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('#','Cara Berbelanja', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/Pengembalian','Pengembalian Dan Pembatalan', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/Jaminan','Garansi Dan Jaminan', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('#','Status Pesanan', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Customer/contact','Hubungi Kami', array('class'=>'my-info')); ?>
+			</div>
+			<div class="col-xs-2">
+				<b>Ikuti Kami</b><br>
+				<div class='sos'>
+					<ul>
+						<li><a href="https://www.youtube.com/channel/UCT6wkP8xyhEgDZzrbuWBQRg"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.youtube.com/channel/UCT6wkP8xyhEgDZzrbuWBQRg"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>
+					  <li><a class="active" href="https://www.facebook.com/MyacicoID/?ref=aymt_homepage_panel"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					  <li><a href="https://twitter.com/myacicoid"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					  <li><a href="https://www.instagram.com/myacico.id/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-2">
+				<b>Email Newsletter</b>
+			</div>
+			<div class="col-xs-2">
+				<b>Metode Pembayaran</b>
+			</div>
+			<div class="col-xs-2">
+				<b>Jasa Perngiriman</b>
+			</div>
+		</div>
+		<br><br>
 
 		<div class="row">
 			<div class="col-xs-3">
@@ -40,6 +83,11 @@
 				<?php echo anchor('#','Status Pesanan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Customer/contact','Hubungi Kami', array('class'=>'my-info')); ?>
 			</div>
+
+
+
+
+
 			<div class="col-xs-3">
 				<h3><span>IKUTI KAMI</span></h3>
 				<div class='sos'>
