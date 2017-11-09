@@ -52,12 +52,13 @@ cursor:pointer;
             <!-- End Header Navigation -->
 
             <!-- Collect the nav links, forms, and other content for toggling -->
+
             <div class="collapse navbar-collapse" id="navbar-menu">
-                <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp" style='width:100%; text-align:center'>
+                <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp" style='text-align:center'>
 
 
 									<?php foreach($hasilNav as $dataNav){ ?>
-									<li class="dropdown megamenu-fw nav-show-desktop" style='width:11%;'>
+									<li class="dropdown megamenu-fw nav-show-desktop">
 										<?php echo anchor('#', $dataNav['name'], array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
 										<ul class="dropdown-menu megamenu-content" role="menu">
 											<li>
