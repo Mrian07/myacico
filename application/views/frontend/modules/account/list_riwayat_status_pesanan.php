@@ -22,7 +22,7 @@
 
         	</thead>
         	<tbody>
-        		<?php foreach($hasil as $items):	?>
+        		<?php foreach($hasil as $items): 	?>
         			<tr>
         				<td data-title="Tanggal Order"><?php echo tanggal_time($items['waktuTransaksi']);?></td>
         				<td data-title="Total Pembayaran">Rp.<?php echo money($items['grandTotal']);?></td>
@@ -31,6 +31,7 @@
         				<td data-title="Status"><?php echo $items['transactionStatus'];?></td>
         				<td data-title="Detail"><?php echo anchor('account/formTransactionDetail/'.$items['idTransaksi'], 'Detail', array('class'=>'btn btn-info'));?></td>
         				<td data-title="Konfirmasi/ Credit Card"><?php
+                                        //die(print_r($items['paymentMethod']));
         					if($items['paymentMethod']=='Bank Transfer'){
         						if($items['transactionStatus']=='PAID'){
         							echo anchor('#', 'Konfirmasi', array('class'=>'btn btn-warning disabled'));
@@ -38,7 +39,7 @@
         							echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
         						}
         					}else{
-
+       
         						if($items['transactionStatus']=='PAID'){
         							echo anchor('#', 'Paid', array('class'=>'btn btn-warning disabled'));
         						}else{

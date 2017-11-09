@@ -192,7 +192,7 @@ function paymentType(payment_method)
 		});
 	}else if(payment_method=='O'){
 	//	$('#typeVal').val(payment_method);
-       
+       //alert(payment_method);
 		$.ajax
 		({
 		url: "<?php echo site_url('checkout/paymentOnline'); ?>",
@@ -218,7 +218,7 @@ function finish(){
 	var courier_amount =$('#courier_amount').val();
 	var data = {};
 	var baseApiUrl = '<?php echo $baseApiUrl; ?>';
-
+//alert(code);die();
 	if(billing_address_id==''){
 		$.alert({
 			title: 'Alert!',
@@ -234,7 +234,7 @@ function finish(){
 			title: 'Alert!',
 			content: 'Silakan pilih metode pembayaran',
 		});
-	}else if(paymentMethod=='R' && code==''){
+	}else if(paymentMethod=='R' && code==''|| paymentMethod=='0' && code==''){
 		$.alert({
 			title: 'Alert!',
 			content: 'Silakan pilih bank transfer',
@@ -255,7 +255,8 @@ function finish(){
 		data.code = code;
 		data.courier = courier;
 		data.courier_amount = courier_amount;
-
+//                alert(code);
+//console.log("sad",data);die();
 		$.ajax
 		({
 		type: "POST",
@@ -264,7 +265,7 @@ function finish(){
 		headers:{"token":token},
 		url: "<?php echo api_base_url('order/checkout'); ?>",
 		success:function(hasil){
-                    console.log("sad",hasil.token);die();
+                    
 				if(hasil.status=='1' && paymentMethod=='R'){
 					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 				}else if(hasil.token!='' && paymentMethod=='C'){
