@@ -572,6 +572,7 @@ ul.list-group:after {
 }
 .btn.btn-custom-sm{
     border-radius: 22px;
+    font-size: 16.5px;
       color: white;
     background-color: #FEBD9F;
 }
@@ -643,7 +644,7 @@ ul.list-group:after {
              <button type="button" class="btn btn-default btn-lg btn-custom-lg"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
                '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
 
-           <button style="margin-top:10px;" type="button" class="btn btn-custom-sm" onClick="addWishlist('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+           <button style="margin-top:10px;" type="button" class="btn btn-custom-sm" onClick="addWishlist('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Add To Wishlist</button>
         </center>
 
       </div>
@@ -680,11 +681,11 @@ ul.list-group:after {
 					<center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide3['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
         			<hr class="line">
 
-              <center><div class="btn-group">
-               <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
+              <center>
+               <button type="button" class="btn btn-primary "  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
                    '<?php echo$itemslide3['name'];?>','<?php echo$itemslide3['stock']; ?>','<?php echo $itemslide3['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
                <button type="button" class="btn btn-success"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
-             </div></center>
+          </center>
 
 
       		</span>
