@@ -184,9 +184,9 @@ a{
 		          <div class="col-xs-9" style='font-size:15px; color:#444242; padding-left:3px;'>Selamat Datang<br>
 								<?php if(isset($user)){ ?>
 									<b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
-									<b><font color='red'><?php echo anchor('#', 'Logout', array('class'=>'logout btn-nav-red'));?></font></b>
+									<b><font color='red'><?php echo anchor('#', 'Logout', array('class'=>'logout btn-nav-black'));?></font></b>
 								<?php }else{ ?>
-									<b><font color='red'><?php echo anchor('customer/signIn','Login', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create','Daftar', array('class'=>'btn-nav-red')); ?></font></b>
+									<b><font color='red'><?php echo anchor('customer/signIn','Login', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create','Daftar', array('class'=>'btn-nav-black')); ?></font></b>
 								<?php } ?>
 							</div>
 						</div>

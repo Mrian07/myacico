@@ -318,12 +318,12 @@ a:hover.my-info {
     padding: 11px 20px;
     border: none;
     border-radius: 4px 0px 0px 4px;
-    background-color: #111111;
-    color:#d0d0d0;
+    background-color: #4d4d4d;
+    color:#f8f5f0;
 	}
 
 	.my-search:hover {
-	    background-color: #4c4e51;
+	    background-color: #131212;
 	    color: white;
 	}
 
@@ -332,7 +332,7 @@ a:hover.my-info {
 	    border: none;
 	    border-radius: 4px;
 	    background: #cd0000 url("../../images/general/red-emboss.jpg");
-		  color:#d0d0d0;
+		  color:#f8f5f0;
       font-size: 30px;
 	}
 
@@ -393,6 +393,22 @@ a:hover.my-info {
 
   .btn-nav-red:active{
     color: #fd9898;
+    text-decoration: none;
+  }
+
+
+  .btn-nav-black{
+    color: #111111;
+    text-decoration: none;
+  }
+
+  .btn-nav-black:hover{
+    color: #9f9e9e;
+    text-decoration: none;
+  }
+
+  .btn-nav-black:active{
+    color: #9f9e9e;
     text-decoration: none;
   }
 
