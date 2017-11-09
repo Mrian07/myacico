@@ -31,14 +31,20 @@
         				<td data-title="Status"><?php echo $items['transactionStatus'];?></td>
         				<td data-title="Detail"><?php echo anchor('account/formTransactionDetail/'.$items['idTransaksi'], 'Detail', array('class'=>'btn btn-info'));?></td>
         				<td data-title="Konfirmasi/ Credit Card"><?php
-                                        //die(print_r($items['paymentMethod']));
+                                       
         					if($items['paymentMethod']=='Bank Transfer'){
         						if($items['transactionStatus']=='PAID'){
         							echo anchor('#', 'Konfirmasi', array('class'=>'btn btn-warning disabled'));
         						}else{
         							echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
         						}
-        					}else{
+        					}elseif($items['paymentMethod']=='Online Payment-Klikpay BCA'){
+                                                    if($items['transactionStatus']=='PAID'){
+        							echo anchor('#', 'Paid', array('class'=>'btn btn-warning disabled'));
+        						}else{
+        							echo anchor('checkout/paymentByOnline/'.$items['idTransaksi'].'/'.$items['token'], 'Pay By Online Payment', array('class'=>'btn btn-warning'));
+        						}
+                                                }else{
        
         						if($items['transactionStatus']=='PAID'){
         							echo anchor('#', 'Paid', array('class'=>'btn btn-warning disabled'));
