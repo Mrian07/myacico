@@ -651,13 +651,13 @@ ul.list-group:after {
           </div>
         <br>
         <center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
-            <hr>
+            <!-- <hr>
             <center>
-             <!-- <button type="button" class="btn btn-default btn-lg btn-custom-lg"  onClick="addToCart('<?php // echo$itemslide2['product_id'];?>','<?php // echo$itemslide2['pricelist'];?>','<?php// echo$itemslide2['imageurl'];?>',
+             <button type="button" class="btn btn-default btn-lg btn-custom-lg"  onClick="addToCart('<?php // echo$itemslide2['product_id'];?>','<?php // echo$itemslide2['pricelist'];?>','<?php// echo$itemslide2['imageurl'];?>',
                '<?php// echo$itemslide2['name'];?>','<?php //echo$itemslide2['stock']; ?>','<?php //echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
 
-           <button style="margin-top:10px;" type="button" class="btn btn-custom-sm" onClick="addWishlist('<?php //echo$itemslide2['product_id'];?>','<?php// echo$itemslide2['name'];?>','<?php //echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Add To Wishlist</button> -->
-        </center>
+           <button style="margin-top:10px;" type="button" class="btn btn-custom-sm" onClick="addWishlist('<?php //echo$itemslide2['product_id'];?>','<?php// echo$itemslide2['name'];?>','<?php //echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Add To Wishlist</button>
+        </center> -->
 
       </div>
       <?php $n++;  } ?>
@@ -684,20 +684,20 @@ ul.list-group:after {
         			<h6 class="link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></h6>
               <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></h5>
         			<div class="ratings" style='text-align: center; color:#d98c13;'>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star-empty"></span>
-                  </div><br>
-					<center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide3['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
-        			<hr class="line">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div><br>
+				        <center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide3['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
 
-              <center>
-               <!-- <button type="button" class="btn btn-custom-xs "  onClick="addToCart('<?php // echo$itemslide2['product_id'];?>','<?php // echo$itemslide2['pricelist'];?>','<?php // echo$itemslide2['imageurl'];?>',
+
+              <!-- <center>
+               <button type="button" class="btn btn-custom-xs "  onClick="addToCart('<?php // echo$itemslide2['product_id'];?>','<?php // echo$itemslide2['pricelist'];?>','<?php // echo$itemslide2['imageurl'];?>',
                    '<?php // echo$itemslide3['name'];?>','<?php  //echo$itemslide3['stock']; ?>','<?php// echo $itemslide3['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button><br/>
-               <button style="margin-top:10px;" type="button" class="btn btn-custom-sm1"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button> -->
-          </center>
+               <button style="margin-top:10px;" type="button" class="btn btn-custom-sm1"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+          </center> -->
 
 
       		</span>
