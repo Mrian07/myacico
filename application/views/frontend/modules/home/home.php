@@ -564,8 +564,14 @@ ul.list-group:after {
     -webkit-border-radius: 0px!important;
     -moz-border-radius: 0px!important;
 }
-.btn.btn-custom-lg,
-.btn.btn-custom-xs {
+.btn.btn-custom-lg
+ {
+  border-radius: 22px;
+  color: white;
+  background-color: #FF0000;
+}
+.btn.btn-custom-xs
+{
   border-radius: 22px;
   color: white;
   background-color: #FF0000;
@@ -573,6 +579,12 @@ ul.list-group:after {
 .btn.btn-custom-sm{
     border-radius: 22px;
     font-size: 16.5px;
+      color: white;
+    background-color: #FEBD9F;
+}
+.btn.btn-custom-sm1{
+    border-radius: 22px;
+    font-size:19px;
       color: white;
     background-color: #FEBD9F;
 }
@@ -682,9 +694,9 @@ ul.list-group:after {
         			<hr class="line">
 
               <center>
-               <button type="button" class="btn btn-primary "  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
-                   '<?php echo$itemslide3['name'];?>','<?php echo$itemslide3['stock']; ?>','<?php echo $itemslide3['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-               <button type="button" class="btn btn-success"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+               <button type="button" class="btn btn-custom-xs "  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
+                   '<?php echo$itemslide3['name'];?>','<?php echo$itemslide3['stock']; ?>','<?php echo $itemslide3['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button><br/>
+               <button style="margin-top:10px;" type="button" class="btn btn-custom-sm1"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
           </center>
 
 
