@@ -580,13 +580,13 @@ ul.list-group:after {
     border-radius: 22px;
     font-size: 16.5px;
       color: white;
-    background-color: #FEBD9F;
+    background-color: #023473;
 }
 .btn.btn-custom-sm1{
     border-radius: 22px;
     font-size:19px;
       color: white;
-    background-color: #FEBD9F;
+    background-color: #3F9F44;
 }
 </style>
 
@@ -618,7 +618,7 @@ ul.list-group:after {
     <div class="col-xs-12"><img src='<?php echo base_url('images/demo/banner-4.jpg');?>' border='0' width='100%'></div>
   </div>
 
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> NEW COLLECTION
   </div>
   <div class="span12" style='background:#ffffff; padding:10px;'>
@@ -653,10 +653,10 @@ ul.list-group:after {
         <center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
             <hr>
             <center>
-             <button type="button" class="btn btn-default btn-lg btn-custom-lg"  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
-               '<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['stock']; ?>','<?php echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+             <!-- <button type="button" class="btn btn-default btn-lg btn-custom-lg"  onClick="addToCart('<?php // echo$itemslide2['product_id'];?>','<?php // echo$itemslide2['pricelist'];?>','<?php// echo$itemslide2['imageurl'];?>',
+               '<?php// echo$itemslide2['name'];?>','<?php //echo$itemslide2['stock']; ?>','<?php //echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
 
-           <button style="margin-top:10px;" type="button" class="btn btn-custom-sm" onClick="addWishlist('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['name'];?>','<?php echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Add To Wishlist</button>
+           <button style="margin-top:10px;" type="button" class="btn btn-custom-sm" onClick="addWishlist('<?php //echo$itemslide2['product_id'];?>','<?php// echo$itemslide2['name'];?>','<?php //echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Add To Wishlist</button> -->
         </center>
 
       </div>
@@ -668,7 +668,7 @@ ul.list-group:after {
 
 
 
-<div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
   <i class="fa fa-dot-circle-o" aria-hidden="true"></i> FEATURED PRODUCT
 </div>
 
@@ -684,19 +684,19 @@ ul.list-group:after {
         			<h6 class="link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></h6>
               <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></h5>
         			<div class="ratings" style='text-align: center; color:#d98c13;'>
-                      <!-- <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star-empty"></span> -->
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star-empty"></span>
                   </div><br>
 					<center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide3['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
         			<hr class="line">
 
               <center>
-               <button type="button" class="btn btn-custom-xs "  onClick="addToCart('<?php echo$itemslide2['product_id'];?>','<?php echo$itemslide2['pricelist'];?>','<?php echo$itemslide2['imageurl'];?>',
-                   '<?php echo$itemslide3['name'];?>','<?php echo$itemslide3['stock']; ?>','<?php echo $itemslide3['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button><br/>
-               <button style="margin-top:10px;" type="button" class="btn btn-custom-sm1"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+               <!-- <button type="button" class="btn btn-custom-xs "  onClick="addToCart('<?php // echo$itemslide2['product_id'];?>','<?php // echo$itemslide2['pricelist'];?>','<?php // echo$itemslide2['imageurl'];?>',
+                   '<?php // echo$itemslide3['name'];?>','<?php  //echo$itemslide3['stock']; ?>','<?php// echo $itemslide3['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button><br/>
+               <button style="margin-top:10px;" type="button" class="btn btn-custom-sm1"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button> -->
           </center>
 
 
@@ -708,7 +708,7 @@ ul.list-group:after {
   		<!-- END PRODUCTS -->
 	</div>
 
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> GADGET DAN AKSESORIS HANDPHONE
   </div>
   <div class="row">
@@ -751,7 +751,7 @@ ul.list-group:after {
   </div>
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> KOMPUTER & LAPTOP
   </div>
   <div class="row">
@@ -795,7 +795,7 @@ ul.list-group:after {
 
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PERALATAN RUMAH TANGGA
   </div>
   <div class="row">
@@ -839,7 +839,7 @@ ul.list-group:after {
 
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> HOBI
   </div>
   <div class="row">
@@ -883,7 +883,7 @@ ul.list-group:after {
 
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> AUDIO & VISUAL
   </div>
   <div class="row">
@@ -925,7 +925,7 @@ ul.list-group:after {
 
   </div>
 
-  <div style='padding:15px; font-family:tahoma; font-size:25px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PILIH DAN KLIK BRAND FAVORIT ANDA
   </div>
 	<div style='text-align: center; padding:15px 0px 15px 0px; border-radius:0px 0px 10px 0px; margin-bottom:20px;'>
