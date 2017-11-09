@@ -735,9 +735,9 @@ ul.list-group:after {
 
           <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
 
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
+            <h6 class='nm_product'><?php echo $itemslide2['name']; ?></h6>
+            <h5 class='h-product'><span class='rp-min'>Rp.</span><?php echo money($itemslide2['pricelist']); ?></h5>
+            <div class="ratings">
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -760,7 +760,7 @@ ul.list-group:after {
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-b3.jpg');?>' border='0' width='100%' height='200'></div>
   </div>
 
-  <div class="span12" style='background:#fdf0db; padding:10px; margin-top:10px'>
+  <div class="span12" style='background:#fdf5e7; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel">
       <?php
@@ -778,9 +778,9 @@ ul.list-group:after {
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
+        <h6 class='nm_product'><?php echo $itemslide2['name']; ?></h6>
+        <h5 class='h-product'><span class='rp-min'>Rp.</span><?php echo money($itemslide2['pricelist']); ?></h5>
+        <div class="ratings">
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -822,9 +822,9 @@ ul.list-group:after {
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
+          <h6 class='nm_product'><?php echo $itemslide2['name']; ?></h6>
+          <h5 class='h-product'><span class='rp-min'>Rp.</span><?php echo money($itemslide2['pricelist']); ?></h5>
+          <div class="ratings">
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -848,7 +848,7 @@ ul.list-group:after {
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-d3.jpg');?>' border='0' width='100%' height='200'></div>
   </div>
 
-  <div class="span12" style='background:#fde3e0; padding:10px; margin-top:10px'>
+  <div class="span12" style='background:#fde9e7; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel">
       <?php
@@ -866,9 +866,9 @@ ul.list-group:after {
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
+          <h6 class='nm_product'><?php echo $itemslide2['name']; ?></h6>
+          <h5 class='h-product'><span class='rp-min'>Rp.</span><?php echo money($itemslide2['pricelist']); ?></h5>
+          <div class="ratings">
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -892,7 +892,7 @@ ul.list-group:after {
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-e3.jpg');?>' border='0' width='100%' height='200'></div>
   </div>
 
-  <div class="span12" style='background:#f1e0fd; padding:10px; margin-top:10px'>
+  <div class="span12" style='background:#f7ebff; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel">
       <?php
@@ -910,9 +910,9 @@ ul.list-group:after {
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
+            <h6 class='nm_product'><?php echo $itemslide2['name']; ?></h6>
+            <h5 class='h-product'><span class='rp-min'>Rp.</span><?php echo money($itemslide2['pricelist']); ?></h5>
+            <div class="ratings">
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>

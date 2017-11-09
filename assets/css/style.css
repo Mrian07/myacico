@@ -23,6 +23,25 @@
 	font-family: sans-serif;
 }
 
+/*harga produk*/
+.rp-min{
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.h-product{
+  text-align: left;
+  color: #51cffd
+}
+
+.nm_product{
+  text-align: left; color: #716e7f; height:50px
+}
+
+.ratings{
+  text-align: left; color:#d98c13;
+}
+
 /*head*/
 .my-head{
     width:100%;
