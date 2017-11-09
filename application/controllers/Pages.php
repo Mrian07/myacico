@@ -59,6 +59,15 @@ class Pages extends Web {
 		$this->load->view('frontend/modules/pages/faqcus.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
+	public function Pemb()
+	{
+		$this->data['title_web'] = "Myacico.com - Home";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+
+		$this->load->view('frontend/modules/pages/pemba.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 
 	public function Pengembalian()
 	{
