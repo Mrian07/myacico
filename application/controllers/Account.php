@@ -27,7 +27,7 @@ class Account extends Web_private {
 	public function index()
     {
 		$this->data['active_dashboard'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Dashboard";
+		$this->data['title_web'] = "Myacico.co.id - Dashboard";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/dashboard.php',$this->data);
@@ -103,7 +103,7 @@ class Account extends Web_private {
 		}
 
 		$this->data['active_informasiAkun'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Informasi Akun";
+		$this->data['title_web'] = "Myacico.co.id - Informasi Akun";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/informasi_akun',$this->data);
@@ -114,7 +114,7 @@ class Account extends Web_private {
 	public function berlanggananNewsletter()
     {
 		$this->data['active_berlanggananNewsletter'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Informasi Akun";
+		$this->data['title_web'] = "Myacico.co.id - Informasi Akun";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/berlanggananNewsletter',$this->data);
@@ -124,7 +124,7 @@ class Account extends Web_private {
 	public function bukuAlamat()
     {
 		$this->data['active_bukuAlamat'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Buku Alamat";
+		$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/buku_alamat',$this->data);
@@ -160,7 +160,7 @@ class Account extends Web_private {
     {
 		$this->data['id'] = $this->uri->segment(3);
 		$this->data['active_bukuAlamat'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Buku Alamat";
+		$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_shipping_edit',$this->data);
@@ -170,7 +170,7 @@ class Account extends Web_private {
 	public function TambahBukuAlamat()
     {
 		$this->data['active_bukuAlamat'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Buku Alamat";
+		$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -182,7 +182,7 @@ class Account extends Web_private {
 	public function riwayatStatusPesanan()
     {
 		$this->data['active_riwayatStatusPesanan'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Riwayat Status Pasaran";
+		$this->data['title_web'] = "Myacico.co.id - Riwayat Status Pasaran";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
@@ -259,7 +259,7 @@ class Account extends Web_private {
 
 			$this->data['konf'] = $this->uri->segment(3);
 			$this->data['active_riwayatStatusPesanan'] = "class='active'";
-			$this->data['title_web'] = "Myacico.com - Buku Alamat";
+			$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
 			$this->load->view('frontend/header',$this->data);
 			$this->load->view('frontend/nav.php',$this->data);
 			$this->load->view('frontend/modules/account/form_confirm.php',$this->data);
@@ -270,7 +270,7 @@ class Account extends Web_private {
 	public function returnManagementAuthority()
     {
 		$this->data['active_returnManagementAuthority'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Return Management Authority";
+		$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
@@ -281,7 +281,7 @@ class Account extends Web_private {
 	public function Wishlist()
     {
 		$this->data['active_wishlist'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Wishlist";
+		$this->data['title_web'] = "Myacico.co.id - Wishlist";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/wishlist',$this->data);
@@ -318,7 +318,7 @@ class Account extends Web_private {
 	public function formAccount()
     {
 		$this->data['active_informasiAkun'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Return Management Authority";
+		$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_account',$this->data);
@@ -333,7 +333,7 @@ class Account extends Web_private {
 
 
 		$this->data['active_informasiAkun'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Return Management Authority";
+		$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -350,7 +350,7 @@ class Account extends Web_private {
     public function formAddBilling()
     {
 		$this->data['active_informasiAkun'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Return Management Authority";
+		$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_add_billing',$this->data);
@@ -361,7 +361,7 @@ class Account extends Web_private {
 	public function formPassword()
     {
 		$this->data['active_informasiAkun'] = "class='active'";
-		$this->data['title_web'] = "Myacico.com - Return Management Authority";
+		$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_password',$this->data);
@@ -388,7 +388,7 @@ class Account extends Web_private {
 			$this->data['hasil'] = json_decode($konten, true);
 
 			$this->data['active_riwayatStatusPesanan'] = "class='active'";
-			$this->data['title_web'] = "Myacico.com - Return Management Authority";
+			$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
 			$this->load->view('frontend/header',$this->data);
 			$this->load->view('frontend/nav.php',$this->data);
 			$this->load->view('frontend/modules/account/form_transaction_detail',$this->data);
