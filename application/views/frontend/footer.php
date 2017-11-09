@@ -45,7 +45,6 @@
 				<div class='sos'>
 					<ul>
 						<li><a href="https://www.youtube.com/channel/UCT6wkP8xyhEgDZzrbuWBQRg"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
-						<li><a href="https://www.youtube.com/channel/UCT6wkP8xyhEgDZzrbuWBQRg"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>
 					  <li><a class="active" href="https://www.facebook.com/MyacicoID/?ref=aymt_homepage_panel"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 					  <li><a href="https://twitter.com/myacicoid"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 					  <li><a href="https://www.instagram.com/myacico.id/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
