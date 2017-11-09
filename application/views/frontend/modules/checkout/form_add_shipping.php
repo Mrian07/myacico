@@ -80,7 +80,8 @@
                     <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
                     <input type="hidden" id="isremitto" name="isremitto" value="N" />
                     <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
-
+                    <label>Nama Penerima*</label>
+                    <input type="text" id = "name" name="name" class="form-control mandatory"/>
                     <div class="form-group">
                       <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
                       <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>

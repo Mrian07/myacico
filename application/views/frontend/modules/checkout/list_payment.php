@@ -11,8 +11,8 @@ Mohon dilakukan pembayaran ke :<br>
 		<td><img src='https://storage.googleapis.com/myacico/image/bank/<?php echo$data['code']; ?>.png' border='0'><br>
 			<?php echo$data['account_name']; ?><br>
 			<?php echo$data['account_number']; ?><br>
-			<?php echo$data['bank_name']; ?><br>
-			<?php echo$data['code']; ?>
+			<?php //echo$data['bank_name']; ?><br>
+			<?php //echo$data['code']; ?>
 		</td>
 		</tr>
 		</table>
