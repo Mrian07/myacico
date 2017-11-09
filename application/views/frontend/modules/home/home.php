@@ -580,13 +580,13 @@ ul.list-group:after {
     border-radius: 22px;
     font-size: 16.5px;
       color: white;
-    background-color: #FEBD9F;
+    background-color: #023473;
 }
 .btn.btn-custom-sm1{
     border-radius: 22px;
     font-size:19px;
       color: white;
-    background-color: #FEBD9F;
+    background-color: #3F9F44;
 }
 </style>
 
