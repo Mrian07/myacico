@@ -57,13 +57,13 @@ cursor:pointer;
 
 
 									<?php foreach($hasilNav as $dataNav){ ?>
-									<li class="dropdown megamenu-fw nav-show-desktop" style='width:12%;'>
+									<li class="dropdown megamenu-fw nav-show-desktop" style='width:11%;'>
 										<?php echo anchor('#', $dataNav['name'], array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
 										<ul class="dropdown-menu megamenu-content" role="menu">
 											<li>
 												<div>
 													<div class="row" style='color:#000000'>
-                              <div class="col-menu col-md-2"><img src="<?php echo$dataNav['imageurl']; ?>" style="float:right;width:180px"/></div>
+                              <div class="col-menu col-md-2"><img src="<?php echo$dataNav['imageurl']; ?>" style="float:right;width:200px"/></div>
 															<?php foreach($dataNav['c2'] as $dataNavChild){ ?>
 																<div class="col-menu col-md-2">
 																	<?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $dataNavChild['name']);?>
