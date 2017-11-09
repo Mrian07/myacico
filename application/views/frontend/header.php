@@ -108,7 +108,7 @@ a{
 						<?php echo anchor('customer/contact','Hubungi Kami', array('class'=>'btn-nav-head')); ?>
 					</div>
 					<div class="col-xs-5" style='text-align:right'>
-					 <b>Belanja murah di myacico.com! Gratis pengiriman untuk area JAKARTA</b>
+					 <b>Belanja murah di myacico.co.id! Gratis pengiriman untuk area JAKARTA</b>
 				 </div>
 			 </div>
 			</div>
