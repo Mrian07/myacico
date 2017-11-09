@@ -249,14 +249,19 @@
 
 
 	<ul class="nav nav-tabs" style='font-size:17px; margin-bottom:20px; border-top:0px'>
-	  <li class="active"><a data-toggle="tab" href="#home">Rincian Barang</a></li>
+	  
 	  <li><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
-		<li><a data-toggle="tab" href="#menu2">Highlight</a></li>
+          <li class="active"><a data-toggle="tab" href="#menu2">Spesifkasi</a></li>
+		<li><a data-toggle="tab" href="#menu3">Highlight</a></li>
                 <li><a data-toggle="tab" href="#komen">Komen</a></li>
 	</ul>
 
 	<div class="tab-content">
-	  <div id="home" class="tab-pane fade in active">
+	  <div id="menu1" class="tab-pane fade">
+		<h3>Description</h3>
+		<p><?php echo $description;  ?></p>
+	  </div>
+          <div id="menu2" class="tab-pane fade in active">
 		<h3>HOME</h3>
 		<table class="table table-striped">
 			<tr>
@@ -402,16 +407,12 @@
 		</table>
 
 	  </div>
-	  <div id="menu1" class="tab-pane fade">
-		<h3>Description</h3>
-		<p><?php echo $description;  ?></p>
-	  </div>
-          <div id="menu2" class="tab-pane fade">
+          <div id="menu3" class="tab-pane fade">
 		<h3>Highlight</h3>
 		<p><?php echo $highlight;  ?></p>
 	  </div>
              <div id="komen" class="tab-pane fade">
-		<h3>komeng</h3>
+		<h3>Kometar</h3>
 		<p><?php $ik=0;
 								$no=1;
                 foreach($komen as $value)

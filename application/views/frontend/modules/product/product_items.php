@@ -552,14 +552,7 @@ $(document).ready(function() {
 		$('[data-toggle="tooltip"]').tooltip();
 
 });
-   new Pagination({
-       parent: '.demo',
-       totalPage:10,
-       align: 'center'
-   });
-
-
-
+   
 function filter(id){
  //  console.log('sam',$('#sort_id').val(id.value));
   window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'.$alias.'/'); ?>"+id.value);

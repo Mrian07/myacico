@@ -17,14 +17,15 @@
 				<div class="panel-body">
 				  <form name="signup" method="post">
 					<div class="form-group">
-					<input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
+<!--					<input type="hidden" id = "name" name="name"  value="<?php // echo $user->name;?>" />-->
                                         <input type="hidden" id = "id" name="id" />
                                           <input type="hidden" id="isbillto" name="isbillto" value="N" />
                                         <input type="hidden" id="isshipto" name="isshipto" value="Y" />
                                         <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
                                         <input type="hidden" id="isremitto" name="isremitto" value="N" />
                                         <input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
-
+                                        <label>Nama Penerima*</label>
+                                        <input type="text" id = "name" name="name" class="form-control mandatory"/>
 					</div>
                                         <div class="form-group">
 					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
