@@ -46,29 +46,27 @@
 
 
 					<div class="xzoom-container">
-					  <img class="xzoom" id="xzoom-magnific" width=400 src="<?php echo $img; ?>" xoriginal="<?php echo $img; ?>" />
+					  <img class="xzoom" id="xzoom-magnific" width=400 src="<?php echo $img[0]; ?>" xoriginal="<?php echo $img[0]; ?>" />
 					  <div class="xzoom-thumbs">
 						<!--<a ng-repeat="url in dat.imageurl" ng-href="{{url}}" on-finish-render="ngRepeatFinished">
 							<img class="xzoom-gallery" width="80" src="{{url}}" xpreview="{{url}}" title="">
 						</a>-->
-						 <a href="<?php echo $img;?>">
-							<img class="xzoom-gallery" width="80" src="<?php echo $img;?>"  xpreview="<?php echo $img;?>" title="">
-						</a>
-						<?php if($img1){?>
-						<a href="<?php echo $img1;?>">
-							<img class="xzoom-gallery" width="80" src="<?php echo $img1;?>" title="">
-						</a>
-						<?php } ?>
-						<?php if($img2){?>
-						<a href="<?php echo $img2;?>">
-							<img class="xzoom-gallery" width="80" src="<?php echo $img2;?>" title="">
-						</a>
-						<?php } ?>
-						<?php if($img3){?>
-						<a href="<?php echo $img3;?>">
-							<img class="xzoom-gallery" width="80" src="<?php echo $img3;?>" title="">
-						</a>
-						<?php } ?>
+						 
+                                                
+                                               <?php
+                                                    if($img[0])
+                                                    {
+                                                        foreach ($img as $gmbr)
+                                                        {?>
+                                                          <a href="<?php echo $gmbr;?>">
+							<img class="xzoom-gallery" width="80" src="<?php echo $gmbr;?>"  xpreview="<?php echo $gmbr;?>" title="">
+                                                        </a>  
+                                                     <?php   }
+                                                    }
+                                               ?>
+						
+						
+						
 						<!--a href="<?php //echo base_url('images/gallery/original/03_r_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/03_r_car.jpg');?>" title="The description goes here"></a>
 						<a href="<?php //echo base_url('images/gallery/original/04_g_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/04_g_car.jpg');?>" title="The description goes here"></a-->
 					  </div>
@@ -93,22 +91,22 @@
 					<div class='detail-add-wishlist'>
 						<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br><br>
 						<!-- <div class="btnaddcart">
-							<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
+							<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
 						</div> -->
 
 
-						<!-- <a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')" class='btn btn-link'> <i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Add To Wishlist</a> -->
+						<!-- <a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')" class='btn btn-link'> <i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Add To Wishlist</a> -->
 							<div class="btn-group">
 
-								<button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+								<button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
 								<?php
 											if($isWishList =='Y')
 											{
 									?>
-									 <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
+									 <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
 								<?php }else{
 							 ?>
-									 <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img;?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+									 <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
 
 								<?php }
 								?>
@@ -250,8 +248,8 @@
 
 	<ul class="nav nav-tabs" style='font-size:17px; margin-bottom:20px; border-top:0px'>
 	  
-	  <li><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
-          <li class="active"><a data-toggle="tab" href="#menu2">Spesifkasi</a></li>
+	  <li class="active"><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
+          <li><a data-toggle="tab" href="#menu2">Spesifkasi</a></li>
 		<li><a data-toggle="tab" href="#menu3">Highlight</a></li>
                 <li><a data-toggle="tab" href="#komen">Ulasan</a></li>
 	</ul>
@@ -414,7 +412,9 @@
              <div id="komen" class="tab-pane fade">
 		
 		<p><?php $ik=0;
-								$no=1;
+			$no=1; 
+                         
+                        if($komen){
                 foreach($komen as $value)
                     {
 
@@ -439,7 +439,10 @@
                         echo $coment_title." "."<div id='rateKoms".$no."'></div><br>".$coment_isi."<br> Oleh ".$coment_user."<br>";
 												$no++;
                     }
-
+                        }
+                        else{
+                            echo "<div class='col-sm-6'><font size='3'> Belum Ada Ulasan Untuk ".$name." </font></div><br>";
+                        }
 
                 ?></p>
 	  </div>
@@ -462,9 +465,8 @@
 		  readOnly: true
 
   });
-
+ 
 });
-
 
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;

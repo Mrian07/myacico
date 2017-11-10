@@ -287,8 +287,21 @@ if(isset($hasil['sku'])){
 		// jika gambar tidak ada
 
 
-
-
+ //die(print_r($hasil['imageurl']));
+$i=0;
+ foreach ($hasil['imageurl'] as $gmb)
+ {
+     //$this->data['img'][$i]=$gmb;
+     if(isset($gmb)){
+	$this->data['img'][$i] = $gmb;     
+     }else{
+         $this->data['img'][$i]=false;
+     }
+    //print_r($this->data['img'.$i]);
+     $i++;
+ }
+  /*
+  die();
 			if(isset($hasil['imageurl'][0])){
 					$this->data['img'] = $hasil['imageurl'][0];
 			}else{
@@ -327,7 +340,7 @@ if(isset($hasil['sku'])){
 
 				}
 	$this->data['img3'] = $hasil['imageurl'][3];
-
+       */
 		// akhir dari jika gambar tidak ada
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
