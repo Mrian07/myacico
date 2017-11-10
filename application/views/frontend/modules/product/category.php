@@ -2,6 +2,7 @@
 <style>
 	.thumbnail:hover{
 		box-shadow: 0px 0px 10px #ffffff;
+		color:#111111;
 	}
 
 	.thumbnail{
@@ -9,13 +10,20 @@
 		-webkit-transition: all 0.5s;
 		transition: all 0.5s;
 		text-align:center;
+		color:#4d4d4d;
+		font-size: 20px;
 	}
+	.thumbnail a{
+		color:#111111;
+	}
+
 	.thumbnail a:hover{
 		opacity:1.00;
-		box-shadow: 0px 0px 10px #4bc6ff;
+		/*box-shadow: 0px 0px 10px #4bc6ff;*/
+		color:#4d4d4d;
 		text-decoration:none;
 	}
-	.line{
+	/*.line{
 		margin-bottom: 5px;
 	}
 	@media screen and (max-width: 770px) {
@@ -23,7 +31,7 @@
 			float:left;
 			width: 100%;
 		}
-	}
+	}*/
 
 	span.thumbnail {
         border: 1px solid #b2b2b2 !important;
@@ -35,7 +43,7 @@
 }
 
 
-.container h4{margin-top:20px; margin-bottom:30px;}
+/*.container h4{margin-top:20px; margin-bottom:30px;}*/
 
 .right {
     float: right;
@@ -69,7 +77,7 @@
 
 			<div class="col-md-3 col-sm-6 box-thum">
 				<span class='thumbnail'>
-				<a href="<?php echo base_url('product/listItem/'.$data['categoryId'].'/'.$data['alias']);?>"><img src="<?php echo $data['imageurl']; ?>" alt="..."><h5><?php echo $data['name']; ?></h5></a>
+				<a href="<?php echo base_url('product/listItem/'.$data['categoryId'].'/'.$data['alias']);?>"><img src="<?php echo $data['imageurl']; ?>" alt="..."><?php echo $data['name']; ?></a>
 				</span>
 			</div>
 		<?php } ?>
