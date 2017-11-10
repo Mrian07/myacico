@@ -94,12 +94,12 @@ a{
 
   <div class='my-head'>
 		<div style='margin-bottom:10px; margin-top:10px'>
-	    <img src='<?php echo base_url('images/general/img-head1.jpg');?>' border='0'>
+	    <center><img src='<?php echo base_url('images/general/img-head1.jpg');?>' border='0'></center>
 		</div>
 
 
 
-
+			<div class="container">
 				<div class='row'>
 					<div class="col-xs-7" style='display: flex;  justify-content: flex-end;align-items: flex-end;height: 60px;border: solid 0px red;'>
 				    <?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
@@ -108,7 +108,7 @@ a{
 						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
 
 					</div>
-					<div class="col-xs-5" >
+					<div class="col-xs-5" style='text-align:right; '>
 					 <!-- <b>Belanja murah di myacico.co.id! Gratis pengiriman untuk area JAKARTA</b> -->
 
 
@@ -177,15 +177,15 @@ a{
 
 				 </div>
 			 </div>
-
-
-
-
-			<div class='my-hdr1'>
-				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
 			</div>
 
-      <div class='my-hdr2'>
+
+			<center>
+    <div class='row' style='width:1300px'>
+			<div class="col-xs-2">
+				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
+			</div>
+      <div class="col-xs-7" >
   			<div class='myserach' ng-app="myApps">
   				<div ng-controller = "searchCtrl">
   				<div class="input-group">
@@ -218,10 +218,15 @@ a{
   			</div>
   		</div>
 
-      <div class='my-hdr3'>
-					<div style='font-family: arial; font-size:24px; font-weight: bold; color:#4d4d4d; margin-top:15px;'>Festival Belanja Online</div>
-      </div>
 
+      <div class="col-xs-3">
+
+					<div style='font-family: arial; font-size:24px; font-weight: bold; color:#4d4d4d; margin-top:15px;'>Festival Belanja Online</div>
+        <!-- <table border='0' width='100%'><tr><td style='font-size:65px; text-align: center; color:#b2b2b2'></td><td style='font-size:20px; font-weight:bold; text-align: center; color:#b2b2b2'>Selamat Datang<br><font color='red'>Login</font> / <font color='red'>Daftar</font></td><td><img src="
+          <?php// echo base_url('images/general/cart.png'); ?>" border="0"></td></tr></table> -->
+      </div>
+    </div>
+	</center>
 
     <!-- <div class="row">
       <div class="col-xs-4">One third</div>
@@ -234,6 +239,8 @@ a{
       <div class="col-xs-6">One third</div>
     </div> -->
   </div>
+
+
 
 
 
