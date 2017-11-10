@@ -360,8 +360,8 @@ a:hover.my-info {
   }
 
   .my-btn-brand:hover{
-    color:#dddddd;
-    background:#252424;
+    color:red;
+    /*background:#252424;*/
     text-decoration: none;
   }
 
