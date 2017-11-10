@@ -106,7 +106,7 @@
 				<h3><span>Email Newsletter</span></h3>
         Berlangganan untuk mendapatkan penawaran spesial dan berita dari MyACICO.co.id<br>
 				<div class="input-group">
-					<input type="text" class="my-sub-field" name="x" placeholder="Search term...">
+					<input type="text" class="my-sub-field" name="x" placeholder="Email...">
 					<span class="input-group-btn">
 						<button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button>
 					</span>

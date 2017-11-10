@@ -569,14 +569,13 @@ a:hover.my-info {
   }
 
   .my-bg-title{
-  	background:#fbfbfc;
   	color:#111111;
   	padding:20px 0px 20px 0px;
   	margin-bottom:0px;
   	font-size:12px;
     margin-bottom:20px;
-    padding: 10px;
-    border-bottom: 1px dashed #b7b3b3;
+    padding: 10px 10px 10px 0px;
+    border-bottom: 1px dashed #bfbfbf;
   }
 
   /*.my-container-white{

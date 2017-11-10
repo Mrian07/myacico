@@ -1,9 +1,7 @@
 
 <style>
-.price{
-		font-size: 30px;
-    	margin: 0 auto;
-    	color: #333;
+	.thumbnail:hover{
+		box-shadow: 0px 0px 10px #ffffff;
 	}
 
 	.thumbnail{
@@ -28,8 +26,8 @@
 	}
 
 	span.thumbnail {
-        border: 1px solid #c40202 !important;
-    border-radius: 10px !important;
+        border: 1px solid #b2b2b2 !important;
+    border-radius: 0px !important;
     -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
     -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
     box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
@@ -51,21 +49,16 @@
 	font-weight:600;
 }
 
-
-/*-------*/
-
-.carousel-inner .active.left { left: -25%; }
-.carousel-inner .next        { left:  25%; }
-.carousel-inner .prev		 { left: -25%; }
-.carousel-control 			 { width:  4%; }
-.carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
 </style>
+<!-- Owl Carousel Assets slide image collection -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.carousel.css');?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.theme.css');?>" />
 
-	<div class="container">
-		<div class='my-bg-title'>
-			<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo strtoupper($hasil['subName']); ?>
-		  </div>
+<div class="container">
+	<div class='my-bg-title'>
+		<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo strtoupper($hasil['subName']); ?>
 	</div>
+</div>
 
 
 <div class="container my-container-transparan">
@@ -74,7 +67,7 @@
 		foreach($hasil['subValue'] as $key => $data){
 			?>
 
-			<div class="col-md-3 col-sm-6">
+			<div class="col-md-3 col-sm-6 box-thum">
 				<span class='thumbnail'>
 				<a href="<?php echo base_url('product/listItem/'.$data['categoryId'].'/'.$data['alias']);?>"><img src="<?php echo $data['imageurl']; ?>" alt="..."><h5><?php echo $data['name']; ?></h5></a>
 				</span>
@@ -83,84 +76,101 @@
 	</div>
 	<!-- END PRODUCTS -->
 
-	<!-- <h4>Bestseller Products</h4>
 
-	<div class="carousel slide" id="myCarousel">
-	  <div class="carousel-inner">
-		<div class="item active">
-		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/e499e4/fff&amp;text=1" class="img-responsive"></a></div>
+
+
+	<div style='padding:15px 15px 15px 0px; font-family:tahoma; font-size:20px; border-bottom: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+		Rekomendasi Kami
+	</div>
+	<div class="row">
+		<div class="col-xs-6"><img src='<?php echo base_url('images/demo/banner-b1.jpg');?>' border='0' width='100%' height='200'></div>
+		<div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-b2.jpg');?>' border='0' width='100%' height='200'></div>
+		<div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-b3.jpg');?>' border='0' width='100%' height='200'></div>
+	</div>
+
+	<div class="span12" style='background:#f2f2f2; padding:10px; margin-top:10px'>
+
+		<div class="promo-front owl-carousel">
+			<?php
+
+			$jmlslide2=count($dathome['level_2']);
+			$n=1;
+			foreach($dathome['level_2'] as $key => $itemslide2){
+				if($n=="$jmlslide2"){
+					$active='active';
+				}else{
+					$active='';
+				}
+				?>
+			<div class="item" style='background:#ffffff; padding:10px; height:300px'>
+
+				<center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:110px; width: auto"></a>
+				</center>
+				<h6 class='nm_product'><?php echo $itemslide2['name']; ?></h6>
+				<h5 class='h-product'><span class='rp-min'>Rp.</span><?php echo money($itemslide2['pricelist']); ?></h5>
+				<div class="ratings">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+						</div>
+			</div>
+			<?php $n++;  } ?>
 		</div>
-		<div class="item">
-		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/e477e4/fff&amp;text=2" class="img-responsive"></a></div>
-		</div>
-		<div class="item">
-		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=3" class="img-responsive"></a></div>
-		</div>
-		<div class="item">
-		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f4f4f4&amp;text=4" class="img-responsive"></a></div>
-		</div>
-		<div class="item">
-		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f566f5/333&amp;text=5" class="img-responsive"></a></div>
-		</div>
-		<div class="item">
-		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/f477f4/fff&amp;text=6" class="img-responsive"></a></div>
-		</div>
-		<div class="item">
-		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=7" class="img-responsive"></a></div>
-		</div>
-		<div class="item">
-		  <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/fcfcfc/333&amp;text=8" class="img-responsive"></a></div>
-		</div>
 
-	  </div>
-	  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-	  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-	</div> -->
+	</div>
 
-</div>
+	</div>
 
-</div>
-<script>
-$('#myCarousel').carousel({
-  interval: 4000
-})
+	<script src="<?php echo base_url('assets/owl-carousel/owl.carousel.js');?>"></script>
 
-$('.carousel .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
+	<style>
+	#owl-demo .item{
+			margin: 3px;
+			/*text-align:center;*/
+	}
+	#owl-demo .item img{
+			display: block;
+			width: auto;
+			height: 150px;
 
-  for (var i=0;i<2;i++) {
-    next=next.next();
-    if (!next.length) {
-    	next = $(this).siblings(':first');
-  	}
-
-    next.children(':first-child').clone().appendTo($(this));
-  }
-});
+	}
+	</style>
 
 
-  $.get(api_base_url+"/category/listc3?c2id=<?php echo $cat_id; ?>",
-  function(data){
-    console.log('get_cat:', data);
-    var box = $('#collection_box');
-	var title = $('#title');
-    title.html('<div class="my-bg-title"><div class="container"><div class="row"><div class="col-sm-12"><i class="fa fa-angle-right" aria-hidden="true"></i> '+data.subName+'</div></div></div></div>');
-    if(data.subValue.length == 0) return box.append('<p>Data tidak ditemukan</p>');
+	<script>
+	$(document).ready(function() {
+		$("#owl-demo").owlCarousel({
+			autoPlay: 3000,
+			items : 6,
+			itemsDesktop : [1199,3],
+			itemsDesktopSmall : [979,3]
+		});
 
-    data.subValue.forEach(function(p){
-      // console.log('pro:',p);
-      box.append(
-        $(document.createElement('div')).attr("class","col-md-3 col-sm-6").append(
-          $(document.createElement('span')).attr("class","thumbnail").append(
-            '<a href="'+base_url+'product/listItem/'+p.categoryId+'"><img src="'+p.imageurl+'" alt="..."><h5>'+p.name+'</h5></a>'
+	});
+	</script>
 
-          )
-        )
-      );
-    });
-  });
-</script>
+	<style>
+	.promo-front .item{
+			margin: 3px;
+	}
+	.promo-front .item img{
+			display: block;
+			width: 100%;
+			height: auto;
+	}
+	</style>
+
+
+	<script>
+	$(document).ready(function() {
+		$(".promo-front").owlCarousel({
+			autoPlay: 3000,
+			items : 6,
+			itemsDesktop : [1199,3],
+			itemsDesktopSmall : [979,3]
+		});
+
+	});
+	</script>
