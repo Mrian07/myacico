@@ -102,10 +102,11 @@ a{
 			<div class="container">
 				<div class='row'>
 					<div class="col-xs-7" style='display: flex;  justify-content: flex-end;align-items: flex-end;height: 60px;border: solid 0px red;'>
-				    <?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?> <?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?> <?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
+				    <?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
-						<?php echo anchor('page/faq','Faq', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/payment','Payment', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/aboutus','About Us', array('class'=>'btn-nav-head')); ?>
-						<?php echo anchor('customer/contact','Hubungi Kami', array('class'=>'btn-nav-head')); ?>
+
 					</div>
 					<div class="col-xs-5" style='text-align:right; '>
 					 <!-- <b>Belanja murah di myacico.co.id! Gratis pengiriman untuk area JAKARTA</b> -->
