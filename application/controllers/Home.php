@@ -33,8 +33,22 @@ class Home extends Web {
 		$api = "home/view";
 		$url = api_base_url($api);
 
+		$api2 = "home/topproductcategory";
+		$url2 = api_base_url($api2);
+		$konten2 = file_get_contents($url2);
+		// echo $url2;
+		// die();
 		$konten = file_get_contents($url);
+
 		$this->data['dathome'] = json_decode($konten, true);
+		$this->data['dathome2'] = json_decode($konten2, true);
+			$dathome2 = json_decode($konten2, true);
+
+	// 	echo "<pre>";
+	// 	print_r($dathome2['topProduct']);
+	// //	print_r($dathome2[0]['category']);
+	// echo "</pre>";
+	// 	die();
 
 		//$this->load->view('frontend/test',$this->data);
 		$this->data['title_web'] = "myacico.co.id - PT. MyAcico Global Indonesia";
