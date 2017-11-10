@@ -766,6 +766,27 @@ a:hover.my-info {
 }
 
 
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #111;
+    cursor: default;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+	border-radius:0px;
+
+}
+
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.428571429;
+    border: 1px solid transparent;
+    border-radius: 0px;
+
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
 
 
 
