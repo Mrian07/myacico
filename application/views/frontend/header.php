@@ -124,7 +124,7 @@ a{
 								 ?>
 								 <button class="dropbtn-basket">
 									 <img src="<?php echo base_url('images/general/cart.png'); ?>" width='45' border="0"><br>
-									 <span class="badge totalCart" style='margin-left:-5px; margin-top: -50px; position: absolute; font-size:15px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
+									 <span class="badge totalCart" style='margin-left:-6px; margin-top: -38px; position: absolute; font-size:12px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
 								 </button>
 									 <div class="dropdown-basket-content">
 										 <?php
@@ -139,8 +139,8 @@ a{
 						 </div>
 						 <div style='float:right; width:160px; text-align:center; border:0px'>
 							 <div class='row' style='margin-top:0px; padding:0px; border-left:2px solid #4d4d4d;'>
-								 <div class="col-xs-4" style='font-size:45px; color:#4d4d4d; '>
-									 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='38' border='0'>
+								 <div class="col-xs-4" style='font-size:45px; color:#4d4d4d; margin-top:5px'>
+									 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='30' border='0'>
 									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
 								 </div>
 								 <div class="col-xs-8" style='font-size:15px; color:#4d4d4d; padding-left:0px;'>
@@ -307,7 +307,7 @@ a{
 								data.forEach(function(p){
 									productSrc.append(
 
-									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' height='80'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
 
 
 									);
@@ -334,7 +334,7 @@ a{
 										data.forEach(function(p){
 											productSrc.append(
 
-											"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+											"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' height='80'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
 
 
 											);
