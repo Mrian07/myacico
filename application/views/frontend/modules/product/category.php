@@ -15,6 +15,7 @@
 	}
 	.thumbnail a{
 		color:#111111;
+		text-decoration: none;
 	}
 
 	.thumbnail a:hover{
