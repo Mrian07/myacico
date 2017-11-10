@@ -3,6 +3,8 @@ $curr = (int)$this->uri->segment(6);
 ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<link rel="stylesheet" href="<?php echo base_url('assets/css/pagination.css');?>">
+<script type="text/javascript" src="<?php echo base_url('assets/js/pagination.js');?>"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 .thumbnail
