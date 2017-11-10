@@ -367,12 +367,13 @@ a:hover.my-info {
 
 
   .btn-nav-head{
-    border: 1px solid #716f6f;
+  /*  border: 1px solid #716f6f;*/
     padding:5px;
     color:#111111;
     font-size:12px;
     text-decoration: none;
     border-radius:5px;
+    margin-left:10px;
   }
 
   .btn-nav-head:hover {
@@ -382,33 +383,33 @@ a:hover.my-info {
   }
 
   .btn-nav-red{
-    color: #d90000;
+    color: #4d4d4d;
     text-decoration: none;
   }
 
   .btn-nav-red:hover{
-    color: #fd9898;
+    color: #9b9999;
     text-decoration: none;
   }
 
   .btn-nav-red:active{
-    color: #fd9898;
+    color: #9b9999;
     text-decoration: none;
   }
 
 
   .btn-nav-black{
-    color: #111111;
+    color: #4d4d4d;
     text-decoration: none;
   }
 
   .btn-nav-black:hover{
-    color: #9f9e9e;
+    color: #9b9999;
     text-decoration: none;
   }
 
   .btn-nav-black:active{
-    color: #9f9e9e;
+    color: #9b9999;
     text-decoration: none;
   }
 

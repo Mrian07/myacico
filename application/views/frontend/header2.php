@@ -93,7 +93,7 @@ a{
 <body style='font-weight: normal;' ng-app="myApp">
 
   <div class='my-head'>
-		<div style='margin-bottom:10px; margin-top:10px'>
+		<div style='margin-bottom:20px; margin-top:10px'>
 	    <center><img src='<?php echo base_url('images/general/img-head1.jpg');?>' border='0'></center>
 		</div>
 
@@ -101,79 +101,14 @@ a{
 
 			<div class="container">
 				<div class='row'>
-					<div class="col-xs-7" style='display: flex;  justify-content: flex-end;align-items: flex-end;height: 60px;border: solid 0px red;'>
+					<div class="col-xs-7">
 				    <?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?> <?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?> <?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('page/faq','Faq', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/payment','Payment', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/aboutus','About Us', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('customer/contact','Hubungi Kami', array('class'=>'btn-nav-head')); ?>
 					</div>
-					<div class="col-xs-5" style='text-align:right; '>
-					 <!-- <b>Belanja murah di myacico.co.id! Gratis pengiriman untuk area JAKARTA</b> -->
-
-
-					 <div class='row' style='padding-top:10px;'>
-
-						 <div style='margin-top:8px;  float:right; width:90px;'>
-							 <div class="dropdown-basket">
-								 <?php
-									 $totalItems = 0;
-									 foreach ($this->cart->contents() as $items):
-										 $totalItems += $items['qty'];
-									 endforeach;
-								 ?>
-								 <button class="dropbtn-basket">
-									 <img src="<?php echo base_url('images/general/cart.png'); ?>" width='45' border="0"><br>
-									 <span class="badge totalCart" style='margin-left:-5px; margin-top: -50px; position: absolute; font-size:15px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
-								 </button>
-									 <div class="dropdown-basket-content">
-										 <?php
-										 if($totalItems==0)
-										 { ?>
-										 <div class='empty-item'><center><img src='<?php echo base_url('images/general/empty.jpg'); ?>' border='0'><br>Keranjang masih kosong</center></div>
-										 <?php } ?>
-										 <div class='list-item'></div>
-										 <div class='btn-chekout'></div>
-									 </div>
-							 </div>
-						 </div>
-						 <div style='float:right; width:160px; text-align:center; border:0px'>
-							 <div class='row' style='margin-top:0px; padding:0px; border-left:2px solid #4d4d4d;'>
-								 <div class="col-xs-4" style='font-size:45px; color:#4d4d4d; '>
-									 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='38' border='0'>
-									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
-								 </div>
-								 <div class="col-xs-8" style='font-size:15px; color:#4d4d4d; padding-left:0px;'>
-									 <div>Selamat Datang</div>
-									 <div style='margin-top:-6px'>
-										 <?php if(isset($user)){ ?>
-											 <b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
-											 <b><font color='red'><?php echo anchor('#', 'Logout', array('class'=>'logout btn-nav-black'));?></font></b>
-										 <?php }else{ ?>
-											 <b><font color='red'><?php echo anchor('customer/signIn','Login', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create','Daftar', array('class'=>'btn-nav-black')); ?></font></b>
-										 <?php } ?>
-									 </div>
-								 </div>
-							 </div>
-						 </div>
-						 <div style='float:right; width: 100px; text-align: center; '>
-
-
-							<div class="dropdown-lang" style='border:0px solid #aeaeab; border-radius:5px; padding:5px; right: 0; left: auto; text-align:left '>
-								<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/flag-id.png'); ?>" border="0" width="50"><?php } ?>
-								<div class="dropdown-lang-content">
-								<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
-								<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
-								</div>
-							</div>
-
-
-
-						</div>
-
-					 </div>
-
-
-
+					<div class="col-xs-5" style='text-align:right'>
+					 <b>Belanja murah di myacico.co.id! Gratis pengiriman untuk area JAKARTA</b>
 				 </div>
 			 </div>
 			</div>
@@ -219,8 +154,59 @@ a{
 
 
       <div class="col-xs-3">
+        <div class='row' style='padding-top:10px;'>
+					<div style='margin-top:8px;  float:left; width:90px;'>
+						<div class="dropdown-basket">
+							<?php
+								$totalItems = 0;
+								foreach ($this->cart->contents() as $items):
+									$totalItems += $items['qty'];
+								endforeach;
+							?>
+							<button class="dropbtn-basket">
+								<img src="<?php echo base_url('images/general/cart.png'); ?>" border="0"><br>
+								<span class="badge totalCart" style='margin-left:-5px; margin-top: -50px; position: absolute; font-size:15px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
+							</button>
+								<div class="dropdown-basket-content">
+									<?php
+									if($totalItems==0)
+									{ ?>
+									<div class='empty-item'><center><img src='<?php echo base_url('images/general/empty.jpg'); ?>' border='0'><br>Keranjang masih kosong</center></div>
+									<?php } ?>
+									<div class='list-item'></div>
+									<div class='btn-chekout'></div>
+								</div>
+						</div>
+					</div>
+					<div style='float:left; width:160px; text-align:center'>
+						<div class='row' style='margin-top:-3px; padding:3px 0px 3px 0px; border-radius:5px'>
+		          <div class="col-xs-3" style='font-size:42px; color:#111111; '><i class="fa fa-user" aria-hidden="true"></i></div>
+		          <div class="col-xs-9" style='font-size:15px; color:#444242; padding-left:3px;'>Selamat Datang<br>
+								<?php if(isset($user)){ ?>
+									<b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
+									<b><font color='red'><?php echo anchor('#', 'Logout', array('class'=>'logout btn-nav-black'));?></font></b>
+								<?php }else{ ?>
+									<b><font color='red'><?php echo anchor('customer/signIn','Login', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create','Daftar', array('class'=>'btn-nav-black')); ?></font></b>
+								<?php } ?>
+							</div>
+						</div>
+					</div>
 
-					<div style='font-family: arial; font-size:24px; font-weight: bold; color:#4d4d4d; margin-top:15px;'>Festival Belanja Online</div>
+					<div style='margin-top:8px;'>
+
+
+						<div class="dropdown-lang" style='border:0px solid #aeaeab; border-radius:5px; padding:5px; right: 0; left: auto; text-align:center '>
+							<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?><br><span class="caret"></span>
+							<div class="dropdown-lang-content">
+							<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
+							<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
+							</div>
+						</div>
+
+
+
+					</div>
+        </div>
         <!-- <table border='0' width='100%'><tr><td style='font-size:65px; text-align: center; color:#b2b2b2'></td><td style='font-size:20px; font-weight:bold; text-align: center; color:#b2b2b2'>Selamat Datang<br><font color='red'>Login</font> / <font color='red'>Daftar</font></td><td><img src="
           <?php// echo base_url('images/general/cart.png'); ?>" border="0"></td></tr></table> -->
       </div>
