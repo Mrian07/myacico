@@ -183,6 +183,14 @@ $this->load->view('frontend/sidenav',$this->data);
 		$this->data['hasil'] = json_decode($konten, true);
 
 
+		//Slide slide_show
+		$api = "home/view";
+		$url = api_base_url($api);
+
+		$konten = file_get_contents($url);
+		$this->data['dathome'] = json_decode($konten, true);
+
+
 		//$this->load->view('frontend/test',$this->data);
 		$this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);

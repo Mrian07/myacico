@@ -52,23 +52,31 @@ cursor:pointer;
             <!-- End Header Navigation -->
 
             <!-- Collect the nav links, forms, and other content for toggling -->
+
             <div class="collapse navbar-collapse" id="navbar-menu">
-                <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp" style='width:100%; text-align:center'>
+                <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp" style='text-align:center'>
 
 
 									<?php foreach($hasilNav as $dataNav){ ?>
-									<li class="dropdown megamenu-fw nav-show-desktop" style='width:11%;'>
+									<li class="dropdown megamenu-fw nav-show-desktop">
 										<?php echo anchor('#', $dataNav['name'], array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
 										<ul class="dropdown-menu megamenu-content" role="menu">
 											<li>
 												<div>
 													<div class="row" style='color:#000000'>
-                              <div class="col-menu col-md-2"><img src="<?php echo$dataNav['imageurl']; ?>" style="float:right;width:200px"/></div>
-															<?php foreach($dataNav['c2'] as $dataNavChild){ ?>
+                              <div class="col-menu col-md-2" style='height:250px'><img src="<?php echo$dataNav['imageurl']; ?>" style="float:right;width:200px"/></div>
+															<?php
+                              $imgLoop = 1;
+                               foreach($dataNav['c2'] as $dataNavChild){ ?>
 																<div class="col-menu col-md-2">
+                                  <?php if($imgLoop<=5){?>
+                                  <img src='<?php echo$dataNavChild['imageurl']; ?>' height='100px' border='0'><br>
+                                  <b><?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $dataNavChild['name']);?></b><hr>
+                                <?php }else{ ?>
 																	<?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $dataNavChild['name']);?>
+                                <?php } ?>
 																</div>
-															<?php } ?>
+															<?php $imgLoop++; } ?>
 
 													</div>
 												</div>

@@ -23,21 +23,94 @@
 	font-family: sans-serif;
 }
 
+/*harga produk*/
+.rp-min{
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.h-product{
+  text-align: left;
+  color: #51cffd
+}
+
+.nm_product{
+  text-align: left; color: #716e7f; height:50px
+}
+
+.ratings{
+  text-align: left; color:#d98c13;
+}
+
 /*head*/
 .my-head{
     width:100%;
 }
 
-/*Nav*/
-
-/*.my-nav{
-  background:#cd0000 url(../../images/general/red-emboss.jpg);
-  border:0px;
-  color:#ffffff;
-  border-radius: 0px;
-  padding-bottom: 5px;
+.my-hdr1{
+  margin-left:10px;
+  width:10%; float:left;
 }
 
+.my-hdr2{
+  width:70%; float:left;
+}
+
+.my-hdr3{
+  width:18%; float:left; text-align:right;
+}
+
+@media screen and (max-width: 1440px) {
+  .my-hdr1{
+    margin-left:10px;
+    width:11%; float:left;
+  }
+
+  .my-hdr2{
+    width:67%; float:left;
+  }
+
+  .my-hdr3{
+    width:20%; float:left; text-align:right;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .my-hdr1{
+    margin-left:10px;
+    width:13%; float:left;
+  }
+
+  .my-hdr2{
+    width:63%; float:left;
+  }
+
+  .my-hdr3{
+    width:22%; float:left; text-align:right;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .my-hdr1{
+    margin-left:10px;
+    width:15%; float:left;
+  }
+
+  .my-hdr2{
+    width:54%; float:left;
+  }
+
+  .my-hdr3{
+    width:28%; float:left; text-align:right;
+  }
+}
+
+/*Nav*/
+
+.my-nav{
+  clear:both
+}
+/*
 .navbar-inverse .navbar-nav > li > a
 {
   color:#ffffff;
@@ -119,7 +192,7 @@
 }
 
 a.my-info{
-  color: #40413e;
+  color: #111111;
   text-decoration: none;
 }
 
@@ -296,24 +369,25 @@ a:hover.my-info {
 		/*background-color:#111111;
 		color:#d0d0d0;
 		padding:13px;*/
-    padding: 15px 20px;
+    padding: 11px 20px;
     border: none;
     border-radius: 4px 0px 0px 4px;
-    background-color: #111111;
-    color:#d0d0d0;
+    background-color: #4d4d4d;
+    color:#f8f5f0;
 	}
 
 	.my-search:hover {
-	    background-color: #4c4e51;
+	    background-color: #131212;
 	    color: white;
 	}
 
 	.my-search-button{
-	    padding: 17px 20px;
+	    padding: 2px 20px;
 	    border: none;
 	    border-radius: 4px;
 	    background: #cd0000 url("../../images/general/red-emboss.jpg");
-		color:#d0d0d0;
+		  color:#f8f5f0;
+      font-size: 30px;
 	}
 
   .my-search-button:hover{
@@ -322,7 +396,7 @@ a:hover.my-info {
 
 	.my-search-field{
 		width: 100%;
-		padding: 14px;
+		padding: 10px;
 		margin: 8px 0;
 		box-sizing: border-box;
 		/*background: #f2f1f1;*/
@@ -332,27 +406,28 @@ a:hover.my-info {
 	}
 
   .my-btn-brand{
-    border: 1px solid #111111;
+    border: 0px;
     padding:10px;
-    color:#111111;
+    color:#989898;
     font-size:20px;
     background:#ffffff;
   }
 
   .my-btn-brand:hover{
-    color:#dddddd;
-    background:#252424;
+    color:red;
+    /*background:#252424;*/
     text-decoration: none;
   }
 
 
   .btn-nav-head{
-    border: 1px solid #716f6f;
+  /*  border: 1px solid #716f6f;*/
     padding:5px;
     color:#111111;
-    font-size:12px;
+    font-size:15px;
     text-decoration: none;
     border-radius:5px;
+    margin-left:10px;
   }
 
   .btn-nav-head:hover {
@@ -362,17 +437,33 @@ a:hover.my-info {
   }
 
   .btn-nav-red{
-    color: #d90000;
+    color: #4d4d4d;
     text-decoration: none;
   }
 
   .btn-nav-red:hover{
-    color: #fd9898;
+    color: #9b9999;
     text-decoration: none;
   }
 
   .btn-nav-red:active{
-    color: #fd9898;
+    color: #9b9999;
+    text-decoration: none;
+  }
+
+
+  .btn-nav-black{
+    color: #4d4d4d;
+    text-decoration: none;
+  }
+
+  .btn-nav-black:hover{
+    color: #9b9999;
+    text-decoration: none;
+  }
+
+  .btn-nav-black:active{
+    color: #9b9999;
     text-decoration: none;
   }
 
@@ -395,13 +486,11 @@ a:hover.my-info {
   }
 
   h3 span {
-      text-transform: uppercase;
       color: #151414;
-      border-bottom: 4px solid #ff0707;
-      font-size: 25px;
+      font-size: 15px;
       line-height: 45px;
       font-family: 'Open Sans', sans-serif;
-      font-weight: 300;
+      font-weight: bold;
   }
 
   /*SUBSCRIBE*/
@@ -480,7 +569,7 @@ a:hover.my-info {
       margin: 0;
       padding: 0;
       overflow: hidden;
-      margin-top:20px;
+      margin-top:0px;
   }
 
   .pay li {
@@ -496,7 +585,7 @@ a:hover.my-info {
       margin: 0;
       padding: 0;
       overflow: hidden;
-      margin-top:20px;
+      margin-top:0px;
   }
 
   .ship li {
@@ -523,26 +612,24 @@ a:hover.my-info {
   		text-decoration: none;
   }
 
-  .cpyright{
+  .copyright{
   	margin-top: 10px;
   	text-align: center;
   	color:#111111;
-  	font-family: verdana;
-  	font-size: 13px;
-  	background-color: #c6c4c4;
+  	font-family: arial;
+  	font-size: 14px;
   	padding:10px;
     font-weight: bold;
   }
 
   .my-bg-title{
-  	background:#fbfbfc;
   	color:#111111;
   	padding:20px 0px 20px 0px;
   	margin-bottom:0px;
   	font-size:12px;
     margin-bottom:20px;
-    padding: 10px;
-    border-bottom: 1px dashed #b7b3b3;
+    padding: 10px 10px 10px 0px;
+    border-bottom: 1px dashed #bfbfbf;
   }
 
   /*.my-container-white{
@@ -733,6 +820,27 @@ a:hover.my-info {
 }
 
 
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #111;
+    cursor: default;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+	border-radius:0px;
+
+}
+
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.428571429;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    color:#b0afaf;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
 
 
 
