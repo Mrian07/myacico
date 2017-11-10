@@ -71,7 +71,7 @@ cursor:pointer;
 																<div class="col-menu col-md-2">
                                   <?php if($imgLoop<=5){?>
                                   <img src='<?php echo$dataNavChild['imageurl']; ?>' height='100px' border='0'><br>
-                                  <b><?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $dataNavChild['name']);?></b>
+                                  <b><?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $dataNavChild['name']);?></b><br><br>
                                 <?php }else{ ?>
 																	<?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $dataNavChild['name']);?>
                                 <?php } ?>
