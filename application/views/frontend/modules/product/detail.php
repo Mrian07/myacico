@@ -77,10 +77,11 @@
 
 	  </div>
 	  <div class="col-sm-7 detail-product">
-			<div class="col-sm-6" style="background-color:white;">
-				<h4 class='title-product'><?php echo $name; ?></h4>
+			<h4 class='title-product'><?php echo $name; ?></h4>
+			<div class="col-sm-6" style="margin-left:0px; padding-left:0px">
 
-				<p style="color:red"><?php echo $sku; ?></p>
+
+				<span style="color:red"><?php echo $sku; ?></span><br>
 					<span class='price'><b>Rp.<?php echo money($pricelist);  ?></b></span><br>
 					<span style="color: green; font-weight:bold">Stock: Tersedia</span>
 
@@ -117,7 +118,7 @@
 
 			</div>
 			<div class="col-sm-6" style="background-color:white;">
-				<h4>Rating breakdown</h4>
+				<b>Rating breakdown</b>
 				<center><div id="rateYo" style="z-index: 0;"></div></center>
 								<div class="pull-left">
 									<div class="pull-left" style="width:35px; line-height:1;">
