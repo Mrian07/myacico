@@ -394,7 +394,9 @@ if($saw==Null)
         <!-- <div class="tmp-product"> -->
         <div class="col-xs-3">
           <div class='tmp-product'>
-          <img class="group list-group-image" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
+            <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>">
+              <img class="group list-group-image" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
+            </a>  
           <div class='nm-product-detail'>
           <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a><br>
           </div>
@@ -466,12 +468,9 @@ if($saw==Null)
 
         for($i;$i<=$max_page;$i++){
 
-          if($i=="5"){
-            echo"<li class='disabled'><span>...</span></li>";
-          }else{?>
+          ?>
             <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
-        <?php  }
-            ?>
+
 
 
         <?php }

@@ -51,8 +51,8 @@
 						<!--<a ng-repeat="url in dat.imageurl" ng-href="{{url}}" on-finish-render="ngRepeatFinished">
 							<img class="xzoom-gallery" width="80" src="{{url}}" xpreview="{{url}}" title="">
 						</a>-->
-						 
-                                                
+
+
                                                <?php
                                                     if($img[0])
                                                     {
@@ -60,13 +60,13 @@
                                                         {?>
                                                           <a href="<?php echo $gmbr;?>">
 							<img class="xzoom-gallery" width="80" src="<?php echo $gmbr;?>"  xpreview="<?php echo $gmbr;?>" title="">
-                                                        </a>  
+                                                        </a>
                                                      <?php   }
                                                     }
                                                ?>
-						
-						
-						
+
+
+
 						<!--a href="<?php //echo base_url('images/gallery/original/03_r_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/03_r_car.jpg');?>" title="The description goes here"></a>
 						<a href="<?php //echo base_url('images/gallery/original/04_g_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/04_g_car.jpg');?>" title="The description goes here"></a-->
 					  </div>
@@ -118,7 +118,7 @@
 			</div>
 			<div class="col-sm-6" style="background-color:white;">
 				<h4>Rating breakdown</h4>
-				<center><div id="rateYo"></div></center>
+				<center><div id="rateYo" style="z-index: 0;"></div></center>
 								<div class="pull-left">
 									<div class="pull-left" style="width:35px; line-height:1;">
 										<div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
@@ -247,7 +247,7 @@
 
 
 	<ul class="nav nav-tabs" style='font-size:17px; margin-bottom:20px; border-top:0px'>
-	  
+
 	  <li class="active"><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
           <li><a data-toggle="tab" href="#menu2">Spesifkasi</a></li>
 		<li><a data-toggle="tab" href="#menu3">Highlight</a></li>
@@ -256,11 +256,11 @@
 
 	<div class="tab-content">
 	  <div id="menu1" class="tab-pane fade">
-		
+
 		<p><?php echo $description;  ?></p>
 	  </div>
           <div id="menu2" class="tab-pane fade in active">
-		
+
 		<table class="table table-striped">
 			<tr>
 				<th> Brand </th>
@@ -406,14 +406,14 @@
 
 	  </div>
           <div id="menu3" class="tab-pane fade">
-		
+
 		<p><?php echo $highlight;  ?></p>
 	  </div>
              <div id="komen" class="tab-pane fade">
-		
+
 		<p><?php $ik=0;
-			$no=1; 
-                         
+			$no=1;
+
                         if($komen){
                 foreach($komen as $value)
                     {
@@ -465,7 +465,7 @@
 		  readOnly: true
 
   });
- 
+
 });
 
 // Starrr plugin (https://github.com/dobtco/starrr)
