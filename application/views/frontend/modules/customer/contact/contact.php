@@ -68,7 +68,7 @@ function myMap() {
 			<p>
 			<?php echo form_error('secutity_code', '<p class="field_error">', '</p>');?>
 			</p>
-			<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo "Daftar"?>">
+			<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo "Kirim"?>">
 			</form>
 			<br><br>
 		</div>
