@@ -139,12 +139,11 @@
 				<h3><span>Jasa Pengiriman</span></h3>
 				<div class='ship'>
 					<ul>
-					  <li><img src='<?php echo base_url('images/general/s-myacicocourier-small.jpg');?>' border='0'></li>
-					  <li><img src='<?php echo base_url('images/general/s-ninjaxpress-small.jpg');?>' border='0'></li>
+					  <li><img src='<?php echo base_url('images/general/s-myacicocourier.jpg');?>' border='0'></li>
+					  <li><img src='<?php echo base_url('images/general/s-ninjaxpress.jpg');?>' border='0'></li>
 					</ul>
 					<ul>
-						<li><img src='<?php echo base_url('images/general/s-jne-small.jpg');?>' border='0'></li>
-						<li><img src='<?php echo base_url('images/general/s-tiki-small.jpg');?>' border='0'></li>
+						<li><img src='<?php echo base_url('images/general/s-jne.jpg');?>' border='0'></li>
 					</ul>
 				</div>
 			</div>
