@@ -52,18 +52,16 @@ a{
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css');?>" />
 
 
-				<style type="text/css">
+				<!-- <style type="text/css">
 					#search_keyword_id
 					{
 						width:500px;
-						/*border:solid 1px #CDCDCD;*/
 						padding:10px;
 						font-size:12px;
 					}
 					.productSrc
 					{
 						position:absolute;
-						width:628px;
 						display:none;
 						margin-top:-1px;
 						border-top:0px;
@@ -75,11 +73,11 @@ a{
 					}
 					.show_result
 					{
-						width: 1000px;
+						/*width: 1000px;*/
 						font-family:tahoma;
 						padding:5px;
 						border-bottom:1px #CDCDCD dashed;
-						font-size:12px;
+						font-size:8px;
 						z-index: 289;
 					}
 					.show_result:hover
@@ -88,7 +86,7 @@ a{
 						color:#000000;
 						cursor:pointer;
 					}
-				</style>
+				</style> -->
     </head>
 
 <body style='font-weight: normal;' ng-app="myApp">
