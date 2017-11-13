@@ -94,7 +94,7 @@ a{
 
 	  <div class='my-head'>
 			<div style='margin-bottom:10px; margin-top:10px'>
-		    <img src='<?php echo base_url('images/general/img-head1.jpg');?>' border='0'>
+		    <img src='<?php echo base_url('images/general/img-head.png');?>' border='0'>
 			</div>
 
 
