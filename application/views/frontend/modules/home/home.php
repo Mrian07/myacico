@@ -745,7 +745,7 @@ ul.list-group:after {
                             <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[0].product_id}}/{{test.topProduct[0].alias}}'>
                               <img src="{{test.topProduct[0].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[0].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[0].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[0].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
 
 
@@ -776,7 +776,7 @@ ul.list-group:after {
                             <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[1].product_id}}/{{test.topProduct[1].alias}}'>
                               <img src="{{test.topProduct[1].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[1].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[1].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[1].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
 
 
@@ -805,7 +805,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[2].product_id}}/{{test.topProduct[2].alias}}'>
                               <img src="{{test.topProduct[2].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[2].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[2].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[2].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -826,7 +826,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[3].product_id}}/{{test.topProduct[3].alias}}'>
                               <img src="{{test.topProduct[3].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[3].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[3].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[3].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -847,7 +847,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[4].product_id}}/{{test.topProduct[4].alias}}'>
                               <img src="{{test.topProduct[4].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[4].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[4].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[4].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -868,7 +868,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[5].product_id}}/{{test.topProduct[5].alias}}'>
                               <img src="{{test.topProduct[5].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[5].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[5].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[5].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -933,7 +933,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[0].product_id}}/{{test.topProduct[0].alias}}'>
                               <img src="{{test.topProduct[0].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[0].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[0].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[0].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -954,7 +954,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[1].product_id}}/{{test.topProduct[1].alias}}'>
                               <img src="{{test.topProduct[1].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[1].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[1].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[1].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -975,7 +975,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[2].product_id}}/{{test.topProduct[2].alias}}'>
                               <img src="{{test.topProduct[2].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[2].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[2].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[2].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -996,7 +996,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[3].product_id}}/{{test.topProduct[3].alias}}'>
                               <img src="{{test.topProduct[3].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[3].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[3].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[3].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -1017,7 +1017,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[2].product_id}}/{{test.topProduct[2].alias}}'>
                               <img src="{{test.topProduct[4].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[4].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[4].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[4].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -1037,7 +1037,7 @@ ul.list-group:after {
                           <div class="list" ng-if="test.category == 'Komputer'"  ng-repeat = "test in list.topProduct">
                               <img src="{{test.topProduct[5].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[5].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[5].pricelist}}</h5>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[5].pricelist  | currency:"Rp.":0}}</h5>
                           </div>
                       </div>
                   </div>
@@ -1098,7 +1098,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[0].product_id}}/{{test.topProduct[0].alias}}'>
                               <img src="{{test.topProduct[0].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[0].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[0].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[0].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -1119,7 +1119,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[1].product_id}}/{{test.topProduct[1].alias}}'>
                               <img src="{{test.topProduct[1].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[1].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[1].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[1].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -1140,7 +1140,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[2].product_id}}/{{test.topProduct[2].alias}}'>
                               <img src="{{test.topProduct[2].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[2].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[2].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[2].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -1161,7 +1161,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[3].product_id}}/{{test.topProduct[3].alias}}'>
                               <img src="{{test.topProduct[3].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[3].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[3].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[3].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -1182,7 +1182,7 @@ ul.list-group:after {
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[2].product_id}}/{{test.topProduct[2].alias}}'>
                               <img src="{{test.topProduct[4].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[4].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[4].pricelist}}</h5></a>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[4].pricelist  | currency:"Rp.":0}}</h5></a>
                           </div>
                       </div>
                   </div>
@@ -1202,7 +1202,7 @@ ul.list-group:after {
                           <div class="list" ng-if="test.category == 'Peralatan Rumah'"  ng-repeat = "test in list.topProduct">
                               <img src="{{test.topProduct[5].imageurl}}" style="height:120px; width: auto">
                                 <h6 class='nm_product'>{{test.topProduct[5].name}}</h6>
-                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[5].pricelist}}</h5>
+                                <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[5].pricelist  | currency:"Rp.":0}}</h5>
                           </div>
                       </div>
                   </div>
@@ -1331,18 +1331,19 @@ ul.list-group:after {
   <div style='clear:both'></div>
 
   <div class="span12" style='background:#fde9e7; padding:10px; margin-top:10px'>
-      <div ng-controller="home1">
-            <div class="list" ng-if="test.category == 'Hobi'&& test.length >= 1"  ng-repeat = "test in list.topProduct">
+
+
     <div class="promo-front owl-carousel">
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
 
-
+  <div ng-controller="home1">
                         <div ng-if="load == 'true'">Loading...</div>
                         <div ng-if="load != 'true'">
-
+<div class="list" ng-if="test.category == 'Hobi'"  ng-repeat = "test in list.topProduct">
                                 <img src="{{test.topProduct[0].imageurl}}" style="height:120px; width: auto">
+                                  <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[0].product_id}}/{{test.topProduct[0].alias}}'>
                                   <h6 class='nm_product'>{{test.topProduct[0].name}}</h6>
-                                  <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[0].pricelist}}</h5>
+                                  <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[0].pricelist  | currency:"Rp.":0}}</h5></a>
                                   <div class="ratings">
                                       <span class="glyphicon glyphicon-star"></span>
                                       <span class="glyphicon glyphicon-star"></span>
@@ -1356,7 +1357,112 @@ ul.list-group:after {
                     </div>
 
         </div>
+        <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                    <div ng-controller="home1">
 
+                        <div ng-if="load == 'true'">Loading...</div>
+                        <div ng-if="load != 'true'">
+                            <div class="list" ng-if="test.category == 'Hobi'"  ng-repeat = "test in list.topProduct">
+                                <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[1].product_id}}/{{test.topProduct[1].alias}}'>
+                                <img src="{{test.topProduct[1].imageurl}}" style="height:120px; width: auto">
+                                  <h6 class='nm_product'>{{test.topProduct[1].name}}</h6>
+                                  <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[1].pricelist  | currency:"Rp.":0}}</h5></a>
+                            </div>
+                        </div>
+                    </div>
+              <div class="ratings">
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+              </div>
+        </div>
+
+        <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                    <div ng-controller="home1">
+
+                        <div ng-if="load == 'true'">Loading...</div>
+                        <div ng-if="load != 'true'">
+                            <div class="list" ng-if="test.category == 'Hobi'"  ng-repeat = "test in list.topProduct">
+                                <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[2].product_id}}/{{test.topProduct[2].alias}}'>
+                                <img src="{{test.topProduct[2].imageurl}}" style="height:120px; width: auto">
+                                  <h6 class='nm_product'>{{test.topProduct[2].name}}</h6>
+                                  <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[2].pricelist  | currency:"Rp.":0}}</h5></a>
+                            </div>
+                        </div>
+                    </div>
+              <div class="ratings">
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+              </div>
+        </div>
+        <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                    <div ng-controller="home1">
+
+                        <div ng-if="load == 'true'">Loading...</div>
+                        <div ng-if="load != 'true'">
+                            <div class="list" ng-if="test.category == 'Hobi'"  ng-repeat = "test in list.topProduct">
+                                <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[3].product_id}}/{{test.topProduct[3].alias}}'>
+                                <img src="{{test.topProduct[3].imageurl}}" style="height:120px; width: auto">
+                                  <h6 class='nm_product'>{{test.topProduct[3].name}}</h6>
+                                  <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[3].pricelist  | currency:"Rp.":0}}</h5></a>
+                            </div>
+                        </div>
+                    </div>
+              <div class="ratings">
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+              </div>
+        </div>
+        <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                    <div ng-controller="home1">
+
+                        <div ng-if="load == 'true'">Loading...</div>
+                        <div ng-if="load != 'true'">
+                            <div class="list" ng-if="test.category == 'Hobi'"  ng-repeat = "test in list.topProduct">
+                              <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[4].product_id}}/{{test.topProduct[4].alias}}'>
+                                <img src="{{test.topProduct[4].imageurl}}" style="height:120px; width: auto">
+                                  <h6 class='nm_product'>{{test.topProduct[4].name}}</h6>
+                                  <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[4].pricelist  | currency:"Rp.":0}}</h5></a>
+                            </div>
+                        </div>
+                    </div>
+              <div class="ratings">
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+              </div>
+        </div>
+        <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                    <div ng-controller="home1">
+
+                        <div ng-if="load == 'true'">Loading...</div>
+                        <div ng-if="load != 'true'">
+                            <div class="list" ng-if="test.category == 'Hobi'"  ng-repeat = "test in list.topProduct">
+                              <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[5].product_id}}/{{test.topProduct[5].alias}}'>
+                                <img src="{{test.topProduct[5].imageurl}}" style="height:120px; width: auto">
+                                  <h6 class='nm_product'>{{test.topProduct[5].name}}</h6>
+                                  <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[5].pricelist  | currency:"Rp.":0}}</h5></a>
+                            </div>
+                        </div>
+                    </div>
+              <div class="ratings">
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+              </div>
+        </div>
     </div>
 
   </div>
@@ -1389,9 +1495,9 @@ ul.list-group:after {
                         <div ng-if="load != 'true'">
                             <div class="list" ng-if="test.category == 'Audio & Visual'"  ng-repeat = "test in list.topProduct">
                                 <img src="{{test.topProduct[0].imageurl}}" style="height:120px; width: auto">
-                                <!-- <a ng-href="http://www.gravatar.com/avatar/{{hash}}">{{test.topProduct[0].name}}</a> -->
-                                  <h6 class='nm_product'>  <a ng-href="https://dev.myacico.co.id//product/detail/1065923/SAMSUNG-Adapter-NX-M-Mount-[ED-MA4NXM]">{{test.topProduct[0].name}}</a></h6>
-                                  <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[0].pricelist}}</h5>
+                                <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[0].product_id}}/{{test.topProduct[0].alias}}'>
+                                  <h6 class='nm_product'>{{test.topProduct[0].name}}</h6>
+                                  <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[0].pricelist  | currency:"Rp.":0}}</h5></a>
                             </div>
                         </div>
                     </div>
@@ -1403,7 +1509,111 @@ ul.list-group:after {
                   <span class="glyphicon glyphicon-star-empty"></span>
               </div>
         </div>
+        <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                      <div ng-controller="home1">
 
+                          <div ng-if="load == 'true'">Loading...</div>
+                          <div ng-if="load != 'true'">
+                              <div class="list" ng-if="test.category == 'Audio & Visual'"  ng-repeat = "test in list.topProduct">
+                                  <img src="{{test.topProduct[1].imageurl}}" style="height:120px; width: auto">
+                                      <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[1].product_id}}/{{test.topProduct[1].alias}}'>
+                                    <h6 class='nm_product'>{{test.topProduct[1].name}}</h6>
+                                    <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[1].pricelist  | currency:"Rp.":0}}</h5></a>
+                              </div>
+                          </div>
+                      </div>
+                <div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+          </div>
+          <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                        <div ng-controller="home1">
+
+                            <div ng-if="load == 'true'">Loading...</div>
+                            <div ng-if="load != 'true'">
+                                <div class="list" ng-if="test.category == 'Audio & Visual'"  ng-repeat = "test in list.topProduct">
+                                    <img src="{{test.topProduct[2].imageurl}}" style="height:120px; width: auto">
+                                        <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[2].product_id}}/{{test.topProduct[2].alias}}'>
+                                      <h6 class='nm_product'>{{test.topProduct[2].name}}</h6>
+                                      <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[2].pricelist  | currency:"Rp.":0}}</h5></a>
+                                </div>
+                            </div>
+                        </div>
+                  <div class="ratings">
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star-empty"></span>
+                  </div>
+            </div>
+            <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                          <div ng-controller="home1">
+
+                              <div ng-if="load == 'true'">Loading...</div>
+                              <div ng-if="load != 'true'">
+                                  <div class="list" ng-if="test.category == 'Audio & Visual'"  ng-repeat = "test in list.topProduct">
+                                      <img src="{{test.topProduct[3].imageurl}}" style="height:120px; width: auto">
+                                          <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[3].product_id}}/{{test.topProduct[3].alias}}'>
+                                        <h6 class='nm_product'>{{test.topProduct[3].name}}</h6>
+                                        <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[3].pricelist  | currency:"Rp.":0}}</h5></a>
+                                  </div>
+                              </div>
+                          </div>
+                    <div class="ratings">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    </div>
+              </div>
+              <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                            <div ng-controller="home1">
+
+                                <div ng-if="load == 'true'">Loading...</div>
+                                <div ng-if="load != 'true'">
+                                    <div class="list" ng-if="test.category == 'Audio & Visual'"  ng-repeat = "test in list.topProduct">
+                                        <img src="{{test.topProduct[4].imageurl}}" style="height:120px; width: auto">
+                                            <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[4].product_id}}/{{test.topProduct[4].alias}}'>
+                                          <h6 class='nm_product'>{{test.topProduct[4].name}}</h6>
+                                          <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[4].pricelist  | currency:"Rp.":0}}</h5></a>
+                                    </div>
+                                </div>
+                            </div>
+                      <div class="ratings">
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star-empty"></span>
+                      </div>
+                </div>
+                <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                              <div ng-controller="home1">
+
+                                  <div ng-if="load == 'true'">Loading...</div>
+                                  <div ng-if="load != 'true'">
+                                      <div class="list" ng-if="test.category == 'Audio & Visual'"  ng-repeat = "test in list.topProduct">
+                                          <img src="{{test.topProduct[5].imageurl}}" style="height:120px; width: auto">
+                                              <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[5].product_id}}/{{test.topProduct[5].alias}}'>
+                                            <h6 class='nm_product'>{{test.topProduct[5].name}}</h6>
+                                            <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[5].pricelist | currency:"Rp.":0}}</h5></a>
+                                      </div>
+                                  </div>
+                              </div>
+                        <div class="ratings">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </div>
+                  </div>
     </div>
 
   </div>
