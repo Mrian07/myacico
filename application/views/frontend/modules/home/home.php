@@ -1079,11 +1079,23 @@ ul.list-group:after {
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PERALATAN RUMAH TANGGA
   </div>
-  <div class="row">
+
+  <div style='float:left;width:604px; margin-right:5px'>
+    <img src='<?php echo base_url('images/demo/banner-c1.jpg');?>' border='0' width='100%' height='200'>
+  </div>
+  <div style='float:left;width:262px; margin-right:5px'>
+    <img src='<?php echo base_url('images/demo/banner-c2.jpg');?>' border='0' width='100%' height='200'>
+  </div>
+  <div style='float:left;width:262px'>
+    <img src='<?php echo base_url('images/demo/banner-c3.jpg');?>' border='0' width='100%' height='200'>
+  </div>
+  <div style='clear:both'></div>
+
+  <!-- <div class="row">
     <div class="col-xs-6"><img src='<?php echo base_url('images/demo/banner-c1.jpg');?>' border='0' width='100%' height='200'></div>
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-c2.jpg');?>' border='0' width='100%' height='200'></div>
     <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-c3.jpg');?>' border='0' width='100%' height='200'></div>
-  </div>
+  </div> -->
 
   <div class="span12" style='background:#fdf5e7; padding:10px; margin-top:10px'>
 

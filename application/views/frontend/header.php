@@ -52,18 +52,16 @@ a{
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css');?>" />
 
 
-				<style type="text/css">
+				<!-- <style type="text/css">
 					#search_keyword_id
 					{
 						width:500px;
-						/*border:solid 1px #CDCDCD;*/
 						padding:10px;
 						font-size:12px;
 					}
 					.productSrc
 					{
 						position:absolute;
-						width:628px;
 						display:none;
 						margin-top:-1px;
 						border-top:0px;
@@ -75,10 +73,11 @@ a{
 					}
 					.show_result
 					{
+						/*width: 1000px;*/
 						font-family:tahoma;
 						padding:5px;
 						border-bottom:1px #CDCDCD dashed;
-						font-size:12px;
+						font-size:8px;
 						z-index: 289;
 					}
 					.show_result:hover
@@ -87,7 +86,7 @@ a{
 						color:#000000;
 						cursor:pointer;
 					}
-				</style>
+				</style> -->
     </head>
 
 <body style='font-weight: normal;' ng-app="myApp">
@@ -236,12 +235,6 @@ a{
 	</div>
 
 
-
-
-
-
-
-
   <!-- s header -->
 
   <script type="text/javascript">
@@ -307,7 +300,7 @@ a{
 								data.forEach(function(p){
 									productSrc.append(
 
-									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' height='80'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\" ><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' height='80'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
 
 
 									);
@@ -483,8 +476,9 @@ a{
   });
 	app.controller('home1', function($scope, $http, $rootScope) {
 			$scope.home = 'test'
+			var api_base_url = "<?php echo $baseApiUrl; ?>";
 			var regData = {
-					url : 'https://api.myacico.co.id/myacico-service/home/topproductcategory',
+					url : api_base_url+'/home/topproductcategory',
 					method : 'GET',
 					headers: {'token' : '5402854820542'}
 			}
@@ -514,9 +508,9 @@ a{
 			$scope.postData = function(){
 
 					var name = $scope.input.data
-
+					var api_base_url = "<?php echo $baseApiUrl; ?>";
 					var regData = {
-							url : 'https://api.myacico.co.id/myacico-service/category/list',
+							url : api_base_url+'/category/list',
 							method : 'POST',
 							data : {
 									name : name
@@ -534,8 +528,9 @@ a{
 	})
 	app.controller('home', function($scope, $http, $rootScope) {
 			$scope.home = 'test'
+			var api_base_url = "<?php echo $baseApiUrl; ?>";
 			var regData = {
-					url : 'http://api.myacico.co.id/myacico-service/category/list',
+					url : api_base_url+'/category/list',
 					method : 'GET',
 					headers: {'token' : '5402854820542'}
 			}
@@ -565,9 +560,9 @@ a{
 			$scope.postData = function(){
 
 					var name = $scope.input.data
-
+					var api_base_url = "<?php echo $baseApiUrl; ?>";
 					var regData = {
-							url : 'https://api.myacico.co.id/myacico-service/category/list',
+							url : api_base_url+'/category/list',
 							method : 'POST',
 							data : {
 									name : name
