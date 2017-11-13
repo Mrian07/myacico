@@ -157,11 +157,12 @@ if($saw==Null)
 }
 //echo $data[1]["nama_lokasi"];
 
+ echo "<br/>";
 ?>
 
 
     <?php
-/*
+
     if ($pro == 1000003)  {
     echo "<div class='jumbotron jumbotron-billboard'>
       <div class='img'></div>
@@ -331,14 +332,14 @@ if($saw==Null)
     </div>";
     }
 
-*/
+
      ?>
 
 
 
 <div class="container">
 
-    <div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
+    <div class="well well-sm">
        <div class="col-sm-8">
         <!-- <strong>Category Title</strong>
 
@@ -398,10 +399,11 @@ if($saw==Null)
                 <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $img_url; ?>" alt="" />
 
                 <div class="caption">
-                  <div class='' style='height:80px;text-align:center;'>
-                    <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a><br>
-                  </div>
-
+                    <div  style='height:80px'>
+                    <h5 class="group inner list-group-item-heading" style='text-align:center;'><a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a>  </h5><br>
+                    </div>
+                        <div class="panel panel-default">
+            <div class="panel-body">
 						<center>
               <?php
               //if($cektoken){}
@@ -415,6 +417,9 @@ if($saw==Null)
                                 Rp.<?php echo money($data['pricelist']); ?></p>
 
 
+		<h4>
+
+            </h4>
                                                 <input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'><br>
 
 
@@ -449,10 +454,10 @@ if($saw==Null)
 
            </center>
 
-          </div>
+          </div></div>
 						 </center>
 
-
+                </div>
             </div>
 
         </div>
