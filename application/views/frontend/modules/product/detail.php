@@ -78,19 +78,21 @@
 	  </div>
 	  <div class="col-sm-7 detail-product">
 			<h4 class='title-product'><?php echo $name; ?></h4>
-			<div class="col-sm-6" style="margin-left:0px; padding-left:0px">
+			<div class="col-sm-6" style="margin-left:0px; padding-left:0px; border-right:1px solid #dddddd;">
 
 
 				<span style="color:red"><?php echo $sku; ?></span><br>
 					<span class='price'><b>Rp.<?php echo money($pricelist);  ?></b></span><br>
 					<span style="color: green; font-weight:bold">Stock: Tersedia</span>
+					<br>
+					Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
 
 					<br><br>
 					<center>
-					Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
+
 
 					<div class='detail-add-wishlist'>
-						<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br><br>
+						<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br>
 						<!-- <div class="btnaddcart">
 							<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
 						</div> -->
@@ -117,7 +119,7 @@
 
 
 			</div>
-			<div class="col-sm-6" style="background-color:white;">
+			<div class="col-sm-6">
 				<b>Rating breakdown</b>
 				<center><div id="rateYo" style="z-index: 0;"></div></center>
 								<div class="pull-left">
@@ -185,6 +187,8 @@
 									</div>
 									<div class="pull-right" style="margin-left:10px;"><?php echo$rating['star1'];?></div>
 								</div>
+
+
 				</div>
 
 
