@@ -476,8 +476,9 @@ a{
   });
 	app.controller('home1', function($scope, $http, $rootScope) {
 			$scope.home = 'test'
+			var api_base_url = "<?php echo $baseApiUrl; ?>";
 			var regData = {
-					url : 'https://api.myacico.co.id/myacico-service/home/topproductcategory',
+					url : api_base_url+'/home/topproductcategory',
 					method : 'GET',
 					headers: {'token' : '5402854820542'}
 			}
@@ -507,9 +508,9 @@ a{
 			$scope.postData = function(){
 
 					var name = $scope.input.data
-
+					var api_base_url = "<?php echo $baseApiUrl; ?>";
 					var regData = {
-							url : 'https://api.myacico.co.id/myacico-service/category/list',
+							url : api_base_url+'/category/list',
 							method : 'POST',
 							data : {
 									name : name
@@ -527,8 +528,9 @@ a{
 	})
 	app.controller('home', function($scope, $http, $rootScope) {
 			$scope.home = 'test'
+			var api_base_url = "<?php echo $baseApiUrl; ?>";
 			var regData = {
-					url : 'http://api.myacico.co.id/myacico-service/category/list',
+					url : api_base_url+'/category/list',
 					method : 'GET',
 					headers: {'token' : '5402854820542'}
 			}
@@ -558,9 +560,9 @@ a{
 			$scope.postData = function(){
 
 					var name = $scope.input.data
-
+					var api_base_url = "<?php echo $baseApiUrl; ?>";
 					var regData = {
-							url : 'https://api.myacico.co.id/myacico-service/category/list',
+							url : api_base_url+'/category/list',
 							method : 'POST',
 							data : {
 									name : name

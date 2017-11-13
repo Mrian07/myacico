@@ -114,7 +114,9 @@ class Web extends MY_Controller {
 	}
 
     public function navigation(){
+
       $url = "https://api.myacico.co.id/myacico-service/category/list";
+      // $url = "http://192.168.0.109:8080/myacico-service/category/list";
   		$konten = file_get_contents($url, false);
   		$hasilNav = json_decode($konten, true);
       $this->data['hasilNav'] = $hasilNav;
@@ -124,15 +126,18 @@ class Web extends MY_Controller {
 
     public function asset(){
 
-        //$this->data['baseApiUrl'] = "http://api.myacico.net:8080/myacico-service/api";
+
 		$this->data['baseApiUrl'] = "https://api.myacico.co.id/myacico-service";
 		$this->data['baseApiUrl2'] = "https://acc.myacico.co.id/myacico-account/account";
+
+    // $this->data['baseApiUrl'] = "http://192.168.0.109:8080/myacico-service";
+		// $this->data['baseApiUrl2'] = "https://acc.myacico.co.id/myacico-account/account";
 
     }
 
     public function categorySearch(){
   		$url = "https://api.myacico.co.id/myacico-service/category";
-
+      // $url = "http://192.168.0.109:8080/myacico-service/category";
   		$konten = file_get_contents($url);
   		$this->data['catsearch'] = json_decode($konten, true);
       $catsearch = json_decode($konten, true);
