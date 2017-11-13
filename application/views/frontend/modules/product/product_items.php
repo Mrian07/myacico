@@ -27,12 +27,12 @@ height: 100px;
 .yu{
   color: red;
 font-family: 'Roboto Condensed', sans-serif;
-font-size: 20px;
+font-size: 16px;
 
 }
 .yu1{
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   color: green;
 }
 .item.list-group-item
@@ -376,121 +376,71 @@ if($saw==Null)
         <div style="clear:both"></div>
     </div>
 
-    <div id="products" class="row list-group">
 
-			<!---<div class="product">
-			</div>-->
 
-        <?php foreach($hasil as $data){
+    <div class='row'>
+      <?php foreach($hasil as $data){
 
-            //die(print_r($data['imageurl']));
-          if(isset($data['imageurl'])){
-               $img_url= $data['imageurl'];
-          }
+        //die(print_r($data['imageurl']));
+        if(isset($data['imageurl'])){
+        $img_url= $data['imageurl'];
+        }
+        else{
+        $img_url= null;
+        }
+      ?>
+
+
+        <!-- <div class="tmp-product"> -->
+        <div class="col-xs-3">
+          <div class='tmp-product'>
+          <img class="group list-group-image" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
+          <div class='nm-product-detail'>
+          <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a><br>
+          </div>
+
+          <?php
+          if($data['stock'] < 1)
+          echo "<div class='yu'>Stock : Tidak Tersedia</div>";
           else{
-               $img_url= null;
+          echo "<div class='yu1'>Stock :  Tersedia</div>";
           }
           ?>
-
-		 <div class="item  col-xs-3 col-lg-3">
-            <div class="thumbnail">
-
-                <img class="group list-group-image" style='margin-top:10px;' src="<?php echo $img_url; ?>" alt="" />
-
-                <div class="caption">
-                  <div class='' style='height:80px;text-align:center;'>
-                    <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a><br>
-                  </div>
-
-						<center>
-              <?php
-              //if($cektoken){}
-                if($data['stock'] < 1)
-         echo "<div class='yu'>Stock : Tidak Tersedia</div>";
-                else{
-                 echo "<div class='yu1'>Stock :  Tersedia</div>";
-                }
-            ?>
-						<p class="lead">
-                                Rp.<?php echo money($data['pricelist']); ?></p>
+          <p class="lead">
+          Rp.<?php echo money($data['pricelist']); ?></p>
+          <center><input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'></center><br>
 
 
-                                                <input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'><br>
+        <div class="btn-group">
+        <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
 
+        <?php
+        //if($cektoken){}
+        if($data['isWishList'] =='Y')
+        {
+        ?>
 
-            <center>
-              <div class="btn-group">
-                <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+        <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
+        <?php }else{
+        ?>
 
-                <?php
-                //if($cektoken){}
-                  if($data['isWishList'] =='Y')
-                  {
-              ?>
+        <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
 
-               <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
-            <?php }else{
-           ?>
-
-
-
-
-
-
-
-               <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
-
-
-
-
-            <?php }
-            ?>
-
-
-           </center>
-
-          </div>
-						 </center>
-
-
-            </div>
+        <?php }
+        ?>
 
         </div>
 
-		<?php
-
-            //}
-
-            } ?>
-       <!---
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Product title</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $21.000</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-		-->
-
-		</div>
+      </div>
+      </div>
+      <?php } ?>
+      </div>
 
 
 
-    </div>
+
+
+<div style="clear:both"></div>
 
 <div class="text-center">
     <ul class="pagination">
@@ -538,7 +488,7 @@ if($saw==Null)
     </ul>
 </div>
 
-</ul>
+
 </div>
 
 <script type="text/javascript">
