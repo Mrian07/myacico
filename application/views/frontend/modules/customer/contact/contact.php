@@ -35,7 +35,7 @@ function myMap() {
 			<!-- <p>Silakan hubungi kami melalui kolom dibawah ini.</p> -->
         <p> <?php echo $lang_field_ContAtas; ?>
 
-			<form action=''>
+		 <form name="myForm" method="post">
 			<div class="form-group">
 			<label><?php echo $lang_field_ContNama; ?></label>
 			<input type="text" id="nama" name="nama" class="form-control mandatory" />
@@ -46,7 +46,7 @@ function myMap() {
 			</div>
 			<div class="form-group">
 			<label><?php echo $lang_field_ContKeperluan; ?></label>
-			<select id='keperluan' name='keperluan' class="form-control mandatory">
+			<select id='issue' name='issue' class="form-control mandatory">
 				<option value=''>-Pilih-</option>
 				<option value='Product Issue'>Product Issue</option>
 				<option value='Customer Relation'>Customer Relation</option>
@@ -58,17 +58,17 @@ function myMap() {
 			</div>
 			<div class="form-group">
 			<label><?php echo $lang_field_ContMessage;?></label>
-			<textarea class="form-control mandatory" rows="5" id="pesan" name='pesan'></textarea>
+			<textarea class="form-control mandatory" rows="5" id="message" name='message'></textarea>
 			</div>
 			<div class="form-group">
 			<?php echo $image;?><br>
 			<label for="pwd">Security Code:</label>
-			<input type='text' size='10' class="form-control mandatory" name='secutity_code' id='secutity_code'/>
+			<input type='text' size='15' class="form-control mandatory" name='secutity_code' id='secutity_code'/>
 			</div>
 			<p>
 			<?php echo form_error('secutity_code', '<p class="field_error">', '</p>');?>
 			</p>
-			<input type="submit" class="btn btn-primary" id="submit_btn" value="<?php echo $lang_btn_Kirim; ?>">  <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+			<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo "Daftar"?>">
 			</form>
 			<br><br>
 		</div>
@@ -84,26 +84,38 @@ var apiurl = baseApiUrl + '/mail/contactus';
 var data = {};
 $(document).ready(function() {
 
+
+
   $('form').submit(function(e){
     e.preventDefault();
-    var name = $("#name").val();
+    var nama = $("#nama").val();
 		var email = $("#email").val();
-		var password = $("#password").val();
-                var password2 = $("#password2").val();
-		data.name = name;
+		var issue = $("#issue").val();
+    	var message = $("#message").val();
+      var captcha = <?php echo  strtolower($this->session->userdata('mycaptcha'));?>;
+      var secutity_code = $("#secutity_code").val();
+      console.log('asdasd',captcha);
+      console.log('testvar2', secutity_code);
+		data.nama = nama;
     data.email = email;
-    data.password = password;
+    data.issue = issue;
+      data.message = message;
 
+      if(secutity_code != captcha){
+        $.alert({title:'Alert', content: ' Security Code yang Anda masukan salah !'});
+        $('#spinner_img').hide();
+        $('#submit_btn').val('Kirim').removeClass('disabled');
+        $('.mandatory').prop('disabled', false);
+        return false;
+      }
 
-
-
-if(name==''){
-			$.alert({
-				title: 'Alert!',
-				content: 'Nama tidak boleh kosong!',
-			});
-      return false;
-		}
+// if(name==''){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'Nama tidak boleh kosong!',
+// 			});
+//       return false;
+// 		}
 		    var x = document.forms["myForm"]["email"].value;
     var atpos = x.indexOf("@");
     var dotpos = x.lastIndexOf(".");
@@ -115,22 +127,30 @@ if(name==''){
 
 
 		// comment baru
-		    var success = function(r){
-      $('#spinner_img').hide();
-      $('#submit_btn').val('Kirim').removeClass('disabled');
-      // console.log('OK:', r);
-      //alert(r.message);
-      //    return false;
-			window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
-    };
 
+    var success = function(data)
+		{
+
+			if(data.status==1){
+        // console.log('asdasd',data.status);
+
+				location.href="<?php echo site_url('customer/messageSent'); ?>";
+			}else{
+        $.alert({title:'Alert', content: ' pesan gagal dikirim silahkan coba kembali !'});
+        $('#spinner_img').hide();
+        $('#submit_btn').val('Kirim').removeClass('disabled');
+        $('.mandatory').prop('disabled', false);
+			}
+
+		}
 
 
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success:success });
+    $.ajax({ type:"POST", contentType: "application/json",headers:{"token":"eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJtYWlsQG1haWwuY29tIiwiYXVkIjoiQURNSU4tQUNDIiwianRpIjoiMjM0MiJ9.i-A1qHNcyoo2z-GTqgue5YKWdDi04qjWER_lDAkG07o"}, data:JSON.stringify(data), dataType: "json", url: apiurl, success:success });
 
   });
+
   });
 // var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
 

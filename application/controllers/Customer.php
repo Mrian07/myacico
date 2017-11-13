@@ -76,7 +76,7 @@ class Customer extends Web {
 			'img_path'	 => './captcha/',
 			'img_url'	 => base_url().'captcha/',
 			'img_width'	 => '200',
-			'img_height' => 32,
+			'img_height' => 52,
 			'border' => 0,
 			'expiration' => 7200
 		);
@@ -97,53 +97,7 @@ class Customer extends Web {
 		$this->load->view('frontend/footer',$this->data);
 	}
 
-	public function prosesContact()
-	{
 
-		echo"halloo"; die();
-
-		$nm_from = $this->input->post('nama');
-		$email_from = $this->input->post('email');
-		$subject = $this->input->post('keperluan');
-		$message = $this->input->post('pesan');
-		$secutity_code = $this->input->post('secutity_code');
-
-		//$email_to='itd@myacico.co.id';
-
-		$datavar = array(
-			"name"=>$nm_from,
-			"email"=>$email_from,
-			"issue"=>$subject,
-			"message"=>$message,
-		);
-		$token = "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJtYWlsQG1haWwuY29tIiwiYXVkIjoiQURNSU4tQUNDIiwianRpIjoiMjM0MiJ9.i-A1qHNcyoo2z-GTqgue5YKWdDi04qjWER_lDAkG07o";
-		$api = "mail/contactus";
-		$url = api_base_url($api);
-echo "$url";
-		$options = ["http" => [
-			"data" => $datavar,
-		"method" => "POST",
-		"header" => ["token: " . $token,
-		"Content-Type: application/json"],
-		]];
-
-		$context = stream_context_create($options);
-		$konten = file_get_contents($url, false, $context);
-		echo"$konten";
-		// $hasil = json_decode($konten, true);
-    //
-		// if((strtolower($secutity_code) == strtolower($this->session->userdata('mycaptcha')))){
-    //
-		// 	if($this->sendMail($email_from,$nm_from,$email_to,$subject,$message)==true)
-		// 	{
-		// 		echo "terkirim";
-		// 	}else{
-		// 		echo "gagal";
-		// 	}
-		// }else{
-		// 	echo "gagal_captcha";
-		// }
-	}
 
 
 	public function messageSent()

@@ -737,7 +737,7 @@ ul.list-group:after {
         //foreach($dathome2['topProduct'] as $key => $itemslide7){ ?>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                         <!-- <a href="<?php //  echo base_url('product/detail/'. $itemslide7['categoryId'].'/'. $itemslide7['topProduct']);?>" class='link-p'> -->
                         <?php //} ?>
@@ -768,7 +768,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
 
 
@@ -799,7 +799,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                           <div class="list" ng-if="test.category == 'Gadget'"  ng-repeat = "test in list.topProduct">
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[2].product_id}}/{{test.topProduct[2].alias}}'>
@@ -820,7 +820,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                           <div class="list" ng-if="test.category == 'Gadget'"  ng-repeat = "test in list.topProduct">
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[3].product_id}}/{{test.topProduct[3].alias}}'>
@@ -841,7 +841,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                           <div class="list" ng-if="test.category == 'Gadget'"  ng-repeat = "test in list.topProduct">
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[4].product_id}}/{{test.topProduct[4].alias}}'>
@@ -862,7 +862,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                           <div class="list" ng-if="test.category == 'Gadget'"  ng-repeat = "test in list.topProduct">
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[5].product_id}}/{{test.topProduct[5].alias}}'>
@@ -883,7 +883,7 @@ ul.list-group:after {
       <!-- <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                           <div class="list" ng-if="test.category == 'Gadget'"  ng-repeat = "test in list.topProduct">
                               <img src="{{test.topProduct[6].imageurl}}" style="height:120px; width: auto">
@@ -927,7 +927,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                           <div class="list" ng-if="test.category == 'Komputer'"  ng-repeat = "test in list.topProduct">
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[0].product_id}}/{{test.topProduct[0].alias}}'>
@@ -948,7 +948,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                           <div class="list" ng-if="test.category == 'Komputer'"  ng-repeat = "test in list.topProduct">
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[1].product_id}}/{{test.topProduct[1].alias}}'>
@@ -969,7 +969,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                           <div class="list" ng-if="test.category == 'Komputer'"  ng-repeat = "test in list.topProduct">
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[2].product_id}}/{{test.topProduct[2].alias}}'>
@@ -990,7 +990,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                           <div class="list" ng-if="test.category == 'Komputer'"  ng-repeat = "test in list.topProduct">
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[3].product_id}}/{{test.topProduct[3].alias}}'>
@@ -1011,7 +1011,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                           <div class="list" ng-if="test.category == 'Komputer'"  ng-repeat = "test in list.topProduct">
                               <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[2].product_id}}/{{test.topProduct[2].alias}}'>
@@ -1032,7 +1032,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                           <div class="list" ng-if="test.category == 'Komputer'"  ng-repeat = "test in list.topProduct">
                               <img src="{{test.topProduct[5].imageurl}}" style="height:120px; width: auto">
@@ -1052,7 +1052,7 @@ ul.list-group:after {
       <!-- <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                   <div ng-controller="home1">
 
-                      <div ng-if="load == 'true'">Loading dulu</div>
+                      <div ng-if="load == 'true'">Loading...</div>
                       <div ng-if="load != 'true'">
                           <div class="list" ng-if="test.category == 'Komputer'"  ng-repeat = "test in list.topProduct">
                               <img src="{{test.topProduct[6].imageurl}}" style="height:120px; width: auto">
@@ -1076,9 +1076,172 @@ ul.list-group:after {
 
   </div>
 
-
-
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PERALATAN RUMAH TANGGA
+  </div>
+  <div class="row">
+    <div class="col-xs-6"><img src='<?php echo base_url('images/demo/banner-c1.jpg');?>' border='0' width='100%' height='200'></div>
+    <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-c2.jpg');?>' border='0' width='100%' height='200'></div>
+    <div class="col-xs-3"><img src='<?php echo base_url('images/demo/banner-c3.jpg');?>' border='0' width='100%' height='200'></div>
+  </div>
+
+  <div class="span12" style='background:#fdf5e7; padding:10px; margin-top:10px'>
+
+    <div class="promo-front owl-carousel">
+
+      <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                  <div ng-controller="home1">
+
+                      <div ng-if="load == 'true'">Loading...</div>
+                      <div ng-if="load != 'true'">
+                          <div class="list" ng-if="test.category == 'Peralatan Rumah'"  ng-repeat = "test in list.topProduct">
+                              <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[0].product_id}}/{{test.topProduct[0].alias}}'>
+                              <img src="{{test.topProduct[0].imageurl}}" style="height:120px; width: auto">
+                                <h6 class='nm_product'>{{test.topProduct[0].name}}</h6>
+                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[0].pricelist}}</h5></a>
+                          </div>
+                      </div>
+                  </div>
+            <div class="ratings">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+      </div>
+      <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                  <div ng-controller="home1">
+
+                      <div ng-if="load == 'true'">Loading...</div>
+                      <div ng-if="load != 'true'">
+                          <div class="list" ng-if="test.category == 'Peralatan Rumah'"  ng-repeat = "test in list.topProduct">
+                              <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[1].product_id}}/{{test.topProduct[1].alias}}'>
+                              <img src="{{test.topProduct[1].imageurl}}" style="height:120px; width: auto">
+                                <h6 class='nm_product'>{{test.topProduct[1].name}}</h6>
+                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[1].pricelist}}</h5></a>
+                          </div>
+                      </div>
+                  </div>
+            <div class="ratings">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+      </div>
+      <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                  <div ng-controller="home1">
+
+                      <div ng-if="load == 'true'">Loading...</div>
+                      <div ng-if="load != 'true'">
+                          <div class="list" ng-if="test.category == 'Peralatan Rumah'"  ng-repeat = "test in list.topProduct">
+                              <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[2].product_id}}/{{test.topProduct[2].alias}}'>
+                              <img src="{{test.topProduct[2].imageurl}}" style="height:120px; width: auto">
+                                <h6 class='nm_product'>{{test.topProduct[2].name}}</h6>
+                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[2].pricelist}}</h5></a>
+                          </div>
+                      </div>
+                  </div>
+            <div class="ratings">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+      </div>
+      <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                  <div ng-controller="home1">
+
+                      <div ng-if="load == 'true'">Loading...</div>
+                      <div ng-if="load != 'true'">
+                          <div class="list" ng-if="test.category == 'Peralatan Rumah'"  ng-repeat = "test in list.topProduct">
+                              <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[3].product_id}}/{{test.topProduct[3].alias}}'>
+                              <img src="{{test.topProduct[3].imageurl}}" style="height:120px; width: auto">
+                                <h6 class='nm_product'>{{test.topProduct[3].name}}</h6>
+                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[3].pricelist}}</h5></a>
+                          </div>
+                      </div>
+                  </div>
+            <div class="ratings">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+      </div>
+      <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                  <div ng-controller="home1">
+
+                      <div ng-if="load == 'true'">Loading...</div>
+                      <div ng-if="load != 'true'">
+                          <div class="list" ng-if="test.category == 'Peralatan Rumah'"  ng-repeat = "test in list.topProduct">
+                              <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[2].product_id}}/{{test.topProduct[2].alias}}'>
+                              <img src="{{test.topProduct[4].imageurl}}" style="height:120px; width: auto">
+                                <h6 class='nm_product'>{{test.topProduct[4].name}}</h6>
+                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[4].pricelist}}</h5></a>
+                          </div>
+                      </div>
+                  </div>
+            <div class="ratings">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+      </div>
+      <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                  <div ng-controller="home1">
+
+                      <div ng-if="load == 'true'">Loading...</div>
+                      <div ng-if="load != 'true'">
+                          <div class="list" ng-if="test.category == 'Peralatan Rumah'"  ng-repeat = "test in list.topProduct">
+                              <img src="{{test.topProduct[5].imageurl}}" style="height:120px; width: auto">
+                                <h6 class='nm_product'>{{test.topProduct[5].name}}</h6>
+                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[5].pricelist}}</h5>
+                          </div>
+                      </div>
+                  </div>
+            <div class="ratings">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+      </div>
+      <!-- <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                  <div ng-controller="home1">
+
+                      <div ng-if="load == 'true'">Loading...</div>
+                      <div ng-if="load != 'true'">
+                          <div class="list" ng-if="test.category == 'Komputer'"  ng-repeat = "test in list.topProduct">
+                              <img src="{{test.topProduct[6].imageurl}}" style="height:120px; width: auto">
+                                <h6 class='nm_product'>{{test.topProduct[6].name}}</h6>
+                                <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[6].pricelist}}</h5>
+                          </div>
+                      </div>
+                  </div>
+            <div class="ratings">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+      </div> -->
+
+
+
+    </div>
+
+  </div>
+
+  <!-- <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PERALATAN RUMAH TANGGA
   </div>
 
@@ -1095,14 +1258,36 @@ ul.list-group:after {
 
 
   <div class="span12" style='background:#f1fae7; padding:10px; margin-top:10px'>
-    <div ng-controller="home1">
+    <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+                <div ng-controller="home1">
+
+                    <div ng-if="load == 'true'">Loading...</div>
+                    <div ng-if="load != 'true'">
+                        <div class="list" ng-if="test.category == 'Peralatan Rumah'"  ng-repeat = "test in list.topProduct">
+                            <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[0].product_id}}/{{test.topProduct[0].alias}}'>
+                            <img src="{{test.topProduct[0].imageurl}}" style="height:120px; width: auto">
+                              <h6 class='nm_product'>{{test.topProduct[0].name}}</h6>
+                              <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[0].pricelist}}</h5></a>
+                        </div>
+                    </div>
+                </div>
+          <div class="ratings">
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+          </div>
+    </div>
+
+    <!-- <div ng-controller="home1">
         <div class="list" ng-if="test.category == 'Peralatan Rumah' && test.length >= 1 "  ng-repeat = "test in list.topProduct">
     <div class="promo-front owl-carousel">
 
           <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
 
 
-                            <div ng-if="load == 'true'">Loading dulu</div>
+                            <div ng-if="load == 'true'">Loading...</div>
                             <div ng-if="load != 'true'">
 
                                     <img src="{{test.topProduct[0].imageurl}}" style="height:120px; width: auto">
@@ -1121,10 +1306,11 @@ ul.list-group:after {
                         </div>
 
             </div>
-
-    </div>
-
   </div>
+    </div> -->
+
+
+
 
 
 
@@ -1151,7 +1337,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
 
 
-                        <div ng-if="load == 'true'">Loading dulu</div>
+                        <div ng-if="load == 'true'">Loading...</div>
                         <div ng-if="load != 'true'">
 
                                 <img src="{{test.topProduct[0].imageurl}}" style="height:120px; width: auto">
@@ -1199,7 +1385,7 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
                     <div ng-controller="home1">
 
-                        <div ng-if="load == 'true'">Loading dulu</div>
+                        <div ng-if="load == 'true'">Loading...</div>
                         <div ng-if="load != 'true'">
                             <div class="list" ng-if="test.category == 'Audio & Visual'"  ng-repeat = "test in list.topProduct">
                                 <img src="{{test.topProduct[0].imageurl}}" style="height:120px; width: auto">
