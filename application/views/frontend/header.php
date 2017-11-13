@@ -75,6 +75,7 @@ a{
 					}
 					.show_result
 					{
+						width: 1000px;
 						font-family:tahoma;
 						padding:5px;
 						border-bottom:1px #CDCDCD dashed;
@@ -236,12 +237,6 @@ a{
 	</div>
 
 
-
-
-
-
-
-
   <!-- s header -->
 
   <script type="text/javascript">
@@ -307,7 +302,7 @@ a{
 								data.forEach(function(p){
 									productSrc.append(
 
-									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' height='80'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\" ><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' height='80'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
 
 
 									);
