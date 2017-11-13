@@ -119,19 +119,19 @@
 				<h3><span>Methode Pembayaran</span></h3>
 				<div class='pay'>
 					<ul>
-					  <li><img src='<?php echo base_url('images/general/p-visa-small.jpg');?>' border='0'></li>
-					  <li><img src='<?php echo base_url('images/general/p-mastercard-small.jpg');?>' border='0'></li>
-						<li><img src='<?php echo base_url('images/general/p-klikbca-small.jpg');?>' border='0'></li>
+					  <li style='margin-right:5px;margin-bottom:5px'><img src='<?php echo base_url('images/general/p-visa-small.jpg');?>' border='0'></li>
+					  <li style='margin-right:5px; margin-bottom:5px'><img src='<?php echo base_url('images/general/ico_bank_02.png');?>' border='0'></li>
+					 	<li style='margin-bottom:5px'><img src='<?php echo base_url('images/general/ico_bank_03.png');?>' border='0'></li>
 					</ul>
 					<ul>
-						<li><img src='<?php echo base_url('images/general/p-bcaklikpay-small.jpg');?>' border='0'></li>
-					  <li><img src='<?php echo base_url('images/general/p-mandiriclickpay-small.jpg');?>' border='0'></li>
-						<li><img src='<?php echo base_url('images/general/p-visa2-small.jpg');?>' border='0'></li>
+						<li style='margin-right:5px;margin-bottom:5px'><img src='<?php echo base_url('images/general/ico_bank_04.png');?>' border='0'></li>
+					  <li style='margin-right:5px;margin-bottom:5px'><img src='<?php echo base_url('images/general/ico_bank_06.png');?>' border='0'></li>
+						<!-- <li></li> -->
 					</ul>
 					<ul>
-						<li><img src='<?php echo base_url('images/general/p-cimbclicks-small.jpg');?>' border='0'></li>
-					  <li><img src='<?php echo base_url('images/general/p-mandiri-small.jpg');?>' border='0'></li>
-						<li><img src='<?php echo base_url('images/general/p-permatabank-small.jpg');?>' border='0'></li>
+						<li><img src='<?php echo base_url('images/general/p-bcaklikpay.png');?>' border='0'></li>
+					  <!-- <li><img src='<?php echo base_url('images/general/p-mandiri-small.jpg');?>' border='0'></li>
+						<li><img src='<?php echo base_url('images/general/p-permatabank-small.jpg');?>' border='0'></li> -->
 					</ul>
 				</div>
 			</div>

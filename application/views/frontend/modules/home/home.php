@@ -642,7 +642,7 @@ ul.list-group:after {
       <div class="item">
 
       <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
-        <center><img src="<?php echo $itemslide2['imageurl']; ?>" class='img-slide'></center></a>
+        <center><img src="<?php echo $itemslide2['imageurl']; ?>" class='img-slide' style='max-width:80%'></center></a>
 
           <h6 class="text-center link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></h6>
           <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
