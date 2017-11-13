@@ -76,7 +76,7 @@ class Customer extends Web {
 			'img_path'	 => './captcha/',
 			'img_url'	 => base_url().'captcha/',
 			'img_width'	 => '200',
-			'img_height' => 32,
+			'img_height' => 52,
 			'border' => 0,
 			'expiration' => 7200
 		);
@@ -97,27 +97,7 @@ class Customer extends Web {
 		$this->load->view('frontend/footer',$this->data);
 	}
 
-	public function prosesContact()
-	{	$nm_from = $this->input->post('nama');
-		$email_from = $this->input->post('email');
-		$subject = $this->input->post('keperluan');
-		$message = $this->input->post('pesan');
-		$secutity_code = $this->input->post('secutity_code');
-
-		$email_to='itd@myacico.co.id';
-
-		if((strtolower($secutity_code) == strtolower($this->session->userdata('mycaptcha')))){
-
-			if($this->sendMail($email_from,$nm_from,$email_to,$subject,$message)==true)
-			{
-				echo "terkirim";
-			}else{
-				echo "gagal";
-			}
-		}else{
-			echo "gagal_captcha";
-		}
-	}
+	
 
 
 	public function messageSent()
