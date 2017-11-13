@@ -741,11 +741,15 @@ ul.list-group:after {
                       <div ng-if="load != 'true'">
                         <!-- <a href="<?php //  echo base_url('product/detail/'. $itemslide7['categoryId'].'/'. $itemslide7['topProduct']);?>" class='link-p'> -->
                         <?php //} ?>
+
                           <div class="list" ng-if="test.category == 'Gadget'"  ng-repeat = "test in list.topProduct">
                             <a href='<?php echo base_url() ?>/product/detail/{{test.topProduct[0].product_id}}/{{test.topProduct[0].alias}}'>
-                              <img src="{{test.topProduct[0].imageurl}}" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';" style="height:120px; max-width:80%;">
+                              <center>
+                              <img src="{{test.topProduct[0].imageurl}}" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';" style="height:120px; max-width:80%; ">
+                            </center>
                                 <h6 class='nm_product'>{{test.topProduct[0].name}}</h6>
                                 <h5 class='h-product'><span class='rp-min'></span>{{test.topProduct[0].pricelist  | currency:"Rp.":0}}</h5></a>
+
                           </div>
 
 
