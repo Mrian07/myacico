@@ -23,6 +23,41 @@
 	font-family: sans-serif;
 }
 
+.tmp-product{
+  border:1px solid #dddddd;
+  padding:10px 5px 10px 5px;
+  margin-bottom:10px;
+  text-align:center;
+  /*width:200px;*/
+  /*float: left;*/
+}
+
+.tmp-product img{
+  width:70%;
+}
+
+.nm-product-detail{
+   height:70px;
+   font-size: 13px;
+   color: #4b4b4b;
+   text-align:center;
+}
+
+.nm-product-detail a{
+   color: #4b4b4b;
+   text-decoration: none;
+}
+
+.nm-product-detail a:hover{
+   color: #b1adad;
+   text-decoration: none;
+}
+
+.tmp-product:hover{
+  /*background-color: #f9f9f9;*/
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
 /*harga produk*/
 .rp-min{
   font-size: 13px;
