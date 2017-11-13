@@ -23,6 +23,13 @@
 	font-family: sans-serif;
 }
 
+/*s: Product*/
+
+.price {
+    font-size: 20px;
+    color: #8a0202;
+}
+
 .tmp-product{
   border:1px solid #dddddd;
   padding:10px 5px 10px 5px;
