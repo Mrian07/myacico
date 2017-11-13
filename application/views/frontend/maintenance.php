@@ -20,5 +20,5 @@
 <div class="jumbotron text-center" style='background-color:#ffffff'>
 	<a href='<?php echo base_url();?>'><img src='<?php echo base_url('images/general/logo.gif');?>' border='0'></a>
   <h1>Maintenance</h1>
-   <p>Maaf website sedang dalam perbaikan, silakan kunjungi kembali beberapa jam kedepan.</p>
+   <p>Maaf website sedang dalam perbaikan, silakan kunjungi kembali beberapa saat kedepan.</p>
 </div>
