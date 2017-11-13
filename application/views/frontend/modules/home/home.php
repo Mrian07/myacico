@@ -1400,7 +1400,7 @@ ul.list-group:after {
                         <div ng-if="load == 'true'">Loading...</div>
                         <div ng-if="load != 'true'">
                             <div class="list" ng-if="test.category == 'Audio & Visual'"  ng-repeat = "test in list.topProduct">
-                                <img src="{{test.topProduct[0].imageurl}}" style="height:120px; width: auto">
+                                <img src="{{test.topProduct[0].imageurl}}" alt="Image not found" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';" style="height:120px; width: auto">
                                 <!-- <a ng-href="http://www.gravatar.com/avatar/{{hash}}">{{test.topProduct[0].name}}</a> -->
                                   <h6 class='nm_product'>  <a ng-href="https://dev.myacico.co.id//product/detail/1065923/SAMSUNG-Adapter-NX-M-Mount-[ED-MA4NXM]">{{test.topProduct[0].name}}</a></h6>
                                   <h5 class='h-product'><span class='rp-min'>Rp.</span>{{test.topProduct[0].pricelist}}</h5>
