@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -11,31 +12,31 @@ a{
 }
 </style>
 
-<!-- Strat Bootstrap -->
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
-<!-- End Bootstrap -->
+		<!-- Strat Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
+		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
+		<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
+		<!-- End Bootstrap -->
 
-<!-- s: jquery-ui -->
-<link rel="stylesheet" href="<?php echo base_url('assets/css/jquery-ui.min.css');?>">
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
-<!-- e: jquery-ui -->
+		<!-- s: jquery-ui -->
+		<link rel="stylesheet" href="<?php echo base_url('assets/css/jquery-ui.min.css');?>">
+		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
+		<!-- e: jquery-ui -->
+
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 
-				<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-				<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
-				<link href="<?php echo base_url('assets/nav/css/bootsnav2.css');?>" rel="stylesheet">
-				<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
-				<script src="<?php echo base_url('assets/nav/js/bootsnav.js');?>"></script>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/nav/css/bootsnav2.css');?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
+		<script src="<?php echo base_url('assets/nav/js/bootsnav.js');?>"></script>
 
+		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
+		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/general/favicon.ico');?>">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="<?php echo base_url('assets_adminlte/font-awesome-4.7.0/css/font-awesome.min.css') ?>"/>
 
-						<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
-						<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/general/favicon.ico');?>">
-						<!-- Font Awesome -->
-						<link rel="stylesheet" href="<?php echo base_url('assets_adminlte/font-awesome-4.7.0/css/font-awesome.min.css') ?>"/>
-
-						<!-- CSS -->
+		<!-- CSS -->
 
 		<!-- s: Alert -->
 		<!--<link rel="stylesheet" type="text/css" href="<?php //echo base_url('assets/alert/libs/bundled.css');?>" />-->
@@ -51,145 +52,77 @@ a{
 		<script src="<?php echo base_url('assets/js/mynav.js');?>"></script> -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css');?>" />
 
-
-				<style type="text/css">
-					#search_keyword_id
-					{
-						width:500px;
-						/*border:solid 1px #CDCDCD;*/
-						padding:10px;
-						font-size:12px;
-					}
-					.productSrc
-					{
-						position:absolute;
-						width:628px;
-						display:none;
-						margin-top:-1px;
-						border-top:0px;
-						overflow:hidden;
-						border-left:1px  #CDCDCD solid;
-						border-right:1px  #CDCDCD solid;
-						background-color: white;
-						z-index: 289;
-					}
-					.show_result
-					{
-						font-family:tahoma;
-						padding:5px;
-						border-bottom:1px #CDCDCD dashed;
-						font-size:12px;
-						z-index: 289;
-					}
-					.show_result:hover
-					{
-						background:#e9e9e8;
-						color:#000000;
-						cursor:pointer;
-					}
-				</style>
+		<style type="text/css">
+			#search_keyword_id
+			{
+				width:500px;
+				/*border:solid 1px #CDCDCD;*/
+				padding:10px;
+				font-size:12px;
+			}
+			.productSrc
+			{
+				position:absolute;
+				width:628px;
+				display:none;
+				margin-top:-1px;
+				border-top:0px;
+				overflow:hidden;
+				border-left:1px  #CDCDCD solid;
+				border-right:1px  #CDCDCD solid;
+				background-color: white;
+				z-index: 289;
+			}
+			.show_result
+			{
+				font-family:tahoma;
+				padding:5px;
+				border-bottom:1px #CDCDCD dashed;
+				font-size:12px;
+				z-index: 289;
+			}
+			.show_result:hover
+			{
+				background:#e9e9e8;
+				color:#000000;
+				cursor:pointer;
+			}
+		</style>
     </head>
 
 <body style='font-weight: normal;' ng-app="myApp">
 
+  <div class='my-head'>
+		<div style='margin-bottom:20px; margin-top:10px'>
+	    <center><img src='<?php echo base_url('images/general/img-head1.jpg');?>' border='0'></center>
+		</div>
 
-	  <div class='my-head'>
-			<div style='margin-bottom:10px; margin-top:10px'>
-		    <img src='<?php echo base_url('images/general/img-head1.jpg');?>' border='0'>
+
+
+			<div class="container">
+				<div class='row'>
+					<div class="col-xs-7">
+				    <?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?> <?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?> <?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('page/faq','Faq', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/payment','Payment', array('class'=>'btn-nav-head')); ?> <?php echo anchor('page/aboutus','About Us', array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('customer/contact','Hubungi Kami', array('class'=>'btn-nav-head')); ?>
+					</div>
+					<div class="col-xs-5" style='text-align:right'>
+					 <b>Belanja murah di myacico.co.id! Gratis pengiriman untuk area JAKARTA</b>
+				 </div>
+			 </div>
 			</div>
 
 
-
-
-
-			<div class='row'>
-				<div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:left'>
-					<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
-					<?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?>
-					<?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
-					<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
-
-				</div>
-				<div class="col-xs-5" >
-					 <!-- <b>Belanja murah di myacico.co.id! Gratis pengiriman untuk area JAKARTA</b> -->
-
-
-					 <div class='row' style='padding-top:10px;'>
-
-						 <div style='margin-top:8px;  float:right; width:90px;'>
-							 <div class="dropdown-basket">
-								 <?php
-									 $totalItems = 0;
-									 foreach ($this->cart->contents() as $items):
-										 $totalItems += $items['qty'];
-									 endforeach;
-								 ?>
-								 <button class="dropbtn-basket">
-									 <img src="<?php echo base_url('images/general/cart.png'); ?>" width='45' border="0"><br>
-									 <span class="badge totalCart" style='margin-left:-6px; margin-top: -38px; position: absolute; font-size:12px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
-								 </button>
-									 <div class="dropdown-basket-content">
-										 <?php
-										 if($totalItems==0)
-										 { ?>
-										 <div class='empty-item'><center><img src='<?php echo base_url('images/general/empty.jpg'); ?>' border='0'><br>Keranjang masih kosong</center></div>
-										 <?php } ?>
-										 <div class='list-item'></div>
-										 <div class='btn-chekout'></div>
-									 </div>
-							 </div>
-						 </div>
-						 <div style='float:right; width:160px; text-align:center; border:0px'>
-							 <div class='row' style='margin-top:0px; padding:0px; border-left:2px solid #4d4d4d;'>
-								 <div class="col-xs-4" style='font-size:45px; color:#4d4d4d; margin-top:5px'>
-									 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='30' border='0'>
-									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
-								 </div>
-								 <div class="col-xs-8" style='font-size:15px; color:#4d4d4d; padding-left:0px;'>
-									 <div>Selamat Datang</div>
-									 <div style='margin-top:-6px'>
-										 <?php if(isset($user)){ ?>
-											 <b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
-											 <b><font color='red'><?php echo anchor('#', 'Logout', array('class'=>'logout btn-nav-black'));?></font></b>
-										 <?php }else{ ?>
-											 <b><font color='red'><?php echo anchor('customer/signIn','Login', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create','Daftar', array('class'=>'btn-nav-black')); ?></font></b>
-										 <?php } ?>
-									 </div>
-								 </div>
-							 </div>
-						 </div>
-						 <div style='float:right; width: 100px; text-align: center; '>
-
-
-							<div class="dropdown-lang" style='border:0px solid #aeaeab; border-radius:5px; padding:5px; right: 0; left: auto; text-align:left '>
-								<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/flag-id.png'); ?>" border="0" width="50"><?php } ?>
-								<div class="dropdown-lang-content">
-								<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
-								<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
-							</div>
-						</div>
-
-
-
-					</div>
-
-				 </div>
-
-
-
-			 </div>
-		 </div>
-
-
-
-					 <div class='my-hdr1'>
- 						<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
- 					</div>
-
-      <div class='my-hdr2'>
+			<center>
+    <div class='row' style='width:1300px'>
+			<div class="col-xs-2">
+				<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
+			</div>
+      <div class="col-xs-7" >
   			<div class='myserach' ng-app="myApps">
-  				<!-- <div ng-controller = "searchCtrl"> -->
-					<div class="input-group">
+  				<div ng-controller = "searchCtrl">
+  				<div class="input-group">
   					<div class="input-group-btn search-panel">
   						<button type="button" class="dropdown-toggle my-search" data-toggle="dropdown">
   							<span id="search_concept">All Categories</span> <span class="caret"></span>
@@ -215,10 +148,70 @@ a{
   						<button class="btn btn-default my-search-button" type="button" onclick='btnSearchDesk()'><i class="fa fa-search" aria-hidden="true"></i></button>
   					</span>
   				</div>
+  			</div>
+  			</div>
+  		</div>
 
 
+      <div class="col-xs-3">
+        <div class='row' style='padding-top:10px;'>
+					<div style='margin-top:8px;  float:left; width:90px;'>
+						<div class="dropdown-basket">
+							<?php
+								$totalItems = 0;
+								foreach ($this->cart->contents() as $items):
+									$totalItems += $items['qty'];
+								endforeach;
+							?>
+							<button class="dropbtn-basket">
+								<img src="<?php echo base_url('images/general/cart.png'); ?>" border="0"><br>
+								<span class="badge totalCart" style='margin-left:-5px; margin-top: -50px; position: absolute; font-size:15px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
+							</button>
+								<div class="dropdown-basket-content">
+									<?php
+									if($totalItems==0)
+									{ ?>
+									<div class='empty-item'><center><img src='<?php echo base_url('images/general/empty.jpg'); ?>' border='0'><br>Keranjang masih kosong</center></div>
+									<?php } ?>
+									<div class='list-item'></div>
+									<div class='btn-chekout'></div>
+								</div>
+						</div>
+					</div>
+					<div style='float:left; width:160px; text-align:center'>
+						<div class='row' style='margin-top:-3px; padding:3px 0px 3px 0px; border-radius:5px'>
+		          <div class="col-xs-3" style='font-size:42px; color:#111111; '><i class="fa fa-user" aria-hidden="true"></i></div>
+		          <div class="col-xs-9" style='font-size:15px; color:#444242; padding-left:3px;'>Selamat Datang<br>
+								<?php if(isset($user)){ ?>
+									<b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
+									<b><font color='red'><?php echo anchor('#', 'Logout', array('class'=>'logout btn-nav-black'));?></font></b>
+								<?php }else{ ?>
+									<b><font color='red'><?php echo anchor('customer/signIn','Login', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create','Daftar', array('class'=>'btn-nav-black')); ?></font></b>
+								<?php } ?>
+							</div>
+						</div>
+					</div>
+
+					<div style='margin-top:8px;'>
+
+
+						<div class="dropdown-lang" style='border:0px solid #aeaeab; border-radius:5px; padding:5px; right: 0; left: auto; text-align:center '>
+							<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"><?php } ?><br><span class="caret"></span>
+							<div class="dropdown-lang-content">
+							<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
+							<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
+							</div>
+						</div>
+
+
+
+					</div>
+        </div>
+        <!-- <table border='0' width='100%'><tr><td style='font-size:65px; text-align: center; color:#b2b2b2'></td><td style='font-size:20px; font-weight:bold; text-align: center; color:#b2b2b2'>Selamat Datang<br><font color='red'>Login</font> / <font color='red'>Daftar</font></td><td><img src="
+          <?php// echo base_url('images/general/cart.png'); ?>" border="0"></td></tr></table> -->
       </div>
-
+    </div>
+	</center>
 
     <!-- <div class="row">
       <div class="col-xs-4">One third</div>
@@ -231,9 +224,8 @@ a{
       <div class="col-xs-6">One third</div>
     </div> -->
   </div>
-	<div class='my-hdr3'>
-			<div style='font-family: arial; font-size:24px; font-weight: bold; color:#4d4d4d; margin-top:15px;'>Festival Belanja Online</div>
-	</div>
+
+
 
 
 
@@ -307,7 +299,7 @@ a{
 								data.forEach(function(p){
 									productSrc.append(
 
-									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' height='80'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
 
 
 									);
@@ -334,7 +326,7 @@ a{
 										data.forEach(function(p){
 											productSrc.append(
 
-											"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' height='80'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+											"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
 
 
 											);
@@ -481,108 +473,7 @@ a{
   		return 'Rp. '+(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
   	}
   });
-	app.controller('home1', function($scope, $http, $rootScope) {
-			$scope.home = 'test'
-			var regData = {
-					url : 'https://api.myacico.co.id/myacico-service/home/topproductcategory',
-					method : 'GET',
-					headers: {'token' : '5402854820542'}
-			}
-			$scope.load = 'true'
-			$http(regData).then(function(res) {
-			//$http.get('http://api.myacico.co.id/myacico-service/category/list')
-			//.then(function(res){
-					console.log('test3',res)
-					$scope.list = res.data
-					$rootScope.testGlobal = 'textnya'
-					// $scope.list[0].name = 'YOsi'
-					//scope.harga = '34934100000'
-					$scope.input.data = 'lalalalala'
-					$scope.load = 'false'
-			})
-			$scope.tombol = function(i){
-					console.log(i)
-					$scope.cedua = i
-			}
-			$scope.tombol2 = function(){
-					console.log($scope.input.data)
-					$scope.list[0].name = $scope.input.data
-					window.alerter()
 
-			}
-			$scope.input = {}
-			$scope.postData = function(){
-
-					var name = $scope.input.data
-
-					var regData = {
-							url : 'https://api.myacico.co.id/myacico-service/category/list',
-							method : 'POST',
-							data : {
-									name : name
-							},
-							headers: {'token' : '5402854820542'}
-					}
-					console.log(regData)
-					$http(regData).then(function(res) {
-					//$http.get('http://api.myacico.co.id/myacico-service/category/list')
-					//.then(function(res){
-							console.log(res)
-					})
-			}
-
-	})
-	app.controller('home', function($scope, $http, $rootScope) {
-			$scope.home = 'test'
-			var regData = {
-					url : 'http://api.myacico.co.id/myacico-service/category/list',
-					method : 'GET',
-					headers: {'token' : '5402854820542'}
-			}
-			$scope.load = 'true'
-			$http(regData).then(function(res) {
-			//$http.get('http://api.myacico.co.id/myacico-service/category/list')
-			//.then(function(res){
-					console.log(res)
-					$scope.list = res.data
-					$rootScope.testGlobal = 'textnya'
-					// $scope.list[0].name = 'YOsi'
-					//scope.harga = '34934100000'
-					$scope.input.data = 'lalalalala'
-					$scope.load = 'false'
-			})
-			$scope.tombol = function(i){
-					console.log(i)
-					$scope.cedua = i
-			}
-			$scope.tombol2 = function(){
-					console.log($scope.input.data)
-					$scope.list[0].name = $scope.input.data
-					window.alerter()
-
-			}
-			$scope.input = {}
-			$scope.postData = function(){
-
-					var name = $scope.input.data
-
-					var regData = {
-							url : 'https://api.myacico.co.id/myacico-service/category/list',
-							method : 'POST',
-							data : {
-									name : name
-							},
-							headers: {'token' : '5402854820542'}
-					}
-					console.log(regData)
-					$http(regData).then(function(res) {
-					//$http.get('http://api.myacico.co.id/myacico-service/category/list')
-					//.then(function(res){
-							console.log(res)
-					})
-			}
-
-	})
   app.controller('cartCnt', function($scope, $mycart, toMoney){
   	$scope.mycart = $mycart.data;
   	$scope.del = function(i){

@@ -31,7 +31,7 @@
         				<td data-title="Status"><?php echo $items['transactionStatus'];?></td>
         				<td data-title="Detail"><?php echo anchor('account/formTransactionDetail/'.$items['idTransaksi'], 'Detail', array('class'=>'btn btn-info'));?></td>
         				<td data-title="Konfirmasi/ Credit Card"><?php
-                                       
+                                       //if($items['productId'])
         					if($items['paymentMethod']=='Bank Transfer'){
         						if($items['transactionStatus']=='PAID'){
         							echo anchor('#', 'Konfirmasi', array('class'=>'btn btn-warning disabled'));
@@ -62,7 +62,7 @@
   </div>
 </div><br><br>
 <script type="text/javascript">
-
+console.log("data",);
 function dellBukuAlamat(id,address1){
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	var apiurl = api_base_url + '/aduser/deleteaddress';

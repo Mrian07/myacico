@@ -210,6 +210,7 @@ class Account extends Web_private {
 
 		$this->data['hasil'] = json_decode($konten, true);
 		$hasil = json_decode($konten, true);
+                //die(print_r($hasil));
 //                $options2 = ["http" => [
 //		"method" => "GET",
 //		"headers" => ["token: " .$token,
@@ -287,6 +288,36 @@ class Account extends Web_private {
 		$this->load->view('frontend/modules/account/wishlist',$this->data);
 		$this->load->view('frontend/footer',$this->data);
                 $this->load->view('frontend/sidenav',$this->data);
+			// $this->load->view('frontend/footer',$this->data);
+	}
+        public function review()
+    {
+            $this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "transaction/list";
+
+		$url = api_base_url($api);
+
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+
+
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+
+		$this->data['hasil'] = json_decode($konten, true);
+		$hasil = json_decode($konten, true);
+                $this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+                $this->load->view('frontend/modules/account/form_review',$this->data);
+                $this->load->view('frontend/sidenav',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+		
+			
+		
 			// $this->load->view('frontend/footer',$this->data);
 	}
 

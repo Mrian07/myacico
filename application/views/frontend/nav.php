@@ -64,12 +64,19 @@ cursor:pointer;
 											<li>
 												<div>
 													<div class="row" style='color:#000000'>
-                              <div class="col-menu col-md-2"><img src="<?php echo$dataNav['imageurl']; ?>" style="float:right;width:200px"/></div>
-															<?php foreach($dataNav['c2'] as $dataNavChild){ ?>
+                              <div class="col-menu col-md-2" style='height:250px'><img src="<?php echo$dataNav['imageurl']; ?>" style="float:right;width:200px"/></div>
+															<?php
+                              $imgLoop = 1;
+                               foreach($dataNav['c2'] as $dataNavChild){ ?>
 																<div class="col-menu col-md-2">
+                                  <?php if($imgLoop<=5){?>
+                                  <img src='<?php echo$dataNavChild['imageurl']; ?>' height='100px' border='0'><br>
+                                  <b><?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $dataNavChild['name']);?></b><hr>
+                                <?php }else{ ?>
 																	<?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $dataNavChild['name']);?>
+                                <?php } ?>
 																</div>
-															<?php } ?>
+															<?php $imgLoop++; } ?>
 
 													</div>
 												</div>
