@@ -406,10 +406,11 @@ a{
 	  });*/
 
 	  function totalCart(){
-	  	var token = document.cookie.split('x-auth=')[1].split(';').shift();
+			var getToken = document.cookie.split('x-auth=');
+	  	// var token = document.cookie.split('x-auth=')[1].split(';').shift();
 	  	var qty = 0;
 
-	  	if(token){
+	  	if(getToken.length > 0){
 
 	  		$.ajax
 	  		({
