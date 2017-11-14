@@ -12,10 +12,7 @@
 
 	$context = stream_context_create($options);
 	$konten = file_get_contents($url, false, $context);
-
-
 	$hasil = json_decode($konten, true);
-
 	if(json_decode($konten, true)){
 
 ?>

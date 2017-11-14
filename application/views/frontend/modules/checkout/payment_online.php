@@ -14,7 +14,7 @@
   </style>
 </head>
 <script type="text/javascript">
-    
+
 var url_string = window.location.href;
 var url = new URL(url_string);
 //var c = url.searchParams.get("c");
@@ -28,30 +28,30 @@ var c = '<?php echo$token; ?>';
         var code = c;
         snap.pay(code, {
             onSuccess: function(result){
-				window.location.replace("<?php echo site_url('checkout/finishByCreditCard/'.$id); ?>");
+				window.location.replace("<?php echo site_url('checkout/finishByOnline/'.$id); ?>");
 				//window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
-				
+
               document.getElementById("mids").innerHTML = "Pembayaran Anda Berhasil, Terima Kasih"
               alert(result.status_message);},
             onPending: function(result){
-				window.location.replace("<?php echo site_url('checkout/finishByCreditCard/'.$id); ?>");
+				window.location.replace("<?php echo site_url('checkout/finishByOnlineFailed/'.$id); ?>");
               document.getElementById("mids").innerHTML = "Pending"
               console.log('pending');alert(result.status_message);},
             onError: function(result){
-				window.location.replace("<?php echo site_url('checkout/finishByCreditCard/'.$id); ?>");
+				window.location.replace("<?php echo site_url('checkout/finishByOnlineFailed/'.$id); ?>");
               var fromMidtrans = result
               document.getElementById("mids").innerHTML = "Error"
               console.log(fromMidtrans);
              // alert(result.status_message);
             },
             onClose: function(){
-				window.location.replace("<?php echo site_url('checkout/finishByCreditCard/'.$id); ?>");
+				window.location.replace("<?php echo site_url('checkout/finishByOnlineFailed/'.$id); ?>");
               //document.getElementById("mids").innerHTML = JSON.stringify(result)
              // document.getElementById("mids").innerHTML ='Anda membatalkan pembayaran, Anda bisa melanjutkan pembayaran dengan mengklik invoice di Riwayat & Status Pesanan'
             }
         })
     }
   </script>
-  
+
 </body>
 </html>

@@ -18,10 +18,23 @@
 	background:#ffffff;
 	margin: 0px;
 	color: #111111;
-	font-family: Verdana;
-	font-size: 12px;
-	font-family: sans-serif;
+	font-family: verdana;
+	font-size: 11px;
+	/*font-family: sans-serif;*/
 }
+
+.my-container{
+    width:912px;
+    margin:0 auto;
+}
+
+/*@media (min-width: 1280px) {
+    .container{
+        max-width: 812px;
+
+        background:#111111;
+    }
+}*/
 
 /*s: Product*/
 
@@ -629,7 +642,6 @@ a:hover.my-info {
 
   .garansi li {
       float: left;
-      font-size:12px;
       display: block;
       text-align: center;
       width:220px;

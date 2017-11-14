@@ -22,7 +22,7 @@ a{
 		<link rel="stylesheet" href="<?php// echo base_url('assets/css/jquery-ui.min.css');?>">
 		<script type="text/javascript" src="<?php //echo base_url('assets/js/jquery-ui.min.js');?>"></script>
 		<!-- e: jquery-ui -->
-<script type="text/javascript" src="<?php echo base_url('assets/js/angular.min.js');?>"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url('assets/js/angular.min.js');?>"></script> -->
 
 		<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
 		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
@@ -58,7 +58,7 @@ a{
 <body style='font-weight: normal;' ng-app="myApp">
 
 
-	  <div class='my-head'>
+	  <!-- <div class='my-head'> -->
 			<div style='margin-bottom:10px; margin-top:10px'>
 		    <img src='<?php echo base_url('images/general/img-head.png');?>' border='0'>
 			</div>

@@ -73,7 +73,7 @@ h1, h2, h3 {
 
 <!-- <div style='background:#dad8d8'> -->
 
-<div class="container">
+<div class="my-container">
   <div class="row">
     <div class="col-xs-8" style='padding-right: 0 !important; margin: 0 !important;'>
       <!-- Slider 1 -->
