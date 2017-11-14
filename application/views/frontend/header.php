@@ -11,38 +11,38 @@ a{
 }
 </style>
 
-<!-- Strat Bootstrap -->
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
-<!-- End Bootstrap -->
+		<!-- Strat Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
+		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
+		<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
+		<!-- End Bootstrap -->
 
-<!-- s: jquery-ui -->
-<link rel="stylesheet" href="<?php echo base_url('assets/css/jquery-ui.min.css');?>">
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
-<!-- e: jquery-ui -->
+		<!-- s: jquery-ui --
+		<link rel="stylesheet" href="<?php// echo base_url('assets/css/jquery-ui.min.css');?>">
+		<script type="text/javascript" src="<?php //echo base_url('assets/js/jquery-ui.min.js');?>"></script>
+		<!-- e: jquery-ui -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 
-				<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-				<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
-				<link href="<?php echo base_url('assets/nav/css/bootsnav2.css');?>" rel="stylesheet">
-				<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
-				<script src="<?php echo base_url('assets/nav/js/bootsnav.js');?>"></script>
+		<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/nav/css/bootsnav2.css');?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
+		<script src="<?php echo base_url('assets/nav/js/bootsnav.js');?>"></script>
 
 
-						<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
-						<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/general/favicon.ico');?>">
-						<!-- Font Awesome -->
-						<link rel="stylesheet" href="<?php echo base_url('assets_adminlte/font-awesome-4.7.0/css/font-awesome.min.css') ?>"/>
+		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
+		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/general/favicon.ico');?>">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="<?php echo base_url('assets_adminlte/font-awesome-4.7.0/css/font-awesome.min.css') ?>"/>
 
-						<!-- CSS -->
+		<!-- CSS -->
 
 		<!-- s: Alert -->
 		<!--<link rel="stylesheet" type="text/css" href="<?php //echo base_url('assets/alert/libs/bundled.css');?>" />-->
 		<!--script type="text/javascript" src="<?php //echo base_url('assets/alert/libs/bundled.js');?>"></script-->
 		<script type="text/javascript" src="<?php echo base_url('assets/alert/js/jquery-confirm.js');?>"></script>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/css/jquery-confirm.css');?>" />
-        <!-- e: Alert -->
+		<!-- e: Alert -->
 
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jwt-decode.min.js');?>"></script>
 		<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
@@ -51,42 +51,6 @@ a{
 		<script src="<?php echo base_url('assets/js/mynav.js');?>"></script> -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css');?>" />
 
-
-				<!-- <style type="text/css">
-					#search_keyword_id
-					{
-						width:500px;
-						padding:10px;
-						font-size:12px;
-					}
-					.productSrc
-					{
-						position:absolute;
-						display:none;
-						margin-top:-1px;
-						border-top:0px;
-						overflow:hidden;
-						border-left:1px  #CDCDCD solid;
-						border-right:1px  #CDCDCD solid;
-						background-color: white;
-						z-index: 289;
-					}
-					.show_result
-					{
-						/*width: 1000px;*/
-						font-family:tahoma;
-						padding:5px;
-						border-bottom:1px #CDCDCD dashed;
-						font-size:8px;
-						z-index: 289;
-					}
-					.show_result:hover
-					{
-						background:#e9e9e8;
-						color:#000000;
-						cursor:pointer;
-					}
-				</style> -->
     </head>
 
 <body style='font-weight: normal;' ng-app="myApp">
@@ -440,10 +404,11 @@ a{
   });*/
 
   function totalCart(){
-  	var token = document.cookie.split('x-auth=')[1].split(';').shift();
+  	var token = document.cookie.split('x-auth=');
   	var qty = 0;
 
-  	if(token){
+  	if(token.length > 0){
+			//var dat_token = token[1].split(';').shift();
 
   		$.ajax
   		({
@@ -761,58 +726,49 @@ a{
 
   function dellItemCartToken(id,img,name,idcart){
 
-  	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-  	var apiurl = api_base_url + '/order/cart/deleteitem?idcartitem='+idcart;
+		var getToken = document.cookie.split('x-auth=');
+		if(getToken.length > 0){
+			var token = getToken[1].split(';').shift();
+	  	//var token = document.cookie.split('x-auth=')[1].split(';').shift();
+	  	var apiurl = api_base_url + '/order/cart/deleteitem?idcartitem='+idcart;
 
-  	$.confirm({
-  		title: name,
-  		content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
-  		//content: '<p>Apakah item ini akan dihapus?</p>',
-  		autoClose: 'cancel|10000',
-  		closeIcon: true,
-  		closeIconClass: 'fa fa-close',
-  		buttons: {
-  			confirm: function () {
-  				//untuk cart yang di header
-  				$.ajax
-  				({	type: "POST",
-  					url: apiurl,
-  					headers:{ "token":token},
-  					success:function(data){
-  						totalCart();
-  					}
-  				});
-
-
-  				//untuk cart yang di basket token
-  				$.ajax
-  				({
-  				url: "<?php echo site_url('cart/listCartToken'); ?>",
-  				success:function(html){
-  						$(".listCart").html(html);
-  					}
-  				});
-
-  			},
-  			cancel: function () {
-  				//$.alert('Canceled!');
-  			}
-  		}
-
-  	});
+	  	$.confirm({
+	  		title: name,
+	  		content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
+	  		//content: '<p>Apakah item ini akan dihapus?</p>',
+	  		autoClose: 'cancel|10000',
+	  		closeIcon: true,
+	  		closeIconClass: 'fa fa-close',
+	  		buttons: {
+	  			confirm: function () {
+	  				//untuk cart yang di header
+	  				$.ajax
+	  				({	type: "POST",
+	  					url: apiurl,
+	  					headers:{ "token":token},
+	  					success:function(data){
+	  						totalCart();
+	  					}
+	  				});
 
 
-  	/*var success = function(r){
-  	$('#spinner_img').hide();
-  	$('#submit_btn').val('Kirim').removeClass('disabled');
-  		 $.alert({
-  		 title: 'Alert!',
-  		 content: 'Item berhasil dihapus',
-  		});
-  		console.log('OK:', r.status);
-  		window.location.replace(base_url+"/account/bukuAlamat");
+	  				//untuk cart yang di basket token
+	  				$.ajax
+	  				({
+	  				url: "<?php echo site_url('cart/listCartToken'); ?>",
+	  				success:function(html){
+	  						$(".listCart").html(html);
+	  					}
+	  				});
 
-  	};*/
+	  			},
+	  			cancel: function () {
+	  				//$.alert('Canceled!');
+	  			}
+	  		}
+
+	  	});
+		}
   }
 
 

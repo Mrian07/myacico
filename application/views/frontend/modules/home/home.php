@@ -1870,7 +1870,7 @@ $('.carousel .item').each(function(){
     next.children(':first-child').clone().appendTo($(this));
   }
 });
-var token = document.cookie.split('x-auth=')[1].split(';').shift();
+//var token = document.cookie.split('x-auth=')[1].split(';').shift();
 function addWishlist(id,name,imageurl){
 	var dataString = 'id='+id;
 
