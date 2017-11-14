@@ -139,7 +139,27 @@ h1.po1{
  position:relative;
   z-index:2;
 }
+.pagination {
+    display: inline-block;
+}
 
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
 </style>
 
 <?php
@@ -445,7 +465,7 @@ if($saw==Null)
 <div style="clear:both"></div>
 
 <div class="text-center">
-    <ul class="pagination">
+    <div class="pagination">
    <!--<li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>-->
 
        <?php
@@ -457,34 +477,69 @@ if($saw==Null)
             $curr2=1;
         }
 //        die(print_r("sam".$curr));
-       if($curr > 1){
+     /*  if($curr > 1){
            $prevCr=$curr;
            $prev =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$prevCr-=1);
 
             echo "<li class=prev><a href=$prev aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>";
-       }
+       }*/
     $i=1;
    //die(print_r($max_page));
 
-        for($i;$i<=$max_page;$i++){
+    //    for($i;$i<=$max_page;$i++){
+    $jmlhalaman=$jdata/5;
+if($curr == null || $curr == 0)
+       {
+           $halaman =1;
+       }
+       else{
+           $halaman =$curr;
+       }
+       if($halaman>1)
+       {
+           $prevCr=$curr;
+            $prev =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$prevCr-=1);
+           echo "<a href=$prev aria-label=Previous><span aria-hidden=true>&laquo;</span></a>";
+       }
+$angka =($halaman > 3 ? "<a href='#'> ... </a>" : " ");
+for($i=$halaman-2;$i < $halaman;$i++)
+{
+    if($i<1)
+        continue;
+    $angka.= "<a href= '".site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i)."'  value='".$i."'>$i</a>";
+}
+$angka .= "<a href='#' class='active'>$halaman</a>";
+if($i< $max_page){
+for($i=$halaman+1;$i<($halaman+3);$i++)
+{
+    if($i > $jmlhalaman)
+        break;
+    $angka.= "<a href= '".site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i)."'  value='".$i."'>$i</a>";
+}
+}
+//die(print_r($jmlhalaman));
+//if($curr < $max_page){
+$angka .= ($halaman+2<$max_page ? "<a href= '".site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i)."'  value='".$i."'>... $i</a> " : " ");
+//}
+echo $angka;
 
           ?>
-            <li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
+            <!--<li><a href="<?php echo site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>-->
 
 
 
-        <?php }
-        if($curr < $max_page){
+        <?php //}
+       if($curr < $max_page){
              $nextCr=$curr;
           $next =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$nextCr+=$curr2);
 
            //die(print_r("sam".$curr));
-            echo "<li class=next><a href=$next aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>";
+            echo "<a href=$next aria-label=Previous><span aria-hidden=true>&raquo;</span></a>";
        }
         ?>
 
    <!--<li class=next><a href="<?php// echo site_url('product/listItem/'.$pro.'/'.$sort_id.'/'.$i+=1); ?>" aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>-->
-    </ul>
+    </div>
 </div>
 
 
@@ -504,22 +559,7 @@ function filter(id){
   window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'.$alias.'/'); ?>"+id.value);
 
 }
-$('.pagination').on('click', 'li:not(.prev):not(.next)', function() {
 
-    $('.pagination li').removeClass('active');
-    $(this).not('.prev,.next').addClass('active');
-});
-
-//    nuOfpage dari total item / (perpage=> 10)
-
-function drawPagination(numOfPages) {
-    $('#pag_nav ul').empty();
-    $('#pag_nav ul').append('<li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>');
-   for (var i = 1; i <= numOfPages; i++) {
-      $('#pag_nav ul').append('<li><a href=#>' + i + '</a></li>');
-   }
-   $('#pag_nav ul').append('<li class=next><a href=# aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>');
-}
 
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
 function addWishlist(id,name,imageurl){

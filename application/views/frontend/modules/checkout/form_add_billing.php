@@ -296,7 +296,7 @@ data.isremitto = 'Y';
 			// $("#ispayfrom").val(null);
 		  // $("#isremitto").val(null);
 
-        window.location.replace(base_url+"checkout/dataShipping");
+        window.location.replace(base_url+"checkout/index");
 
     };
     $('#spinner_img').show();
