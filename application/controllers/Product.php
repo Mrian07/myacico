@@ -94,6 +94,8 @@ if($page){
   $ob=$this->uri->segment(5);
 
                 $page=$this->uri->segment(6);
+          $api_rec = "product/productlist?category=".$id_cat."&show=productcount";
+
                 //$pg = intval($_GET['page']);
             if($ob != 'all' && $page == True){
                     $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
@@ -119,7 +121,7 @@ if($page){
                 $api2 = "product/productlist/".$id_cat;
   $url = api_base_url($api);
                 $url2 = api_base_url($api_max);
-
+$url3 = api_base_url($api_rec);
   $options = ["http" => [
         "method" => "GET",
                "header" => ["token: " . $token,
@@ -129,10 +131,12 @@ if($page){
 
   $context = stream_context_create($options);
                 $konten2 = file_get_contents($url2, false, $context);
+  $konten3 = file_get_contents($url3, false, $context);
   $konten = file_get_contents($url, false, $context);
                  //die(print_r("sam ".json_decode($konten2)->pageCount));
                 $this->data['max_page'] =json_decode($konten2)->pageCount;
-                //die(print_r($this->data['max_page']));
+                $this->data['jdata'] =json_decode($konten3)->productCount;
+//              die(print_r($this->data['max_page']));
   $this->data['hasil'] = json_decode($konten, true);
 //                die(print_r(get_headers($url)));
   if($adaToken == 1){
