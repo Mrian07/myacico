@@ -120,8 +120,13 @@ class Cart extends Web {
 
 	function totalQtyToken()
 	{
-		$this->data['token'] = $_COOKIE['x-auth'];
-		$token = $_COOKIE['x-auth'];
+		if(isset($_COOKIE['x-auth'])){
+			$au = $_COOKIE['x-auth'];
+		}else{
+			$au = '';
+		}
+		$this->data['token'] = $au;
+		$token = $au;
 		$api = "order/cart/detail";
 		$url = api_base_url($api);
 
