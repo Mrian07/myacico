@@ -21,8 +21,8 @@ a{
 <link rel="stylesheet" href="<?php echo base_url('assets/css/jquery-ui.min.css');?>">
 <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
 <!-- e: jquery-ui -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 
+<script type="text/javascript" src="<?php echo base_url('assets/js/angular.min.js');?>"></script>
 				<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 				<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
 				<link href="<?php echo base_url('assets/nav/css/bootsnav2.css');?>" rel="stylesheet">
@@ -486,7 +486,7 @@ a{
 			$http(regData).then(function(res) {
 			//$http.get('http://api.myacico.co.id/myacico-service/category/list')
 			//.then(function(res){
-					console.log('test3',res)
+					
 					$scope.list = res.data
 					$rootScope.testGlobal = 'textnya'
 					// $scope.list[0].name = 'YOsi'
