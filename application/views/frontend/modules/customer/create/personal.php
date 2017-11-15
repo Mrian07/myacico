@@ -12,7 +12,7 @@ margin-top: -11px;
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 
 
-<div class="container my-container-transparan">
+<div class="my-container">
 	<div class="row">
 
 		<div class="col-sm-6">

@@ -963,7 +963,7 @@ ul.list-group:after {
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PILIH DAN KLIK BRAND FAVORIT ANDA
   </div>
-	<div style='text-align: center; padding:15px 0px 15px 0px; border-radius:0px 0px 10px 0px; margin-bottom:20px;'>
+	<div style='text-align: center; padding:15px 0px 15px 30px; border-radius:0px 0px 10px 0px; margin-bottom:20px;'>
     	<!-- BEGIN PRODUCTS -->
   <center>
 <ul class="list-group" style="padding-left:0px;">
@@ -971,7 +971,7 @@ ul.list-group:after {
   <?php $bloop = 0; foreach($dathome['level_4'] as $datBrand){
     if($bloop <20){
     ?>
-    <li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="Smiley face" height="80%" width="80"></li>
+    <li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="Smiley face" height="80%" width="55"></li>
   <?php } $bloop++; } ?>
 
 						</ul>

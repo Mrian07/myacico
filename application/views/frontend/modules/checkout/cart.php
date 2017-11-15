@@ -315,9 +315,9 @@ hr{
 </style>
 
 
-<div class="container wrapper">
+<div class="my-container">
             <div class="row cart-head">
-                <div class="container">
+                <div class="my-container">
                 <div class="row">
                     <p></p>
                 </div>

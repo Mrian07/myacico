@@ -1,5 +1,5 @@
 
-<div class="container my-container-transparan">
+<div class="my-container">
 
   <div class="row">
     <div class="col-sm-3">

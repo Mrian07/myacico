@@ -34,13 +34,13 @@ a
 </style>
 
 
-<div class="container">
+<div class="my-container">
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> FINISH
 	</div>
 </div>
 
-<div class="container">
+<div class="my-container">
 	<h3>PEMBAYARAN GAGAL</h3>
 	<p>Pembayaran menggunakan credit card telah digagalkan, Anda bisa mencoba malakukan pembayaran kembali untuk order anda menggunakan credit card melalui halaman <b>Riwayat Status Pesanan</b> pada Account Anda.</p>
 	<p>

@@ -1,5 +1,5 @@
 
-	<div class="container">
+	<div class="my-container">
 		<div class='my-bg-title'>
 
 			<i class="fa fa-angle-right" aria-hidden="true"></i> LIST PRODUCT
@@ -7,7 +7,7 @@
 		</div>
 	</div>
 
-<div class="container">
+<div class="my-container">
 	<?php
 	// echo $hasil[0]['m_product_id'];
 	// echo"<pre>"; print_r($hasil[0]);

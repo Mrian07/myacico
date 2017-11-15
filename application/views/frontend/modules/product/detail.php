@@ -21,7 +21,7 @@
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/magnific-popup/js/magnific-popup.js');?>"></script>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-<div class="container">
+<div class="my-container">
 	<div class='my-bg-title'>
 			<i class="fa fa-angle-right" aria-hidden="true"></i> DETAIL PRODUCT
 	</div>
@@ -31,7 +31,7 @@
 
 
 
-<div class="container" style='background:#ffffff'>
+<div class="my-container" style='background:#ffffff'>
 
 
 

@@ -34,13 +34,13 @@ a
 </style>
 
 
-<div class="container">
+<div class="my-container">
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> FINISH
 	</div>
 </div>
 
-<div class="container">
+<div class="my-container">
 	<h3>TERIMA KASIH</h3>
 	<p>Order Anda telah berhasil diproses.</p>
 

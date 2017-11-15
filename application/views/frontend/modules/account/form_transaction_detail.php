@@ -1,10 +1,10 @@
-<div class="container">
+<div class="my-container">
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> Detail Pesanan
 	</div>
 </div>
 
-<div class="container my-container-white">
+<div class="my-container">
 	<div class="row">
 		<div class="col-sm-3">
                     <input type="hidden" id = "idtrans" name="idtrans"  value="<?php echo $hasil['idTransaksi'];?>" />

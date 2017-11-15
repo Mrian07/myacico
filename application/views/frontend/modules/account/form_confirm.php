@@ -27,12 +27,12 @@
   </style>
 
 
-<div class="container">
+<div class="my-container">
 	<div class='my-bg-title'>
 			<i class="fa fa-angle-right" aria-hidden="true"></i> UPLOAD IMAGE
 	</div>
 </div>
-<div class="container my-container-white">
+<div class="my-container">
 <input type="hidden" id = "idtrans" name="idtrans"  value="<?php echo $this->data['konf'];?>" />
 <input type="hidden" id = "ck" name="ck"  value="" />
 	<div class="row">
