@@ -51,6 +51,11 @@ a
 		  <div class="panel-heading"><b>DETAIL ORDER</b></div>
 		  <div class="panel-body">
 		  <form class="form-horizontal">
+        <div class="form-group">
+  			<label class="control-label col-sm-4" for="email">Transaksi:</label>
+  			<div class="col-sm-8">
+  			  <p class="form-control-static"><b>SUKSES</b></p>
+  			</div>
 		  <div class="form-group">
 			<label class="control-label col-sm-4" for="email">Nomor Order:</label>
 			<div class="col-sm-8">
