@@ -593,9 +593,7 @@ a:hover.my-info {
     font-size:11px;
     text-decoration: none;
     margin-left:10px;
-    border:1px solid #dddddd;
     border-bottom:0px;
-    background: #ffffff;
   }
 
   .btn-nav-head:hover {

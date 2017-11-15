@@ -57,9 +57,13 @@ cursor:pointer;
                 <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp" style='text-align:center'>
 
 
-									<?php foreach($hasilNav as $dataNav){ ?>
+									<?php
+  //                echo"<pre>";
+//print_r($hasilNav);
+
+                   foreach($hasilNav as $dataNav){ ?>
 									<li class="dropdown megamenu-fw nav-show-desktop">
-										<?php echo anchor('#', $dataNav['name'], array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
+										<?php echo anchor('#', '<img src="'.$dataNav['iconurl'].'" border="0" height="20"> '.$dataNav['name'], array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
 										<ul class="dropdown-menu megamenu-content" role="menu">
 											<li>
 												<div>
