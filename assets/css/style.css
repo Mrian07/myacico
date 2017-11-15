@@ -51,7 +51,7 @@
 }
 
 .my-paging-list-on{
-  background:#dad8d8;
+  background:#ffffff;
   border-radius:80px;
   padding: 5px 10px 5px 10px;
   font-weight: bold;
@@ -590,7 +590,7 @@ a:hover.my-info {
   /*  border: 1px solid #716f6f;*/
     padding:5px;
     color:#111111;
-    font-size:15px;
+    font-size:12px;
     text-decoration: none;
     border-radius:5px;
     margin-left:10px;

@@ -68,14 +68,14 @@ a{
 
 
 			<div class='row'>
-				<div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:left'>
+				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
+				<div class="col-xs-7" style='margin-top:30px; text-align:right;'>
 					<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
 					<?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?>
 					<?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
 					<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
-
 				</div>
-				<div class="col-xs-5" >
+				<div class="col-xs-5">
 					 <!-- <b>Belanja murah di myacico.co.id! Gratis pengiriman untuk area JAKARTA</b> -->
 
 
@@ -110,7 +110,7 @@ a{
 									 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='30' border='0'>
 									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
 								 </div>
-								 <div class="col-xs-8" style='font-size:15px; color:#4d4d4d; padding-left:0px;'>
+								 <div class="col-xs-8" style='font-size:12px; color:#4d4d4d; padding-left:0px;'>
 									 <div>Selamat Datang</div>
 									 <div style='margin-top:-6px'>
 										 <?php if(isset($user)){ ?>
