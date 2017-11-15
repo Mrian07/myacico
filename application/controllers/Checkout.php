@@ -331,18 +331,40 @@ class Checkout extends Web_private {
 		$konten = file_get_contents($url, false, $context);
 		$this->data['field'] = json_decode($konten);
 		$field = json_decode($konten);
-echo"<pre>"; print_r($field); die();
-		// $data = array('shipping_address_id' => '');
-  	// $this->session->set_userdata($data);
 
-		$this->data['title_web'] = "Myacico.com - Checkout";
-		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
+		if($field->status=='1'){
 
-		if($field->transactionStatus=='PAID'){
+			$id=$field->orderId;
+
+			$this->data['token'] = $_COOKIE['x-auth'];
+			$token = $_COOKIE['x-auth'];
+
+			$options = ["http" => [
+			"method" => "GET",
+			"header" => ["token: " . $token,
+			"Content-Type: application/json"],
+			]];
+
+			$context = stream_context_create($options);
+
+			$api = "transaction/list?orderid=".$id;
+			$url = api_base_url($api);
+
+			$konten = file_get_contents($url, false, $context);
+			$this->data['field'] = json_decode($konten);
+			$field = json_decode($konten);
+
+			$data = array('shipping_address_id' => '');
+	  	$this->session->set_userdata($data);
+
+			$this->data['title_web'] = "Myacico.com - Checkout";
+			$this->load->view('frontend/header',$this->data);
+			$this->load->view('frontend/nav.php',$this->data);
+
 			$this->load->view('frontend/modules/checkout/finish_credit_cart_success.php',$this->data);
+
 		}else{
-			$this->load->view('frontend/modules/checkout/finish_credit_cart_error.php',$this->data);
+			$this->load->view('frontend/modules/checkout/finish_payment_online_error.php',$this->data);
 		}
 		$this->load->view('frontend/footer',$this->data);
 	}
