@@ -513,7 +513,7 @@ a:hover.my-info {
 		font-family:tahoma;
 		padding:5px;
 		border-bottom:1px #CDCDCD dashed;
-		font-size:12px;
+		font-size:11px;
 		z-index: 289;
 	}
 	.show_result:hover

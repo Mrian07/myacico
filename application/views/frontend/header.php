@@ -284,7 +284,7 @@ $('#searchDesk').keypress(function(e) {
 									data.forEach(function(p){
 										productSrc.append(
 
-										"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"' width='100'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+										"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5' width='100%'><tr><td width='80'><img src='"+p.imageurl+"' width='50'></td><td>"+p.name+" <span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td><td align='right'><font size='3'><b>"+money(p.pricelist)+"</b></font></td></tr></table></div>"
 
 
 										);
