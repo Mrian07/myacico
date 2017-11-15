@@ -69,12 +69,15 @@ a{
 
 			<div class='row'>
 				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
+				<div style='border-bottom:1px solid #dddddd; height:55px;'>
 				<div class="col-xs-7" style='margin-top:30px; text-align:right;'>
-					<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
-					<?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?>
-					<?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
-					<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
-				</div>
+
+						<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
+					</div>
+
 				<div class="col-xs-5">
 					 <!-- <b>Belanja murah di myacico.co.id! Gratis pengiriman untuk area JAKARTA</b> -->
 
@@ -142,6 +145,8 @@ a{
 
 
 
+			 </div>
+			 <div style='celar:both'></div>
 			 </div>
 		 </div>
 
