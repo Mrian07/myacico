@@ -512,14 +512,14 @@ $angka .= "<a href='#' class='active'>$halaman</a>";
 if($i< $max_page){
 for($i=$halaman+1;$i<($halaman+3);$i++)
 {
-    if($i > $jmlhalaman)
+    if($i > $max_page)
         break;
     $angka.= "<a href= '".site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i)."'  value='".$i."'>$i</a>";
 }
 }
 //die(print_r($jmlhalaman));
 //if($curr < $max_page){
-$angka .= ($halaman+2<$max_page ? "<a href= '".site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i)."'  value='".$i."'>... $i</a> " : " ");
+$angka .= ($halaman+2<$max_page ? "<a href= '".site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i)."'  value='".$i."'>$i</a> " : " ");
 //}
 echo $angka;
 
