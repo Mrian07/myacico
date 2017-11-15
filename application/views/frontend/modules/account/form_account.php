@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="my-container">
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> DATA AKUN
 	</div>
@@ -7,7 +7,7 @@
 
 
 
-<div class="container my-container-white">
+<div class="my-container">
 
 	<div class="row">
 		<div class="col-sm-3">

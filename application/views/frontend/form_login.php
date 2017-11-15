@@ -1,7 +1,7 @@
-<div class="container">
+<div class="my-container">
 
 </div>
-<div class="container">
+<div class="my-container">
 
 	<?php $attributes = array('name' => 'login_form', 'id' => 'login_form');
 		echo form_open('frontend', $attributes);

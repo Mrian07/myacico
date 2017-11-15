@@ -63,14 +63,14 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.carousel.css');?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.theme.css');?>" />
 
-<div class="container">
+<div class="my-container">
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo strtoupper($hasil['subName']); ?>
 	</div>
 </div>
 
 
-<div class="container my-container-transparan">
+<div class="my-container">
 	<div class="row">
 		<?php
 		foreach($hasil['subValue'] as $key => $data){

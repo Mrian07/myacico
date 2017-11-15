@@ -1,4 +1,4 @@
-<div class="container my-container-transparan">
+<div class="my-container">
 
 
   <div class="row">

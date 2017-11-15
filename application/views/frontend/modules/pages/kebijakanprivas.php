@@ -11,7 +11,7 @@ p{
 }
 </style>
 
-<div class="container">
+<div class="my-container">
 <br>
     <h4 color="grey"> Kebijakan Privasi </h4>
     <hr>
