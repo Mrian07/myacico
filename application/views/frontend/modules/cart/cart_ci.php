@@ -2,11 +2,11 @@
 echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 				<thead>
 					<tr>
-						<th style='width:30%'>Product</th>
+						<th style='width:40%'>Product</th>
 						<th style='width:10%'>Price</th>
 						<th style='width:10%'>Quantity</th>
 						<th style='width:22%' class='text-center'>Subtotal</th>
-						<th style='width:20%'>Delete</th>
+						<th style='width:10%'>Delete</th>
 					</tr>
 				</thead>
 				<tbody>";
@@ -17,7 +17,7 @@ echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 							<div class='row'>
 								<div class='col-sm-2 hidden-xs'><img src='".$items['image']."' border='0' height='50' width='50'></div>
 								<div class='col-sm-10'>
-									<h4 class='nomargin'>".$items['name']."</h4>
+									<b>".$items['name']."</b>
 								</div>
 							</div>
 						</td>

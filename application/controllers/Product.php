@@ -147,7 +147,19 @@ $url3 = api_base_url($api_rec);
    $this->data['cektoken'] = '0';
   }
 
-   $this->data['alias'] = $this->uri->segment(4);
+	$batas = '8';
+	if(empty($page)){
+		$posisi = 0;
+		$page =1;
+	}else{
+		$posisi = ($page-1)*$batas;
+	}
+	$this->data['page'] = $page;
+	$this->data['posisi'] = $posisi;
+	$jdata =json_decode($konten3)->productCount;
+	$this->data['jpage'] = ceil($jdata/$batas);
+
+  $this->data['alias'] = $this->uri->segment(4);
   $this->data['title_web'] = "Myacico.com - Home";
   $this->load->view('frontend/header',$this->data);
   $this->load->view('frontend/nav.php',$this->data);
@@ -186,7 +198,6 @@ $this->load->view('frontend/sidenav',$this->data);
 
 		$this->data['hasil'] = json_decode($konten, true);
 
-
 		//Slide slide_show
 		$api = "home/view";
 		$url = api_base_url($api);
@@ -201,7 +212,7 @@ $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
 		$this->load->view('frontend/modules/product/category.php',$this->data);
-$this->load->view('frontend/sidenav',$this->data);
+		$this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 

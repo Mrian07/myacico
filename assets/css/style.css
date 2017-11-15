@@ -28,6 +28,47 @@
     margin:0 auto;
 }
 
+.my-paging{
+  margin-top:20px;
+  padding: 10px;
+  text-align:center;
+  font-size:12px;
+  background:#f6f3f3;
+}
+
+.my-paging-list{
+  padding: 10px;
+  margin:5px;
+  color:#c62f2f;
+}
+
+.my-paging-list:hover{
+  text-decoration: none;
+  background:#dad8d8;
+  color:#111111;
+  border-radius:80px;
+  padding: 5px 10px 5px 10px;
+}
+
+.my-paging-list-on{
+  background:#ffffff;
+  border-radius:80px;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+}
+
+.my-paging-btn{
+  margin:5px;
+  color:#c62f2f;
+}
+/*.my-paging-btn:link{
+  color:#111111;
+  text-decoration: none;
+}*/
+.my-paging-btn:hover{
+  text-decoration: none;
+  color:#111111;
+}
 /*@media (min-width: 1280px) {
     .container{
         max-width: 812px;
@@ -374,6 +415,7 @@ a:hover.my-info {
     background-color: #1a6aa4;
 		border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-primary:hover{
 		background-color: #1785d4;
@@ -386,6 +428,7 @@ a:hover.my-info {
     background-color: #e30c0c;
 		border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-danger:hover{
 		background-color: #ff0000;
@@ -398,6 +441,7 @@ a:hover.my-info {
     background-color: #d1cece;
     border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-default:hover{
 		background-color: #e2dede;
@@ -410,6 +454,7 @@ a:hover.my-info {
     background-color: #d9840c;
     border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-warning:hover{
 		background-color: #f39a1d;
@@ -422,6 +467,7 @@ a:hover.my-info {
     background-color: #006600;
     border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-success:hover{
 		background-color: #017801;
@@ -434,6 +480,7 @@ a:hover.my-info {
     background-color: #4cacc9;
     border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-info:hover{
 		background-color: #5bc0de;
@@ -466,7 +513,7 @@ a:hover.my-info {
 		font-family:tahoma;
 		padding:5px;
 		border-bottom:1px #CDCDCD dashed;
-		font-size:12px;
+		font-size:11px;
 		z-index: 289;
 	}
 	.show_result:hover
@@ -543,10 +590,12 @@ a:hover.my-info {
   /*  border: 1px solid #716f6f;*/
     padding:5px;
     color:#111111;
-    font-size:15px;
+    font-size:11px;
     text-decoration: none;
-    border-radius:5px;
     margin-left:10px;
+    border:1px solid #dddddd;
+    border-bottom:0px;
+    background: #ffffff;
   }
 
   .btn-nav-head:hover {

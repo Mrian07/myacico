@@ -103,14 +103,17 @@ a{
 
 
 			<div class='row'>
-				<div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:left'>
-					<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
-					<?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?>
-					<?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
-					<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
+				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
+				<div style='border-bottom:1px solid #dddddd; height:55px;'>
+				<div class="col-xs-7" style='margin-top:30px; text-align:right;'>
 
-				</div>
-				<div class="col-xs-5" >
+						<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
+					</div>
+
+				<div class="col-xs-5">
 					 <!-- <b>Belanja murah di myacico.co.id! Gratis pengiriman untuk area JAKARTA</b> -->
 
 
@@ -145,7 +148,7 @@ a{
 									 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='30' border='0'>
 									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
 								 </div>
-								 <div class="col-xs-8" style='font-size:15px; color:#4d4d4d; padding-left:0px;'>
+								 <div class="col-xs-8" style='font-size:12px; color:#4d4d4d; padding-left:0px;'>
 									 <div>Selamat Datang</div>
 									 <div style='margin-top:-6px'>
 										 <?php if(isset($user)){ ?>
@@ -177,6 +180,8 @@ a{
 
 
 
+			 </div>
+			 <div style='celar:both'></div>
 			 </div>
 		 </div>
 
@@ -244,22 +249,37 @@ a{
 
   <!-- s header -->
 
-  <script type="text/javascript">
-  	$('body').click(function() {
-  		 $('.show_result').hide();
-  	});
 
-  	function btnSearchDesk(){
-  		var searchDesk = $('#searchDesk').val();
-                if(searchDesk){
-  		location.href = base_url+'product/alllistItem/'+searchDesk;
-            }else{
-              $.alert({
-            title: 'Peringatan',
-            content: 'kolom pencarian tidak boleh kosong',
-          });
-            }
-  	}
+	  <script type="text/javascript">
+	  	$('body').click(function() {
+	  		 $('.show_result').hide();
+	  	});
+$('#searchDesk').keypress(function(e) {
+        if(e.which == 13) {
+           var searchDesk = $('#searchDesk').val();
+	                if(searchDesk){
+	  		location.href = base_url+'product/alllistItem/'+searchDesk;
+	            }else{
+	              $.alert({
+	            title: 'Peringatan',
+	            content: 'kolom pencarian tidak boleh kosong',
+	          });
+	            }
+            //SendData();
+        }
+    });
+	  	function btnSearchDesk(){
+	  		var searchDesk = $('#searchDesk').val();
+	                if(searchDesk){
+	  		location.href = base_url+'product/alllistItem/'+searchDesk;
+	            }else{
+	              $.alert({
+	            title: 'Peringatan',
+	            content: 'kolom pencarian tidak boleh kosong',
+	          });
+	            }
+	  	}
+
 
   	function money(x){
   		return 'Rp. '+(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
@@ -307,7 +327,9 @@ a{
 								data.forEach(function(p){
 									productSrc.append(
 
-									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5'><tr><td><img src='"+p.imageurl+"'  height='80'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+
+										"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5' width='100%'><tr><td width='80'><img src='"+p.imageurl+"' width='50'></td><td>"+p.name+" <span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td><td align='right'><font size='3'><b>"+money(p.pricelist)+"</b></font></td></tr></table></div>"
+
 
 
 									);
@@ -334,7 +356,9 @@ a{
 										data.forEach(function(p){
 											productSrc.append(
 
+
 											"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' height='80'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
+
 
 
 											);
