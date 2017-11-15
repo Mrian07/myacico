@@ -415,6 +415,7 @@ a:hover.my-info {
     background-color: #1a6aa4;
 		border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-primary:hover{
 		background-color: #1785d4;
@@ -427,6 +428,7 @@ a:hover.my-info {
     background-color: #e30c0c;
 		border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-danger:hover{
 		background-color: #ff0000;
@@ -439,6 +441,7 @@ a:hover.my-info {
     background-color: #d1cece;
     border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-default:hover{
 		background-color: #e2dede;
@@ -451,6 +454,7 @@ a:hover.my-info {
     background-color: #d9840c;
     border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-warning:hover{
 		background-color: #f39a1d;
@@ -463,6 +467,7 @@ a:hover.my-info {
     background-color: #006600;
     border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-success:hover{
 		background-color: #017801;
@@ -475,6 +480,7 @@ a:hover.my-info {
     background-color: #4cacc9;
     border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-info:hover{
 		background-color: #5bc0de;
