@@ -52,37 +52,38 @@ a
 		  <div class="panel-body">
 		  <form class="form-horizontal">
         <div class="form-group">
-  			<label class="control-label col-sm-4" for="email">Transaksi:</label>
-  			<div class="col-sm-8">
+  			<label class="control-label col-sm-5" for="email">Transaksi:</label>
+  			<div class="col-sm-7">
   			  <p class="form-control-static"><b>SUKSES</b></p>
   			</div>
+        </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Nomor Order:</label>
-			<div class="col-sm-8">
+			<label class="control-label col-sm-5" for="email">Nomor Order:</label>
+			<div class="col-sm-7">
 			  <p class="form-control-static"><?php echo $field->orderNumber; ?></p>
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Nomor Invoice:</label>
-			<div class="col-sm-8">
+			<label class="control-label col-sm-5" for="email">Nomor Invoice:</label>
+			<div class="col-sm-7">
 			  <p class="form-control-static"><?php echo $field->invoiceNumber; ?></p>
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Metode Pembayaran:</label>
-			<div class="col-sm-8">
+			<label class="control-label col-sm-5" for="email">Metode Pembayaran:</label>
+			<div class="col-sm-7">
 			  <p class="form-control-static"><?php echo $field->paymentMethod; ?></p>
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Status:</label>
-			<div class="col-sm-8">
+			<label class="control-label col-sm-5" for="email">Status:</label>
+			<div class="col-sm-7">
 			  <p class="form-control-static"><?php echo $field->transactionStatus; ?></p>
 			</div>
 		  </div>
 		   <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Tanggal Transaksi:</label>
-			<div class="col-sm-8">
+			<label class="control-label col-sm-5" for="email">Tanggal:</label>
+			<div class="col-sm-7">
 			  <p class="form-control-static"><?php
 			  echo tanggal_time($field->waktuTransaksi);
 			 // $tgl = explode(" ",$field->waktuTransaksi);
@@ -92,6 +93,7 @@ a
 		  </form>
 		  </div>
 		</div>
+
 	  </div>
 	  <div class="col-sm-6">
 
@@ -141,7 +143,7 @@ a
 		</div>
 
     <div class="panel panel-default">
-    <h5>
+
 
       <form class="form-horizontal">
       <div class="form-group">
@@ -157,7 +159,7 @@ a
       </div>
       </div>
     </form>
-      </h5>
+
     </div>
 
 
