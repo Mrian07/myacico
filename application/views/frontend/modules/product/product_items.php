@@ -465,16 +465,16 @@ if($saw==Null)
 
 <div style="clear:both"></div>
 
-<center>
+<div class='my-paging'>
   <?php
     if($page>1){
       $previous=$page-1;
       $first =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/1');
       $prev =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$previous);
-      echo "<a href=$first aria-label=Previous><span aria-hidden=true><< First</a> |";
-      echo "<a href=$prev aria-label=Previous><span aria-hidden=true>< Previous</a> |";
+      echo "<a href=$first class='my-paging-btn'><< First</a> ";
+      echo "<a href=$prev class='my-paging-btn'>< Previous</a> ";
     }else{
-      echo"<< First | < Previous | ";
+      echo"<< First < Previous ";
     }
 
     //angka awal
@@ -483,41 +483,41 @@ if($saw==Null)
       if($i<1)
         continue;
         $hal =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i);
-        $angka .="<a href=$hal>$i</a>";
+        $angka .="<a href=$hal class='my-paging-list'>$i</a>";
 
     }
 
     //angka tengah
-    $angka.="<b>$page</b>";
+    $angka.="<span class='my-paging-list-on'>$page</span>";
     for($i=$page+1;$i<($page+3);$i++){
       if($i>$jpage)
         break;
         $hal =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$i);
-        $angka .="<a href=$hal>$i</a>";
+        $angka .="<a href=$hal class='my-paging-list'>$i</a>";
     }
 
     //angka akhir
     $hal =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$jpage);
-    $angka .=($page+2<$jpage ? "...<a href=$hal>$jpage</a>":"");
+    $angka .=($page+2<$jpage ? "...<a href=$hal class='my-paging-list'>$jpage</a>":"");
 
     //cetak semua angka
-    echo $angka;
+    echo "$angka";
 
     //next
     if($page<$jpage){
       $next = $page+1;
       $next =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$next);
       $last =  site_url('product/listItem/'.$pro.'/'.$alias.'/'.$sort_id.'/'.$jpage);
-      echo " | <a href=$next>Next >></a>";
-      echo " | <a href=$last>Last ></a>";
+      echo " <a href=$next class='my-paging-btn'>Next >></a>";
+      echo " <a href=$last class='my-paging-btn'>Last ></a>";
     }else{
-      echo"Next > | Last >>";
+      echo"Next >  Last >>";
     }
 
 
 
   ?>
-</center>
+</div>
 
 
 

@@ -28,6 +28,47 @@
     margin:0 auto;
 }
 
+.my-paging{
+  margin-top:20px;
+  padding: 10px;
+  text-align:center;
+  font-size:12px;
+  background:#f6f3f3;
+}
+
+.my-paging-list{
+  padding: 10px;
+  margin:5px;
+  color:#c62f2f;
+}
+
+.my-paging-list:hover{
+  text-decoration: none;
+  background:#dad8d8;
+  color:#111111;
+  border-radius:80px;
+  padding: 5px 10px 5px 10px;
+}
+
+.my-paging-list-on{
+  background:#dad8d8;
+  border-radius:80px;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+}
+
+.my-paging-btn{
+  margin:5px;
+  color:#c62f2f;
+}
+/*.my-paging-btn:link{
+  color:#111111;
+  text-decoration: none;
+}*/
+.my-paging-btn:hover{
+  text-decoration: none;
+  color:#111111;
+}
 /*@media (min-width: 1280px) {
     .container{
         max-width: 812px;
