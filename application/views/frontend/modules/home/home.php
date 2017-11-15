@@ -184,6 +184,13 @@
     width: 100%;
     height: 100%;
 }
+h6{
+  display:inline-block;
+width:112px;
+white-space: nowrap;
+overflow:hidden !important;
+text-overflow: ellipsis;
+}
 .section-box-six img{
     height: 100%;
     position: absolute;
@@ -690,7 +697,7 @@ ul.list-group:after {
 
         <div class="col-md-3 col-sm-6">
       		<span class="thumbnail text-center">
-              <a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><img src="<?php echo $itemslide3['imageurl']; ?>" style="height:200px"></a>
+              <a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><img src="<?php echo $itemslide3['imageurl']; ?>" style="height:150px;"></a>
         			<h6 class="link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></h6>
               <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></h5>
         			<div class="ratings" style='text-align: center; color:#d98c13;'>
@@ -701,7 +708,7 @@ ul.list-group:after {
                       <span class="glyphicon glyphicon-star-empty"></span>
                   </div><br>
 					<center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide3['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
-        			<hr class="line">
+
 
               <center>
                <!-- <button type="button" class="btn btn-custom-xs "  onClick="addToCart('<?php // echo$itemslide2['product_id'];?>','<?php // echo$itemslide2['pricelist'];?>','<?php // echo$itemslide2['imageurl'];?>',
@@ -721,14 +728,14 @@ ul.list-group:after {
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> GADGET DAN AKSESORIS HANDPHONE
   </div>
-  <div style='float:left;width:400px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-a1.jpg');?>' border='0' width='100%' height='200'>
+  <div style='float:left;width:400px; height:auto; margin-right:5px'>
+    <img src='<?php echo base_url('images/demo/banner-a1.jpg');?>' border='0' width='100%' height = '160px;'>
   </div>
   <div style='float:left;width:250px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-a2.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-a2.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='float:left;width:250px'>
-    <img src='<?php echo base_url('images/demo/banner-a3.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-a3.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='clear:both'></div>
 
@@ -770,13 +777,13 @@ ul.list-group:after {
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> KOMPUTER & LAPTOP
   </div>
   <div style='float:left;width:400px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-b1.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-b31.jpg');?>' border='0' width='100%' height='160px;'>
   </div>
   <div style='float:left;width:250px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-b2.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-b2.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='float:left;width:250px'>
-    <img src='<?php echo base_url('images/demo/banner-b3.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-b3.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='clear:both'></div>
 
@@ -819,13 +826,13 @@ ul.list-group:after {
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PERALATAN RUMAH TANGGA
   </div>
   <div style='float:left;width:400px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-c1.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-c1.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='float:left;width:250px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-c2.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-c2.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='float:left;width:250px'>
-    <img src='<?php echo base_url('images/demo/banner-c3.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-c3.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='clear:both'></div>
 
@@ -868,13 +875,13 @@ ul.list-group:after {
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> HOBI
   </div>
   <div style='float:left;width:400px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-d1.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-d1.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='float:left;width:250px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-d2.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-d2.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='float:left;width:250px'>
-    <img src='<?php echo base_url('images/demo/banner-d3.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-d3.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='clear:both'></div>
 
@@ -917,13 +924,13 @@ ul.list-group:after {
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> AUDIO & VISUAL
   </div>
   <div style='float:left;width:400px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-e1.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-e1.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='float:left;width:250px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-e2.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-e2.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='float:left;width:250px'>
-    <img src='<?php echo base_url('images/demo/banner-e3.jpg');?>' border='0' width='100%' height='200'>
+    <img src='<?php echo base_url('images/demo/banner-e3.jpg');?>' border='0' width='100%' height='160px'>
   </div>
   <div style='clear:both'></div>
 

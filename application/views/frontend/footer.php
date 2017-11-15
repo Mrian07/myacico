@@ -89,7 +89,7 @@
 
 
 
-
+<form name="myForm" method="post">
 
 			<div class="col-xs-3">
 				<h3><span>Ikuti Kami</span></h3>
@@ -102,15 +102,19 @@
 					</ul>
 				</div>
 			</div>
+
       <div class="col-xs-3">
 				<h3><span>Email Newsletter</span></h3>
         Berlangganan untuk mendapatkan penawaran spesial dan berita dari MyACICO.co.id<br>
 				<div class="input-group">
-					<input type="text" class="my-sub-field" name="x" placeholder="Email...">
+					<input type="hidden" id="isSubscribe" name="isSubscribe" class="my-sub-field" name="x" value="Y">
+					<input type="text" id="email" name="email" class="my-sub-field" name="x" placeholder="Email...">
 					<span class="input-group-btn">
-						<button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button>
+							<input type="submit" id="submit_btn" class="btn btn-default my-sub-button" value="<?php echo "Daftar"?>">
+						<!-- <button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button> -->
 					</span>
 				</div>
+			</form>
 			</div>
 		</div>
 		<br><br>
@@ -241,30 +245,151 @@
 
 <!--
 <script src="<?php //echo base_url('assets_adminlte/plugins/jQuery/jQuery-2.1.4.min.js') ?>"></script>-->
-<script>
+
+
+
+<script type="text/javascript">
+var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+
+var apiurl = baseApiUrl + '/newsletter/save/genericsubscribe';
+console.log('api123',apiurl);
+var data = {};
 $("#btnTop").click(function() {
      $("html, body").animate({ scrollTop: 0 }, "slow");
      return false;
   });
 
 $(document).ready(function() {
-	$('#alertSubmit').show('slow').delay(5000).hide('slow');
-
-});
-
-</script>
-
-<script>
-	$(document).ready(function(e){
-		$('.search-panel .dropdown-menu').find('a').click(function(e) {
-			e.preventDefault();
-			var param = $(this).attr("href").replace("#","");
-			var concept = $(this).text();
-			$('.search-panel span#search_concept').text(concept);
-			$('.input-group #search_param').val(param);
-		});
+		$('#alertSubmit').show('slow').delay(5000).hide('slow');
+	$('.search-panel .dropdown-menu').find('a').click(function(e) {
+		e.preventDefault();
+		var param = $(this).attr("href").replace("#","");
+		var concept = $(this).text();
+		$('.search-panel span#search_concept').text(concept);
+		$('.input-group #search_param').val(param);
 	});
+  $('form').submit(function(e){
+    e.preventDefault();
+		var isSubscribe =  $("#isSubscribe").val();
+		var email = $("#email").val();
+
+		data.isSubscribe = isSubscribe;
+    data.email = email;
+
+
+
+		var apiurl = baseApiUrl + '/newsletter/save/genericsubscribe';
+		function validateForm() {
+
+
+}
+
+if(email==''){
+			$.alert({
+				title: 'Alert!',
+				content: 'Nama tidak boleh kosong!',
+			});
+      return false;
+		}
+
+
+
+
+		// comment baru
+		    var success = function(r){
+      $('#spinner_img').hide();
+      $('#submit_btn').val('Kirim').removeClass('disabled');
+      // console.log('OK:', r);
+      //alert(r.message);
+      //    return false;
+			return false;
+			window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
+    };
+
+
+
+    $('#spinner_img').show();
+    $('#submit_btn').val('loading...').addClass('disabled');
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success:success });
+
+  });
+  });
+// var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
+
+// var apiurl = baseApiUrl + '/create';
+// var success = function(r){
+// 	console.log('OK:', r);
+// 	if(r.status == 1) return location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
+// 	$('#spinner_img').hide();
+// 	$('#submit_btn').val('Kirim').removeClass('disabled');
+// 	$.alert({
+// 		title: 'Alert!',
+// 		content: r.message
+// 	});
+// };
+
+// var error = function(er){
+//   $('#spinner_img').hide();
+//   $('#submit_btn').val('Kirim').removeClass('disabled');
+//   console.log('OK:', er);
+//   $.alert({
+//     title: 'Alert!',
+//     content: 'koneksi tidak berhasil, silahkan coba lagi!',
+//   });
+// };
+
+
+// 	$("form").submit(function(e){
+// 	    e.preventDefault();
+// 		var apiurl = baseApiUrl + '/create';
+// 		var data = $(this).serialize();
+
+// 		var nama = $("#nama").val();
+// 		var email = $("#email").val();
+// 		var password = $("#password").val();
+// 		var password2 = $("#password2").val();
+
+
+// 		if(nama==''){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'nama tidak boleh kosong!',
+// 			});
+// 		}else
+// 		if(email==''){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'email tidak boleh kosong!',
+// 			});
+// 		}else
+// 		if(password.length < 7){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'password minimal 7 karakter!',
+// 			});
+// 		}else
+// 		if(password != password2){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'Password tidak sama!',
+// 			});
+// 		}else{
+// 			$('#spinner_img').show();
+// 			$('#submit_btn').val('loading...').addClass('disabled');
+// 			//$.post( apiurl, data, success, "json" );
+// 			//$.ajax({ type:"POST", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
+// 			 //$.ajax({ type:"POST", contentType: "application/json", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
+// 			  $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, timeout: 30000 });
+// 		}
+
+// 		console.log('data',data);
+
+// 	});
+
+
 </script>
+
+
 
 <script>
 	function langFunction($data){
