@@ -86,7 +86,7 @@ class Checkout extends Web_private {
 		$this->load->view('frontend/modules/checkout/list_payment.php',$this->data);
 
 	}
-        
+
         public function paymentOnline()
 	{
 		$api = "payment/onlinepayment?value=O";
@@ -267,13 +267,14 @@ class Checkout extends Web_private {
 		$this->load->view('frontend/modules/checkout/payment_credit.php',$this->data);
 	}
 
-        public function paymentByOnline()
+  public function paymentByOnline()
 	{
 		$this->data['id'] = $this->uri->segment(3);
 		$this->data['token'] = $this->uri->segment(4);
 		$this->load->view('frontend/modules/checkout/payment_online.php',$this->data);
 	}
-        public function finishByOnline()
+
+	public function finishByOnlineFailed()
 	{
 		$id=$this->uri->segment(3);
 
@@ -311,7 +312,63 @@ class Checkout extends Web_private {
 		}
 		$this->load->view('frontend/footer',$this->data);
 	}
-        
+
+  public function finishByOnline()
+	{
+
+		$id=$_GET['id'];
+		echo"$id";
+		$options = ["http" => [
+		"method" => "GET",
+		"Content-Type: application/json"],
+		];
+
+		$context = stream_context_create($options);
+
+		$api = "transaction/status/".$id;
+		$url = api_base_url($api);
+
+		$konten = file_get_contents($url, false, $context);
+		$this->data['field'] = json_decode($konten);
+		$field = json_decode($konten);
+
+		if($field->status=='1'){
+
+			$id=$field->orderId;
+
+			$this->data['token'] = $_COOKIE['x-auth'];
+			$token = $_COOKIE['x-auth'];
+
+			$options = ["http" => [
+			"method" => "GET",
+			"header" => ["token: " . $token,
+			"Content-Type: application/json"],
+			]];
+
+			$context = stream_context_create($options);
+
+			$api = "transaction/list?orderid=".$id;
+			$url = api_base_url($api);
+
+			$konten = file_get_contents($url, false, $context);
+			$this->data['field'] = json_decode($konten);
+			$field = json_decode($konten);
+
+			$data = array('shipping_address_id' => '');
+	  	$this->session->set_userdata($data);
+
+			$this->data['title_web'] = "Myacico.com - Checkout";
+			$this->load->view('frontend/header',$this->data);
+			$this->load->view('frontend/nav.php',$this->data);
+
+			$this->load->view('frontend/modules/checkout/finish_credit_cart_success.php',$this->data);
+
+		}else{
+			$this->load->view('frontend/modules/checkout/finish_payment_online_error.php',$this->data);
+		}
+		$this->load->view('frontend/footer',$this->data);
+	}
+
 	public function finishByCreditCard()
 	{
 		$id=$this->uri->segment(3);

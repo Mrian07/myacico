@@ -46,7 +46,16 @@
 
 
 					<div class="xzoom-container">
-					  <img class="xzoom" id="xzoom-magnific" width=400 src="<?php echo $img[0]; ?>" xoriginal="<?php echo $img[0]; ?>" />
+						<?php if(isset($img[0])) { ?>
+							<img class="xzoom" id="xzoom-magnific" width=400 src="<?php echo $img[0]; ?>" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"
+ xoriginal="<?php echo $img[0]; ?>" />
+						<?php
+
+						}else{
+							$img[0] = '';
+						}
+						?>
+
 					  <div class="xzoom-thumbs">
 						<!--<a ng-repeat="url in dat.imageurl" ng-href="{{url}}" on-finish-render="ngRepeatFinished">
 							<img class="xzoom-gallery" width="80" src="{{url}}" xpreview="{{url}}" title="">
@@ -54,12 +63,13 @@
 
 
                                                <?php
-                                                    if($img[0])
+                                                    if(isset($img[0]))
                                                     {
                                                         foreach ($img as $gmbr)
                                                         {?>
                                                           <a href="<?php echo $gmbr;?>">
-							<img class="xzoom-gallery" width="80" src="<?php echo $gmbr;?>"  xpreview="<?php echo $gmbr;?>" title="">
+							<img class="xzoom-gallery" width="80" src="<?php echo $gmbr;?>" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"
+ xpreview="<?php echo $gmbr;?>" title="">
                                                         </a>
                                                      <?php   }
                                                     }

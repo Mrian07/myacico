@@ -305,7 +305,7 @@ $i=0;
  {
      //$this->data['img'][$i]=$gmb;
      if(isset($gmb)){
-	$this->data['img'][$i] = $gmb;     
+	$this->data['img'][$i] = $gmb;
      }else{
          $this->data['img'][$i]=false;
      }
