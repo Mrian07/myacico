@@ -230,11 +230,11 @@
   }
 
   .my-hdr2{
-    width:63%; float:left;
+    width:55%; float:left;
   }
 
   .my-hdr3{
-    width:22%; float:left; text-align:right;
+    width:30%; float:left; text-align:right;
   }
 
   /*Serach product*/
@@ -535,7 +535,7 @@ a:hover.my-info {
 		/*background-color:#111111;
 		color:#d0d0d0;
 		padding:13px;*/
-    padding: 11px 20px;
+    padding: 5px 10px 5px 10px;
     border: none;
     border-radius: 4px 0px 0px 4px;
     background-color: #4d4d4d;
@@ -548,12 +548,12 @@ a:hover.my-info {
 	}
 
 	.my-search-button{
-	    padding: 2px 20px;
+	    padding: 1px 20px 1px 20px;
 	    border: none;
 	    border-radius: 4px;
 	    background: #cd0000 url("../../images/general/red-emboss.jpg");
 		  color:#f8f5f0;
-      font-size: 30px;
+      font-size: 22px;
 	}
 
   .my-search-button:hover{
@@ -562,7 +562,7 @@ a:hover.my-info {
 
 	.my-search-field{
 		width: 100%;
-		padding: 10px;
+		padding: 4px 5px 4px 5px;
 		margin: 8px 0;
 		box-sizing: border-box;
 		/*background: #f2f1f1;*/

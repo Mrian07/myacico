@@ -93,19 +93,13 @@ a{
 <body style='font-weight: normal;' ng-app="myApp">
 
 
-	  <div class='my-head'>
-			<div style='margin-bottom:10px; margin-top:10px'>
-		    <img src='<?php echo base_url('images/general/img-head1.jpg');?>' border='0'>
+			<div>
+		    <img src='<?php echo base_url('images/general/img-head.png');?>' border='0' height='35'>
 			</div>
-
-
-
-
-
 			<div class='row'>
 				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
 
-				<div class="col-xs-7" style='margin-top:30px; text-align:right;'>
+				<div class="col-xs-7" style='margin-top:20px; text-align:right;'>
 
 						<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?>
@@ -128,8 +122,8 @@ a{
 									 endforeach;
 								 ?>
 								 <button class="dropbtn-basket">
-									 <img src="<?php echo base_url('images/general/cart.png'); ?>" width='45' border="0"><br>
-									 <span class="badge totalCart" style='margin-left:-6px; margin-top: -38px; position: absolute; font-size:12px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
+									 <img src="<?php echo base_url('images/general/cart.png'); ?>" width='30' border="0"><br>
+									 <span class="badge totalCart" style='margin-left:-7px; margin-top: -30px; position: absolute; font-size:10px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
 								 </button>
 									 <div class="dropdown-basket-content">
 										 <?php
@@ -142,15 +136,15 @@ a{
 									 </div>
 							 </div>
 						 </div>
-						 <div style='float:right; width:160px; text-align:center; border:0px'>
-							 <div class='row' style='margin-top:0px; padding:0px; border-left:2px solid #4d4d4d;'>
-								 <div class="col-xs-4" style='font-size:45px; color:#4d4d4d; margin-top:5px'>
-									 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='30' border='0'>
+						 <div style='float:right; width:160px; text-align:center; border:0px;' >
+							 <div class='row' style='margin-top:0px; padding:0px;'>
+								 <div class="col-xs-4" style='margin-top:5px; text-align: right'>
+									 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='20' border='0'>
 									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
 								 </div>
-								 <div class="col-xs-8" style='font-size:12px; color:#4d4d4d; padding-left:0px;'>
+								 <div class="col-xs-8" style='font-size:10px; color:#4d4d4d; padding-left:0px;'>
 									 <div>Selamat Datang</div>
-									 <div style='margin-top:-6px'>
+									 <div style='margin-top:-8px; '>
 										 <?php if(isset($user)){ ?>
 											 <b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
 											 <b><font color='red'><?php echo anchor('#', 'Logout', array('class'=>'logout btn-nav-black'));?></font></b>
@@ -161,34 +155,30 @@ a{
 								 </div>
 							 </div>
 						 </div>
-						 <div style='float:right; width: 100px; text-align: center; '>
+						 <div style='float:right; width: 80px; text-align: center; border-right:1px solid #4d4d4d; margin-top:8px;'>
 
-
-							<div class="dropdown-lang" style='border:0px solid #aeaeab; border-radius:5px; padding:5px; right: 0; left: auto; text-align:left '>
-								<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"><?php }else{ ?><img src="<?php echo base_url('images/general/flag-id.png'); ?>" border="0" width="50"><?php } ?>
+							<div class="dropdown-lang" style='border:0px solid #aeaeab; padding:0px; right: 0; left: auto; text-align:left'>
+								<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0" width="38"><?php }else{ ?><img src="<?php echo base_url('images/general/flag-id.png'); ?>" border="0" width="38"><?php } ?>
 								<div class="dropdown-lang-content">
-								<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
-								<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
+									<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
+									<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
+								</div>
 							</div>
+
 						</div>
 
-
-
-					</div>
-
 				 </div>
-
-
 
 			 </div>
 
 		 </div>
 
 
-
-					 <div class='my-hdr1'>
- 						<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
- 					</div>
+		 	<div class='my-hdr1'>
+				<div style='margin-top:-10px'>
+					<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
+				</div>
+			</div>
 
       <div class='my-hdr2'>
   			<div class='myserach' ng-app="myApps">
@@ -223,20 +213,9 @@ a{
 
       </div>
 
-
-    <!-- <div class="row">
-      <div class="col-xs-4">One third</div>
-      <div class="col-xs-4">One third</div>
-      <div class="col-xs-4">One third</div>
-    </div>
-
-		<div class="row">
-      <div class="col-xs-6">One third</div>
-      <div class="col-xs-6">One third</div>
-    </div> -->
   </div>
 	<div class='my-hdr3'>
-			<div style='font-family: arial; font-size:24px; font-weight: bold; color:#4d4d4d; margin-top:15px;'>Festival Belanja Online</div>
+			<div style='font-family: arial; font-size:20px; font-weight: bold; color:#4d4d4d; margin-top:15px;'>Festival Belanja Online</div>
 	</div>
 
 
