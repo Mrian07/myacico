@@ -43,6 +43,7 @@ echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 
 					</tr>";
 		endforeach;
+		
 		echo"
 			</tbody>
 				<tfoot>
@@ -59,7 +60,7 @@ echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 						Potongan Rp.0<br><br>-->
 						<strong>Grand Total Rp.".money($this->cart->total())."</strong></td>
 						<td>
-							".anchor('checkout', 'Checkout <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success btn-block'))."
+							".anchor('checkout', 'Checkout <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success btn-block','style'=>'padding:10px'))."
 						</td>
 					</tr>
 				</tfoot>
