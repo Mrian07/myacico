@@ -210,11 +210,25 @@ h6{
   text-overflow: ellipsis;
   font-weight: bold;
   text-align: center;
-  color: red;
+  color: #8a0202;
   font-size: 12px;
   height:20px
 
 }
+.box-title3{
+  width:100%;
+  white-space: wrap;
+  line-height: 14px;
+  overflow:hidden !important;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  text-align: center;
+  color: #8a0202;
+  font-size: 12px;
+  height:20px;
+
+}
+
 .section-box-six img{
     height: 100%;
     position: absolute;
@@ -715,23 +729,23 @@ ul.list-group:after {
 </div>
 
 
-	<div class="row">
+	<div class="row" align="center">
       <?php
 
       foreach($dathome['level_3'] as $key => $itemslide3){ ?>
 
         <div class="col-md-3 col-sm-6" align="center">
       		<span class="thumbnail text-center" align="center">
-              <a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><img src="<?php echo $itemslide3['imageurl']; ?>" style="height:150px;"></a>
+              <a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><img src="<?php echo $itemslide3['imageurl']; ?>" style='height:100px;'></a>
         			<p class="link-nmp box-title" style='height:50px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></p>
               <p class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></p>
-        			<div class="ratings" style='text-align: center; color:#d98c13;'>
+        			<!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star-empty"></span>
-                  </div><br>
+                  </div><br> -->
 					<center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide3['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
 
 
@@ -766,7 +780,7 @@ ul.list-group:after {
 
   <div class="span12" style='background:#e9f6fe; padding:10px; margin-top:10px'>
 
-    <div class="promo-front owl-carousel">
+    <div class="promo-front owl-carousel" align="center">
       <?php
 
       $jmlslide0=count($dathome2['topProduct'][1]['topProduct']);
@@ -782,8 +796,8 @@ ul.list-group:after {
 
           <a href="<?php echo base_url('product/detail/'. $itemslide0['product_id'].'/'. $itemslide0['alias']);?>"><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: auto"></a>
 
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide0['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide0['pricelist']); ?></h5>
+              <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide0['name']; ?></p>
+        <p class="box-title3" style='color: #80DCFC'>Rp.<?php echo money($itemslide0['pricelist']); ?></p>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -814,7 +828,7 @@ ul.list-group:after {
 
   <div class="span12" style='background:#fdf0db; padding:10px; margin-top:10px'>
 
-    <div class="promo-front owl-carousel">
+    <div class="promo-front owl-carousel" align="center">
       <?php
 
       $jmlslide1=count($dathome2['topProduct'][0]['topProduct']);
@@ -828,10 +842,10 @@ ul.list-group:after {
         ?>
       <div class="item" style='background:#ffffff; padding:10px; height:300px'>
 
-        <center><a href="<?php echo base_url('product/detail/'. $itemslide1['product_id'].'/'. $itemslide1['alias']);?>"><img src="<?php echo $itemslide1['imageurl']; ?>"  style="height:120px; width: auto"></a>
-        </center>
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide1['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide1['pricelist']); ?></h5>
+    <a href="<?php echo base_url('product/detail/'. $itemslide1['product_id'].'/'. $itemslide1['alias']);?>"><img src="<?php echo $itemslide1['imageurl']; ?>"  style="height:120px; width: auto"></a>
+
+            <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide1['name']; ?></p>
+            <b><p class="box-title3" style='color: #80DCFC'>Rp.<?php echo money($itemslide1['pricelist']); ?></p></b>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -879,8 +893,8 @@ ul.list-group:after {
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
+            <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide2['name']; ?></p>
+            <p class="box-title3" style='color: #80DCFC'>Rp.<?php echo money($itemslide2['pricelist']); ?></p>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>

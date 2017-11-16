@@ -112,7 +112,7 @@
 					<input type="hidden" id="isSubscribe" name="isSubscribe" class="my-sub-field" name="x" value="Y">
 					<input type="text" id="email" name="email" class="my-sub-field" name="x" placeholder="Email...">
 					<span class="input-group-btn">
-							<input type="button" id="submit_btn" class="btn btn-default my-sub-button" value="<?php echo "Daftar"?>">
+							<input type="button" id="submit_btn1" class="btn btn-default my-sub-button" value="<?php echo "Daftar"?>">
 						<!-- <button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button> -->
 					</span>
 				</div>
@@ -270,7 +270,7 @@ $(document).ready(function() {
 		$('.search-panel span#search_concept').text(concept);
 		$('.input-group #search_param').val(param);
 	});
-  $('#submit_btn').on('click', function(e){
+  $('#submit_btn1').on('click', function(e){
     e.preventDefault();
 		var isSubscribe =  $("#isSubscribe").val();
 		var email = $("#email").val();
