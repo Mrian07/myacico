@@ -635,10 +635,10 @@ ul.list-group:after {
     <div class="col-xs-12"><img src='<?php echo base_url('images/demo/banner-4.jpg');?>' border='0' width='100%'></div>
   </div>
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+  <div style='padding:10px 0px 10px 0px; font-family:tahoma; font-size:15px; border-top: 3px solid #c40202; color:#535151'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> NEW COLLECTION
   </div>
-  <div class="span12" style='background:#ffffff; padding:10px;'>
+  <div class="span12" style='background:#ffffff; padding:0px;'>
 
     <div id="owl-demo" class="owl-carousel">
       <?php
@@ -659,29 +659,26 @@ ul.list-group:after {
 
           <h6 class="text-center link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></h6>
           <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-          <div class="ratings" style='text-align: center; color:#d98c13;'>
-              <!-- <span class="glyphicon glyphicon-star"></span>
+          <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
               <span class="glyphicon glyphicon-star"></span>
               <span class="glyphicon glyphicon-star"></span>
               <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star-empty"></span> -->
-          </div>
-        <br>
-        <center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
-            <hr>
-            <center>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+          </div> -->
+
+        <!-- <center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'> -->
              <!-- <button type="button" class="btn btn-default btn-lg btn-custom-lg"  onClick="addToCart('<?php // echo$itemslide2['product_id'];?>','<?php // echo$itemslide2['pricelist'];?>','<?php// echo$itemslide2['imageurl'];?>',
                '<?php// echo$itemslide2['name'];?>','<?php //echo$itemslide2['stock']; ?>','<?php //echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
 
            <button style="margin-top:10px;" type="button" class="btn btn-custom-sm" onClick="addWishlist('<?php //echo$itemslide2['product_id'];?>','<?php// echo$itemslide2['name'];?>','<?php //echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Add To Wishlist</button> -->
-        </center>
+        <!-- </center> -->
 
       </div>
       <?php $n++;  } ?>
     </div>
 
   </div>
-
 
 
 
@@ -725,7 +722,7 @@ ul.list-group:after {
   		<!-- END PRODUCTS -->
 	</div>
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:15px; border-top: 3px solid #c40202; color:#535151; margin-top:10px; margin-bottom:5px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> GADGET DAN AKSESORIS HANDPHONE
   </div>
   <div style='float:left;width:400px; height:auto; margin-right:5px'>
