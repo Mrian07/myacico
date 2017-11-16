@@ -332,6 +332,10 @@ class Checkout extends Web_private {
 		$this->data['field'] = json_decode($konten);
 		$field = json_decode($konten);
 
+		$this->data['title_web'] = "Myacico.com - Checkout";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+
 		if($field->status=='1'){
 
 			$id=$field->orderId;
@@ -357,9 +361,6 @@ class Checkout extends Web_private {
 			$data = array('shipping_address_id' => '');
 	  	$this->session->set_userdata($data);
 
-			$this->data['title_web'] = "Myacico.com - Checkout";
-			$this->load->view('frontend/header',$this->data);
-			$this->load->view('frontend/nav.php',$this->data);
 
 			$this->load->view('frontend/modules/checkout/finish_payment_online_success.php',$this->data);
 
