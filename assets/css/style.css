@@ -680,6 +680,32 @@ a:hover.my-info {
   }
 
   /*footer garansi*/
+  /*.garansi{
+    width: 100%;
+  }*/
+  .footer-box{
+    width: 175px;
+    height: 200px;
+    padding-top: 10px;
+    display: inline-block;
+    border-right: 1px solid #f1f1f1;
+  }
+  .footer-box p{
+    padding: 10px 10px 10px 10px;
+    line-height: 14px;
+    font-size: 10px;
+  }
+  .footer-box2{
+    width: 175px;
+    height: 200px;
+    padding-top: 10px;
+    display: inline-block;
+  }
+  .footer-box2 p{
+    padding: 10px 10px 10px 10px;
+    line-height: 14px;
+    font-size: 10px;
+  }
   .garansi ul {
       list-style-type: none;
       margin: 0;

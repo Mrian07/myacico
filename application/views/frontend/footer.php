@@ -8,7 +8,7 @@
 	<div class="my-container" style='margin-bottom:20px;'>
 		<center><font size='3'><b>myacico.co.id menjamin kualitas toko kami melalui 5 poin berikut ini:</font></b></center>
 
-		<div class='garansi'>
+		<!-- <div class='garansi'>
 			<ul>
 				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' /><br><br><b>Gratis Pengiriman</b><br>Kami akan mengirimkan pesanan anda secara cuma-cuma untuk area Jakarta</li>
 				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon2.png');?>' border='0' /><br><br><b>Keamanan Pembayaran</b><br>
@@ -18,6 +18,29 @@
 				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' /><br><br><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</li>
 				<li><img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' /><br><br><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</li>
 			</ul>
+		</div> -->
+		<div class="garansi" align="center">
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' />
+				<p><b>Gratis Pengiriman</b><br>Kami akan mengirimkan pesanan anda secara cuma-cuma untuk area Jakarta</p>
+			</div>
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon2.png');?>' border='0' />
+				<p><b>Keamanan Pembayaran</b><br>
+				Kami akan memastikan kerahasiaan informasi pembayaran Anda.</p>
+			</div>
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon3.png');?>' border='0' />
+				<p><b>Kemudahan Transaksi</b><br>Anda bisa melakukan transaksi dengan mudah melalui berbagai metode pembayaran</p>
+			</div>
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' />
+				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</p>
+			</div>
+			<div class="footer-box2">
+				<img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' />
+				<p><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</p>
+			</div>
 		</div>
 		<br><br>
 
