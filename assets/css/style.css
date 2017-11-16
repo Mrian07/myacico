@@ -163,14 +163,22 @@
 
 .productSrc
 {
-  width:1140px;
+  width:1160px;
+}
+
+.link-head{
+  margin-left:298px
 }
 
 @media screen and (max-width: 1680px) {
 
   .productSrc
   {
-    width:970px;
+    width:990px;
+  }
+
+  .link-head{
+    margin-left:275px
   }
 }
 
@@ -178,7 +186,11 @@
 
   .productSrc
   {
-    width:910px;
+    width:935px;
+  }
+
+  .link-head{
+    margin-left:266px
   }
 }
 
@@ -198,7 +210,11 @@
 
   .productSrc
   {
-    width:753px;
+    width:756px;
+  }
+
+  .link-head{
+    margin-left:275px
   }
 
 }
@@ -208,12 +224,20 @@
   {
     width:735px;
   }
+
+  .link-head{
+    margin-left:263px
+  }
 }
 
 @media screen and (max-width: 1366px) {
   .productSrc
   {
     width:710px;
+  }
+
+  .link-head{
+    margin-left:261px
   }
 }
 
@@ -225,6 +249,10 @@
 }
 
 @media screen and (max-width: 1280px) {
+  .link-head{
+    margin-left:275px
+  }
+
   .my-hdr1{
     margin-left:10px;
     width:13%; float:left;
@@ -263,6 +291,10 @@
   .productSrc
   {
     width:420px;
+  }
+
+  .link-head{
+    margin-left:275px
   }
 }
 

@@ -97,12 +97,13 @@ a{
 			<div class='row'>
 				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
 
-				<div class="col-xs-7" style='margin-top:20px; text-align:right;'>
-
+				<div class="col-xs-7" style='margin-top:20px;'>
+					<div class='link-head'>
 						<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
+					</div>
 					</div>
 
 				<div class="col-xs-5">
