@@ -25,7 +25,7 @@
 			<div class="col-xs-2">
 				<b>Informasi</b><br>
 				<?php echo anchor('Pages/AboutUs','Tentang Kami', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Blog MyACICO.co.id', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('blog.myacico.co.id','Blog MyACICO.co.id', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Pages/SyaratDnKetentuan','Syarat & Ketentuan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Karir', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Pages/kebijakanPrivasi','Kebajikan Privasi', array('class'=>'my-info')); ?><br>
@@ -71,7 +71,9 @@
 			<div class="col-xs-3">
 				<h3><span>Informasi</span></h3>
 				<?php echo anchor('Pages/AboutUs','Tentang Kami', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Blog MyACICO.co.id', array('class'=>'my-info')); ?><br>
+
+				<a href="http://blog.myacico.co.id/" class="my-info">Blog MyACICO.co.id</a><br/>
+
 				<?php echo anchor('Pages/SyaratDnKetentuan','Syarat & Ketentuan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Karir', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Pages/kebijakanPrivasi','Kebajikan Privasi', array('class'=>'my-info')); ?><br>
