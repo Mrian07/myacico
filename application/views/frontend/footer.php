@@ -287,11 +287,17 @@ $(document).ready(function() {
 if(email==''){
 			$.alert({
 				title: 'Alert!',
-				content: 'Nama tidak boleh kosong!',
+				content: 'Email tidak boleh kosong!',
 			});
       return false;
 		}
-
+		var x = document.forms["myForm"]["email"].value;
+		var atpos = x.indexOf("@");
+		var dotpos = x.lastIndexOf(".");
+		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+				alert("Masukan Email Yang Benar");
+				return false;
+		}
 
 
 
@@ -299,10 +305,13 @@ if(email==''){
 		    var success = function(r){
       $('#spinner_img').hide();
       $('#submit_btn').val('Kirim').removeClass('disabled');
-      // console.log('OK:', r);
-      //alert(r.message);
-      //    return false;
-			return false;
+      console.log('OK:', r);
+      alert(r.message);
+
+				 	if(r.message == "email anda belum terdaftar, silahkan registrasi terlebih dahulu"){
+       return false;
+					}else
+
 			window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
     };
 
