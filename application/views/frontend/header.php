@@ -53,10 +53,8 @@ a{
 
 
 				<style type="text/css">
-					#search_keyword_id
+					/*#search_keyword_id
 					{
-						width:500px;
-						/*border:solid 1px #CDCDCD;*/
 						padding:10px;
 						font-size:12px;
 					}
@@ -86,7 +84,7 @@ a{
 						background:#e9e9e8;
 						color:#000000;
 						cursor:pointer;
-					}
+					}*/
 				</style>
     </head>
 
@@ -158,7 +156,7 @@ a{
 						 <div style='float:right; width: 80px; text-align: center; border-right:1px solid #4d4d4d; margin-top:8px;'>
 
 							<div class="dropdown-lang" style='border:0px solid #aeaeab; padding:0px; right: 0; left: auto; text-align:left'>
-								<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0" width="38"><?php }else{ ?><img src="<?php echo base_url('images/general/flag-id.png'); ?>" border="0" width="38"><?php } ?>
+								<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/flag-en.png'); ?>" border="0" width="38"><?php }else{ ?><img src="<?php echo base_url('images/general/flag-id.png'); ?>" border="0" width="38"><?php } ?>
 								<div class="dropdown-lang-content">
 									<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
 									<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>

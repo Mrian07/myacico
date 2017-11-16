@@ -84,6 +84,11 @@
     color: #8a0202;
 }
 
+.price2 {
+    font-size: 20px;
+    color: #8a0202;
+}
+
 .tmp-product{
   border:1px solid #dddddd;
   padding:10px 5px 10px 5px;
@@ -162,7 +167,7 @@
 }
 
 @media screen and (max-width: 1680px) {
-  /*Serach product*/
+
   .productSrc
   {
     width:970px;
@@ -170,7 +175,7 @@
 }
 
 @media screen and (max-width: 1600px) {
-  /*Serach product*/
+
   .productSrc
   {
     width:910px;
@@ -191,7 +196,6 @@
     width:20%; float:left; text-align:right;
   }
 
-  /*Serach product*/
   .productSrc
   {
     width:753px;
@@ -200,7 +204,6 @@
 }
 
 @media screen and (max-width: 1400px) {
-  /*Serach product*/
   .productSrc
   {
     width:735px;
@@ -208,7 +211,6 @@
 }
 
 @media screen and (max-width: 1366px) {
-  /*Serach product*/
   .productSrc
   {
     width:710px;
@@ -216,7 +218,6 @@
 }
 
 @media screen and (max-width: 1360px) {
-  /*Serach product*/
   .productSrc
   {
     width:700px;
@@ -268,7 +269,7 @@
 /*Nav*/
 
 .my-nav{
-  clear:both
+  clear:both;
 }
 /*
 .navbar-inverse .navbar-nav > li > a
@@ -888,9 +889,6 @@ a:hover.my-info {
 		right: 0; left: auto;
     border-radius:5px;
 }
-
-
-
 
 .dropdown-basket-content:after, .arrow_box:before {
 	bottom: 100%;

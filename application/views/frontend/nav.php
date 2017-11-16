@@ -62,7 +62,7 @@ cursor:pointer;
 //print_r($hasilNav);
 
                    foreach($hasilNav as $dataNav){ ?>
-									<li class="dropdown megamenu-fw nav-show-desktop">
+									<li class="dropdown megamenu-fw nav-show-desktop nav-garis">
 										<?php echo anchor('#', '<img src="'.$dataNav['iconurl'].'" border="0" height="20"> '.$dataNav['name'], array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
 										<ul class="dropdown-menu megamenu-content" role="menu">
 											<li>
