@@ -13,7 +13,7 @@ margin-top: -11px;
 
 
 <div class="my-container">
-	<div class="row">
+	<div class="row" style='margin-top:20px'>
 
 		<div class="col-sm-6">
 <h4> <?php echo $lang_field_selamatDatang; ?> </h4>

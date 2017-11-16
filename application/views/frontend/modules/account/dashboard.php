@@ -31,26 +31,26 @@
 </div>
 </div>
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
-
-$(document).ready(function() {
-
-  $('form').submit(function(e){
-    e.preventDefault();
-
-    var apiurl = baseApiUrl + '/login';
-    var data = $(this).serialize();
-
-    // success handling
-    var success = function(r){
-      console.log('OK:', r);
-      alert(r.message);
-    };
-
-    $.post( apiurl, data, success, "json" );
-    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
-
-  });
-
-});
+// var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+//
+// $(document).ready(function() {
+//
+//   $('form').submit(function(e){
+//     e.preventDefault();
+//
+//     var apiurl = baseApiUrl + '/login';
+//     var data = $(this).serialize();
+//
+//     // success handling
+//     var success = function(r){
+//       console.log('OK:', r);
+//       alert(r.message);
+//     };
+//
+//     $.post( apiurl, data, success, "json" );
+//     //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
+//
+//   });
+//
+// });
 </script>
