@@ -684,28 +684,43 @@ a:hover.my-info {
     width: 100%;
   }*/
   .footer-box{
-    width: 175px;
-    height: 200px;
+    width: 170px;
+    height: 160px;
     padding-top: 10px;
     display: inline-block;
     border-right: 1px solid #f1f1f1;
   }
   .footer-box p{
     padding: 10px 10px 10px 10px;
+    height: 120px;
     line-height: 14px;
     font-size: 10px;
+    /*background-color: black;*/
+  }
+  .footer-box img{
+    height: 40px;
+    width: auto;
   }
   .footer-box2{
-    width: 175px;
-    height: 200px;
-    padding-top: 10px;
+    width: 170px;
+    height: 160px;
+    padding-top: 0px;
     display: inline-block;
+    border-right: 1px solid #f1f1f1;
   }
   .footer-box2 p{
     padding: 10px 10px 10px 10px;
+    height: 120px;
     line-height: 14px;
     font-size: 10px;
+    background-color: black;
   }
+  .footer-box2 img{
+    height: 45px;
+    width: auto;
+  }
+
+
   .garansi ul {
       list-style-type: none;
       margin: 0;

@@ -19,7 +19,7 @@
 				<li><img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' /><br><br><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</li>
 			</ul>
 		</div> -->
-		<div class="garansi" align="center">
+		<div class="" align="center">
 			<div class="footer-box">
 				<img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' />
 				<p><b>Gratis Pengiriman</b><br>Kami akan mengirimkan pesanan anda secara cuma-cuma untuk area Jakarta</p>
@@ -33,16 +33,26 @@
 				<img src='<?php echo base_url('images/general/f-icon3.png');?>' border='0' />
 				<p><b>Kemudahan Transaksi</b><br>Anda bisa melakukan transaksi dengan mudah melalui berbagai metode pembayaran</p>
 			</div>
-			<div class="footer-box">
-				<img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' />
+			<!-- <div class="footer-box2" >
+				<img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' style="padding-top:10px;" />
 				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</p>
-			</div>
-			<div class="footer-box2">
+			</div> -->
+
+			<div class="footer-box">
 				<img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' />
 				<p><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</p>
 			</div>
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon4.png');?>'/>
+				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi</p>
+			</div>
+			<!-- <div class="footer-box2" >
+				<img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' style="padding-top:10px;" />
+				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</p>
+			</div> -->
 		</div>
-		<br><br>
+		<br/><br/>
+
 
 		<!-- <div class="row">
 			<div class="col-xs-2">
