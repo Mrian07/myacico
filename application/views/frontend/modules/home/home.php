@@ -710,7 +710,7 @@ ul.list-group:after {
 
 
 
-<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:20px;'>
   <i class="fa fa-dot-circle-o" aria-hidden="true"></i> FEATURED PRODUCT
 </div>
 
