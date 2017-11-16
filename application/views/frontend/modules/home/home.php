@@ -603,7 +603,7 @@ ul.list-group:after {
 <div>
 
 
-            <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
+            <!-- <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet"> -->
 
 
 <div class="my-container">
