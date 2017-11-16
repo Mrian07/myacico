@@ -66,7 +66,7 @@ if($page){
 		$this->data['max_page'] =json_decode($konten2)->pageCount;
 		$this->data['hasil'] = json_decode($konten, true);
 
-		
+
                 if($this->data['hasil'])
                  {
 		$this->load->view('frontend/header',$this->data);

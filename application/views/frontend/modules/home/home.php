@@ -186,10 +186,34 @@
 }
 h6{
   display:inline-block;
-width:112px;
-white-space: nowrap;
-overflow:hidden !important;
-text-overflow: ellipsis;
+  width:112px;
+  white-space: nowrap;
+  overflow:hidden !important;
+  text-overflow: ellipsis;
+}
+.box-title{
+  width:100%;
+  white-space: wrap;
+  line-height: 14px;
+  overflow:hidden !important;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  text-align: center;
+  font-size: 10px;
+  height:40px
+}
+.box-title2{
+  width:100%;
+  white-space: wrap;
+  line-height: 14px;
+  overflow:hidden !important;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  text-align: center;
+  color: red;
+  font-size: 12px;
+  height:20px
+
 }
 .section-box-six img{
     height: 100%;
@@ -652,13 +676,14 @@ ul.list-group:after {
           $active='';
         }
         ?>
-      <div class="item">
+      <!-- <div class="item" align="center"> -->
+        <div class="item" align="center">
 
       <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
-        <center><img src="<?php echo $itemslide2['imageurl']; ?>" class='img-slide' style='max-width:80%'></center></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
 
-          <h6 class="text-center link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></h6>
-          <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
+          <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></p>
+          <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
           <div class="ratings" style='text-align: center; color:#d98c13;'>
               <!-- <span class="glyphicon glyphicon-star"></span>
               <span class="glyphicon glyphicon-star"></span>
@@ -695,11 +720,11 @@ ul.list-group:after {
 
       foreach($dathome['level_3'] as $key => $itemslide3){ ?>
 
-        <div class="col-md-3 col-sm-6">
-      		<span class="thumbnail text-center">
+        <div class="col-md-3 col-sm-6" align="center">
+      		<span class="thumbnail text-center" align="center">
               <a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><img src="<?php echo $itemslide3['imageurl']; ?>" style="height:150px;"></a>
-        			<h6 class="link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></h6>
-              <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></h5>
+        			<p class="link-nmp box-title" style='height:50px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></p>
+              <p class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></p>
         			<div class="ratings" style='text-align: center; color:#d98c13;'>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>

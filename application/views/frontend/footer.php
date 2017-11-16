@@ -112,7 +112,7 @@
 					<input type="hidden" id="isSubscribe" name="isSubscribe" class="my-sub-field" name="x" value="Y">
 					<input type="text" id="email" name="email" class="my-sub-field" name="x" placeholder="Email...">
 					<span class="input-group-btn">
-							<input type="submit" id="submit_btn" class="btn btn-default my-sub-button" value="<?php echo "Daftar"?>">
+							<input type="button" id="submit_btn" class="btn btn-default my-sub-button" value="<?php echo "Daftar"?>">
 						<!-- <button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button> -->
 					</span>
 				</div>
@@ -254,7 +254,7 @@
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
 var apiurl = baseApiUrl + '/newsletter/save/genericsubscribe';
-console.log('api123',apiurl);
+
 var data = {};
 $("#btnTop").click(function() {
      $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -270,7 +270,7 @@ $(document).ready(function() {
 		$('.search-panel span#search_concept').text(concept);
 		$('.input-group #search_param').val(param);
 	});
-  $('form').submit(function(e){
+  $('#submit_btn').on('click', function(e){
     e.preventDefault();
 		var isSubscribe =  $("#isSubscribe").val();
 		var email = $("#email").val();
