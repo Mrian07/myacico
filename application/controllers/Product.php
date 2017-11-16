@@ -102,18 +102,20 @@ public function alllistItem()
 		$short=$this->uri->segment(4);
   	$page=$this->uri->segment(5);
 
+		if($short==''){$this->data['sort_id'] = 'all'; }else{$this->data['sort_id'] =$short; }
 		$this->data['pro'] = $id;
-		$this->data['sort_id'] = $short;
 
 		//product/productlist?category=".$id_cat."&show=productcount";
 
 		if($page){
-			//$api = "product/productall/".$page;
+			$api = "product/productall/".$id."?itemperpage=8&page=".$page."&ob=".$short;
+			$api2 = "product/productall/".$id."?itemperpage=8&page=".$page."&show=productcount";
+		}elseif($short){
+			$api = "product/productall/".$id."?ob=".$short;
+			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
 		}else{
 			$api = "product/productall/".$id;
-
-			//mencari jumlah
-			$api2 = "product/productall/asus?itemperpage=8&page=1&show=productcount";
+			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
 		}
 		$url = api_base_url($api);
 		$konten = file_get_contents($url, false);
@@ -135,7 +137,7 @@ public function alllistItem()
 		$this->data['jpage'] = ceil($jdata/$batas);
 
 		$this->data['alias'] = $this->uri->segment(4);
-		$this->data['title_web'] = "Myacico.com - List Items";
+		$this->data['title_web'] = "Myacico.com - List Items ".$id;
 
 		$this->data['hasil'] = json_decode($konten, true);
 		$this->load->view('frontend/header',$this->data);

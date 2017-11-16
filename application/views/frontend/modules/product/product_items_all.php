@@ -1,164 +1,3 @@
-<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-.thumbnail
-{
-    margin-bottom: 20px;
-    padding: 0px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
-}
-.thumbnail>img, .thumbnail a>img{
-height: 100px;
-}
-.color-wishlist{
-	color:#FE4365;
-}
-.color-wishlist-disabled{
-	color:#dddddd;
-}
-.yu{
-  color: red;
-font-family: 'Roboto Condensed', sans-serif;
-font-size: 20px;
-
-}
-.yu1{
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 20px;
-  color: green;
-}
-.item.list-group-item
-{
-    float: none;
-    width: 100%;
-    background-color: #fff;
-    margin-bottom: 10px;
-}
-.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
-{
-    background: #428bca;
-}
-
-.item.list-group-item .list-group-image
-{
-    margin-right: 10px;
-}
-.item.list-group-item .thumbnail
-{
-    margin-bottom: 0px;
-}
-.item.list-group-item .caption
-{
-    padding: 9px 9px 0px 9px;
-}
-.item.list-group-item:nth-of-type(odd)
-{
-    background: #eeeeee;
-}
-
-.item.list-group-item:before, .item.list-group-item:after
-{
-    display: table;
-    content: " ";
-}
-
-.item.list-group-item img
-{
-    float: left;
-}
-.item.list-group-item:after
-{
-    clear: both;
-}
-.list-group-item-text
-{
-    margin: 0 0 11px;
-}
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-        width: 100%;
-    }
-}
-.jumbotron-billboard .img {
-    margin-bottom: 0px;
-    opacity: 0.5;
-    color: #fff;
-    background: #000 url("https://myacico.com/media/bannerslider/lel1.jpg") center center;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden;
-
-
-  position:absolute;
-  top:0;left:0;
-  z-index:1;
-}
-.jumbotron-billboard2 .img {
-    margin-bottom: 0px;
-    opacity: 0.5;
-    color: #fff;
-    background: #000 url("https://s1.postimg.org/40i0xfe8sf/banner_atas.png") center center;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden;
-
-
-  position:absolute;
-  top:0;left:0;
-  z-index:1;
-}
-h1.po1{
-  color: White;
-}
-.jumbotron {position:relative;padding:50px;}
-.jumbotron .container {z-index:2;
- position:relative;
-  z-index:2;
-}
-</style>
-
-<?php
-	// $sumber = $baseApiUrl.'/product/productall/'.$pro;
- //  $sumber2 = $baseApiUrl.'/product/productall/'.$pro."?page=1"."&show="."pagecount";
- //
- //
- // //$sumber = 'http://myacico.net:8080/myacico-service/api/product/productlist?category='.$pro;
- // $konten = file_get_contents($sumber);
- // $konten2 = file_get_contents($sumber2);
- // $data = json_decode($konten, true);
- // $data2 = json_decode($konten2, true);
- // $saw1=$this->uri->segment(5);
- //
- // $saw=$this->uri->segment(4);
- // if($saw==Null)
- // {
- //     $sort_id ="all";
- // }else{
- //     $sort_id = $saw;
- // }
- // //echo $data[1]["nama_lokasi"];
- //
- // echo "<br/>";
-?>
 
 
     <?php
@@ -335,41 +174,18 @@ h1.po1{
 
      ?>
 
-<!--<div class="row my-sort-product">
-	<div class="col-sm-9">
-
-
-
-	</div>
-	<div class="col-sm-3">
-
-		<div class="form-group">
-		<label for="usr">Urutkan:</label>
-		<select name="urutkan" class="form-control" onchange='filter(this)'>
-		<option value='5'>Produk Terbaru</option>
-		<option value='1'>Nama: A Ke Z</option>
-		<option value='2'>Nama: Z Ke A</option>
-		<option value='3'>Harga: Rendah Ke Tinggi</option>
-		<option value='4'>Harga: Tinggi Ke Rendah</option>
-		</select>
-		</div>
-
-
-	</div>
-</div>-->
 
 <div class="my-container">
+  <div class='my-bg-title'>
+
+    <i class="fa fa-angle-right" aria-hidden="true"></i> LIST PRODUCT: <?php echo $pro; ?>
+
+  </div>
+
 
     <div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
        <div class="col-sm-8">
-        <!-- <strong>Category Title</strong>
 
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span> List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                class="glyphicon glyphicon-th"></span> Grid</a>
-
-        </div> -->
        </div>
         <div class="col-sm-4">
         <div class="row">
@@ -518,20 +334,9 @@ h1.po1{
 
   ?>
 </div>
-<!-- <div class="text-center">
-    <ul class="pagination">
-   <li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
-   <?php
-    $i=1;
-   //die(print_r($max_page));
-        for($i;$i<=$max_page;$i++){
-   ?>
-  <li><a href="<?php echo site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$i); ?>"  value="<?php echo $i;?>"><?php echo $i;?></a></li>
 
-        <?php }?>
-   <li class=next><a href="<?php echo site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$i+=1); ?>" aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>
-    </ul>
-</div> -->
+</div>
+
 
 
 <script type="text/javascript">
