@@ -759,13 +759,13 @@ ul.list-group:after {
 
             <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide0['name']; ?></h6>
             <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide0['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
+            <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star-empty"></span>
-            </div>
+            </div> -->
       </div>
       <?php $n++;  } ?>
     </div>
@@ -807,13 +807,13 @@ ul.list-group:after {
         </center>
             <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide1['name']; ?></h6>
             <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide1['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
+            <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star-empty"></span>
-            </div>
+            </div> -->
       </div>
       <?php $n++;  } ?>
     </div>
@@ -856,13 +856,13 @@ ul.list-group:after {
         </center>
             <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
             <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
+            <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star-empty"></span>
-            </div>
+            </div> -->
       </div>
       <?php $n++;  } ?>
     </div>
@@ -905,13 +905,13 @@ ul.list-group:after {
         </center>
             <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
             <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
+            <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star-empty"></span>
-            </div>
+            </div> -->
       </div>
       <?php $n++;  } ?>
     </div>
@@ -954,13 +954,13 @@ ul.list-group:after {
         </center>
             <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
             <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-            <div class="ratings" style='text-align: center; color:#d98c13;'>
+            <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star-empty"></span>
-            </div>
+            </div> -->
       </div>
       <?php $n++;  } ?>
     </div>
