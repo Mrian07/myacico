@@ -37,19 +37,19 @@
 }
 
 .font-aneh{
-	
+
 	color:red;
 }
-</style> 
+</style>
 
 <table id="cart" class="table table-hover table-condensed">
 	<thead>
 		<tr>
-			<th style='width:30%'>Product</th>
+			<th style='width:40%'>Product</th>
 			<th style='width:10%'>Price</th>
 			<th style='width:10%'>Quantity</th>
 			<th style='width:22%' class='text-center'>Subtotal</th>
-			<th style='width:20%'>Delete</th>
+			<th style='width:10%'>Delete</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -61,7 +61,7 @@
 							<div class='row'>
 								<div class='col-sm-2 hidden-xs'><img src='".$items['imageurl']."' border='0' height='50' width='50'></div>
 								<div class='col-sm-10'>
-									<h4 class='nomargin'>".$items['name']."</h4>
+									<b>".$items['name']."</b>
 								</div>
 							</div>
 						</td>
@@ -84,28 +84,28 @@
 						<td class='actions' data-th=''>
 							<a href='#' onClick=\"dellItemCartToken('".$items['productId']."','".$items['imageurl']."','".$items['name']."','".$items['itemCartId']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a>
 						</td>
-						
+
 					</tr>";
 					$total +=$items['subtotal'];
-		endforeach; 
+		endforeach;
 	?>
 	</tbody>
 		<tfoot>
-			
+
 			<tr>
 				<td colspan='3'>
-				
+
 					<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman
 				</td>
 				<td class='text-center'>
 				<strong>Grand Total Rp.<?php echo money($total); ?></strong></td>
 				<td>
-					<?php echo anchor('checkout', 'Checkout <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success btn-block')); ?>
+					<?php echo anchor('checkout', 'Checkout <i class="fa fa-angle-right"></i>', array('class'=>'btn btn-success btn-block','style'=>'padding:10px')); ?>
 				</td>
 			</tr>
 		</tfoot>
 	</table>
-	
+
 </table>
 
 <script>
@@ -116,35 +116,35 @@
 		var jm = jml.split('-');
 		var qty = jm[0];
 		var itemCartId = jm[1];
-		var data = {};		
+		var data = {};
 		var apiurl = api_base_url +'/order/cart/updateitem';
-		
+
 		$.ajax
-		({  
+		({
 		type: "POST",
 		url: apiurl,
 		data:JSON.stringify({
-			"qty":qty, 
+			"qty":qty,
 			"itemCartId":itemCartId
 		}) ,
 		contentType: "application/json",
 		headers: {"token":token},
 		success:function(data){
-		
+
 				var qtyTotal = qty;
 				$.ajax
 				({
 				url: "<?php echo site_url('cart/listCartToken'); ?>",
-				
+
 				success:function(html){
 						$(".listCart").html(html);
 						$('.totalCart').html(qtyTotal);
 					}
 				});
-			
+
 			}
 		});
-		
+
 	}
 
 </script>

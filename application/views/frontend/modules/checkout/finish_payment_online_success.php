@@ -1,8 +1,6 @@
 <style>
 .table>tbody>tr>td, .table>tfoot>tr>td{
     vertical-align: middle;
-	font-size:13px;
-	padding:15px;
 }
 @media screen and (max-width: 600px) {
     table#cart tbody td .form-control{
@@ -13,7 +11,7 @@
 		width:36%;
 		margin:1.5em 0;
 	}
-
+a
 	.actions .btn-info{
 		float:left;
 	}
@@ -29,56 +27,19 @@
 		display: inline-block; width: 8rem;
 	}
 
-
-
 	table#cart tfoot td{display:block; }
 	table#cart tfoot td .btn{display:block;}
 
 }
 </style>
 
+
 <div class="my-container">
 	<div class='my-bg-title'>
-		<i class="fa fa-angle-right" aria-hidden="true"></i> KERANJANG BELANJA ANDA
+		<i class="fa fa-angle-right" aria-hidden="true"></i> FINISH
 	</div>
 </div>
-<div class="my-container" style='background:#ffffff;  padding-top:20px; margin-bottom:20px;'>
 
-	<div class="col-md-12 listCart">
-		<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>
-	</div>
-
-
+<div class="my-container">
+	<center><h3>success</h3></center>
 </div>
-<div style='clear:both'></div>
-<script>
-$(document).ready(function() {
-
-	var cookie = document.cookie.split('x-auth=');
-	if(cookie.length > 1){
-
-		$.ajax
-		({
-		url: "<?php echo site_url('cart/listCartToken'); ?>",
-		success:function(html){
-				$(".listCart").html(html);
-			}
-		});
-
-
-	}else{
-
-		$.ajax
-		({
-		url: "<?php echo site_url('cart/listCart'); ?>",
-		success:function(html){
-				$(".listCart").html(html);
-			}
-		});
-
-	}
-
-
-
-});
-</script>

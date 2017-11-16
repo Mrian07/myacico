@@ -1480,8 +1480,14 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
 #navbar-menu ul li a{
 	color:#ffffff;
 	display:inline-block;
+  font-size: 12px;
 }
-
+.nav-garis{
+  border-left:1px solid #9d0000;
+  border-right:1px solid #9d0000;
+  margin-left:3px;
+  /*padding:0px 20px 0px 20px;*/
+}
 #navbar-menu ul li a:hover{
   color:#eee10e;
   text-decoration: none;

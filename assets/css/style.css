@@ -28,6 +28,47 @@
     margin:0 auto;
 }
 
+.my-paging{
+  margin-top:20px;
+  padding: 10px;
+  text-align:center;
+  font-size:12px;
+  background:#f6f3f3;
+}
+
+.my-paging-list{
+  padding: 10px;
+  margin:5px;
+  color:#c62f2f;
+}
+
+.my-paging-list:hover{
+  text-decoration: none;
+  background:#dad8d8;
+  color:#111111;
+  border-radius:80px;
+  padding: 5px 10px 5px 10px;
+}
+
+.my-paging-list-on{
+  background:#ffffff;
+  border-radius:80px;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+}
+
+.my-paging-btn{
+  margin:5px;
+  color:#c62f2f;
+}
+/*.my-paging-btn:link{
+  color:#111111;
+  text-decoration: none;
+}*/
+.my-paging-btn:hover{
+  text-decoration: none;
+  color:#111111;
+}
 /*@media (min-width: 1280px) {
     .container{
         max-width: 812px;
@@ -39,6 +80,11 @@
 /*s: Product*/
 
 .price {
+    font-size: 20px;
+    color: #8a0202;
+}
+
+.price2 {
     font-size: 20px;
     color: #8a0202;
 }
@@ -117,22 +163,34 @@
 
 .productSrc
 {
-  width:1140px;
+  width:1160px;
+}
+
+.link-head{
+  margin-left:298px
 }
 
 @media screen and (max-width: 1680px) {
-  /*Serach product*/
+
   .productSrc
   {
-    width:970px;
+    width:990px;
+  }
+
+  .link-head{
+    margin-left:275px
   }
 }
 
 @media screen and (max-width: 1600px) {
-  /*Serach product*/
+
   .productSrc
   {
-    width:910px;
+    width:935px;
+  }
+
+  .link-head{
+    margin-left:266px
   }
 }
 
@@ -150,56 +208,68 @@
     width:20%; float:left; text-align:right;
   }
 
-  /*Serach product*/
   .productSrc
   {
-    width:753px;
+    width:778px;
+  }
+
+  .link-head{
+    margin-left:265px
   }
 
 }
 
 @media screen and (max-width: 1400px) {
-  /*Serach product*/
   .productSrc
   {
-    width:735px;
+    width:754px;
+  }
+
+  .link-head{
+    margin-left:263px
   }
 }
 
 @media screen and (max-width: 1366px) {
-  /*Serach product*/
   .productSrc
   {
-    width:710px;
+    width:730px;
+  }
+
+  .link-head{
+    margin-left:261px
   }
 }
 
 @media screen and (max-width: 1360px) {
-  /*Serach product*/
   .productSrc
   {
-    width:700px;
+    width:725px;
   }
 }
 
 @media screen and (max-width: 1280px) {
+  .link-head{
+    margin-left:275px
+  }
+
   .my-hdr1{
     margin-left:10px;
     width:13%; float:left;
   }
 
   .my-hdr2{
-    width:63%; float:left;
+    width:55%; float:left;
   }
 
   .my-hdr3{
-    width:22%; float:left; text-align:right;
+    width:30%; float:left; text-align:right;
   }
 
   /*Serach product*/
   .productSrc
   {
-    width:600px;
+    width:520px;
   }
 }
 
@@ -222,12 +292,16 @@
   {
     width:420px;
   }
+
+  .link-head{
+    margin-left:275px
+  }
 }
 
 /*Nav*/
 
 .my-nav{
-  clear:both
+  clear:both;
 }
 /*
 .navbar-inverse .navbar-nav > li > a
@@ -374,6 +448,7 @@ a:hover.my-info {
     background-color: #1a6aa4;
 		border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-primary:hover{
 		background-color: #1785d4;
@@ -386,6 +461,7 @@ a:hover.my-info {
     background-color: #e30c0c;
 		border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-danger:hover{
 		background-color: #ff0000;
@@ -398,6 +474,7 @@ a:hover.my-info {
     background-color: #d1cece;
     border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-default:hover{
 		background-color: #e2dede;
@@ -410,6 +487,7 @@ a:hover.my-info {
     background-color: #d9840c;
     border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-warning:hover{
 		background-color: #f39a1d;
@@ -422,6 +500,7 @@ a:hover.my-info {
     background-color: #006600;
     border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-success:hover{
 		background-color: #017801;
@@ -434,6 +513,7 @@ a:hover.my-info {
     background-color: #4cacc9;
     border-radius: 0px;
 		border: 0px;
+    font-size: 11px;
 }
 .btn-info:hover{
 		background-color: #5bc0de;
@@ -466,7 +546,7 @@ a:hover.my-info {
 		font-family:tahoma;
 		padding:5px;
 		border-bottom:1px #CDCDCD dashed;
-		font-size:12px;
+		font-size:11px;
 		z-index: 289;
 	}
 	.show_result:hover
@@ -488,7 +568,7 @@ a:hover.my-info {
 		/*background-color:#111111;
 		color:#d0d0d0;
 		padding:13px;*/
-    padding: 11px 20px;
+    padding: 5px 10px 5px 10px;
     border: none;
     border-radius: 4px 0px 0px 4px;
     background-color: #4d4d4d;
@@ -501,12 +581,12 @@ a:hover.my-info {
 	}
 
 	.my-search-button{
-	    padding: 2px 20px;
+	    padding: 1px 20px 1px 20px;
 	    border: none;
 	    border-radius: 4px;
 	    background: #cd0000 url("../../images/general/red-emboss.jpg");
 		  color:#f8f5f0;
-      font-size: 30px;
+      font-size: 22px;
 	}
 
   .my-search-button:hover{
@@ -515,7 +595,7 @@ a:hover.my-info {
 
 	.my-search-field{
 		width: 100%;
-		padding: 10px;
+		padding: 4px 5px 4px 5px;
 		margin: 8px 0;
 		box-sizing: border-box;
 		/*background: #f2f1f1;*/
@@ -543,10 +623,10 @@ a:hover.my-info {
   /*  border: 1px solid #716f6f;*/
     padding:5px;
     color:#111111;
-    font-size:15px;
+    font-size:11px;
     text-decoration: none;
-    border-radius:5px;
     margin-left:10px;
+    border-bottom:0px;
   }
 
   .btn-nav-head:hover {
@@ -632,6 +712,32 @@ a:hover.my-info {
   }
 
   /*footer garansi*/
+  /*.garansi{
+    width: 100%;
+  }*/
+  .footer-box{
+    width: 175px;
+    height: 200px;
+    padding-top: 10px;
+    display: inline-block;
+    border-right: 1px solid #f1f1f1;
+  }
+  .footer-box p{
+    padding: 10px 10px 10px 10px;
+    line-height: 14px;
+    font-size: 10px;
+  }
+  .footer-box2{
+    width: 175px;
+    height: 200px;
+    padding-top: 10px;
+    display: inline-block;
+  }
+  .footer-box2 p{
+    padding: 10px 10px 10px 10px;
+    line-height: 14px;
+    font-size: 10px;
+  }
   .garansi ul {
       list-style-type: none;
       margin: 0;
@@ -767,7 +873,17 @@ a:hover.my-info {
   	border: 1px #dddddd solid;
   	padding:10px;
   	margin-bottom:40px;
+        
+          text-align: center;
   	background:#ffffff;
+  }
+  .border-create1{
+    border: 1px #dddddd solid;
+    padding:10px;
+    height: 200px;
+      text-align: center;
+    margin-bottom:40px;
+
   }
 
   .border-sidebar{
@@ -841,9 +957,6 @@ a:hover.my-info {
 		right: 0; left: auto;
     border-radius:5px;
 }
-
-
-
 
 .dropdown-basket-content:after, .arrow_box:before {
 	bottom: 100%;

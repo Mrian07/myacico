@@ -54,7 +54,7 @@ function onSignIn(googleUser) {
 <div class="my-container">
 
 
-	<div class="row">
+	<div class="row" style='margin-top:20px'>
 		<div class="col-sm-6">
 		<h5>LOGIN</h5>
 		<div class='border-create' style='background:#ffffff'>

@@ -19,67 +19,133 @@ class Product extends Web {
 
 	}
 
-	public function alllistItem()
-	{
-		$id=$this->uri->segment(3);
-		$this->data['pro']=$this->uri->segment(3);
-  $page=$this->uri->segment(5);
-	  $page2=$this->uri->segment(4);
-// die($id);
-
-// if($id){$page=$id;}else{
-// $page=$page;
+// 	public function alllistItem()
+// 	{
+// 		$id=$this->uri->segment(3);
+// 		$this->data['pro']=$this->uri->segment(3);
+// 		$page2=$this->uri->segment(4);
+//   	$page=$this->uri->segment(5);
+//
+//
+// // die($id);
+//
+// // if($id){$page=$id;}else{
+// // $page=$page;
+// // }
+// //
+// // if($page ==0 ){
+// // 	$page =1;
+// // }
+// if($page){
+// 	$api = "product/productall/".$page;
+// }else{
+// 	$api = "product/productall/".$id;
 // }
 //
-// if($page ==0 ){
-// 	$page =1;
-// }
-if($page){
-	$api = "product/productall/".$page;
-}else{
-	$api = "product/productall/".$id;
-}
+// // echo"$api"; die();
+// 		$url = api_base_url($api);
+// 		 // $api_rec = "product/productall=".$id."&show=productcount";
+//
+//
+// 		/$konten = file_get_contents($url, false);
+//
+//
+// 		  $api_max = "product/productall/".$id."?itemperpage=8"."&page=".$page."&show=pagecount";
+//
+// 		  $url2 = api_base_url($api_max);
+// 			// die($url2);
+// 		$options = ["http" => [
+// 					"method" => "GET",
+// 					"Content-Type: application/json",
+// 				],
+// 		];
+//
+// 									// looking maximum page
+//
+// 		$context = stream_context_create($options);
+//
+// 		$konten2 = file_get_contents($url2, false, $context);
+// 		// die($konten2);
+//
+// 		$batas = '8';
+// 		if(empty($page)){
+// 			$posisi = 0;
+// 			$page =1;
+// 		}else{
+// 			$posisi = ($page-1)*$batas;
+// 		}
+// 		$this->data['page'] = $page;
+// 		$this->data['posisi'] = $posisi;
+// 				$this->data['max_page'] =json_decode($konten2)->pageCount;
+// 		$max_page = json_decode($konten2)->pageCount;
+// 		// $jdata =json_decode($konten2)->pageCount;
+// 		$this->data['jpage'] = ceil($max_page/$batas);
+//
+//
+// 	  $this->data['title_web'] = "Myacico.com - List Items";
+//
+//
+// 		$this->data['hasil'] = json_decode($konten, true);
+//
+// 		$this->load->view('frontend/header',$this->data);
+// 		$this->load->view('frontend/nav.php',$this->data);
+// 		$this->load->view('frontend/modules/product/product_items_all.php',$this->data);
+// 		$this->load->view('frontend/footer',$this->data);
+//
+//
+// 	}
 
-// echo"$api"; die();
+public function alllistItem()
+	{
+		$id=$this->uri->segment(3);
+		// 		$this->data['pro']=$this->uri->segment(3);
+		$short=$this->uri->segment(4);
+  	$page=$this->uri->segment(5);
+
+		if($short==''){$this->data['sort_id'] = '5'; }else{$this->data['sort_id'] =$short; }
+		$this->data['pro'] = $id;
+
+		//product/productlist?category=".$id_cat."&show=productcount";
+
+		if($page){
+			$api = "product/productall/".$id."?itemperpage=8&page=".$page."&ob=".$short;
+			$api2 = "product/productall/".$id."?itemperpage=8&page=".$page."&show=productcount";
+		}elseif($short){
+			$api = "product/productall/".$id."?ob=".$short;
+			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
+		}else{
+			$api = "product/productall/".$id;
+			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
+		}
 		$url = api_base_url($api);
-
-
 		$konten = file_get_contents($url, false);
 
-		  $api_max = "product/productall/".$id."?itemperpage=8"."&page=".$page."&show=pagecount";
-		  $url2 = api_base_url($api_max);
-			// die($url2);
-		$options = ["http" => [
-					"method" => "GET",
-					"Content-Type: application/json",
-				],
-		];
 
-									// looking maximum page
+		$url2 = api_base_url($api2);
+		$konten2 = file_get_contents($url2, false);
 
-		$context = stream_context_create($options);
-		$konten2 = file_get_contents($url2, false, $context);
-		// die($konten2);
+		$batas = '8';
+		if(empty($page)){
+			$posisi = 0;
+			$page =1;
+		}else{
+			$posisi = ($page-1)*$batas;
+		}
+		$this->data['page'] = $page;
+		$this->data['posisi'] = $posisi;
+		$jdata =json_decode($konten2)->productCount;
+		$this->data['jpage'] = ceil($jdata/$batas);
 
+		$this->data['alias'] = $this->uri->segment(4);
+		$this->data['title_web'] = "Myacico.com - List Items ".$id;
 
-
-		$this->data['max_page'] =json_decode($konten2)->pageCount;
 		$this->data['hasil'] = json_decode($konten, true);
-                if($this->data['hasil'])
-                 {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/product/product_items_all.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
-                 }
-                 else{
-                     $this->data['notFound'] = "Kami tidak menemukan hasil pencarian untuk  ".'"'."<i><b>".$id.'"'."</b></i>";
-                    $this->load->view('frontend/header',$this->data);
-                    $this->load->view('frontend/nav.php',$this->data);
-                    $this->load->view('frontend/modules/product/product_not_found.php',$this->data);
-                    $this->load->view('frontend/footer',$this->data);
-                 }
-	}
+
+}
 
 	public function listItem()
  {
@@ -147,8 +213,20 @@ $url3 = api_base_url($api_rec);
    $this->data['cektoken'] = '0';
   }
 
-   $this->data['alias'] = $this->uri->segment(4);
-  $this->data['title_web'] = "Myacico.com - Home";
+	$batas = '8';
+	if(empty($page)){
+		$posisi = 0;
+		$page =1;
+	}else{
+		$posisi = ($page-1)*$batas;
+	}
+	$this->data['page'] = $page;
+	$this->data['posisi'] = $posisi;
+	$jdata =json_decode($konten3)->productCount;
+	$this->data['jpage'] = ceil($jdata/$batas);
+
+  $this->data['alias'] = $this->uri->segment(4);
+  $this->data['title_web'] = "Myacico.com - List Items";
   $this->load->view('frontend/header',$this->data);
   $this->load->view('frontend/nav.php',$this->data);
   // $this->load->view('frontend/slide_show.php',$this->data);
@@ -186,7 +264,6 @@ $this->load->view('frontend/sidenav',$this->data);
 
 		$this->data['hasil'] = json_decode($konten, true);
 
-
 		//Slide slide_show
 		$api = "home/view";
 		$url = api_base_url($api);
@@ -201,7 +278,7 @@ $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
 		$this->load->view('frontend/modules/product/category.php',$this->data);
-$this->load->view('frontend/sidenav',$this->data);
+		$this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 

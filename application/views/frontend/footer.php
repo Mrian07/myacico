@@ -8,7 +8,7 @@
 	<div class="my-container" style='margin-bottom:20px;'>
 		<center><font size='3'><b>myacico.co.id menjamin kualitas toko kami melalui 5 poin berikut ini:</font></b></center>
 
-		<div class='garansi'>
+		<!-- <div class='garansi'>
 			<ul>
 				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' /><br><br><b>Gratis Pengiriman</b><br>Kami akan mengirimkan pesanan anda secara cuma-cuma untuk area Jakarta</li>
 				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon2.png');?>' border='0' /><br><br><b>Keamanan Pembayaran</b><br>
@@ -18,14 +18,47 @@
 				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' /><br><br><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</li>
 				<li><img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' /><br><br><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</li>
 			</ul>
+		</div> -->
+		<div class="" align="center">
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' />
+				<p><b>Gratis Pengiriman</b><br>Kami akan mengirimkan pesanan anda secara cuma-cuma untuk area Jakarta</p>
+			</div>
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon2.png');?>' border='0' />
+				<p><b>Keamanan Pembayaran</b><br>
+				Kami akan memastikan kerahasiaan informasi pembayaran Anda.</p>
+			</div>
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon3.png');?>' border='0' />
+				<p><b>Kemudahan Transaksi</b><br>Anda bisa melakukan transaksi dengan mudah melalui berbagai metode pembayaran</p>
+			</div>
+			<!-- <div class="footer-box2" >
+				<img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' style="padding-top:10px;" />
+				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</p>
+			</div> -->
+
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' />
+				<p><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</p>
+			</div>
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon4.png');?>'/>
+				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi</p>
+			</div>
+			<!-- <div class="footer-box2" >
+				<img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' style="padding-top:10px;" />
+				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</p>
+			</div> -->
 		</div>
-		<br><br>
+		<br/><br/>
+
 
 		<!-- <div class="row">
 			<div class="col-xs-2">
 				<b>Informasi</b><br>
 				<?php echo anchor('Pages/AboutUs','Tentang Kami', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Blog MyACICO.co.id', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('blog.myacico.co.id','Blog MyACICO.co.id', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Pages/SyaratDnKetentuan','Syarat & Ketentuan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Karir', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Pages/kebijakanPrivasi','Kebajikan Privasi', array('class'=>'my-info')); ?><br>
@@ -71,7 +104,9 @@
 			<div class="col-xs-3">
 				<h3><span>Informasi</span></h3>
 				<?php echo anchor('Pages/AboutUs','Tentang Kami', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Blog MyACICO.co.id', array('class'=>'my-info')); ?><br>
+
+				<a href="http://blog.myacico.co.id/" class="my-info">Blog MyACICO.co.id</a><br/>
+
 				<?php echo anchor('Pages/SyaratDnKetentuan','Syarat & Ketentuan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Karir', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Pages/kebijakanPrivasi','Kebajikan Privasi', array('class'=>'my-info')); ?><br>
@@ -89,7 +124,7 @@
 
 
 
-
+<form name="myForm" method="post">
 
 			<div class="col-xs-3">
 				<h3><span>Ikuti Kami</span></h3>
@@ -102,15 +137,19 @@
 					</ul>
 				</div>
 			</div>
+
       <div class="col-xs-3">
 				<h3><span>Email Newsletter</span></h3>
         Berlangganan untuk mendapatkan penawaran spesial dan berita dari MyACICO.co.id<br>
 				<div class="input-group">
-					<input type="text" class="my-sub-field" name="x" placeholder="Email...">
+					<input type="hidden" id="isSubscribe" name="isSubscribe" class="my-sub-field" name="x" value="Y">
+					<input type="text" id="email" name="email" class="my-sub-field" name="x" placeholder="Email...">
 					<span class="input-group-btn">
-						<button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button>
+							<input type="button" id="submit_btn1" class="btn btn-default my-sub-button" value="<?php echo "Daftar"?>">
+						<!-- <button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button> -->
 					</span>
 				</div>
+			</form>
 			</div>
 		</div>
 		<br><br>
@@ -241,30 +280,161 @@
 
 <!--
 <script src="<?php //echo base_url('assets_adminlte/plugins/jQuery/jQuery-2.1.4.min.js') ?>"></script>-->
-<script>
+
+
+
+<script type="text/javascript">
+var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+
+var apiurl = baseApiUrl + '/newsletter/save/genericsubscribe';
+
+var data = {};
 $("#btnTop").click(function() {
      $("html, body").animate({ scrollTop: 0 }, "slow");
      return false;
   });
 
 $(document).ready(function() {
-	$('#alertSubmit').show('slow').delay(5000).hide('slow');
-
-});
-
-</script>
-
-<script>
-	$(document).ready(function(e){
-		$('.search-panel .dropdown-menu').find('a').click(function(e) {
-			e.preventDefault();
-			var param = $(this).attr("href").replace("#","");
-			var concept = $(this).text();
-			$('.search-panel span#search_concept').text(concept);
-			$('.input-group #search_param').val(param);
-		});
+		$('#alertSubmit').show('slow').delay(5000).hide('slow');
+	$('.search-panel .dropdown-menu').find('a').click(function(e) {
+		e.preventDefault();
+		var param = $(this).attr("href").replace("#","");
+		var concept = $(this).text();
+		$('.search-panel span#search_concept').text(concept);
+		$('.input-group #search_param').val(param);
 	});
+  $('#submit_btn1').on('click', function(e){
+    e.preventDefault();
+		var isSubscribe =  $("#isSubscribe").val();
+		var email = $("#email").val();
+
+		data.isSubscribe = isSubscribe;
+    data.email = email;
+
+
+
+		var apiurl = baseApiUrl + '/newsletter/save/genericsubscribe';
+		function validateForm() {
+
+
+}
+
+if(email==''){
+			$.alert({
+				title: 'Alert!',
+				content: 'Email tidak boleh kosong!',
+			});
+      return false;
+		}
+		var x = document.forms["myForm"]["email"].value;
+		var atpos = x.indexOf("@");
+		var dotpos = x.lastIndexOf(".");
+		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+				alert("Masukan Email Yang Benar");
+				return false;
+		}
+
+
+
+		// comment baru
+		    var success = function(r){
+      $('#spinner_img').hide();
+      $('#submit_btn').val('Kirim').removeClass('disabled');
+      console.log('OK:', r);
+      alert(r.message);
+
+				 	if(r.message == "email anda belum terdaftar, silahkan registrasi terlebih dahulu"){
+       return false;
+					}else
+
+					      	 location.reload();
+
+    };
+
+
+
+    $('#spinner_img').show();
+    $('#submit_btn').val('loading...').addClass('disabled');
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success:success });
+
+  });
+  });
+// var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
+
+// var apiurl = baseApiUrl + '/create';
+// var success = function(r){
+// 	console.log('OK:', r);
+// 	if(r.status == 1) return location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
+// 	$('#spinner_img').hide();
+// 	$('#submit_btn').val('Kirim').removeClass('disabled');
+// 	$.alert({
+// 		title: 'Alert!',
+// 		content: r.message
+// 	});
+// };
+
+// var error = function(er){
+//   $('#spinner_img').hide();
+//   $('#submit_btn').val('Kirim').removeClass('disabled');
+//   console.log('OK:', er);
+//   $.alert({
+//     title: 'Alert!',
+//     content: 'koneksi tidak berhasil, silahkan coba lagi!',
+//   });
+// };
+
+
+// 	$("form").submit(function(e){
+// 	    e.preventDefault();
+// 		var apiurl = baseApiUrl + '/create';
+// 		var data = $(this).serialize();
+
+// 		var nama = $("#nama").val();
+// 		var email = $("#email").val();
+// 		var password = $("#password").val();
+// 		var password2 = $("#password2").val();
+
+
+// 		if(nama==''){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'nama tidak boleh kosong!',
+// 			});
+// 		}else
+// 		if(email==''){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'email tidak boleh kosong!',
+// 			});
+// 		}else
+// 		if(password.length < 7){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'password minimal 7 karakter!',
+// 			});
+// 		}else
+// 		if(password != password2){
+// 			$.alert({
+// 				title: 'Alert!',
+// 				content: 'Password tidak sama!',
+// 			});
+// 		}else{
+// 			$('#spinner_img').show();
+// 			$('#submit_btn').val('loading...').addClass('disabled');
+// 			//$.post( apiurl, data, success, "json" );
+// 			//$.ajax({ type:"POST", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
+// 			 //$.ajax({ type:"POST", contentType: "application/json", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
+// 			  $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, timeout: 30000 });
+// 		}
+
+// 		console.log('data',data);
+
+// 	});
+
+
 </script>
+
+
 
 <script>
 	function langFunction($data){
