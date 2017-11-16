@@ -670,7 +670,7 @@ ul.list-group:after {
   </div> -->
 
   <div class="row" style='margin-top:10px; margin-bottom:10px'>
-    <div class="col-xs-12"><img src='<?php echo base_url('images/demo/banner-4.jpg');?>' border='0' width='100%'></div>
+    <div class="col-xs-12"><img src='https://storage.googleapis.com/myacico/image/banner/banner-54.png' border='0' width='100%'></div>
   </div>
 
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
