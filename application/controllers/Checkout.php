@@ -361,7 +361,7 @@ class Checkout extends Web_private {
 			$this->load->view('frontend/header',$this->data);
 			$this->load->view('frontend/nav.php',$this->data);
 
-			$this->load->view('frontend/modules/checkout/finish_credit_cart_success.php',$this->data);
+			$this->load->view('frontend/modules/checkout/finish_payment_online_success.php',$this->data);
 
 		}else{
 			$this->load->view('frontend/modules/checkout/finish_payment_online_error.php',$this->data);
