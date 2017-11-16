@@ -77,7 +77,7 @@ margin-top: -11px;
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl2; ?>'+'/create';
 console.log('333',baseApiUrl)
-var apiurl = baseApiUrl + '/create';
+var apiurl = '<?php echo $baseApiUrl2; ?>'+'/create';
 console.log('tes1111',apiurl)
 var data = {};
 $(document).ready(function() {
@@ -92,7 +92,7 @@ $(document).ready(function() {
     data.email = email;
     data.password = password;
 
-var apiurl = baseApiUrl + '/create';
+var apiurl = '<?php echo $baseApiUrl2; ?>'+'/create';
 		console.log('ini apa ya', apiurl)
 		function validateForm() {
 
