@@ -102,7 +102,7 @@ public function alllistItem()
 		$short=$this->uri->segment(4);
   	$page=$this->uri->segment(5);
 
-		if($short==''){$this->data['sort_id'] = 'all'; }else{$this->data['sort_id'] =$short; }
+		if($short==''){$this->data['sort_id'] = '5'; }else{$this->data['sort_id'] =$short; }
 		$this->data['pro'] = $id;
 
 		//product/productlist?category=".$id_cat."&show=productcount";
