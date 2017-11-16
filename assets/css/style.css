@@ -210,11 +210,11 @@
 
   .productSrc
   {
-    width:756px;
+    width:778px;
   }
 
   .link-head{
-    margin-left:275px
+    margin-left:265px
   }
 
 }
@@ -222,7 +222,7 @@
 @media screen and (max-width: 1400px) {
   .productSrc
   {
-    width:735px;
+    width:754px;
   }
 
   .link-head{
@@ -233,7 +233,7 @@
 @media screen and (max-width: 1366px) {
   .productSrc
   {
-    width:710px;
+    width:730px;
   }
 
   .link-head{
@@ -244,7 +244,7 @@
 @media screen and (max-width: 1360px) {
   .productSrc
   {
-    width:700px;
+    width:725px;
   }
 }
 
@@ -269,7 +269,7 @@
   /*Serach product*/
   .productSrc
   {
-    width:600px;
+    width:520px;
   }
 }
 
@@ -716,43 +716,28 @@ a:hover.my-info {
     width: 100%;
   }*/
   .footer-box{
-    width: 170px;
-    height: 160px;
+    width: 175px;
+    height: 200px;
     padding-top: 10px;
     display: inline-block;
     border-right: 1px solid #f1f1f1;
   }
   .footer-box p{
     padding: 10px 10px 10px 10px;
-    height: 120px;
     line-height: 14px;
     font-size: 10px;
-    /*background-color: black;*/
-  }
-  .footer-box img{
-    height: 40px;
-    width: auto;
   }
   .footer-box2{
-    width: 170px;
-    height: 160px;
-    padding-top: 0px;
+    width: 175px;
+    height: 200px;
+    padding-top: 10px;
     display: inline-block;
-    border-right: 1px solid #f1f1f1;
   }
   .footer-box2 p{
     padding: 10px 10px 10px 10px;
-    height: 120px;
     line-height: 14px;
     font-size: 10px;
-    background-color: black;
   }
-  .footer-box2 img{
-    height: 45px;
-    width: auto;
-  }
-
-
   .garansi ul {
       list-style-type: none;
       margin: 0;
