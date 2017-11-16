@@ -163,174 +163,174 @@ h1.po1{
 
     <?php
 
- //    if ($pro == 1000003)  {
- //    echo "<div class='jumbotron jumbotron-billboard'>
- //      <div class='img'></div>
- //        <div class='my-container'>
- //            <div class='row'>
- //                <div class='col-lg-12'>
- //                    <h1 class='po1'>Laptop Gaming</h1>
- //                    <br/>
- //                    <p>
- //
- //                    </p>
- //
- //                </div>
- //            </div>
- //        </div>
- //    </div>";
- //  } else if ($pro == 1000038) {
- //
- //    echo "<div class='jumbotron jumbotron-billboard'>
- //      <div class='img'></div>
- //        <div class='my-container'>
- //            <div class='row'>
- //                <div class='col-lg-12'>
- //                    <h1 class='po1'>Laptop 2 in  1</h1>
- //                    <br/>
- //                    <p>
- //
- //                    </p>
- //
- //                </div>
- //            </div>
- //        </div>
- //    </div>";
- //  } else if ($pro == 1000015) {
- //    echo "<div class='jumbotron jumbotron-billboard'>
- //      <div class='img'></div>
- //        <div class='my-container'>
- //            <div class='row'>
- //                <div class='col-lg-12'>
- //                    <h1 class='po1'>Laptop Apple</h1>
- //                    <br/>
- //                    <p>
- //
- //                    </p>
- //
- //                </div>
- //            </div>
- //        </div>
- //    </div>";
- //
- //  }  else if ($pro == 1000431)  {
- //    echo "<div class='w3l_banner_nav_right_banner7'>
- //
- //    </div>";
- //  } else if ($pro == 1000009) {
- //    echo "<div class='jumbotron jumbotron-billboard'>
- //      <div class='img'></div>
- //        <div class='my-container'>
- //            <div class='row'>
- //                <div class='col-lg-12'>
- //                    <h1 class='po1'>Laptop Bisnis</h1>
- //                    <br/>
- //                    <p>
- //
- //                    </p>
- //
- //                </div>
- //            </div>
- //        </div>
- //    </div>";
- //  }else if($pro == 1000231) {
- //    echo "<div class='jumbotron jumbotron-billboard'>
- //      <div class='img'></div>
- //        <div class='my-container'>
- //            <div class='row'>
- //                <div class='col-lg-12'>
- //                    <h1 class='po1'>Toner Printer</h1>
- //                    <br/>
- //                    <p>
- //
- //                    </p>
- //
- //                </div>
- //            </div>
- //        </div>
- //    </div>";
- //  } else if($pro == 1000235) {
- //    echo "<div class='jumbotron jumbotron-billboard'>
- //      <div class='img'></div>
- //        <div class='my-container'>
- //            <div class='row'>
- //                <div class='col-lg-12'>
- //                    <h1 class='po1'>Printer Inkjet</h1>
- //                    <br/>
- //                    <p>
- //
- //                    </p>
- //
- //                </div>
- //            </div>
- //        </div>
- //    </div>";
- //  } else if($pro == 1000236) {
- //    echo "<div class='jumbotron jumbotron-billboard'>
- //      <div class='img'></div>
- //        <div class='my-container'>
- //            <div class='row'>
- //                <div class='col-lg-12'>
- //                    <h1 class='po1'>Printer All In One</h1>
- //                    <br/>
- //                    <p>
- //
- //                    </p>
- //
- //                </div>
- //            </div>
- //        </div>
- //    </div>";
- // } else if($pro == 1000237){
- //   echo "<div class='jumbotron jumbotron-billboard'>
- //     <div class='img'></div>
- //       <div class='my-container'>
- //           <div class='row'>
- //               <div class='col-lg-12'>
- //                   <h1 class='po1'>Printer Laser</h1>
- //                   <br/>
- //                   <p>
- //
- //                   </p>
- //
- //               </div>
- //           </div>
- //       </div>
- //   </div>";
- //  } else if ($pro == 1000473) {
- //    echo "<div class='jumbotron jumbotron-billboard'>
- //      <div class='img'></div>
- //        <div class='my-container'>
- //            <div class='row'>
- //                <div class='col-lg-12'>
- //                    <h1 class='po1'>Laptop Consumer</h1>
- //                    <br/>
- //                    <p>
- //
- //                    </p>
- //
- //                </div>
- //            </div>
- //        </div>
- //    </div>";
- //  }  else {
- //
- //    echo "<div class='jumbotron jumbotron-billboard2'>
- //      <div class='img'></div>
- //        <div class='my-container'>
- //            <div class='row'>
- //                <div class='col-lg-12'>
- //        <br/>
- //                    <br/>
- //                    <p>
- //
- //                    </p>
- //
- //                </div>
- //            </div>
- //        </div>
- //    </div>";
- //    }
+    if ($pro == 1000003)  {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='my-container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Laptop Gaming</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+  } else if ($pro == 1000038) {
+
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='my-container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Laptop 2 in  1</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+  } else if ($pro == 1000015) {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='my-container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Laptop Apple</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+
+  }  else if ($pro == 1000431)  {
+    echo "<div class='w3l_banner_nav_right_banner7'>
+
+    </div>";
+  } else if ($pro == 1000009) {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='my-container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Laptop Bisnis</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+  }else if($pro == 1000231) {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='my-container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Toner Printer</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+  } else if($pro == 1000235) {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='my-container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Printer Inkjet</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+  } else if($pro == 1000236) {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='my-container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Printer All In One</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+ } else if($pro == 1000237){
+   echo "<div class='jumbotron jumbotron-billboard'>
+     <div class='img'></div>
+       <div class='my-container'>
+           <div class='row'>
+               <div class='col-lg-12'>
+                   <h1 class='po1'>Printer Laser</h1>
+                   <br/>
+                   <p>
+
+                   </p>
+
+               </div>
+           </div>
+       </div>
+   </div>";
+  } else if ($pro == 1000473) {
+    echo "<div class='jumbotron jumbotron-billboard'>
+      <div class='img'></div>
+        <div class='my-container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <h1 class='po1'>Laptop Consumer</h1>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+  }  else {
+
+    echo "<div class='jumbotron jumbotron-billboard2'>
+      <div class='img'></div>
+        <div class='my-container'>
+            <div class='row'>
+                <div class='col-lg-12'>
+        <br/>
+                    <br/>
+                    <p>
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>";
+    }
 
 
      ?>
@@ -506,7 +506,60 @@ h1.po1{
 
     </div>
 </div>
-<div class="text-center">
+<div class='my-paging'>
+  <?php
+    if($page>1){
+      $previous=$page-1;
+      $first =  site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/1');
+      $prev =  site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$previous);
+      echo "<a href=$first class='my-paging-btn'><< First</a> ";
+      echo "<a href=$prev class='my-paging-btn'>< Previous</a> ";
+    }else{
+      echo"<< First < Previous ";
+    }
+
+    //angka awal
+    $angka = ($page > 3 ? "...":"");
+    for($i=$page-1;$i<$page;$i++){
+      if($i<1)
+        continue;
+        $hal =  site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$i);
+        $angka .="<a href=$hal class='my-paging-list'>$i</a>";
+
+    }
+
+    //angka tengah
+    $angka.="<span class='my-paging-list-on'>$page</span>";
+    for($i=$page+1;$i<($page+3);$i++){
+      if($i>$jpage)
+        break;
+        $hal =  site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$i);
+        $angka .="<a href=$hal class='my-paging-list'>$i</a>";
+    }
+
+    //angka akhir
+    $hal =  site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$jpage);
+    $angka .=($page+2<$jpage ? "...<a href=$hal class='my-paging-list'>$jpage</a>":"");
+
+    //cetak semua angka
+    echo "$angka";
+
+    //next
+    if($page<$jpage){
+      $next = $page+1;
+      $next =  site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$next);
+      $last =  site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$jpage);
+      echo " <a href=$next class='my-paging-btn'>Next >></a>";
+      echo " <a href=$last class='my-paging-btn'>Last ></a>";
+    }else{
+      echo"Next >  Last >>";
+    }
+
+
+
+  ?>
+</div>
+<!-- <div class="text-center">
     <ul class="pagination">
    <li class=prev><a href=# aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
    <?php
@@ -519,7 +572,7 @@ h1.po1{
         <?php }?>
    <li class=next><a href="<?php echo site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$i+=1); ?>" aria-label=Previous><span aria-hidden=true>&raquo;</span></a></li>
     </ul>
-</div>
+</div> -->
 
 
 <script type="text/javascript">
