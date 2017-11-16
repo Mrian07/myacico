@@ -7,13 +7,13 @@
 		</div>
 	  </div>
 	  <div class="col-sm-4">
-		<div class='border-create'>
+		<div class='border-create1'>
 			<p><?php echo $lang_ket_daftar_akunBisnis;?></p>
 			<div class='my-btn-create'><?php echo anchor('customer/business/', "<i class='fa fa-briefcase fa-3x' aria-hidden='true'></i> ", array('class'=>''));?> </div>
 		</div>
 	  </div>
 	  <div class="col-sm-4">
-		<div class='border-create'>
+		<div class='border-create1'>
 			<p>Untuk pemerintah yang ingin belanja di myacico.com.</p>
 			<div class='my-btn-create'><?php echo anchor('customer/government/', "<br/><br/><i class='fa fa-building fa-3x' aria-hidden='true'></i> ", array('class'=>''));?></div>
 		</div>
