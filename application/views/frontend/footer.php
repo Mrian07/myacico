@@ -287,7 +287,7 @@ $(document).ready(function() {
 if(email==''){
 			$.alert({
 				title: 'Alert!',
-				content: 'Nama tidak boleh kosong!',
+				content: 'Email tidak boleh kosong!',
 			});
       return false;
 		}
@@ -300,9 +300,9 @@ if(email==''){
       $('#spinner_img').hide();
       $('#submit_btn').val('Kirim').removeClass('disabled');
       // console.log('OK:', r);
-      //alert(r.message);
+      alert(r.message);
       //    return false;
-			return false;
+
 			window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
     };
 
