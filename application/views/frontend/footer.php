@@ -305,9 +305,12 @@ if(email==''){
 		    var success = function(r){
       $('#spinner_img').hide();
       $('#submit_btn').val('Kirim').removeClass('disabled');
-      // console.log('OK:', r);
+      console.log('OK:', r);
       alert(r.message);
-      //    return false;
+
+				 	if(r.message == "email anda belum terdaftar, silahkan registrasi terlebih dahulu"){
+       return false;
+					}else
 
 			window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
     };
