@@ -1,11 +1,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<div id="<?php echo$pane; ?>" class="menu_list">
+		<br>
 		<p class="menu_head plus">Harga
 		</p>
 		<div class="menu_body">
 
 
 			<div id="<?php echo$sliderprice; ?>"></div>
+			<br>
 				<div class="row">
 					<div class="col-md-12 kiri">
 						<div class="input-group">
@@ -77,9 +79,83 @@
 				</label>
 			</div>
 
+
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				BLAUPUNKT
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				HISENSE
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				HTC
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				HUAWEI
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				IPHONE
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				MOTOROLA
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				SAMSUNG
+				</label>
+			</div>
 		</div>
 	</div>
-	
+
+
+	<div id="<?php echo$pane; ?>" class="menu_list">
+		<p class="menu_head plus">Sistem Operasi
+		</p>
+		<div class="menu_body">
+
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				System OS 1
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				System OS 2
+				</label>
+			</div>
+
+		</div>
+	</div>
+
 <script>
 //slides the element with class "menu_body" when paragraph with class "menu_head" is clicked
 
