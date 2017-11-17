@@ -11,7 +11,7 @@
         	<thead class="cf">
 
         	  <tr>
-        		<th>Image</th>
+
         		<th>Nama</th>
         		<th>Hapus</th>
         	  </tr>
@@ -19,9 +19,11 @@
         	</thead>
         	<tbody>
         		<?php foreach($hasil as $items):	?>
+
         			<tr>
-        				<td data-title="Image"><img src="<?php echo $items['imageUrl'];?>" height="100"></td>
-                <td data-title="Nama"><?php echo $items['name'];?></td>
+                <p class="link-nmp box-title" ></p>
+        				<!-- <td data-title="Image"><img src="<?php // echo $items['imageurl'];?>" height="100"></td> -->
+                <td data-title="Nama"><a href="<?php echo base_url('product/detail/'. $items['productID'].'/'. $items['name']);?>"><?php echo $items['name']; ?></a></td>
         				<td data-title="Hapus"><a href='#' onClick="dellWishlist('<?php echo $items['productID']; ?>','<?php echo $items['name']; ?>')" class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></a></td>
         			</tr>
         		<?php endforeach; ?>
@@ -32,9 +34,13 @@
   </div>
 </div><br><br>
 <script type="text/javascript">
-
+// $(document).ready(function(){
+//   var token = document.cookie.split('x-auth=')[1].split(';').shift();
+//   console.log('token',token);
+// });
 function dellWishlist(id,name){
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
+  console.log('token',token);
 	var apiurl = api_base_url + '/product/deletewishlist?item_id='+id;
 
 	$.confirm({

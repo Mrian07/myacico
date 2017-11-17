@@ -42,7 +42,7 @@
 				<img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' />
 				<p><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</p>
 			</div>
-			<div class="footer-box">
+			<div class="footer-box2">
 				<img src='<?php echo base_url('images/general/f-icon4.png');?>'/>
 				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi</p>
 			</div>
@@ -129,6 +129,7 @@
 			<div class="col-xs-3">
 				<h3><span>Ikuti Kami</span></h3>
 				<div class='sos'>
+
 					<ul>
 						<li><a href="https://www.youtube.com/channel/UCT6wkP8xyhEgDZzrbuWBQRg"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
 					  <li><a class="active" href="https://www.facebook.com/MyacicoID/?ref=aymt_homepage_panel"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
