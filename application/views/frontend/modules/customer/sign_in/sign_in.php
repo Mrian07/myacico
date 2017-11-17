@@ -57,7 +57,7 @@ function onSignIn(googleUser) {
 	<div class="row" style='margin-top:20px'>
 		<div class="col-sm-6">
 		<h5>LOGIN</h5>
-		<div class='border-create' style='background:#ffffff'>
+		<div class='border-create' style='height:350px'>
 				<p>Masukan email dan password login Anda pada form dibawah ini.</p>
 			<form name="myForm" method="post">
 				<div class="form-group">
@@ -95,7 +95,7 @@ function onSignIn(googleUser) {
 		<div class="col-sm-6">
 
 				<h5>PENDAFTARAN BARU</h5>
-				<div class='border-create'>
+				<div class='border-create' style='height:350px'>
 				<div class="row">
 				  <div class="col-sm-12">
 						<?php echo $lang_ket_daftar_personal; ?>
