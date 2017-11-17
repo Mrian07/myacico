@@ -797,6 +797,7 @@ ul.list-group:after {
           <a href="<?php echo base_url('product/detail/'. $itemslide0['product_id'].'/'. $itemslide0['alias']);?>"><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: auto"></a>
 
               <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide0['name']; ?></p>
+  
         <p class="box-title3" style='color: #80DCFC'>Rp.<?php echo money($itemslide0['pricelist']); ?></p>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>

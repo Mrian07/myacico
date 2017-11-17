@@ -42,6 +42,9 @@ class Home extends Web {
 
 		$this->data['dathome'] = json_decode($konten, true);
 		$this->data['dathome2'] = json_decode($konten2, true);
+		// echo "<pre>";
+		// print_r($this->data['dathome2'] );
+		// die();
 		//$dathome2 = json_decode($konten2, true);
 		//$this->data['dathome3'] = $dathome2['topProduct'][0]['topProduct']
 
