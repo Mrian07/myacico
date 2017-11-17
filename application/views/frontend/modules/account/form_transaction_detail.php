@@ -11,7 +11,7 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-			<p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
+			<p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
 
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -41,11 +41,12 @@ $.ajax({
    // contentType: "image/png",
     //beforeSend: getAdd(),
     success: function(data){
-       console.log('data:',data);
+
 
 //$('.buktiTrans').html('<img src="data:image/png;base64,' + encodedResponse + '" />');
-      $(".buktiTrans").append("<div><h6>Berikut adalah Bukti transfer: </br></div><a href='"+apiGet+"' target='_blank'><img class='group list-group-image' src='"+apiGet+"' alt='...' style:border='0' height='100'></a>");
-//
+			if(data){
+	      $(".buktiTrans").append("<div><h6>Berikut adalah Bukti transfer: </br></div><a href='"+apiGet+"' target='_blank'><img class='group list-group-image' src='"+apiGet+"' alt='...' style:border='0' height='100'></a>");
+			}
         },
        error: function(error, data) {
       console.log('asd',data);
