@@ -1,11 +1,15 @@
 <?php
 
 class Maintenance extends CI_Controller {
+	public function __construct()
+    {
+		parent::__construct();
+		$this->load->helper('app');
+	}
 	public function index()
     {
 
-			$url = "https://api.myacico.co.id/myacico-service/category";
-      // $url = "http://192.168.0.109:8080/myacico-service/category";
+			$url = api_base_url('category');
   		$konten = file_get_contents($url);
 			if($konten){
   		$this->data['catsearch'] = json_decode($konten, true);

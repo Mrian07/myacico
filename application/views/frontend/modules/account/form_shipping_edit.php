@@ -11,7 +11,7 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
+			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
 			<p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima. </br> *harap isi kemabali negara, propinsi, kota, dan kecamatan. </p>
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -44,7 +44,7 @@
 																						</select>
 																				</div>
 																				<div class="form-group" id="region_box">
-                                                                                                                                                 
+
 															<label><?php echo $lang_Provience; ?>*</label>
                                                                                                                         <select name="province" id="region_sel" class="form-control mandatory">
                                                                                                                             <option value="<?php echo $hasil['region_id'];?>" selected="selected"><?php echo $hasil['region_name'];?></option>
@@ -53,7 +53,7 @@
 					<div class="form-group" id="city_box">
 						<label><?php echo $lang_kota; ?>*</label>
 					  <select name="city" id="city_sel" class="form-control mandatory">
-                                             
+
                                       </select>
 					</div>
                                         <div class="form-group" id="ditric_box">
@@ -65,8 +65,8 @@
                                        <div class="form-group" id="village_box">
 							<label><?php echo "kelurahan"; ?>*</label>
                                                         <select name="village_id" id="village_id" class="form-control mandatory">
-                                                   
-      
+
+
                                                         </select>
 					</div>
 					<div class="form-group">
@@ -95,7 +95,7 @@
 	</div>
 </div>
 <script>
-   
+
    // var propName;
     var kotaId;
     var kecId;
@@ -104,7 +104,7 @@
     var kota = "<?php echo $hasil['city_id'];?>";
      var kec = "<?php echo $hasil['district_id'];?>";
       var kel = "<?php echo $hasil['village_id'];?>";
-   
+
 $.ajaxSetup({
   error: function(){
     alert('service not available, please try again later');
@@ -129,7 +129,7 @@ $('#postal').change(function () {
       $.ajax({
           type:"GET",
            success: function(data){
-               
+
            },
       dataType: "json",
     url: apiGet});
@@ -164,7 +164,7 @@ function get_distric(){
 
 function get_city(){
   $("#city_box").slideDown();
-  
+
   //alert(kota);
   $("#city_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_distric);
   $.get( api_base_url+"/ccity/getlistccitybyidregion/"+$("#region_sel").val(), function(r){
@@ -192,7 +192,7 @@ function get_city(){
 
 var data = {};
 $(document).ready(function() {
-    
+
      var kotas = function(){
          var propId = "<?php echo $hasil['region_id'];?>";
           var kota = "<?php echo $hasil['city_id'];?>";
@@ -209,20 +209,20 @@ $(document).ready(function() {
             //alert("saas");
              $("#city_sel").append("<option value='"+o.c_city_id+"'>"+o.name+"</option>");
         }
-     
+
     });
     $("#city_sel").prop('disabled', false).change(get_distric);
   }, "json" );
-  
-  
+
+
   console.log(propId);
   var insideTest = "variable inside test";
-  
+
 }
 var keces= function(){
- 
+
     var keca=kec;
-    
+
    console.log("sasasdasd",keca);
     $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+kota, function(r){
     r.forEach(function(o){
@@ -233,7 +233,7 @@ var keces= function(){
         else {
             $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
         }
-    
+
     });
     $("#district_id").prop('disabled', false).change(get_village);
   }, "json" );
@@ -248,9 +248,9 @@ var keces= function(){
         }
         else {
            $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
-        }   
-        
-      
+        }
+
+
     });
        $("#village_id").prop('disabled', false).change(get_postal);
   }, "json" );
@@ -314,7 +314,7 @@ $.ajax({
     dataType: "json",
     url: apiGet});
 */
-   
+
    /*
         $.get(api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token,
  function(data){

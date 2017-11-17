@@ -273,8 +273,26 @@ function finish(){
 
 					//window.location.replace("<?php // echo site_url('payment/creditcard.php/?c='); ?>"+hasil.token);
 				}else if(hasil.token!='' && paymentMethod=='O'){
-					window.location.replace("<?php echo site_url('checkout/paymentByOnline/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
-
+          if(hasil.status==1){
+  					window.location.replace("<?php echo site_url('checkout/paymentByOnline/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
+          }else{
+            if(code=="1000000"){
+              $.alert({
+    						title: 'Alert!',
+    						content: 'Maaf pembayaran online payment menggunkan BCA KlikPay mengalami gangguan, cobalah beberapa saat lagi.',
+    					});
+            }else if(code=="1000001"){
+              $.alert({
+    						title: 'Alert!',
+    						content: 'Maaf pembayaran online payment menggunkan CIMB Clicks mengalami gangguan, cobalah beberapa saat lagi.',
+    					});
+            }else{
+              $.alert({
+    						title: 'Alert!',
+    						content: 'Maaf pembayaran online payment mengalami gangguan',
+    					});
+            }
+          }
 				}else{
 					$.alert({
 						title: 'Alert!',

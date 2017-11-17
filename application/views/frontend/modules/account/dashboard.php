@@ -23,9 +23,9 @@
 		<h4>Konfirmasi Pembayaran</h4>
 		<p>Anda bisa melakukan konfirmasi pembayaran pada halaman Riwayat dan Status Pesanan.</p>
 		<p><?php echo anchor('account/riwayatStatusPesanan/', 'Konfirmasi', array('class'=>'btn btn-default'));?><p/>
-		<h4>Newsletters</h4>
+		<!-- <h4>Newsletters</h4>
 		<p>Anda saat ini belum terdaftar.</p>
-		<p><?php echo anchor('customer/government/', 'Daftar', array('class'=>'btn btn-default'));?></p>
+		<p><?php echo anchor('customer/government/', 'Daftar', array('class'=>'btn btn-default'));?></p> -->
 
 	</div>
 </div>
