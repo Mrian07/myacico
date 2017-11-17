@@ -57,7 +57,7 @@ margin-top: -11px;
 		  </div>
 		  <div class="row">
 			<div class="col-sm-6">
-				<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo "Daftar"?>">
+				<input type="submit" id="submit_btn3" class="btn btn-primary" value="<?php echo "Daftar"?>">
 				<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 			</div>
 			<div class="col-sm-6" style='text-align: right'>
