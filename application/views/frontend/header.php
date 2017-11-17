@@ -121,10 +121,10 @@ a{
 									 endforeach;
 								 ?>
 								 <button class="dropbtn-basket">
-									 <img src="<?php echo base_url('images/general/cart.png'); ?>" width='30' border="0"><br>
-									 <span class="badge totalCart" style='margin-left:-7px; margin-top: -30px; position: absolute; font-size:10px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
+									 <img src="<?php echo base_url('images/general/cart.png'); ?>" width='35' border="0"><br>
+									 <span class="badge totalCart" style='margin-left:-7px; margin-top: -30px; position: absolute; font-size:9px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
 								 </button>
-									 <div class="dropdown-basket-content">
+									 <div class="dropdown-basket-content" style='padding:0px;'>
 										 <?php
 										 if($totalItems==0)
 										 { ?>
@@ -138,10 +138,10 @@ a{
 						 <div style='float:right; width:160px; text-align:center; border:0px;' >
 							 <div class='row' style='margin-top:0px; padding:0px;'>
 								 <div class="col-xs-4" style='margin-top:5px; text-align: right'>
-									 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='20' border='0'>
+									 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='25' border='0'>
 									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
 								 </div>
-								 <div class="col-xs-8" style='font-size:10px; color:#4d4d4d; padding-left:0px;'>
+								 <div class="col-xs-8" style='font-size:10px; text-align: left; color:#4d4d4d; padding-left:0px;'>
 									 <div>Selamat Datang</div>
 									 <div style='margin-top:-8px; '>
 										 <?php if(isset($user)){ ?>
@@ -154,10 +154,11 @@ a{
 								 </div>
 							 </div>
 						 </div>
-						 <div style='float:right; width: 80px; text-align: center; border-right:1px solid #4d4d4d; margin-top:8px;'>
+						 <!-- <div style='float:right; width: 80px; text-align: center; border-right:1px solid #4d4d4d; margin-top:8px;'> -->
+						<div style='float:right; width: 40px; text-align: center; margin-top:8px;'>
 
 							<div class="dropdown-lang" style='border:0px solid #aeaeab; padding:0px; right: 0; left: auto; text-align:left'>
-								<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/flag-en.png'); ?>" border="0" width="38"><?php }else{ ?><img src="<?php echo base_url('images/general/flag-id.png'); ?>" border="0" width="38"><?php } ?>
+								<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/flag-en.png'); ?>" border="0" width="30"><?php }else{ ?><img src="<?php echo base_url('images/general/flag-id.png'); ?>" border="0" width="30"><?php } ?>
 								<div class="dropdown-lang-content">
 									<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
 									<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
@@ -214,7 +215,15 @@ a{
 
   </div>
 	<div class='my-hdr3'>
-			<div style='font-family: arial; font-size:20px; font-weight: bold; color:#4d4d4d; margin-top:15px;'>Festival Belanja Online</div>
+			<table border='0' width='100%'><tr><td>
+			<div style='margin-top:0px;'>
+				Dapatkan promo menarik di<br>
+				<span style='font-family: arial; font-size:14px; font-weight: bold; color:#ff0000; '>Festival Belanja Online </span>
+				</div>
+		</td><td>
+			<img src="<?php echo base_url('images/general/basket-01.png'); ?>" border="0" height="55">
+		</td>
+	</tr></table>
 	</div>
 
 
