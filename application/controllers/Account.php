@@ -378,7 +378,21 @@ class Account extends Web_private {
 	public function formBilling()
     {
 		$type = $this->typeLogin();
+                $idadd=$this->uri->segment(3);
+//                die(print_r($idadd));
+                $token = $_COOKIE['x-auth'];
+                
+		$api = "aduser/getaddress/".$idadd;
+		$url = api_base_url($api);
 
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+                $this->data['hasil'] = json_decode($konten, true);
 
 
 		$this->data['active_informasiAkun'] = "class='active'";

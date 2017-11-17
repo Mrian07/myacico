@@ -147,6 +147,7 @@ a
 			<h5>ONGKOS KIRIM: Rp.<span id='totalOngkir'>0</span></h5>
 			<h5>TOTAL PEMBAYARAN: Rp.<span id='grandtotalall'><?php echo money($total); ?></span></h5>
 			<button class='btn btn-success my-btn-chekout' onclick='finish()'>FINISH ORDER <i class="fa fa-angle-right"></i></button>
+                        <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 		</div>
 
 
@@ -207,6 +208,7 @@ function paymentType(payment_method)
 }
 
 function finish(){
+ $('#spinner_img').hide();
 	var token= '<?php echo $token; ?>';
 	var grandtotal= $('#grandtotal').val();
 	var paymentMethod=$('#typeVal').val();
@@ -265,7 +267,7 @@ function finish(){
 		headers:{"token":token},
 		url: "<?php echo api_base_url('order/checkout'); ?>",
 		success:function(hasil){
-
+ $('#spinner_img').show();
 				if(hasil.status=='1' && paymentMethod=='R'){
 					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 				}else if(hasil.token!='' && paymentMethod=='C'){

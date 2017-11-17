@@ -35,21 +35,22 @@
             <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
             </div>
           <div class="form-group">
-            <label><?php echo $lang_Country; ?>*</label>
-              <select name="country" id="country_sel" class="form-control mandatory" disabled >
-                    <option value="" selected="selected">12</option>
-              </select>
-            </div>
+        <label><?php echo $lang_Country; ?>*</label>
+        <select name="country" id="country_sel" class="form-control mandatory">
+            <option value="209" selected="selected">Indonesia</option>
+        </select>
+        </div>
           <div class="form-group" id="region_box">
-            <label>asdlaskdka213*</label>
+                                                                                                         
+            <label><?php echo $lang_Provience; ?>*</label>
             <select name="province" id="region_sel" class="form-control mandatory">
-                <option value="">--Pilih--</option>
-            </select>
-          </div>
-          <div class="form-group" style="display:none" id="city_box">
-            <label><?php echo $lang_kota; ?>*</label>
-            <select name="city" id="city_sel" class="form-control mandatory"></select>
-          </div>
+                <option value="<?php echo $hasil['region_id'];?>" selected="selected"><?php echo $hasil['region_name'];?></option>
+               </select>
+       </div>
+          <div class="form-group" id="city_box">
+                    <label><?php echo $lang_kota; ?>*</label>
+              <select name="city" id="city_sel" class="form-control mandatory"></select>
+	</div>
                                         <div class="form-group" style="display:none" id="ditric_box">
               <label><?php echo $lang_Keca; ?>*</label>
             <select name="district_id" id="district_id" class="form-control mandatory"></select>
