@@ -58,6 +58,7 @@
 					</div>
                                         <div class="form-group" id="ditric_box">
 							<label><?php echo $lang_Keca; ?>*</label>
+                                                        <!--<input name="district_id" >-->
                                                         <select name="district_id" id="district_id" class="form-control mandatory">
 
                                                         </select>
@@ -100,11 +101,17 @@
     var kotaId;
     var kecId;
     var kelId;
-    var postal;
+    var postal= "<?php echo $hasil['postal'];?>";
     var kota = "<?php echo $hasil['city_id'];?>";
+<<<<<<< HEAD
+    var kec = "<?php echo $hasil['district_id'];?>";
+    var kel = "<?php echo $hasil['village_id'];?>";
+   
+=======
      var kec = "<?php echo $hasil['district_id'];?>";
       var kel = "<?php echo $hasil['village_id'];?>";
 
+>>>>>>> e65fe97f256fd0a9a8179f1e4d1ee0b2859a657b
 $.ajaxSetup({
   error: function(){
     alert('service not available, please try again later');
@@ -203,7 +210,7 @@ $(document).ready(function() {
        // alert("ccccccccc"+propId);
         if(o.c_city_id == kota)
         {
-             $("#city_sel").append("<option value='"+o.c_city_id+"' selected>"+o.name+"</option>");
+             $("#city_sel").append("<option value='"+o.c_city_id+"' selected='selected'>"+o.name+"</option>");
         }
         else{
             //alert("saas");
@@ -228,7 +235,7 @@ var keces= function(){
     r.forEach(function(o){
         if(o.c_district_id == keca)
         {
-          $("#district_id").append("<option value='"+o.c_district_id+"' selected>"+o.name+"</option>");
+          $("#district_id").append("<option value='"+o.c_district_id+"' selected='selected'>"+o.name+"</option>");
         }
         else {
             $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
@@ -244,7 +251,7 @@ var keces= function(){
     r.forEach(function(o){
      if(o.c_village_id == kel)
         {
-          $("#village_id").append("<option value='"+o.c_district_id+"' selected>"+o.name+"</option>");
+          $("#village_id").append("<option value='"+o.c_district_id+"' selected='selected'>"+o.name+"</option>");
         }
         else {
            $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
@@ -256,9 +263,14 @@ var keces= function(){
   }, "json" );
  }
  var kodePos = function(){
-     $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+kel, function(r){
+     $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+kec, function(r){
         r.forEach(function(o){
-          $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+            if(o.postal == postal){
+                $("#postal").append("<option value='"+o.postal+"' selected='selected'>"+o.postal+"</option>");
+            }else{
+                $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+            }
+          
                 console.log('23',o.postal);
         });
         $("#postal").prop('disabled', false);
@@ -350,12 +362,13 @@ $.ajax({
   });
     */
   $("form").submit(function(e){
+      
     e.preventDefault();
     //var data = $(this).serialize();
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
     var apiurl = api_base_url + '/aduser/updateaddress?token='+token;
 //    console.log('test'+token);
-    var id = $("#id").val();
+    var id = $("#idAdd").val();
     var name =  $("#name").val();
         var phone = $("#phone").val();
         var phone2 = $("#phone2").val();
@@ -401,7 +414,7 @@ data.id = id;
 		});
 //      alert(r.message);
       console.log('OK:', r.status);
-        window.location.replace(base_url+"/account/informasiAkun");
+        //window.location.replace(base_url+"/account/informasiAkun");
 
     };
     $('#spinner_img').show();
