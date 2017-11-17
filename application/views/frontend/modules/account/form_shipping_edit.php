@@ -246,7 +246,7 @@ var keces= function(){
     r.forEach(function(o){
      if(o.c_village_id == kel)
         {
-          $("#village_id").append("<option value='"+o.c_district_id+"' selected='selected'>"+o.name+"</option>");
+          $("#village_id").append("<option value='"+o.c_village_id+"' selected='selected'>"+o.name+"</option>");
         }
         else {
            $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
@@ -409,7 +409,7 @@ data.id = id;
 		});
 //      alert(r.message);
       console.log('OK:', r.status);
-        //window.location.replace(base_url+"/account/informasiAkun");
+        window.location.replace(base_url+"/account/informasiAkun");
 
     };
     $('#spinner_img').show();
