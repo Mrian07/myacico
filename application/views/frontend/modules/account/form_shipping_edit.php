@@ -29,12 +29,12 @@
 					</div>
                                         <div class="form-group">
 					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
-					  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
+					  <input type="text" id="address_name" name="address_name" class="form-control mandatory" value="<?php echo $hasil['address_name'];?>" />
 					</div>
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
-					  <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
-					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
+					  <input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />
+					  <input type="text" id = "address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>" />
 
                                         </div>
 																				<div class="form-group">
@@ -44,22 +44,30 @@
 																						</select>
 																				</div>
 																				<div class="form-group" id="region_box">
+                                                                                                                                                 
 															<label><?php echo $lang_Provience; ?>*</label>
-																														<select name="province" id="region_sel" class="form-control mandatory">
-																														 <option value="" selected="selected">--Pilih--</option>
-																														</select>
-																													</div>
-					<div class="form-group" style="display:none" id="city_box">
+                                                                                                                        <select name="province" id="region_sel" class="form-control mandatory">
+                                                                                                                            <option value="<?php echo $hasil['region_id'];?>" selected="selected"><?php echo $hasil['region_name'];?></option>
+                                                                                                                           </select>
+                                                                                                                   </div>
+					<div class="form-group" id="city_box">
 						<label><?php echo $lang_kota; ?>*</label>
-					  <select name="city" id="city_sel" class="form-control mandatory"></select>
+					  <select name="city" id="city_sel" class="form-control mandatory">
+                                             
+                                      </select>
 					</div>
-                                        <div class="form-group" style="display:none" id="ditric_box">
+                                        <div class="form-group" id="ditric_box">
 							<label><?php echo $lang_Keca; ?>*</label>
-					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
+                                                        <select name="district_id" id="district_id" class="form-control mandatory">
+
+                                                        </select>
 					</div>
-                                       <div class="form-group" style="display:none" id="village_box">
+                                       <div class="form-group" id="village_box">
 							<label><?php echo "kelurahan"; ?>*</label>
-					  <select name="village_id" id="village_id" class="form-control mandatory"></select>
+                                                        <select name="village_id" id="village_id" class="form-control mandatory">
+                                                   
+      
+                                                        </select>
 					</div>
 					<div class="form-group">
 				 <label><?php echo $lang_PostCode; ?>*</label>
@@ -67,11 +75,11 @@
 				 </div>
                                       <div class="form-group">
 					<label>Handphone*</label>
-						<input type="text" id = "phone"name="phone" class="form-control mandatory" />
+						<input type="text" id = "phone"name="phone" class="form-control mandatory" value="<?php echo $hasil['phone'];?>" />
 					</div>
 					<div class="form-group">
 					<label>Telepon</label>
-						<input type="text" id = "phone2"name="phone2" class="form-control"/>
+						<input type="text" id = "phone2"name="phone2" class="form-control" value="<?php echo $hasil['phone2'];?>" />
 					</div>
 
 
@@ -87,6 +95,16 @@
 	</div>
 </div>
 <script>
+   
+   // var propName;
+    var kotaId;
+    var kecId;
+    var kelId;
+    var postal;
+    var kota = "<?php echo $hasil['city_id'];?>";
+     var kec = "<?php echo $hasil['district_id'];?>";
+      var kel = "<?php echo $hasil['village_id'];?>";
+   
 $.ajaxSetup({
   error: function(){
     alert('service not available, please try again later');
@@ -107,6 +125,15 @@ $('#postal').change(function () {
         var negara = $('#country_sel').val();
 
       $("#region_sel").prop('disabled', true).unbind("change", get_city);
+      /*
+      $.ajax({
+          type:"GET",
+           success: function(data){
+               
+           },
+      dataType: "json",
+    url: apiGet});
+        */
       $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
         r.forEach(function(o){
           $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
@@ -137,8 +164,11 @@ function get_distric(){
 
 function get_city(){
   $("#city_box").slideDown();
+  
+  //alert(kota);
   $("#city_sel").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_distric);
   $.get( api_base_url+"/ccity/getlistccitybyidregion/"+$("#region_sel").val(), function(r){
+      console.log(r);
     r.forEach(function(o){
       $("#city_sel").append("<option value='"+o.c_city_id+"'>"+o.name+"</option>");
     });
@@ -162,12 +192,90 @@ function get_city(){
 
 var data = {};
 $(document).ready(function() {
+    
+     var kotas = function(){
+         var propId = "<?php echo $hasil['region_id'];?>";
+          var kota = "<?php echo $hasil['city_id'];?>";
+        //  alert(kota);
+         $.get( api_base_url+"/ccity/getlistccitybyidregion/"+$("#region_sel").val(), function(r){
+      console.log(r);
+    r.forEach(function(o){
+       // alert("ccccccccc"+propId);
+        if(o.c_city_id == kota)
+        {
+             $("#city_sel").append("<option value='"+o.c_city_id+"' selected>"+o.name+"</option>");
+        }
+        else{
+            //alert("saas");
+             $("#city_sel").append("<option value='"+o.c_city_id+"'>"+o.name+"</option>");
+        }
+     
+    });
+    $("#city_sel").prop('disabled', false).change(get_distric);
+  }, "json" );
+  
+  
+  console.log(propId);
+  var insideTest = "variable inside test";
+  
+}
+var keces= function(){
+ 
+    var keca=kec;
+    
+   console.log("sasasdasd",keca);
+    $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+kota, function(r){
+    r.forEach(function(o){
+        if(o.c_district_id == keca)
+        {
+          $("#district_id").append("<option value='"+o.c_district_id+"' selected>"+o.name+"</option>");
+        }
+        else {
+            $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+        }
+    
+    });
+    $("#district_id").prop('disabled', false).change(get_village);
+  }, "json" );
+   //alert($("#city_sel").val());
+}
+ var kels=function(){
+     $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+kec, function(r){
+    r.forEach(function(o){
+     if(o.c_village_id == kel)
+        {
+          $("#village_id").append("<option value='"+o.c_district_id+"' selected>"+o.name+"</option>");
+        }
+        else {
+           $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
+        }   
+        
+      
+    });
+       $("#village_id").prop('disabled', false).change(get_postal);
+  }, "json" );
+ }
+ var kodePos = function(){
+     $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+kel, function(r){
+        r.forEach(function(o){
+          $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+                console.log('23',o.postal);
+        });
+        $("#postal").prop('disabled', false);
+      }, "json" );
+ }
+    kotas();
+    keces();
+    kels();
+    kodePos();
     $('#submit_btn').attr('disabled','disabled');
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
     var idAdd = $('#idAdd').val();
 //    $http.get('www.google.com/someapi', {
 //    headers: {'Authorization': 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='}
 //});
+
+/*
  var apiGet= api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token;
 $.ajax({
     type:"GET",
@@ -182,9 +290,15 @@ $.ajax({
         $("#name").val(data.name);
         $("#phone").val(data.phone);
         $("#phone2").val(data.phone2);
+        propId=data.region_id;
+        kotaId=data.city_id;
+        kecId=data.district_id;
+        kelId=data.village_id;
+        postal=data.postal;region_name
         $("#postal").val(data.postal);
         $("#address1").val(data.address1);
         $("#address2").val(data.address2);
+        console.log("data: ",data);
         data.forEach(function(p){
 
   rumah.append(
@@ -199,7 +313,8 @@ $.ajax({
         },
     dataType: "json",
     url: apiGet});
-
+*/
+   
    /*
         $.get(api_base_url+'/aduser/getaddress/'+idAdd+'?token='+token,
  function(data){

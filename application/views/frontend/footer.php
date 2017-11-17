@@ -347,7 +347,8 @@ if(email==''){
        return false;
 					}else
 
-			window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
+					      	 location.reload();
+
     };
 
 

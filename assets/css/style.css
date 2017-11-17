@@ -873,7 +873,17 @@ a:hover.my-info {
   	border: 1px #dddddd solid;
   	padding:10px;
   	margin-bottom:40px;
+        
+          text-align: center;
   	background:#ffffff;
+  }
+  .border-create1{
+    border: 1px #dddddd solid;
+    padding:10px;
+    height: 200px;
+      text-align: center;
+    margin-bottom:40px;
+
   }
 
   .border-sidebar{
