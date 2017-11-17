@@ -764,7 +764,7 @@ ul.list-group:after {
   		<!-- END PRODUCTS -->
 	</div>
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:0px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:0px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> GADGET DAN AKSESORIS HANDPHONE
   </div>
   <div style='float:left;width:400px; height:auto; margin-right:5px'>
@@ -798,13 +798,7 @@ ul.list-group:after {
 
               <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide0['name']; ?></p>
         <p class="box-title3" style='color: #80DCFC'>Rp.<?php echo money($itemslide0['pricelist']); ?></p>
-            <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-            </div> -->
+
       </div>
       <?php $n++;  } ?>
     </div>
@@ -812,7 +806,7 @@ ul.list-group:after {
   </div>
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> KOMPUTER & LAPTOP
   </div>
   <div style='float:left;width:400px; margin-right:5px'>
@@ -861,7 +855,7 @@ ul.list-group:after {
 
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PERALATAN RUMAH TANGGA
   </div>
   <div style='float:left;width:400px; margin-right:5px'>
@@ -910,7 +904,7 @@ ul.list-group:after {
 
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> HOBI
   </div>
   <div style='float:left;width:400px; margin-right:5px'>
@@ -959,7 +953,7 @@ ul.list-group:after {
 
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> AUDIO & VISUAL
   </div>
   <div style='float:left;width:400px; margin-right:5px'>
@@ -1006,7 +1000,7 @@ ul.list-group:after {
 
   </div>
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PILIH DAN KLIK BRAND FAVORIT ANDA
   </div>
 	<div style='text-align: center; padding:15px 0px 15px 30px; border-radius:0px 0px 10px 0px; margin-bottom:20px;'>

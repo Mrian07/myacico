@@ -12,7 +12,7 @@ class Maintenance extends CI_Controller {
       if($catsearch==''){
 				$this->data['active_dashboard'] = "class='active'";
 				$this->data['title_web'] = "Myacico.com - Dashboard";
-				$this->load->view('frontend/maintenance',$this->data);
+				$this->load->view('frontend/maintenance',$this->data); 
       }else{
 				redirect('home');
 			}
