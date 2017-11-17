@@ -90,9 +90,9 @@
 
 	  </div>
 	  <div class="col-sm-7 detail-product">
-              <b><?php echo$totalRate;?> review</b>
-              <div id="rateYo" style="z-index: 0;"></div>
-			<h4 class='title-product'><?php echo $name; ?></h4>
+            <div id="rateYo" style="z-index: 0; display:inline-block;"></div> 
+              <div style="display:inline-block;"><b>(<?php echo$totalRate;?> review)</b></div>
+              <p style="font-size:18px"><b><?php echo $name; ?></b></p>
 			<div class="col-sm-6">
                         
 
@@ -137,7 +137,7 @@
 											if($isWishList =='Y')
 											{
 									?>
-                                                                <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
+                                                                <button type="button" class="btn btn-success btn-lg" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
 								<?php }else{
 							 ?>
 									 <button type="button" class="btn btn-success btn-lg" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" aria-hidden="true"></i>Add Wishlist</button>

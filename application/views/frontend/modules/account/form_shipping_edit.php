@@ -103,15 +103,10 @@
     var kelId;
     var postal= "<?php echo $hasil['postal'];?>";
     var kota = "<?php echo $hasil['city_id'];?>";
-<<<<<<< HEAD
-    var kec = "<?php echo $hasil['district_id'];?>";
-    var kel = "<?php echo $hasil['village_id'];?>";
-   
-=======
-     var kec = "<?php echo $hasil['district_id'];?>";
-      var kel = "<?php echo $hasil['village_id'];?>";
 
->>>>>>> e65fe97f256fd0a9a8179f1e4d1ee0b2859a657b
+     var kec = "<?php echo $hasil['district_id'];?>";
+    var kel = "<?php echo $hasil['village_id'];?>";
+
 $.ajaxSetup({
   error: function(){
     alert('service not available, please try again later');
@@ -251,7 +246,7 @@ var keces= function(){
     r.forEach(function(o){
      if(o.c_village_id == kel)
         {
-          $("#village_id").append("<option value='"+o.c_district_id+"' selected='selected'>"+o.name+"</option>");
+          $("#village_id").append("<option value='"+o.c_village_id+"' selected='selected'>"+o.name+"</option>");
         }
         else {
            $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
@@ -414,7 +409,7 @@ data.id = id;
 		});
 //      alert(r.message);
       console.log('OK:', r.status);
-        //window.location.replace(base_url+"/account/informasiAkun");
+        window.location.replace(base_url+"/account/informasiAkun");
 
     };
     $('#spinner_img').show();
