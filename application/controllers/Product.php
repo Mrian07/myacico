@@ -299,24 +299,24 @@ $this->load->view('frontend/sidenav',$this->data);
 
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
-                $hasil = json_decode($konten, true);
+    $hasil = json_decode($konten, true);
 //                Komen
-                $konten_komen = file_get_contents($url_komen, false, $context);
-                $komen = json_decode($konten_komen, true);
-                //echo "<pre>";die(print_r($komen[0]['user']));
-                //$komen[0]['user']
-                 $this->data['komen']=$komen;
+    $konten_komen = file_get_contents($url_komen, false, $context);
+    $komen = json_decode($konten_komen, true);
+    //echo "<pre>";die(print_r($komen[0]['user']));
+    //$komen[0]['user']
+     $this->data['komen']=$komen;
 
 
-//die(print_r($hasil['isWishList']));
+		//die(print_r($hasil['isWishList']));
 
-if(isset($hasil['sku'])){
-	$this->data['sku'] = $hasil['sku'];
+		if(isset($hasil['sku'])){
+			$this->data['sku'] = $hasil['sku'];
 
-}else{
-	$hasil['sku'] ='';
+		}else{
+			$hasil['sku'] ='';
 
-}
+		}
 
 
 				if(isset($hasil['specification'][0]['attribute'])){
@@ -435,7 +435,7 @@ $i=0;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/product/detail.php',$this->data);
-$this->load->view('frontend/sidenav',$this->data);
+		$this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
