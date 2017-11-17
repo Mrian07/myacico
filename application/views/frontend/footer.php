@@ -124,7 +124,7 @@
 
 
 
-<form name="myForm" method="post">
+<form name="myForm1" method="post">
 
 			<div class="col-xs-3">
 				<h3><span>Ikuti Kami</span></h3>
@@ -327,7 +327,7 @@ if(email==''){
 			});
       return false;
 		}
-		var x = document.forms["myForm"]["email"].value;
+		var x = document.forms["myForm1"]["email"].value;
 		var atpos = x.indexOf("@");
 		var dotpos = x.lastIndexOf(".");
 		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
@@ -365,7 +365,7 @@ if(email==''){
 // var apiurl = baseApiUrl + '/create';
 // var success = function(r){
 // 	console.log('OK:', r);
-// 	if(r.status == 1) return location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
+// 	if(r.status == 1) return location.href = '<?php // echo base_url('customer/successCreate/'); ?>'+$("#email").val();
 // 	$('#spinner_img').hide();
 // 	$('#submit_btn').val('Kirim').removeClass('disabled');
 // 	$.alert({
