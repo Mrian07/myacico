@@ -133,11 +133,17 @@ if(name==''){
 		// comment baru
 		    var success = function(r){
       $('#spinner_img').hide();
-      $('#submit_btn').val('Kirim').removeClass('disabled');
+      $('#submit_btn').val('Daftar').removeClass('disabled');
       // console.log('OK:', r);
       alert(r.message);
-      //    return false;
-			window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
+			if(r.status == 0){
+					         return false;
+			}else{
+
+				window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
+			}
+
+
     };
 
 
@@ -153,7 +159,7 @@ if(name==''){
 // var apiurl = baseApiUrl + '/create';
 // var success = function(r){
 // 	console.log('OK:', r);
-// 	if(r.status == 1) return location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
+// 	if(r.status == 1) return location.href = '<?php // echo base_url('customer/successCreate/'); ?>'+$("#email").val();
 // 	$('#spinner_img').hide();
 // 	$('#submit_btn').val('Kirim').removeClass('disabled');
 // 	$.alert({
