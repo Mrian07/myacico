@@ -146,7 +146,7 @@ a
 
 			<h5>ONGKOS KIRIM: Rp.<span id='totalOngkir'>0</span></h5>
 			<h5>TOTAL PEMBAYARAN: Rp.<span id='grandtotalall'><?php echo money($total); ?></span></h5>
-			<button class='btn btn-success my-btn-chekout' onclick='finish()'>FINISH ORDER <i class="fa fa-angle-right"></i></button>
+			<button class='btn btn-success my-btn-chekout' id ="finish" onclick='finish()'>FINISH ORDER <i class="fa fa-angle-right"></i></button>
                         <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 		</div>
 
@@ -248,7 +248,9 @@ function finish(){
 			content: 'Silakan pilih metode pengiriman',
 		});
 	}else {
-
+$('#spinner_img').show();
+ 
+ $('#finish').addClass('disabled');
 		data.grandtotal = grandtotal;
 		data.paymentMethod = paymentMethod;
 		data.billing_address_id = billing_address_id;
@@ -267,7 +269,7 @@ function finish(){
 		headers:{"token":token},
 		url: "<?php echo api_base_url('order/checkout'); ?>",
 		success:function(hasil){
- $('#spinner_img').show();
+ 
 				if(hasil.status=='1' && paymentMethod=='R'){
 					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 				}else if(hasil.token!='' && paymentMethod=='C'){
@@ -277,7 +279,8 @@ function finish(){
 				}else if(hasil.token!='' && paymentMethod=='O'){
           if(hasil.status==1){
   					window.location.replace("<?php echo site_url('checkout/paymentByOnline/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
-          }else{
+          }else{ $('#spinner_img').hide();
+              $('#finish').removeClass('disabled');
             if(code=="1000000"){
               $.alert({
     						title: 'Alert!',
