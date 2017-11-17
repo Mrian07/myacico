@@ -654,13 +654,13 @@ ul.list-group:after {
   </div> -->
 
   <div style='float:left;width:300px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-1.jpg');?>' border='0' width='100%'>
+    <img src='https://storage.googleapis.com/myacico/image/banner/banner-55.png' border='0' width='100%'>
   </div>
   <div style='float:left;width:300px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-2.jpg');?>' border='0' width='100%'>
+    <img src='https://storage.googleapis.com/myacico/image/banner/banner-56.png' border='0' width='100%'>
   </div>
   <div style='float:left;width:300px'>
-    <img src='<?php echo base_url('images/demo/banner-3.jpg');?>' border='0' width='100%'>
+    <img src='https://storage.googleapis.com/myacico/image/banner/banner-57.png' border='0' width='100%'>
   </div>
   <div style='clear:both'></div>
   <!-- <div class="row" style='width:1155px'>
@@ -670,7 +670,7 @@ ul.list-group:after {
   </div> -->
 
   <div class="row" style='margin-top:10px; margin-bottom:10px'>
-    <div class="col-xs-12"><img src='https://storage.googleapis.com/myacico/image/banner/banner-54.png' border='0' width='100%'></div>
+    <div class="col-xs-12"><img src='https://storage.googleapis.com/myacico/image/banner/banner-58.png' border='0' width='100%'></div>
   </div>
 
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>

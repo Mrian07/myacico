@@ -144,7 +144,7 @@
         Berlangganan untuk mendapatkan penawaran spesial dan berita dari MyACICO.co.id<br>
 				<div class="input-group">
 					<input type="hidden" id="isSubscribe" name="isSubscribe" class="my-sub-field" name="x" value="Y">
-					<input type="text" id="email" name="email" class="my-sub-field" name="x" placeholder="Email...">
+					<input type="text" id="email1" name="email1" class="my-sub-field" name="x" placeholder="Email...">
 					<span class="input-group-btn">
 							<input type="button" id="submit_btn1" class="btn btn-default my-sub-button" value="<?php echo "Daftar"?>">
 						<!-- <button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button> -->
@@ -307,10 +307,10 @@ $(document).ready(function() {
   $('#submit_btn1').on('click', function(e){
     e.preventDefault();
 		var isSubscribe =  $("#isSubscribe").val();
-		var email = $("#email").val();
+		var email1 = $("#email1").val();
 
 		data.isSubscribe = isSubscribe;
-    data.email = email;
+    data.email = email1;
 
 
 
@@ -320,14 +320,14 @@ $(document).ready(function() {
 
 }
 
-if(email==''){
+if(email1==''){
 			$.alert({
 				title: 'Alert!',
 				content: 'Email tidak boleh kosong!',
 			});
       return false;
 		}
-		var x = document.forms["myForm1"]["email"].value;
+		var x = document.forms["myForm1"]["email1"].value;
 		var atpos = x.indexOf("@");
 		var dotpos = x.lastIndexOf(".");
 		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
@@ -347,7 +347,7 @@ if(email==''){
 				 	if(r.message == "email anda belum terdaftar, silahkan registrasi terlebih dahulu"){
        return false;
 					}else
-
+			
 					      	 location.reload();
 
     };

@@ -23,6 +23,34 @@
 	/*font-family: sans-serif;*/
 }
 
+/*s: Sidebar product*/
+.menu_list {
+    width: 100%;
+}
+.menu_head {
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+    margin:1px;
+	margin-bottom:20px;
+    font-weight:bold;
+    background: url(plus.png) center right no-repeat;
+	border-bottom:1px solid #dddddd;
+}
+.menu_body {
+    display:none;
+}
+
+.plus{
+ background-image: url(../../images/general/math-add-icon.png);
+}
+
+.minus {
+ background-image: url(../../images/general/math-minus-icon.png);
+}
+
+/*e: Sidebar product*/
+
 .btn-back{
   color:#111111;
   font-size:11px;
@@ -684,7 +712,7 @@ a:hover.my-info {
   }
 
   .btn-nav-red{
-    color: #4d4d4d;
+    color: #ff0000;
     text-decoration: none;
   }
 
@@ -825,7 +853,7 @@ a:hover.my-info {
       display: block;
       color: #ffffff;
       text-align: center;
-      padding: 14px 16px;
+      padding: 6px 10px;
       text-decoration: none;
 
   }
