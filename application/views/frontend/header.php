@@ -215,15 +215,17 @@ a{
 
   </div>
 	<div class='my-hdr3'>
-			<table border='0' width='100%'><tr><td>
-			<div style='margin-top:0px;'>
-				Dapatkan promo menarik di<br>
-				<span style='font-family: arial; font-size:14px; font-weight: bold; color:#ff0000; '>Festival Belanja Online </span>
+			<div class="row" style='margin:0px; padding:0px'>
+				<div class="col-xs-9" style='padding:5px; text-align:right'>
+						<div style='font-size:11px; margin-bottom:-5px;'>Dapatkan promo menarik di</div>
+						<div style='font-family: arial; font-size:14px; font-weight: bold; color:#ff0000; '>Festival Belanja Online </div>
 				</div>
-		</td><td>
-			<img src="<?php echo base_url('images/general/basket-01.png'); ?>" border="0" height="55">
-		</td>
-	</tr></table>
+				<div class="col-xs-3" align="left" style='margin:0px; padding:0px'>
+					<div style='margin-top:-7px;'>
+						<img src="<?php echo base_url('images/general/basket-01.png'); ?>" border="0" height="55">
+					</div>
+				</div>
+			</div>
 	</div>
 
 
