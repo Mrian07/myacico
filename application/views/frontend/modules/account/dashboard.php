@@ -10,7 +10,7 @@
 <div class="container my-container-white">
 	<div class="row">
 		<div class="col-sm-3">
-			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
+			<?php  $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9 dashboard">
 
