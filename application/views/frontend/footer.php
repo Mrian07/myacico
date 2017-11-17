@@ -42,7 +42,7 @@
 				<img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' />
 				<p><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</p>
 			</div>
-			<div class="footer-box">
+			<div class="footer-box2">
 				<img src='<?php echo base_url('images/general/f-icon4.png');?>'/>
 				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi</p>
 			</div>
@@ -124,11 +124,12 @@
 
 
 
-<form name="myForm" method="post">
+<form name="myForm1" method="post">
 
 			<div class="col-xs-3">
 				<h3><span>Ikuti Kami</span></h3>
 				<div class='sos'>
+
 					<ul>
 						<li><a href="https://www.youtube.com/channel/UCT6wkP8xyhEgDZzrbuWBQRg"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
 					  <li><a class="active" href="https://www.facebook.com/MyacicoID/?ref=aymt_homepage_panel"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -326,7 +327,7 @@ if(email==''){
 			});
       return false;
 		}
-		var x = document.forms["myForm"]["email"].value;
+		var x = document.forms["myForm1"]["email"].value;
 		var atpos = x.indexOf("@");
 		var dotpos = x.lastIndexOf(".");
 		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
@@ -364,7 +365,7 @@ if(email==''){
 // var apiurl = baseApiUrl + '/create';
 // var success = function(r){
 // 	console.log('OK:', r);
-// 	if(r.status == 1) return location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
+// 	if(r.status == 1) return location.href = '<?php // echo base_url('customer/successCreate/'); ?>'+$("#email").val();
 // 	$('#spinner_img').hide();
 // 	$('#submit_btn').val('Kirim').removeClass('disabled');
 // 	$.alert({

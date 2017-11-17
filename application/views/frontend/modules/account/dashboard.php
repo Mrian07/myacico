@@ -10,7 +10,7 @@
 <div class="container my-container-white">
 	<div class="row">
 		<div class="col-sm-3">
-			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
+			<?php  $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9 dashboard">
 
@@ -23,9 +23,9 @@
 		<h4>Konfirmasi Pembayaran</h4>
 		<p>Anda bisa melakukan konfirmasi pembayaran pada halaman Riwayat dan Status Pesanan.</p>
 		<p><?php echo anchor('account/riwayatStatusPesanan/', 'Konfirmasi', array('class'=>'btn btn-default'));?><p/>
-		<h4>Newsletters</h4>
+		<!-- <h4>Newsletters</h4>
 		<p>Anda saat ini belum terdaftar.</p>
-		<p><?php echo anchor('customer/government/', 'Daftar', array('class'=>'btn btn-default'));?></p>
+		<p><?php echo anchor('customer/government/', 'Daftar', array('class'=>'btn btn-default'));?></p> -->
 
 	</div>
 </div>
