@@ -21,7 +21,7 @@
       xfbml      : true,
       version    : 'v2.10'
     });
-    FB.AppEvents.logPageView();
+    window.FB.AppEvents.logPageView();
   };
 
   (function(d, s, id){
@@ -31,13 +31,13 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-   FB.getLoginStatus(function(response) {
+   window.FB.getLoginStatus(function(response) {
        console.log('Logged in.',response.status);
   if (response.status === 'connected') {
     console.log('Logged in.');
   }
   else {
-    FB.login();
+    window.FB.login();
   }
 });
 </script>
