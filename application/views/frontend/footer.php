@@ -8,7 +8,7 @@
 	<div class="my-container" style='margin-bottom:20px;'>
 		<center><font size='3'><b>myacico.co.id menjamin kualitas toko kami melalui 5 poin berikut ini:</font></b></center>
 
-		<div class='garansi'>
+		<!-- <div class='garansi'>
 			<ul>
 				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' /><br><br><b>Gratis Pengiriman</b><br>Kami akan mengirimkan pesanan anda secara cuma-cuma untuk area Jakarta</li>
 				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon2.png');?>' border='0' /><br><br><b>Keamanan Pembayaran</b><br>
@@ -18,8 +18,41 @@
 				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' /><br><br><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</li>
 				<li><img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' /><br><br><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</li>
 			</ul>
+		</div> -->
+		<div class="" align="center">
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' />
+				<p><b>Gratis Pengiriman</b><br>Kami akan mengirimkan pesanan anda secara cuma-cuma untuk area Jakarta</p>
+			</div>
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon2.png');?>' border='0' />
+				<p><b>Keamanan Pembayaran</b><br>
+				Kami akan memastikan kerahasiaan informasi pembayaran Anda.</p>
+			</div>
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon3.png');?>' border='0' />
+				<p><b>Kemudahan Transaksi</b><br>Anda bisa melakukan transaksi dengan mudah melalui berbagai metode pembayaran</p>
+			</div>
+			<!-- <div class="footer-box2" >
+				<img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' style="padding-top:10px;" />
+				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</p>
+			</div> -->
+
+			<div class="footer-box">
+				<img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' />
+				<p><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</p>
+			</div>
+			<div class="footer-box2">
+				<img src='<?php echo base_url('images/general/f-icon4.png');?>'/>
+				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi</p>
+			</div>
+			<!-- <div class="footer-box2" >
+				<img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' style="padding-top:10px;" />
+				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</p>
+			</div> -->
 		</div>
-		<br><br>
+		<br/><br/>
+
 
 		<!-- <div class="row">
 			<div class="col-xs-2">
@@ -91,11 +124,12 @@
 
 
 
-<form name="myForm" method="post">
+<form name="myForm1" method="post">
 
 			<div class="col-xs-3">
 				<h3><span>Ikuti Kami</span></h3>
 				<div class='sos'>
+
 					<ul>
 						<li><a href="https://www.youtube.com/channel/UCT6wkP8xyhEgDZzrbuWBQRg"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
 					  <li><a class="active" href="https://www.facebook.com/MyacicoID/?ref=aymt_homepage_panel"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -110,9 +144,9 @@
         Berlangganan untuk mendapatkan penawaran spesial dan berita dari MyACICO.co.id<br>
 				<div class="input-group">
 					<input type="hidden" id="isSubscribe" name="isSubscribe" class="my-sub-field" name="x" value="Y">
-					<input type="text" id="email" name="email" class="my-sub-field" name="x" placeholder="Email...">
+					<input type="text" id="email1" name="email1" class="my-sub-field" name="x" placeholder="Email...">
 					<span class="input-group-btn">
-							<input type="submit" id="submit_btn" class="btn btn-default my-sub-button" value="<?php echo "Daftar"?>">
+							<input type="button" id="submit_btn1" class="btn btn-default my-sub-button" value="<?php echo "Daftar"?>">
 						<!-- <button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button> -->
 					</span>
 				</div>
@@ -254,7 +288,7 @@
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
 var apiurl = baseApiUrl + '/newsletter/save/genericsubscribe';
-console.log('api123',apiurl);
+
 var data = {};
 $("#btnTop").click(function() {
      $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -270,13 +304,13 @@ $(document).ready(function() {
 		$('.search-panel span#search_concept').text(concept);
 		$('.input-group #search_param').val(param);
 	});
-  $('form').submit(function(e){
+  $('#submit_btn1').on('click', function(e){
     e.preventDefault();
 		var isSubscribe =  $("#isSubscribe").val();
-		var email = $("#email").val();
+		var email1 = $("#email1").val();
 
 		data.isSubscribe = isSubscribe;
-    data.email = email;
+    data.email = email1;
 
 
 
@@ -286,14 +320,14 @@ $(document).ready(function() {
 
 }
 
-if(email==''){
+if(email1==''){
 			$.alert({
 				title: 'Alert!',
 				content: 'Email tidak boleh kosong!',
 			});
       return false;
 		}
-		var x = document.forms["myForm"]["email"].value;
+		var x = document.forms["myForm1"]["email1"].value;
 		var atpos = x.indexOf("@");
 		var dotpos = x.lastIndexOf(".");
 		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
@@ -313,8 +347,9 @@ if(email==''){
 				 	if(r.message == "email anda belum terdaftar, silahkan registrasi terlebih dahulu"){
        return false;
 					}else
+			
+					      	 location.reload();
 
-			window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
     };
 
 
@@ -330,7 +365,7 @@ if(email==''){
 // var apiurl = baseApiUrl + '/create';
 // var success = function(r){
 // 	console.log('OK:', r);
-// 	if(r.status == 1) return location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
+// 	if(r.status == 1) return location.href = '<?php // echo base_url('customer/successCreate/'); ?>'+$("#email").val();
 // 	$('#spinner_img').hide();
 // 	$('#submit_btn').val('Kirim').removeClass('disabled');
 // 	$.alert({

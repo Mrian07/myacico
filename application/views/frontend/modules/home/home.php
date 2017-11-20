@@ -186,11 +186,49 @@
 }
 h6{
   display:inline-block;
-width:112px;
-white-space: nowrap;
-overflow:hidden !important;
-text-overflow: ellipsis;
+  width:112px;
+  white-space: nowrap;
+  overflow:hidden !important;
+  text-overflow: ellipsis;
 }
+.box-title{
+  width:100%;
+  white-space: wrap;
+  line-height: 14px;
+  overflow:hidden !important;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  text-align: center;
+  font-size: 10px;
+  height:40px
+}
+.box-title2{
+  width:100%;
+  white-space: wrap;
+  line-height: 14px;
+  overflow:hidden !important;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  text-align: center;
+  color: #8a0202;
+  font-size: 12px;
+  height:20px
+
+}
+.box-title3{
+  width:100%;
+  white-space: wrap;
+  line-height: 14px;
+  overflow:hidden !important;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  text-align: center;
+  color: #8a0202;
+  font-size: 12px;
+  height:20px;
+
+}
+
 .section-box-six img{
     height: 100%;
     position: absolute;
@@ -616,13 +654,13 @@ ul.list-group:after {
   </div> -->
 
   <div style='float:left;width:300px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-1.jpg');?>' border='0' width='100%'>
+    <img src='https://storage.googleapis.com/myacico/image/banner/banner-55.png' border='0' width='100%'>
   </div>
   <div style='float:left;width:300px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-2.jpg');?>' border='0' width='100%'>
+    <img src='https://storage.googleapis.com/myacico/image/banner/banner-56.png' border='0' width='100%'>
   </div>
   <div style='float:left;width:300px'>
-    <img src='<?php echo base_url('images/demo/banner-3.jpg');?>' border='0' width='100%'>
+    <img src='https://storage.googleapis.com/myacico/image/banner/banner-57.png' border='0' width='100%'>
   </div>
   <div style='clear:both'></div>
   <!-- <div class="row" style='width:1155px'>
@@ -632,7 +670,7 @@ ul.list-group:after {
   </div> -->
 
   <div class="row" style='margin-top:10px; margin-bottom:10px'>
-    <div class="col-xs-12"><img src='<?php echo base_url('images/demo/banner-4.jpg');?>' border='0' width='100%'></div>
+    <div class="col-xs-12"><img src='https://storage.googleapis.com/myacico/image/banner/banner-58.png' border='0' width='100%'></div>
   </div>
 
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
@@ -652,29 +690,17 @@ ul.list-group:after {
           $active='';
         }
         ?>
-      <div class="item">
+      <!-- <div class="item" align="center"> -->
+        <div class="item" align="center">
 
       <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
-        <center><img src="<?php echo $itemslide2['imageurl']; ?>" class='img-slide' style='max-width:80%'></center></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
 
-          <h6 class="text-center link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></h6>
-          <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
-          <div class="ratings" style='text-align: center; color:#d98c13;'>
-              <!-- <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star-empty"></span> -->
-          </div>
-        <br>
-        <center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide2['product_id'];?>' style='width:70px' value='1' min='1'></center>
+          <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></p>
+          <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+
+
             <hr>
-            <center>
-             <!-- <button type="button" class="btn btn-default btn-lg btn-custom-lg"  onClick="addToCart('<?php // echo$itemslide2['product_id'];?>','<?php // echo$itemslide2['pricelist'];?>','<?php// echo$itemslide2['imageurl'];?>',
-               '<?php// echo$itemslide2['name'];?>','<?php //echo$itemslide2['stock']; ?>','<?php //echo $itemslide2['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-
-           <button style="margin-top:10px;" type="button" class="btn btn-custom-sm" onClick="addWishlist('<?php //echo$itemslide2['product_id'];?>','<?php// echo$itemslide2['name'];?>','<?php //echo$itemslide2['imageurl'];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Add To Wishlist</button> -->
-        </center>
 
       </div>
       <?php $n++;  } ?>
@@ -685,21 +711,21 @@ ul.list-group:after {
 
 
 
-<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:0px; margin-bottom:20px;'>
   <i class="fa fa-dot-circle-o" aria-hidden="true"></i> FEATURED PRODUCT
 </div>
 
 
-	<div class="row">
+	<div class="row" align="center">
       <?php
 
       foreach($dathome['level_3'] as $key => $itemslide3){ ?>
 
-        <div class="col-md-3 col-sm-6">
-      		<span class="thumbnail text-center">
-              <a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><img src="<?php echo $itemslide3['imageurl']; ?>" style="height:150px;"></a>
-        			<h6 class="link-nmp" style='height:50px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></h6>
-              <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></h5>
+        <div class="col-md-3 col-sm-6" align="center">
+      		<span class="thumbnail text-center" align="center">
+              <a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><img src="<?php echo $itemslide3['imageurl']; ?>" style='height:100px;'></a>
+        			<p class="link-nmp box-title" style='height:50px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></p>
+              <p class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></p>
         			<div class="ratings" style='text-align: center; color:#d98c13;'>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
@@ -725,7 +751,7 @@ ul.list-group:after {
   		<!-- END PRODUCTS -->
 	</div>
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:0px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> GADGET DAN AKSESORIS HANDPHONE
   </div>
   <div style='float:left;width:400px; height:auto; margin-right:5px'>
@@ -741,7 +767,7 @@ ul.list-group:after {
 
   <div class="span12" style='background:#e9f6fe; padding:10px; margin-top:10px'>
 
-    <div class="promo-front owl-carousel">
+    <div class="promo-front owl-carousel" align="center">
       <?php
 
       $jmlslide0=count($dathome2['topProduct'][1]['topProduct']);
@@ -753,19 +779,14 @@ ul.list-group:after {
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:300px; text-align:center'>
+      <div class="item" style='background:#ffffff; padding:10px; height:240px; text-align:center'>
 
           <a href="<?php echo base_url('product/detail/'. $itemslide0['product_id'].'/'. $itemslide0['alias']);?>"><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: auto"></a>
 
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide0['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide0['pricelist']); ?></h5>
-            <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-            </div> -->
+              <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide0['name']; ?></p>
+
+        <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide0['pricelist']); ?></p>
+
       </div>
       <?php $n++;  } ?>
     </div>
@@ -773,7 +794,7 @@ ul.list-group:after {
   </div>
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> KOMPUTER & LAPTOP
   </div>
   <div style='float:left;width:400px; margin-right:5px'>
@@ -789,7 +810,7 @@ ul.list-group:after {
 
   <div class="span12" style='background:#fdf0db; padding:10px; margin-top:10px'>
 
-    <div class="promo-front owl-carousel">
+    <div class="promo-front owl-carousel" align="center">
       <?php
 
       $jmlslide1=count($dathome2['topProduct'][0]['topProduct']);
@@ -801,12 +822,12 @@ ul.list-group:after {
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:300px'>
+      <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
 
-        <center><a href="<?php echo base_url('product/detail/'. $itemslide1['product_id'].'/'. $itemslide1['alias']);?>"><img src="<?php echo $itemslide1['imageurl']; ?>"  style="height:120px; width: auto"></a>
-        </center>
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide1['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide1['pricelist']); ?></h5>
+    <a href="<?php echo base_url('product/detail/'. $itemslide1['product_id'].'/'. $itemslide1['alias']);?>"><img src="<?php echo $itemslide1['imageurl']; ?>"  style="height:120px; width: auto"></a>
+
+            <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide1['name']; ?></p>
+            <b><p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide1['pricelist']); ?></p></b>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -822,7 +843,7 @@ ul.list-group:after {
 
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PERALATAN RUMAH TANGGA
   </div>
   <div style='float:left;width:400px; margin-right:5px'>
@@ -850,12 +871,12 @@ ul.list-group:after {
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:300px'>
+      <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
+            <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide2['name']; ?></p>
+            <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide2['pricelist']); ?></p>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -871,7 +892,7 @@ ul.list-group:after {
 
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> HOBI
   </div>
   <div style='float:left;width:400px; margin-right:5px'>
@@ -899,12 +920,12 @@ ul.list-group:after {
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:300px'>
+      <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
+              <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide2['name']; ?></p>
+              <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide2['pricelist']); ?></p>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -920,7 +941,7 @@ ul.list-group:after {
 
 
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> AUDIO & VISUAL
   </div>
   <div style='float:left;width:400px; margin-right:5px'>
@@ -948,12 +969,12 @@ ul.list-group:after {
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:300px'>
+      <div class="item" style='background:#ffffff; padding:10px; height:240px'>
 
-        <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
+        <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:80px; width: auto"></a>
         </center>
-            <h6 class="text-center" style='color: #4b4b4b; height:50px'><?php echo $itemslide2['name']; ?></h6>
-            <h5 class="text-center" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></h5>
+            <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide2['name']; ?></p>
+            <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide2['pricelist']); ?></p>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -967,7 +988,7 @@ ul.list-group:after {
 
   </div>
 
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:50px; margin-bottom:20px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PILIH DAN KLIK BRAND FAVORIT ANDA
   </div>
 	<div style='text-align: center; padding:15px 0px 15px 30px; border-radius:0px 0px 10px 0px; margin-bottom:20px;'>

@@ -17,17 +17,17 @@
 				<div class="col-sm-4">
 					<div class="panel panel-default">
 					  <div class="panel-heading"><strong>Data Akun</strong></div>
-					  <div class="panel-body"><?php echo $user->name; ?>, <?php echo $user->email; ?>
-					  <div class='my-btn-general'><?php echo anchor('account/formAccount/', 'Ubah', array('class'=>'my-link-general'));?></div>
+					  <div class="panel-body"><?php echo $user->name; ?>, <?php echo $user->email; ?><br><br><center>
+					  <?php echo anchor('account/formAccount/', 'Ubah', array('class'=>'btn btn-default'));?></center>
 					  </div>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="panel panel-default">
 					  <div class="panel-heading"><strong>Ganti Password</strong></div>
-					  <div class="panel-body">Jika ingin mengganti password login click button dibawah ini.
-					  <div class='my-btn-general'><?php echo anchor('account/formPassword/', 'Ubah', array('class'=>'my-link-general'));?></div>
-
+					  <div class="panel-body">Jika ingin mengganti password login click button dibawah ini.<br><br><center>
+					  <?php echo anchor('account/formPassword/', 'Ubah', array('class'=>'btn btn-default'));?>
+					</center>
 					  </div>
 					</div>
 				</div>
@@ -38,12 +38,12 @@
 						<?php
 						if(isset($alamat_billing)){
 							echo $alamat_billing;
-							echo "<br><center><div class='my-btn-general'>";
-							echo anchor('account/formBilling/'.$id_billing, 'Ubah', array('class'=>'my-link-general')); echo"</div></center>";
+							echo "<br><br><center>";
+							echo anchor('account/formBilling/'.$id_billing, 'Ubah', array('class'=>'btn btn-default')); echo"</center>";
 						}else{
 							echo"Belum ada data billing, data billing diperlukan saat checkout pembelian.
-						<br><br><center><div class='my-btn-general'>";
-							echo anchor('account/formAddBilling/', 'Tambah', array('class'=>'my-link-general')); echo"</div></center>";
+						<br><br><center>";
+							echo anchor('account/formAddBilling/', 'Tambah', array('class'=>'btn btn-default')); echo"</center>";
 						}?>
 						</div>
 					</div>

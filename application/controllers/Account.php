@@ -31,7 +31,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/dashboard.php',$this->data);
-                $this->load->view('frontend/sidenav',$this->data);
+    $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
 	}
@@ -159,6 +159,24 @@ class Account extends Web_private {
 	public function editBukuAlamat()
     {
 		$this->data['id'] = $this->uri->segment(3);
+                $idadd=$this->uri->segment(3);
+                
+                $token = $_COOKIE['x-auth'];
+                
+		$api = "aduser/getaddress/".$idadd;
+		$url = api_base_url($api);
+
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+                $this->data['hasil'] = json_decode($konten, true);
+                
+//                die(print_r($url));
+
 		$this->data['active_bukuAlamat'] = "class='active'";
 		$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
@@ -315,9 +333,9 @@ class Account extends Web_private {
                 $this->load->view('frontend/modules/account/form_review',$this->data);
                 $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
-		
-			
-		
+
+
+
 			// $this->load->view('frontend/footer',$this->data);
 	}
 
@@ -360,7 +378,21 @@ class Account extends Web_private {
 	public function formBilling()
     {
 		$type = $this->typeLogin();
+                $idadd=$this->uri->segment(3);
+//                die(print_r($idadd));
+                $token = $_COOKIE['x-auth'];
+                
+		$api = "aduser/getaddress/".$idadd;
+		$url = api_base_url($api);
 
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+                $this->data['hasil'] = json_decode($konten, true);
 
 
 		$this->data['active_informasiAkun'] = "class='active'";

@@ -13,7 +13,7 @@ margin-top: -11px;
 
 
 <div class="my-container">
-	<div class="row">
+	<div class="row" style='margin-top:20px'>
 
 		<div class="col-sm-6">
 <h4> <?php echo $lang_field_selamatDatang; ?> </h4>
@@ -57,7 +57,7 @@ margin-top: -11px;
 		  </div>
 		  <div class="row">
 			<div class="col-sm-6">
-				<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo "Daftar"?>">
+				<input type="submit" id="submit_btn3" class="btn btn-primary" value="<?php echo "Daftar"?>">
 				<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 			</div>
 			<div class="col-sm-6" style='text-align: right'>
@@ -75,9 +75,10 @@ margin-top: -11px;
 
 </div>
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
-
-var apiurl = baseApiUrl + '/create';
+var baseApiUrl = '<?php echo $baseApiUrl2; ?>'+'/create';
+console.log('333',baseApiUrl)
+var apiurl = '<?php echo $baseApiUrl2; ?>'+'/create';
+console.log('tes1111',apiurl)
 var data = {};
 $(document).ready(function() {
 
@@ -91,7 +92,8 @@ $(document).ready(function() {
     data.email = email;
     data.password = password;
 
-		var apiurl = baseApiUrl + '/create';
+var apiurl = '<?php echo $baseApiUrl2; ?>'+'/create';
+		console.log('ini apa ya', apiurl)
 		function validateForm() {
 
 
@@ -131,11 +133,17 @@ if(name==''){
 		// comment baru
 		    var success = function(r){
       $('#spinner_img').hide();
-      $('#submit_btn').val('Kirim').removeClass('disabled');
+      $('#submit_btn').val('Daftar').removeClass('disabled');
       // console.log('OK:', r);
-      //alert(r.message);
-      //    return false;
-			window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
+      alert(r.message);
+			if(r.status == 0){
+					         return false;
+			}else{
+
+				window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
+			}
+
+
     };
 
 
@@ -151,7 +159,7 @@ if(name==''){
 // var apiurl = baseApiUrl + '/create';
 // var success = function(r){
 // 	console.log('OK:', r);
-// 	if(r.status == 1) return location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
+// 	if(r.status == 1) return location.href = '<?php // echo base_url('customer/successCreate/'); ?>'+$("#email").val();
 // 	$('#spinner_img').hide();
 // 	$('#submit_btn').val('Kirim').removeClass('disabled');
 // 	$.alert({

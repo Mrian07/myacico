@@ -376,17 +376,13 @@ if($saw==Null)
         </div>
         <div class="col-sm-9">
              <div class="row my-sort-product">
-
-                          <select name="urutkan" class="form-control" onchange='filter(this)'>
-                          <option value='5'>Produk Terbaru</option>
-                          <option value='1'>Nama: A Ke Z</option>
-                          <option value='2'>Nama: Z Ke A</option>
-                          <option value='3'>Harga: Rendah Ke Tinggi</option>
-                          <option value='4'>Harga: Tinggi Ke Rendah</option>
-                          </select>
-
-
-
+                 <select name="urutkan" class="form-control" onchange='filter(this)'>
+                 <option value='5' <?php if($sort_id=='5'){echo"selected";}?>>Produk Terbaru</option>
+                 <option value='1' <?php if($sort_id=='1'){echo"selected";}?>>Nama: A Ke Z</option>
+                 <option value='2' <?php if($sort_id=='2'){echo"selected";}?>>Nama: Z Ke A</option>
+                 <option value='3' <?php if($sort_id=='3'){echo"selected";}?>>Harga: Rendah Ke Tinggi</option>
+                 <option value='4' <?php if($sort_id=='4'){echo"selected";}?>>Harga: Tinggi Ke Rendah</option>
+                 </select>
               </div>
             </div>
         </div>
@@ -416,7 +412,7 @@ if($saw==Null)
         <div class="col-xs-3">
           <div class='tmp-product'>
             <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>">
-              <img class="group list-group-image" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
+              <img class="group list-group-image" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" style="height:120px; width: auto;" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
             </a>
           <div class='nm-product-detail'>
           <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a><br>

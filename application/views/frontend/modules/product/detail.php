@@ -8,6 +8,9 @@
 #hearts { font-size: 140px; color: #F4044F;}
 #hearts-existing { color: #87bad7;}
 	</style>
+        <?php
+            $totalRate= $rating['star1']+$rating['star2']+$rating['star3']+$rating['star4']+$rating['star5'];
+        ?>
         <!--Star-->
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
@@ -47,7 +50,7 @@
 
 					<div class="xzoom-container">
 						<?php if(isset($img[0])) { ?>
-							<img class="xzoom" id="xzoom-magnific" width=400 src="<?php echo $img[0]; ?>" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"
+							<img class="xzoom" id="xzoom-magnific" width=380 src="<?php echo $img[0]; ?>" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"
  xoriginal="<?php echo $img[0]; ?>" />
 						<?php
 
@@ -87,118 +90,66 @@
 
 	  </div>
 	  <div class="col-sm-7 detail-product">
-			<h4 class='title-product'><?php echo $name; ?></h4>
-			<div class="col-sm-6" style="margin-left:0px; padding-left:0px; border-right:1px solid #dddddd;">
-
+            <div id="rateYo" style="z-index: 0; display:inline-block;"></div> 
+              <div style="display:inline-block;"><b>(<?php echo$totalRate;?> review)</b></div>
+              <p style="font-size:18px"><b><?php echo $name; ?></b></p>
+			<div class="col-sm-6">
+                        
 
 				<span style="color:red"><?php echo $sku; ?></span><br>
 					<span class='price'><b>Rp.<?php echo money($pricelist);  ?></b></span><br>
 					<span style="color: green; font-weight:bold">Stock: Tersedia</span>
 					<br>
+                                       
+				
 					Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
 
-					<br><br>
-					<center>
+                                    <table>
+                                       <tr> 
+                                           <td style="padding:0px;">
+                                                <font size="0"><b>Produk Highlight:</b> <?php echo $highlight;  ?></font>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+					
+					
 
 
-					<div class='detail-add-wishlist'>
-						<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br>
+			</div>
+                        
+			<div class="col-sm-6">
+				<center>
+				<div class='detail-add-wishlist' style="display: block; background: #e7e7e7; border-radius: 5px;">
+                                    Quantity<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br>
 						<!-- <div class="btnaddcart">
 							<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
 						</div> -->
 
 
 						<!-- <a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')" class='btn btn-link'> <i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Add To Wishlist</a> -->
-							<div class="btn-group">
+                                               
+                                                <div class="btn-group">
 
-								<button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-								<?php
+                                                    <button type="button" class="btn btn-danger btn-lg" style="border-radius: 25px; padding: 7px 34px;"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+								<br>
+                                                                    <?php
 											if($isWishList =='Y')
 											{
 									?>
-									 <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
+                                                                <button type="button" class="btn btn-success btn-lg" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
 								<?php }else{
 							 ?>
-									 <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button>
+									 <button type="button" class="btn btn-success btn-lg" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" aria-hidden="true"></i>Add Wishlist</button>
 
 								<?php }
 								?>
 							</div>
-						</div>
-					</center>
+                                                
+						</div>				
+							
 
-
-			</div>
-			<div class="col-sm-6">
-				<b>Rating breakdown</b>
-				<center><div id="rateYo" style="z-index: 0;"></div></center>
-								<div class="pull-left">
-									<div class="pull-left" style="width:35px; line-height:1;">
-										<div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
-									</div>
-									<div class="pull-left" style="width:180px;">
-										<div class="progress" style="height:9px; margin:8px 0;">
-										  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
-											<span class="sr-only">80% Complete (danger)</span>
-										  </div>
-										</div>
-									</div>
-									<div class="pull-right" style="margin-left:10px;"><?php echo$rating['star5'];?></div>
-								</div>
-								<div class="pull-left">
-									<div class="pull-left" style="width:35px; line-height:1;">
-										<div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
-									</div>
-									<div class="pull-left" style="width:180px;">
-										<div class="progress" style="height:9px; margin:8px 0;">
-										  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 100%">
-											<span class="sr-only">80% Complete (danger)</span>
-										  </div>
-										</div>
-									</div>
-									<div class="pull-right" style="margin-left:10px;"><?php echo$rating['star4'];?></div>
-								</div>
-								<div class="pull-left">
-									<div class="pull-left" style="width:35px; line-height:1;">
-										<div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
-									</div>
-									<div class="pull-left" style="width:180px;">
-										<div class="progress" style="height:9px; margin:8px 0;">
-										  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 100%">
-											<span class="sr-only">80% Complete (danger)</span>
-										  </div>
-										</div>
-									</div>
-									<div class="pull-right" style="margin-left:10px;"><?php echo$rating['star3'];?></div>
-								</div>
-								<div class="pull-left">
-									<div class="pull-left" style="width:35px; line-height:1;">
-										<div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
-									</div>
-									<div class="pull-left" style="width:180px;">
-										<div class="progress" style="height:9px; margin:8px 0;">
-										  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 100%">
-											<span class="sr-only">80% Complete (danger)</span>
-										  </div>
-										</div>
-									</div>
-									<div class="pull-right" style="margin-left:10px;"><?php echo$rating['star2'];?></div>
-								</div>
-								<div class="pull-left">
-									<div class="pull-left" style="width:35px; line-height:1;">
-										<div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
-									</div>
-									<div class="pull-left" style="width:180px;">
-										<div class="progress" style="height:9px; margin:8px 0;">
-										  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 100%">
-											<span class="sr-only">80% Complete (danger)</span>
-										  </div>
-										</div>
-									</div>
-									<div class="pull-right" style="margin-left:10px;"><?php echo$rating['star1'];?></div>
-								</div>
-
-
+                                    </center>
 				</div>
 
 
@@ -265,16 +216,16 @@
 
 	  <li class="active"><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
           <li><a data-toggle="tab" href="#menu2">Spesifkasi</a></li>
-		<li><a data-toggle="tab" href="#menu3">Highlight</a></li>
-                <li><a data-toggle="tab" href="#komen">Ulasan</a></li>
+		<li><a data-toggle="tab" href="#menu3">Ulasan</a></li>
+               
 	</ul>
 
 	<div class="tab-content">
-	  <div id="menu1" class="tab-pane fade">
+	  <div id="menu1" class="tab-pane fade in active">
 
 		<p><?php echo $description;  ?></p>
 	  </div>
-          <div id="menu2" class="tab-pane fade in active">
+          <div id="menu2" class="tab-pane fade">
 
 		<table class="table table-striped">
 			<tr>
@@ -420,11 +371,11 @@
 		</table>
 
 	  </div>
-          <div id="menu3" class="tab-pane fade">
+<!--          <div id="menu3" class="tab-pane fade">
 
-		<p><?php echo $highlight;  ?></p>
-	  </div>
-             <div id="komen" class="tab-pane fade">
+		<p><?php //echo $highlight;  ?></p>
+	  </div>-->
+             <div id="menu3" class="tab-pane fade">
 
 		<p><?php $ik=0;
 			$no=1;
@@ -444,7 +395,7 @@
 												var rateV = '<?php echo $coment_rate; ?>';
                         $('#rateKoms'+no).rateYo({
 	                              // rating: $coment_rate,
-																rating: rateV,
+					 starWidth: "20px",											rating: rateV,
 	                              readOnly: true
 	                        });
 	                      });
@@ -477,6 +428,7 @@
 
   $("#rateYo").rateYo({
 		  rating: rate,
+                  starWidth: "20px",
 		  readOnly: true
 
   });

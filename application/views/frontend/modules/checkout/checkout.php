@@ -146,7 +146,8 @@ a
 
 			<h5>ONGKOS KIRIM: Rp.<span id='totalOngkir'>0</span></h5>
 			<h5>TOTAL PEMBAYARAN: Rp.<span id='grandtotalall'><?php echo money($total); ?></span></h5>
-			<button class='btn btn-success my-btn-chekout' onclick='finish()'>FINISH ORDER <i class="fa fa-angle-right"></i></button>
+			<button class='btn btn-success my-btn-chekout' id ="finish" onclick='finish()'>FINISH ORDER <i class="fa fa-angle-right"></i></button>
+                        <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 		</div>
 
 
@@ -207,6 +208,7 @@ function paymentType(payment_method)
 }
 
 function finish(){
+ $('#spinner_img').hide();
 	var token= '<?php echo $token; ?>';
 	var grandtotal= $('#grandtotal').val();
 	var paymentMethod=$('#typeVal').val();
@@ -246,7 +248,9 @@ function finish(){
 			content: 'Silakan pilih metode pengiriman',
 		});
 	}else {
-
+$('#spinner_img').show();
+ 
+ $('#finish').addClass('disabled');
 		data.grandtotal = grandtotal;
 		data.paymentMethod = paymentMethod;
 		data.billing_address_id = billing_address_id;
@@ -265,7 +269,7 @@ function finish(){
 		headers:{"token":token},
 		url: "<?php echo api_base_url('order/checkout'); ?>",
 		success:function(hasil){
-
+ 
 				if(hasil.status=='1' && paymentMethod=='R'){
 					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 				}else if(hasil.token!='' && paymentMethod=='C'){
@@ -273,8 +277,27 @@ function finish(){
 
 					//window.location.replace("<?php // echo site_url('payment/creditcard.php/?c='); ?>"+hasil.token);
 				}else if(hasil.token!='' && paymentMethod=='O'){
-					window.location.replace("<?php echo site_url('checkout/paymentByOnline/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
-
+          if(hasil.status==1){
+  					window.location.replace("<?php echo site_url('checkout/paymentByOnline/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
+          }else{ $('#spinner_img').hide();
+              $('#finish').removeClass('disabled');
+            if(code=="1000000"){
+              $.alert({
+    						title: 'Alert!',
+    						content: 'Maaf pembayaran online payment menggunkan BCA KlikPay mengalami gangguan, cobalah beberapa saat lagi.',
+    					});
+            }else if(code=="1000001"){
+              $.alert({
+    						title: 'Alert!',
+    						content: 'Maaf pembayaran online payment menggunkan CIMB Clicks mengalami gangguan, cobalah beberapa saat lagi.',
+    					});
+            }else{
+              $.alert({
+    						title: 'Alert!',
+    						content: 'Maaf pembayaran online payment mengalami gangguan',
+    					});
+            }
+          }
 				}else{
 					$.alert({
 						title: 'Alert!',

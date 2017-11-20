@@ -1,7 +1,7 @@
 <?php
 	$lang['daftar'] = 'Daftar';
 	$lang['masuk'] = 'Login';
-	$lang['ket_daftar_personal'] = 'Untuk pribadi yang ingin belanja di myacico.com';
+	$lang['ket_daftar_personal'] = 'Untuk pribadi yang ingin belanja di myAcico.co.id';
 	$lang['ket_daftar_akunBisnis'] = 'Ingin menyediakan barang untuk perusahaan anda? akun myacico bisnis akan sesuai dengan kebutuhan anda. informasi perusahaan anda diperlukan untuk verifikasi.';
 
 //Button untuk daftar

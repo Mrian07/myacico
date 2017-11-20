@@ -23,6 +23,82 @@
 	/*font-family: sans-serif;*/
 }
 
+/*s: Sidebar product*/
+.menu_list {
+    width: 100%;
+}
+.menu_head {
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+    margin:1px;
+	margin-bottom:20px;
+    font-weight:bold;
+    background: url(plus.png) center right no-repeat;
+	border-bottom:1px solid #dddddd;
+}
+.menu_body {
+    display:none;
+}
+
+.plus{
+ background-image: url(../../images/general/math-add-icon.png);
+}
+
+.minus {
+ background-image: url(../../images/general/math-minus-icon.png);
+}
+
+/*e: Sidebar product*/
+
+.btn-back{
+  color:#111111;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.btn-back:hover{
+  color:#e61616;
+  text-decoration: none;
+}
+
+.btn-back:active{
+  color:#e61616;
+  text-decoration: none;
+}
+
+.btn-edit{
+  color:#111111;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.btn-edit:hover{
+  color:#e61616;
+  text-decoration: none;
+}
+
+.btn-edit:active{
+  color:#e61616;
+  text-decoration: none;
+}
+
+.btn-add{
+  color:#111111;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.btn-add:hover{
+  color:#e61616;
+  text-decoration: none;
+}
+
+.btn-add:active{
+  color:#e61616;
+  text-decoration: none;
+}
+
 .my-container{
     width:912px;
     margin:0 auto;
@@ -80,6 +156,11 @@
 /*s: Product*/
 
 .price {
+    font-size: 18px;
+    color: #8a0202;
+}
+
+.price2 {
     font-size: 20px;
     color: #8a0202;
 }
@@ -153,27 +234,39 @@
 }
 
 .my-hdr3{
-  width:18%; float:left; text-align:right;
+  width:18%; float:left; text-align:right; padding:5px;
 }
 
 .productSrc
 {
-  width:1140px;
+  width:1160px;
+}
+
+.link-head{
+  margin-left:298px
 }
 
 @media screen and (max-width: 1680px) {
-  /*Serach product*/
+
   .productSrc
   {
-    width:970px;
+    width:990px;
+  }
+
+  .link-head{
+    margin-left:275px
   }
 }
 
 @media screen and (max-width: 1600px) {
-  /*Serach product*/
+
   .productSrc
   {
-    width:910px;
+    width:935px;
+  }
+
+  .link-head{
+    margin-left:266px
   }
 }
 
@@ -191,39 +284,51 @@
     width:20%; float:left; text-align:right;
   }
 
-  /*Serach product*/
   .productSrc
   {
-    width:753px;
+    width:778px;
+  }
+
+  .link-head{
+    margin-left:265px
   }
 
 }
 
 @media screen and (max-width: 1400px) {
-  /*Serach product*/
   .productSrc
   {
-    width:735px;
+    width:754px;
+  }
+
+  .link-head{
+    margin-left:263px
   }
 }
 
 @media screen and (max-width: 1366px) {
-  /*Serach product*/
   .productSrc
   {
-    width:710px;
+    width:730px;
+  }
+
+  .link-head{
+    margin-left:261px
   }
 }
 
 @media screen and (max-width: 1360px) {
-  /*Serach product*/
   .productSrc
   {
-    width:700px;
+    width:725px;
   }
 }
 
 @media screen and (max-width: 1280px) {
+  .link-head{
+    margin-left:275px
+  }
+
   .my-hdr1{
     margin-left:10px;
     width:13%; float:left;
@@ -240,7 +345,7 @@
   /*Serach product*/
   .productSrc
   {
-    width:600px;
+    width:520px;
   }
 }
 
@@ -262,6 +367,10 @@
   .productSrc
   {
     width:420px;
+  }
+
+  .link-head{
+    margin-left:275px
   }
 }
 
@@ -603,7 +712,7 @@ a:hover.my-info {
   }
 
   .btn-nav-red{
-    color: #4d4d4d;
+    color: #ff0000;
     text-decoration: none;
   }
 
@@ -679,6 +788,32 @@ a:hover.my-info {
   }
 
   /*footer garansi*/
+  /*.garansi{
+    width: 100%;
+  }*/
+  .footer-box{
+    width: 175px;
+    height: 200px;
+    padding-top: 10px;
+    display: inline-block;
+    border-right: 1px solid #f1f1f1;
+  }
+  .footer-box p{
+    padding: 10px 10px 10px 10px;
+    line-height: 14px;
+    font-size: 10px;
+  }
+  .footer-box2{
+    width: 175px;
+    height: 200px;
+    padding-top: 10px;
+    display: inline-block;
+  }
+  .footer-box2 p{
+    padding: 10px 10px 10px 10px;
+    line-height: 14px;
+    font-size: 10px;
+  }
   .garansi ul {
       list-style-type: none;
       margin: 0;
@@ -718,7 +853,7 @@ a:hover.my-info {
       display: block;
       color: #ffffff;
       text-align: center;
-      padding: 14px 16px;
+      padding: 6px 10px;
       text-decoration: none;
 
   }
@@ -814,7 +949,16 @@ a:hover.my-info {
   	border: 1px #dddddd solid;
   	padding:10px;
   	margin-bottom:40px;
+    text-align: center;
   	background:#ffffff;
+  }
+  .border-create1{
+    border: 1px #dddddd solid;
+    padding:10px;
+    height: 200px;
+      text-align: center;
+    margin-bottom:40px;
+
   }
 
   .border-sidebar{
@@ -888,9 +1032,6 @@ a:hover.my-info {
 		right: 0; left: auto;
     border-radius:5px;
 }
-
-
-
 
 .dropdown-basket-content:after, .arrow_box:before {
 	bottom: 100%;

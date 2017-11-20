@@ -40,7 +40,7 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-			<p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali');?></p>
+      <p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
                         <div class="buktiTrans"></div>
 			<p>Silakan upload bukti transfer pembayaran Anda pada form dibawah ini.</p>
 			<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
@@ -56,8 +56,8 @@
 						<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 						<span class="input-group-btn">
 						<input type="hidden" placeholder="placeholder" id="transid" class="input-xlarge" value="<?php echo $konf; ?>" name="transid">
-						<span class="btn btn-default btn-file">
-						Browse…<input class="input-file" id="file" type="file" name="file">
+						<span class="btn btn-info btn-file">
+						Browse…<input class="input-file" id="file" type="file" name="file" style='height:10px'>
 						</span>
 						</span>
 						<input type="text" class="form-control" readonly>

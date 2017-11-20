@@ -11,7 +11,8 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-
+			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
+			<p>Gunakan form dibawah ini untuk mengubah password login Anda.</p>
 			<section class="login_content">
 			  <form name="loginFm" method="post">
 

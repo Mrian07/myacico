@@ -10,7 +10,7 @@
 <div class="container my-container-white">
 	<div class="row">
 		<div class="col-sm-3">
-			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
+			<?php  $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9 dashboard">
 
@@ -23,34 +23,34 @@
 		<h4>Konfirmasi Pembayaran</h4>
 		<p>Anda bisa melakukan konfirmasi pembayaran pada halaman Riwayat dan Status Pesanan.</p>
 		<p><?php echo anchor('account/riwayatStatusPesanan/', 'Konfirmasi', array('class'=>'btn btn-default'));?><p/>
-		<h4>Newsletters</h4>
+		<!-- <h4>Newsletters</h4>
 		<p>Anda saat ini belum terdaftar.</p>
-		<p><?php echo anchor('customer/government/', 'Daftar', array('class'=>'btn btn-default'));?></p>
+		<p><?php echo anchor('customer/government/', 'Daftar', array('class'=>'btn btn-default'));?></p> -->
 
 	</div>
 </div>
 </div>
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl; ?>';
-
-$(document).ready(function() {
-
-  $('form').submit(function(e){
-    e.preventDefault();
-
-    var apiurl = baseApiUrl + '/login';
-    var data = $(this).serialize();
-
-    // success handling
-    var success = function(r){
-      console.log('OK:', r);
-      alert(r.message);
-    };
-
-    $.post( apiurl, data, success, "json" );
-    //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
-
-  });
-
-});
+// var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+//
+// $(document).ready(function() {
+//
+//   $('form').submit(function(e){
+//     e.preventDefault();
+//
+//     var apiurl = baseApiUrl + '/login';
+//     var data = $(this).serialize();
+//
+//     // success handling
+//     var success = function(r){
+//       console.log('OK:', r);
+//       alert(r.message);
+//     };
+//
+//     $.post( apiurl, data, success, "json" );
+//     //$.ajax({ type:"GET", dataType: "json", url: apiurl, success: success, error: error });
+//
+//   });
+//
+// });
 </script>
