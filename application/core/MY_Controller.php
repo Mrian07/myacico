@@ -134,6 +134,11 @@ class Web extends MY_Controller {
                                       $this->data['lang_pay'] = $this->lang->line('f_pay');
                                       $this->data['lang_cour'] = $this->lang->line('f_courier');
                                       $this->data['lang_dunlud'] = $this->lang->line('f_dunlud');
+                                            $this->data['lang_sea'] = $this->lang->line('f_sea');
+                                             $this->data['lang_sel'] = $this->lang->line('F_SEL');
+                                                $this->data['lang_house'] = $this->lang->line('f_house');
+                                                  $this->data['lang_komp'] = $this->lang->line('f_com');
+                                                    $this->data['lang_gad'] = $this->lang->line('f_gad');
 
 
   $this->data['lang_conta'] = $this->lang->line('f_contact');

@@ -241,7 +241,7 @@
 
 		<br><br>
 		<center>
-		<button data-toggle="collapse" data-target="#demo" class='my-btn-brand'>LIHAT SEMUA <span style='font-size:24px;'><i class="fa fa-angle-double-right" aria-hidden="true"></i></span></button>
+		<button data-toggle="collapse" data-target="#demo" class='my-btn-brand'><?php echo $lang_sea; ?> <span style='font-size:24px;'><i class="fa fa-angle-double-right" aria-hidden="true"></i></span></button>
 		<div id="demo" class="collapse" style='margin-top:20px; text-align:justify; border-radius:5px; padding:20px; color:#111111; '>
 			<?php echo $lang_footer_info;?>
 		</div>

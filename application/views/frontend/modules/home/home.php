@@ -752,7 +752,7 @@ ul.list-group:after {
 	</div>
 
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:0px; margin-bottom:10px;'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> GADGET DAN AKSESORIS HANDPHONE
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_gad; ?>
   </div>
   <div style='float:left;width:506px; height:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-a1.jpg');?>' border='0' width='100%' height = '190px;'>
@@ -795,7 +795,7 @@ ul.list-group:after {
 
 
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> KOMPUTER & LAPTOP
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_komp; ?>
   </div>
   <div style='float:left;width:506px; height:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-b31.jpg');?>' border='0' width='100%' height = '190px;'>
@@ -844,7 +844,7 @@ ul.list-group:after {
 
 
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PERALATAN RUMAH TANGGA
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_house; ?>
   </div>
   <div style='float:left;width:506px; height:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-c1.jpg');?>' border='0' width='100%' height = '190px;'>
@@ -1000,7 +1000,7 @@ ul.list-group:after {
   </div>
 
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PILIH DAN KLIK BRAND FAVORIT ANDA
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_sel; ?>
   </div>
 	<div style='text-align: center; padding:15px 0px 15px 30px; border-radius:0px 0px 10px 0px; margin-bottom:20px;'>
     	<!-- BEGIN PRODUCTS -->
@@ -1015,7 +1015,7 @@ ul.list-group:after {
 
 						</ul>
 <BR>
-            <?php echo anchor('brand','LIHAT SEMUA <span style="font-size:24px;"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>', array('class'=>'my-btn-brand')); ?>
+            <?php echo anchor('brand',$lang_sea.' <span style="font-size:24px;"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>', array('class'=>'my-btn-brand')); ?>
          </center>
           </div>
 
