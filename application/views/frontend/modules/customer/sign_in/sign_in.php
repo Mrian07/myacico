@@ -1,20 +1,11 @@
 <script>
-    function init() {
-        FB.api(
-          '/l214.animaux',
-          {"fields":"fan_count"},
-          function(response) {
-            alert(response.fan_count);
-          }
-        );
-    }
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '542138116138058',
       xfbml      : true,
       version    : 'v2.10'
     });
-    init();
+    FB.AppEvents.logPageView();
   };
 
   (function(d, s, id){
@@ -24,7 +15,14 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-  
+   FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    console.log('Logged in.');
+  }
+  else {
+    FB.login();
+  }
+});
 </script>
 <div id="fb-root"></div>
 <div id="fb-root"></div>
