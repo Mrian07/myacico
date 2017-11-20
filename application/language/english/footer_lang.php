@@ -12,4 +12,27 @@ Bagi Anda yang membutuhkan produk-produk maknikal-elektrikal, Toko Online MyACIC
 <b>Pengiriman 2-7 Hari Kerja</b><br> Sebagai toko online dengan kategori produk dan promo terlengkap, myacico.co.id juga menjamin pengiriman cepat untuk setiap produk yang di pesan. Komitmen  Toko Online myacico.co.id untuk dapat mengirimkan produk pelanggan dengan jangka waktu pengiriman 2-7 Hari Kerja. Pengiriman produk dari myacico.co.id akan di support oleh myACICO courrier, Ninja Express dan JNE.<br><br>
 <b>Harga yang Kompetitif</b><br> myacico.co.id memberikan harga yang paling kompetitif kepada para costumer, sehingga costumer dapat merasakan pembelian produk laptop murah, gadget murah, tablet murah, kamera murah, drone murah,headset murah, game murah, Ac murah. Pembayaran dalam belanja online di myacico.co.id bisa Anda lakukan dengan bergam cara yang mudah. Pembayaran yang tersedia di Toko Online myacico.co.id, seperti pembayaran melalui Visa, MasterCard, CIMB Clicks, Mandiri Clickpay, dan Klik BCA.<br><br>
 <b>Garansi 7 Hari Pengembalian Barang</b><br> Toko Online myacico.co.id sangat nyaman dan terpercaya. Online Shop myacico.co.id mendukung Anda agar nyaman dalam belanja, dengan garansi 7 hari pengembalian barang di myacico.co.id anda tidak perlu khawatir dengan kondisi barang yang anda pesan. Penggantian barang yang mengalami cacat produksi di tanggung oleh myacico.co.id dengan gratis pengiriman produk pada saat pengembalian, Anda bisa hubungi kami melalui Customer Care (telepon, email, dan live chat) yang online 24 jam untuk membantu Anda';
+$lang['f_info'] = 'Information';
+$lang['f_ttangKami'] = 'About Us';
+$lang['f_syarat'] = 'Terms and conditions';
+$lang['f_karier'] = 'Career';
+$lang['f_kebij'] = 'Privacy Policy';
+$lang['f_hakCip'] = 'Copyright';
+$lang['f_carabeli'] = 'How To Buy';
+$lang['f_pengemba'] = 'Return';
+$lang['f_guara'] = 'Guarantee And Warranty';
+$lang['f_order'] = 'Order Status';
+$lang['f_contact'] = 'Contact';
+$lang['f_help'] = 'Help';
+$lang['f_folow'] = 'Follow Us';
+$lang['f_berla'] = 'Subscribe to get special deals and news from MyACICO.com';
+$lang['f_pay'] = 'Payment Method';
+$lang['f_courier'] = 'Courier';
+$lang['f_dunlud'] = 'Download Our Applications';
+
+
+
+
+
+
 ?>
