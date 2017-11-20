@@ -4,7 +4,7 @@
 
     </div>
     <div class="col-sm-6">
-      <div class='border-create'>
+      <div class='border-create7'>
       <form name="signup" method="post">
         <div class="form-group">
           <label><?php echo $lang_namaDepan; ?>*</label>
