@@ -1,4 +1,79 @@
-<script>
+
+<!--            G Plus              -->
+<script type="text/javascript">
+    function logout(){
+        gapi.auth.signOut();
+        location.reload();
+    }
+    var ori = null
+    function login(w) {
+       // console.log(w)
+        ori = w
+      var myParams = {
+        'clientid' : '879752343646-cunagke2s8vokdao51es112nlhrnults.apps.googleusercontent.com',
+        'cookiepolicy' : 'single_host_origin',
+        'callback' : 'loginCallback',
+        'approvalprompt':'force',
+        'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
+      };
+      gapi.auth.signIn(myParams);
+    }
+ 
+    function loginCallback(result){
+        if(result['status']['signed_in'])
+        {
+            var request = gapi.client.plus.people.get(
+            {
+                'userId': 'me'
+            });
+            request.execute(function (resp)
+            {
+                var email = '';
+                if(resp['emails'])
+                {
+                    for(i = 0; i < resp['emails'].length; i++)
+                    {
+                        if(resp['emails'][i]['type'] == 'account')
+                        {
+                            email = resp['emails'][i]['value'];
+                        }
+                    }
+                }
+     
+                var str = "Name:" + resp['displayName'] + "<br>";
+                str += "Image:" + resp['image']['url'] + "<br>";
+                str += "<img src='" + resp['image']['url'] + "' /><br>";
+     
+                str += "URL:" + resp['url'] + "<br>";
+                str += "Email:" + email + "<br>";
+                if(ori == 1){
+                    window.location.assign('#/app/login/'+email)
+                }else{
+                    window.location.assign('#/app/password/'+email)
+                }
+                
+            });
+     
+        }
+     
+    }
+
+    function onLoadCallback(){
+        gapi.client.setApiKey('AIzaSyCqXQ5Te1coI72mtysKI0_GbbMpJo6EaUs');
+        gapi.client.load('plus', 'v1',function(){});
+    }
+ 
+    </script>
+ 
+        <script type="text/javascript">
+              (function() {
+               var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+               po.src = 'https://apis.google.com/js/client.js?onload=onLoadCallback';
+               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+             })();
+        </script>
+        <body>
+            <script>
         window.fbAsyncInit = function() {
             // FB JavaScript SDK configuration and setup
             FB.init({
@@ -72,24 +147,9 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<!--            G Plus              -->
-<script src="https://apis.google.com/js/platform.js" async defer>
-
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-
-}
-
-</script>
-<meta name="google-signin-client_id" content="879752343646-cunagke2s8vokdao51es112nlhrnults.apps.googleusercontent.com">
-
+        
 <div id="status">
 </div>
-
 <div class="container">
 
 
@@ -262,3 +322,4 @@ $(document).ready(function() {
 
 });
 </script>
+
