@@ -6,7 +6,7 @@
 
     </div>
     <div class="col-sm-6">
-      <div class='border-create'>
+      <div class='border-create7'>
 
       <form name="signup" method="post" novalidate="novalidate" enctype="multipart/form-data">
         <div class="form-group">
@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
           <label>Email*</label>
-          <input type="email" id="email" name="email" class="form-control mandatory" value="@gmail.com" />
+          <input type="email" id="email" name="email" class="form-control mandatory" />
         </div>
         <div class="form-group">
       <label><?php echo $lang_CompanyInfo; ?>*</label>

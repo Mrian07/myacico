@@ -952,6 +952,13 @@ a:hover.my-info {
     text-align: center;
   	background:#ffffff;
   }
+  .border-create7{
+    border: 1px #dddddd solid;
+    padding:10px;
+    margin-bottom:40px;
+    text-align: left;
+    background:#ffffff;
+  }
   .border-create1{
     border: 1px #dddddd solid;
     padding:10px;

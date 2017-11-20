@@ -164,17 +164,20 @@ var success = function(r){
 	$this->cart->destroy();
 	?>
 
-  document.cookie='x-auth='+r.token+'; path='+base_path;
-  var cb = location.search.split('callback=');
-  //SAM
-   //alert(wishlist);
+	document.cookie='x-auth='+r.token+'; path='+base_path;
+	token = r.token;
+	var cb = location.search.split('callback=');
+	//SAM
+	//alert(wishlist);
     if(wishlist)
-{
-    window.location.replace(base_url+"product/detail/"+wishlist);
-    die();
-}
-  if(cb.length > 1) location.href = cb[1].split(';').shift();
-  else location.href = '<?php echo base_url('account'); ?>';
+	{
+		window.location.replace(base_url+"product/detail/"+wishlist);
+		die();
+	}
+	if(cb.length > 1) location.href = cb[1].split(';').shift();
+	else location.href = '<?php echo base_url('account'); ?>';
+
+	if(localStorage.chat_status == 'redirect') chat.connect();
 };
 var error = function(er){
   $('#spinner_img').hide();
