@@ -203,13 +203,13 @@
 
 
 		 	<div class='my-hdr1'>
-				<div style='margin-top:-10px'>
+				<div style='margin-top:-3px'>
 					<?php echo anchor('/', '<img src="'.base_url('images/general/logo-transparan.gif').'" border="0" height="55">');?>
 				</div>
 			</div>
 
       <div class='my-hdr2'>
-  			<div class='myserach' ng-app="myApps">
+  			<div class='myserach' ng-app="myApps" style='margin-top:8px'>
   				<!-- <div ng-controller = "searchCtrl"> -->
 					<div class="input-group">
   					<div class="input-group-btn search-panel">
