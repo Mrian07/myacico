@@ -72,7 +72,7 @@
                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
              })();
         </script>
-        <body>
+
             <script>
         window.fbAsyncInit = function() {
             // FB JavaScript SDK configuration and setup
@@ -146,7 +146,7 @@
   js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.10&appId=542138116138058';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-</body>
+
         
 <div id="status">
 </div>
@@ -181,6 +181,7 @@
         <hr>
         <div class="row">
       		<div class="col-sm-4">
+                    <a href="javascript:fbLogin();">fb</a>
               <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
           </div>
           <div class="col-sm-4">
