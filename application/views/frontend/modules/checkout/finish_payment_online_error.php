@@ -42,7 +42,7 @@ a
 
 <div class="container">
 	<h3>PEMBAYARAN GAGAL</h3>
-	<p>Pembayaran menggunakan online payment telah digagalkan, Anda bisa mencoba malakukan pembayaran kembali untuk order anda menggunakan online payment melalui halaman <b>Riwayat Status Pesanan</b> pada Account Anda.</p>
+        <p>Pembayaran menggunakan online payment <b>(<?php echo $field->paymentMethod?>)</b> telah digagalkan, Anda bisa mencoba malakukan pembayaran kembali untuk order anda menggunakan online payment melalui halaman <b>Riwayat Status Pesanan</b> pada Account Anda.</p>
 	<p>
 	<?php echo anchor('account/riwayatStatusPesanan', 'Click disini untuk melihat riwayat status pesanan', array('class'=>'btn btn-primary btn-sm'));?>
 	</p>
