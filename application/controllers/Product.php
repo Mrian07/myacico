@@ -147,92 +147,103 @@ public function alllistItem()
 
 }
 
+public function changeView()
+{
+	$view=$_POST['id'];
+	if($view=='list'){
+		$data = array('itemView' => 'list');
+		$this->session->set_userdata($data);
+		echo"list";
+	}else{
+		$data = array('itemView' => 'grid');
+		$this->session->set_userdata($data);
+		echo"grid";
+	}
+}
+
 	public function listItem()
  {
-  $token = null;
-    $adaToken =0;
-  $this->data['pro']=$this->uri->segment(3);
-    if(isset($_COOKIE['x-auth'])){
-        $token = $_COOKIE['x-auth'];
-        $adaToken =1;
-    }
-  $id_cat=$this->uri->segment(3);
-  $ob=$this->uri->segment(5);
+		$token = null;
+		$adaToken =0;
+		$this->data['pro']=$this->uri->segment(3);
+		if(isset($_COOKIE['x-auth'])){
+		    $token = $_COOKIE['x-auth'];
+		    $adaToken =1;
+		}
+		$id_cat=$this->uri->segment(3);
+		$ob=$this->uri->segment(5);
 
-                $page=$this->uri->segment(6);
-          $api_rec = "product/productlist?category=".$id_cat."&show=productcount";
+		$page=$this->uri->segment(6);
+		$api_rec = "product/productlist?category=".$id_cat."&show=productcount";
 
-                //$pg = intval($_GET['page']);
-            if($ob != 'all' && $page == True){
-                    $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
-                    $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page."&show=pagecount";
+    if($ob != 'all' && $page == True){
+            $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
+            $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page."&show=pagecount";
 
 
-                }elseif($page){
-                    $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&page=".$page;
-                    $api_max = "product/productlist?category=".$id_cat."&page=".$page."&show=pagecount";
+        }elseif($page){
+            $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&page=".$page;
+            $api_max = "product/productlist?category=".$id_cat."&page=".$page."&show=pagecount";
 
-                }elseif($ob != 'all'){
+        }elseif($ob != 'all'){
 
-   $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob;
+   					$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob;
                         $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&show=pagecount";
-                }else
-                {
-                    $api = "product/productlist?category=".$id_cat."&itemperpage=8";
-                    $api_max = "product/productlist?category=".$id_cat."&show=pagecount";
+        }else{
+            $api = "product/productlist?category=".$id_cat."&itemperpage=8";
+            $api_max = "product/productlist?category=".$id_cat."&show=pagecount";
 
-                }
-//                die(print_r("sam ".$konten2));
-//                die(print_r("sam ".$api));
-                $api2 = "product/productlist/".$id_cat;
-  $url = api_base_url($api);
-                $url2 = api_base_url($api_max);
-$url3 = api_base_url($api_rec);
-  $options = ["http" => [
-        "method" => "GET",
-               "header" => ["token: " . $token,
-               "Content-Type: application/json"],
-  ]];
+        }
+
+          	$api2 = "product/productlist/".$id_cat;
+						$url = api_base_url($api);
+						$url2 = api_base_url($api_max);
+						$url3 = api_base_url($api_rec);
+						$options = ["http" => [
+						      "method" => "GET",
+			             "header" => ["token: " . $token,
+			             "Content-Type: application/json"],
+						]];
                 // looking maximum page
 
-  $context = stream_context_create($options);
-                $konten2 = file_get_contents($url2, false, $context);
-  $konten3 = file_get_contents($url3, false, $context);
-  $konten = file_get_contents($url, false, $context);
-                 //die(print_r("sam ".json_decode($konten2)->pageCount));
-                $this->data['max_page'] =json_decode($konten2)->pageCount;
-                $this->data['jdata'] =json_decode($konten3)->productCount;
-//              die(print_r($this->data['max_page']));
-  $this->data['hasil'] = json_decode($konten, true);
+						$context = stream_context_create($options);
+						$konten2 = file_get_contents($url2, false, $context);
+						$konten3 = file_get_contents($url3, false, $context);
+						$konten = file_get_contents($url, false, $context);
+             //die(print_r("sam ".json_decode($konten2)->pageCount));
+            $this->data['max_page'] =json_decode($konten2)->pageCount;
+            $this->data['jdata'] =json_decode($konten3)->productCount;
+					//              die(print_r($this->data['max_page']));
+					  $this->data['hasil'] = json_decode($konten, true);
 //                die(print_r(get_headers($url)));
-  if($adaToken == 1){
-   $this->data['cektoken'] = '1';
-                        //$this->data['wish']
+					  if($adaToken == 1){
+					   $this->data['cektoken'] = '1';
+					                        //$this->data['wish']
 
-  }else{
-   $this->data['cektoken'] = '0';
-  }
+					  }else{
+					   $this->data['cektoken'] = '0';
+					  }
 
-	$batas = '8';
-	if(empty($page)){
-		$posisi = 0;
-		$page =1;
-	}else{
-		$posisi = ($page-1)*$batas;
-	}
-	$this->data['page'] = $page;
-	$this->data['posisi'] = $posisi;
-	$jdata =json_decode($konten3)->productCount;
-	$this->data['jpage'] = ceil($jdata/$batas);
+						$batas = '8';
+						if(empty($page)){
+							$posisi = 0;
+							$page =1;
+						}else{
+							$posisi = ($page-1)*$batas;
+						}
+			$this->data['page'] = $page;
+			$this->data['posisi'] = $posisi;
+			$jdata =json_decode($konten3)->productCount;
+			$this->data['jpage'] = ceil($jdata/$batas);
 
-  $this->data['alias'] = $this->uri->segment(4);
-  $this->data['title_web'] = "Myacico.com - List Items";
-  $this->load->view('frontend/header',$this->data);
-  $this->load->view('frontend/nav.php',$this->data);
-  // $this->load->view('frontend/slide_show.php',$this->data);
-  $this->load->view('frontend/modules/product/product.php',$this->data);
-$this->load->view('frontend/sidenav',$this->data);
-  $this->load->view('frontend/footer',$this->data);
+			$this->data['alias'] = $this->uri->segment(4);
+			$this->data['title_web'] = "Myacico.com - List Items";
+			$this->load->view('frontend/header',$this->data);
+			$this->load->view('frontend/nav.php',$this->data);
+			// $this->load->view('frontend/slide_show.php',$this->data);
+			$this->load->view('frontend/modules/product/product.php',$this->data);
+			$this->load->view('frontend/sidenav',$this->data);
+			$this->load->view('frontend/footer',$this->data);
  }
 
 	public function index()
@@ -243,7 +254,7 @@ $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
 		$this->load->view('frontend/modules/product/product.php',$this->data);
-$this->load->view('frontend/sidenav',$this->data);
+		$this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 

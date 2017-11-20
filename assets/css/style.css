@@ -23,6 +23,18 @@
 	/*font-family: sans-serif;*/
 }
 
+.list-item{
+  color:#111111;
+}
+
+.list-item:hover{
+  color:#e30c0c;
+}
+
+.list-item:active{
+  color:#e30c0c;
+}
+
 /*s: Sidebar product*/
 .menu_list {
     width: 100%;
