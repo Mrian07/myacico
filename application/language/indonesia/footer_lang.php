@@ -12,4 +12,26 @@ Bagi Anda yang membutuhkan produk-produk maknikal-elektrikal, Toko Online MyACIC
 <b>Pengiriman 2-7 Hari Kerja</b><br> Sebagai toko online dengan kategori produk dan promo terlengkap, myacico.co.id juga menjamin pengiriman cepat untuk setiap produk yang di pesan. Komitmen  Toko Online myacico.co.id untuk dapat mengirimkan produk pelanggan dengan jangka waktu pengiriman 2-7 Hari Kerja. Pengiriman produk dari myacico.co.id akan di support oleh myACICO courrier, Ninja Express dan JNE.<br><br>
 <b>Harga yang Kompetitif</b><br> myacico.co.id memberikan harga yang paling kompetitif kepada para costumer, sehingga costumer dapat merasakan pembelian produk laptop murah, gadget murah, tablet murah, kamera murah, drone murah,headset murah, game murah, Ac murah. Pembayaran dalam belanja online di myacico.co.id bisa Anda lakukan dengan bergam cara yang mudah. Pembayaran yang tersedia di Toko Online myacico.co.id, seperti pembayaran melalui Visa, MasterCard, CIMB Clicks, Mandiri Clickpay, dan Klik BCA.<br><br>
 <b>Garansi 7 Hari Pengembalian Barang</b><br> Toko Online myacico.co.id sangat nyaman dan terpercaya. Online Shop myacico.co.id mendukung Anda agar nyaman dalam belanja, dengan garansi 7 hari pengembalian barang di myacico.co.id anda tidak perlu khawatir dengan kondisi barang yang anda pesan. Penggantian barang yang mengalami cacat produksi di tanggung oleh myacico.co.id dengan gratis pengiriman produk pada saat pengembalian, Anda bisa hubungi kami melalui Customer Care (telepon, email, dan live chat) yang online 24 jam untuk membantu Anda';
+$lang['f_info'] = 'Informasi';
+$lang['f_ttangKami'] = 'Tentang Kami';
+$lang['f_syarat'] = 'Syarat & Ketentuan';
+$lang['f_karier'] = 'Karir';
+$lang['f_kebij'] = 'Kebajikan Privasi';
+$lang['f_hakCip'] = 'Kebijakan Hak Cipta';
+$lang['f_carabeli'] = 'Cara Berbelanja';
+$lang['f_pengemba'] = 'Pengembalian & Pembatalan';
+$lang['f_guara'] = 'Garansi';
+$lang['f_order'] = 'Status Pesanan';
+$lang['f_contact'] = 'Kontak Kami';
+$lang['f_help'] = 'Bantuan';
+$lang['f_folow'] = 'Ikuti Kami';
+$lang['f_berla'] = 'Berlangganan untuk mendapatkan penawaran spesial dan berita dari MyACICO.co.id';
+$lang['f_pay'] = 'Methode Pembayaran';
+$lang['f_courier'] = 'Jasa Pengiriman';
+$lang['f_dunlud'] = 'Unduh Aplikasi Kami';
+$lang['f_sea'] = 'Lihat Semua';
+$lang['F_SEL'] = 'PILIH DAN KLIK BRAND FAVORIT ANDA';
+$lang['f_house'] = 'PERALATAN RUMAH TANGGA';
+$lang['f_com'] = 'KOMPUTER & LAPTOP';
+$lang['f_gad'] = 'GADGET DAN AKSESORIS HANDPHONE';
 ?>

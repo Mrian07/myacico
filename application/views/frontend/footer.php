@@ -101,24 +101,25 @@
 
 		<div class="row">
 			<div class="col-xs-3">
-				<h3><span>Informasi</span></h3>
-				<?php echo anchor('Pages/AboutUs','Tentang Kami', array('class'=>'my-info')); ?><br>
+				<h3><span><?php echo $lang_f_info; ?></span></h3>
+				<?php echo anchor('Pages/AboutUs', $lang_ttangkami, array('class'=>'my-info')); ?><br>
 
 				<a href="http://blog.myacico.co.id/" class="my-info">Blog MyACICO.co.id</a><br/>
 
-				<?php echo anchor('Pages/SyaratDnKetentuan','Syarat & Ketentuan', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Karir', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('Pages/kebijakanPrivasi','Kebajikan Privasi', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('Pages/hakCipta','Kebijakan Hak Cipta', array('class'=>'my-info')); ?>
+				<?php echo anchor('Pages/SyaratDnKetentuan',$lang_Terms, array('class'=>'my-info')); ?><br>
+				<?php echo anchor('#',$lang_karier, array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/kebijakanPrivasi',$lang_kebj, array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/hakCipta',$lang_hakCip, array('class'=>'my-info')); ?>
 			</div>
 			<div class="col-xs-3">
-				<h3><span>Bantuan</span></h3>
+				<h3><span><?php echo $lang_help; ?></span></h3>
 				<?php echo anchor('Pages/faq','FAQ', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Cara Berbelanja', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('Pages/Pengembalian','Pengembalian Dan Pembatalan', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('Pages/Jaminan','Garansi Dan Jaminan', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Status Pesanan', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('Customer/contact','Hubungi Kami', array('class'=>'my-info')); ?>
+				<?php echo anchor('#',$lang_carabeli, array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/Pengembalian',$lang_pengemba, array('class'=>'my-info')); ?><br>
+
+				<?php echo anchor('Pages/Jaminan',$lang_guara, array('class'=>'my-info')); ?><br>
+				<?php echo anchor('#',$lang_orde, array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Customer/contact',$lang_conta, array('class'=>'my-info')); ?>
 			</div>
 
 
@@ -126,7 +127,7 @@
 <form name="myForm1" method="post">
 
 			<div class="col-xs-3">
-				<h3><span>Ikuti Kami</span></h3>
+				<h3><span><?php echo $lang_folow; ?></span></h3>
 				<div class='sos'>
 
 					<ul>
@@ -140,7 +141,7 @@
 
       <div class="col-xs-3">
 				<h3><span>Email Newsletter</span></h3>
-        Berlangganan untuk mendapatkan penawaran spesial dan berita dari MyACICO.co.id<br>
+      <?php echo $lang_belr; ?><br>
 				<div class="input-group">
 					<input type="hidden" id="isSubscribe" name="isSubscribe" class="my-sub-field" name="x" value="Y">
 					<input type="text" id="email1" name="email1" class="my-sub-field" name="x" placeholder="Email...">
@@ -155,7 +156,7 @@
 		<br><br>
 		<div class="row">
 			<div class="col-xs-5">
-				<h3><span>Methode Pembayaran</span></h3>
+				<h3><span><?php echo $lang_pay; ?></span></h3>
 				<div class='pay'>
 					<ul>
 					  <li style='margin-right:5px;margin-bottom:5px'><img src='<?php echo base_url('images/general/p-visa-small.jpg');?>' border='0'></li>
@@ -170,7 +171,7 @@
 				</div>
 			</div>
 			<div class="col-xs-4">
-				<h3><span>Jasa Pengiriman</span></h3>
+				<h3><span><?php echo $lang_cour ?></span></h3>
 				<div class='ship'>
 					<ul>
 					  <li style='margin-bottom:5px;margin-right:5px;'><img src='<?php echo base_url('images/general/s-myacicocourier.jpg');?>' border='0'></li>
@@ -180,7 +181,7 @@
 				</div>
 			</div>
       <div class="col-xs-3">
-				<h3><span>Unduh Aplikasi Kami</span></h3>
+				<h3><span><?php echo $lang_dunlud; ?></span></h3>
         <div><img src='<?php echo base_url('images/general/app-googleplay.png');?>' border='0'></div>
 				<div style='margin-top:8px'><img src='<?php echo base_url('images/general/app-store.png');?>' border='0'></div>
 			</div>
@@ -240,7 +241,7 @@
 
 		<br><br>
 		<center>
-		<button data-toggle="collapse" data-target="#demo" class='my-btn-brand'>LIHAT SEMUA <span style='font-size:24px;'><i class="fa fa-angle-double-right" aria-hidden="true"></i></span></button>
+		<button data-toggle="collapse" data-target="#demo" class='my-btn-brand'><?php echo $lang_sea; ?> <span style='font-size:24px;'><i class="fa fa-angle-double-right" aria-hidden="true"></i></span></button>
 		<div id="demo" class="collapse" style='margin-top:20px; text-align:justify; border-radius:5px; padding:20px; color:#111111; '>
 			<?php echo $lang_footer_info;?>
 		</div>
