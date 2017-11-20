@@ -221,11 +221,11 @@
 	</ul>
 
 	<div class="tab-content">
-	  <div id="menu1" class="tab-pane fade">
+	  <div id="menu1" class="tab-pane fade in active">
 
 		<p><?php echo $description;  ?></p>
 	  </div>
-          <div id="menu2" class="tab-pane fade in active">
+          <div id="menu2" class="tab-pane fade">
 
 		<table class="table table-striped">
 			<tr>
@@ -373,7 +373,7 @@
 	  </div>
 <!--          <div id="menu3" class="tab-pane fade">
 
-		<p><?php echo $highlight;  ?></p>
+		<p><?php //echo $highlight;  ?></p>
 	  </div>-->
              <div id="menu3" class="tab-pane fade">
 
