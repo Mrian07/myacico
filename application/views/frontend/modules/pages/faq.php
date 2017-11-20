@@ -136,7 +136,7 @@ a:hover, a:focus {
     color: #e95e37;
 }
 </style>
-<div class="my-container">
+<div class="container">
 <div class="row bootstrap snippets">
     <div class="col-md-4 col-sm-6 content-card">
         <div class="card-big-shadow">

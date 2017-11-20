@@ -1,4 +1,4 @@
-<div class="my-container">
+<div class="container">
 	<div class="row">
 	  <div class="col-sm-12">
 		<div class="my-border-title">

@@ -286,7 +286,7 @@ p{
 </style>
 
 <section class="content_wrap">
-  <div class="my-container">
+  <div class="container">
     <div class="jumbotron">
       <h1>Pengiriman Barang</h1>
     <center>  <p>Pengiriman Barang Di myAcico.co.id.</p> </center>
@@ -351,7 +351,7 @@ p{
   <!-- END LIST ELEMENT -->
   </ul>
   <center>
-    <div class="my-container">
+    <div class="container">
      			 <div class="row">
                      <div class="col-lg-12">
 

@@ -1,10 +1,10 @@
-<div class="my-container">
+<div class="container">
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> INFORMASI AKUN
 	</div>
 </div>
 
-<div class="my-container">
+<div class="container">
 
 	<div class="row">
 		<div class="col-sm-3">

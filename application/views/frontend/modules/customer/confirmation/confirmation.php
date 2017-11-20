@@ -1,5 +1,5 @@
 <div class='my-bg-title'>
-	<div class="my-container">
+	<div class="container">
 		<div class="row">
 		  <div class="col-sm-12">
 
@@ -9,6 +9,6 @@
 		</div>
 	</div>
 </div>
-<div class="my-container">
+<div class="container">
 	Lakukan konfirmasi pembayaran dengan memasukan kode order Anda pada form dibawah ini.
 </div>

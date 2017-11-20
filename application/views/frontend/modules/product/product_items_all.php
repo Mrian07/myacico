@@ -175,7 +175,7 @@
      ?>
 
 
-<div class="my-container">
+<div class="container">
   <div class='my-bg-title'>
 
     <i class="fa fa-angle-right" aria-hidden="true"></i> LIST PRODUCT: <?php echo $pro; ?>

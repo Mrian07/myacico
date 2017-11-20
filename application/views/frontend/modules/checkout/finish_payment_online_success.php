@@ -34,12 +34,12 @@ a
 </style>
 
 
-<div class="my-container">
+<div class="container">
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> FINISH
 	</div>
 </div>
 
-<div class="my-container">
+<div class="container">
 	<center><h3>success</h3></center>
 </div>

@@ -1,5 +1,5 @@
 <div class='my-bg-title'>
-	<div class="my-container">
+	<div class="container">
 		<div class="row">
 		  <div class="col-sm-12">
 
@@ -10,7 +10,7 @@
 	</div>
 </div>
 
-<div class="my-container">
+<div class="container">
 	<div class="row" ng-controller="cartCnt">
 		<div class="col-md-7">
 			<div class="panel panel-default">

@@ -1,5 +1,5 @@
 
-<div class="my-container">
+<div class="container">
 
   <div class="row" style='margin-top:20px'>
     <div class="col-sm-3">
