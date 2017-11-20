@@ -111,13 +111,13 @@ p {
 
     <div class="document__content">
       <img src="https://s26.postimg.org/a5xbhjv2h/image.png" style="float:right;" width="400px">
-  <h3 style="color:white; margin:19px;">Tentang Kami</h3>
+  <h3 style="color:black; margin:19px;">Tentang Kami</h3>
 
       <p>myACICO.com adalah perusahaan ecommerce yang berdiri sejak Februari 2017 yang dapat memberikan terobosan baru dan juga merupakan salah satu
         anak perusahaan Alpha Cipta Computindo Indonesia. myACICO.com sebagai salah satu platform untuk B2B, B2C dan B2G yang berkembang dengan cepat
     </p>
     </div>
-  <img src="https://s26.postimg.org/74fpz2wp5/image.png" style="float:right;" width="400px"><h3 style="color:white; margin:19px; float:right;">Sejarah</h3>
+  <img src="https://s26.postimg.org/74fpz2wp5/image.png" style="float:right;" width="400px"><h3 style="color:black; margin:19px; float:right;">Sejarah</h3>
   <br/>
   <br/>
   <br/>
@@ -136,7 +136,7 @@ p {
   <br/>
   <div class="document__content">
     <img src="https://s26.postimg.org/e7x8pjxu1/teo.png" style="float:right;" width="500px">
-<h3 style="color:white; margin:19px;">Visi Dan Misi</h3>
+<h3 style="color:black; margin:19px;">Visi Dan Misi</h3>
 
       <h2 style="color:black; margin:19px;"> Visi</h2>
       <p> Untuk menjadi pusat pelayanan bagi pelanggan dan juga menjadi pempimpin global dalam IT dengan pasar untuk teknologi tinggi </p>
@@ -146,7 +146,7 @@ p {
        </p>
   </div>
   <div class="document__content">
-    <h3 style="color:white; margin:19px;">Keunggulan Kami </h3>
+    <h3 style="color:black; margin:19px;">Keunggulan Kami </h3>
     <center>
     <h3 style="background-color:#FFD181; border-radius: 25px;  color:white; margin-left:90px;" > •&nbspBarang Selalu ada</h3>
 <h3 style="background-color:#FFD181; border-radius: 25px; color:white;" > •&nbspPengiriman 2 Hari Kerja</h3>
