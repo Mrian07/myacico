@@ -23,8 +23,10 @@ class Web extends MY_Controller {
         $this->data['lang'] = $lang;
         if($lang=='en'){
         $this->load->language('header','english');
+        $this->load->language('footer','english');
         }else{
         $this->load->language('header','indonesia');
+        $this->load->language('footer','indonesia');
         }
 
         $this->lang();
@@ -109,6 +111,15 @@ class Web extends MY_Controller {
 		$this->data['lang_BtnSend'] = $this->lang->line('btn_login');
 		//end of bussines
 
+    //s: footer
+    $this->data['lang_f_moto'] = $this->lang->line('f_moto');
+    $this->data['lang_f_guarantee1'] = $this->lang->line('f_guarantee1');
+    $this->data['lang_f_guarantee2'] = $this->lang->line('f_guarantee2');
+    $this->data['lang_f_guarantee3'] = $this->lang->line('f_guarantee3');
+    $this->data['lang_f_guarantee4'] = $this->lang->line('f_guarantee4');
+    $this->data['lang_f_guarantee5'] = $this->lang->line('f_guarantee5');
+    $this->data['lang_footer_info'] = $this->lang->line('footer_info');
+    //e: footer
 		$this->data['title_web'] = "Myacico.com - Login Admin";
 
 	}
