@@ -22,6 +22,14 @@
       version    : 'v2.10'
     });
     FB.AppEvents.logPageView();
+    FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    console.log('Logged in.');
+  }
+  else {
+    FB.login();
+  }
+});
   };
 
   (function(d, s, id){
@@ -31,14 +39,7 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-   FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-    console.log('Logged in.');
-  }
-  else {
-    FB.login();
-  }
-});
+   
 </script>
 <div id="fb-root"></div>
 <div id="fb-root"></div>
