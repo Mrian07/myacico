@@ -38,7 +38,7 @@
         						}else{
         							echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
         						}
-        					}elseif($items['paymentMethod']=='Online Payment-Klikpay BCA'){
+        					}elseif($items['paymentMethod']=='Online Payment-BCA KlikPay'){
                                                     if($items['transactionStatus']=='PAID'){
         							echo anchor('#', 'Paid', array('class'=>'btn btn-warning disabled'));
         						}else{
