@@ -32,6 +32,7 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
    FB.getLoginStatus(function(response) {
+       console.log('Logged in.',response.status);
   if (response.status === 'connected') {
     console.log('Logged in.');
   }
