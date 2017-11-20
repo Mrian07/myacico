@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	  <meta charset="utf-8">
-	  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+		<meta charset="utf-8">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 		<title><?php echo $title_web; ?></title>
 
-<style>
-a{
-	color:red;
-}
-</style>
+		<style>
+		a{
+			color:red;
+		}
+		</style>
 
-<!-- Strat Bootstrap -->
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
-<!-- End Bootstrap -->
+		<!-- Strat Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
+		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
+		<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
+		<!-- End Bootstrap -->
 
-<!-- s: jquery-ui -->
-<link rel="stylesheet" href="<?php echo base_url('assets/css/jquery-ui.min.css');?>">
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
-<!-- e: jquery-ui -->
+		<!-- s: jquery-ui -->
+		<link rel="stylesheet" href="<?php echo base_url('assets/css/jquery-ui.min.css');?>">
+		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-ui.min.js');?>"></script>
+		<!-- e: jquery-ui -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 
-				<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-				<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
-				<link href="<?php echo base_url('assets/nav/css/bootsnav2.css');?>" rel="stylesheet">
-				<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
-				<script src="<?php echo base_url('assets/nav/js/bootsnav.js');?>"></script>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/nav/css/bootsnav2.css');?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
+		<script src="<?php echo base_url('assets/nav/js/bootsnav.js');?>"></script>
 
 
-						<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
-						<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/general/favicon.ico');?>">
-						<!-- Font Awesome -->
-						<link rel="stylesheet" href="<?php echo base_url('assets_adminlte/font-awesome-4.7.0/css/font-awesome.min.css') ?>"/>
+		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
+		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/general/favicon.ico');?>">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="<?php echo base_url('assets_adminlte/font-awesome-4.7.0/css/font-awesome.min.css') ?>"/>
 
-						<!-- CSS -->
+		<!-- CSS -->
 
 		<!-- s: Alert -->
 		<!--<link rel="stylesheet" type="text/css" href="<?php //echo base_url('assets/alert/libs/bundled.css');?>" />-->
@@ -45,6 +45,34 @@ a{
         <!-- e: Alert -->
 
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jwt-decode.min.js');?>"></script>
+		<script type="text/javascript">
+			var base_url = '<?php echo base_url();?>';
+			var base_path = base_url.split(location.host).pop();
+
+			var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
+			// var login_base_url_api = 'acc.myacico.co.id/myacico-service';
+			var adduser = 'http://acc.myacico.co.id/myacico-account/account/';
+
+			//
+			//var api_base_url2 = <?php echo $baseApiUrl; ?>;
+			//var api_base_url = 'http://myacico.net:8080/myacico-service/api';
+			var api_base_url = "<?php echo $baseApiUrl; ?>";
+			var token;
+
+			(function(){
+				console.log('cek token');
+				var cookie = document.cookie.split('x-auth=');
+				if(cookie.length > 1){
+					token = cookie[1].split(';').shift()
+				}
+			})()
+		</script>
+
+        <!-- s: Chat -->
+		<script type="text/javascript" src="<?php echo base_url('assets/js/chat.js');?>"></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/chat.css');?>" />
+        <!-- e: Chat -->
+
 		<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 
 		<!-- <link href="<?php echo base_url('assets/css/mynav.css');?>" rel="stylesheet">
@@ -52,45 +80,45 @@ a{
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css');?>" />
 
 
-				<style type="text/css">
-					#search_keyword_id
-					{
-						width:500px;
-						/*border:solid 1px #CDCDCD;*/
-						padding:10px;
-						font-size:12px;
-					}
-					.productSrc
-					{
-						position:absolute;
-						width:628px;
-						display:none;
-						margin-top:-1px;
-						border-top:0px;
-						overflow:hidden;
-						border-left:1px  #CDCDCD solid;
-						border-right:1px  #CDCDCD solid;
-						background-color: white;
-						z-index: 289;
-					}
-					.show_result
-					{
-						font-family:tahoma;
-						padding:5px;
-						border-bottom:1px #CDCDCD dashed;
-						font-size:12px;
-						z-index: 289;
-					}
-					.show_result:hover
-					{
-						background:#e9e9e8;
-						color:#000000;
-						cursor:pointer;
-					}
-				</style>
+		<style type="text/css">
+			#search_keyword_id
+			{
+				width:500px;
+				/*border:solid 1px #CDCDCD;*/
+				padding:10px;
+				font-size:12px;
+			}
+			.productSrc
+			{
+				position:absolute;
+				width:628px;
+				display:none;
+				margin-top:-1px;
+				border-top:0px;
+				overflow:hidden;
+				border-left:1px  #CDCDCD solid;
+				border-right:1px  #CDCDCD solid;
+				background-color: white;
+				z-index: 289;
+			}
+			.show_result
+			{
+				font-family:tahoma;
+				padding:5px;
+				border-bottom:1px #CDCDCD dashed;
+				font-size:12px;
+				z-index: 289;
+			}
+			.show_result:hover
+			{
+				background:#e9e9e8;
+				color:#000000;
+				cursor:pointer;
+			}
+		</style>
     </head>
 
-<body style='font-weight: normal;' ng-app="myApp">
+	<body style='font-weight: normal;' ng-app="myApp">
 
 
 			<div>
@@ -449,10 +477,10 @@ $('#searchDesk').keypress(function(e) {
   });*/
 
   function totalCart(){
-  	var token = document.cookie.split('x-auth=')[1].split(';').shift();
+  	// var token = document.cookie.split('x-auth=')[1].split(';').shift();
   	var qty = 0;
 
-  	if(token){
+  	if(window.token){
 
   		$.ajax
   		({
@@ -628,64 +656,64 @@ $('#searchDesk').keypress(function(e) {
   <!---modif lalang-->
   <script type="text/javascript">
 
-  //Desktop
-  $(".dropbtn-basket").mouseover(function(){
+	//Desktop
+	$(".dropbtn-basket").mouseover(function(){
 
-  	var cookie = document.cookie.split('x-auth=');
-  	if(cookie.length > 1){
+		// var cookie = document.cookie.split('x-auth=');
+		if(window.token){
 
-  	/*		$('.empty-item').hide();
-  			listCartToken();
+		/*		$('.empty-item').hide();
+				listCartToken();
 
-  */
-  		$.ajax
-  		({
-  			url: "<?php echo site_url('cart/loadCartToken'); ?>",
-  			success:function(html){
-  				$('.dropdown-basket-content').html(html);
-  			}
-  		});
+	*/
+			$.ajax
+			({
+				url: "<?php echo site_url('cart/loadCartToken'); ?>",
+				success:function(html){
+					$('.dropdown-basket-content').html(html);
+				}
+			});
 
-  	}else{
+		}else{
 
-  		$.ajax
-  		({
-  			url: "<?php echo site_url('cart/loadCart'); ?>",
-  			success:function(html){
-  				$('.dropdown-basket-content').html(html);
-  			}
-  		});
+			$.ajax
+			({
+				url: "<?php echo site_url('cart/loadCart'); ?>",
+				success:function(html){
+					$('.dropdown-basket-content').html(html);
+				}
+			});
 
-  	}
-  });
+		}
+	});
 
-  //Mobile
-  $(".dropbtn-basket-mobile").mouseover(function(){
+	//Mobile
+	$(".dropbtn-basket-mobile").mouseover(function(){
 
-  	var cookie = document.cookie.split('x-auth=');
-  	if(cookie.length > 1){
+		// var cookie = document.cookie.split('x-auth=');
+		if(window.token){
 
-  		$.ajax
-  		({
-  			url: "<?php echo site_url('cart/loadCartTokenMobile'); ?>",
-  			success:function(html){
-  				$('.dropdown-basket-mobile-content').html(html);
-  			}
-  		});
+			$.ajax
+			({
+				url: "<?php echo site_url('cart/loadCartTokenMobile'); ?>",
+				success:function(html){
+					$('.dropdown-basket-mobile-content').html(html);
+				}
+			});
 
-  	}else{
+		}else{
 
-  		$.ajax
-  		({
-  			url: "<?php echo site_url('cart/loadCartMobile'); ?>",
-  			success:function(html){
-  				$('.dropdown-basket-mobile-content').html(html);
-  			}
-  		});
+			$.ajax
+			({
+				url: "<?php echo site_url('cart/loadCartMobile'); ?>",
+				success:function(html){
+					$('.dropdown-basket-mobile-content').html(html);
+				}
+			});
 
-  	}
-  });
-  /*
+		}
+	});
+	/*
   function listCartToken(){
   	var token = document.cookie.split('x-auth=')[1].split(';').shift();
   	var list = $('.list-item');
@@ -766,74 +794,63 @@ $('#searchDesk').keypress(function(e) {
   	});
   }
 
-  function dellItemCartToken(id,img,name,idcart){
+	function dellItemCartToken(id,img,name,idcart){
 
-  	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-  	var apiurl = api_base_url + '/order/cart/deleteitem?idcartitem='+idcart;
+		// var token = document.cookie.split('x-auth=')[1].split(';').shift();
+		var apiurl = api_base_url + '/order/cart/deleteitem?idcartitem='+idcart;
 
-  	$.confirm({
-  		title: name,
-  		content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
-  		//content: '<p>Apakah item ini akan dihapus?</p>',
-  		autoClose: 'cancel|10000',
-  		closeIcon: true,
-  		closeIconClass: 'fa fa-close',
-  		buttons: {
-  			confirm: function () {
-  				//untuk cart yang di header
-  				$.ajax
-  				({	type: "POST",
-  					url: apiurl,
-  					headers:{ "token":token},
-  					success:function(data){
-  						totalCart();
-  					}
-  				});
-
-
-  				//untuk cart yang di basket token
-  				$.ajax
-  				({
-  				url: "<?php echo site_url('cart/listCartToken'); ?>",
-  				success:function(html){
-  						$(".listCart").html(html);
-  					}
-  				});
-
-  			},
-  			cancel: function () {
-  				//$.alert('Canceled!');
-  			}
-  		}
-
-  	});
+		$.confirm({
+			title: name,
+			content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
+			//content: '<p>Apakah item ini akan dihapus?</p>',
+			autoClose: 'cancel|10000',
+			closeIcon: true,
+			closeIconClass: 'fa fa-close',
+			buttons: {
+				confirm: function () {
+					//untuk cart yang di header
+					$.ajax
+					({	type: "POST",
+						url: apiurl,
+						headers:{ "token":token},
+						success:function(data){
+							totalCart();
+						}
+					});
 
 
-  	/*var success = function(r){
-  	$('#spinner_img').hide();
-  	$('#submit_btn').val('Kirim').removeClass('disabled');
-  		 $.alert({
-  		 title: 'Alert!',
-  		 content: 'Item berhasil dihapus',
-  		});
-  		console.log('OK:', r.status);
-  		window.location.replace(base_url+"/account/bukuAlamat");
+					//untuk cart yang di basket token
+					$.ajax
+					({
+					url: "<?php echo site_url('cart/listCartToken'); ?>",
+					success:function(html){
+							$(".listCart").html(html);
+						}
+					});
 
-  	};*/
-  }
+				},
+				cancel: function () {
+					//$.alert('Canceled!');
+				}
+			}
+
+		});
 
 
-  var base_url = '<?php echo base_url();?>';
-  var base_path = base_url.split(location.host).pop();
+		/*var success = function(r){
+		$('#spinner_img').hide();
+		$('#submit_btn').val('Kirim').removeClass('disabled');
+			 $.alert({
+			 title: 'Alert!',
+			 content: 'Item berhasil dihapus',
+			});
+			console.log('OK:', r.status);
+			window.location.replace(base_url+"/account/bukuAlamat");
 
-  var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
-  // var login_base_url_api = 'acc.myacico.co.id/myacico-service';
-  var adduser = 'http://acc.myacico.co.id/myacico-account/account/';
+		};*/
+	}
 
-  //
-  //var api_base_url2 = <?php echo $baseApiUrl; ?>;
-  //var api_base_url = 'http://myacico.net:8080/myacico-service/api';
-  var api_base_url = "<?php echo $baseApiUrl; ?>";
+
   </script>
 
   <!-- e header -->
