@@ -48,7 +48,7 @@ chat = {
 		var txt = $('#msgInp').val();
 		var msg = {from: this.user.iss, txt: txt, time: new Date()};
 		console.log('sendMsg:', msg);
-		soc.emit('cln_msg', msg);
+		this.soc.emit('cln_msg', msg);
 		$('.message-scroll').append(chat.addMsg(msg));
 		$('#msgInp').val('');
 	},
