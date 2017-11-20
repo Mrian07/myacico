@@ -28,17 +28,11 @@
 	<div class='my-bg-title'>
 			<i class="fa fa-angle-right" aria-hidden="true"></i> DETAIL PRODUCT
 	</div>
-</div>
 
 
 
 
-
-<div class="my-container" style='background:#ffffff'>
-
-
-
-<div class='my-detail-product' ng-controller="detailCnt">
+<div ng-controller="detailCnt">
 
 	<!-- aaa -->
 
@@ -89,50 +83,51 @@
 
 
 	  </div>
-	  <div class="col-sm-7 detail-product">
-            <div id="rateYo" style="z-index: 0; display:inline-block;"></div> 
+	  <div class="col-sm-7">
+            <div id="rateYo" style="z-index: 0; display:inline-block;"></div>
               <div style="display:inline-block;"><b>(<?php echo$totalRate;?> review)</b></div>
               <p style="font-size:18px"><b><?php echo $name; ?></b></p>
+			<div class="row">
 			<div class="col-sm-6">
-                        
+
 
 				<span style="color:red"><?php echo $sku; ?></span><br>
 					<span class='price'><b>Rp.<?php echo money($pricelist);  ?></b></span><br>
 					<span style="color: green; font-weight:bold">Stock: Tersedia</span>
 					<br>
-                                       
-				
+
+
 					Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
 
                                     <table>
-                                       <tr> 
+                                       <tr>
                                            <td style="padding:0px;">
                                                 <font size="0"><b>Produk Highlight:</b> <?php echo $highlight;  ?></font>
                                             </td>
                                         </tr>
 
                                     </table>
-					
-					
+
+
 
 
 			</div>
-                        
+
 			<div class="col-sm-6">
-				<center>
-				<div class='detail-add-wishlist' style="display: block; background: #e7e7e7; border-radius: 5px;">
-                                    Quantity<input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br>
+
+				<div class='detail-add-wishlist' style="display: block; background: #e7e7e7; border-radius: 5px; padding:10px;"><center>
+                                    <b>Quantity</b><input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'><br>
 						<!-- <div class="btnaddcart">
 							<button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
 						</div> -->
 
 
 						<!-- <a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')" class='btn btn-link'> <i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Add To Wishlist</a> -->
-                                               
-                                                <div class="btn-group">
 
-                                                    <button type="button" class="btn btn-danger btn-lg" style="border-radius: 25px; padding: 7px 34px;"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-								<br>
+
+
+                                                    <button type="button" class="btn btn-danger btn-lg" style="border-radius: 25px; padding: 7px 34px; margin-bottom:7px;"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+
                                                                     <?php
 											if($isWishList =='Y')
 											{
@@ -140,18 +135,17 @@
                                                                 <button type="button" class="btn btn-success btn-lg" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
 								<?php }else{
 							 ?>
-									 <button type="button" class="btn btn-success btn-lg" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" aria-hidden="true"></i>Add Wishlist</button>
+									 <button type="button" class="btn btn-success btn-lg" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Add Wishlist</button>
 
 								<?php }
 								?>
-							</div>
-                                                
-						</div>				
-							
 
-                                    </center>
+							</center>
+						</div>
+
+
 				</div>
-
+			</div>
 
 
 
@@ -217,7 +211,7 @@
 	  <li class="active"><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
           <li><a data-toggle="tab" href="#menu2">Spesifkasi</a></li>
 		<li><a data-toggle="tab" href="#menu3">Ulasan</a></li>
-               
+
 	</ul>
 
 	<div class="tab-content">

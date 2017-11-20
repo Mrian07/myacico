@@ -58,12 +58,17 @@ cursor:pointer;
 
 
 									<?php
-  //                echo"<pre>";
-//print_r($hasilNav);
+                // echo"<pre>";print_r($hasilNav);
 
-                   foreach($hasilNav as $dataNav){ ?>
+                   foreach($hasilNav as $dataNav){
+                     if($lang=='en'){
+                       $nav_name = $dataNav['name_en'];
+                     }else{
+                       $nav_name = $dataNav['name'];
+                     }
+                     ?>
 									<li class="dropdown megamenu-fw nav-show-desktop nav-garis">
-										<?php echo anchor('#', '<img src="'.$dataNav['iconurl'].'" border="0" height="20"> '.$dataNav['name'], array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
+										<?php echo anchor('#', '<img src="'.$dataNav['iconurl'].'" border="0" height="20"> '.$nav_name, array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
 										<ul class="dropdown-menu megamenu-content" role="menu">
 											<li>
 												<div>
@@ -71,13 +76,20 @@ cursor:pointer;
                               <div class="col-menu col-md-2" style='height:250px'><img src="<?php echo$dataNav['imageurl']; ?>" style="float:right;width:200px"/></div>
 															<?php
                               $imgLoop = 1;
-                               foreach($dataNav['c2'] as $dataNavChild){ ?>
+                               foreach($dataNav['c2'] as $dataNavChild){
+                                 if($lang=='en'){
+                                   $navChildName = $dataNavChild['name_en'];
+                                 }else{
+                                   $navChildName = $dataNavChild['name'];
+                                 }
+
+                                 ?>
 																<div class="col-menu col-md-2">
                                   <?php if($imgLoop<=5){?>
                                   <img src='<?php echo$dataNavChild['imageurl']; ?>' height='100px' border='0'><br>
-                                  <b><?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $dataNavChild['name']);?></b><hr>
+                                  <b><?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $navChildName);?></b><hr>
                                 <?php }else{ ?>
-																	<?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $dataNavChild['name']);?>
+																	<?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $navChildName);?>
                                 <?php } ?>
 																</div>
 															<?php $imgLoop++; } ?>
