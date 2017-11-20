@@ -1,9 +1,7 @@
 <style>
 
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400,300);
-body{
-    font-family: 'Quicksand', sans-serif;
-}
+
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -225,7 +223,7 @@ footer a,footer a:hover{
       </div>
     </div>
 
-          
+
 
   </div>
   </div>
