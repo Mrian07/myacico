@@ -7,13 +7,12 @@ chat = {
 			return location.href = base_path + 'customer/signIn';
 		}
 		this.user = jwt_decode(token);
-		var soc = this.soc;
-		if(soc) return console.log('already connected!');
+		if(this.soc) return console.log('already connected!');
 		this.box.show(400);
 		this.showAnim();
-		soc = io.connect(this.uri+'/?token='+token);
+		this.soc = io.connect(this.uri+'/?token='+token);
 
-		soc.on('connect', function() {
+		this.soc.on('connect', function() {
 			chat.hideAnim();
 			$('.message-scroll').empty();
 			console.log('connected');
@@ -24,22 +23,22 @@ chat = {
 				chat.box.hide(400);
 			}
 		});
-		soc.on('disconnect', function() {
+		this.soc.on('disconnect', function() {
 			$('.message-scroll').html('you\'re offline');
 			$('#chat_btn').show();
 		});
-		soc.on('history', function(his){
+		this.soc.on('history', function(his){
 			console.log('his:', his);
 			his.forEach(function(m){
 				$('.message-scroll').append(chat.addMsg(m));
 			})
 		});
-		soc.on('msg', function(msg){
+		this.soc.on('msg', function(msg){
 			this.addMsg(msg).insertBefore(".footer-container");
 			//console.log(msg.from, 'say:', msg.txt);
 			this.box.removeClass('typing')
 		});
-		soc.on('typing', function(){
+		this.soc.on('typing', function(){
 			this.box.addClass('typing');
 			setTimeout(function() {chat.box.removeClass('typing')}, 4000);
 		});
@@ -60,7 +59,7 @@ chat = {
 		this.ontyping = true;
 		var that = this;
 		setTimeout(function() {delete that.ontyping}, 5000);
-		// soc.emit('typing');
+		this.soc.emit('typing');
 	},
 	balon: $(document.createElement('div')).attr({'class':'message-info'}).append(
 		'<span class="fa fa-comments"> pesan</span>',
