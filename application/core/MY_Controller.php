@@ -118,6 +118,26 @@ class Web extends MY_Controller {
     $this->data['lang_f_guarantee3'] = $this->lang->line('f_guarantee3');
     $this->data['lang_f_guarantee4'] = $this->lang->line('f_guarantee4');
     $this->data['lang_f_guarantee5'] = $this->lang->line('f_guarantee5');
+    $this->data['lang_f_info'] = $this->lang->line('f_info');
+      $this->data['lang_ttangkami'] = $this->lang->line('f_ttangKami');
+      $this->data['lang_Terms'] = $this->lang->line('f_syarat');
+      $this->data['lang_karier'] = $this->lang->line('f_karier');
+        $this->data['lang_kebj'] = $this->lang->line('f_kebij');
+                $this->data['lang_hakCip'] = $this->lang->line('f_hakCip');
+                $this->data['lang_carabeli'] = $this->lang->line('f_carabeli');
+                            $this->data['lang_pengemba'] = $this->lang->line('f_pengemba');
+                              $this->data['lang_guara'] = $this->lang->line('f_guara');
+                                $this->data['lang_orde'] = $this->lang->line('f_order');
+                                  $this->data['lang_help'] = $this->lang->line('f_help');
+                                    $this->data['lang_folow'] = $this->lang->line('f_folow');
+                                    $this->data['lang_belr'] = $this->lang->line('f_berla');
+                                      $this->data['lang_pay'] = $this->lang->line('f_pay');
+                                      $this->data['lang_cour'] = $this->lang->line('f_courier');
+                                      $this->data['lang_dunlud'] = $this->lang->line('f_dunlud');
+
+
+  $this->data['lang_conta'] = $this->lang->line('f_contact');
+
     $this->data['lang_footer_info'] = $this->lang->line('footer_info');
     //e: footer
 		$this->data['title_web'] = "Myacico.com - Login Admin";
