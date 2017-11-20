@@ -1010,7 +1010,7 @@ ul.list-group:after {
   <?php $bloop = 0; foreach($dathome['level_4'] as $datBrand){
     if($bloop <20){
     ?>
-    <li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="Smiley face" height="80%" width="55"></li>
+    <li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="Smiley face" height="80%" width="75"></li>
   <?php } $bloop++; } ?>
 
 						</ul>
