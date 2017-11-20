@@ -38,14 +38,14 @@
 
 
 
-<div class="my-container">
+<div class="container">
   <div class='my-bg-title'>
 			<i class="fa fa-angle-right" aria-hidden="true"></i> CHECKOUT / BILLING
 
 	</div>
 </div>
 
-<div class="my-container">
+<div class="container">
 	<div class="row" ng-controller="cartCnt">
 		<div class="col-md-7">
 			<div class="panel panel-default">

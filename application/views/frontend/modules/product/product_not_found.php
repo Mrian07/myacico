@@ -166,7 +166,7 @@ h1.po1{
     if ($pro == 1000003)  {
     echo "<div class='jumbotron jumbotron-billboard'>
       <div class='img'></div>
-        <div class='my-container'>
+        <div class='container'>
             <div class='row'>
                 <div class='col-lg-12'>
                     <h1 class='po1'>Laptop Gaming</h1>
@@ -183,7 +183,7 @@ h1.po1{
 
     echo "<div class='jumbotron jumbotron-billboard'>
       <div class='img'></div>
-        <div class='my-container'>
+        <div class='container'>
             <div class='row'>
                 <div class='col-lg-12'>
                     <h1 class='po1'>Laptop 2 in  1</h1>
@@ -199,7 +199,7 @@ h1.po1{
   } else if ($pro == 1000015) {
     echo "<div class='jumbotron jumbotron-billboard'>
       <div class='img'></div>
-        <div class='my-container'>
+        <div class='container'>
             <div class='row'>
                 <div class='col-lg-12'>
                     <h1 class='po1'>Laptop Apple</h1>
@@ -220,7 +220,7 @@ h1.po1{
   } else if ($pro == 1000009) {
     echo "<div class='jumbotron jumbotron-billboard'>
       <div class='img'></div>
-        <div class='my-container'>
+        <div class='container'>
             <div class='row'>
                 <div class='col-lg-12'>
                     <h1 class='po1'>Laptop Bisnis</h1>
@@ -236,7 +236,7 @@ h1.po1{
   }else if($pro == 1000231) {
     echo "<div class='jumbotron jumbotron-billboard'>
       <div class='img'></div>
-        <div class='my-container'>
+        <div class='container'>
             <div class='row'>
                 <div class='col-lg-12'>
                     <h1 class='po1'>Toner Printer</h1>
@@ -252,7 +252,7 @@ h1.po1{
   } else if($pro == 1000235) {
     echo "<div class='jumbotron jumbotron-billboard'>
       <div class='img'></div>
-        <div class='my-container'>
+        <div class='container'>
             <div class='row'>
                 <div class='col-lg-12'>
                     <h1 class='po1'>Printer Inkjet</h1>
@@ -268,7 +268,7 @@ h1.po1{
   } else if($pro == 1000236) {
     echo "<div class='jumbotron jumbotron-billboard'>
       <div class='img'></div>
-        <div class='my-container'>
+        <div class='container'>
             <div class='row'>
                 <div class='col-lg-12'>
                     <h1 class='po1'>Printer All In One</h1>
@@ -284,7 +284,7 @@ h1.po1{
  } else if($pro == 1000237){
    echo "<div class='jumbotron jumbotron-billboard'>
      <div class='img'></div>
-       <div class='my-container'>
+       <div class='container'>
            <div class='row'>
                <div class='col-lg-12'>
                    <h1 class='po1'>Printer Laser</h1>
@@ -300,7 +300,7 @@ h1.po1{
   } else if ($pro == 1000473) {
     echo "<div class='jumbotron jumbotron-billboard'>
       <div class='img'></div>
-        <div class='my-container'>
+        <div class='container'>
             <div class='row'>
                 <div class='col-lg-12'>
                     <h1 class='po1'>Laptop Consumer</h1>
@@ -317,7 +317,7 @@ h1.po1{
 
     echo "<div class='jumbotron jumbotron-billboard2'>
       <div class='img'></div>
-        <div class='my-container'>
+        <div class='container'>
             <div class='row'>
                 <div class='col-lg-12'>
         <br/>
@@ -341,7 +341,7 @@ h1.po1{
 	
 </div>
 
-<div class="my-container">
+<div class="container">
     <div class="well well-sm">
         <h3><strong>Tidak Ditemukan</strong></h3>
         

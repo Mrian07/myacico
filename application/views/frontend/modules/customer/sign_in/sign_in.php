@@ -51,7 +51,7 @@ function onSignIn(googleUser) {
 <div id="status">
 </div>
 
-<div class="my-container">
+<div class="container">
 
 
 	<div class="row" style='margin-top:20px; text-align:left'>

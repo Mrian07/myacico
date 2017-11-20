@@ -97,7 +97,7 @@ p {
 
 </style>
 
-<div class="my-container">
+<div class="container">
 
 
 

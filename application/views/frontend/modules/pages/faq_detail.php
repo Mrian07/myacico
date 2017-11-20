@@ -10,7 +10,7 @@
 <body>
 
 <div class='my-bg-title'>
-	<div class="my-container">
+	<div class="container">
 		<div class="row">
 		  <div class="col-sm-12">
 
@@ -21,7 +21,7 @@
 	</div>
 </div>
 
-<div class="my-container">
+<div class="container">
 	<div style='background:#ffffff; padding:10px;'>
    <div class="row">
 		<div class="col-sm-3">

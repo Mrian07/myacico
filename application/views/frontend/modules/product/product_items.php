@@ -356,7 +356,7 @@ if($saw==Null)
 
 
 
-<div class="my-container">
+<div class="container">
 
     <div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
        <div class="col-sm-8">

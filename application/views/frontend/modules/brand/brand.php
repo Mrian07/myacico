@@ -11,7 +11,7 @@ ul.list-group:after {
 
 </style>
 
-<div class="my-container">
+<div class="container">
 
 <ul class="list-group" style="padding-left:0px;">
 
