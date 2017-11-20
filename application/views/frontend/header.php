@@ -128,8 +128,8 @@
 				<div class="col-xs-7" style='margin-top:20px;'>
 					<div class='link-head'>
 						<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
-						<?php echo anchor('#','Produk Terbaru', array('class'=>'btn-nav-head')); ?>
-						<?php echo anchor('#','Cara Belanja', array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('#',$lang_produck, array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('#',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
 					</div>
 					</div>
@@ -170,13 +170,13 @@
 									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
 								 </div>
 								 <div class="col-xs-8" style='font-size:10px; text-align: left; color:#4d4d4d; padding-left:0px;'>
-									 <div>Selamat Datang</div>
+									 <div><?php echo $lang_aa; ?></div>
 									 <div style='margin-top:-8px; '>
 										 <?php if(isset($user)){ ?>
 											 <b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
 											 <b><font color='red'><?php echo anchor('#', 'Logout', array('class'=>'logout btn-nav-black'));?></font></b>
 										 <?php }else{ ?>
-											 <b><font color='red'><?php echo anchor('customer/signIn','Login', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create','Daftar', array('class'=>'btn-nav-black')); ?></font></b>
+											 <b><font color='red'><?php echo anchor('customer/signIn','Login', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create',$lang_sign, array('class'=>'btn-nav-black')); ?></font></b>
 										 <?php } ?>
 									 </div>
 								 </div>
@@ -245,8 +245,8 @@
 	<div class='my-hdr3'>
 			<div class="row" style='margin:0px; padding:0px'>
 				<div class="col-xs-9" style='padding:5px; text-align:right'>
-						<div style='font-size:11px; margin-bottom:-5px;'>Dapatkan promo menarik di</div>
-						<div style='font-family: arial; font-size:14px; font-weight: bold; color:#ff0000; '>Festival Belanja Online </div>
+						<div style='font-size:11px; margin-bottom:-5px;'><?php echo $lang_promo1; ?></div>
+						<div style='font-family: arial; font-size:14px; font-weight: bold; color:#ff0000; '><?php echo $lang_promo2; ?> </div>
 				</div>
 				<div class="col-xs-3" align="left" style='margin:0px; padding:0px'>
 					<div style='margin-top:-7px;'>
