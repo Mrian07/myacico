@@ -306,9 +306,9 @@ class Checkout extends Web_private {
 //echo $field->transactionStatus; die();
 
 		if($field->transactionStatus=='PAID'){
-			$this->load->view('frontend/modules/checkout/finish_credit_cart_success.php',$this->data);
+			$this->load->view('frontend/modules/checkout/finish_payment_online_success.php',$this->data);
 		}else{
-			$this->load->view('frontend/modules/checkout/finish_credit_cart_error.php',$this->data);
+			$this->load->view('frontend/modules/checkout/finish_payment_online_error.php',$this->data);
 		}
 		$this->load->view('frontend/footer',$this->data);
 	}
