@@ -35,11 +35,11 @@
 					</div>
                                         <div class="form-group">
 					<label><?php echo $lang_Country; ?>*</label>
-					  <select name="country" id="country_sel" class="form-control mandatory" disabled >
+					  <select name="country" id="country_sel" class="form-control mandatory">
 						<option value="209" selected="selected">Indonesia</option>
 					  </select>
 					</div>
-                                      <div class="form-group" id="region_box" onclick="get_region()">
+                                      <div class="form-group" id="region_box">
 					<label><?php echo $lang_Provience; ?>*</label>
                                         <select name="province" id="region_sel" class="form-control mandatory">
                                             <option value="">--Pilih--</option>
@@ -59,9 +59,9 @@
 					</div>
 
 					<div class="form-group">
-					<label><?php echo $lang_PostCode; ?>*</label>
-						<input type="text" id="postal" name="postal" class="form-control mandatory" />
-					</div>
+				 <label><?php echo $lang_PostCode; ?>*</label>
+					 <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
+				 </div>
 					<div class="form-group">
 					<label>Handphone*</label>
 						<input type="text" id = "phone"name="phone" class="form-control mandatory" />
@@ -102,7 +102,7 @@ function get_village(){
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
     });
-    $("#village_id").prop('disabled', false);
+       $("#village_id").prop('disabled', false).change(get_postal);
   }, "json" );
 }
 
@@ -130,26 +130,40 @@ function get_city(){
 }
 
 function get_region(){
-  $("#region_box").slideDown();
-    var negara = $('#country_sel').val();
+      $("#region_box").slideDown();
+        var negara = $('#country_sel').val();
 
-  $("#region_sel").prop('disabled', true).unbind("change", get_city);
-  $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
-    r.forEach(function(o){
-      $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
-    });
-    $("#region_sel").prop('disabled', false).change(get_city);
-  }, "json" );
-}
+      $("#region_sel").prop('disabled', true).unbind("change", get_city);
+    
+      $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
+        r.forEach(function(o){
+          $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
+        });
+        $("#region_sel").prop('disabled', false).change(get_city);
+      }, "json" );
+    }
 $.get(api_base_url+"/ccountry/getlistccountry", function(r){
-    console.log(r);
-    //$("#country_sel").prop('disabled', true).html('<option value="209" selected="selected">Indonesia</option>');
-//    $("#country_sel").prop('disabled', true).html('<option value="">Indonesia</option>');
-    r.forEach(function(o){
-      $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
-    });
-    $("#country_sel").prop('disabled', false).change(get_region);
-  }, "json" );
+	    console.log(r);
+	//    $("#country_sel").prop('disabled', true).html('<option value="209" selected="selected">Indonesia</option>');
+	//    $("#country_sel").prop('disabled', true).html('<option value="">Indonesia</option>');
+	//    $("#country_sel").prop('disabled', true).on("load", get_region);
+	    r.forEach(function(o){
+	      $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
+	    });
+	    $("#country_sel").prop('disabled', true).change(get_region(this));
+	  }, "json" );
+
+       function get_postal(){
+      $("#postal_box").slideDown();
+      $("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+        r.forEach(function(o){
+          $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+                console.log('23',o.postal);
+        });
+        $("#postal").prop('disabled', false);
+      }, "json" );
+    }
 
 var data = {};
 
