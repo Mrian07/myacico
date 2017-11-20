@@ -46,17 +46,17 @@ chat = {
 	},
 	sndMsg: function(){
 		var txt = $('#msgInp').val();
-		var msg = {from: this.user.email, txt: txt, time: new Date()};
+		var msg = {from: this.user.iss, txt: txt, time: new Date()};
 		console.log('sendMsg:', msg);
-		// soc.emit('cln_msg', msg);
+		soc.emit('cln_msg', msg);
 		$('.message-scroll').append(chat.addMsg(msg));
 		$('#msgInp').val('');
 	},
 	keyup: function(e){
 		if(e.keyCode==13) return this.sndMsg();
-		console.log('key:', e.keyCode);
+		// console.log('key:', e.keyCode);
 		if(this.ontyping) return false;
-		console.log('send ontyping event');
+		// console.log('send ontyping event');
 		this.ontyping = true;
 		var that = this;
 		setTimeout(function() {delete that.ontyping}, 5000);
