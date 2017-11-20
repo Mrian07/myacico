@@ -9,6 +9,20 @@
 	$lang['btn_daftar_bisnis'] = 'CREATE BUSINESS ACCOUNT';
 $lang['btn_daftar_pemerintah'] = 'CREATE GOVERNMENT ACCOUNT';
 
+
+//header
+	$lang['lang_promo'] = '
+Get interesting deals on';
+$lang['lang_wel'] = '
+Wellcome';
+$lang['lang_prod'] = 'New Product';
+$lang['lang_signUp'] = 'Sign Up';
+
+$lang['field_fbo'] = "<div style='font-family: arial; font-size:12px; font-weight: bold; color:#ff0000; '>Online Shopping Festival</div>";
+
+
+//akhir dari header
+
 //field di contact
 
 $lang['field_atas'] = 'if you have question Please Contact Us below';

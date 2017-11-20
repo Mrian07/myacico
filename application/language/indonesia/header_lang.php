@@ -10,7 +10,17 @@ $lang['btn_daftar'] = 'DAFTAR AKUN PERSONAL';
 $lang['btn_daftar_bisnis'] = 'DAFTAR AKUN BISNIS';
 $lang['btn_daftar_pemerintah'] = 'DAFTAR AKUN PEMERINTAH';
 //akhir dari button daftar
+//header
+	$lang['lang_promo'] = '
+Dapatkan promo menarik di';
+$lang['lang_wel'] = '
+Selamat Datang';
+$lang['lang_signUp'] = 'Daftar';
 
+$lang['lang_prod'] = 'Produk Baru';
+$lang['field_fbo'] = "<div style='font-family: arial; font-size:14px; font-weight: bold; color:#ff0000; '>Festival Belanja Online</div>";
+
+//akhir dari header
 //field di contact
 
 $lang['field_atas'] = 'Silakan hubungi kami melalui kolom dibawah ini';

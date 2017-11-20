@@ -94,6 +94,15 @@ class Web extends MY_Controller {
 		$this->data['field_sudahDaftar'] = $this->lang->line('field_daftar');
 		//end of personal
 
+    //headers
+      		$this->data['lang_promo1'] = $this->lang->line('lang_promo');
+                		$this->data['lang_promo2'] = $this->lang->line('field_fbo');
+                    	$this->data['lang_aa'] = $this->lang->line('lang_wel');
+                      $this->data['lang_produck'] = $this->lang->line('lang_prod');
+                        $this->data['lang_sign'] = $this->lang->line('lang_signUp');
+
+    //end of headers
+
 		//bussines
 		$this->data['lang_welcome'] = $this->lang->line('field_DaftarBisns');
 		$this->data['lang_namaDepan'] = $this->lang->line('field_namadepan');
