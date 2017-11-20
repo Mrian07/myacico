@@ -5,7 +5,7 @@
 		<img src='<?php echo base_url('images/general/btn-top-white.png');?>' border='0' /></a>
 </div>
 <div class="footer">
-	<div class="my-container" style='margin-bottom:20px;'>
+	<div class="container" style='margin-bottom:20px;'>
 		<center><font size='3'><b>myacico.co.id menjamin kualitas toko kami melalui 5 poin berikut ini:</font></b></center>
 
 		<!-- <div class='garansi'>
@@ -347,7 +347,7 @@ if(email1==''){
 				 	if(r.message == "email anda belum terdaftar, silahkan registrasi terlebih dahulu"){
        return false;
 					}else
-			
+
 					      	 location.reload();
 
     };
