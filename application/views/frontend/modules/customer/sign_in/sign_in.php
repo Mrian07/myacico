@@ -1,3 +1,4 @@
+
 <?php //            G Plus              ?>
 <script type="text/javascript">
     function logout(){
@@ -46,7 +47,8 @@
                 str += "URL:" + resp['url'] + "<br>";
                 str += "Email:" + email + "<br>";
                 var umail=email;
-                //console.log("sss",umail);
+                $("#email").val(umail);
+                console.log("sss",umail);
                 if(ori == 1){
                     window.location.assign('#/app/login/'+email)
                 }else{
@@ -149,63 +151,14 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
         
-<div id="status">
-</div>
-<style>
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+<!--<div id="status">
+</div>-->
 
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 5px solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-</style>
 <div class="container">
   
 
 	<div class="row" style='margin-top:20px; text-align:left'>
-              <button id="myBtn">Open Modal</button>
-
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-
-</div>
+        
 		<div class="col-sm-6">
 		<h5>LOGIN</h5>
 		<div style='border: 1px #dddddd solid;padding:10px;margin-bottom:40px;height:350px'>
@@ -233,8 +186,9 @@
         <hr>
         <div class="row">
       		<div class="col-sm-4">
-<!--                    <a href="javascript:fbLogin();">fb</a>-->
-<a href="javascript:login(1);">gP</a>
+
+                    <a href="javascript:fbLogin();">fb</a>
+<a href="javascript:login(1);"><img src="<?php echo base_url('images/general/google.png');?>"></a>
               <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
           </div>
           <div class="col-sm-4">
@@ -242,6 +196,7 @@
           </div>
         </div>
 			</form>
+         
 		</div>
 
 		</div>
@@ -274,33 +229,7 @@
 		</div>
 	</div>
 </div>
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
 <script type="text/javascript">
 
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
