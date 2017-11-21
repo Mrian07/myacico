@@ -360,7 +360,7 @@ if($saw==Null)
        <div class="col-sm-8">
          <div class="row">
            <div class="col-sm-12">
-             <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="List View" id='viewList'><i class="fa fa-list" aria-hidden="true"></i></a></span> <span style='font-size:15px; color:#e30c0c'><i class="fa fa-th-large" aria-hidden="true"></i></span>
+             <span style='font-size:15px; color:#e30c0c'><i class="fa fa-list" aria-hidden="true"></i></span> <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="Grid View" id='viewGrid'><i class="fa fa-th-large" aria-hidden="true"></i></a></span>
            </div>
          </div>
 
@@ -409,48 +409,56 @@ if($saw==Null)
         }
       ?>
 
-        <div class="col-xs-3">
-          <div class='tmp-product'>
-            <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>">
-              <img class="group list-group-image" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" style="height:120px; width: auto;" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
-            </a>
-          <div class='nm-product-detail'>
-          <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a><br>
+        <div class="col-xs-12" style='margin-bottom:10px;'>
+          <div class='row'>
+              <div class="col-xs-2">
+                <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>">
+                  <img class="group list-group-image" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" style="height:200px; width: auto;" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
+                </a>
+              </div>
+              <div class="col-xs-7">
+                <div class='nm-product-detail' style='text-align:left;margin-left:20px'>
+                <b><a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a></b>
+                </div>
+              </div>
+              <div class="col-xs-3"><center>
+                <p class="lead">
+                Rp.<?php echo money($data['pricelist']); ?></p>
+                <?php
+                if($data['stock'] < 1){
+                  echo "<div class='yu'>Stock : Tidak Tersedia</div>";
+                }else{
+                  echo "<div class='yu1'>Stock :  Tersedia</div>";
+                }
+                ?>
+                <br>
+                <center><input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'></center><br>
+
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+
+                <?php
+                if($data['isWishList'] =='Y')
+                {
+                ?>
+
+                <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
+                <?php }else{
+                ?>
+
+                <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
+
+                <?php }
+                ?>
+
+              </div></center>
+            </div>
           </div>
 
-          <?php
-          if($data['stock'] < 1)
-          echo "<div class='yu'>Stock : Tidak Tersedia</div>";
-          else{
-          echo "<div class='yu1'>Stock :  Tersedia</div>";
-          }
-          ?>
-          <p class="lead">
-          Rp.<?php echo money($data['pricelist']); ?></p>
-          <center><input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'></center><br>
-
-
-        <div class="btn-group">
-          <button type="button" class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-
-          <?php
-          if($data['isWishList'] =='Y')
-          {
-          ?>
-
-          <button type="button" class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
-          <?php }else{
-          ?>
-
-          <button type="button" class="btn btn-success" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
-
-          <?php }
-          ?>
-
+          <div class="col-xs-12" style='border-top:1px solid #e30c0c'>
+          </div>
         </div>
-
-      </div>
-      </div>
       <?php } ?>
       </div>
 
@@ -522,9 +530,8 @@ $(document).ready(function() {
     $('#list').click(function(){event.preventDefault();$('#products .item').addClass('list-group-item');});
     $('#grid').click(function(){event.preventDefault();$('#products .item').removeClass('list-group-item');});
 		$('[data-toggle="tooltip"]').tooltip();
-
-    $("#viewList").click(function(){
-      var dataString = 'id=list';
+    $("#viewGrid").click(function(){
+      var dataString = 'id=grid';
       $.ajax
     		({
     		type: "POST",
@@ -537,8 +544,8 @@ $(document).ready(function() {
     		});
 
     });
-
 });
+
 
 function filter(id){
  //  console.log('sam',$('#sort_id').val(id.value));

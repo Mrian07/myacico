@@ -221,7 +221,12 @@
   						<ul class="dropdown-menu mycategory-search" role="menu">
   							<li><a href='#all'>All Categories</a></li>
   							<?php foreach($catsearch as $datacat){
-  								echo"<li><a href='#".$datacat['m_product_category_id']."'>".$datacat['name']."</a></li>";
+									if($lang=='en'){
+										$cat_name = $datacat['name_en'];
+									}else{
+										$cat_name = $datacat['name'];
+									}
+  								echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
   							}?>
   						</ul>
   					</div>
