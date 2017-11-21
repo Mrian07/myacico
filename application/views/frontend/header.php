@@ -221,7 +221,12 @@
   						<ul class="dropdown-menu mycategory-search" role="menu">
   							<li><a href='#all'>All Categories</a></li>
   							<?php foreach($catsearch as $datacat){
-  								echo"<li><a href='#".$datacat['m_product_category_id']."'>".$datacat['name']."</a></li>";
+									if($lang=='en'){
+										$cat_name = $datacat['name_en'];
+									}else{
+										$cat_name = $datacat['name'];
+									}
+  								echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
   							}?>
   						</ul>
   					</div>
@@ -639,27 +644,31 @@ $('#searchDesk').keypress(function(e) {
   	}
   });
 
-  <?php if(isset($user->name)){ ?>
+<?php if(isset($user->name)){ ?>
 
-  $(".logout").click(function(e){
-      e.preventDefault();
+$(".logout").click(function(e){
+	e.preventDefault();
 
-  	$.confirm({
-  		title: 'Confirm!',
-  		content: 'Anda yakin akan logout?',
-  		buttons: {
-  			confirm: function () {
-  				document.cookie='x-auth=; path='+base_path+';expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-  				location.href='<?php echo base_url("customer/signIn");?>';
-  			},
-  			cancel: function () {
-  				//$.alert('Canceled!');
-  			}
-  		}
-  	});
+	$.confirm({
+		title: 'Confirm!',
+		content: 'Anda yakin akan logout?',
+		buttons: {
+			confirm: function () {
+				document.cookie='x-auth=; path='+base_path+';expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+				location.href='<?php echo base_url("customer/signIn");?>';
+				if(chat.soc){
+					chat.soc.disconnect();
+					localStorage.chat_status = 'offline';
+				}
+			},
+			cancel: function () {
+				//$.alert('Canceled!');
+			}
+		}
+	});
 
-  });
-  <?php } ?>
+});
+<?php } ?>
 
   </script>
 
