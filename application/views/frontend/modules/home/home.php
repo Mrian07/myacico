@@ -790,7 +790,7 @@ ul.list-group:after {
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:240px; text-align:center'>
+      <div class="item" style='background:#ffffff; padding:10px; height:210px; text-align:center'>
 
 <!-- <script>
 var length = 30;
@@ -807,7 +807,7 @@ text.innerHTML = trimmedString
 <!-- <div class="text"><?php //  echo $itemslide0['name']; ?></div> -->
           <a href="<?php echo base_url('product/detail/'. $itemslide0['product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: auto"></center></a>
 
-              <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+              <p class="box-title" style='color: #4b4b4b; height:35px'><?php
               $str1 = $itemslide0['name'];
               $str2 = substr($str1, 0, 41);
               $str = strlen($str2);
@@ -857,10 +857,10 @@ text.innerHTML = trimmedString
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
+      <div class="item" style='background:#ffffff; padding:10px; height:210px;'>
 
     <a href="<?php echo base_url('product/detail/'. $itemslide1['product_id'].'/'. $itemslide1['alias']);?>"><img src="<?php echo $itemslide1['imageurl']; ?>"  style="height:120px; width: auto"></a>
-        <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+        <p class="box-title" style='color: #4b4b4b; height:35px'><?php
                 $str1 = $itemslide1['name'];
                 $str2 = substr($str1, 0, 41);
                 $str = strlen($str2);
@@ -915,11 +915,11 @@ text.innerHTML = trimmedString
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
+      <div class="item" style='background:#ffffff; padding:10px; height:210px;'>
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-            <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+            <p class="box-title" style='color: #4b4b4b; height:35px'><?php
                     $str1 = $itemslide2['name'];
                     $str2 = substr($str1, 0, 41);
                     $str = strlen($str2);
@@ -985,11 +985,11 @@ text.innerHTML = trimmedString
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
+      <div class="item" style='background:#ffffff; padding:10px; height:210px;'>
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-              <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+              <p class="box-title" style='color: #4b4b4b; height:35px'><?php
                       $str1 = $itemslide2['name'];
                       $str2 = substr($str1, 0, 40);
                       $str = strlen($str2);
@@ -1044,11 +1044,11 @@ text.innerHTML = trimmedString
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:240px'>
+      <div class="item" style='background:#ffffff; padding:10px; height:210px'>
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:80px; width: auto"></a>
         </center>
-            <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+            <p class="box-title" style='color: #4b4b4b; height:35px'><?php
                     $str1 = $itemslide2['name'];
                     $str2 = substr($str1, 0, 39);
                     $str = strlen($str2);
