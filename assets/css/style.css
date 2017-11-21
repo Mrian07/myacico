@@ -884,7 +884,7 @@ a:hover.my-info {
   }*/
   .footer-box{
     width: 175px;
-    height: 200px;
+    height: 150px;
     padding-top: 10px;
     display: inline-block;
     border-right: 1px solid #f1f1f1;
@@ -896,7 +896,7 @@ a:hover.my-info {
   }
   .footer-box2{
     width: 175px;
-    height: 200px;
+    height: 150px;
     padding-top: 10px;
     display: inline-block;
   }

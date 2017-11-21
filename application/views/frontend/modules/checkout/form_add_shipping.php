@@ -33,14 +33,10 @@
 }
 </style>
 
-
-<div class="my-container">
-	<div class='my-bg-title'>
-			<i class="fa fa-angle-right" aria-hidden="true"></i> CHECKOUT / PENERIMA
+<div class="container">
+  <div class='my-bg-title'>
+		<i class="fa fa-angle-right" aria-hidden="true"></i> CHECKOUT / PENERIMA
 	</div>
-</div>
-
-<div class="my-container">
 	<div class="row" ng-controller="cartCnt">
 		<div class="col-md-7">
 			<div class="panel panel-default">

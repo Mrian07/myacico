@@ -135,14 +135,14 @@ public function alllistItem()
 		$this->data['posisi'] = $posisi;
 		$jdata =json_decode($konten2)->productCount;
 		$this->data['jpage'] = ceil($jdata/$batas);
-
+		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
 		$this->data['title_web'] = "Myacico.com - List Items ".$id;
 
 		$this->data['hasil'] = json_decode($konten, true);
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/product/product_items_all.php',$this->data);
+		$this->load->view('frontend/modules/product/product_all.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
 }
@@ -235,7 +235,7 @@ public function changeView()
 			$this->data['posisi'] = $posisi;
 			$jdata =json_decode($konten3)->productCount;
 			$this->data['jpage'] = ceil($jdata/$batas);
-
+			$this->data['totalItem'] = $jdata;
 			$this->data['alias'] = $this->uri->segment(4);
 			$this->data['title_web'] = "Myacico.com - List Items";
 			$this->load->view('frontend/header',$this->data);

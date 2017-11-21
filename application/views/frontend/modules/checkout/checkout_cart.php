@@ -68,8 +68,8 @@
 					<td colspan="2" class="hidden-xs text-center"><strong>Total Rp.<?php echo money($total); ?></strong></td>
 				</tr>-->
 				<tr>
-					<td colspan="3" class="hidden-xs"></td>
-					<td class="hidden-xs" colspan="5">
+					<td colspan="2" class="hidden-xs"></td>
+					<td class="hidden-xs" colspan="6">
 					<input type='hidden' id='SubtotalOrder' value='<?php echo $total; ?>'>
 					<input type='hidden' id='weightTotalOrder' value='<?php echo $totalWeight; ?>'>
 					<strong>Total Rp.<?php echo money($total); ?></strong></td>
