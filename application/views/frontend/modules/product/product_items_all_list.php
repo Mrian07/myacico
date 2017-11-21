@@ -225,6 +225,10 @@ font-size: 16px;
 
     <div class='row'>
       <?php
+      if($totalItem==0){
+        echo"<center>Maaf item yang Anda cari belum tersedia.</center>";
+      }else{
+
       $no = $posisi+1;
       foreach($hasil as $data){
 
@@ -288,7 +292,7 @@ font-size: 16px;
         <div class="col-xs-12" style='border-top:1px solid #e30c0c'>
         </div>
       </div>
-      <?php } ?>
+    <?php }} ?>
       </div>
 
 
