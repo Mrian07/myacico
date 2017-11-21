@@ -54,11 +54,11 @@
 					</div>
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
+                                          <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory"></textarea>
 
 
 
-
-					  <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
+					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory"/>-->
 					  <label>Alamat Lain:</label>
                                           <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
 
@@ -90,7 +90,8 @@
 					</div>
 			         <div class="form-group" style="display:none" id="postal_box">
         <label><?php echo $lang_PostCode; ?>*</label>
-          <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
+        <div id="postal"></div>
+          <!--<select type="text" name="postal" id="postal" class="form-control mandatory" ></select>-->
         </div>
 					<div class="form-group">
 					<label>Handphone*</label>
@@ -131,7 +132,8 @@ function get_village(){
   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
-
+     
+      //$("#postal").val(o.postal);
     });
     $("#village_id").prop('disabled', false).change(get_postal);
   }, "json" );
@@ -167,12 +169,14 @@ function get_city(){
     });
     function get_postal(){
       $("#postal_box").slideDown();
-      $("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+      //$("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
       $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
-        r.forEach(function(o){
-          $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
-                console.log('23',o.postal);
-        });
+          // r.forEach(function(o){
+       //   $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+      $("#postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+
+               // console.log('23',o.postal);
+       // });
         $("#postal").prop('disabled', false);
       }, "json" );
     }

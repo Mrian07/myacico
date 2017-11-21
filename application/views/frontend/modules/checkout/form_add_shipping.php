@@ -117,9 +117,10 @@
                       <select name="village_id" id="village_id" class="form-control mandatory"></select>
                     </div>
                     <div class="form-group" style="display:none" id="postal_box">
-             <label><?php echo $lang_PostCode; ?>*</label>
-               <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
-             </div>
+                    <label><?php echo $lang_PostCode; ?>*</label>
+                    <div id="postal"></div>
+                      <!--<select type="text" name="postal" id="postal" class="form-control mandatory" ></select>-->
+                    </div>
                     <div class="form-group">
                     <label>Handphone*</label>
                       <input type="text" id = "phone"name="phone" class="form-control mandatory" />
@@ -200,16 +201,19 @@ $('#postal_id').change(function () {
     $('#submit_btn').removeAttr('disabled');
   });
   function get_postal(){
-    $("#postal_box").slideDown();
-    $("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
-    $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
-      r.forEach(function(o){
-        $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
-              console.log('23',o.postal);
-      });
-      $("#postal").prop('disabled', false);
-    }, "json" );
-  }
+      $("#postal_box").slideDown();
+      //$("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+        //  console.log('23',r[0]['postal']);
+       // r.forEach(function(o){
+       //   $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+      $("#postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+
+               // console.log('23',o.postal);
+       // });
+        $("#postal").prop('disabled', false);
+      }, "json" );
+    }
 function get_region(){
   $("#region_box").slideDown();
   // var negara = $('#country_sel').val();

@@ -30,8 +30,10 @@
 					</div>
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
-					  <input type="text" id = "address1"name="address1" class="form-control mandatory"/>
-					  <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
+					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory"/>-->
+					<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory"></textarea>
+ 
+                                          <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
 					</div>
                                         <div class="form-group">
 					<label><?php echo $lang_Country; ?>*</label>
@@ -155,12 +157,14 @@ $.get(api_base_url+"/ccountry/getlistccountry", function(r){
 
        function get_postal(){
       $("#postal_box").slideDown();
-      $("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+      //$("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
       $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
-        r.forEach(function(o){
-          $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
-                console.log('23',o.postal);
-        });
+       // r.forEach(function(o){
+       //   $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+      $("#postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+
+               // console.log('23',o.postal);
+       // });
         $("#postal").prop('disabled', false);
       }, "json" );
     }
