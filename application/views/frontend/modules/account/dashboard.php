@@ -14,14 +14,14 @@
 		</div>
 		<div class="col-sm-9 dashboard">
 
-        <p>Hello <b><?php echo $user->name; ?></b>, <br><br>Dari Beranda Akun anda, anda bisa melihat tinjauan dari aktivitas akun yang ada sekarang dan memperbaharui informasi akun anda. Pilih tautan di bawah ini untuk melihat atau mengedit informasi.</p>
+        <p>Hello <b><?php echo $user->name; ?></b>, <br><br><?php echo $lang_dar; ?></p>
 		<hr>
 
-		<h4>Informasi Akun & Billing</h4>
-		<p>Informasi yang berkenaan dengan akun dan data pembayaran order Anda.</p>
-		<p><?php echo anchor('account/informasiAkun/', 'Ubah Data & Password', array('class'=>'btn btn-default'));?></p>
-		<h4>Konfirmasi Pembayaran</h4>
-		<p>Anda bisa melakukan konfirmasi pembayaran pada halaman Riwayat dan Status Pesanan.</p>
+		<h4><?php echo $lang_acc; ?></h4>
+		<p><?php echo $lang_info; ?></p>
+		<p><?php echo anchor('account/informasiAkun/', $lang_change, array('class'=>'btn btn-default'));?></p>
+		<h4><?php echo $lang_pay; ?></h4>
+		<p><?php echo $lang_you; ?></p>
 		<p><?php echo anchor('account/riwayatStatusPesanan/', 'Konfirmasi', array('class'=>'btn btn-default'));?><p/>
 		<h4>Newsletters</h4>
 				<div class="rumah"></div>
@@ -52,9 +52,9 @@ $(document).ready(function() {
 	 var rumah = $('.rumah');
 $("#hapus").val(null);
 if(data.status == 1 ) {
-	rumah.append('<tr><td>'+data.message+'');
+	rumah.append('<tr><td><?php echo $lang_news; ?></td></tr>');
 }else{
-	rumah.append('<tr><td>'+data.message+'</td></tr>');
+	rumah.append('<tr><td><?php echo $lang_news; ?></td></tr>');
 }
 
 	 // rumah.append('<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.city_name+' '+p.postal+'</td><td><a href="'+link_url+'/'+p.id+'" class="btn btn-link" aria-label="Ubah"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>')
