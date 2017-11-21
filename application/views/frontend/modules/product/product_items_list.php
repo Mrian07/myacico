@@ -359,10 +359,15 @@ if($saw==Null)
     <div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
        <div class="col-sm-8">
          <div class="row">
-           <div class="col-sm-12">
-             <span style='font-size:15px; color:#e30c0c'><i class="fa fa-list" aria-hidden="true"></i></span> <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="Grid View" id='viewGrid'><i class="fa fa-th-large" aria-hidden="true"></i></a></span>
+           <div class="col-sm-3">
+             Total items <?php echo $totalItem; ?>
+          </div>
+          <div class="col-sm-9">
+             Tampilan <span style='font-size:15px; color:#e30c0c'><i class="fa fa-list" aria-hidden="true"></i></span> <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="Grid View" id='viewGrid'><i class="fa fa-th-large" aria-hidden="true" id='btn_list'></i></a>
+               <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none"></span>
            </div>
-         </div>
+        </div>
+
 
         <!-- <strong>Category Title</strong>
 
@@ -531,6 +536,8 @@ $(document).ready(function() {
     $('#grid').click(function(){event.preventDefault();$('#products .item').removeClass('list-group-item');});
 		$('[data-toggle="tooltip"]').tooltip();
     $("#viewGrid").click(function(){
+      $("#btn_list").hide();
+      $("#spinner_img").show();
       var dataString = 'id=grid';
       $.ajax
     		({
