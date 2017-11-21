@@ -90,7 +90,9 @@
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
                     //display user data
-                    console.log(response.status)
+                    console.log(response.status.email)
+                    //var umail=response.status.ema;
+                //$("#email").val(umail);
                     getFbUserData();
                 }
             });
