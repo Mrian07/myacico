@@ -6,7 +6,8 @@
 	$lang['das_pay'] ='Payment confirmation';
 	$lang['das_you'] ='You can make payment confirmation on your Order History and Status page.';
 	$lang['das_news'] ='Newsletters Subscribe';
-
+	//leftsidebar
+	$lang['das_addres'] ='Address Book';
 
 
 

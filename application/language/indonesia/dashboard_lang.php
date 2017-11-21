@@ -6,6 +6,7 @@
 					$lang['das_pay'] ='Konfirmasi Pembayaran';
 					$lang['das_you'] ='Anda bisa melakukan konfirmasi pembayaran pada halaman Riwayat dan Status Pesanan.';
 						$lang['das_news'] ='email berlangganan newsletter';
+								$lang['das_addres'] ='Buku Alamat';
 
 
  ?>
