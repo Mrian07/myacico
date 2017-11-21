@@ -123,7 +123,7 @@
         function getFbUserData(){
             FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
             function (response) {
-                //console.log(response.email)
+                console.log(response)
                 window.location.assign('#/app/login/'+response.email)
                 // document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
                 // document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
