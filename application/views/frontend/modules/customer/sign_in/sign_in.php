@@ -90,7 +90,7 @@
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
                     //display user data
-                    console.log(esponse.status)
+                    console.log(response.status)
                     getFbUserData();
                 }
             });
