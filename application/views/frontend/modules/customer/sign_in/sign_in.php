@@ -91,8 +91,7 @@
                 if (response.status === 'connected') {
                     //display user data
                     //console.log(response.status.email)
-                    //var umail=response.status.ema;
-                //$("#email").val(umail);
+                   
                     getFbUserData();
                 }
             });
@@ -123,7 +122,10 @@
         function getFbUserData(){
             FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
             function (response) {
-                console.log(response)
+                //console.log(response)
+                var umail=response.email;
+                console.log(umail)
+                $("#email").val(umail);
                 window.location.assign('#/app/login/'+response.email)
                 // document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
                 // document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
