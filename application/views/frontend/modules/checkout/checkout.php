@@ -38,9 +38,6 @@ a
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> CHECKOUT
 	</div>
-</div>
-
-<div class="container">
 	<div class="row" ng-controller="cartCnt" method="post">
 		<div class="col-md-7">
 			<div class="panel panel-default">
@@ -249,7 +246,7 @@ function finish(){
 		});
 	}else {
 $('#spinner_img').show();
- 
+
  $('#finish').addClass('disabled');
 		data.grandtotal = grandtotal;
 		data.paymentMethod = paymentMethod;
@@ -269,7 +266,7 @@ $('#spinner_img').show();
 		headers:{"token":token},
 		url: "<?php echo api_base_url('order/checkout'); ?>",
 		success:function(hasil){
- 
+
 				if(hasil.status=='1' && paymentMethod=='R'){
 					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 				}else if(hasil.token!='' && paymentMethod=='C'){
