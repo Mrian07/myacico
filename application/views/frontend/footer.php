@@ -19,7 +19,7 @@
 				<li><img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' /><br><br><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</li>
 			</ul>
 		</div> -->
-		<div class="" align="center">
+		<div style='margin-bottom:20px; margin-top:10px' align="center">
 			<div class="footer-box">
 				<img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' />
 				<?php echo $lang_f_guarantee1; ?>
@@ -50,8 +50,6 @@
 				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</p>
 			</div> -->
 		</div>
-		<br/><br/>
-
 
 		<!-- <div class="row">
 			<div class="col-xs-2">
@@ -153,7 +151,7 @@
 			</form>
 			</div>
 		</div>
-		<br><br>
+		<br>
 		<div class="row">
 			<div class="col-xs-5">
 				<h3><span><?php echo $lang_pay; ?></span></h3>

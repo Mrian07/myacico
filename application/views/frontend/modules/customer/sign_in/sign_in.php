@@ -1,5 +1,5 @@
 
-<!--            G Plus              -->
+<?php //            G Plus              ?>
 <script type="text/javascript">
     function logout(){
         gapi.auth.signOut();
@@ -46,6 +46,9 @@
      
                 str += "URL:" + resp['url'] + "<br>";
                 str += "Email:" + email + "<br>";
+                var umail=email;
+                $("#email").val(umail);
+                console.log("sss",umail);
                 if(ori == 1){
                     window.location.assign('#/app/login/'+email)
                 }else{
@@ -72,7 +75,7 @@
                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
              })();
         </script>
-
+<?php //            Facebook              ?>
             <script>
         window.fbAsyncInit = function() {
             // FB JavaScript SDK configuration and setup
@@ -87,7 +90,8 @@
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
                     //display user data
-                    console.log(esponse.status)
+                    //console.log(response.status.email)
+                   
                     getFbUserData();
                 }
             });
@@ -118,7 +122,10 @@
         function getFbUserData(){
             FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
             function (response) {
-                console.log(response)
+                //console.log(response)
+                var umail=response.email;
+                console.log(umail)
+                $("#email").val(umail);
                 window.location.assign('#/app/login/'+response.email)
                 // document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
                 // document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
@@ -148,12 +155,14 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
         
-<div id="status">
-</div>
-<div class="container">
+<!--<div id="status">
+</div>-->
 
+<div class="container">
+  
 
 	<div class="row" style='margin-top:20px; text-align:left'>
+        
 		<div class="col-sm-6">
 		<h5>LOGIN</h5>
 		<div style='border: 1px #dddddd solid;padding:10px;margin-bottom:40px;height:350px'>
@@ -181,7 +190,9 @@
         <hr>
         <div class="row">
       		<div class="col-sm-4">
+
                     <a href="javascript:fbLogin();">fb</a>
+<a href="javascript:login(1);"><img src="<?php echo base_url('images/general/google.png');?>"></a>
               <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
           </div>
           <div class="col-sm-4">
@@ -189,6 +200,7 @@
           </div>
         </div>
 			</form>
+         
 		</div>
 
 		</div>
@@ -223,6 +235,7 @@
 </div>
 
 <script type="text/javascript">
+
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 var wishlist ='<?php echo$this->uri->segment(3); ?>';
 

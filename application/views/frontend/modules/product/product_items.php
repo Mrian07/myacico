@@ -356,13 +356,17 @@ if($saw==Null)
 
 
 
-    <div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
-       <div class="col-sm-8">
+    <div class='row' style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
+       <div class="col-sm-8" style='text-align:left; padding:0px; margin:0px'>
          <div class="row">
-           <div class="col-sm-12">
-             <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="List View" id='viewList'><i class="fa fa-list" aria-hidden="true"></i></a></span> <span style='font-size:15px; color:#e30c0c'><i class="fa fa-th-large" aria-hidden="true"></i></span>
-           </div>
-         </div>
+           <div class="col-sm-3">
+             Total items <?php echo $totalItem; ?>
+          </div>
+          <div class="col-sm-9">
+            Tampilan <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="List View" id='viewList'><i class="fa fa-list" id='btn_list' aria-hidden="true"></i></a><img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+            </span> <span style='font-size:15px; color:#e30c0c'><i class="fa fa-th-large" aria-hidden="true"></i></span>
+          </div>
+        </div>
 
         <!-- <strong>Category Title</strong>
 
@@ -525,6 +529,8 @@ $(document).ready(function() {
 
     $("#viewList").click(function(){
       var dataString = 'id=list';
+      $("#btn_list").hide();
+      $("#spinner_img").show();
       $.ajax
     		({
     		type: "POST",
