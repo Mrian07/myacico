@@ -4,9 +4,9 @@
     <li <?php echo$active_dashboard; ?>><?php echo anchor('account', '<i class="fa fa-caret-right" aria-hidden="true"></i>
  Dashboard');?></li>
     <li <?php echo$active_informasiAkun; ?>><?php echo anchor('account/informasiAkun', '<i class="fa fa-caret-right" aria-hidden="true"></i>
- Informasi Akun & Billing');?></li>
+ '.$lang_acc);?></li>
     <li <?php echo$active_bukuAlamat; ?>><?php echo anchor('account/bukuAlamat', '<i class="fa fa-caret-right" aria-hidden="true"></i>
- Buku Alamat');?></li>
+ '.$lang_add);?></li>
     <li <?php echo$active_riwayatStatusPesanan; ?>><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-caret-right" aria-hidden="true"></i>
  Riwayat & Status Pesanan');?></li>
 

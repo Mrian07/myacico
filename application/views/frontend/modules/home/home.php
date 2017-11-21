@@ -109,7 +109,19 @@
     -webkit-transform: translate(-100%, 100%);
     -moz-transform: translate(-100%, 100%);
 }
-
+.brick{
+  float: left;
+font-family: Arial;
+background: #FAFA41;
+margin: 5px 0;
+padding: 1%;
+width: 150px;
+overflow: hidden;
+    text-overflow: ellipsis;
+white-space: nowrap;
+height: 17px;
+color: #505050;
+}
 .section-box-four{
     height: 250px;
     background: radial-gradient(#6e6e6e,#2f2f2f);
@@ -680,8 +692,7 @@ ul.list-group:after {
 
     <div id="owl-demo" class="owl-carousel">
       <?php
-
-      $jmlslide2=count($dathome['level_2']);
+        $jmlslide2=count($dathome['level_2']);
       $n=1;
       foreach($dathome['level_2'] as $key => $itemslide2){
         if($n=="$jmlslide2"){
@@ -781,9 +792,32 @@ ul.list-group:after {
         ?>
       <div class="item" style='background:#ffffff; padding:10px; height:240px; text-align:center'>
 
-          <a href="<?php echo base_url('product/detail/'. $itemslide0['product_id'].'/'. $itemslide0['alias']);?>"><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: auto"></a>
+<!-- <script>
+var length = 30;
 
-              <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide0['name']; ?></p>
+var text = document.getElementById('.text')
+var string = text.innerHTML
+var trimmedString = string.length > length ?
+  string.substring(0, length - 3) + "..." :
+  string
+
+text.innerHTML = trimmedString
+
+</script> -->
+<!-- <div class="text"><?php //  echo $itemslide0['name']; ?></div> -->
+          <a href="<?php echo base_url('product/detail/'. $itemslide0['product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: auto"></center></a>
+
+              <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+              $str1 = $itemslide0['name'];
+              $str2 = substr($str1, 0, 41);
+              $str = strlen($str2);
+              if($str <= 40){
+               echo $itemslide0['name'];
+              }else{
+                // $str = substr($str, 0, 49);
+                 echo $str2."....";
+              }
+              ?></span></p>
 
         <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide0['pricelist']); ?></p>
 
@@ -811,6 +845,7 @@ ul.list-group:after {
   <div class="span12" style='background:#fdf0db; padding:10px; margin-top:10px'>
 
     <div class="promo-front owl-carousel" align="center">
+
       <?php
 
       $jmlslide1=count($dathome2['topProduct'][0]['topProduct']);
@@ -825,8 +860,17 @@ ul.list-group:after {
       <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
 
     <a href="<?php echo base_url('product/detail/'. $itemslide1['product_id'].'/'. $itemslide1['alias']);?>"><img src="<?php echo $itemslide1['imageurl']; ?>"  style="height:120px; width: auto"></a>
-
-            <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide1['name']; ?></p>
+        <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+                $str1 = $itemslide1['name'];
+                $str2 = substr($str1, 0, 41);
+                $str = strlen($str2);
+                if($str <= 40){
+                echo $itemslide1['name'];
+                }else{
+                  // $str = substr($str, 0, 49);
+                  echo $str2."....";
+                }
+                ?></p>
             <b><p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide1['pricelist']); ?></p></b>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
@@ -875,7 +919,17 @@ ul.list-group:after {
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-            <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide2['name']; ?></p>
+            <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+                    $str1 = $itemslide2['name'];
+                    $str2 = substr($str1, 0, 41);
+                    $str = strlen($str2);
+                    if($str <= 40){
+                    echo $itemslide2['name'];
+                    }else{
+                      // $str = substr($str, 0, 49);
+                      echo $str2."....";
+                    }
+                    ?></p>
             <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide2['pricelist']); ?></p>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
@@ -935,7 +989,17 @@ ul.list-group:after {
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-              <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide2['name']; ?></p>
+              <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+                      $str1 = $itemslide2['name'];
+                      $str2 = substr($str1, 0, 40);
+                      $str = strlen($str2);
+                      if($str <= 39){
+                      echo $itemslide2['name'];
+                      }else{
+                        // $str = substr($str, 0, 49);
+                        echo $str2."....";
+                      }
+                      ?></p>
               <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide2['pricelist']); ?></p>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
@@ -984,7 +1048,17 @@ ul.list-group:after {
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:80px; width: auto"></a>
         </center>
-            <p class="box-title" style='color: #4b4b4b; height:60px'><?php echo $itemslide2['name']; ?></p>
+            <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+                    $str1 = $itemslide2['name'];
+                    $str2 = substr($str1, 0, 39);
+                    $str = strlen($str2);
+                    if($str <= 38){
+                    echo $itemslide2['name'];
+                    }else{
+                      // $str = substr($str, 0, 49);
+                      echo $str2."....";
+                    }
+                    ?></p>
             <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide2['pricelist']); ?></p>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
@@ -1464,7 +1538,17 @@ console.log('ini'+m_product_id+','+pricelist+','+imageurl+','+name+','+stock+','
 
     });
     </script>
+    <script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+        autoPlay: 3000,
+        items : 6,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+      });
 
+    });
+    </script>
 
     <style>
     .promo-front .item{

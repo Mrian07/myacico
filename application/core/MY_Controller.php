@@ -89,8 +89,8 @@ class Web extends MY_Controller {
           $this->data['lang_change'] = $this->lang->line('das_change');
           $this->data['lang_pay'] = $this->lang->line('das_change');
           $this->data['lang_you'] = $this->lang->line('das_you');
-              $this->data['lang_news'] = $this->lang->line('das_news');
-
+          $this->data['lang_news'] = $this->lang->line('das_news');
+          $this->data['lang_add'] = $this->lang->line('das_addres');
     //akhhir dari dashboard
 
 		// signIn
