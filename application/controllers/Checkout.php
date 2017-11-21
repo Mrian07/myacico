@@ -317,7 +317,7 @@ class Checkout extends Web_private {
 	{
 
 		$id=$_GET['id'];
-		echo"$id";
+//		echo"$id";
 		$options = ["http" => [
 		"method" => "GET",
 		"Content-Type: application/json"],
@@ -331,7 +331,7 @@ class Checkout extends Web_private {
 		$konten = file_get_contents($url, false, $context);
 		$this->data['field'] = json_decode($konten);
 		$field = json_decode($konten);
-
+//die(print_r($field));
 		$this->data['title_web'] = "Myacico.com - Checkout";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -365,7 +365,7 @@ class Checkout extends Web_private {
 			$this->load->view('frontend/modules/checkout/finish_payment_online_success.php',$this->data);
 
 		}else{
-			$this->load->view('frontend/modules/checkout/finish_payment_online_error.php',$this->data);
+			$this->load->view('frontend/modules/checkout/error_payment.php',$this->data);
 		}
 		$this->load->view('frontend/footer',$this->data);
 	}

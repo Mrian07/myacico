@@ -1,5 +1,4 @@
-
-<!--            G Plus              -->
+<?php //            G Plus              ?>
 <script type="text/javascript">
     function logout(){
         gapi.auth.signOut();
@@ -46,6 +45,8 @@
      
                 str += "URL:" + resp['url'] + "<br>";
                 str += "Email:" + email + "<br>";
+                var umail=email;
+                //console.log("sss",umail);
                 if(ori == 1){
                     window.location.assign('#/app/login/'+email)
                 }else{
@@ -72,7 +73,7 @@
                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
              })();
         </script>
-
+<?php //            Facebook              ?>
             <script>
         window.fbAsyncInit = function() {
             // FB JavaScript SDK configuration and setup
@@ -181,7 +182,8 @@
         <hr>
         <div class="row">
       		<div class="col-sm-4">
-                    <a href="javascript:fbLogin();">fb</a>
+<!--                    <a href="javascript:fbLogin();">fb</a>-->
+<a href="javascript:login(1);">gP</a>
               <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
           </div>
           <div class="col-sm-4">
