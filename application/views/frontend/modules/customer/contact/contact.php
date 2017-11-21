@@ -92,6 +92,17 @@ $(document).ready(function() {
 		var email = $("#email").val();
 		var issue = $("#issue").val();
     	var message = $("#message").val();
+        // do validation
+		var form_ok = true;
+			$('.mandatory').each(function(){
+			if($(this).val()==''){
+			$.alert({title:'Alert', content: $(this).prev().text()+ ' tidak boleh kosong!'});
+			// onContentReady: function(){$(this).focus();}
+			//$(this).val().focus();
+			form_ok =false;
+			return false;
+			}
+		});
       var captcha = <?php echo  strtolower($this->session->userdata('mycaptcha'));?>;
       var secutity_code = $("#secutity_code").val();
       console.log('asdasd',captcha);

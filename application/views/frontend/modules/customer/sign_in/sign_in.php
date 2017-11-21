@@ -190,13 +190,10 @@
         <hr>
         <div class="row">
       		<div class="col-sm-4">
-
-                    <a href="javascript:fbLogin();">fb</a>
-<a href="javascript:login(1);"><img src="<?php echo base_url('images/general/google.png');?>"></a>
-              <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-          </div>
+<a href="javascript:fbLogin();"><img src="<?php echo base_url('images/general/facebook.png');?>"></a>
+  </div>
           <div class="col-sm-4">
-              <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <a href="javascript:login(1);"><img src="<?php echo base_url('images/general/google.png');?>"></a>
           </div>
         </div>
 			</form>
