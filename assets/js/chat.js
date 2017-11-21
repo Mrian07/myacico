@@ -3,7 +3,8 @@ chat = {
 	uri: 'https://chat.myacico.co.id',
 	connect: function(){
 		if(!token){
-			localStorage.chat_status = 'redirect'
+			localStorage.chat_status = 'redirect';
+			alert('Silahkan Registrasi/Log in terlebih dahulu untuk memulai percakapan dengan Customer Service kami.');
 			return location.href = base_path + 'customer/signIn';
 		}
 		this.user = jwt_decode(token);

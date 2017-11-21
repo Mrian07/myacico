@@ -24,9 +24,11 @@ class Web extends MY_Controller {
         if($lang=='en'){
         $this->load->language('header','english');
         $this->load->language('footer','english');
+        $this->load->language('dashboard','english');
         }else{
         $this->load->language('header','indonesia');
         $this->load->language('footer','indonesia');
+              $this->load->language('dashboard','indonesia');
         }
 
         $this->lang();
@@ -79,6 +81,17 @@ class Web extends MY_Controller {
 		$this->data['lang_field_ContMessage'] = $this->lang->line('field_pesan');
 		$this->data['lang_btn_Kirim'] = $this->lang->line('btn_kirim');
 		//akkhir dari field di contact
+
+    //dashboard
+    	$this->data['lang_dar'] = $this->lang->line('das_welcome');
+      	$this->data['lang_acc'] = $this->lang->line('das_acc');
+        $this->data['lang_info'] = $this->lang->line('das_info');
+          $this->data['lang_change'] = $this->lang->line('das_change');
+          $this->data['lang_pay'] = $this->lang->line('das_change');
+          $this->data['lang_you'] = $this->lang->line('das_you');
+              $this->data['lang_news'] = $this->lang->line('das_news');
+
+    //akhhir dari dashboard
 
 		// signIn
 		$this->data['lang_btn_SignIn'] = $this->lang->line('btn_kirim1');
