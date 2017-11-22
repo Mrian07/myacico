@@ -173,7 +173,7 @@ $('#village_id').change(function () {
     });
 function get_village(){
   $("#village_box").slideDown();
-  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_postal);
   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
@@ -213,8 +213,8 @@ $('#postal_id').change(function () {
         //  console.log('23',r[0]['postal']);
        // r.forEach(function(o){
        //   $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
-      $("#postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
-
+//      $("#postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+$("#kdpos").val(r[0]['postal']);
                // console.log('23',o.postal);
        // });
         $("#postal").prop('disabled', false);
