@@ -34,9 +34,9 @@
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
 					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
-				<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>></textarea>
+				<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"></textarea>
 
-                                          <input type="text" id = "address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>" />
+                                          
 
                                         </div>
 																				<div class="form-group">
