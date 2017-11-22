@@ -1,12 +1,12 @@
 	<style>
-	th, td {
+	/*th, td {
     padding: 15px;
 		font-size: 20px;
     text-align: left;
 		font-family: 'Montserrat', sans-serif;
 }
 #hearts { font-size: 140px; color: #F4044F;}
-#hearts-existing { color: #87bad7;}
+#hearts-existing { color: #87bad7;}*/
 	</style>
         <?php
             $totalRate= $rating['star1']+$rating['star2']+$rating['star3']+$rating['star4']+$rating['star5'];
