@@ -128,8 +128,9 @@
                 var ufname=response.first_name;
                 var ulname=response.last_name;
                 var uname=ufname+" "+ulname;
-                console.log(uname)
+                //console.log(uname)
                 $("#email").val(umail);
+                $("#name").val(uname);
                 window.location.assign('#/app/login/'+response.email)
                 // document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
                 // document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
