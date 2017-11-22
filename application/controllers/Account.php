@@ -403,7 +403,7 @@ class Account extends Web_private {
 		if($type->role=='B2B'){
 			$this->load->view('frontend/modules/account/form_billing_b2b',$this->data);
 		}else{
-			$this->load->view('frontend/modules/account/form_billing',$this->data);
+			$this->load->view('frontend/modules/account/form_billing_new',$this->data);
 		}
                 $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
