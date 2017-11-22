@@ -12,7 +12,7 @@
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
-			<p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima. </br> *harap isi kemabali negara, propinsi, kota, dan kecamatan. </p>
+			<p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima. </br> *harap isi kembali negara, propinsi, kota, dan kecamatan. </p>
 			<div class="panel panel-default">
 				<div class="panel-body">
 				  <form name="signup" method="post">
@@ -35,7 +35,8 @@
 					  <label><?php echo $lang_addres; ?>*</label>
 					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
 				<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"><?php echo $hasil['address1'];?></textarea>
-
+<label>Alamat Lain:</label>
+                                          <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
                                           
 
                                         </div>
@@ -74,8 +75,9 @@
 					</div>
 					<div class="form-group">
 				 <label><?php echo $lang_PostCode; ?>*</label>
-					 <div class="postal"></div>
-                                         <input type='text' id = 'kdpos'  class='form-control mandatory' disabled/>
+					
+                                         <!--<input type='text' id = 'kdpos'  class='form-control mandatory' disabled/>-->
+                                          <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
 				 </div>
                                       <div class="form-group">
 					<label>Handphone*</label>
@@ -183,16 +185,16 @@ function get_city(){
 
        function get_postal(){
       $("#postal_box").slideDown();
-      //$("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+      $("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
       $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
-        // r.forEach(function(o){
-       //   $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+         r.forEach(function(o){
+          $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
       //$(".postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
-$("#kdpos").val(r[0]['postal']);
+//$("#kdpos").val(r[0]['postal']);
 
                // console.log('23',o.postal);
-       // });
-        $(".postal").prop('disabled', false);
+        });
+        $("#postal").prop('disabled', false);
       }, "json" );
     }
 
@@ -263,7 +265,7 @@ var keces= function(){
  }
  var kodePos = function(){
      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+kec, function(r){
-       /* r.forEach(function(o){
+       r.forEach(function(o){
             if(o.postal == postal){
                 $("#postal").append("<option value='"+o.postal+"' selected='selected'>"+o.postal+"</option>");
             }else{
@@ -271,11 +273,11 @@ var keces= function(){
             }
           
                 console.log('23',o.postal);
-        });*/
+        });
 //              $(".postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
-$("#kdpos").val(r[0]['postal']);
+//$("#kdpos").val(r[0]['postal']);
 
-        $(".postal").prop('disabled', false);
+        $("#postal").prop('disabled', false);
       }, "json" );
  }
     kotas();
@@ -377,7 +379,7 @@ $.ajax({
         var address_name = $("#address_name").val();
         var address1 = $("#address1").val();
         var address2 = $("#address2").val();
-        var postal = $("#kdpos").val();
+        var postal = $("#postal").val();
         var district_id = $("#district_id").val();
         var village_id = $("#village_id").val();
         var isbillto = $("#isbillto").val();

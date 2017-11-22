@@ -135,14 +135,14 @@ public function alllistItem()
 		$this->data['posisi'] = $posisi;
 		$jdata =json_decode($konten2)->productCount;
 		$this->data['jpage'] = ceil($jdata/$batas);
-		$this->data['totalItem'] = $jdata;
+
 		$this->data['alias'] = $this->uri->segment(4);
 		$this->data['title_web'] = "Myacico.com - List Items ".$id;
 
 		$this->data['hasil'] = json_decode($konten, true);
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/product/product_all.php',$this->data);
+		$this->load->view('frontend/modules/product/product_items_all.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
 }
@@ -160,7 +160,11 @@ public function changeView()
 		echo"grid";
 	}
 }
-
+public function bawahDetail(){
+			$api2 = "home/topproductcategory";
+	$konten = file_get_contents($url);
+		$this->data['dathome'] = json_decode($konten, true);
+}
 	public function listItem()
  {
 		$token = null;
@@ -236,6 +240,7 @@ public function changeView()
 			$jdata =json_decode($konten3)->productCount;
 			$this->data['jpage'] = ceil($jdata/$batas);
 			$this->data['totalItem'] = $jdata;
+
 			$this->data['alias'] = $this->uri->segment(4);
 			$this->data['title_web'] = "Myacico.com - List Items";
 			$this->load->view('frontend/header',$this->data);
@@ -295,7 +300,26 @@ public function changeView()
 
 	public function detail()
     {
+
+
 		$this->data['pro_id']=$this->uri->segment(3);
+			$pro_id=$this->uri->segment(3);
+			$api = "product/productlist/related/".$pro_id;
+		$url = api_base_url($api);
+
+
+$konten21 = file_get_contents($url);
+
+	$this->data['dathome'] = json_decode($konten21, true);
+	  $hasil = json_decode($konten21, true);
+
+	if(isset($hasil['imageurl'])){
+		$this->data['imageurl'] = $hasil['imageurl'];
+
+	}else{
+		$hasil['imageurl'] ='';
+
+	}
 		$pro_id=$this->uri->segment(3);
 		$api = "product/productlist/detail?id=".$pro_id;
                 $url = api_base_url($api);
