@@ -274,7 +274,10 @@
 	  <script type="text/javascript">
 	  	$('body').click(function() {
 	  		 $('.show_result').hide();
+				 $('.ps').hide();
+ 				 $('.sr').hide();
 	  	});
+
 $('#searchDesk').keypress(function(e) {
         if(e.which == 13) {
            var searchDesk = $('#searchDesk').val();
@@ -325,6 +328,10 @@ $('#searchDesk').keypress(function(e) {
 			    }, delay);
 			  };
 			}
+			$('#searchDesk').on('click',function(e){
+				$('.ps').hide();
+				$('.sr').hide();
+			});
 
 			$('#searchDesk').keypress(debounce(function (event) {
 					var cat = $('#search_param').val();
@@ -343,7 +350,8 @@ $('#searchDesk').keypress(function(e) {
 							//data: datas,
 						//
 							success: function(data) {
-								if(data.length!=0 || data.length!=''){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold'>Popular Search</div>");}
+								$('#ps').show();
+								if(data.length!=0 || data.length!=''){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold' class='ps'>Popular Search</div>");}
 								data.forEach(function(p){
 									if(p.image_thumbnail){
 										var img = p.image_thumbnail;
@@ -361,12 +369,13 @@ $('#searchDesk').keypress(function(e) {
 						});
 
 						function searching(){
+							$('#sr').show();
 							$.ajax({
 								url: api_base_url+'/product/productlist/'+search_value,
 								data: datas,
 								success: function(data) {
 									console.log(data);
-									if(data.length!=0 || data.length!=''){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold'>Search Result</div>");}
+									if(data.length!=0 || data.length!=''){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold' class='sr'>Search Result</div>");}
 									data.forEach(function(p){
 
 										if(p.imageurl){
@@ -394,7 +403,8 @@ $('#searchDesk').keypress(function(e) {
 							//data: datas,
 						//
 							success: function(data) {
-								if(data.length!=0){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold'>Popular Search</div>");}
+								$('#ps').show();
+								if(data.length!=0){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold' class='ps'>Popular Search</div>");}
 								data.forEach(function(p){
 									if(p.image_thumbnail){
 										var img = p.image_thumbnail;
@@ -416,7 +426,8 @@ $('#searchDesk').keypress(function(e) {
 								url: api_base_url+'/product/productlist/'+cat+'/'+search_value,
 								data: datas,
 								success: function(data) {
-									if(data.length!=0){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold'>Search Result</div>");}
+									$('#sr').show();
+									if(data.length!=0){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold' class='sr'>Search Result</div>");}
 
 										data.forEach(function(p){
 											if(p.imageurl){
