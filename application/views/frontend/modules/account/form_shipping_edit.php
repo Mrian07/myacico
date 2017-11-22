@@ -25,7 +25,7 @@
                                         <input type="hidden" id="isremitto" name="isremitto" value="N" />
                                         <input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
                                         <label>Nama Penerima*</label>
-                                        <input type="text" id = "name" name="name" class="form-control mandatory"/>
+                                        <input type="text" id = "name" name="name" class="form-control mandatory" value="<?php echo $hasil['name'];?>"/>
 					</div>
                                         <div class="form-group">
 					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
@@ -34,7 +34,7 @@
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
 					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
-				<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"></textarea>
+				<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"><?php echo $hasil['address1'];?></textarea>
 
                                           
 
