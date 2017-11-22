@@ -75,7 +75,7 @@ h1, h2, h3 {
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-7" style='padding-right: 0 !important; margin: 0 !important;'>
+    <div class="col-xs-8" style='padding-right: 0 !important; margin: 0 !important;'>
       <!-- Slider 1 -->
       <div class="slider" id="slider1">
           <!-- Slides -->
@@ -103,11 +103,11 @@ h1, h2, h3 {
       </div>
 
     </div>
-    <div class="col-xs-5 padding-1">
+    <div class="col-xs-4 padding-1">
 
 
-      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/banner-30.png');?>" width="100%" height="121"></div>
-      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/banner-31.png');?>" width="100%" height="121"></div>
+      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/banner-30.png');?>" width="100%" height="170"></div>
+      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/banner-31.png');?>" width="100%" height="170"></div>
       <!-- <div style='margin-left:5px;'><img src="https://s1.postimg.org/6g8wm25b1r/ps4.png" width="100%" height="170"></div> -->
 
 

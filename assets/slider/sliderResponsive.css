@@ -4,7 +4,8 @@
     background-position: center center;
     display: block;
     width: 100%;
-    height: 242px;
+  /* height: 242px;*/
+    height: 342px;
     /* height: 100vh; *//* If you want fullscreen */
     position: relative;
     background-size: cover;
