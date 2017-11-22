@@ -327,8 +327,6 @@ $('#searchDesk').keypress(function(e) {
 			}
 
 			$('#searchDesk').keypress(debounce(function (event) {
-
-
 					var cat = $('#search_param').val();
 					$(".productSrc").show();
 
@@ -340,46 +338,85 @@ $('#searchDesk').keypress(function(e) {
 
 					if(cat=='all'){
 						productSrc.html('');
-
 						$.ajax({
-							url: api_base_url+'/product/productlist/'+search_value,
-							data: datas,
+							url: api_base_url+'/product/topsearch?keyword='+search_value,
+							//data: datas,
+						//
 							success: function(data) {
+								if(data.length!=0 || data.length!=''){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold'>Popular Search</div>");}
 								data.forEach(function(p){
-
-									if(p.imageurl){
-										var img = p.imageurl;
+									if(p.image_thumbnail){
+										var img = p.image_thumbnail;
 									}else{
 										var img = '<?php echo base_url('images/general/noimage.png'); ?>';
 									}
 
 									productSrc.append(
-
-
-										"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5' width='100%'><tr><td width='80'><img src='"+img+"' width='50'></td><td>"+p.name+" <br/> <span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td><td align='right'><font size='3'><b>"+money(p.pricelist)+"</b></font></td></tr></table></div>"
-
-
-
+										"<div class=\"show_result\" onclick=\"showData('"+p.product_name+"','"+p.product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='30'></div><div class='col-xs-6'>"+p.product_name+"</div><div class='col-xs-5' style='text-align:right'><span style='padding:4px; background:#fbbd44;'>"+p.product_category+"</span></div></div></div>"
 									);
 
 								});
-
+								searching();
 							}
 						});
 
+						function searching(){
+							$.ajax({
+								url: api_base_url+'/product/productlist/'+search_value,
+								data: datas,
+								success: function(data) {
+									console.log(data);
+									if(data.length!=0 || data.length!=''){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold'>Search Result</div>");}
+									data.forEach(function(p){
 
+										if(p.imageurl){
+											var img = p.imageurl;
+										}else{
+											var img = '<?php echo base_url('images/general/noimage.png'); ?>';
+										}
 
+										productSrc.append(
+											"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='50'></div><div class='col-xs-6'>"+p.name+"<br> <span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></div><div class='col-xs-5' style='text-align:right'><font size='3'><b>"+money(p.pricelist)+"</b></font></div></div></div>"
+										);
 
+									});
+
+								}
+							});
+						}
 
 					}else{
 
 						productSrc.html('');
 
+						$.ajax({
+							url: api_base_url+'/product/topsearch?keyword='+search_value,
+							//data: datas,
+						//
+							success: function(data) {
+								if(data.length!=0){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold'>Popular Search</div>");}
+								data.forEach(function(p){
+									if(p.image_thumbnail){
+										var img = p.image_thumbnail;
+									}else{
+										var img = '<?php echo base_url('images/general/noimage.png'); ?>';
+									}
+
+									productSrc.append(
+										"<div class=\"show_result\" onclick=\"showData('"+p.product_name+"','"+p.product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='30'></div><div class='col-xs-6'>"+p.product_name+"</div><div class='col-xs-5' style='text-align:right'><span style='padding:4px; background:#fbbd44;'>"+p.product_category+"</span></div></div></div>"
+									);
+
+								});
+								searching2();
+							}
+						});
+
+						function searching2(){
 							$.ajax({
 								url: api_base_url+'/product/productlist/'+cat+'/'+search_value,
 								data: datas,
 								success: function(data) {
-
+									if(data.length!=0){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold'>Search Result</div>");}
 
 										data.forEach(function(p){
 											if(p.imageurl){
@@ -388,9 +425,7 @@ $('#searchDesk').keypress(function(e) {
 												var img = '<?php echo base_url('images/general/noimage.png'); ?>';
 											}
 											productSrc.append(
-
-												"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5' width='100%'><tr><td width='80'><img src='"+img+"' width='50'></td><td>"+p.name+" <br/> <span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td><td align='right'><font size='3'><b>"+money(p.pricelist)+"</b></font></td></tr></table></div>"
-
+												"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='50'></div><div class='col-xs-6'>"+p.name+"<br> <span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></div><div class='col-xs-5' style='text-align:right'><font size='3'><b>"+money(p.pricelist)+"</b></font></div></div></div>"
 											);
 
 										});
@@ -399,13 +434,9 @@ $('#searchDesk').keypress(function(e) {
 							});
 
 					}
-
+				}
 					return false;
-
-
-
-
-}, 250));
+				}, 250));
 
 
 
