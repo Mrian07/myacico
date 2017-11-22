@@ -13,7 +13,7 @@
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
-			<p>Silakan lengkapi data billing Anda dibawah ini.</p>
+			<p>Silakan lengkapi data penerima dibawah ini.</p>
 
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -60,7 +60,8 @@
 
 					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory"/>-->
 					  <label>Alamat Lain:</label>
-                                          <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
+  
+																					<textarea rows="4" cols="50" id="address2" name="address2" class="form-control"></textarea>
 
 
 					</div>
@@ -131,7 +132,7 @@ function get_village(){
   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
-     
+
       //$("#postal").val(o.postal);
     });
     $("#village_id").prop('disabled', false).change(get_postal);
