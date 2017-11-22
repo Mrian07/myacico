@@ -209,7 +209,7 @@
 	<ul class="nav nav-tabs" style='font-size:17px; margin-bottom:20px; border-top:0px'>
 
 	  <li class="active"><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
-          <li><a data-toggle="tab" href="#menu2">Spesifkasi</a></li>
+          <li><a data-toggle="tab" href="#menu2">Spesifikasi</a></li>
 		<li><a data-toggle="tab" href="#menu3">Ulasan</a></li>
 
 	</ul>

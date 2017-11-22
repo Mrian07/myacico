@@ -12,7 +12,7 @@
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
-			<p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima. </br> *harap isi kemabali negara, propinsi, kota, dan kecamatan. </p>
+			<p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima. </br> *harap isi kembali negara, propinsi, kota, dan kecamatan. </p>
 			<div class="panel panel-default">
 				<div class="panel-body">
 				  <form name="signup" method="post">
@@ -35,7 +35,8 @@
 					  <label><?php echo $lang_addres; ?>*</label>
 					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
 				<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"><?php echo $hasil['address1'];?></textarea>
-
+<label>Alamat Lain:</label>
+                                          <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
                                           
 
                                         </div>
