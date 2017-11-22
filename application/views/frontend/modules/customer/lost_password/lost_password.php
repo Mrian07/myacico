@@ -1,16 +1,14 @@
-<div class='my-bg-title'>
-	<div class="container">
-		<div class="row">
-		  <div class="col-sm-12">
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> LUPA PASSWORD
-
-		  </div>
-		</div>
-	</div>
-</div>
 <div class="container">
+	<div class='my-bg-title'>
+			<div class="row">
+			  <div class="col-sm-12">
 
+				<i class="fa fa-angle-right" aria-hidden="true"></i> LUPA PASSWORD
+
+			  </div>
+			</div>
+		</div>
 
 	<div class="row">
 		<div class="col-sm-3">
@@ -18,7 +16,7 @@
 		</div>
 	  <div class="col-sm-6">
 			<p>Masukkan alamat email Anda di bawah ini. Anda akan menerima link untuk mereset password Anda.</p>
-		<div class='border-create'>
+		<div class='border-create' style='text-align:left'>
 		 <form name="signup" method="post">
 		  <div class="form-group">
 			<label>Email:</label>
