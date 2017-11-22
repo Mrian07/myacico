@@ -34,7 +34,7 @@
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
 					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
-				<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory"></textarea>
+				<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>></textarea>
 
                                           <input type="text" id = "address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>" />
 
@@ -75,6 +75,7 @@
 					<div class="form-group">
 				 <label><?php echo $lang_PostCode; ?>*</label>
 					 <div class="postal"></div>
+                                         <input type='text' id = 'kdpos'  class='form-control mandatory' disabled/>
 				 </div>
                                       <div class="form-group">
 					<label>Handphone*</label>
@@ -186,7 +187,8 @@ function get_city(){
       $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
         // r.forEach(function(o){
        //   $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
-      $(".postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+      //$(".postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+$("#kdpos").val(r[0]['postal']);
 
                // console.log('23',o.postal);
        // });
@@ -270,7 +272,8 @@ var keces= function(){
           
                 console.log('23',o.postal);
         });*/
-              $(".postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+//              $(".postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+$("#kdpos").val(r[0]['postal']);
 
         $(".postal").prop('disabled', false);
       }, "json" );
@@ -374,7 +377,7 @@ $.ajax({
         var address_name = $("#address_name").val();
         var address1 = $("#address1").val();
         var address2 = $("#address2").val();
-        var postal = $("#postal").val();
+        var postal = $("#kdpos").val();
         var district_id = $("#district_id").val();
         var village_id = $("#village_id").val();
         var isbillto = $("#isbillto").val();
