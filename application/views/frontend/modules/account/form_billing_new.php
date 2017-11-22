@@ -12,7 +12,7 @@
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
-			<p>Silakan lengkapi data penerima dibawah ini jika anda ingin mengubah alamat Penerima. </br> *harap isi kemabali negara, propinsi, kota, dan kecamatan. </p>
+			<p>Di Bawah ini adalah data Billing Anda, pastikan data Billing telah terisi dengan Benar. </br> *harap isi kemabali negara, propinsi, kota, dan kecamatan. </p>
 			<div class="panel panel-default">
 				<div class="panel-body">
 				  <form name="signup" method="post">
@@ -35,7 +35,8 @@
 					  <label><?php echo $lang_addres; ?>*</label>
                                            <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"><?php echo $hasil['address1'];?></textarea>
 					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
-					  <input type="text" id = "address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>" />
+					  <!--<input type="text" id = "address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>" />-->
+                                           <textarea rows="4" cols="50" id="address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>"><?php echo $hasil['address2'];?></textarea>
 
                                         </div>
 																				<div class="form-group">
@@ -71,10 +72,12 @@
 
                                                         </select>
 					</div>
-					<div class="form-group" style="display:none" id="postal_box">
-        <label><?php echo $lang_PostCode; ?>*</label>
-          <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
-        </div>                                      
+					<div class="form-group">
+				 <label><?php echo $lang_PostCode; ?>*</label>
+					
+                                         <!--<input type='text' id = 'kdpos'  class='form-control mandatory' disabled/>-->
+                                          <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
+				 </div>                 
                                       <div class="form-group">
 					<label>Handphone*</label>
 						<input type="text" id = "phone"name="phone" class="form-control mandatory" value="<?php echo $hasil['phone'];?>" />
