@@ -124,6 +124,7 @@
                  <div class="form-group" style="display:none" id="postal_box">
         <label><?php echo $lang_PostCode; ?>*</label>
         <div id="postal"></div>
+        <input type='text' id = 'kdpos'  class='form-control mandatory' disabled/>
           <!--<select type="text" name="postal" id="postal" class="form-control mandatory" ></select>-->
         </div>
                     <div class="form-group">
@@ -252,7 +253,7 @@ $('#submit_btn').attr('disabled','disabled');
         var address_name = $("#address_name").val();
         var address1 = $("#address1").val();
         var address2 = $("#address2").val();
-        var postal = $("#postal").val();
+        var postal = $("#kdpos").val();
         var village_id = $("#village_id").val();
         var isbillto = $("#isbillto").val();
         var isshipto = $("#isshipto").val();
