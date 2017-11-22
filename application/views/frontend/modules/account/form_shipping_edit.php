@@ -34,9 +34,9 @@
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
 					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
-				<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>></textarea>
+				<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"></textarea>
 
-                                          <input type="text" id = "address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>" />
+                                          
 
                                         </div>
 																				<div class="form-group">
@@ -146,7 +146,7 @@ $('#village_id').change(function () {
     
 function get_village(){
   $("#village_box").slideDown();
-  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_postal);
   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
@@ -156,7 +156,7 @@ function get_village(){
 }
 function get_distric(){
   $("#ditric_box").slideDown();
-  $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_village);
   $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
     r.forEach(function(o){
       $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
