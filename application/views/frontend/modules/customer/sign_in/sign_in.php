@@ -18,7 +18,7 @@
       };
       gapi.auth.signIn(myParams);
     }
- 
+
     function loginCallback(result){
         if(result['status']['signed_in'])
         {
@@ -39,11 +39,11 @@
                         }
                     }
                 }
-     
+
                 var str = "Name:" + resp['displayName'] + "<br>";
                 str += "Image:" + resp['image']['url'] + "<br>";
                 str += "<img src='" + resp['image']['url'] + "' /><br>";
-     
+
                 str += "URL:" + resp['url'] + "<br>";
                 str += "Email:" + email + "<br>";
                 var umail=email;
@@ -54,20 +54,20 @@
                 }else{
                     window.location.assign('#/app/password/'+email)
                 }
-                
+
             });
-     
+
         }
-     
+
     }
 
     function onLoadCallback(){
         gapi.client.setApiKey('AIzaSyCqXQ5Te1coI72mtysKI0_GbbMpJo6EaUs');
         gapi.client.load('plus', 'v1',function(){});
     }
- 
+
     </script>
- 
+
         <script type="text/javascript">
               (function() {
                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -85,13 +85,13 @@
               xfbml      : true,  // parse social plugins on this page
               version    : 'v2.8' // use graph api version 2.8
             });
-            
+
             // Check whether the user already logged in
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
                     //display user data
                     //console.log(response.status.email)
-                   
+
                     getFbUserData();
                 }
             });
@@ -154,17 +154,17 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-        
+
 <!--<div id="status">
 </div>-->
 
 <div class="container">
-  
+
 
 	<div class="row" style='margin-top:20px; text-align:left'>
-        
+
 		<div class="col-sm-6">
-		<h5>LOGIN</h5>
+		<h5>LOG IN</h5>
 		<div style='border: 1px #dddddd solid;padding:10px;margin-bottom:40px;height:350px'>
 				<p>Masukan email dan password login Anda pada form dibawah ini.</p>
 			<form name="myForm" method="post">
@@ -190,17 +190,14 @@
         <hr>
         <div class="row">
       		<div class="col-sm-4">
-
-                    <a href="javascript:fbLogin();">fb</a>
-<a href="javascript:login(1);"><img src="<?php echo base_url('images/general/google.png');?>"></a>
-              <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-          </div>
+<a href="javascript:fbLogin();"><img src="<?php echo base_url('images/general/facebook.png');?>"></a>
+  </div>
           <div class="col-sm-4">
-              <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <a href="javascript:login(1);"><img src="<?php echo base_url('images/general/google.png');?>"></a>
           </div>
         </div>
 			</form>
-         
+
 		</div>
 
 		</div>
@@ -224,7 +221,7 @@
 				<div class="row">
 				  <div class="col-sm-12">
 						<hr>
-						Untuk pemerintah yang ingin belanja di myacico.com.
+						Untuk pemerintah yang ingin belanja di myacico.co.id.
 						<div class='my-btn-create'><?php echo anchor('customer/government/', $lang_btn_pemerintah, array('class'=>'btn btn-primary'));?></div>
 				  </div>
 				</div>
@@ -336,4 +333,3 @@ $(document).ready(function() {
 
 });
 </script>
-

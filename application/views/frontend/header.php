@@ -174,9 +174,9 @@
 									 <div style='margin-top:-8px; '>
 										 <?php if(isset($user)){ ?>
 											 <b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
-											 <b><font color='red'><?php echo anchor('#', 'Logout', array('class'=>'logout btn-nav-black'));?></font></b>
+											 <b><font color='red'><?php echo anchor('#', 'Log out', array('class'=>'logout btn-nav-black'));?></font></b>
 										 <?php }else{ ?>
-											 <b><font color='red'><?php echo anchor('customer/signIn','Login', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create',$lang_sign, array('class'=>'btn-nav-black')); ?></font></b>
+											 <b><font color='red'><?php echo anchor('customer/signIn','Log in', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create',$lang_sign, array('class'=>'btn-nav-black')); ?></font></b>
 										 <?php } ?>
 									 </div>
 								 </div>
@@ -346,10 +346,17 @@ $('#searchDesk').keypress(function(e) {
 							data: datas,
 							success: function(data) {
 								data.forEach(function(p){
+
+									if(p.imageurl){
+										var img = p.imageurl;
+									}else{
+										var img = '<?php echo base_url('images/general/noimage.png'); ?>';
+									}
+
 									productSrc.append(
 
 
-										"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5' width='100%'><tr><td width='80'><img src='"+p.imageurl+"' width='50'></td><td>"+p.name+" <br/> <span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td><td align='right'><font size='3'><b>"+money(p.pricelist)+"</b></font></td></tr></table></div>"
+										"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5' width='100%'><tr><td width='80'><img src='"+img+"' width='50'></td><td>"+p.name+" <br/> <span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td><td align='right'><font size='3'><b>"+money(p.pricelist)+"</b></font></td></tr></table></div>"
 
 
 
@@ -375,15 +382,17 @@ $('#searchDesk').keypress(function(e) {
 
 
 										data.forEach(function(p){
+											if(p.imageurl){
+												var img = p.imageurl;
+											}else{
+												var img = '<?php echo base_url('images/general/noimage.png'); ?>';
+											}
 											productSrc.append(
 
-
-											"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0'><tr><td><img src='"+p.imageurl+"' height='80'></td><td><font size='3'>"+p.name+"<br><b>"+money(p.pricelist)+"</b><br><span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td></tr></table></div>"
-
-
+												"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><table border='0' cellpadding='5' width='100%'><tr><td width='80'><img src='"+img+"' width='50'></td><td>"+p.name+" <br/> <span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></td><td align='right'><font size='3'><b>"+money(p.pricelist)+"</b></font></td></tr></table></div>"
 
 											);
-											//alert(p.name);
+
 										});
 									//$("#result").html(data).show();
 								}

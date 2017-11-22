@@ -145,7 +145,7 @@ $('#postal').change(function () {
     }
 function get_village(){
   $("#village_box").slideDown();
-  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_postal);
   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
@@ -155,7 +155,7 @@ function get_village(){
 }
 function get_distric(){
   $("#ditric_box").slideDown();
-  $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_village);
   $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
     r.forEach(function(o){
       $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
@@ -182,12 +182,13 @@ function get_city(){
 
        function get_postal(){
       $("#postal_box").slideDown();
-      $("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+      //$("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
       $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
-        r.forEach(function(o){
+       /* r.forEach(function(o){
           $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
                 console.log('23',o.postal);
-        });
+        });*/
+        $("#kdpos").val(r[0]['postal']);
         $("#postal").prop('disabled', false);
       }, "json" );
     }
@@ -259,7 +260,7 @@ var keces= function(){
  }
  var kodePos = function(){
      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+kec, function(r){
-        r.forEach(function(o){
+       /* r.forEach(function(o){
             if(o.postal == postal){
                 $("#postal").append("<option value='"+o.postal+"' selected='selected'>"+o.postal+"</option>");
             }else{
@@ -267,7 +268,8 @@ var keces= function(){
             }
           
                 console.log('23',o.postal);
-        });
+        });*/
+       $("#kdpos").val(r[0]['postal']);
         $("#postal").prop('disabled', false);
       }, "json" );
  }
@@ -370,7 +372,7 @@ $.ajax({
         var address_name = $("#address_name").val();
         var address1 = $("#address1").val();
         var address2 = $("#address2").val();
-        var postal = $("#postal").val();
+        var postal = $("#kdpos").val();
         var district_id = $("#district_id").val();
         var village_id = $("#village_id").val();
         var isbillto = $("#isbillto").val();

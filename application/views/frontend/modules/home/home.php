@@ -735,25 +735,15 @@ ul.list-group:after {
         <div class="col-md-3 col-sm-6" align="center">
       		<span class="thumbnail text-center" align="center">
               <a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><img src="<?php echo $itemslide3['imageurl']; ?>" style='height:100px;'></a>
-        			<p class="link-nmp box-title" style='height:50px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></p>
-              <p class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></p>
+        			<div class="link-nmp box-title" style='height:40px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></div>
+              <div class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></div>
         			<div class="ratings" style='text-align: center; color:#d98c13;'>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star-empty"></span>
-                  </div><br>
-					<center><input type='hidden' class='form-control' id='jmlItem<?php echo$itemslide3['m_product_id'];?>' style='width:70px' value='1' min='1'></center>
-
-
-              <center>
-               <!-- <button type="button" class="btn btn-custom-xs "  onClick="addToCart('<?php // echo$itemslide2['product_id'];?>','<?php // echo$itemslide2['pricelist'];?>','<?php // echo$itemslide2['imageurl'];?>',
-                   '<?php // echo$itemslide3['name'];?>','<?php  //echo$itemslide3['stock']; ?>','<?php// echo $itemslide3['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button><br/>
-               <button style="margin-top:10px;" type="button" class="btn btn-custom-sm1"><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</button> -->
-          </center>
-
-
+                  </div>
       		</span>
     		</div>
 
@@ -790,7 +780,7 @@ ul.list-group:after {
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:240px; text-align:center'>
+      <div class="item" style='background:#ffffff; padding:10px; height:210px; text-align:center'>
 
 <!-- <script>
 var length = 30;
@@ -807,7 +797,7 @@ text.innerHTML = trimmedString
 <!-- <div class="text"><?php //  echo $itemslide0['name']; ?></div> -->
           <a href="<?php echo base_url('product/detail/'. $itemslide0['product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: auto"></center></a>
 
-              <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+              <p class="box-title" style='color: #4b4b4b; height:35px'><?php
               $str1 = $itemslide0['name'];
               $str2 = substr($str1, 0, 41);
               $str = strlen($str2);
@@ -857,10 +847,10 @@ text.innerHTML = trimmedString
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
+      <div class="item" style='background:#ffffff; padding:10px; height:210px;'>
 
     <a href="<?php echo base_url('product/detail/'. $itemslide1['product_id'].'/'. $itemslide1['alias']);?>"><img src="<?php echo $itemslide1['imageurl']; ?>"  style="height:120px; width: auto"></a>
-        <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+        <p class="box-title" style='color: #4b4b4b; height:35px'><?php
                 $str1 = $itemslide1['name'];
                 $str2 = substr($str1, 0, 41);
                 $str = strlen($str2);
@@ -915,11 +905,11 @@ text.innerHTML = trimmedString
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
+      <div class="item" style='background:#ffffff; padding:10px; height:210px;'>
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-            <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+            <p class="box-title" style='color: #4b4b4b; height:35px'><?php
                     $str1 = $itemslide2['name'];
                     $str2 = substr($str1, 0, 41);
                     $str = strlen($str2);
@@ -985,11 +975,11 @@ text.innerHTML = trimmedString
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
+      <div class="item" style='background:#ffffff; padding:10px; height:210px;'>
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-              <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+              <p class="box-title" style='color: #4b4b4b; height:35px'><?php
                       $str1 = $itemslide2['name'];
                       $str2 = substr($str1, 0, 40);
                       $str = strlen($str2);
@@ -1044,11 +1034,11 @@ text.innerHTML = trimmedString
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:240px'>
+      <div class="item" style='background:#ffffff; padding:10px; height:210px'>
 
-        <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:80px; width: auto"></a>
+        <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
-            <p class="box-title" style='color: #4b4b4b; height:60px'><?php
+            <p class="box-title" style='color: #4b4b4b; height:35px'><?php
                     $str1 = $itemslide2['name'];
                     $str2 = substr($str1, 0, 39);
                     $str = strlen($str2);

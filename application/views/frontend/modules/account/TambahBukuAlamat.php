@@ -91,6 +91,7 @@
 			         <div class="form-group" style="display:none" id="postal_box">
         <label><?php echo $lang_PostCode; ?>*</label>
         <div id="postal"></div>
+        <input type='text' id = 'kdpos'  class='form-control mandatory' disabled/>
           <!--<select type="text" name="postal" id="postal" class="form-control mandatory" ></select>-->
         </div>
 					<div class="form-group">
@@ -128,7 +129,7 @@ $('#village_id').change(function () {
     });
 function get_village(){
   $("#village_box").slideDown();
-  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_postal);
   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
@@ -141,7 +142,7 @@ function get_village(){
 }
 function get_distric(){
   $("#ditric_box").slideDown();
-  $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_village);
   $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
     r.forEach(function(o){
       $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
@@ -173,8 +174,8 @@ function get_city(){
       $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
           // r.forEach(function(o){
        //   $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
-      $("#postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
-
+      //$("#postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+$("#kdpos").val(r[0]['postal']);
                // console.log('23',o.postal);
        // });
         $("#postal").prop('disabled', false);
@@ -236,7 +237,7 @@ $.ajax({
     var address2 = $("#address2").val();
     var address3 = $("#address3").val();
     var address4 = $("#address4").val();
-    var postal = $("#postal").val();
+    var postal = $("#kdpos").val();
     var district_id = $("#district_id").val();
     var village_id = $("#village_id").val();
     var isbillto = $("#isbillto").val();

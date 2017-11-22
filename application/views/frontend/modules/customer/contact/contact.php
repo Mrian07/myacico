@@ -79,7 +79,7 @@ function myMap() {
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
-var apiurl = baseApiUrl + '/mail/contactus';
+var apiurl_comp = baseApiUrl + '/mail/contactus';
     console.log('asd',apiurl);
 var data = {};
 $(document).ready(function() {
@@ -92,6 +92,7 @@ $(document).ready(function() {
 		var email = $("#email").val();
 		var issue = $("#issue").val();
     	var message = $("#message").val();
+        
       var captcha = <?php echo  strtolower($this->session->userdata('mycaptcha'));?>;
       var secutity_code = $("#secutity_code").val();
       console.log('asdasd',captcha);
@@ -101,6 +102,35 @@ $(document).ready(function() {
     data.issue = issue;
       data.message = message;
 
+      if(nama ===''){
+        $.alert({title:'Alert', content: ' Nama tidak boleh kosong'});
+        $('#spinner_img').hide();
+        $('#submit_btn').val('Kirim').removeClass('disabled');
+        $('.mandatory').prop('disabled', false);
+        return false;
+      }
+      if(email ===''){
+        $.alert({title:'Alert', content: ' Email tidak boleh kosong'});
+        $('#spinner_img').hide();
+        $('#submit_btn').val('Kirim').removeClass('disabled');
+        $('.mandatory').prop('disabled', false);
+        return false;
+      }
+      if(issue ===''){
+        $.alert({title:'Alert', content: ' Keperluan tidak boleh kosong'});
+        $('#spinner_img').hide();
+        $('#submit_btn').val('Kirim').removeClass('disabled');
+        $('.mandatory').prop('disabled', false);
+        return false;
+      }
+      
+      if(message ===''){
+        $.alert({title:'Alert', content: ' Pesan tidak boleh kosong'});
+        $('#spinner_img').hide();
+        $('#submit_btn').val('Kirim').removeClass('disabled');
+        $('.mandatory').prop('disabled', false);
+        return false;
+      }
       if(secutity_code != captcha){
         $.alert({title:'Alert', content: ' Security Code yang Anda masukan salah !'});
         $('#spinner_img').hide();
@@ -147,7 +177,7 @@ $(document).ready(function() {
 
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajax({ type:"POST", contentType: "application/json",headers:{"token":"eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJtYWlsQG1haWwuY29tIiwiYXVkIjoiQURNSU4tQUNDIiwianRpIjoiMjM0MiJ9.i-A1qHNcyoo2z-GTqgue5YKWdDi04qjWER_lDAkG07o"}, data:JSON.stringify(data), dataType: "json", url: apiurl, success:success });
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl_comp, success:success });
 
   });
 
