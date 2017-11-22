@@ -310,22 +310,22 @@ public function bawahDetail(){
 
 			$konten21 = file_get_contents($url);
 
-			$this->data['dathome'] = json_decode($konten21, true);
-			$hasil = json_decode($konten21, true);
+	$this->data['dathome'] = json_decode($konten21, true);
+	  $hasil1 = json_decode($konten21, true);
 
-			if(isset($hasil['imageurl'])){
-				$this->data['imageurl'] = $hasil['imageurl'];
+	if(isset($hasil1['imageurl'])){
+		$this->data['imageurl'] = $hasil1['imageurl'];
 
-			}else{
-				$hasil['imageurl'] ='';
-
-			}
-			$pro_id=$this->uri->segment(3);
-			$api = "product/productlist/detail?id=".$pro_id;
-			$url = api_base_url($api);
-			//              KOMENG CUY ~Samuel  utk page &page=1&itemperpage=1
-			$api_komen = "product/listreview?productid=".$pro_id;
-			$url_komen = api_base_url($api_komen);
+	}else{
+		//$hasil['imageurl'] ='';
+                $this->data['imageurl']='';
+	}
+		$pro_id=$this->uri->segment(3);
+		$api = "product/productlist/detail?id=".$pro_id;
+                $url = api_base_url($api);
+//              KOMENG CUY ~Samuel  utk page &page=1&itemperpage=1
+                $api_komen = "product/listreview?productid=".$pro_id;
+		$url_komen = api_base_url($api_komen);
 
 
 			$options = ["http" => [
