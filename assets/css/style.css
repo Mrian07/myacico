@@ -715,7 +715,7 @@ a:hover.my-info {
 	.show_result
 	{
 		font-family:tahoma;
-		padding:5px;
+		padding:0px 5px 0px 5px;
 		border-bottom:1px #CDCDCD dashed;
 		font-size:11px;
 		z-index: 289;

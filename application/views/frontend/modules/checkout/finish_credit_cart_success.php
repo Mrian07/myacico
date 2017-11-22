@@ -96,17 +96,18 @@ a
 
 	  </div>
 	  <div class="col-sm-6">
-
+    <?php if($field->billing_name){  ?>
 		<div class="panel panel-default">
 		  <div class="panel-heading"><b>PENGIRIM</b></div>
 		  <div class="panel-body"><b><?php echo $field->billing_name; ?></b>,<br><?php echo $field->billing_address; ?></div>
 		</div>
-
+    <?php } ?>
+    <?php if($field->shipping_name){  ?>
 		<div class="panel panel-default">
 		  <div class="panel-heading"><b>PENERIMA</b></div>
 		  <div class="panel-body"><b><?php echo $field->shipping_name; ?></b>,<br><?php echo $field->shipping_address; ?></div>
 		</div>
-
+    <?php } ?>
 
 		<div class="panel panel-default">
 		  <div class="panel-heading"><b>DETAIL CART</b></div>

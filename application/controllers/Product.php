@@ -302,13 +302,13 @@ public function bawahDetail(){
     {
 
 
-		$this->data['pro_id']=$this->uri->segment(3);
+			$this->data['pro_id']=$this->uri->segment(3);
 			$pro_id=$this->uri->segment(3);
 			$api = "product/productlist/related/".$pro_id;
-		$url = api_base_url($api);
+			$url = api_base_url($api);
 
 
-$konten21 = file_get_contents($url);
+			$konten21 = file_get_contents($url);
 
 	$this->data['dathome'] = json_decode($konten21, true);
 	  $hasil1 = json_decode($konten21, true);
@@ -328,18 +328,37 @@ $konten21 = file_get_contents($url);
 		$url_komen = api_base_url($api_komen);
 
 
-		$options = ["http" => [
-		"method" => "GET",
-		]];
+			$options = ["http" => [
+			"method" => "GET",
+			]];
 
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
     $hasil = json_decode($konten, true);
+
 //                Komen
     $konten_komen = file_get_contents($url_komen, false, $context);
     $komen = json_decode($konten_komen, true);
     //echo "<pre>";die(print_r($komen[0]['user']));
     //$komen[0]['user']
+
+		//s lalang
+		$getNama = $hasil['name'];
+		$options2 = ["http" => [
+		'protocol_version'=>'1.1',
+		"method" => "GET",
+		]];
+
+		$newname = str_replace(' ','%',$getNama);
+		$api_komen2 = "product/productlist/detail?id=".$pro_id."&keyword=".$newname;
+		$url_komen2 = api_base_url($api_komen2);
+		$context2 = stream_context_create($options2);
+		$konten2 = file_get_contents($url_komen2);
+		//e lalang
+
+
+
+
      $this->data['komen']=$komen;
 
 

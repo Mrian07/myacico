@@ -681,7 +681,7 @@ ul.list-group:after {
     <div class="col-xs-4"><img src='<?php echo base_url('images/demo/banner-3.jpg');?>' border='0' width='370'></div>
   </div> -->
 
-  <div class="row" style='margin-top:10px; margin-bottom:10px'>
+  <div class="row" style='margin-top:5px; margin-bottom:10px'>
     <div class="col-xs-12"><img src='https://storage.googleapis.com/myacico/image/banner/banner-58.png' border='0' width='100%'></div>
   </div>
 
