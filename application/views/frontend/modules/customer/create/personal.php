@@ -127,8 +127,8 @@
                 var umail=response.email;
                 var ufname=response.first_name;
                 var ulname=response.last_name;
-                var uname=ufname.concat(ulname);
-                console.log(ufname,ulname)
+                var uname=ufname,ulname;
+                console.log(uname)
                 $("#email").val(umail);
                 window.location.assign('#/app/login/'+response.email)
                 // document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
