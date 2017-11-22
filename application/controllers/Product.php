@@ -311,14 +311,14 @@ public function bawahDetail(){
 $konten21 = file_get_contents($url);
 
 	$this->data['dathome'] = json_decode($konten21, true);
-	  $hasil = json_decode($konten21, true);
+	  $hasil1 = json_decode($konten21, true);
 
-	if(isset($hasil['imageurl'])){
-		$this->data['imageurl'] = $hasil['imageurl'];
+	if(isset($hasil1['imageurl'])){
+		$this->data['imageurl'] = $hasil1['imageurl'];
 
 	}else{
-		$hasil['imageurl'] ='';
-
+		//$hasil['imageurl'] ='';
+                $this->data['imageurl']='';
 	}
 		$pro_id=$this->uri->segment(3);
 		$api = "product/productlist/detail?id=".$pro_id;
