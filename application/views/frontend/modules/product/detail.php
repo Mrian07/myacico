@@ -21,6 +21,8 @@
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/dist/xzoom.min.js');?>"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/productpopup/css/xzoom.css');?>" media="all" />
 <link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url('assets/productpopup/magnific-popup/css/magnific-popup.css');?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.carousel.css');?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.theme.css');?>" />
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/magnific-popup/js/magnific-popup.js');?>"></script>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
@@ -410,8 +412,47 @@
 
 </div>
 </div>
+
+
 </div>
+
 <br><br>
+
+
+<div class="container">
+<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+	<i class="fa fa-dot-circle-o" aria-hidden="true"></i> Product Related
+</div>
+<div class="span12" style='background:#ffffff; padding:10px;'>
+
+	<div id="owl-demo" class="owl-carousel">
+		<?php
+			$jmlslide2=count($dathome);
+		$n=1;
+		foreach($dathome as $key => $itemslide2){
+			if($n=="$jmlslide2"){
+				$active='active';
+			}else{
+				$active='';
+			}
+			?>
+		<!-- <div class="item" align="center"> -->
+			<div class="item" align="center">
+
+		<a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+			<img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
+
+				<p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></p>
+				<p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+
+
+					<hr>
+
+		</div>
+		<?php $n++;  } ?>
+	</div>
+</div>
+</div>
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/foundation.min.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/setup.js');?>"></script>
 
@@ -838,3 +879,40 @@ app.controller('detailCnt', function($scope, $http, $mycart, toMoney){
 	});
 });*/
 </script>
+<script src="<?php echo base_url('assets/owl-carousel/owl.carousel.js');?>"></script>
+
+<style>
+#owl-demo .item{
+		margin: 3px;
+		/*text-align:center;*/
+}
+#owl-demo .item img{
+		display: block;
+		width: auto;
+		height: 150px;
+
+}
+</style>
+
+    <script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+        autoPlay: 3000,
+        items : 6,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+      });
+
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+        autoPlay: 3000,
+        items : 6,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+      });
+
+    });
+    </script>
