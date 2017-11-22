@@ -157,14 +157,15 @@ $.get(api_base_url+"/ccountry/getlistccountry", function(r){
 
        function get_postal(){
       $("#postal_box").slideDown();
-      //$("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+      $("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
       $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
-       // r.forEach(function(o){
-       //   $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
-      $("#postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+         r.forEach(function(o){
+          $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+      //$(".postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+//$("#kdpos").val(r[0]['postal']);
 
                // console.log('23',o.postal);
-       // });
+        });
         $("#postal").prop('disabled', false);
       }, "json" );
     }
