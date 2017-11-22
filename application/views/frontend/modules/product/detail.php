@@ -440,9 +440,24 @@
 			<div class="item" align="center">
 
 		<a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+			<?php if($itemslide2['imageurl']){?>
 			<img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
-
-				<p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></p>
+			<?php }else{
+				echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px; width: auto' border='0'>";
+			} ?>
+				<p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+					<?php
+					$str1 = $itemslide2['name'];
+					$str2 = substr($str1, 0, 41);
+					$str = strlen($str2);
+					if($str <= 40){
+					 echo $itemslide2['name'];
+					}else{
+						// $str = substr($str, 0, 49);
+						 echo $str2."....";
+					}
+					?>
+					</a></p>
 				<p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
 
 
