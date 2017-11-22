@@ -125,7 +125,10 @@
             function (response) {
                 //console.log(response)
                 var umail=response.email;
-                console.log(response)
+                var ufname=response.first_name;
+                var ulname=response.last_name;
+                var uname=ufname.concat(ulname);
+                console.log(ufname,ulname)
                 $("#email").val(umail);
                 window.location.assign('#/app/login/'+response.email)
                 // document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
