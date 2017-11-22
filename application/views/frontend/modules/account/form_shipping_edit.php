@@ -36,8 +36,8 @@
 					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
 				<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"><?php echo $hasil['address1'];?></textarea>
 <label>Alamat Lain:</label>
-                                          <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
-                                          
+<textarea rows="4" cols="50" id="address1" name="address1" class="form-control" value="<?php echo $hasil['address2'];?>"><?php echo $hasil['address2'];?></textarea>
+
 
                                         </div>
 																				<div class="form-group">
@@ -75,7 +75,7 @@
 					</div>
 					<div class="form-group">
 				 <label><?php echo $lang_PostCode; ?>*</label>
-					
+
                                          <!--<input type='text' id = 'kdpos'  class='form-control mandatory' disabled/>-->
                                           <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
 				 </div>
@@ -145,7 +145,7 @@ $('#village_id').change(function () {
         $("#region_sel").prop('disabled', false).change(get_city);
       }, "json" );
     }
-    
+
 function get_village(){
   $("#village_box").slideDown();
   $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_postal);
@@ -271,7 +271,7 @@ var keces= function(){
             }else{
                 $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
             }
-          
+
                 console.log('23',o.postal);
         });
 //              $(".postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
@@ -366,7 +366,7 @@ $.ajax({
   });
     */
   $("form").submit(function(e){
-      
+
     e.preventDefault();
     //var data = $(this).serialize();
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
