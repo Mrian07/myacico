@@ -15,8 +15,8 @@
 				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none;'>
 				<span class="glyphicon glyphicon-ok"></span> Update account success.</div>
 			<?php }else{ ?>
-				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none'>
-				<span class="glyphicon glyphicon-ok"></span> Update akun sukses.</div>');
+				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none;'>
+				<span class="glyphicon glyphicon-ok"></span> Update akun sukses.</div>
 			<?php } ?>
 
 
