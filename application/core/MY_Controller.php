@@ -69,7 +69,15 @@ class Web extends MY_Controller {
 	public function lang(){
     //buttons 
     $this->data['lang_btn_signin'] = $this->lang->line('btn_signin');
+
     $this->data['lang_btn_update'] = $this->lang->line('btn_update');
+
+
+    //label
+    $this->data['lang_lab_name'] = $this->lang->line('label_name');
+    $this->data['lang_lab_rep_pass'] = $this->lang->line('label_rep_pass');
+
+
 		//Lang
 		$this->data['lang_daftar'] = $this->lang->line('daftar');
 		$this->data['lang_masuk'] = $this->lang->line('masuk');
@@ -274,24 +282,6 @@ class Web_private extends web {
     }
 
 }
-/*
-class LogInAdmin extends MY_Controller {
-
-    public function __construct() {
-        parent::__construct();
-		$this->load->model('Users_model', 'users');
-
-		if($this->users->cekLogin($this->session->userdata('user_admin'),$this->session->userdata('pass_admin'))==False){
-			redirect('frontend/index');
-		}elseif ($this->session->userdata('user_admin') == "" and $this->session->userdata('pass_admin')=="")
-        {
-			redirect('frontend/index');
-
-        }
-
-    }
-
-}*/
 
 /* End of file MY_Controller.php */
 /* Location: ./application/core/MY_Controller.php */

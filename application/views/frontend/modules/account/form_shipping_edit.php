@@ -40,7 +40,7 @@
 					<div class="form-group">
 
 						<label>Alamat Lain:</label>
-						<textarea rows="4" cols="50" id="address1" name="address1" class="form-control" value="<?php echo $hasil['address2'];?>"><?php echo $hasil['address2'];?></textarea>
+						<textarea rows="4" cols="50" id="address2" name="address2" class="form-control" value="<?php echo $hasil['address2'];?>"><?php echo $hasil['address2'];?></textarea>
 
 
 					</div>
@@ -403,8 +403,8 @@ data.id = id;
     data.address2 = address2;
     data.postal = postal;
     data.district_id = district_id;
-    data.isbillto = 'Y';
-    data.isshipto = 'N';
+    data.isbillto = 'N';
+    data.isshipto = 'Y';
     data.ispayfrom = 'N';
     data.isremitto = 'N';
     data.village_id = village_id;
@@ -415,13 +415,12 @@ data.id = id;
     var success = function(r){
          $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');
-        $.alert({
-			title: 'Alert!',
-			content: 'Alamat Baru Berhasil di tambahkan',
-		});
-//      alert(r.message);
-      console.log('OK:', r.status);
-        window.location.replace(base_url+"/account/informasiAkun");
+    //     $.alert({
+		// 	title: 'Alert!',
+		// 	content: 'Alamat Baru Berhasil di tambahkan',
+		// });
+
+        window.location.replace(base_url+"/account/bukuAlamat/2");
 
     };
     $('#spinner_img').show();
@@ -433,7 +432,6 @@ data.id = id;
     $('.mandatory').each(function(){
       if($(this).val()==''){
         $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
-        // onContentReady: function(){$(this).focus();}
         form_ok =false;
         return false;
       }
@@ -452,10 +450,6 @@ data.id = id;
   });
 
 	$.get(api_base_url+"/ccountry/getlistccountry", function(r){
-	    console.log(r);
-	//    $("#country_sel").prop('disabled', true).html('<option value="209" selected="selected">Indonesia</option>');
-	//    $("#country_sel").prop('disabled', true).html('<option value="">Indonesia</option>');
-	//    $("#country_sel").prop('disabled', true).on("load", get_region);
 	    r.forEach(function(o){
 	      $("#country_sel").append("<option value='"+o.c_country_id+"'>"+o.name+"</option>");
 	    });

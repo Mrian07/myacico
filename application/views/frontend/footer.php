@@ -55,7 +55,7 @@
 			<div class="col-xs-2">
 				<b>Informasi</b><br>
 				<?php echo anchor('Pages/AboutUs','Tentang Kami', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('blog.myacico.co.id','Blog MyACICO.co.id', array('class'=>'my-info')); ?><br>
+				<?php echo anchor('blog.myACICO.co.id','Blog myACICO.co.id', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Pages/SyaratDnKetentuan','Syarat & Ketentuan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Karir', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Pages/kebijakanPrivasi','Kebajikan Privasi', array('class'=>'my-info')); ?><br>
@@ -80,7 +80,7 @@
 			</div>
 			<div class="col-xs-2">
 				<b>Email Newsletter</b><br>
-				Berlangganan untuk mendapatkan penawaran spesial dan berita dari MyACICO.co.id<br>
+				Berlangganan untuk mendapatkan penawaran spesial dan berita dari myACICO.co.id<br>
 				<div class="input-group">
 					<input type="text" class="my-sub-field" name="x" placeholder="Search term...">
 					<span class="input-group-btn">
@@ -102,7 +102,7 @@
 				<h3><span><?php echo $lang_f_info; ?></span></h3>
 				<?php echo anchor('Pages/AboutUs', $lang_ttangkami, array('class'=>'my-info')); ?><br>
 
-				<a href="http://blog.myacico.co.id/" class="my-info">Blog MyACICO.co.id</a><br/>
+				<a href="http://blog.myACICO.co.id/" class="my-info">Blog myACICO.co.id</a><br/>
 
 				<?php echo anchor('Pages/SyaratDnKetentuan',$lang_Terms, array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#',$lang_karier, array('class'=>'my-info')); ?><br>
@@ -199,7 +199,7 @@
 			</div>
 			<div class="col-xs-3">
 				<h3><span>EMAIL NEWSLETTER</span></h3>
-				All items in myacico.co.id are guaranteed for 7 days, counted upon receipt of the goods.
+				All items in myACICO.co.id are guaranteed for 7 days, counted upon receipt of the goods.
 			</div>
       <div class="col-xs-3">
 				<h3><span>Pembayaran</span></h3>
@@ -443,4 +443,14 @@ $(document).ready(function() {
 
 });
 </script>
+
+<<<<<<< HEAD
+<script>
+$(document).ready(function() {
+	$('#alertSubmit').show('slow').delay(5000).hide('slow');
+
+});
+</script>
+=======
+>>>>>>> 0e084aa5bee8a7a1f48461a17597135331d8ba73
 </html>
