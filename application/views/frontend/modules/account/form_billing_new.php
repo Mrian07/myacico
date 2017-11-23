@@ -11,19 +11,19 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
+			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
 			<p>Di Bawah ini adalah data Billing Anda, pastikan data Billing telah terisi dengan Benar. </br> *harap isi kemabali negara, propinsi, kota, dan kecamatan. </p>
 			<div class="panel panel-default">
 				<div class="panel-body">
 				  <form name="signup" method="post">
 					<div class="form-group">
 					<input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
-                                        <input type="hidden" id = "id" name="id" />
-                                          <input type="hidden" id="isbillto" name="isbillto" value="Y" />
-                                        <input type="hidden" id="isshipto" name="isshipto" value="N" />
-                                        <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
-                                        <input type="hidden" id="isremitto" name="isremitto" value="N" />
-                                        <input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
+					<input type="hidden" id = "id" name="id" />
+					<input type="hidden" id="isbillto" name="isbillto" value="Y" />
+					<input type="hidden" id="isshipto" name="isshipto" value="N" />
+					<input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
+					<input type="hidden" id="isremitto" name="isremitto" value="N" />
+					<input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
                                         <!--<label>Nama Penerima*</label>-->
                                         <!--<input type="text" id = "name" name="name" class="form-control mandatory"/>-->
 					</div>
@@ -33,66 +33,62 @@
 					</div>
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
-                                           <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"><?php echo $hasil['address1'];?></textarea>
-					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
-					  <!--<input type="text" id = "address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>" />-->
-                                           <label>Alamat Lain:</label>
-                                           <textarea rows="4" cols="50" id="address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>"><?php echo $hasil['address2'];?></textarea>
+						<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"><?php echo $hasil['address1'];?></textarea>
+						<!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
+						<!--<input type="text" id = "address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>" />-->
+						<label>Alamat Lain:</label>
+						<textarea rows="4" cols="50" id="address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>"><?php echo $hasil['address2'];?></textarea>
 
-                                        </div>
-																				<div class="form-group">
-																				<label><?php echo $lang_Country; ?>*</label>
-																				<select name="country" id="country_sel" class="form-control mandatory">
-															<option value="209" selected="selected">Indonesia</option>
-																						</select>
-																				</div>
-																				<div class="form-group" id="region_box">
-
-															<label><?php echo $lang_Provience; ?>*</label>
-                                                                                                                        <select name="province" id="region_sel" class="form-control mandatory">
-                                                                                                                            <option value="<?php echo $hasil['region_id'];?>" selected="selected"><?php echo $hasil['region_name'];?></option>
-                                                                                                                           </select>
-                                                                                                                   </div>
-					<div class="form-group" id="city_box">
-						<label><?php echo $lang_kota; ?>*</label>
-					  <select name="city" id="city_sel" class="form-control mandatory">
-
-                                      </select>
-					</div>
-                                        <div class="form-group" id="ditric_box">
-							<label><?php echo $lang_Keca; ?>*</label>
-                                                        <!--<input name="district_id" >-->
-                                                        <select name="district_id" id="district_id" class="form-control mandatory">
-
-                                                        </select>
-					</div>
-                                       <div class="form-group" id="village_box">
-							<label><?php echo "kelurahan"; ?>*</label>
-                                                        <select name="village_id" id="village_id" class="form-control mandatory">
-
-
-                                                        </select>
 					</div>
 					<div class="form-group">
-				 <label><?php echo $lang_PostCode; ?>*</label>
-					
-                                         <!--<input type='text' id = 'kdpos'  class='form-control mandatory' disabled/>-->
-                                          <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
-				 </div>                 
-                                      <div class="form-group">
-					<label>Handphone*</label>
+						<label><?php echo $lang_Country; ?>*</label>
+						<select name="country" id="country_sel" class="form-control mandatory">
+						<option value="209" selected="selected">Indonesia</option>
+						</select>
+						</div>
+						<div class="form-group" id="region_box">
+
+						<label><?php echo $lang_Provience; ?>*</label>
+						<select name="province" id="region_sel" class="form-control mandatory">
+						<option value="<?php echo $hasil['region_id'];?>" selected="selected"><?php echo $hasil['region_name'];?></option>
+						</select>
+						</div>
+						<div class="form-group" id="city_box">
+						<label><?php echo $lang_kota; ?>*</label>
+						<select name="city" id="city_sel" class="form-control mandatory">
+
+						</select>
+						</div>
+						<div class="form-group" id="ditric_box">
+						<label><?php echo $lang_Keca; ?>*</label>
+						<!--<input name="district_id" >-->
+						<select name="district_id" id="district_id" class="form-control mandatory">
+
+						</select>
+						</div>
+						<div class="form-group" id="village_box">
+						<label><?php echo "kelurahan"; ?>*</label>
+						<select name="village_id" id="village_id" class="form-control mandatory">
+
+
+						</select>
+						</div>
+						<div class="form-group">
+						<label><?php echo $lang_PostCode; ?>*</label>
+
+						<!--<input type='text' id = 'kdpos'  class='form-control mandatory' disabled/>-->
+						<select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
+						</div>
+						<div class="form-group">
+						<label>Handphone*</label>
 						<input type="text" id = "phone"name="phone" class="form-control mandatory" value="<?php echo $hasil['phone'];?>" />
 					</div>
 					<div class="form-group">
-					<label>Telepon</label>
+						<label>Telepon</label>
 						<input type="text" id = "phone2"name="phone2" class="form-control" value="<?php echo $hasil['phone2'];?>" />
-					</div>
-
-
-
-
-					<div class="clearfix"></div>
-                                            <input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+						</div>
+						<div class="clearfix"></div>
+						<input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 
 				  </form>
 				</div>
@@ -121,11 +117,11 @@ $.ajaxSetup({
 });
 $('#village_id').change(function () {
         var end = this.value;
-      $('#submit_btn').removeAttr('disabled');
+      // $('#submit_btn').removeAttr('disabled');
     });
 $('#postal').change(function () {
         var end = this.value;
-      $('#submit_btn').removeAttr('disabled');
+      // $('#submit_btn').removeAttr('disabled');
     });
     function get_region(){
       $("#region_box").slideDown();
@@ -270,7 +266,7 @@ var keces= function(){
             }else{
                 $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
             }
-          
+
                 console.log('23',o.postal);
         });
 //              $(".postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
@@ -283,7 +279,7 @@ var keces= function(){
     keces();
     kels();
     kodePos();
-    $('#submit_btn').attr('disabled','disabled');
+    // $('#submit_btn').attr('disabled','disabled');
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
     var idAdd = $('#idAdd').val();
 //    $http.get('www.google.com/someapi', {
