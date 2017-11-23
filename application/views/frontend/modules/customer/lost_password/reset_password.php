@@ -1,16 +1,13 @@
-<div class='my-bg-title'>
-	<div class="container">
-		<div class="row">
-		  <div class="col-sm-12">
-
-			<i class="fa fa-angle-right" aria-hidden="true"></i> RESET PASSWORD
-
-		  </div>
-		</div>
-	</div>
-</div>
 <div class="container">
+	<div class='my-bg-title'>
+			<div class="row">
+			  <div class="col-sm-12">
 
+				<i class="fa fa-angle-right" aria-hidden="true"></i> RESET PASSWORD
+
+			  </div>
+			</div>
+		</div>
 
 	<div class="row">
 		<div class="col-sm-3">
@@ -18,7 +15,7 @@
 		</div>
 	  <div class="col-sm-6">
               <p>Silahkan masukkan password baru Anda.</p>
-		<div class='border-create' syle='text-align:left'>
+		<div class='border-create' style='text-align:left'>
 		 <form name="signup" method="post">
 		  <div class="form-group">
 			<label>Password Baru:</label>
@@ -29,7 +26,7 @@
 			<input type="password" id="password2" class="form-control" />
 		  </div>
 		  <div class="row">
-			<div class="col-sm-6">
+			<div class="col-sm-12">
 				<input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
 				<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 			</div>
@@ -43,7 +40,6 @@
 	</div>
 </div>
 
-<?php echo $baseApiUrl2; ?>
 <script type="text/javascript">
 
 $(document).ready(function() {
