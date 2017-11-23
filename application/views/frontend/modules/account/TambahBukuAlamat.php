@@ -60,7 +60,7 @@
 
 					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory"/>-->
 					  <label>Alamat Lain:</label>
-  
+
 																					<textarea rows="4" cols="50" id="address2" name="address2" class="form-control"></textarea>
 
 
@@ -106,7 +106,7 @@
 
 
 					<div class="clearfix"></div>
-						<input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+						<input type="submit" id="submit_btn" class="btn btn-primary" value="Save"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 				  </form>
 				</div>
 			</div>
