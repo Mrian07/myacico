@@ -1,20 +1,18 @@
 <?php
-	$lang['daftar'] = 'Registration';
-	$lang['masuk'] = 'Login';
-	$lang['ket_daftar_personal'] = 'For personal to shopping in myacico.com';
-	$lang['ket_daftar_akunBisnis'] = 'Want to provide goods for your company? business myacico account will suit your needs. your company information is required for verification. ';
+$lang['daftar'] = 'Registration';
+$lang['masuk'] = 'Login';
+$lang['ket_daftar_personal'] = 'For personal to shopping in myacico.com';
+$lang['ket_daftar_akunBisnis'] = 'Want to provide goods for your company? business myacico account will suit your needs. your company information is required for verification. ';
 
 //Button untuk daftar
-	$lang['btn_daftar'] = 'CREATE PERSONAL ACCOUNT';
-	$lang['btn_daftar_bisnis'] = 'CREATE BUSINESS ACCOUNT';
+$lang['btn_daftar'] = 'CREATE PERSONAL ACCOUNT';
+$lang['btn_daftar_bisnis'] = 'CREATE BUSINESS ACCOUNT';
 $lang['btn_daftar_pemerintah'] = 'CREATE GOVERNMENT ACCOUNT';
 
 
 //header
-	$lang['lang_promo'] = '
-Get interesting deals on';
-$lang['lang_wel'] = '
-Wellcome';
+$lang['lang_promo'] = 'Get interesting deals on';
+$lang['lang_wel'] = 'Welcome';
 $lang['lang_prod'] = 'New Product';
 $lang['lang_signUp'] = 'Sign Up';
 
@@ -69,5 +67,7 @@ $lang['field_Passeword2'] = 'Confirm Password';
 $lang['btn_login'] = 'Create';
 //akhir dari bussines
 
-
+//s: search
+$lang['field_all_src'] = 'All Categories';
+//e: search
 ?>

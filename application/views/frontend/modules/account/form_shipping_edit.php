@@ -16,68 +16,71 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 				  <form name="signup" method="post">
-					<div class="form-group">
+
 <!--					<input type="hidden" id = "name" name="name"  value="<?php // echo $user->name;?>" />-->
-                                        <input type="hidden" id = "id" name="id" />
-                                          <input type="hidden" id="isbillto" name="isbillto" value="N" />
-                                        <input type="hidden" id="isshipto" name="isshipto" value="Y" />
-                                        <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
-                                        <input type="hidden" id="isremitto" name="isremitto" value="N" />
-                                        <input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
-                                        <label>Nama Penerima*</label>
-                                        <input type="text" id = "name" name="name" class="form-control mandatory" value="<?php echo $hasil['name'];?>"/>
-					</div>
-                                        <div class="form-group">
-					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
-					  <input type="text" id="address_name" name="address_name" class="form-control mandatory" value="<?php echo $hasil['address_name'];?>" />
-					</div>
+	          <input type="hidden" id = "id" name="id" />
+	          <input type="hidden" id="isbillto" name="isbillto" value="N" />
+	          <input type="hidden" id="isshipto" name="isshipto" value="Y" />
+	          <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
+	          <input type="hidden" id="isremitto" name="isremitto" value="N" />
+	          <input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
+						<div class="form-group">
+							<label>Nama Penerima*</label>
+		          <input type="text" id = "name" name="name" class="form-control mandatory" value="<?php echo $hasil['name'];?>"/>
+						</div>
+						<div class="form-group">
+							<label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+							<input type="text" id="address_name" name="address_name" class="form-control mandatory" value="<?php echo $hasil['address_name'];?>" />
+						</div>
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
 					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
-				<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"><?php echo $hasil['address1'];?></textarea>
-<label>Alamat Lain:</label>
-<textarea rows="4" cols="50" id="address1" name="address1" class="form-control" value="<?php echo $hasil['address2'];?>"><?php echo $hasil['address2'];?></textarea>
+						<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"><?php echo $hasil['address1'];?></textarea>
+					</div>
+					<div class="form-group">
+
+						<label>Alamat Lain:</label>
+						<textarea rows="4" cols="50" id="address1" name="address1" class="form-control" value="<?php echo $hasil['address2'];?>"><?php echo $hasil['address2'];?></textarea>
 
 
-                                        </div>
-																				<div class="form-group">
-																				<label><?php echo $lang_Country; ?>*</label>
-																				<select name="country" id="country_sel" class="form-control mandatory">
-															<option value="209" selected="selected">Indonesia</option>
-																						</select>
-																				</div>
-																				<div class="form-group" id="region_box">
-
-															<label><?php echo $lang_Provience; ?>*</label>
-                                                                                                                        <select name="province" id="region_sel" class="form-control mandatory">
-                                                                                                                            <option value="<?php echo $hasil['region_id'];?>" selected="selected"><?php echo $hasil['region_name'];?></option>
-                                                                                                                           </select>
-                                                                                                                   </div>
+					</div>
+					<div class="form-group">
+						<label><?php echo $lang_Country; ?>*</label>
+						<select name="country" id="country_sel" class="form-control mandatory">
+						<option value="209" selected="selected">Indonesia</option>
+						</select>
+					</div>
+					<div class="form-group" id="region_box">
+						<label><?php echo $lang_Provience; ?>*</label>
+						<select name="province" id="region_sel" class="form-control mandatory">
+						<option value="<?php echo $hasil['region_id'];?>" selected="selected"><?php echo $hasil['region_name'];?></option>
+						</select>
+					</div>
 					<div class="form-group" id="city_box">
 						<label><?php echo $lang_kota; ?>*</label>
 					  <select name="city" id="city_sel" class="form-control mandatory">
 
-                                      </select>
+						</select>
 					</div>
-                                        <div class="form-group" id="ditric_box">
-							<label><?php echo $lang_Keca; ?>*</label>
-                                                        <!--<input name="district_id" >-->
-                                                        <select name="district_id" id="district_id" class="form-control mandatory">
+					<div class="form-group" id="ditric_box">
+						<label><?php echo $lang_Keca; ?>*</label>
+						<!--<input name="district_id" >-->
+						<select name="district_id" id="district_id" class="form-control mandatory">
 
-                                                        </select>
+						</select>
 					</div>
-                                       <div class="form-group" id="village_box">
-							<label><?php echo "kelurahan"; ?>*</label>
-                                                        <select name="village_id" id="village_id" class="form-control mandatory">
+					<div class="form-group" id="village_box">
+						<label><?php echo "kelurahan"; ?>*</label>
+						<select name="village_id" id="village_id" class="form-control mandatory">
 
 
-                                                        </select>
+						</select>
 					</div>
 					<div class="form-group">
-				 <label><?php echo $lang_PostCode; ?>*</label>
+				 		<label><?php echo $lang_PostCode; ?>*</label>
 
-                                         <!--<input type='text' id = 'kdpos'  class='form-control mandatory' disabled/>-->
-                                          <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
+						<!--<input type='text' id = 'kdpos'  class='form-control mandatory' disabled/>-->
+						<select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
 				 </div>
                                       <div class="form-group">
 					<label>Handphone*</label>

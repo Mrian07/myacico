@@ -43,11 +43,11 @@
 						</div>
 
 					</div>
-                                        <div class="form-group">
-                                        <label>Atas Nama:</label>
-                                        <input type="text" id="atas_name" name="name" class="form-control mandatory"/>
+          <div class="form-group">
+          <label>Atas Nama:</label>
+          <input type="text" id="atas_name" name="name" class="form-control mandatory"/>
 
-                                        </div>
+          </div>
 					<div class="form-group">
 					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
 					  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>

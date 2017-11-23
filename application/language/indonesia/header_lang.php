@@ -11,10 +11,8 @@ $lang['btn_daftar_bisnis'] = 'DAFTAR AKUN BISNIS';
 $lang['btn_daftar_pemerintah'] = 'DAFTAR AKUN PEMERINTAH';
 //akhir dari button daftar
 //header
-	$lang['lang_promo'] = '
-Dapatkan promo menarik di';
-$lang['lang_wel'] = '
-Selamat Datang';
+$lang['lang_promo'] = 'Dapatkan promo menarik di';
+$lang['lang_wel'] = 'Selamat Datang';
 $lang['lang_signUp'] = 'Daftar';
 
 $lang['lang_prod'] = 'Produk Baru';
@@ -65,4 +63,8 @@ $lang['field_Passeword2'] = 'Konfrimasi Kata Sandi';
 $lang['btn_login'] = 'Kirim';
 
 //akhir dari bussines
+
+//s: search
+$lang['field_all_src'] = 'Semua Kategori';
+//e: search
 ?>
