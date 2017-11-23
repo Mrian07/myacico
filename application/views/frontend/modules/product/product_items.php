@@ -356,7 +356,7 @@ if($saw==Null)
 
 
 
-    <div class='row' style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
+    <div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
        <div class="col-sm-8" style='text-align:left; padding:0px; margin:0px'>
          <div class="row">
            <div class="col-sm-3">
