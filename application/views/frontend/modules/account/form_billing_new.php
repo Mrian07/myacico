@@ -36,9 +36,10 @@
 						<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>"><?php echo $hasil['address1'];?></textarea>
 						<!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
 						<!--<input type="text" id = "address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>" />-->
+					</div>
+					<div class="form-group">
 						<label>Alamat Lain:</label>
 						<textarea rows="4" cols="50" id="address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>"><?php echo $hasil['address2'];?></textarea>
-
 					</div>
 					<div class="form-group">
 						<label><?php echo $lang_Country; ?>*</label>
