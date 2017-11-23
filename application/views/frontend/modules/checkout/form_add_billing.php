@@ -93,8 +93,8 @@
                     <div class="form-group">
                       <label><?php echo $lang_addres; ?>*</label>
                    <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory"></textarea>
-
-                      <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
+                   <textarea rows="4" cols="50" id="address2" name="address2" class="form-control mandatory"></textarea>
+                      <!--<input type="text" id = "address2" name="address2" class="form-control mandatory"/>-->
                     </div>
 
                     <div class="form-group">
@@ -221,19 +221,18 @@ $('#postal_id').change(function () {
       }, "json" );
     }
 function get_region(){
-  $("#region_box").slideDown();
-  // var negara = $('#country_sel').val();
-  // $("#country_sel").prop('disabled', false).change(get_region);
-//alert(negara);
-  $("#region_sel").prop('disabled', true).unbind("change", get_city);
+      $("#region_box").slideDown();
+        var negara = $('#country_sel').val();
 
-  $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
-    r.forEach(function(o){
-      $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
-    });
-    $("#region_sel").prop('disabled', false).change(get_city);
-  }, "json" );
-}
+      $("#region_sel").prop('disabled', true).unbind("change", get_city);
+
+      $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
+        r.forEach(function(o){
+          $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
+        });
+        $("#region_sel").prop('disabled', false).change(get_city);
+      }, "json" );
+    }
 
 
 var data = {};
@@ -254,6 +253,7 @@ $('#submit_btn').attr('disabled','disabled');
         var address1 = $("#address1").val();
         var address2 = $("#address2").val();
         var postal = $("#postal").val();
+        var district_id = $("#district_id").val();
         var village_id = $("#village_id").val();
         var isbillto = $("#isbillto").val();
         var isshipto = $("#isshipto").val();
