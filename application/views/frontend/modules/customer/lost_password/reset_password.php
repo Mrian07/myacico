@@ -18,7 +18,7 @@
 		</div>
 	  <div class="col-sm-6">
               <p>Silahkan masukkan password baru Anda.</p>
-		<div class='border-create'>
+		<div class='border-create' syle='text-align:left'>
 		 <form name="signup" method="post">
 		  <div class="form-group">
 			<label>Password Baru:</label>
@@ -45,10 +45,9 @@
 
 <?php echo $baseApiUrl2; ?>
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
-
 
 $(document).ready(function() {
+		var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
     var data = {};
     var url =$('#surel').val();
     var res = url.split("key=");
