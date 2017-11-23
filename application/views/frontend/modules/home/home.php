@@ -937,7 +937,7 @@ text.innerHTML = trimmedString
 
 
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> HOBI
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_hob; ?>
   </div>
   <div style='float:left;width:506px; height:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-d1.jpg');?>' border='0' width='100%' height = '190px;'>

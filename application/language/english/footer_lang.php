@@ -40,13 +40,5 @@ $lang['f_pay'] = 'Payment Method';
 $lang['f_courier'] = 'Courier';
 $lang['f_dunlud'] = 'Download Our Applications';
 $lang['f_sea'] = 'View All';
-$lang['F_SEL'] = 'Select AND CLICK YOUR FAVORITE BRAND';
-$lang['f_house'] = 'HOUSEHOLD EQUIPMENT';
-$lang['f_com'] = 'COMPUTER & LAPTOP';
-$lang['f_gad'] = 'GADGET AND HANDPHONE ACCESSORIES';
-
-
-
-
 
 ?>

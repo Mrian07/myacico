@@ -22,13 +22,15 @@ class Web extends MY_Controller {
         $lang = get_cookie('lang');
         $this->data['lang'] = $lang;
         if($lang=='en'){
-        $this->load->language('header','english');
-        $this->load->language('footer','english');
-        $this->load->language('dashboard','english');
+          $this->load->language('header','english');
+          $this->load->language('home','english');
+          $this->load->language('footer','english');
+          $this->load->language('dashboard','english');
         }else{
-        $this->load->language('header','indonesia');
-        $this->load->language('footer','indonesia');
-              $this->load->language('dashboard','indonesia');
+          $this->load->language('header','indonesia');
+          $this->load->language('home','indonesia');
+          $this->load->language('footer','indonesia');
+          $this->load->language('dashboard','indonesia');
         }
 
         $this->lang();
@@ -161,7 +163,7 @@ class Web extends MY_Controller {
     $this->data['lang_house'] = $this->lang->line('f_house');
     $this->data['lang_komp'] = $this->lang->line('f_com');
     $this->data['lang_gad'] = $this->lang->line('f_gad');
-
+    $this->data['lang_hob'] = $this->lang->line('f_hob');
 
     $this->data['lang_conta'] = $this->lang->line('f_contact');
 
