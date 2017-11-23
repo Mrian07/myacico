@@ -23,7 +23,21 @@
 				  <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
 				  <input type="hidden" id="isremitto" name="isremitto" value="N" />
           <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
+					<div class='row'>
+						<div class="col-sm-6">
+							<div class="form-group">
+							<label>Nama:</label>
+								<?php echo $user->name; ?>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+							<label>EMail:</label>
+								<?php echo $user->email; ?>
+							</div>
+						</div>
 
+					</div>
 					<div class="form-group">
 					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
 					  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
@@ -32,8 +46,10 @@
 					  <label><?php echo $lang_addres; ?>*</label>
 					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory"/>-->
 					<textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory"></textarea>
- 
-                                          <input type="text" id = "address2" name="address2" class="form-control mandatory"/>
+					</div>
+					<div class="form-group">
+						<label>Alamat Lain:</label>
+						<textarea rows="4" cols="50" id="address2" name="address2" class="form-control mandatory"></textarea>
 					</div>
                                         <div class="form-group">
 					<label><?php echo $lang_Country; ?>*</label>
@@ -136,7 +152,7 @@ function get_region(){
         var negara = $('#country_sel').val();
 
       $("#region_sel").prop('disabled', true).unbind("change", get_city);
-    
+
       $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
         r.forEach(function(o){
           $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
