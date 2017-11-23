@@ -379,13 +379,13 @@ class Account extends Web_private {
 	}
 
 	public function formAccount()
-    {
+  {
 		$this->data['active_informasiAkun'] = "class='active'";
 		$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_account',$this->data);
-                $this->load->view('frontend/sidenav',$this->data);
+    $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
