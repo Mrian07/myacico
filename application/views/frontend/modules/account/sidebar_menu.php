@@ -7,8 +7,8 @@
  '.$lang_acc);?></li>
     <li <?php echo$active_bukuAlamat; ?>><?php echo anchor('account/bukuAlamat', '<i class="fa fa-caret-right" aria-hidden="true"></i>
  '.$lang_add);?></li>
-    <li <?php echo$active_riwayatStatusPesanan; ?>><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-caret-right" aria-hidden="true"></i>
- Riwayat & Status Pesanan');?></li>
+    <li <?php echo$active_riwayatStatusPesanan; ?>><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-caret-right" aria-hidden="true"></i> '
+ .$lang_history);?></li>
 
     <li <?php echo$active_wishlist; ?>><?php echo anchor('account/wishlist', '<i class="fa fa-caret-right" aria-hidden="true"></i>
  Wishlist');?></li>

@@ -1,9 +1,9 @@
 <?php
 $lang['daftar'] = 'Registration';
 $lang['masuk'] = 'Login';
-$lang['ket_daftar_personal'] = 'For personal to shopping in myacico.com';
+$lang['ket_daftar_personal'] = 'For personal to shopping at myACICO.co.id';
 $lang['ket_daftar_akunBisnis'] = 'Want to provide goods for your company? business myacico account will suit your needs. your company information is required for verification. ';
-
+$lang['ket_daftar_akunGov'] = 'To government that shop at  myACICO.co.id.';
 //Button untuk daftar
 $lang['btn_daftar'] = 'CREATE PERSONAL ACCOUNT';
 $lang['btn_daftar_bisnis'] = 'CREATE BUSINESS ACCOUNT';
@@ -36,7 +36,7 @@ $lang['btn_kirim'] = 'Send';
 //button di signIn
 $lang['btn_kirim1'] = 'Log in';
 $lang['field_lp_password'] = 'Forget Your Password ?';
-$lang['field_ClickMe'] = 'Click Here..';
+$lang['field_ClickMe'] = 'Click Here';
 //akhir button di signIn
 
 //customer personal

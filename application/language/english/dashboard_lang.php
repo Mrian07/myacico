@@ -8,7 +8,7 @@
 	$lang['das_news'] ='Newsletters Subscribe';
 	//leftsidebar
 	$lang['das_addres'] ='Address Book';
-
-
+        $lang['das_regis'] ='Register With';
+        $lang['das_history'] ='History & Order Status';
 
  ?>

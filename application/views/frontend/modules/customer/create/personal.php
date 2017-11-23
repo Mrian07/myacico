@@ -225,7 +225,7 @@ margin-top: -11px;
 			<div class="col-sm-6" style='text-align: right'>
 				<?php echo $field_sudahDaftar; ?> <?php echo anchor('customer/signIn', 'Log In'); ?>
 			</div>
-		  </div><hr>Daftar dengan:
+		  </div><hr><?php echo$lang_daftar_text;?>
       <div class="row">
         <div class="col-sm-4">
           <a href="javascript:fbLogin();"><img src="<?php echo base_url('images/general/facebook.png');?>"></a>
