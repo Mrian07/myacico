@@ -16,7 +16,7 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 				  <form name="signup" method="post">
-					<div class="form-group">
+
 					<input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
 					<input type="hidden" id = "id" name="id" />
 					<input type="hidden" id="isbillto" name="isbillto" value="Y" />
@@ -26,8 +26,23 @@
 					<input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
                                         <!--<label>Nama Penerima*</label>-->
                                         <!--<input type="text" id = "name" name="name" class="form-control mandatory"/>-->
+
+					<div class='row'>
+						<div class="col-sm-6">
+							<div class="form-group">
+							<label>Nama:</label>
+								<?php echo $user->name; ?>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+							<label>EMail:</label>
+								<?php echo $user->email; ?>
+							</div>
+						</div>
+
 					</div>
-                                        <div class="form-group">
+          <div class="form-group">
 					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
 					  <input type="text" id="address_name" name="address_name" class="form-control mandatory" value="<?php echo $hasil['address_name'];?>" />
 					</div>
