@@ -132,7 +132,14 @@ class Account extends Web_private {
 				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
 				<span class="glyphicon glyphicon-ok"></span> Tambah buku alamat sukses.</div>');
 			}
-
+		}elseif($flag=='2'){
+			if($lang=='en'){
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Update address book success.</div>');
+			}else{
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Ubah buku alamat sukses.</div>');
+			}
 		}
 
 		$this->data['active_bukuAlamat'] = "class='active'";

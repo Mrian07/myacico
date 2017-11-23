@@ -9,13 +9,13 @@
 		</div>
 		<div class="col-sm-9">
 			<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat', array('class'=>'btn-back'));?>
-					<br/><br/>
-					<!-- pesan start -->
-					<?php $flash_pesan = $this->session->flashdata('pesan')?>
-					<?php if (! empty($flash_pesan)) : ?>
-					<?php echo $flash_pesan; ?>
-					<?php endif ?>
-					<!-- pesan end -->
+			<br/><br/>
+			<!-- pesan start -->
+			<?php $flash_pesan = $this->session->flashdata('pesan')?>
+			<?php if (! empty($flash_pesan)) : ?>
+			<?php echo $flash_pesan; ?>
+			<?php endif ?>
+			<!-- pesan end -->
 		<div class='listBukuAlamat'><center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center></div>
 
 		</div>
