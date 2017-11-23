@@ -1,4 +1,4 @@
 <?php
 //LogIn
-$lang['info_login'] = 'Please input your email and password below.';
+$lang['info_login'] = 'Please input your email anda password below.';
 ?>

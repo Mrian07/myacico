@@ -76,8 +76,20 @@ class Web extends MY_Controller {
     //label
     $this->data['lang_lab_name'] = $this->lang->line('label_name');
     $this->data['lang_lab_rep_pass'] = $this->lang->line('label_rep_pass');
-
-
+//    Forgot Password
+    $this->data['lang_password_text'] = $this->lang->line('lost_password_text');
+    $this->data['lang_password_tittle'] = $this->lang->line('lost_password_tittle');
+    $this->data['lang_password_button'] = $this->lang->line('lost_password_button');
+    $this->data['lang_password_msg1'] = $this->lang->line('lost_password_msg1');
+    $this->data['lang_password_msg2'] = $this->lang->line('lost_password_msg2');
+    $this->data['lang_password_msg3'] = $this->lang->line('lost_password_msg3');
+    
+     $this->data['lang_reset_password'] = $this->lang->line('reset_password_tittle');
+    $this->data['lang_reset_password_txt'] = $this->lang->line('reset_password_text');
+    $this->data['lang_reset_password_form1'] = $this->lang->line('reset_password_form1');
+    $this->data['lang_reset_password_form2'] = $this->lang->line('reset_password_form2');
+    $this->data['lang_reset_password_msg1'] = $this->lang->line('reset_password_msg1');
+    $this->data['lang_reset_password_msg2'] = $this->lang->line('reset_password_msg2');
 		//Lang
 		$this->data['lang_daftar'] = $this->lang->line('daftar');
 		$this->data['lang_masuk'] = $this->lang->line('masuk');

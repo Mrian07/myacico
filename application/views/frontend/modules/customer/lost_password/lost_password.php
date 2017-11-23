@@ -4,7 +4,7 @@
 			<div class="row">
 			  <div class="col-sm-12">
 
-				<i class="fa fa-angle-right" aria-hidden="true"></i> LUPA PASSWORD
+				<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo$lang_password_tittle;?>
 
 			  </div>
 			</div>
@@ -15,14 +15,14 @@
 
 		</div>
 	  <div class="col-sm-6">
-			<p>Masukkan alamat email Anda di bawah ini. Anda akan menerima link untuk mereset password Anda.</p>
+			<p><?php echo$lang_password_text;?></p>
 		<div class='border-create' style='text-align:left'>
 		 <form name="signup" method="post">
 		  <div class="form-group">
 			<label>Email:</label>
 			<input type="email" id="email" name="email" class="form-control"/>
 		  </div>
-		  <input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+                     <input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo$lang_password_button;?>">
 			<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 		</form>
 		</div>
@@ -53,7 +53,7 @@ $(document).ready(function() {
 		if(email==''){
 			$.alert({
 				title: 'Alert!',
-				content: 'Email tidak boleh kosong!',
+				content: '<?php echo$lang_password_msg1;?>',
 			});
 		}else{
 
@@ -69,7 +69,19 @@ $(document).ready(function() {
 				$('#spinner_img').hide();
 				$('#submit_btn').val('Kirim').removeClass('disabled');
 				console.log('OK:', r);
-				alert(r.message);
+				//alert(r.message);
+                                if(r.status === '0'){
+                                    $.alert({
+				title: 'Alert!',
+				content: '<?php echo$lang_password_msg2;?>',
+			});
+                                }
+                                else{
+                                 $.alert({
+				title: 'Alert!',
+				content: '<?php echo$lang_password_msg3;?>',
+			});
+                                }
 			};
 
 			//$.post( apiurl, data, success, "json" );
