@@ -11,4 +11,16 @@
         $lang['das_regis'] ='Register With';
         $lang['das_history'] ='History & Order Status';
 
+				//informasi AKUN
+				$lang['inf_datakun'] ='Account Information';
+				$lang['inf_gant'] ='Change Password';
+				$lang['inf_you'] ='If you want to change the password click button below.';
+				$lang['inf_bil'] ='Billing Information.';
+				$lang['inf_bils'] ='
+No billing data yet, billing data is required at checkout purchase.';
+
+
+
+				//akhirdari informasi akun
+
  ?>
