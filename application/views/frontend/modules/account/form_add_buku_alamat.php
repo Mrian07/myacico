@@ -96,10 +96,6 @@
 					<label>Telepon</label>
 						<input type="text" id = "phone2"name="phone2" class="form-control"/>
 					</div>
-
-
-
-
 					<div class="clearfix"></div>
 						<input type="submit" id="submit_btn" class="btn btn-primary" value="Save"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 				  </form>
@@ -237,33 +233,30 @@ $.ajax({
     var ispayfrom = $("#ispayfrom").val();
     var isremitto = $("#isremitto").val();
 
-    //var fl=document.signup;
-//    var data = $(this).serialize();
-//     return alert(data);die();
-        data.name = name;
-        data.phone = phone;
-        data.phone2 = phone2;
-        data.address_name = address_name;
-        data.address1 = address1;
-        data.address2 = address2;
-        data.address3 = address3;
-        data.address4 = address4;
-        data.postal = postal;
-        data.c_country_id = negara;
-        data.district_id = district_id;
-        data.isbillto = isbillto;
-        data.isshipto = isshipto;
-        data.ispayfrom = ispayfrom;
-        data.isremitto = isremitto;
-        data.village_id = village_id;
+    data.name = name;
+    data.phone = phone;
+    data.phone2 = phone2;
+    data.address_name = address_name;
+    data.address1 = address1;
+    data.address2 = address2;
+    data.address3 = address3;
+    data.address4 = address4;
+    data.postal = postal;
+    data.c_country_id = negara;
+    data.district_id = district_id;
+    data.isbillto = isbillto;
+    data.isshipto = isshipto;
+    data.ispayfrom = ispayfrom;
+    data.isremitto = isremitto;
+    data.village_id = village_id;
 
-     var success = function(r){
-         $('#spinner_img').hide();
-  $('#submit_btn').val('Kirim').removeClass('disabled');
-         $.alert({
-     title: 'Alert!',
-     content: 'Alamat Baru Berhasil di tambahkan',
-    });
+		var success = function(r){
+		$('#spinner_img').hide();
+		$('#submit_btn').val('Save').removeClass('disabled');
+    //      $.alert({
+    //  title: 'Alert!',
+    //  content: 'Alamat Baru Berhasil di tambahkan',
+    // });
 //      alert(r.message);
       //console.log('OK:', r.status);
 			$("#name").val(null);
@@ -280,8 +273,8 @@ $.ajax({
 			$("#isshipto").val(null);
 			$("#ispayfrom").val(null);
 		  $("#isremitto").val(null);
-console.log('datanya: ',data);
-        window.location.replace(base_url+"/account/bukuAlamat");
+
+      window.location.replace(base_url+"/account/bukuAlamat/1");
 
     };
     $('#spinner_img').show();
@@ -292,7 +285,7 @@ console.log('datanya: ',data);
 
 var error = function(er){
   $('#spinner_img').hide();
-  $('#submit_btn').val('Kirim').removeClass('disabled');
+  $('#submit_btn').val('Save').removeClass('disabled');
   console.log('OK:', er);
   $.alert({
     title: 'Alert!',

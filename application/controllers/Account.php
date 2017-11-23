@@ -122,10 +122,17 @@ class Account extends Web_private {
 
 	public function bukuAlamat()
   {
+		$lang = get_cookie('lang');
 		$flag = $this->uri->segment(3);
 		if($flag=='1'){
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
-			<span class="glyphicon glyphicon-ok"></span> Tambah buku alamat sukses.</div>');
+			if($lang=='en'){
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Add address book success.</div>');
+			}else{
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Tambah buku alamat sukses.</div>');
+			}
+
 		}
 
 		$this->data['active_bukuAlamat'] = "class='active'";
