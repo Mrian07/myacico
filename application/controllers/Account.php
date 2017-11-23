@@ -158,9 +158,8 @@ class Account extends Web_private {
 	public function editBukuAlamat()
     {
 		$this->data['id'] = $this->uri->segment(3);
-                $idadd=$this->uri->segment(3);
-
-                $token = $_COOKIE['x-auth'];
+    $idadd=$this->uri->segment(3);
+    $token = $_COOKIE['x-auth'];
 
 		$api = "aduser/getaddress/".$idadd;
 		$url = api_base_url($api);
@@ -172,10 +171,7 @@ class Account extends Web_private {
 		]];
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
-                $this->data['hasil'] = json_decode($konten, true);
-
-//                die(print_r($url));
-
+    $this->data['hasil'] = json_decode($konten, true);
 		$this->data['active_bukuAlamat'] = "class='active'";
 		$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);

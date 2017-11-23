@@ -40,7 +40,7 @@
 					<div class="form-group">
 
 						<label>Alamat Lain:</label>
-						<textarea rows="4" cols="50" id="address1" name="address1" class="form-control" value="<?php echo $hasil['address2'];?>"><?php echo $hasil['address2'];?></textarea>
+						<textarea rows="4" cols="50" id="address2" name="address2" class="form-control" value="<?php echo $hasil['address2'];?>"><?php echo $hasil['address2'];?></textarea>
 
 
 					</div>
@@ -403,8 +403,8 @@ data.id = id;
     data.address2 = address2;
     data.postal = postal;
     data.district_id = district_id;
-    data.isbillto = 'Y';
-    data.isshipto = 'N';
+    data.isbillto = 'N';
+    data.isshipto = 'Y';
     data.ispayfrom = 'N';
     data.isremitto = 'N';
     data.village_id = village_id;
@@ -421,7 +421,7 @@ data.id = id;
 		});
 //      alert(r.message);
       console.log('OK:', r.status);
-        window.location.replace(base_url+"/account/informasiAkun");
+        window.location.replace(base_url+"/account/bukuAlamat");
 
     };
     $('#spinner_img').show();
