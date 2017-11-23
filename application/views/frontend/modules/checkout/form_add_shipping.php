@@ -76,34 +76,38 @@
                     <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
                     <input type="hidden" id="isremitto" name="isremitto" value="N" />
                     <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
-                    <label>Nama Penerima*</label>
-                    <input type="text" id = "name" name="name" class="form-control mandatory"/>
+                    <div class="form-group">
+                      <label>Nama Penerima*</label>
+                      <input type="text" id = "name" name="name" class="form-control mandatory"/>
+                    </div>
                     <div class="form-group">
                       <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
                       <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
                     </div>
-                    
+
                     <div class="form-group">
                         <label><?php echo $lang_addres; ?>*</label>
                          <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" ></textarea>
                         <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" />-->
                         <!--<input type="text" id = "address2" name="address2" class="form-control mandatory" />-->
+                    </div>    
+                    <div class="form-group">
                          <label>Alamat Lain:</label>
                          <textarea rows="4" cols="50" id="address2" name="address2" class="form-control mandatory" ></textarea>
 
                     </div>
                     <div class="form-group">
-                    <label><?php echo $lang_Country; ?>*</label>
-                    <select name="country" id="country_sel" class="form-control mandatory">
-			<option value="209" selected="selected">Indonesia</option>
-                        </select>
+                      <label><?php echo $lang_Country; ?>*</label>
+                      <select name="country" id="country_sel" class="form-control mandatory">
+                      <option value="209" selected="selected">Indonesia</option>
+                      </select>
                     </div>
                     <div class="form-group" id="region_box">
-					<label><?php echo $lang_Provience; ?>*</label>
-                                        <select name="province" id="region_sel" class="form-control mandatory">
-                                         <option value="" selected="selected">--Pilih--</option>
-                                        </select>
-                                      </div>
+                      <label><?php echo $lang_Provience; ?>*</label>
+                      <select name="province" id="region_sel" class="form-control mandatory">
+                      <option value="" selected="selected">--Pilih--</option>
+                      </select>
+                    </div>
                     <div class="form-group" style="display:none" id="city_box">
                       <label><?php echo $lang_kota; ?>*</label>
                       <select name="city" id="city_sel" class="form-control mandatory"></select>
@@ -113,12 +117,12 @@
                       <select name="district_id" id="district_id" class="form-control mandatory"></select>
                     </div>
                     <div class="form-group" style="display:none" id="village_box">
-                        <label><?php echo "kelurahan"; ?>*</label>
+                      <label><?php echo "kelurahan"; ?>*</label>
                       <select name="village_id" id="village_id" class="form-control mandatory"></select>
                     </div>
                     <div class="form-group" style="display:none" id="postal_box">
-                    <label><?php echo $lang_PostCode; ?>*</label>
-               <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
+                      <label><?php echo $lang_PostCode; ?>*</label>
+                      <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
                     </div>
                     <div class="form-group">
                     <label>Handphone*</label>

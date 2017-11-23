@@ -4,12 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Account extends Web_private {
 
 	public function __construct()
-    {
+  {
 		parent::__construct();
-        $this->load->helper('form');
-        $this->load->library('form_validation');
+    $this->load->helper('form');
+    $this->load->library('form_validation');
 		$this->load->helper('app');
-
 		$this->atribut();
 	}
 
