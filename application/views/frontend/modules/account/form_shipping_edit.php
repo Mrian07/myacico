@@ -284,7 +284,7 @@ var keces= function(){
     keces();
     kels();
     kodePos();
-    $('#submit_btn').attr('disabled','disabled');
+   // $('#submit_btn').attr('disabled','disabled');
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
     var idAdd = $('#idAdd').val();
 //    $http.get('www.google.com/someapi', {
