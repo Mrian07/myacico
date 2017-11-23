@@ -10,7 +10,7 @@
 	</div>
 </div>
 <div class="container">
-	
+
 
 	<div class="row">
 		<div class="col-sm-3">
@@ -33,7 +33,7 @@
 				<input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
 				<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 			</div>
-		  </div>	
+		  </div>
 		</form>
 		</div>
 	  </div>
@@ -43,7 +43,7 @@
 	</div>
 </div>
 
-
+<?php echo $baseApiUrl2; ?>
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
 
@@ -52,8 +52,8 @@ $(document).ready(function() {
     var data = {};
     var url =$('#surel').val();
     var res = url.split("key=");
-                  
-                   // var kunci = 
+
+                   // var kunci =
 console.log('sam',res[1]);
 	$('form').submit(function(e){
 
@@ -62,13 +62,13 @@ console.log('sam',res[1]);
 		var password = $("#password").val();
 		var password2 = $("#password2").val();
                 var key = $('#surel').val();
-		if(password.length < 7){ 
+		if(password.length < 7){
 			$.alert({
 				title: 'Alert!',
 				content: 'Password minimal 7 karakter!',
 			});
 		}
-		else if(password != password2){ 
+		else if(password != password2){
 			$.alert({
 				title: 'Alert!',
 				content: 'Password konfirmasi tidak sama!',
@@ -77,7 +77,7 @@ console.log('sam',res[1]);
 		else{
 
 		    var apiurl = baseApiUrl + '/forgotpassword/reset';
-                    
+
 		    //var data = $(this).serialize();
                     data.key = res[1];
                     data.password = password;
@@ -88,7 +88,7 @@ console.log('sam',res[1]);
                       if(r.status === '1'){
                             window.location.replace(base_url+"customer/signIn");
 
-                }	
+                }
 		    };
 
 //		    $.post( apiurl, data, success, "json" );

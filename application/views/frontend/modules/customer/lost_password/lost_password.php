@@ -32,10 +32,7 @@
 		</div>
 	</div>
 </div>
-
-
 <script type="text/javascript">
-var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
 
 var error = function(er){
   $('#spinner_img').hide();
@@ -48,6 +45,7 @@ var error = function(er){
 };
 
 $(document).ready(function() {
+	var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
 
 	$('form').submit(function(e){
 		var email = $("#email").val();

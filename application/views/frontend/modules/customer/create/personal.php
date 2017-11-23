@@ -17,7 +17,7 @@
       };
       gapi.auth.signIn(myParams);
     }
- 
+
     function loginCallback(result){
         if(result['status']['signed_in'])
         {
@@ -38,11 +38,11 @@
                         }
                     }
                 }
-     
+
                 var str = "Name:" + resp['displayName'] + "<br>";
                 str += "Image:" + resp['image']['url'] + "<br>";
                 str += "<img src='" + resp['image']['url'] + "' /><br>";
-     
+
                 str += "URL:" + resp['url'] + "<br>";
                 str += "Email:" + email + "<br>";
                 var umail=email;
@@ -55,20 +55,20 @@
                 }else{
                     window.location.assign('#/app/password/'+email)
                 }
-                
+
             });
-     
+
         }
-     
+
     }
 
     function onLoadCallback(){
         gapi.client.setApiKey('AIzaSyCqXQ5Te1coI72mtysKI0_GbbMpJo6EaUs');
         gapi.client.load('plus', 'v1',function(){});
     }
- 
+
     </script>
- 
+
         <script type="text/javascript">
               (function() {
                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -86,13 +86,13 @@
               xfbml      : true,  // parse social plugins on this page
               version    : 'v2.8' // use graph api version 2.8
             });
-            
+
             // Check whether the user already logged in
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
                     //display user data
                     //console.log(response.status.email)
-                   
+
                     getFbUserData();
                 }
             });
@@ -219,21 +219,21 @@ margin-top: -11px;
 		  </div>
 		  <div class="row">
 			<div class="col-sm-6">
-				<input type="submit" id="submit_btn3" class="btn btn-primary" value="<?php echo "Daftar"?>">
+				<input type="submit" id="submit_btn3" class="btn btn-primary" value="<?php echo $lang_btn_signin; ?>">
 				<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 			</div>
 			<div class="col-sm-6" style='text-align: right'>
 				<?php echo $field_sudahDaftar; ?> <?php echo anchor('customer/signIn', 'Log In'); ?>
 			</div>
 		  </div><hr>Daftar dengan:
-                     <div class="row">
-      		<div class="col-sm-4">
-<a href="javascript:fbLogin();"><img src="<?php echo base_url('images/general/facebook.png');?>"></a>
-  </div>
-          <div class="col-sm-4">
-            <a href="javascript:login(1);"><img src="<?php echo base_url('images/general/google.png');?>"></a>
-          </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <a href="javascript:fbLogin();"><img src="<?php echo base_url('images/general/facebook.png');?>"></a>
         </div>
+        <div class="col-sm-4">
+          <a href="javascript:login(1);"><img src="<?php echo base_url('images/general/google.png');?>"></a>
+        </div>
+      </div>
 		</form>
 		</div>
 	  </div>

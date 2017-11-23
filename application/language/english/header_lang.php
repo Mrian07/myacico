@@ -26,8 +26,7 @@ $lang['field_fbo'] = "<div style='font-family: arial; font-size:12px; font-weigh
 $lang['field_atas'] = 'if you have question Please Contact Us below';
 $lang['field_name'] = 'Name';
 $lang['field_email'] = 'Email';
-$lang['field_keperluan'] = '
-Please choose your needs';
+$lang['field_keperluan'] = 'Please choose your needs';
 $lang['field_pesan'] = 'Message';
 
 //button di contact
@@ -35,7 +34,7 @@ $lang['btn_kirim'] = 'Send';
 //akhir button contact
 
 //button di signIn
-$lang['btn_kirim1'] = 'Login';
+$lang['btn_kirim1'] = 'Log in';
 $lang['field_lp_password'] = 'Forget Your Password ?';
 $lang['field_ClickMe'] = 'Click Here..';
 //akhir button di signIn

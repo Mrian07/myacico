@@ -166,7 +166,7 @@
 		<div class="col-sm-6">
 		<h5>LOG IN</h5>
 		<div style='border: 1px #dddddd solid;padding:10px;margin-bottom:40px;height:350px'>
-				<p>Masukan email dan password login Anda pada form dibawah ini.</p>
+				<p><?php echo$lang_info_login; ?></p>
 			<form name="myForm" method="post">
 				<div class="form-group">
 				<label>Email:</label>

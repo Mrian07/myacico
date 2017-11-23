@@ -26,11 +26,15 @@ class Web extends MY_Controller {
           $this->load->language('home','english');
           $this->load->language('footer','english');
           $this->load->language('dashboard','english');
+          $this->load->language('general','english');
+          $this->load->language('body','english');
         }else{
           $this->load->language('header','indonesia');
           $this->load->language('home','indonesia');
           $this->load->language('footer','indonesia');
           $this->load->language('dashboard','indonesia');
+          $this->load->language('general','indonesia');
+          $this->load->language('body','english');
         }
 
         $this->lang();
@@ -63,6 +67,8 @@ class Web extends MY_Controller {
 	}
 
 	public function lang(){
+    //buttons
+    $this->data['lang_btn_signin'] = $this->lang->line('btn_signin');
 
 		//Lang
 		$this->data['lang_daftar'] = $this->lang->line('daftar');
@@ -96,6 +102,7 @@ class Web extends MY_Controller {
     //akhhir dari dashboard
 
 		// signIn
+    $this->data['lang_info_login'] = $this->lang->line('info_login');
 		$this->data['lang_btn_SignIn'] = $this->lang->line('btn_kirim1');
 		$this->data['lang_Field_lpPassword'] = $this->lang->line('field_lp_password');
 		$this->data['lang_Field_ClickMe'] = $this->lang->line('field_ClickMe');
