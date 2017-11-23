@@ -306,7 +306,7 @@ if(name==''){
          // alert(r.message);
           $.alert({
 				title: 'Alert!',
-				content: r.message,
+				content: 'Pendaftaran Gagal karena '+r.message,
 			});
 					return false;
 			}else{
