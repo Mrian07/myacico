@@ -420,7 +420,7 @@ data.id = id;
 		// 	content: 'Alamat Baru Berhasil di tambahkan',
 		// });
 
-        window.location.replace(base_url+"/account/bukuAlamat/".1);
+        window.location.replace(base_url+"/account/bukuAlamat/2");
 
     };
     $('#spinner_img').show();

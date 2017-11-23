@@ -122,10 +122,24 @@ class Account extends Web_private {
 
 	public function bukuAlamat()
   {
+		$lang = get_cookie('lang');
 		$flag = $this->uri->segment(3);
 		if($flag=='1'){
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
-			<span class="glyphicon glyphicon-ok"></span> Tambah buku alamat sukses.</div>');
+			if($lang=='en'){
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Add address book success.</div>');
+			}else{
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Tambah buku alamat sukses.</div>');
+			}
+		}elseif($flag=='2'){
+			if($lang=='en'){
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Update address book success.</div>');
+			}else{
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Ubah buku alamat sukses.</div>');
+			}
 		}
 
 		$this->data['active_bukuAlamat'] = "class='active'";
@@ -187,19 +201,18 @@ class Account extends Web_private {
 	}
 
 	public function TambahBukuAlamat()
-    {
+  {
 		$this->data['active_bukuAlamat'] = "class='active'";
 		$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-
-		$this->load->view('frontend/modules/account/TambahBukuAlamat',$this->data);
-                $this->load->view('frontend/sidenav',$this->data);
+		$this->load->view('frontend/modules/account/form_add_buku_alamat',$this->data);
+    $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
 	public function riwayatStatusPesanan()
-    {
+  {
 		$this->data['active_riwayatStatusPesanan'] = "class='active'";
 		$this->data['title_web'] = "Myacico.co.id - Riwayat Status Pasaran";
 		$this->load->view('frontend/header',$this->data);

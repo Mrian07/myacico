@@ -444,10 +444,13 @@ $(document).ready(function() {
 });
 </script>
 
+<<<<<<< HEAD
 <script>
 $(document).ready(function() {
 	$('#alertSubmit').show('slow').delay(5000).hide('slow');
 
 });
 </script>
+=======
+>>>>>>> 0e084aa5bee8a7a1f48461a17597135331d8ba73
 </html>
