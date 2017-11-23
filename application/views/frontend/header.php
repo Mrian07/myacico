@@ -125,14 +125,14 @@
 			<div class='row'>
 				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
 
-				<div class="col-xs-7" style='margin-top:20px;'>
-					<div class='link-head'>
+				<div class="col-xs-7">
+					<div class='link-head' style='margin-top:40px; position: absolute'>
 						<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_produck, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
 					</div>
-					</div>
+				</div>
 
 				<div class="col-xs-5">
 					 <!-- <b>Belanja murah di myacico.co.id! Gratis pengiriman untuk area JAKARTA</b> -->
