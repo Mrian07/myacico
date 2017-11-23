@@ -70,6 +70,10 @@ class Web extends MY_Controller {
     //buttons
     $this->data['lang_btn_signin'] = $this->lang->line('btn_signin');
 
+    //label
+    $this->data['lang_lab_name'] = $this->lang->line('label_name');
+    $this->data['lang_lab_rep_pass'] = $this->lang->line('label_rep_pass');
+
 		//Lang
 		$this->data['lang_daftar'] = $this->lang->line('daftar');
 		$this->data['lang_masuk'] = $this->lang->line('masuk');

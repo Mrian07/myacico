@@ -443,4 +443,11 @@ $(document).ready(function() {
 
 });
 </script>
+
+<script>
+$(document).ready(function() {
+	$('#alertSubmit').show('slow').delay(5000).hide('slow');
+
+});
+</script> 
 </html>

@@ -201,7 +201,7 @@ margin-top: -11px;
 		<div class='border-create7'>
 		 <form name="myForm" method="post">
 		<div class="form-group">
-		<label>Name:</label>
+		<label><?php echo $lang_lab_name; ?>:</label>
 		<input type="text" id="name" name="name" class="form-control mandatory"/>
 		</div>
 		  <div class="form-group">
@@ -214,7 +214,7 @@ margin-top: -11px;
 			<input type="password" id="password" name="password" class="form-control" placeholder=""  />
 		  </div>
 		  <div class="form-group">
-			<label>Ulangi Password:</label>
+			<label><?php echo $lang_lab_rep_pass; ?>:</label>
 			<input type="password" id="password2" class="form-control" placeholder="" />
 		  </div>
 		  <div class="row">
@@ -245,9 +245,7 @@ margin-top: -11px;
 </div>
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl2; ?>'+'/create';
-console.log('333',baseApiUrl)
 var apiurl = '<?php echo $baseApiUrl2; ?>'+'/create';
-console.log('tes1111',apiurl)
 var data = {};
 $(document).ready(function() {
 
@@ -256,7 +254,7 @@ $(document).ready(function() {
     var name = $("#name").val();
 		var email = $("#email").val();
 		var password = $("#password").val();
-                var password2 = $("#password2").val();
+    var password2 = $("#password2").val();
 		data.name = name;
     data.email = email;
     data.password = password;
@@ -304,7 +302,7 @@ if(name==''){
       $('#spinner_img').hide();
       $('#submit_btn').val('Daftar').removeClass('disabled');
       // console.log('OK:', r);
-      alert(r.message);
+      //alert(r.message);
 			if(r.status == 0){
 					         return false;
 			}else{

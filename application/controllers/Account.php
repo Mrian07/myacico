@@ -121,7 +121,13 @@ class Account extends Web_private {
 	}
 
 	public function bukuAlamat()
-    {
+  {
+		$flag = $this->uri->segment(3);
+		if($flag=='1'){
+			$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+			<span class="glyphicon glyphicon-ok"></span> Tambah buku alamat sukses.</div>');
+		}
+
 		$this->data['active_bukuAlamat'] = "class='active'";
 		$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);

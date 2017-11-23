@@ -2,10 +2,13 @@
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> BUKU ALAMAT
 	</div>
-</div>
+	<!-- pesan start -->
+	<?php $flash_pesan = $this->session->flashdata('pesan')?>
+	<?php if (! empty($flash_pesan)) : ?>
+	<?php echo $flash_pesan; ?>
+	<?php endif ?>
+	<!-- pesan end -->
 
-
-<div class="container my-container-white">
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
