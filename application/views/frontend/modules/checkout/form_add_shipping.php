@@ -53,7 +53,7 @@
 			  </div>
 
 				 <div class="panel-body">
-
+           <p>Silakan lengkapi data penerima Anda dibawah ini.</p>
 
 						<form name="signup" method="post">
 						<div class="form-group">
@@ -68,7 +68,7 @@
             <div class="row">
               <div class="col-sm-12">
 
-                <p>Silakan lengkapi data billing Anda dibawah ini.</p>
+
 
                     <form name="test1" method="post">
                     <input type="hidden" id="isbillto" name="isbillto" value="N" />
@@ -90,7 +90,7 @@
                          <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" ></textarea>
                         <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" />-->
                         <!--<input type="text" id = "address2" name="address2" class="form-control mandatory" />-->
-                    </div>    
+                    </div>
                     <div class="form-group">
                          <label>Alamat Lain:</label>
                          <textarea rows="4" cols="50" id="address2" name="address2" class="form-control mandatory" ></textarea>
