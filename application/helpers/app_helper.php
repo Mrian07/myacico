@@ -39,12 +39,12 @@ function tanggal($tanggal)
 		$bulan="November";
 	}elseif($bulan=="12"){
 		$bulan="Desember";
-	}	
+	}
 	return "$tanggal $bulan $tahun";
 }
 
 function tanggal_time($tgl_time)
-{	
+{
 	$get_date_time=explode(" ",$tgl_time);
 
 	$get_date=explode("-",$get_date_time[0]);
@@ -76,10 +76,10 @@ function tanggal_time($tgl_time)
 		$bulan="November";
 	}elseif($bulan=="12"){
 		$bulan="Desember";
-	}	
-	
+	}
+
 	$time = explode(".",$get_date_time[1]);
-	
+
 	return "$tanggal $bulan $tahun ".$time[0]." WIB";
 }
 /*
@@ -89,7 +89,7 @@ function money($money)
 	if($get_m[0]){
 	return number_format($get_m[0],0,',','.');
 	}else{
-	return 0; 
+	return 0;
 	}
 }
 */
@@ -99,11 +99,11 @@ function money($money)
 	return number_format($money,0,',','.');
 	}else{
 	$money="0";
-	return $money; 
+	return $money;
 	}
 }
 
-	
+
 function setUrl($id)
 {
 	return strtr($id,array('+' => '.', '=' => '-', '/' => '~'));
@@ -113,6 +113,3 @@ function getUrl($id)
 {
 	return strtr($id,array('.' => '+', '-' => '=', '~' => '/'));
 }
-
-
-	

@@ -302,9 +302,9 @@ if(name==''){
       $('#spinner_img').hide();
       $('#submit_btn').val('Daftar').removeClass('disabled');
       // console.log('OK:', r);
-      //alert(r.message);
 			if(r.status == 0){
-					         return false;
+          alert(r.message);
+					return false;
 			}else{
 
 				window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);

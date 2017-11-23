@@ -187,19 +187,18 @@ class Account extends Web_private {
 	}
 
 	public function TambahBukuAlamat()
-    {
+  {
 		$this->data['active_bukuAlamat'] = "class='active'";
 		$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-
-		$this->load->view('frontend/modules/account/TambahBukuAlamat',$this->data);
-                $this->load->view('frontend/sidenav',$this->data);
+		$this->load->view('frontend/modules/account/form_add_buku_alamat',$this->data);
+    $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
 	public function riwayatStatusPesanan()
-    {
+  {
 		$this->data['active_riwayatStatusPesanan'] = "class='active'";
 		$this->data['title_web'] = "Myacico.co.id - Riwayat Status Pasaran";
 		$this->load->view('frontend/header',$this->data);

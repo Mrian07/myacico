@@ -54,25 +54,20 @@
 					</div>
 					<div class="form-group">
 					  <label><?php echo $lang_addres; ?>*</label>
-                                          <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory"></textarea>
-
-
-
-					  <!--<input type="text" id = "address1"name="address1" class="form-control mandatory"/>-->
-					  <label>Alamat Lain:</label>
-
-																					<textarea rows="4" cols="50" id="address2" name="address2" class="form-control"></textarea>
-
-
+            <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory"></textarea>
 					</div>
 					<div class="form-group">
-					<label><?php echo $lang_Country; ?>*</label>
-					<select name="country" id="country_sel" class="form-control mandatory">
-<option value="209" selected="selected">Indonesia</option>
-							</select>
+					  <label>Alamat Lain:</label>
+						<textarea rows="4" cols="50" id="address2" name="address2" class="form-control"></textarea>
+					</div>
+					<div class="form-group">
+						<label><?php echo $lang_Country; ?>*</label>
+						<select name="country" id="country_sel" class="form-control mandatory">
+						<option value="209" selected="selected">Indonesia</option>
+						</select>
 					</div>
 					<div class="form-group" id="region_box">
-<label><?php echo $lang_Provience; ?>*</label>
+						<label><?php echo $lang_Provience; ?>*</label>
 															<select name="province" id="region_sel" class="form-control mandatory">
 															 <option value="" selected="selected">--Pilih--</option>
 															</select>
