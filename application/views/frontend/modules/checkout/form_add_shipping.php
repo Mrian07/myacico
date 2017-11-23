@@ -55,7 +55,7 @@
 				 <div class="panel-body">
            <p>Silakan lengkapi data penerima Anda dibawah ini.</p>
 
-						<form name="signup" method="post">
+						<!-- <form name="signup" method="post"> -->
 						<!-- <div class="form-group">
 
 						<input type="hidden" id="bill" name="bill" value="N" />
@@ -67,15 +67,11 @@
 						</div> -->
             <div class="row">
               <div class="col-sm-12">
-
-
-
                     <form name="test1" method="post">
                     <input type="hidden" id="isbillto" name="isbillto" value="N" />
                     <input type="hidden" id="isshipto" name="isshipto" value="Y" />
                     <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
                     <input type="hidden" id="isremitto" name="isremitto" value="N" />
-                    <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
                     <div class="form-group">
                       <label>Nama Penerima*</label>
                       <input type="text" id = "name" name="name" class="form-control mandatory"/>
@@ -254,48 +250,48 @@ $('#submit_btn').attr('disabled','disabled');
         var ispayfrom = $("#ispayfrom").val();
         var isremitto = $("#isremitto").val();
 
-    //var fl=document.signup;
-//    var data = $(this).serialize();
-//     return alert(data);die();
-data.name = name;
-data.phone = phone;
-data.phone2 = phone2;
-data.address_name = address_name;
-data.address1 = address1;
-data.address2 = address2;
-data.postal = postal;
-data.district_id = district_id;
-data.village_id = village_id;
-data.isbillto = 'Y';
-data.isshipto = 'Y';
-data.ispayfrom = 'Y';
-data.isremitto = 'Y';
+        //var fl=document.signup;
+        //    var data = $(this).serialize();
+        //     return alert(data);die();
+
+        data.name = name;
+        data.phone = phone;
+        data.phone2 = phone2;
+        data.address_name = address_name;
+        data.address1 = address1;
+        data.address2 = address2;
+        data.postal = postal;
+        data.district_id = district_id;
+        data.village_id = village_id;
+        data.isbillto = 'N';
+        data.isshipto = 'Y';
+        data.ispayfrom = 'N';
+        data.isremitto = 'N';
 
     //return alert(data.phone);die();
      var success = function(r){
          $('#spinner_img').hide();
-  $('#submit_btn').val('Kirim').removeClass('disabled');
-//         $.alert({
-//     title: 'Alert!',
-//     content: 'Alamat Baru Berhasil di tambahkan',
-//    });
-//      alert(r.message);
-      console.log('OK:', r.status);
-			// $("#name").val(null);
-			// $("#phone").val(null);
-			// $("#phone2").val(null);
-			// $("#address_name").val(null);
-			// $("#address1").val(null);
-			// $("#address2").val(null);
-			// $("#address3").val(null);
-			// $("#address4").val(null);
-			// $("#postal").val(null);
-			// $("#district_id").val(null);
-			// $("#isbillto").val(null);
-			// $("#isshipto").val(null);
-			// $("#ispayfrom").val(null);
-		  // $("#isremitto").val(null);
-
+         $('#submit_btn').val('Kirim').removeClass('disabled');
+        //         $.alert({
+        //     title: 'Alert!',
+        //     content: 'Alamat Baru Berhasil di tambahkan',
+        //    });
+        //      alert(r.message);
+        console.log('OK:', r.status);
+    		// $("#name").val(null);
+    		// $("#phone").val(null);
+    		// $("#phone2").val(null);
+    		// $("#address_name").val(null);
+    		// $("#address1").val(null);
+    		// $("#address2").val(null);
+    		// $("#address3").val(null);
+    		// $("#address4").val(null);
+    		// $("#postal").val(null);
+    		// $("#district_id").val(null);
+    		// $("#isbillto").val(null);
+    		// $("#isshipto").val(null);
+    		// $("#ispayfrom").val(null);
+    	  // $("#isremitto").val(null);
         window.location.replace(base_url+"checkout/dataShipping");
 
     };
