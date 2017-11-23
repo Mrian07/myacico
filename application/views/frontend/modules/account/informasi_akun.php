@@ -12,6 +12,12 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
+			<!-- pesan start -->
+			<?php $flash_pesan = $this->session->flashdata('pesan')?>
+			<?php if (! empty($flash_pesan)) : ?>
+			<?php echo $flash_pesan; ?>
+			<?php endif ?>
+			<!-- pesan end -->
 
 			<div class="row">
 				<div class="col-sm-4">
@@ -52,10 +58,14 @@
 		</div>
 	</div>
 </div>
-
 <script type="text/javascript">
-/*
-var link_url = '<?php echo base_url('account/editBukuAlamat') ?>';
+$(document).ready(function() {
+	$('#alertSubmit2').show('slow').delay(5000).hide('slow');
+});
+</script>
+<!-- <script type="text/javascript">
+
+var link_url = '<?php //echo base_url('account/editBukuAlamat') ?>';
 
 $(document).ready(function() {
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
@@ -92,9 +102,9 @@ $(document).ready(function() {
 	console.log('da1',token);
 	console.log('asd',api2);
 
-});*/
+});
 
-</script>
+</script> -->
 
 
 <!-- <script type="text/javascript">
