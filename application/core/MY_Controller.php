@@ -67,7 +67,7 @@ class Web extends MY_Controller {
 	}
 
 	public function lang(){
-    //buttons 
+    //buttons
     $this->data['lang_btn_signin'] = $this->lang->line('btn_signin');
 
     $this->data['lang_btn_update'] = $this->lang->line('btn_update');
@@ -89,7 +89,7 @@ class Web extends MY_Controller {
 		$this->data['lang_btn_personal'] = $this->lang->line('btn_daftar');
 		$this->data['lang_btn_bisnis'] = $this->lang->line('btn_daftar_bisnis');
 		$this->data['lang_btn_pemerintah'] = $this->lang->line('btn_daftar_pemerintah');
-                
+
                 $this->data['lang_daftar_text'] = $this->lang->line('das_regis');
 		// akhir dari button daftar
 
@@ -114,6 +114,15 @@ class Web extends MY_Controller {
     $this->data['lang_confirm'] = $this->lang->line('das_pay');
      $this->data['lang_history'] = $this->lang->line('das_history');
     //akhhir dari dashboard
+
+    //informasi AKUN
+       $this->data['lang_datkun'] = $this->lang->line('inf_datakun');
+          $this->data['lang_gant'] = $this->lang->line('inf_gant');
+            $this->data['lang_fyou'] = $this->lang->line('inf_you');
+              $this->data['lang_bil'] = $this->lang->line('inf_bil');
+                $this->data['lang_bils'] = $this->lang->line('inf_bils');
+
+    //akhir dari informasi
 
 		// signIn
     $this->data['lang_info_login'] = $this->lang->line('info_login');

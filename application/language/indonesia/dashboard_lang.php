@@ -10,4 +10,14 @@ $lang['das_addres'] ='Buku Alamat';
 $lang['das_regis'] ='Daftar dengan';
 $lang['das_history'] ='Riwayat & Status Pesanan';
 
+//informasi AKUN
+$lang['inf_datakun'] ='Data Akun';
+$lang['inf_gant'] ='Ganti Password';
+$lang['inf_you'] ='Jika ingin mengganti password login click button dibawah ini.';
+$lang['inf_bil'] ='Data Billing.';
+$lang['inf_bils'] ='Belum ada data billing, data billing diperlukan saat checkout pembelian.';
+
+
+//akhirdari informasi akun
+
  ?>

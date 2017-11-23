@@ -16,7 +16,7 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="panel panel-default">
-					  <div class="panel-heading"><strong>Data Akun</strong></div>
+					  <div class="panel-heading"><strong><?php echo $lang_datkun; ?></strong></div>
 					  <div class="panel-body"><?php echo $user->name; ?>, <?php echo $user->email; ?><br><br><center>
 					  <?php echo anchor('account/formAccount/', $lang_btn_update, array('class'=>'btn btn-default'));?></center>
 					  </div>
@@ -24,8 +24,8 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="panel panel-default">
-					  <div class="panel-heading"><strong>Ganti Password</strong></div>
-					  <div class="panel-body">Jika ingin mengganti password login click button dibawah ini.<br><br><center>
+					  <div class="panel-heading"><strong><?php echo $lang_gant; ?></strong></div>
+					  <div class="panel-body"><?php echo $lang_fyou; ?><br><br><center>
 					  <?php echo anchor('account/formPassword/', $lang_btn_update, array('class'=>'btn btn-default'));?>
 					</center>
 					  </div>
@@ -33,7 +33,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="panel panel-default">
-						<div class="panel-heading"><strong>Data Billing</strong></div>
+						<div class="panel-heading"><strong><?php echo $lang_bil; ?></strong></div>
 						<div class="panel-body">
 						<?php
 						if(isset($alamat_billing)){
@@ -41,9 +41,9 @@
 							echo "<br><br><center>";
 							echo anchor('account/formBilling/'.$id_billing, $lang_btn_update, array('class'=>'btn btn-default')); echo"</center>";
 						}else{
-							echo"Belum ada data billing, data billing diperlukan saat checkout pembelian.
+							echo $lang_bils."
 						<br><br><center>";
-							echo anchor('account/formAddBilling/', 'Tambah', array('class'=>'btn btn-default')); echo"</center>";
+							echo anchor('account/formAddBilling/', $lang_btn_update, array('class'=>'btn btn-default')); echo"</center>";
 						}?>
 						</div>
 					</div>
