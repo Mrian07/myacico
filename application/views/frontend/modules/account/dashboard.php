@@ -22,8 +22,8 @@
 		<p><?php echo anchor('account/informasiAkun/', $lang_change, array('class'=>'btn btn-default'));?></p>
 		<h4><?php echo $lang_pay; ?></h4>
 		<p><?php echo $lang_you; ?></p>
-		<p><?php echo anchor('account/riwayatStatusPesanan/', 'Konfirmasi', array('class'=>'btn btn-default'));?><p/>
-		<h4>Newsletters</h4>
+		<p><?php echo anchor('account/riwayatStatusPesanan/', $lang_confirm, array('class'=>'btn btn-default'));?><p/>
+		<h4>Newsletter</h4>
 				<div class="rumah"></div>
 		<!-- <p><?php echo anchor('customer/government/', 'Daftar', array('class'=>'btn btn-default'));?></p> -->
 

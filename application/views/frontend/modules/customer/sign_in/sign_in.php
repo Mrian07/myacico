@@ -203,7 +203,7 @@
 		</div>
 		<div class="col-sm-6">
 
-				<h5>PENDAFTARAN BARU</h5>
+				<h5><?php echo$lang_reg_text;?></h5>
 				<div style='border: 1px #dddddd solid;padding:10px;margin-bottom:40px;height:350px'>
 				<div class="row">
 				  <div class="col-sm-12">
@@ -221,7 +221,7 @@
 				<div class="row">
 				  <div class="col-sm-12">
 						<hr>
-						Untuk pemerintah yang ingin belanja di myacico.co.id.
+						<?php echo$lang_ket_daftar_gov;?>
 						<div class='my-btn-create'><?php echo anchor('customer/government/', $lang_btn_pemerintah, array('class'=>'btn btn-primary'));?></div>
 				  </div>
 				</div>
