@@ -56,7 +56,7 @@
            <p>Silakan lengkapi data penerima Anda dibawah ini.</p>
 
 						<form name="signup" method="post">
-						<div class="form-group">
+						<!-- <div class="form-group">
 
 						<input type="hidden" id="bill" name="bill" value="N" />
 						<input type="hidden" id="ship" name="ship" value="Y" />
@@ -64,7 +64,7 @@
 						<input type="hidden" id="remit" name="remit" value="N" />
 						<input type="hidden" id="addn" name="addn" value="kontrakan" />
 						<input type="hidden" id="alamat3" name="alamat3" value="kelurahan duri kosambi" />
-						</div>
+						</div> -->
             <div class="row">
               <div class="col-sm-12">
 
