@@ -69,5 +69,7 @@ $lang['field_Passeword2'] = 'Confirm Password';
 $lang['btn_login'] = 'Create';
 //akhir dari bussines
 
-
+//s: search
+$lang['field_all_src'] = 'All Categories';
+//e: search
 ?>

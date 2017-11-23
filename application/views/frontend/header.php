@@ -214,12 +214,10 @@
 					<div class="input-group">
   					<div class="input-group-btn search-panel">
   						<button type="button" class="dropdown-toggle my-search" data-toggle="dropdown">
-  							<span id="search_concept">All Categories</span> <span class="caret"></span>
+  							<span id="search_concept"><?php echo $lang_all_src; ?></span> <span class="caret"></span>
   						</button>
-              <?php //echo"<pre>"; print_r($catsearch); die(); ?>
-  						<!-- <ul class="dropdown-menu cat_menu" role="menu"> -->
   						<ul class="dropdown-menu mycategory-search" role="menu">
-  							<li><a href='#all'>All Categories</a></li>
+  							<li><a href='#all'><?php echo $lang_all_src; ?></a></li>
   							<?php foreach($catsearch as $datacat){
 									if($lang=='en'){
 										$cat_name = $datacat['name_en'];

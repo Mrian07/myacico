@@ -166,6 +166,8 @@ class Web extends MY_Controller {
     $this->data['lang_conta'] = $this->lang->line('f_contact');
 
     $this->data['lang_footer_info'] = $this->lang->line('footer_info');
+
+    $this->data['lang_all_src'] = $this->lang->line('field_all_src');
     //e: footer
 		$this->data['title_web'] = "Myacico.com - Login Admin";
 
