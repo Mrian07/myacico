@@ -15,7 +15,25 @@
 
 		</div>
 	  <div class="col-sm-6">
+
 			<p><?php echo$lang_password_text;?></p>
+
+			<?php
+			$lang = get_cookie('lang');
+			if($lang=='en'){?>
+				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none;'>
+				<span class="glyphicon glyphicon-ok"></span> Please cek your email account for next proses.</div>
+
+				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertFailed" style='display:none;'>
+				<span class="glyphicon glyphicon-ok"></span> Sorry, your email no registering yet.</div>
+			<?php }else{ ?>
+				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none;'>
+				<span class="glyphicon glyphicon-ok"></span> Silakan cek email Anda untuk proses selanjutnya.</div>
+
+				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertFailed" style='display:none;'>
+				<span class="glyphicon glyphicon-ok"></span> Maaf, email Anda belum terdaftar.</div>
+			<?php } ?>
+
 		<div class='border-create' style='text-align:left'>
 		 <form name="signup" method="post">
 		  <div class="form-group">
@@ -58,7 +76,7 @@ $(document).ready(function() {
 		}else{
 
 			$('#spinner_img').show();
-			$('#submit_btn').val('loading...').addClass('disabled');
+			$('#submit_btn').val('Loading...').addClass('disabled');
 			e.preventDefault();
 
 			var apiurl = baseApiUrl + '/forgotpassword';
@@ -70,6 +88,7 @@ $(document).ready(function() {
 				$('#submit_btn').val('Kirim').removeClass('disabled');
 				console.log('OK:', r);
 				//alert(r.message);
+<<<<<<< HEAD
                                 if(r.status === '0'){
                                     $.alert({
 				title: 'Alert!',
@@ -82,6 +101,14 @@ $(document).ready(function() {
 				content: '<?php echo$lang_password_msg3;?>',
 			});
                                 }
+=======
+				if(r.status=='1'){
+					$('#alert').show('slow').delay(5000).hide('slow');
+				}else{
+					$('#alertFailed').show('slow').delay(5000).hide('slow');
+				}
+
+>>>>>>> b847e1794c270b809c946075c7641cadc8b42ae9
 			};
 
 			//$.post( apiurl, data, success, "json" );
