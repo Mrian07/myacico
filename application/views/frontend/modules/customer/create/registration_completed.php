@@ -38,8 +38,10 @@ $(document).ready(function() {
 
   $('form').submit(function(e){
       e.preventDefault();
-    var api2 = api_base_url +'/aduser/resendemail';
-    console.log('asdasd213', api2)
+      var apiurl3 = '<?php echo $baseApiUrl2; ?>';
+      // acc.myacico.co.id/myacico-account/account/resendemail
+    var api2 = login1 +'account/resendemail';
+    console.log('api2',api2)
     //$.get(api_base_url+'/aduser/getaddress?addresstype=isshipto',
             var email = $("#email").val();
                   data.email = email;
@@ -54,10 +56,10 @@ $(document).ready(function() {
      alert(r.message);
      console.log('OK:', r.status);
 
-       window.location.replace(base_url+"/account/informasiAkun/1");
+
 
    };
-  $.ajax({ type:"POST", contentType: "application/json", data:data , url: api2, success: success});
+  $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), url: api2, success: success});
 
 
     console.log('da1',token);
