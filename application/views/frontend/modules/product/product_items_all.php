@@ -194,7 +194,7 @@ font-size: 16px;
           </div>
           <div class="col-sm-9">
              Tampilan <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="List View" id='viewList'><i class="fa fa-list" aria-hidden="true" id='btn_list'></i></a>
-               <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none"></span> <span style='font-size:15px; color:#e30c0c'><i class="fa fa-th-large" aria-hidden="true"></i></span>
+               <img src="<?php echo base_url('images/general/Spinner2.gif');?>" id="spinner_img" style="display:none"></span> <span style='font-size:15px; color:#e30c0c'><i class="fa fa-th-large" aria-hidden="true"></i></span>
            </div>
          </div>
        </div>
