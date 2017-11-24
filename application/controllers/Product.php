@@ -59,7 +59,7 @@ class Product extends Web {
 		$this->data['posisi'] = $posisi;
 		$jdata =json_decode($konten2)->productCount;
 		$this->data['jpage'] = ceil($jdata/$batas);
-
+               
 		$this->data['alias'] = $this->uri->segment(4);
 		$this->data['title_web'] = "Myacico.com - List Items ".$id;
 
