@@ -88,27 +88,27 @@ $(document).ready(function() {
 				$('#submit_btn').val('Kirim').removeClass('disabled');
 				console.log('OK:', r);
 				//alert(r.message);
-<<<<<<< HEAD
-                                if(r.status === '0'){
-                                    $.alert({
-				title: 'Alert!',
-				content: '<?php echo$lang_password_msg2;?>',
-			});
-                                }
-                                else{
-                                 $.alert({
-				title: 'Alert!',
-				content: '<?php echo$lang_password_msg3;?>',
-			});
-                                }
-=======
+
+      //                           if(r.status === '0'){
+      //                               $.alert({
+			// 	title: 'Alert!',
+			// 	content: '<?php// echo$lang_password_msg2;?>',
+			// });
+      //                           }
+      //                           else{
+      //                            $.alert({
+			// 	title: 'Alert!',
+			// 	content: '<?php// echo$lang_password_msg3;?>',
+			// });
+      //                           }
+
 				if(r.status=='1'){
 					$('#alert').show('slow').delay(5000).hide('slow');
 				}else{
 					$('#alertFailed').show('slow').delay(5000).hide('slow');
 				}
 
->>>>>>> b847e1794c270b809c946075c7641cadc8b42ae9
+
 			};
 
 			//$.post( apiurl, data, success, "json" );

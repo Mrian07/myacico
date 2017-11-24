@@ -18,9 +18,29 @@
 				$lang['inf_bil'] ='Billing Information.';
 				$lang['inf_bils'] ='
 No billing data yet, billing data is required at checkout purchase.';
-
-
-
 				//akhirdari informasi akun
+
+				//buku Alamat
+				$lang['inf_datakun'] ='Add Address Book	';
+				$lang['add_dibawa'] ='Below is a list of address book recipients of the order. You can add a new address or change your previous address with another address.';
+				$lang['add_rec'] ='Receiver	';
+				    $lang['add_alamat'] ='Address	';
+						  $lang['add_pho'] ='Phone	';
+
+							//tambah buku alamat
+						      $lang['field_kembali'] ='Back	';
+								  $lang['field_sila'] ='
+									Please complete the recipient data below.	';
+  							  $lang['field_byname'] ='By Name:';
+									$lang['field_save'] ='Saved as an address (example: home address, work address etc.)*';
+									$lang['field_alamat'] ='Other Addresses:';
+									$lang['field_kel'] ='Vilage*';
+									$lang['field_telp'] ='Telephone*';
+
+
+
+						  //end of tambah buku alamat
+
+				//end of buku alamat
 
  ?>
