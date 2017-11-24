@@ -43,7 +43,7 @@ class Product extends Web {
 		}
 		$url = api_base_url($api);
 		$konten = file_get_contents($url, false);
-
+                //ie(print_r($konten));
 
 		$url2 = api_base_url($api2);
 		$konten2 = file_get_contents($url2, false);
@@ -59,6 +59,7 @@ class Product extends Web {
 		$this->data['posisi'] = $posisi;
 		$jdata =json_decode($konten2)->productCount;
 		$this->data['jpage'] = ceil($jdata/$batas);
+
 		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
 		$this->data['title_web'] = "Myacico.com - List Items ".$id;
