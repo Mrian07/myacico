@@ -60,13 +60,14 @@ class Product extends Web {
 		$jdata =json_decode($konten2)->productCount;
 		$this->data['jpage'] = ceil($jdata/$batas);
 
+		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
 		$this->data['title_web'] = "Myacico.com - List Items ".$id;
 
 		$this->data['hasil'] = json_decode($konten, true);
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/product/product_items_all.php',$this->data);
+		$this->load->view('frontend/modules/product/product_all.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
 }
@@ -89,7 +90,7 @@ public function bawahDetail(){
 	$konten = file_get_contents($url);
 		$this->data['dathome'] = json_decode($konten, true);
 }
-	public function listItem()
+public function listItem()
  {
 		$token = null;
 		$adaToken =0;
@@ -98,7 +99,7 @@ public function bawahDetail(){
 		    $token = $_COOKIE['x-auth'];
 		    $adaToken =1;
 		}
-              
+
 		$id_cat=$this->uri->segment(3);
 		$ob=$this->uri->segment(5);
 
@@ -124,7 +125,7 @@ public function bawahDetail(){
     }
 
   	$api2 = "product/productlist/".$id_cat;
-        $api4 = "category/cat3?id=".$id_cat;
+  	$api4 = "category/cat3?id=".$id_cat;
 		$url = api_base_url($api);
 		$url2 = api_base_url($api_max);
 		$url3 = api_base_url($api_rec);
@@ -135,9 +136,9 @@ public function bawahDetail(){
            "Content-Type: application/json"],
 		]];
         // looking maximum page
-   
-		
-           
+
+
+
 		$context = stream_context_create($options);
 		$konten2 = file_get_contents($url2, false, $context);
 		$konten3 = file_get_contents($url3, false, $context);
@@ -174,7 +175,6 @@ public function bawahDetail(){
 		$jdata =json_decode($konten3)->productCount;
 		$this->data['jpage'] = ceil($jdata/$batas);
 		$this->data['totalItem'] = $jdata;
-
 		$this->data['alias'] = $this->uri->segment(4);
 		$this->data['title_web'] = "Myacico.com - List Items";
 		$this->load->view('frontend/header',$this->data);
@@ -188,7 +188,7 @@ public function bawahDetail(){
 	public function index()
     {
 		//$this->load->view('frontend/test',$this->data);
-	  
+
                 $this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
