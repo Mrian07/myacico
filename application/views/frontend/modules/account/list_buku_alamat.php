@@ -1,13 +1,13 @@
 
-<p>Dibawah ini adalah daftar buku alamat penerima pesanan. Anda bisa menambahkan alamat baru atau mengubah alamat sebelumnya dengan alamat yang lain.</p>
+<p><?php echo $lang_dibwh; ?></p>
 <div class="panel panel-default">
 <table class="table">
 	<thead>
 
 	  <tr>
-		<th>Penerima</th>
-		<th>Alamat</th>
-		<th>Phone</th>
+		<th><?php echo $lang_Pen; ?></th>
+		<th><?php echo $lang_alam; ?></th>
+		<th><?php echo $lang_pho ; ?></th>
 		<th>Ubah</th>
 		<th>Hapus</th>
 	  </tr>

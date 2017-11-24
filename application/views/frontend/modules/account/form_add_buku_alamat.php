@@ -12,8 +12,8 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
-			<p>Silakan lengkapi data penerima dibawah ini.</p>
+			<p><?php echo anchor('account/bukuAlamat', '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'.$field_back, array('class'=>'btn-back'));?></p>
+			<p><?php echo $field_lengkap; ?></p>
 
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -31,7 +31,7 @@
 					<div class='row'>
 						<div class="col-sm-6">
 							<div class="form-group">
-							<label>Nama:</label>
+							<label><?php echo $field_naem; ?></label>
 								<?php echo $user->name; ?>
 							</div>
 						</div>
@@ -44,12 +44,12 @@
 
 					</div>
           <div class="form-group">
-          <label>Atas Nama:</label>
+          <label><?php echo $field_atasnama; ?></label>
           <input type="text" id="atas_name" name="name" class="form-control mandatory"/>
 
           </div>
 					<div class="form-group">
-					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+					  <label><?php echo $field_save ; ?></label>
 					  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
 					</div>
 					<div class="form-group">
@@ -57,7 +57,7 @@
             <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory"></textarea>
 					</div>
 					<div class="form-group">
-					  <label>Alamat Lain:</label>
+					  <label><?php echo $field_alamatLain; ?></label>
 						<textarea rows="4" cols="50" id="address2" name="address2" class="form-control"></textarea>
 					</div>
 					<div class="form-group">
@@ -81,7 +81,7 @@
 					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
 					</div>
                                        <div class="form-group" style="display:none" id="village_box">
-							<label><?php echo "Kelurahan"; ?>*</label>
+							<label><?php echo $field_kel; ?></label>
 					  <select name="village_id" id="village_id" class="form-control mandatory"></select>
 					</div>
 			         <div class="form-group" style="display:none" id="postal_box">
@@ -93,7 +93,7 @@
 						<input type="text" id = "phone"name="phone" class="form-control mandatory" />
 					</div>
 					<div class="form-group">
-					<label>Telepon</label>
+					<label><?php echo  $field_telpon; ?></label>
 						<input type="text" id = "phone2"name="phone2" class="form-control"/>
 					</div>
 					<div class="clearfix"></div>

@@ -8,7 +8,7 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-			<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Buku Alamat', array('class'=>'btn-back'));?>
+			<?php echo anchor('account/TambahBukuAlamat', '<i class="fa fa-plus-square" aria-hidden="true"></i>'.$lang_addDres, array('class'=>'btn-back'));?>
 			<br/><br/>
 			<!-- pesan start -->
 			<?php $flash_pesan = $this->session->flashdata('pesan')?>
