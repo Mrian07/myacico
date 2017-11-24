@@ -56,7 +56,9 @@ a
 								";
 							}else{
 								echo"<p>". anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default')); echo"</p>";
-							}?>
+							
+                                                                echo"<input type='hidden' value='' id='billing_address_id'/>";
+                                                        }?>
 
 							<p><strong>Data Penerima</strong></p>
 						   <?php if($this->session->userdata('shipping_address_id'))
