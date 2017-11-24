@@ -62,7 +62,7 @@ class Account extends Web_private {
 	// 	set_cookie('cookie_name','cookie_value','3600');
   //
 	// }
-  // 
+  //
 	// public function test2()
   //   {	$this->load->helper('cookie');
 	// 	echo get_cookie('cookie_name'); die();
@@ -137,6 +137,15 @@ class Account extends Web_private {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/berlanggananNewsletter',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+	public function avatar()
+    {
+		$this->data['active_avatar'] = "class='active'";
+		$this->data['title_web'] = "Myacico.co.id - Informasi Akun";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/avatar',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
