@@ -142,7 +142,7 @@ public function listItem()
 		$context = stream_context_create($options);
 		$konten2 = file_get_contents($url2, false, $context);
 		$konten3 = file_get_contents($url3, false, $context);
-                $konten4 = file_get_contents($url4, false, $context);
+    $konten4 = file_get_contents($url4, false, $context);
 		$konten = file_get_contents($url, false, $context);
      //die(print_r("sam ".json_decode($konten2)->pageCount));
     $this->data['max_page'] =json_decode($konten2)->pageCount;
@@ -154,7 +154,8 @@ public function listItem()
     }
 //	              die(print_r($this->data['listMenu']));
 	  $this->data['hasil'] = json_decode($konten, true);
-
+// $hasil = json_decode($konten, true);
+// echo"<pre>"; print_r($hasil); die();
 	  if($adaToken == 1){
 	   $this->data['cektoken'] = '1';
 	                        //$this->data['wish']

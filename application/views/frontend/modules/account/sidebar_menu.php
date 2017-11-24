@@ -12,6 +12,8 @@
 
     <li <?php echo$active_wishlist; ?>><?php echo anchor('account/wishlist', '<i class="fa fa-caret-right" aria-hidden="true"></i>
  Wishlist');?></li>
+ <li <?php echo$active_wishlist; ?>><?php echo anchor('account/avatar', '<i class="fa fa-caret-right" aria-hidden="true"></i>
+Avatar');?></li>
 </ul>
 
 <?php }elseif($user->role=='B2B'){ ?>

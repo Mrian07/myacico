@@ -363,19 +363,11 @@ if($saw==Null)
              Total items <?php echo $totalItem; ?>
           </div>
           <div class="col-sm-9">
-            Tampilan <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="List View" id='viewList'><i class="fa fa-list" id='btn_list' aria-hidden="true"></i></a><img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+            Tampilan <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="List View" id='viewList'><i class="fa fa-list" id='btn_list' aria-hidden="true"></i></a><img src="<?php echo base_url('images/general/Spinner2.gif');?>" id="spinner_img" style="display:none">
             </span> <span style='font-size:15px; color:#e30c0c'><i class="fa fa-th-large" aria-hidden="true"></i></span>
           </div>
         </div>
 
-        <!-- <strong>Category Title</strong>
-
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span> List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                class="glyphicon glyphicon-th"></span> Grid</a>
-
-        </div> -->
        </div>
         <div class="col-sm-4">
           <div class="row">
