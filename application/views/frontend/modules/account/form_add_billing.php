@@ -271,7 +271,7 @@ data.isremitto = 'Y';
 			// $("#ispayfrom").val(null);
 		  // $("#isremitto").val(null);
 
-        window.location.replace(base_url+"/account/informasiAkun");
+        window.location.replace(base_url+"/account/informasiAkun/1");
 
     };
     $('#spinner_img').show();

@@ -3,18 +3,23 @@
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> DATA AKUN
 	</div>
-</div>
-
-
-
-<div class="container">
-
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
+			<?php
+			$lang = get_cookie('lang');
+			if($lang=='en'){?>
+				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none;'>
+				<span class="glyphicon glyphicon-ok"></span> Update account success.</div>
+			<?php }else{ ?>
+				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none;'>
+				<span class="glyphicon glyphicon-ok"></span> Update akun sukses.</div>
+			<?php } ?>
+
+
 			<p>Silakan isi nama akun yang baru jika ingin melakukan perubahan dan click button update.</p>
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -49,7 +54,6 @@ var error = function(er){
 };
 
 $(document).ready(function() {
-
 	$('form').submit(function(e){
 		var name = $("#name").val();
 		var token = document.cookie.split('x-auth=')[1].split(';').shift();
@@ -76,12 +80,15 @@ $(document).ready(function() {
 				console.log('OK:', r);
 				//alert(r.message);
 
-				$.alert({
-					title: 'Alert!',
-					content: 'Nama berhasil diubah',
-				});
+				// $.alert({
+				// 	title: 'Alert!',
+				// 	content: 'Nama berhasil diubah',
+				// });
 
 				 document.cookie='x-auth='+r.newToken+'; path='+base_path;
+				 //window.location.replace(base_url+"/account/formAccount/1");
+				// $("#alertSubmit").show();
+				$('#alert').show('slow').delay(5000).hide('slow');
 
 			};
 

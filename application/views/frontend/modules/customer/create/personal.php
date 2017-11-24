@@ -303,7 +303,11 @@ if(name==''){
       $('#submit_btn').val('Daftar').removeClass('disabled');
       // console.log('OK:', r);
 			if(r.status == 0){
-          alert(r.message);
+         // alert(r.message);
+          $.alert({
+				title: 'Alert!',
+				content: 'Pendaftaran Gagal karena '+r.message,
+			});
 					return false;
 			}else{
 

@@ -2,9 +2,6 @@
 	<div class='my-bg-title'>
 			<i class="fa fa-angle-right" aria-hidden="true"></i> INFORMASI AKUN
 	</div>
-</div>
-
-<div class="container my-container-white">
 
 	<div class="row">
 		<div class="col-sm-3">
@@ -12,6 +9,15 @@
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
+			<?php
+			$lang = get_cookie('lang');
+			if($lang=='en'){?>
+				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none;'>
+				<span class="glyphicon glyphicon-ok"></span> Update password success.</div>
+			<?php }else{ ?>
+				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none;'>
+				<span class="glyphicon glyphicon-ok"></span> Update password sukses.</div>
+			<?php } ?>
 			<p>Gunakan form dibawah ini untuk mengubah password login Anda.</p>
 			<section class="login_content">
 			  <form name="loginFm" method="post">
@@ -31,7 +37,7 @@
 				</div>
 
 				<div class="clearfix"></div>
-				<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo $btn_pesan_personal?>">
+				<input type="submit" id="submit_btn" class="btn btn-primary" value="Update">
 
 			  </form>
 			</section>
@@ -92,13 +98,13 @@ var success = function(r){
 	console.log('OK:', r);
 	//alert(r.message);
 
-	$.alert({
-		title: 'Alert!',
-		content: 'Password berhasil diubah',
-	});
+	// $.alert({
+	// 	title: 'Alert!',
+	// 	content: 'Password berhasil diubah',
+	// });
 
 	 document.cookie='x-auth='+r.newToken+'; path='+base_path;
-
+	 $('#alert').show('slow').delay(5000).hide('slow');
 };
 					$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "oldPassword":oldPassword,"newPassword":newPassword }) , headers:{"token":token}, url: apiurl, success: success, error: error });
 				}

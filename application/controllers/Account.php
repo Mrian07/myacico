@@ -77,7 +77,27 @@ class Account extends Web_private {
 
 
 	public function informasiAkun()
-    {
+  {
+
+		$lang = get_cookie('lang');
+		$flag = $this->uri->segment(3);
+		if($flag=='1'){
+			if($lang=='en'){
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit2">
+				<span class="glyphicon glyphicon-ok"></span> Add billing success.</div>');
+			}else{
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit2">
+				<span class="glyphicon glyphicon-ok"></span> Tambah data billing sukses.</div>');
+			}
+		}elseif($flag=='2'){
+			if($lang=='en'){
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit2">
+				<span class="glyphicon glyphicon-ok"></span> Update billing success.</div>');
+			}else{
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit2">
+				<span class="glyphicon glyphicon-ok"></span> Ubah data billing sukses.</div>');
+			}
+		}
 
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
@@ -126,18 +146,18 @@ class Account extends Web_private {
 		$flag = $this->uri->segment(3);
 		if($flag=='1'){
 			if($lang=='en'){
-				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit2">
 				<span class="glyphicon glyphicon-ok"></span> Add address book success.</div>');
 			}else{
-				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit2">
 				<span class="glyphicon glyphicon-ok"></span> Tambah buku alamat sukses.</div>');
 			}
 		}elseif($flag=='2'){
 			if($lang=='en'){
-				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit2">
 				<span class="glyphicon glyphicon-ok"></span> Update address book success.</div>');
 			}else{
-				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit2">
 				<span class="glyphicon glyphicon-ok"></span> Ubah buku alamat sukses.</div>');
 			}
 		}
@@ -379,13 +399,13 @@ class Account extends Web_private {
 	}
 
 	public function formAccount()
-    {
+  {
 		$this->data['active_informasiAkun'] = "class='active'";
 		$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_account',$this->data);
-                $this->load->view('frontend/sidenav',$this->data);
+    $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
