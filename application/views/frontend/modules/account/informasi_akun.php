@@ -49,7 +49,7 @@
 						}else{
 							echo $lang_bils."
 						<br><br><center>";
-							echo anchor('account/formAddBilling/', $lang_btn_update, array('class'=>'btn btn-default')); echo"</center>";
+							echo anchor('account/formAddBilling/', $lang_tamb, array('class'=>'btn btn-default')); echo"</center>";
 						}?>
 						</div>
 					</div>

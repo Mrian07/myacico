@@ -3,7 +3,7 @@
 			<div class="row">
 			  <div class="col-sm-12">
 
-				<i class="fa fa-angle-right" aria-hidden="true"></i> RESET PASSWORD
+				<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_reset_password;?>
 
 			  </div>
 			</div>
@@ -14,20 +14,20 @@
  <input type="hidden" id="surel" name="surel" value="<?php echo $_SERVER['QUERY_STRING'];?>" />
 		</div>
 	  <div class="col-sm-6">
-              <p>Silahkan masukkan password baru Anda.</p>
+              <p><?php echo $lang_reset_password_txt;?></p>
 		<div class='border-create' style='text-align:left'>
 		 <form name="signup" method="post">
 		  <div class="form-group">
-			<label>Password Baru:</label>
+			<label><?php echo $lang_reset_password_form1;?></label>
 			<input type="password" id="password" name="new_password" class="form-control" />
 		  </div>
 		  <div class="form-group">
-			<label>Ulangi Password Baru:</label>
+			<label><?php echo $lang_reset_password_form2;?></label>
 			<input type="password" id="password2" class="form-control" />
 		  </div>
 		  <div class="row">
 			<div class="col-sm-12">
-				<input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+				<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo $lang_password_button;?>">
 				<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 			</div>
 		  </div>
@@ -60,13 +60,13 @@ console.log('sam',res[1]);
 		if(password.length < 7){
 			$.alert({
 				title: 'Alert!',
-				content: 'Password minimal 7 karakter!',
+				content: '<?php echo $lang_reset_password_msg1;?>',
 			});
 		}
 		else if(password != password2){
 			$.alert({
 				title: 'Alert!',
-				content: 'Password konfirmasi tidak sama!',
+				content: '<?php echo $lang_reset_password_msg2;?>',
 			});
 		}
 		else{
