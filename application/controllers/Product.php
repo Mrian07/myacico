@@ -89,7 +89,7 @@ public function bawahDetail(){
 	$konten = file_get_contents($url);
 		$this->data['dathome'] = json_decode($konten, true);
 }
-	public function listItem()
+public function listItem()
  {
 		$token = null;
 		$adaToken =0;
