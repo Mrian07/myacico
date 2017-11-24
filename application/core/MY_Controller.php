@@ -76,15 +76,27 @@ class Web extends MY_Controller {
     //label
     $this->data['lang_lab_name'] = $this->lang->line('label_name');
     $this->data['lang_lab_rep_pass'] = $this->lang->line('label_rep_pass');
+//    Forgot Password
+    $this->data['lang_password_text'] = $this->lang->line('lost_password_text');
+    $this->data['lang_password_tittle'] = $this->lang->line('lost_password_tittle');
+    $this->data['lang_password_button'] = $this->lang->line('lost_password_button');
+    $this->data['lang_password_msg1'] = $this->lang->line('lost_password_msg1');
+    $this->data['lang_password_msg2'] = $this->lang->line('lost_password_msg2');
+    $this->data['lang_password_msg3'] = $this->lang->line('lost_password_msg3');
 
-
+     $this->data['lang_reset_password'] = $this->lang->line('reset_password_tittle');
+    $this->data['lang_reset_password_txt'] = $this->lang->line('reset_password_text');
+    $this->data['lang_reset_password_form1'] = $this->lang->line('reset_password_form1');
+    $this->data['lang_reset_password_form2'] = $this->lang->line('reset_password_form2');
+    $this->data['lang_reset_password_msg1'] = $this->lang->line('reset_password_msg1');
+    $this->data['lang_reset_password_msg2'] = $this->lang->line('reset_password_msg2');
 		//Lang
 		$this->data['lang_daftar'] = $this->lang->line('daftar');
 		$this->data['lang_masuk'] = $this->lang->line('masuk');
 		$this->data['lang_ket_daftar_personal'] = $this->lang->line('ket_daftar_personal');
 		$this->data['lang_ket_daftar_akunBisnis'] = $this->lang->line('ket_daftar_akunBisnis');
-                $this->data['lang_reg_text'] = $this->lang->line('lang_new_reg');
-                $this->data['lang_ket_daftar_gov'] = $this->lang->line('ket_daftar_akunGov');
+    $this->data['lang_reg_text'] = $this->lang->line('lang_new_reg');
+    $this->data['lang_ket_daftar_gov'] = $this->lang->line('ket_daftar_akunGov');
 		//button di daftar
 		$this->data['lang_btn_personal'] = $this->lang->line('btn_daftar');
 		$this->data['lang_btn_bisnis'] = $this->lang->line('btn_daftar_bisnis');
@@ -116,12 +128,15 @@ class Web extends MY_Controller {
     //akhhir dari dashboard
 
     //informasi AKUN
-       $this->data['lang_datkun'] = $this->lang->line('inf_datakun');
-          $this->data['lang_gant'] = $this->lang->line('inf_gant');
-            $this->data['lang_fyou'] = $this->lang->line('inf_you');
-              $this->data['lang_bil'] = $this->lang->line('inf_bil');
-                $this->data['lang_bils'] = $this->lang->line('inf_bils');
-                      $this->data['lang_tamb'] = $this->lang->line('btn_tambah');
+
+    $this->data['lang_datkun'] = $this->lang->line('inf_datakun');
+    $this->data['lang_gant'] = $this->lang->line('inf_gant');
+    $this->data['lang_fyou'] = $this->lang->line('inf_you');
+    $this->data['lang_bil'] = $this->lang->line('inf_bil');
+    $this->data['lang_bils'] = $this->lang->line('inf_bils');
+    $this->data['lang_tamb'] = $this->lang->line('btn_tambah');
+
+
     //akhir dari informasi
 
     //buku Alamat

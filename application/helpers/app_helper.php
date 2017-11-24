@@ -6,6 +6,12 @@ function api_base_url($param)
 	return $url;
 }
 
+function api_base_url2($param)
+{
+	$url = "https://acc.myacico.co.id/myacico-account/".$param;
+	return $url;
+}
+
 function tanggal($tanggal)
 {
 	$get_tanggal=explode(" ",$tanggal);

@@ -35,8 +35,8 @@ class Account extends Web_private {
 
 	}
 
-	public function test()
-    {	$this->load->helper('cookie');
+	// public function test()
+  //   {	$this->load->helper('cookie');
 		/*$cookie = array(
 				'name'   => 'remember_me',
 				'value'  => 'test',
@@ -59,22 +59,22 @@ class Account extends Web_private {
 		$this->input->get_cookie($cookie);
 	//	echo"ini"; print_r(get_cookie($cookie));*/
 
-		set_cookie('cookie_name','cookie_value','3600');
-
-	}
-
-	public function test2()
-    {	$this->load->helper('cookie');
-		echo get_cookie('cookie_name'); die();
-		echo"<pre>"; print_r($this->input->get_cookie($cookie));
-	}
-
-	public function test3()
-    {
-		delete_cookie('cookie_name');
-	}
-
-
+	// 	set_cookie('cookie_name','cookie_value','3600');
+  //
+	// }
+  // 
+	// public function test2()
+  //   {	$this->load->helper('cookie');
+	// 	echo get_cookie('cookie_name'); die();
+	// 	echo"<pre>"; print_r($this->input->get_cookie($cookie));
+	// }
+  //
+	// public function test3()
+  //   {
+	// 	delete_cookie('cookie_name');
+	// }
+  //
+  //
 
 	public function informasiAkun()
   {
