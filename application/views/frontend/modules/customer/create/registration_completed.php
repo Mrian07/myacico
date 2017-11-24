@@ -29,3 +29,40 @@
 	  </div>
 	</div>
 </div>
+
+<script type="text/javascript">
+
+var link_url = '<?php echo base_url('account/editBukuAlamat') ?>';
+
+$(document).ready(function() {
+
+  $('form').submit(function(e){
+      e.preventDefault();
+    var api2 = api_base_url +'/aduser/resendemail';
+    console.log('asdasd213', api2)
+    //$.get(api_base_url+'/aduser/getaddress?addresstype=isshipto',
+            var email = $("#email").val();
+                  data.email = email;
+    var success = function(r){
+
+        $('#spinner_img').hide();
+ $('#submit_btn').val('Kirim').removeClass('disabled');
+//         $.alert({
+//     title: 'Alert!',
+//     content: 'Alamat Baru Berhasil di tambahkan',
+//    });
+     alert(r.message);
+     console.log('OK:', r.status);
+
+       window.location.replace(base_url+"/account/informasiAkun/1");
+
+   };
+  $.ajax({ type:"POST", contentType: "application/json", data:data , url: api2, success: success});
+
+
+    console.log('da1',token);
+    console.log('asd',api2);
+  });
+});
+
+</script>

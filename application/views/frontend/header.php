@@ -522,7 +522,8 @@ $('#searchDesk').keypress(function(e) {
   	});
   	function showData(name,id,alias)
   	{
-  		var url = base_url+'/product/detail/'+id+'/'+alias;
+  		// var url = base_url+'/product/detail/'+id+'/'+alias;
+			var url = base_url+'/product/alllistItem/'+id+'/'+alias;
   		window.location.href = url;
   		// $("#search").val(name);
   		// $("#searchID").val(id);
