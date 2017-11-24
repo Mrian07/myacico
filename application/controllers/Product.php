@@ -43,7 +43,7 @@ class Product extends Web {
 		}
 		$url = api_base_url($api);
 		$konten = file_get_contents($url, false);
-
+                //ie(print_r($konten));
 
 		$url2 = api_base_url($api2);
 		$konten2 = file_get_contents($url2, false);
