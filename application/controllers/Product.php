@@ -98,6 +98,7 @@ public function listItem()
 		    $token = $_COOKIE['x-auth'];
 		    $adaToken =1;
 		}
+              
 		$id_cat=$this->uri->segment(3);
 		$ob=$this->uri->segment(5);
 
@@ -123,24 +124,34 @@ public function listItem()
     }
 
   	$api2 = "product/productlist/".$id_cat;
+        $api4 = "category/cat3?id=".$id_cat;
 		$url = api_base_url($api);
 		$url2 = api_base_url($api_max);
 		$url3 = api_base_url($api_rec);
+                $url4 = api_base_url($api4);
 		$options = ["http" => [
 		      "method" => "GET",
            "header" => ["token: " . $token,
            "Content-Type: application/json"],
 		]];
         // looking maximum page
-
+   
+		
+           
 		$context = stream_context_create($options);
 		$konten2 = file_get_contents($url2, false, $context);
 		$konten3 = file_get_contents($url3, false, $context);
+                $konten4 = file_get_contents($url4, false, $context);
 		$konten = file_get_contents($url, false, $context);
      //die(print_r("sam ".json_decode($konten2)->pageCount));
     $this->data['max_page'] =json_decode($konten2)->pageCount;
     $this->data['jdata'] =json_decode($konten3)->productCount;
-	//              die(print_r($this->data['max_page']));
+    $this->data['listMenu'] = json_decode($konten4, true);
+     $this->data['jumlahMenu']= 0;
+    foreach($this->data['listMenu'] as $menu_list){
+        ++$this->data['jumlahMenu'];
+    }
+//	              die(print_r($this->data['listMenu']));
 	  $this->data['hasil'] = json_decode($konten, true);
 
 	  if($adaToken == 1){
@@ -177,7 +188,8 @@ public function listItem()
 	public function index()
     {
 		//$this->load->view('frontend/test',$this->data);
-		$this->data['title_web'] = "Myacico.com - Home";
+	  
+                $this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
