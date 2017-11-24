@@ -121,6 +121,8 @@ class Web extends MY_Controller {
             $this->data['lang_fyou'] = $this->lang->line('inf_you');
               $this->data['lang_bil'] = $this->lang->line('inf_bil');
                 $this->data['lang_bils'] = $this->lang->line('inf_bils');
+                      $this->data['lang_tamb'] = $this->lang->line('btn_tambah');
+
 
     //akhir dari informasi
 
