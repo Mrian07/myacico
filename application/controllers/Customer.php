@@ -9,8 +9,7 @@ class Customer extends Web {
     $this->load->helper('form');
     $this->load->library('form_validation');
 		$this->load->library('session');
-	//	$this->load->model('Login_model', 'login', TRUE);
-
+		$this->load->helper('app');
 
 		$this->atribut();
 	}
@@ -133,6 +132,34 @@ class Customer extends Web {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/lost_password/reset_password.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function registrationCompleted()
+	{
+		$key = $_GET['key'];
+		$api = "account/accountactivation";
+		$url = api_base_url2($api);
+
+		$data= array(
+		  'key' => $key,
+		);
+
+		$options = ["http" => [
+			"method" => "POST",
+			"content" => json_encode( $data ),
+			"header"=>  "Content-Type: application/json\r\n" .
+                "Accept: application/json\r\n"
+		]];
+
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+		$this->data['hasil'] = json_decode($konten, true);
+// echo"<pre>"; print_r($hasil['status']); die();
+		$this->data['title_web'] = "Myacico.com - Reset Password";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/customer/create/registration_completed.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 

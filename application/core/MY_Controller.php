@@ -83,8 +83,8 @@ class Web extends MY_Controller {
 		$this->data['lang_masuk'] = $this->lang->line('masuk');
 		$this->data['lang_ket_daftar_personal'] = $this->lang->line('ket_daftar_personal');
 		$this->data['lang_ket_daftar_akunBisnis'] = $this->lang->line('ket_daftar_akunBisnis');
-                $this->data['lang_reg_text'] = $this->lang->line('lang_new_reg');
-                $this->data['lang_ket_daftar_gov'] = $this->lang->line('ket_daftar_akunGov');
+    $this->data['lang_reg_text'] = $this->lang->line('lang_new_reg');
+    $this->data['lang_ket_daftar_gov'] = $this->lang->line('ket_daftar_akunGov');
 		//button di daftar
 		$this->data['lang_btn_personal'] = $this->lang->line('btn_daftar');
 		$this->data['lang_btn_bisnis'] = $this->lang->line('btn_daftar_bisnis');
@@ -116,11 +116,11 @@ class Web extends MY_Controller {
     //akhhir dari dashboard
 
     //informasi AKUN
-       $this->data['lang_datkun'] = $this->lang->line('inf_datakun');
-          $this->data['lang_gant'] = $this->lang->line('inf_gant');
-            $this->data['lang_fyou'] = $this->lang->line('inf_you');
-              $this->data['lang_bil'] = $this->lang->line('inf_bil');
-                $this->data['lang_bils'] = $this->lang->line('inf_bils');
+    $this->data['lang_datkun'] = $this->lang->line('inf_datakun');
+    $this->data['lang_gant'] = $this->lang->line('inf_gant');
+    $this->data['lang_fyou'] = $this->lang->line('inf_you');
+    $this->data['lang_bil'] = $this->lang->line('inf_bil');
+    $this->data['lang_bils'] = $this->lang->line('inf_bils');
 
     //akhir dari informasi
 
