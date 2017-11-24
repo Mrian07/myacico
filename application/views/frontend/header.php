@@ -50,6 +50,7 @@
 			var base_path = base_url.split(location.host).pop();
 
 			var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
+			var login1 = 'https://acc.myacico.co.id/myacico-account/';
 			// var login_base_url_api = 'acc.myacico.co.id/myacico-service';
 			var adduser = 'http://acc.myacico.co.id/myacico-account/account/';
 
@@ -523,7 +524,7 @@ $('#searchDesk').keypress(function(e) {
   	function showData(name,id,alias)
   	{
   		// var url = base_url+'/product/detail/'+id+'/'+alias;
-			var url = base_url+'/product/alllistItem/'+id+'/'+alias;
+			var url = base_url+'product/detail/'+id+'/'+alias;
   		window.location.href = url;
   		// $("#search").val(name);
   		// $("#searchID").val(id);

@@ -80,6 +80,10 @@ chat = {
 			}),
 			$(document.createElement('i')).attr({'class':'fa fa-times'}).click(function(){
 				if(!confirm('Akhiri percakapan?'))return false;
+				chat.soc.emit('close_msg');
+				chat.soc.disconnect();
+				chat.box.hide(400);
+				$('#chat_btn').show();
 			})
 		),
 		$(document.createElement('div')).attr({'class':'message-scroll'}),
@@ -93,7 +97,10 @@ chat = {
 		var d = (new Date(msg.time)).toLocaleString().split(' ');
 		var t = d[1].slice(0,-3)+' '+d[2];
 		var div = $('<div class="chat-bubble"><div class="message-user">'+msg.from+'</div>'+msg.txt+'<span class="messages-time">'+t+'</span></div>');
-		div.addClass(this.user.iss == msg.from?'msg-right':'msg-left');
+		var c = 'msg-left';
+		if(this.user.iss == msg.from) c = 'msg-right';
+		if('sys' == msg.from) c = 'msg-sys';
+		div.addClass(c);
 		return div;
 	},
 	showAnim: function(h){
