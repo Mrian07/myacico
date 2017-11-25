@@ -167,7 +167,15 @@
 						 <div style='float:right; width:160px; text-align:center; border:0px;' >
 							 <div class='row' style='margin-top:0px; padding:0px;'>
 								 <div class="col-xs-4" style='margin-top:5px; text-align: right'>
-									 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='25' border='0'>
+									   <!-- <div class="buktiTrans"></div> -->
+										 <!-- <?php  echo " <img src='$myavatar' width='25' border='0'>"; ?> -->
+							<?php
+							if(isset($_COOKIE['x-auth'])){
+					  		   echo "<img src='$myavatar' width='25' border='0'>";
+				  		} else{ ?>
+							 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='25' border='0'>
+							<?php } ?>
+
 									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
 								 </div>
 								 <div class="col-xs-8" style='font-size:10px; text-align: left; color:#4d4d4d; padding-left:0px;'>

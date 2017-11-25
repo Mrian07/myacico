@@ -26,6 +26,21 @@
     position: relative;
     overflow:hidden;
 }
+.badge {
+  background: #b20c0c;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 31px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  border: 2px solid #FFF;
+  box-shadow: 0 0 0 1px #b20c0c;
+  top: -1px;
+  right: -1%;
+}
 .thumbnail:hover{
 		opacity:1.00;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -705,7 +720,7 @@ ul.list-group:after {
         <div class="item" align="center">
 
       <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
-        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
+          <span class="badge">New</span>  <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
 
           <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></p>
           <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
