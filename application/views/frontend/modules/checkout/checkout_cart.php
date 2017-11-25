@@ -19,7 +19,7 @@
 
 
 <div class="panel panel-default">
-	<div class="panel-heading"><b>CART</b></div>
+	<div class="panel-heading"><b><?php echo $lang_shoping_cart;?></b></div>
 	<div class="panel-body">
 		<table class="table table-hover table-condensed">
 			<thead>
@@ -75,7 +75,7 @@
 					<strong>Total Rp.<?php echo money($total); ?></strong></td>
 				</tr>
 				<tr>
-					<td colspan="5"><b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman</td>
+                                    <td colspan="5"><b><?php echo $lang_cart_note;?></b> <?php echo $lang_cart_note_text;?></td>
 				</tr>
 			</tfoot>
 		</table>

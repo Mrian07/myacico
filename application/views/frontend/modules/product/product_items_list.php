@@ -357,14 +357,14 @@ if($saw==Null)
 
 
     <div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
-       <div class="col-sm-8">
+       <div class="col-sm-8" style='text-align:left; padding:0px; margin:0px'>
          <div class="row">
            <div class="col-sm-3">
              Total items <?php echo $totalItem; ?>
           </div>
           <div class="col-sm-9">
              Tampilan <span style='font-size:15px; color:#e30c0c'><i class="fa fa-list" aria-hidden="true"></i></span> <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="Grid View" id='viewGrid'><i class="fa fa-th-large" aria-hidden="true" id='btn_list'></i></a>
-               <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none"></span>
+               <img src="<?php echo base_url('images/general/Spinner2.gif');?>" id="spinner_img" style="display:none"></span>
            </div>
         </div>
 
