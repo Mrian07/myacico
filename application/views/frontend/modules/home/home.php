@@ -26,7 +26,10 @@
     position: relative;
     overflow:hidden;
 }
-.badge {
+
+
+a.badgeNi:hover,a.badgeNi:focus{color:#fff;text-decoration:none;cursor:pointer}
+.badgeNi {
   background: #b20c0c;
   position: absolute;
   height: 40px;
@@ -719,8 +722,8 @@ ul.list-group:after {
       <!-- <div class="item" align="center"> -->
         <div class="item" align="center">
 
-      <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
-          <span class="badge">New</span>  <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
+      <a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>" class='link-p' style="color:#fff;">
+          <span class="badgeNi">New</span>  <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
 
           <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></p>
           <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
