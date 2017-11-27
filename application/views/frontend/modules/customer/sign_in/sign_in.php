@@ -154,9 +154,21 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<style>
+/*ini spesial buat button search jangan dihapus*/
+.my-search-button{
+    padding: 6px 20px 6px 20px;
+    border: none;
+    border-radius: 4px;
+    background: #cd0000 url("../../images/general/red-emboss.jpg");
+    color:#f8f5f0;
+    font-size: 22px;
+}
 
-<!--<div id="status">
-</div>-->
+.my-search-button:hover{
+  background: #111111;
+}
+</style>
 
 <div class="container">
 

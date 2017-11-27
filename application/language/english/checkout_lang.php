@@ -37,5 +37,5 @@ $lang['sender'] = 'SENDER';
 $lang['reciever'] = 'RECIPIENT';
 $lang['cart_detail'] = 'CART DETAIL';
 $lang['total_payment'] = 'Total payment:';
-
+$lang['payment_confirm'] = 'Payment Confirmation';
 ?>

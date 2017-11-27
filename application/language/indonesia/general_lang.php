@@ -7,7 +7,7 @@ $lang['lang_new_reg'] = 'PENDAFTARAN';
 
 
 //fields
-$lang['label_name'] = 'Pendaftaran Gagal karena';
+$lang['label_name'] = 'Nama';
 $lang['msg_regis'] = 'Silahkan isi Nama Anda';
 $lang['label_rep_pass'] = 'Ulangi Password';
 $lang['msg_regis2'] = 'Pendaftaran Gagal kKarena,';
