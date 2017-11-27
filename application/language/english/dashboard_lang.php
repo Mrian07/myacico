@@ -37,9 +37,15 @@ No billing data yet, billing data is required at checkout purchase.';
 									$lang['field_kel'] ='Vilage*';
 									$lang['field_telp'] ='Telephone*';
 
+										  //end of tambah buku alamat
+									 //history dan order Status
+									 $lang['field_riwayyat'] ='ORDER HISTORY';
+									 $lang['field_tgl'] ='Order Date';
+									 $lang['field_total'] ='Total payment';
+									  $lang['field_metod'] ='Payment method';
+										  $lang['fiedl_order'] ='Order Number';
+									 //end of history
 
-
-						  //end of tambah buku alamat
 
 				//end of buku alamat
 

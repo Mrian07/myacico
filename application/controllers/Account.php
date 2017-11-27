@@ -20,6 +20,7 @@ class Account extends Web_private {
 		$this->data['active_returnManagementAuthority'] = "";
 		$this->data['active_berlanggananNewsletter'] = "";
 		$this->data['active_wishlist'] = "";
+		$this->data['active_avatar'] = "";
 	}
 
 
@@ -195,7 +196,13 @@ class Account extends Web_private {
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 
-		$this->data['hasil'] = json_decode($konten, true);
+		//untuk cek expired token
+		$hasil = json_decode($konten, true);
+		if(isset($hasil['status'])){
+			$this->logout();
+		}else{
+			$this->data['hasil'] = json_decode($konten, true);
+		}
 
 		if($hasil = json_decode($konten, true)){
 			$this->load->view('frontend/modules/account/list_buku_alamat',$this->data);
@@ -368,7 +375,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
 		$this->load->view('frontend/footer',$this->data);
-                $this->load->view('frontend/sidenav',$this->data);
+    $this->load->view('frontend/sidenav',$this->data);
 	}
 
 	public function Wishlist()

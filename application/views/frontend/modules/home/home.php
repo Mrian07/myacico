@@ -44,6 +44,36 @@ a.badgeNi:hover,a.badgeNi:focus{color:#fff;text-decoration:none;cursor:pointer}
   top: -1px;
   right: -1%;
 }
+.badgeNi3 {
+  background: #b20c0c;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 31px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  border: 2px solid #FFF;
+  box-shadow: 0 0 0 1px #b20c0c;
+  top: -1px;
+  right: 20%;
+}
+.badgeNi34 {
+  background: #b20c0c;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 31px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  border: 2px solid #FFF;
+  box-shadow: 0 0 0 1px #b20c0c;
+  top: 3px;
+  right: 10%;
+}
 .thumbnail:hover{
 		opacity:1.00;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -726,7 +756,12 @@ ul.list-group:after {
           <span class="badgeNi">New</span>  <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
 
           <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></p>
-          <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+          <?php if ($itemslide2['specialprice'] == 0){
+            ?> <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+       <?php    } else{ ?>
+           <p class="box-title2"><s>Rp.<?php echo money($itemslide2['pricelist']); ?></s></p><p><?php echo money($itemslide2['specialprice']); ?></p>
+        <?php } ?>
+
 
 
             <hr>
@@ -754,7 +789,17 @@ ul.list-group:after {
       		<span class="thumbnail text-center" align="center">
               <a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><img src="<?php echo $itemslide3['imageurl']; ?>" style='height:100px;'></a>
         			<div class="link-nmp box-title" style='height:40px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></div>
-              <div class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></div>
+                  <?php if($itemslide3['specialprice'] == 0){
+                  ?>   <div class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></div>
+                <?php  }else{  ?>
+ <p class="box-title2"><s>Rp.<?php echo money($itemslide3['pricelist']); ?></s></p><div class="box-title2" style='color: #8a0202'><p>Rp.<?php echo money($itemslide3['specialprice']); ?></p></div>
+              <?php } ?>
+          <?php if($itemslide3['discount'] == 0){
+            echo "";
+          } else { ?>
+  <span class="badgeNi3" style="color:white;">  <?php echo $itemslide3['discount']; ?> %</span>
+          <?php } ?>
+
         			<div class="ratings" style='text-align: center; color:#d98c13;'>
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star"></span>
@@ -798,7 +843,8 @@ ul.list-group:after {
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:210px; text-align:center'>
+
+      <div class="item" style='background:#ffffff; padding:10px; height:240px; text-align:center'>
 
 <!-- <script>
 var length = 30;
@@ -826,8 +872,18 @@ text.innerHTML = trimmedString
                  echo $str2."....";
               }
               ?></span></p>
+              <?php if($itemslide0['specialprice'] == 0){
+              ?>   <div class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide0['pricelist']); ?></div>
+            <?php  }else{  ?>
+<p class="box-title2"><s >Rp.<?php echo money($itemslide0['pricelist']); ?></s></p><div class="box-title2" style='color: #8a0202; '><p >Rp.<?php echo money($itemslide0['specialprice']); ?></p></div>
+          <?php } ?>
+          <?php if($itemslide0['discount'] == 0){
+            echo "";
+          } else { ?>
+  <span class="badgeNi34" style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
+          <?php } ?>
 
-        <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide0['pricelist']); ?></p>
+
 
       </div>
       <?php $n++;  } ?>
@@ -879,6 +935,7 @@ text.innerHTML = trimmedString
                   echo $str2."....";
                 }
                 ?></p>
+
             <b><p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide1['pricelist']); ?></p></b>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
@@ -938,6 +995,7 @@ text.innerHTML = trimmedString
                       echo $str2."....";
                     }
                     ?></p>
+
             <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide2['pricelist']); ?></p>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>

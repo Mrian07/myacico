@@ -201,6 +201,50 @@ public function listItem()
 		$this->load->view('frontend/footer',$this->data);
 	}
 
+	public function test()
+  {
+		// $this->session->userdata('username');
+		//  $stack = array(
+		// 	 'filterAlias2' =>'Kulkas',
+		// 	 'valueAlias2' =>'LG',
+		//  ) ;
+    //
+		// $data = array(
+		// 		'fctr' => array(
+		// 			'filterAlias1' =>'HP',
+		// 			'valueAlias1' =>'Samsung',
+		// 		)
+		// 	);
+		// 	array_push(
+		// 		'fctr' => array(
+		// 			$stack
+		// 			'filterAlias' =>'HP',
+		// 			'valueAlias' =>'Samsung',
+		// 		)
+    //
+		// 	print_r($data);
+		//$this->session->set_userdata($stack);
+
+		$array = array("size" => "XL", "color" => "gold");
+		print_r(array_values($array));
+
+	}
+
+	public function filterSidebar()
+  {
+		$filterAlias=$_POST['filterAlias'];
+		$valueAlias=$_POST['valueAlias'];
+
+
+		$data[] = array_push($item, $result[0]['sport_name']);
+
+		$data = array(
+			'itemView' => 'list',
+			'itemView' => 'list'
+		);
+		$this->session->set_userdata($data);
+	}
+
 	public function category()
 	{
 		$this->data['cat_id']=$this->uri->segment(3);

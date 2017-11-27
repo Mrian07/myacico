@@ -1,7 +1,7 @@
 
 <div class="container">
 	<div class='my-bg-title'>
-		<i class="fa fa-angle-right" aria-hidden="true"></i> RIWAYAT PESANAN
+		<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_riw; ?>
 	</div>
 </div>
 <div class="container">
@@ -10,7 +10,7 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-			<p>Dibawah ini adalah daftar buku alamat penerima pesanan. Anda bisa menambahkan alamat baru atau mengubah alamat sebelumnya dengan alamat yang lain.</p>
+		
 			Sort By:
 
 			<div class="row">

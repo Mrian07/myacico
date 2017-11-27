@@ -5,15 +5,18 @@
 }
 </style>
 
+<p align="center"><?php echo $lang_riw; ?></p>
+
+
 <div class="row"  style='width: 100%; margin:0 auto;'>
     <div id="no-more-tables">
         <table class="col-md-12 table-bordered table-striped table-condensed cf">
         	<thead class="cf">
         	  <tr>
-        		<th>Tanggal Order</th>
-        		<th>Total Pembayaran</th>
-        		<th>Metode Pembayaran</th>
-        		<th>Nomor Pesanan</th>
+        		<th><?php echo $lang_tgl; ?></th>
+        		<th><?php echo $lang_tota; ?></th>
+        		<th><?php echo $lang_metod; ?></th>
+        		<th><?php  echo $lang_orde;?></th>
         		<th>Status</th>
         		<th>Detail</th>
         		<th>Konfirmasi/ Credit Card</th>
