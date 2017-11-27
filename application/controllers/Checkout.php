@@ -10,7 +10,7 @@ class Checkout extends Web_private {
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		$this->load->helper('app');
-	//	$this->load->helper('cookie');
+		$this->load->helper('cookie');
 	//	$this->load->model('Login_model', 'login', TRUE);
 
 
@@ -45,10 +45,12 @@ class Checkout extends Web_private {
 		}
 
         // Shipping Address ~Samuel
-		if($this->session->userdata('shipping_address_id'))
+		//checkoutget_cookie('shipping_address_id')
+		$get_shipping = get_cookie('shipping_address_id');
+		if($get_shipping)
 		{
 
-		   $api = "aduser/getaddress?id=".$this->session->userdata('shipping_address_id');
+		   $api = "aduser/getaddress?id=".$get_shipping;
 		   $url = api_base_url($api);
 
 
@@ -56,10 +58,16 @@ class Checkout extends Web_private {
 		   $hasil_ship = json_decode($konten2, true);
 
 		   //Data Shipping
-				$this->data['alamat_shipping'] =$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
+				$this->data['alamat_shipping'] =$hasil_ship['name'].", ".$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
 				$this->data['id_kelurahan'] = $hasil_ship['village_id'];
 				$this->data['shipping_address_id'] = $hasil_ship['id'];
-//                   print_r($api); die();
+		//                   print_r($api); die();
+		}else{
+			foreach($hasil as $items){
+				$this->data['alamat_shipping'] =$items['name'].", ".$items['address_name'].", ".$items['address1']." ".$items['city_name']." ".$items['postal'];
+				$this->data['id_kelurahan'] = $items['village_id'];
+				$this->data['shipping_address_id'] = $items['id'];
+			}
 		}
 
         //Metode Pembayaran
@@ -222,8 +230,11 @@ class Checkout extends Web_private {
 
 	public function pilihShipping() {
 		$id = $this->uri->segment(3);
-		$data = array('shipping_address_id' => $id);
-        $this->session->set_userdata($data);
+		// $data = array('shipping_address_id' => $id);
+    // $this->session->set_userdata($data);
+		$shipping_address_id = $id;
+		set_cookie('shipping_address_id',$shipping_address_id,'3600');
+
 		redirect('checkout');
 	}
 
