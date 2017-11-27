@@ -3,7 +3,7 @@
     <div class="row">
 	  <div class="col-sm-12"><br>
 
-			<?php if($hasil['status']=='0'){?>
+			<?php if($hasil['status']=='1'){?>
 				<div class='border-create'>
 				<h4>Aktivasi account anda berhasil. </h4><h5><?php echo anchor('customer/signIn','click disini untuk login.'); ?></h5>
 				</div>

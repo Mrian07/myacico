@@ -20,6 +20,7 @@ class Account extends Web_private {
 		$this->data['active_returnManagementAuthority'] = "";
 		$this->data['active_berlanggananNewsletter'] = "";
 		$this->data['active_wishlist'] = "";
+		$this->data['active_avatar'] = "";
 	}
 
 

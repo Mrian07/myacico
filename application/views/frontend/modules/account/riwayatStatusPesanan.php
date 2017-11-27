@@ -1,7 +1,7 @@
 
 <div class="container">
 	<div class='my-bg-title'>
-		<i class="fa fa-angle-right" aria-hidden="true"></i> RIWAYAT PESANAN
+		<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_riw; ?>
 	</div>
 </div>
 <div class="container">

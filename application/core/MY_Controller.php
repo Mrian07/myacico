@@ -187,8 +187,15 @@ class Web extends MY_Controller {
                   $this->data['field_alamatLain'] = $this->lang->line('field_alamat');
                     $this->data['field_kel'] = $this->lang->line('field_kel');
                       $this->data['field_telpon'] = $this->lang->line('field_telp');
-
           //end of tambah
+          //riwayat PESANAN
+              $this->data['lang_riw'] = $this->lang->line('field_riwayyat');
+              $this->data['lang_tgl'] = $this->lang->line('field_tgl');
+              $this->data['lang_tota'] = $this->lang->line('field_total');
+                $this->data['lang_metod'] = $this->lang->line('field_metod');
+                        $this->data['lang_orde'] = $this->lang->line('fiedl_order');
+
+          //end pesanan
 
     //ennd of buku alamat
 
@@ -242,35 +249,35 @@ class Web extends MY_Controller {
     $this->data['lang_payment_method'] = $this->lang->line('payment_method');
     $this->data['lang_transaction_date'] = $this->lang->line('transaction_date');
     $this->data['lang_transaction_status'] = $this->lang->line('transaction_status');
-    $this->data['lang_sender_checkout'] = $this->lang->line('sender'); 
-    $this->data['lang_reciever_checkout'] = $this->lang->line('reciever');  
-    $this->data['lang_cart_detail'] = $this->lang->line('cart_detail');  
+    $this->data['lang_sender_checkout'] = $this->lang->line('sender');
+    $this->data['lang_reciever_checkout'] = $this->lang->line('reciever');
+    $this->data['lang_cart_detail'] = $this->lang->line('cart_detail');
     $this->data['lang_total_payment'] = $this->lang->line('total_payment');
-    
+
     $this->data['lang_msg1_checkout'] = $this->lang->line('msg1_checkout');
     $this->data['lang_msg2_checkout'] = $this->lang->line('msg2_checkout');
     $this->data['lang_msg3_checkout'] = $this->lang->line('msg3_checkout');
     $this->data['lang_msg4_checkout'] = $this->lang->line('msg4_checkout');
     $this->data['lang_msg5_checkout'] = $this->lang->line('msg5_checkout');
     $this->data['lang_msg6_checkout'] = $this->lang->line('msg6_checkout');
-    $this->data['lang_msg_bca'] = $this->lang->line('msg_bca');  
-    $this->data['lang_msg_cimb'] = $this->lang->line('msg_cimb');  
-    $this->data['lang_msg_online_payment'] = $this->lang->line('msg_online_payment'); 
-    
+    $this->data['lang_msg_bca'] = $this->lang->line('msg_bca');
+    $this->data['lang_msg_cimb'] = $this->lang->line('msg_cimb');
+    $this->data['lang_msg_online_payment'] = $this->lang->line('msg_online_payment');
+
     $this->data['lang_sender_receiver_data'] = $this->lang->line('sender_receiver_data');
     $this->data['lang_data_bill'] = $this->lang->line('data_bill');
     $this->data['lang_data_receiver'] = $this->lang->line('data_receiver');
-    $this->data['lang_payment_type'] = $this->lang->line('payment_type'); 
-    $this->data['lang_shiping_method'] = $this->lang->line('shiping_method');  
-    $this->data['lang_shoping_cart'] = $this->lang->line('shoping_cart');  
+    $this->data['lang_payment_type'] = $this->lang->line('payment_type');
+    $this->data['lang_shiping_method'] = $this->lang->line('shiping_method');
+    $this->data['lang_shoping_cart'] = $this->lang->line('shoping_cart');
     $this->data['lang_cart_note_text'] = $this->lang->line('cart_note_text');
-    $this->data['lang_cart_note'] = $this->lang->line('cart_note');  
-    $this->data['lang_shiping_fare'] = $this->lang->line('shiping_fare');  
-    $this->data['lang_finish_button'] = $this->lang->line('finish_button'); 
+    $this->data['lang_cart_note'] = $this->lang->line('cart_note');
+    $this->data['lang_shiping_fare'] = $this->lang->line('shiping_fare');
+    $this->data['lang_finish_button'] = $this->lang->line('finish_button');
     $this->data['lang_address_note'] = $this->lang->line('address_note');
     $this->data['lang_txt_btn_address'] = $this->lang->line('txt_btn_address');
     $this->data['lang_btn_update_receiver'] = $this->lang->line('btn_update_receiver');
-    
+
     //s: footer
     $this->data['lang_f_moto'] = $this->lang->line('f_moto');
     $this->data['lang_f_guarantee1'] = $this->lang->line('f_guarantee1');
