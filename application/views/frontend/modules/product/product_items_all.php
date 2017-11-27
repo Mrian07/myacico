@@ -264,19 +264,20 @@ font-size: 16px;
 
 
         <div class="btn-group">
-        <button type="button" style="border-radius: 25px; padding: 7px 34px; margin-bottom:7px;"  class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+          <center>
+        <button type="button" style="border-radius: 25px; padding: 7px 34px; margin-bottom:7px;"  class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button></center>
 
         <?php
         //if($cektoken){}
         if($data['isWishList'] =='Y')
         {
         ?>
-
-        <button type="button" style="border-radius: 25px;  padding: 8px 45px; margin-bottom:7px;"  class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
+<center>
+        <button type="button" style="border-radius: 25px;  padding: 8px 55px; margin-bottom:7px;"  class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button></center>
         <?php }else{
         ?>
-
-        <button type="button" class="btn btn-success" style="border-radius: 25px;  padding: 8px 45px; margin-bottom:7px;"  onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
+        <center>
+        <button type="button" class="btn btn-success" style="border-radius: 25px;  padding: 8px 55px; margin-bottom:7px;"  onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button></center>
 
         <?php }
         ?>

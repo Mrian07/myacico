@@ -163,6 +163,7 @@ a
 
 $(document).ready(function()
 {
+    location.reload();
 	var totaltrans = $('#SubtotalOrder').val();
 	$('#grandtotalall').html(addPeriod(totaltrans));
 

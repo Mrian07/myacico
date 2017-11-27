@@ -36,7 +36,7 @@
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
-							<label>EMail:</label>
+							<label>Email:</label>
 								<?php echo $user->email; ?>
 							</div>
 						</div>
@@ -52,10 +52,7 @@
 						<!--<input type="text" id = "address1"name="address1" class="form-control mandatory" value="<?php echo $hasil['address1'];?>" />-->
 						<!--<input type="text" id = "address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>" />-->
 					</div>
-					<div class="form-group">
-						<label>Alamat Lain:</label>
-						<textarea rows="4" cols="50" id="address2" name="address2" class="form-control mandatory" value="<?php echo $hasil['address2'];?>"><?php echo $hasil['address2'];?></textarea>
-					</div>
+
 					<div class="form-group">
 						<label><?php echo $lang_Country; ?>*</label>
 						<select name="country" id="country_sel" class="form-control mandatory">
@@ -389,7 +386,7 @@ $.ajax({
         var phone2 = $("#phone2").val();
         var address_name = $("#address_name").val();
         var address1 = $("#address1").val();
-        var address2 = $("#address2").val();
+
         var postal = $("#postal").val();
         var district_id = $("#district_id").val();
         var village_id = $("#village_id").val();
@@ -408,7 +405,7 @@ data.id = id;
     data.phone2 = phone2;
     data.address_name = address_name;
     data.address1 = address1;
-    data.address2 = address2;
+
     data.postal = postal;
     data.district_id = district_id;
     data.isbillto = 'Y';
