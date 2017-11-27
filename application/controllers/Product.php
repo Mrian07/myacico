@@ -102,7 +102,6 @@ public function listItem()
 
 		$id_cat=$this->uri->segment(3);
 		$ob=$this->uri->segment(5);
-
 		$page=$this->uri->segment(6);
 		$api_rec = "product/productlist?category=".$id_cat."&show=productcount";
 
@@ -115,13 +114,11 @@ public function listItem()
         $api_max = "product/productlist?category=".$id_cat."&page=".$page."&show=pagecount";
 
     }elseif($ob != 'all'){
-
-					$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob;
-                    $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&show=pagecount";
+				$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob;
+        $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&show=pagecount";
     }else{
         $api = "product/productlist?category=".$id_cat."&itemperpage=8";
         $api_max = "product/productlist?category=".$id_cat."&show=pagecount";
-
     }
 
   	$api2 = "product/productlist/".$id_cat;
@@ -129,15 +126,13 @@ public function listItem()
 		$url = api_base_url($api);
 		$url2 = api_base_url($api_max);
 		$url3 = api_base_url($api_rec);
-                $url4 = api_base_url($api4);
+    $url4 = api_base_url($api4);
 		$options = ["http" => [
 		      "method" => "GET",
            "header" => ["token: " . $token,
            "Content-Type: application/json"],
 		]];
         // looking maximum page
-
-
 
 		$context = stream_context_create($options);
 		$konten2 = file_get_contents($url2, false, $context);
@@ -148,7 +143,7 @@ public function listItem()
     $this->data['max_page'] =json_decode($konten2)->pageCount;
     $this->data['jdata'] =json_decode($konten3)->productCount;
     $this->data['listMenu'] = json_decode($konten4, true);
-     $this->data['jumlahMenu']= 0;
+    $this->data['jumlahMenu']= 0;
     foreach($this->data['listMenu'] as $menu_list){
         ++$this->data['jumlahMenu'];
     }
@@ -171,6 +166,13 @@ public function listItem()
 		}else{
 			$posisi = ($page-1)*$batas;
 		}
+
+		//filters
+		$api_filter = "product/filter?category=".$id_cat;
+		$url_filter = api_base_url($api_filter);
+		$konten_filter = file_get_contents($url_filter);
+		$this->data['hasil_filter'] = json_decode($konten_filter);
+// echo"<pre>"; print_r($hasil_filter); die();
 		$this->data['page'] = $page;
 		$this->data['posisi'] = $posisi;
 		$jdata =json_decode($konten3)->productCount;

@@ -1,5 +1,26 @@
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-	<div id="<?php echo$pane; ?>" class="menu_list">
+	<?php
+	foreach($hasil_filter as $dataf){?>
+
+		<div id="<?php echo$pane; ?>" class="menu_list">
+			<p class="menu_head plus"><?php echo $dataf->filter; ?></p>
+			<div class="menu_body">
+				<?php
+					foreach($dataf->data as $datac){?>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="<?php echo $datac->count; ?>">
+							<?php echo $datac->value; ?>
+							</label>
+						</div>
+					<?php }
+				 ?>
+			</div>
+		</div>
+	<?php }
+	 ?>
+
+	<!-- <div id="<?php echo$pane; ?>" class="menu_list">
 		<p class="menu_head plus">Harga
 		</p>
 		<div class="menu_body">
@@ -47,10 +68,10 @@
 			</div>
 
 		</div>
-	</div>
+	</div> -->
 
 
-
+<!--
 	<div id="<?php echo$pane; ?>" class="menu_list">
 		<p class="menu_head plus">Brand
 		</p>
@@ -153,7 +174,7 @@
 			</div>
 
 		</div>
-	</div>
+	</div> -->
 
 <script>
 //slides the element with class "menu_body" when paragraph with class "menu_head" is clicked
