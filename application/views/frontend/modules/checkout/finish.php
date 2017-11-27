@@ -42,35 +42,35 @@ a
 
 <div class="container">
 	<h3>TERIMA KASIH</h3>
-	<p>Order Anda telah berhasil diproses.</p>
+	<p>Order Anda telah berhasil diproses. Untuk <?php echo anchor('account/riwayatStatusPesanan', $lang_payment_confirm);?></p>
 
 
 	<div class="row">
 	  <div class="col-sm-6">
 		<div class="panel panel-default">
-		  <div class="panel-heading"><b>DETAIL ORDER</b></div>
+		  <div class="panel-heading"><b><?php echo $lang_no_order;?></b></div>
 		  <div class="panel-body">
 		  <form class="form-horizontal">
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Nomor Order:</label>
+			<label class="control-label col-sm-4" for="email"><?php echo $lang_no_order;?></label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->orderNumber; ?></p>
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Nomor Invoice:</label>
+			<label class="control-label col-sm-4" for="email"><?php echo $lang_no_invoice;?></label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->invoiceNumber; ?></p>
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Metode Pembayaran:</label>
+			<label class="control-label col-sm-4" for="email"><?php echo $lang_payment_method;?></label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->paymentMethod; ?></p>
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Metode Pembayaran:</label>
+			<label class="control-label col-sm-4" for="email"><?php echo $lang_transaction_status;?></label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->paymentMethod; if($field->paymentMethod=='Bank Transfer'){
 				 echo"<br><i>".$field->accountNameTo;
@@ -80,13 +80,13 @@ a
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Status:</label>
+			<label class="control-label col-sm-4" for="email"><?php echo $lang_transaction_status;?></label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->transactionStatus; ?></p>
 			</div>
 		  </div>
 		   <div class="form-group">
-			<label class="control-label col-sm-4" for="email">Tanggal Transaksi:</label>
+			<label class="control-label col-sm-4" for="email"><?php echo $lang_transaction_date;?></label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php
 			  echo tanggal_time($field->waktuTransaksi);
@@ -101,18 +101,18 @@ a
 	  <div class="col-sm-6">
 
 		<div class="panel panel-default">
-		  <div class="panel-heading"><b>PENGIRIM</b></div>
+		  <div class="panel-heading"><b><?php echo $lang_sender_checkout;?></b></div>
 		  <div class="panel-body"><b><?php echo $field->billing_name; ?></b>,<br><?php echo $field->billing_address; ?></div>
 		</div>
 
 		<div class="panel panel-default">
-		  <div class="panel-heading"><b>PENERIMA</b></div>
+		  <div class="panel-heading"><b><?php echo $lang_reciever_checkout;?></b></div>
 		  <div class="panel-body"><b><?php echo $field->shipping_name; ?></b>,<br><?php echo $field->shipping_address; ?></div>
 		</div>
 
 
 		<div class="panel panel-default">
-		  <div class="panel-heading"><b>DETAIL CART</b></div>
+		  <div class="panel-heading"><b><?php echo $lang_cart_detail;?></b></div>
 		  <div class="panel-body">
 
 			<table class="table table-hover table-condensed">

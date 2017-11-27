@@ -291,6 +291,7 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
     $this->data['lang_address_note'] = $this->lang->line('address_note');
     $this->data['lang_txt_btn_address'] = $this->lang->line('txt_btn_address');
     $this->data['lang_btn_update_receiver'] = $this->lang->line('btn_update_receiver');
+    $this->data['lang_payment_confirm'] = $this->lang->line('payment_confirm');
 
     //s: footer
     $this->data['lang_f_moto'] = $this->lang->line('f_moto');
