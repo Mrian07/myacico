@@ -59,6 +59,21 @@ a.badgeNi:hover,a.badgeNi:focus{color:#fff;text-decoration:none;cursor:pointer}
   top: -1px;
   right: 20%;
 }
+.badgeNi34 {
+  background: #b20c0c;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 31px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  border: 2px solid #FFF;
+  box-shadow: 0 0 0 1px #b20c0c;
+  top: 3px;
+  right: 10%;
+}
 .thumbnail:hover{
 		opacity:1.00;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -828,7 +843,8 @@ ul.list-group:after {
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:220px; text-align:center'>
+
+      <div class="item" style='background:#ffffff; padding:10px; height:240px; text-align:center'>
 
 <!-- <script>
 var length = 30;
@@ -856,7 +872,17 @@ text.innerHTML = trimmedString
                  echo $str2."....";
               }
               ?></span></p>
-            <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide0['pricelist']); ?></p>
+              <?php if($itemslide0['specialprice'] == 0){
+              ?>   <div class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide0['pricelist']); ?></div>
+            <?php  }else{  ?>
+<p class="box-title2"><s >Rp.<?php echo money($itemslide0['pricelist']); ?></s></p><div class="box-title2" style='color: #8a0202; '><p >Rp.<?php echo money($itemslide0['specialprice']); ?></p></div>
+          <?php } ?>
+          <?php if($itemslide0['discount'] == 0){
+            echo "";
+          } else { ?>
+  <span class="badgeNi34" style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
+          <?php } ?>
+
 
 
       </div>

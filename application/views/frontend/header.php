@@ -185,7 +185,8 @@
 								 </div>
 								 <div class="col-xs-8" style='font-size:10px; text-align: left; color:#4d4d4d; padding-left:0px;'>
 									  <?php if(isset($user)){ ?>
-											Hii .. <?php echo $user->name; ?>
+
+											Hi. <?php echo substr($user->name,0,6); ?>
 											 <?php }else{ ?>
 												  <div><?php echo $lang_aa; ?></div>
 												  <?php } ?>
