@@ -97,8 +97,12 @@ class Web extends MY_Controller {
 		$this->data['lang_masuk'] = $this->lang->line('masuk');
 		$this->data['lang_ket_daftar_personal'] = $this->lang->line('ket_daftar_personal');
 		$this->data['lang_ket_daftar_akunBisnis'] = $this->lang->line('ket_daftar_akunBisnis');
-    $this->data['lang_reg_text'] = $this->lang->line('lang_new_reg');
-    $this->data['lang_ket_daftar_gov'] = $this->lang->line('ket_daftar_akunGov');
+                $this->data['lang_reg_text'] = $this->lang->line('lang_new_reg');
+                $this->data['lang_ket_daftar_gov'] = $this->lang->line('ket_daftar_akunGov');
+                $this->data['lang_msg_login1'] = $this->lang->line('msg_login1');
+                $this->data['lang_msg_login2'] = $this->lang->line('msg_login2');
+                $this->data['lang_msg_login3'] = $this->lang->line('msg_login3');
+                $this->data['lang_msg_login4'] = $this->lang->line('msg_login4');
 		//button di daftar
 		$this->data['lang_btn_personal'] = $this->lang->line('btn_daftar');
 		$this->data['lang_btn_bisnis'] = $this->lang->line('btn_daftar_bisnis');

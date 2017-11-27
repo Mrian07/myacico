@@ -23,4 +23,8 @@ $lang['reset_password_form1'] = 'New Password :';
 $lang['reset_password_form2'] = 'Repeat Password :';
 $lang['reset_password_msg1'] = 'Password minimum consist of 7 character!';
 $lang['reset_password_msg2'] = 'Password does not match!';
+$lang['msg_login1'] = 'Invalid Email Address';
+$lang['msg_login2'] = 'Password Can not Be Empty!';
+$lang['msg_login3'] = 'Connection Problem, Please Try Again';
+$lang['msg_login4'] = 'Wrong Password Or Email';
 ?>

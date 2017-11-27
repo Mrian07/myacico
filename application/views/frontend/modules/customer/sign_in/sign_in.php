@@ -243,7 +243,7 @@ var success = function(r){
 
   if(!r.token) return $.alert({
     title: 'Alert!',
-    content: r.message
+    content:  '<?php echo $lang_msg_login4;?>'
   });
   var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
   <?php
@@ -295,7 +295,7 @@ var error = function(er){
   console.log('OK:', er);
   $.alert({
     title: 'Alert!',
-    content: 'Koneksi tidak berhasil, silahkan coba lagi!',
+    content: '<?php echo $lang_msg_login3;?>',
   });
 };
     var data = {};
@@ -311,7 +311,10 @@ $(document).ready(function() {
     var atpos = x.indexOf("@");
     var dotpos = x.lastIndexOf(".");
     if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-        alert("Masukan Email Yang Benar");
+       $.alert({
+    title: 'Alert!',
+    content: '<?php echo $lang_msg_login1;?>',
+  });
         return false;
     }
 
@@ -319,7 +322,7 @@ $(document).ready(function() {
 		if(password==''){
 			$.alert({
 				title: 'Alert!',
-				content: 'Password tidak boleh kosong!',
+				content: '<?php echo $lang_msg_login1;?>',
 			});
       return false;
 		};
