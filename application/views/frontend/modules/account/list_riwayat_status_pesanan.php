@@ -4,12 +4,11 @@
    cursor: default;
 }
 </style>
-<p>Dibawah ini adalah daftar buku alamat penerima pesanan. Anda bisa menambahkan alamat baru atau mengubah alamat sebelumnya dengan alamat yang lain.</p>
+
 <div class="row"  style='width: 100%; margin:0 auto;'>
     <div id="no-more-tables">
         <table class="col-md-12 table-bordered table-striped table-condensed cf">
         	<thead class="cf">
-
         	  <tr>
         		<th>Tanggal Order</th>
         		<th>Total Pembayaran</th>
@@ -19,7 +18,6 @@
         		<th>Detail</th>
         		<th>Konfirmasi/ Credit Card</th>
         	  </tr>
-
         	</thead>
         	<tbody>
         		<?php foreach($hasil as $items): 	?>
@@ -45,7 +43,7 @@
         							echo anchor('checkout/paymentByOnline/'.$items['idTransaksi'].'/'.$items['token'], 'Pay By Online Payment', array('class'=>'btn btn-warning'));
         						}
                                                 }else{
-       
+
         						if($items['transactionStatus']=='PAID'){
         							echo anchor('#', 'Paid', array('class'=>'btn btn-warning disabled'));
         						}else{

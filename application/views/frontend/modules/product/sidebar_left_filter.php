@@ -1,5 +1,5 @@
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-	<?php
+	<!-- <?php
 	foreach($hasil_filter as $dataf){?>
 
 		<div id="<?php echo$pane; ?>" class="menu_list">
@@ -18,9 +18,9 @@
 			</div>
 		</div>
 	<?php }
-	 ?>
+	 ?> -->
 
-	<!-- <div id="<?php echo$pane; ?>" class="menu_list">
+	<div id="<?php echo$pane; ?>" class="menu_list">
 		<p class="menu_head plus">Harga
 		</p>
 		<div class="menu_body">
@@ -68,7 +68,7 @@
 			</div>
 
 		</div>
-	</div> -->
+	</div>
 
 
 <!--
