@@ -15,6 +15,7 @@ class Web extends MY_Controller {
         parent::__construct();
         $this->load->helper('cookie');
         $this->load->library('jwt');
+        $this->load->helper('app');
 
         $this->logedin=false;
         $this->auth();
@@ -43,6 +44,31 @@ class Web extends MY_Controller {
         $this->asset();
         $this->categorySearch();
         $this->navigation();
+        $this->avatarCust();
+    }
+
+    public function avatarCust(){
+      $token3 = null;
+  		$adaToken3 =0;
+
+  		if(isset($_COOKIE['x-auth'])){
+  		    $token3 = $_COOKIE['x-auth'];
+  		    $adaToken3 =1;
+  		}
+
+      $api3 = "aduser/avatar/file?key=".$token3;
+
+      $url3 = api_base_url($api3);
+
+      $options3 = ["http" => [
+  		      "method" => "GET",
+
+  		]];
+      $context3 = stream_context_create($options3);
+
+  		$konten3 = file_get_contents($url3, false, $context3);
+      // $this->data['myavatar'] = "halo nih";
+      $this->data['myavatar'] = $url3;
     }
 
     public function auth(){
