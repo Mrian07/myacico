@@ -7,7 +7,10 @@ $lang['lang_new_reg'] = 'REGISTRATION';
 
 //fields
 $lang['label_name'] = 'Name';
+$lang['msg_regis'] = 'Please Input your Name';
 $lang['label_rep_pass'] = 'Repeat Password';
+$lang['msg_regis2'] = 'Register Process Failed Because,';
+
 // forgot password
 $lang['info_login'] = 'Please input your email and password below.';
 $lang['lost_password_text'] = 'Please Enter you email address. You will received link to reset your password .';
@@ -27,4 +30,14 @@ $lang['msg_login1'] = 'Invalid Email Address';
 $lang['msg_login2'] = 'Password Can not Be Empty!';
 $lang['msg_login3'] = 'Connection Problem, Please Try Again';
 $lang['msg_login4'] = 'Wrong Password Or Email';
+//success
+$lang['reset_pswd_info'] = 'Your account activation is successful.';
+$lang['reset_pswd_info2'] = 'Sorry your account activation failed, please re-activate by entering your email in the form below.'; 
+$lang['reset_pswd_info3'] = '1.DELIVERY';
+//register
+$lang['daftar_info'] = '2x24 hours delivery on weekdays for all areas of JABODETABEK and free delivery to all area in Indonesia.'; 
+$lang['daftar_info_point1'] = '1.DELIVERY';
+$lang['daftar_info_point2'] = '2. RETURN';
+$lang['daftar_info2'] = 'Damage to goods caused by errors from the manufacturer of goods, can be exchanged within 7 working days or money back within 2x24 hours.'; 
+//$lang['daftar_info2'] = '';
 ?>

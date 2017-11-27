@@ -84,9 +84,11 @@
                     <div class="form-group">
                         <label><?php echo $lang_addres; ?>*</label>
                          <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" ></textarea>
+
                         <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" />-->
                         <!--<input type="text" id = "address2" name="address2" class="form-control mandatory" />-->
                     </div>
+
 
                     <div class="form-group">
                       <label><?php echo $lang_Country; ?>*</label>
@@ -238,7 +240,6 @@ $('#submit_btn').attr('disabled','disabled');
         var phone2 = $("#phone2").val();
         var address_name = $("#address_name").val();
         var address1 = $("#address1").val();
-
         var postal = $("#postal").val();
         var village_id = $("#village_id").val();
         var isbillto = $("#isbillto").val();
@@ -279,7 +280,6 @@ $('#submit_btn').attr('disabled','disabled');
     		// $("#phone2").val(null);
     		// $("#address_name").val(null);
     		// $("#address1").val(null);
-    		// $("#address2").val(null);
     		// $("#address3").val(null);
     		// $("#address4").val(null);
     		// $("#postal").val(null);

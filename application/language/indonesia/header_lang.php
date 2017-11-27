@@ -41,7 +41,7 @@ $lang['btn_kirim1'] = 'Masuk';
 //customer personal
 $lang['field_Create'] = 'Daftar Akun Personal';
 $lang['field_selamat_datang'] = 'Selamat Datang';
-$lang['field_pesan2'] = 'Dengan daftar dan belanja di myacico.com anda bisa mendapatkan keuntungan - keuntungan sebagai berikut :';
+$lang['field_pesan2'] = 'Dengan daftar dan belanja di myACICO.co.id anda bisa mendapatkan keuntungan - keuntungan sebagai berikut :';
 $lang['btn_kirim_personal'] = 'Masuk';
 $lang['field_daftar'] = 'Sudah Mendaftar ?';
 //akhir dari personal

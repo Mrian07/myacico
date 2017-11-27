@@ -56,7 +56,7 @@ a
 								";
 							}else{
 								echo"<p>". anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default')); echo"</p>";
-							
+
                                                                 echo"<input type='hidden' value='' id='billing_address_id'/>";
                                                         }?>
 
@@ -160,6 +160,7 @@ a
 
 $(document).ready(function()
 {
+    location.reload();
 	var totaltrans = $('#SubtotalOrder').val();
 	$('#grandtotalall').html(addPeriod(totaltrans));
 
