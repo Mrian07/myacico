@@ -35,6 +35,13 @@ $lang['add_pho'] ='Telepon	';
     $lang['field_telp'] ='Telepon*';
     //end of tambah buku alamat
 
+    //history dan order Status
+    $lang['field_riwayyat'] ='RIWAYAT PESANAN';
+    $lang['field_tgl'] ='Tanggal Order';
+     $lang['field_total'] ='Total Pembayaran';
+     $lang['field_metod'] ='Metode Pembayaran';
+       $lang['fiedl_order'] ='Nomor Pesanan';
+    //end of history
 //end of buku alamat
 
  ?>

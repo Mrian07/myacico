@@ -184,7 +184,13 @@
 									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
 								 </div>
 								 <div class="col-xs-8" style='font-size:10px; text-align: left; color:#4d4d4d; padding-left:0px;'>
-									 <div><?php echo $lang_aa; ?></div>
+									  <?php if(isset($user)){ ?>
+
+											Hi. <?php echo substr($user->name,0,6); ?>
+											 <?php }else{ ?>
+												  <div><?php echo $lang_aa; ?></div>
+												  <?php } ?>
+
 									 <div style='margin-top:-8px; '>
 										 <?php if(isset($user)){ ?>
 											 <b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
