@@ -331,7 +331,40 @@ $('#searchDesk').keypress(function(e) {
   		$('.show_result').hide();
   	});
 
+		function topSearching(){
+			// var cat = $('#search_param').val();
+			// $(".productSrc").show();
+      //
+			// var search_value = $(this).val();
+			// var datas		 = 'search='+search_value;
+			 var productSrc = $('.productSrc');
+			 $(".productSrc").show();
 
+
+			productSrc.html('');
+			$.ajax({
+				url: api_base_url+'/product/topsearch?keyword=',
+				success: function(data) {
+
+					//$('#ps').show();
+					if(data.length!=0 || data.length!=''){
+						productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold' class='ps'>Popular Search</div>");}
+					data.forEach(function(p){
+						if(p.image_thumbnail){
+							var img = p.image_thumbnail;
+						}else{
+							var img = '<?php echo base_url('images/general/noimage.png'); ?>';
+						}
+
+						productSrc.append(
+							"<div class=\"show_result\" onclick=\"showData('"+p.product_name+"','"+p.product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='30'></div><div class='col-xs-6'>"+p.product_name+"</div><div class='col-xs-5' style='text-align:right'><span style='padding:4px; background:#fbbd44;'>"+p.product_category+"</span></div></div></div>"
+						);
+
+					});
+
+				}
+			});
+		}
 
   	$(document).ready(function() {
 
@@ -347,8 +380,10 @@ $('#searchDesk').keypress(function(e) {
 			  };
 			}
 			$('#searchDesk').on('click',function(e){
-				$('.ps').hide();
+				$('.ps').show();
 				$('.sr').hide();
+				//$('.topSrc').show();
+				topSearching();
 			});
 
 			$('#searchDesk').keypress(debounce(function (event) {
