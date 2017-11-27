@@ -41,14 +41,14 @@ a
 	<div class="row" ng-controller="cartCnt" method="post">
 		<div class="col-md-7">
 			<div class="panel panel-default">
-			  <div class="panel-heading"><b>DATA PENGIRIM & PENERIMA</b></div>
+			  <div class="panel-heading"><b><?php echo$lang_sender_receiver_data;?></b></div>
 			  <div class="panel-body">
 
 				<div class="row">
 					<div class="col-md-12">
 
 						<form>
-							<p><strong>Data Billing</strong></p>
+							<p><strong><?php echo $lang_data_bill;?></strong></p>
 							<?php
 							if(isset($alamat_billing)){
 								echo"<p>". $alamat_billing."</p>
@@ -60,7 +60,7 @@ a
                                                                 echo"<input type='hidden' value='' id='billing_address_id'/>";
                                                         }?>
 
-							<p><strong>Data Penerima</strong></p>
+							<p><strong><?php echo $lang_data_receiver;?></strong></p>
 						   <?php if($this->session->userdata('shipping_address_id'))
 						   {
 							   echo"<p>".anchor('checkout/dataShipping/', $alamat_shipping)."</p>
@@ -68,9 +68,9 @@ a
 							   ";
 						   }
 						   else{
-							 echo "<p>Tidak ada data penerima yang tersedia, silakan update data penerima terlebih dulu.<p>";
-							 echo "<p>".anchor('checkout/dataShipping/', 'Update data penerima', array('class'=>'btn btn-info btn-sm'))."</p>";
-
+							 echo "<p>".$lang_address_note."<p>";
+							 echo "<p>".anchor('checkout/dataShipping/', $lang_btn_update_receiver, array('class'=>'btn btn-info btn-sm'))."</p>";
+                                                          echo"<input type='hidden' value='' id='shipping_address_id'/>";
 						   }
 						   ?>
 						</form>
@@ -81,12 +81,12 @@ a
 			  </div>
 			</div>
 			<div class="panel panel-default">
-			  <div class="panel-heading"><b>METODE PEMBAYARAN</b></div>
+			  <div class="panel-heading"><b><?php echo $lang_payment_method;?></b></div>
 			  <div class="panel-body">
 				<?php if($this->session->userdata('shipping_address_id'))
 					{?>
 				  <div class="form-group">
-					<label for="email">Pilih Type Pembayaran:</label>
+					<label for="email"><?php echo $lang_payment_type;?></label>
 					<input type="hidden" id="typeVal">
 					<select id='payment_method' name='payment_method' onchange='paymentType(this.value)' class='form-control'>
 						<?php
@@ -99,14 +99,14 @@ a
                     <div class='listPayment'></div>
 
 				  </div>
-					<?php }else{echo"Silakan update data penerima diatas terlebih dulu.";} ?>
+					<?php }else{echo $lang_txt_btn_address;} ?>
 			  </div>
 			</div>
 
 			<div class="panel panel-default">
-			  <div class="panel-heading"><b>METODE PENGIRIMAN</b></div>
+			  <div class="panel-heading"><b><?php echo $lang_shiping_method;?></b></div>
 			  <div class="panel-body">
-				<div class='listShipping'>Silakan update data penerima diatas terlebih dulu.</div>
+				<div class='listShipping'><?php echo $lang_txt_btn_address;?></div>
 
 			  </div>
 			</div>
@@ -143,9 +143,9 @@ a
           $total +=$items['subtotal'];
         }?>
 
-			<h5>ONGKOS KIRIM: Rp.<span id='totalOngkir'>0</span></h5>
-			<h5>TOTAL PEMBAYARAN: Rp.<span id='grandtotalall'><?php echo money($total); ?></span></h5>
-			<button class='btn btn-success my-btn-chekout' id ="finish" onclick='finish()'>FINISH ORDER <i class="fa fa-angle-right"></i></button>
+			<h5><?php echo $lang_shiping_fare;?> Rp.<span id='totalOngkir'>0</span></h5>
+			<h5><?php echo $lang_total_payment;?> Rp.<span id='grandtotalall'><?php echo money($total); ?></span></h5>
+			<button class='btn btn-success my-btn-chekout' id ="finish" onclick='finish()'><?php echo $lang_finish_button;?> <i class="fa fa-angle-right"></i></button>
                         <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 		</div>
 
@@ -223,28 +223,28 @@ function finish(){
 	if(billing_address_id==''){
 		$.alert({
 			title: 'Alert!',
-			content: 'Data billing tidak boleh kosong',
+			content: '<?php echo $lang_msg1_checkout;?>',
 		});
 	}else if(shipping_address_id==''){
 		$.alert({
 			title: 'Alert!',
-			content: 'Data penerima tidak boleh kosong',
+			content: '<?php echo $lang_msg2_checkout;?>',
 		});
 	}else if(paymentMethod==''){
 		$.alert({
 			title: 'Alert!',
-			content: 'Silakan pilih metode pembayaran',
+			content: '<?php echo $lang_msg3_checkout;?>',
 		});
 	}else if(paymentMethod=='R' && code==''|| paymentMethod=='0' && code==''){
 		$.alert({
 			title: 'Alert!',
-			content: 'Silakan pilih bank transfer',
+			content: '<?php echo $lang_msg4_checkout;?>',
 		});
 
 	}else if(courier==''){
 		 $.alert({
 			title: 'Alert!',
-			content: 'Silakan pilih metode pengiriman',
+			content: '<?php echo $lang_msg5_checkout;?>',
 		});
 	}else {
 $('#spinner_img').show();
@@ -283,24 +283,24 @@ $('#spinner_img').show();
             if(code=="1000000"){
               $.alert({
     						title: 'Alert!',
-    						content: 'Maaf pembayaran online payment menggunkan BCA KlikPay mengalami gangguan, cobalah beberapa saat lagi.',
+    						content: '<?php echo $lang_msg_bca;?>',
     					});
             }else if(code=="1000001"){
               $.alert({
     						title: 'Alert!',
-    						content: 'Maaf pembayaran online payment menggunkan CIMB Clicks mengalami gangguan, cobalah beberapa saat lagi.',
+    						content: '<?php echo $lang_msg_cimb;?>',
     					});
             }else{
               $.alert({
     						title: 'Alert!',
-    						content: 'Maaf pembayaran online payment mengalami gangguan',
+    						content: '<?php echo $lang_msg_online_payment;?>',
     					});
             }
           }
 				}else{
 					$.alert({
 						title: 'Alert!',
-						content: 'Proses gagal silakan dicoba kembali',
+						content: '<?php echo $lang_msg6_checkout;?>',
 					});
 				}
 

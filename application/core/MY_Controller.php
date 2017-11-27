@@ -15,6 +15,7 @@ class Web extends MY_Controller {
         parent::__construct();
         $this->load->helper('cookie');
         $this->load->library('jwt');
+        $this->load->helper('app');
 
         $this->logedin=false;
         $this->auth();
@@ -28,6 +29,7 @@ class Web extends MY_Controller {
           $this->load->language('dashboard','english');
           $this->load->language('general','english');
           $this->load->language('body','english');
+          $this->load->language('checkout','english');
         }else{
           $this->load->language('header','indonesia');
           $this->load->language('home','indonesia');
@@ -35,12 +37,38 @@ class Web extends MY_Controller {
           $this->load->language('dashboard','indonesia');
           $this->load->language('general','indonesia');
           $this->load->language('body','english');
+           $this->load->language('checkout','indonesia');
         }
 
         $this->lang();
         $this->asset();
         $this->categorySearch();
         $this->navigation();
+        $this->avatarCust();
+    }
+
+    public function avatarCust(){
+      $token3 = null;
+  		$adaToken3 =0;
+
+  		if(isset($_COOKIE['x-auth'])){
+  		    $token3 = $_COOKIE['x-auth'];
+  		    $adaToken3 =1;
+  		}
+
+      $api3 = "aduser/avatar/file?key=".$token3;
+
+      $url3 = api_base_url($api3);
+
+      $options3 = ["http" => [
+  		      "method" => "GET",
+
+  		]];
+      $context3 = stream_context_create($options3);
+
+  		$konten3 = file_get_contents($url3, false, $context3);
+      // $this->data['myavatar'] = "halo nih";
+      $this->data['myavatar'] = $url3;
     }
 
     public function auth(){
@@ -200,7 +228,45 @@ class Web extends MY_Controller {
 		$this->data['lang_Passwpord2'] = $this->lang->line('field_Passeword2');
 		$this->data['lang_BtnSend'] = $this->lang->line('btn_login');
 		//end of bussines
-
+//    CHECKOUT
+    $this->data['lang_finish'] = $this->lang->line('finish');
+    $this->data['lang_thanks'] = $this->lang->line('thanks');
+    $this->data['lang_status_order'] = $this->lang->line('status_order');
+    $this->data['lang_detail_order'] = $this->lang->line('detail_order');
+    $this->data['lang_no_order'] = $this->lang->line('no_order');
+    $this->data['lang_no_invoice'] = $this->lang->line('no_invoice');
+    $this->data['lang_payment_method'] = $this->lang->line('payment_method');
+    $this->data['lang_transaction_date'] = $this->lang->line('transaction_date');
+    $this->data['lang_transaction_status'] = $this->lang->line('transaction_status');
+    $this->data['lang_sender_checkout'] = $this->lang->line('sender'); 
+    $this->data['lang_reciever_checkout'] = $this->lang->line('reciever');  
+    $this->data['lang_cart_detail'] = $this->lang->line('cart_detail');  
+    $this->data['lang_total_payment'] = $this->lang->line('total_payment');
+    
+    $this->data['lang_msg1_checkout'] = $this->lang->line('msg1_checkout');
+    $this->data['lang_msg2_checkout'] = $this->lang->line('msg2_checkout');
+    $this->data['lang_msg3_checkout'] = $this->lang->line('msg3_checkout');
+    $this->data['lang_msg4_checkout'] = $this->lang->line('msg4_checkout');
+    $this->data['lang_msg5_checkout'] = $this->lang->line('msg5_checkout');
+    $this->data['lang_msg6_checkout'] = $this->lang->line('msg6_checkout');
+    $this->data['lang_msg_bca'] = $this->lang->line('msg_bca');  
+    $this->data['lang_msg_cimb'] = $this->lang->line('msg_cimb');  
+    $this->data['lang_msg_online_payment'] = $this->lang->line('msg_online_payment'); 
+    
+    $this->data['lang_sender_receiver_data'] = $this->lang->line('sender_receiver_data');
+    $this->data['lang_data_bill'] = $this->lang->line('data_bill');
+    $this->data['lang_data_receiver'] = $this->lang->line('data_receiver');
+    $this->data['lang_payment_type'] = $this->lang->line('payment_type'); 
+    $this->data['lang_shiping_method'] = $this->lang->line('shiping_method');  
+    $this->data['lang_shoping_cart'] = $this->lang->line('shoping_cart');  
+    $this->data['lang_cart_note_text'] = $this->lang->line('cart_note_text');
+    $this->data['lang_cart_note'] = $this->lang->line('cart_note');  
+    $this->data['lang_shiping_fare'] = $this->lang->line('shiping_fare');  
+    $this->data['lang_finish_button'] = $this->lang->line('finish_button'); 
+    $this->data['lang_address_note'] = $this->lang->line('address_note');
+    $this->data['lang_txt_btn_address'] = $this->lang->line('txt_btn_address');
+    $this->data['lang_btn_update_receiver'] = $this->lang->line('btn_update_receiver');
+    
     //s: footer
     $this->data['lang_f_moto'] = $this->lang->line('f_moto');
     $this->data['lang_f_guarantee1'] = $this->lang->line('f_guarantee1');
