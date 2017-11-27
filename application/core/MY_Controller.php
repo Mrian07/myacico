@@ -36,7 +36,7 @@ class Web extends MY_Controller {
           $this->load->language('footer','indonesia');
           $this->load->language('dashboard','indonesia');
           $this->load->language('general','indonesia');
-          $this->load->language('body','english');
+          $this->load->language('body','indonesia');
            $this->load->language('checkout','indonesia');
         }
 
@@ -111,6 +111,7 @@ class Web extends MY_Controller {
     $this->data['lang_password_msg1'] = $this->lang->line('lost_password_msg1');
     $this->data['lang_password_msg2'] = $this->lang->line('lost_password_msg2');
     $this->data['lang_password_msg3'] = $this->lang->line('lost_password_msg3');
+    $this->data['lang_reset_password_msg'] = $this->lang->line('reset_password');
 
      $this->data['lang_reset_password'] = $this->lang->line('reset_password_tittle');
     $this->data['lang_reset_password_txt'] = $this->lang->line('reset_password_text');
@@ -118,7 +119,11 @@ class Web extends MY_Controller {
     $this->data['lang_reset_password_form2'] = $this->lang->line('reset_password_form2');
     $this->data['lang_reset_password_msg1'] = $this->lang->line('reset_password_msg1');
     $this->data['lang_reset_password_msg2'] = $this->lang->line('reset_password_msg2');
-		//Lang
+$this->data['lang_reset_pswd_info'] = $this->lang->line('reset_pswd_info');
+$this->data['lang_reset_pswd_info2'] = $this->lang->line('reset_pswd_info2');
+$this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
+
+    //Lang
 		$this->data['lang_daftar'] = $this->lang->line('daftar');
 		$this->data['lang_masuk'] = $this->lang->line('masuk');
 		$this->data['lang_ket_daftar_personal'] = $this->lang->line('ket_daftar_personal');
@@ -129,6 +134,10 @@ class Web extends MY_Controller {
                 $this->data['lang_msg_login2'] = $this->lang->line('msg_login2');
                 $this->data['lang_msg_login3'] = $this->lang->line('msg_login3');
                 $this->data['lang_msg_login4'] = $this->lang->line('msg_login4');
+                $this->data['lang_msg_regis'] = $this->lang->line('msg_regis');
+                $this->data['lang_msg_regis2'] = $this->lang->line('msg_regis2');
+
+
 		//button di daftar
 		$this->data['lang_btn_personal'] = $this->lang->line('btn_daftar');
 		$this->data['lang_btn_bisnis'] = $this->lang->line('btn_daftar_bisnis');
@@ -205,6 +214,11 @@ class Web extends MY_Controller {
 		$this->data['lang_pesan'] = $this->lang->line('field_pesan2');
 		$this->data['btn_pesan_personal'] = $this->lang->line('btn_kirim_personal');
 		$this->data['field_sudahDaftar'] = $this->lang->line('field_daftar');
+                $this->data['lang_daftar_info_point1'] = $this->lang->line('daftar_info_point1');
+                $this->data['lang_daftar_info_point2'] = $this->lang->line('daftar_info_point2');
+                $this->data['lang_daftar_info'] = $this->lang->line('daftar_info');
+                $this->data['lang_daftar_info2'] = $this->lang->line('daftar_info2');
+                
 		//end of personal
 
     //headers

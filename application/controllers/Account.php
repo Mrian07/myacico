@@ -242,6 +242,7 @@ class Account extends Web_private {
 
 	public function riwayatStatusPesanan()
   {
+            
 		$this->data['active_riwayatStatusPesanan'] = "class='active'";
 		$this->data['title_web'] = "Myacico.co.id - Riwayat Status Pasaran";
 		$this->load->view('frontend/header',$this->data);
@@ -255,10 +256,24 @@ class Account extends Web_private {
     {
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
-		$api = "transaction/list";
-
+		 $api = "transaction/list";
+                 $api2 ="transaction/list?show=transactioncount";
+            $page=$this->uri->segment(3);
+              /*  if($page){
+			$api = "product/productall/".$id."?itemperpage=8&page=".$page."&ob=".$short;
+			$api2 = "product/productall/".$id."?itemperpage=8&page=".$page."&show=productcount";
+		}elseif($short){
+			$api = "product/productall/".$id."?ob=".$short;
+			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
+		}else{
+			$api = "product/productall/".$id;
+			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
+		}
+		*/
 		$url = api_base_url($api);
-
+                $url2 = api_base_url($api2);
+                $url3 = api_base_url($api);
+                
 		$options = ["http" => [
 		"method" => "GET",
 		"header" => ["token: " . $token,
@@ -268,7 +283,23 @@ class Account extends Web_private {
 
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
-
+                
+                $konten2 = file_get_contents($url2, false, $context);
+//               
+                $jdata =json_decode($konten2)->transactionCount; 
+		
+                 $batas = '8';
+		if(empty($page)){
+			$posisi = 0;
+			$page =1;
+		}else{
+			$posisi = ($page-1)*$batas;
+		}
+		$this->data['page'] = $page;
+               
+                $this->data['posisi'] = $posisi;
+                $this->data['jpage'] = ceil($jdata/$batas);
+                $konten3 = file_get_contents($url3, false, $context);
 		$this->data['hasil'] = json_decode($konten, true);
 		$hasil = json_decode($konten, true);
                 //die(print_r($hasil));

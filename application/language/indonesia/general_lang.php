@@ -7,8 +7,10 @@ $lang['lang_new_reg'] = 'PENDAFTARAN';
 
 
 //fields
-$lang['label_name'] = 'Nama';
+$lang['label_name'] = 'Pendaftaran Gagal karena';
+$lang['msg_regis'] = 'Silahkan isi Nama Anda';
 $lang['label_rep_pass'] = 'Ulangi Password';
+$lang['msg_regis2'] = 'Pendaftaran Gagal kKarena,';
 // forgot password
 $lang['info_login'] = 'Masukan email dan password login Anda pada form dibawah ini.';
 $lang['lost_password_text'] = 'Masukkan alamat email Anda di bawah ini. Anda akan menerima link untuk mereset password Anda.';
@@ -29,5 +31,13 @@ $lang['msg_login1'] = 'Masukan Email Yang Benar';
 $lang['msg_login2'] = 'Password tidak boleh kosong!';
 $lang['msg_login3'] = 'Koneksi tidak berhasil, silahkan coba lagi';
 $lang['msg_login4'] = 'Email atau password salah';
-
+//success
+$lang['reset_pswd_info'] = 'Aktivasi akun anda berhasil.'; 
+$lang['reset_pswd_info2'] = 'Maaf aktivasi akun Anda gagal, silakan lakukan aktifasi ulang dengan memasukan email Anda pada form dibawah ini.'; 
+$lang['reset_pswd_info3'] = 'Klik disini untuk login.';
+//register
+$lang['daftar_info'] = 'Pengiriman 2x24 jam pada hari kerja untuk semua area JABODETABEK dan pengiriman gratis ke seluruh wilayah di Indonesia.'; 
+$lang['daftar_info_point1'] = '1.PENGIRIMAN';
+$lang['daftar_info_point2'] = '2. PENGEMBALIAN';
+$lang['daftar_info2'] = 'Kerusakan barang akibat kesalahan dari produsen barang, bisa ditukar dalam waktu 7 hari kerja atau uang kembali dalam waktu 2x24 jam.'; 
 ?>
