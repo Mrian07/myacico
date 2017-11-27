@@ -4,12 +4,14 @@
    cursor: default;
 }
 </style>
+
 <p align="center"><?php echo $lang_riw; ?></p>
+
+
 <div class="row"  style='width: 100%; margin:0 auto;'>
     <div id="no-more-tables">
         <table class="col-md-12 table-bordered table-striped table-condensed cf">
         	<thead class="cf">
-
         	  <tr>
         		<th><?php echo $lang_tgl; ?></th>
         		<th><?php echo $lang_tota; ?></th>
@@ -19,7 +21,6 @@
         		<th>Detail</th>
         		<th>Konfirmasi/ Credit Card</th>
         	  </tr>
-
         	</thead>
         	<tbody>
         		<?php foreach($hasil as $items): 	?>

@@ -80,6 +80,9 @@
 		<script src="<?php echo base_url('assets/js/mynav.js');?>"></script> -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css');?>" />
 
+		<!-- s: Datepicker-->
+		<link rel="stylesheet" href="<?php echo base_url('date_picker/bootstrap-datetimepicker.min.css');?>" type='text/css'>
+		<!-- e: Datepicker-->
 
 		<style type="text/css">
 			/*#search_keyword_id
@@ -115,6 +118,8 @@
 				cursor:pointer;
 			}*/
 		</style>
+
+
     </head>
 
 	<body style='font-weight: normal;' ng-app="myApp">

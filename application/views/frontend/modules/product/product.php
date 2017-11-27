@@ -7,7 +7,7 @@
 <div style='width:230px; float:left; margin-right:10px;'><?php $this->load->view('frontend/modules/product/sidebar_left',$this->data); ?></div>
 
 
-<div style='width:890px; float:left'>
+<div style='width:870px; float:left'>
 	<?php
 	foreach($listMenu as $menu_list){
 	//echo $menu_list['name'].'>';

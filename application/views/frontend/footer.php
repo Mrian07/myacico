@@ -265,6 +265,22 @@
 <!--
 <script src="<?php //echo base_url('assets_adminlte/plugins/jQuery/jQuery-2.1.4.min.js') ?>"></script>-->
 
+<!-- s: date_picker -->
+	<script type="text/javascript" src="<?php echo base_url('date_picker/js/bootstrap-datetimepicker.js');?>" charset="UTF-8"></script>
+	<script type="text/javascript">
+	 $('.form_date').datetimepicker({
+			language:  'id',
+			weekStart: 1,
+			todayBtn:  1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 2,
+			minView: 2,
+			forceParse: 0
+		});
+	</script>
+	<!-- e: date_picker -->
+
 
 
 <script type="text/javascript">
