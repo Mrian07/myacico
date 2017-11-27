@@ -40,7 +40,7 @@ class Checkout extends Web_private {
 
 		//Data Billing
 		foreach($hasil as $items){
-			$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['address2']." ".$items['city_name']." ".$items['postal'];
+			$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['city_name']." ".$items['postal'];
 			$this->data['billing_address_id'] = $items['id'];
 		}
 
@@ -56,7 +56,7 @@ class Checkout extends Web_private {
 		   $hasil_ship = json_decode($konten2, true);
 
 		   //Data Shipping
-				$this->data['alamat_shipping'] =$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['address2']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
+				$this->data['alamat_shipping'] =$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
 				$this->data['id_kelurahan'] = $hasil_ship['village_id'];
 				$this->data['shipping_address_id'] = $hasil_ship['id'];
 //                   print_r($api); die();
