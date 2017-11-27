@@ -394,6 +394,10 @@ $('#searchDesk').keypress(function(e) {
 					var datas		 = 'search='+search_value;
 					var productSrc = $('.productSrc');
 
+					if(search_value==''){
+						topSearching();
+					}else{
+
 					if ( search_value == '' ) {$(".productSrc").hide();}
 
 					if(cat=='all'){
@@ -500,7 +504,8 @@ $('#searchDesk').keypress(function(e) {
 					}
 				}
 					return false;
-				}, 250));
+				}
+			}, 250));
 
 
 
