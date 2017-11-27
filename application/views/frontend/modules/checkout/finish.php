@@ -42,7 +42,7 @@ a
 
 <div class="container">
 	<h3>TERIMA KASIH</h3>
-	<p>Order Anda telah berhasil diproses.</p>
+	<p>Order Anda telah berhasil diproses. Silakan lakukan pembayaran sesuai dengan nilai transaksi Anda. Untuk melakukan konfirmasi pembayaran <?php echo anchor('account/riwayatStatusPesanan', '<b>klik disini</b>');?>.</p>
 
 
 	<div class="row">
