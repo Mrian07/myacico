@@ -25,4 +25,9 @@ $lang['reset_password_form2'] = 'Ulangi Password Baru:';
 $lang['reset_password_msg1'] = 'Password minimal 7 karakter!';
 $lang['reset_password_msg2'] = 'Password konfirmasi tidak sama!';
 $lang['reset_password_msg3'] = 'Link Reset Sudah Terkirim';
+$lang['msg_login1'] = 'Masukan Email Yang Benar';
+$lang['msg_login2'] = 'Password tidak boleh kosong!';
+$lang['msg_login3'] = 'Koneksi tidak berhasil, silahkan coba lagi';
+$lang['msg_login4'] = 'Email atau password salah';
+
 ?>

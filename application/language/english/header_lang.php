@@ -2,7 +2,7 @@
 $lang['daftar'] = 'Registration';
 $lang['masuk'] = 'Login';
 $lang['ket_daftar_personal'] = 'For personal to shopping at myACICO.co.id';
-$lang['ket_daftar_akunBisnis'] = 'Want to provide goods for your company? business myacico account will suit your needs. your company information is required for verification. ';
+$lang['ket_daftar_akunBisnis'] = 'Want to provide goods for your company? business myACICO.co.id account will suit your needs. your company information is required for verification. ';
 $lang['ket_daftar_akunGov'] = 'To government that shop at  myACICO.co.id.';
 //Button untuk daftar
 $lang['btn_daftar'] = 'CREATE PERSONAL ACCOUNT';
