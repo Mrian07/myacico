@@ -184,16 +184,16 @@ margin-top: -11px;
  ?>
  </p>
  	<p>
-		1.DELIVERY
+		<?php echo $lang_daftar_info_point1?>
 	</p>
 	<p class="p1">
-2x24 hours delivery on weekdays for all areas of JABODETABEK and free delivery to all area in Indonesia.
+            <?php echo $lang_daftar_info;?>
 	</p>
 	<p>
-		2. RETURN
+		<?php echo $lang_daftar_info_point2?>
 	</p>
 	<p class="p1">
-		Damage to goods caused by errors from the manufacturer of goods, can be exchanged within 7 working days or money back within 2x24 hours.
+	<?php echo $lang_daftar_info2;?>	
 	</p>
 		</div>
 	  <div class="col-sm-6">
@@ -269,7 +269,7 @@ var apiurl = '<?php echo $baseApiUrl2; ?>'+'/create';
 if(name==''){
 			$.alert({
 				title: 'Alert!',
-				content: 'Nama tidak boleh kosong!',
+				content: '<?php echo $lang_msg_regis;?>',
 			});
       return false;
 		}
@@ -277,7 +277,10 @@ if(name==''){
     var atpos = x.indexOf("@");
     var dotpos = x.lastIndexOf(".");
     if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-        alert("Email Tidak Benar");
+       $.alert({
+				title: 'Alert!',
+				content: '<?php echo $lang_msg_login1;?>',
+			});
         return false;
     }
 
@@ -285,14 +288,14 @@ if(name==''){
 		if(password.length < 7){
 			$.alert({
 				title: 'Alert!',
-				content: 'Password Kurang dari 7!',
+				content: '<?php echo $lang_reset_password_msg1;?>',
 			});
       return false;
 		}else
 		if(password != password2){
 			$.alert({
 				title: 'Alert!',
-				content: 'Password tidak sama!',
+				content: '<?php echo $lang_reset_password_msg2;?>',
 			});
 
 	      return false;
@@ -306,7 +309,7 @@ if(name==''){
          // alert(r.message);
           $.alert({
 				title: 'Alert!',
-				content: 'Pendaftaran Gagal karena '+r.message,
+				content: '<?php echo $lang_msg_regis2;?> '+r.message,
 			});
 					return false;
 			}else{

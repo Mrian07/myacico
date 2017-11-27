@@ -18,7 +18,7 @@
 			        <div class="form-group">
 			            <div class="input-group date form_date" data-date="" data-date-format="dd/mm/yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
 			                <input type='text' class="form-control" />
-			                <input type="text" id="dtp_input2" name="star_date"/>
+                                        <input type="hidden" id="dtp_input2" name="star_date"/>
 			                <span class="input-group-addon">
 			                    <span class="glyphicon glyphicon-calendar"></span>
 			                </span>
@@ -29,7 +29,7 @@
 			        <div class="form-group">
 			            <div class="input-group date form_date" data-date="" data-date-format="dd/mm/yyyy" data-link-field="dtp_input3" data-link-format="yyyy-mm-dd">
 			                <input type='text' class="form-control" />
-			                <input type="text" id="dtp_input3" name="end_date"/>
+			                <input type="hidden" id="dtp_input3" name="end_date"/>
 			                <span class="input-group-addon">
 			                    <span class="glyphicon glyphicon-calendar"></span>
 			                </span>

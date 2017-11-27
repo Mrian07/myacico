@@ -5,10 +5,10 @@
 
 			<?php if($hasil['status']=='1'){?>
 				<div class='border-create'>
-				<h4>Aktivasi akun Anda berhasil. </h4><h5><?php echo anchor('customer/signIn','Klik disini untuk login.'); ?></h5>
+				<h4><?php echo $lang_reset_pswd_info;?> </h4><h5><?php echo anchor('customer/signIn',$lang_reset_pswd_info3); ?></h5>
 				</div>
 			<?php }else{ ?>
-				<h6>Maaf aktivasi akun Anda gagal, silakan lakukan aktifasi ulang dengan memasukan email Anda pada form dibawah ini.</h6>
+				<h6><?php echo $lang_reset_pswd_info2;?></h6>
 				<div class="panel-group">
 				  <div class="panel panel-default">
 				    <div class="panel-body">
