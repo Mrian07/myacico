@@ -37,7 +37,7 @@
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
-							<label>EMail:</label>
+							<label>Email:</label>
 								<?php echo $user->email; ?>
 							</div>
 						</div>
@@ -56,10 +56,7 @@
 					  <label><?php echo $lang_addres; ?>*</label>
             <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory"></textarea>
 					</div>
-					<div class="form-group">
-					  <label><?php echo $field_alamatLain; ?></label>
-						<textarea rows="4" cols="50" id="address2" name="address2" class="form-control"></textarea>
-					</div>
+
 					<div class="form-group">
 						<label><?php echo $lang_Country; ?>*</label>
 						<select name="country" id="country_sel" class="form-control mandatory">
@@ -84,9 +81,9 @@
 							<label><?php echo $field_kel; ?></label>
 					  <select name="village_id" id="village_id" class="form-control mandatory"></select>
 					</div>
-			         <div class="form-group" style="display:none" id="postal_box">
+			         <div class="form-group"  id="postal_box">
         <label><?php echo $lang_PostCode; ?>*</label>
-          <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
+          <input type="text" name="postal" id="postal" class="form-control mandatory" ></select>
         </div>
 					<div class="form-group">
 					<label>Handphone*</label>
@@ -119,14 +116,14 @@ $('#village_id').change(function () {
     });
 function get_village(){
   $("#village_box").slideDown();
-  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_postal);
+  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
 
       //$("#postal").val(o.postal);
     });
-    $("#village_id").prop('disabled', false).change(get_postal);
+    $("#village_id").prop('disabled', false);
   }, "json" );
 
 }
@@ -154,21 +151,8 @@ function get_city(){
   }, "json" );
 }
 
-  $('#postal_id').change(function () {
-        var end = this.value;
-      $('#submit_btn').removeAttr('disabled');
-    });
-    function get_postal(){
-      $("#postal_box").slideDown();
-      $("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
-      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
-        r.forEach(function(o){
-          $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
-                console.log('23',o.postal);
-        });
-        $("#postal").prop('disabled', false);
-      }, "json" );
-    }
+
+
 
 function get_region(){
   $("#region_box").slideDown();
@@ -222,7 +206,7 @@ $.ajax({
     var phone2 = $("#phone2").val();
     var address_name = $("#address_name").val();
     var address1 = $("#address1").val();
-    var address2 = $("#address2").val();
+
     var address3 = $("#address3").val();
     var address4 = $("#address4").val();
     var postal = $("#postal").val();
@@ -238,7 +222,7 @@ $.ajax({
     data.phone2 = phone2;
     data.address_name = address_name;
     data.address1 = address1;
-    data.address2 = address2;
+
     data.address3 = address3;
     data.address4 = address4;
     data.postal = postal;
@@ -264,7 +248,7 @@ $.ajax({
 			$("#phone2").val(null);
 			$("#address_name").val(null);
 			$("#address1").val(null);
-			$("#address2").val(null);
+
 			$("#address3").val(null);
 			$("#address4").val(null);
 			$("#postal").val(null);

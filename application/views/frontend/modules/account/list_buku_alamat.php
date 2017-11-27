@@ -17,12 +17,12 @@
 		<?php
 		$i=0;
 		foreach($hasil as $items):
-		if($items['address2']==null || $items['address2']=='')
+		if($items['address1']==null || $items['address1']=='')
 		{
 		  $add2='';
 		}
 		else{
-		  $add2=$items['address2'];
+		  $add2=$items['address1'];
 		}
 		?>
 

@@ -87,11 +87,7 @@
                         <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" />-->
                         <!--<input type="text" id = "address2" name="address2" class="form-control mandatory" />-->
                     </div>
-                    <div class="form-group">
-                         <label>Alamat Lain:</label>
-                         <textarea rows="4" cols="50" id="address2" name="address2" class="form-control mandatory" ></textarea>
 
-                    </div>
                     <div class="form-group">
                       <label><?php echo $lang_Country; ?>*</label>
                       <select name="country" id="country_sel" class="form-control mandatory">
@@ -118,7 +114,7 @@
                     </div>
                     <div class="form-group" style="display:none" id="postal_box">
                       <label><?php echo $lang_PostCode; ?>*</label>
-                      <select type="text" name="postal" id="postal" class="form-control mandatory" ></select>
+                      <input type="text" name="postal" id="postal" class="form-control mandatory" />
                     </div>
                     <div class="form-group">
                     <label>Handphone*</label>
@@ -242,7 +238,7 @@ $('#submit_btn').attr('disabled','disabled');
         var phone2 = $("#phone2").val();
         var address_name = $("#address_name").val();
         var address1 = $("#address1").val();
-        var address2 = $("#address2").val();
+
         var postal = $("#postal").val();
         var village_id = $("#village_id").val();
         var isbillto = $("#isbillto").val();
@@ -259,7 +255,7 @@ $('#submit_btn').attr('disabled','disabled');
         data.phone2 = phone2;
         data.address_name = address_name;
         data.address1 = address1;
-        data.address2 = address2;
+
         data.postal = postal;
         data.district_id = district_id;
         data.village_id = village_id;
