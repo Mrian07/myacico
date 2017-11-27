@@ -36,7 +36,7 @@ $lang['transaction_date'] = 'Tanggal Transaksi:';
 $lang['transaction_status'] = 'Status:';
 $lang['sender'] = 'PENGIRIM';
 $lang['reciever'] = 'PENERIMA';
-$lang['cart_detail'] = 'DETAIL Keranjang';
+$lang['cart_detail'] = 'Detail Keranjang';
 $lang['total_payment'] = 'Total Pembayaran:';
-
+$lang['payment_confirm'] = 'Konfirmasi Pembayaran';
 ?>
