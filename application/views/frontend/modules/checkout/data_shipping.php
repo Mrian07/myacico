@@ -75,7 +75,7 @@ console.log('sam',data);
 		if(data.length == 0) return rumah.append('<p>Data tidak ditemukan</p>');
 
 		 data.forEach(function(p){
-			 rumah.append('<tr><td><b>'+p.name+' </b> ,'+p.address_name+',  '+p.address1+' '+p.address2+','+p.city_name+', '+p.postal+'</td><td><a href="'+base_url+'/'+p.id+'" class="btn btn-warning" aria-label="Pilih">Pilih</a></td></tr>')
+			 rumah.append('<tr><td><b>'+p.name+' </b> ,'+p.address_name+',  '+p.address1+','+p.city_name+', '+p.postal+'</td><td><a href="'+base_url+'/'+p.id+'" class="btn btn-warning" aria-label="Pilih">Pilih</a></td></tr>')
 			/* $("#hapus"+p.id).click(function(e){
 
 				var id = $("#id"+p.id).val();

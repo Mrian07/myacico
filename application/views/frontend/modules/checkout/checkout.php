@@ -56,12 +56,14 @@ a
 								";
 							}else{
 								echo"<p>". anchor('checkout/formAddBillingNew/', 'Update data billing', array('class'=>'btn btn-default')); echo"</p>";
-							
+
                                                                 echo"<input type='hidden' value='' id='billing_address_id'/>";
                                                         }?>
 
 							<p><strong><?php echo $lang_data_receiver;?></strong></p>
-						   <?php if($this->session->userdata('shipping_address_id'))
+						   <?php
+               $get_shipping = get_cookie('shipping_address_id');
+               if($get_shipping)
 						   {
 							   echo"<p>".anchor('checkout/dataShipping/', $alamat_shipping)."</p>
 							   <input type='hidden' value='". $shipping_address_id."' id='shipping_address_id'>
@@ -73,6 +75,8 @@ a
                                                           echo"<input type='hidden' value='' id='shipping_address_id'/>";
 						   }
 						   ?>
+
+
 						</form>
 
 					</div>
@@ -83,7 +87,8 @@ a
 			<div class="panel panel-default">
 			  <div class="panel-heading"><b><?php echo $lang_payment_method;?></b></div>
 			  <div class="panel-body">
-				<?php if($this->session->userdata('shipping_address_id'))
+				<?php
+        if($get_shipping)
 					{?>
 				  <div class="form-group">
 					<label for="email"><?php echo $lang_payment_type;?></label>
@@ -111,7 +116,10 @@ a
 			  </div>
 			</div>
 
-
+      <h5><?php echo $lang_shiping_fare;?> Rp.<span id='totalOngkir'>0</span></h5>
+			<h5><?php echo $lang_total_payment;?> Rp.<span id='grandtotalall'><?php echo money($total); ?></span></h5>
+			<button class='btn btn-success my-btn-chekout' id ="finish" onclick='finish()'><?php echo $lang_finish_button;?> <i class="fa fa-angle-right"></i></button>
+                        <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 		</div>
 		<div class="col-md-5">
 			<?php
@@ -143,10 +151,7 @@ a
           $total +=$items['subtotal'];
         }?>
 
-			<h5><?php echo $lang_shiping_fare;?> Rp.<span id='totalOngkir'>0</span></h5>
-			<h5><?php echo $lang_total_payment;?> Rp.<span id='grandtotalall'><?php echo money($total); ?></span></h5>
-			<button class='btn btn-success my-btn-chekout' id ="finish" onclick='finish()'><?php echo $lang_finish_button;?> <i class="fa fa-angle-right"></i></button>
-                        <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+
 		</div>
 
 
@@ -157,13 +162,29 @@ a
 </div>
 
 <script type="text/javascript">
-
+console.log("checkout...");
 $(document).ready(function()
+
 {
+  console.log('testnih123')
+  window.onload = function() {
+    console.log('testnih1234')
+      if(!window.location.hash) {
+            console.log('testnih12345')
+          window.location = window.location + '#loaded';
+          window.location.reload();
+      }
+  }
 	var totaltrans = $('#SubtotalOrder').val();
 	$('#grandtotalall').html(addPeriod(totaltrans));
+    	var idkel = <?php
+          if(isset($id_kelurahan)){
+          echo $id_kelurahan;
+          }else{
+            echo "123";
+                                                     }?>;
 
-	var idkel = <?php echo $id_kelurahan;?>;
+
 	var dataString = 'idkel='+idkel;
 
 	$.ajax

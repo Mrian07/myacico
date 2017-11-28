@@ -154,9 +154,21 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<style>
+/*ini spesial buat button search jangan dihapus*/
+.my-search-button{
+    padding: 6px 20px 6px 20px;
+    border: none;
+    border-radius: 4px;
+    background: #cd0000 url("../../images/general/red-emboss.jpg");
+    color:#f8f5f0;
+    font-size: 22px;
+}
 
-<!--<div id="status">
-</div>-->
+.my-search-button:hover{
+  background: #111111;
+}
+</style>
 
 <div class="container">
 
@@ -178,7 +190,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-6">
-						<input type="submit" id="submit_btn" class="btn btn-primary" value="<?php echo $lang_btn_SignIn ?>">
+						<input type="submit" id="submit_btn"  class="btn btn-primary" value="<?php echo $lang_btn_SignIn ?>">
 						<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 					</div>
 					<div class="col-sm-6" style='text-align: right'>
@@ -237,15 +249,21 @@ var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 var wishlist ='<?php echo$this->uri->segment(3); ?>';
 
 var success = function(r){
+
   $('#spinner_img').hide();
+
   $('#submit_btn').val('Kirim').removeClass('disabled');
+
   //console.log('OK:', r);
 
   if(!r.token) return $.alert({
     title: 'Alert!',
-    content:  '<?php echo $lang_msg_login4;?>'
+    content:  'Login'
   });
-  var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
+  // var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
+    var apiurl = api_base_url +'/order/cart/additem';
+
+
   <?php
 	//Memasukan produk yang dibeli sebelum login ke api
 
@@ -257,9 +275,9 @@ var success = function(r){
 		var pricelist = <?php echo $items['price']; ?>;
 		var weight = <?php echo $items['weight']; ?>;
 
-		var success = function(r){
-
-		};
+		// var success = function(r){
+    //
+		// };
 
 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
 			{
@@ -268,7 +286,7 @@ var success = function(r){
 				"price":pricelist,
 				"weightPerItem":weight
 			}
-		) , url: apiurl, success: success });
+		) , url: apiurl, headers:{"token":r.token}, success: success });
 	<?php
 	endforeach;
 	$this->cart->destroy();
@@ -277,6 +295,7 @@ var success = function(r){
 	document.cookie='x-auth='+r.token+'; path='+base_path;
 	token = r.token;
 	var cb = location.search.split('callback=');
+
 	//SAM
 	//alert(wishlist);
     if(wishlist)
