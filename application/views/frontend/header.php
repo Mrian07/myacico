@@ -176,7 +176,7 @@
 										 <!-- <?php  echo " <img src='$myavatar' width='25' border='0'>"; ?> -->
 							<?php
 							if(isset($_COOKIE['x-auth'])){
-					  		   echo "<img src='$myavatar' width='25' border='0'>";
+					  		   echo anchor('account/avatar', "<img src='$myavatar' width='25' border='0'>");
 				  		} else{ ?>
 							 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='25' border='0'>
 							<?php } ?>
