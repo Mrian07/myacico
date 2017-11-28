@@ -61,58 +61,7 @@
         	</tbody>
         </table>
   </div>
-    <?php
-    //die(print_r($page));
-    if($page>1){
-      $previous=$page-1;
-      $first =  site_url('account/listRiwayatStatusPesanan/page=1');
-      $prev =  site_url('account/listRiwayatStatusPesanan/page='.$previous);
-      echo "<a href=$first class='my-paging-btn'><< First</a> ";
-      echo "<a href=$prev class='my-paging-btn'>< Previous</a> ";
-    }else{
-      echo"<< First < Previous ";
-    }
-
-    //angka awal
-    $angka = ($page > 3 ? "...":"");
-    for($i=$page-1;$i<$page;$i++){
-      if($i<1)
-        continue;
-        $hal =  site_url('account/listRiwayatStatusPesanan/page='.$i);
-        $angka .="<a href=$hal class='my-paging-list'>$i</a>";
-
-    }
-
-    //angka tengah
-    $angka.="<span class='my-paging-list-on'>$page</span>";
-    for($i=$page+1;$i<($page+3);$i++){
-      if($i>$jpage)
-        break;
-        $hal =  site_url('account/listRiwayatStatusPesanan/page='.$i);
-        $angka .="<a href=$hal class='my-paging-list'>$i</a>";
-    }
-
-    //angka akhir
-    $hal =  site_url('account/listRiwayatStatusPesanan/page='.$jpage);
-    $angka .=($page+2<$jpage ? "...<a href=$hal class='my-paging-list'>$jpage</a>":"");
-
-    //cetak semua angka
-    echo "$angka";
-
-    //next
-    if($page<$jpage){
-      $next = $page+1;
-      $next =  site_url('account/listRiwayatStatusPesanan/page='.$next);
-      $last =  site_url('account/listRiwayatStatusPesanan/page='.$jpage);
-      echo " <a href=$next class='my-paging-btn'>Next >></a>";
-      echo " <a href=$last class='my-paging-btn'>Last ></a>";
-    }else{
-      echo"Next >  Last >>";
-    }
-
-
-
-  ?>
+    
 </div><br><br>
 <script type="text/javascript">
 console.log("data",);
