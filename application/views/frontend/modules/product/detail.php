@@ -1,4 +1,8 @@
-	<style>
+<?php
+$url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+//echo $url;
+?>
+<style>
 	/*th, td {
     padding: 15px;
 		font-size: 20px;
@@ -99,7 +103,9 @@
 					<br>
 
 
-					Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
+					Bagikan <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url_share;?>" target="_blank">
+  <i class="fa fa-facebook" aria-hidden="true"></i>
+</a>
 
                                     <table>
                                        <tr>
