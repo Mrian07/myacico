@@ -23,7 +23,8 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/dist/xzoom.min.js');?>"></script>
-
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.carousel.css');?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.theme.css');?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/productpopup/css/xzoom.css');?>" media="all" />
 <link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url('assets/productpopup/magnific-popup/css/magnific-popup.css');?>" />
 
@@ -53,7 +54,8 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
 	<div class="xzoom-container">
 						<?php if(isset($img[0])) { ?>
-							<img class="xzoom" style="  margin-bottom: 15px;
+							<img class="xzoom" style="
+							margin-bottom:25px;
   margin-left:100px;
   height: 100%;" id="xzoom-magnific" width="380" src="<?php echo $img[0]; ?>" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"
  xoriginal="<?php echo $img[0]; ?>" />
@@ -176,6 +178,8 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
 
 			<div class="row lead">
+				<script src="jquery.js"></script>
+				<script src="jquery.rateyo.js"></script>
 
 
 <!--			<div class="ratings" style='text-align: center; color:#d98c13;'>
