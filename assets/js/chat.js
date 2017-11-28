@@ -35,12 +35,12 @@ chat = {
 			})
 		});
 		this.soc.on('msg', function(msg){
-			this.addMsg(msg).insertBefore(".footer-container");
+			chat.addMsg(msg).insertBefore(".footer-container");
 			//console.log(msg.from, 'say:', msg.txt);
-			this.box.removeClass('typing')
+			chat.box.removeClass('typing')
 		});
 		this.soc.on('typing', function(){
-			this.box.addClass('typing');
+			chat.box.addClass('typing');
 			setTimeout(function() {chat.box.removeClass('typing')}, 4000);
 		});
 	},
@@ -63,9 +63,9 @@ chat = {
 		this.soc.emit('typing');
 	},
 	balon: $(document.createElement('div')).attr({'class':'message-info'}).append(
-		'<span class="fa fa-comments"> pesan</span>',
+		'<span class="fa fa-comments icon-balon"></span>','pesan',
 		/*$(document.createElement('i')).attr({'class':'fa fa-comments'}),*/
-		$(document.createElement('i')).attr({'class':'fa fa-chevron-up'}).click(function(){
+		$(document.createElement('i')).attr({'class':'fa fa-chevron-up arrow-up'}).click(function(){
 			chat.balon.hide();
 			chat.box.show(400);
 			delete localStorage.chat_hide;
@@ -84,6 +84,7 @@ chat = {
 				chat.soc.disconnect();
 				chat.box.hide(400);
 				$('#chat_btn').show();
+				localStorage.chat_status='off';
 			})
 		),
 		$(document.createElement('div')).attr({'class':'message-scroll'}),
@@ -122,7 +123,7 @@ $(document).ready(function (e) {
 			})
 			chat.ready = true;
 			console.log('chat ready');
-			if(localStorage.chat_status=='on')chat.connect();
+			if(localStorage.chat_status=='on' || localStorage.chat_status=='redirect')chat.connect();
 			chat.balon.appendTo('body');
 			chat.box.appendTo('body');
 		},

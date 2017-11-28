@@ -1,172 +1,172 @@
 
 <?php //            G Plus              ?>
 <script type="text/javascript">
-    function logout(){
-        gapi.auth.signOut();
-        location.reload();
-    }
-    var ori = null
-    function login(w) {
-       // console.log(w)
-        ori = w
-      var myParams = {
-        'clientid' : '879752343646-cunagke2s8vokdao51es112nlhrnults.apps.googleusercontent.com',
-        'cookiepolicy' : 'single_host_origin',
-        'callback' : 'loginCallback',
-        'approvalprompt':'force',
-        'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
-      };
-      gapi.auth.signIn(myParams);
-    }
+		function logout(){
+				gapi.auth.signOut();
+				location.reload();
+		}
+		var ori = null
+		function login(w) {
+			 // console.log(w)
+				ori = w
+			var myParams = {
+				'clientid' : '879752343646-cunagke2s8vokdao51es112nlhrnults.apps.googleusercontent.com',
+				'cookiepolicy' : 'single_host_origin',
+				'callback' : 'loginCallback',
+				'approvalprompt':'force',
+				'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
+			};
+			gapi.auth.signIn(myParams);
+		}
 
-    function loginCallback(result){
-        if(result['status']['signed_in'])
-        {
-            var request = gapi.client.plus.people.get(
-            {
-                'userId': 'me'
-            });
-            request.execute(function (resp)
-            {
-                var email = '';
-                if(resp['emails'])
-                {
-                    for(i = 0; i < resp['emails'].length; i++)
-                    {
-                        if(resp['emails'][i]['type'] == 'account')
-                        {
-                            email = resp['emails'][i]['value'];
-                        }
-                    }
-                }
+		function loginCallback(result){
+				if(result['status']['signed_in'])
+				{
+						var request = gapi.client.plus.people.get(
+						{
+								'userId': 'me'
+						});
+						request.execute(function (resp)
+						{
+								var email = '';
+								if(resp['emails'])
+								{
+										for(i = 0; i < resp['emails'].length; i++)
+										{
+												if(resp['emails'][i]['type'] == 'account')
+												{
+														email = resp['emails'][i]['value'];
+												}
+										}
+								}
 
-                var str = "Name:" + resp['displayName'] + "<br>";
-                str += "Image:" + resp['image']['url'] + "<br>";
-                str += "<img src='" + resp['image']['url'] + "' /><br>";
+								var str = "Name:" + resp['displayName'] + "<br>";
+								str += "Image:" + resp['image']['url'] + "<br>";
+								str += "<img src='" + resp['image']['url'] + "' /><br>";
 
-                str += "URL:" + resp['url'] + "<br>";
-                str += "Email:" + email + "<br>";
-                var umail=email;
-                $("#email").val(umail);
-                console.log("sss",umail);
-                if(ori == 1){
-                    window.location.assign('#/app/login/'+email)
-                }else{
-                    window.location.assign('#/app/password/'+email)
-                }
+								str += "URL:" + resp['url'] + "<br>";
+								str += "Email:" + email + "<br>";
+								var umail=email;
+								$("#email").val(umail);
+								console.log("sss",umail);
+								if(ori == 1){
+										window.location.assign('#/app/login/'+email)
+								}else{
+										window.location.assign('#/app/password/'+email)
+								}
 
-            });
+						});
 
-        }
+				}
 
-    }
+		}
 
-    function onLoadCallback(){
-        gapi.client.setApiKey('AIzaSyCqXQ5Te1coI72mtysKI0_GbbMpJo6EaUs');
-        gapi.client.load('plus', 'v1',function(){});
-    }
+		function onLoadCallback(){
+				gapi.client.setApiKey('AIzaSyCqXQ5Te1coI72mtysKI0_GbbMpJo6EaUs');
+				gapi.client.load('plus', 'v1',function(){});
+		}
 
-    </script>
+		</script>
 
-        <script type="text/javascript">
-              (function() {
-               var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-               po.src = 'https://apis.google.com/js/client.js?onload=onLoadCallback';
-               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-             })();
-        </script>
+				<script type="text/javascript">
+							(function() {
+							 var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+							 po.src = 'https://apis.google.com/js/client.js?onload=onLoadCallback';
+							 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+						 })();
+				</script>
 <?php //            Facebook              ?>
-            <script>
-        window.fbAsyncInit = function() {
-            // FB JavaScript SDK configuration and setup
-            FB.init({
-              appId      : '1860917310831534', // FB App ID
-              cookie     : true,  // enable cookies to allow the server to access the session
-              xfbml      : true,  // parse social plugins on this page
-              version    : 'v2.8' // use graph api version 2.8
-            });
+						<script>
+				window.fbAsyncInit = function() {
+						// FB JavaScript SDK configuration and setup
+						FB.init({
+							appId      : '1860917310831534', // FB App ID
+							cookie     : true,  // enable cookies to allow the server to access the session
+							xfbml      : true,  // parse social plugins on this page
+							version    : 'v2.8' // use graph api version 2.8
+						});
 
-            // Check whether the user already logged in
-            FB.getLoginStatus(function(response) {
-                if (response.status === 'connected') {
-                    //display user data
-                    //console.log(response.status.email)
+						// Check whether the user already logged in
+						FB.getLoginStatus(function(response) {
+								if (response.status === 'connected') {
+										//display user data
+										//console.log(response.status.email)
 
-                    getFbUserData();
-                }
-            });
-        };
+										getFbUserData();
+								}
+						});
+				};
 
-        // Load the JavaScript SDK asynchronously
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+				// Load the JavaScript SDK asynchronously
+				(function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0];
+						if (d.getElementById(id)) return;
+						js = d.createElement(s); js.id = id;
+						js.src = "//connect.facebook.net/en_US/sdk.js";
+						fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
 
-        // Facebook login with JavaScript SDK
-        function fbLogin() {
-            FB.login(function (response) {
-                if (response.authResponse) {
-                    // Get and display the user profile data
-                    getFbUserData();
-                } else {
-                   // document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
-                }
-            }, {scope: 'email'});
-        }
+				// Facebook login with JavaScript SDK
+				function fbLogin() {
+						FB.login(function (response) {
+								if (response.authResponse) {
+										// Get and display the user profile data
+										getFbUserData();
+								} else {
+									 // document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
+								}
+						}, {scope: 'email'});
+				}
 
-        // Fetch the user profile data from facebook
-        function getFbUserData(){
-            FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
-            function (response) {
-                //console.log(response)
-                var umail=response.email;
-                console.log(umail)
-                $("#email").val(umail);
-                window.location.assign('#/app/login/'+response.email)
-                // document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
-                // document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
-                // document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
-                // document.getElementById('userData').innerHTML = '<p><b>FB ID:</b> '+response.id+'</p><p><b>Name:</b> '+response.first_name+' '+response.last_name+'</p><p><b>Email:</b> '+response.email+'</p><p><b>Gender:</b> '+response.gender+'</p><p><b>Locale:</b> '+response.locale+'</p><p><b>Picture:</b> <img src="'+response.picture.data.url+'"/></p><p><b>FB Profile:</b> <a target="_blank" href="'+response.link+'">click to view profile</a></p>';
-            });
-        }
+				// Fetch the user profile data from facebook
+				function getFbUserData(){
+						FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
+						function (response) {
+								//console.log(response)
+								var umail=response.email;
+								console.log(umail)
+								$("#email").val(umail);
+								window.location.assign('#/app/login/'+response.email)
+								// document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
+								// document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
+								// document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
+								// document.getElementById('userData').innerHTML = '<p><b>FB ID:</b> '+response.id+'</p><p><b>Name:</b> '+response.first_name+' '+response.last_name+'</p><p><b>Email:</b> '+response.email+'</p><p><b>Gender:</b> '+response.gender+'</p><p><b>Locale:</b> '+response.locale+'</p><p><b>Picture:</b> <img src="'+response.picture.data.url+'"/></p><p><b>FB Profile:</b> <a target="_blank" href="'+response.link+'">click to view profile</a></p>';
+						});
+				}
 
-        // Logout from facebook
-        function fbLogout() {
-            FB.logout(function() {
-                // document.getElementById('fbLink').setAttribute("onclick","fbLogin()");
-                // document.getElementById('fbLink').innerHTML = '<img src="fblogin.png"/>';
-                // document.getElementById('userData').innerHTML = '';
-                // document.getElementById('status').innerHTML = 'You have successfully logout from Facebook.';
-            });
-        }
-        </script>
+				// Logout from facebook
+				function fbLogout() {
+						FB.logout(function() {
+								// document.getElementById('fbLink').setAttribute("onclick","fbLogin()");
+								// document.getElementById('fbLink').innerHTML = '<img src="fblogin.png"/>';
+								// document.getElementById('userData').innerHTML = '';
+								// document.getElementById('status').innerHTML = 'You have successfully logout from Facebook.';
+						});
+				}
+				</script>
 <div id="fb-root"></div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.10&appId=542138116138058';
-  fjs.parentNode.insertBefore(js, fjs);
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.10&appId=542138116138058';
+	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <style>
 /*ini spesial buat button search jangan dihapus*/
 .my-search-button{
-    padding: 6px 20px 6px 20px;
-    border: none;
-    border-radius: 4px;
-    background: #cd0000 url("../../images/general/red-emboss.jpg");
-    color:#f8f5f0;
-    font-size: 22px;
+		padding: 6px 20px 6px 20px;
+		border: none;
+		border-radius: 4px;
+		background: #cd0000 url("../../images/general/red-emboss.jpg");
+		color:#f8f5f0;
+		font-size: 22px;
 }
 
 .my-search-button:hover{
-  background: #111111;
+	background: #111111;
 }
 </style>
 
@@ -199,15 +199,15 @@
 						</p>
 					</div>
 				</div>
-        <hr>
-        <div class="row">
-      		<div class="col-sm-4">
+				<hr>
+				<div class="row">
+					<div class="col-sm-4">
 <a href="javascript:fbLogin();"><img src="<?php echo base_url('images/general/facebook.png');?>"></a>
-  </div>
-          <div class="col-sm-4">
-            <a href="javascript:login(1);"><img src="<?php echo base_url('images/general/google.png');?>"></a>
-          </div>
-        </div>
+	</div>
+					<div class="col-sm-4">
+						<a href="javascript:login(1);"><img src="<?php echo base_url('images/general/google.png');?>"></a>
+					</div>
+				</div>
 			</form>
 
 		</div>
@@ -218,24 +218,24 @@
 				<h5><?php echo$lang_reg_text;?></h5>
 				<div style='border: 1px #dddddd solid;padding:10px;margin-bottom:40px;height:350px'>
 				<div class="row">
-				  <div class="col-sm-12">
+					<div class="col-sm-12">
 						<?php echo $lang_ket_daftar_personal; ?>
 						<div class='my-btn-create'><?php echo anchor('customer/personal/', $lang_btn_personal, array('class'=>'btn btn-primary'));?></div>
-				  </div>
+					</div>
 				</div>
 				<div class="row">
-				  <div class="col-sm-12">
+					<div class="col-sm-12">
 						<hr>
 						<?php echo $lang_ket_daftar_akunBisnis;?>
 						<div class='my-btn-create'><?php echo anchor('customer/business/', $lang_btn_bisnis, array('class'=>'btn btn-primary'));?> </div>
-				  </div>
+					</div>
 				</div>
 				<div class="row">
-				  <div class="col-sm-12">
+					<div class="col-sm-12">
 						<hr>
 						<?php echo$lang_ket_daftar_gov;?>
 						<div class='my-btn-create'><?php echo anchor('customer/government/', $lang_btn_pemerintah, array('class'=>'btn btn-primary'));?></div>
-				  </div>
+					</div>
 				</div>
 
 			</div>
@@ -249,22 +249,23 @@ var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 var wishlist ='<?php echo$this->uri->segment(3); ?>';
 
 var success = function(r){
+	console.log(r);
 
-  $('#spinner_img').hide();
+	$('#spinner_img').hide();
 
-  $('#submit_btn').val('Kirim').removeClass('disabled');
+	$('#submit_btn').val('Kirim').removeClass('disabled');
 
-  //console.log('OK:', r);
+	//console.log('OK:', r);
 
-  // if(!r.token) return $.alert({
-  //   title: 'Alert!',
-  //   content:  'Login'
-  // });
-  // var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
-    var apiurl = api_base_url +'/order/cart/additem';
+	if(r.status==0) return $.alert({
+		title: 'Login fail!',
+		content: r.message
+	});
+	// var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
+	var apiurl = api_base_url +'/order/cart/additem';
 
 
-  <?php
+	<?php
 	//Memasukan produk yang dibeli sebelum login ke api
 
 	foreach ($this->cart->contents() as $items):?>
@@ -276,7 +277,7 @@ var success = function(r){
 		var weight = <?php echo $items['weight']; ?>;
 
 		// var success = function(r){
-    //
+		//
 		// };
 
 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
@@ -298,60 +299,68 @@ var success = function(r){
 
 	//SAM
 	//alert(wishlist);
-    if(wishlist)
-	{
+	if(wishlist){
 		window.location.replace(base_url+"product/detail/"+wishlist);
 		die();
 	}
+	// alert('login OK');
 	if(cb.length > 1) location.href = cb[1].split(';').shift();
 	else location.href = '<?php echo base_url('account'); ?>';
 
-	if(localStorage.chat_status == 'redirect') chat.connect();
+	// if(localStorage.chat_status == 'redirect') chat.connect();
 };
 var error = function(er){
-  $('#spinner_img').hide();
-  $('#submit_btn').val('Kirim').removeClass('disabled');
-  console.log('OK:', er);
-  $.alert({
-    title: 'Alert!',
-    content: '<?php echo $lang_msg_login3;?>',
-  });
+	$('#spinner_img').hide();
+	$('#submit_btn').val('Kirim').removeClass('disabled');
+	console.log('OK:', er);
+	$.alert({
+		title: 'Alert!',
+		content: '<?php echo $lang_msg_login3;?>',
+	});
 };
-    var data = {};
+		var data = {};
 $(document).ready(function() {
 
-  $('form').submit(function(e){
-    e.preventDefault();
+	$('form').submit(function(e){
+		e.preventDefault();
 		var email = $("#email").val();
 		var password = $("#password").val();
 		var apiurl = baseApiUrl + '/aduser/masuk';
 
 		var x = document.forms["myForm"]["email"].value;
-    var atpos = x.indexOf("@");
-    var dotpos = x.lastIndexOf(".");
-    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-       $.alert({
-    title: 'Alert!',
-    content: '<?php echo $lang_msg_login1;?>',
-  });
-        return false;
-    }
+		var atpos = x.indexOf("@");
+		var dotpos = x.lastIndexOf(".");
+		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+			$.alert({
+				title: 'Alert!',
+				content: '<?php echo $lang_msg_login1;?>',
+			});
+			return false;
+		}
 
-    data.email=email;
+		data.email=email;
 		if(password==''){
 			$.alert({
 				title: 'Alert!',
 				content: '<?php echo $lang_msg_login1;?>',
 			});
-      return false;
+			return false;
 		};
-    data.password=password;
+		data.password=password;
 
-    $('#spinner_img').show();
-    $('#submit_btn').val('loading...').addClass('disabled');
-    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, error: error, timeout: 30000 });
-
-  });
+		$('#spinner_img').show();
+		$('#submit_btn').val('loading...').addClass('disabled');
+		$.ajax({
+			type:"POST",
+			contentType: "application/json",
+			data:JSON.stringify(data),
+			dataType: "json",
+			url: apiurl,
+			success: success,
+			error: error,
+			timeout: 20000
+		});
+	});
 
 });
 </script>

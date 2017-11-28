@@ -41,15 +41,14 @@
 </div>
 
 <script type="text/javascript">
-
 $(document).ready(function() {
 		var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
     var data = {};
     var url =$('#surel').val();
-    var res = url.split("key=");
+    var res = "<?php echo $_GET['key'];?>";
 
                    // var kunci =
-console.log('sam',res[1]);
+console.log(res);
 	$('form').submit(function(e){
 
 	    e.preventDefault();
@@ -74,14 +73,15 @@ console.log('sam',res[1]);
 		    var apiurl = baseApiUrl + '/forgotpassword/reset';
 
 		    //var data = $(this).serialize();
-                    data.key = res[1];
-                    data.password = password;
-		    // success handling
-		    var success = function(r){
-		      console.log('OK:', r);
-		      alert(r.message);
-                      if(r.status === '1'){
-                            window.location.replace(base_url+"customer/signIn");
+				data.key = res;
+				data.password = password;
+				console.log(data.key);
+				// success handling
+				var success = function(r){
+				console.log('OK:', r);
+				alert(r.message);
+				  if(r.status === '1'){
+				        window.location.replace(base_url+"customer/signIn");
 
                 }
 		    };
