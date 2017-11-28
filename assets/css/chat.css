@@ -7,6 +7,13 @@
     background: #eee;
     border: 1px solid #ddd;
     background:#10c136;
+    font-family:verdana;
+    font-size:20px;
+    color:#ffffff;
+    width:250px;
+    text-align: center;
+    padding:8px;
+    border-radius: 7px 7px 0px 0px;
 }
 .message-box {
     display: none;
@@ -95,4 +102,11 @@
 }
 .message-anim i {
     color: #dfe;
+}
+
+.arrow-up{
+  float: right;
+}
+.icon-balon{
+  float: left;
 }
