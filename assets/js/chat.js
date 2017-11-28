@@ -124,7 +124,7 @@ $(document).ready(function (e) {
 			})
 			chat.ready = true;
 			console.log('chat ready');
-			if(localStorage.chat_status=='on' || localStorage.chat_status=='redirect')chat.connect();
+			if(localStorage.chat_status=='on' || (localStorage.chat_status=='redirect' && token))chat.connect();
 			chat.balon.appendTo('body');
 			chat.box.appendTo('body');
 		},
