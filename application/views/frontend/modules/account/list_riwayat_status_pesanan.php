@@ -61,9 +61,9 @@
         	</tbody>
         </table>
   </div>
-    
-</div><br><br>
-<script type="text/javascript">
+
+</div>
+<!-- <script type="text/javascript">
 console.log("data",);
 function dellBukuAlamat(id,address1){
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
@@ -97,4 +97,4 @@ function dellBukuAlamat(id,address1){
 	});
 
 }
-</script>
+</script> -->
