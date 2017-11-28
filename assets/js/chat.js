@@ -85,6 +85,7 @@ chat = {
 				chat.soc.disconnect();
 				chat.box.hide(400);
 				$('#chat_btn').show();
+				localStorage.chat_status='off';
 			})
 		),
 		$(document.createElement('div')).attr({'class':'message-scroll'}),
@@ -123,7 +124,7 @@ $(document).ready(function (e) {
 			})
 			chat.ready = true;
 			console.log('chat ready');
-			if(localStorage.chat_status=='on')chat.connect();
+			if(localStorage.chat_status=='on' || localStorage.chat_status=='redirect')chat.connect();
 			chat.balon.appendTo('body');
 			chat.box.appendTo('body');
 		},
