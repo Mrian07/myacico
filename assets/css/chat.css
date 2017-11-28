@@ -23,15 +23,17 @@
     width: 30%;
     background: #eee;
     border: 1px solid #ddd;
+    background:#10c136;
 }
 .message-head {
-    border-bottom: 1px solid #ccc;
+    /*border-bottom: 1px solid #ccc;*/
     margin: 0 5px;
     text-align: right;
 }
 .message-head i, .message-info i {
     padding: 3px;
     cursor: pointer;
+    color:#ffffff;
 }
 .message-head i:hover, .message-info i:hover {
     color: cyan;
@@ -40,6 +42,10 @@
     max-height: 40%;
     overflow: auto;
     padding: 30px 15px 5px;
+    background:#ffffff;
+    margin: 5px 8px 0px 8px;
+    color:#000000;
+    border-radius:5px;
 }
 .footer-container {
     margin: 8px;
@@ -109,4 +115,8 @@
 }
 .icon-balon{
   float: left;
+}
+
+.btn-chat{
+  padding:10px 15px;
 }
