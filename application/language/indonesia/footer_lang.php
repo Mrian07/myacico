@@ -30,7 +30,7 @@ $lang['f_pay'] = 'Metode Pembayaran';
 $lang['f_courier'] = 'Jasa Pengiriman';
 $lang['f_dunlud'] = 'Unduh Aplikasi Kami';
 $lang['f_sea'] = 'Lihat Semua';
-$lang['f_after_sales'] = 'Purna Jual';
+$lang['f_after_sales'] = 'Layanan Purna Jual';
 $lang['f_a_sales'] = '<br>Layanan Purna jual PT Myacico Global Indonesia'
         . '<br><b>I. Informasi Umum</b><br>Myacico.co.id memiliki layanan purna jual sebagai salah satu bentuk pelayanan kepada pelanggan. Dengan didukung oleh tenaga ahli maupun kerjasama dengan tenaga ahli dari beberapa brand terkemuka, Myacico.co.id akan membantu pelanggan dalam memperbaiki dan penukaran produk.'
         . '<br><b>II. Bentuk Layanan Purna jual</b>'

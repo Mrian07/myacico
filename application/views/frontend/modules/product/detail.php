@@ -1035,7 +1035,7 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 }
 </style>
 
-<<<<<<< HEAD
+
     <script>
        
      
@@ -1047,33 +1047,8 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
         itemsDesktop : [1199,3],
         itemsDesktopSmall : [979,3]
       });
-      
-=======
-  <script>
-  $(document).ready(function() {
-    $("#owl-demo").owlCarousel({
-      autoPlay: 3000,
-      items : 6,
-      itemsDesktop : [1199,3],
-      itemsDesktopSmall : [979,3]
->>>>>>> 0ea7d2c671612e7102338a573376a95010c1f3d1
-    });
+ 
 
   });
   </script>
-  <script>
-  $(document).ready(function() {
-    $("#owl-demo").owlCarousel({
-      autoPlay: 3000,
-      items : 6,
-      itemsDesktop : [1199,3],
-      itemsDesktopSmall : [979,3]
-    });
-<<<<<<< HEAD
-  
-    </script>
-=======
-
-  });
-  </script>
->>>>>>> 0ea7d2c671612e7102338a573376a95010c1f3d1
+ 
