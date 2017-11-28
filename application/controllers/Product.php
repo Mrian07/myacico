@@ -32,14 +32,14 @@ class Product extends Web {
 		//product/productlist?category=".$id_cat."&show=productcount";
 
 		if($page){
-			$api = "product/productall/".$id."?itemperpage=8&page=".$page."&ob=".$short;
-			$api2 = "product/productall/".$id."?itemperpage=8&page=".$page."&show=productcount";
+			$api = "product/productall/".$id."?itemperpage=10&page=".$page."&ob=".$short;
+			$api2 = "product/productall/".$id."?itemperpage=10&page=".$page."&show=productcount";
 		}elseif($short){
-			$api = "product/productall/".$id."?ob=".$short;
-			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
+			$api = "product/productall/".$id."?itemperpage=10&ob=".$short;
+			$api2 = "product/productall/".$id."?itemperpage=10&page=1&show=productcount";
 		}else{
-			$api = "product/productall/".$id;
-			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
+			$api = "product/productall/".$id."?itemperpage=10";
+			$api2 = "product/productall/".$id."?itemperpage=10&page=1&show=productcount";
 		}
 		$url = api_base_url($api);
 		$konten = file_get_contents($url, false);
@@ -48,7 +48,7 @@ class Product extends Web {
 		$url2 = api_base_url($api2);
 		$konten2 = file_get_contents($url2, false);
 
-		$batas = '8';
+		$batas = '10';
 		if(empty($page)){
 			$posisi = 0;
 			$page =1;
@@ -106,18 +106,18 @@ public function listItem()
 		$api_rec = "product/productlist?category=".$id_cat."&show=productcount";
 
     if($ob != 'all' && $page == True){
-          $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
-          $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page."&show=pagecount";
+          $api = "product/productlist?category=".$id_cat."&itemperpage=10"."&ob=".$ob."&page=".$page;
+          $api_max = "product/productlist?category=".$id_cat."&itemperpage=10"."&ob=".$ob."&page=".$page."&show=pagecount";
 
     }elseif($page){
-        $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&page=".$page;
+        $api = "product/productlist?category=".$id_cat."&itemperpage=10"."&page=".$page;
         $api_max = "product/productlist?category=".$id_cat."&page=".$page."&show=pagecount";
 
     }elseif($ob != 'all'){
-				$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob;
-        $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&show=pagecount";
+				$api = "product/productlist?category=".$id_cat."&itemperpage=10"."&ob=".$ob;
+        $api_max = "product/productlist?category=".$id_cat."&itemperpage=10"."&ob=".$ob."&show=pagecount";
     }else{
-        $api = "product/productlist?category=".$id_cat."&itemperpage=8";
+        $api = "product/productlist?category=".$id_cat."&itemperpage=10";
         $api_max = "product/productlist?category=".$id_cat."&show=pagecount";
     }
 
@@ -159,7 +159,7 @@ public function listItem()
 	   $this->data['cektoken'] = '0';
 	  }
 
-		$batas = '8';
+		$batas = '10';
 		if(empty($page)){
 			$posisi = 0;
 			$page =1;

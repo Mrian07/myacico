@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class='my-bg-title'>
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i> LIST PRODUCT
+			<i class="fa fa-angle-right" aria-hidden="true"></i>HASIL PENCARIAN UNTUK '<span id="search-key"></span>'
 
 		</div>
 	<div class="row">

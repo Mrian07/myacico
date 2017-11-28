@@ -1,15 +1,71 @@
 <style>
 .yu{
-  color: red;
-font-family: 'Roboto Condensed', sans-serif;
-font-size: 16px;
-
-}
-.yu1{
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 16px;
-  color: green;
-}
+	color: #c40202;
+	  font-family: 'Roboto Condensed', sans-serif;
+	  font-size: 10pt;
+  }
+  .yu1{
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 10pt;
+	color: #4ba240;
+  }
+  .dark-red {
+	  color: #8a0202;
+  }
+  .clear-border {
+	  border: 0;
+  }
+  .highlight-list {
+	  color: #4b4b4b!important;
+	  overflow: hidden;
+      height: 50px;
+  }
+  .highlight-list a.title-product {
+	  color: #4b4b4b!important;
+	  font-weight: bold;
+	  font-size: 1.22em;
+	  text-decoration: none!important;
+  }
+  .btn-add-to-cart {
+	  border-radius: 25px!important;
+	  padding: 7px 10px;
+	  margin-bottom: 7px;
+	  background-color: #c40202;
+	  font-size: 8pt;
+	  width: 100%;
+  }
+  .btn-add-to-cart:hover {
+	  background-color: #8a0202;
+  }
+  
+  .btn-add-to-whishlist {
+	  border-radius: 25px!important;
+	  /* padding: 7px 10px; */
+	  margin-bottom: 7px;
+	  /* background-color: #006600; */
+	  font-size: 8pt;
+	  width: 100%;
+	  font-weight: bold;
+	  cursor: pointer;
+	  text-decoration: none!important;
+  }
+  .btn-add-to-whishlist.whishlist-active {
+	  background-color: #d9840c;
+  }
+  .pricelist {
+	  font-weight: bold;
+	  font-family: 'Open Sans', sans-serif !important;
+	  font-size: 1.6em;
+  }
+  .strike-throgh {
+	  text-decoration: line-through;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none; 
+	  appearance: none; 
+	margin: 0; 
+  }
 </style>
 
     <?php
@@ -186,41 +242,45 @@ font-size: 16px;
 
      ?>
 
-    <div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
-       <div class="col-sm-8">
+	<div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
+       <div class="col-sm-6">
          <div class="row">
-           <div class="col-sm-3">
-             Total items <?php echo $totalItem; ?>
+           	<div class="col-sm-8">
+            Items <span id="startItem"></span> to <span id="endItem"></span> of <span><?php echo $totalItem; ?> total</span>
           </div>
-          <div class="col-sm-9">
-             Tampilan <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="List View" id='viewList'><i class="fa fa-list" aria-hidden="true" id='btn_list'></i></a>
-               <img src="<?php echo base_url('images/general/Spinner2.gif');?>" id="spinner_img" style="display:none"></span> <span style='font-size:15px; color:#e30c0c'><i class="fa fa-th-large" aria-hidden="true"></i></span>
-           </div>
+          <div class="col-sm-4">
+		  Tampilan <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="List View" id='viewList'><i class="fa fa-list" aria-hidden="true" id='btn_list'></i></a>
+			<img src="<?php echo base_url('images/general/Spinner2.gif');?>" id="spinner_img" style="display:none"></span> <span style='font-size:15px; color:#e30c0c'><i class="fa fa-th-large" aria-hidden="true"></i></span>
+			</div>
          </div>
        </div>
-        <div class="col-sm-4">
+
+			<div class="col-sm-6">
         <div class="row">
-        <div class="col-sm-3">
-            <strong>Urutkan: </strong>
-        </div>
-        <div class="col-sm-9">
-             <div class="row my-sort-product">
-                  <select name="urutkan" class="form-control" onchange='filter(this)'>
-                  <option value='5' <?php if($sort_id=='5'){echo"selected";}?>>Produk Terbaru</option>
-                  <option value='1' <?php if($sort_id=='1'){echo"selected";}?>>Nama: A Ke Z</option>
-                  <option value='2' <?php if($sort_id=='2'){echo"selected";}?>>Nama: Z Ke A</option>
-                  <option value='3' <?php if($sort_id=='3'){echo"selected";}?>>Harga: Rendah Ke Tinggi</option>
-                  <option value='4' <?php if($sort_id=='4'){echo"selected";}?>>Harga: Tinggi Ke Rendah</option>
-                  </select>
-              </div>
-            </div>
-        </div>
-
-
-      </div>
+				<div class="col-sm-12 text-right">
+					<form class="form-inline">
+						<div class="form-group text-right">
+							<label for="atur">Atur berdasarkan:</label>
+							<select name="atur" class="form-control" onchange='filter(this)' style="font-size: 8pt;height: 30px;width: 140px;">
+								<option value='5' <?php if($sort_id=='5'){echo"selected";}?>>Produk Terbaru</option>
+								<option value='1' <?php if($sort_id=='1'){echo"selected";}?>>Nama: A Ke Z</option>
+								<option value='2' <?php if($sort_id=='2'){echo"selected";}?>>Nama: Z Ke A</option>
+								<option value='3' <?php if($sort_id=='3'){echo"selected";}?>>Harga: Rendah Ke Tinggi</option>
+								<option value='4' <?php if($sort_id=='4'){echo"selected";}?>>Harga: Tinggi Ke Rendah</option>
+							</select>
+						</div>
+					</form>
+        <!-- <div class="col-sm-6"> -->
+					<!-- <strong>Atur berdasarkan: </strong> -->
+        <!-- </div> -->
+					<!-- <div class="row my-sort-product">
+							
+					</div> -->
+				</div>
+			</div>
+      	</div>
         <div style="clear:both"></div>
     </div>
-
 
     <div class='row'>
       <?php
@@ -228,9 +288,10 @@ font-size: 16px;
         echo"<center>Maaf item yang Anda cari belum tersedia.</center>";
       }else{
 
-      $no = $posisi+1;
+	  $no = $posisi+1;
+	  $i = -1;
       foreach($hasil as $data){
-
+		$i++;
         //die(print_r($data['imageurl']));
         if(isset($data['imageurl'])){
         $img_url= $data['imageurl'];
@@ -245,40 +306,71 @@ font-size: 16px;
         <div class="col-xs-3">
           <div class='tmp-product'>
             <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>">
-              <img class="group list-group-image" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" style="height:120px; width: auto;" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
+              <img class="img-thumbnail clear-border" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" style="width: 100%; min-height: 188px;" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
             </a>
-          <div class='nm-product-detail'>
-          <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a><br>
+          <div class='highlight-list text-center'>
+          <a class="title-product" href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a><br>
           </div>
 
           <?php
-          if($data['stock'] < 1)
-          echo "<div class='yu'>Stock : Tidak Tersedia</div>";
-          else{
-          echo "<div class='yu1'>Stock :  Tersedia</div>";
-          }
-          ?>
-          <p class="lead">
-          Rp.<?php echo money($data['pricelist']); ?></p>
-          <center><input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'></center><br>
+			// if($data['stock'] < 1) {
+			// 	echo "<div class='yu'><i class='fa fa-info-circle' aria-hidden='true'></i> Stock: Tidak tersedia</div>";
+			// } else {
+				echo "<div class='yu1 text-center'><i class='fa fa-info-circle' aria-hidden='true'></i> Stock: Tersedia</div>";
+			// }
+		  ?>
+
+          <!-- <p class="dark-red pricelist text-center">
+          Rp.<?php echo money($data['pricelist']); ?></p> -->
+			<div style="height: 50px">
+				<?php if ($i == 0) {?>
+					<span class="strike-throgh">Rp <?php echo money($data['pricelist']); ?></span>
+					<span class="lead dark-red pricelist" style="font-size: 1.1em;">
+						Rp <?php echo money($data['pricelist'] - ($data['pricelist'] * 10 / 100)); ?>
+					</span>
+					<div>Hemat 
+						<span class="lead dark-red pricelist" style="font-size: 1.1em;">
+							Rp <?php echo money($data['pricelist'] * 10 / 100); ?> (10%)
+						</span>
+					</div>
+				<?php } else if ($i == 4 || $i == 9) { ?>
+					<span class="strike-throgh">Rp <?php echo money(999999999); ?></span>
+					<span class="lead dark-red pricelist" style="font-size: 1.1em;">
+						Rp <?php echo money(999999999 - (999999999 * 10 / 100)); ?>
+					</span>
+					<div>Hemat 
+						<span class="lead dark-red pricelist" style="font-size: 1.1em;">
+							Rp <?php echo money(999999999 * 10 / 100); ?> (10%)
+						</span>
+					</div>
+				<?php } else { ?>
+					<div>
+						<span class="lead dark-red pricelist">
+							Rp <?php echo money($data['pricelist']); ?>
+						</span>
+					</div>
+				<?php } ?>
+			</div>
+
+          <input type='hidden' class='form-control' id='jmlItem<?php echo $data['m_product_id'];?>' style='width:70px' value='1' min='1'>
 
 
         <div class="btn-group">
-          <center>
-        <button type="button" style="border-radius: 25px; padding: 7px 34px; margin-bottom:7px;"  class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button></center>
+        <button type="button" style="border-radius: 25px; padding: 7px 34px; margin-bottom:7px;"  class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
 
         <?php
         //if($cektoken){}
         if($data['isWishList'] =='Y')
         {
         ?>
-<center>
-        <button type="button" style="border-radius: 25px;  padding: 8px 55px; margin-bottom:7px;"  class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button></center>
+		<div>
+        <button type="button" style="border-radius: 25px;  padding: 8px 55px; margin-bottom:7px;"  class="btn btn-warning" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
+		</div>
         <?php }else{
         ?>
-        <center>
-        <button type="button" class="btn btn-success" style="border-radius: 25px;  padding: 8px 55px; margin-bottom:7px;"  onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button></center>
-
+        <div>
+        <a class="btn-add-to-whishlist" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')">Add to Wishlist</a>
+		</div>
         <?php }
         ?>
 
@@ -371,6 +463,31 @@ $(document).ready(function() {
 
     });
 
+	var path = '<?php echo $_SERVER['PATH_INFO'] ?>';
+	var arrPath = path.split('/');
+	console.log(path);
+	console.log(arrPath);
+	console.log(arrPath[3]);
+	$('#search-key').html(arrPath[3]);
+	if (arrPath.length == 4) {
+		console.log("arrPath = 4");
+		$('#startItem').html(1);
+		$('#endItem').html(10);
+	} else {
+		console.log("> 4");
+		if (arrPath.length == 6) {
+
+			if (arrPath[5] == 1) {
+				console.log("== 1");
+				$('#startItem').html(1);
+				$('#endItem').html(10);
+			} else {
+				console.log("!= 1");
+				$('#startItem').html((arrPath[5] * 10) - 9);
+				$('#endItem').html((arrPath[5] * 10));
+			}
+		}
+	}
 });
 function filter(id){
   window.location.replace("<?php echo site_url('product/alllistItem/'.$pro.'/'); ?>"+id.value);
