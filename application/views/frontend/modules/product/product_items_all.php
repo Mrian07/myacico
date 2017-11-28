@@ -463,7 +463,7 @@ $(document).ready(function() {
 
     });
 
-	var path = '<?php echo $_SERVER['PATH_INFO'] ?>';
+	var path = '<?php echo $_SERVER['REQUEST_URI']; ?>';
 	var arrPath = path.split('/');
 	console.log(path);
 	console.log(arrPath);
