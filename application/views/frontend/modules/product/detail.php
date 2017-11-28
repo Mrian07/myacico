@@ -103,12 +103,13 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 					<br>
 
 
-
 					Bagikan <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url_share;?>" target="_blank">
   <i class="fa fa-facebook" aria-hidden="true"></i>
 </a>
-<a href="https://plus.google.com/share?url=<?php echo $url_share;?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                    <table>
+<!--<a href="https://plus.google.com/share?url=<?php echo $url_share;?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a>-->
+                                    <a href="mailto:?&subject=<?php echo $name;?>&body=<?php echo $url_share;?>"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+
+                                        <table>
                                        <tr>
                                            <td style="padding:0px;">
                                                 <font size="0"><b>Produk Highlight:</b> <?php echo $highlight;  ?></font>
