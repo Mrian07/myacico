@@ -97,7 +97,15 @@ class Customer extends Web {
 	}
 
 
+public function afterSales()
+	{	
 
+		$this->data['title_web'] = "Myacico.com - Create Account Business";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/customer/contact/after_sales.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 
 	public function messageSent()
 	{

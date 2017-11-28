@@ -2,10 +2,6 @@
 $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 //die(print_r($local_strg));
 //echo $url;
-//foreach ($local_strg as $item) {
-//    var_dump($item);die();
-   //var_dump($item->product->brand);
-//}
 ?>
 <style>
 	/*th, td {
@@ -487,21 +483,12 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <script>
    var rate = "<?php  echo $rate;?>";
    var star_rate = "<?php  echo $ik;?>";
-    var idss = "<?php echo $local_strg;?>";
-  
-  var detail = JSON.parse(localStorage.getItem('product_detail'))
-   
-   $.ajax({
-  url: 'https://api.myacico.co.id/myacico-service/product/productlist/detail?id='+idss,
-  success: function(data) {
-      detail.push(data)
-     localStorage.setItem('product_detail', JSON.stringify(detail));
+    var testObject = "<?php print_r($local_strg);?>";
+  localStorage.setItem('product_detail', JSON.stringify(testObject));
 // Retrieve the object from storage
-var retrievedObject = localStorage.getItem('product_detail');
+var retrievedObject = localStorage.getItem('testObject');
 
-console.log('retrievedObject: ', JSON.parse(retrievedObject));
-      //console.log(data);
-  }})
+console.log('retrievedObject: ', JSON.parse(testObject));
    
 //localStorage.setItem('product_detail', JSON.stringify(testObject));
 // Retrieve the object from storage

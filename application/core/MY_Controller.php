@@ -324,6 +324,19 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
     $this->data['lang_hob'] = $this->lang->line('f_hob');
 
     $this->data['lang_conta'] = $this->lang->line('f_contact');
+    $this->data['lang_after_sales'] = $this->lang->line('f_after_sales');
+    $this->data['lang_a_sales'] = $this->lang->line('f_a_sales');
+    $this->data['lang_aftersales_cont'] = $this->lang->line('f_aftersale_cont');
+    $this->data['lang_subjek'] = $this->lang->line('f_subjek');
+    $this->data['lang_email_add'] = $this->lang->line('f_email_add');
+    $this->data['lang_name'] = $this->lang->line('f_name');
+    $this->data['lang_phone'] = $this->lang->line('f_phone');
+    $this->data['lang_order_id'] = $this->lang->line('f_order_id');
+    $this->data['lang_company'] = $this->lang->line('f_company');
+    $this->data['lang_msg'] = $this->lang->line('f_msg');
+    $this->data['lang_btn_send'] = $this->lang->line('f_btn_send');
+
+
 
     $this->data['lang_footer_info'] = $this->lang->line('footer_info');
 

@@ -123,10 +123,13 @@ public function listItem()
 
   	$api2 = "product/productlist/".$id_cat;
   	$api4 = "category/cat3?id=".$id_cat;
+        // untuk recently view yg 5 ya
+        $api5 = "product/productlist/recent";
 		$url = api_base_url($api);
 		$url2 = api_base_url($api_max);
 		$url3 = api_base_url($api_rec);
     $url4 = api_base_url($api4);
+    $url5 = api_base_url($api5);
 		$options = ["http" => [
 		      "method" => "GET",
            "header" => ["token: " . $token,
@@ -138,16 +141,18 @@ public function listItem()
 		$konten2 = file_get_contents($url2, false, $context);
 		$konten3 = file_get_contents($url3, false, $context);
     $konten4 = file_get_contents($url4, false, $context);
+     $konten5 = file_get_contents($url5, false, $context);
 		$konten = file_get_contents($url, false, $context);
      //die(print_r("sam ".json_decode($konten2)->pageCount));
     $this->data['max_page'] =json_decode($konten2)->pageCount;
     $this->data['jdata'] =json_decode($konten3)->productCount;
     $this->data['listMenu'] = json_decode($konten4, true);
+    $this->data['recentView'] = json_decode($konten5, true);
     $this->data['jumlahMenu']= 0;
     foreach($this->data['listMenu'] as $menu_list){
         ++$this->data['jumlahMenu'];
     }
-//	              die(print_r($this->data['listMenu']));
+//	              die(print_r($this->data['recentView']));
 	  $this->data['hasil'] = json_decode($konten, true);
 // $hasil = json_decode($konten, true);
 // echo"<pre>"; print_r($hasil); die();
@@ -317,6 +322,7 @@ public function listItem()
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
     $hasil = json_decode($konten, true);
+    
 
 //                Komen
     $konten_komen = file_get_contents($url_komen, false, $context);
@@ -338,7 +344,7 @@ public function listItem()
 		$konten2 = file_get_contents($url_komen2);
 		//e lalang
 
-
+//die(print_r($hasil));
 
 
      $this->data['komen']=$komen;
@@ -411,8 +417,9 @@ public function listItem()
 			$this->data['rate'] = $hasil['rate'];
 		// jika gambar tidak ada
 
-
- //die(print_r($hasil['imageurl']));
+$this->data['local_strg'] =$pro_id;
+//echo '<pre>';
+//die(print_r($this->data['local_strg']));
 $i=0;
  foreach ($hasil['imageurl'] as $gmb)
  {
