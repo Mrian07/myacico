@@ -256,10 +256,10 @@ var success = function(r){
 
   //console.log('OK:', r);
 
-  if(!r.token) return $.alert({
-    title: 'Alert!',
-    content:  'Login'
-  });
+  // if(!r.token) return $.alert({
+  //   title: 'Alert!',
+  //   content:  'Login'
+  // });
   // var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
     var apiurl = api_base_url +'/order/cart/additem';
 
