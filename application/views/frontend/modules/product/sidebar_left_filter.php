@@ -39,35 +39,193 @@
 	<?php }}
 	 ?> -->
 
-	<div id="<?php echo$pane; ?>" class="menu_list">
-		<p class="menu_head plus">Harga
+	<div id="<?php echo$pane; ?>" class="menu_list">	
+		<p class="menu_head plus">Category
 		</p>
 		<div class="menu_body">
 
-
-			<div id="<?php echo$sliderprice; ?>"></div>
-			<br>
-				<div class="row">
-					<div class="col-md-12 kiri">
-						<div class="input-group">
-						<span class="input-group-addon" id="basic-addon2">Rp</span>
-						<input id="<?php echo$sliderpricelow; ?>" type="text" class="form-control" aria-describedby="basic-addon2">
-						</div>
-					</div>
-					<div class="col-md-12 kanan">
-						<div class="input-group">
-							<span class="input-group-addon" id="basic-addon2">Rp</span>
-							<input id="<?php echo$sliderpricehigh; ?>" type="text" class="form-control" aria-describedby="basic-addon2">
-						</div>
-					</div>
-				</div>
-
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				On Sale
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				Not On Sale
+				</label>
+			</div>
 
 		</div>
 	</div>
 
 	<div id="<?php echo$pane; ?>" class="menu_list">
+		<p class="menu_head plus">Brand
+		</p>
+		<div class="menu_body">
+
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				On Sale
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				Not On Sale
+				</label>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="<?php echo$pane; ?>" class="menu_list">
+		<p class="menu_head plus">
+			Harga
+		</p>
+		<div class="menu_body">
+			<div id="<?php echo$sliderprice; ?>"></div>
+			<br>
+			<div class="row">
+				<div class="col-md-12 kiri">
+					<div class="input-group">
+					<span class="input-group-addon" id="basic-addon2">Rp</span>
+					<input id="<?php echo$sliderpricelow; ?>" type="text" class="form-control" aria-describedby="basic-addon2">
+					</div>
+				</div>
+				<div class="col-md-12 kanan">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon2">Rp</span>
+						<input id="<?php echo$sliderpricehigh; ?>" type="text" class="form-control" aria-describedby="basic-addon2">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="<?php echo$pane; ?>" class="menu_list">
 		<p class="menu_head plus">Sale
+		</p>
+		<div class="menu_body">
+
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				On Sale
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				Not On Sale
+				</label>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="<?php echo$pane; ?>" class="menu_list">
+		<p class="menu_head plus">Warna
+		</p>
+		<div class="menu_body">
+
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				On Sale
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				Not On Sale
+				</label>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="<?php echo$pane; ?>" class="menu_list">
+		<p class="menu_head plus">RAM
+		</p>
+		<div class="menu_body">
+
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				On Sale
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				Not On Sale
+				</label>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="<?php echo$pane; ?>" class="menu_list">
+		<p class="menu_head plus">Kapasitas Penyimpanan
+		</p>
+		<div class="menu_body">
+
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				On Sale
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				Not On Sale
+				</label>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="<?php echo$pane; ?>" class="menu_list">
+		<p class="menu_head plus">Sistem Operasi
+		</p>
+		<div class="menu_body">
+
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				On Sale
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="">
+				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+				Not On Sale
+				</label>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="<?php echo$pane; ?>" class="menu_list">
+		<p class="menu_head plus">Ukuran Layar
 		</p>
 		<div class="menu_body">
 

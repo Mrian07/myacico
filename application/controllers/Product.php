@@ -32,14 +32,14 @@ class Product extends Web {
 		//product/productlist?category=".$id_cat."&show=productcount";
 
 		if($page){
-			$api = "product/productall/".$id."?itemperpage=8&page=".$page."&ob=".$short;
-			$api2 = "product/productall/".$id."?itemperpage=8&page=".$page."&show=productcount";
+			$api = "product/productall/".$id."?itemperpage=10&page=".$page."&ob=".$short;
+			$api2 = "product/productall/".$id."?itemperpage=10&page=".$page."&show=productcount";
 		}elseif($short){
-			$api = "product/productall/".$id."?ob=".$short;
-			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
+			$api = "product/productall/".$id."?itemperpage=10&ob=".$short;
+			$api2 = "product/productall/".$id."?itemperpage=10&page=1&show=productcount";
 		}else{
-			$api = "product/productall/".$id;
-			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
+			$api = "product/productall/".$id."?itemperpage=10";
+			$api2 = "product/productall/".$id."?itemperpage=10&page=1&show=productcount";
 		}
 		$url = api_base_url($api);
 		$konten = file_get_contents($url, false);
@@ -48,7 +48,7 @@ class Product extends Web {
 		$url2 = api_base_url($api2);
 		$konten2 = file_get_contents($url2, false);
 
-		$batas = '8';
+		$batas = '10';
 		if(empty($page)){
 			$posisi = 0;
 			$page =1;
@@ -106,18 +106,18 @@ public function listItem()
 		$api_rec = "product/productlist?category=".$id_cat."&show=productcount";
 
     if($ob != 'all' && $page == True){
-          $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page;
-          $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&page=".$page."&show=pagecount";
+          $api = "product/productlist?category=".$id_cat."&itemperpage=10"."&ob=".$ob."&page=".$page;
+          $api_max = "product/productlist?category=".$id_cat."&itemperpage=10"."&ob=".$ob."&page=".$page."&show=pagecount";
 
     }elseif($page){
-        $api = "product/productlist?category=".$id_cat."&itemperpage=8"."&page=".$page;
+        $api = "product/productlist?category=".$id_cat."&itemperpage=10"."&page=".$page;
         $api_max = "product/productlist?category=".$id_cat."&page=".$page."&show=pagecount";
 
     }elseif($ob != 'all'){
-				$api = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob;
-        $api_max = "product/productlist?category=".$id_cat."&itemperpage=8"."&ob=".$ob."&show=pagecount";
+				$api = "product/productlist?category=".$id_cat."&itemperpage=10"."&ob=".$ob;
+        $api_max = "product/productlist?category=".$id_cat."&itemperpage=10"."&ob=".$ob."&show=pagecount";
     }else{
-        $api = "product/productlist?category=".$id_cat."&itemperpage=8";
+        $api = "product/productlist?category=".$id_cat."&itemperpage=10";
         $api_max = "product/productlist?category=".$id_cat."&show=pagecount";
     }
 
@@ -164,7 +164,7 @@ public function listItem()
 	   $this->data['cektoken'] = '0';
 	  }
 
-		$batas = '8';
+		$batas = '10';
 		if(empty($page)){
 			$posisi = 0;
 			$page =1;
@@ -480,6 +480,205 @@ $i=0;
 		$this->load->view('frontend/modules/product/detail.php',$this->data);
 		$this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function detailKoe()
+	    {
+
+
+				$this->data['pro_id']=$this->uri->segment(3);
+				$pro_id=$this->uri->segment(3);
+				$api = "product/productlist/related/".$pro_id;
+				$url = api_base_url($api);
+
+
+				$konten21 = file_get_contents($url);
+
+		$this->data['dathome'] = json_decode($konten21, true);
+		  $hasil1 = json_decode($konten21, true);
+
+		if(isset($hasil1['imageurl'])){
+			$this->data['imageurl'] = $hasil1['imageurl'];
+
+		}else{
+			//$hasil['imageurl'] ='';
+	                $this->data['imageurl']='';
+		}
+			$pro_id=$this->uri->segment(3);
+			$api = "product/productlist/detail?id=".$pro_id;
+	                $url = api_base_url($api);
+	//              KOMENG CUY ~Samuel  utk page &page=1&itemperpage=1
+	                $api_komen = "product/listreview?productid=".$pro_id;
+			$url_komen = api_base_url($api_komen);
+
+
+				$options = ["http" => [
+				"method" => "GET",
+				]];
+
+			$context = stream_context_create($options);
+			$konten = file_get_contents($url, false, $context);
+	    $hasil = json_decode($konten, true);
+
+	//                Komen
+	    $konten_komen = file_get_contents($url_komen, false, $context);
+	    $komen = json_decode($konten_komen, true);
+	    //echo "<pre>";die(print_r($komen[0]['user']));
+	    //$komen[0]['user']
+
+			//s lalang
+			$getNama = $hasil['name'];
+			$options2 = ["http" => [
+			'protocol_version'=>'1.1',
+			"method" => "GET",
+			]];
+
+			$newname = str_replace(' ','%',$getNama);
+			$api_komen2 = "product/productlist/detail?id=".$pro_id."&keyword=".$newname;
+			$url_komen2 = api_base_url($api_komen2);
+			$context2 = stream_context_create($options2);
+			$konten2 = file_get_contents($url_komen2);
+			//e lalang
+
+
+
+
+	     $this->data['komen']=$komen;
+
+
+
+			//die(print_r($hasil['isWishList']));
+
+			if(isset($hasil['sku'])){
+				$this->data['sku'] = $hasil['sku'];
+
+			}else{
+				$hasil['sku'] ='';
+
+			}
+
+
+
+
+					if(isset($hasil['specification'][0]['attribute'])){
+						$this->data['specification'] = $hasil['specification'][0]['attribute'];
+						$this->data['value'] = $hasil['specification'][0]['value'];
+					}else{
+						$hasil['specification'][0]['attribute'] ='';
+							$hasil['specification'][0]['value'] ='';
+					}
+
+					if(isset($hasil['specification'][1]['attribute'])){
+						$this->data['attribute'] = $hasil['specification'][1]['attribute'];
+						$this->data['attribute3'] = $hasil['specification'][1]['value'];
+					}else{
+						$hasil['specification'][1]['attribute'] ='';
+							$hasil['specification'][1]['value'] ='';
+					}
+					if(isset($hasil['specification'][2]['attribute'])){
+						$this->data['attribute4'] = $hasil['specification'][2]['attribute'];
+						$this->data['value1'] = $hasil['specification'][2]['value'];
+					}else{
+						$hasil['specification'][2]['attribute'] ='';
+							$hasil['specification'][2]['value'] ='';
+					}
+					if(isset($hasil['specification'][3]['attribute'])){
+						$this->data['attribute5'] = $hasil['specification'][3]['attribute'];
+						$this->data['value2'] = $hasil['specification'][3]['value'];
+					}else{
+						$hasil['specification'][3]['attribute'] ='';
+							$hasil['specification'][3]['value'] ='';
+					}
+					if(isset($hasil['specification'][4]['attribute'])){
+						$this->data['attribute6'] = $hasil['specification'][4]['attribute'];
+						$this->data['value3'] = $hasil['specification'][4]['value'];
+					}else{
+						$hasil['specification'][4]['attribute'] ='';
+							$hasil['specification'][4]['value'] ='';
+					}
+
+			$this->data['description'] = $hasil['description'];
+			$this->data['highlight'] = $hasil['highlight'];
+			$this->data['sku'] = $hasil['sku'];
+
+	                $this->data['isWishList']=$hasil['isWishList'];
+			$this->data['category'] = $hasil['category'];
+			$this->data['m_product_id'] = $hasil['m_product_id'];
+	                $this->data['rate'] = $hasil['rate'];
+	                $this->data['rating'] = $hasil['rating'];
+	              //  die(print_r($this->data['rating']['star1']));
+			$this->data['name'] = $hasil['name'];
+			$this->data['pricelist'] = $hasil['pricelist'];
+			//$this->data['sku'] = $hasil['sku'];
+			$this->data['stock'] = $hasil['stock'];
+			$this->data['volume'] = $hasil['volume'];
+			$this->data['weight'] = $hasil['weight'];
+				$this->data['rate'] = $hasil['rate'];
+			// jika gambar tidak ada
+
+
+	 //die(print_r($hasil['imageurl']));
+	$i=0;
+	 foreach ($hasil['imageurl'] as $gmb)
+	 {
+	     //$this->data['img'][$i]=$gmb;
+	     if(isset($gmb)){
+		$this->data['img'][$i] = $gmb;
+	     }else{
+	         $this->data['img'][$i]=false;
+	     }
+	    //print_r($this->data['img'.$i]);
+	     $i++;
+	 }
+	  /*
+	  die();
+				if(isset($hasil['imageurl'][0])){
+						$this->data['img'] = $hasil['imageurl'][0];
+				}else{
+						$this->data['img'] = "";
+				}
+
+			 	if(isset($hasil['img1'][1]['imageurl'])){
+					$this->data['img1'] = $hasil['imageurl'][1];
+
+					}else{
+						$hasil['imageurl'][1] ='';
+
+					}
+			$this->data['img1'] = $hasil['imageurl'][1];
+				 	if(isset($hasil['img2'][2]['imageurl'])){
+					$this->data['img2'] = $hasil['imageurl'][2];
+
+					}else{
+						$hasil['imageurl'][2] ='';
+
+					}
+			$this->data['img2'] = $hasil['imageurl'][2];
+				if(isset($hasil['img1'][2]['imageurl'])){
+					$this->data['img1'] = $hasil['imageurl'][2];
+
+					}else{
+						$hasil['imageurl'][2] ='';
+
+					}
+
+			if(isset($hasil['img3'][3]['imageurl'])){
+					$this->data['img3'] = $hasil['imageurl'][3];
+
+					}else{
+						$hasil['imageurl'][3] ='';
+
+					}
+		$this->data['img3'] = $hasil['imageurl'][3];
+	       */
+			// akhir dari jika gambar tidak ada
+			$this->data['title_web'] = "Myacico.com - Home";
+			$this->load->view('frontend/header',$this->data);
+			$this->load->view('frontend/nav.php',$this->data);
+			$this->load->view('frontend/modules/product/detail2koe.php',$this->data);
+			$this->load->view('frontend/sidenav',$this->data);
+			$this->load->view('frontend/footer',$this->data);
+
 	}
 
 	public function addWishlist()

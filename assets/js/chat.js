@@ -35,12 +35,12 @@ chat = {
 			})
 		});
 		this.soc.on('msg', function(msg){
-			this.addMsg(msg).insertBefore(".footer-container");
+			chat.addMsg(msg).insertBefore(".footer-container");
 			//console.log(msg.from, 'say:', msg.txt);
-			this.box.removeClass('typing')
+			chat.box.removeClass('typing')
 		});
 		this.soc.on('typing', function(){
-			this.box.addClass('typing');
+			chat.box.addClass('typing');
 			setTimeout(function() {chat.box.removeClass('typing')}, 4000);
 		});
 	},
@@ -63,7 +63,7 @@ chat = {
 		this.soc.emit('typing');
 	},
 	balon: $(document.createElement('div')).attr({'class':'message-info'}).append(
-		'<span class="fa fa-comments icon-balon"></span>','pesan',
+		'<span class="fa fa-comments icon-balon"></span>','<div class="index-pesan">Pesan</div>',
 		/*$(document.createElement('i')).attr({'class':'fa fa-comments'}),*/
 		$(document.createElement('i')).attr({'class':'fa fa-chevron-up arrow-up'}).click(function(){
 			chat.balon.hide();
@@ -73,6 +73,7 @@ chat = {
 	),
 	box: $(document.createElement('div')).attr({'class':'message-box'}).append(
 		$(document.createElement('div')).attr({'class':'message-head'}).append(
+			'<span style="float:left;color:#ffffff"><b>Chatting</b></span>',
 			$(document.createElement('i')).attr({'class':'fa fa-chevron-down'}).click(function(){
 				chat.box.hide(400);
 				chat.balon.show();
@@ -90,7 +91,7 @@ chat = {
 		$(document.createElement('div')).attr({'class':'message-scroll'}),
 		$(document.createElement('div')).attr({'class':"footer-container"}).append(
 			'<textarea class="text-area" id="msgInp" onkeyup="chat.keyup(event)" placeholder="your message here..."></textarea>',
-			'<input type="button" value="send" onclick="chat.sndMsg()">'
+			'<input type="button" class="btn-chat" value="send" onclick="chat.sndMsg()">'
 		),
 		'<div class="message-anim"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>'
 	),
@@ -123,7 +124,7 @@ $(document).ready(function (e) {
 			})
 			chat.ready = true;
 			console.log('chat ready');
-			if(localStorage.chat_status=='on' || localStorage.chat_status=='redirect')chat.connect();
+			if(localStorage.chat_status=='on' || (localStorage.chat_status=='redirect' && token))chat.connect();
 			chat.balon.appendTo('body');
 			chat.box.appendTo('body');
 		},
