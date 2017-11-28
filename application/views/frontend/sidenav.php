@@ -12,10 +12,12 @@
     font-size: 25px;
     color: white;
     border-radius: 0 5px 5px 0;
+    background: #c81423;
 }
 
 #mySidenav a:hover {
     right: 0;
+    background: #ef4554;
 }
 
 #youtube {

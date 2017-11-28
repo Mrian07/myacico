@@ -176,7 +176,7 @@
 										 <!-- <?php  echo " <img src='$myavatar' width='25' border='0'>"; ?> -->
 							<?php
 							if(isset($_COOKIE['x-auth'])){
-					  		   echo "<img src='$myavatar' width='25' border='0'>";
+					  		   echo anchor('account/avatar', "<img src='$myavatar' width='25' border='0'>");
 				  		} else{ ?>
 							 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='25' border='0'>
 							<?php } ?>
@@ -417,7 +417,7 @@ $('#searchDesk').keypress(function(e) {
 									}
 
 									productSrc.append(
-										"<div class=\"show_result\" onclick=\"showData('"+p.product_name+"','"+p.product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='30'></div><div class='col-xs-6'>"+p.product_name+"</div><div class='col-xs-5' style='text-align:right'><span style='padding:4px; background:#fbbd44;'>"+p.product_category+"</span></div></div></div>"
+										"<div class=\"show_result\" onclick=\"showData('"+p.product_name+"','"+p.product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='30'></div><div class='col-xs-6'>"+p.product_name+"</div><div class='col-xs-5' style='text-align:right'><span style='padding:4px;'>"+p.product_category+"</span></div></div></div>"
 									);
 
 								});
@@ -442,7 +442,7 @@ $('#searchDesk').keypress(function(e) {
 										}
 
 										productSrc.append(
-											"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='50'></div><div class='col-xs-6'>"+p.name+"<br> <span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></div><div class='col-xs-5' style='text-align:right'><font size='3'><b>"+money(p.pricelist)+"</b></font></div></div></div>"
+											"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='50'></div><div class='col-xs-6'>"+p.name+"<br> <span style='padding:5px;'>"+p.category+"</span></div><div class='col-xs-5' style='text-align:right'><font size='3'><b>"+money(p.pricelist)+"</b></font></div></div></div>"
 										);
 
 									});

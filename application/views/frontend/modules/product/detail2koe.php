@@ -119,7 +119,6 @@ xpreview="<?php echo $gmbr;?>" title="">
         border : 0px;
         background: #E7E7E7;
         color: black;
-				font-size: 14px;
       }
       .btn-link:hover{
         background-color: #E7E7E7;
@@ -187,16 +186,10 @@ xpreview="<?php echo $gmbr;?>" title="">
             </form>
 
           </div> --><table border="0">
-					<br/>
-					<br/>
-					<tr>
+          <tr>
             <td><b>Quantity</b></td>
-						<td> &nbsp; </td>
-								<td> &nbsp; </td>
-										<td> &nbsp; </td>
-												<td> &nbsp; </td>
-												<td> : </td>
-            <td colspan="3"><input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'/></td>
+            <td> : </td>
+            <td><input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'/></td>
               </tr>
 
           </table>
@@ -310,7 +303,6 @@ xpreview="<?php echo $gmbr;?>" title="">
   <li class="active"><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
         <li><a data-toggle="tab" href="#menu2">Spesifikasi</a></li>
   <li><a data-toggle="tab" href="#menu3">Ulasan</a></li>
-	<li><a data-toggle="tab" href="#menu4">Pertanyaan</a></li>
 
 </ul>
 
