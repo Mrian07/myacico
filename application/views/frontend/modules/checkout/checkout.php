@@ -73,6 +73,8 @@ a
                                                           echo"<input type='hidden' value='' id='shipping_address_id'/>";
 						   }
 						   ?>
+
+
 						</form>
 
 					</div>
@@ -157,14 +159,29 @@ a
 </div>
 
 <script type="text/javascript">
-
+console.log("checkout...");
 $(document).ready(function()
+
 {
-    location.reload();
+  console.log('testnih123')
+  window.onload = function() {
+    console.log('testnih1234')
+      if(!window.location.hash) {
+            console.log('testnih12345')
+          window.location = window.location + '#loaded';
+          window.location.reload();
+      }
+  }
 	var totaltrans = $('#SubtotalOrder').val();
 	$('#grandtotalall').html(addPeriod(totaltrans));
+    	var idkel = <?php
+          if(isset($id_kelurahan)){
+          echo $id_kelurahan;
+          }else{
+            echo "123";
+                                                     }?>;
 
-	var idkel = <?php echo $id_kelurahan;?>;
+
 	var dataString = 'idkel='+idkel;
 
 	$.ajax

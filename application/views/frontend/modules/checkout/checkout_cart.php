@@ -36,6 +36,7 @@
 				$total = 0;
 				$totalWeight=0;
 				foreach($hasil as $items):?>
+		
 				<tr>
 					<td data-th="Product">
 						<img src="<?php echo $items['imageurl']; ?>" alt="<?php echo $items['name']; ?>" class="img-responsive" width='100'/>

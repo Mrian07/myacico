@@ -190,7 +190,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-6">
-						<input type="submit" id="submit_btn" onclick="myFunction()" class="btn btn-primary" value="<?php echo $lang_btn_SignIn ?>">
+						<input type="submit" id="submit_btn"  class="btn btn-primary" value="<?php echo $lang_btn_SignIn ?>">
 						<img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 					</div>
 					<div class="col-sm-6" style='text-align: right'>
@@ -244,13 +244,12 @@
 </div>
 
 <script type="text/javascript">
-function myFunction() {
-    location.reload();
-}
+
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 var wishlist ='<?php echo$this->uri->segment(3); ?>';
 
 var success = function(r){
+
   $('#spinner_img').hide();
 
   $('#submit_btn').val('Kirim').removeClass('disabled');
@@ -259,7 +258,7 @@ var success = function(r){
 
   if(!r.token) return $.alert({
     title: 'Alert!',
-    content:  'test'
+    content:  'Silahkan'
   });
   // var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
     var apiurl = api_base_url +'/order/cart/additem';
@@ -308,7 +307,6 @@ var success = function(r){
 	else location.href = '<?php echo base_url('account'); ?>';
 
 	if(localStorage.chat_status == 'redirect') chat.connect();
-    location.reload();
 };
 var error = function(er){
   $('#spinner_img').hide();
