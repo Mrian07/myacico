@@ -258,7 +258,7 @@ var success = function(r){
 
   if(!r.token) return $.alert({
     title: 'Alert!',
-    content:  'Silahkan'
+    content:  'Silahkan Lanjutkan Checkout Anda'
   });
   // var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
     var apiurl = api_base_url +'/order/cart/additem';
