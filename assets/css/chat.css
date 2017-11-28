@@ -1,7 +1,7 @@
 .message-info {
     display: none;
     position: fixed;
-    bottom: 5px;
+    bottom: 0px;
     right: 15px;
     padding: 0 15px;
     background: #eee;
@@ -12,8 +12,8 @@
     color:#ffffff;
     width:250px;
     text-align: center;
-    padding:8px;
-    border-radius: 7px 7px 0px 0px;
+    padding:0px;
+    border-radius: 10px 10px 0px 0px;
 }
 .message-box {
     display: none;
@@ -112,11 +112,21 @@
 
 .arrow-up{
   float: right;
+  margin-top:5px;
 }
 .icon-balon{
   float: left;
+  background:#00b327;
+  padding:10px;
+  border-radius: 10px 0px 0px 0px;
 }
 
 .btn-chat{
   padding:10px 15px;
+}
+
+.index-pesan{
+  float: left;
+  width:180px;
+  margin-top:7px;
 }

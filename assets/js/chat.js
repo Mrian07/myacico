@@ -63,7 +63,7 @@ chat = {
 		this.soc.emit('typing');
 	},
 	balon: $(document.createElement('div')).attr({'class':'message-info'}).append(
-		'<span class="fa fa-comments icon-balon"></span>','pesan',
+		'<span class="fa fa-comments icon-balon"></span>','<div class="index-pesan">Pesan</div>',
 		/*$(document.createElement('i')).attr({'class':'fa fa-comments'}),*/
 		$(document.createElement('i')).attr({'class':'fa fa-chevron-up arrow-up'}).click(function(){
 			chat.balon.hide();
