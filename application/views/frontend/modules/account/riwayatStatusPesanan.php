@@ -11,7 +11,7 @@
 		</div>
 		<div class="col-sm-9">
 
-			Sort By:
+			<!-- Sort By:
 
 			<div class="row">
 			    <div class='col-sm-5'>
@@ -39,9 +39,8 @@
 					<div class='col-sm-2'>
 							<button type="button" class="btn btn-default">CARI</button>
 					</div>
-			</div>
+			</div> -->
 
-			<!-- <div class='listRiwayatStatusPesanan'><center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center></div> -->
 
 			<style>
 			.disabled {
@@ -49,10 +48,7 @@
 			   cursor: default;
 			}
 			</style>
-
-			<p align="center"><?php echo $lang_riw; ?></p>
-
-
+			Total list: <?php echo $total_list; ?>
 			<div class="row"  style='width: 100%; margin:0 auto;'>
 			    <div id="no-more-tables">
 			        <table class="col-md-12 table-bordered table-striped table-condensed cf">
@@ -176,7 +172,7 @@ $(document).ready(function() {
 
 	$.ajax
 	({
-	url: "<?php echo site_url('account/listRiwayatStatusPesanan'); ?>",
+	url: "<?php // echo site_url('account/listRiwayatStatusPesanan'); ?>",
 	success:function(html){
 			$(".listRiwayatStatusPesanan").html(html);
 		}

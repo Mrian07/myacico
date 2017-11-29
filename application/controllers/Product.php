@@ -322,7 +322,7 @@ public function listItem()
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
     $hasil = json_decode($konten, true);
-    
+
 
 //                Komen
     $konten_komen = file_get_contents($url_komen, false, $context);
@@ -397,8 +397,10 @@ public function listItem()
 					$hasil['specification'][4]['attribute'] ='';
 						$hasil['specification'][4]['value'] ='';
 				}
+				$this->data['description'] = $hasil['description'];
 
-		$this->data['description'] = $hasil['description'];
+		$this->data['specialPrice'] = $hasil['specialPrice'];
+		$this->data['discount'] = $hasil['discount'];
 		$this->data['highlight'] = $hasil['highlight'];
 		$this->data['sku'] = $hasil['sku'];
 

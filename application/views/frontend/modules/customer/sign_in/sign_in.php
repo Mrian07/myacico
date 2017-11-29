@@ -261,6 +261,7 @@ var success = function(r){
 		title: 'Login fail!',
 		content: r.message
 	});
+	if(!r.token) return false;
 	// var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
 	var apiurl = api_base_url +'/order/cart/additem';
 
@@ -285,7 +286,8 @@ var success = function(r){
 				"productId":m_product_id,
 				"qty":qty,
 				"price":pricelist,
-				"weightPerItem":weight
+				"weight":weight,
+
 			}
 		) , url: apiurl, headers:{"token":r.token}, success: success });
 	<?php
@@ -295,6 +297,8 @@ var success = function(r){
 
 	document.cookie='x-auth='+r.token+'; path='+base_path;
 	token = r.token;
+
+
 	var cb = location.search.split('callback=');
 
 	//SAM
