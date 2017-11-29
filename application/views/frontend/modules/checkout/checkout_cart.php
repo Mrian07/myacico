@@ -48,7 +48,7 @@
 					<td data-th="Subtotal" class="text-center">Rp.<?php echo money($items['subtotal']); ?></td>
 					<td class="actions" data-th="">
 						<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'); ?>
-						<?php echo $items['totalWeight']; ?>
+				
 					</td>
 				</tr>
 				<?php

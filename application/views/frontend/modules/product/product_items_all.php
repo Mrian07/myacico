@@ -334,13 +334,13 @@
 						</span>
 					</div>
 				<?php } else if ($i == 4 || $i == 9) { ?>
-					<span class="strike-throgh">Rp <?php echo money(999999999); ?></span>
+					<span class="strike-throgh">Rp <?php echo money($data['pricelist']); ?></span>
 					<span class="lead dark-red pricelist" style="font-size: 1.1em;">
-						Rp <?php echo money(999999999 - (999999999 * 10 / 100)); ?>
+						Rp <?php echo money($data['pricelist'] - ($data['pricelist'] * 10 / 100)); ?>
 					</span>
 					<div>Hemat 
 						<span class="lead dark-red pricelist" style="font-size: 1.1em;">
-							Rp <?php echo money(999999999 * 10 / 100); ?> (10%)
+							Rp <?php echo money($data['pricelist'] * 10 / 100); ?> (10%)
 						</span>
 					</div>
 				<?php } else { ?>

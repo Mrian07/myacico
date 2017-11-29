@@ -921,7 +921,7 @@ text.innerHTML = trimmedString
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:210px;'>
+      <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
 
     <a href="<?php echo base_url('product/detail/'. $itemslide1['product_id'].'/'. $itemslide1['alias']);?>"><img src="<?php echo $itemslide1['imageurl']; ?>"  style="height:120px; width: auto"></a>
         <p class="box-title" style='color: #4b4b4b; height:35px'><?php
@@ -935,8 +935,17 @@ text.innerHTML = trimmedString
                   echo $str2."....";
                 }
                 ?></p>
+                <?php if($itemslide1['specialprice'] == 0){
+                ?>   <div class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide1['pricelist']); ?></div>
+              <?php  }else{  ?>
+              <p class="box-title2"><s >Rp.<?php echo money($itemslide1['pricelist']); ?></s></p><div class="box-title2" style='color: #8a0202; '><p >Rp.<?php echo money($itemslide1['specialprice']); ?></p></div>
+              <?php } ?>
+              <?php if($itemslide1['discount'] == 0){
+              echo "";
+              } else { ?>
+              <span class="badgeNi34" style="color:white;">  <?php echo $itemslide1['discount']; ?> %</span>
+              <?php } ?>
 
-            <b><p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide1['pricelist']); ?></p></b>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -980,7 +989,7 @@ text.innerHTML = trimmedString
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:210px;'>
+      <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
@@ -995,8 +1004,18 @@ text.innerHTML = trimmedString
                       echo $str2."....";
                     }
                     ?></p>
+                    <?php if($itemslide2['specialprice'] == 0){
+                    ?>   <div class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide2['pricelist']); ?></div>
+                  <?php  }else{  ?>
+                  <p class="box-title2"><s >Rp.<?php echo money($itemslide2['pricelist']); ?></s></p><div class="box-title2" style='color: #8a0202; '><p >Rp.<?php echo money($itemslide2['specialprice']); ?></p></div>
+                  <?php } ?>
+                  <?php if($itemslide2['discount'] == 0){
+                  echo "";
+                  } else { ?>
+                  <span class="badgeNi34" style="color:white;">  <?php echo $itemslide2['discount']; ?> %</span>
+                  <?php } ?>
 
-            <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
