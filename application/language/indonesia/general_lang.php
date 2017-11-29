@@ -10,7 +10,7 @@ $lang['lang_new_reg'] = 'PENDAFTARAN';
 $lang['label_name'] = 'Nama';
 $lang['msg_regis'] = 'Silahkan isi Nama Anda';
 $lang['label_rep_pass'] = 'Ulangi Password';
-$lang['msg_regis2'] = 'Pendaftaran Gagal kKarena,';
+$lang['msg_regis2'] = 'Pendaftaran Gagal Karena,';
 // forgot password
 $lang['info_login'] = 'Masukan email dan password login Anda pada form dibawah ini.';
 $lang['lost_password_text'] = 'Masukkan alamat email Anda di bawah ini. Anda akan menerima link untuk mereset password Anda.';
