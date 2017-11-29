@@ -124,12 +124,12 @@ public function listItem()
   	$api2 = "product/productlist/".$id_cat;
   	$api4 = "category/cat3?id=".$id_cat;
         // untuk recently view yg 5 ya
-        $api5 = "product/productlist/recent";
+        //$api5 = "product/productlist/recent";
 		$url = api_base_url($api);
 		$url2 = api_base_url($api_max);
 		$url3 = api_base_url($api_rec);
     $url4 = api_base_url($api4);
-    $url5 = api_base_url($api5);
+   // $url5 = api_base_url($api5);
 		$options = ["http" => [
 		      "method" => "GET",
            "header" => ["token: " . $token,
@@ -141,13 +141,13 @@ public function listItem()
 		$konten2 = file_get_contents($url2, false, $context);
 		$konten3 = file_get_contents($url3, false, $context);
     $konten4 = file_get_contents($url4, false, $context);
-     $konten5 = file_get_contents($url5, false, $context);
+     //$konten5 = file_get_contents($url5, false, $context);
 		$konten = file_get_contents($url, false, $context);
      //die(print_r("sam ".json_decode($konten2)->pageCount));
     $this->data['max_page'] =json_decode($konten2)->pageCount;
     $this->data['jdata'] =json_decode($konten3)->productCount;
     $this->data['listMenu'] = json_decode($konten4, true);
-    $this->data['recentView'] = json_decode($konten5, true);
+    //$this->data['recentView'] = json_decode($konten5, true);
     $this->data['jumlahMenu']= 0;
     foreach($this->data['listMenu'] as $menu_list){
         ++$this->data['jumlahMenu'];
@@ -197,7 +197,7 @@ public function listItem()
     {
 		//$this->load->view('frontend/test',$this->data);
 
-                $this->data['title_web'] = "Myacico.com - Home";
+    $this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
