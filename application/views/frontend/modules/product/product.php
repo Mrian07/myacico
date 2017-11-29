@@ -25,7 +25,7 @@
       <!-- $lang_recent_view -->
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> Baru di lihat
   </div>
-<div class="container">
+<!--<div class="container">-->
   <div id="product" class="promo-front owl-carousel">
 <!--       <div id="product" align="center" ></div>
       <div class="item" style='background:#ffffff; padding:10px; height:210px'>-->
@@ -46,7 +46,7 @@
 
             <hr>
 
-</div>
+<!--</div>-->
 </div>
 <script>
 //    $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
@@ -65,13 +65,13 @@ for(var i=0;i<detail.length;i++)
 //            a = a.length;
             if(str.length >20)
             {
-                 namapotong = str.substring(0, 20)+' '+'...';
+                 namapotong = str.substring(0, 20)+'<br>'+'...';
             }else{
                   namapotong = detail[i].name;
             }
 //            console.log(currencyFormat(detail[i].pricelist));
 //      $('#product').append('<div class="pull-left" style="width: 100px;"><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'" class="link-p" style="color:#fff;"><span class="badgeNi">New</span><img src="'+detail[i].imageurl[0]+'" class="" style="height:100px;"></a><p><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'">'+detail[i].name+'</a></p></div>')
-    $('#product').append('<p><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'" class="link-p" style="color:#fff;"><span class="badgeNi">New</span><img src="'+detail[i].imageurl[0]+'" class="" style="height:100px;"></a><br><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'">'+namapotong+' </a><br> '+currencyFormat(detail[i].pricelist)+'</p>')
+    $('#product').append('<p><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'" class="link-p" style="color:#fff;"><span class="badgeNi">New</span><img src="'+detail[i].imageurl[0]+'" class="" style="height:100px; width:100px;"></a><br><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'">'+namapotong+' </a><br> '+currencyFormat(detail[i].pricelist)+'</p>')
   
 }
 //detail.forEach(p){
@@ -138,7 +138,7 @@ for(var i=0;i<detail.length;i++)
     $(document).ready(function() {
       $(".promo-front").owlCarousel({
         autoPlay: 3000,
-        items : 6,
+        items : 8,
         itemsDesktop : [1199,3],
         itemsDesktopSmall : [979,3]
       });
