@@ -124,6 +124,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 				color:#000000;
 				cursor:pointer;
 			}*/
+
 		</style>
 
 
@@ -144,7 +145,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 						<?php echo anchor('#',$lang_produck, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
-                                           <?php echo anchor('Customer/afterSales',$lang_after_sales, array('class'=>'my-info')); ?>
+           <?php echo anchor('customer/afterSales',$lang_after_sales, array('class'=>'btn-nav-head')); ?>
 					</div>
 				</div>
 
@@ -265,17 +266,18 @@ var prod_detail =  localStorage.getItem('product_detail');
 							<p id='loading'><img src="<?php echo base_url('images/general/Spinner_search.gif'); ?>" border="0"> Loading...</p>
 							<div id="title_top">Popular Search</div>
 							<div id="top"></div>
+							<p id='loading2'><img src="<?php echo base_url('images/general/Spinner_search.gif'); ?>" border="0"> Loading...</p>
 							<div id="title_list">Search Result</div>
 							<div id="list"></div>
 						</div>
 
-  					<!-- <span class="input-group-btn">
-  						<button class="btn btn-default my-search-button" type="button" onclick='btnSearchDesk()'><i class="fa fa-search" aria-hidden="true"></i></button>
-  					</span> -->
-
-						<span class="input-group-btn">
-  						<button class="btn btn-default my-search-button" type="button" id="other"><i class="fa fa-search" aria-hidden="true"></i></button>
+  					<span class="input-group-btn">
+  						<button class="my-search-button" type="button" onclick='btnSearchDesk()'><i class="fa fa-search" aria-hidden="true"></i></button>
   					</span>
+
+						<!-- <span class="input-group-btn">
+  						<button class="btn btn-default my-search-button" type="button" id="other"><i class="fa fa-search" aria-hidden="true"></i></button>
+  					</span> -->
   				</div>
 
 
@@ -300,96 +302,24 @@ var prod_detail =  localStorage.getItem('product_detail');
 
 	<script>
 
-	// $('#loading').hide()
-	// var typingTimer;
-	// var doneTypingInterval = 15000;
-	// $("#searchDesk").keyup(function( event ) {
-	// 	var key = $(this).val()
-	// 	$('#list').empty();
-	// 	$('#top').empty();
-	// 	$('#loading').show()
-	// 	clearTimeout(typingTimer);
-	//   	typingTimer = setTimeout(topProduct(key), doneTypingInterval);
-	// 	typingTimer = setTimeout(searchProduct(key), doneTypingInterval);
-	// }).keydown(function( event ) {
-	//   	if ( event.which == 13 ) {
-	//     	event.preventDefault();
-	//   	}
-	// }).click(function() {
-	// 	//handle yg click
-  //
-	// }).focus(function(){
-	// 	topProduct('');
-	// 	$('#list').empty();
-	// }).blur(function(){
-  //
-	// 	setTimeout(function(){
-	// 		$('#top').empty();
-	// 		$('#list').empty();
-	// 	},3000)
-	// })
-  //
-  //
-  //
-	// function searchProduct(key){
-  //
-	// 	$.ajax({
-	// 		url: 'https://api.myacico.co.id/myacico-service/product/productlist/'+key,
-	// 		success: function(data) {
-	// 			//console.log(data)
-	// 			$('#loading').hide()
-	// 			for (var i = 0; i < data.length; i++) {
-	// 				var result = '<div class="img-con">Item:<img class="img-src" src="'+data[i].imageurl+'">'+'<span class="searh-name">'+data[i].name+'</span></div>'
-	// 				$('#list').append(result)
-	// 			}
-	// 			//searchProduct(key);
-	// 		}
-	// 	});
-	// }
-  //
-  //
-	// function topProduct(key){
-	// 	//console.log('top')
-	// 	$.ajax({
-	// 		url: 'https://api.myacico.co.id/myacico-service/product/topsearch?keyword='+key,
-	// 		success: function(data) {
-	// 			$('#loading').hide()
-	// 			//console.log(data)
-	// 			for (var i = 0; i < data.length; i++) {
-	// 				var result = '<div class="img-con" onclick="javascript:showData('+data[i].product_id+');">Top:<img class="img-src" src="'+data[i].image_thumbnail+'">'+'<span class="searh-name" onclick="showData("dfdaf")">'+data[i].product_name+'</span>testing</div>'
-	// 				$('#top').append(result)
-	// 			}
-	// 		}
-	// 	});
-	// }
-  //
-	// function showData(q){
-	// 	console.log(q)
-	// }
 
-
-
-
-
-
-	// $('#searchDesk').keypress(function(e) {
-	//         if(e.which == 13) {
-	//            var searchDesk = $('#searchDesk').val();
-	// 	                if(searchDesk){
-	// 	  		location.href = base_url+'product/alllistItem/'+searchDesk;
-	// 	            }else{
-	// 	              $.alert({
-	// 	            title: 'Peringatan',
-	// 	            content: 'kolom pencarian tidak boleh kosong',
-	// 	          });
-	// 	            }
-	//         }
-	//     });
+	function btnSearchDesk(){
+		var searchDesk = $('#searchDesk').val();
+		if(searchDesk){
+			location.href = base_url+'product/alllistItem/'+searchDesk;
+		}else{
+				$.alert({
+				title: 'Peringatan',
+				content: 'kolom pencarian tidak boleh kosong',
+				});
+			}
+	}
 
 	$('#loading').hide()
+	$('#loading2').hide()
 	var typingTimer;
 	var doneTypingInterval = 5000;
-
+	var doneTypingIntervalCat = 20000;
 
 	$("#searchDesk").keyup(function( event ) {
 		var key = $(this).val();
@@ -399,6 +329,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 		$('#list').empty();
 		$('#top').empty();
 		$('#loading').show();
+		$('#loading2').show();
 		clearTimeout(typingTimer);
 
 		if(cat=="all"){
@@ -406,13 +337,23 @@ var prod_detail =  localStorage.getItem('product_detail');
 				typingTimer = setTimeout(searchProduct(key), doneTypingInterval);
 		}else{
 				typingTimer = setTimeout(topProduct(key), doneTypingInterval);
-				typingTimer = setTimeout(searchProductCat(cat,key), doneTypingInterval);
+				typingTimer = setTimeout(searchProductCat(cat,key), doneTypingIntervalCat);
 		}
 
 	}).keydown(function( event ) {
 	  	if ( event.which == 13 ) {
 	    	event.preventDefault();
-				alert('masuk');
+
+				var searchDesk = $('#searchDesk').val();
+				if(searchDesk){
+					location.href = base_url+'product/alllistItem/'+searchDesk;
+				}else{
+					$.alert({
+					title: 'Peringatan',
+					content: 'kolom pencarian tidak boleh kosong',
+					});
+				}
+
 	  	}
 
 	}).click(function() {
@@ -420,6 +361,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 
 	}).focus(function(){
 		topProduct('');
+		$('#loading2').hide()
 		$('#list').empty();
 	})
 	//.blur(function(){
@@ -441,18 +383,17 @@ var prod_detail =  localStorage.getItem('product_detail');
 
 
 	function searchProduct(key){
-		$('#top').empty();
-		$('#list').empty();
+	//	$('#top').empty();
+		// $('#list').empty();
 		$.ajax({
 			url: api_base_url+'/product/productlist/'+key,
 			success: function(data) {
-				 //console.log(data);
-				$('#loading').hide()
+				$('#list').empty();
+				$('#loading2').hide()
 				if(data.length==0 || data.length==''){$('#title_list').hide();}else{$('#title_list').show();}
 				for (var i = 0; i < data.length; i++) {
 					 var result = '<div class="img-con" onclick="showData(\''+data[i].m_product_id+'\',\''+data[i].alias+'\');"><img class="img-src" src="'+data[i].imageurl+'">'+'<span class="searh-name">'+data[i].name+'</span><span style="float:right"><b>'+money(data[i].pricelist)+'</b></span></div>'
-					// var result = '<div class="img-con"  onclick="javascript:showData("hallo");"><img class="img-src" src="'+data[i].imageurl+'">'+'<span class="searh-name">'+data[i].name+'</span></div>'
-					$('#list').append(result)
+				$('#list').append(result)
 				}
 
 			}
@@ -460,35 +401,34 @@ var prod_detail =  localStorage.getItem('product_detail');
 	}
 
 	function topProduct(key){
-		$('#top').empty();
+		// $('#top').empty();
 		$.ajax({
 			url: api_base_url+'/product/topsearch?keyword='+key,
 			success: function(data) {
+				$('#top').empty();
 				$('#loading').hide()
-
 				if(data.length==0 || data.length==''){$('#title_top').hide();}else{$('#title_top').show();}
 				for (var i = 0; i < data.length; i++) {
-					// var result = '<div class="img-con" onclick="javascript:showData('+data[i].m_product_id+','+data[i].alias+');"><img class="img-src" src="'+data[i].image_thumbnail+'">'+'<span class="searh-name">'+data[i].product_name+'</span></div>'
-					var result = '<div class="img-con" onclick="showData(\''+data[i].product_id+'\',\''+data[i].alias+'\');"><img class="img-src" src="'+data[i].image_thumbnail+'">'+'<span class="searh-name">'+data[i].product_name+'</span></div>'
-
-
-					$('#top').append(result)
+				var result = '<div class="img-con" onclick="showData(\''+data[i].product_id+'\',\''+data[i].alias+'\');"><img class="img-src" src="'+data[i].image_thumbnail+'">'+'<span class="searh-name">'+data[i].product_name+'</span></div>'
+				$('#top').append(result)
 				}
 			}
 		});
 	}
 
 	function searchProductCat(cat,key){
-		$('#list').empty();
+		// $('#list').empty();
 		$.ajax({
 			url: api_base_url+'/product/productlist/'+cat+'/'+key,
+		//	url: api_base_url+'/product/productlist/'+key,
 			// url: 'https://api.myacico.co.id/myacico-service/product/productlist/'+key,
 			success: function(data) {
 				// console.log(data);
-				$('#loading').hide()
+				$('#list').empty();
+				$('#loading2').hide()
 				if(data.length==0 || data.length==''){$('#title_list').hide();}else{$('#title_list').show();}
 				for (var i = 0; i < data.length; i++) {
-					var result = '<div class="img-con" onclick="showData(\''+data[i].m_product_id+'\',\''+data[i].alias+'\');">cat: <img class="img-src" src="'+data[i].imageurl+'">'+'<span class="searh-name">'+data[i].name+'</span><span style="float:right"><b>'+money(data[i].pricelist)+'</b></span></div>'
+					var result = '<div class="img-con" onclick="showData(\''+data[i].m_product_id+'\',\''+data[i].alias+'\');"><img class="img-src" src="'+data[i].imageurl+'">'+'<span class="searh-name">'+data[i].name+'</span><span style="float:right"><b>'+money(data[i].pricelist)+'</b></span></div>'
 					$('#list').append(result)
 				}
 
@@ -501,12 +441,6 @@ var prod_detail =  localStorage.getItem('product_detail');
 	{
 		var url = base_url+'product/detail/'+id+'/'+alias;
 		window.location.href = url;
-
-
-		// $("#search").val(name);
-		// $("#searchID").val(id);
-		// $("#result").hide();
-		// $(".productSrc").hide();
 	}
 
 	function money(x){
@@ -521,31 +455,8 @@ var prod_detail =  localStorage.getItem('product_detail');
  			// 	 $('.sr').hide();
 	  	// });
 
-// $('#searchDesk').keypress(function(e) {
-//         if(e.which == 13) {
-//            var searchDesk = $('#searchDesk').val();
-// 	                if(searchDesk){
-// 	  		location.href = base_url+'product/alllistItem/'+searchDesk;
-// 	            }else{
-// 	              $.alert({
-// 	            title: 'Peringatan',
-// 	            content: 'kolom pencarian tidak boleh kosong',
-// 	          });
-// 	            }
-//         }
-//     });
-      //
-	  	// function btnSearchDesk(){
-	  	// 	var searchDesk = $('#searchDesk').val();
-	    //             if(searchDesk){
-	  	// 	location.href = base_url+'product/alllistItem/'+searchDesk;
-	    //         }else{
-	    //           $.alert({
-	    //         title: 'Peringatan',
-	    //         content: 'kolom pencarian tidak boleh kosong',
-	    //       });
-	    //         }
-	  	// }
+
+
 
 
 

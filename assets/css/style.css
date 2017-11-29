@@ -802,9 +802,9 @@ a:hover.my-info {
 	}
 
 	.my-search-button{
-	    padding: 1px 20px 1px 20px;
+	    padding: 5px 20px 5px 20px;
 	    border: none;
-	    border-radius: 4px;
+	    border-radius: 0px 4px 4px 0px;
 	    background: #cd0000 url("../../images/general/red-emboss.jpg");
 		  color:#f8f5f0;
       font-size: 22px;
