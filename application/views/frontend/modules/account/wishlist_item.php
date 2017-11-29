@@ -1,17 +1,11 @@
-<style>
-.disabled {
-   pointer-events: none;
-   cursor: default;
-}
-</style>
-<p>Dibawah ini adalah daftar buku alamat penerima pesanan. Anda bisa menambahkan alamat baru atau mengubah alamat sebelumnya dengan alamat yang lain.</p>
+<center><h1> Wishlist Anda </h1></center>
 <div class="row"  style='width: 100%; margin:0 auto;'>
     <div id="no-more-tables">
         <table class="col-md-12 table-bordered table-striped table-condensed cf">
         	<thead class="cf">
 
         	  <tr>
-
+              <th>Gambar</th>
         		<th>Nama</th>
         		<th>Hapus</th>
         	  </tr>
@@ -22,8 +16,9 @@
 
         			<tr>
                 <p class="link-nmp box-title" ></p>
-        				<!-- <td data-title="Image"><img src="<?php // echo $items['imageurl'];?>" height="100"></td> -->
+        				<td data-title="Image"><img src="<?php  echo $items['imageUrl'];?>" height="100"></td>
                 <td data-title="Nama"><a href="<?php echo base_url('product/detail/'. $items['productID'].'/'. $items['name']);?>"><?php echo $items['name']; ?></a></td>
+
         				<td data-title="Hapus"><a href='#' onClick="dellWishlist('<?php echo $items['productID']; ?>','<?php echo $items['name']; ?>')" class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></a></td>
         			</tr>
         		<?php endforeach; ?>

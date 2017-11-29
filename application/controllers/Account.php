@@ -447,8 +447,9 @@ class Account extends Web_private {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/wishlist',$this->data);
+		        $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
-              
+
 			// $this->load->view('frontend/footer',$this->data);
 	}
         public function review()
@@ -501,7 +502,7 @@ class Account extends Web_private {
 
 			$this->data['hasil'] = json_decode($konten, true);
 			$hasil = json_decode($konten, true);
-                        $this->load->view('frontend/sidenav',$this->data);
+                    
 		$this->load->view('frontend/modules/account/wishlist_item',$this->data);
 
 			// $this->load->view('frontend/footer',$this->data);
