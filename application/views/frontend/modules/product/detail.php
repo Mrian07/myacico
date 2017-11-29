@@ -618,13 +618,38 @@ xpreview="<?php echo $gmbr;?>" title="">
    $.ajax({
   url: 'https://api.myacico.co.id/myacico-service/product/productlist/detail?id='+idss,
   success: function(data) {
-      detail.push(data)
-     localStorage.setItem('product_detail', JSON.stringify(detail));
-// Retrieve the object from storage
+      //if(data['m_product_id'])
+      
+       if(detail.length == 0)
+       {
+           detail.push(data)
+       }
+       else{
+           var result = $.grep(detail, function(e){ return e.m_product_id == data['m_product_id']; });
+           if (result.length == 0) {
+                detail.push(data)
+                // not found
+              }
+           
+     /* for(var i=0;i<detail.length;i++)
+{   console.log(detail[i].m_product_id);
+    console.log("testst",data['m_product_id']);
+    if(detail[i].m_product_id == data['m_product_id'])
+    { 
+        console.log("masuk");
+         detail.push(data)
+        
+    }
+}*/
+       } 
+      localStorage.setItem('product_detail', JSON.stringify(detail));
+      
+     
+// Retrieve the object from storage m_product_id
 var retrievedObject = localStorage.getItem('product_detail');
 
-console.log('retrievedObject: ', JSON.parse(retrievedObject));
-      //console.log(data);
+//console.log('retrievedObject: ', JSON.parse(retrievedObject));
+      
   }})
 
 //localStorage.setItem('product_detail', JSON.stringify(testObject));

@@ -4,7 +4,7 @@
    cursor: default;
 }
 </style>
-<p>Dibawah ini adalah daftar buku alamat penerima pesanan. Anda bisa menambahkan alamat baru atau mengubah alamat sebelumnya dengan alamat yang lain.</p>
+<p><?php echo $lang_ket_wishlist;?></p>
 <div class="row"  style='width: 100%; margin:0 auto;'>
     <div id="no-more-tables">
         <table class="col-md-12 table-bordered table-striped table-condensed cf">
@@ -12,8 +12,8 @@
 
         	  <tr>
 
-        		<th>Nama</th>
-        		<th>Hapus</th>
+        		<th><?php echo $lang_wishlist_name;?></th>
+        		<th><?php echo $lang_wishlist_del;?></th>
         	  </tr>
 
         	</thead>
