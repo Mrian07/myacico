@@ -249,12 +249,24 @@ class Account extends Web_private {
 
 	public function riwayatStatusPesanan()
   {
+		$page=$this->uri->segment(3);
+		$startDate=$this->uri->segment(4);
+		$endDate=$this->uri->segment(5);
+
     $token = $_COOKIE['x-auth'];
-    $api2 ="transaction/list?show=transactioncount";
-    $page=$this->uri->segment(3);
-		if($page){
+		$this->data['startDate'] ='';
+		$this->data['endDate'] = '';
+
+		if($startDate!='' and $endDate!=''){
+			$api2 ="transaction/list?startdate=".$startDate."&enddate=".$endDate."&show=transactioncount";
+			$api3 ="transaction/list?itemperpage=5&startdate=".$startDate."&enddate=".$endDate."&page=".$page;
+			$this->data['startDate'] = $startDate;
+			$this->data['endDate'] = $endDate;
+		}elseif($page){
+			$api2 ="transaction/list?show=transactioncount";
 			$api3 ="transaction/list?page=".$page;
 		}else{
+			$api2 ="transaction/list?show=transactioncount";
 			$api3 = "transaction/list";
 		}
 
