@@ -9,18 +9,7 @@
 
 
 <div style='width:890px; float:left'>
-	<?php
-	foreach($listMenu as $menu_list){
-	//echo $menu_list['name'].'>';
-		--$jumlahMenu;
-	?>
-		<a href="<?php echo base_url('product/listItem/'.$menu_list['categoryId'].'/'.$menu_list['alias']);?>"><?php echo $menu_list['name']; ?></a>
-	<?php
-		if($jumlahMenu >0){
-		echo '>';
-		}
-	}
-	?>
+	
 	<?php
 	if($this->session->userdata('itemView')=='grid'){
 	$this->load->view('frontend/modules/product/product_items',$this->data);
