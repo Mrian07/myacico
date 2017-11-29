@@ -153,7 +153,7 @@ xpreview="<?php echo $gmbr;?>" title="">
           <th><span class='price'>Harga </span></th>
           <th>:</th>
         <th><span class='price'>Rp.".money($specialPrice)."</b></span></th>
-        
+
         </tr>
         <tr>
           <td> <span class='price3'>Harga Awal </span> </td>
@@ -576,9 +576,9 @@ xpreview="<?php echo $gmbr;?>" title="">
 
   <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
     <?php if($itemslide2['imageurl']){?>
-    <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
+    <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
     <?php }else{
-      echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px; width: auto' border='0'>";
+      echo"<img src='".base_url('images/general/noimage.png')."' style='height:auto; width: auto' border='0'>";
     } ?>
       <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
         <?php
