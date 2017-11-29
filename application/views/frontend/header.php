@@ -195,11 +195,26 @@ var prod_detail =  localStorage.getItem('product_detail');
 								 <div class="col-xs-8" style='font-size:10px; text-align: left; color:#4d4d4d; padding-left:0px;'>
 									  <?php if(isset($user)){ ?>
 
-											Hi. <?php echo substr($user->name,0,6); ?>
+											Hi. <span id="test"></span>
 											 <?php }else{ ?>
 												  <div><?php echo $lang_aa; ?></div>
 												  <?php } ?>
 
+													<script language="javascript">
+
+
+														function test(){
+
+															var testString = "<?php echo $user->name;?>"
+
+															var testArray = testString .split(' ');
+
+															return testArray[0];
+
+
+														}
+														document.getElementById("test").innerHTML = test();
+													</script>
 									 <div style='margin-top:-8px; '>
 										 <?php if(isset($user)){ ?>
 											 <b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
