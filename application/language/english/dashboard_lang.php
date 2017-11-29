@@ -51,6 +51,7 @@ No billing data yet, billing data is required at checkout purchase.';
 //  Wishlist
        $lang['wishlist_tittle'] ='ORDER HISTORY ';
        $lang['ket_wishlist'] ='Below is a list of Wishlist. You can add  Wishlist or delete your previous Wishlist.';
+       $lang['wishlist_pic'] ='Picture';
        $lang['wishlist_name'] ='Name';
        $lang['wishlist_del'] ='Delete';
 

@@ -1,6 +1,8 @@
 <div class="container">
 	<div class='my-bg-title'>
+
 		<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_wishlist_tittle;?>
+
 	</div>
 </div>
 <div class="container my-container-white">

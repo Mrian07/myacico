@@ -10,6 +10,7 @@
 			color:red;
 		}
 		</style>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
 		<!-- Strat Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>" />
@@ -134,7 +135,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 
 
 			<div>
-		    <img src='https://storage.googleapis.com/myacico/image/banner/bg-atas-2.png' border='0' height='35'>
+		    <img src='<?php echo base_url('images/general/bg_atas_2.png'); ?>' height="55" border='0'>
 			</div>
 			<div class='row'>
 				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
@@ -195,11 +196,26 @@ var prod_detail =  localStorage.getItem('product_detail');
 								 <div class="col-xs-8" style='font-size:10px; text-align: left; color:#4d4d4d; padding-left:0px;'>
 									  <?php if(isset($user)){ ?>
 
-											Hi. <?php echo substr($user->name,0,6); ?>
+											Hi. <span id="test"></span>
 											 <?php }else{ ?>
 												  <div><?php echo $lang_aa; ?></div>
 												  <?php } ?>
 
+													<script language="javascript">
+
+
+														function test(){
+
+															var testString = "<?php echo $user->name;?>"
+
+															var testArray = testString .split(' ');
+
+															return testArray[0];
+
+
+														}
+														document.getElementById("test").innerHTML = test();
+													</script>
 									 <div style='margin-top:-8px; '>
 										 <?php if(isset($user)){ ?>
 											 <b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /

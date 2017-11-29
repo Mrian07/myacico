@@ -230,6 +230,7 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
                 $this->data['lang_wishlist_name'] = $this->lang->line('wishlist_name');
                 $this->data['lang_wishlist_del'] = $this->lang->line('wishlist_del');
                 $this->data['lang_wishlist_tittle'] = $this->lang->line('wishlist_tittle');
+                 $this->data['lang_wishlist_pic'] = $this->lang->line('wishlist_pic');
 		//end of personal
 
     //headers
