@@ -121,14 +121,14 @@ xpreview="<?php echo $gmbr;?>" title="">
         border-bottom: 0px;
       }
       .btn-link, .btn-link:active, .btn-link:visited, .btn-link:focus{
-        background-color: #E7E7E7;
+        background-color: #FFF;
         border : 0px;
-        background: #E7E7E7;
+        background: #FFF;
         color: black;
 				font-size: 12px;
       }
       .btn-link:hover{
-        background-color: #E7E7E7;
+        background-color: #FFF;
         color:black;
       }
       .price3{
@@ -145,6 +145,7 @@ xpreview="<?php echo $gmbr;?>" title="">
           <th><span class='price'>Harga </span></th>
           <th>:</th>
         <th><span class='price'>Rp.".money($pricelist)."</b></span></th>
+        <th></th>
         </tr>";
       }else{
         echo "
@@ -152,6 +153,7 @@ xpreview="<?php echo $gmbr;?>" title="">
           <th><span class='price'>Harga </span></th>
           <th>:</th>
         <th><span class='price'>Rp.".money($specialPrice)."</b></span></th>
+        
         </tr>
         <tr>
           <td> <span class='price3'>Harga Awal </span> </td>
@@ -203,7 +205,7 @@ xpreview="<?php echo $gmbr;?>" title="">
       </a>
       <a href="mailto:?&subject=<?php echo $name;?>&body=<?php echo $url_share;?>"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
     </center>
-      <div class='detail-add-wishlist' style="display: block; background: #e7e7e7; border-radius: 5px; padding:10px;">
+      <div class='detail-add-wishlist' style="display: block; background: #ffff; border:1px solid; border-radius: 5px; padding:10px;">
           <span> <b> Kebijakan </b> </span><br/>
           <span> <b> Pengembalian </b> :  jika barang yang dikirim mengalami kerusakan atau tidak sesuai deskripsi, Anda dapat mengembalikan barang tersebut kepada kami dalam jangka waktu 7hari
 
