@@ -11,24 +11,23 @@
 		</div>
 		<div class="col-sm-9">
 
-			Sort By:
-
 			<div class="row">
-			    <div class='col-sm-5'>
-			        <div class="form-group">
-			            <div class="input-group date form_date" data-date="" data-date-format="dd/mm/yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-			                <input type='text' class="form-control" />
-                                        <input type="hidden" id="dtp_input2" name="star_date"/>
+
+			    <div class='col-sm-4'>
+			        <div class="form-group">Tanggal Awal
+			            <div class="input-group date form_date" data-date="" data-date-format="dd-mm-yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+			                <input type='text' class="form-control" id='startDate' value='<?php if(isset($startDate)){ echo$startDate; } ?>'/>
+                      <input type="hidden" id="dtp_input2" name="star_date"/>
 			                <span class="input-group-addon">
 			                    <span class="glyphicon glyphicon-calendar"></span>
 			                </span>
 			            </div>
 			        </div>
 			    </div>
-					<div class='col-sm-5'>
-			        <div class="form-group">
-			            <div class="input-group date form_date" data-date="" data-date-format="dd/mm/yyyy" data-link-field="dtp_input3" data-link-format="yyyy-mm-dd">
-			                <input type='text' class="form-control" />
+					<div class='col-sm-4'>
+			        <div class="form-group">Tanggal Akhir
+			            <div class="input-group date form_date" data-date="" data-date-format="dd-mm-yyyy" data-link-field="dtp_input3" data-link-format="yyyy-mm-dd">
+			                <input type='text' class="form-control" id='endDate' value='<?php if(isset($endDate)){ echo$endDate; } ?>'/>
 			                <input type="hidden" id="dtp_input3" name="end_date"/>
 			                <span class="input-group-addon">
 			                    <span class="glyphicon glyphicon-calendar"></span>
@@ -37,11 +36,13 @@
 			        </div>
 			    </div>
 					<div class='col-sm-2'>
-							<button type="button" class="btn btn-default">CARI</button>
+							<button type="button" class="btn btn-default" style='margin-top:27px' onclick='srcByDate()'>CARI</button>
+					</div>
+					<div class='col-sm-2' style='text-align:right;'>
+							<div style='margin-top:30px'>Total list: <?php echo $total_list; ?></div>
 					</div>
 			</div>
 
-			<!-- <div class='listRiwayatStatusPesanan'><center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center></div> -->
 
 			<style>
 			.disabled {
@@ -49,9 +50,6 @@
 			   cursor: default;
 			}
 			</style>
-
-			<p align="center"><?php echo $lang_riw; ?></p>
-
 
 			<div class="row"  style='width: 100%; margin:0 auto;'>
 			    <div id="no-more-tables">
@@ -115,53 +113,113 @@
 
 <div class='my-paging'>
     <?php
-    //die(print_r($page));
-    if($page>1){
-      $previous=$page-1;
-      $first =  site_url('account/riwayatStatusPesanan/1');
-      $prev =  site_url('account/riwayatStatusPesanan/'.$previous);
-      echo "<a href=$first class='my-paging-btn'><< First</a> ";
-      echo "<a href=$prev class='my-paging-btn'>< Previous</a> ";
-    }else{
-      echo"<< First < Previous ";
-    }
+    //paging menggunakan tanggal
+		if($startDate and $endDate){
 
-    //angka awal
-    $angka = ($page > 3 ? "...":"");
-    for($i=$page-1;$i<$page;$i++){
-      if($i<1)
-        continue;
-        $hal =  site_url('account/riwayatStatusPesanan/'.$i);
-        $angka .="<a href=$hal class='my-paging-list'>$i</a>";
 
-    }
+			if($page>1){
+				$previous=$page-1;
+				$first =  site_url('account/riwayatStatusPesanan/1/'.$startDate.'/'.$endDate);
+				$prev =  site_url('account/riwayatStatusPesanan/'.$previous.'/'.$startDate.'/'.$endDate);
+				echo "<a href=$first class='my-paging-btn'><< First</a> ";
+				echo "<a href=$prev class='my-paging-btn'>< Previous</a> ";
+			}else{
+				echo"<< First < Previous ";
+			}
 
-    //angka tengah
-    $angka.="<span class='my-paging-list-on'>$page</span>";
-    for($i=$page+1;$i<($page+3);$i++){
-      if($i>$jpage)
-        break;
-        $hal =  site_url('account/riwayatStatusPesanan/'.$i);
-        $angka .="<a href=$hal class='my-paging-list'>$i</a>";
-    }
+			//angka awal
+			$angka = ($page > 3 ? "...":"");
+			for($i=$page-1;$i<$page;$i++){
+				if($i<1)
+					continue;
+					$hal =  site_url('account/riwayatStatusPesanan/'.$i.'/'.$startDate.'/'.$endDate);
+					$angka .="<a href=$hal class='my-paging-list'>$i</a>";
 
-    //angka akhir
-    $hal =  site_url('account/riwayatStatusPesanan/'.$jpage);
-    $angka .=($page+2<$jpage ? "...<a href=$hal class='my-paging-list'>$jpage</a>":"");
+			}
 
-    //cetak semua angka
-    echo "$angka";
+			//angka tengah
+			$angka.="<span class='my-paging-list-on'>$page</span>";
+			for($i=$page+1;$i<($page+3);$i++){
+				if($i>$jpage)
+					break;
+					$hal =  site_url('account/riwayatStatusPesanan/'.$i.'/'.$startDate.'/'.$endDate);
+					$angka .="<a href=$hal class='my-paging-list'>$i</a>";
+			}
 
-    //next
-    if($page<$jpage){
-      $next = $page+1;
-      $next =  site_url('account/riwayatStatusPesanan/'.$next);
-      $last =  site_url('account/riwayatStatusPesanan/'.$jpage);
-      echo " <a href=$next class='my-paging-btn'>Next >></a>";
-      echo " <a href=$last class='my-paging-btn'>Last ></a>";
-    }else{
-      echo"Next >  Last >>";
-    }
+			//angka akhir
+			$hal =  site_url('account/riwayatStatusPesanan/'.$jpage.'/'.$startDate.'/'.$endDate);
+			$angka .=($page+2<$jpage ? "...<a href=$hal class='my-paging-list'>$jpage</a>":"");
+
+			//cetak semua angka
+			echo "$angka";
+
+			//next
+			if($page<$jpage){
+				$next = $page+1;
+				$next =  site_url('account/riwayatStatusPesanan/'.$next.'/'.$startDate.'/'.$endDate);
+				$last =  site_url('account/riwayatStatusPesanan/'.$jpage.'/'.$startDate.'/'.$endDate);
+				echo " <a href=$next class='my-paging-btn'>Next >></a>";
+				echo " <a href=$last class='my-paging-btn'>Last ></a>";
+			}else{
+				echo"Next >  Last >>";
+			}
+
+		}else{
+
+			//paging tanpa tanggal
+			if($page>1){
+				$previous=$page-1;
+				$first =  site_url('account/riwayatStatusPesanan/1');
+				$prev =  site_url('account/riwayatStatusPesanan/'.$previous);
+				echo "<a href=$first class='my-paging-btn'><< First</a> ";
+				echo "<a href=$prev class='my-paging-btn'>< Previous</a> ";
+			}else{
+				echo"<< First < Previous ";
+			}
+
+			//angka awal
+			$angka = ($page > 3 ? "...":"");
+			for($i=$page-1;$i<$page;$i++){
+				if($i<1)
+					continue;
+					$hal =  site_url('account/riwayatStatusPesanan/'.$i);
+					$angka .="<a href=$hal class='my-paging-list'>$i</a>";
+
+			}
+
+			//angka tengah
+			$angka.="<span class='my-paging-list-on'>$page</span>";
+			for($i=$page+1;$i<($page+3);$i++){
+				if($i>$jpage)
+					break;
+					$hal =  site_url('account/riwayatStatusPesanan/'.$i);
+					$angka .="<a href=$hal class='my-paging-list'>$i</a>";
+			}
+
+			//angka akhir
+			$hal =  site_url('account/riwayatStatusPesanan/'.$jpage);
+			$angka .=($page+2<$jpage ? "...<a href=$hal class='my-paging-list'>$jpage</a>":"");
+
+			//cetak semua angka
+			echo "$angka";
+
+			//next
+			if($page<$jpage){
+				$next = $page+1;
+				$next =  site_url('account/riwayatStatusPesanan/'.$next);
+				$last =  site_url('account/riwayatStatusPesanan/'.$jpage);
+				echo " <a href=$next class='my-paging-btn'>Next >></a>";
+				echo " <a href=$last class='my-paging-btn'>Last ></a>";
+			}else{
+				echo"Next >  Last >>";
+			}
+
+
+		}
+
+
+
+
 
 
 
@@ -170,13 +228,57 @@
 		</div>
 	</div>
 </div>
+<script>
+function srcByDate(){
+	var startDate = $('#startDate').val();
+	var endDate = $('#endDate').val();
+	var page = "<?php if($page){echo$page;}else{echo"1";} ?>";
+	if(startDate==""){
+
+		$.dialog({
+			title: 'Alert!',
+			content: 'Masukan tanggal awal dengan benar.',
+			autoClose: 'close|50000',
+			buttons: {
+				close: function () {
+					//$.alert('action is canceled');
+				}
+			},
+			closeIcon: true,
+			closeIconClass: 'fa fa-close'
+
+		});
+
+	}else if(endDate==""){
+
+		$.dialog({
+			title: 'Alert!',
+			content: 'Masukan tanggal akhir dengan benar.',
+			autoClose: 'close|50000',
+			buttons: {
+				close: function () {
+					//$.alert('action is canceled');
+				}
+			},
+			closeIcon: true,
+			closeIconClass: 'fa fa-close'
+
+		});
+
+	}else{
+		location.href = base_url+'account/riwayatStatusPesanan/'+page+'/'+startDate+'/'+endDate;
+	}
+
+
+}
+</script>
 
 <!-- <script>
 $(document).ready(function() {
 
 	$.ajax
 	({
-	url: "<?php echo site_url('account/listRiwayatStatusPesanan'); ?>",
+	url: "<?php // echo site_url('account/listRiwayatStatusPesanan'); ?>",
 	success:function(html){
 			$(".listRiwayatStatusPesanan").html(html);
 		}

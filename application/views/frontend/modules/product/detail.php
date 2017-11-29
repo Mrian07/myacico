@@ -32,6 +32,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <link type="text/css" rel="stylesheet" media="all" href="<?php echo base_url('assets/productpopup/magnific-popup/css/magnific-popup.css');?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.carousel.css');?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.theme.css');?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/detail-product.css');?>">
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/magnific-popup/js/magnific-popup.js');?>"></script>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
@@ -120,24 +121,51 @@ xpreview="<?php echo $gmbr;?>" title="">
         border-bottom: 0px;
       }
       .btn-link, .btn-link:active, .btn-link:visited, .btn-link:focus{
-        background-color: #E7E7E7;
+        background-color: #FFF;
         border : 0px;
-        background: #E7E7E7;
+        background: #FFF;
         color: black;
-				font-size: 14px;
+				font-size: 12px;
       }
       .btn-link:hover{
-        background-color: #E7E7E7;
+        background-color: #FFF;
         color:black;
+      }
+      .price3{
+
+        color:black;
+        font-size: 10px;
       }
       </style>
       <table class="table" border="0">
     <thead>
-      <tr>
-        <th><span class='price'>Harga </span></th>
-        <th>:</th>
-        <th><span class='price'>Rp.<?php echo money($pricelist);  ?></b></span></th>
-      </tr>
+      <?php
+      if($specialPrice == 0 ){
+        echo "<tr>
+          <th><span class='price'>Harga </span></th>
+          <th>:</th>
+        <th><span class='price'>Rp.".money($pricelist)."</b></span></th>
+        <th></th>
+        </tr>";
+      }else{
+        echo "
+        <tr>
+          <th><span class='price'>Harga </span></th>
+          <th>:</th>
+        <th><span class='price'>Rp.".money($specialPrice)."</b></span></th>
+
+        </tr>
+        <tr>
+          <td> <span class='price3'>Harga Awal </span> </td>
+            <td> : </td>
+
+            <td> <span class='price3'><s>Rp.".money($pricelist)."</s></b></span> </td>
+
+        </tr>";
+      }
+      ?>
+
+
     </thead>
     <tbody>
       <tr>
@@ -171,13 +199,13 @@ xpreview="<?php echo $gmbr;?>" title="">
     </div>
 
     <div class="col-sm-6">
-      <center>
+      <center><br/>
       Bagikan : <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url_share;?>" target="_blank">
       <i class="fa fa-facebook" aria-hidden="true"></i>
       </a>
       <a href="mailto:?&subject=<?php echo $name;?>&body=<?php echo $url_share;?>"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
     </center>
-      <div class='detail-add-wishlist' style="display: block; background: #e7e7e7; border-radius: 5px; padding:10px;">
+      <div class='detail-add-wishlist' style="display: block; background: #ffff; border:1px solid; border-radius: 5px; padding:10px;">
           <span> <b> Kebijakan </b> </span><br/>
           <span> <b> Pengembalian </b> :  jika barang yang dikirim mengalami kerusakan atau tidak sesuai deskripsi, Anda dapat mengembalikan barang tersebut kepada kami dalam jangka waktu 7hari
 
@@ -217,16 +245,16 @@ xpreview="<?php echo $gmbr;?>" title="">
 
 
 
-                                                  <button type="button" class="btn btn-danger btn-lg" style="border-radius: 5px; padding: 9px 60px; margin-bottom:7px;"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+                                                  <button type="button" class="btn btn-danger btn-lg" style="border-radius: 5px; padding: 9px 60px; margin-bottom:7px;"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" style="font-size:15px;" aria-hidden="true"> </i> <b style="font-size:15px;"> BELI</b> SEKARANG</button>
 
                                                                   <?php
                     if($isWishList =='Y')
                     {
                 ?>
-                                                              <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
+                                                              <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart-o" style="color:#dffd54;" aria-hidden="true"></i> Tambahkan Ke Wishlist</button>
               <?php }else{
              ?>
-                 <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Add Wishlist</button>
+                 <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart-o" aria-hidden="true"></i> Tambahkan Ke Wishlist</button>
 
               <?php }
               ?>
@@ -511,6 +539,10 @@ xpreview="<?php echo $gmbr;?>" title="">
 
               ?></p>
   </div>
+  <div id="menu4" class="tab-pane fade">
+
+<p></p>
+</div>
 </div>
 
 </div>
@@ -544,9 +576,9 @@ xpreview="<?php echo $gmbr;?>" title="">
 
   <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
     <?php if($itemslide2['imageurl']){?>
-    <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
+    <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
     <?php }else{
-      echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px; width: auto' border='0'>";
+      echo"<img src='".base_url('images/general/noimage.png')."' style='height:auto; width: auto' border='0'>";
     } ?>
       <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
         <?php
@@ -568,6 +600,7 @@ xpreview="<?php echo $gmbr;?>" title="">
 
   </div>
   <?php $n++;  } ?>
+
 </div>
 </div>
 </div>
@@ -579,9 +612,9 @@ xpreview="<?php echo $gmbr;?>" title="">
    var rate = "<?php  echo $rate;?>";
    var star_rate = "<?php  echo $ik;?>";
     var idss = "<?php echo $local_strg;?>";
-  
+
   var detail = JSON.parse(localStorage.getItem('product_detail'))
-   
+
    $.ajax({
   url: 'https://api.myacico.co.id/myacico-service/product/productlist/detail?id='+idss,
   success: function(data) {
@@ -593,7 +626,7 @@ var retrievedObject = localStorage.getItem('product_detail');
 console.log('retrievedObject: ', JSON.parse(retrievedObject));
       //console.log(data);
   }})
-   
+
 //localStorage.setItem('product_detail', JSON.stringify(testObject));
 // Retrieve the object from storage
 //var retrievedObject = localStorage.getItem('testObject');
@@ -1037,9 +1070,9 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 
 
     <script>
-       
-     
- 
+
+
+
     $(document).ready(function() {
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
@@ -1047,8 +1080,7 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
         itemsDesktop : [1199,3],
         itemsDesktopSmall : [979,3]
       });
- 
+
 
   });
   </script>
- 

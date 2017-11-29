@@ -172,6 +172,35 @@ class Account extends Web_private {
 			}
 		}
 
+
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "aduser/getaddress?addresstype";
+		$url = api_base_url($api);
+
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+
+		//untuk cek expired token
+		$hasil = json_decode($konten, true);
+		if(isset($hasil['status'])){
+			$this->logout();
+		}else{
+			$this->data['hasil'] = json_decode($konten, true);
+		}
+
+		if($hasil = json_decode($konten, true)){
+			$this->data['jmlData'] = '1';
+		}else{
+			$this->data['jmlData'] = '0';
+		}
+
 		$this->data['active_bukuAlamat'] = "class='active'";
 		$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
 		$this->load->view('frontend/header',$this->data);
@@ -249,77 +278,43 @@ class Account extends Web_private {
 
 	public function riwayatStatusPesanan()
   {
+		$page=$this->uri->segment(3);
+		$startDate=$this->uri->segment(4);
+		$endDate=$this->uri->segment(5);
 
-		$this->data['token'] = $_COOKIE['x-auth'];
-		$token = $_COOKIE['x-auth'];
-		 $api = "transaction/list";
+    $token = $_COOKIE['x-auth'];
+		$this->data['startDate'] ='';
+		$this->data['endDate'] = '';
 
-              /*  if($page){
-			$api = "product/productall/".$id."?itemperpage=8&page=".$page."&ob=".$short;
-			$api2 = "product/productall/".$id."?itemperpage=8&page=".$page."&show=productcount";
-		}elseif($short){
-			$api = "product/productall/".$id."?ob=".$short;
-			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
+		if($startDate!='' and $endDate!=''){
+			$api2 ="transaction/list?startdate=".$startDate."&enddate=".$endDate."&show=transactioncount";
+			$api3 ="transaction/list?itemperpage=5&startdate=".$startDate."&enddate=".$endDate."&page=".$page;
+			$this->data['startDate'] = $startDate;
+			$this->data['endDate'] = $endDate;
+		}elseif($page){
+			$api2 ="transaction/list?show=transactioncount";
+			$api3 ="transaction/list?page=".$page;
 		}else{
-			$api = "product/productall/".$id;
-			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
+			$api2 ="transaction/list?show=transactioncount";
+			$api3 = "transaction/list";
 		}
-		*/
-		$url = api_base_url($api);
+
+    $url2 = api_base_url($api2);
+    $url3 = api_base_url($api3);
+
+    $options = ["http" => [
+    "method" => "GET",
+    "header" => ["token: " . $token,
+    "Content-Type: application/json"],
+    ]];
 
 
-		$options = ["http" => [
-		"method" => "GET",
-		"header" => ["token: " . $token,
-		"Content-Type: application/json"],
-		]];
+    $context = stream_context_create($options);
+    $konten2 = file_get_contents($url2, false, $context);
 
+    $jdata =json_decode($konten2)->transactionCount;
 
-		$context = stream_context_create($options);
-		$konten = file_get_contents($url, false, $context);
-
-
-		$this->data['hasil'] = json_decode($konten, true);
-
-		// if($hasil = json_decode($konten, true)){
-		// 	$this->load->view('frontend/modules/account/list_riwayat_status_pesanan',$this->data);
-		// }else{
-		// 	echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'>List riwayat status pesanan masih kosong Silahkan Belanja <a href='https://dev.myacico.co.id/'>Visit Home</a></div>";
-		// }
-
-
-      $token = $_COOKIE['x-auth'];
-      $api2 ="transaction/list?show=transactioncount";
-
-
-			$url = api_base_url($api);
-
-      $page=$this->uri->segment(3);
-			if($page){
-				$api3 ="transaction/list?page=".$page;
-			}else{
-				$api3 ="transaction/list?show=pageCount";
-			}
-
-
-      $url2 = api_base_url($api2);
-          $url3 = api_base_url($api3);
-        // 
-				// echo"$api3<p>";
-
-          $options = ["http" => [
-          "method" => "GET",
-          "header" => ["token: " . $token,
-          "Content-Type: application/json"],
-          ]];
-
-
-      $context = stream_context_create($options);
-      $konten2 = file_get_contents($url2, false, $context);
-      //
-      $jdata =json_decode($konten2)->transactionCount;
-
-       $batas = '5';
+     $batas = '5';
 		if(empty($page)){
 			$posisi = 0;
 			$page =1;
@@ -327,10 +322,12 @@ class Account extends Web_private {
 			$posisi = ($page-1)*$batas;
 		}
 		$this->data['page'] = $page;
-
+		$this->data['total_list'] = $jdata;
     $this->data['posisi'] = $posisi;
     $this->data['jpage'] = ceil($jdata/$batas);
     $konten3 = file_get_contents($url3, false, $context);
+
+		$this->data['hasil'] = json_decode($konten3, true);
 
 		$this->data['active_riwayatStatusPesanan'] = "class='active'";
 		$this->data['title_web'] = "Myacico.co.id - Riwayat Status Pasaran";

@@ -166,15 +166,15 @@ console.log("checkout...");
 $(document).ready(function()
 
 {
-  console.log('testnih123')
-  window.onload = function() {
-    console.log('testnih1234')
-      if(!window.location.hash) {
-            console.log('testnih12345')
-          window.location = window.location + '#loaded';
-          window.location.reload();
-      }
-  }
+  // console.log('testnih123')
+  // window.onload = function() {
+  //   console.log('testnih1234')
+  //     if(!window.location.hash) {
+  //           console.log('testnih12345')
+  //         window.location = window.location + '#loaded';
+  //         window.location.reload();
+  //     }
+  // }
 	var totaltrans = $('#SubtotalOrder').val();
 	$('#grandtotalall').html(addPeriod(totaltrans));
     	var idkel = <?php

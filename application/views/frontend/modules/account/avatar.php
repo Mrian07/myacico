@@ -76,11 +76,27 @@ width: 100%;
 </div>
 
 <script>
+function readURL(input) {
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('#img-upload').attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$("#file").change(function() {
+  readURL(this);
+});
 $(document).ready( function() {
   var token1 = document.cookie.split('x-auth=')[1].split(';').shift();
-console.log('ini data',token1);
+
   var apiurl = api_base_url +'/aduser/upload/avatar';
-  console.log('ini apaan sih',apiurl)
+
 // $.ajaxSetup({
 //   error: function(){
 //     alert('Image Berhasil Di Upload');
