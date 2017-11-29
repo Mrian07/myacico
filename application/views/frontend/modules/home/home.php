@@ -270,9 +270,10 @@ h6{
   text-overflow: ellipsis;
   font-weight: bold;
   text-align: center;
-  color: #8a0202;
+  color: #b3afaf;
   font-size: 12px;
-  height:20px
+  height:20px;
+  margin-bottom: 12px;
 
 }
 .box-title3{

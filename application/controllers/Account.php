@@ -448,7 +448,7 @@ class Account extends Web_private {
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/wishlist',$this->data);
 		$this->load->view('frontend/footer',$this->data);
-                $this->load->view('frontend/sidenav',$this->data);
+              
 			// $this->load->view('frontend/footer',$this->data);
 	}
         public function review()
