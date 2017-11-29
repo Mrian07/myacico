@@ -24,7 +24,7 @@
     <div class="col-sm-6">
      <input type="text" id="email" name="email" class="form-control mandatory" placeholder="<?php echo$lang_email_add;?>">
   </div>
-</div>
+</div> <br>
 <div class="row">
     <div class="col-sm-6">
      <input type="text" id="nama" name="nama" class="form-control mandatory" placeholder="<?php echo$lang_name;?>">
@@ -32,7 +32,7 @@
     <div class="col-sm-6">
      <input type="text" id="phone" name="phone" class="form-control mandatory" placeholder="<?php echo$lang_phone;?>">
   </div>
-</div>
+</div> <br>
 <div class="row">
     <div class="col-sm-6">
      <input type="text" id="id_order" name="id_order" class="form-control mandatory" placeholder="<?php echo$lang_order_id;?>">
@@ -40,12 +40,13 @@
     <div class="col-sm-6">
      <input type="text" id="company" name="company" class="form-control mandatory" placeholder="<?php echo$lang_company;?>">
   </div>
-</div>
+</div> <br>
 <div class="row">
     <div class="col-sm-12">
-    <textarea class="form-control mandatory" id="message" name="message" rows="3" placeholder="<?php echo$lang_msg;?>"></textarea>
+    <textarea class="form-control mandatory" id="message" name="message" rows="3" style="width: 440px; height: 200px;" placeholder="<?php echo$lang_msg;?>"></textarea>
   </div>
 </div>
+        <br>
 <div class="col-sm-12 text-center">
     <input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
 </div>
@@ -60,7 +61,7 @@
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
 var apiurl_comp = baseApiUrl + '/mail/aftersales';
-    console.log('asd',apiurl);
+    console.log('asd',apiurl_comp);
 var data = {};
 $(document).ready(function() {
     
@@ -170,7 +171,7 @@ $(document).ready(function() {
 			if(data.status==1){
         // console.log('asdasd',data.status);
 
-				location.href="<?php echo site_url('customer/afterSales/id=1'); ?>";
+				location.href="<?php echo site_url('customer/AfterSalesSent'); ?>";
 			}else{
         $.alert({title:'Alert', content: ' pesan gagal dikirim silahkan coba kembali !'});
         $('#spinner_img').hide();

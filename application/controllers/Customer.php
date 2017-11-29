@@ -115,6 +115,14 @@ public function afterSales()
 		$this->load->view('frontend/modules/customer/contact/success_contact.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
+        public function AfterSalesSent()
+	{
+		$this->data['title_web'] = "Myacico.com - Create Account Business";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/customer/contact/after_sales_sukses.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 
 	public function government()
     {
