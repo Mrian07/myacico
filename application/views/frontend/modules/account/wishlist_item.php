@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <style>
 .disabled {
    pointer-events: none;
