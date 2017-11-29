@@ -54,7 +54,7 @@
   position: absolute;
   z-index:289;
   background:#ffffff;
-  width:90%;
+  width:87%;
 }
 
 #title_top{
@@ -314,9 +314,9 @@
 
 @media screen and (max-width: 1680px) {
 
-  .productSrc
+  #productSrc
   {
-    width:990px;
+    width:1010px;
   }
 
   .link-head{
@@ -339,9 +339,9 @@
 
 @media screen and (max-width: 1600px) {
 
-  .productSrc
+  #productSrc
   {
-    width:935px;
+    width:955px;
   }
 
   .link-head{
@@ -377,9 +377,9 @@
     width:20%; float:left; text-align:right;
   }
 
-  .productSrc
+  #productSrc
   {
-    width:778px;
+    width:810px;
   }
 
   .link-head{
@@ -402,9 +402,9 @@
 }
 
 @media screen and (max-width: 1400px) {
-  .productSrc
+  #productSrc
   {
-    width:754px;
+    width:782px;
   }
 
   .link-head{
@@ -426,7 +426,7 @@
 }
 
 @media screen and (max-width: 1366px) {
-  .productSrc
+  #productSrc
   {
     width:730px;
   }
@@ -450,7 +450,7 @@
 }
 
 @media screen and (max-width: 1360px) {
-  .productSrc
+  #productSrc
   {
     width:725px;
   }
@@ -488,9 +488,9 @@
   }
 
   /*Serach product*/
-  .productSrc
+  #productSrc
   {
-    width:520px;
+    width:635px;
   }
 }
 
@@ -509,7 +509,7 @@
   }
 
   /*Serach product*/
-  .productSrc
+  #productSrc
   {
     width:420px;
   }
