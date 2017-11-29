@@ -124,20 +124,45 @@ xpreview="<?php echo $gmbr;?>" title="">
         border : 0px;
         background: #E7E7E7;
         color: black;
-				font-size: 14px;
+				font-size: 12px;
       }
       .btn-link:hover{
         background-color: #E7E7E7;
         color:black;
       }
+      .price3{
+
+        color:black;
+        font-size: 10px;
+      }
       </style>
       <table class="table" border="0">
     <thead>
-      <tr>
-        <th><span class='price'>Harga </span></th>
-        <th>:</th>
-        <th><span class='price'>Rp.<?php echo money($pricelist);  ?></b></span></th>
-      </tr>
+      <?php
+      if($specialPrice == 0 ){
+        echo "<tr>
+          <th><span class='price'>Harga </span></th>
+          <th>:</th>
+        <th><span class='price'>Rp.".money($pricelist)."</b></span></th>
+        </tr>";
+      }else{
+        echo "
+        <tr>
+          <th><span class='price'>Harga </span></th>
+          <th>:</th>
+        <th><span class='price'>Rp.".money($specialPrice)."</b></span></th>
+        </tr>
+        <tr>
+          <td> <span class='price3'>Harga Awal </span> </td>
+            <td> : </td>
+
+            <td> <span class='price3'><s>Rp.".money($pricelist)."</s></b></span> </td>
+
+        </tr>";
+      }
+      ?>
+
+
     </thead>
     <tbody>
       <tr>
@@ -171,7 +196,7 @@ xpreview="<?php echo $gmbr;?>" title="">
     </div>
 
     <div class="col-sm-6">
-      <center>
+      <center><br/>
       Bagikan : <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url_share;?>" target="_blank">
       <i class="fa fa-facebook" aria-hidden="true"></i>
       </a>
@@ -511,6 +536,10 @@ xpreview="<?php echo $gmbr;?>" title="">
 
               ?></p>
   </div>
+  <div id="menu4" class="tab-pane fade">
+
+<p></p>
+</div>
 </div>
 
 </div>
@@ -568,6 +597,7 @@ xpreview="<?php echo $gmbr;?>" title="">
 
   </div>
   <?php $n++;  } ?>
+
 </div>
 </div>
 </div>
@@ -579,9 +609,9 @@ xpreview="<?php echo $gmbr;?>" title="">
    var rate = "<?php  echo $rate;?>";
    var star_rate = "<?php  echo $ik;?>";
     var idss = "<?php echo $local_strg;?>";
-  
+
   var detail = JSON.parse(localStorage.getItem('product_detail'))
-   
+
    $.ajax({
   url: 'https://api.myacico.co.id/myacico-service/product/productlist/detail?id='+idss,
   success: function(data) {
@@ -593,7 +623,7 @@ var retrievedObject = localStorage.getItem('product_detail');
 console.log('retrievedObject: ', JSON.parse(retrievedObject));
       //console.log(data);
   }})
-   
+
 //localStorage.setItem('product_detail', JSON.stringify(testObject));
 // Retrieve the object from storage
 //var retrievedObject = localStorage.getItem('testObject');
@@ -1037,9 +1067,9 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 
 
     <script>
-       
-     
- 
+
+
+
     $(document).ready(function() {
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
@@ -1047,8 +1077,7 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
         itemsDesktop : [1199,3],
         itemsDesktopSmall : [979,3]
       });
- 
+
 
   });
   </script>
- 
