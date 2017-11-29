@@ -36,7 +36,7 @@
 				$total = 0;
 				$totalWeight=0;
 				foreach($hasil as $items):?>
-		
+
 				<tr>
 					<td data-th="Product">
 						<img src="<?php echo $items['imageurl']; ?>" alt="<?php echo $items['name']; ?>" class="img-responsive" width='100'/>
@@ -48,6 +48,7 @@
 					<td data-th="Subtotal" class="text-center">Rp.<?php echo money($items['subtotal']); ?></td>
 					<td class="actions" data-th="">
 						<?php echo anchor('cart', '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'); ?>
+						<?php echo $items['totalWeight']; ?>
 					</td>
 				</tr>
 				<?php
