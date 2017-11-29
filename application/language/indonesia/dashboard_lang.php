@@ -43,5 +43,11 @@ $lang['add_pho'] ='Telepon	';
        $lang['fiedl_order'] ='Nomor Pesanan';
     //end of history
 //end of buku alamat
-
+//  Wishlist
+       $lang['wishlist_tittle'] ='RIWAYAT PESANAN ';
+       $lang['ket_wishlist'] ='Dibawah ini adalah daftar <i>Wishlist</i>. Anda bisa menambahkan <i>Wishlist</i> atau menghapus <i>Wishlist</i> anda sebelumnya.';
+        $lang['wishlist_pic'] ='Gambar';
+       $lang['wishlist_name'] ='Nama';
+       $lang['wishlist_del'] ='Hapus';
+      
  ?>

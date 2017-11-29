@@ -518,9 +518,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
   <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
     <?php if($itemslide2['imageurl']){?>
-    <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
+    <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
     <?php }else{
-      echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px; width: auto' border='0'>";
+      echo"<img src='".base_url('images/general/noimage.png')."' style='height:auto; width: auto' border='0'>";
     } ?>
       <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
         <?php
@@ -560,13 +560,38 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
    $.ajax({
   url: 'https://api.myacico.co.id/myacico-service/product/productlist/detail?id='+idss,
   success: function(data) {
-      detail.push(data)
-     localStorage.setItem('product_detail', JSON.stringify(detail));
-// Retrieve the object from storage
+      //if(data['m_product_id'])
+      
+       if(detail.length == 0)
+       {
+           detail.push(data)
+       }
+       else{
+           var result = $.grep(detail, function(e){ return e.m_product_id == data['m_product_id']; });
+           if (result.length == 0) {
+                detail.push(data)
+                // not found
+              }
+           
+     /* for(var i=0;i<detail.length;i++)
+{   console.log(detail[i].m_product_id);
+    console.log("testst",data['m_product_id']);
+    if(detail[i].m_product_id == data['m_product_id'])
+    { 
+        console.log("masuk");
+         detail.push(data)
+        
+    }
+}*/
+       } 
+      localStorage.setItem('product_detail', JSON.stringify(detail));
+      
+     
+// Retrieve the object from storage m_product_id
 var retrievedObject = localStorage.getItem('product_detail');
 
-console.log('retrievedObject: ', JSON.parse(retrievedObject));
-      //console.log(data);
+//console.log('retrievedObject: ', JSON.parse(retrievedObject));
+      
   }})
 
 //localStorage.setItem('product_detail', JSON.stringify(testObject));

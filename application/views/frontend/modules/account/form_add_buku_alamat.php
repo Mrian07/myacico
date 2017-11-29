@@ -45,7 +45,7 @@
 					</div>
           <div class="form-group">
           <label><?php echo $field_atasnama; ?></label>
-          <input type="text" id="atas_name" name="name" class="form-control mandatory"/>
+          <input type="text" id="atas_name" name="atas_name" class="form-control mandatory"/>
 
           </div>
 					<div class="form-group">
@@ -207,8 +207,7 @@ $.ajax({
     var address_name = $("#address_name").val();
     var address1 = $("#address1").val();
 
-    var address3 = $("#address3").val();
-    var address4 = $("#address4").val();
+
     var postal = $("#postal").val();
     var district_id = $("#district_id").val();
     var village_id = $("#village_id").val();
@@ -217,14 +216,74 @@ $.ajax({
     var ispayfrom = $("#ispayfrom").val();
     var isremitto = $("#isremitto").val();
 
+		if(name ===''){
+						$.alert({title:'Alert', content: ' Atas Nama tidak boleh kosong'});
+						$('#spinner_img').hide();
+						$('#submit_btn').val('Kirim').removeClass('disabled');
+						$('.mandatory').prop('disabled', false);
+						return false;
+					}
+					if(phone ===''){
+									$.alert({title:'Alert', content: 'handphone tidak boleh kosong'});
+									$('#spinner_img').hide();
+									$('#submit_btn').val('Kirim').removeClass('disabled');
+									$('.mandatory').prop('disabled', false);
+									return false;
+								}
+					if(phone2 ===''){
+									$.alert({title:'Alert', content: ' Telepon tidak boleh kosong'});
+									$('#spinner_img').hide();
+									$('#submit_btn').val('Kirim').removeClass('disabled');
+									$('.mandatory').prop('disabled', false);
+									return false;
+								}
+								if(address_name ===''){
+												$.alert({title:'Alert', content: 'Status Alamat tidak boleh kosong'});
+												$('#spinner_img').hide();
+												$('#submit_btn').val('Kirim').removeClass('disabled');
+												$('.mandatory').prop('disabled', false);
+												return false;
+											}
+											if(address1 ===''){
+															$.alert({title:'Alert', content: 'Alamat tidak boleh kosong'});
+															$('#spinner_img').hide();
+															$('#submit_btn').val('Kirim').removeClass('disabled');
+															$('.mandatory').prop('disabled', false);
+															return false;
+														}
+														if(postal ===''){
+																		$.alert({title:'Alert', content: 'Kode Post tidak boleh kosong'});
+																		$('#spinner_img').hide();
+																		$('#submit_btn').val('Kirim').removeClass('disabled');
+																		$('.mandatory').prop('disabled', false);
+																		return false;
+																	}
+																	if(district_id ===''){
+																					$.alert({title:'Alert', content: 'Kecamatan tidak boleh kosong'});
+																					$('#spinner_img').hide();
+																					$('#submit_btn').val('Kirim').removeClass('disabled');
+																					$('.mandatory').prop('disabled', false);
+																					return false;
+																				}
+																				if(village_id ===''){
+																								$.alert({title:'Alert', content: 'Kelurahaan tidak boleh kosong'});
+																								$('#spinner_img').hide();
+																								$('#submit_btn').val('Kirim').removeClass('disabled');
+																								$('.mandatory').prop('disabled', false);
+																								return false;
+																							}
+
+
+
+
+
     data.name = name;
     data.phone = phone;
     data.phone2 = phone2;
     data.address_name = address_name;
     data.address1 = address1;
 
-    data.address3 = address3;
-    data.address4 = address4;
+
     data.postal = postal;
     data.c_country_id = negara;
     data.district_id = district_id;
@@ -242,21 +301,21 @@ $.ajax({
     //  content: 'Alamat Baru Berhasil di tambahkan',
     // });
 //      alert(r.message);
-      //console.log('OK:', r.status);
+
 			$("#name").val(null);
 			$("#phone").val(null);
 			$("#phone2").val(null);
 			$("#address_name").val(null);
 			$("#address1").val(null);
 
-			$("#address3").val(null);
-			$("#address4").val(null);
+
 			$("#postal").val(null);
 			$("#district_id").val(null);
 			$("#isbillto").val(null);
 			$("#isshipto").val(null);
 			$("#ispayfrom").val(null);
 		  $("#isremitto").val(null);
+			  console.log('OK:', r.status);
 
       window.location.replace(base_url+"/account/bukuAlamat/1");
 
@@ -276,17 +335,21 @@ var error = function(er){
     content: 'koneksi tidak berhasil, silahkan coba lagi!',
   });
 };
-    // do validation
-    var form_ok = true;
-    $('.mandatory').each(function(){
-      if($(this).val()==''){
-        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
-        // onContentReady: function(){$(this).focus();}
-        form_ok =false;
-        return false;
-      }
 
-    });
+
+
+
+    // do validation
+    // var form_ok = true;
+    // $('.mandatory').each(function(){
+    //   if($(this).val()==''){
+    //     $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
+    //     // onContentReady: function(){$(this).focus();}
+    //     form_ok = false;
+    //     return false;
+    //   }
+    //
+    // });
 
 
   });
