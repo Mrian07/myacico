@@ -242,16 +242,16 @@ xpreview="<?php echo $gmbr;?>" title="">
 
 
 
-                                                  <button type="button" class="btn btn-danger btn-lg" style="border-radius: 5px; padding: 9px 60px; margin-bottom:7px;"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+                                                  <button type="button" class="btn btn-danger btn-lg" style="border-radius: 5px; padding: 9px 60px; margin-bottom:7px;"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" style="font-size:15px;" aria-hidden="true"> </i> <b style="font-size:15px;"> BELI</b> SEKARANG</button>
 
                                                                   <?php
                     if($isWishList =='Y')
                     {
                 ?>
-                                                              <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
+                                                              <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart-o" style="color:#dffd54;" aria-hidden="true"></i> Tambahkan Ke Wishlist</button>
               <?php }else{
              ?>
-                 <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart" aria-hidden="true"></i> Add Wishlist</button>
+                 <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart-o" aria-hidden="true"></i> Tambahkan Ke Wishlist</button>
 
               <?php }
               ?>
