@@ -67,6 +67,13 @@
 					token = cookie[1].split(';').shift()
 				}
 			})()
+//                         deklarasi awal
+//var prod_detail = localStorage.setItem('product_detail', '[]');
+var prod_detail =  localStorage.getItem('product_detail');
+                if(!prod_detail)
+                {
+                     localStorage.setItem('product_detail', '[]');
+                }
 		</script>
 
         <!-- s: Chat -->
@@ -137,6 +144,7 @@
 						<?php echo anchor('#',$lang_produck, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
+                                           <?php echo anchor('Customer/afterSales',$lang_after_sales, array('class'=>'my-info')); ?>
 					</div>
 				</div>
 

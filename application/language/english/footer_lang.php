@@ -40,5 +40,38 @@ $lang['f_pay'] = 'Payment Method';
 $lang['f_courier'] = 'Courier';
 $lang['f_dunlud'] = 'Download Our Applications';
 $lang['f_sea'] = 'View All';
-
+$lang['f_after_sales'] = 'After Sales';
+$lang['f_a_sales'] = '<h5>Layanan Purna jual PT Myacico Global Indonesia</h5>'
+        . '<br><b>I. Informasi Umum</b><br>Myacico.co.id memiliki layanan purna jual sebagai salah satu bentuk pelayanan kepada pelanggan. Dengan didukung oleh tenaga ahli maupun kerjasama dengan tenaga ahli dari beberapa brand terkemuka, Myacico.co.id akan membantu pelanggan dalam memperbaiki dan penukaran produk.'
+        . '<br><b>II. Bentuk Layanan Purna jual</b>'
+        . '<br>Berikut ini merupakan bentuk ketersediaan layanan purna jual yang dilakukan Myacico.co.id:'
+        . '<br>*Dukungan teknis'
+        . '<br>*Informasi suku cadang/spare part'
+        . '<br>*Dukungan garansi resmi'
+        . '<br><b>III. Jam Operasional Layanan Purna jual</b>'
+        . '<br>Myacico.co.id melakukan kegiatan layanan purna-jual pada hari dan jam operasional sebagai berikut:';
+$lang['f_aftersale_cont'] = 'Hubungi Layanan Purna Jual Kami';
+$lang['f_subjek'] = 'Subject:';
+$lang['f_email_add'] = 'Email Address:';
+$lang['f_name'] = 'Name:';
+$lang['f_phone'] = 'Phone Number:';
+$lang['f_order_id'] = 'Order ID:';
+$lang['f_company'] = 'Company:';
+$lang['f_msg'] = 'Message';
+$lang['f_btn_send'] = 'Send';
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
