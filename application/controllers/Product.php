@@ -197,7 +197,7 @@ public function listItem()
     {
 		//$this->load->view('frontend/test',$this->data);
 
-                $this->data['title_web'] = "Myacico.com - Home";
+    $this->data['title_web'] = "Myacico.com - Home";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);

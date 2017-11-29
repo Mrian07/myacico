@@ -27,6 +27,56 @@
   /*font-family: "MyriadPro";*/
 }
 
+/*s: search*/
+.img-src{
+  height: 30px;
+  width: auto;
+  overflow: hidden;
+}
+.img-con{
+  /*height: 50px;*/
+  padding:5px;
+  border-bottom : 1px solid #dddddd;
+}
+
+.img-con:hover{
+  background: #fbfafa;
+  cursor:pointer;
+}
+
+.search-name{
+  font-size: 12px;
+  color: #666;
+  font-family: 'arial';
+}
+
+#productSrc{
+  position: absolute;
+  z-index:289;
+  background:#ffffff;
+  width:87%;
+}
+
+#title_top{
+  display: none;
+  background:#f5f5f5;
+  padding:5px;
+  font-weight: bold;
+  margin-bottom:5px;
+}
+
+#title_list{
+  display: none;
+  background:#f5f5f5;
+  padding:5px;
+  font-weight: bold;
+  margin-bottom:5px;
+}
+
+/*e: search*/
+
+
+
 .list-item{
   color:#111111;
 }
@@ -264,9 +314,9 @@
 
 @media screen and (max-width: 1680px) {
 
-  .productSrc
+  #productSrc
   {
-    width:990px;
+    width:1010px;
   }
 
   .link-head{
@@ -289,9 +339,9 @@
 
 @media screen and (max-width: 1600px) {
 
-  .productSrc
+  #productSrc
   {
-    width:935px;
+    width:955px;
   }
 
   .link-head{
@@ -327,9 +377,9 @@
     width:20%; float:left; text-align:right;
   }
 
-  .productSrc
+  #productSrc
   {
-    width:778px;
+    width:810px;
   }
 
   .link-head{
@@ -352,9 +402,9 @@
 }
 
 @media screen and (max-width: 1400px) {
-  .productSrc
+  #productSrc
   {
-    width:754px;
+    width:782px;
   }
 
   .link-head{
@@ -376,7 +426,7 @@
 }
 
 @media screen and (max-width: 1366px) {
-  .productSrc
+  #productSrc
   {
     width:730px;
   }
@@ -400,7 +450,7 @@
 }
 
 @media screen and (max-width: 1360px) {
-  .productSrc
+  #productSrc
   {
     width:725px;
   }
@@ -438,9 +488,9 @@
   }
 
   /*Serach product*/
-  .productSrc
+  #productSrc
   {
-    width:520px;
+    width:635px;
   }
 }
 
@@ -459,7 +509,7 @@
   }
 
   /*Serach product*/
-  .productSrc
+  #productSrc
   {
     width:420px;
   }
@@ -699,10 +749,10 @@ a:hover.my-info {
 		padding:10px;
 		font-size:12px;
 	}
-	.productSrc
+	/*.productSrc
 	{
 		position:absolute;
-		/*width:628px;*/
+
 		display:none;
 		margin-top:-1px;
 		border-top:0px;
@@ -725,7 +775,7 @@ a:hover.my-info {
 		background:#e9e9e8;
 		color:#000000;
 		cursor:pointer;
-	}
+	}*/
 
 	.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default{
 		color: #333;
@@ -752,9 +802,9 @@ a:hover.my-info {
 	}
 
 	.my-search-button{
-	    padding: 1px 20px 1px 20px;
+	    padding: 5px 20px 5px 20px;
 	    border: none;
-	    border-radius: 4px;
+	    border-radius: 0px 4px 4px 0px;
 	    background: #cd0000 url("../../images/general/red-emboss.jpg");
 		  color:#f8f5f0;
       font-size: 22px;
