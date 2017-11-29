@@ -35,7 +35,7 @@ chat = {
 			})
 		});
 		this.soc.on('msg', function(msg){
-			chat.addMsg(msg).insertBefore(".footer-container");
+			$('.message-scroll').append(chat.addMsg(msg));
 			//console.log(msg.from, 'say:', msg.txt);
 			chat.box.removeClass('typing')
 		});
