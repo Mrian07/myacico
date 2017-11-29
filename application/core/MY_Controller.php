@@ -231,6 +231,15 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
                 $this->data['lang_wishlist_del'] = $this->lang->line('wishlist_del');
                 $this->data['lang_wishlist_tittle'] = $this->lang->line('wishlist_tittle');
                  $this->data['lang_wishlist_pic'] = $this->lang->line('wishlist_pic');
+//                 Avatar
+                $this->data['lang_avatar_tittle'] = $this->lang->line('avatar_tittle');
+                $this->data['lang_avatar_tittle2'] = $this->lang->line('avatar_tittle2');
+                $this->data['lang_avatar_tittle3'] = $this->lang->line('avatar_tittle3');
+                $this->data['lang_avatar_back'] = $this->lang->line('avatar_back');
+                $this->data['lang_avatar_button'] = $this->lang->line('avatar_button');
+                $this->data['lang_avatar_browse'] = $this->lang->line('avatar_browse');
+                   
+
 		//end of personal
 
     //headers

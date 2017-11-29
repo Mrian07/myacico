@@ -54,5 +54,13 @@ No billing data yet, billing data is required at checkout purchase.';
        $lang['wishlist_pic'] ='Picture';
        $lang['wishlist_name'] ='Name';
        $lang['wishlist_del'] ='Delete';
+//       AVATAR 
+       $lang['avatar_tittle'] ='UPLOAD IMAGE ';
+       $lang['avatar_tittle2'] ='Upload Your Avatar Here';
+       $lang['avatar_tittle3'] ='Upload Avatar';
+       $lang['avatar_back'] ='Back';
+       $lang['avatar_button'] ='Upload';
+       $lang['avatar_browse'] ='Browse';
+      
 
  ?>

@@ -29,7 +29,7 @@ width: 100%;
 
 <div class="container">
 <div class='my-bg-title'>
-    <i class="fa fa-angle-right" aria-hidden="true"></i> UPLOAD IMAGE
+    <i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_avatar_tittle;?>
 </div>
 </div>
 <div class="container">
@@ -40,14 +40,14 @@ width: 100%;
     <?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
   </div>
   <div class="col-sm-9">
-    <p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
+    <p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'.$lang_avatar_button, array('class'=>'btn-back'));?></p>
                       <div class="buktiTrans"></div>
-    <p>Upload Avatar Kamu Disini</p>
+    <p><?php echo $lang_avatar_tittle2;?></p>
     <form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 
     <div class="panel panel-default">
       <div class="panel-heading">
-         <label>Upload Avatar</label>
+         <label><?php echo $lang_avatar_tittle3;?></label>
       </div>
       <div class="panel-body">
 
@@ -57,7 +57,7 @@ width: 100%;
           <span class="input-group-btn">
 
           <span class="btn btn-info btn-file">
-          Browse…<input class="input-file" id="file" type="file" name="file" style='height:10px'>
+          <?php echo $lang_avatar_browse;?><input class="input-file" id="file" type="file" name="file" style='height:10px'>
           </span>
           </span>
           <input type="text" class="form-control" readonly>
@@ -65,7 +65,7 @@ width: 100%;
 
         <img id='img-upload'/>
 
-                             <button class="btn btn-success">Upload</button>
+                             <button class="btn btn-success"> <?php echo $lang_avatar_button;?></button>
           <div class="form-group">
 
         </div>
