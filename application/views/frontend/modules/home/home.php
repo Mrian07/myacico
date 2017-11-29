@@ -273,7 +273,7 @@ h6{
   color: #b3afaf;
   font-size: 12px;
   height:20px;
-  margin-bottom: 12px;
+  margin-bottom: 1px;
 
 }
 .box-title3{
