@@ -276,6 +276,20 @@ h6{
   margin-bottom: 1px;
 
 }
+.box-title27{
+  width:100%;
+  white-space: wrap;
+  line-height: 14px;
+  overflow:hidden !important;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  text-align: center;
+  color: #8a0202;
+  font-size: 12px;
+  height:20px;
+  margin-bottom: 1px;
+
+}
 .box-title3{
   width:100%;
   white-space: wrap;
@@ -758,7 +772,7 @@ ul.list-group:after {
 
           <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><?php echo $itemslide2['name']; ?></a></p>
           <?php if ($itemslide2['specialprice'] == 0){
-            ?> <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+            ?> <p class="box-title27">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
        <?php    } else{ ?>
            <p class="box-title2"><s>Rp.<?php echo money($itemslide2['pricelist']); ?></s></p><p><?php echo money($itemslide2['specialprice']); ?></p>
         <?php } ?>
@@ -791,7 +805,7 @@ ul.list-group:after {
               <a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><img src="<?php echo $itemslide3['imageurl']; ?>" style='height:100px;'></a>
         			<div class="link-nmp box-title" style='height:40px'><a href="<?php echo base_url('product/detail/'.$itemslide3['product_id'].'/'. $itemslide3['alias']);?>"><?php $nmitem = substr($itemslide3['name'],0,70); echo $nmitem; ?></a></div>
                   <?php if($itemslide3['specialprice'] == 0){
-                  ?>   <div class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></div>
+                  ?>   <div class="box-title27" style='color: #8a0202'>Rp.<?php echo money($itemslide3['pricelist']); ?></div>
                 <?php  }else{  ?>
  <p class="box-title2"><s>Rp.<?php echo money($itemslide3['pricelist']); ?></s></p><div class="box-title2" style='color: #8a0202'><p>Rp.<?php echo money($itemslide3['specialprice']); ?></p></div>
               <?php } ?>
