@@ -1,13 +1,23 @@
-<center><h1> Wishlist Anda </h1></center>
+<<<<<<< HEAD
+<style>
+.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+</style>
+<p><?php echo $lang_ket_wishlist;?></p>
+
 <div class="row"  style='width: 100%; margin:0 auto;'>
     <div id="no-more-tables">
         <table class="col-md-12 table-bordered table-striped table-condensed cf">
         	<thead class="cf">
 
         	  <tr>
-              <th>Gambar</th>
-        		<th>Nama</th>
-        		<th>Hapus</th>
+
+                        <th><?php echo $lang_wishlist_pic;?></th>
+        		<th><?php echo $lang_wishlist_name;?></th>
+        		<th><?php echo $lang_wishlist_del;?></th>
+
         	  </tr>
 
         	</thead>
