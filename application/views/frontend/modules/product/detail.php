@@ -106,7 +106,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
               <td>Harga:</td>
               <td>
                 <span class='price-list'>Rp ".money($specialPrice)."</span>
-                <span class='discount'>".money($discount)."</span>
+                <span class='discount'>".money($discount)."% OFF</span>
                 <span>Hemat: <span style='color: #8a0202; font-weight: bold'>Rp ".money($pricelist - $specialPrice)."</span></span> 
               </td>
             </tr>
