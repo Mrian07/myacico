@@ -111,7 +111,7 @@ p {
 
     <div class="document__content">
       <img src="https://s26.postimg.org/a5xbhjv2h/image.png" style="float:right;" width="400px">
-  <h3 style="color:black; margin:19px;">Tentang Kami</h3>
+  <h3 style="color:black; margin:19px;"><?php echo $lang_tentangkami; ?></h3>
 
       <p>myACICO.com adalah perusahaan ecommerce yang berdiri sejak Februari 2017 yang dapat memberikan terobosan baru dan juga merupakan salah satu
         anak perusahaan Alpha Cipta Computindo Indonesia. myACICO.com sebagai salah satu platform untuk B2B, B2C dan B2G yang berkembang dengan cepat

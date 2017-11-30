@@ -1,22 +1,7 @@
 <?php
 $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-//die(print_r($local_strg));
-//echo $url;
-//foreach ($local_strg as $item) {
-//    var_dump($item);die();
-   //var_dump($item->product->brand);
-//}
 ?>
-<style>
-/*th, td {
-  padding: 15px;
-  font-size: 20px;
-  text-align: left;
-  font-family: 'Montserrat', sans-serif;
-}
-#hearts { font-size: 140px; color: #F4044F;}
-#hearts-existing { color: #87bad7;}*/
-</style>
+
       <?php
           $totalRate= $rating['star1']+$rating['star2']+$rating['star3']+$rating['star4']+$rating['star5'];
       ?>
@@ -52,7 +37,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
     <?php if (isset($img[0])) { ?>
       <img id="xzoom-magnific" class="xzoom"
-          style="width: 100%!important"
+          style="width: 100%!important position: absolute; width: 284px; top: -41.2038px; left: 0px;"
           src="<?php echo $img[0]; ?>"
           onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"
           xoriginal="<?php echo $img[0]; ?>" />
@@ -77,7 +62,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       ?>
     </div>
   </div>
-  
+
   <div class="col-sm-6">
     <h5 style="margin-bottom: 0px;">
       <?php echo $name; ?>
@@ -85,9 +70,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
     <div class="ratting-container">
       <div id="rateYo" class="detail-prod-rating"></div><span class="ratting-text">(<?php echo$totalRate;?>) <a href=""><i class="fa fa-pencil" aria-hidden="true"></i> Tulis ulasan</a></span>
-      <!-- <div class="pull-left">
-        <b>(<?php echo$totalRate;?>)</b>
-      </div> -->
+
       <div class="clearfix"></div>
     </div>
 
@@ -107,7 +90,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
               <td>
                 <span class='price-list'>Rp ".money($specialPrice)."</span>
                 <span class='discount'>".money($discount)."% OFF</span>
-                <span>Hemat: <span style='color: #8a0202; font-weight: bold'>Rp ".money($pricelist - $specialPrice)."</span></span> 
+                <span>Hemat: <span style='color: #8a0202; font-weight: bold'>Rp ".money($pricelist - $specialPrice)."</span></span>
               </td>
             </tr>
             <tr>
@@ -233,7 +216,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
   </div>
 </div>
 
-  
+
   <div class="row lead">
 
 
@@ -647,7 +630,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
   url: 'https://api.myacico.co.id/myacico-service/product/productlist/detail?id='+idss,
   success: function(data) {
       //if(data['m_product_id'])
-      
+
        if(detail.length == 0)
        {
            detail.push(data)
@@ -658,26 +641,26 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                 detail.push(data)
                 // not found
               }
-           
+
      /* for(var i=0;i<detail.length;i++)
 {   console.log(detail[i].m_product_id);
     console.log("testst",data['m_product_id']);
     if(detail[i].m_product_id == data['m_product_id'])
-    { 
+    {
         console.log("masuk");
          detail.push(data)
-        
+
     }
 }*/
-       } 
+       }
       localStorage.setItem('product_detail', JSON.stringify(detail));
-      
-     
+
+
 // Retrieve the object from storage m_product_id
 var retrievedObject = localStorage.getItem('product_detail');
 
 //console.log('retrievedObject: ', JSON.parse(retrievedObject));
-      
+
   }})
 
 //localStorage.setItem('product_detail', JSON.stringify(testObject));
@@ -1169,4 +1152,5 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
       });
 
   });
+
   </script>

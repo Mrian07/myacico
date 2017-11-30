@@ -38,6 +38,11 @@ $lang['field_ClickMe'] = 'Klik Disini';
 $lang['btn_kirim1'] = 'Masuk';
 //akhir filed di signIn
 
+//about us
+$lang['lang_pages_aboutUs'] ='Tentang Kami';
+
+//pages tentang kami
+
 //customer personal
 $lang['field_Create'] = 'Daftar Akun Personal';
 $lang['field_selamat_datang'] = 'Selamat Datang';

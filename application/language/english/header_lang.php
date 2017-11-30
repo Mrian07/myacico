@@ -21,6 +21,11 @@ $lang['field_fbo'] = "<div style='font-family: arial; font-size:12px; font-weigh
 
 //akhir dari header
 
+      //about us
+      $lang['lang_pages_aboutUs'] ='About Us';
+
+      //pages tentang kami
+
 //field di contact
 
 $lang['field_atas'] = 'if you have question Please Contact Us below';
