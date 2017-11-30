@@ -46,253 +46,195 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
 <div ng-controller="detailCnt">
 
-<!-- aaa -->
-
-
 <div class="row">
 
-  <div class="col-sm-5">
+  <div class="col-sm-3">
 
+    <?php if (isset($img[0])) { ?>
+      <img id="xzoom-magnific" class="xzoom"
+          style="width: 100%!important"
+          src="<?php echo $img[0]; ?>"
+          onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"
+          xoriginal="<?php echo $img[0]; ?>" />
+    <?php } else {
+      $img[0] = '';
+    } ?>
 
-        <div class="xzoom-container">
-          <?php if(isset($img[0])) { ?>
-            <img class="xzoom" id="xzoom-magnific" width=380 src="<?php echo $img[0]; ?>" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"
-xoriginal="<?php echo $img[0]; ?>" />
-          <?php
-
-          }else{
-            $img[0] = '';
-          }
-          ?>
-
-          <div class="xzoom-thumbs">
-          <!--<a ng-repeat="url in dat.imageurl" ng-href="{{url}}" on-finish-render="ngRepeatFinished">
-            <img class="xzoom-gallery" width="80" src="{{url}}" xpreview="{{url}}" title="">
-          </a>-->
-
-
-                                             <?php
-                                                  if(isset($img[0]))
-                                                  {
-                                                      foreach ($img as $gmbr)
-                                                      {?>
-                                                        <a href="<?php echo $gmbr;?>">
-            <img class="xzoom-gallery" width="80" src="<?php echo $gmbr;?>" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"
-xpreview="<?php echo $gmbr;?>" title="">
-                                                      </a>
-                                                   <?php   }
-                                                  }
-                                             ?>
-
-
-
-          <!--a href="<?php //echo base_url('images/gallery/original/03_r_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/03_r_car.jpg');?>" title="The description goes here"></a>
-          <a href="<?php //echo base_url('images/gallery/original/04_g_car.jpg');?>"><img class="xzoom-gallery5" width="80" src="<?php //echo base_url('images/gallery/preview/04_g_car.jpg');?>" title="The description goes here"></a-->
-          </div>
-
-        </div>
-
-
-
-  </div>
-  <div class="col-sm-7">
-
-        <p style="font-size:18px"><b><?php echo $name; ?></b></p>
-          <div id="rateYo" style="z-index: 0; display:inline-block;"></div>
-            <div style="display:inline-block;"><b>(<?php echo$totalRate;?> review)</b></div>
-
-    <div class="row">
-    <div class="col-sm-6">
-      <style>
-      .price{
-        color:#EF2A2F;
-      }
-      .price:b{
-            color:#EF2A2F;
-      }
-      .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
-        padding: 8px;
-    line-height: 1.428571429;
-    vertical-align: top;
-     border-top: 0px solid #ddd;
-     border-bottom: : 0px solid #ddd;
-      }
-      .table>thead>tr>th{
-        border-bottom: 0px;
-      }
-      .btn-link, .btn-link:active, .btn-link:visited, .btn-link:focus{
-        background-color: #FFF;
-        border : 0px;
-        background: #FFF;
-        color: black;
-				font-size: 12px;
-      }
-      .btn-link:hover{
-        background-color: #FFF;
-        color:black;
-      }
-      .price3{
-
-        color:black;
-        font-size: 10px;
-      }
-      </style>
-      <table class="table" border="0">
-    <thead>
+    <div class="xzoom-thumbs">
       <?php
-      if($specialPrice == 0 ){
-        echo "<tr>
-          <th><span class='price'>Harga </span></th>
-          <th>:</th>
-        <th><span class='price'>Rp.".money($pricelist)."</b></span></th>
-        <th></th>
-        </tr>";
-      }else{
-        echo "
-        <tr>
-          <th><span class='price'>Harga </span></th>
-          <th>:</th>
-        <th><span class='price'>Rp.".money($specialPrice)."</b></span></th>
+        if (isset($img[0])) {
+          foreach ($img as $gmbr) {
+      ?>
+        <a href="<?php echo $gmbr;?>">
+          <img class="xzoom-gallery" width="80"
+              src="<?php echo $gmbr;?>"
+              onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"
+              xpreview="<?php echo $gmbr;?>" title="">
+        </a>
+      <?php
+          }
+        }
+      ?>
+    </div>
+  </div>
+  
+  <div class="col-sm-6">
+    <h5 style="margin-bottom: 0px;">
+      <?php echo $name; ?>
+    </h5>
 
+    <div class="ratting-container">
+      <div id="rateYo" class="detail-prod-rating"></div><span class="ratting-text">(<?php echo$totalRate;?>) <a href=""><i class="fa fa-pencil" aria-hidden="true"></i> Tulis ulasan</a></span>
+      <!-- <div class="pull-left">
+        <b>(<?php echo$totalRate;?>)</b>
+      </div> -->
+      <div class="clearfix"></div>
+    </div>
+
+    <table class="table table-detail-prod" border="0">
+      <tbody>
+        <?php
+          if($specialPrice == 0 ){
+            echo "
+              <tr>
+                <td>Harga:</td>
+                <td><span class='price-list'>Rp ".money($pricelist)."</span></td>
+              </tr>";
+          }else{
+            echo "
+              <tr>
+              <td>Harga:</td>
+              <td>
+                <span class='price-list'>Rp ".money($specialPrice)."</span>
+                <span class='discount'>".money($discount)."% OFF</span>
+                <span>Hemat: <span style='color: #8a0202; font-weight: bold'>Rp ".money($pricelist - $specialPrice)."</span></span> 
+              </td>
+            </tr>
+            <tr>
+              <td>Harga Awal:</td>
+              <td><s>Rp ".money($pricelist)."</s></td>
+            </tr>";
+          }
+        ?>
+        <tr>
+          <td>Status:</td>
+          <td style="color: #4ba240">Tersedia.</td>
         </tr>
         <tr>
-          <td> <span class='price3'>Harga Awal </span> </td>
-            <td> : </td>
+          <td></td>
+          <td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih myacico courier bagi anda yang tinggal di jakarta </td>
+        </tr>
+        <tr>
+          <td>Warna:</td>
+          <td><div class="opt-color black"></div></td>
+        </tr>
+        <tr>
+          <td>Kapasitas:</td>
+          <td><span class="capacity">128GB</span></td>
+        </tr>
+        <tr>
+          <td>Product Highlight:</td>
+          <td class="hook-clear-ul"><?php echo $highlight;  ?></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <span style="border-bottom: 1px solid #c81423; font-weight: bold">Butuh bantuan?</span>
+            <ul style="list-style:none; margin-top: 10px; padding: 0">
+              <a class="link-need-help" href=""><li><i class="fa fa-envelope-o color-red" aria-hidden="true"></i> Hubungi Kami</li></a>
+              <a class="link-need-help" href=""><li><i class="fa fa-comment-o color-red" aria-hidden="true"></i> Live Chat</li></a>
+              <a class="link-need-help" href=""><li><i class="fa fa-phone color-red" aria-hidden="true"></i> Layanan Pelanggan</li></a>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-            <td> <span class='price3'><s>Rp.".money($pricelist)."</s></b></span> </td>
-
-        </tr>";
-      }
-      ?>
-
-
-    </thead>
-    <tbody>
+    <!-- <table>
       <tr>
-        <td><span style="color: black; font-weight:bold">Stock</td>
-          <td>:</td>
-          <td><span style="color:green; font-weight:bold;"> Tersedia.<br/></td>
+        <td style="padding:0px;">
+          <font size="0"><b>Produk Highlight:</b> <?php echo $highlight;  ?></font>
+        </td>
       </tr>
-      <tr>
-          <td><span style="color:white; font-weight:bold;"> <br/></td>
-        <td colspan="2"> ingin barang anda sampai dalam <span style="color:red;">2hari</span> ?pilih myacico courier bagi anda yang tinggal di jakarta </td>
+    </table> -->
+  </div>
 
-      </tr>
-
-
-
-    </tbody>
-  </table>
-
-                                  <table>
-                                     <tr>
-                                         <td style="padding:0px;">
-                                              <font size="0"><b>Produk Highlight:</b> <?php echo $highlight;  ?></font>
-                                          </td>
-                                      </tr>
-
-                                  </table>
-
-
-
-
-    </div>
-
-    <div class="col-sm-6">
-      <center><br/>
-      Bagikan : <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url_share;?>" target="_blank">
-      <i class="fa fa-facebook" aria-hidden="true"></i>
+  <div class="col-sm-3">
+    <div class="social-media-sharing-container text-center">
+      Bagikan :
+      <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url_share;?>" target="_blank" style="text-decoration: none!important">
+        <i class="fa fa-facebook icon-share" aria-hidden="true"></i>
       </a>
-      <a href="mailto:?&subject=<?php echo $name;?>&body=<?php echo $url_share;?>"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-    </center>
-      <div class='detail-add-wishlist' style="display: block; background: #ffff; border:1px solid; border-radius: 5px; padding:10px;">
-          <span> <b> Kebijakan </b> </span><br/>
-          <span> <b> Pengembalian </b> :  jika barang yang dikirim mengalami kerusakan atau tidak sesuai deskripsi, Anda dapat mengembalikan barang tersebut kepada kami dalam jangka waktu 7hari
+      <a href="mailto:?&subject=<?php echo $name;?>&body=<?php echo $url_share;?>" style="text-decoration: none!important">
+        <i class="fa fa-envelope-o icon-share" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class='detail-add-wishlist' style="display: block; background: #ffff; border:1px solid; border-radius: 5px; padding:10px;">
+      <div><b>Kebijakan</b></span><br/>
+      <div style="text-align: justify">
+        <b>Pengembalian: </b>jika barang yang dikirim mengalami kerusakan atau tidak sesuai deskripsi, Anda dapat mengembalikan barang tersebut kepada kami dalam jangka waktu 7 hari
+      </div>
+      <div>
+        <b>Cicilan: </b>Cicilan 0% mulai dari Rp 431,250 / bulan
+      </div>
+      <div>
+        <select name="" id="">
+          <option value="12">12</option>
+          <option value="24">24</option>
+        </select>
+        <a href="">3 bank</a>
+      </div>
+      <div>
+        <b>Pembayaran: </b><br>
+        <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/p-visa-small.jpg">
+        <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/ico_bank_02.png">
+        <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/ico_bank_03.png">
+        <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/ico_bank_04.png">
+        <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/ico_bank_06.png">
+        <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/p-bcaklikpay.jpg">
+      </div>
+      <div>
+        <b>Garansi: </b>1 TAHUN GARANSI
+      </div>
+      <div style="margin-bottom: 20px;">
+        <span class="pull-left"><b>Jumlah: </b></span> <input type='number' class='form-control pull-left' id='jmlItem' style='width: 70px; margin-left: 5px; height: 30px;' value='1' min='1'/>
+        <div class="clearfix"></div>
+      </div>
 
-          </span><br/>
+      <button type="button" class="btn btn-danger btn-lg" style="border-radius: 5px; padding: 6px 60px; margin-bottom: 7px; background-color: #c81423"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" style="font-size:15px;" aria-hidden="true"> </i> <b style="font-size:15px;"> BELI</b> SEKARANG</button>
 
-          <span> <b> Pembayaran </b> :  <img src='<?php echo base_url('images/general/layer2nich.jpg');?>'  width="200px" border='0'> </span>
+      <?php
+        if($isWishList =='Y')
+          {
+      ?>
+        <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart-o" style="color:#dffd54;" aria-hidden="true"></i> Tambahkan Ke Wishlist</button>
+      <?php } else { ?>
+        <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart-o" aria-hidden="true"></i> Tambahkan Ke favorites</button>
+      <?php } ?>
 
-          <!-- <form class="form-inline">
-            <div class="form-group">
-              <label for="exampleInputName2">Name</label>
-              <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-            </form>
-
-          </div> --><table border="0">
-					<br/>
-					<br/>
-					<tr>
-            <td><b>Quantity</b></td>
-						<td> &nbsp; </td>
-								<td> &nbsp; </td>
-										<td> &nbsp; </td>
-												<td> &nbsp; </td>
-												<td> : </td>
-            <td colspan="3"><input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'/></td>
-              </tr>
-
-          </table>
-          <br/>
-           <center>
-
-          <!-- <div class="btnaddcart">
-            <button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
-          </div> -->
-
-
-          <!-- <a href='#' onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')" class='btn btn-link'> <i class="color-wishlist fa fa-heart" style="color:#FE4365;" aria-hidden="true"></i> Add To Wishlist</a> -->
-
-
-
-                                                  <button type="button" class="btn btn-danger btn-lg" style="border-radius: 5px; padding: 9px 60px; margin-bottom:7px;"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" style="font-size:15px;" aria-hidden="true"> </i> <b style="font-size:15px;"> BELI</b> SEKARANG</button>
-
-                                                                  <?php
-                    if($isWishList =='Y')
-                    {
-                ?>
-                                                              <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart-o" style="color:#dffd54;" aria-hidden="true"></i> Tambahkan Ke Wishlist</button>
-              <?php }else{
-             ?>
-                 <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart-o" aria-hidden="true"></i> Tambahkan Ke Wishlist</button>
-
-              <?php }
-              ?>
-              <br/>
-              <br/>
-              <span> <b>Jasa Pengiriman</b> </span>
-               <img src='<?php echo base_url('images/general/myLogo.jpg');?>'  width="200px" border='0'>
-               <br/>
-               <br/>
-               <img src='<?php echo base_url('images/general/myninja.jpg');?>'  width="200px" border='0'>
-               <br/>
-               <br/>
-               <img src='<?php echo base_url('images/general/myjne.jpg');?>'  width="200px" border='0'>
-               <br/>
-               <br/>
-                  <img src='<?php echo base_url('images/general/mytiki.jpg');?>'  width="200px" border='0'>
-
-            </center>
-          </div>
-
-
+      <div>
+        <span> <b>Jasa Pengiriman</b> </span>
+        <table class="table" border="0" style="margin: 0">
+          <tr>
+            <td><img src="https://dev.myacico.co.id/images/general/s-myacicocourier.jpg"></td>
+            <td>Gratis pengiriman* untuk wilayah jakarta dan jaminan pengiriman dalam 2 hari</td>
+          </tr>
+          <tr>
+            <td><img src="https://dev.myacico.co.id/images/general/s-ninjaxpress.jpg"></td>
+            <td>jaminan pengiriman dalam 3 hari</td>
+          </tr>
+          <tr>
+            <td><img src="https://dev.myacico.co.id/images/general/s-jne.jpg"></td>
+            <td>jaminan pengiriman dalam 2-5 hari</td>
+          </tr>
+        </table>
       </div>
     </div>
+  </div>
+</div>
 
-
-
-
-
-    </div>
-
-    </div>
-
-    <!-- <b>Berat: <span class='red-tx'><?php echo $weight; ?></span></b><br> -->
-
-
-
-
-    <div class="row lead">
+  
+  <div class="row lead">
 
 
 <script src="jquery.js"></script>
@@ -555,52 +497,138 @@ xpreview="<?php echo $gmbr;?>" title="">
 
 
 <div class="container">
-<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
-<i class="fa fa-dot-circle-o" aria-hidden="true"></i> Product Related
-</div>
-<div class="span12" style='background:#ffffff; padding:10px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK SEJENIS
+  </div>
 
-<div id="owl-demo" class="owl-carousel">
-  <?php
-    $jmlslide2=count($dathome);
-  $n=1;
-  foreach($dathome as $key => $itemslide2){
-    if($n=="$jmlslide2"){
-      $active='active';
-    }else{
-      $active='';
-    }
-    ?>
-  <!-- <div class="item" align="center"> -->
-    <div class="item" align="center">
-
-  <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
-    <?php if($itemslide2['imageurl']){?>
-    <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
-    <?php }else{
-      echo"<img src='".base_url('images/general/noimage.png')."' style='height:auto; width: auto' border='0'>";
-    } ?>
-      <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
-        <?php
-        $str1 = $itemslide2['name'];
-        $str2 = substr($str1, 0, 41);
-        $str = strlen($str2);
-        if($str <= 40){
-         echo $itemslide2['name'];
+  <div class="span12" style='background:#ffffff; padding:10px;'>
+    <div id="owl-demo" class="owl-carousel">
+      <?php
+        $jmlslide2=count($dathome);
+      $n=1;
+      foreach($dathome as $key => $itemslide2){
+        if($n=="$jmlslide2"){
+          $active='active';
         }else{
-          // $str = substr($str, 0, 49);
-           echo $str2."....";
+          $active='';
         }
         ?>
-        </a></p>
+      <!-- <div class="item" align="center"> -->
+    <div class="item" align="center">
+
+      <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+        <?php if($itemslide2['imageurl']){?>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
+        <?php }else{
+          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100;' border='0'>";
+        } ?>
+        <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+          <?php
+          $str1 = $itemslide2['name'];
+          $str2 = substr($str1, 0, 41);
+          $str = strlen($str2);
+          if($str <= 40){
+          echo $itemslide2['name'];
+          }else{
+            // $str = substr($str, 0, 49);
+            echo $str2."....";
+          }
+          ?>
+      </a></p>
       <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
-
-
         <hr>
-
   </div>
   <?php $n++;  } ?>
+</div>
+</div>
 
+<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK REKOMENDASI
+  </div>
+
+  <div class="span12" style='background:#ffffff; padding:10px;'>
+    <div id="owl-demo1" class="owl-carousel">
+      <?php
+        $jmlslide2=count($dathome);
+      $n=1;
+      foreach($dathome as $key => $itemslide2){
+        if($n=="$jmlslide2"){
+          $active='active';
+        }else{
+          $active='';
+        }
+        ?>
+      <!-- <div class="item" align="center"> -->
+    <div class="item" align="center">
+
+      <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+        <?php if($itemslide2['imageurl']){?>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
+        <?php }else{
+          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100;' border='0'>";
+        } ?>
+        <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+          <?php
+          $str1 = $itemslide2['name'];
+          $str2 = substr($str1, 0, 41);
+          $str = strlen($str2);
+          if($str <= 40){
+          echo $itemslide2['name'];
+          }else{
+            // $str = substr($str, 0, 49);
+            echo $str2."....";
+          }
+          ?>
+      </a></p>
+      <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+        <hr>
+  </div>
+  <?php $n++;  } ?>
+</div>
+</div>
+
+<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK PELENGKAP
+  </div>
+
+  <div class="span12" style='background:#ffffff; padding:10px;'>
+    <div id="owl-demo2" class="owl-carousel">
+      <?php
+        $jmlslide2=count($dathome);
+      $n=1;
+      foreach($dathome as $key => $itemslide2){
+        if($n=="$jmlslide2"){
+          $active='active';
+        }else{
+          $active='';
+        }
+        ?>
+      <!-- <div class="item" align="center"> -->
+    <div class="item" align="center">
+
+      <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+        <?php if($itemslide2['imageurl']){?>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
+        <?php }else{
+          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100;' border='0'>";
+        } ?>
+        <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+          <?php
+          $str1 = $itemslide2['name'];
+          $str2 = substr($str1, 0, 41);
+          $str = strlen($str2);
+          if($str <= 40){
+          echo $itemslide2['name'];
+          }else{
+            // $str = substr($str, 0, 49);
+            echo $str2."....";
+          }
+          ?>
+      </a></p>
+      <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+        <hr>
+  </div>
+  <?php $n++;  } ?>
 </div>
 </div>
 </div>
@@ -618,13 +646,38 @@ xpreview="<?php echo $gmbr;?>" title="">
    $.ajax({
   url: 'https://api.myacico.co.id/myacico-service/product/productlist/detail?id='+idss,
   success: function(data) {
-      detail.push(data)
-     localStorage.setItem('product_detail', JSON.stringify(detail));
-// Retrieve the object from storage
+      //if(data['m_product_id'])
+      
+       if(detail.length == 0)
+       {
+           detail.push(data)
+       }
+       else{
+           var result = $.grep(detail, function(e){ return e.m_product_id == data['m_product_id']; });
+           if (result.length == 0) {
+                detail.push(data)
+                // not found
+              }
+           
+     /* for(var i=0;i<detail.length;i++)
+{   console.log(detail[i].m_product_id);
+    console.log("testst",data['m_product_id']);
+    if(detail[i].m_product_id == data['m_product_id'])
+    { 
+        console.log("masuk");
+         detail.push(data)
+        
+    }
+}*/
+       } 
+      localStorage.setItem('product_detail', JSON.stringify(detail));
+      
+     
+// Retrieve the object from storage m_product_id
 var retrievedObject = localStorage.getItem('product_detail');
 
-console.log('retrievedObject: ', JSON.parse(retrievedObject));
-      //console.log(data);
+//console.log('retrievedObject: ', JSON.parse(retrievedObject));
+      
   }})
 
 //localStorage.setItem('product_detail', JSON.stringify(testObject));
@@ -633,16 +686,14 @@ console.log('retrievedObject: ', JSON.parse(retrievedObject));
 
 //console.log('retrievedObject: ', JSON.parse(testObject));
 
-    $(function () {
-
-$("#rateYo").rateYo({
-    rating: rate,
-                starWidth: "20px",
-    readOnly: true
-
-});
-
-});
+  $(function () {
+    $("#rateYo").rateYo({
+        rating: rate,
+        starWidth: "15px",
+        readOnly: true,
+        normalFill: "#dddddd"
+    });
+  });
 
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
@@ -1066,6 +1117,28 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
   height: 150px;
 
 }
+
+#owl-demo1 .item{
+  margin: 3px;
+  /*text-align:center;*/
+}
+#owl-demo1 .item img{
+  display: block;
+  width: auto;
+  height: 150px;
+
+}
+
+#owl-demo2 .item{
+  margin: 3px;
+  /*text-align:center;*/
+}
+#owl-demo2 .item img{
+  display: block;
+  width: auto;
+  height: 150px;
+
+}
 </style>
 
 
@@ -1081,6 +1154,19 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
         itemsDesktopSmall : [979,3]
       });
 
+      $("#owl-demo1").owlCarousel({
+        autoPlay: 3000,
+        items : 6,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+      });
+
+      $("#owl-demo2").owlCarousel({
+        autoPlay: 3000,
+        items : 6,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+      });
 
   });
   </script>

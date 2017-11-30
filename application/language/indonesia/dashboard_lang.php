@@ -43,5 +43,19 @@ $lang['add_pho'] ='Telepon	';
        $lang['fiedl_order'] ='Nomor Pesanan';
     //end of history
 //end of buku alamat
-
+//  Wishlist
+       $lang['wishlist_tittle'] ='RIWAYAT PESANAN ';
+       $lang['ket_wishlist'] ='Dibawah ini adalah daftar <i>Wishlist</i>. Anda bisa menambahkan <i>Wishlist</i> atau menghapus <i>Wishlist</i> anda sebelumnya.';
+        $lang['wishlist_pic'] ='Gambar';
+       $lang['wishlist_name'] ='Nama';
+       $lang['wishlist_del'] ='Hapus';
+       //       AVATAR 
+       $lang['avatar_tittle'] ='UPLOAD GAMBAR ';
+       $lang['avatar_tittle2'] ='Upload Avatar Kamu Disini';
+       $lang['avatar_tittle3'] ='Upload Avatar';
+       $lang['avatar_back'] ='Kembali';
+       $lang['avatar_button'] ='Upload';
+       $lang['avatar_browse'] ='Cari';
+      
+      
  ?>

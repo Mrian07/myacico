@@ -98,7 +98,8 @@ chat = {
 	addMsg: function(msg){
 		var d = (new Date(msg.time)).toLocaleString().split(' ');
 		var t = d[1].slice(0,-3)+' '+d[2];
-		var div = $('<div class="chat-bubble"><div class="message-user">'+msg.from+'</div>'+msg.txt+'<span class="messages-time">'+t+'</span></div>');
+		console.log(msg.txt);
+		var div = $('<div class="chat-bubble"><div class="message-user">'+msg.from+'</div>'+msg.txt.replace(/\r?\n/g, '<br>')+'<span class="messages-time">'+t+'</span></div>');
 		var c = 'msg-left';
 		if(this.user.iss == msg.from) c = 'msg-right';
 		if('sys' == msg.from) c = 'msg-sys';

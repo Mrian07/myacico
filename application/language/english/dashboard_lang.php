@@ -48,5 +48,19 @@ No billing data yet, billing data is required at checkout purchase.';
 
 
 				//end of buku alamat
+//  Wishlist
+       $lang['wishlist_tittle'] ='ORDER HISTORY ';
+       $lang['ket_wishlist'] ='Below is a list of Wishlist. You can add  Wishlist or delete your previous Wishlist.';
+       $lang['wishlist_pic'] ='Picture';
+       $lang['wishlist_name'] ='Name';
+       $lang['wishlist_del'] ='Delete';
+//       AVATAR 
+       $lang['avatar_tittle'] ='UPLOAD IMAGE ';
+       $lang['avatar_tittle2'] ='Upload Your Avatar Here';
+       $lang['avatar_tittle3'] ='Upload Avatar';
+       $lang['avatar_back'] ='Back';
+       $lang['avatar_button'] ='Upload';
+       $lang['avatar_browse'] ='Browse';
+      
 
  ?>

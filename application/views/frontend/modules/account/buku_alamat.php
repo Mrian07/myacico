@@ -95,7 +95,7 @@ function dellBukuAlamat(id,address1){
 					data: '{"id": "' + id+ '"}',
 					success:function(data){
 						// $(".listBukuAlamat").html(html);
-						location.reload();
+					  window.location.replace(base_url+"/account/bukuAlamat");
 					}
 				});
 
