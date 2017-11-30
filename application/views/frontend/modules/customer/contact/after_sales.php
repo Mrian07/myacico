@@ -33,7 +33,7 @@
         <input type="text" id="subject" name="subject" class="form-control mandatory" placeholder="<?php echo$lang_subjek;?>">
   </div>
     <div class="col-sm-6">
-     <input type="text" id="email" name="email" class="form-control mandatory" placeholder="<?php echo$lang_email_add;?>">
+     <input type="email" id="email" name="email" class="form-control mandatory" placeholder="<?php echo$lang_email_add;?>">
   </div>
 </div> <br>
 <div class="row">
