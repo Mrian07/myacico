@@ -7,16 +7,21 @@
 
 		</div>
 	<div class="row">
-	  <div style='width:230px; float:left; margin-right:10px;'><?php $this->load->view('frontend/modules/product/sidebar_left',$this->data); ?></div>
-	  <div style='width:890px; float:left'><?php
+	  <div style='width:230px; float:left; margin-right:10px;'>
+			<?php  $this->load->view('frontend/modules/product/sidebar_left',$this->data); ?>
+		</div>
+	  <div style='width:890px; float:left'>
+			<?php
 		if($this->session->userdata('itemView')=='grid'){
 			$this->load->view('frontend/modules/product/product_items_all',$this->data);
 		}else{
 			$this->load->view('frontend/modules/product/product_items_all_list',$this->data);
 		}
-		 ?></div>
+		 ?>
+	 </div>
 	  <!-- <div class="col-sm-2"><?php // $this->load->view('frontend/modules/product/sidebar_right',$this->data); ?></div>-->
 	</div>
+
         <div id="recentView" style="display: none;">
         <div style='padding:8px; font-family:tahoma; font-size:12px; color:#535151'>
 
@@ -25,11 +30,13 @@
           </div>
     </div>
   <div id="product" class="promo-front owl-carousel">
+
+
 <!--       <div id="product" align="center" ></div>
       <div class="item" style='background:#ffffff; padding:10px; height:210px'>-->
 
-            
-           
+
+
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -38,13 +45,14 @@
                 <span class="glyphicon glyphicon-star-empty"></span>
             </div> -->
 <!--      </div>
-    
+
     </div>-->
 
 
             
 
 </div>
+
 </div>
 <script>
 //    $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
@@ -62,7 +70,7 @@ if(detail[0].name)
 //console.log(detail);
 for(var i=0;i<detail.length;i++)
 {
-    
+
     var str = detail[i].name;
 //            a = a.length;
             if(str.length >20)
@@ -74,10 +82,10 @@ for(var i=0;i<detail.length;i++)
 //            console.log(currencyFormat(detail[i].pricelist));
 //      $('#product').append('<div class="pull-left" style="width: 100px;"><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'" class="link-p" style="color:#fff;"><span class="badgeNi">New</span><img src="'+detail[i].imageurl[0]+'" class="" style="height:100px;"></a><p><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'">'+detail[i].name+'</a></p></div>')
     $('#product').append('<p><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'" class="link-p" style="color:#fff;"><span class="badgeNi">New</span><img src="'+detail[i].imageurl[0]+'" class="" style="height:100px;"></a><br><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'">'+namapotong+' </a><br> '+currencyFormat(detail[i].pricelist)+'</p>')
-  
+
 }
 //detail.forEach(p){
-//    
+//
 //     product.append('<tr><td>'+p.m_product_id+'</td><td>')
 //}
 
