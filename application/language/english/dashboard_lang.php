@@ -57,7 +57,7 @@ No billing data yet, billing data is required at checkout purchase.';
 
 				//end of buku alamat
 //  Wishlist
-       $lang['wishlist_tittle'] ='ORDER HISTORY ';
+       $lang['wishlist_tittle'] ='WISHLIST ';
        $lang['ket_wishlist'] ='Below is a list of Wishlist. You can add  Wishlist or delete your previous Wishlist.';
        $lang['wishlist_pic'] ='Picture';
        $lang['wishlist_name'] ='Name';
