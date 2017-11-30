@@ -76,7 +76,8 @@ No billing data yet, billing data is required at checkout purchase.';
        $lang['avatar_back'] ='Back';
        $lang['avatar_button'] ='Upload';
        $lang['avatar_browse'] ='Browse';
-     
+    //      Info Akun
+       $lang['field_info_akun'] =' If you want changes name, please input the new one and click button update.'; 
       
 
  ?>

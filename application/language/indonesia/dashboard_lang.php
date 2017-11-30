@@ -72,6 +72,7 @@ $lang['add_pho'] ='Telepon	';
        $lang['avatar_button'] ='Upload';
        $lang['avatar_browse'] ='Cari';
      
-      
+//      Info Akun
+       $lang['field_info_akun'] ='Silakan isi nama akun yang baru jika ingin melakukan perubahan dan click button update.';
       
  ?>

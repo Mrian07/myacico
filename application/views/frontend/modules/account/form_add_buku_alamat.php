@@ -31,7 +31,7 @@
 					<div class='row'>
 						<div class="col-sm-6">
 							<div class="form-group">
-							<label><?php echo $field_naem; ?></label>
+							<label><?php echo $field_name; ?></label>
 								<?php echo $user->name; ?>
 							</div>
 						</div>

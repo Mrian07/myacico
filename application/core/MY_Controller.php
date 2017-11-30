@@ -195,8 +195,8 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
     $this->data['lang_fyou'] = $this->lang->line('inf_you');
     $this->data['lang_bil'] = $this->lang->line('inf_bil');
     $this->data['lang_bils'] = $this->lang->line('inf_bils');
-    $this->data['lang_tamb'] = $this->lang->line('btn_tambah');
-
+    $this->data['lang_info_akun'] = $this->lang->line('field_info_akun');
+    
 
     //akhir dari informasi
 
@@ -210,7 +210,7 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
           //tambah buku Alamat
             $this->data['field_back'] = $this->lang->line('field_kembali');
             $this->data['field_lengkap'] = $this->lang->line('field_sila');
-            $this->data['field_naem'] = $this->lang->line('field_name');
+            $this->data['field_name'] = $this->lang->line('field_name');
             $this->data['field_atasnama'] = $this->lang->line('field_byname');
             $this->data['field_save'] = $this->lang->line('field_save');
             $this->data['field_alamatLain'] = $this->lang->line('field_alamat');
