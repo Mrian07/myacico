@@ -15,13 +15,24 @@ The products you buy can be service at various trusted outlets</p>';
 $lang['f_guarantee5'] = '<p><b>
 Quick service</b><br>
 Our customer service will always be fast and responsive in providing information</p>';
-$lang['footer_info'] = '<b>myACICO.co.id, Complete & Reliable Ecommerce With Various Product Options And Promo Attractive</b><br> Sebagai Toko Online baru di Indonesia, myACICO.co.id yang memiliki slogan “Total Shopping Experience” hadir dengan delapan kategori pilihan untuk memenuhi kebutuhan Anda, mulai dari kebutuhan komputer, gadget, komunikasi, audio dan visual, mekanikal-elektrikal, hobi, perlengkapan rumah dan perlengkapan kantor. Bagi Anda yang memiliki kebutuhan laptop bisnis, laptop gaming, laptop murah, smartphone selfie, dan smartphone murah,  Toko Online myACICO.co.id dapat memenuhi kebutuhan Anda denga menghadirkan berbagai varian laptop dan gadget terbaru dan terpopuler di kategori laptop & kategori gadget. Selain itu, Online Shop myACICO.co.id juga menghadirkan kategori Komunikasi, Audio-Visual dan Hobi untuk memberikan pilihan produk lifestyle kekinian.<br><br>
-Bagi Anda yang membutuhkan produk-produk maknikal-elektrikal, Toko Online MyACICO membantu Anda untuk memiliki perlengkapan mekanik-elektrik secara mudah dengan penawaran produk mekanikal terlengkap, mulai dari produk Bor, Genset, dan Gerinda. Berbagai produk perlengkapan rumah tangga juga hadir di Online Shop myACICO.co.id, mulai dari produk elektronik rumah tangga,  seperti AC, perlatan dapur, kulkas, kompor, perlengkapan menjahit, perlengkapan mencuci, perlengkapan sanitasi, peralatan kebersihan dan barang konsumsi rumah tangga. Ditambah dengan varian perlengkapan kantor mulai dari  mebel kantor, perlengkapan seni, pengarsipan dokumen, buku, printer label, smart access, aksesoris meja kantor, kalkulator, mesin absen, kertas, shredder , mesin jilid & laminasi, papan tulis dan peralatan kasir. Ayo belanja online kebutuhan sehari-hari Anda di online shop myACICO.co.id dengan kategori terlengkap dan terpecaya. Rasakan “Total Shopping Experience” Anda dengan menjelajahi kategori dengan ribuan produk pilihan di online shop myACICO.co.id!
-<br><br><b>Gratis Ongkir untuk Area Jakarta</b><br> Toko Online myACICO.co.id memberikan Anda kemudahan dalam belanja online dengan memudahkan pengiriman produk yang anda pesan untuk pemesanan wilayah Jakarta. Nikmati belanja online untuk segala kebutuhan di Toko Online myACICO.co.id setiap hari dengan promo-promo pilihan. Dapatkan harga spesial dengan mengunjungi website myACICO.co.id. Promo spesial bagi pengunjung dapat dilihat pada website myACICO.co.id dengan produk-produk terbaik yang ditawarkan Setiap hari, Anda juga masih bisa menikmati produk gadget termurah dengan Potongan harga terbaik, setiap hari.<br><br>
+$lang['footer_info'] = '<b>myACICO.co.id, the most comprehensive and trusted e-commerce with various products and fantastic promotion</b>
+myACICO.co.id, as new e-commerce in Indonesia, has a tagline “Total Shopping Experience”, providing 8 categories to fulfill customers’ needs. myACICO category includes Computers, Gadgets, Communications, Audio-Visual, Mechanical-Electrical, Hobby, Home Appliances, and Office Equipment. myACICO.co.id will complete your requirement for Business Laptop, Gaming Laptop, Consumer Laptop and Selfie Expert Smartphone with  the latest and the most popular items. Moreover, myACICO.co.id offers the latest lifestyle products from each categories.
+If you need Mechanical-Electrical products, myACICO.co.id will cover it with complete Mechanical-Electrical tools, such as Drill, Genset, and Grinder. All various Home Appliance such as AC, Kitchen Equipment, Refrigerator, Stove, Sewing Supplies, Washing Machine, Sanitary Supplies and Households Goods. It added with Office Equipment like Office Furniture, Art Supplies, Document Archiving, Book, Label Printer, Smart Access, Office Desk Accessories, Calculator, Attendance Machines, Papers, Shredder, Binding and Laminating, Board, Cashier Equipment. Let’s Shop your daily needs at myACICO.co.id, the most comprehensive and trusted e-commerce. Feel your “Total Shopping Experience” with exploring thousands selection products in 8 Categories at myACICO.co.id.
+<br/>
+<br/>
+<b>Jakarta Area Free Delivery</b>
+myACICO.co.id gives customers easiness with Free Delivery for Jakarta Area. Enjoy your online shopping everyday and everytime with interesting promotion at myACICO.co.id . Get your special price and special promotion with the wide range of product selection by visiting myACICO website. You can also get daily discount for Special Gadgets.<br/>
+<br/>
+<b>Shipping in 2-7 Days</b>
+As the most comprehensive product categories and promotion online shop, myACICO.co.id will guarantee your shipping order in fastest way. We committed to deliver your product in 2-7 days. The Shipment is supported by myACICO Courier, Ninja Express and JNE.<br/>
+<br/>
+<b>Competitive Price</b>
+myACICO.co.id always in competitive price to ensure every customer gets the cheapest laptop, cheapest gadget, cheapest tablet, cheapest camera, cheapest drone, cheapest headset, cheapest game and cheapest AC. Our online payment always in various simple ways. myACICO.co.id provides the payment methods of Visa, Master Cards, CIMB Clicks, Mandiri KlikPay and KlikPay BCA.<br/>
+<br/>
+<b>7 Days Return Warranty</b>
+E-commerce myACICO.co.id is very comfortable and trusted. 7 Days Return Warranty make customers feel comfortable and No Worry with Our Products. Replacement of Defective Items certified by myACICO.co.id without Delivery Fee in Return. Please Contact our Customer Care through telephone, email or live chat to assist you.<br/>
 
-<b>Pengiriman 2-7 Hari Kerja</b><br> Sebagai toko online dengan kategori produk dan promo terlengkap, myACICO.co.id juga menjamin pengiriman cepat untuk setiap produk yang di pesan. Komitmen  Toko Online myACICO.co.id untuk dapat mengirimkan produk pelanggan dengan jangka waktu pengiriman 2-7 Hari Kerja. Pengiriman produk dari myACICO.co.id akan di support oleh myACICO courrier, Ninja Express dan JNE.<br><br>
-<b>Harga yang Kompetitif</b><br> myACICO.co.id memberikan harga yang paling kompetitif kepada para costumer, sehingga costumer dapat merasakan pembelian produk laptop murah, gadget murah, tablet murah, kamera murah, drone murah,headset murah, game murah, Ac murah. Pembayaran dalam belanja online di myACICO.co.id bisa Anda lakukan dengan bergam cara yang mudah. Pembayaran yang tersedia di Toko Online myACICO.co.id, seperti pembayaran melalui Visa, MasterCard, CIMB Clicks, Mandiri Clickpay, dan Klik BCA.<br><br>
-<b>Garansi 7 Hari Pengembalian Barang</b><br> Toko Online myACICO.co.id sangat nyaman dan terpercaya. Online Shop myACICO.co.id mendukung Anda agar nyaman dalam belanja, dengan garansi 7 hari pengembalian barang di myACICO.co.id anda tidak perlu khawatir dengan kondisi barang yang anda pesan. Penggantian barang yang mengalami cacat produksi di tanggung oleh myACICO.co.id dengan gratis pengiriman produk pada saat pengembalian, Anda bisa hubungi kami melalui Customer Care (telepon, email, dan live chat) yang online 24 jam untuk membantu Anda';
+';
 $lang['f_info'] = 'Information';
 $lang['f_ttangKami'] = 'About Us';
 $lang['f_syarat'] = 'Terms and conditions';
@@ -41,7 +52,8 @@ $lang['f_courier'] = 'Courier';
 $lang['f_dunlud'] = 'Download Our Applications';
 $lang['f_sea'] = 'View All';
 $lang['f_after_sales'] = 'After Sales';
-$lang['f_a_sales'] = '<br>Layanan Purna jual PT Myacico Global Indonesia'
+$lang['f_a_sales'] = '<div style="text-align: justify;
+    text-justify: inter-word;"><br>Layanan Purna jual PT Myacico Global Indonesia'
         . '<br><b>I. Informasi Umum</b><br>Myacico.co.id memiliki layanan purna jual sebagai salah satu bentuk pelayanan kepada pelanggan. Dengan didukung oleh tenaga ahli maupun kerjasama dengan tenaga ahli dari beberapa brand terkemuka, Myacico.co.id akan membantu pelanggan dalam memperbaiki dan penukaran produk.'
         . '<br><b>II. Bentuk Layanan Purna jual</b>'
         . '<br>Berikut ini merupakan bentuk ketersediaan layanan purna jual yang dilakukan Myacico.co.id:'
@@ -78,6 +90,7 @@ $lang['f_a_sales'] = '<br>Layanan Purna jual PT Myacico Global Indonesia'
         . '<br>2. Segel garansi sudah copot atau rusak'
         . '<br>3. Tidak dapat menyertakan bukti pembelian di Myacico.co.id atau nomor serial produk tidak terdaftar pada data transaksi di Myacico.co.id Pembelian produk diluar website Myacico.co.id'
         . '<br>4. Kelalaian pelanggan baik secara sengaja maupun tidak sengaja yang mengakibatkan kerusakan seperti modifikasi, kerusakan akibat bencana alam, kelalaian akibat pemakaian (terjatuh, terkena cairan, hilang, dll), ketidakstabilan aliran listrik, serangan virus, kerusakan pemakaian perangkat tambahan, kesalahan instalasi perangkat lunak/software, dan telah diperbaiki di tempat lain'
+        . '</div>'
 ;
 $lang['f_aftersale_cont'] = 'Please Contact Our After Sales Service';
 $lang['f_subjek'] = 'Subject:';
@@ -89,18 +102,3 @@ $lang['f_company'] = 'Company:';
 $lang['f_msg'] = 'Message';
 $lang['f_btn_send'] = 'Send';
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

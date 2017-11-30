@@ -1,45 +1,4 @@
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-	<!-- <?php
-	foreach($hasil_filter as $dataf){
-		if($dataf->filterAlias=='Price'){?>
-			<div id="<?php echo$pane; ?>" class="menu_list">
-				<p class="menu_head plus"><?php echo $dataf->filter; ?></p>
-				<div class="menu_body">
-					<div id="<?php echo$sliderprice; ?>" style='margin-bottom:5px'></div>
-					<div class="input-group" style='margin-bottom:5px'>
-					<span class="input-group-addon" id="basic-addon2">Rp</span>
-					<input id="<?php echo$sliderpricelow; ?>" type="text" class="form-control" aria-describedby="basic-addon2">
-					</div>
-
-					<div class="input-group">
-						<span class="input-group-addon" id="basic-addon2">Rp</span>
-						<input id="<?php echo$sliderpricehigh; ?>" type="text" class="form-control" aria-describedby="basic-addon2">
-					</div>
-
-				</div>
-			</div>
-		<?php }else{
-		?>
-		<div id="<?php echo$pane; ?>" class="menu_list">
-			<p class="menu_head plus"><?php echo $dataf->filter; ?></p>
-			<div class="menu_body">
-				<?php
-					foreach($dataf->data as $datac){
-						?>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="<?php echo $datac->count; ?>" onclick='filterSidebar("<?php echo $dataf->filterAlias; ?>","<?php echo $datac->valueAlias; ?>")'>
-							<?php echo $datac->value; ?>
-							</label>
-						</div>
-					<?php }
-				 ?>
-			</div>
-		</div>
-	<?php }}
-	 ?> -->
-
-	<div id="<?php echo$pane; ?>" class="menu_list">	
+	<div id="<?php echo$pane; ?>" class="menu_list">
 		<p class="menu_head plus">Category
 		</p>
 		<div class="menu_body">

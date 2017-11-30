@@ -1,11 +1,11 @@
 <?php
 $lang['das_welcome'] = 'Dari Beranda Akun anda, anda bisa melihat tinjauan dari aktivitas akun yang ada sekarang dan memperbaharui informasi akun anda. Pilih tautan di bawah ini untuk melihat atau mengedit informasi.';
-$lang['das_acc'] = 'Informasi Akun & Billing';
+$lang['das_acc'] = 'Informasi Akun & Tagihan';
 $lang['das_info'] ='Informasi yang berkaitan dengan akun dan data pembayaran order Anda.';
 $lang['das_change'] ='Ubah Data Dan Password';
 $lang['das_pay'] ='Konfirmasi Pembayaran';
 $lang['das_you'] ='Anda bisa melakukan konfirmasi pembayaran pada halaman Riwayat dan Status Pesanan.';
-$lang['das_news'] ='email berlangganan newsletter';
+$lang['das_news'] ='email berlangganan news letter';
 $lang['das_addres'] ='Buku Alamat';
 $lang['das_regis'] ='Daftar dengan';
 $lang['das_history'] ='Riwayat & Status Pesanan';
@@ -20,7 +20,8 @@ $lang['das_history'] ='Riwayat & Status Pesanan';
 
 //buku Alamat
 $lang['inf_datakun'] ='Tambah Buku Alamat	';
-$lang['add_dibawa'] ='Dibawah ini adalah daftar buku alamat penerima pesanan. Anda bisa menambahkan alamat baru atau mengubah alamat sebelumnya dengan alamat yang lain.';
+ $lang['add_edit_button'] ='Ubah';
+$lang['add_dibawah'] ='Dibawah ini adalah daftar buku alamat penerima pesanan. Anda bisa menambahkan alamat baru atau mengubah alamat sebelumnya dengan alamat yang lain.';
 $lang['add_rec'] ='Penerima	';
 $lang['add_alamat'] ='Alamat	';
 $lang['add_pho'] ='Telepon	';
@@ -41,10 +42,16 @@ $lang['add_pho'] ='Telepon	';
      $lang['field_total'] ='Total Pembayaran';
      $lang['field_metod'] ='Metode Pembayaran';
        $lang['fiedl_order'] ='Nomor Pesanan';
+    $lang['field_start_date'] ='Tanggal Awal';
+    $lang['field_to_date'] ='Tanggal Akhir';
+    $lang['field_btn_search'] ='cari';
+    $lang['field_confirmation'] ='Konfirmasi /Kartu Kredit';
+    $lang['field_btn_confirm'] ='Konfirmasi';
+
     //end of history
 //end of buku alamat
 //  Wishlist
-       $lang['wishlist_tittle'] ='RIWAYAT PESANAN ';
+       $lang['wishlist_tittle'] ='WISHLIST ';
        $lang['ket_wishlist'] ='Dibawah ini adalah daftar <i>Wishlist</i>. Anda bisa menambahkan <i>Wishlist</i> atau menghapus <i>Wishlist</i> anda sebelumnya.';
         $lang['wishlist_pic'] ='Gambar';
        $lang['wishlist_name'] ='Nama';
@@ -56,6 +63,7 @@ $lang['add_pho'] ='Telepon	';
        $lang['avatar_back'] ='Kembali';
        $lang['avatar_button'] ='Upload';
        $lang['avatar_browse'] ='Cari';
+     
       
       
  ?>

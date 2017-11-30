@@ -22,7 +22,8 @@ No billing data yet, billing data is required at checkout purchase.';
 
 				//buku Alamat
 				$lang['inf_datakun'] ='Add Address Book	';
-				$lang['add_dibawa'] ='Below is a list of address book recipients of the order. You can add a new address or change your previous address with another address.';
+                                $lang['add_edit_button'] ='Edit';
+				$lang['add_dibawah'] ='Below is a list of address book recipients of the order. You can add a new address or change your previous address with another address.';
 				$lang['add_rec'] ='Receiver	';
 				    $lang['add_alamat'] ='Address	';
 						  $lang['add_pho'] ='Phone	';
@@ -42,14 +43,21 @@ No billing data yet, billing data is required at checkout purchase.';
 									 $lang['field_riwayyat'] ='ORDER HISTORY';
 									 $lang['field_tgl'] ='Order Date';
 									 $lang['field_total'] ='Total payment';
-									  $lang['field_metod'] ='Payment method';
-										  $lang['fiedl_order'] ='Order Number';
+									 $lang['field_metod'] ='Payment method';
+                                                                         $lang['fiedl_order'] ='Order Number';
+                                                                        $lang['field_start_date'] ='From Date';
+									$lang['field_to_date'] ='To Date';
+                                                                        $lang['field_btn_search'] ='search';
+									$lang['field_confirmation'] ='Confirmation/Credit Card';
+                                                                            $lang['field_btn_confirm'] ='Confirmation';
+
+                                                                                  
 									 //end of history
 
 
 				//end of buku alamat
 //  Wishlist
-       $lang['wishlist_tittle'] ='ORDER HISTORY ';
+       $lang['wishlist_tittle'] ='WISHLIST ';
        $lang['ket_wishlist'] ='Below is a list of Wishlist. You can add  Wishlist or delete your previous Wishlist.';
        $lang['wishlist_pic'] ='Picture';
        $lang['wishlist_name'] ='Name';
@@ -61,6 +69,7 @@ No billing data yet, billing data is required at checkout purchase.';
        $lang['avatar_back'] ='Back';
        $lang['avatar_button'] ='Upload';
        $lang['avatar_browse'] ='Browse';
+     
       
 
  ?>

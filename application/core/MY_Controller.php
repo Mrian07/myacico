@@ -168,6 +168,24 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
      $this->data['lang_history'] = $this->lang->line('das_history');
     //akhhir dari dashboard
 
+    //language di headers
+      $this->data['lang_tentangkami'] = $this->lang->line('lang_pages_aboutUs');
+      $this->data['lang_isinya'] = $this->lang->line('lang_isiaboutUS');
+        $this->data['lang_hist'] = $this->lang->line('lang_pages_history');
+          $this->data['lang_page'] = $this->lang->line('lang_pages_acico');
+            $this->data['lang_pages_vis'] = $this->lang->line('lang_pages_vis');
+              $this->data['lang_vis'] = $this->lang->line('lang_pages_vis');
+                $this->data['lang_mis'] = $this->lang->line('lang_pages_miss');
+                  $this->data['lang_isi_vis'] = $this->lang->line('lang_pagesisi_vis');
+                    $this->data['lang_isi_mis'] = $this->lang->line('lang_pagesisi_mis');
+                      $this->data['lang_isi_oru'] = $this->lang->line('lang_pages_oru');
+                      $this->data['lang_isi_peng'] = $this->lang->line('lang_pages_peng');
+                      $this->data['lang_isi_al'] = $this->lang->line('lang_pages_alw');
+                        $this->data['lang_isi_harg'] = $this->lang->line('lang_pages_ch');
+
+
+    //akhir langauge di header
+
     //informasi AKUN
 
     $this->data['lang_datkun'] = $this->lang->line('inf_datakun');
@@ -182,20 +200,23 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
 
     //buku Alamat
       $this->data['lang_addDres'] = $this->lang->line('inf_datakun');
-      $this->data['lang_dibwh'] = $this->lang->line('add_dibawa');
+      $this->data['lang_dibwh'] = $this->lang->line('add_dibawah');
         $this->data['lang_Pen'] = $this->lang->line('add_rec');
         $this->data['lang_alam'] = $this->lang->line('add_alamat');
           $this->data['lang_pho'] = $this->lang->line('add_pho');
 
           //tambah buku Alamat
             $this->data['field_back'] = $this->lang->line('field_kembali');
-              $this->data['field_lengkap'] = $this->lang->line('field_sila');
-                $this->data['field_naem'] = $this->lang->line('field_name');
-                $this->data['field_atasnama'] = $this->lang->line('field_byname');
-                $this->data['field_save'] = $this->lang->line('field_save');
-                  $this->data['field_alamatLain'] = $this->lang->line('field_alamat');
-                    $this->data['field_kel'] = $this->lang->line('field_kel');
-                      $this->data['field_telpon'] = $this->lang->line('field_telp');
+            $this->data['field_lengkap'] = $this->lang->line('field_sila');
+            $this->data['field_naem'] = $this->lang->line('field_name');
+            $this->data['field_atasnama'] = $this->lang->line('field_byname');
+            $this->data['field_save'] = $this->lang->line('field_save');
+            $this->data['field_alamatLain'] = $this->lang->line('field_alamat');
+            $this->data['field_kel'] = $this->lang->line('field_kel');
+            $this->data['field_telpon'] = $this->lang->line('field_telp');
+           // $this->data['lang_add_book'] = $this->lang->line('add_book');
+            $this->data['lang_add_edit'] = $this->lang->line('add_edit_button');
+
           //end of tambah
           //riwayat PESANAN
               $this->data['lang_riw'] = $this->lang->line('field_riwayyat');
@@ -203,6 +224,14 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
               $this->data['lang_tota'] = $this->lang->line('field_total');
                 $this->data['lang_metod'] = $this->lang->line('field_metod');
                         $this->data['lang_orde'] = $this->lang->line('fiedl_order');
+               $this->data['lang_to_date'] = $this->lang->line('field_to_date');
+$this->data['lang_start_date'] = $this->lang->line('field_start_date');
+$this->data['lang_btn_search'] = $this->lang->line('field_btn_search');
+$this->data['lang_field_confirmation'] = $this->lang->line('field_confirmation');
+$this->data['lang_btn_confirm'] = $this->lang->line('field_btn_confirm');
+
+
+
 
           //end pesanan
 
@@ -238,7 +267,7 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
                 $this->data['lang_avatar_back'] = $this->lang->line('avatar_back');
                 $this->data['lang_avatar_button'] = $this->lang->line('avatar_button');
                 $this->data['lang_avatar_browse'] = $this->lang->line('avatar_browse');
-                   
+
 
 		//end of personal
 
