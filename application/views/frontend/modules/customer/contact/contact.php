@@ -80,7 +80,7 @@ function myMap() {
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
 var apiurl_comp = baseApiUrl + '/mail/contactus';
-    console.log('asd',apiurl);
+
 var data = {};
 $(document).ready(function() {
 
@@ -92,7 +92,7 @@ $(document).ready(function() {
 		var email = $("#email").val();
 		var issue = $("#issue").val();
     	var message = $("#message").val();
-        
+
       var captcha = <?php echo  strtolower($this->session->userdata('mycaptcha'));?>;
       var secutity_code = $("#secutity_code").val();
       console.log('asdasd',captcha);
@@ -123,7 +123,7 @@ $(document).ready(function() {
         $('.mandatory').prop('disabled', false);
         return false;
       }
-      
+
       if(message ===''){
         $.alert({title:'Alert', content: ' Pesan tidak boleh kosong'});
         $('#spinner_img').hide();

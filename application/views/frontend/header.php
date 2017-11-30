@@ -205,16 +205,27 @@ var prod_detail =  localStorage.getItem('product_detail');
 
 
 														function test(){
+															<?php if(isset($user)){
+																?>
+																var testString = "<?php echo $user->name;?>"
 
-															var testString = "<?php echo $user->name;?>"
+																var testArray = testString .split(' ');
 
-															var testArray = testString .split(' ');
+																return testArray[0];
+															<?php }else{
+															?>	var testString = "";
+															<?php } ?>
 
-															return testArray[0];
 
 
 														}
+														<?php if(isset($user)){
+														 ?>
 														document.getElementById("test").innerHTML = test();
+														<?php }else{
+															?>
+															
+														<?php } ?>
 													</script>
 									 <div style='margin-top:-8px; '>
 										 <?php if(isset($user)){ ?>
