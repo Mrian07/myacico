@@ -2,7 +2,7 @@
 <div class="container">
 	<div class='my-bg-title'>
 
-		<i class="fa fa-angle-right" aria-hidden="true"></i> DASHBOARD
+		<i class="fa fa-angle-right" aria-hidden="true"></i> DASHBOARD1
 
 	</div>
 </div>
