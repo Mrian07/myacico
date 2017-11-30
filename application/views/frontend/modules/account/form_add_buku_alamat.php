@@ -87,11 +87,11 @@
         </div>
 					<div class="form-group">
 					<label>Handphone*</label>
-						<input type="text" id = "phone"name="phone" class="form-control mandatory" />
+						<input type="text" id = "phone"name="phone" maxlength="12" class="form-control mandatory" />
 					</div>
 					<div class="form-group">
 					<label><?php echo  $field_telpon; ?></label>
-						<input type="text" id = "phone2"name="phone2" class="form-control"/>
+						<input type="text" id = "phone2"name="phone2" maxlength="12" class="form-control"/>
 					</div>
 					<div class="clearfix"></div>
 						<input type="submit" id="submit_btn" class="btn btn-primary" value="Save"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
@@ -110,6 +110,12 @@ $.ajaxSetup({
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
 });
+$('#phone').on('input', function(event) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+$('#phone2').on('input', function(event) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
 $('#village_id').change(function () {
         var end = this.value;
       $('#submit_btn').removeAttr('disabled');

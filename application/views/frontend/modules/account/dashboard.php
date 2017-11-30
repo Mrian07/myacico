@@ -55,7 +55,7 @@ $("#hapus").val(null);
 if(data.status == 1 ) {
 	rumah.append('<tr><td><?php echo $lang_news; ?></td></tr>');
 }else{
-	rumah.append('<tr><td><?php echo $lang_news; ?></td></tr>');
+	rumah.append('<tr><td><?php echo $lang_news2; ?></td></tr>');
 }
 
 	 // rumah.append('<tr><td>'+p.address_name+',  '+p.address1+' '+p.address2+' '+p.city_name+' '+p.postal+'</td><td><a href="'+link_url+'/'+p.id+'" class="btn btn-link" aria-label="Ubah"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a class="btn btn-link" id="hapus'+p.id+'" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>')
