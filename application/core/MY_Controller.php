@@ -170,6 +170,20 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
 
     //language di headers
       $this->data['lang_tentangkami'] = $this->lang->line('lang_pages_aboutUs');
+      $this->data['lang_isinya'] = $this->lang->line('lang_isiaboutUS');
+        $this->data['lang_hist'] = $this->lang->line('lang_pages_history');
+          $this->data['lang_page'] = $this->lang->line('lang_pages_acico');
+            $this->data['lang_pages_vis'] = $this->lang->line('lang_pages_vis');
+              $this->data['lang_vis'] = $this->lang->line('lang_pages_vis');
+                $this->data['lang_mis'] = $this->lang->line('lang_pages_miss');
+                  $this->data['lang_isi_vis'] = $this->lang->line('lang_pagesisi_vis');
+                    $this->data['lang_isi_mis'] = $this->lang->line('lang_pagesisi_mis');
+                      $this->data['lang_isi_oru'] = $this->lang->line('lang_pages_oru');
+                      $this->data['lang_isi_peng'] = $this->lang->line('lang_pages_peng');
+                      $this->data['lang_isi_al'] = $this->lang->line('lang_pages_alw');
+                        $this->data['lang_isi_harg'] = $this->lang->line('lang_pages_ch');
+
+
     //akhir langauge di header
 
     //informasi AKUN
@@ -202,7 +216,7 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
             $this->data['field_telpon'] = $this->lang->line('field_telp');
            // $this->data['lang_add_book'] = $this->lang->line('add_book');
             $this->data['lang_add_edit'] = $this->lang->line('add_edit_button');
-           
+
           //end of tambah
           //riwayat PESANAN
               $this->data['lang_riw'] = $this->lang->line('field_riwayyat');

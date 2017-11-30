@@ -23,6 +23,18 @@ $lang['field_fbo'] = "<div style='font-family: arial; font-size:12px; font-weigh
 
       //about us
       $lang['lang_pages_aboutUs'] ='About Us';
+      $lang['lang_isiaboutUS'] ='
+      Myacico.co.id is a breakthrough in today`s leading Ecommerce sector that established since February 2017, is also a subsidiary of ACICO Indonesia, is one of the fastest growing B2C, B2B and B2G website destination for your shopping needs myACICO.co.id offers a wide variety of product ensuring your shopping journey is fast, transparent and safe.';
+        $lang['lang_pages_history'] ='History';
+          $lang['lang_pages_acico'] ='ACICO Group, specializing in international trade and procurement services has over 20 years of experience. Entering the B2B market since 1995, ACICO vast experience has landed the group as one of the faster growing procurement services in the nation.';
+          $lang['lang_pages_vis'] ='Vision';
+          $lang['lang_pages_miss'] ='Mission';
+          $lang['lang_pagesisi_vis'] ='To be the most customer centric and Global leader in IT and High Technology market.';
+          $lang['lang_pagesisi_mis'] ='To provide a high quality service, and setting high standards in the Industry by providing a simple yet an effective business solution. Thus, providing a high level of satisfaction to our customers and consumers.';
+          $lang['lang_pages_oru'] ='Our benefits';
+          	$lang['lang_pages_peng'] ='2 working days delivering';
+            $lang['lang_pages_alw'] ='Always ready in stock';
+            $lang['lang_pages_ch'] ='Cheapest prices';
 
       //pages tentang kami
 
