@@ -190,6 +190,7 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
     //informasi AKUN
 
     $this->data['lang_datkun'] = $this->lang->line('inf_datakun');
+    $this->data['lang_inf_name'] = $this->lang->line('inf_name');
     $this->data['lang_gant'] = $this->lang->line('inf_gant');
     $this->data['lang_fyou'] = $this->lang->line('inf_you');
     $this->data['lang_bil'] = $this->lang->line('inf_bil');
@@ -200,7 +201,7 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
     //akhir dari informasi
 
     //buku Alamat
-      $this->data['lang_addDres'] = $this->lang->line('inf_datakun');
+      $this->data['lang_addDres'] = $this->lang->line('add_info');
       $this->data['lang_dibwh'] = $this->lang->line('add_dibawah');
         $this->data['lang_Pen'] = $this->lang->line('add_rec');
         $this->data['lang_alam'] = $this->lang->line('add_alamat');

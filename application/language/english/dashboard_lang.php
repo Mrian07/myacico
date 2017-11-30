@@ -14,6 +14,7 @@
 
 				//informasi AKUN
 				$lang['inf_datakun'] ='Account Information';
+                                $lang['inf_name'] ='Change Name';
 				$lang['inf_gant'] ='Change Password';
 				$lang['inf_you'] ='If you want to change the password click button below.';
 				$lang['inf_bil'] ='Billing Information.';
@@ -22,7 +23,7 @@ No billing data yet, billing data is required at checkout purchase.';
 				//akhirdari informasi akun
 
 				//buku Alamat
-				$lang['inf_datakun'] ='Add Address Book	';
+				$lang['add_info'] ='Add Address Book	';
                                 $lang['add_edit_button'] ='Edit';
 				$lang['add_dibawah'] ='Below is a list of address book recipients of the order. You can add a new address or change your previous address with another address.';
 				$lang['add_rec'] ='Receiver	';
