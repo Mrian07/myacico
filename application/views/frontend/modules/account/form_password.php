@@ -1,6 +1,6 @@
 <div class="container">
 	<div class='my-bg-title'>
-			<i class="fa fa-angle-right" aria-hidden="true"></i> INFORMASI AKUN
+			<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_datkun;?>
 	</div>
 
 	<div class="row">
@@ -8,7 +8,7 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
+			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> '.$lang_avatar_back, array('class'=>'btn-back'));?></p>
 			<?php
 			$lang = get_cookie('lang');
 			if($lang=='en'){?>
@@ -18,21 +18,21 @@
 				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none;'>
 				<span class="glyphicon glyphicon-ok"></span> Update password sukses.</div>
 			<?php } ?>
-			<p>Gunakan form dibawah ini untuk mengubah password login Anda.</p>
+			<p><?php echo $lang_password_tittle;?></p>
 			<section class="login_content">
 			  <form name="loginFm" method="post">
 
 				<div class="form-group">
-				  <label>Kata Sandi Saat Ini*</label>
+				  <label><?php echo $lang_password_now;?></label>
 				  <input type="password" name="oldPassword" id="oldPassword" class="form-control mandatory"/>
 				</div>
 				<div class="form-group">
-				  <label>Kata Sandi Baru*</label>
+				  <label><?php echo $lang_reset_password_txt;?></label>
 				  <input type="password" name="newPassword" id="newPassword" class="form-control mandatory"/>
 				</div>
 
 				<div class="form-group">
-				  <label>Konfirmasi Kata Sandi Baru*</label>
+				  <label><?php echo $lang_reset_password_form2;?></label>
 				  <input type="password" id="new_password2" class="form-control mandatory"/>
 				</div>
 
@@ -58,7 +58,7 @@
 		  console.log('OK:', er);
 		  $.alert({
 		    title: 'Alert!',
-		    content: 'koneksi tidak berhasil, silahkan coba lagi!',
+		    content: '<?php echo$lang_msg_login3;?>',
 		  });
 		};
 
@@ -77,15 +77,24 @@
 				if(oldPassword==''){
 					$.alert({
 						title: 'Alert!',
-						content: 'password tidak boleh kosong!',
+						content: '<?php echo$lang_msg_pswd1;?>',
 					});
-				}else
-				if(newPassword != new_password2){
+				}else if(newPassword==''){
 					$.alert({
 						title: 'Alert!',
-						content: 'Password tidak sama!',
+						content: '<?php echo$lang_msg_pswd2;?>',
 					});
-				}else{
+				}else if(newPassword != new_password2){
+					$.alert({
+						title: 'Alert!',
+						content: '<?php echo$lang_reset_password_msg2;?>',
+					});
+				}else if(newPassword.length < 7){
+                                        $.alert({
+                                                title: 'Alert!',
+                                                content: '<?php echo $lang_reset_password_msg1;?>',
+                                        });
+                                }else{
 					$('#spinner_img').show();
 					$('#submit_btn').val('loading...').addClass('disabled');
 					//$.post( apiurl, data, success, "json" );

@@ -39,5 +39,10 @@ $lang['daftar_info'] = '2x24 hours delivery on weekdays for all areas of JABODET
 $lang['daftar_info_point1'] = '1.DELIVERY';
 $lang['daftar_info_point2'] = '2. RETURN';
 $lang['daftar_info2'] = 'Damage to goods caused by errors from the manufacturer of goods, can be exchanged within 7 working days or money back within 2x24 hours.'; 
-//$lang['daftar_info2'] = '';
+//change pswd
+$lang['password_tittle'] = 'Use the form below to change your login password.';
+$lang['password_now'] = 'Your Old Password*';
+$lang['msg_pswd1'] = 'Password Old Can not Be Empty!';
+$lang['msg_pswd2'] = 'Password New Can not Be Empty!';
+
 ?>

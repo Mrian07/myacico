@@ -104,6 +104,15 @@ class Web extends MY_Controller {
     //label
     $this->data['lang_lab_name'] = $this->lang->line('label_name');
     $this->data['lang_lab_rep_pass'] = $this->lang->line('label_rep_pass');
+//    ubah password akun
+    $this->data['lang_password_tittle'] = $this->lang->line('password_tittle');
+    $this->data['lang_password_now'] = $this->lang->line('password_now');
+    $this->data['lang_msg_pswd1'] = $this->lang->line('msg_pswd1');
+    $this->data['lang_msg_pswd2'] = $this->lang->line('msg_pswd2');
+
+
+
+
 //    Forgot Password
     $this->data['lang_password_text'] = $this->lang->line('lost_password_text');
     $this->data['lang_password_tittle'] = $this->lang->line('lost_password_tittle');
