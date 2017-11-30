@@ -245,7 +245,9 @@ $this->data['lang_nama_barang'] = $this->lang->line('field_nama_barang');
 $this->data['lang_invoice'] = $this->lang->line('field_invoice');
 $this->data['lang_detail_order'] = $this->lang->line('field_detail_pesanan');
 $this->data['lang_ket_konfirm'] = $this->lang->line('field_ket_konfirm');
-
+$this->data['lang_msg_upload'] = $this->lang->line('msg_upload');
+$this->data['lang_msg_upload2'] = $this->lang->line('msg_upload2');
+$this->data['lang_label_upload'] = $this->lang->line('label_upload');
 
 
           //end pesanan
@@ -309,6 +311,10 @@ $this->data['lang_ket_konfirm'] = $this->lang->line('field_ket_konfirm');
 		$this->data['lang_PostCode'] = $this->lang->line('field_PostCode');
 		$this->data['lang_Passwpord'] = $this->lang->line('field_Passeword');
 		$this->data['lang_Passwpord2'] = $this->lang->line('field_Passeword2');
+                $this->data['lang_field_tittle'] = $this->lang->line('field_tittle');
+                $this->data['lang_txt_address'] = $this->lang->line('txt_address');
+                 $this->data['lang_nama_penerima'] = $this->lang->line('nama_penerima');
+
 		$this->data['lang_BtnSend'] = $this->lang->line('btn_login');
 		//end of bussines
 //    CHECKOUT

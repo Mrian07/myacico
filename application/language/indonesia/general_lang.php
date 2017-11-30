@@ -44,5 +44,8 @@ $lang['password_tittle'] = 'Gunakan form dibawah ini untuk mengubah password log
 $lang['password_now'] = 'Kata Sandi Saat Ini*';
 $lang['msg_pswd1'] = 'Mohon Isi password anda saat ini!';
 $lang['msg_pswd2'] = 'Mohon Isi password Baru Anda';
-
+//confirm Berikut adalah Bukti transfer
+$lang['msg_upload'] = 'Gambar Berhasil Di Upload';
+$lang['msg_upload2'] = 'Gambar Gagal Di Upload';
+$lang['label_upload'] = 'Berikut adalah Bukti transfer';
 ?>

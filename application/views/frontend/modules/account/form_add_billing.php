@@ -13,7 +13,7 @@
 		</div>
 		<div class="col-sm-9">
 			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> '.$lang_avatar_back, array('class'=>'btn-back'));?></p>
-			<p>Silakan lengkapi data billing Anda dibawah ini.</p>
+			<p><?php echo $lang_txt_address;?></p>
 
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -26,7 +26,7 @@
 					<div class='row'>
 						<div class="col-sm-6">
 							<div class="form-group">
-							<label>Nama:</label>
+							<label><?php echo $field_save ; ?></label>
 								<?php echo $user->name; ?>
 							</div>
 						</div>
@@ -39,7 +39,7 @@
 
 					</div>
 					<div class="form-group">
-					  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+					  <label><?php echo $lang_field_tittle;?>*</label>
 					  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
 					</div>
 					<div class="form-group">
@@ -69,7 +69,7 @@
 					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
 					</div>
                                         <div class="form-group" style="display:none" id="village_box">
-							<label><?php echo "Kelurahan"; ?>*</label>
+							<label><?php echo $field_kel; ?>*</label>
 					  <select name="village_id" id="village_id" class="form-control mandatory"></select>
 					</div>
 

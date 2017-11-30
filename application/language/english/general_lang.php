@@ -44,5 +44,8 @@ $lang['password_tittle'] = 'Use the form below to change your login password.';
 $lang['password_now'] = 'Your Old Password*';
 $lang['msg_pswd1'] = 'Password Old Can not Be Empty!';
 $lang['msg_pswd2'] = 'Password New Can not Be Empty!';
-
+//confirm
+$lang['msg_upload'] = 'Image uploaded successfully';
+$lang['msg_upload2'] = 'image failed to upload';
+$lang['label_upload'] = 'Here is a transfer proof';
 ?>

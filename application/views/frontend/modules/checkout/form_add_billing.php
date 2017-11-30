@@ -77,7 +77,7 @@
             <div class="row">
               <div class="col-sm-12">
 
-                <p>Silakan lengkapi data billing Anda dibawah ini.</p>
+                <p><?php echo $lang_txt_address;?>.</p>
 
                     <form name="test1" method="post">
                     <input type="hidden" id="isbillto" name="isbillto" value="N" />
@@ -87,7 +87,7 @@
                     <input type="hidden" id = "name" name="name"  value="<?php echo $user->name;?>" />
 
                     <div class="form-group">
-                      <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+                      <label><?php echo $lang_field_tittle;?>*</label>
                       <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
                     </div>
                     <div class="form-group">

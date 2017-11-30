@@ -111,8 +111,12 @@ $(document).ready( function() {
       console.log('OK:', r.status);
 //      $("#file").val(null);
 //      $("#transid").val(null);
-
-alert('Image Berhasil Di Upload');
+if(r.status ==1){
+    $.alert({title:'Alert', content: ' <?php echo $lang_msg_upload?>'});
+}
+else{
+    $.alert({title:'Alert', content: ' <?php echo $lang_msg_upload2?>'});
+}
         window.location.replace(base_url+"account/confirm/"+$("#transid").val());
 
     };
@@ -175,7 +179,7 @@ $(document).on('change', '.btn-file :file', function() {
     var token = document.cookie.split('x-auth=')[1].split(';').shift();
     var apiGet = api_base_url +"/transaction/file/"+transid+"?key="+token;
     var apiGet2 = api_base_url +"/transaction/file/"+transid;
-
+var stat="<?php echo $lang_label_upload;?>";
 
   $.ajax({
     type:"GET",
@@ -188,10 +192,10 @@ $(document).on('change', '.btn-file :file', function() {
        var response = j['status'];
        if(response === 200)
        {
-        $(".buktiTrans").append("<div><h6>Berikut adalah Bukti transfer: </br></div><a href='"+apiGet+"' target='_blank'><img class='group list-group-image' src='"+apiGet+"' alt='...' style:border='0' height='100'></a>");
+        $(".buktiTrans").append("<div>"+stat+"</br></div><a href='"+apiGet+"' target='_blank'><img class='group list-group-image' src='"+apiGet+"' alt='...' style:border='0' height='100'></a>");
        }
        else{
-           (".buktiTrans").append("");
+           $(".buktiTrans").append("");
        }
 //
         },
