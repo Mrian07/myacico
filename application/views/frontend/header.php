@@ -145,7 +145,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 						<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_produck, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
-						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
+						
            <?php echo anchor('customer/afterSales',$lang_after_sales, array('class'=>'btn-nav-head')); ?>
 					</div>
 				</div>
@@ -224,7 +224,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 														document.getElementById("test").innerHTML = test();
 														<?php }else{
 															?>
-															
+
 														<?php } ?>
 													</script>
 									 <div style='margin-top:-8px; '>
