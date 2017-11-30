@@ -49,5 +49,13 @@ $lang['add_pho'] ='Telepon	';
         $lang['wishlist_pic'] ='Gambar';
        $lang['wishlist_name'] ='Nama';
        $lang['wishlist_del'] ='Hapus';
+       //       AVATAR 
+       $lang['avatar_tittle'] ='UPLOAD GAMBAR ';
+       $lang['avatar_tittle2'] ='Upload Avatar Kamu Disini';
+       $lang['avatar_tittle3'] ='Upload Avatar';
+       $lang['avatar_back'] ='Kembali';
+       $lang['avatar_button'] ='Upload';
+       $lang['avatar_browse'] ='Cari';
+      
       
  ?>

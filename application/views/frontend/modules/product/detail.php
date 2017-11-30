@@ -497,52 +497,138 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
 
 <div class="container">
-<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
-<i class="fa fa-dot-circle-o" aria-hidden="true"></i> Product Related
-</div>
-<div class="span12" style='background:#ffffff; padding:10px;'>
+  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK SEJENIS
+  </div>
 
-<div id="owl-demo" class="owl-carousel">
-  <?php
-    $jmlslide2=count($dathome);
-  $n=1;
-  foreach($dathome as $key => $itemslide2){
-    if($n=="$jmlslide2"){
-      $active='active';
-    }else{
-      $active='';
-    }
-    ?>
-  <!-- <div class="item" align="center"> -->
-    <div class="item" align="center">
-
-  <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
-    <?php if($itemslide2['imageurl']){?>
-    <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
-    <?php }else{
-      echo"<img src='".base_url('images/general/noimage.png')."' style='height:auto; width: auto' border='0'>";
-    } ?>
-      <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
-        <?php
-        $str1 = $itemslide2['name'];
-        $str2 = substr($str1, 0, 41);
-        $str = strlen($str2);
-        if($str <= 40){
-         echo $itemslide2['name'];
+  <div class="span12" style='background:#ffffff; padding:10px;'>
+    <div id="owl-demo" class="owl-carousel">
+      <?php
+        $jmlslide2=count($dathome);
+      $n=1;
+      foreach($dathome as $key => $itemslide2){
+        if($n=="$jmlslide2"){
+          $active='active';
         }else{
-          // $str = substr($str, 0, 49);
-           echo $str2."....";
+          $active='';
         }
         ?>
-        </a></p>
+      <!-- <div class="item" align="center"> -->
+    <div class="item" align="center">
+
+      <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+        <?php if($itemslide2['imageurl']){?>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
+        <?php }else{
+          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100;' border='0'>";
+        } ?>
+        <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+          <?php
+          $str1 = $itemslide2['name'];
+          $str2 = substr($str1, 0, 41);
+          $str = strlen($str2);
+          if($str <= 40){
+          echo $itemslide2['name'];
+          }else{
+            // $str = substr($str, 0, 49);
+            echo $str2."....";
+          }
+          ?>
+      </a></p>
       <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
-
-
         <hr>
-
   </div>
   <?php $n++;  } ?>
+</div>
+</div>
 
+<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK REKOMENDASI
+  </div>
+
+  <div class="span12" style='background:#ffffff; padding:10px;'>
+    <div id="owl-demo1" class="owl-carousel">
+      <?php
+        $jmlslide2=count($dathome);
+      $n=1;
+      foreach($dathome as $key => $itemslide2){
+        if($n=="$jmlslide2"){
+          $active='active';
+        }else{
+          $active='';
+        }
+        ?>
+      <!-- <div class="item" align="center"> -->
+    <div class="item" align="center">
+
+      <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+        <?php if($itemslide2['imageurl']){?>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
+        <?php }else{
+          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100;' border='0'>";
+        } ?>
+        <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+          <?php
+          $str1 = $itemslide2['name'];
+          $str2 = substr($str1, 0, 41);
+          $str = strlen($str2);
+          if($str <= 40){
+          echo $itemslide2['name'];
+          }else{
+            // $str = substr($str, 0, 49);
+            echo $str2."....";
+          }
+          ?>
+      </a></p>
+      <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+        <hr>
+  </div>
+  <?php $n++;  } ?>
+</div>
+</div>
+
+<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK PELENGKAP
+  </div>
+
+  <div class="span12" style='background:#ffffff; padding:10px;'>
+    <div id="owl-demo2" class="owl-carousel">
+      <?php
+        $jmlslide2=count($dathome);
+      $n=1;
+      foreach($dathome as $key => $itemslide2){
+        if($n=="$jmlslide2"){
+          $active='active';
+        }else{
+          $active='';
+        }
+        ?>
+      <!-- <div class="item" align="center"> -->
+    <div class="item" align="center">
+
+      <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+        <?php if($itemslide2['imageurl']){?>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
+        <?php }else{
+          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100;' border='0'>";
+        } ?>
+        <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+          <?php
+          $str1 = $itemslide2['name'];
+          $str2 = substr($str1, 0, 41);
+          $str = strlen($str2);
+          if($str <= 40){
+          echo $itemslide2['name'];
+          }else{
+            // $str = substr($str, 0, 49);
+            echo $str2."....";
+          }
+          ?>
+      </a></p>
+      <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+        <hr>
+  </div>
+  <?php $n++;  } ?>
 </div>
 </div>
 </div>
@@ -1031,6 +1117,28 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
   height: 150px;
 
 }
+
+#owl-demo1 .item{
+  margin: 3px;
+  /*text-align:center;*/
+}
+#owl-demo1 .item img{
+  display: block;
+  width: auto;
+  height: 150px;
+
+}
+
+#owl-demo2 .item{
+  margin: 3px;
+  /*text-align:center;*/
+}
+#owl-demo2 .item img{
+  display: block;
+  width: auto;
+  height: 150px;
+
+}
 </style>
 
 
@@ -1046,6 +1154,19 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
         itemsDesktopSmall : [979,3]
       });
 
+      $("#owl-demo1").owlCarousel({
+        autoPlay: 3000,
+        items : 6,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+      });
+
+      $("#owl-demo2").owlCarousel({
+        autoPlay: 3000,
+        items : 6,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+      });
 
   });
   </script>
