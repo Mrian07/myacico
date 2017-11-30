@@ -101,15 +101,14 @@ $(document).ready(function() {
     
       
     
-
-      if(nama ===''){
-        $.alert({title:'Alert', content: ' Nama tidak boleh kosong'});
+      if(subject ===''){
+        $.alert({title:'Alert', content: ' Keperluan/subject tidak boleh kosong'});
         $('#spinner_img').hide();
         $('#submit_btn').val('Kirim').removeClass('disabled');
         $('.mandatory').prop('disabled', false);
-        $("#nama").focus();
         return false;
       }
+     
       if(email ===''){
         $.alert({title:'Alert', content: ' Email tidak boleh kosong'});
         $('#spinner_img').hide();
@@ -117,14 +116,15 @@ $(document).ready(function() {
         $('.mandatory').prop('disabled', false);
         return false;
       }
-      if(subject ===''){
-        $.alert({title:'Alert', content: ' Keperluan tidak boleh kosong'});
+      
+       if(nama ===''){
+        $.alert({title:'Alert', content: ' Nama tidak boleh kosong'});
         $('#spinner_img').hide();
         $('#submit_btn').val('Kirim').removeClass('disabled');
         $('.mandatory').prop('disabled', false);
+        $("#nama").focus();
         return false;
       }
-      
       if(message ===''){
         $.alert({title:'Alert', content: ' Pesan tidak boleh kosong'});
         $('#spinner_img').hide();
