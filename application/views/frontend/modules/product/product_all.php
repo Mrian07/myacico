@@ -17,12 +17,13 @@
 		 ?></div>
 	  <!-- <div class="col-sm-2"><?php // $this->load->view('frontend/modules/product/sidebar_right',$this->data); ?></div>-->
 	</div>
-            <div style='padding:8px; font-family:tahoma; font-size:12px; border-top: 3px solid #c40202; color:#535151'>
-    
-      <!-- $lang_recent_view -->
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> Baru di lihat
-  </div>
-<div class="container">
+        <div id="recentView" style="display: none;">
+        <div style='padding:8px; font-family:tahoma; font-size:12px; color:#535151'>
+
+              <!-- $lang_recent_view -->
+            <i class="fa fa-dot-circle-o" aria-hidden="true"></i> Baru di lihat<hr>
+          </div>
+    </div>
   <div id="product" class="promo-front owl-carousel">
 <!--       <div id="product" align="center" ></div>
       <div class="item" style='background:#ffffff; padding:10px; height:210px'>-->
@@ -41,9 +42,8 @@
     </div>-->
 
 
-            <hr>
+            
 
-</div>
 </div>
 </div>
 <script>
@@ -55,7 +55,11 @@
     return  "Rp." +num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
 }
 var detail = JSON.parse(localStorage.getItem('product_detail'))
-console.log(detail);
+if(detail[0].name)
+{
+     $('#recentView').show();   
+}
+//console.log(detail);
 for(var i=0;i<detail.length;i++)
 {
     

@@ -253,7 +253,7 @@ var success = function(r){
 
 	$('#spinner_img').hide();
 
-	$('#submit_btn').val('Kirim').removeClass('disabled');
+	$('#submit_btn').val('<?php echo $lang_btn_SignIn ?>').removeClass('disabled');
 
 	//console.log('OK:', r);
 
