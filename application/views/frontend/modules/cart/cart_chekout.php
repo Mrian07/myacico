@@ -254,7 +254,7 @@
 							</td>
 						<tr>
 							<td colspan="6" class="tc">
-								<div class="other-info3">Hapus</div>
+								<div class="other-info3"><i class="fa fa-trash-o" aria-hidden="true"></i> Hapus</div>
 								<div class="other-info4">Total per Tagihan <span class="red">Rp.8.508.150</span></div>
 							</td>
 					</table>
