@@ -43,8 +43,15 @@ No billing data yet, billing data is required at checkout purchase.';
 									 $lang['field_riwayyat'] ='ORDER HISTORY';
 									 $lang['field_tgl'] ='Order Date';
 									 $lang['field_total'] ='Total payment';
-									  $lang['field_metod'] ='Payment method';
-										  $lang['fiedl_order'] ='Order Number';
+									 $lang['field_metod'] ='Payment method';
+                                                                         $lang['fiedl_order'] ='Order Number';
+                                                                        $lang['field_start_date'] ='From Date';
+									$lang['field_to_date'] ='To Date';
+                                                                        $lang['field_btn_search'] ='search';
+									$lang['field_confirmation'] ='Confirmation/Credit Card';
+                                                                            $lang['field_btn_confirm'] ='Confirmation';
+
+                                                                                  
 									 //end of history
 
 
