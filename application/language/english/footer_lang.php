@@ -52,7 +52,8 @@ $lang['f_courier'] = 'Courier';
 $lang['f_dunlud'] = 'Download Our Applications';
 $lang['f_sea'] = 'View All';
 $lang['f_after_sales'] = 'After Sales';
-$lang['f_a_sales'] = '<br>Layanan Purna jual PT Myacico Global Indonesia'
+$lang['f_a_sales'] = '<div style="text-align: justify;
+    text-justify: inter-word;"><br>Layanan Purna jual PT Myacico Global Indonesia'
         . '<br><b>I. Informasi Umum</b><br>Myacico.co.id memiliki layanan purna jual sebagai salah satu bentuk pelayanan kepada pelanggan. Dengan didukung oleh tenaga ahli maupun kerjasama dengan tenaga ahli dari beberapa brand terkemuka, Myacico.co.id akan membantu pelanggan dalam memperbaiki dan penukaran produk.'
         . '<br><b>II. Bentuk Layanan Purna jual</b>'
         . '<br>Berikut ini merupakan bentuk ketersediaan layanan purna jual yang dilakukan Myacico.co.id:'
@@ -89,6 +90,7 @@ $lang['f_a_sales'] = '<br>Layanan Purna jual PT Myacico Global Indonesia'
         . '<br>2. Segel garansi sudah copot atau rusak'
         . '<br>3. Tidak dapat menyertakan bukti pembelian di Myacico.co.id atau nomor serial produk tidak terdaftar pada data transaksi di Myacico.co.id Pembelian produk diluar website Myacico.co.id'
         . '<br>4. Kelalaian pelanggan baik secara sengaja maupun tidak sengaja yang mengakibatkan kerusakan seperti modifikasi, kerusakan akibat bencana alam, kelalaian akibat pemakaian (terjatuh, terkena cairan, hilang, dll), ketidakstabilan aliran listrik, serangan virus, kerusakan pemakaian perangkat tambahan, kesalahan instalasi perangkat lunak/software, dan telah diperbaiki di tempat lain'
+        . '</div>'
 ;
 $lang['f_aftersale_cont'] = 'Please Contact Our After Sales Service';
 $lang['f_subjek'] = 'Subject:';

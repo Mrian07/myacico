@@ -1,4 +1,5 @@
-<div class="my-container">
+<!DOCTYPE html>
+<div class="container">
 	 <div class="row">
 	  <div class="col-sm-6">
 		
@@ -8,13 +9,23 @@
 	
    <br>
 	  <div class="col-sm-6">
- 
-<div class="row">
+              <div id="sukses_after_sales" style="display: none;">
+                   <div class="col-sm-8" style="text-align: justify;text-justify: inter-word;">
+                       <center>
+                           <h3><b>TERIMA KASIH</b></h3><br>
+                       </center>
+                           
+    Telah menghubungi kami. Customer service kami akan segera menghubungi Anda.
+	
+	  </div>
+              </div>
+
+     <div id="aftersale">
+         <div class="row">
   <div class="col-sm-12 text-center">
-      <?php echo $lang_aftersales_cont;?> 
+      <b><?php echo $lang_aftersales_cont;?></b> 
   </div>
 </div>
-              <div id="aftersale">
     <form name="myForm" method="post">
 <div class="row">
    
@@ -30,7 +41,7 @@
      <input type="text" id="nama" name="nama" class="form-control mandatory" placeholder="<?php echo$lang_name;?>">
   </div>
     <div class="col-sm-6">
-     <input type="text" id="phone" name="phone" class="form-control mandatory" placeholder="<?php echo$lang_phone;?>">
+     <input type="text" id="phone" name="phone" maxlength="12" class="form-control mandatory" placeholder="<?php echo$lang_phone;?>">
   </div>
 </div> <br>
 <div class="row">
@@ -43,7 +54,7 @@
 </div> <br>
 <div class="row">
     <div class="col-sm-12">
-    <textarea class="form-control mandatory" id="message" name="message" rows="3" style="width: 440px; height: 200px;" placeholder="<?php echo$lang_msg;?>"></textarea>
+    <textarea class="form-control mandatory" id="message" name="message" rows="3" style="width: 550px; height: 200px;" placeholder="<?php echo$lang_msg;?>"></textarea>
   </div>
 </div>
         <br>
@@ -63,6 +74,9 @@ var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 var apiurl_comp = baseApiUrl + '/mail/aftersales';
     console.log('asd',apiurl_comp);
 var data = {};
+$('#phone').on('input', function(event) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
 $(document).ready(function() {
     
 //$("#ilang").load(function() {
@@ -93,6 +107,7 @@ $(document).ready(function() {
         $('#spinner_img').hide();
         $('#submit_btn').val('Kirim').removeClass('disabled');
         $('.mandatory').prop('disabled', false);
+        $("#nama").focus();
         return false;
       }
       if(email ===''){
@@ -171,7 +186,9 @@ $(document).ready(function() {
 			if(data.status==1){
         // console.log('asdasd',data.status);
 
-				location.href="<?php echo site_url('customer/AfterSalesSent'); ?>";
+                $('#aftersale').hide(); 
+                $('#sukses_after_sales').show(); 
+				//
 			}else{
         $.alert({title:'Alert', content: ' pesan gagal dikirim silahkan coba kembali !'});
         $('#spinner_img').hide();
