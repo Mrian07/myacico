@@ -3,7 +3,7 @@
 <head>
 <style>
 #mySidenav a {
-    position: absolute;
+    position: fixed;
     right: -10px;
     transition: 0.3s;
     padding: 15px;
@@ -45,7 +45,11 @@
 </style>
 </head>
 <body>
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
+  <scipt>
+    
 
+  </script>
 <div id="mySidenav" class="sidenav">
   <a target="_blank" href="https://www.youtube.com/channel/UCT6wkP8xyhEgDZzrbuWBQRg" id="youtube"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
   <a target="_blank" href="https://plus.google.com/109226501209243616006" id="gplus"><i class="fa fa-google-plus-square fa-lg" aria-hidden="true"></i></a>
