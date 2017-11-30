@@ -1,7 +1,7 @@
 
 <div class="container">
 	<div class='my-bg-title'>
-		<i class="fa fa-angle-right" aria-hidden="true"></i> INFORMASI AKUN
+		<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_datkun; ?>
 	</div>
 </div>
 
@@ -22,7 +22,7 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="panel panel-default">
-					  <div class="panel-heading"><strong><?php echo $lang_datkun; ?></strong></div>
+					  <div class="panel-heading"><strong><?php echo $lang_inf_name; ?></strong></div>
 					  <div class="panel-body"><?php echo $user->name; ?>, <?php echo $user->email; ?><br><br><center>
 					  <?php echo anchor('account/formAccount/', $lang_btn_update, array('class'=>'btn btn-default'));?></center>
 					  </div>

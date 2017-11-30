@@ -13,14 +13,15 @@ $lang['das_history'] ='Riwayat & Status Pesanan';
 
 //informasi AKUN
     $lang['inf_datakun'] ='Data Akun';
-    $lang['inf_gant'] ='Ganti Password';
+    $lang['inf_gant'] ='Ubah Password';
+    $lang['inf_name'] ='Ubah Nama';
     $lang['inf_you'] ='Jika ingin mengganti password login click button dibawah ini.';
     $lang['inf_bil'] ='Data Billing.';
     $lang['inf_bils'] ='Belum ada data billing, data billing diperlukan saat checkout pembelian.';
 //akhirdari informasi akun
 
 //buku Alamat
-$lang['inf_datakun'] ='Tambah Buku Alamat	';
+$lang['add_info'] ='Tambah Buku Alamat	';
  $lang['add_edit_button'] ='Ubah';
 $lang['add_dibawah'] ='Dibawah ini adalah daftar buku alamat penerima pesanan. Anda bisa menambahkan alamat baru atau mengubah alamat sebelumnya dengan alamat yang lain.';
 $lang['add_rec'] ='Penerima	';
@@ -71,6 +72,7 @@ $lang['add_pho'] ='Telepon	';
        $lang['avatar_button'] ='Upload';
        $lang['avatar_browse'] ='Cari';
      
-      
+//      Info Akun
+       $lang['field_info_akun'] ='Silakan isi nama akun yang baru jika ingin melakukan perubahan dan click button update.';
       
  ?>
