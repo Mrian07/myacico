@@ -1,3 +1,48 @@
+<style>
+#line-green{
+  background:#e4eed0;
+  color:#655d56;
+  padding:3px;
+  font-family: arial;
+  border-bottom: 1px solid #cfdeb0;
+}
+
+#border-pop-buy{
+  border-top:5px solid #e4352b;
+  border-bottom:5px solid #e4352b;
+  height:65px;
+}
+#btn-pop-lanjut{
+  float: left;
+  background:#e95931;
+  margin:5px;
+  padding:10px;
+  color:#ffffff;
+  font-size:15px;
+  font-weight: bold;
+  font-family: arial;
+}
+
+#btn-pop-bayar{
+  float: right;
+  background:#e95931;
+  margin:5px;
+  padding:10px;
+  color:#ffffff;
+  font-size:15px;
+  font-weight: bold;
+  font-family: arial;
+}
+
+#pop-title{
+  font-size:25px;
+  font-family: tahoma;
+}
+
+#border-pop-list{
+  padding:10px;
+}
+</style>
 <?php
 $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 ?>
@@ -618,6 +663,43 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/foundation.min.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/setup.js');?>"></script>
 
+<!-- Modal -->
+<div id="cartModal" class="modal fade cartModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="width:680px">
+      <!-- <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div> -->
+      <div class="modal-body" >
+
+
+        <div id='line-green'>
+          <ul><li>Produk berhasil dimasukan ke keranjang Belanja</li></ul>
+        </div>
+        <hr border='1' color='d8d8d7'>
+        <div id='border-pop-buy'>
+        <a href='#' id='btn-pop-lanjut' class="btn btn-default" data-dismiss="modal"><i class="fa fa-angle-left" aria-hidden="true"></i> Lanjutkan berbelanja</a>
+        <a href='<?php echo base_url('cart/newcart');?>' id='btn-pop-bayar' class="btn btn-default">Bayar <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        <div id='border-pop-list'>
+        <!-- <div id='pop-title'>PRODUK PELENGKAP</div> -->
+        <img border='0' src='<?php echo base_url('images/general/test1.jpg');?>'>
+        </div>
+
+
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+
+  </div>
+</div>
+
+
 <script>
 
    var rate = "<?php  echo $rate;?>";
@@ -890,18 +972,19 @@ if(jmlItem<=0){
 
     var success = function(r){
 
-      $.confirm({
-        title: name,
-        content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
-        autoClose: 'close|3000',
-        buttons: {
-          close: function () {
-            //$.alert('action is canceled');
-          }
-        },
-        closeIcon: true,
-        closeIconClass: 'fa fa-close'
-      });
+       $('.cartModal').modal('show');
+
+      // $.confirm({
+      //   title: name,
+      //   content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
+      //   autoClose: 'close|3000',
+      //   buttons: {
+      //     close: function () {
+      //     }
+      //   },
+      //   closeIcon: true,
+      //   closeIconClass: 'fa fa-close'
+      // });
 
       //Buat update cart, fungsi ini ada di file header.php
       totalCart();
@@ -952,18 +1035,22 @@ if(jmlItem<=0){
         if(data!='gagal'){
 
           $(".totalCart").html(data);
-          $.confirm({
-            title: name,
-            content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
-            autoClose: 'close|3000',
-            buttons: {
-              close: function () {
-                //$.alert('action is canceled');
-              }
-            },
-            closeIcon: true,
-            closeIconClass: 'fa fa-close'
-          });
+
+           $('.cartModal').modal('show');
+
+          // $.confirm({
+          //   title: name,
+          //   content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
+          //   autoClose: 'close|3000',
+          //   buttons: {
+          //     close: function () {
+          //       //$.alert('action is canceled');
+          //     }
+          //   },
+          //   closeIcon: true,
+          //   closeIconClass: 'fa fa-close'
+          // });
+
         }else{
           $.dialog({
             title: name,

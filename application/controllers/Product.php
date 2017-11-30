@@ -19,6 +19,15 @@ class Product extends Web {
 
 	}
 
+	public function pop()
+	{
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/product/popup_add_cart.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+
+	}
+
 	public function alllistItem()
 	{
 		$id=$this->uri->segment(3);

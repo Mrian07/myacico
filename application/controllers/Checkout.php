@@ -95,6 +95,32 @@ class Checkout extends Web_private {
 		$this->load->view('frontend/footer',$this->data);
 	}
 
+	public function test3()
+	{
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "order/cart/detail";
+		$url = api_base_url($api);
+
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+
+		$hasil = json_decode($konten, true);
+		// echo"<pre>"; print_r($hasil); die();
+		$this->data['hasil'] = json_decode($konten, true);
+		$this->data['title_web'] = "Myacico.com - Checkout";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/checkout/test3.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
 	public function paymentTransfer()
 	{
 		$api = "payment/myacicoaccount";
