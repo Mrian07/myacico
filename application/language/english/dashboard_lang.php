@@ -5,7 +5,8 @@
 	$lang['das_change'] ='Change Data And Password';
 	$lang['das_pay'] ='Payment confirmation';
 	$lang['das_you'] ='You can make payment confirmation on your Order History and Status page.';
-	$lang['das_news'] ='Newsletters Subscribe';
+	$lang['das_news'] ='Newsletters Has Been Subscribed';
+        $lang['das_news2'] ='Email Has Not Been Subscribed to Newsletter';
 	//leftsidebar
 	$lang['das_addres'] ='Address Book';
         $lang['das_regis'] ='Register With';
@@ -44,12 +45,17 @@ No billing data yet, billing data is required at checkout purchase.';
 									 $lang['field_tgl'] ='Order Date';
 									 $lang['field_total'] ='Total payment';
 									 $lang['field_metod'] ='Payment method';
-                                                                         $lang['fiedl_order'] ='Order Number';
+                                                                         $lang['field_order'] ='Order Number';
                                                                         $lang['field_start_date'] ='From Date';
 									$lang['field_to_date'] ='To Date';
                                                                         $lang['field_btn_search'] ='search';
 									$lang['field_confirmation'] ='Confirmation/Credit Card';
                                                                             $lang['field_btn_confirm'] ='Confirmation';
+                                                                            $lang['field_gambar'] ='Image';
+                    $lang['field_nama_barang'] ='Item Name';
+                    $lang['field_invoice'] ='Invoice Number';
+                    $lang['field_detail_pesanan'] ='Order Detail';
+                    $lang['field_ket_konfirm'] ='Please upload your payment transfer receipt in the form below.';
 
                                                                                   
 									 //end of history

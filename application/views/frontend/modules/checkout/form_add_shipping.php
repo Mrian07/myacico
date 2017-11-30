@@ -120,11 +120,11 @@
                     </div>
                     <div class="form-group">
                     <label>Handphone*</label>
-                      <input type="text" id = "phone"name="phone" class="form-control mandatory" />
+                      <input type="text" id = "phone"name="phone" maxlength="12" class="form-control mandatory" />
                     </div>
                     <div class="form-group">
                     <label>Telepon</label>
-                      <input type="text" id = "phone2"name="phone2" class="form-control"/>
+                      <input type="text" id = "phone2"name="phone2" maxlength="12" class="form-control"/>
                     </div>
 
                     <div class="clearfix"></div>
@@ -161,6 +161,12 @@ $.ajaxSetup({
 $('#village_id').change(function () {
         var end = this.value;
       $('#submit_btn').removeAttr('disabled');
+    });
+    $('#phone').on('input', function(event) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+$('#phone2').on('input', function(event) {
+        this.value = this.value.replace(/[^0-9]/g, '');
     });
 function get_village(){
   $("#village_box").slideDown();

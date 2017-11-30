@@ -162,7 +162,8 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
     $this->data['lang_change'] = $this->lang->line('das_change');
     $this->data['lang_pay'] = $this->lang->line('das_change');
     $this->data['lang_you'] = $this->lang->line('das_you');
-    $this->data['lang_news'] = $this->lang->line('das_news');
+    $this->data['lang_news'] = $this->lang->line('das_news2');
+    $this->data['lang_news2'] = $this->lang->line('das_news2');
     $this->data['lang_add'] = $this->lang->line('das_addres');
     $this->data['lang_confirm'] = $this->lang->line('das_pay');
      $this->data['lang_history'] = $this->lang->line('das_history');
@@ -223,13 +224,17 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
               $this->data['lang_tgl'] = $this->lang->line('field_tgl');
               $this->data['lang_tota'] = $this->lang->line('field_total');
                 $this->data['lang_metod'] = $this->lang->line('field_metod');
-                        $this->data['lang_orde'] = $this->lang->line('fiedl_order');
+                        $this->data['lang_order_no'] = $this->lang->line('field_order');
                $this->data['lang_to_date'] = $this->lang->line('field_to_date');
 $this->data['lang_start_date'] = $this->lang->line('field_start_date');
 $this->data['lang_btn_search'] = $this->lang->line('field_btn_search');
 $this->data['lang_field_confirmation'] = $this->lang->line('field_confirmation');
 $this->data['lang_btn_confirm'] = $this->lang->line('field_btn_confirm');
-
+$this->data['lang_gambar'] = $this->lang->line('field_gambar');
+$this->data['lang_nama_barang'] = $this->lang->line('field_nama_barang');
+$this->data['lang_invoice'] = $this->lang->line('field_invoice');
+$this->data['lang_detail_order'] = $this->lang->line('field_detail_pesanan');
+$this->data['lang_ket_konfirm'] = $this->lang->line('field_ket_konfirm');
 
 
 

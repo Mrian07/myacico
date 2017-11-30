@@ -29,6 +29,33 @@ class Cart extends Web {
 		$this->load->view('frontend/footer',$this->data);
 	}
 
+	//on progress
+	public function newcart()
+	{
+		$this->data['title_web'] = "Myacico.com";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/cart/cart_new.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function newcheckout()
+	{
+		$this->data['title_web'] = "Myacico.com";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/cart/cart_chekout.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function finishcheckout()
+	{
+		$this->data['title_web'] = "Myacico.com";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/cart/finish_chekout.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 
 	function addToCart()
 	{

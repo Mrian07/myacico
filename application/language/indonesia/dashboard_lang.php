@@ -6,6 +6,7 @@ $lang['das_change'] ='Ubah Data Dan Password';
 $lang['das_pay'] ='Konfirmasi Pembayaran';
 $lang['das_you'] ='Anda bisa melakukan konfirmasi pembayaran pada halaman Riwayat dan Status Pesanan.';
 $lang['das_news'] ='email berlangganan news letter';
+$lang['das_news2'] ='email belum berlangganan news letter';
 $lang['das_addres'] ='Buku Alamat';
 $lang['das_regis'] ='Daftar dengan';
 $lang['das_history'] ='Riwayat & Status Pesanan';
@@ -41,12 +42,18 @@ $lang['add_pho'] ='Telepon	';
     $lang['field_tgl'] ='Tanggal Order';
      $lang['field_total'] ='Total Pembayaran';
      $lang['field_metod'] ='Metode Pembayaran';
-       $lang['fiedl_order'] ='Nomor Pesanan';
+       $lang['field_order'] ='Nomor Pesanan';
     $lang['field_start_date'] ='Tanggal Awal';
     $lang['field_to_date'] ='Tanggal Akhir';
     $lang['field_btn_search'] ='cari';
     $lang['field_confirmation'] ='Konfirmasi /Kartu Kredit';
     $lang['field_btn_confirm'] ='Konfirmasi';
+    $lang['field_gambar'] ='Gambar';
+    $lang['field_nama_barang'] ='Nama Barang';
+    $lang['field_invoice'] ='Nomor Faktur'; 
+    $lang['field_detail_pesanan'] ='Detail Pesanan';
+   $lang['field_ket_konfirm'] ='Silakan upload bukti transfer pembayaran Anda pada form dibawah ini.';
+
 
     //end of history
 //end of buku alamat

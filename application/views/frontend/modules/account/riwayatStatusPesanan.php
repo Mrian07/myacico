@@ -59,7 +59,7 @@
 			        		<th><?php echo $lang_tgl; ?></th>
 			        		<th><?php echo $lang_tota; ?></th>
 			        		<th><?php echo $lang_metod; ?></th>
-			        		<th><?php  echo $lang_orde;?></th>
+			        		<th><?php  echo $lang_order_no;?></th>
 			        		<th>Status</th>
 			        		<th>Detail</th>
 			        		<th><?php  echo $lang_field_confirmation;?></th>
