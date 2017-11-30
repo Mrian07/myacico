@@ -39,7 +39,7 @@ class Web extends MY_Controller {
           $this->load->language('body','indonesia');
            $this->load->language('checkout','indonesia');
         }
-
+        $this->maintan();
         $this->lang();
         $this->asset();
         $this->categorySearch();
@@ -426,6 +426,21 @@ $this->data['lang_ket_konfirm'] = $this->lang->line('field_ket_konfirm');
 
     }
 
+
+    public function maintan(){
+
+  		$url = "https://api.myacico.co.id/myacico-service/check/server";
+      // $url = "http://192.168.0.109:8080/myacico-service/category";
+  		$konten = file_get_contents($url);
+  		// $this->data['catsearch'] = json_decode($konten, true);
+      $hasil = json_decode($konten, true);
+
+
+      if($hasil['status'] != '1'){
+        redirect('maintenance');
+      }
+
+    }
     public function categorySearch(){
   		$url = "https://api.myacico.co.id/myacico-service/category";
       // $url = "http://192.168.0.109:8080/myacico-service/category";
