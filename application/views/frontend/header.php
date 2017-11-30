@@ -145,7 +145,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 						<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_produck, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
-						<?php echo anchor('#','Customer Service', array('class'=>'btn-nav-head')); ?>
+						
            <?php echo anchor('customer/afterSales',$lang_after_sales, array('class'=>'btn-nav-head')); ?>
 					</div>
 				</div>
@@ -205,16 +205,27 @@ var prod_detail =  localStorage.getItem('product_detail');
 
 
 														function test(){
+															<?php if(isset($user)){
+																?>
+																var testString = "<?php echo $user->name;?>"
 
-															var testString = "<?php echo $user->name;?>"
+																var testArray = testString .split(' ');
 
-															var testArray = testString .split(' ');
+																return testArray[0];
+															<?php }else{
+															?>	var testString = "";
+															<?php } ?>
 
-															return testArray[0];
 
 
 														}
+														<?php if(isset($user)){
+														 ?>
 														document.getElementById("test").innerHTML = test();
+														<?php }else{
+															?>
+
+														<?php } ?>
 													</script>
 									 <div style='margin-top:-8px; '>
 										 <?php if(isset($user)){ ?>

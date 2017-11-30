@@ -40,6 +40,21 @@ $lang['btn_kirim1'] = 'Masuk';
 
 //about us
 $lang['lang_pages_aboutUs'] ='Tentang Kami';
+$lang['lang_isiaboutUS'] ='
+myACICO.com adalah perusahaan ecommerce yang berdiri sejak Februari 2017 yang dapat memberikan terobosan baru dan juga merupakan salah satu anak perusahaan Alpha Cipta Computindo Indonesia. myACICO.com sebagai salah satu platform untuk B2B, B2C dan B2G yang berkembang dengan cepat';
+    $lang['lang_pages_history'] ='Sejarah';
+		$lang['lang_pages_acico'] ='sebagai induk perusahaan dari myACICO.com, Alpha Cipta Computindo grup mengkhususkan pelayanannya pada perdagangan internasional dan pengadaan barang yang sudah berpengalaman lebih dari 20 tahun. Memasuki pasar B2B sejak tahun 1995, pengalaman yang luas telah membawa ACICO grup sebagai salah satu layanan pengadaan barang yang berkembang pesat di negara ini';
+		$lang['lang_pages_vis'] ='Visi';
+		$lang['lang_pages_miss'] ='Misi';
+		$lang['lang_pagesisi_vis'] ='Untuk menjadi pusat pelayanan bagi pelanggan dan juga menjadi pempimpin global dalam IT dengan pasar untuk teknologi tinggi';
+
+		    $lang['lang_pagesisi_mis'] ='Menyediakan layanan yang berkualitas dan menetapkan standar yang tinggi di industri dengan menyediakan solusi bisnis yang sederhana namun efektif. dengan demikian dapat memberikan tingkat kepuasan yang tinggi kepada pelanggan dan pemakai.';
+				$lang['lang_pages_oru'] ='Keunggulan Kami';
+					$lang['lang_pages_peng'] ='Pengiriman 2 Hari Kerja';
+					$lang['lang_pages_alw'] ='Barang Selalu ada';
+					$lang['lang_pages_alw'] ='Harga termurah';
+					
+
 
 //pages tentang kami
 

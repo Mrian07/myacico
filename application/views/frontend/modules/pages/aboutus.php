@@ -113,18 +113,15 @@ p {
       <img src="https://s26.postimg.org/a5xbhjv2h/image.png" style="float:right;" width="400px">
   <h3 style="color:black; margin:19px;"><?php echo $lang_tentangkami; ?></h3>
 
-      <p>myACICO.com adalah perusahaan ecommerce yang berdiri sejak Februari 2017 yang dapat memberikan terobosan baru dan juga merupakan salah satu
-        anak perusahaan Alpha Cipta Computindo Indonesia. myACICO.com sebagai salah satu platform untuk B2B, B2C dan B2G yang berkembang dengan cepat
+      <p><?php echo $lang_isinya; ?>
     </p>
     </div>
-  <img src="https://s26.postimg.org/74fpz2wp5/image.png" style="float:right;" width="400px"><h3 style="color:black; margin:19px; float:right;">Sejarah</h3>
+  <img src="https://s26.postimg.org/74fpz2wp5/image.png" style="float:right;" width="400px"><h3 style="color:black; margin:19px; float:right;"><?php echo $lang_hist; ?></h3>
   <br/>
   <br/>
   <br/>
 
-<p> sebagai induk perusahaan dari myACICO.com, Alpha Cipta Computindo grup mengkhususkan pelayanannya pada perdagangan internasional dan pengadaan barang
-  yang sudah berpengalaman lebih dari 20 tahun. Memasuki pasar B2B sejak tahun 1995, pengalaman yang luas telah membawa ACICO grup sebagai salah satu layanan pengadaan
-  barang yang berkembang pesat di negara ini
+<p> <?php echo $lang_page; ?>
 </p>
 
   </div>
@@ -136,21 +133,20 @@ p {
   <br/>
   <div class="document__content">
     <img src="https://s26.postimg.org/e7x8pjxu1/teo.png" style="float:right;" width="500px">
-<h3 style="color:black; margin:19px;">Visi Dan Misi</h3>
+<h3 style="color:white; margin:19px;">Visi Dan Misi</h3>
 
-      <h2 style="color:black; margin:19px;"> Visi</h2>
-      <p> Untuk menjadi pusat pelayanan bagi pelanggan dan juga menjadi pempimpin global dalam IT dengan pasar untuk teknologi tinggi </p>
-      <h2 style="color:black; margin:19px;"> Misi</h2>
-      <p> Menyediakan layanan yang berkualitas dan menetapkan standar yang tinggi di industri dengan menyediakan solusi bisnis yang sederhana
-        namum efekti. Dengan demikian dapat memberikan tingkat kepuasan yang tinggi kepada pelanggan dan pemakai
+      <h2 style="color:black; margin:19px;"> <?php echo $lang_vis; ?></h2>
+      <p> <?php echo $lang_isi_vis; ?></p>
+      <h2 style="color:black; margin:19px;"> <?php echo $lang_mis; ?></h2>
+      <p> <?php echo $lang_isi_mis; ?>
        </p>
   </div>
   <div class="document__content">
-    <h3 style="color:black; margin:19px;">Keunggulan Kami </h3>
+    <h3 style="color:black; margin:19px;"><?php echo $lang_isi_oru; ?></h3>
     <center>
-    <h3 style="background-color:#FFD181; border-radius: 25px;  color:white; margin-left:90px;" > •&nbspBarang Selalu ada</h3>
-<h3 style="background-color:#FFD181; border-radius: 25px; color:white;" > •&nbspPengiriman 2 Hari Kerja</h3>
-<h3 style="background-color:#FFD181; border-radius: 25px; color:white; margin-left:90px;" > •&nbspHarga Terjangkau</h3>
+    <h3 style="background-color:#FFD181; border-radius: 25px;  color:white; margin-left:90px;" > •&nbsp<?php echo $lang_isi_harg; ?></h3>
+<h3 style="background-color:#FFD181; border-radius: 25px; color:white;" > •&nbsp<?php echo $lang_isi_peng; ?></h3>
+<h3 style="background-color:#FFD181; border-radius: 25px; color:white; margin-left:90px;" > •&nbsp<?php echo $lang_isi_al; ?></h3>
   </center>
     <img src="https://s26.postimg.org/jr4dkik95/111.png" style="float:left;" width="500px">
 
