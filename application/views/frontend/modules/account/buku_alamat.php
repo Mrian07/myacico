@@ -1,6 +1,6 @@
 <div class="container">
 	<div class='my-bg-title'>
-		<i class="fa fa-angle-right" aria-hidden="true"></i> BUKU ALAMAT
+		<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_addDres;?>
 	</div>
 
 	<div class="row">
@@ -29,8 +29,8 @@
 				<th><?php echo $lang_Pen; ?></th>
 				<th><?php echo $lang_alam; ?></th>
 				<th><?php echo $lang_pho ; ?></th>
-				<th>Ubah</th>
-				<th>Hapus</th>
+				<th><?php echo $lang_add_edit ; ?></th>
+				<th><?php echo $lang_wishlist_del ; ?></th>
 				</tr>
 
 			</thead>

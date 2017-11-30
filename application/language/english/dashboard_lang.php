@@ -22,7 +22,8 @@ No billing data yet, billing data is required at checkout purchase.';
 
 				//buku Alamat
 				$lang['inf_datakun'] ='Add Address Book	';
-				$lang['add_dibawa'] ='Below is a list of address book recipients of the order. You can add a new address or change your previous address with another address.';
+                                $lang['add_edit_button'] ='Edit';
+				$lang['add_dibawah'] ='Below is a list of address book recipients of the order. You can add a new address or change your previous address with another address.';
 				$lang['add_rec'] ='Receiver	';
 				    $lang['add_alamat'] ='Address	';
 						  $lang['add_pho'] ='Phone	';
@@ -61,6 +62,7 @@ No billing data yet, billing data is required at checkout purchase.';
        $lang['avatar_back'] ='Back';
        $lang['avatar_button'] ='Upload';
        $lang['avatar_browse'] ='Browse';
+     
       
 
  ?>
