@@ -66,7 +66,7 @@
 				<?php echo anchor('Pages/faq','G/Jaminan','Garansi Dan Jaminan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#','Status Pesanan', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Customer/contact','Hubungi Kami', array('class'=>'my-info')); ?>
-                                
+
 			</div>
 			<div class="col-xs-2">
 				<b>Ikuti Kami</b><br>

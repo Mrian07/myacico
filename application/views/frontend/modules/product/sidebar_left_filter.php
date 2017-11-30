@@ -1,5 +1,3 @@
-
-
 	<div id="<?php echo$pane; ?>" class="menu_list">
 		<p class="menu_head plus">Category
 		</p>

@@ -168,6 +168,10 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
      $this->data['lang_history'] = $this->lang->line('das_history');
     //akhhir dari dashboard
 
+    //language di headers
+      $this->data['lang_tentangkami'] = $this->lang->line('lang_pages_aboutUs');
+    //akhir langauge di header
+
     //informasi AKUN
 
     $this->data['lang_datkun'] = $this->lang->line('inf_datakun');
@@ -249,7 +253,7 @@ $this->data['lang_btn_confirm'] = $this->lang->line('field_btn_confirm');
                 $this->data['lang_avatar_back'] = $this->lang->line('avatar_back');
                 $this->data['lang_avatar_button'] = $this->lang->line('avatar_button');
                 $this->data['lang_avatar_browse'] = $this->lang->line('avatar_browse');
-                   
+
 
 		//end of personal
 
