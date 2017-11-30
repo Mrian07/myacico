@@ -16,10 +16,10 @@
         		<th><?php echo $lang_tgl; ?></th>
         		<th><?php echo $lang_tota; ?></th>
         		<th><?php echo $lang_metod; ?></th>
-        		<th><?php  echo $lang_orde;?></th>
+        		<th><?php  echo $lang_btn_confirm;?></th>
         		<th>Status</th>
         		<th>Detail</th>
-        		<th>Konfirmasi/ Credit Card</th>
+        		<th><?php  echo $lang_field_confirmation;?></th>
         	  </tr>
         	</thead>
         	<tbody>
@@ -35,9 +35,9 @@
                                        //if($items['productId'])
         					if($items['paymentMethod']=='Bank Transfer'){
         						if($items['transactionStatus']=='PAID'){
-        							echo anchor('#', 'Konfirmasi', array('class'=>'btn btn-warning disabled'));
+        							echo anchor('#', $lang_btn_confirm, array('class'=>'btn btn-warning disabled'));
         						}else{
-        							echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
+        							echo anchor('account/confirm/'.$items['idTransaksi'], $lang_btn_confirm, array('class'=>'btn btn-warning'));
         						}
         					}elseif($items['paymentMethod']=='Online Payment-BCA KlikPay'){
                                                     if($items['transactionStatus']=='PAID'){

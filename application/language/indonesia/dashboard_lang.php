@@ -42,10 +42,16 @@ $lang['add_pho'] ='Telepon	';
      $lang['field_total'] ='Total Pembayaran';
      $lang['field_metod'] ='Metode Pembayaran';
        $lang['fiedl_order'] ='Nomor Pesanan';
+    $lang['field_start_date'] ='Tanggal Awal';
+    $lang['field_to_date'] ='Tanggal Akhir';
+    $lang['field_btn_search'] ='cari';
+    $lang['field_confirmation'] ='Konfirmasi /Kartu Kredit';
+    $lang['field_btn_confirm'] ='Konfirmasi';
+
     //end of history
 //end of buku alamat
 //  Wishlist
-       $lang['wishlist_tittle'] ='RIWAYAT PESANAN ';
+       $lang['wishlist_tittle'] ='WISHLIST ';
        $lang['ket_wishlist'] ='Dibawah ini adalah daftar <i>Wishlist</i>. Anda bisa menambahkan <i>Wishlist</i> atau menghapus <i>Wishlist</i> anda sebelumnya.';
         $lang['wishlist_pic'] ='Gambar';
        $lang['wishlist_name'] ='Nama';

@@ -14,7 +14,7 @@
 			<div class="row">
 
 			    <div class='col-sm-4'>
-			        <div class="form-group">Tanggal Awal
+			        <div class="form-group"><?php  echo $lang_start_date;?>
 			            <div class="input-group date form_date" data-date="" data-date-format="dd-mm-yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
 			                <input type='text' class="form-control" id='startDate' value='<?php if(isset($startDate)){ echo$startDate; } ?>'/>
                       <input type="hidden" id="dtp_input2" name="star_date"/>
@@ -25,7 +25,7 @@
 			        </div>
 			    </div>
 					<div class='col-sm-4'>
-			        <div class="form-group">Tanggal Akhir
+			        <div class="form-group"><?php  echo $lang_to_date;?>
 			            <div class="input-group date form_date" data-date="" data-date-format="dd-mm-yyyy" data-link-field="dtp_input3" data-link-format="yyyy-mm-dd">
 			                <input type='text' class="form-control" id='endDate' value='<?php if(isset($endDate)){ echo$endDate; } ?>'/>
 			                <input type="hidden" id="dtp_input3" name="end_date"/>
@@ -36,7 +36,7 @@
 			        </div>
 			    </div>
 					<div class='col-sm-2'>
-							<button type="button" class="btn btn-default" style='margin-top:27px' onclick='srcByDate()'>CARI</button>
+							<button type="button" class="btn btn-default" style='margin-top:27px' onclick='srcByDate()'><?php  echo $lang_btn_search;?></button>
 					</div>
 					<div class='col-sm-2' style='text-align:right;'>
 							<div style='margin-top:30px'>Total list: <?php echo $total_list; ?></div>
@@ -62,7 +62,7 @@
 			        		<th><?php  echo $lang_orde;?></th>
 			        		<th>Status</th>
 			        		<th>Detail</th>
-			        		<th>Konfirmasi/ Credit Card</th>
+			        		<th><?php  echo $lang_field_confirmation;?></th>
 			        	  </tr>
 			        	</thead>
 			        	<tbody>
@@ -78,9 +78,9 @@
 			                                       //if($items['productId'])
 			        					if($items['paymentMethod']=='Bank Transfer'){
 			        						if($items['transactionStatus']=='PAID'){
-			        							echo anchor('#', 'Konfirmasi', array('class'=>'btn btn-warning disabled'));
+			        							echo anchor('#', $lang_btn_confirm, array('class'=>'btn btn-warning disabled'));
 			        						}else{
-			        							echo anchor('account/confirm/'.$items['idTransaksi'], 'Konfirmasi', array('class'=>'btn btn-warning'));
+			        							echo anchor('account/confirm/'.$items['idTransaksi'], $lang_btn_confirm, array('class'=>'btn btn-warning'));
 			        						}
 			        					}elseif($items['paymentMethod']=='Online Payment-BCA KlikPay'){
 			                                                    if($items['transactionStatus']=='PAID'){
