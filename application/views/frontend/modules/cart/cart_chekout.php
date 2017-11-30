@@ -225,11 +225,8 @@
 							<td class="td">
 								<div class="other-info">Alamat Tujuan</div>
 								<div class="prod-cont" align="left">
-									JNE - Reguler<br>
-									<b>PT Myacico Global Indonesia</b><br>
-									Jl. Kesehatan No 60 O-P,<br>
-									RT 2, RW 4<br>
-									Petojo Selatan, Gambir, Pusat Jakarta Pusat 10160<br>
+                  <b>Yasser Arafat Ahmad</b><br>
+        						Jl. Tanah Abang 4 No.60 O-P 10160 Gambir Kota Administrasi <br>Jakarta Pusat DKI Jakarta
 								</div>
 							</td>
 							<td class="td">
@@ -308,7 +305,7 @@
 						</div>
 
 						<div align="left" class="method">
-							<p>Online Paymeny</p>
+							<p>Online Payment</p>
 							<div class="segmen">
 								<input type="radio" name="gender" value="male">
 			  				</div>

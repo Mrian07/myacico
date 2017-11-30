@@ -280,16 +280,12 @@
 
 				</div>
 				<div class="shadow-box">
-					<b>PT Myacico Global Indonesia</b><br>
-						Jl. Kesehatan No 60 O-P,<br>
-						RT 2, RW 4<br>
-						Petojo Selatan, Gambir, Pusat Jakarta Pusat 10160
+					<b>Yasser Arafat Ahmad</b><br>
+						Jl. Tanah Abang 4 No.60 O-P 10160 Gambir Kota Administrasi <br>Jakarta Pusat DKI Jakarta
 				</div>
 				<p class="alamat2">
-					 <b>PT Myacico Global Indonesia</b><br>
-						Jl. Kesehatan No 60 O-P,<br>
-						RT 2, RW 4<br>
-						Petojo Selatan, Gambir, Pusat Jakarta Pusat 10160
+					 <b>Yasser Arafat Ahmad</b><br>
+						Jl. Tanah Abang 4 No.60 O-P 10160 <br>Gambir Kota Administrasi <br>Jakarta Pusat DKI Jakarta
 				</p>
 			</div>
 
