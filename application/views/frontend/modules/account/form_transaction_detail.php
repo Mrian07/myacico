@@ -1,6 +1,6 @@
 <div class="container">
 	<div class='my-bg-title'>
-		<i class="fa fa-angle-right" aria-hidden="true"></i> Detail Pesanan
+		<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_detail_order;?>
 	</div>
 </div>
 
@@ -11,7 +11,7 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-			<p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
+			<p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> '.$lang_avatar_back, array('class'=>'btn-back'));?></p>
 
 			<div class="panel panel-default">
 				<div class="panel-body">

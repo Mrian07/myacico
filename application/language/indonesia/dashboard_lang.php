@@ -49,8 +49,9 @@ $lang['add_pho'] ='Telepon	';
     $lang['field_btn_confirm'] ='Konfirmasi';
     $lang['field_gambar'] ='Gambar';
     $lang['field_nama_barang'] ='Nama Barang';
-    $lang['field_invoice'] ='Nomor Faktur';
-
+    $lang['field_invoice'] ='Nomor Faktur'; 
+    $lang['field_detail_pesanan'] ='Detail Pesanan';
+    
 
     //end of history
 //end of buku alamat

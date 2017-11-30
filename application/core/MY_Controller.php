@@ -232,6 +232,8 @@ $this->data['lang_btn_confirm'] = $this->lang->line('field_btn_confirm');
 $this->data['lang_gambar'] = $this->lang->line('field_gambar');
 $this->data['lang_nama_barang'] = $this->lang->line('field_nama_barang');
 $this->data['lang_invoice'] = $this->lang->line('field_invoice');
+$this->data['lang_detail_order'] = $this->lang->line('field_detail_pesanan');
+
 
 
 

@@ -53,6 +53,7 @@ No billing data yet, billing data is required at checkout purchase.';
                                                                             $lang['field_gambar'] ='Image';
                     $lang['field_nama_barang'] ='Item Name';
                     $lang['field_invoice'] ='Invoice Number';
+                    $lang['field_detail_pesanan'] ='Order Detail';
 
                                                                                   
 									 //end of history
