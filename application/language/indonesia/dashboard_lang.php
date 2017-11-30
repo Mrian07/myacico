@@ -41,12 +41,16 @@ $lang['add_pho'] ='Telepon	';
     $lang['field_tgl'] ='Tanggal Order';
      $lang['field_total'] ='Total Pembayaran';
      $lang['field_metod'] ='Metode Pembayaran';
-       $lang['fiedl_order'] ='Nomor Pesanan';
+       $lang['field_order'] ='Nomor Pesanan';
     $lang['field_start_date'] ='Tanggal Awal';
     $lang['field_to_date'] ='Tanggal Akhir';
     $lang['field_btn_search'] ='cari';
     $lang['field_confirmation'] ='Konfirmasi /Kartu Kredit';
     $lang['field_btn_confirm'] ='Konfirmasi';
+    $lang['field_gambar'] ='Gambar';
+    $lang['field_nama_barang'] ='Nama Barang';
+    $lang['field_invoice'] ='Nomor Faktur';
+
 
     //end of history
 //end of buku alamat

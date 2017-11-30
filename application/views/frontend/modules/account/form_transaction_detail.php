@@ -15,7 +15,7 @@
 
 			<div class="panel panel-default">
 				<div class="panel-body">
-						<table class="table table-striped"><thead><tr><th>Nama Barang</th><th>Invoice Number</th><th>Order Number</th><th>Payment Method</th><th>Image</th><th>Jumlah Harga</th></tr></thead>
+						<table class="table table-striped"><thead><tr><th><?php echo $lang_nama_barang; ?></th><th><?php echo $lang_invoice; ?></th><th><?php echo $lang_order_no;?></th><th><?php echo $lang_metod; ?></th><th><?php echo $lang_gambar; ?></th><th><?php echo $lang_tota; ?></th></tr></thead>
 							<tbody><tr><td><?php echo $hasil['items'][0]['name']; ?></td><td><?php echo $hasil['invoiceNumber']; ?></td><td><?php echo $hasil['orderNumber']; ?></td><td>
 								<?php echo $hasil['paymentMethod']; ?></td><td><img class="group list-group-image" src="<?php echo $hasil['items'][0]['imageurl']; ?>" alt="..." style:border="0" height="100"></td><td>Rp.<?php echo money($hasil['grandTotal']); ?>
 								</td></tr></tbody></table>
