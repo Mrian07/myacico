@@ -39,7 +39,7 @@ class Web extends MY_Controller {
           $this->load->language('body','indonesia');
            $this->load->language('checkout','indonesia');
         }
-
+        $this->maintan();
         $this->lang();
         $this->asset();
         $this->categorySearch();
@@ -104,6 +104,15 @@ class Web extends MY_Controller {
     //label
     $this->data['lang_lab_name'] = $this->lang->line('label_name');
     $this->data['lang_lab_rep_pass'] = $this->lang->line('label_rep_pass');
+//    ubah password akun
+    $this->data['lang_password_tittle'] = $this->lang->line('password_tittle');
+    $this->data['lang_password_now'] = $this->lang->line('password_now');
+    $this->data['lang_msg_pswd1'] = $this->lang->line('msg_pswd1');
+    $this->data['lang_msg_pswd2'] = $this->lang->line('msg_pswd2');
+
+
+
+
 //    Forgot Password
     $this->data['lang_password_text'] = $this->lang->line('lost_password_text');
     $this->data['lang_password_tittle'] = $this->lang->line('lost_password_tittle');
@@ -190,17 +199,18 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
     //informasi AKUN
 
     $this->data['lang_datkun'] = $this->lang->line('inf_datakun');
+    $this->data['lang_inf_name'] = $this->lang->line('inf_name');
     $this->data['lang_gant'] = $this->lang->line('inf_gant');
     $this->data['lang_fyou'] = $this->lang->line('inf_you');
     $this->data['lang_bil'] = $this->lang->line('inf_bil');
     $this->data['lang_bils'] = $this->lang->line('inf_bils');
-    $this->data['lang_tamb'] = $this->lang->line('btn_tambah');
-
+    $this->data['lang_info_akun'] = $this->lang->line('field_info_akun');
+    
 
     //akhir dari informasi
 
     //buku Alamat
-      $this->data['lang_addDres'] = $this->lang->line('inf_datakun');
+      $this->data['lang_addDres'] = $this->lang->line('add_info');
       $this->data['lang_dibwh'] = $this->lang->line('add_dibawah');
         $this->data['lang_Pen'] = $this->lang->line('add_rec');
         $this->data['lang_alam'] = $this->lang->line('add_alamat');
@@ -209,7 +219,7 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
           //tambah buku Alamat
             $this->data['field_back'] = $this->lang->line('field_kembali');
             $this->data['field_lengkap'] = $this->lang->line('field_sila');
-            $this->data['field_naem'] = $this->lang->line('field_name');
+            $this->data['field_name'] = $this->lang->line('field_name');
             $this->data['field_atasnama'] = $this->lang->line('field_byname');
             $this->data['field_save'] = $this->lang->line('field_save');
             $this->data['field_alamatLain'] = $this->lang->line('field_alamat');
@@ -235,7 +245,9 @@ $this->data['lang_nama_barang'] = $this->lang->line('field_nama_barang');
 $this->data['lang_invoice'] = $this->lang->line('field_invoice');
 $this->data['lang_detail_order'] = $this->lang->line('field_detail_pesanan');
 $this->data['lang_ket_konfirm'] = $this->lang->line('field_ket_konfirm');
-
+$this->data['lang_msg_upload'] = $this->lang->line('msg_upload');
+$this->data['lang_msg_upload2'] = $this->lang->line('msg_upload2');
+$this->data['lang_label_upload'] = $this->lang->line('label_upload');
 
 
           //end pesanan
@@ -299,6 +311,10 @@ $this->data['lang_ket_konfirm'] = $this->lang->line('field_ket_konfirm');
 		$this->data['lang_PostCode'] = $this->lang->line('field_PostCode');
 		$this->data['lang_Passwpord'] = $this->lang->line('field_Passeword');
 		$this->data['lang_Passwpord2'] = $this->lang->line('field_Passeword2');
+                $this->data['lang_field_tittle'] = $this->lang->line('field_tittle');
+                $this->data['lang_txt_address'] = $this->lang->line('txt_address');
+                 $this->data['lang_nama_penerima'] = $this->lang->line('nama_penerima');
+
 		$this->data['lang_BtnSend'] = $this->lang->line('btn_login');
 		//end of bussines
 //    CHECKOUT
@@ -416,6 +432,21 @@ $this->data['lang_ket_konfirm'] = $this->lang->line('field_ket_konfirm');
 
     }
 
+
+    public function maintan(){
+
+  		$url = "https://api.myacico.co.id/myacico-service/check/server";
+      // $url = "http://192.168.0.109:8080/myacico-service/category";
+  		$konten = file_get_contents($url);
+  		// $this->data['catsearch'] = json_decode($konten, true);
+      $hasil = json_decode($konten, true);
+
+
+      if($hasil['status'] != '1'){
+        redirect('maintenance');
+      }
+
+    }
     public function categorySearch(){
   		$url = "https://api.myacico.co.id/myacico-service/category";
       // $url = "http://192.168.0.109:8080/myacico-service/category";

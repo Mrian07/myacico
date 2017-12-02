@@ -25,11 +25,11 @@
 	          <input type="hidden" id="isremitto" name="isremitto" value="N" />
 	          <input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
 						<div class="form-group">
-							<label>Nama Penerima*</label>
+							<label><?php echo $lang_nama_penerima;?>*</label>
 		          <input type="text" id = "name" name="name" class="form-control mandatory" value="<?php echo $hasil['name'];?>"/>
 						</div>
 						<div class="form-group">
-							<label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+							<label><?php echo $lang_txt_address;?>*</label>
 							<input type="text" id="address_name" name="address_name" class="form-control mandatory" value="<?php echo $hasil['address_name'];?>" />
 						</div>
 					<div class="form-group">
@@ -64,7 +64,7 @@
 						</select>
 					</div>
 					<div class="form-group" id="village_box">
-						<label><?php echo "kelurahan"; ?>*</label>
+						<label><?php echo $field_kel; ?>*</label>
 						<select name="village_id" id="village_id" class="form-control mandatory">
 
 

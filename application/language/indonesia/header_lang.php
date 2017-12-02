@@ -80,6 +80,9 @@ $lang['field_kec'] = 'Kecamatan';
 $lang['field_PostCode'] = 'Kode Post';
 $lang['field_Passeword'] = 'Kata Sandi';
 $lang['field_Passeword2'] = 'Konfrimasi Kata Sandi';
+$lang['field_tittle'] = 'Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)';
+$lang['txt_address'] = 'Silakan lengkapi data billing Anda dibawah ini';
+$lang['nama_penerima'] = 'Nama Penerima';
 $lang['btn_login'] = 'Kirim';
 
 //akhir dari bussines

@@ -15,7 +15,7 @@ $lang['msg_regis2'] = 'Pendaftaran Gagal Karena,';
 $lang['info_login'] = 'Masukan email dan password login Anda pada form dibawah ini.';
 $lang['lost_password_text'] = 'Masukkan alamat email Anda di bawah ini. Anda akan menerima link untuk mereset password Anda.';
 $lang['lost_password_tittle'] = 'LUPA PASSWORD';
-$lang['lost_password_button'] = 'Kirim';
+$lang['lost_password_button'] = 'Kata Sandi Saat Ini*';
 $lang['lost_password_msg1'] = 'Email tidak boleh kosong!';
 $lang['lost_password_msg2'] = 'Email belum terdaftar';
 $lang['lost_password_msg3'] = 'Link Reset Sudah Terkirim';
@@ -40,4 +40,12 @@ $lang['daftar_info'] = 'Pengiriman 2x24 jam pada hari kerja untuk semua area JAB
 $lang['daftar_info_point1'] = '1.PENGIRIMAN';
 $lang['daftar_info_point2'] = '2. PENGEMBALIAN';
 $lang['daftar_info2'] = 'Kerusakan barang akibat kesalahan dari produsen barang, bisa ditukar dalam waktu 7 hari kerja atau uang kembali dalam waktu 2x24 jam.'; 
+$lang['password_tittle'] = 'Gunakan form dibawah ini untuk mengubah password login Anda.';
+$lang['password_now'] = 'Kata Sandi Saat Ini*';
+$lang['msg_pswd1'] = 'Mohon Isi password anda saat ini!';
+$lang['msg_pswd2'] = 'Mohon Isi password Baru Anda';
+//confirm Berikut adalah Bukti transfer
+$lang['msg_upload'] = 'Gambar Berhasil Di Upload';
+$lang['msg_upload2'] = 'Gambar Gagal Di Upload';
+$lang['label_upload'] = 'Berikut adalah Bukti transfer';
 ?>
