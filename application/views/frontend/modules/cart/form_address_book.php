@@ -148,7 +148,7 @@
  var negara= 209;
 $.ajaxSetup({
   error: function(){
-    alert('service not available, please try again later');
+  //  alert('service not available, please try again later');
   },
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/

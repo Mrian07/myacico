@@ -57,14 +57,14 @@
 .strike-throgh {
 	text-decoration: line-through;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-	appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+	appearance: none;
+  margin: 0;
 }
 </style>
-
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/pop_cart.css');?>" />
     <?php
 
  //    if ($pro == 1000003)  {
@@ -272,7 +272,7 @@ input[type=number]::-webkit-outer-spin-button {
 					<!-- <strong>Atur berdasarkan: </strong> -->
         <!-- </div> -->
 					<!-- <div class="row my-sort-product">
-							
+
 					</div> -->
 				</div>
 			</div>
@@ -325,7 +325,7 @@ input[type=number]::-webkit-outer-spin-button {
 								<span class="lead dark-red pricelist" style="font-size: 1.4em;">
 									Rp <?php echo money($data['pricelist'] - ($data['pricelist'] * 10 / 100)); ?>
 								</span>
-								<div>Hemat 
+								<div>Hemat
 									<span class="lead dark-red pricelist" style="font-size: 1.2em;">
 										Rp <?php echo money($data['pricelist'] * 10 / 100); ?> (10%)
 									</span>
@@ -335,7 +335,7 @@ input[type=number]::-webkit-outer-spin-button {
 									Rp <?php echo money($data['pricelist']); ?>
 								</span>
 							<?php } ?>
-							
+
 
 							<?php
 								// if($data['stock'] < 1) {
@@ -346,7 +346,7 @@ input[type=number]::-webkit-outer-spin-button {
 							?>
 							<div class="text-left" style="margin-top: 20px;">
 								<input type='hidden' class='form-control text-center' id='jmlItem<?php echo$data['m_product_id'];?>' style='width: 50px; font-size: 9pt; margin-bottom: 8px; height: 29px;' value='1' min='1'>
-								
+
 								<div>
 									<div style="width: 130px;">
 										<button type="button" class="btn btn-danger btn-add-to-cart" onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
@@ -434,6 +434,17 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
   ?>
+</div>
+
+<!-- Modal -->
+<div id="cartModal" class="modal fade cartModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content" style="width:680px">
+      <div class="modal-body">
+        <?php $this->load->view('frontend/modules/cart/modal_cart.php',$this->data); ?>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript">
@@ -596,19 +607,19 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 			var weight = weight;
 
 			var success = function(r){
-
-				$.confirm({
-					title: name,
-					content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
-					autoClose: 'close|3000',
-					buttons: {
-						close: function () {
-							//$.alert('action is canceled');
-						}
-					},
-					closeIcon: true,
-					closeIconClass: 'fa fa-close'
-				});
+          $('.cartModal').modal('show');
+				// $.confirm({
+				// 	title: name,
+				// 	content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
+				// 	autoClose: 'close|3000',
+				// 	buttons: {
+				// 		close: function () {
+				// 			//$.alert('action is canceled');
+				// 		}
+				// 	},
+				// 	closeIcon: true,
+				// 	closeIconClass: 'fa fa-close'
+				// });
 
 				//Buat update cart, fungsi ini ada di file header.php
 				totalCart();
@@ -658,18 +669,19 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 					if(data!='gagal'){
 
 						$(".totalCart").html(data);
-						$.confirm({
-							title: name,
-							content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
-							autoClose: 'close|3000',
-							buttons: {
-								close: function () {
-									//$.alert('action is canceled');
-								}
-							},
-							closeIcon: true,
-							closeIconClass: 'fa fa-close'
-						});
+            $('.cartModal').modal('show');
+						// $.confirm({
+						// 	title: name,
+						// 	content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
+						// 	autoClose: 'close|3000',
+						// 	buttons: {
+						// 		close: function () {
+						// 			//$.alert('action is canceled');
+						// 		}
+						// 	},
+						// 	closeIcon: true,
+						// 	closeIconClass: 'fa fa-close'
+						// });
 					}else{
 						$.dialog({
 							title: name,

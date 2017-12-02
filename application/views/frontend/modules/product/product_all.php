@@ -49,7 +49,7 @@
     </div>-->
 
 
-            
+
 
 </div>
 
@@ -65,7 +65,7 @@
 var detail = JSON.parse(localStorage.getItem('product_detail'))
 if(detail[0].name)
 {
-     $('#recentView').show();   
+     $('#recentView').show();
 }
 //console.log(detail);
 for(var i=0;i<detail.length;i++)

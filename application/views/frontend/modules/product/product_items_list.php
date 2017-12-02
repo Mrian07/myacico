@@ -161,7 +161,7 @@ h1.po1{
     border-radius: 5px;
 }
 </style>
-
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/pop_cart.css');?>" />
 <?php
 	$sumber = $baseApiUrl.'/product/productlist?category='.$pro;
  //$sumber = 'http://myacico.net:8080/myacico-service/api/product/productlist?category='.$pro;
@@ -527,12 +527,19 @@ if($saw==Null)
       echo"Next >  Last >>";
     }
 
-
-
   ?>
 </div>
 
-
+<!-- Modal -->
+<div id="cartModal" class="modal fade cartModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content" style="width:680px">
+      <div class="modal-body">
+        <?php $this->load->view('frontend/modules/cart/modal_cart.php',$this->data); ?>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript">
 
@@ -661,21 +668,23 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 			var success = function(r){
 
-				$.confirm({
-					title: name,
-					content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
-					autoClose: 'close|3000',
-					buttons: {
-						close: function () {
-							//$.alert('action is canceled');
-						}
-					},
-					closeIcon: true,
-					closeIconClass: 'fa fa-close'
-				});
+        $('.cartModal').modal('show');
+				// $.confirm({
+				// 	title: name,
+				// 	content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
+				// 	autoClose: 'close|3000',
+				// 	buttons: {
+				// 		close: function () {
+				// 			//$.alert('action is canceled');
+				// 		}
+				// 	},
+				// 	closeIcon: true,
+				// 	closeIconClass: 'fa fa-close'
+				// });
 
 				//Buat update cart, fungsi ini ada di file header.php
 				totalCart();
+
 			};
 
 			$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
@@ -722,18 +731,19 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 					if(data!='gagal'){
 
 						$(".totalCart").html(data);
-						$.confirm({
-							title: name,
-							content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
-							autoClose: 'close|3000',
-							buttons: {
-								close: function () {
-									//$.alert('action is canceled');
-								}
-							},
-							closeIcon: true,
-							closeIconClass: 'fa fa-close'
-						});
+            $('.cartModal').modal('show');
+						// $.confirm({
+						// 	title: name,
+						// 	content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
+						// 	autoClose: 'close|3000',
+						// 	buttons: {
+						// 		close: function () {
+						// 			//$.alert('action is canceled');
+						// 		}
+						// 	},
+						// 	closeIcon: true,
+						// 	closeIconClass: 'fa fa-close'
+						// });
 					}else{
 						$.dialog({
 							title: name,

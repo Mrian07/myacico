@@ -1,48 +1,4 @@
-<style>
-#line-green{
-  background:#e4eed0;
-  color:#655d56;
-  padding:3px;
-  font-family: arial;
-  border-bottom: 1px solid #cfdeb0;
-}
-
-#border-pop-buy{
-  border-top:5px solid #e4352b;
-  border-bottom:5px solid #e4352b;
-  height:65px;
-}
-#btn-pop-lanjut{
-  float: left;
-  background:#e95931;
-  margin:5px;
-  padding:10px;
-  color:#ffffff;
-  font-size:15px;
-  font-weight: bold;
-  font-family: arial;
-}
-
-#btn-pop-bayar{
-  float: right;
-  background:#e95931;
-  margin:5px;
-  padding:10px;
-  color:#ffffff;
-  font-size:15px;
-  font-weight: bold;
-  font-family: arial;
-}
-
-#pop-title{
-  font-size:25px;
-  font-family: tahoma;
-}
-
-#border-pop-list{
-  padding:10px;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/pop_cart.css');?>" />
 <?php
 $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 ?>
@@ -1060,6 +1016,7 @@ if(jmlItem<=0){
   }
 }
 }
+
 function addToCart1(m_product_id,pricelist,imageurl,name,stock,weight){
 
 var jmlItem = $('#jmlItem').val();
