@@ -61,7 +61,7 @@
     $allsubtotal += $items['subtotal'];
   }
 
-  $grandTotal = $allsubtotal;
+  $grandTotal = $allsubtotal+$this->session->userdata('ongkos_kurir');
   ?>
   <div class="totalfee">
     <div class="totalsub">
