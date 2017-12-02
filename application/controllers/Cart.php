@@ -231,7 +231,9 @@ class Cart extends Web {
 		if($hasil = json_decode($konten, true)){
 			$this->load->view('frontend/modules/cart/cart_by_token.php',$this->data);
 		}else{
-			echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'><img src='".base_url('images/general/empty.jpg')."' border='0'><br>Keranjang masih kosong</div>";
+			echo"
+			<input type='hidden' value='1' id='itemKosong'>
+			<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'><img src='".base_url('images/general/empty.jpg')."' border='0'><br>Keranjang masih kosong</div>";
 		}
 	}
 

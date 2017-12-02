@@ -322,6 +322,7 @@ function delItemCart(id,img,name,idcart){
 function finish(){
   $('#spinner_img').show();
 	$('.checkout-button').css("background", "#f9a8a8");
+	var itemKosong = $('#itemKosong').val();
 	var getPay = $("input[name='code']:checked").val()
 	var resultPay=getPay.split('-');
 	var paymentMethod= resultPay['0'];
@@ -337,7 +338,12 @@ function finish(){
 	var data = {};
 	var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
-	if(billing_address_id==''){
+	if(itemKosong=="1"){
+		$.alert({
+			title: 'Alert!',
+			content: 'Keranjang belanja kosong transaksi tidak bisa dilanjutkan.',
+		});
+	} else if(billing_address_id==''){
 		$.alert({
 			title: 'Alert!',
 			content: '<?php echo $lang_msg1_checkout;?>',

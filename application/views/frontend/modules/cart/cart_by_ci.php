@@ -181,8 +181,15 @@ function next(){
 
   // alert('jalan');die();
   var kurir = $('#kurir').val();
+  var itemKosong = $('#itemKosong').val();
   var selectShip = $('#selectShip').val();
-  if(selectShip==""){
+    if(itemKosong=="1"){
+      $.alert({
+        title: 'Alert!',
+        content: 'Keranjang belanja kosong transaksi tidak bisa dilanjutkan.',
+      });
+    }
+    else if(selectShip==""){
     $.alert({
       title: 'Alert!',
       content: 'Alamat tujuan tidak boleh kosong',

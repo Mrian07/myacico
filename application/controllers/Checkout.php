@@ -127,7 +127,16 @@ class Checkout extends Web_private {
 			$this->data['alamat_shipping'] =$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
 
 		}
-		$this->load->view('frontend/modules/checkout/summary_detail.php',$this->data);
+
+		if($hasil = json_decode($konten, true)){
+			$this->load->view('frontend/modules/checkout/summary_detail.php',$this->data);
+		}else{
+			echo"
+			<input type='hidden' value='1' id='itemKosong'>
+			<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'><img src='".base_url('images/general/empty.jpg')."' border='0'><br>Keranjang masih kosong</div>";
+		}
+
+
 	}
 
 	public function selectKurir()
