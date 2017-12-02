@@ -40,7 +40,7 @@ width: 100%;
     <?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
   </div>
   <div class="col-sm-9">
-    <p><?php echo anchor('account', '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'.$lang_avatar_button, array('class'=>'btn-back'));?></p>
+    <p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'.$lang_avatar_button, array('class'=>'btn-back'));?></p>
                       <div class="buktiTrans"></div>
     <p><?php echo $lang_avatar_tittle2;?></p>
     <form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">

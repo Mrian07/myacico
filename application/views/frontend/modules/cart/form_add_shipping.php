@@ -1,53 +1,52 @@
 <style>
-.table>tbody>tr>td, .table>tfoot>tr>td{
-    vertical-align: middle;
+.box-ship{
+  border: 1px solid #dddddd;
+  padding:20px;
+  margin:10px 0px;
+  color: #4a4847;
+  background: #e9e8e7;
 }
-@media screen and (max-width: 600px) {
-    table#cart tbody td .form-control{
-		width:20%;
-		display: inline !important;
-	}
-	.actions .btn{
-		width:36%;
-		margin:1.5em 0;
-	}
 
-	.actions .btn-info{
-		float:left;
-	}
-	.actions .btn-danger{
-		float:right;
-	}
 
-	table#cart thead { display: none; }
-	table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
-	table#cart tbody tr td:first-child { background: #333; color: #fff; }
-	table#cart tbody td:before {
-		content: attr(data-th); font-weight: bold;
-		display: inline-block; width: 8rem;
-	}
-
-	table#cart tfoot td{display:block; }
-	table#cart tfoot td .btn{display:block;}
-
+#box-adrs{
+  background: #e9e8e7;
+  height:120px;
 }
+
+.link-ship{
+  color: #4a4847;
+}
+
+.link-ship:hover{
+  color: #e1dfdf;
+  /*text-decoration: none;*/
+}
+
 </style>
 
 <div class="container">
-  <div class='my-bg-title'>
-		<i class="fa fa-angle-right" aria-hidden="true"></i> CHECKOUT / PENERIMA
-	</div>
+<br><p align='center'><img src="<?php echo base_url('images/general/step1.jpg'); ?>" border="0"></p>
+    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'>
+      <?php echo anchor('checkout/cart','KERANJANG BELANJA', array('class'=>'link-ship')); ?>/ <?php echo anchor('checkout/addressbook','BUKU ALAMAT', array('class'=>'link-ship')); ?>/ PENERIMA</div>
+      Silakan pilih data penerima pada kolom <b>Pilih Penerima</b>. Jika belum ada data penerima silakan isi kolom data penerima terlebih dulu.
+      <!-- pesan start -->
+      <?php $flash_pesan = $this->session->flashdata('pesan')?>
+      <?php if (! empty($flash_pesan)) : ?>
+      <?php echo $flash_pesan; ?>
+      <?php endif ?>
+      <!-- pesan end -->
+
+    <div class='box-ship'>
+
+
+
 	<div class="row" ng-controller="cartCnt">
-		<div class="col-md-7">
+		<div class="col-xs-8">
 			<div class="panel panel-default">
 			  <div class="panel-heading">
 			  <div class="row">
-					<div class="col-md-8">
-						<b>Data Billing/ Penerima</b>
-					</div>
-					<div class="col-md-4" style='text-align: right'>
-						<?php echo anchor('checkout', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali');?>
-
+					<div class="col-md-12">
+						<b>Data Penerima</b>
 					</div>
 				</div>
 			  </div>
@@ -67,86 +66,84 @@
 						</div> -->
             <div class="row">
               <div class="col-sm-12">
-                    <form name="test1" method="post">
-                    <input type="hidden" id="isbillto" name="isbillto" value="N" />
-                    <input type="hidden" id="isshipto" name="isshipto" value="Y" />
-                    <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
-                    <input type="hidden" id="isremitto" name="isremitto" value="N" />
-                    <div class="form-group">
-                      <label>Nama Penerima*</label>
-                      <input type="text" id = "name" name="name" class="form-control mandatory"/>
-                    </div>
-                    <div class="form-group">
-                      <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
-                      <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
-                    </div>
+                <form name="test1" method="post">
+                <input type="hidden" id="isbillto" name="isbillto" value="N" />
+                <input type="hidden" id="isshipto" name="isshipto" value="Y" />
+                <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
+                <input type="hidden" id="isremitto" name="isremitto" value="N" />
+                <div class="form-group">
+                  <label>Nama Penerima*</label>
+                  <input type="text" id = "name" name="name" class="form-control mandatory"/>
+                </div>
+                <div class="form-group">
+                  <label>Disimpan sebagai alamat (contoh: alamat rumah, alamat kantor dll.)*</label>
+                  <input type="text" id="address_name" name="address_name" class="form-control mandatory"/>
+                </div>
 
-                    <div class="form-group">
-                        <label><?php echo $lang_addres; ?>*</label>
-                         <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" ></textarea>
+                <div class="form-group">
+                    <label><?php echo $lang_addres; ?>*</label>
+                     <textarea rows="4" cols="50" id="address1" name="address1" class="form-control mandatory" ></textarea>
 
-                        <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" />-->
-                        <!--<input type="text" id = "address2" name="address2" class="form-control mandatory" />-->
-                    </div>
-
-
-                    <div class="form-group">
-                      <label><?php echo $lang_Country; ?>*</label>
-                      <select name="country" id="country_sel" class="form-control mandatory">
-                      <option value="209" selected="selected">Indonesia</option>
-                      </select>
-                    </div>
-                    <div class="form-group" id="region_box">
-                      <label><?php echo $lang_Provience; ?>*</label>
-                      <select name="province" id="region_sel" class="form-control mandatory">
-                      <option value="" selected="selected">--Pilih--</option>
-                      </select>
-                    </div>
-                    <div class="form-group" style="display:none" id="city_box">
-                      <label><?php echo $lang_kota; ?>*</label>
-                      <select name="city" id="city_sel" class="form-control mandatory"></select>
-                    </div>
-                    <div class="form-group" style="display:none" id="ditric_box">
-                        <label><?php echo $lang_Keca; ?>*</label>
-                      <select name="district_id" id="district_id" class="form-control mandatory"></select>
-                    </div>
-                    <div class="form-group" style="display:none" id="village_box">
-                      <label><?php echo "kelurahan"; ?>*</label>
-                      <select name="village_id" id="village_id" class="form-control mandatory"></select>
-                    </div>
-                    <div class="form-group" style="display:none" id="postal_box">
-                      <label><?php echo $lang_PostCode; ?>*</label>
-                      <input type="text" name="postal" id="postal" class="form-control mandatory" />
-                    </div>
-                    <div class="form-group">
-                    <label>Handphone*</label>
-                      <input type="text" id = "phone"name="phone" class="form-control mandatory" />
-                    </div>
-                    <div class="form-group">
-                    <label>Telepon</label>
-                      <input type="text" id = "phone2"name="phone2" class="form-control"/>
-                    </div>
-
-                    <div class="clearfix"></div>
-                      <input type="submit" id="submit_btn" class="btn btn-primary" value="Tambah"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
-                    </form>
-                  </div>
+                    <!--<input type="text" id = "address1"name="address1" class="form-control mandatory" />-->
+                    <!--<input type="text" id = "address2" name="address2" class="form-control mandatory" />-->
                 </div>
 
 
-			</div>
+                <div class="form-group">
+                  <label><?php echo $lang_Country; ?>*</label>
+                  <select name="country" id="country_sel" class="form-control mandatory">
+                  <option value="209" selected="selected">Indonesia</option>
+                  </select>
+                </div>
+                <div class="form-group" id="region_box">
+                  <label><?php echo $lang_Provience; ?>*</label>
+                  <select name="province" id="region_sel" class="form-control mandatory">
+                  <option value="" selected="selected">--Pilih--</option>
+                  </select>
+                </div>
+                <div class="form-group" style="display:none" id="city_box">
+                  <label><?php echo $lang_kota; ?>*</label>
+                  <select name="city" id="city_sel" class="form-control mandatory"></select>
+                </div>
+                <div class="form-group" style="display:none" id="ditric_box">
+                    <label><?php echo $lang_Keca; ?>*</label>
+                  <select name="district_id" id="district_id" class="form-control mandatory"></select>
+                </div>
+                <div class="form-group" style="display:none" id="village_box">
+                  <label><?php echo "kelurahan"; ?>*</label>
+                  <select name="village_id" id="village_id" class="form-control mandatory"></select>
+                </div>
+                <div class="form-group" style="display:none" id="postal_box">
+                  <label><?php echo $lang_PostCode; ?>*</label>
+                  <input type="text" name="postal" id="postal" class="form-control mandatory" />
+                </div>
+                <div class="form-group">
+                <label>Handphone*</label>
+                  <input type="text" id = "phone"name="phone" class="form-control mandatory" />
+                </div>
+                <div class="form-group">
+                <label>Telepon</label>
+                  <input type="text" id = "phone2"name="phone2" class="form-control"/>
+                </div>
+
+                <div class="clearfix"></div>
+                  <input type="submit" id="submit_btn" class="btn btn-primary" value="Tambah"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
+                </form>
+              </div>
 
 
+            </div>
+	       </div>
 			</div>
 
 		</div>
-		<div class="col-md-5">
-			<?php
-				$this->load->view('frontend/modules/checkout/checkout_cart');
-			?>
-		</div>
+    <div class="col-xs-4">
+
+      <?php $this->load->view('frontend/modules/cart/data_shipping.php',$this->data); ?>
+
+    </div>
 	</div>
-
+</div>
 
 </div>
 <script>
@@ -288,8 +285,8 @@ $('#submit_btn').attr('disabled','disabled');
     		// $("#isshipto").val(null);
     		// $("#ispayfrom").val(null);
     	  // $("#isremitto").val(null);
-        window.location.replace(base_url+"checkout/dataShipping");
-
+        // window.location.replace(base_url+"checkout/dataShipping");
+        window.location.replace("<?php echo base_url('checkout/shipping/1');?>");
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');

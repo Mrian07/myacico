@@ -29,7 +29,7 @@
 
 <div class="container">
 	<div class='my-bg-title'>
-			<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_avatar_tittle;?>
+			<i class="fa fa-angle-right" aria-hidden="true"></i> UPLOAD IMAGE
 	</div>
 </div>
 <div class="container">
@@ -40,14 +40,14 @@
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-      <p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> '.$lang_avatar_back, array('class'=>'btn-back'));?></p>
+      <p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
                         <div class="buktiTrans"></div>
-			<p><?php echo $lang_ket_konfirm;?></p>
+			<p>Silakan upload bukti transfer pembayaran Anda pada form dibawah ini.</p>
 			<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					 <label><?php echo $lang_avatar_tittle;?></label>
+					 <label>Upload Image</label>
 				</div>
 				<div class="panel-body">
 
@@ -57,7 +57,7 @@
 						<span class="input-group-btn">
 						<input type="hidden" placeholder="placeholder" id="transid" class="input-xlarge" value="<?php echo $konf; ?>" name="transid">
 						<span class="btn btn-info btn-file">
-						<?php echo $lang_avatar_browse;?><input class="input-file" id="file" type="file" name="file" style='height:10px'>
+						Browse…<input class="input-file" id="file" type="file" name="file" style='height:10px'>
 						</span>
 						</span>
 						<input type="text" class="form-control" readonly>
@@ -65,7 +65,7 @@
 
 					<img id='img-upload'/>
 
-                               <button class="btn btn-success"><?php echo $lang_avatar_button;?></button>
+                               <button class="btn btn-success">Upload</button>
 					  <div class="form-group">
 
 					</div>

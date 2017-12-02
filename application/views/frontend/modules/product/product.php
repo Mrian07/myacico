@@ -23,7 +23,7 @@
 <div style='padding:8px; font-family:tahoma; font-size:12px; color:#535151'>
     
       <!-- $lang_recent_view -->
-    <b>Baru dilihat</b><hr>
+    <i class="fa fa-dot-circle-o" aria-hidden="true"></i> Baru di lihat<hr>
   </div>
     </div>
 <!--<div class="container">-->
@@ -48,7 +48,6 @@
       
 
 <!--</div>-->
-</div>
 </div>
 <script>
 //    $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];

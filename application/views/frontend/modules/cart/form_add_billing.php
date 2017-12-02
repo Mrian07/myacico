@@ -1,62 +1,39 @@
 <style>
-.table>tbody>tr>td, .table>tfoot>tr>td{
-    vertical-align: middle;
+.box-ship{
+  border: 1px solid #dddddd;
+  padding:20px;
+  margin:10px 0px;
+  color: #4a4847;
+  background: #e9e8e7;
 }
-@media screen and (max-width: 600px) {
-    table#cart tbody td .form-control{
-		width:20%;
-		display: inline !important;
-	}
-	.actions .btn{
-		width:36%;
-		margin:1.5em 0;
-	}
 
-	.actions .btn-info{
-		float:left;
-	}
-	.actions .btn-danger{
-		float:right;
-	}
 
-	table#cart thead { display: none; }
-	table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
-	table#cart tbody tr td:first-child { background: #333; color: #fff; }
-	table#cart tbody td:before {
-		content: attr(data-th); font-weight: bold;
-		display: inline-block; width: 8rem;
-	}
-
-	table#cart tfoot td{display:block; }
-	table#cart tfoot td .btn{display:block;}
-
+#box-adrs{
+  background: #e9e8e7;
+  height:120px;
 }
+
+.link-ship{
+  color: #4a4847;
+}
+
+.link-ship:hover{
+  color: #e1dfdf;
+  /*text-decoration: none;*/
+}
+
 </style>
-
-
-
-
-
-
 <div class="container">
-  <div class='my-bg-title'>
-			<i class="fa fa-angle-right" aria-hidden="true"></i> CHECKOUT / BILLING
+<br><p align='center'><img src="<?php echo base_url('images/general/step1.jpg'); ?>" border="0"></p>
+    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'>
+      <?php echo anchor('checkout/cart','SHIPPING', array('class'=>'link-ship')); ?>/ <?php echo anchor('checkout/addressbook','BUKU ALAMAT', array('class'=>'link-ship')); ?>/ TAMBAH BILLING</div>
+    <div class='box-ship'>
 
-	</div>
-</div>
-
-<div class="container">
-	<div class="row" ng-controller="cartCnt">
-		<div class="col-md-7">
-			<div class="panel panel-default">
+      <div class="panel panel-default">
 			  <div class="panel-heading">
 			  <div class="row">
-					<div class="col-md-8">
-						<b>Data Billing/ Penerima</b>
-					</div>
-					<div class="col-md-4" style='text-align: right'>
-						<?php echo anchor('checkout', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali');?>
-
+					<div class="col-md-12">
+						<b>Data Penerima</b>
 					</div>
 				</div>
 			  </div>
@@ -146,16 +123,10 @@
 
 			</div>
 
-		</div>
-		<div class="col-md-5">
-			<?php
-				$this->load->view('frontend/modules/checkout/checkout_cart');
-			?>
-		</div>
-	</div>
 
-
+    </div>
 </div>
+
 <script>
  var negara= 209;
 $.ajaxSetup({

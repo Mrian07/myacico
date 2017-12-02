@@ -35,13 +35,13 @@ a
 
 
 <div class="container">
-	<div class='my-bg-title'>
-		<i class="fa fa-angle-right" aria-hidden="true"></i> FINISH
-	</div>
-</div>
 
-<div class="container">
-	<h3>TERIMA KASIH</h3>
+  <br><p align='center'><img src="<?php echo base_url('images/general/step3.jpg'); ?>" border="0"></p>
+    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'>TERIMA KASIH</div>
+
+
+  <!-- <br>
+	<h3>TERIMA KASIH</h3> -->
 
 	<p>Order Anda telah berhasil diproses. Silakan lakukan pembayaran sesuai dengan nilai transaksi Anda. Untuk melakukan konfirmasi pembayaran <?php echo anchor('account/riwayatStatusPesanan', '<b>klik disini</b>');?>.</p>
 

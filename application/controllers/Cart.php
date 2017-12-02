@@ -22,10 +22,38 @@ class Cart extends Web {
 
 	public function index()
 	{
+
+			/*s: terbaru*/
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "order/cart/detail";
+		$url = api_base_url($api);
+
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+
+		$this->data['hasil'] = json_decode($konten, true);
+
+		// $hasil = json_decode($konten, true);
+		// echo"<pre>";
+		// print_r($hasil); die();
+		/*e: terbaru*/
+
 		$this->data['title_web'] = "Myacico.com - Create Account Business";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/cart/cart.php',$this->data);
+
+		// $this->load->view('frontend/modules/cart/cart_by_ci.php',$this->data);
+		// $this->load->view('frontend/modules/cart/cart_by_token.php',$this->data);
+
+
 		$this->load->view('frontend/footer',$this->data);
 	}
 
@@ -36,6 +64,7 @@ class Cart extends Web {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/cart/cart_new.php',$this->data);
+		// $this->load->view('frontend/modules/cart/cart_new2.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
@@ -200,7 +229,7 @@ class Cart extends Web {
 
 		$this->data['hasil'] = json_decode($konten, true);
 		if($hasil = json_decode($konten, true)){
-			$this->load->view('frontend/modules/cart/cart_token.php',$this->data);
+			$this->load->view('frontend/modules/cart/cart_by_token.php',$this->data);
 		}else{
 			echo"<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'><img src='".base_url('images/general/empty.jpg')."' border='0'><br>Keranjang masih kosong</div>";
 		}
