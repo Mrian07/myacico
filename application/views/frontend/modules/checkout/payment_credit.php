@@ -4,12 +4,12 @@
   <meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
 
   <!-- dev -->
-  <script type="text/javascript"
+  <!-- <script type="text/javascript"
   src="https://app.sandbox.midtrans.com/snap/snap.js"
-  data-client-key="VT-client-Zg0dPXNpghjr1e6S"></script>
+  data-client-key="VT-client-Zg0dPXNpghjr1e6S"></script> -->
 
   <!-- prod -->
-  <!-- <script type="text/javascript" src="https://app.midtrans.com/snap/snap.js" data-client-key="VT-client-pB1L01rg-5vSIPCA"></script> -->
+  <script type="text/javascript" src="https://app.midtrans.com/snap/snap.js" data-client-key="VT-client-pB1L01rg-5vSIPCA"></script>
   <style type="text/css">
     .mids{
       text-align: center;
