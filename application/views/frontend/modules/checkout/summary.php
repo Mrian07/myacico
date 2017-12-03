@@ -258,7 +258,7 @@
 						</div>
 					</div>
 
-					<input type='hidden' value='<?php echo$this->session->userdata('id_kurir');?>' id='courier'>
+					<input type='hidden' value='<?php echo$this->session->userdata('name_kurir');?>' id='courier'>
 					<input type='hidden' value='<?php echo$this->session->userdata('ongkos_kurir');?>' id='courier_amount'>
 					<input type='hidden' value='<?php echo$billing_address_id;?>' id='billing_address_id'>
 					<input type='hidden' value='<?php echo$shipping_address_id;?>' id='shipping_address_id'>

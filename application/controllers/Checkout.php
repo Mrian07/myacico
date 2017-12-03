@@ -271,10 +271,11 @@ class Checkout extends Web_private {
 
 		$id_kurir = $_GET['id'];
 		$ongkos_kurir = $_GET['amount'];
-
+		$name_kurir = $_GET['name'];
 		$data = array(
 			'id_kurir' => $id_kurir,
 			'ongkos_kurir' => $ongkos_kurir,
+			'name_kurir' => $name_kurir,
 		);
 		$this->session->set_userdata($data);
 		//ini diload pake ajak

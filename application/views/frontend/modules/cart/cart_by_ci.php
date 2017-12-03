@@ -106,9 +106,9 @@ textarea#styled {
           foreach($hasil_kurir as $dataKur){?>
 
             <?php if($this->session->userdata('id_kurir')==$dataKur['shipperId']){?>
-              <option value='<?php echo $dataKur['shipperId']; ?>-<?php echo $dataKur['amount']; ?>' selected><?php echo $dataKur['shipperName']; ?></option>
+              <option value='<?php echo $dataKur['shipperId']; ?>-<?php echo $dataKur['amount']; ?>-<?php echo $dataKur['shipperName']; ?>' selected><?php echo $dataKur['shipperName']; ?></option>
             <?php }else{?>
-              <option value='<?php echo $dataKur['shipperId']; ?>-<?php echo $dataKur['amount']; ?>'><?php echo $dataKur['shipperName']; ?></option>
+              <option value='<?php echo $dataKur['shipperId']; ?>-<?php echo $dataKur['amount']; ?>-<?php echo $dataKur['shipperName']; ?>'><?php echo $dataKur['shipperName']; ?></option>
             <?php } ?>
 
 
@@ -242,13 +242,14 @@ function pilihKurir(row){
   var result=row.value.split('-');
   var id = result[0];
   var amount = result[1];
+  var nameKur = result[2];
   if(id=='kosong'){
     $(".amount").html('-');
   }else{
     var url = '<?php echo site_url('checkout/pilihKurir'); ?>'
     $.ajax
     ({
-    url: url+'/?id='+id+'&amount='+amount,
+    url: url+'/?id='+id+'&amount='+amount+'&name='+nameKur,
     success:function(html){
         $(".amount").html(html);
       }
