@@ -478,10 +478,13 @@ $(document).ready(function() {
 
 	var path = '<?php echo $_SERVER['REQUEST_URI']; ?>';
 	var arrPath = path.split('/');
-	console.log(path);
-	console.log(arrPath);
-	console.log(arrPath[3]);
-	$('#search-key').html(arrPath[3]);
+	//console.log(path);
+	//console.log(arrPath);
+	//console.log(arrPath[4]);
+	 var cari = arrPath[3];
+                cari = cari.replace(/%20/g," ");
+                
+		$('#search-key').html(cari);
 	if (arrPath.length == 4) {
 		console.log("arrPath = 4");
 		$('#startItem').html(1);
