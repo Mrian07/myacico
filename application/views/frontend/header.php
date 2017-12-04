@@ -848,6 +848,9 @@ $(".logout").click(function(e){
 		buttons: {
 			confirm: function () {
 				document.cookie='x-auth=; path='+base_path+';expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+				<?php
+				//untuk menghapus cookie 
+				unset($_COOKIE['shipping_address_id']); ?>
 				location.href='<?php echo base_url("customer/signIn");?>';
 				if(chat.soc){
 					chat.soc.disconnect();
