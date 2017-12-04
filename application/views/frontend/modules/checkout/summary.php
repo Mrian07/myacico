@@ -509,7 +509,7 @@ function finish(){
 		data.courier = courier;
 		data.courier_amount = courier_amount;
 //                alert(code);
-//console.log("sad",data);die();
+// console.log("sad",data);die();
 		$.ajax
 		({
 		type: "POST",

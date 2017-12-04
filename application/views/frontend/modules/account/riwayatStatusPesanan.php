@@ -69,7 +69,7 @@
 			        		<?php foreach($hasil as $items): 	?>
 			        			<tr>
 			        				<td data-title="Tanggal Order"><?php echo tanggal_time($items['waktuTransaksi']);?></td>
-			        				<td data-title="Total Pembayaran">Rp.<?php echo money($items['grandTotal']);?></td>
+			        				<td data-title="Total Pembayaran">Rp.<?php if(isset($items['grandTotal'])){echo money($items['grandTotal']);}else{echo"0";}?></td>
 			        				<td data-title="Metode Pembayaran"><?php echo $items['paymentMethod'];?></td>
 			        				<td data-title="Nomor Pesanan"><?php echo $items['orderNumber'];?></td>
 			        				<td data-title="Status"><?php echo $items['transactionStatus'];?></td>

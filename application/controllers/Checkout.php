@@ -65,6 +65,8 @@ class Checkout extends Web_private {
 			 $this->data['shipping_address_id'] = $hasil_ship['id'];
 			// $id_kelurahan = $hasil_ship['village_id'];
 
+		}else{
+			redirect('checkout/cart');
 		}
 
 		//payment
@@ -879,7 +881,7 @@ class Checkout extends Web_private {
 
 		$data = array('shipping_address_id' => '');
   	$this->session->set_userdata($data);
-$domain = domain();
+		$domain = domain();
 		$this->data['title_web'] = "Checkout - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
