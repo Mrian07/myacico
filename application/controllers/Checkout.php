@@ -228,7 +228,7 @@ class Checkout extends Web_private {
 			}
 		}
 
-		if($id_kelurahan){
+		if(isset($id_kelurahan)){
 			$api = "freight/shipment/rates?to_village_id=".$id_kelurahan;
 			$url = api_base_url($api);
 
