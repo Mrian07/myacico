@@ -50,7 +50,7 @@
 					<tr>
 						<td><?php echo $items['name']; ?></td>
 						<td><?php echo $items['address_name'].", ".$items['address1']." ".$add2." ".$items['city_name']." ".$items['postal']; ?></td>
-						<td><?php echo $items['phone'].", ".$items['phone2']; ?></td>
+						<td><?php echo $items['phone']?></td>
 						<td><?php echo anchor('account/editBukuAlamat/'.$items['id'], '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>', array('class'=>'btn btn-info'));?></td>
 						<td><a href='#' onClick="dellBukuAlamat('<?php echo $items['id']; ?>','<?php echo $items['address1']; ?>')" class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></a></td>
 					</tr>

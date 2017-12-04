@@ -836,15 +836,15 @@ ul.list-group:after {
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_gad; ?>
   </div>
   <a href="https://myacico.co.id/product/detail/1057595/APPLE-iPhone-7-Plus-%5b256GB%5d---Jet-Black">
-  <div style='float:left;width:695px; height:auto; margin-right:5px'>
+  <div style='float:left;width:650px; height:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-a1.jpg');?>' border='0' width='100%' height = '190px;'>
   </div></a>
   <a href="https://myacico.co.id/product/detail/1065088/XIAOMI-Mi-A1-64GB/4GB---Gold">
   <div style='float:left;width:auto; margin-right:5px'>
-    <img src='<?php echo base_url('images/general/xiaomi.jpg');?>' border='0' width='100%' height='190px'>
+    <img src='<?php echo base_url('images/general/xiaomi_copy.jpg');?>' border='0' width='auto' height='190px'>
   </div></a>
   <div style='float:left;width:auto'>
-    <img src='<?php echo base_url('images/general/oppo.jpg');?>' border='0' width='100%' height='190px'>
+    <img src='<?php echo base_url('images/general/oppo_copy.jpg');?>' border='0' width='auto' height='190px'>
   </div>
   <div style='clear:both'></div>
 
