@@ -83,15 +83,6 @@ textarea#styled {
   background-color: #ca3833;
   color:#f1eeee;
 }
-/*.checkout-button:active{
-  background-color: #ca3833;
-  color:#f1eeee;
-}
-.checkout-button:visited{
-  background-color: #ca3833;
-  color:#f1eeee;
-}*/
-
 </style>
 
 
@@ -111,11 +102,12 @@ textarea#styled {
   }
 
   .title-step2{
-    width: 100px;
+    width: 230px;
     display: inline-block;
     margin-top:0px;
     margin-bottom:0px;
-    margin-left: 220px;
+    margin-left: 160px;
+
   }
   .title-step2 p{
     color: #9a9c9b;
@@ -128,7 +120,7 @@ textarea#styled {
     width: 250px;
     display: inline-block;
     margin-right: 0px;
-    margin-left: 200px;
+    margin-left: 110px;
     margin-top:0px;
     margin-bottom:0px;
   }
@@ -209,7 +201,7 @@ textarea#styled {
   <div style='margin:0px auto; width:1000px; margin-top:30px;'>
     <div class="number-container">
       <div class="title-step"><p>Keranjang Belanja</p></div>
-      <div class="title-step2"><p>Ringkasan</p></div>
+      <div class="title-step2"><p>Metode Pembayaran</p></div>
       <div class="title-step3"><p>Konfirmasi Pembayaran</p></div>
     </div>
   </div>
@@ -292,8 +284,7 @@ textarea#styled {
       </div>
       <div style='clear:both'></div>
   </div>
-  <button onclick='next()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b>BAYAR</b> SEKARANG</span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
-  <div style='clear:both'></div>
+
   <div class='box-cart'>
 
     <div class="col-md-12 listCart">
@@ -302,6 +293,9 @@ textarea#styled {
 
     <div style='clear:both'></div>
   </div>
+
+  <button onclick='next()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b>BAYAR</b> SEKARANG</span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
+  <div style='clear:both'></div>
 </div>
 
 

@@ -727,16 +727,18 @@ ul.list-group:after {
     <div class="col-xs-4" style='padding-left: 5px; padding-right:5px'><img src='<?php echo base_url('images/demo/banner-2.jpg');?>' border='0' width='100%' height='167'></div>
     <div class="col-xs-4" style='padding-left: 2px'><img src='<?php echo base_url('images/demo/banner-3.jpg');?>' border='0' width='100%' height='167'></div>
   </div> -->
-
+  <a href="https://myacico.co.id/product/detail/1064093/VIVO-V5-Plus-%5b4/64GB%5d---Gold">
   <div style='float:left;width:376px; margin-right:5px'>
     <img src='https://storage.googleapis.com/myacico/image/banner/banner-55.png' border='0' width='100%'>
-  </div>
+  </div></a>
+  <a href="https://myacico.co.id/product/detail/1064001/BOSE-Headphone-QuietComfort-QC25-for-Samsung-or-Android-Devices-%5bHDPRA0117%5d---Black">
   <div style='float:left;width:376px; margin-right:5px'>
     <img src='https://storage.googleapis.com/myacico/image/banner/banner-56.png' border='0' width='100%'>
-  </div>
+  </div></a>
+  <a href="https://myacico.co.id/product/detail/1060256/MODENA-Washing-Machine-IMPERIAN-%5bWF620%5d">
   <div style='float:left;width:376px'>
     <img src='https://storage.googleapis.com/myacico/image/banner/banner-57.png' border='0' width='100%'>
-  </div>
+  </div></a>
   <div style='clear:both'></div>
   <!-- <div class="row" style='width:1155px'>
     <div class="col-xs-4"><img src='<?php echo base_url('images/demo/banner-1.jpg');?>' border='0' width='370'></div>
@@ -833,14 +835,16 @@ ul.list-group:after {
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:0px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_gad; ?>
   </div>
-  <div style='float:left;width:695px; height:auto; margin-right:5px'>
+  <a href="https://myacico.co.id/product/detail/1057595/APPLE-iPhone-7-Plus-%5b256GB%5d---Jet-Black">
+  <div style='float:left;width:650px; height:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-a1.jpg');?>' border='0' width='100%' height = '190px;'>
-  </div>
+  </div></a>
+  <a href="https://myacico.co.id/product/detail/1065088/XIAOMI-Mi-A1-64GB/4GB---Gold">
   <div style='float:left;width:auto; margin-right:5px'>
-    <img src='<?php echo base_url('images/general/xiaomi.jpg');?>' border='0' width='100%' height='190px'>
-  </div>
+    <img src='<?php echo base_url('images/general/xiaomi_copy.jpg');?>' border='0' width='auto' height='190px'>
+  </div></a>
   <div style='float:left;width:auto'>
-    <img src='<?php echo base_url('images/general/oppo.jpg');?>' border='0' width='100%' height='190px'>
+    <img src='<?php echo base_url('images/general/oppo_copy.jpg');?>' border='0' width='auto' height='190px'>
   </div>
   <div style='clear:both'></div>
 
@@ -910,15 +914,18 @@ text.innerHTML = trimmedString
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_komp; ?>
   </div>
+  <a href="https://myacico.co.id/product/detail/1053255/GIGABYTE-Laptop-Gaming-Sabre-15-%5b9WP45K005-ID-A-003%5d">
   <div style='float:left;width:650px; height:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-b31.jpg');?>' border='0' width='100%' height = '190px;'>
-  </div>
+  </div></a>
+  <a href="https://myacico.co.id/product/detail/1066350/CANON-Multifunction-Inkjet-Printer-%5bE410%5d---Black">
   <div style='float:left;width:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-b2.jpg');?>' border='0' width='auto' height='190px'>
-  </div>
+  </div></a>
+  <a href="https://myacico.co.id/product/detail/1065832/DELL-Desktop-All-In-One-Inspiron-3264">
   <div style='float:left;width:auto'>
     <img src='<?php echo base_url('images/demo/banner-b3.jpg');?>' border='0' width='auto' height='190px'>
-  </div>
+  </div></a>
   <div style='clear:both'></div>
 
   <div class="span12" style='background:#fdf0db; padding:10px; margin-top:10px'>
@@ -979,15 +986,18 @@ text.innerHTML = trimmedString
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_house; ?>
   </div>
+  <a href="https://myacico.co.id/product/detail/1072101/PANASONIC-Air-Conditioner-Split-%5bCS-YN9SKJ%5d">
   <div style='float:left;width:643px; height:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-c1.jpg');?>' border='0' width='100%' height = '190px;'>
-  </div>
+  </div></a>
+  <a href="https://myacico.co.id/product/detail/1049309/SEVERIN-Coffee-Maker-%5bKV8090%5d---Stainless-steel">
   <div style='float:left;width:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-c2.jpg');?>' border='0' width='auto' height='190px'>
-  </div>
+  </div></a>
+  <a href="https://myacico.co.id/product/detail/1056241/MASPION-Mastro-Grill-32-cm---Red">
   <div style='float:left;width:auto'>
     <img src='<?php echo base_url('images/demo/banner-c3.jpg');?>' border='0' width='auto' height='190px'>
-  </div>
+  </div></a>
   <div style='clear:both'></div>
 
   <div class="span12" style='background:#f1fae7; padding:10px; margin-top:10px'>
@@ -1049,12 +1059,14 @@ text.innerHTML = trimmedString
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo $lang_hob; ?>
   </div>
+  <a href="https://myacico.co.id/product/detail/1061320/DJI-Mavic-Pro---Grey">
   <div style='float:left;width:653px; height:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-d1.jpg');?>' border='0' width='100%' height = '190px;'>
-  </div>
+  </div></a>
+  <a href="">
   <div style='float:left;width:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-d2.jpg');?>' border='0' width='auto' height='190px'>
-  </div>
+  </div></a>
   <div style='float:left;width:auto'>
     <img src='<?php echo base_url('images/demo/banner-d3.jpg');?>' border='0' width='auto' height='190px'>
   </div>
@@ -1119,15 +1131,18 @@ text.innerHTML = trimmedString
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:20px; margin-bottom:10px;'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> AUDIO & VISUAL
   </div>
+  <a href="https://myacico.co.id/product/detail/1053741/FUJIFILM-Body-Camera-Mirrorless-include-Lens-%5bX-PRO2-plus-Lens-XF35-f2/0%5d---Black">
   <div style='float:left;width:650px; height:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-e1.jpg');?>' border='0' width='100%' height = '190px;'>
-  </div>
+  </div></a>
+  <a href="https://myacico.co.id/product/detail/1063937/SENNHEISER-Headphone-%5bHD-201%5d">
   <div style='float:left;width:auto; margin-right:5px'>
     <img src='<?php echo base_url('images/demo/banner-e2.jpg');?>' border='0' width='auto' height='190px'>
-  </div>
+  </div></a>
+  <a href="https://myacico.co.id/product/detail/1065654/SHARP-LCD-TV-40-inch-%5bLC-40LE185I%5d">
   <div style='float:left;width:auto'>
     <img src='<?php echo base_url('images/demo/banner-e3.jpg');?>' border='0' width='auto' height='190px'>
-  </div>
+  </div></a>
   <div style='clear:both'></div>
 
   <div class="span12" style='background:#f1e0fd; padding:10px; margin-top:10px'>

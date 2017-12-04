@@ -24,8 +24,134 @@
 
 </style>
 
+<style type="text/css">
+.title-step{
+    width: 200px;
+    display: inline-block;
+    margin-right: 0%;
+    margin-top:0px;
+    margin-bottom:0px;
+  }
+  .title-step p{
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .title-step2{
+    width: 230px;
+    display: inline-block;
+    margin-top:0px;
+    margin-bottom:0px;
+    margin-left: 160px;
+
+  }
+  .title-step2 p{
+    color: #9a9c9b;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .title-step3{
+    width: 250px;
+    display: inline-block;
+    margin-right: 0px;
+    margin-left: 110px;
+    margin-top:0px;
+    margin-bottom:0px;
+  }
+  .title-step3 p{
+    color: #9a9c9b;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .number{
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    display: inline-block;
+    border-radius: 50px;
+    margin-right: 24%;
+    margin-top:0px;
+    margin-bottom:-500px;
+  }
+  .number p{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .number2{
+    width: 60px;
+    height: 60px;
+    background-color: #9a9c9b;
+    display: inline-block;
+    border-radius: 50px;
+    margin-left: 110px;
+    margin-top:0px;
+    margin-bottom:-500px;
+  }
+  .number2 p{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .number3{
+    width: 60px;
+    height: 60px;
+    background-color: #9a9c9b;
+    display: inline-block;
+    border-radius: 50px;
+    margin-right: 0px;
+    margin-left: 300px;
+    margin-top:0px;
+    margin-bottom:-500px;
+  }
+  .number3 p{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .barred{
+    width: 90%;
+    height: 10px;
+    background-color: red;
+    /*position: absolute;*/
+    margin-top: -25px;
+    z-index: -1;
+  }
+
+</style>
+
 <div class="container">
-<br><p align='center'><img src="<?php echo base_url('images/general/step1.jpg'); ?>" border="0"></p>
+  <div style='margin:0px auto; width:1000px; margin-top:30px;'>
+    <div class="number-container">
+      <div class="title-step"><p>Keranjang Belanja</p></div>
+      <div class="title-step2"><p>Metode Pembayaran</p></div>
+      <div class="title-step3"><p>Konfirmasi Pembayaran</p></div>
+    </div>
+  </div>
+  <div style='margin:0px auto; width:900px; margin-bottom:50px;'>
+    <div class="number-container">
+      <div class="number"><p>1</p></div>
+      <div class="number2"><p>2</p></div>
+      <div class="number3"><p>3</p></div>
+      <div class="barred"></div>
+    </div>
+  </div>
+
     <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'>
       <?php echo anchor('checkout/cart','KERANJANG BELANJA', array('class'=>'link-ship')); ?>/ TAMBAH BUKU ALAMAT</div>
       Silakan pilih data penerima pada kolom <b>Pilih Penerima</b>. Jika belum ada data penerima silakan isi kolom data penerima terlebih dulu.
@@ -259,6 +385,50 @@ $('#submit_btn').attr('disabled','disabled');
         data.isshipto = isshipto;
         data.ispayfrom = ispayfrom;
         data.isremitto = isremitto;
+
+        if(name ===''){
+          $.alert({title:'Alert', content: ' name tidak boleh kosong'});
+          $('#spinner_img').hide();
+          $('#submit_btn').val('Kirim').removeClass('disabled');
+          $('.mandatory').prop('disabled', false);
+          return false;
+        }
+        if(phone ===''){
+          $.alert({title:'Alert', content: ' phone tidak boleh kosong'});
+          $('#spinner_img').hide();
+          $('#submit_btn').val('Kirim').removeClass('disabled');
+          $('.mandatory').prop('disabled', false);
+          return false;
+        }
+        if(phone2 ===''){
+          $.alert({title:'Alert', content: ' Telepon tidak boleh kosong'});
+          $('#spinner_img').hide();
+          $('#submit_btn').val('Kirim').removeClass('disabled');
+          $('.mandatory').prop('disabled', false);
+          return false;
+        }
+        if(address_name ===''){
+          $.alert({title:'Alert', content: 'address_name tidak boleh kosong'});
+          $('#spinner_img').hide();
+          $('#submit_btn').val('Kirim').removeClass('disabled');
+          $('.mandatory').prop('disabled', false);
+          return false;
+        }
+        if(address1 ===''){
+          $.alert({title:'Alert', content: 'Alamat tidak boleh kosong'});
+          $('#spinner_img').hide();
+          $('#submit_btn').val('Kirim').removeClass('disabled');
+          $('.mandatory').prop('disabled', false);
+          return false;
+        }
+        if(postal ===''){
+          $.alert({title:'Alert', content: 'postal tidak boleh kosong'});
+          $('#spinner_img').hide();
+          $('#submit_btn').val('Kirim').removeClass('disabled');
+          $('.mandatory').prop('disabled', false);
+          return false;
+        }
+
 
     //return alert(data.phone);die();
      var success = function(r){

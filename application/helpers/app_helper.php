@@ -1,11 +1,11 @@
 <?php
 
 function domain(){
-            
+
             return "Myacico.co.id";
   }
   function domain2(){
-            
+
             return "Belanja online murah, gratis pengiriman area Jakarta*";
   }
 function api_base_url($param)
@@ -111,10 +111,10 @@ function money($money)
 function money($money)
 {
 	if($money){
-	return number_format($money,0,',','.');
+	   return number_format($money,0,',','.');
 	}else{
-	$money="0";
-	return $money;
+  	$money="0";
+  	return $money;
 	}
 }
 
