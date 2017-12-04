@@ -108,14 +108,14 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           <td></td>
           <td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih myacico courier bagi anda yang tinggal di jakarta </td>
         </tr>
-        <tr>
+        <!-- <tr>
           <td>Warna:</td>
           <td><div class="opt-color black"></div></td>
         </tr>
         <tr>
           <td>Kapasitas:</td>
           <td><span class="capacity">128GB</span></td>
-        </tr>
+        </tr> -->
         <tr>
           <td>Product Highlight:</td>
           <td class="hook-clear-ul"><?php echo $highlight;  ?></td>
@@ -149,7 +149,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url_share;?>" target="_blank" style="text-decoration: none!important">
         <i class="fa fa-facebook icon-share" aria-hidden="true"></i>
       </a>
-     
+
       <a href="https://twitter.com/home?status=<?php echo $url_share;?>"><i class="fa fa-twitter icon-share" aria-hidden="true"></i>
       </a>
       <a href="https://plus.google.com/share?url=<?php echo $url_share;?>"><i class="fa fa-google-plus icon-share" aria-hidden="true"></i>
