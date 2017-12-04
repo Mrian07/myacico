@@ -287,7 +287,7 @@ $home_domain = domain2();
 
 
 		//$this->load->view('frontend/test',$this->data);
-		$this->data['title_web'] = "Myacico.co.id".$home_domain;
+		$this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
