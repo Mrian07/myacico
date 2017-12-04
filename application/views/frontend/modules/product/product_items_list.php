@@ -160,6 +160,9 @@ h1.po1{
     background-color: #ddd;
     border-radius: 5px;
 }
+.strike-throgh {
+	text-decoration: line-through;
+}
 </style>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/pop_cart.css');?>" />
 <?php
@@ -431,8 +434,26 @@ if($saw==Null)
                 </div>
               </div>
               <div class="col-xs-3"><center>
-                <p class="lead">
-                Rp.<?php echo money($data['pricelist']); ?></p>
+                
+                   <?php if ($data['specialPrice'] > 0) { ?>
+					<span class="strike-throgh">Rp <?php echo money($data['pricelist']); ?></span>
+					<span class="lead dark-red pricelist" style="font-size: 1.1em;">
+						Rp <?php echo money(($data['specialPrice'])); ?>
+					</span>
+					<div>Hemat
+						<span class="lead dark-red pricelist" style="font-size: 1.1em;">
+							Rp <?php echo money($data['pricelist'] - ($data['specialPrice'])); ?> 
+                                                                                (<?php echo $data['discount']; ?>%)
+						</span>
+					</div>
+				<?php } else { ?>
+					<div>
+						<span class="lead dark-red pricelist">
+							Rp <?php echo money($data['pricelist']); ?>
+						</span>
+					</div>
+				<?php } ?>
+              
                 <?php
                 if($data['stock'] < 1){
                   echo "<div class='yu'>Stock : Tidak Tersedia</div>";
