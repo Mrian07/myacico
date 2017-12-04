@@ -57,7 +57,7 @@
 						<span class="input-group-btn">
 						<input type="hidden" placeholder="placeholder" id="transid" class="input-xlarge" value="<?php echo $konf; ?>" name="transid">
 						<span class="btn btn-info btn-file">
-						Browse…<input class="input-file" id="file" type="file" name="file" style='height:10px'>
+						Browse…<input class="input-file" id="file" type="file" name="file" onchange="show(this)" style='height:10px'>
 						</span>
 						</span>
 						<input type="text" class="form-control" readonly>
@@ -76,6 +76,28 @@
 </div>
 
 <script>
+function show(input) {
+        debugger;
+        var validExtensions = ['jpg','png','jpeg']; //array of valid extensions
+        var fileName = input.files[0].name;
+        var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
+        if ($.inArray(fileNameExt, validExtensions) == -1) {
+            input.type = ''
+            input.type = 'file'
+            $('#user_img').attr('src',"");
+            alert("Only these file types are accepted : "+validExtensions.join(', '));
+        }
+        else
+        {
+        if (input.files && input.files[0]) {
+            var filerdr = new FileReader();
+            filerdr.onload = function (e) {
+                $('#user_img').attr('src', e.target.result);
+            }
+            filerdr.readAsDataURL(input.files[0]);
+        }
+        }
+    }
 $(document).ready( function() {
   $.ajaxSetup({
     error: function(){

@@ -209,6 +209,20 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
 
     //akhir dari informasi
 
+    //label label yang ada di privacy police
+    $this->data['lang_pri'] = $this->lang->line('label_privacy');
+      $this->data['lang_isiPri1'] = $this->lang->line('label_isi_pri1');
+        $this->data['lang_isiPri2'] = $this->lang->line('label_isi_pri2');
+          $this->data['lang_isiPri3'] = $this->lang->line('label_isi_pri3');
+              $this->data['lang_isiPri4'] = $this->lang->line('label_isi_pri4');
+              $this->data['lang_isiPri5'] = $this->lang->line('label_isi_pri5');
+              $this->data['lang_isiPri6'] = $this->lang->line('label_isi_pri6');
+                $this->data['lang_isiPri7'] = $this->lang->line('label_isi_pri7');
+                  $this->data['lang_isiPri8'] = $this->lang->line('label_isi_pri8');
+                  $this->data['lang_isiPri9'] = $this->lang->line('label_isi_pri9');
+
+    //akhir dari label yang ada di privacy police
+
     //buku Alamat
       $this->data['lang_addDres'] = $this->lang->line('add_info');
       $this->data['lang_dibwh'] = $this->lang->line('add_dibawah');
