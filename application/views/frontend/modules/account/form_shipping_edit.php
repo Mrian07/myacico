@@ -1,4 +1,3 @@
-
 <div class="container">
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> UBAH BUKU ALAMAT
@@ -71,18 +70,18 @@
 						</select>
 					</div>
 					<div class="form-group">
-				 		<label><?php echo $lang_PostCode; ?>*</label>
+				 		<label><?php echo $lang_PostCode; ?></label>
 
 						<!--<input type='text' id = 'kdpos'  class='form-control mandatory' disabled/>-->
-						<input type="text" name="postal" id="postal" class="form-control mandatory" />
+						<input type="text" maxlength="5" name="postal" id="postal" class="form-control mandatory" />
 				 </div>
                                       <div class="form-group">
 					<label>Handphone*</label>
-						<input type="text" id = "phone"name="phone" class="form-control mandatory" value="<?php echo $hasil['phone'];?>" />
+						<input type="text" id = "phone"name="phone" maxlength="12" class="form-control mandatory" value="<?php echo $hasil['phone'];?>" />
 					</div>
 					<div class="form-group">
 					<label>Telepon</label>
-						<input type="text" id = "phone2"name="phone2" class="form-control" value="<?php echo $hasil['phone2'];?>" />
+						<input type="text" id = "phone2"name="phone2" maxlength="12" class="form-control" value="<?php echo $hasil['phone2'];?>" />
 					</div>
 
 
@@ -115,6 +114,15 @@ $.ajaxSetup({
   },
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
+});
+$('#phone').on('input', function(event) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+$('#phone2').on('input', function(event) {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
+$('#postal').on('input', function(event) {
+    this.value = this.value.replace(/[^0-9]/g, '');
 });
 $('#village_id').change(function () {
         var end = this.value;
@@ -372,64 +380,68 @@ $.ajax({
         var isremitto = $("#isremitto").val();
 
 
-						if(name ===''){
-										$.alert({title:'Alert', content: ' Atas Nama tidak boleh kosong'});
-										$('#spinner_img').hide();
-										$('#submit_btn').val('Kirim').removeClass('disabled');
-										$('.mandatory').prop('disabled', false);
-										return false;
-									}
-									if(phone ===''){
-													$.alert({title:'Alert', content: 'handphone tidak boleh kosong'});
-													$('#spinner_img').hide();
-													$('#submit_btn').val('Kirim').removeClass('disabled');
-													$('.mandatory').prop('disabled', false);
-													return false;
-												}
-									if(phone2 ===''){
-													$.alert({title:'Alert', content: ' Telepon tidak boleh kosong'});
-													$('#spinner_img').hide();
-													$('#submit_btn').val('Kirim').removeClass('disabled');
-													$('.mandatory').prop('disabled', false);
-													return false;
-												}
-												if(address_name ===''){
-																$.alert({title:'Alert', content: 'Status Alamat tidak boleh kosong'});
-																$('#spinner_img').hide();
-																$('#submit_btn').val('Kirim').removeClass('disabled');
-																$('.mandatory').prop('disabled', false);
-																return false;
-															}
-															if(address1 ===''){
-																			$.alert({title:'Alert', content: 'Alamat tidak boleh kosong'});
-																			$('#spinner_img').hide();
-																			$('#submit_btn').val('Kirim').removeClass('disabled');
-																			$('.mandatory').prop('disabled', false);
-																			return false;
-																		}
-																		if(postal ===''){
-																						$.alert({title:'Alert', content: 'Kode Post tidak boleh kosong'});
-																						$('#spinner_img').hide();
-																						$('#submit_btn').val('Kirim').removeClass('disabled');
-																						$('.mandatory').prop('disabled', false);
-																						return false;
-																					}
-																					if(district_id ===''){
-																									$.alert({title:'Alert', content: 'Kecamatan tidak boleh kosong'});
-																									$('#spinner_img').hide();
-																									$('#submit_btn').val('Kirim').removeClass('disabled');
-																									$('.mandatory').prop('disabled', false);
-																									return false;
-																								}
-																								if(village_id ===''){
-																												$.alert({title:'Alert', content: 'Kelurahaan tidak boleh kosong'});
-																												$('#spinner_img').hide();
-																												$('#submit_btn').val('Kirim').removeClass('disabled');
-																												$('.mandatory').prop('disabled', false);
-																												return false;
-																											}
+if(name ===''){ $('#name').focus();
+                                $.alert({title:'Alert', content: ' Atas Nama tidak boleh kosong'});
+                                $('#spinner_img').hide();
+                                $('#submit_btn').val('Kirim').removeClass('disabled');
+                                $('.mandatory').prop('disabled', false);
+                                return false;
+                        }
+                        if(phone ===''){ $('#phone').focus();
+                                                        $.alert({title:'Alert', content: 'handphone tidak boleh kosong'});
+                                                        $('#spinner_img').hide();
+                                                        $('#submit_btn').val('Kirim').removeClass('disabled');
+                                                        $('.mandatory').prop('disabled', false);
+                                                        return false;
+                                                }
+                        if(phone2 ===''){ $('#phone2').focus();
+                                                        $.alert({title:'Alert', content: ' Telepon tidak boleh kosong'});
+                                                        $('#spinner_img').hide();
+                                                        $('#submit_btn').val('Kirim').removeClass('disabled');
+                                                        $('.mandatory').prop('disabled', false);
+                                                        return false;
+                                                }
+                                                if(address_name ===''){
+                                                     $('#address_name').focus();
+                                                                                $.alert({title:'Alert', content: 'Status Alamat tidak boleh kosong'});
+                                                                                $('#spinner_img').hide();
+                                                                                $('#submit_btn').val('Kirim').removeClass('disabled');
+                                                                                $('.mandatory').prop('disabled', false);
+                                                                                return false;
+                                                                        }
+                                                                        if(address1 ===''){
+                                                                            $('#address1').focus();
+                                                                                                        $.alert({title:'Alert', content: 'Alamat tidak boleh kosong'});
+                                                                                                        $('#spinner_img').hide();
+                                                                                                        $('#submit_btn').val('Kirim').removeClass('disabled');
+                                                                                                        $('.mandatory').prop('disabled', false);
+                                                                                                        return false;
+                                                                                                }
+                                                                                                if(postal ===''){ $('#postal').focus();
+                                                                                                                                $.alert({title:'Alert', content: 'Kode Pos tidak boleh kosong'});
 
-    //var fl=document.signup;
+                                                                                                                                 $('#spinner_img').hide();
+                                                                                                                                $('#submit_btn').val('Kirim').removeClass('disabled');
+
+                                                                                                                                $('.mandatory').prop('disabled', false);
+                                                                                                                                return false;
+                                                                                                                        }
+                                                                                                                        if(district_id ===''){
+                                                                                                                                                        $.alert({title:'Alert', content: 'Kecamatan tidak boleh kosong'});
+                                                                                                                                                        $('#spinner_img').hide();
+                                                                                                                                                        $('#submit_btn').val('Kirim').removeClass('disabled');
+                                                                                                                                                        $('.mandatory').prop('disabled', false);
+                                                                                                                                                        return false;
+                                                                                                                                                }
+                                                                                                                                                if(village_id ===''){
+                                                                                                                                                                                $.alert({title:'Alert', content: 'Kelurahaan tidak boleh kosong'});
+                                                                                                                                                                                $('#spinner_img').hide();
+                                                                                                                                                                                $('#submit_btn').val('Kirim').removeClass('disabled');
+                                                                                                                                                                                $('.mandatory').prop('disabled', false);
+                                                                                                                                                                                return false;
+                                                                                                                                                                        }
+
+//var fl=document.signup;
 //    var data = $(this).serialize();
 //     return alert(data);die();
 data.id = id;

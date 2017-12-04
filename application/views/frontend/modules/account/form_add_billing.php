@@ -69,21 +69,21 @@
 					  <select name="district_id" id="district_id" class="form-control mandatory"></select>
 					</div>
                                         <div class="form-group" style="display:none" id="village_box">
-							<label><?php echo $field_kel; ?>*</label>
+							<label><?php echo $field_kel; ?></label>
 					  <select name="village_id" id="village_id" class="form-control mandatory"></select>
 					</div>
 
 					<div class="form-group">
 				 <label><?php echo $lang_PostCode; ?>*</label>
-					 <input type="text" name="postal" id="postal" class="form-control mandatory" >
+					 <input type="text" name="postal" maxlength="5" id="postal" class="form-control mandatory" >
 				 </div>
 					<div class="form-group">
 					<label>Handphone*</label>
-						<input type="text" id = "phone"name="phone" class="form-control mandatory" />
+						<input type="text" maxlength="12" id = "phone"name="phone" class="form-control mandatory" />
 					</div>
 					<div class="form-group">
 					<label>Telepon</label>
-						<input type="text" id = "phone2"name="phone2" class="form-control"/>
+						<input type="text" maxlength="12" id = "phone2"name="phone2" class="form-control"/>
 					</div>
 
 					<div class="clearfix"></div>
@@ -104,7 +104,15 @@ $.ajaxSetup({
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
 });
-
+$('#phone').on('input', function(event) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+$('#phone2').on('input', function(event) {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
+$('#postal').on('input', function(event) {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
 $('#village_id').change(function () {
         var end = this.value;
       $('#submit_btn').removeAttr('disabled');

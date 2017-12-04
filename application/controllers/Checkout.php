@@ -228,7 +228,7 @@ class Checkout extends Web_private {
 			}
 		}
 
-		if($id_kelurahan){
+		if(isset($id_kelurahan)){
 			$api = "freight/shipment/rates?to_village_id=".$id_kelurahan;
 			$url = api_base_url($api);
 
@@ -278,7 +278,8 @@ class Checkout extends Web_private {
 		);
 		$this->session->set_userdata($data);
 		//ini diload pake ajak
-		echo money($ongkos_kurir);
+		if(isset($ongkos_kurir)){echo money($ongkos_kurir);}else{echo"0";}
+
 		//redirect('checkout/cart');
 	}
 	public function pilihShip()
