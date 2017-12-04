@@ -167,7 +167,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     </div>
     <div class='detail-add-wishlist' style="display: block; background: #ffff; border:1px solid; border-radius: 5px; padding:10px;">
       <div><b>Kebijakan</b></span><br/>
-      <div style="text-align: justify">
+      <div style="text-align: left;">
         <b>Pengembalian: </b>jika barang yang dikirim mengalami kerusakan atau tidak sesuai deskripsi, Anda dapat mengembalikan barang tersebut kepada kami dalam jangka waktu 7 hari
       </div>
 <!--      <div>
@@ -481,7 +481,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                   }
                       }
                       else{
-                          echo "<div class='col-sm-6'><font size='3'> Belum Ada Ulasan Untuk ".$name." </font></div><br>";
+                          echo "<div class='col-sm-6'><font size='2'> Belum Ada Ulasan Untuk ".$name." </font></div><br>";
                       }
 
               ?></p>

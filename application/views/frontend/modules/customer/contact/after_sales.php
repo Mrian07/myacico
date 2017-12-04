@@ -1,14 +1,24 @@
 <!DOCTYPE html>
+<style>
+.strike-throgh {
+	text-decoration: line-through;
+}
+</style>
 <div class="container">
 	 <div class="row">
-	  <div class="col-sm-6">
+	  <div class="col-sm-4">
 		
 		<?php echo $lang_a_sales;?>
 		
 	  </div>
 	
    <br>
-	  <div class="col-sm-6">
+   <div class="col-sm-8">
+   <div class="col-sm-5" style="padding-right: 0">
+       <?php echo $lang_aftersale_baner;?>
+  </div>
+    
+	  <div class="col-sm-7" style="padding-left: 0">
               <div id="sukses_after_sales" style="display: none;">
                    <div class="col-sm-8" style="text-align: justify;text-justify: inter-word;">
                        <center>
@@ -20,53 +30,65 @@
 	  </div>
               </div>
 
-     <div id="aftersale">
+     <div id="aftersale" style="display: block;background: #ffff;border: 1px solid;border-top-right-radius: 10px;padding: 10px;border-bottom-right-radius: 10px;border: 1px solid #ccc;border-left: 0;height: 460px;">
+         
          <div class="row">
   <div class="col-sm-12 text-center">
       <b><?php echo $lang_aftersales_cont;?></b> 
   </div>
+      
 </div>
+         
     <form name="myForm" method="post">
-<div class="row">
-   
+<div class="row" style="margin-bottom: 10px;">
+        
     <div class="col-sm-6">
         <input type="text" id="subject" name="subject" class="form-control mandatory" placeholder="<?php echo$lang_subjek;?>">
   </div>
     <div class="col-sm-6">
      <input type="email" id="email" name="email" class="form-control mandatory" placeholder="<?php echo$lang_email_add;?>">
   </div>
-</div> <br>
-<div class="row">
+</div>
+<div class="row" style="margin-bottom: 10px;">
     <div class="col-sm-6">
      <input type="text" id="nama" name="nama" class="form-control mandatory" placeholder="<?php echo$lang_name;?>">
   </div>
     <div class="col-sm-6">
      <input type="text" id="phone" name="phone" maxlength="12" class="form-control mandatory" placeholder="<?php echo$lang_phone;?>">
   </div>
-</div> <br>
-<div class="row">
+</div>
+<div class="row" style="margin-bottom: 10px;">
     <div class="col-sm-6">
      <input type="text" id="id_order" name="id_order" class="form-control mandatory" placeholder="<?php echo$lang_order_id;?>">
   </div>
     <div class="col-sm-6">
      <input type="text" id="company" name="company" class="form-control mandatory" placeholder="<?php echo$lang_company;?>">
   </div>
-</div> <br>
-<div class="row">
+</div>
+<div class="row" style="margin-bottom: 10px;">
     <div class="col-sm-12">
-    <textarea class="form-control mandatory" id="message" name="message" rows="3" style="width: 550px; height: 200px;" placeholder="<?php echo$lang_msg;?>"></textarea>
+    <textarea class="form-control mandatory" id="message" name="message" rows="3" style="width: 100%; height: 200px;" placeholder="<?php echo$lang_msg;?>"></textarea>
   </div>
 </div>
-        <br>
-<div class="col-sm-12 text-center">
-    <input type="submit" id="submit_btn" class="btn btn-primary" value="Kirim">
+<div class="row" style="margin-bottom: 10px;">
+    <div class="col-sm-12 text-center">
+        <input type="submit" id="submit_btn" class="btn btn-danger btn-lg" style="border-radius: 5px;padding: 8px 0;margin-bottom: 7px;background-color: #c81423;width: 100%;" value="Kirim">
+    </div>
 </div>
         </form>
-
+        
+         <div class="clearfix"></div>
           </div>
+               
          </div>
-	</div> 
+       <div class="row" style="margin-bottom: 10px;">
+        <?php echo $lang_aftersale_bawah;?>
+    </div>
+	</div>
+   
 </div>
+    
+    </div>
 <script type="text/javascript">
     
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
