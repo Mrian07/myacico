@@ -170,7 +170,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       <div style="text-align: justify">
         <b>Pengembalian: </b>jika barang yang dikirim mengalami kerusakan atau tidak sesuai deskripsi, Anda dapat mengembalikan barang tersebut kepada kami dalam jangka waktu 7 hari
       </div>
-      <div>
+<!--      <div>
         <b>Cicilan: </b>Cicilan 0% mulai dari Rp 431,250 / bulan
       </div>
       <div>
@@ -179,7 +179,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           <option value="24">24</option>
         </select>
         <a href="">3 bank</a>
-      </div>
+      </div>-->
       <div>
         <b>Pembayaran: </b><br>
         <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/p-visa-small.jpg">
