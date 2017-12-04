@@ -23,8 +23,8 @@ class Pages extends Web {
 
 
   public function AboutUs()
-  {
-    $this->data['title_web'] = "Myacico.com - Home";
+  {$home_domain = domain2();
+    $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
     $this->load->view('frontend/header',$this->data);
     $this->load->view('frontend/nav.php',$this->data);
    $this->load->view('frontend/modules/pages/aboutus.php',$this->data);
@@ -32,7 +32,8 @@ class Pages extends Web {
   }
 	public function SyaratDnKetentuan()
 	{
-		$this->data['title_web'] = "Myacico.com - Home";
+		$home_domain = domain2();
+                $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -42,7 +43,8 @@ class Pages extends Web {
 
 	public function kebijakanPrivasi()
 	{
-		$this->data['title_web'] = "Myacico.com - Home";
+		$home_domain = domain2();
+                $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -51,7 +53,8 @@ class Pages extends Web {
 	}
 	public function faqCus()
 	{
-		$this->data['title_web'] = "Myacico.com - Home";
+		$home_domain = domain2();
+                $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -60,7 +63,8 @@ class Pages extends Web {
 	}
 	public function Pemb()
 	{
-		$this->data['title_web'] = "Myacico.com - Home";
+		$home_domain = domain2();
+                $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -70,7 +74,8 @@ class Pages extends Web {
 
 	public function Pengembalian()
 	{
-		$this->data['title_web'] = "Myacico.com - Home";
+		$home_domain = domain2();
+                $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -79,7 +84,8 @@ class Pages extends Web {
 	}
 	public function Jaminan()
 	{
-		$this->data['title_web'] = "Myacico.com - Home";
+		$home_domain = domain2();
+                $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -89,7 +95,8 @@ class Pages extends Web {
 
 	public function hakCipta()
 	{
-		$this->data['title_web'] = "Myacico.com - Home";
+		$home_domain = domain2();
+                $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -99,7 +106,8 @@ class Pages extends Web {
 
 	public function payment()
 	{
-		$this->data['title_web'] = "Myacico.com - Home";
+		$home_domain = domain2();
+                $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -119,7 +127,8 @@ class Pages extends Web {
 	public function faq()
 	{
 		$id=$this->uri->segment(3);
-		$this->data['title_web'] = "Myacico.com - Home";
+		$home_domain = domain2();
+                $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
     $this->load->view('frontend/nav.php',$this->data);
 		if($id){

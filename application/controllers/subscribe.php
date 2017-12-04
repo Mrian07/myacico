@@ -23,7 +23,8 @@ class subscribe extends Web {
 
 public function index()
 {
-  $this->data['title_web'] = "Myacico.com - Lupa Password";
+    $domain = domain();
+  $this->data['title_web'] = "subscribe - ".$domain;
   $this->load->view('frontend/header',$this->data);
   $this->load->view('frontend/nav.php',$this->data);
   $this->load->view('frontend/modules/subscribe/subscribe.php',$this->data);

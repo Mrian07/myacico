@@ -21,7 +21,8 @@ class Customer extends Web {
 
 	public function cart()
 	{
-		$this->data['title_web'] = "Myacico.com - Create Account Business";
+            $domain = domain();
+		$this->data['title_web'] = "Create Account Business - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/cart/cart.php',$this->data);
@@ -30,8 +31,9 @@ class Customer extends Web {
 
 	public function successCreate()
     {
+            $domain = domain();
 		$this->data['email'] = $this->uri->segment(3);
-		$this->data['title_web'] = "Myacico.com - Create Account Personal";
+		$this->data['title_web'] = "Create Account Personal - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/create/success_create.php',$this->data);
@@ -40,7 +42,8 @@ class Customer extends Web {
 
 	public function create()
     {
-		$this->data['title_web'] = "Myacico.com - Create Account";
+            $domain = domain();
+		$this->data['title_web'] = "Create Account - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/create/create.php',$this->data);
@@ -49,8 +52,8 @@ class Customer extends Web {
 	}
 
 	public function personal()
-    {
-		$this->data['title_web'] = "Myacico.com - Create Account Personal";
+    {$domain = domain();
+		$this->data['title_web'] =  "Create Account Personal - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/create/personal.php',$this->data);
@@ -59,7 +62,8 @@ class Customer extends Web {
 
 	public function business()
     {
-		$this->data['title_web'] = "Myacico.com - Create Account Business";
+            $domain = domain();
+		$this->data['title_web'] = "Create Account Business - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/create/business.php',$this->data);
@@ -68,7 +72,7 @@ class Customer extends Web {
 
 	public function contact()
 	{	$this->load->helper(array('captcha','url'));
-
+                 $domain = domain();
 		$random_number = substr(number_format(time() * rand(),0,'',''),0,6);
 		$vals = array(
 			'word' => $random_number,
@@ -89,18 +93,17 @@ class Customer extends Web {
 		// store the captcha word in a session
 		$this->session->set_userdata('mycaptcha', $cap['word']);
 
-		$this->data['title_web'] = "Myacico.com - Create Account Business";
+		$this->data['title_web'] = " Create Account Business - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/contact/contact.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
-
-public function afterSales()
+      public function afterSales()
 	{	
-
-		$this->data['title_web'] = "Myacico.com - Create Account Business";
+                 $domain = domain();
+		$this->data['title_web'] = "After Sales - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/contact/after_sales.php',$this->data);
@@ -109,7 +112,8 @@ public function afterSales()
 
 	public function messageSent()
 	{
-		$this->data['title_web'] = "Myacico.com - Create Account Business";
+            $domain = domain();
+		$this->data['title_web'] = "Massage - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/contact/success_contact.php',$this->data);
@@ -117,7 +121,8 @@ public function afterSales()
 	}
         public function AfterSalesSent()
 	{
-		$this->data['title_web'] = "Myacico.com - Create Account Business";
+            $domain = domain();
+		$this->data['title_web'] = "Massage - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/contact/after_sales_sukses.php',$this->data);
@@ -126,7 +131,8 @@ public function afterSales()
 
 	public function government()
     {
-		$this->data['title_web'] = "Myacico.com - Create Account Government";
+            $domain = domain();
+		$this->data['title_web'] = "Create Account Government - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/create/government.php',$this->data);
@@ -135,7 +141,8 @@ public function afterSales()
 
 	public function lostPassword()
 	{
-		$this->data['title_web'] = "Myacico.com - Lupa Password";
+            $domain = domain();
+		$this->data['title_web'] = "Password - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/lost_password/lost_password.php',$this->data);
@@ -144,7 +151,8 @@ public function afterSales()
 
 	public function resetPassword()
 	{
-		$this->data['title_web'] = "Myacico.com - Reset Password";
+             $domain = domain();
+		$this->data['title_web'] = "Password - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/lost_password/reset_password.php',$this->data);
@@ -172,7 +180,8 @@ public function afterSales()
 		$konten = file_get_contents($url, false, $context);
 		$this->data['hasil'] = json_decode($konten, true);
 // echo"<pre>"; print_r($hasil['status']); die();
-		$this->data['title_web'] = "Myacico.com - Reset Password";
+                $domain = domain();
+		$this->data['title_web'] = "Activation - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/create/registration_completed.php',$this->data);
@@ -187,9 +196,9 @@ public function afterSales()
 //            if($catId){
 //                echo $catId;
 //            }
-
+$domain = domain();
             echo "<script> console.log('$catId');</script>";
-		$this->data['title_web'] = "Myacico.com - Login";
+		$this->data['title_web'] = "Login - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/sign_in/sign_in.php',$this->data);
@@ -216,7 +225,8 @@ public function afterSales()
 
 	public function logout()
     {
-		$this->data['title_web'] = "Myacico.com - Login";
+            $domain = domain();
+		$this->data['title_web'] = "Login - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/logout/logout.php',$this->data);
@@ -226,7 +236,8 @@ public function afterSales()
 
 	public function confirmation()
 	{
-		$this->data['title_web'] = "Myacico.com - Konfirmasi Pembayaran";
+            $domain = domain();
+		$this->data['title_web'] = "Payment - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/confirmation/confirmation.php',$this->data);
