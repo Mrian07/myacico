@@ -91,9 +91,16 @@ textarea#styled {
   background-color: #ca3833;
   color:#f1eeee;
 }*/
+
+/*.line-cart{
+  border-bottom: 1px solid #
+}*/
 </style>
 <div class="container">
-<br><p align='center'><img src="<?php echo base_url('images/general/step1.jpg'); ?>" border="0"></p>
+<br><p align='center'><img src="<?php //echo base_url('images/general/step1.jpg'); ?>" border="0"></p>
+<!-- <div class='line-cart'>
+
+</div> -->
     <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'>KERANJANG BELANJA</div>
     <div class='box-ship'>
       <div class='box-ship-info'>
