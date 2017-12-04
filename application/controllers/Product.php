@@ -68,10 +68,11 @@ class Product extends Web {
 		$this->data['posisi'] = $posisi;
 		$jdata =json_decode($konten2)->productCount;
 		$this->data['jpage'] = ceil($jdata/$batas);
-
+$domain = domain();
+   
 		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
-		$this->data['title_web'] = "Myacico.com - List Items ".$id;
+		$this->data['title_web'] = "List Items - ".$domain.'-'.$id;
 
 		$this->data['hasil'] = json_decode($konten, true);
 		$this->load->view('frontend/header',$this->data);
@@ -101,6 +102,7 @@ public function bawahDetail(){
 }
 public function listItem()
  {
+    $domain = domain();
 		$token = null;
 		$adaToken =0;
 		$this->data['pro']=$this->uri->segment(3);
@@ -193,7 +195,7 @@ public function listItem()
 		$this->data['jpage'] = ceil($jdata/$batas);
 		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
-		$this->data['title_web'] = "Myacico.com - List Items";
+		$this->data['title_web'] = "List Items - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
@@ -205,8 +207,8 @@ public function listItem()
 	public function index()
     {
 		//$this->load->view('frontend/test',$this->data);
-
-    $this->data['title_web'] = "Myacico.com - Home";
+$home_domain = domain2();
+    $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
@@ -262,7 +264,7 @@ public function listItem()
 	public function category()
 	{
 		$this->data['cat_id']=$this->uri->segment(3);
-
+                $home_domain = domain2();
 		$cat_id=$this->uri->segment(3);
 		$api = "category/listc3?c2id=".$cat_id;
 		$url = api_base_url($api);
@@ -285,7 +287,7 @@ public function listItem()
 
 
 		//$this->load->view('frontend/test',$this->data);
-		$this->data['title_web'] = "Myacico.com - Home";
+		$this->data['title_web'] = "Myacico.co.id".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
@@ -485,7 +487,8 @@ $i=0;
 	$this->data['img3'] = $hasil['imageurl'][3];
        */
 		// akhir dari jika gambar tidak ada
-		$this->data['title_web'] = "Myacico.com - Home";
+ $home_domain = domain2();
+		$this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/product/detail.php',$this->data);
@@ -683,7 +686,8 @@ $i=0;
 		$this->data['img3'] = $hasil['imageurl'][3];
 	       */
 			// akhir dari jika gambar tidak ada
-			$this->data['title_web'] = "Myacico.com - Home";
+         $home_domain = domain2();
+			$this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 			$this->load->view('frontend/header',$this->data);
 			$this->load->view('frontend/nav.php',$this->data);
 			$this->load->view('frontend/modules/product/detail2koe.php',$this->data);
@@ -718,7 +722,8 @@ $i=0;
 	public function product2()
     {
 		//$this->load->view('frontend/test',$this->data);
-		$this->data['title_web'] = "Myacico.com - Home";
+            $home_domain = domain2();
+		$this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
@@ -729,8 +734,9 @@ $this->load->view('frontend/sidenav',$this->data);
 
 	public function product3()
     {
+            $home_domain = domain2();
 		//$this->load->view('frontend/test',$this->data);
-		$this->data['title_web'] = "Myacico.com - Home";
+		$this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);

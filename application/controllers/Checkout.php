@@ -252,8 +252,8 @@ class Checkout extends Web_private {
 		//$hasil_kurir = json_decode($konten, true);
 
 		//echo"<pre>"; print_r($hasil_kurir); die();
-
-		$this->data['title_web'] = "Myacico.com";
+                $domain = domain();
+		$this->data['title_web'] = "Cart - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/modules/cart/cart.php',$this->data);
@@ -310,7 +310,7 @@ class Checkout extends Web_private {
 
 	public function addressbook()
 	{
-
+             $domain = domain();
 		$lang = get_cookie('lang');
 		$flag = $this->uri->segment(3);
 		if($flag=='1'){
@@ -338,7 +338,7 @@ class Checkout extends Web_private {
 		$kontenShip = file_get_contents($urlShip, false, $context);
 		//$this->data['hasil_ship'] = json_decode($kontenShip, true);
 		$this->data['jmladrs'] = count(json_decode($kontenShip, true));
-		$this->data['title_web'] = "Myacico.com";
+		$this->data['title_web'] = "Buku Alamat - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/cart/form_address_book.php',$this->data);
@@ -412,7 +412,8 @@ class Checkout extends Web_private {
 
 	public function billing()
 	{
-		$this->data['title_web'] = "Myacico.com";
+            $domain = domain();
+		$this->data['title_web'] = "Billing - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/cart/form_add_billing.php',$this->data);
@@ -421,6 +422,7 @@ class Checkout extends Web_private {
 
 	public function shipping()
 	{
+            $domain = domain();
 		$lang = get_cookie('lang');
 		$flag = $this->uri->segment(3);
 		if($flag=='1'){
@@ -432,7 +434,7 @@ class Checkout extends Web_private {
 				<span class="glyphicon glyphicon-ok"></span> Tambah data penerima sukses.</div>');
 			}
 		}
-		$this->data['title_web'] = "Myacico.com";
+		$this->data['title_web'] = "Shipping - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/cart/form_add_shipping.php',$this->data);
@@ -504,9 +506,9 @@ class Checkout extends Web_private {
 		$urlMethod = api_base_url($apiMethod);
 		$kontenMethod = file_get_contents($urlMethod);
 		$this->data['hasilMethod'] = json_decode($kontenMethod, true);
-
+                $domain = domain();
 		$this->data['token'] = $_COOKIE['x-auth'];
-		$this->data['title_web'] = "Myacico.com - Checkout";
+		$this->data['title_web'] = "Checkout - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/checkout/checkout.php',$this->data);
@@ -628,7 +630,8 @@ class Checkout extends Web_private {
 
 	public function formAddBillingNew()
 	{
-		$this->data['title_web'] = "Myacico.com - Checkout / Add Billing";
+            $domain = domain();
+		$this->data['title_web'] = "Checkout / Add Billing - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/checkout/form_add_billing.php',$this->data);
@@ -637,7 +640,8 @@ class Checkout extends Web_private {
 
 	public function formAddShippingNew()
 	{
-		$this->data['title_web'] = "Myacico.com - Checkout / Add Shipping";
+            $domain = domain();
+		$this->data['title_web'] = "Checkout / Add Shipping - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/checkout/form_add_shipping.php',$this->data);
@@ -646,7 +650,8 @@ class Checkout extends Web_private {
 
 	public function dataShipping()
 	{
-		$this->data['title_web'] = "Myacico.com - Checkout / Show Shipping";
+             $domain = domain();
+		$this->data['title_web'] = "Checkout / Show Shipping - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/checkout/data_shipping.php',$this->data);
@@ -655,7 +660,8 @@ class Checkout extends Web_private {
 
     public function success()
 	{
-		$this->data['title_web'] = "Myacico.com - Checkout";
+        $domain = domain();
+		$this->data['title_web'] = "Checkout - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/checkout/success.php',$this->data);
@@ -704,6 +710,7 @@ class Checkout extends Web_private {
 
 	public function finish()
 	{
+            $domain = domain();
 		$id=$this->uri->segment(3);
 
 		$this->data['token'] = $_COOKIE['x-auth'];
@@ -728,7 +735,7 @@ class Checkout extends Web_private {
 		// $field = json_decode($konten);
 		// echo"<pre>"; print_r($field); die();
 
-		$this->data['title_web'] = "Myacico.com - Checkout";
+		$this->data['title_web'] = "Checkout - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/checkout/finish.php',$this->data);
@@ -752,7 +759,7 @@ class Checkout extends Web_private {
 	public function finishByOnlineFailed()
 	{
 		$id=$this->uri->segment(3);
-
+                $domain = domain();
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
 
@@ -774,7 +781,7 @@ class Checkout extends Web_private {
 		$data = array('shipping_address_id' => '');
   	$this->session->set_userdata($data);
 
-		$this->data['title_web'] = "Myacico.com - Checkout";
+		$this->data['title_web'] = "Checkout - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -807,7 +814,8 @@ class Checkout extends Web_private {
 		$this->data['field'] = json_decode($konten);
 		$field = json_decode($konten);
 //die(print_r($field));
-		$this->data['title_web'] = "Myacico.com - Checkout";
+                $domain = domain();
+		$this->data['title_web'] = "Checkout - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -869,8 +877,8 @@ class Checkout extends Web_private {
 
 		$data = array('shipping_address_id' => '');
   	$this->session->set_userdata($data);
-
-		$this->data['title_web'] = "Myacico.com - Checkout";
+$domain = domain();
+		$this->data['title_web'] = "Checkout - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
