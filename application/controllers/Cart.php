@@ -22,7 +22,7 @@ class Cart extends Web {
 
 	public function index()
 	{
-
+                $domain = domain();
 			/*s: terbaru*/
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
@@ -45,7 +45,7 @@ class Cart extends Web {
 		// print_r($hasil); die();
 		/*e: terbaru*/
 
-		$this->data['title_web'] = "Myacico.com - Create Account Business";
+		$this->data['title_web'] = "Create Account Business - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/cart/cart.php',$this->data);
@@ -60,7 +60,8 @@ class Cart extends Web {
 	//on progress
 	public function newcart()
 	{
-		$this->data['title_web'] = "Myacico.com";
+            $domain = domain();
+		$this->data['title_web'] = "Cart - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/cart/cart_new.php',$this->data);
@@ -69,8 +70,8 @@ class Cart extends Web {
 	}
 
 	public function newcheckout()
-	{
-		$this->data['title_web'] = "Myacico.com";
+	{       $domain = domain();
+		$this->data['title_web'] = "Check Out - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/cart/cart_chekout.php',$this->data);
@@ -79,7 +80,8 @@ class Cart extends Web {
 
 	public function finishcheckout()
 	{
-		$this->data['title_web'] = "Myacico.com";
+            $domain = domain();
+		$this->data['title_web'] = "Check Out - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/cart/finish_chekout.php',$this->data);
@@ -89,7 +91,7 @@ class Cart extends Web {
 	function addToCart()
 	{
 		//$id_unik = $this->unik();
-
+                
 		$id = $this->input->post('m_product_id');
 		//$name = $this->input->post('name');
 		$name = preg_replace('#[^A-Za-z0-9\ ]+#', '',  $this->input->post('name'));

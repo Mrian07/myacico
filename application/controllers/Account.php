@@ -529,7 +529,8 @@ class Account extends Web_private {
 	}
 
 	public function formBilling()
-    {
+    { 
+            $domain = domain();
 		$type = $this->typeLogin();
                 $idadd=$this->uri->segment(3);
 //                die(print_r($idadd));
@@ -549,7 +550,7 @@ class Account extends Web_private {
 
 
 		$this->data['active_informasiAkun'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
+		$this->data['title_web'] = "Billing - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 
@@ -565,8 +566,9 @@ class Account extends Web_private {
 
   public function formAddBilling()
   {
+      $domain = domain();
 		$this->data['active_informasiAkun'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
+		$this->data['title_web'] = "Billing - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_add_billing',$this->data);
@@ -576,8 +578,9 @@ class Account extends Web_private {
 
 	public function formPassword()
     {
+            $domain = domain();
 		$this->data['active_informasiAkun'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
+		$this->data['title_web'] = "Akun - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_password',$this->data);
@@ -586,6 +589,7 @@ class Account extends Web_private {
 
     public function formTransactionDetail()
     {
+        $domain = domain();
 			$id=$this->uri->segment(3);
 			$this->data['token'] = $_COOKIE['x-auth'];
 			$token = $_COOKIE['x-auth'];
@@ -604,7 +608,7 @@ class Account extends Web_private {
 			$this->data['hasil'] = json_decode($konten, true);
 
 			$this->data['active_riwayatStatusPesanan'] = "class='active'";
-			$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
+			$this->data['title_web'] = "Transaksi - ".$domain;
 			$this->load->view('frontend/header',$this->data);
 			$this->load->view('frontend/nav.php',$this->data);
 			$this->load->view('frontend/modules/account/form_transaction_detail',$this->data);

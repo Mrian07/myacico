@@ -51,28 +51,33 @@ $lang['add_pho'] ='Telepon	';
     $lang['field_btn_confirm'] ='Konfirmasi';
     $lang['field_gambar'] ='Gambar';
     $lang['field_nama_barang'] ='Nama Barang';
-    $lang['field_invoice'] ='Nomor Faktur'; 
+    $lang['field_invoice'] ='Nomor Faktur';
     $lang['field_detail_pesanan'] ='Detail Pesanan';
    $lang['field_ket_konfirm'] ='Silakan upload bukti transfer pembayaran Anda pada form dibawah ini.';
 
 
     //end of history
 //end of buku alamat
+
+
+    //btn di account informasi
+      $lang['btn_tambah'] ='Tambah.';
+    //akhir dari informasi
 //  Wishlist
        $lang['wishlist_tittle'] ='WISHLIST ';
        $lang['ket_wishlist'] ='Dibawah ini adalah daftar <i>Wishlist</i>. Anda bisa menambahkan <i>Wishlist</i> atau menghapus <i>Wishlist</i> anda sebelumnya.';
         $lang['wishlist_pic'] ='Gambar';
        $lang['wishlist_name'] ='Nama';
        $lang['wishlist_del'] ='Hapus';
-       //       AVATAR 
+       //       AVATAR
        $lang['avatar_tittle'] ='UPLOAD GAMBAR ';
        $lang['avatar_tittle2'] ='Upload Avatar Kamu Disini';
        $lang['avatar_tittle3'] ='Upload Avatar';
        $lang['avatar_back'] ='Kembali';
        $lang['avatar_button'] ='Upload';
        $lang['avatar_browse'] ='Cari';
-     
+
 //      Info Akun
        $lang['field_info_akun'] ='Silakan isi nama akun yang baru jika ingin melakukan perubahan dan click button update.';
-      
+
  ?>

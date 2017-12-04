@@ -205,7 +205,7 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
     $this->data['lang_bil'] = $this->lang->line('inf_bil');
     $this->data['lang_bils'] = $this->lang->line('inf_bils');
     $this->data['lang_info_akun'] = $this->lang->line('field_info_akun');
-    
+
 
     //akhir dari informasi
 
@@ -356,6 +356,10 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_txt_btn_address'] = $this->lang->line('txt_btn_address');
     $this->data['lang_btn_update_receiver'] = $this->lang->line('btn_update_receiver');
     $this->data['lang_payment_confirm'] = $this->lang->line('payment_confirm');
+
+    //btn tambah  informasi akun
+      $this->data['btn_nih'] = $this->lang->line('btn_tambah');
+    //akhir dari btn tambah di informasi akun
 
     //s: footer
     $this->data['lang_f_moto'] = $this->lang->line('f_moto');
