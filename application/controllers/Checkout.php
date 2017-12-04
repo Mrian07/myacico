@@ -278,7 +278,8 @@ class Checkout extends Web_private {
 		);
 		$this->session->set_userdata($data);
 		//ini diload pake ajak
-		echo money($ongkos_kurir);
+		if(isset($ongkos_kurir)){echo money($ongkos_kurir);}else{echo"0";}
+
 		//redirect('checkout/cart');
 	}
 	public function pilihShip()
