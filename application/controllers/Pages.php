@@ -106,6 +106,15 @@ class Pages extends Web {
 		$this->load->view('frontend/modules/pages/payment.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
+	public function konfrimasi()
+	{
+		$this->data['title_web'] = "Myacico.com - Home";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+
+		$this->load->view('frontend/modules/pages/konfrimasi.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 
 	public function faq()
 	{
