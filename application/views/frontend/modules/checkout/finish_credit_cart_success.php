@@ -49,11 +49,11 @@ a
   }
 
   .title-step2{
-    width: 100px;
+    width: 230px;
     display: inline-block;
     margin-top:0px;
     margin-bottom:0px;
-    margin-left: 220px;
+    margin-left: 160px;
   }
   .title-step2 p{
     color: red;
@@ -66,7 +66,7 @@ a
     width: 250px;
     display: inline-block;
     margin-right: 0px;
-    margin-left: 200px;
+    margin-left: 110px;
     margin-top:0px;
     margin-bottom:0px;
   }
@@ -148,7 +148,7 @@ a
   <div style='margin:0px auto; width:1000px; margin-top:30px;  '>
     <div class="number-container">
       <div class="title-step"><p>Keranjang Belanja</p></div>
-      <div class="title-step2"><p>Ringkasan</p></div>
+      <div class="title-step2"><p>Metode Pembayaran</p></div>
       <div class="title-step3"><p>Konfirmasi Pembayaran</p></div>
     </div>
   </div>
