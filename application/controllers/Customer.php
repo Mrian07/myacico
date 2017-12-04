@@ -101,7 +101,7 @@ class Customer extends Web {
 	}
 
       public function afterSales()
-	{	
+	{
                  $domain = domain();
 		$this->data['title_web'] = "After Sales - ".$domain;
 		$this->load->view('frontend/header',$this->data);
@@ -190,20 +190,22 @@ class Customer extends Web {
 
 	public function signIn()
     {
-            $catId = $this->uri->segment(3);
+				$catId = $this->uri->segment(3);
 
-//    die(); dpt nihid itemnya
-//            if($catId){
-//                echo $catId;
-//            }
-$domain = domain();
-            echo "<script> console.log('$catId');</script>";
-		$this->data['title_web'] = "Login - ".$domain;
-		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/customer/sign_in/sign_in.php',$this->data);
-                $this->load->view('frontend/sidenav',$this->data);
-		$this->load->view('frontend/footer',$this->data);
+				//    die(); dpt nihid itemnya
+				//            if($catId){
+				//                echo $catId;
+				//            }
+				$domain = domain();
+				set_cookie('shipping_address_id','',time() + (86400 * 30));
+
+				echo "<script> console.log('$catId');</script>";
+				$this->data['title_web'] = "Login - ".$domain;
+				$this->load->view('frontend/header',$this->data);
+				$this->load->view('frontend/nav.php',$this->data);
+				$this->load->view('frontend/modules/customer/sign_in/sign_in.php',$this->data);
+				$this->load->view('frontend/sidenav',$this->data);
+				$this->load->view('frontend/footer',$this->data);
 
 	}
 
