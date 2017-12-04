@@ -135,7 +135,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 
 
 			<div>
-		    <img src='<?php echo base_url('images/general/bg_atas_2.png'); ?>' height="55" border='0'>
+		    <img src='<?php echo base_url('images/general/bg_atas_3.png'); ?>' height="55" border='0'>
 			</div>
 			<div class='row'>
 				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->

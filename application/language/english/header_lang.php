@@ -71,7 +71,7 @@ $lang['field_namadepan'] = 'Front Name';
 $lang['field_namabelakang'] = 'Last Name';
 $lang['field_CompanyInfo'] = 'Company Information';
 $lang['field_Companytipe'] = 'Company Type';
-$lang['field_addres'] = 'Addres';
+$lang['field_addres'] = 'Address';
 $lang['field_Contry'] = 'Country';
 $lang['field_Provinsi'] = 'Province';
 $lang['field_city'] = 'City';
@@ -80,6 +80,9 @@ Districts';
 $lang['field_PostCode'] = 'Post Code';
 $lang['field_Passeword'] = 'Password';
 $lang['field_Passeword2'] = 'Confirm Password';
+$lang['field_tittle'] = 'Saved as an address (example: home address, work address etc.)';
+$lang['txt_address'] = 'Please complete your billing data';
+$lang['nama_penerima'] = 'Recepient Name';
 $lang['btn_login'] = 'Create';
 //akhir dari bussines
 

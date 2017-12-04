@@ -27,7 +27,7 @@
 <div class="container">
 <br><p align='center'><img src="<?php echo base_url('images/general/step1.jpg'); ?>" border="0"></p>
     <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'>
-      <?php echo anchor('checkout/cart','KERANJANG BELANJA', array('class'=>'link-ship')); ?>/ <?php echo anchor('checkout/addressbook','BUKU ALAMAT', array('class'=>'link-ship')); ?>/ PENERIMA</div>
+      <?php echo anchor('checkout/cart','KERANJANG BELANJA', array('class'=>'link-ship')); ?>/ TAMBAH BUKU ALAMAT</div>
       Silakan pilih data penerima pada kolom <b>Pilih Penerima</b>. Jika belum ada data penerima silakan isi kolom data penerima terlebih dulu.
       <!-- pesan start -->
       <?php $flash_pesan = $this->session->flashdata('pesan')?>
@@ -54,23 +54,21 @@
 				 <div class="panel-body">
            <p>Silakan lengkapi data penerima Anda dibawah ini.</p>
 
-						<!-- <form name="signup" method="post"> -->
-						<!-- <div class="form-group">
-
-						<input type="hidden" id="bill" name="bill" value="N" />
-						<input type="hidden" id="ship" name="ship" value="Y" />
-						<input type="hidden" id="pay" name="pay" value="N" />
-						<input type="hidden" id="remit" name="remit" value="N" />
-						<input type="hidden" id="addn" name="addn" value="kontrakan" />
-						<input type="hidden" id="alamat3" name="alamat3" value="kelurahan duri kosambi" />
-						</div> -->
             <div class="row">
               <div class="col-sm-12">
                 <form name="test1" method="post">
-                <input type="hidden" id="isbillto" name="isbillto" value="N" />
-                <input type="hidden" id="isshipto" name="isshipto" value="Y" />
-                <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
-                <input type="hidden" id="isremitto" name="isremitto" value="N" />
+                <?php if($jmladrs){?>
+                  <input type="hidden" id="isbillto" name="isbillto" value="N" />
+                  <input type="hidden" id="isshipto" name="isshipto" value="Y" />
+                  <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
+                  <input type="hidden" id="isremitto" name="isremitto" value="N" />
+                <?php }else{?>
+                  <input type="hidden" id="isbillto" name="isbillto" value="Y" />
+      						<input type="hidden" id="isshipto" name="isshipto" value="Y" />
+      						<input type="hidden" id="ispayfrom" name="ispayfrom" value="Y" />
+      						<input type="hidden" id="isremitto" name="isremitto" value="Y" />
+                <?php  } ?>
+
                 <div class="form-group">
                   <label>Nama Penerima*</label>
                   <input type="text" id = "name" name="name" class="form-control mandatory"/>
@@ -150,7 +148,7 @@
  var negara= 209;
 $.ajaxSetup({
   error: function(){
-    alert('service not available, please try again later');
+  //  alert('service not available, please try again later');
   },
   timeout: 10000/*,
   contentType: "application/json; charset=UTF-8"*/
@@ -257,10 +255,10 @@ $('#submit_btn').attr('disabled','disabled');
         data.postal = postal;
         data.district_id = district_id;
         data.village_id = village_id;
-        data.isbillto = 'N';
-        data.isshipto = 'Y';
-        data.ispayfrom = 'N';
-        data.isremitto = 'N';
+        data.isbillto = isbillto;
+        data.isshipto = isshipto;
+        data.ispayfrom = ispayfrom;
+        data.isremitto = isremitto;
 
     //return alert(data.phone);die();
      var success = function(r){
@@ -286,7 +284,7 @@ $('#submit_btn').attr('disabled','disabled');
     		// $("#ispayfrom").val(null);
     	  // $("#isremitto").val(null);
         // window.location.replace(base_url+"checkout/dataShipping");
-        window.location.replace("<?php echo base_url('checkout/shipping/1');?>");
+        window.location.replace("<?php echo base_url('checkout/addressbook/1');?>");
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');

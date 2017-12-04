@@ -16,8 +16,14 @@
   background:#f2f2f1;
   color:#746d68;
   padding:5px;
-  height:200px;
+  height:120px;
   font-size: 15px;
+  text-decoration: none;
+}
+
+
+
+.link-box:hover {
   text-decoration: none;
 }
 
@@ -25,7 +31,7 @@
   background:#f2f2f1;
   color:#746d68;
   padding:5px;
-  height:200px;
+  height:120px;
   font-size: 15px;
   text-decoration: none;
 }
@@ -51,10 +57,10 @@
 <div class="container">
 <br><p align='center'><img src="<?php echo base_url('images/general/step1.jpg'); ?>" border="0"></p>
     <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'>
-      <?php echo anchor('checkout/cart','SHIPPING', array('class'=>'link-ship')); ?>/ BUKU ALAMAT</div>
+      <?php echo anchor('checkout/cart','KERANJANG BELANJA', array('class'=>'link-ship')); ?>/ BUKU ALAMAT</div>
     <div class='box-ship'>
         <div class='row'>
-          <div class="col-xs-6"><b>Data Billing</b><br>
+          <div class="col-xs-6"><b>Data Pengirim</b><br>
             <?php
             if(isset($alamat_billing)){
               echo"<div class='sub-box'>". $alamat_billing."</div>";
@@ -62,12 +68,12 @@
               <a href='<?php echo base_url('checkout/billing');?>'><div class='sub-box-ship'><center><br><br><br>Tambah Data Billing</center></div></a>
             <?php }?>
           </div>
-          <div class="col-xs-6"><b>Data Shipping</b><br>
+          <div class="col-xs-6"><b>Data Penerima</b><br>
             <?php
             $get_shipping = get_cookie('shipping_address_id');
             if($get_shipping)
             {?>
-              <a href='<?php echo base_url('checkout/shipping');?>'><div class='sub-box-ship'><?php echo $alamat_shipping; ?></div></a>
+              <a href='<?php echo base_url('checkout/shipping');?>' class='link-box'><div class='sub-box-ship'><?php echo $alamat_shipping; ?></div></a>
               <?php
             }elseif($alamat_shipping){?>
               <a href='<?php echo base_url('checkout/shipping');?>'><div class='sub-box-ship'><?php echo $alamat_shipping; ?></div></a>

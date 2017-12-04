@@ -240,6 +240,7 @@ function finish(){
 	var courier_amount =$('#courier_amount').val();
 	var data = {};
 	var baseApiUrl = '<?php echo $baseApiUrl; ?>';
+
 //alert(code);die();
 	if(billing_address_id==''){
 		$.alert({

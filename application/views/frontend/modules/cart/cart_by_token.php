@@ -98,7 +98,8 @@
 					<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman
 				</td>
 				<td class='text-center' colspan='2'>
-				<strong>Grand Total Rp.<?php echo money($total); ?></strong></td>
+				<strong>Total Rp.<?php echo money($total); ?></strong></td>
+
 			</tr>
 		</tfoot>
 	</table>

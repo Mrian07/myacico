@@ -1,14 +1,14 @@
 
 <div class="container">
 	<div class='my-bg-title'>
-		<i class="fa fa-angle-right" aria-hidden="true"></i> DATA AKUN
+		<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_datkun;?>
 	</div>
 	<div class="row">
 		<div class="col-sm-3">
 			<?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
 		</div>
 		<div class="col-sm-9">
-			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
+			<p><?php echo anchor('account/informasiAkun', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> ' .$lang_avatar_back, array('class'=>'btn-back'));?></p>
 			<?php
 			$lang = get_cookie('lang');
 			if($lang=='en'){?>
@@ -20,12 +20,12 @@
 			<?php } ?>
 
 
-			<p>Silakan isi nama akun yang baru jika ingin melakukan perubahan dan click button update.</p>
+			<p><?php echo $lang_info_akun;?></p>
 			<div class="panel panel-default">
 				<div class="panel-body">
 				  <form name="loginFm" method="post">
 					<div class="form-group">
-					  <label>Nama</label>
+					  <label><?php echo $field_name;?></label>
 					  <input type="text" id="name" name="name" value='<?php echo $user->name; ?>' class="form-control mandatory"/>
 					</div>
 					<div class="form-group">

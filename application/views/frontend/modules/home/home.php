@@ -837,10 +837,10 @@ ul.list-group:after {
     <img src='<?php echo base_url('images/demo/banner-a1.jpg');?>' border='0' width='100%' height = '190px;'>
   </div>
   <div style='float:left;width:311px; margin-right:5px'>
-    <img src='<?php echo base_url('images/demo/banner-a2.jpg');?>' border='0' width='100%' height='190px'>
+    <img src='<?php echo base_url('images/general/xiaomi.jpg');?>' border='0' width='100%' height='190px'>
   </div>
   <div style='float:left;width:311px'>
-    <img src='<?php echo base_url('images/demo/banner-a3.jpg');?>' border='0' width='100%' height='190px'>
+    <img src='<?php echo base_url('images/general/oppo.jpg');?>' border='0' width='100%' height='190px'>
   </div>
   <div style='clear:both'></div>
 

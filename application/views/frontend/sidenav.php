@@ -3,7 +3,7 @@
 <head>
 <style>
 #mySidenav a {
-    position: absolute;
+    position: fixed;
     right: -10px;
     transition: 0.3s;
     padding: 15px;

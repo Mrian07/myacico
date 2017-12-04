@@ -106,8 +106,8 @@ h1, h2, h3 {
     <div class="col-xs-5 padding-1">
 
 
-      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/banner-30.png');?>" width="100%" height="121"></div>
-      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/banner-31.png');?>" width="100%" height="121"></div>
+      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/banner_kcl01.jpg');?>" width="100%" height="121"></div>
+      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/bnerkcl02.jpg');?>" width="100%" height="121"></div>
       <!-- <div style='margin-left:5px;'><img src="https://s1.postimg.org/6g8wm25b1r/ps4.png" width="100%" height="170"></div> -->
 
 

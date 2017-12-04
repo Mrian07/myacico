@@ -21,10 +21,80 @@ class Checkout extends Web_private {
 
 	}
 
-	public function cart()
+	public function summary()
 	{
+		/*s: terbaru*/
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
 
-			/*s: terbaru*/
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+
+		$context = stream_context_create($options);
+
+		$api = "aduser/getaddress?addresstype=isbillto";
+		$url = api_base_url($api);
+		$konten = file_get_contents($url, false, $context);
+		$hasil = json_decode($konten, true);
+
+		//Data Billing
+		foreach($hasil as $items){
+		$this->data['billing_address_id'] = $items['id'];
+		}
+
+
+
+
+
+		$get_shipping = get_cookie('shipping_address_id');
+
+		if($get_shipping)
+		{
+
+		   $api = "aduser/getaddress?id=".$get_shipping;
+		   $url = api_base_url($api);
+
+		   $konten2 = file_get_contents($url, false, $context);
+		   $hasil_ship = json_decode($konten2, true);
+
+			//Data Shipping
+			// $this->data['id_kelurahan'] = $hasil_ship['village_id'];
+			 $this->data['shipping_address_id'] = $hasil_ship['id'];
+			// $id_kelurahan = $hasil_ship['village_id'];
+
+		}
+
+		//payment
+		//Transfer
+		$api = "payment/myacicoaccount";
+		$url = api_base_url($api);
+		$konten = file_get_contents($url);
+		$this->data['hasilTransfer'] = json_decode($konten, true);
+		$hasilTransfer = json_decode($konten, true);
+
+		//onlinepayment
+		$api = "payment/onlinepayment?value=O";
+		$url = api_base_url($api);
+
+		$konten = file_get_contents($url);
+		$this->data['hasilOnline'] = json_decode($konten, true);
+
+		/*e: terbaru*/
+
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$this->data['title_web'] = "Myacico.com";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/checkout/summary.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function summaryDetail()
+	{
+		/*s: terbaru*/
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
 		$api = "order/cart/detail";
@@ -41,26 +111,72 @@ class Checkout extends Web_private {
 
 		$this->data['hasil'] = json_decode($konten, true);
 
-		// $hasil = json_decode($konten, true);
-		// echo"<pre>";
-		// print_r($hasil); die();
-		/*e: terbaru*/
+		$get_shipping = get_cookie('shipping_address_id');
 
-		$this->data['title_web'] = "Myacico.com";
-		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		// $this->load->view('frontend/modules/cart/cart.php',$this->data);
+		if($get_shipping)
+		{
 
-		$this->load->view('frontend/modules/cart/cart_by_ci.php',$this->data);
-		// $this->load->view('frontend/modules/cart/cart_by_token.php',$this->data);
+			 $api = "aduser/getaddress?id=".$get_shipping;
+			 $url = api_base_url($api);
+
+			 $konten2 = file_get_contents($url, false, $context);
+			 $hasil_ship = json_decode($konten2, true);
+
+			//Data Shipping
+			$this->data['name'] = $hasil_ship['name'];
+			$this->data['alamat_shipping'] =$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
+
+		}
+
+		if($hasil = json_decode($konten, true)){
+			$this->load->view('frontend/modules/checkout/summary_detail.php',$this->data);
+		}else{
+			echo"
+			<input type='hidden' value='1' id='itemKosong'>
+			<div class='alert alert-warning produk-kosong' style='border-radius:0px; border:0px; border-left:5px solid #dbd19e;'><img src='".base_url('images/general/empty.jpg')."' border='0'><br>Keranjang masih kosong</div>";
+		}
 
 
-		$this->load->view('frontend/footer',$this->data);
 	}
 
-	public function addressbook()
+	public function selectKurir()
+	{
+		$id = $_GET['id'];
+
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+		$context = stream_context_create($options);
+
+		$api = "aduser/getaddress?id=".$id;
+		$url = api_base_url($api);
+
+		$konten = file_get_contents($url, false, $context);
+		$hasil_ship = json_decode($konten, true);
+		$id_kelurahan = $hasil_ship['village_id'];
+
+		$api = "freight/shipment/rates?to_village_id=".$id_kelurahan;
+		$url = api_base_url($api);
+
+		$konten = file_get_contents($url);
+		$hasil_kurir = json_decode($konten, true);
+	// echo"<pre>";	print_r($hasil_kurir);
+		echo"<option value='kosong-kosong'>-Pilih-</option>";
+		foreach($hasil_kurir as $dataKur){
+			echo"<option value='".$dataKur['shipperId']."-".$dataKur['amount']."'>".$dataKur['shipperName']."</option>";
+		}
+
+	}
+
+	public function cart()
 	{
 
+		//Data Billing akan menjadi data shipping
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
 		$api = "aduser/getaddress?addresstype=isbillto";
@@ -76,12 +192,14 @@ class Checkout extends Web_private {
 		$konten = file_get_contents($url, false, $context);
 		$hasil = json_decode($konten, true);
 
-		//Data Billing
-		foreach($hasil as $items){
-			$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['city_name']." ".$items['postal'];
-			$this->data['billing_address_id'] = $items['id'];
-		}
+		//load all data shipping
+		$apiShip = "aduser/getaddress?token=".$token;
+		$urlShip = api_base_url($apiShip);
+		$kontenShip = file_get_contents($urlShip, false, $context);
+		$this->data['hasil_ship'] = json_decode($kontenShip, true);
 
+		$hasil_ship = json_decode($kontenShip, true);
+//echo"<pre>"; print_r($hasil_ship);
     // Shipping Address
 		$get_shipping = get_cookie('shipping_address_id');
 		if($get_shipping)
@@ -90,7 +208,6 @@ class Checkout extends Web_private {
 		   $api = "aduser/getaddress?id=".$get_shipping;
 		   $url = api_base_url($api);
 
-
 		   $konten2 = file_get_contents($url, false, $context);
 		   $hasil_ship = json_decode($konten2, true);
 
@@ -98,29 +215,200 @@ class Checkout extends Web_private {
 				$this->data['alamat_shipping'] =$hasil_ship['name'].", ".$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
 				$this->data['id_kelurahan'] = $hasil_ship['village_id'];
 				$this->data['shipping_address_id'] = $hasil_ship['id'];
+				$id_kelurahan = $hasil_ship['village_id'];
 
 		}else{
 			foreach($hasil as $items){
 				$this->data['alamat_shipping'] =$items['name'].", ".$items['address_name'].", ".$items['address1']." ".$items['city_name']." ".$items['postal'];
 				$this->data['id_kelurahan'] = $items['village_id'];
 				$this->data['shipping_address_id'] = $items['id'];
+
+				$id_kelurahan = $items['village_id'];
+				set_cookie('shipping_address_id',$items['id'],time() + (86400 * 30));
 			}
 		}
 
-    //Metode Pembayaran
-		$apiMethod = "payment/method";
-		$urlMethod = api_base_url($apiMethod);
-		$kontenMethod = file_get_contents($urlMethod);
-		$this->data['hasilMethod'] = json_decode($kontenMethod, true);
+		if($id_kelurahan){
+			$api = "freight/shipment/rates?to_village_id=".$id_kelurahan;
+			$url = api_base_url($api);
 
-		$this->data['token'] = $_COOKIE['x-auth'];
+			$konten = file_get_contents($url);
+			$this->data['hasil_kurir'] = json_decode($konten, true);
+			$hasil_kurir = json_decode($konten, true);
+			$ongkos_kurir = $hasil_kurir[0]['amount'];
+			$shipperId = $hasil_kurir[0]['shipperId'];
+
+			if(empty($this->session->userdata('ongkos_kurir'))){
+				$data = array(
+					'id_kurir' => $shipperId,
+					'ongkos_kurir' => $ongkos_kurir,
+				);
+		    $this->session->set_userdata($data);
+			}
+			//	echo"<pre>"; print_r($data); echo"<br>";
+		}
+		// echo $ongkos_kurir;
+		// echo'<p>'. $this->session->userdata('ongkos_kurir'); die();
+		//$hasil_kurir = json_decode($konten, true);
+
+		//echo"<pre>"; print_r($hasil_kurir); die();
 
 		$this->data['title_web'] = "Myacico.com";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/cart/address_book.php',$this->data);
+		// $this->load->view('frontend/modules/cart/cart.php',$this->data);
+
+		$this->load->view('frontend/modules/cart/cart_by_ci.php',$this->data);
+		// $this->load->view('frontend/modules/cart/cart_by_token.php',$this->data);
+
+
 		$this->load->view('frontend/footer',$this->data);
 	}
+
+	public function pilihKurir() {
+		// $id_kurir = $this->uri->segment(3);
+		// $ongkos_kurir = $this->uri->segment(4);
+
+		$id_kurir = $_GET['id'];
+		$ongkos_kurir = $_GET['amount'];
+		$name_kurir = $_GET['name'];
+		$data = array(
+			'id_kurir' => $id_kurir,
+			'ongkos_kurir' => $ongkos_kurir,
+			'name_kurir' => $name_kurir,
+		);
+		$this->session->set_userdata($data);
+		//ini diload pake ajak
+		echo money($ongkos_kurir);
+		//redirect('checkout/cart');
+	}
+	public function pilihShip()
+	{
+		$id = $_GET['id'];
+		set_cookie('shipping_address_id',$id,time() + (86400 * 30));
+
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "aduser/getaddress?id=".$id;
+		$url = api_base_url($api);
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+		$hasil_ship = json_decode($konten, true);
+
+		//Data Shipping
+		 $alamat_shipping =$hasil_ship['name'].", ".$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
+		 echo"$alamat_shipping";
+		// redirect('checkout');
+		//redirect('checkout/cart');
+	}
+
+	public function addressbook()
+	{
+
+		$lang = get_cookie('lang');
+		$flag = $this->uri->segment(3);
+		if($flag=='1'){
+			if($lang=='en'){
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Add shipping success.</div>');
+			}else{
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Tambah data penerima sukses.</div>');
+			}
+		}
+
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+
+		$context = stream_context_create($options);
+		$apiShip = "aduser/getaddress?token=".$token;
+		$urlShip = api_base_url($apiShip);
+		$kontenShip = file_get_contents($urlShip, false, $context);
+		//$this->data['hasil_ship'] = json_decode($kontenShip, true);
+		$this->data['jmladrs'] = count(json_decode($kontenShip, true));
+		$this->data['title_web'] = "Myacico.com";
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/cart/form_address_book.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+
+	// public function addressbook()
+	// {
+  //
+	// 	$this->data['token'] = $_COOKIE['x-auth'];
+	// 	$token = $_COOKIE['x-auth'];
+	// 	$api = "aduser/getaddress?addresstype=isbillto";
+	// 	$url = api_base_url($api);
+  //
+	// 	$options = ["http" => [
+	// 	"method" => "GET",
+	// 	"header" => ["token: " . $token,
+	// 	"Content-Type: application/json"],
+	// 	]];
+  //
+	// 	$context = stream_context_create($options);
+	// 	$konten = file_get_contents($url, false, $context);
+	// 	$hasil = json_decode($konten, true);
+  //
+	// 	//Data Billing
+	// 	foreach($hasil as $items){
+	// 		$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['city_name']." ".$items['postal'];
+	// 		$this->data['billing_address_id'] = $items['id'];
+	// 	}
+  //
+  //   // Shipping Address
+	// 	$get_shipping = get_cookie('shipping_address_id');
+	// 	if($get_shipping)
+	// 	{
+  //
+	// 	   $api = "aduser/getaddress?id=".$get_shipping;
+	// 	   $url = api_base_url($api);
+  //
+  //
+	// 	   $konten2 = file_get_contents($url, false, $context);
+	// 	   $hasil_ship = json_decode($konten2, true);
+  //
+	// 	   //Data Shipping
+	// 			$this->data['alamat_shipping'] =$hasil_ship['name'].", ".$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
+	// 			$this->data['id_kelurahan'] = $hasil_ship['village_id'];
+	// 			$this->data['shipping_address_id'] = $hasil_ship['id'];
+  //
+	// 	}else{
+	// 		foreach($hasil as $items){
+	// 			$this->data['alamat_shipping'] =$items['name'].", ".$items['address_name'].", ".$items['address1']." ".$items['city_name']." ".$items['postal'];
+	// 			$this->data['id_kelurahan'] = $items['village_id'];
+	// 			$this->data['shipping_address_id'] = $items['id'];
+	// 		}
+	// 	}
+  //
+  //   //Metode Pembayaran
+	// 	$apiMethod = "payment/method";
+	// 	$urlMethod = api_base_url($apiMethod);
+	// 	$kontenMethod = file_get_contents($urlMethod);
+	// 	$this->data['hasilMethod'] = json_decode($kontenMethod, true);
+  //
+	// 	$this->data['token'] = $_COOKIE['x-auth'];
+  //
+	// 	$this->data['title_web'] = "Myacico.com";
+	// 	$this->load->view('frontend/header',$this->data);
+	// 	$this->load->view('frontend/nav.php',$this->data);
+	// 	$this->load->view('frontend/modules/cart/address_book.php',$this->data);
+	// 	$this->load->view('frontend/footer',$this->data);
+	// }
 
 	public function billing()
 	{
@@ -133,6 +421,17 @@ class Checkout extends Web_private {
 
 	public function shipping()
 	{
+		$lang = get_cookie('lang');
+		$flag = $this->uri->segment(3);
+		if($flag=='1'){
+			if($lang=='en'){
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Add shipping success.</div>');
+			}else{
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Tambah data penerima sukses.</div>');
+			}
+		}
 		$this->data['title_web'] = "Myacico.com";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -271,6 +570,7 @@ class Checkout extends Web_private {
 		$konten = file_get_contents($url);
 		$this->data['hasil'] = json_decode($konten, true);
 		$hasil = json_decode($konten, true);
+
 		$this->data['id_kelurahan'] = $idkel;
 		$this->load->view('frontend/modules/checkout/list_shipping.php',$this->data);
 	}
@@ -365,7 +665,7 @@ class Checkout extends Web_private {
 	public function switchLang()
     {
 		$lang = $this->input->post('lang');
-		set_cookie('lang',$lang,'3600');
+		set_cookie('lang',$lang,time() + (86400 * 30));
 		echo $lang;
 	}
 	/*
@@ -389,9 +689,17 @@ class Checkout extends Web_private {
 		// $data = array('shipping_address_id' => $id);
     // $this->session->set_userdata($data);
 		$shipping_address_id = $id;
-		set_cookie('shipping_address_id',$shipping_address_id,'3600');
+		set_cookie('shipping_address_id',$shipping_address_id,time() + (86400 * 30));
 
-		redirect('checkout');
+		$data = array(
+			'id_kurir' => '',
+			'ongkos_kurir' => '',
+		);
+		$this->session->set_userdata($data);
+
+		// redirect('checkout');
+		//redirect('checkout/addressbook');
+		redirect('checkout/cart');
 	}
 
 	public function finish()

@@ -1,48 +1,4 @@
-<style>
-#line-green{
-  background:#e4eed0;
-  color:#655d56;
-  padding:3px;
-  font-family: arial;
-  border-bottom: 1px solid #cfdeb0;
-}
-
-#border-pop-buy{
-  border-top:5px solid #e4352b;
-  border-bottom:5px solid #e4352b;
-  height:65px;
-}
-#btn-pop-lanjut{
-  float: left;
-  background:#e95931;
-  margin:5px;
-  padding:10px;
-  color:#ffffff;
-  font-size:15px;
-  font-weight: bold;
-  font-family: arial;
-}
-
-#btn-pop-bayar{
-  float: right;
-  background:#e95931;
-  margin:5px;
-  padding:10px;
-  color:#ffffff;
-  font-size:15px;
-  font-weight: bold;
-  font-family: arial;
-}
-
-#pop-title{
-  font-size:25px;
-  font-family: tahoma;
-}
-
-#border-pop-list{
-  padding:10px;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/pop_cart.css');?>" />
 <?php
 $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 ?>
@@ -112,7 +68,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     <h5 style="margin-bottom: 0px;">
       <?php echo $name; ?>
     </h5>
-
+    <span> Dijual Oleh : </span> <span style="color:red"> myACICO </span>
     <div class="ratting-container">
       <div id="rateYo" class="detail-prod-rating"></div><span class="ratting-text">(<?php echo$totalRate;?>) <a href=""><i class="fa fa-pencil" aria-hidden="true"></i> Tulis ulasan</a></span>
 
@@ -230,12 +186,13 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       </div>
 
       <button type="button" class="btn btn-danger btn-lg" style="border-radius: 5px; padding: 6px 60px; margin-bottom: 7px; background-color: #c81423"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" style="font-size:15px;" aria-hidden="true"> </i> <b style="font-size:15px;"> BELI</b> SEKARANG</button>
+      <button type="button" class="btn btn-danger btn-lg" style="border-radius: 5px; padding: 6px 24px; margin-bottom: 7px; background-color: #c81423"  onClick="addToCart1('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" style="font-size:15px;" aria-hidden="true"> </i> <b style="font-size:15px;"> Tambahkan </b>Ke Keranjang</button>
 
       <?php
         if($isWishList =='Y')
           {
       ?>
-        <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart-o" style="color:#dffd54;" aria-hidden="true"></i> Tambahkan Ke Wishlist</button>
+        <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart-o" style="color:#dffd54;" aria-hidden="true"></i> Tambahkan Ke favorites</button>
       <?php } else { ?>
         <button type="button" class="btn btn-link" style="border-radius: 25px; padding: 8px 34px;" onClick="addWishlist('<?php echo$m_product_id;?>','<?php echo$name;?>','<?php echo$img[0];?>')"><i class="fa fa-heart-o" aria-hidden="true"></i> Tambahkan Ke favorites</button>
       <?php } ?>
@@ -974,6 +931,139 @@ if(jmlItem<=0){
       //   closeIcon: true,
       //   closeIconClass: 'fa fa-close'
       // });
+
+      //Buat update cart, fungsi ini ada di file header.php
+      totalCart();
+    };
+
+    $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
+      {
+        "productId":m_product_id,
+        "qty":qty,
+        "price":pricelist,
+        "weightPerItem":weight
+      }
+    ) , url: apiurl, headers: {"token":token}, success: success, error: error });
+
+    var error = function(er){
+      console.log('OK:', er);
+      $.alert({
+      title: 'Alert!',
+      content: 'koneksi tidak berhasil, silahkan coba lagi!',
+      });
+    };
+
+
+  }else{
+
+
+    $.ajax
+    ({
+    type: "POST",
+    url: "<?php echo site_url('cart/addToCart'); ?>",
+    data: dataString,
+    success:function(data){
+
+        if(data=='stockkosong'){
+          $.dialog({
+            title: name,
+            content: 'Item gagal ditambahkan, jumlah melebihi stock yang ada!',
+            autoClose: 'close|3000',
+            buttons: {
+              close: function () {
+                //$.alert('action is canceled');
+              }
+            },
+            closeIcon: true,
+            closeIconClass: 'fa fa-close'
+          });
+        }else
+        if(data!='gagal'){
+
+          $(".totalCart").html(data);
+
+           $('.cartModal').modal('show');
+
+          // $.confirm({
+          //   title: name,
+          //   content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
+          //   autoClose: 'close|3000',
+          //   buttons: {
+          //     close: function () {
+          //       //$.alert('action is canceled');
+          //     }
+          //   },
+          //   closeIcon: true,
+          //   closeIconClass: 'fa fa-close'
+          // });
+
+        }else{
+          $.dialog({
+            title: name,
+            content: 'Item gagal ditambahkan!',
+            autoClose: 'close|3000',
+            buttons: {
+              close: function () {
+                //$.alert('action is canceled');
+              }
+            },
+            closeIcon: true,
+            closeIconClass: 'fa fa-close'
+          });
+        }
+      }
+    });
+  }
+}
+}
+
+function addToCart1(m_product_id,pricelist,imageurl,name,stock,weight){
+
+var jmlItem = $('#jmlItem').val();
+var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
+// dsasdadas
+if(jmlItem<=0){
+  $.dialog({
+    title: 'Alert!',
+    content: 'Silakan masukan jumlah item dengan benar',
+    autoClose: 'close|3000',
+    buttons: {
+      close: function () {
+        //$.alert('action is canceled');
+      }
+    },
+    closeIcon: true,
+    closeIconClass: 'fa fa-close'
+  });
+
+}else{
+
+
+  var cookie = document.cookie.split('x-auth=');
+  if(cookie.length > 1){
+    var token = cookie[1].split(';').shift();
+
+    var apiurl = api_base_url +'/order/cart/additem';
+    var m_product_id = m_product_id;
+    var qty = jmlItem;
+    var pricelist = pricelist;
+    var weight = weight;
+
+    var success = function(r){
+
+       // $('.cartModal').modal('show');
+
+      $.confirm({
+        title: name,
+        content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
+        autoClose: 'close|3000',
+        buttons: {
+          close: function () {
+          }
+        },
+        closeIcon: true,
+        closeIconClass: 'fa fa-close'
+      });
 
       //Buat update cart, fungsi ini ada di file header.php
       totalCart();

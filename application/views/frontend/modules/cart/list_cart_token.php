@@ -18,5 +18,5 @@
 	?>
 </div>
 <div style='color:#111111; text-align:center'>
-	<div class='my-total-cart'>TOTAL : <b>Rp.<?php echo money($total); ?></b></div><?php echo anchor('cart', 'My Cart & Checkout', array('class'=>'btn btn-success','style'=>'color:#ffffff'));?>
+	<div class='my-total-cart'>TOTAL : <b>Rp.<?php echo money($total); ?></b></div><?php echo anchor('checkout/cart', 'My Cart & Checkout', array('class'=>'btn btn-success','style'=>'color:#ffffff'));?>
 </div>
