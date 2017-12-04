@@ -57,18 +57,23 @@
                     $lang['field_detail_pesanan'] ='Order Detail';
                     $lang['field_ket_konfirm'] ='Please upload your payment transfer receipt in the form below.';
 
-                                                                                  
+
 									 //end of history
 
 
 				//end of buku alamat
+
+				//btn di account informasi
+					$lang['btn_tambah'] ='Update.';
+				//akhir dari informasi
+
 //  Wishlist
        $lang['wishlist_tittle'] ='WISHLIST ';
        $lang['ket_wishlist'] ='Below is a list of Wishlist. You can add  Wishlist or delete your previous Wishlist.';
        $lang['wishlist_pic'] ='Picture';
        $lang['wishlist_name'] ='Name';
        $lang['wishlist_del'] ='Delete';
-//       AVATAR 
+//       AVATAR
        $lang['avatar_tittle'] ='UPLOAD IMAGE ';
        $lang['avatar_tittle2'] ='Upload Your Avatar Here';
        $lang['avatar_tittle3'] ='Upload Avatar';
@@ -76,7 +81,7 @@
        $lang['avatar_button'] ='Upload';
        $lang['avatar_browse'] ='Browse';
     //      Info Akun
-       $lang['field_info_akun'] =' If you want changes name, please input the new one and click button update.'; 
-      
+       $lang['field_info_akun'] =' If you want changes name, please input the new one and click button update.';
+
 
  ?>
