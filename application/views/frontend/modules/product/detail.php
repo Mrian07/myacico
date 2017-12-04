@@ -1,6 +1,13 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/pop_cart.css');?>" />
 <?php
 $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+
+      //$text = str_replace("/[^A-Za-z0-9\-\']/", '', $url_share);
+        $string = str_replace('(', '_', $url_share);
+        $string = str_replace(')', '_', $string);
+        $string = str_replace('[', '_', $string);
+        $string = str_replace(']', '_', $string);
+     // die(print_r($string));
 ?>
 
       <?php
@@ -150,9 +157,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <i class="fa fa-facebook icon-share" aria-hidden="true"></i>
       </a>
 
-      <a href="https://twitter.com/home?status=<?php echo $url_share;?>"><i class="fa fa-twitter icon-share" aria-hidden="true"></i>
+      <a target="_blank" href="https://twitter.com/home?status=<?php echo $url_share;?>"><i class="fa fa-twitter icon-share" aria-hidden="true"></i>
       </a>
-      <a href="https://plus.google.com/share?url=<?php echo $url_share;?>"><i class="fa fa-google-plus icon-share" aria-hidden="true"></i>
+      <a target="_blank" href="https://plus.google.com/share?url=<?php echo $string;?>"><i class="fa fa-google-plus icon-share" aria-hidden="true"></i>
       </a>
        <a href="mailto:?&subject=<?php echo $name;?>&body=<?php echo $url_share;?>" style="text-decoration: none!important">
         <i class="fa fa-envelope-o icon-share" aria-hidden="true"></i>
