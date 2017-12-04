@@ -145,7 +145,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 						<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_produck, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
-						
+
            <?php echo anchor('customer/afterSales',$lang_after_sales, array('class'=>'btn-nav-head')); ?>
 					</div>
 				</div>
@@ -840,6 +840,9 @@ $(".logout").click(function(e){
 		buttons: {
 			confirm: function () {
 				document.cookie='x-auth=; path='+base_path+';expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+				<?php
+				//untuk menghapus cookie 
+				unset($_COOKIE['shipping_address_id']); ?>
 				location.href='<?php echo base_url("customer/signIn");?>';
 				if(chat.soc){
 					chat.soc.disconnect();
