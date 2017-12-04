@@ -245,13 +245,8 @@ class Checkout extends Web_private {
 				);
 		    $this->session->set_userdata($data);
 			}
-			//	echo"<pre>"; print_r($data); echo"<br>";
-		}
-		// echo $ongkos_kurir;
-		// echo'<p>'. $this->session->userdata('ongkos_kurir'); die();
-		//$hasil_kurir = json_decode($konten, true);
 
-		//echo"<pre>"; print_r($hasil_kurir); die();
+		}
 
 		$this->data['title_web'] = "Myacico.com";
 		$this->load->view('frontend/header',$this->data);

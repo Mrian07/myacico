@@ -918,7 +918,7 @@ if(jmlItem<=0){
 
     var success = function(r){
 
-       $('.cartModal').modal('show');
+    //   $('.cartModal').modal('show');
 
       // $.confirm({
       //   title: name,
@@ -931,7 +931,7 @@ if(jmlItem<=0){
       //   closeIcon: true,
       //   closeIconClass: 'fa fa-close'
       // });
-
+      window.location.href = '<?php echo site_url('checkout/cart'); ?>';
       //Buat update cart, fungsi ini ada di file header.php
       totalCart();
     };
@@ -1052,18 +1052,18 @@ if(jmlItem<=0){
 
        // $('.cartModal').modal('show');
 
-      $.confirm({
-        title: name,
-        content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
-        autoClose: 'close|3000',
-        buttons: {
-          close: function () {
-          }
-        },
-        closeIcon: true,
-        closeIconClass: 'fa fa-close'
-      });
-
+      // $.confirm({
+      //   title: name,
+      //   content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
+      //   autoClose: 'close|3000',
+      //   buttons: {
+      //     close: function () {
+      //     }
+      //   },
+      //   closeIcon: true,
+      //   closeIconClass: 'fa fa-close'
+      // });
+      $('.cartModal').modal('show');
       //Buat update cart, fungsi ini ada di file header.php
       totalCart();
     };
