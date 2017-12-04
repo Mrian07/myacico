@@ -100,8 +100,7 @@ class Customer extends Web {
 		$this->load->view('frontend/footer',$this->data);
 	}
 
-
-public function afterSales()
+      public function afterSales()
 	{	
                  $domain = domain();
 		$this->data['title_web'] = "After Sales - ".$domain;

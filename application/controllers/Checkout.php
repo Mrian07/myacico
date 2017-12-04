@@ -245,15 +245,14 @@ class Checkout extends Web_private {
 				);
 		    $this->session->set_userdata($data);
 			}
-			//	echo"<pre>"; print_r($data); echo"<br>";
-		}
-		// echo $ongkos_kurir;
-		// echo'<p>'. $this->session->userdata('ongkos_kurir'); die();
-		//$hasil_kurir = json_decode($konten, true);
+
 
 		//echo"<pre>"; print_r($hasil_kurir); die();
                 $domain = domain();
 		$this->data['title_web'] = "Cart - ".$domain;
+
+		}
+
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/modules/cart/cart.php',$this->data);

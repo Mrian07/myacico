@@ -99,7 +99,7 @@
 				</td>
 				<td class='text-center' colspan='2'>
 				<strong>Total Rp.<?php echo money($total); ?></strong></td>
-        
+
 			</tr>
 		</tfoot>
 	</table>
