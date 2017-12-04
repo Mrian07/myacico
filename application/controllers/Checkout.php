@@ -112,7 +112,6 @@ class Checkout extends Web_private {
 		$this->data['hasil'] = json_decode($konten, true);
 
 		$get_shipping = get_cookie('shipping_address_id');
-
 		if($get_shipping)
 		{
 
@@ -702,6 +701,7 @@ class Checkout extends Web_private {
 		$data = array(
 			'id_kurir' => '',
 			'ongkos_kurir' => '',
+			'name_kurir' => '',
 		);
 		$this->session->set_userdata($data);
 

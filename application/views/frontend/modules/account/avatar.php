@@ -57,7 +57,7 @@ width: 100%;
           <span class="input-group-btn">
 
           <span class="btn btn-info btn-file">
-          <?php echo $lang_avatar_browse;?><input class="input-file" id="file" type="file" name="file" style='height:10px'>
+          <?php echo $lang_avatar_browse;?><input class="input-file" id="file" onchange="show(this)" type="file" name="file" style='height:10px'>
           </span>
           </span>
           <input type="text" class="form-control" readonly>
@@ -76,6 +76,28 @@ width: 100%;
 </div>
 
 <script>
+function show(input) {
+        debugger;
+        var validExtensions = ['jpg','png','jpeg']; //array of valid extensions
+        var fileName = input.files[0].name;
+        var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
+        if ($.inArray(fileNameExt, validExtensions) == -1) {
+            input.type = ''
+            input.type = 'file'
+            $('#user_img').attr('src',"");
+            alert("Only these file types are accepted : "+validExtensions.join(', '));
+        }
+        else
+        {
+        if (input.files && input.files[0]) {
+            var filerdr = new FileReader();
+            filerdr.onload = function (e) {
+                $('#user_img').attr('src', e.target.result);
+            }
+            filerdr.readAsDataURL(input.files[0]);
+        }
+        }
+    }
 function readURL(input) {
 
   if (input.files && input.files[0]) {
