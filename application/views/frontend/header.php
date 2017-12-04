@@ -173,7 +173,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 										 $totalItems += $items['qty'];
 									 endforeach;
 								 ?>
-								 <button class="dropbtn-basket">
+								 <button class="dropbtn-basket" onclick="javascript:location.href='<?php echo base_url('checkout/cart'); ?>'">
 									 <img src="<?php echo base_url('images/general/cart.png'); ?>" width='35' border="0"><br>
 									 <span class="badge totalCart" style='margin-left:-7px; margin-top: -30px; position: absolute; font-size:9px; background:#faaf3b;color:#000000'><?php echo $totalItems; ?></span>
 								 </button>
