@@ -28,7 +28,7 @@ class Home extends Web {
 
 	public function index()
     {
-
+            $home_domain = domain2();
 		//Slide slide_show
 		$api = "home/view";
 		$url = api_base_url($api);
@@ -59,7 +59,7 @@ class Home extends Web {
 	// 	die();
 
 		//$this->load->view('frontend/test',$this->data);
-		$this->data['title_web'] = "myacico.co.id - PT. MyAcico Global Indonesia";
+		$this->data['title_web'] = "myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/slide_show.php',$this->data);

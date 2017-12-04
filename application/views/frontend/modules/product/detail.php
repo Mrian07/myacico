@@ -981,8 +981,8 @@ if(jmlItem<=0){
         if(data!='gagal'){
 
           $(".totalCart").html(data);
-
-           $('.cartModal').modal('show');
+          window.location.href = '<?php echo site_url('checkout/cart'); ?>';
+        //   $('.cartModal').modal('show');
 
           // $.confirm({
           //   title: name,
@@ -1037,7 +1037,6 @@ if(jmlItem<=0){
   });
 
 }else{
-
 
   var cookie = document.cookie.split('x-auth=');
   if(cookie.length > 1){
@@ -1114,7 +1113,6 @@ if(jmlItem<=0){
         if(data!='gagal'){
 
           $(".totalCart").html(data);
-
            $('.cartModal').modal('show');
 
           // $.confirm({

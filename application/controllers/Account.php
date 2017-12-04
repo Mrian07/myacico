@@ -26,8 +26,9 @@ class Account extends Web_private {
 
 	public function index()
     {
+             $domain = domain();
 		$this->data['active_dashboard'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Dashboard";
+		$this->data['title_web'] = "Dashboard - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/dashboard.php',$this->data);
@@ -79,7 +80,7 @@ class Account extends Web_private {
 
 	public function informasiAkun()
   {
-
+                $domain = domain();
 		$lang = get_cookie('lang');
 		$flag = $this->uri->segment(3);
 		if($flag=='1'){
@@ -123,7 +124,7 @@ class Account extends Web_private {
 		}
 
 		$this->data['active_informasiAkun'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Informasi Akun";
+		$this->data['title_web'] = "Informasi Akun - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/informasi_akun',$this->data);
@@ -133,8 +134,9 @@ class Account extends Web_private {
 
 	public function berlanggananNewsletter()
     {
+            $domain = domain();
 		$this->data['active_berlanggananNewsletter'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Informasi Akun";
+		$this->data['title_web'] = "Informasi Akun - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/berlanggananNewsletter',$this->data);
@@ -142,8 +144,9 @@ class Account extends Web_private {
 	}
 	public function avatar()
     {
+            $domain = domain();
 		$this->data['active_avatar'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Informasi Akun";
+		$this->data['title_web'] = "Informasi Akun - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/avatar',$this->data);
@@ -152,6 +155,7 @@ class Account extends Web_private {
 
 	public function bukuAlamat()
   {
+            $domain = domain();
 		$lang = get_cookie('lang');
 		$flag = $this->uri->segment(3);
 		if($flag=='1'){
@@ -202,7 +206,7 @@ class Account extends Web_private {
 		}
 
 		$this->data['active_bukuAlamat'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
+		$this->data['title_web'] = "Buku Alamat - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/buku_alamat',$this->data);
@@ -242,6 +246,7 @@ class Account extends Web_private {
 
 	public function editBukuAlamat()
     {
+            $domain = domain();
 		$this->data['id'] = $this->uri->segment(3);
     $idadd=$this->uri->segment(3);
     $token = $_COOKIE['x-auth'];
@@ -258,7 +263,7 @@ class Account extends Web_private {
 		$konten = file_get_contents($url, false, $context);
     $this->data['hasil'] = json_decode($konten, true);
 		$this->data['active_bukuAlamat'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
+		$this->data['title_web'] = "Buku Alamat - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_shipping_edit',$this->data);
@@ -267,8 +272,9 @@ class Account extends Web_private {
 
 	public function TambahBukuAlamat()
   {
+            $domain = domain();
 		$this->data['active_bukuAlamat'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
+		$this->data['title_web'] = "Buku Alamat - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_add_buku_alamat',$this->data);
@@ -278,6 +284,7 @@ class Account extends Web_private {
 
 	public function riwayatStatusPesanan()
   {
+            $domain = domain();
 		$page=$this->uri->segment(3);
 		$startDate=$this->uri->segment(4);
 		$endDate=$this->uri->segment(5);
@@ -330,7 +337,7 @@ class Account extends Web_private {
 		$this->data['hasil'] = json_decode($konten3, true);
 
 		$this->data['active_riwayatStatusPesanan'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Riwayat Status Pasaran";
+		$this->data['title_web'] = "Riwayat Status Pasaran - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
@@ -401,7 +408,7 @@ class Account extends Web_private {
 
 	public function confirm()
 		{
-
+                        $domain = domain();
 			$this->data['token'] = $_COOKIE['x-auth'];
 			$token = $_COOKIE['x-auth'];
 			$api = "transaction/list";
@@ -421,7 +428,7 @@ class Account extends Web_private {
 
 			$this->data['konf'] = $this->uri->segment(3);
 			$this->data['active_riwayatStatusPesanan'] = "class='active'";
-			$this->data['title_web'] = "Myacico.co.id - Buku Alamat";
+			$this->data['title_web'] = "Konfirmasi - ".$domain;
 			$this->load->view('frontend/header',$this->data);
 			$this->load->view('frontend/nav.php',$this->data);
 			$this->load->view('frontend/modules/account/form_confirm.php',$this->data);
@@ -431,8 +438,9 @@ class Account extends Web_private {
 
 	public function returnManagementAuthority()
     {
+            $domain = domain();
 		$this->data['active_returnManagementAuthority'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Return Management Authority";
+		$this->data['title_web'] = "Return Management Authority - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);
@@ -442,8 +450,9 @@ class Account extends Web_private {
 
 	public function Wishlist()
     {
+            $domain = domain();
 		$this->data['active_wishlist'] = "class='active'";
-		$this->data['title_web'] = "Myacico.co.id - Wishlist";
+		$this->data['title_web'] = "Wishlist - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/wishlist',$this->data);

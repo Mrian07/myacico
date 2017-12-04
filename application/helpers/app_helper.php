@@ -1,4 +1,13 @@
 <?php
+
+function domain(){
+            
+            return "Myacico.co.id";
+  }
+  function domain2(){
+            
+            return "Belanja online murah, gratis pengiriman area Jakarta*";
+  }
 function api_base_url($param)
 {
 	//$url = "http://myacico.net:8080/myacico-service/api/".$param;
