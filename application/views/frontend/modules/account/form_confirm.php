@@ -109,13 +109,14 @@ $(document).ready( function() {
   $('#submit_btn').val('Kirim').removeClass('disabled');
 
       console.log('OK:', r.status);
+      // alert(r.message);
 //      $("#file").val(null);
 //      $("#transid").val(null);
 if(r.status ==1){
     $.alert({title:'Alert', content: ' <?php echo $lang_msg_upload?>'});
 }
 else{
-    $.alert({title:'Alert', content: ' <?php echo $lang_msg_upload2?>'});
+    $.alert({title:'Alert', content:  r.message});
 }
         window.location.replace(base_url+"account/confirm/"+$("#transid").val());
 
