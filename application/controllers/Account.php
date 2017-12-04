@@ -511,7 +511,7 @@ class Account extends Web_private {
 
 			$this->data['hasil'] = json_decode($konten, true);
 			$hasil = json_decode($konten, true);
-                    
+
 		$this->load->view('frontend/modules/account/wishlist_item',$this->data);
 
 			// $this->load->view('frontend/footer',$this->data);
@@ -529,7 +529,7 @@ class Account extends Web_private {
 	}
 
 	public function formBilling()
-    { 
+    {
             $domain = domain();
 		$type = $this->typeLogin();
                 $idadd=$this->uri->segment(3);
@@ -590,30 +590,30 @@ class Account extends Web_private {
     public function formTransactionDetail()
     {
         $domain = domain();
-			$id=$this->uri->segment(3);
-			$this->data['token'] = $_COOKIE['x-auth'];
-			$token = $_COOKIE['x-auth'];
-			$api = "transaction/list?id=".$id;
-			$url = api_base_url($api);
+				$id=$this->uri->segment(3);
+				$this->data['token'] = $_COOKIE['x-auth'];
+				$token = $_COOKIE['x-auth'];
+				$api = "transaction/list?id=".$id;
+				$url = api_base_url($api);
 
-			$options = ["http" => [
-			"method" => "GET",
-			"header" => ["token: " . $token,
-			"Content-Type: application/json"],
-			]];
+				$options = ["http" => [
+				"method" => "GET",
+				"header" => ["token: " . $token,
+				"Content-Type: application/json"],
+				]];
 
-			$context = stream_context_create($options);
-			$konten = file_get_contents($url, false, $context);
+				$context = stream_context_create($options);
+				$konten = file_get_contents($url, false, $context);
 
-			$this->data['hasil'] = json_decode($konten, true);
+				$this->data['hasil'] = json_decode($konten, true);
 
-			$this->data['active_riwayatStatusPesanan'] = "class='active'";
-			$this->data['title_web'] = "Transaksi - ".$domain;
-			$this->load->view('frontend/header',$this->data);
-			$this->load->view('frontend/nav.php',$this->data);
-			$this->load->view('frontend/modules/account/form_transaction_detail',$this->data);
-			$this->load->view('frontend/footer',$this->data);
-                        $this->load->view('frontend/sidenav',$this->data);
+				$this->data['active_riwayatStatusPesanan'] = "class='active'";
+				$this->data['title_web'] = "Transaksi - ".$domain;
+				$this->load->view('frontend/header',$this->data);
+				$this->load->view('frontend/nav.php',$this->data);
+				$this->load->view('frontend/modules/account/form_transaction_detail',$this->data);
+				$this->load->view('frontend/footer',$this->data);
+				$this->load->view('frontend/sidenav',$this->data);
 	}
 
 	public function logout()
