@@ -186,7 +186,15 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <b>Garansi: </b>1 TAHUN GARANSI
       </div>
       <div style="margin-bottom: 20px;">
-        <span class="pull-left"><b>Jumlah: </b></span> <input type='number' class='form-control pull-left' id='jmlItem' style='width: 70px; margin-left: 5px; height: 30px;' value='1' min='1'/>
+        <span class="pull-left"><b>Jumlah: </b></span>
+        <select class='form-control pull-left' id='jmlItem' style='width: 70px; margin-left: 5px; height: 30px;'>
+          <?php $nJml=1; while($nJml<=20){
+            echo"<option value=".$nJml.">".$nJml."</option>";
+          $nJml++; }?>
+
+        </select>
+
+        <!-- <input type='number' class='form-control pull-left' id='jmlItem' style='width: 70px; margin-left: 5px; height: 30px;' value='1' min='1'/> -->
         <div class="clearfix"></div>
       </div>
 
