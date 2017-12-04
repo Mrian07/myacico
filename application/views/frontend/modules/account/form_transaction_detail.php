@@ -14,12 +14,12 @@
 			<p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Kembali', array('class'=>'btn-back'));?></p>
 			<div class="panel panel-default">
 				<div class="panel-body">
-						<table class="table table-striped"><thead><tr><th>Nama Barang</th><th>Invoice Number</th><th>Order Number</th><th>Payment Method</th><th>Image</th><th>Jumlah Harga</th></tr></thead>
+						<table class="table table-striped"><thead><tr><th>Nama Barang</th><th>Invoice Number</th><th>Order Number</th><th>Payment Method</th><th>Image</th><th>Jumlah & Harga</th></tr></thead>
 							<tbody>
 								<?php foreach($hasil['items'] as $data){
 									?>
 								<tr><td><?php echo $data['name']; ?></td><td><?php echo $hasil['invoiceNumber']; ?></td><td><?php echo $hasil['orderNumber']; ?></td><td>
-								<?php echo $hasil['paymentMethod']; ?></td><td><img class="group list-group-image" src="<?php echo $data['imageurl']; ?>" alt="..." style:border="0" height="100"></td><td>Rp.<?php echo money($hasil['grandTotal']); ?>
+								<?php echo $hasil['paymentMethod']; ?></td><td><img class="group list-group-image" src="<?php echo $data['imageurl']; ?>" alt="..." style:border="0" height="100"></td><td>Qty(<?php echo $data['qty']; ?>)<br>Rp.<?php echo money($hasil['grandTotal']); ?>
 								</td></tr>
 							<?php } ?>
 							</tbody></table>
