@@ -841,10 +841,10 @@ ul.list-group:after {
   </div></a>
   <a href="https://myacico.co.id/product/detail/1065088/XIAOMI-Mi-A1-64GB/4GB---Gold">
   <div style='float:left;width:auto; margin-right:5px'>
-    <img src='<?php echo base_url('images/general/xiaomi.jpg');?>' border='0' width='100%' height='190px'>
+    <img src='<?php echo base_url('images/general/xiaomi_copy.jpg');?>' border='0' width='auto' height='190px'>
   </div></a>
   <div style='float:left;width:auto'>
-    <img src='<?php echo base_url('images/general/oppo.jpg');?>' border='0' width='100%' height='190px'>
+    <img src='<?php echo base_url('images/general/oppo_copy.jpg');?>' border='0' width='auto' height='190px'>
   </div>
   <div style='clear:both'></div>
 
