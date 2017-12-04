@@ -202,6 +202,8 @@ class Checkout extends Web_private {
 //echo"<pre>"; print_r($hasil_ship);
     // Shipping Address
 		$get_shipping = get_cookie('shipping_address_id');
+
+		//echo"$get_shipping"; die();
 		if($get_shipping)
 		{
 
