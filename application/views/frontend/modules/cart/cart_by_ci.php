@@ -97,7 +97,7 @@ textarea#styled {
 }*/
 </style>
 <div class="container">
-<br><p align='center'><img src="<?php //echo base_url('images/general/step1.jpg'); ?>" border="0"></p>
+<br><p align='center'><img src="<?php echo base_url('images/general/step1.jpg'); ?>" border="0"></p>
 <!-- <div class='line-cart'>
 
 </div> -->
