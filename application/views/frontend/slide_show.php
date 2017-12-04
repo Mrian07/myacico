@@ -75,7 +75,7 @@ h1, h2, h3 {
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-7" style='padding-right: 0 !important; margin: 0 !important;'>
+    <div class="col-xs-7" style='padding-right: 0'>
       <!-- Slider 1 -->
       <div class="slider" id="slider1">
           <!-- Slides -->
@@ -90,7 +90,8 @@ h1, h2, h3 {
               $active='';
             }
             ?>
-              <div style="background-image:url(<?php echo $itemslide['imageurl']; ?>)" class="img-responsive"></div>
+            <div><a href="<?php echo base_url('product/detail/'. $itemslide['product_id'].'/'. $itemslide['alias']);?>"><img src='<?php echo $itemslide['imageurl']; ?>'class="img-responsive"></div></a>
+              <!-- <div style="background-image:url(<?php // echo $itemslide['imageurl']; ?>)" class="img-responsive"></div></a> -->
             <?php $n++; } ?>
 
           <!-- The Arrows -->
