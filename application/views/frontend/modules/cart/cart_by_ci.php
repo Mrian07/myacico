@@ -237,6 +237,7 @@ textarea#styled {
       <div class='box-ship-info-adrs'>
         Pilih Alamat Lain</br>
         <select name='selectShip' id='selectShip' class="form-control" onchange="pilihAlamat(this);">
+          <option value=''>-Pilih-</option>
           <?php foreach($hasil_ship as $dasa_ship){
             $almt_shipping =$dasa_ship['name'].", ".$dasa_ship['address_name'].", ".$dasa_ship['address1']." ".$dasa_ship['city_name']." ".$dasa_ship['postal'];
             if($shipping_address_id==$dasa_ship['id']){
