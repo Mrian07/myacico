@@ -323,7 +323,7 @@
           <!-- <p class="dark-red pricelist text-center">
           Rp.<?php echo money($data['pricelist']); ?></p> -->
 			<div style="height: 50px">
-			
+
 				<?php if ($data['specialPrice'] > 0) { ?>
 					<span class="strike-throgh">Rp <?php echo money($data['pricelist']); ?></span>
 					<span class="lead dark-red pricelist" style="font-size: 1.1em;">
@@ -331,7 +331,7 @@
 					</span>
 					<div>Hemat
 						<span class="lead dark-red pricelist" style="font-size: 1.1em;">
-							Rp <?php echo money($data['pricelist'] - ($data['specialPrice'])); ?> 
+							Rp <?php echo money($data['pricelist'] - ($data['specialPrice'])); ?>
                                                                                 (<?php echo $data['discount']; ?>%)
 						</span>
 					</div>
@@ -475,7 +475,7 @@ $(document).ready(function() {
 	//console.log(arrPath[4]);
 	 var cari = arrPath[3];
                 cari = cari.replace(/%20/g," ");
-                
+
 		$('#search-key').html(cari);
 	if (arrPath.length == 4) {
 		console.log("arrPath = 4");
