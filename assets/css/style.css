@@ -27,6 +27,10 @@
   /*font-family: "MyriadPro";*/
 }
 
+.top-bg{
+  background-image: url(../../images/general/bg-top_sub.jpg);
+}
+
 .my-btn-logout{
   padding-left:20px;
   background: #f0c14c;
@@ -330,7 +334,10 @@
 }
 
 .link-head{
-  margin-left:298px
+  margin-left:298px;
+  margin-top:40px;
+  position: absolute;
+  /*font-family: "Helvetica Neue";*/
 }
 
 @media screen and (max-width: 1680px) {

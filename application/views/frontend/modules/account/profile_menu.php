@@ -1,4 +1,7 @@
-<?php if(isset($user)){ ?>
+<?php if(isset($user)){
+    // cart di ci perlu di destroy setelah login
+    $this->cart->destroy();
+  ?>
   <div class='side-profile-border-button'>
     <div class='my-btn-logout logout'>Log out</div>
   </div>

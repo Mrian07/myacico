@@ -47,7 +47,7 @@ cursor:pointer;
 
 	<div class='my-nav'>
 <!-- Start Navigation -->
-    <nav class="navbar navbar-default navbar-custom bootsnav" style='width100%; margin: 0 auto;'>
+    <nav class="navbar navbar-default navbar-custom bootsnav" style='width:100%;'>
 			<!-- Start Header Navigation -->
             <!-- End Header Navigation -->
 
@@ -69,7 +69,7 @@ cursor:pointer;
                      ?>
 									<li class="dropdown megamenu-fw nav-show-desktop nav-garis">
 										<?php echo anchor('#', '<img src="'.$dataNav['iconurl'].'" border="0" height="20"> '.$nav_name, array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
-										<ul class="dropdown-menu megamenu-content" role="menu">
+                                                                            <ul  class="dropdown-menu megamenu-content" role="menu">
 											<li>
 												<div>
 													<div class="row" style='color:#000000'>
@@ -85,8 +85,10 @@ cursor:pointer;
 
                                  ?>
 																<div class="col-menu col-md-2">
-                                  <?php if($imgLoop<=5){?>
-                                  <img src='<?php echo$dataNavChild['imageurl']; ?>' height='100px' border='0'><br>
+                                  <?php if($imgLoop<=5){
+                                    $imgP = "<img src=".$dataNavChild['imageurl']." height='100px' border='0'>";
+                                    echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $imgP);?>
+                                  <br>
                                   <b><?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $navChildName);?></b><hr>
                                 <?php }else{ ?>
 																	<?php echo anchor(base_url('product/category/'.$dataNavChild['categorySubId'].'/'.$dataNavChild['alias']), $navChildName);?>

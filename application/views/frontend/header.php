@@ -92,60 +92,13 @@ var prod_detail =  localStorage.getItem('product_detail');
 		<link rel="stylesheet" href="<?php echo base_url('date_picker/bootstrap-datetimepicker.min.css');?>" type='text/css'>
 		<!-- e: Datepicker-->
 
-		<style type="text/css">
-			/*#search_keyword_id
-			{
-				padding:10px;
-				font-size:12px;
-			}
-			.productSrc
-			{
-				position:absolute;
-				width:628px;
-				display:none;
-				margin-top:-1px;
-				border-top:0px;
-				overflow:hidden;
-				border-left:1px  #CDCDCD solid;
-				border-right:1px  #CDCDCD solid;
-				background-color: white;
-				z-index: 289;
-			}
-			.show_result
-			{
-				font-family:tahoma;
-				padding:5px;
-				border-bottom:1px #CDCDCD dashed;
-				font-size:12px;
-				z-index: 289;
-			}
-			.show_result:hover
-			{
-				background:#e9e9e8;
-				color:#000000;
-				cursor:pointer;
-			}*/
-			.top-bg2{
-				background-image: url('https://s8.postimg.org/9zlahsmcl/bg_atas_2.png');
-				width: 100%;
-				min-width: 2560px;
-				height: 55px;
-				background-size: contain;
-
-				background-position: 0px 0px;
-				float: left;
-				z-index: -1;
-			}
-		</style>
-
 
     </head>
 
 	<body style='font-weight: normal;' ng-app="myApp">
 
 
-
-					<div class="top-bg2"></div>
+					<div class="top-bg"><img src='<?php echo base_url('images/general/bg-top_main.jpg');?>' border='0'></div>
 
 
 
@@ -153,7 +106,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
 
 				<div class="col-xs-7">
-					<div class='link-head' style='margin-top:40px; position: absolute'>
+					<div class='link-head'>
 						<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_produck, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_carabeli, array('class'=>'btn-nav-head')); ?>

@@ -240,16 +240,16 @@
                 <div class="form-group" style="display:none" id="postal_box">
          <label><?php echo $lang_PostCode; ?>*</label>
          <div id="postal"></div>
-         <input type='text' id = 'kdpos'  class='form-control mandatory' maxlength="5"/>
+         <input type='number' id ='kdpos' maxlength="5" class='form-control mandatory' maxlength="5"/>
            <!--<select type="text" name="postal" id="postal" class="form-control mandatory" ></select>-->
          </div>
                 <div class="form-group">
                 <label>Handphone*</label>
-                  <input type="text" id = "phone"name="phone" class="form-control mandatory" />
+                  <input type="number" id = "phone"name="phone" maxlength="16" class="form-control mandatory" />
                 </div>
                 <div class="form-group">
                 <label>Telepon</label>
-                  <input type="text" id = "phone2"name="phone2" class="form-control"/>
+                  <input type="number" id = "phone2"name="phone2" maxlength="16" class="form-control"/>
                 </div>
 
                 <div class="clearfix"></div>
@@ -404,28 +404,28 @@ $('#submit_btn').attr('disabled','disabled');
         data.isremitto = isremitto;
 
         if(name ===''){
-          $.alert({title:'Alert', content: ' name tidak boleh kosong'});
+          $.alert({title:'Alert', content: ' Nama tidak boleh kosong'});
           $('#spinner_img').hide();
           $('#submit_btn').val('Kirim').removeClass('disabled');
           $('.mandatory').prop('disabled', false);
           return false;
         }
         if(phone ===''){
-          $.alert({title:'Alert', content: ' phone tidak boleh kosong'});
+          $.alert({title:'Alert', content: 'Nomor handphone tidak boleh kosong'});
           $('#spinner_img').hide();
           $('#submit_btn').val('Kirim').removeClass('disabled');
           $('.mandatory').prop('disabled', false);
           return false;
         }
-        if(phone2 ===''){
-          $.alert({title:'Alert', content: ' Telepon tidak boleh kosong'});
-          $('#spinner_img').hide();
-          $('#submit_btn').val('Kirim').removeClass('disabled');
-          $('.mandatory').prop('disabled', false);
-          return false;
-        }
+        // if(phone2 ===''){
+        //   $.alert({title:'Alert', content: ' Telepon tidak boleh kosong'});
+        //   $('#spinner_img').hide();
+        //   $('#submit_btn').val('Kirim').removeClass('disabled');
+        //   $('.mandatory').prop('disabled', false);
+        //   return false;
+        // }
         if(address_name ===''){
-          $.alert({title:'Alert', content: 'address_name tidak boleh kosong'});
+          $.alert({title:'Alert', content: 'Nama alamat tidak boleh kosong'});
           $('#spinner_img').hide();
           $('#submit_btn').val('Kirim').removeClass('disabled');
           $('.mandatory').prop('disabled', false);
