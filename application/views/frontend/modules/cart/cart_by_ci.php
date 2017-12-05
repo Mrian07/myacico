@@ -80,10 +80,7 @@ textarea#styled {
   padding:10px;
 }
 
-.checkout-button:hover{
-  background-color: #ca3833;
-  color:#f1eeee;
-}
+
 </style>
 
 
