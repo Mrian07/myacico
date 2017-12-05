@@ -125,7 +125,17 @@ var prod_detail =  localStorage.getItem('product_detail');
 				color:#000000;
 				cursor:pointer;
 			}*/
+			.top-bg2{
+				background-image: url('https://s8.postimg.org/9zlahsmcl/bg_atas_2.png');
+				width: 100%;
+				min-width: 2560px;
+				height: 55px;
+				background-size: contain;
 
+				background-position: 0px 0px;
+				float: left;
+				z-index: -1;
+			}
 		</style>
 
 
@@ -134,16 +144,9 @@ var prod_detail =  localStorage.getItem('product_detail');
 	<body style='font-weight: normal;' ng-app="myApp">
 
 
-			<div>
-				<a href="https://myacico.co.id/product/category/1000553/Perlengkapan-Kantor">
-		    <img src='<?php echo base_url('images/general/bg_atas_2.png'); ?>' style="background-color: #F6F6F6;
-				text-align: left;
-				background-position: top left;
-				height: 70px;
-				background-repeat: no-repeat;
-				background-size: 1920px;
-				min-width: 1000px;">
-			</div></a>
+
+					<div class="top-bg2"></div>
+
 
 
 			<div class='row'>

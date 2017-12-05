@@ -164,8 +164,6 @@
 
     <div class='box-ship'>
 
-
-
 	<div class="row" ng-controller="cartCnt">
 		<div class="col-xs-8">
 			<div class="panel panel-default">
@@ -188,11 +186,13 @@
                   <input type="hidden" id="isshipto" name="isshipto" value="Y" />
                   <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
                   <input type="hidden" id="isremitto" name="isremitto" value="N" />
+                  <input type="hidden" id="newAddress" name="newAddress" value="N" />
                 <?php }else{?>
                   <input type="hidden" id="isbillto" name="isbillto" value="Y" />
       						<input type="hidden" id="isshipto" name="isshipto" value="Y" />
       						<input type="hidden" id="ispayfrom" name="ispayfrom" value="Y" />
       						<input type="hidden" id="isremitto" name="isremitto" value="Y" />
+                  <input type="hidden" id="newAddress" name="newAddress" value="Y" />
                 <?php  } ?>
 
                 <div class="form-group">
@@ -382,41 +382,9 @@ $('#submit_btn').attr('disabled','disabled');
         var ispayfrom = $("#ispayfrom").val();
         var isremitto = $("#isremitto").val();
 
-        if(name ===''){
-          $.alert({title:'Alert', content: ' name tidak boleh kosong'});
-          $('#spinner_img').hide();
-          $('#submit_btn').val('Kirim').removeClass('disabled');
-          $('.mandatory').prop('disabled', false);
-          return false;
-        }
-        if(phone ===''){
-          $.alert({title:'Alert', content: ' phone boleh kosong'});
-          $('#spinner_img').hide();
-          $('#submit_btn').val('Kirim').removeClass('disabled');
-          $('.mandatory').prop('disabled', false);
-          return false;
-        }
-        if(phone2 ===''){
-          $.alert({title:'Alert', content: 'Telephone boleh kosong'});
-          $('#spinner_img').hide();
-          $('#submit_btn').val('Kirim').removeClass('disabled');
-          $('.mandatory').prop('disabled', false);
-          return false;
-        }
-        if(address_name ===''){
-          $.alert({title:'Alert', content: 'Nama Alamat boleh kosong'});
-          $('#spinner_img').hide();
-          $('#submit_btn').val('Kirim').removeClass('disabled');
-          $('.mandatory').prop('disabled', false);
-          return false;
-        }
-        if(address1 ===''){
-          $.alert({title:'Alert', content: 'Alamat boleh kosong'});
-          $('#spinner_img').hide();
-          $('#submit_btn').val('Kirim').removeClass('disabled');
-          $('.mandatory').prop('disabled', false);
-          return false;
-        }
+
+        var newAddress = $("#newAddress").val();
+
         //var fl=document.signup;
         //    var data = $(this).serialize();
         //     return alert(data);die();
@@ -470,13 +438,7 @@ $('#submit_btn').attr('disabled','disabled');
           $('.mandatory').prop('disabled', false);
           return false;
         }
-        if(postal ===''){
-          $.alert({title:'Alert', content: 'postal tidak boleh kosong'});
-          $('#spinner_img').hide();
-          $('#submit_btn').val('Kirim').removeClass('disabled');
-          $('.mandatory').prop('disabled', false);
-          return false;
-        }
+
 
 
     //return alert(data.phone);die();
@@ -488,7 +450,7 @@ $('#submit_btn').attr('disabled','disabled');
         //     content: 'Alamat Baru Berhasil di tambahkan',
         //    });
         //      alert(r.message);
-        console.log('OK:', r.status);
+        //console.log('OK:', r.status);
     		// $("#name").val(null);
     		// $("#phone").val(null);
     		// $("#phone2").val(null);
@@ -503,7 +465,12 @@ $('#submit_btn').attr('disabled','disabled');
     		// $("#ispayfrom").val(null);
     	  // $("#isremitto").val(null);
         // window.location.replace(base_url+"checkout/dataShipping");
-        window.location.replace("<?php echo base_url('checkout/addressbook/1');?>");
+        if(newAddress=='Y'){
+          window.location.replace("<?php echo base_url('checkout/cart');?>");
+        }else{
+          window.location.replace("<?php echo base_url('checkout/addressbook/1');?>");
+        }
+
     };
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');

@@ -417,6 +417,8 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_company'] = $this->lang->line('f_company');
     $this->data['lang_msg'] = $this->lang->line('f_msg');
     $this->data['lang_btn_send'] = $this->lang->line('f_btn_send');
+    $this->data['lang_aftersale_baner'] = $this->lang->line('f_aftersale_baner');
+    $this->data['lang_aftersale_bawah'] = $this->lang->line('f_aftersale_bawah');
 
 
 

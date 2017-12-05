@@ -12,11 +12,9 @@
         	<thead class="cf">
 
         	  <tr>
-
-                        <th><?php echo $lang_wishlist_pic;?></th>
-        		<th><?php echo $lang_wishlist_name;?></th>
-        		<th><?php echo $lang_wishlist_del;?></th>
-
+              <th><?php echo $lang_wishlist_pic;?></th>
+              <th><?php echo $lang_wishlist_name;?></th>
+              <th><?php echo $lang_wishlist_del;?></th>
         	  </tr>
 
         	</thead>
@@ -25,9 +23,8 @@
 
         			<tr>
                 <p class="link-nmp box-title" ></p>
-        				<td data-title="Image"><img src="<?php  echo $items['imageUrl'];?>" height="100"></td>
+        				<td data-title="Image"><?php if($items['imageUrl']){ ?><img src="<?php  echo $items['imageUrl'];?>" height="100"><?php }else{echo"-";} ?></td>
                 <td data-title="Nama"><a href="<?php echo base_url('product/detail/'. $items['productID'].'/'. $items['name']);?>"><?php echo $items['name']; ?></a></td>
-
         				<td data-title="Hapus"><a href='#' onClick="dellWishlist('<?php echo $items['productID']; ?>','<?php echo $items['name']; ?>')" class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></a></td>
         			</tr>
         		<?php endforeach; ?>

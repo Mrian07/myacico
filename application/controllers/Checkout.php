@@ -202,6 +202,7 @@ class Checkout extends Web_private {
 		$hasil_ship = json_decode($kontenShip, true);
 //echo"<pre>"; print_r($hasil_ship);
     // Shipping Address
+		$get_shipping ='';
 		$get_shipping = get_cookie('shipping_address_id');
 
 		//echo"$get_shipping"; die();
@@ -258,7 +259,7 @@ class Checkout extends Web_private {
 
 
 		//echo"<pre>"; print_r($hasil_kurir); die();
-                $domain = domain();
+    $domain = domain();
 		$this->data['title_web'] = "Cart - ".$domain;
 
 		}
@@ -320,7 +321,7 @@ class Checkout extends Web_private {
 
 	public function addressbook()
 	{
-             $domain = domain();
+    $domain = domain();
 		$lang = get_cookie('lang');
 		$flag = $this->uri->segment(3);
 		if($flag=='1'){
