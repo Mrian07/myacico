@@ -324,126 +324,29 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     </tr>
 
 
-    <tr>
-
-      <th> <?php
-      if(!empty($specification)){
-            echo $specification;
-
-      }else{
-      $specification = '';
-      }
-
-
-       ?>  </th>
-      <td><?php
-      if(!empty($value)){
-            echo $value;
-
-      }else{
-      $value = '';
-      }
-
-
-       ?></td>
-    </tr>
-    <tr>
-      <th> <?php
-      if(!empty($attribute)){
-            echo $attribute;
-
-      }else{
-      $attribute = '';
-      }
-
-
-       ?>  </th>
-      <td>
-
-        <?php
-        if(!empty($attribute3)){
-              echo $attribute3;
-
-        }else{
-        $attribute3 = '';
+         <!-- -->
+     
+     <?php
+     $loop=0;
+        if (isset($specification[1])) {
+          foreach ($specification as $spek) {
+      ?>
+         <tr>
+          <th>
+      <?php echo $spek;?>
+        </th>
+        
+        <td><?php echo $value[$loop].'</td>';
+        $loop++;
+        ?>
+            </tr>
+    <?php
         }
-
-
-         ?>  </th>
-        </td>
-    </tr>
-    <tr>
-      <th> <?php
-
-      if(!empty($attribute4)){
-            echo $attribute4;
-
-      }else{
-      $attribute4 = '';
-      }
-
-
-?>
-
-       </th>
-      <td> <?php
-      if(!empty($value1)){
-            echo $value1;
-
-      }else{
-      $value1 = '';
-      }
-
-       ?>
-
-
-      </td>
-    </tr>
-    <tr>
-      <th> <?php
-      if(!empty($attribute5)){
-            echo $attribute5;
-
-      }else{
-      $attribute5 = '';
-      }
-
-
-       ?>  </th>
-      <td>
-      <?php
-
-              if(!empty($value2)){
-                    echo $value2;
-
-              }else{
-          $value2 = '';
-              }
-       ?>
-      </td>
-    </tr>
-    <tr>
-      <th><?php
-
-      if(!empty($attribute6)){
-            echo $attribute6;
-
-      }else{
-  $attribute6 = '';
-      }
-
-
-       ?>  </th>
-      <td><?php
-
-              if(!empty($value3)){
-                    echo $value3;
-
-              }else{
-          $value3 = '';
-              }
-       ?></td>
-    </tr>
+        
+          }
+      ?>
+    
+   
   </table>
 
   </div>
