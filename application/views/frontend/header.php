@@ -190,6 +190,9 @@ var prod_detail =  localStorage.getItem('product_detail');
 						 </div>
 						 <div style='float:right; width:160px; text-align:center; border:0px;' >
 							 <div class='row' style='margin-top:0px; padding:0px;'>
+
+								 <div class="dropdown-profile">
+
 								 <div class="col-xs-4" style='margin-top:5px; text-align: right'>
 									   <!-- <div class="buktiTrans"></div> -->
 										 <!-- <?php  echo " <img src='$myavatar' width='25' border='0'>"; ?> -->
@@ -237,14 +240,32 @@ var prod_detail =  localStorage.getItem('product_detail');
 														<?php } ?>
 													</script>
 									 <div style='margin-top:-8px; '>
-										 <?php if(isset($user)){ ?>
-											 <b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
-											 <b><font color='red'><?php echo anchor('#', 'Log out', array('class'=>'logout btn-nav-black'));?></font></b>
+
+										 <b><font color='red'><?php echo anchor('account', 'Account & List', array('class'=>'btn-nav-red'));?></font></b>
+											<div class="dropdown-profile-content" style='padding:10px;'>
+											 <?php $this->load->view('frontend/modules/account/profile_menu.php'); ?>
+											</div>
+
+										 <!-- <?php if(isset($user)){ ?>
+
+					 								 	<b><font color='red'><?php echo anchor('account', 'Account & List', array('class'=>'btn-nav-red'));?></font></b>
+					 									 <div class="dropdown-profile-content" style='padding:10px;'>
+					 										<?php $this->load->view('frontend/modules/account/profile_menu.php'); ?>
+					 									 </div>
+
+
 										 <?php }else{ ?>
+
+
+
 											 <b><font color='red'><?php echo anchor('customer/signIn','Log in', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create',$lang_sign, array('class'=>'btn-nav-black')); ?></font></b>
-										 <?php } ?>
+										 <?php } ?> -->
 									 </div>
 								 </div>
+
+								</div>
+
+
 							 </div>
 						 </div>
 						 <!-- <div style='float:right; width: 80px; text-align: center; border-right:1px solid #4d4d4d; margin-top:8px;'> -->
