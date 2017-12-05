@@ -171,6 +171,10 @@
 			font-weight: bold;
 			color: #666;
 		}
+		.method-kupon{
+			margin-top:40px;
+			color: #666;
+		}
 		.segmen{
 			float: left;
 			width: 10%;
@@ -310,6 +314,23 @@
 		    z-index: -1;
 		  }
 
+			.my-btn-kupon{
+		      padding: 10px 10px;
+		      border: none;
+		      border-radius: 4px;
+		      background-color: #403a35;
+		  	  color:#ffffff;
+		  }
+
+		  .my-field-kupon{
+		  	width: 100%;
+		      padding: 6px 18px;
+		      margin: 8px 0;
+		      box-sizing: border-box;
+		  	background: #f2f1f1;
+		  	border:0px;
+		  	border-radius: 4px 0px 0px 4px;
+		  }
 		</style>
     <div class="container">
 
@@ -386,6 +407,16 @@
 			  					<img class="imgs" src="https://myacico.co.id/images/general/p-visa-small.jpg">
 			  					<img class="imgs" src="https://myacico.co.id/images/general/ico_bank_02.png">
 			  				</div><br><br>
+						</div>
+
+						<div align="left" class="method-kupon">
+							<b>PUNYA KODE PROMO ?</b><br>
+							<div class="input-group">
+								<input type="text" id="email1" name="email1" class="my-field-kupon" name="x" placeholder="">
+								<span class="input-group-btn">
+										<input type="button" id="submit_btn1" class="btn btn-default my-btn-kupon" value="GUNAKAN KODE">
+								</span>
+							</div>
 						</div>
 					</div>
 
