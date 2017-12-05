@@ -501,7 +501,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <br><br>
 
 
-<div class="container">
+<!--<div class="container">-->
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK SEJENIS
   </div>
@@ -636,7 +636,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
   <?php $n++;  } ?>
 </div>
 </div>
-</div>
+<!--</div>-->
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/foundation.min.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/setup.js');?>"></script>
 
