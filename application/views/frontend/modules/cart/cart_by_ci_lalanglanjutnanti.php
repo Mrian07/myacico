@@ -31,6 +31,13 @@
   /*background:#e9e8e7;*/
 }
 
+.box-com2{
+  float:right;
+  padding-top:10px;
+  width:540px;
+  /*background:#e9e8e7;*/
+}
+
 textarea#styled {
 	width: 500px;
 	height: 120px;
@@ -72,15 +79,17 @@ textarea#styled {
 	/*height: 30px;*/
 	float: right;
 	padding: 5px;
-
-  background: transparent;
-  border: 1px;
+	background-color: red;
+	border-radius: 10px;
 	color: white;
   font-size:15px;
   padding:10px;
 }
 
-
+.checkout-button:hover{
+  background-color: #ca3833;
+  color:#f1eeee;
+}
 </style>
 
 
@@ -215,6 +224,23 @@ textarea#styled {
 
     <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1150px;margin-bottom:40px;'>KERANJANG BELANJA</div>
     <div class='box-ship'>
+
+      <?php echo anchor('checkout/addressbook','Tambah Alamat Baru', array('class'=>'btn-add-adrs')); ?>
+      <br>
+      <div class='box-ship-info'>
+        Pilih Alamat Lain</br>
+        <select name='selectShip' id='selectShip' class="form-control" onchange="pilihAlamat(this);">
+          <?php foreach($hasil_ship as $dasa_ship){
+            $almt_shipping =$dasa_ship['name'].", ".$dasa_ship['address_name'].", ".$dasa_ship['address1']." ".$dasa_ship['city_name']." ".$dasa_ship['postal'];
+            if($shipping_address_id==$dasa_ship['id']){
+              echo"<option value=".$dasa_ship['id']." selected>".$almt_shipping."</option>";
+            }else{
+              echo"<option value=".$dasa_ship['id'].">".$almt_shipping."</option>";
+            }
+
+          }?>
+        </select>
+      </div>
       <div class='box-ship-info'>
         Kurir Pengiriman</br>
         <select name='kurir' id='kurir' onchange="pilihKurir(this);" class="form-control">
@@ -249,34 +275,22 @@ textarea#styled {
       <div class='box-ship-info'>
         Ongkos Kirim</br>Rp.<span class='amount'>-</span>
       </div>
-      <div class='box-ship-info'>
-        Pilih Alamat Lain</br>
-        <select name='selectShip' id='selectShip' class="form-control" onchange="pilihAlamat(this);">
-          <?php foreach($hasil_ship as $dasa_ship){
-            $almt_shipping =$dasa_ship['name'].", ".$dasa_ship['address_name'].", ".$dasa_ship['address1']." ".$dasa_ship['city_name']." ".$dasa_ship['postal'];
-            if($shipping_address_id==$dasa_ship['id']){
-              echo"<option value=".$dasa_ship['id']." selected>".$almt_shipping."</option>";
-            }else{
-              echo"<option value=".$dasa_ship['id'].">".$almt_shipping."</option>";
-            }
 
-          }?>
-        </select>
-      </div>
       <div class='box-ship-info' style='text-align:right'>
-        <?php echo anchor('checkout/addressbook','Tambah Alamat Baru', array('class'=>'btn-add-adrs')); ?>
+
       </div>
       <div style='clear:both'></div>
-      <div class='box-com'>
-        Catatan</br>
-        <textarea id='styled'></textarea>
-      </div>
       <div class='box-com'>
         Alamat Tujuan</br>
         <div class="row" id='box-adrs'>
           <div class="col-xs-12 alamat" id='box-shadow'><?php  if(isset($alamat_shipping)){ echo$alamat_shipping; }else{echo"-";} ?></div>
         </div>
       </div>
+      <div class='box-com2'>
+        Catatan</br>
+        <textarea id='styled'></textarea>
+      </div>
+
       <div style='clear:both'></div>
   </div>
 
@@ -289,7 +303,7 @@ textarea#styled {
     <div style='clear:both'></div>
   </div>
 
-  <button onclick='next()' class="checkout-button"> <img src="https://s8.postimg.org/mgry4ywxx/Artboard_1-100.jpg"> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
+  <button onclick='next()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b>BAYAR</b> SEKARANG</span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
   <div style='clear:both'></div>
 </div>
 

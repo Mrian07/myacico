@@ -205,8 +205,11 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <div class="clearfix"></div>
       </div>
 
-      <button type="button" class="btn btn-danger btn-lg" style="border-radius: 5px; padding: 6px 60px; margin-bottom: 7px; background-color: #c81423"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" style="font-size:15px;" aria-hidden="true"> </i> <b style="font-size:15px;"> BELI</b> SEKARANG</button>
-      <button type="button" class="btn btn-danger btn-lg" style="border-radius: 5px; padding: 6px 24px; margin-bottom: 7px; background-color: #c81423"  onClick="addToCart1('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" style="font-size:15px;" aria-hidden="true"> </i> <b style="font-size:15px;"> Tambahkan </b>Ke Keranjang</button>
+      <button type="button"style="margin-bottom: 7px; margin-left:-8px; background: transparent;
+    border: 1px"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"<b style="font-size:15px;"><img src="https://s8.postimg.org/w01my4un9/Artboard_3-100.jpg"></button>
+      <button type="button"style="margin-bottom: 7px; margin-left:-8px; background: transparent;
+    border: 1px"  onClick="addToCart1('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"<b style="font-size:15px;"><img src="https://s8.postimg.org/dx8k77wb9/Artboard_5-100.jpg"></button>
+
 
       <?php
         if($isWishList =='Y')

@@ -27,6 +27,31 @@
   /*font-family: "MyriadPro";*/
 }
 
+.top-bg{
+  background-image: url(../../images/general/bg-top_sub.jpg);
+}
+
+.my-btn-logout{
+  padding-left:20px;
+  background: #f0c14c;
+  border: 1px solid #b0820f;
+  color:#111111;
+  border-radius:5px;
+}
+
+.my-btn-logout:hover{
+  padding-left:20px;
+  background: #f7dd9c;
+  border: 1px solid #b0820f;
+  cursor:pointer;
+}
+
+.side-profile-border-button{
+  padding:10px;
+  border-bottom:1px solid #eeeeee;
+  text-align: center;
+}
+
 /*s: search*/
 .img-src{
   height: 30px;
@@ -1155,6 +1180,91 @@ a:hover.my-info {
       color: #565658;
       font-weight: bold;
   }
+
+  /*Drop profile*/
+
+.dropbtn-profile {
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  margin:0px;
+  right: 0; left: auto;
+  background-color: #ffffff;
+}
+
+.dropdown-profile {
+  position: relative;
+  display: inline-block;
+  right: 0; left: auto;
+  /*background:#eeeeee;*/
+  width:160px;
+  border: 1px solid #ffffff;
+  /*border-radius: 1px solid #eeeeee;*/
+}
+
+.dropdown-profile:hover {
+  border: 1px solid #eeeeee;
+}
+
+.dropdown-profile-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 350px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding:10px;
+  z-index: 999999;
+  right: 0; left: auto;
+  font-size: 13px;
+
+}
+
+.dropdown-profile-content:after, .arrow_box:before {
+  bottom: 100%;
+  left: 90%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.dropdown-profile-content:after {
+border-color: rgba(255, 255, 255, 0);
+border-bottom-color: #ffffff;
+border-width: 10px;
+margin-left: -10px;
+}
+.dropdown-profile-content:before {
+border-color: rgba(153, 178, 194, 0);
+border-bottom-color: #99b2c2;
+border-width: 11px;
+margin-left: -11px;
+
+}
+
+
+.dropdown-profile-content a {
+  color: black;
+  padding: 0px;
+  text-decoration: none;
+  /*display: block;*/
+  right: 0; left: auto;
+
+}
+
+.dropdown-profile-content a:hover {
+  color:#e47911;
+}
+
+.dropdown-profile:hover .dropdown-profile-content {
+  display: block;
+}
+
+.dropdown-profile:hover .dropbtn-profile {
+  background-color: #ffffff;
+}
 
   /*Drop Basket*/
 
