@@ -240,16 +240,16 @@
                 <div class="form-group" style="display:none" id="postal_box">
          <label><?php echo $lang_PostCode; ?>*</label>
          <div id="postal"></div>
-         <input type='text' id = 'kdpos'  class='form-control mandatory' maxlength="5"/>
+         <input type='number' id ='kdpos' maxlength="5" class='form-control mandatory' maxlength="5"/>
            <!--<select type="text" name="postal" id="postal" class="form-control mandatory" ></select>-->
          </div>
                 <div class="form-group">
                 <label>Handphone*</label>
-                  <input type="text" id = "phone"name="phone" class="form-control mandatory" />
+                  <input type="number" id = "phone"name="phone" maxlength="16" class="form-control mandatory" />
                 </div>
                 <div class="form-group">
                 <label>Telepon</label>
-                  <input type="text" id = "phone2"name="phone2" class="form-control"/>
+                  <input type="number" id = "phone2"name="phone2" maxlength="16" class="form-control"/>
                 </div>
 
                 <div class="clearfix"></div>
