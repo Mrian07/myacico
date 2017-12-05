@@ -73,10 +73,12 @@
 					  <select name="village_id" id="village_id" class="form-control mandatory"></select>
 					</div>
 
-					<div class="form-group">
-				 <label><?php echo $lang_PostCode; ?>*</label>
-					 <input type="text" name="postal" maxlength="5" id="postal" class="form-control mandatory" >
-				 </div>
+					<div class="form-group" style="display:none" id="postal_box">
+	 <label><?php echo $lang_PostCode; ?>*</label>
+	 <div id="postal"></div>
+	 <input type='text' id = 'kdpos'  class='form-control mandatory' maxlength="5"/>
+		 <!--<select type="text" name="postal" id="postal" class="form-control mandatory" ></select>-->
+	 </div>
 					<div class="form-group">
 					<label>Handphone*</label>
 						<input type="text" maxlength="12" id = "phone"name="phone" class="form-control mandatory" />
@@ -120,14 +122,27 @@ $('#village_id').change(function () {
 
 function get_village(){
   $("#village_box").slideDown();
-  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_postal);
   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
 
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
     });
-       $("#village_id").prop('disabled', false);
+       $("#village_id").prop('disabled', false).change(get_postal);
   }, "json" );
+}
+function get_postal(){
+	$("#postal_box").slideDown();
+	//$("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+	$.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+			// r.forEach(function(o){
+	 //   $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+	//$("#postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+$("#kdpos").val(r[0]['postal']);
+					 // console.log('23',o.postal);
+	 // });
+		$("#postal").prop('disabled', false);
+	}, "json" );
 }
 
 function get_distric(){
@@ -196,8 +211,7 @@ $(document).ready(function() {
         var address_name = $("#address_name").val();
         var address1 = $("#address1").val();
 
-        var address3 = $("#address3").val();
-        var address4 = $("#address4").val();
+
         var postal = $("#postal").val();
         var district_id = $("#district_id").val();
         var village_id = $("#village_id").val();
@@ -206,6 +220,29 @@ $(document).ready(function() {
         var ispayfrom = $("#ispayfrom").val();
         var isremitto = $("#isremitto").val();
 
+				if(address_name ===''){
+					$.alert({title:'Alert', content: 'Nama Alamat tidak boleh kosong'});
+					$('#spinner_img').hide();
+					$('#submit_btn').val('Kirim').removeClass('disabled');
+					$('.mandatory').prop('disabled', false);
+					return false;
+				}
+				if(phone ===''){
+					$.alert({title:'Alert', content: ' phone tidak boleh kosong'});
+					$('#spinner_img').hide();
+					$('#submit_btn').val('Kirim').removeClass('disabled');
+					$('.mandatory').prop('disabled', false);
+					return false;
+				}
+
+
+				if(address1 ===''){
+					$.alert({title:'Alert', content: 'Alamat tidak boleh kosong'});
+					$('#spinner_img').hide();
+					$('#submit_btn').val('Kirim').removeClass('disabled');
+					$('.mandatory').prop('disabled', false);
+					return false;
+				}
     //var fl=document.signup;
 //    var data = $(this).serialize();
 //     return alert(data);die();
@@ -215,8 +252,7 @@ data.phone2 = phone2;
 data.address_name = address_name;
 data.address1 = address1;
 
-data.address3 = "address3";
-data.address4 = "address4";
+
 data.postal = postal;
 data.district_id = district_id;
 data.village_id = village_id;
@@ -242,7 +278,7 @@ data.isremitto = 'Y';
     //return alert(data.phone);die();
      var success = function(r){
          $('#spinner_img').hide();
-  $('#submit_btn').val('Kirim').removeClass('disabled');
+  $('#submit_btn').val('Save').removeClass('disabled');
 //         $.alert({
 //     title: 'Alert!',
 //     content: 'Alamat Baru Berhasil di tambahkan',

@@ -434,7 +434,7 @@ if($saw==Null)
                 </div>
               </div>
               <div class="col-xs-3"><center>
-                
+
                    <?php if ($data['specialPrice'] > 0) { ?>
 					<span class="strike-throgh">Rp <?php echo money($data['pricelist']); ?></span>
 					<span class="lead dark-red pricelist" style="font-size: 1.1em;">
@@ -442,7 +442,7 @@ if($saw==Null)
 					</span>
 					<div>Hemat
 						<span class="lead dark-red pricelist" style="font-size: 1.1em;">
-							Rp <?php echo money($data['pricelist'] - ($data['specialPrice'])); ?> 
+							Rp <?php echo money($data['pricelist'] - ($data['specialPrice'])); ?>
                                                                                 (<?php echo $data['discount']; ?>%)
 						</span>
 					</div>
@@ -453,13 +453,16 @@ if($saw==Null)
 						</span>
 					</div>
 				<?php } ?>
-              
-                <?php
-                if($data['stock'] < 1){
-                  echo "<div class='yu'>Stock : Tidak Tersedia</div>";
-                }else{
-                  echo "<div class='yu1'>Stock :  Tersedia</div>";
-                }
+
+                <?php echo "<div class='yu1'>Stock :  Tersedia</div>";
+                //validasi untuk cek stok jika tidak ada
+                  // echo "ini ".$data['stock'];
+                // if($data['stock'] < 1){
+                //   echo "<div class='yu'>Stock : Tidak Tersedia</div>";
+                // }else{
+                //   echo "<div class='yu1'>Stock :  Tersedia</div>";
+                // }
+                //akhir dari validasi stock
                 ?>
                 <br>
                 <center><input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'></center><br>

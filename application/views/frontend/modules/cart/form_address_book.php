@@ -238,9 +238,11 @@
                   <select name="village_id" id="village_id" class="form-control mandatory"></select>
                 </div>
                 <div class="form-group" style="display:none" id="postal_box">
-                  <label><?php echo $lang_PostCode; ?>*</label>
-                  <input type="text" name="postal" id="postal" class="form-control mandatory" />
-                </div>
+         <label><?php echo $lang_PostCode; ?>*</label>
+         <div id="postal"></div>
+         <input type='text' id = 'kdpos'  class='form-control mandatory' maxlength="5"/>
+           <!--<select type="text" name="postal" id="postal" class="form-control mandatory" ></select>-->
+         </div>
                 <div class="form-group">
                 <label>Handphone*</label>
                   <input type="text" id = "phone"name="phone" class="form-control mandatory" />
@@ -343,7 +345,19 @@ function get_region(){
     $("#region_sel").prop('disabled', false).change(get_city);
   }, "json" );
 }
-
+function get_postal(){
+  $("#postal_box").slideDown();
+  //$("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+  $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+      // r.forEach(function(o){
+   //   $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+  //$("#postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+$("#kdpos").val(r[0]['postal']);
+           // console.log('23',o.postal);
+   // });
+    $("#postal").prop('disabled', false);
+  }, "json" );
+}
 
 var data = {};
 
@@ -368,7 +382,9 @@ $('#submit_btn').attr('disabled','disabled');
         var ispayfrom = $("#ispayfrom").val();
         var isremitto = $("#isremitto").val();
 
+
         var newAddress = $("#newAddress").val();
+
         //var fl=document.signup;
         //    var data = $(this).serialize();
         //     return alert(data);die();
@@ -422,13 +438,7 @@ $('#submit_btn').attr('disabled','disabled');
           $('.mandatory').prop('disabled', false);
           return false;
         }
-        if(postal ===''){
-          $.alert({title:'Alert', content: 'postal tidak boleh kosong'});
-          $('#spinner_img').hide();
-          $('#submit_btn').val('Kirim').removeClass('disabled');
-          $('.mandatory').prop('disabled', false);
-          return false;
-        }
+
 
 
     //return alert(data.phone);die();

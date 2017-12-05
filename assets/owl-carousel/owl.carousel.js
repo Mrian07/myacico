@@ -487,7 +487,7 @@ if (typeof Object.create !== "function") {
                     paginationButton.data("owl-page", lastPage === i ? lastItem : i);
                     paginationButton.data("owl-roundPages", counter);
 
-                    base.paginationWrapper.append(paginationButton);
+//                    base.paginationWrapper.append(paginationButton);
                 }
             }
             base.checkPagination();
