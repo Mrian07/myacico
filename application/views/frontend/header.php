@@ -244,7 +244,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 													</script>
 									 <div style='margin-top:-8px; '>
 
-										 <b><font color='red'><?php echo anchor('account', 'Account & List', array('class'=>'btn-nav-red'));?></font></b>
+										 <b><font color='red'>Account & List</font></b>
 											<div class="dropdown-profile-content" style='padding:10px;'>
 											 <?php $this->load->view('frontend/modules/account/profile_menu.php'); ?>
 											</div>
