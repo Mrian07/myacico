@@ -540,7 +540,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           }
           ?>
       </a></p>
-      <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <p class="box-title2" style="color:red;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
   <?php $n++;  } ?>
@@ -585,7 +585,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           }
           ?>
       </a></p>
-      <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <p class="box-title2" style="color:red;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
   <?php $n++;  } ?>
@@ -630,7 +630,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           }
           ?>
       </a></p>
-      <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <p class="box-title2" style="color:red;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
   <?php $n++;  } ?>
@@ -1316,23 +1316,23 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
     $(document).ready(function() {
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
-        items : 6,
-        itemsDesktop : [1199,3],
-        itemsDesktopSmall : [979,3]
+        items : 8,
+        itemsDesktop : [1199,4],
+        itemsDesktopSmall : [979,4]
       });
 
       $("#owl-demo1").owlCarousel({
         autoPlay: 3000,
-        items : 6,
-        itemsDesktop : [1199,3],
-        itemsDesktopSmall : [979,3]
+        items : 8,
+        itemsDesktop : [1199,4],
+        itemsDesktopSmall : [979,4]
       });
 
       $("#owl-demo2").owlCarousel({
         autoPlay: 3000,
-        items : 6,
-        itemsDesktop : [1199,3],
-        itemsDesktopSmall : [979,3]
+        items : 8,
+        itemsDesktop : [1199,4],
+        itemsDesktopSmall : [979,4]
       });
 
   });
