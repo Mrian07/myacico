@@ -465,7 +465,7 @@ if($saw==Null)
                 //akhir dari validasi stock
                 ?>
                 <br>
-                <center><input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'></center><br>
+                <center><input type='hidden' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'></center><br>
 
 
               <div class="btn-group">

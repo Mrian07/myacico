@@ -195,10 +195,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       <div style="margin-bottom: 20px;">
         <span class="pull-left"><b>Jumlah: </b></span>
         <select class='form-control pull-left' id='jmlItem' style='width: 70px; margin-left: 5px; height: 30px;'>
-          <?php $nJml=1; while($nJml<=20){
+          <?php $nJml=1; while($nJml<=3){
             echo"<option value=".$nJml.">".$nJml."</option>";
           $nJml++; }?>
-
         </select>
 
         <!-- <input type='number' class='form-control pull-left' id='jmlItem' style='width: 70px; margin-left: 5px; height: 30px;' value='1' min='1'/> -->
@@ -511,7 +510,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
   <div class="span12" style='background:#ffffff; padding:10px;'>
     <div id="owl-demo" class="owl-carousel">
-      <?php 
+      <?php
         $jmlslide2=count($dathome);
       $n=1;
       foreach($dathome as $key => $itemslide2){
@@ -544,7 +543,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           ?>
       </a></p>
       <div class="ratting-container"  style="margin-top: -25px;">
-      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span> 
+      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
     </div>
       <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
@@ -592,7 +591,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           ?>
       </a></p>
        <div class="ratting-container"  style="margin-top: -25px;">
-      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span> 
+      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
     </div>
       <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
@@ -640,7 +639,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           ?>
       </a></p>
        <div class="ratting-container"  style="margin-top: -25px;">
-      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span> 
+      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
     </div>
       <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
