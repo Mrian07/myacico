@@ -75,7 +75,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     <h5 style="margin-bottom: 0px;">
       <?php echo $name; ?>
     </h5>
-    <span> Dijual Oleh : </span> <span style="color:red"> myACICO </span>
+<!--    <span> Dijual Oleh : </span> <span style="color:red"> myACICO </span>-->
     <div class="ratting-container">
       <div id="rateYo" class="detail-prod-rating"></div><span class="ratting-text">(<?php echo$totalRate;?>) <a href=""><i class="fa fa-pencil" aria-hidden="true"></i> Tulis ulasan</a></span>
 
