@@ -15,6 +15,12 @@
   overflow:auto;
 }
 
+.box-ship-info-adrs{
+  float:left;
+  width:350px;
+  height:auto;
+  margin-right:5px;
+}
 
 .box-ship-info{
   float:left;
@@ -31,6 +37,13 @@
   /*background:#e9e8e7;*/
 }
 
+.box-com2{
+  float:right;
+  padding-top:10px;
+  /*width:540px;*/
+  /*background:#e9e8e7;*/
+}
+
 textarea#styled {
 	width: 500px;
 	height: 120px;
@@ -44,11 +57,12 @@ textarea#styled {
 #box-adrs{
   background: #e9e8e7;
   height:120px;
+  margin-left:0px;
 }
 
 #box-shadow{
 	height: 100px;
-  width:550px;
+  width:540px;
 	box-shadow: 1px 1px 5px #888888;
 	background-color: #fff;
 	float: left;
@@ -56,15 +70,15 @@ textarea#styled {
 	padding: 10px;
 }
 .btn-add-adrs{
-  background:#f2f2f1;
-  color:#746d68;
+  background:#ff0000;
+  color:#ffffff;
   padding:5px;
   font-weight: bold;
 }
 .btn-add-adrs:hover{
-  background:#e9e8e7;
+  background:#ff0000;
   text-decoration: none;
-  color:#111111;
+  color:#ffffff;
   font-weight: bold;
 }
 .checkout-button{
@@ -72,15 +86,17 @@ textarea#styled {
 	/*height: 30px;*/
 	float: right;
 	padding: 5px;
-
-  background: transparent;
-  border: 1px;
+	background-color: red;
+	border-radius: 10px;
 	color: white;
   font-size:15px;
   padding:10px;
 }
 
-
+.checkout-button:hover{
+  background-color: #ca3833;
+  color:#f1eeee;
+}
 </style>
 
 
@@ -215,6 +231,23 @@ textarea#styled {
 
     <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1150px;margin-bottom:40px;'>KERANJANG BELANJA</div>
     <div class='box-ship'>
+
+      <?php echo anchor('checkout/addressbook','Tambah Alamat Baru', array('class'=>'btn-add-adrs')); ?>
+      <br><br>
+      <div class='box-ship-info-adrs'>
+        Pilih Alamat Lain</br>
+        <select name='selectShip' id='selectShip' class="form-control" onchange="pilihAlamat(this);">
+          <?php foreach($hasil_ship as $dasa_ship){
+            $almt_shipping =$dasa_ship['name'].", ".$dasa_ship['address_name'].", ".$dasa_ship['address1']." ".$dasa_ship['city_name']." ".$dasa_ship['postal'];
+            if($shipping_address_id==$dasa_ship['id']){
+              echo"<option value=".$dasa_ship['id']." selected>".$almt_shipping."</option>";
+            }else{
+              echo"<option value=".$dasa_ship['id'].">".$almt_shipping."</option>";
+            }
+
+          }?>
+        </select>
+      </div>
       <div class='box-ship-info'>
         Kurir Pengiriman</br>
         <select name='kurir' id='kurir' onchange="pilihKurir(this);" class="form-control">
@@ -222,7 +255,9 @@ textarea#styled {
           <?php
           $jmlKur = count($hasil_kurir);
           if($jmlKur){
-          foreach($hasil_kurir as $dataKur){?>
+          foreach($hasil_kurir as $dataKur){
+            $nameKurir = $dataKur['shipperName'];
+            ?>
 
             <?php if($this->session->userdata('id_kurir')==$dataKur['shipperId']){?>
               <option value='<?php echo $dataKur['shipperId']; ?>-<?php echo $dataKur['amount']; ?>-<?php echo $dataKur['shipperName']; ?>' selected><?php echo $dataKur['shipperName']; ?></option>
@@ -238,8 +273,22 @@ textarea#styled {
       </div>
       <div class='box-ship-info'>
         Paket Pengiriman</br>
-        <select name='' class="form-control">
-          <option>-</option>
+        <select name='' class="form-control paket">
+          <option value='kosong-kosong'>-Pilih-</option>
+          <?php
+          $jmlKur = count($hasil_kurir);
+          if($jmlKur){
+
+              if($nameKurir=='Myacico Courier'){
+                echo"<option>Flat Rate</option>";
+              }elseif($nameKurir=='JNE Regular' || $nameKurir=='Ninja Express'){
+                echo"<option>Reguler</option>";
+              }else{
+                  echo"<option>-</option>";
+              }
+
+           } ?>
+
         </select>
       </div>
       <div class='box-ship-info'>
@@ -249,39 +298,25 @@ textarea#styled {
       <div class='box-ship-info'>
         Ongkos Kirim</br>Rp.<span class='amount'>-</span>
       </div>
-      <div class='box-ship-info'>
-        Pilih Alamat Lain</br>
-        <select name='selectShip' id='selectShip' class="form-control" onchange="pilihAlamat(this);">
-          <?php foreach($hasil_ship as $dasa_ship){
-            $almt_shipping =$dasa_ship['name'].", ".$dasa_ship['address_name'].", ".$dasa_ship['address1']." ".$dasa_ship['city_name']." ".$dasa_ship['postal'];
-            if($shipping_address_id==$dasa_ship['id']){
-              echo"<option value=".$dasa_ship['id']." selected>".$almt_shipping."</option>";
-            }else{
-              echo"<option value=".$dasa_ship['id'].">".$almt_shipping."</option>";
-            }
 
-          }?>
-        </select>
-      </div>
       <div class='box-ship-info' style='text-align:right'>
-        <?php echo anchor('checkout/addressbook','Tambah Alamat Baru', array('class'=>'btn-add-adrs')); ?>
+
       </div>
       <div style='clear:both'></div>
       <div class='box-com'>
-        Catatan</br>
-        <textarea id='styled'></textarea>
-      </div>
-      <div class='box-com'>
-        Alamat Tujuan</br>
+        <font color='red'><b>Alamat Tujuan</b></font></br>
         <div class="row" id='box-adrs'>
           <div class="col-xs-12 alamat" id='box-shadow'><?php  if(isset($alamat_shipping)){ echo$alamat_shipping; }else{echo"-";} ?></div>
         </div>
       </div>
+      <div class='box-com2'>
+        Catatan</br>
+        <textarea id='styled'></textarea>
+      </div>
+
       <div style='clear:both'></div>
-  </div>
 
-  <div class='box-cart'>
-
+      <br><br>
     <div class="col-md-12 listCart">
       <center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>
     </div>
@@ -289,7 +324,7 @@ textarea#styled {
     <div style='clear:both'></div>
   </div>
 
-  <button onclick='next()' class="checkout-button"> <img src="https://s8.postimg.org/mgry4ywxx/Artboard_1-100.jpg"> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
+  <button onclick='next()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b>BAYAR</b> SEKARANG</span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
   <div style='clear:both'></div>
 </div>
 
@@ -364,6 +399,7 @@ function pilihKurir(row){
   if(id=='kosong'){
     $(".amount").html('-');
   }else{
+
     var url = '<?php echo site_url('checkout/pilihKurir'); ?>'
     $.ajax
     ({
@@ -372,6 +408,16 @@ function pilihKurir(row){
         $(".amount").html(html);
       }
     });
+
+    var url = '<?php echo site_url('checkout/pilihPaket'); ?>'
+    $.ajax
+    ({
+    url: url+'/?id='+id+'&amount='+amount+'&name='+nameKur,
+    success:function(html){
+        $(".paket").html(html);
+      }
+    });
+
   }
 
 

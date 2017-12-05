@@ -92,42 +92,6 @@ var prod_detail =  localStorage.getItem('product_detail');
 		<link rel="stylesheet" href="<?php echo base_url('date_picker/bootstrap-datetimepicker.min.css');?>" type='text/css'>
 		<!-- e: Datepicker-->
 
-		<style type="text/css">
-			/*#search_keyword_id
-			{
-				padding:10px;
-				font-size:12px;
-			}
-			.productSrc
-			{
-				position:absolute;
-				width:628px;
-				display:none;
-				margin-top:-1px;
-				border-top:0px;
-				overflow:hidden;
-				border-left:1px  #CDCDCD solid;
-				border-right:1px  #CDCDCD solid;
-				background-color: white;
-				z-index: 289;
-			}
-			.show_result
-			{
-				font-family:tahoma;
-				padding:5px;
-				border-bottom:1px #CDCDCD dashed;
-				font-size:12px;
-				z-index: 289;
-			}
-			.show_result:hover
-			{
-				background:#e9e9e8;
-				color:#000000;
-				cursor:pointer;
-			}*/
-			
-		</style>
-
 
     </head>
 

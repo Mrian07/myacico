@@ -306,6 +306,25 @@ class Checkout extends Web_private {
 
 		//redirect('checkout/cart');
 	}
+
+	public function pilihPaket() {
+		/*
+		myacico = 111
+		jne = 1000002
+		ninja = 1000003
+		*/
+		$id_kurir = $_GET['id'];
+		$ongkos_kurir = $_GET['amount'];
+		$name_kurir = $_GET['name'];
+		if($id_kurir=='111'){
+			echo"<option>Flat Rate</option>";
+		}elseif($id_kurir=='1000002' || $id_kurir=='1000003'){
+			echo"<option>Reguler</option>";
+		}else{
+			echo"<option>-</option>";
+		}
+	}
+
 	public function pilihShip()
 	{
 		$id = $_GET['id'];
@@ -838,8 +857,8 @@ class Checkout extends Web_private {
 		$konten = file_get_contents($url, false, $context);
 		$this->data['field'] = json_decode($konten);
 		$field = json_decode($konten);
-//die(print_r($field));
-                $domain = domain();
+
+    $domain = domain();
 		$this->data['title_web'] = "Checkout - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
