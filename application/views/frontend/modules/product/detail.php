@@ -523,16 +523,16 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
       <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
         <?php if($itemslide2['imageurl']){?>
-        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
         <?php }else{
-          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100;' border='0'>";
+          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+        <p class="link-nmp box-title" style="height:50px;" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 41);
+          $str2 = substr($str1, 0, 21);
           $str = strlen($str2);
-          if($str <= 40){
+          if($str <= 20){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
@@ -568,16 +568,16 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
       <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
         <?php if($itemslide2['imageurl']){?>
-        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
         <?php }else{
-          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100;' border='0'>";
+          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+        <p class="link-nmp box-title"  style="height:50px;"><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 41);
+          $str2 = substr($str1, 0, 21);
           $str = strlen($str2);
-          if($str <= 40){
+          if($str <= 20){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
@@ -613,16 +613,16 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
       <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
         <?php if($itemslide2['imageurl']){?>
-        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
         <?php }else{
-          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100;' border='0'>";
+          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+        <p class="link-nmp box-title"  style="height:50px;"><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 41);
+          $str2 = substr($str1, 0, 21);
           $str = strlen($str2);
-          if($str <= 40){
+          if($str <= 20){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
