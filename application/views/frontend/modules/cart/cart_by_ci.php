@@ -273,16 +273,16 @@ textarea#styled {
       </div>
       <div class='box-ship-info'>
         Paket Pengiriman</br>
-        <select name='' class="form-control paket">
-          <option value='kosong-kosong'>-Pilih-</option>
+        <select id='pilihPaket' class="form-control paket">
+          <option value=''>-Pilih-</option>
           <?php
           $jmlKur = count($hasil_kurir);
           if($jmlKur){
 
               if($nameKurir=='Myacico Courier'){
-                echo"<option>Flat Rate</option>";
+                echo"<option value='Flat Rate'>Flat Rate</option>";
               }elseif($nameKurir=='JNE Regular' || $nameKurir=='Ninja Express'){
-                echo"<option>Reguler</option>";
+                echo"<option value='Reguler'>Reguler</option>";
               }else{
                   echo"<option>-</option>";
               }
@@ -336,6 +336,9 @@ function next(){
   var kurir = $('#kurir').val();
   var itemKosong = $('#itemKosong').val();
   var selectShip = $('#selectShip').val();
+  var pilihPaket = $('#pilihPaket').val();
+
+
     if(itemKosong=="1"){
       $.alert({
         title: 'Alert!',
@@ -351,6 +354,11 @@ function next(){
     $.alert({
       title: 'Alert!',
       content: 'Silakan pilih kurir pengiriman',
+    });
+  }else if(pilihPaket==""){
+    $.alert({
+      title: 'Alert!',
+      content: 'Silakan pilih paket pengiriman',
     });
   }else{
     $('#spinner_img').show();
@@ -373,7 +381,7 @@ function pilihAlamat(id){
       $(".alamat").html(html);
       $(".amount").html('-');
       getKurir(id);
-      $(".paket").html('<option>-Pilih-</option>');
+      $(".paket").html('<option value=''>-Pilih-</option>');
     }
   });
 

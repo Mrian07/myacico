@@ -404,28 +404,28 @@ $('#submit_btn').attr('disabled','disabled');
         data.isremitto = isremitto;
 
         if(name ===''){
-          $.alert({title:'Alert', content: ' name tidak boleh kosong'});
+          $.alert({title:'Alert', content: ' Nama tidak boleh kosong'});
           $('#spinner_img').hide();
           $('#submit_btn').val('Kirim').removeClass('disabled');
           $('.mandatory').prop('disabled', false);
           return false;
         }
         if(phone ===''){
-          $.alert({title:'Alert', content: ' phone tidak boleh kosong'});
+          $.alert({title:'Alert', content: 'Nomor handphone tidak boleh kosong'});
           $('#spinner_img').hide();
           $('#submit_btn').val('Kirim').removeClass('disabled');
           $('.mandatory').prop('disabled', false);
           return false;
         }
-        if(phone2 ===''){
-          $.alert({title:'Alert', content: ' Telepon tidak boleh kosong'});
-          $('#spinner_img').hide();
-          $('#submit_btn').val('Kirim').removeClass('disabled');
-          $('.mandatory').prop('disabled', false);
-          return false;
-        }
+        // if(phone2 ===''){
+        //   $.alert({title:'Alert', content: ' Telepon tidak boleh kosong'});
+        //   $('#spinner_img').hide();
+        //   $('#submit_btn').val('Kirim').removeClass('disabled');
+        //   $('.mandatory').prop('disabled', false);
+        //   return false;
+        // }
         if(address_name ===''){
-          $.alert({title:'Alert', content: 'address_name tidak boleh kosong'});
+          $.alert({title:'Alert', content: 'Nama alamat tidak boleh kosong'});
           $('#spinner_img').hide();
           $('#submit_btn').val('Kirim').removeClass('disabled');
           $('.mandatory').prop('disabled', false);
