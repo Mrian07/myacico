@@ -337,7 +337,7 @@
   margin-left:298px;
   margin-top:40px;
   position: absolute;
-  font-family: "Helvetica Neue";
+  /*font-family: "Helvetica Neue";*/
 }
 
 @media screen and (max-width: 1680px) {

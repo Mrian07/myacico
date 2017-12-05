@@ -381,7 +381,7 @@ function pilihAlamat(id){
       $(".alamat").html(html);
       $(".amount").html('-');
       getKurir(id);
-      $(".paket").html('<option value=''>-Pilih-</option>');
+      $(".paket").html('<option value="">-Pilih-</option>');
     }
   });
 
