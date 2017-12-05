@@ -1,25 +1,4 @@
-	<div id="<?php echo$pane; ?>" class="menu_list">
-		<p class="menu_head plus">Category
-		</p>
-		<div class="menu_body">
-
-			<div class="checkbox">
-				<label>
-				<input type="checkbox" value="">
-				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-				On Sale
-				</label>
-			</div>
-			<div class="checkbox">
-				<label>
-				<input type="checkbox" value="">
-				<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-				Not On Sale
-				</label>
-			</div>
-
-		</div>
-	</div>
+<!-- 
 
 	<div id="<?php echo$pane; ?>" class="menu_list">
 		<p class="menu_head plus">Brand
@@ -204,7 +183,7 @@
 			</div>
 
 		</div>
-	</div>
+	</div> -->
 
 
 <!--
@@ -332,9 +311,9 @@ function filterSidebar(filterAlias,valueAlias){
 
 <script>
 //slides the element with class "menu_body" when paragraph with class "menu_head" is clicked
-$("#<?php echo$pane; ?> p.menu_head").click(function(){
-    $(this).toggleClass("plus minus").next("div.menu_body").slideToggle(300);
-});
+// $("#<?php echo$pane; ?> p.menu_head").click(function(){
+//     $(this).toggleClass("plus minus").next("div.menu_body").slideToggle(300);
+// });
 </script>
 
 <script src="<?php echo base_url('assets/sliderprice/jquery-ui.js');?>"></script>
@@ -395,5 +374,6 @@ console.log(filterItems('an')); // ['banana', 'mango', 'orange']
             }
             $('#<?php echo$sliderprice; ?>').slider('values', 1, high);
         });
+
     });
 </script>
