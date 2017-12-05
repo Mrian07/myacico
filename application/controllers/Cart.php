@@ -91,7 +91,7 @@ class Cart extends Web {
 	function addToCart()
 	{
 		//$id_unik = $this->unik();
-                
+
 		$id = $this->input->post('m_product_id');
 		//$name = $this->input->post('name');
 		$name = preg_replace('#[^A-Za-z0-9\ ]+#', '',  $this->input->post('name'));
@@ -230,6 +230,7 @@ class Cart extends Web {
 		$konten = file_get_contents($url, false, $context);
 
 		$this->data['hasil'] = json_decode($konten, true);
+
 		if($hasil = json_decode($konten, true)){
 			$this->load->view('frontend/modules/cart/cart_by_token.php',$this->data);
 		}else{
