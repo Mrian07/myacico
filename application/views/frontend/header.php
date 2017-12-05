@@ -125,17 +125,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 				color:#000000;
 				cursor:pointer;
 			}*/
-			.top-bg2{
-				background-image: url('https://s8.postimg.org/9zlahsmcl/bg_atas_2.png');
-				width: 100%;
-				min-width: 2560px;
-				height: 55px;
-				background-size: contain;
-
-				background-position: 0px 0px;
-				float: left;
-				z-index: -1;
-			}
+			
 		</style>
 
 
@@ -144,8 +134,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 	<body style='font-weight: normal;' ng-app="myApp">
 
 
-
-					<div class="top-bg2"></div>
+					<div class="top-bg"><img src='<?php echo base_url('images/general/bg-top_main.jpg');?>' border='0'></div>
 
 
 
