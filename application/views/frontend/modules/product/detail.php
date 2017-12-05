@@ -243,7 +243,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
 
 <script src="jquery.js"></script>
-<script src="jquery.rateyo.js"></script>
+
 <!--			<div class="ratings" style='text-align: center; color:#d98c13;'>
         <span class="glyphicon glyphicon-star"></span>
         <span class="glyphicon glyphicon-star"></span>
@@ -527,12 +527,12 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <?php }else{
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title" style="height:50px;" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+        <p class="link-nmp box-title" style="height:50px; word-wrap: normal; line-height: 16px;" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 21);
+          $str2 = substr($str1, 0, 71);
           $str = strlen($str2);
-          if($str <= 20){
+          if($str <= 70){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
@@ -540,7 +540,10 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           }
           ?>
       </a></p>
-      <p class="box-title2" style="color:red;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <div class="ratting-container"  style="margin-top: -25px;">
+      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text">(<?php echo$itemslide2['rate'];?>)</span> 
+    </div>
+      <p class="box-title2" style="color:red;margin-top: -10px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
   <?php $n++;  } ?>
@@ -572,12 +575,12 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <?php }else{
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title"  style="height:50px;"><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+        <p class="link-nmp box-title"  style="height:50px; word-wrap: normal; line-height: 16px;"><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 21);
+          $str2 = substr($str1, 0, 71);
           $str = strlen($str2);
-          if($str <= 20){
+          if($str <= 70){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
@@ -585,7 +588,10 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           }
           ?>
       </a></p>
-      <p class="box-title2" style="color:red;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+       <div class="ratting-container"  style="margin-top: -25px;">
+      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text">(<?php echo$itemslide2['rate'];?>)</span> 
+    </div>
+      <p class="box-title2" style="color:red;margin-top: -10px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
   <?php $n++;  } ?>
@@ -617,12 +623,12 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <?php }else{
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title"  style="height:50px;"><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+        <p class="link-nmp box-title"  style="height:50px; word-wrap: normal; line-height: 16px;"><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 21);
+          $str2 = substr($str1, 0, 71);
           $str = strlen($str2);
-          if($str <= 20){
+          if($str <= 70){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
@@ -630,7 +636,10 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           }
           ?>
       </a></p>
-      <p class="box-title2" style="color:red;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+       <div class="ratting-container"  style="margin-top: -25px;">
+      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text">(<?php echo$itemslide2['rate'];?>)</span> 
+    </div>
+      <p class="box-title2" style="color:red;margin-top: -10px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
   <?php $n++;  } ?>
@@ -664,7 +673,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
   </div>
 </div>
-
+<script src="jquery.rateyo.js"></script>
 
 <script>
 
@@ -719,6 +728,14 @@ var retrievedObject = localStorage.getItem('product_detail');
 
   $(function () {
     $("#rateYo").rateYo({
+        rating: rate,
+        starWidth: "15px",
+        readOnly: true,
+        normalFill: "#dddddd"
+    });
+  });
+$(function () {
+    $(".rateSejenis").rateYo({
         rating: rate,
         starWidth: "15px",
         readOnly: true,
