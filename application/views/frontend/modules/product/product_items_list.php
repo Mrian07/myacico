@@ -304,7 +304,7 @@ if($saw==Null)
                   <div style="padding-left:30px">
                   <div class="ratting-container">
 
-                    <?php echo "<div id='rateYo".$test1."' class='detail-prod-rating'></div><span class='ratting-text'></span>" ?>
+                    <?php echo "<div id='rateYo".$test1."' class='detail-prod-rating' style='z-index:-1'></div><span class='ratting-text'></span>" ?>
 
                     (<?php echo $data['rate'];?>)
 
