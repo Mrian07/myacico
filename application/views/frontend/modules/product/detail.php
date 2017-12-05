@@ -544,9 +544,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           ?>
       </a></p>
       <div class="ratting-container"  style="margin-top: -25px;">
-      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text">(<?php echo$itemslide2['rate'];?>)</span> 
+      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span> 
     </div>
-      <p class="box-title2" style="color:red;margin-top: -10px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <p class="box-title2" style="color:red;margin-top: -12px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
   <?php $n++;  } ?>
@@ -592,9 +592,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           ?>
       </a></p>
        <div class="ratting-container"  style="margin-top: -25px;">
-      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text">(<?php echo$itemslide2['rate'];?>)</span> 
+      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span> 
     </div>
-      <p class="box-title2" style="color:red;margin-top: -10px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <p class="box-title2" style="color:red;margin-top: -12px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
   <?php $n++;  } ?>
@@ -640,9 +640,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           ?>
       </a></p>
        <div class="ratting-container"  style="margin-top: -25px;">
-      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text">(<?php echo$itemslide2['rate'];?>)</span> 
+      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span> 
     </div>
-      <p class="box-title2" style="color:red;margin-top: -10px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <p class="box-title2" style="color:red;margin-top: -12px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
   <?php $n++;  } ?>
@@ -1336,7 +1336,7 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
     $(document).ready(function() {
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
-        items : 8,
+        nav: true,
         itemsDesktop : [1199,4],
         itemsDesktopSmall : [979,4]
       });
