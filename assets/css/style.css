@@ -10,10 +10,16 @@
 
  /* Account for fixed navbar */
 
- /*@font-face {
-    font-family: "MyriadPro";
-    src: url('../../assets/fonts/Myriad-Web-Pro_31664.TTF');
-    }*/
+@font-face {
+  font-family: "helvetica_neue";
+  src: url('../../assets/fonts/HelveticaNeueMedium.ttf');
+  }
+
+@font-face {
+   font-family: "myriad_web_pro";
+   src: url('../../assets/fonts/Myriad-Web-Pro_31664.ttf');
+   }
+
 
  body,
  .navbar-fixed-top,

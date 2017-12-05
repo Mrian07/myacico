@@ -297,19 +297,20 @@ var prod_detail =  localStorage.getItem('product_detail');
       </div>
 
   </div>
+	<center>
 	<div class='my-hdr3'>
 			<div class="row" style='margin:0px; padding:0px'>
 				<div class="col-xs-9" style='padding:5px; text-align:right'>
-						<div style='font-size:11px; margin-bottom:-5px;'><?php echo $lang_promo1; ?></div>
-						<div style='font-family: arial; font-size:14px; font-weight: bold; color:#ff0000; '><?php echo $lang_promo2; ?> </div>
+						<div style='font-size:11px; margin-bottom:-5px; padding-right:20px'>Nantikan Hot Promo</div>
+						<div style='font-family: arial; font-size:14px; font-weight: bold; color:#ff0000; padding-right:50px '>12.12</div>
 				</div>
 				<div class="col-xs-3" align="left" style='margin:0px; padding:0px'>
 					<div style='margin-top:-7px;'>
-						<img src="<?php echo base_url('images/general/basket-01.png'); ?>" border="0" height="55">
+						<img src="<?php echo base_url('images/general/HARBOLNAS_Logo.png'); ?>" border="0" height="55">
 					</div>
 				</div>
 			</div>
-	</div>
+	</div></center>
 
   <!-- s header -->
 
@@ -848,6 +849,7 @@ $(".logout").click(function(e){
 
 	//Desktop
 	$(".dropbtn-basket").mouseover(function(){
+		$('.dropdown-basket-content').html('<img src="<?php echo base_url('images/general/Spinner_search.gif'); ?>" border="0"> Loading...');
 
 		// var cookie = document.cookie.split('x-auth=');
 		if(window.token){
