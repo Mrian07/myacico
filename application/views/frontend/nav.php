@@ -54,7 +54,7 @@ cursor:pointer;
             <!-- Collect the nav links, forms, and other content for toggling -->
 
             <div class="collapse navbar-collapse" id="navbar-menu">
-                <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp" style='text-align:center'>
+                <ul class="navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp" style='text-align:center; list-style: none; width: 100%;'>
 
 
 									<?php
@@ -67,7 +67,7 @@ cursor:pointer;
                        $nav_name = $dataNav['name'];
                      }
                      ?>
-									<li class="dropdown megamenu-fw nav-show-desktop nav-garis">
+                    <li class="dropdown megamenu-fw nav-show-desktop nav-garis" style="width:12%;">
 										<?php echo anchor('#', '<img src="'.$dataNav['iconurl'].'" border="0" height="20"> '.$nav_name, array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
                                                                             <ul  class="dropdown-menu megamenu-content" role="menu">
 											<li>
