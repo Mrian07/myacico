@@ -1197,9 +1197,10 @@ text.innerHTML = trimmedString
 <ul class="list-group" style="padding-left:0px;">
 
   <?php $bloop = 0; foreach($dathome['level_4'] as $datBrand){
+     
     if($bloop <20){
     ?>
-    <li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="Smiley face" height="80%" width="75"></li>
+    <a href="<?php echo base_url(''.$datBrand['imageurl2'].'');?>"/><li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="Smiley face" height="80%" width="75"></li>
   <?php } $bloop++; } ?>
 
 						</ul>
