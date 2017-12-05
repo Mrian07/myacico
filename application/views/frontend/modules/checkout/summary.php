@@ -364,7 +364,7 @@
 
 						</div>
 
-						<div align="left" class="method">
+						<!-- <div align="left" class="method">
 							<p>Online Payment</p>
 							<?php
 							foreach($hasilOnline as $dataOl){?>
@@ -375,7 +375,7 @@
 			  					<img src='https://storage.googleapis.com/myacico/image/onlinepayment/<?php echo$dataOl['value']; ?>.png' border='0'>
 			  				</div>
 							<?php } ?>
-						</div>
+						</div> -->
 
 						<div align="left" class="method">
 							<p>Credit Card</p>
