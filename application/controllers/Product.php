@@ -365,6 +365,7 @@ $home_domain = domain2();
 		 }
 
 
+<<<<<<< HEAD
 		 /*
 							echo '<pre>';
 die(print_r($hasil['specification']));
@@ -380,6 +381,31 @@ $this->data['img'][$i] = $speck;
 	//print_r($this->data['img'.$i]);
 	 $i++;
 }*/
+=======
+		}
+                
+//                echo '<pre>';
+//die(print_r($hasil['specification']));
+$i=0;
+ foreach ($hasil['specification'] as $speck)
+ {
+     //$this->data['img'][$i]=$gmb;
+     if(isset($speck)){
+	$this->data['img'][$i] = $speck;
+     }else{
+         $this->data['img'][$i]=false;
+     }
+    //print_r($this->data['img'.$i]);
+     $i++;
+ }
+				if(isset($hasil['specification'][0]['attribute'])){
+					$this->data['specification'] = $hasil['specification'][0]['attribute'];
+					$this->data['value'] = $hasil['specification'][0]['value'];
+				}else{
+					$hasil['specification'][0]['attribute'] ='';
+						$hasil['specification'][0]['value'] ='';
+				}
+>>>>>>> d57d0bc3788a3ed7db16b9d0c1ec8f28e89d2dc1
 
 		 if(isset($hasil['specification'][0]['attribute'])){
 				$this->data['specification'] = $hasil['specification'][0]['attribute'];
