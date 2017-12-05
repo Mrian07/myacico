@@ -511,7 +511,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
   <div class="span12" style='background:#ffffff; padding:10px;'>
     <div id="owl-demo" class="owl-carousel">
-      <?php
+      <?php 
         $jmlslide2=count($dathome);
       $n=1;
       foreach($dathome as $key => $itemslide2){
