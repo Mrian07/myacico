@@ -205,7 +205,8 @@ class Checkout extends Web_private {
 		$get_shipping = get_cookie('shipping_address_id');
 
 		//echo"$get_shipping"; die();
-		if($get_shipping)
+
+		if(empty($get_shipping))
 		{
 
 		   $api = "aduser/getaddress?id=".$get_shipping;
@@ -215,20 +216,26 @@ class Checkout extends Web_private {
 		   $hasil_ship = json_decode($konten2, true);
 
 		   //Data Shipping
-				$this->data['alamat_shipping'] =$hasil_ship['name'].", ".$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
-				$this->data['id_kelurahan'] = $hasil_ship['village_id'];
-				$this->data['shipping_address_id'] = $hasil_ship['id'];
-				$id_kelurahan = $hasil_ship['village_id'];
+			 foreach($hasil as $items){
+ 				$this->data['alamat_shipping'] =$items['name'].", ".$items['address_name'].", ".$items['address1']." ".$items['city_name']." ".$items['postal'];
+ 				$this->data['id_kelurahan'] = $items['village_id'];
+ 				$this->data['shipping_address_id'] = $items['id'];
+
+ 				$id_kelurahan = $items['village_id'];
+ 				set_cookie('shipping_address_id',$items['id'],time() + (86400 * 30));
+ 			}
 
 		}else{
-			foreach($hasil as $items){
-				$this->data['alamat_shipping'] =$items['name'].", ".$items['address_name'].", ".$items['address1']." ".$items['city_name']." ".$items['postal'];
-				$this->data['id_kelurahan'] = $items['village_id'];
-				$this->data['shipping_address_id'] = $items['id'];
+			$api = "aduser/getaddress?id=".$get_shipping;
+			$url = api_base_url($api);
 
-				$id_kelurahan = $items['village_id'];
-				set_cookie('shipping_address_id',$items['id'],time() + (86400 * 30));
-			}
+			$konten2 = file_get_contents($url, false, $context);
+			$hasil_ship = json_decode($konten2, true);
+			$this->data['alamat_shipping'] =$hasil_ship['name'].", ".$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
+			$this->data['id_kelurahan'] = $hasil_ship['village_id'];
+			$this->data['shipping_address_id'] = $hasil_ship['id'];
+			$id_kelurahan = $hasil_ship['village_id'];
+
 		}
 
 		if(isset($id_kelurahan)){

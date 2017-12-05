@@ -386,6 +386,50 @@ $('#submit_btn').attr('disabled','disabled');
         data.ispayfrom = ispayfrom;
         data.isremitto = isremitto;
 
+        if(name ===''){
+          $.alert({title:'Alert', content: ' name tidak boleh kosong'});
+          $('#spinner_img').hide();
+          $('#submit_btn').val('Kirim').removeClass('disabled');
+          $('.mandatory').prop('disabled', false);
+          return false;
+        }
+        if(phone ===''){
+          $.alert({title:'Alert', content: ' phone tidak boleh kosong'});
+          $('#spinner_img').hide();
+          $('#submit_btn').val('Kirim').removeClass('disabled');
+          $('.mandatory').prop('disabled', false);
+          return false;
+        }
+        if(phone2 ===''){
+          $.alert({title:'Alert', content: ' Telepon tidak boleh kosong'});
+          $('#spinner_img').hide();
+          $('#submit_btn').val('Kirim').removeClass('disabled');
+          $('.mandatory').prop('disabled', false);
+          return false;
+        }
+        if(address_name ===''){
+          $.alert({title:'Alert', content: 'address_name tidak boleh kosong'});
+          $('#spinner_img').hide();
+          $('#submit_btn').val('Kirim').removeClass('disabled');
+          $('.mandatory').prop('disabled', false);
+          return false;
+        }
+        if(address1 ===''){
+          $.alert({title:'Alert', content: 'Alamat tidak boleh kosong'});
+          $('#spinner_img').hide();
+          $('#submit_btn').val('Kirim').removeClass('disabled');
+          $('.mandatory').prop('disabled', false);
+          return false;
+        }
+        if(postal ===''){
+          $.alert({title:'Alert', content: 'postal tidak boleh kosong'});
+          $('#spinner_img').hide();
+          $('#submit_btn').val('Kirim').removeClass('disabled');
+          $('.mandatory').prop('disabled', false);
+          return false;
+        }
+
+
     //return alert(data.phone);die();
      var success = function(r){
          $('#spinner_img').hide();

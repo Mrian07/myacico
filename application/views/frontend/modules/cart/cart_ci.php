@@ -43,7 +43,7 @@ echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 
 					</tr>";
 		endforeach;
-		
+
 		echo"
 			</tbody>
 				<tfoot>
