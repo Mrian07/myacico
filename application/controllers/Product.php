@@ -370,9 +370,9 @@ $home_domain = domain2();
 			$hasil['sku'] ='';
 
 		}
-                /*
-                echo '<pre>';
-die(print_r($hasil['specification']));
+                
+//                echo '<pre>';
+//die(print_r($hasil['specification']));
 $i=0;
  foreach ($hasil['specification'] as $speck)
  {
@@ -384,7 +384,7 @@ $i=0;
      }
     //print_r($this->data['img'.$i]);
      $i++;
- }*/
+ }
 				if(isset($hasil['specification'][0]['attribute'])){
 					$this->data['specification'] = $hasil['specification'][0]['attribute'];
 					$this->data['value'] = $hasil['specification'][0]['value'];
