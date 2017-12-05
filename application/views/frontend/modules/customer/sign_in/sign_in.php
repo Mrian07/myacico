@@ -292,7 +292,7 @@ var success = function(r){
 		) , url: apiurl, headers:{"token":r.token}, success: success });
 	<?php
 	endforeach;
-	$this->cart->destroy();
+
 	?>
 
 	document.cookie='x-auth='+r.token+'; path='+base_path;

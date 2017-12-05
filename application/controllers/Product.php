@@ -69,7 +69,7 @@ class Product extends Web {
 		$jdata =json_decode($konten2)->productCount;
 		$this->data['jpage'] = ceil($jdata/$batas);
 $domain = domain();
-   
+
 		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
 		$this->data['title_web'] = "List Items - ".$domain.'-'.$id;
@@ -310,7 +310,7 @@ $home_domain = domain2();
 
 	$this->data['dathome'] = json_decode($konten21, true);
 	  $hasil1 = json_decode($konten21, true);
-
+//die(print_r($this->data['dathome']));
 	if(isset($hasil1['imageurl'])){
 		$this->data['imageurl'] = $hasil1['imageurl'];
 
@@ -334,117 +334,128 @@ $home_domain = domain2();
 		$konten = file_get_contents($url, false, $context);
     $hasil = json_decode($konten, true);
 
+		if($hasil['isActive']=='Y'){
 
-//                Komen
-    $konten_komen = file_get_contents($url_komen, false, $context);
-    $komen = json_decode($konten_komen, true);
-    //echo "<pre>";die(print_r($komen[0]['user']));
-    //$komen[0]['user']
+			//Komen
+			$konten_komen = file_get_contents($url_komen, false, $context);
+			$komen = json_decode($konten_komen, true);
 
-		//s lalang
-		$getNama = $hasil['name'];
-		$options2 = ["http" => [
-		'protocol_version'=>'1.1',
-		"method" => "GET",
-		]];
+			//s lalang
+			$getNama = $hasil['name'];
+			$options2 = ["http" => [
+			'protocol_version'=>'1.1',
+			"method" => "GET",
+			]];
 
-		$newname = str_replace(' ','%',$getNama);
-		$api_komen2 = "product/productlist/detail?id=".$pro_id."&keyword=".$newname;
-		$url_komen2 = api_base_url($api_komen2);
-		$context2 = stream_context_create($options2);
-		$konten2 = file_get_contents($url_komen2);
-		//e lalang
+			$newname = str_replace(' ','%',$getNama);
+			$api_komen2 = "product/productlist/detail?id=".$pro_id."&keyword=".$newname;
+			$url_komen2 = api_base_url($api_komen2);
+			$context2 = stream_context_create($options2);
+			$konten2 = file_get_contents($url_komen2);
+			//e lalang
 
-//die(print_r($hasil));
+			$this->data['komen']=$komen;
+
+		 if(isset($hasil['sku'])){
+			 $this->data['sku'] = $hasil['sku'];
+
+		 }else{
+			 $hasil['sku'] ='';
+
+		 }
 
 
-     $this->data['komen']=$komen;
+		 /*
+							echo '<pre>';
+die(print_r($hasil['specification']));
+$i=0;
+foreach ($hasil['specification'] as $speck)
+{
+	 //$this->data['img'][$i]=$gmb;
+	 if(isset($speck)){
+$this->data['img'][$i] = $speck;
+	 }else{
+			 $this->data['img'][$i]=false;
+	 }
+	//print_r($this->data['img'.$i]);
+	 $i++;
+}*/
+
+		 if(isset($hasil['specification'][0]['attribute'])){
+				$this->data['specification'] = $hasil['specification'][0]['attribute'];
+				$this->data['value'] = $hasil['specification'][0]['value'];
+			}else{
+				$hasil['specification'][0]['attribute'] ='';
+					$hasil['specification'][0]['value'] ='';
+			}
+
+			if(isset($hasil['specification'][1]['attribute'])){
+				$this->data['attribute'] = $hasil['specification'][1]['attribute'];
+				$this->data['attribute3'] = $hasil['specification'][1]['value'];
+			}else{
+				$hasil['specification'][1]['attribute'] ='';
+					$hasil['specification'][1]['value'] ='';
+			}
+			if(isset($hasil['specification'][2]['attribute'])){
+				$this->data['attribute4'] = $hasil['specification'][2]['attribute'];
+				$this->data['value1'] = $hasil['specification'][2]['value'];
+			}else{
+				$hasil['specification'][2]['attribute'] ='';
+					$hasil['specification'][2]['value'] ='';
+			}
+			if(isset($hasil['specification'][3]['attribute'])){
+				$this->data['attribute5'] = $hasil['specification'][3]['attribute'];
+				$this->data['value2'] = $hasil['specification'][3]['value'];
+			}else{
+				$hasil['specification'][3]['attribute'] ='';
+					$hasil['specification'][3]['value'] ='';
+			}
+			if(isset($hasil['specification'][4]['attribute'])){
+				$this->data['attribute6'] = $hasil['specification'][4]['attribute'];
+				$this->data['value3'] = $hasil['specification'][4]['value'];
+			}else{
+				$hasil['specification'][4]['attribute'] ='';
+					$hasil['specification'][4]['value'] ='';
+			}
 
 
-		//die(print_r($hasil['isWishList']));
+			$this->data['description'] = $hasil['description'];
 
-		if(isset($hasil['sku'])){
+			$this->data['specialPrice'] = $hasil['specialPrice'];
+			$this->data['discount'] = $hasil['discount'];
+			$this->data['highlight'] = $hasil['highlight'];
 			$this->data['sku'] = $hasil['sku'];
 
-		}else{
-			$hasil['sku'] ='';
+			$this->data['isWishList']=$hasil['isWishList'];
+			$this->data['category'] = $hasil['category'];
+			$this->data['m_product_id'] = $hasil['m_product_id'];
+			$this->data['rate'] = $hasil['rate'];
+			$this->data['rating'] = $hasil['rating'];
 
+			$this->data['name'] = $hasil['name'];
+			$this->data['pricelist'] = $hasil['pricelist'];
+			//$this->data['sku'] = $hasil['sku'];
+			$this->data['stock'] = $hasil['stock'];
+			$this->data['volume'] = $hasil['volume'];
+			$this->data['weight'] = $hasil['weight'];
+			$this->data['rate'] = $hasil['rate'];
+			// jika gambar tidak ada
+
+			$this->data['local_strg'] =$pro_id;
+			$i=0;
+			 foreach ($hasil['imageurl'] as $gmb)
+			 {
+			     //$this->data['img'][$i]=$gmb;
+			     if(isset($gmb)){
+				$this->data['img'][$i] = $gmb;
+			     }else{
+			         $this->data['img'][$i]=false;
+			     }
+			    //print_r($this->data['img'.$i]);
+			     $i++;
+			 }
 		}
 
-
-				if(isset($hasil['specification'][0]['attribute'])){
-					$this->data['specification'] = $hasil['specification'][0]['attribute'];
-					$this->data['value'] = $hasil['specification'][0]['value'];
-				}else{
-					$hasil['specification'][0]['attribute'] ='';
-						$hasil['specification'][0]['value'] ='';
-				}
-
-				if(isset($hasil['specification'][1]['attribute'])){
-					$this->data['attribute'] = $hasil['specification'][1]['attribute'];
-					$this->data['attribute3'] = $hasil['specification'][1]['value'];
-				}else{
-					$hasil['specification'][1]['attribute'] ='';
-						$hasil['specification'][1]['value'] ='';
-				}
-				if(isset($hasil['specification'][2]['attribute'])){
-					$this->data['attribute4'] = $hasil['specification'][2]['attribute'];
-					$this->data['value1'] = $hasil['specification'][2]['value'];
-				}else{
-					$hasil['specification'][2]['attribute'] ='';
-						$hasil['specification'][2]['value'] ='';
-				}
-				if(isset($hasil['specification'][3]['attribute'])){
-					$this->data['attribute5'] = $hasil['specification'][3]['attribute'];
-					$this->data['value2'] = $hasil['specification'][3]['value'];
-				}else{
-					$hasil['specification'][3]['attribute'] ='';
-						$hasil['specification'][3]['value'] ='';
-				}
-				if(isset($hasil['specification'][4]['attribute'])){
-					$this->data['attribute6'] = $hasil['specification'][4]['attribute'];
-					$this->data['value3'] = $hasil['specification'][4]['value'];
-				}else{
-					$hasil['specification'][4]['attribute'] ='';
-						$hasil['specification'][4]['value'] ='';
-				}
-				$this->data['description'] = $hasil['description'];
-
-		$this->data['specialPrice'] = $hasil['specialPrice'];
-		$this->data['discount'] = $hasil['discount'];
-		$this->data['highlight'] = $hasil['highlight'];
-		$this->data['sku'] = $hasil['sku'];
-
-                $this->data['isWishList']=$hasil['isWishList'];
-		$this->data['category'] = $hasil['category'];
-		$this->data['m_product_id'] = $hasil['m_product_id'];
-                $this->data['rate'] = $hasil['rate'];
-                $this->data['rating'] = $hasil['rating'];
-              //  die(print_r($this->data['rating']['star1']));
-		$this->data['name'] = $hasil['name'];
-		$this->data['pricelist'] = $hasil['pricelist'];
-		//$this->data['sku'] = $hasil['sku'];
-		$this->data['stock'] = $hasil['stock'];
-		$this->data['volume'] = $hasil['volume'];
-		$this->data['weight'] = $hasil['weight'];
-			$this->data['rate'] = $hasil['rate'];
-		// jika gambar tidak ada
-
-$this->data['local_strg'] =$pro_id;
-//echo '<pre>';
-//die(print_r($this->data['local_strg']));
-$i=0;
- foreach ($hasil['imageurl'] as $gmb)
- {
-     //$this->data['img'][$i]=$gmb;
-     if(isset($gmb)){
-	$this->data['img'][$i] = $gmb;
-     }else{
-         $this->data['img'][$i]=false;
-     }
-    //print_r($this->data['img'.$i]);
-     $i++;
- }
   /*
   die();
 			if(isset($hasil['imageurl'][0])){
@@ -487,11 +498,18 @@ $i=0;
 	$this->data['img3'] = $hasil['imageurl'][3];
        */
 		// akhir dari jika gambar tidak ada
- $home_domain = domain2();
+
+
+ 		$home_domain = domain2();
 		$this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/product/detail.php',$this->data);
+		if($hasil['isActive']=='Y'){
+			$this->load->view('frontend/modules/product/detail.php',$this->data);
+		}else{
+			$this->load->view('frontend/modules/product/empty_product.php',$this->data);
+		}
+
 		$this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}

@@ -272,7 +272,35 @@ $.ajax({
         data.ispayfrom = ispayfrom;
         data.isremitto = isremitto;
         data.village_id = village_id;
+				if(name ===''){
+					$.alert({title:'Alert', content: ' nama tidak boleh kosong'});
+					$('#spinner_img').hide();
+					$('#submit_btn').val('Kirim').removeClass('disabled');
+					$('.mandatory').prop('disabled', false);
+					return false;
+				}
+				if(phone ===''){
+					$.alert({title:'Alert', content: ' phone tidak boleh kosong'});
+					$('#spinner_img').hide();
+					$('#submit_btn').val('Kirim').removeClass('disabled');
+					$('.mandatory').prop('disabled', false);
+					return false;
+				}
 
+				if(address_name ===''){
+					$.alert({title:'Alert', content: 'Nama Alamat tidak boleh kosong'});
+					$('#spinner_img').hide();
+					$('#submit_btn').val('Kirim').removeClass('disabled');
+					$('.mandatory').prop('disabled', false);
+					return false;
+				}
+				if(address1 ===''){
+					$.alert({title:'Alert', content: 'Alamat tidak boleh kosong'});
+					$('#spinner_img').hide();
+					$('#submit_btn').val('Kirim').removeClass('disabled');
+					$('.mandatory').prop('disabled', false);
+					return false;
+				}
      var success = function(r){
          $('#spinner_img').hide();
   $('#submit_btn').val('Kirim').removeClass('disabled');

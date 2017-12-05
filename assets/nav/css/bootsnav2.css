@@ -49,6 +49,8 @@ nav.navbar.bootsnav{
     border: none;
     /*border-bottom: solid 1px #e0e0e0;*/
     z-index: 9;
+    width: 100%;
+
 }
 
 nav.navbar.bootsnav ul.nav > li > a{
@@ -1483,8 +1485,8 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
   font-size: 12px;
 }
 .nav-garis{
-  border-left:1px solid #9d0000;
-  border-right:1px solid #9d0000;
+/*  border-left:1px solid #9d0000;
+  border-right:1px solid #9d0000;*/
   margin-left:3px;
   /*padding:0px 20px 0px 20px;*/
 }

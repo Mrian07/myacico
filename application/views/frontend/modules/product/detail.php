@@ -75,7 +75,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     <h5 style="margin-bottom: 0px;">
       <?php echo $name; ?>
     </h5>
-    <span> Dijual Oleh : </span> <span style="color:red"> myACICO </span>
+<!--    <span> Dijual Oleh : </span> <span style="color:red"> myACICO </span>-->
     <div class="ratting-container">
       <div id="rateYo" class="detail-prod-rating"></div><span class="ratting-text">(<?php echo$totalRate;?>) <a href=""><i class="fa fa-pencil" aria-hidden="true"></i> Tulis ulasan</a></span>
 
@@ -195,18 +195,20 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       <div style="margin-bottom: 20px;">
         <span class="pull-left"><b>Jumlah: </b></span>
         <select class='form-control pull-left' id='jmlItem' style='width: 70px; margin-left: 5px; height: 30px;'>
-          <?php $nJml=1; while($nJml<=20){
+          <?php $nJml=1; while($nJml<=3){
             echo"<option value=".$nJml.">".$nJml."</option>";
           $nJml++; }?>
-
         </select>
 
         <!-- <input type='number' class='form-control pull-left' id='jmlItem' style='width: 70px; margin-left: 5px; height: 30px;' value='1' min='1'/> -->
         <div class="clearfix"></div>
       </div>
 
-      <button type="button" class="btn btn-danger btn-lg" style="border-radius: 5px; padding: 6px 60px; margin-bottom: 7px; background-color: #c81423"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" style="font-size:15px;" aria-hidden="true"> </i> <b style="font-size:15px;"> BELI</b> SEKARANG</button>
-      <button type="button" class="btn btn-danger btn-lg" style="border-radius: 5px; padding: 6px 24px; margin-bottom: 7px; background-color: #c81423"  onClick="addToCart1('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"><i class="fa fa-shopping-cart" style="font-size:15px;" aria-hidden="true"> </i> <b style="font-size:15px;"> Tambahkan </b>Ke Keranjang</button>
+      <button type="button"style="margin-bottom: 7px; margin-left:-8px; background: transparent;
+    border: 1px"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"<b style="font-size:15px;"><img src="https://s8.postimg.org/w01my4un9/Artboard_3-100.jpg"></button>
+      <button type="button"style="margin-bottom: 7px; margin-left:-8px; background: transparent;
+    border: 1px"  onClick="addToCart1('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"<b style="font-size:15px;"><img src="https://s8.postimg.org/dx8k77wb9/Artboard_5-100.jpg"></button>
+
 
       <?php
         if($isWishList =='Y')
@@ -243,7 +245,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
 
 <script src="jquery.js"></script>
-<script src="jquery.rateyo.js"></script>
+
 <!--			<div class="ratings" style='text-align: center; color:#d98c13;'>
         <span class="glyphicon glyphicon-star"></span>
         <span class="glyphicon glyphicon-star"></span>
@@ -523,16 +525,16 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
       <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
         <?php if($itemslide2['imageurl']){?>
-        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
         <?php }else{
-          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100;' border='0'>";
+          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+        <p class="link-nmp box-title" style="height:50px; word-wrap: normal; line-height: 16px;" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 41);
+          $str2 = substr($str1, 0, 71);
           $str = strlen($str2);
-          if($str <= 40){
+          if($str <= 70){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
@@ -540,7 +542,10 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           }
           ?>
       </a></p>
-      <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <div class="ratting-container"  style="margin-top: -25px;">
+      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
+    </div>
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
   <?php $n++;  } ?>
@@ -568,16 +573,16 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
       <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
         <?php if($itemslide2['imageurl']){?>
-        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
         <?php }else{
-          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100;' border='0'>";
+          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+        <p class="link-nmp box-title"  style="height:50px; word-wrap: normal; line-height: 16px;"><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 41);
+          $str2 = substr($str1, 0, 71);
           $str = strlen($str2);
-          if($str <= 40){
+          if($str <= 70){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
@@ -585,7 +590,10 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           }
           ?>
       </a></p>
-      <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+       <div class="ratting-container"  style="margin-top: -25px;">
+      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
+    </div>
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
   <?php $n++;  } ?>
@@ -613,16 +621,16 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
       <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
         <?php if($itemslide2['imageurl']){?>
-        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100;'></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
         <?php }else{
-          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100;' border='0'>";
+          echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+        <p class="link-nmp box-title"  style="height:50px; word-wrap: normal; line-height: 16px;"><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 41);
+          $str2 = substr($str1, 0, 71);
           $str = strlen($str2);
-          if($str <= 40){
+          if($str <= 70){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
@@ -630,7 +638,10 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           }
           ?>
       </a></p>
-      <p class="box-title2">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+       <div class="ratting-container"  style="margin-top: -25px;">
+      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
+    </div>
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
   <?php $n++;  } ?>
@@ -664,7 +675,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
   </div>
 </div>
-
+<script src="jquery.rateyo.js"></script>
 
 <script>
 
@@ -719,6 +730,14 @@ var retrievedObject = localStorage.getItem('product_detail');
 
   $(function () {
     $("#rateYo").rateYo({
+        rating: rate,
+        starWidth: "15px",
+        readOnly: true,
+        normalFill: "#dddddd"
+    });
+  });
+$(function () {
+    $(".rateSejenis").rateYo({
         rating: rate,
         starWidth: "15px",
         readOnly: true,
@@ -1316,23 +1335,23 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
     $(document).ready(function() {
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
-        items : 6,
-        itemsDesktop : [1199,3],
-        itemsDesktopSmall : [979,3]
+        nav: true,
+        itemsDesktop : [1199,4],
+        itemsDesktopSmall : [979,4]
       });
 
       $("#owl-demo1").owlCarousel({
         autoPlay: 3000,
-        items : 6,
-        itemsDesktop : [1199,3],
-        itemsDesktopSmall : [979,3]
+        items : 8,
+        itemsDesktop : [1199,4],
+        itemsDesktopSmall : [979,4]
       });
 
       $("#owl-demo2").owlCarousel({
         autoPlay: 3000,
-        items : 6,
-        itemsDesktop : [1199,3],
-        itemsDesktopSmall : [979,3]
+        items : 8,
+        itemsDesktop : [1199,4],
+        itemsDesktopSmall : [979,4]
       });
 
   });

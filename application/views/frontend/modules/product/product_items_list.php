@@ -6,7 +6,16 @@ $curr = (int)$this->uri->segment(6);
 <link rel="stylesheet" href="<?php echo base_url('assets/css/pagination.css');?>">
 <script type="text/javascript" src="<?php echo base_url('assets/js/pagination.js');?>"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 <style>
+.pricelist {
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 1.6em;
+}
 .thumbnail
 {
     margin-bottom: 20px;
@@ -162,6 +171,21 @@ h1.po1{
 }
 .strike-throgh {
 	text-decoration: line-through;
+
+}
+.lead{
+  color: #8A0202;
+}
+.btn-add-to-whishlist {
+  border-radius: 25px!important;
+  /* padding: 7px 10px; */
+  margin-bottom: 7px;
+  /* background-color: #006600; */
+  font-size: 8pt;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none!important;
 }
 </style>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/pop_cart.css');?>" />
@@ -183,179 +207,6 @@ if($saw==Null)
 ?>
 
 
-    <?php
-/*
-    if ($pro == 1000003)  {
-    echo "<div class='jumbotron jumbotron-billboard'>
-      <div class='img'></div>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-lg-12'>
-                    <h1 class='po1'>Laptop Gaming</h1>
-                    <br/>
-                    <p>
-
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div>";
-  } else if ($pro == 1000038) {
-
-    echo "<div class='jumbotron jumbotron-billboard'>
-      <div class='img'></div>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-lg-12'>
-                    <h1 class='po1'>Laptop 2 in  1</h1>
-                    <br/>
-                    <p>
-
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div>";
-  } else if ($pro == 1000015) {
-    echo "<div class='jumbotron jumbotron-billboard'>
-      <div class='img'></div>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-lg-12'>
-                    <h1 class='po1'>Laptop Apple</h1>
-                    <br/>
-                    <p>
-
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div>";
-
-  }  else if ($pro == 1000431)  {
-    echo "<div class='w3l_banner_nav_right_banner7'>
-
-    </div>";
-  } else if ($pro == 1000009) {
-    echo "<div class='jumbotron jumbotron-billboard'>
-      <div class='img'></div>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-lg-12'>
-                    <h1 class='po1'>Laptop Bisnis</h1>
-                    <br/>
-                    <p>
-
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div>";
-  }else if($pro == 1000231) {
-    echo "<div class='jumbotron jumbotron-billboard'>
-      <div class='img'></div>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-lg-12'>
-                    <h1 class='po1'>Toner Printer</h1>
-                    <br/>
-                    <p>
-
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div>";
-  } else if($pro == 1000235) {
-    echo "<div class='jumbotron jumbotron-billboard'>
-      <div class='img'></div>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-lg-12'>
-                    <h1 class='po1'>Printer Inkjet</h1>
-                    <br/>
-                    <p>
-
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div>";
-  } else if($pro == 1000236) {
-    echo "<div class='jumbotron jumbotron-billboard'>
-      <div class='img'></div>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-lg-12'>
-                    <h1 class='po1'>Printer All In One</h1>
-                    <br/>
-                    <p>
-
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div>";
- } else if($pro == 1000237){
-   echo "<div class='jumbotron jumbotron-billboard'>
-     <div class='img'></div>
-       <div class='container'>
-           <div class='row'>
-               <div class='col-lg-12'>
-                   <h1 class='po1'>Printer Laser</h1>
-                   <br/>
-                   <p>
-
-                   </p>
-
-               </div>
-           </div>
-       </div>
-   </div>";
-  } else if ($pro == 1000473) {
-    echo "<div class='jumbotron jumbotron-billboard'>
-      <div class='img'></div>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-lg-12'>
-                    <h1 class='po1'>Laptop Consumer</h1>
-                    <br/>
-                    <p>
-
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div>";
-  }  else {
-
-    echo "<div class='jumbotron jumbotron-billboard2'>
-      <div class='img'></div>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-lg-12'>
-        <br/>
-                    <br/>
-                    <p>
-
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div>";
-    }
-
-*/
-     ?>
 
 
 
@@ -407,19 +258,37 @@ if($saw==Null)
 
     <div class='row'>
       <?php
+
       if($totalItem==0){
         echo"<center>Maaf item yang Anda cari belum tersedia.</center>";
       }else{
 
       $no = $posisi+1;
+        $test1 = 1;
       foreach($hasil as $data){
+            $coment_rate =$data['rate'];
         if(isset($data['imageurl'])){
         $img_url= $data['imageurl'];
         }
         else{
         $img_url= null;
         }
+
       ?>
+
+      <script>
+
+
+        $(function () {
+          var rate = "<?php  echo  $coment_rate;?>";
+          var test1 =  "<?php echo $test1; ?>";
+        $("#rateYo"+test1).rateYo({
+            rating: rate,
+            starWidth: "15px",
+            readOnly: true,
+  });
+        });
+      </script>
 
         <div class="col-xs-12" style='margin-bottom:10px;'>
           <div class='row'>
@@ -431,20 +300,36 @@ if($saw==Null)
               <div class="col-xs-7">
                 <div class='nm-product-detail' style='text-align:left;margin-left:20px'>
                 <b><a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a></b>
+                  <br/>
+                  <div style="padding-left:30px">
+                  <div class="ratting-container">
+
+                    <?php echo "<div id='rateYo".$test1."' class='detail-prod-rating'></div><span class='ratting-text'></span>" ?>
+
+                    (<?php echo $data['rate'];?>)
+
+                    <!-- <div id="rateYo"  class="detail-prod-rating"></div><span class="ratting-text">(<?php echo $data['rate'];?>) -->
+                    <div class="clearfix"></div>
+                  </div>
+
                 </div>
+                  </div>
               </div>
+
+
               <div class="col-xs-3"><center>
-                
+
                    <?php if ($data['specialPrice'] > 0) { ?>
 					<span class="strike-throgh">Rp <?php echo money($data['pricelist']); ?></span>
 					<span class="lead dark-red pricelist" style="font-size: 1.1em;">
 						Rp <?php echo money(($data['specialPrice'])); ?>
 					</span>
 					<div>Hemat
-						<span class="lead dark-red pricelist" style="font-size: 1.1em;">
-							Rp <?php echo money($data['pricelist'] - ($data['specialPrice'])); ?> 
+						<span class="lead dark-red pricelist" style="font-size: 1.4em;">
+							Rp <?php echo money($data['pricelist'] - ($data['specialPrice'])); ?>
                                                                                 (<?php echo $data['discount']; ?>%)
 						</span>
+
 					</div>
 				<?php } else { ?>
 					<div>
@@ -453,16 +338,20 @@ if($saw==Null)
 						</span>
 					</div>
 				<?php } ?>
-              
-                <?php
-                if($data['stock'] < 1){
-                  echo "<div class='yu'>Stock : Tidak Tersedia</div>";
-                }else{
-                  echo "<div class='yu1'>Stock :  Tersedia</div>";
-                }
+
+                <?php echo "<div class='yu1'>Stock :  Tersedia</div>";
+                //validasi untuk cek stok jika tidak ada
+                  // echo "ini ".$data['stock'];
+                // if($data['stock'] < 1){
+                //   echo "<div class='yu'>Stock : Tidak Tersedia</div>";
+                // }else{
+                //   echo "<div class='yu1'>Stock :  Tersedia</div>";
+                // }
+                //akhir dari validasi stock
                 ?>
                 <br>
-                <center><input type='number' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'></center><br>
+                <center><input type='hidden' class='form-control' id='jmlItem<?php echo$data['m_product_id'];?>' style='width:70px' value='1' min='1'></center><br>
+
 
 
               <div class="btn-group">
@@ -474,11 +363,11 @@ if($saw==Null)
                 {
                 ?>
 
-                <button type="button" class="btn btn-warning" style="border-radius: 25px;  padding: 8px 45px; margin-bottom:7px;"  onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
+                <button type="button" class="btn-add-to-whishlist" style="border-radius: 25px;  padding: 8px 45px; margin-bottom:7px;"  onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
                 <?php }else{
                 ?>
+                  <a class="btn-add-to-whishlist" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')">Add to Wishlist</a>
 
-                <button type="button" class="btn btn-success" style="border-radius: 25px;  padding: 8px 45px; margin-bottom:7px;"  onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart" style="color:#dffd54;" aria-hidden="true"></i> Wishlist</button>
 
                 <?php }
                 ?>
@@ -490,7 +379,7 @@ if($saw==Null)
           <div class="col-xs-12" style='border-top:1px solid #e30c0c'>
           </div>
         </div>
-      <?php } } ?>
+      <?php    $test1++;} } ?>
       </div>
 
 
@@ -561,8 +450,9 @@ if($saw==Null)
     </div>
   </div>
 </div>
-
+<script src="jquery.rateyo.js"></script>
 <script type="text/javascript">
+
 
 $(document).ready(function() {
     $('#list').click(function(){event.preventDefault();$('#products .item').addClass('list-group-item');});

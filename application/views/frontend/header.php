@@ -92,65 +92,21 @@ var prod_detail =  localStorage.getItem('product_detail');
 		<link rel="stylesheet" href="<?php echo base_url('date_picker/bootstrap-datetimepicker.min.css');?>" type='text/css'>
 		<!-- e: Datepicker-->
 
-		<style type="text/css">
-			/*#search_keyword_id
-			{
-				padding:10px;
-				font-size:12px;
-			}
-			.productSrc
-			{
-				position:absolute;
-				width:628px;
-				display:none;
-				margin-top:-1px;
-				border-top:0px;
-				overflow:hidden;
-				border-left:1px  #CDCDCD solid;
-				border-right:1px  #CDCDCD solid;
-				background-color: white;
-				z-index: 289;
-			}
-			.show_result
-			{
-				font-family:tahoma;
-				padding:5px;
-				border-bottom:1px #CDCDCD dashed;
-				font-size:12px;
-				z-index: 289;
-			}
-			.show_result:hover
-			{
-				background:#e9e9e8;
-				color:#000000;
-				cursor:pointer;
-			}*/
-
-		</style>
-
 
     </head>
 
 	<body style='font-weight: normal;' ng-app="myApp">
 
 
-			<div>
-				<a href="https://myacico.co.id/product/category/1000553/Perlengkapan-Kantor">
-		    <img src='<?php echo base_url('images/general/bg_atas_2.png'); ?>' style="background-color: #F6F6F6;
-				text-align: left;
-				background-position: top left;
-				height: 70px;
-				background-repeat: no-repeat;
-				background-size: 1920px;
-				min-width: 1000px;">
-			</div></a>
+					<div class="top-bg"><img src='<?php echo base_url('images/general/bg-top_main.jpg');?>' border='0'></div>
+
 
 
 			<div class='row'>
 				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
 
 				<div class="col-xs-7">
-					<div class='link-head' style='margin-top:40px; position: absolute'>
+					<div class='link-head'>
 						<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_produck, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('#',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
@@ -190,6 +146,9 @@ var prod_detail =  localStorage.getItem('product_detail');
 						 </div>
 						 <div style='float:right; width:160px; text-align:center; border:0px;' >
 							 <div class='row' style='margin-top:0px; padding:0px;'>
+
+								 <div class="dropdown-profile">
+
 								 <div class="col-xs-4" style='margin-top:5px; text-align: right'>
 									   <!-- <div class="buktiTrans"></div> -->
 										 <!-- <?php  echo " <img src='$myavatar' width='25' border='0'>"; ?> -->
@@ -237,14 +196,32 @@ var prod_detail =  localStorage.getItem('product_detail');
 														<?php } ?>
 													</script>
 									 <div style='margin-top:-8px; '>
-										 <?php if(isset($user)){ ?>
-											 <b><font color='red'><?php echo anchor('account', 'Profile', array('class'=>'btn-nav-red'));?></font></b> /
-											 <b><font color='red'><?php echo anchor('#', 'Log out', array('class'=>'logout btn-nav-black'));?></font></b>
+
+										 <b><font color='red'>Account & List</font></b>
+											<div class="dropdown-profile-content" style='padding:10px;'>
+											 <?php $this->load->view('frontend/modules/account/profile_menu.php'); ?>
+											</div>
+
+										 <!-- <?php if(isset($user)){ ?>
+
+					 								 	<b><font color='red'><?php echo anchor('account', 'Account & List', array('class'=>'btn-nav-red'));?></font></b>
+					 									 <div class="dropdown-profile-content" style='padding:10px;'>
+					 										<?php $this->load->view('frontend/modules/account/profile_menu.php'); ?>
+					 									 </div>
+
+
 										 <?php }else{ ?>
+
+
+
 											 <b><font color='red'><?php echo anchor('customer/signIn','Log in', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create',$lang_sign, array('class'=>'btn-nav-black')); ?></font></b>
-										 <?php } ?>
+										 <?php } ?> -->
 									 </div>
 								 </div>
+
+								</div>
+
+
 							 </div>
 						 </div>
 						 <!-- <div style='float:right; width: 80px; text-align: center; border-right:1px solid #4d4d4d; margin-top:8px;'> -->
@@ -320,19 +297,20 @@ var prod_detail =  localStorage.getItem('product_detail');
       </div>
 
   </div>
+	<center>
 	<div class='my-hdr3'>
 			<div class="row" style='margin:0px; padding:0px'>
 				<div class="col-xs-9" style='padding:5px; text-align:right'>
-						<div style='font-size:11px; margin-bottom:-5px;'><?php echo $lang_promo1; ?></div>
-						<div style='font-family: arial; font-size:14px; font-weight: bold; color:#ff0000; '><?php echo $lang_promo2; ?> </div>
+						<div style='font-size:11px; margin-bottom:-5px; padding-right:20px'>Nantikan Hot Promo</div>
+						<div style='font-family: arial; font-size:14px; font-weight: bold; color:#ff0000; padding-right:50px '>12.12</div>
 				</div>
 				<div class="col-xs-3" align="left" style='margin:0px; padding:0px'>
 					<div style='margin-top:-7px;'>
-						<img src="<?php echo base_url('images/general/basket-01.png'); ?>" border="0" height="55">
+						<img src="<?php echo base_url('images/general/HARBOLNAS_Logo.png'); ?>" border="0" height="55">
 					</div>
 				</div>
 			</div>
-	</div>
+	</div></center>
 
   <!-- s header -->
 
@@ -871,6 +849,7 @@ $(".logout").click(function(e){
 
 	//Desktop
 	$(".dropbtn-basket").mouseover(function(){
+		$('.dropdown-basket-content').html('<img src="<?php echo base_url('images/general/Spinner_search.gif'); ?>" border="0"> Loading...');
 
 		// var cookie = document.cookie.split('x-auth=');
 		if(window.token){
