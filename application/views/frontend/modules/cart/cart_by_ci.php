@@ -232,10 +232,7 @@ textarea#styled {
               <option value='<?php echo $dataKur['shipperId']; ?>-<?php echo $dataKur['amount']; ?>-<?php echo $dataKur['shipperName']; ?>'><?php echo $dataKur['shipperName']; ?></option>
             <?php } ?>
 
-
           <?php }
-          }else{
-            echo"<option value=''>-</option>";
           }?>
 
 
