@@ -72,17 +72,15 @@ textarea#styled {
 	/*height: 30px;*/
 	float: right;
 	padding: 5px;
-	background-color: red;
-	border-radius: 10px;
+
+  background: transparent;
+  border: 1px;
 	color: white;
   font-size:15px;
   padding:10px;
 }
 
-.checkout-button:hover{
-  background-color: #ca3833;
-  color:#f1eeee;
-}
+
 </style>
 
 
@@ -291,7 +289,7 @@ textarea#styled {
     <div style='clear:both'></div>
   </div>
 
-  <button onclick='next()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b>BAYAR</b> SEKARANG</span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
+  <button onclick='next()' class="checkout-button"> <img src="https://s8.postimg.org/mgry4ywxx/Artboard_1-100.jpg"> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
   <div style='clear:both'></div>
 </div>
 
