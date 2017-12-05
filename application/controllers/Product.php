@@ -310,7 +310,7 @@ $home_domain = domain2();
 
 	$this->data['dathome'] = json_decode($konten21, true);
 	  $hasil1 = json_decode($konten21, true);
-
+//die(print_r($this->data['dathome']));
 	if(isset($hasil1['imageurl'])){
 		$this->data['imageurl'] = $hasil1['imageurl'];
 
