@@ -373,7 +373,7 @@ function pilihAlamat(id){
       $(".alamat").html(html);
       $(".amount").html('-');
       getKurir(id);
-
+      $(".paket").html('<option>-Pilih-</option>');
     }
   });
 
