@@ -54,7 +54,7 @@ cursor:pointer;
             <!-- Collect the nav links, forms, and other content for toggling -->
 
             <div class="collapse navbar-collapse" id="navbar-menu">
-                <ul class="nav navbar-nav navbar-center" style="margin-right:7%; margin-left: 7%;" data-in="fadeInDown" data-out="fadeOutUp" style='text-align:center'>
+                <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp" style='text-align:center'>
 
 
 									<?php
