@@ -67,7 +67,7 @@ $lang['f_a_sales'] = '<div style="text-align: justify;
         . '<br>4. Kelalaian pelanggan baik secara sengaja maupun tidak sengaja yang mengakibatkan kerusakan seperti modifikasi, kerusakan akibat bencana alam, kelalaian akibat pemakaian (terjatuh, terkena cairan, hilang, dll), ketidakstabilan aliran listrik, serangan virus, kerusakan pemakaian perangkat tambahan, kesalahan instalasi perangkat lunak/software, dan telah diperbaiki di tempat lain'
         . '</div>'
 ;
-$lang['f_aftersale_baner'] = '<img src="'.base_url("images/general/after_sale4.png").'"'
+$lang['f_aftersale_baner'] = '<img src="'.base_url("images/general/after_sale7.png").'"'
         . 'style=" text-align: left; background-position: top left;height: 460px; '
         . 'background-repeat: no-repeat; background-size: 0px; min-width: 100px;width: 100%">';
 $lang['f_aftersale_bawah'] = '<img src="'.base_url("images/general/after_sale5.png").'"'
