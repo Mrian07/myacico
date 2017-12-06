@@ -305,31 +305,7 @@ var success = function(r){
 
 
 
-	// var apiurl = api_base_url +'/order/cart/additem';
-	// <?php
-	// //Memasukan produk yang dibeli sebelum login ke api
-  //
-	// 	foreach ($this->cart->contents() as $items):?>
-  //
-  //
-	// 	var m_product_id = <?php echo $items['id']; ?>;
-	// 	var qty = <?php echo $items['qty']; ?>;
-	// 	var pricelist = <?php echo $items['price']; ?>;
-	// 	var weight = <?php echo $items['weight']; ?>;
-  //
-  //
-	// 	$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
-	// 		{
-	// 			"productId":m_product_id,
-	// 			"qty":qty,
-	// 			"price":pricelist,
-	// 			"weightPerItem":weight,
-	// 		}
-	// 	) , url: apiurl, headers:{"token":r.token}, success: success });
-	// <?php
-	// endforeach;
-  //
-	// ?>
+	
 
 
 

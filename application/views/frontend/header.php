@@ -96,7 +96,7 @@ var prod_detail =  localStorage.getItem('product_detail');
     </head>
 
 	<body style='font-weight: normal;' ng-app="myApp">
-			<div class="top-bg" onclick="location.href='<?php echo base_url('product/category/1000553/Perlengkapan-Kantor');?>'" style='cursor: pointer;'><img src='<?php echo base_url('images/general/bg-top_main.jpg');?>' border='0'></div>
+			<div class="top-bg" onclick="location.href='<?php echo base_url('product/category/1000540/Peralatan-Dapur');?>'" style='cursor: pointer;'><img src='<?php echo base_url('images/general/bg-top_main.jpg');?>' border='0'></div>
 			<div class='row'>
 				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
 
@@ -358,8 +358,8 @@ var prod_detail =  localStorage.getItem('product_detail');
 					if(cat=="all"){
 						location.href = base_url+'product/alllistItem/'+searchDesk;
 					}else{
-						location.href = base_url+'product/alllistItem/'+searchDesk;
-						//location.href = base_url+'product/alllistItemCat/'+cat+'/'+searchDesk;
+						//location.href = base_url+'product/alllistItem/'+searchDesk;
+						location.href = base_url+'product/alllistItemCat/'+cat+'/'+searchDesk;
 					}
 
 
