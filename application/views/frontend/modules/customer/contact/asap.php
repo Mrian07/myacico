@@ -4,7 +4,7 @@
               <img src="https://storage.googleapis.com/myacico/image/banner/banner-58.png" style="width:100%; ">
 		<br>
                 <center>
-                    <img src="<?php echo base_url('images/general/asap_big.png');?>" style='height:auto; width: auto;'>
+                    <img src="<?php echo base_url('images/general/asap_big.png');?>" style='height:150px; width: auto;'>
                 </center>
 		<?php echo $lang_inf_asap;?>
 		
