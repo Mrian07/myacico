@@ -432,7 +432,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <?php }else{
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title" style="height:50px; word-wrap: normal; line-height: 16px;" ><a style="font-size:11px; font-weight: bold;" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+        <p class="link-nmp box-title" style="height:50px; word-wrap: normal; line-height: 16px;" ><a style="font-size:11px; text-align: justify; width: auto; font-weight: bold;" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
           $str2 = substr($str1, 0, 61);
