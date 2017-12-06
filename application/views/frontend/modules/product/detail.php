@@ -102,11 +102,12 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     <table class="table table-detail-prod" border="0">
       <tbody>
         <?php
+        $asap = "<a style='height:20px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."' class='test01'> </a>";
           if($specialPrice == 0 ){
             echo "
               <tr>
                 <td>Harga:</td>
-                <td><span class='price-list'>Rp ".money($pricelist)."</span><span><img src=".base_url('images/general/asap.png')." style='height:20px; margin-left:5px;'></span></td>
+                <td><span class='price-list'>Rp ".money($pricelist)."</span><span>".$asap."</span></td>
               </tr>";
           }else{
             echo "
@@ -115,7 +116,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
               <td>
                 <span class='price-list'>Rp ".money($specialPrice)."</span>
                 <span class='discount'>".money($discount)."% OFF</span>
-                <span>Hemat: <span style='color: #8a0202; font-weight: bold'>Rp ".money($pricelist - $specialPrice)."</span></span><span><img src=".base_url('images/general/asap.png')." style='height:20px; margin-left:5px;'></span>
+                <span>Hemat: <span style='color: #8a0202; font-weight: bold'>Rp ".money($pricelist - $specialPrice)."</span></span><span>".$asap."</span>
               </td>
             </tr>
             <tr>
