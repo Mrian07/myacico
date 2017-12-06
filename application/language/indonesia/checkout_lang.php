@@ -24,6 +24,23 @@ $lang['msg_cimb'] = 'Maaf pembayaran online payment menggunkan CIMB Clicks menga
 $lang['msg_online_payment'] = 'Maaf pembayaran online payment mengalami gangguan';
 
 
+// checkout atas
+    $lang['lang_keranjang'] = 'Keranjang Belanja';
+      $lang['lang_ringkasan'] = 'Metode Pemabyaraan';
+        $lang['lang_konfrim'] = 'Konfrimasi';
+          $lang['lang_tamb123'] = 'Tambah Alamat Baru';
+          $lang['Field_Another'] = 'Pilih Alamat Lain';
+            $lang['Field_Another'] = 'Kurir Pengiriman';
+            $lang['field_paket'] = 'Paket Pengiriman';
+            $lang['field_biaya'] = 'Biaya Asuransi';
+            $lang['field_ongk'] = 'Ongkos Kirim';
+            $lang['field_alamatTu'] = 'Alamat Tujuan';
+            $lang['field_catatan'] = 'Catatan';
+            $lang['field_byr1'] = 'Bayar';
+            $lang['field_byr2'] = 'Sekarang';
+
+// akhir dari atas
+
 // Finish
 $lang['finish'] = 'SELESAI';
 $lang['thanks'] = 'TERIMA KASIH';

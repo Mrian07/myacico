@@ -237,7 +237,7 @@
                   <label><?php echo "kelurahan"; ?>*</label>
                   <select name="village_id" id="village_id" class="form-control mandatory"></select>
                 </div>
-                <div class="form-group" style="display:none" id="postal_box">
+                <div class="form-group" id="postal_box">
          <label><?php echo $lang_PostCode; ?>*</label>
          <div id="postal"></div>
          <input type='number' id ='kdpos' maxlength="5" class='form-control mandatory' maxlength="5"/>
@@ -287,12 +287,12 @@ $('#village_id').change(function () {
     });
 function get_village(){
   $("#village_box").slideDown();
-  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_postal);
+  $("#village_id").prop('disabled', true).html('<option value="">--pilih--</option>');
   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
     r.forEach(function(o){
       $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
     });
-    $("#village_id").prop('disabled', false).change(get_postal);
+    $("#village_id").prop('disabled', false);
   }, "json" );
 }
 function get_distric(){
@@ -320,17 +320,17 @@ $('#postal_id').change(function () {
       var end = this.value;
     $('#submit_btn').removeAttr('disabled');
   });
-  function get_postal(){
-      $("#postal_box").slideDown();
-    $("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
-      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
-      r.forEach(function(o){
-        $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
-              console.log('23',o.postal);
-      });
-        $("#postal").prop('disabled', false);
-      }, "json" );
-    }
+  // function get_postal(){
+  //     $("#postal_box").slideDown();
+  //   $("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+  //     $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+  //     r.forEach(function(o){
+  //       $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+  //             console.log('23',o.postal);
+  //     });
+  //       $("#postal").prop('disabled', false);
+  //     }, "json" );
+  //   }
 function get_region(){
   $("#region_box").slideDown();
   // var negara = $('#country_sel').val();
@@ -345,19 +345,19 @@ function get_region(){
     $("#region_sel").prop('disabled', false).change(get_city);
   }, "json" );
 }
-function get_postal(){
-  $("#postal_box").slideDown();
-  //$("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
-  $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
-      // r.forEach(function(o){
-   //   $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
-  //$("#postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
-$("#kdpos").val(r[0]['postal']);
-           // console.log('23',o.postal);
-   // });
-    $("#postal").prop('disabled', false);
-  }, "json" );
-}
+// function get_postal(){
+//   $("#postal_box").slideDown();
+//   //$("#postal").prop('disabled', true).html('<option value="">--pilih--</option>');
+//   $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
+//       // r.forEach(function(o){
+//    //   $("#postal").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
+//   //$("#postal").append(" <input type='text' id = 'kdpos'  class='form-control mandatory' value='"+r[0]['postal']+"'  disabled/>");
+// $("#kdpos").val(r[0]['postal']);
+//            // console.log('23',o.postal);
+//    // });
+//     $("#postal").prop('disabled', false);
+//   }, "json" );
+// }
 
 var data = {};
 
