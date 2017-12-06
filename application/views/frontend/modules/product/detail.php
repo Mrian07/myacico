@@ -431,13 +431,15 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       <!-- <div class="item" align="center"> -->
     <div class="item" align="center">
 
-      <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+      <a style="font-size:10px; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='#0066c0'" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
         <?php if($itemslide2['imageurl']){?>
-        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" style='height:100px;'>
+               <!--</a>-->
         <?php }else{
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title" style="height:50px; word-wrap: normal; line-height: 16px;" ><a style="font-size:10px; text-align: justify; width: auto; font-weight: bold;" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+       <p style="height:50px; word-wrap: normal; line-height: 16px;">
+            <!--<a style="font-size:10px; text-align: justify; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='#c45500'" onMouseOut="this.style.color='#0066c0'" href="<?php // echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">-->
           <?php
           $str1 = $itemslide2['name'];
           $str2 = substr($str1, 0, 56);
@@ -449,7 +451,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             echo $str2."....";
           }
           ?>
-      </a></p>
+            </p>
+
+      </a>
       <div class="ratting-container"  style="margin-top: -25px;">
       <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
     </div>
@@ -479,13 +483,15 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       <!-- <div class="item" align="center"> -->
     <div class="item" align="center">
 
-      <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+      <a style="font-size:10px; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='#0066c0'" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
         <?php if($itemslide2['imageurl']){?>
-        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" style='height:100px;'>
+               <!--</a>-->
         <?php }else{
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title"  style="height:50px; word-wrap: normal; line-height: 16px;"><a style="font-size:10px; text-align: justify; width: auto; font-weight: bold;"  href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+       <p style="height:50px; word-wrap: normal; line-height: 16px;">
+            <!--<a style="font-size:10px; text-align: justify; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='#c45500'" onMouseOut="this.style.color='#0066c0'" href="<?php // echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">-->
           <?php
           $str1 = $itemslide2['name'];
           $str2 = substr($str1, 0, 56);
@@ -497,7 +503,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             echo $str2."....";
           }
           ?>
-      </a></p>
+            </p>
+
+      </a>
        <div class="ratting-container"  style="margin-top: -25px;">
       <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
     </div>
@@ -1239,10 +1247,10 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 
 }
 .owl-prev{
-    position :absolute; top: 50px; left:18px; border-radius:50px; height:38px; width: 38px;
+    position :absolute; top: 50px; left:32px; border-radius:50px; height:38px; width: 38px;
 }
 .owl-next{
-    position :absolute; right:18px; top: 48px; border-radius:50px; height:38px; width: 38px;
+    position :absolute; right:32px; top: 48px; border-radius:50px; height:38px; width: 38px;
 }
 
 </style>
