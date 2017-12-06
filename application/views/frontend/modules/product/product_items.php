@@ -111,6 +111,7 @@ font-size: 16px;
         width: 100%;
     }
 }
+
 .jumbotron-billboard .img {
     margin-bottom: 0px;
     opacity: 0.5;
@@ -259,6 +260,7 @@ if($saw==Null)
             rating: rate,
             starWidth: "15px",
             readOnly: true,
+
           });
         });
       </script>
@@ -274,7 +276,7 @@ if($saw==Null)
         <div style="padding-left:50px">
         <div class="ratting-container">
 
-          <?php echo "<div id='rateYo".$test1."' class='detail-prod-rating'></div><span class='ratting-text'></span>" ?>
+          <?php echo "<div id='rateYo".$test1."' class='detail-prod-rating' style='z-index:-1'></div><span class='ratting-text'></span>" ?>
 
 
           <!-- <div id="rateYo"  class="detail-prod-rating"></div><span class="ratting-text">(<?php echo $data['rate'];?>) -->
