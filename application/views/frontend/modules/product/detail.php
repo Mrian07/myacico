@@ -1229,10 +1229,10 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 
 }
 .owl-prev{
-    position :absolute; top: 50px; left:10px; border-radius:50px; height:33px; width: 35px;padding-top:5px;
+    position :absolute; top: 50px; left:10px; border-radius:50px; height:33px; width: 35px;padding-top:7px;
 }
 .owl-next{
-    position :absolute; right:10px; top: 50px; border-radius:50px; height:33px; width: 35px;padding-top:5px;
+    position :absolute; right:10px; top: 50px; border-radius:50px; height:33px; width: 35px;padding-top:7px;
 }
 
 </style>
