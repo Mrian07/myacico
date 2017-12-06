@@ -60,16 +60,26 @@ cursor:pointer;
 
 									<?php
                 // echo"<pre>";print_r($hasilNav);
-
+                    $loopmn=1;
                    foreach($hasilNav as $dataNav){
                      if($lang=='en'){
                        $nav_name = $dataNav['name_en'];
                      }else{
                        $nav_name = $dataNav['name'];
                      }
+
+                     if($loopmn=='6'){
+                       $atur = "width:9%;";
+                     }elseif($loopmn=='2'){
+                       $atur = "width:9%;";
+                     }else if($loopmn=='5'){
+                        $atur = "width:15%;";
+                      }else{
+                       $atur = "width:12%;";
+                     }
                      ?>
 									<!-- <li class="dropdown megamenu-fw nav-show-desktop nav-garis"> -->
-                  <li class="dropdown megamenu-fw nav-show-desktop nav-garis" style="width:12%;">
+                  <li class="dropdown megamenu-fw nav-show-desktop nav-garis" style="<?php echo $atur; ?> font-family: 'myriad_web_pro';">
 										<?php echo anchor('#', '<img src="'.$dataNav['iconurl'].'" border="0" height="20"> '.$nav_name, array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
                                                                             <ul  class="dropdown-menu megamenu-content" role="menu">
 											<li>
@@ -104,136 +114,7 @@ cursor:pointer;
 										</ul>
 									</li>
 
-									<?php } ?>
-
-
-
-
-
-
-									<!-- <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Megamenu One</a>
-                        <ul class="dropdown-menu megamenu-content" role="menu">
-                            <li>
-                                <div class="row">
-                                    <div class="row">
-																				<div class="col-menu col-md-2">
-																					<img src="<?php// echo base_url('images/demo/oppo-f3plus-gold.jpg'); ?>" border="0" height="100">
-																				</div>
-																				<div class="col-menu col-md-2">
-																					<a href='#'>Samsung</a>
-																				</div>
-																				<div class="col-menu col-md-2">
-																					Samsung
-																				</div>
-																				<div class="col-menu col-md-2">
-																					Samsung
-																				</div>
-																				<div class="col-menu col-md-2">
-																					Samsung
-																				</div>
-																				<div class="col-menu col-md-2">
-																					Samsung
-																				</div>
-																				<div class="col-menu col-md-2">
-																					Samsung
-																				</div>
-																			</div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Megamenu</a>
-                        <ul class="dropdown-menu megamenu-content" role="menu">
-                            <li>
-                                <div class="row">
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Title Menu One</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Title Menu Two</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Title Menu Three</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Title Menu Four</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Dropdowns</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Custom Menu</a></li>
-                            <li><a href="#">Custom Menu</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Sub Menu</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Custom Menu</a></li>
-                                    <li><a href="#">Custom Menu</a></li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Sub Menu</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Custom Menu</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Custom Menu</a></li>
-                            <li><a href="#">Custom Menu</a></li>
-                            <li><a href="#">Custom Menu</a></li>
-                            <li><a href="#">Custom Menu</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact Us</a></li> -->
+									<?php $loopmn++; } ?>
                 </ul>
 
 

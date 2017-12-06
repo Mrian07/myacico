@@ -29,7 +29,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/magnific-popup/js/magnific-popup.js');?>"></script>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-<div class="container">
+<div class="container font2">
 <div class='my-bg-title'>
     <i class="fa fa-angle-right" aria-hidden="true"></i> DETAIL PRODUCT
 </div>
@@ -325,7 +325,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
 
          <!-- -->
-     
+
      <?php
      $loop=0;
         if (isset($specification[1])) {
@@ -335,18 +335,18 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           <th>
       <?php echo $spek;?>
         </th>
-        
+
         <td><?php echo $value[$loop].'</td>';
         $loop++;
         ?>
             </tr>
     <?php
         }
-        
+
           }
       ?>
-    
-   
+
+
   </table>
 
   </div>
