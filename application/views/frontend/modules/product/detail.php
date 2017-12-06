@@ -3,7 +3,19 @@
     .melayang:hover {
     color: hotpink;
 }
+.xzoom{
+  width: 278px;
+  /*top: -41.2038px;
+  left: 0px;
+  position: absolute;*/
+}
+.xzoom-source{
+  margin-left: 7px;
+
+}
+
 </style>
+        <!-- style="width: 100%!important position: absolute; width: 284px; top: -41.2038px; left: 0px;" -->
 <?php
 $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
@@ -47,10 +59,10 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <div class="row">
 
   <div class="col-sm-3">
-
+<!-- style="width: 100% position: absolute; width: 284px; top: -41.2038px; left: 0px;" -->
     <?php if (isset($img[0])) { ?>
       <img id="xzoom-magnific" class="xzoom"
-          style="width: 100%!important position: absolute; width: 284px; top: -41.2038px; left: 0px;"
+
           src="<?php echo $img[0]; ?>"
           onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"
           xoriginal="<?php echo $img[0]; ?>" />
@@ -558,7 +570,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             </p>
 
       </a>
-        
+
        <div class="ratting-container"  style="margin-top: -25px;">
       <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
     </div>
@@ -1280,7 +1292,7 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
       });
 
       $("#owl-demo2").owlCarousel({
-        autoPlay: 3000,  
+        autoPlay: 3000,
         navigation: true,
         items : 10,
         itemsDesktop : [1199,5],
@@ -1288,5 +1300,57 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
       });
 
   });
+  $('.xzoom, .xzoom-gallery').xzoom({zoomWidth: 400, title: true, tint: '#333', Xoffset: 15});
 
+  //Integration with hammer.js
+  var isTouchSupported = 'ontouchstart' in window;
+
+  if (isTouchSupported) {
+      //If touch device
+      $('.xzoom').each(function(){
+          var xzoom = $(this).data('xzoom');
+          xzoom.eventunbind();
+      });
+
+      $('.xzoom').each(function() {
+          var xzoom = $(this).data('xzoom');
+          $(this).hammer().on("tap", function(event) {
+              event.pageX = event.gesture.center.pageX;
+              event.pageY = event.gesture.center.pageY;
+              var s = 1, ls;
+
+              xzoom.eventmove = function(element) {
+                  element.hammer().on('drag', function(event) {
+                      event.pageX = event.gesture.center.pageX;
+                      event.pageY = event.gesture.center.pageY;
+                      xzoom.movezoom(event);
+                      event.gesture.preventDefault();
+                  });
+              }
+
+              xzoom.eventleave = function(element) {
+                  element.hammer().on('tap', function(event) {
+                      xzoom.closezoom();
+                  });
+              }
+              xzoom.openzoom(event);
+          });
+      });
+
+  } else {
+      //If not touch device
+
+      //Integration with magnific popup plugin
+      $('#xzoom-magnific').bind('click', function(event) {
+          var xzoom = $(this).data('xzoom');
+          xzoom.closezoom();
+          var gallery = xzoom.gallery().cgallery;
+          var i, images = new Array();
+          for (i in gallery) {
+              images[i] = {src: gallery[i]};
+          }
+          $.magnificPopup.open({items: images, type:'image', gallery: {enabled: true}});
+          event.preventDefault();
+      });
+  }
   </script>
