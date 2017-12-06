@@ -96,7 +96,7 @@ $(document).ready(function() {
 })
 
 function getListProduct() {
-    var url = api_base_url + '/product/filter/<?php echo $pro ?>';
+    // var url = api_base_url + '/product/filter/<?php echo $pro ?>';
     var page = '<?php echo $page; ?>';
     var sort = '<?php echo $sort; ?>';
     var searchKey = '<?php echo $pro; ?>';
@@ -214,7 +214,7 @@ function getSidebar() {
                 m.data.forEach(function(d) {
                     menu_body += '<div class="checkbox">'
                         + '<label>'
-                            + '<input name="" type="checkbox" value="' + d.valueAlias + '">'
+                            + '<input name="checkbox-filter" type="checkbox" value="' + m.filterAlias + ' ~ ' + d.valueAlias + '" onclick="doFilter()">'
                             + '<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>'
                             + d.value
                             + '(' + d.count + ')'
@@ -234,6 +234,75 @@ function getSidebar() {
                 )
             });
         });
+}
+
+function doFilter() {
+
+    var searchKey = '<?php echo $pro; ?>';
+
+    var objFilter = {}
+    objFilter.Others = [];
+    var urlFilter = api_base_url + '/product/productall/' + searchKey + '?';
+
+    var urlCategory = '';
+    var urlBrand = '';
+    var urlPrice = '';
+    var urlInstance = '';
+    var urlOthers = '';
+    var urlAttribute = '';
+    
+    $('#sidebar-left-filter input[name=checkbox-filter]:checked').each(function() {
+
+        var valraw = $(this).val();
+        var arrVal = valraw.split('~');
+        var key = arrVal[0].trim();
+        var val = arrVal[1].trim();
+
+        // console.log("1objFilter[key]: ", objFilter[key]);
+        if (key == 'Category' || key == 'Brand') {
+            if(typeof objFilter[key] == 'undefined') objFilter[key] = [];
+            objFilter[key].push(val);
+        } else {
+            if (objFilter.Others.length == 0) {
+                var tempObj = {};
+                tempObj[key] = [val];
+                objFilter.Others.push(tempObj);
+            } else {
+                objFilter.Others.forEach(function(item) {
+                    console.log('item: ', item);
+                    if(typeof item[key] == 'undefined') item[key] = [];
+                    item[key].push(val);
+                });
+            }
+        }
+    })
+
+    console.log('objFilter: ', objFilter);
+
+    if (objFilter.Category) {
+        objFilter.Category.forEach(function(item) {
+            urlCategory += 'cat=' + item + '&';
+        });
+    }
+    if (objFilter.Brand) {
+        objFilter.Brand.forEach(function(item) {
+            urlBrand += 'brand=' + item + '&';
+        });
+    }
+    if (objFilter.Others.length != 0) {
+        objFilter.Others.forEach(function(items) {
+            for (var key in items) {
+                urlInstance += 'instance=' + key + '&'
+                
+                items[key].forEach(function(val) {
+                    urlAttribute += 'attribute=' + val + '&'
+                });
+            }
+            urlOthers += urlInstance + urlAttribute;
+        });
+    }
+
+    urlFilter += urlCategory + urlBrand + urlPrice + urlOthers;
 }
 </script>
 
