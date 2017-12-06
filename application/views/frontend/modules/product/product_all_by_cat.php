@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class='my-bg-title'>
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i>HASIL PENCARIAN UNTUK '<span id="search-key"></span>'
+			<i class="fa fa-angle-right" aria-hidden="true"></i>HASIL PENCARIAN UNTUK '<b><?php echo$id; ?></b>'
 
 		</div>
 	<div class="row">
@@ -30,26 +30,6 @@
           </div>
     </div>
   <div id="product" class="promo-front owl-carousel">
-
-
-<!--       <div id="product" align="center" ></div>
-      <div class="item" style='background:#ffffff; padding:10px; height:210px'>-->
-
-
-
-            <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-            </div> -->
-<!--      </div>
-
-    </div>-->
-
-
-
 
 </div>
 
