@@ -31,6 +31,9 @@
 
 </div>
 <script>
+
+	var filterUrl = '';
+
 	// $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	var ctrl= "<?php echo base_url('/product/detail')?>";
 	var namapotong = '';
@@ -58,57 +61,70 @@
 	// }
 
 $(document).ready(function() {
-	
 	getListProduct();
 	getSidebar();
+	
+	$('#order_by').change(function(){
+		getListProduct();
+	});
 })
 
-function buildPage(total, page){
-	if(!page) return false;
+function buildPage(total, page) {
+	console.log('page: ', page);
+	page = parseInt(page);
+	if(!total) return false;
 	var limit = 10;
 	var totalPage = Math.ceil(total / limit);
 	$('.my-paging').empty();
 
-	if (page == 1) $('.my-paging').append('&laquo; First &lt; Previous');
-	else $('.my-paging').append('<a href=$first class="my-paging-btn">&laquo; First</a> <a href="#" class="my-paging-btn">&lt; Previous</a>');
+	if (page == 1) $('.my-paging').append('<span class="my-paging-off"><i class="fa fa-angle-left" aria-hidden="true"></i></span>');
+	else $('.my-paging').append('<span onclick ="getListProduct(' + (page-1) + ')" class="my-paging-btn my-paging-list"><i class="fa fa-angle-left" aria-hidden="true"></i></span>');
 
 	if(total > limit){
 
 		for (var i = 1; i <= totalPage; i++) {
-			if(((i < page + 3) && (i > page - 3))||(i < 4)||(i > totalPage - 2)) {
-				if(i == page) $('.my-paging').append(' <span class="my-paging-list-on">'+i+'</span>');
-				else  $('.my-paging').append(' <a href="#" class="my-paging-list">'+i+'</a>');
+			if(((i < page + 3) && (i > page - 3)) || (i == 1) || (i == totalPage)) {
+				if(i == page)
+					$('.my-paging').append(' <span class="my-paging-list-on">'+i+'</span>');
+				else
+					$('.my-paging').append('<span onclick ="getListProduct(' + i + ')" class="my-paging-btn my-paging-list">'+i+'</span>')/*.append(' ',
+						$(document.createElement('a')).attr({v:i, href:'#', 'class':'my-paging-list'})
+							.click(function (e) {
+								e.preventDefault();
+								getListProduct($(this).attr('v'));
+							})
+							.text(i)
+						)*/;
 			}
-			else if((i < page + 4) && (i > page - 4)) $('.my-paging').append(' ... ');
+			else if((i == page + 3) || (i == page - 3)) $('.my-paging').append(' ... ');
 		}
 	}
 
 	if (page < totalPage){
-		$('.my-paging').append('<a href="#" class="my-paging-btn">Next >></a> <a href="#" class="my-paging-btn">Last ></a>');
+		$('.my-paging').append('<span onclick ="getListProduct(' + (page+1) + ')" class="my-paging-btn my-paging-list"><i class="fa fa-angle-right" aria-hidden="true"></i></span>');
 	}
-	else $('.my-paging').append('&raquo; Next &gt; Last');
+	else $('.my-paging').append('<span class="my-paging-off"><i class="fa fa-angle-right" aria-hidden="true"></i></span>');
 }
 
-function getListProduct(u,p) {
-
-
-	var url = api_base_url + '/product/productall/<?php echo $pro ?>?itemperpage=10';
+function getListProduct(p) {
+	$('#productlist').empty();
+	var url = api_base_url + '/product/productall/<?php echo $pro ?>?itemperpage=10&';
 	var order = $('#order_by').val();
 	var total;
 
-	if(order) url+= '&ob='+order;
+	if(order) url += 'ob=' + order + '&';
 
-	if(u) url = u;
+	if(filterUrl) url += filterUrl;
 
 	p = p || 1;
-	url += '&page='+p;
+	url += 'page=' + p + '&';
 
-	$.get(url+'&show=productcount', function(res){
+	$.get(url + 'show=productcount', function(res){
 		console.log('get total:', res);
 		total = res.productCount;
 	});
 
-	$.get(url, function(res){
+	$.get(encodeURI(url), function(res){
 		// alert("finish");
 		console.log("konten:", res);
 		// console.log(res);
@@ -185,7 +201,8 @@ function getListProduct(u,p) {
 			)
 			i++;
 		});
-		buildPage(total, p);
+		buildPage(total, parseInt(p));
+		window.scrollTo(0,0);
 	});
 
 	// $.get(api_base_url + api2,function(res){
@@ -196,38 +213,107 @@ function getListProduct(u,p) {
 function getSidebar() {
 	var url = api_base_url + '/product/filter/<?php echo $pro ?>';
 		// console.log("url: ", url);
-		$.get(url,function(res){
-			console.log("result ajax list");
-			// console.log(res);
-			
+	$.get(url,function(res){
+		console.log("result ajax list");
+		// console.log(res);
+		
 
-			res.forEach(function(m) {
+		res.forEach(function(m) {
 
-				var menu_body = '';
+			var menu_body = '';
 
-				m.data.forEach(function(d) {
-					menu_body += '<div class="checkbox">'
-						+ '<label>'
-							+ '<input name="" type="checkbox" value="' + d.valueAlias + '">'
-							+ '<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>'
-							+ d.value
-							+ '(' + d.count + ')'
-						+ '</label>'
-					+ '</div>'
-				})
+			m.data.forEach(function(d) {
+				menu_body += '<div class="checkbox">'
+					+ '<label>'
+						+ '<input name="checkbox-filter" type="checkbox" value="' + m.filterAlias + ' ~ ' + d.valueAlias + '" onclick="doFilter()">'
+						+ '<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>'
+						+ d.value
+						+ '(' + d.count + ')'
+					+ '</label>'
+				+ '</div>'
+			})
 
-				$('#sidebar-left-filter').append(
-					$(document.createElement('div')).attr({'id': m.filterAlias,'class': 'menu_list'}).append(
-						$(document.createElement('p')).text(m.filter).attr({'class': 'menu_head plus'}).click(function() {
-							console.log("clicked lhooo");
-							$(this).toggleClass("plus minus").next("div.menu_body").slideToggle(300);
-						}),
-						// '<p class="menu_head plus">' +	+ '</p>' "#" + m.filterAlias + " > p.menu_head"
-						'<div class="menu_body">' + menu_body + '</div>'
-					)
+			$('#sidebar-left-filter').append(
+				$(document.createElement('div')).attr({'id': m.filterAlias,'class': 'menu_list'}).append(
+					$(document.createElement('p')).text(m.filter).attr({'class': 'menu_head plus'}).click(function() {
+						console.log("clicked lhooo");
+						$(this).toggleClass("plus minus").next("div.menu_body").slideToggle(300);
+					}),
+					// '<p class="menu_head plus">' +	+ '</p>' "#" + m.filterAlias + " > p.menu_head"
+					'<div class="menu_body">' + menu_body + '</div>'
 				)
-			});
+			)
 		});
+	});
+}
+
+function doFilter() {
+
+    var objFilter = {}
+    objFilter.Others = [];
+
+    var urlCategory = '';
+    var urlBrand = '';
+    var urlPrice = '';
+    var urlInstance = '';
+    var urlOthers = '';
+    var urlAttribute = '';
+    
+    $('#sidebar-left-filter input[name=checkbox-filter]:checked').each(function() {
+        var valraw = $(this).val();
+        var arrVal = valraw.split('~');
+        var key = arrVal[0].trim();
+        var val = arrVal[1].trim();
+
+        // console.log("1objFilter[key]: ", objFilter[key]);
+        if (key == 'Category' || key == 'Brand') {
+            if(typeof objFilter[key] == 'undefined') objFilter[key] = [];
+            objFilter[key].push(val);
+        } else {
+            if (objFilter.Others.length == 0) {
+                var tempObj = {};
+                tempObj[key] = [val];
+                objFilter.Others.push(tempObj);
+            } else {
+                objFilter.Others.forEach(function(item) {
+                    console.log('item: ', item);
+                    if(typeof item[key] == 'undefined') item[key] = [];
+                    item[key].push(val);
+                });
+            }
+        }
+    })
+
+    console.log('objFilter: ', objFilter);
+
+    if (objFilter.Category) {
+        objFilter.Category.forEach(function(item) {
+            urlCategory += 'cat=' + item + '&';
+        });
+    }
+    if (objFilter.Brand) {
+        objFilter.Brand.forEach(function(item) {
+            urlBrand += 'brand=' + item + '&';
+        });
+    }
+    if (objFilter.Others.length != 0) {
+        objFilter.Others.forEach(function(items) {
+            for (var key in items) {
+                urlInstance += 'instance=' + key + '&'
+                
+                items[key].forEach(function(val) {
+                    urlAttribute += 'attribute=' + val + '&'
+                });
+            }
+            urlOthers += urlInstance + urlAttribute;
+        });
+    }
+
+    filterUrl = urlCategory + urlBrand + urlPrice + urlOthers;
+
+    console.log('filterUrl: ', filterUrl);
+
+    getListProduct();
 }
 </script>
 

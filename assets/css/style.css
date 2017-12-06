@@ -182,6 +182,7 @@
   padding: 10px;
   margin:5px;
   color:#c62f2f;
+  cursor: pointer;
 }
 
 .my-paging-list:hover{
@@ -197,11 +198,17 @@
   border-radius:80px;
   padding: 5px 10px 5px 10px;
   font-weight: bold;
+  cursor: default;
 }
 
 .my-paging-btn{
   margin:5px;
   color:#c62f2f;
+  cursor: pointer;
+}
+.my-paging-off{
+  margin:5px;
+  cursor: default;
 }
 /*.my-paging-btn:link{
   color:#111111;

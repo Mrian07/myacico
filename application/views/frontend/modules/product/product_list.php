@@ -86,7 +86,7 @@ input[type=number]::-webkit-outer-spin-button {
 			<form class="form-inline">
 				<div class="form-group text-right">
 					<label for="atur">Atur berdasarkan:</label>
-					<select name="atur" class="form-control" onchange='filter(this)' style="font-size: 8pt;height: 30px;width: 140px;">
+					<select id="order_by" class="form-control" style="font-size: 8pt;height: 30px;width: 140px;">
 						<option value='5' <?php if($sort_id=='5'){echo"selected";}?>>Produk Terbaru</option>
 						<option value='1' <?php if($sort_id=='1'){echo"selected";}?>>Nama: A Ke Z</option>
 						<option value='2' <?php if($sort_id=='2'){echo"selected";}?>>Nama: Z Ke A</option>
@@ -114,57 +114,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 <div style="clear:both"></div>
 
-<div class='my-paging'>
-	<?php
-		/*if($page>1){
-			$previous=$page-1;
-			$first =	site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/1');
-			$prev =	site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$previous);
-			echo "<a href=$first class='my-paging-btn'><< First</a> ";
-			echo "<a href=$prev class='my-paging-btn'>< Previous</a> ";
-		}else{
-			echo"<< First < Previous ";
-		}
-
-		//angka awal
-		$angka = ($page > 3 ? "...":"");
-		for($i=$page-1;$i<$page;$i++){
-			if($i<1)
-				continue;
-				$hal =	site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$i);
-				$angka .="<a href=$hal class='my-paging-list'>$i</a>";
-
-		}
-
-		//angka tengah
-		$angka.="<span class='my-paging-list-on'>$page</span>";
-		for($i=$page+1;$i<($page+3);$i++){
-			if($i>$jpage)
-				break;
-				$hal =	site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$i);
-				$angka .="<a href=$hal class='my-paging-list'>$i</a>";
-		}
-
-		//angka akhir
-		$hal =	site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$jpage);
-		$angka .=($page+2<$jpage ? "...<a href=$hal class='my-paging-list'>$jpage</a>":"");
-
-		//cetak semua angka
-		echo "$angka";
-
-		//next
-		if($page<$jpage){
-			$next = $page+1;
-			$next =	site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$next);
-			$last =	site_url('product/alllistItem/'.$pro.'/'.$sort_id.'/'.$jpage);
-			echo " <a href=$next class='my-paging-btn'>Next >></a>";
-			echo " <a href=$last class='my-paging-btn'>Last ></a>";
-		}else{
-			echo"Next >	Last >>";
-		}*/
-
-	?>
-</div>
+<div class='my-paging'></div>
 
 <!-- Modal -->
 <div id="cartModal" class="modal fade cartModal" role="dialog">
@@ -232,8 +182,8 @@ $(document).ready(function() {
 		$('.highlight'+ i + ' ul li:gt(3)').hide();
 	}
 });
-function filter(id){
-	window.location.replace("<?php echo site_url('product/alllistItem/'.$pro.'/'); ?>"+id.value);
+function filter(e){
+	
 }
 
 var token = document.cookie.split('x-auth=')[1].split(';').shift();
