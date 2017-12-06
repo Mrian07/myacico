@@ -423,9 +423,9 @@
 						<div align="left" class="method-kupon">
 							<b><?=$lang_voucher_code;?> ?</b><br>
 							<div class="input-group">
-								<input type="text" id="email1" name="email1" class="my-field-kupon" name="x" placeholder="">
+								<input type="text" id="txt_voucher" name="txt_voucher" class="my-field-kupon"  placeholder="">
 								<span class="input-group-btn">
-										<input type="button" id="submit_btn1" class="btn btn-default my-btn-kupon" value="GUNAKAN KODE">
+										<input type="button" id="btn_voucher" class="btn btn-default my-btn-kupon" value="GUNAKAN KODE">
 								</span>
 							</div>
 						</div>
@@ -452,6 +452,14 @@ $(document).ready(function() {
 		}
 	});
 });
+
+$('#btn_voucher').click(function(){
+if($("#txt_voucher").val() == '')
+{
+     alert('Kode Voucher Tidak Boleh Kosong');
+}
+   
+}); 
 
 function delItemCart(id,img,name,idcart){
 	var apiurl = api_base_url + '/order/cart/deleteitem?idcartitem='+idcart;

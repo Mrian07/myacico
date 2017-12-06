@@ -29,14 +29,11 @@ $lang['msg_online_payment'] = 'Sorry payment online payment has been interrupted
     $lang['lang_ringkasan'] = 'Payment Method';
     $lang['lang_konfrim'] = 'Confirmation';
     $lang['lang_tamb123'] = 'Add New Address';
-    $lang['Field_Another'] = 'Choose Another Address';
-    $lang['lang_courier'] = '
-Shipping Courier';
-$lang['field_paket'] = '
-Delivery Package';
+    $lang['Field_Another'] = 'Choose Address';
+    $lang['lang_courier'] = 'Shipping Courier';
+$lang['field_paket'] = 'Delivery Package';
 $lang['field_biaya'] = 'Insurance fee';
-$lang['field_ongk'] = '
-Postal fee';
+$lang['field_ongk'] = 'Postal fee';
 $lang['field_alamatTu'] = 'Destination address';
 $lang['field_catatan'] = 'Note';
 $lang['field_byr1'] = 'Pay';

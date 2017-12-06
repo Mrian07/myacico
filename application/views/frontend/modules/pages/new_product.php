@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class='my-bg-title'>
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i>HASIL PENCARIAN UNTUK '<span id="search-key"></span>'
+			<i class="fa fa-angle-right" aria-hidden="true"></i>PRODUK BARU
 
 		</div>
 	<div class="row">
@@ -13,13 +13,13 @@
 	  <div style='width:890px; float:left'>
 			<?php
 		if($this->session->userdata('itemView')=='grid'){
-			$this->load->view('frontend/modules/product/product_items_all',$this->data);
+			$this->load->view('frontend/modules/pages/new_product_grid',$this->data);
 		}else{
-			$this->load->view('frontend/modules/product/product_items_all_list',$this->data);
+			$this->load->view('frontend/modules/pages/new_product_list',$this->data);
 		}
 		 ?>
 	 </div>
-	  <!-- <div class="col-sm-2"><?php // $this->load->view('frontend/modules/product/sidebar_right',$this->data); ?></div>-->
+
 	</div>
 
         <div id="recentView" style="display: none;">
@@ -30,7 +30,6 @@
           </div>
     </div>
   <div id="product" class="promo-front owl-carousel">
-
 
 
 </div>
@@ -54,22 +53,16 @@ for(var i=0;i<detail.length;i++)
 {
 
     var str = detail[i].name;
-//            a = a.length;
             if(str.length >20)
             {
                  namapotong = str.substring(0, 20)+' '+'...';
             }else{
                   namapotong = detail[i].name;
             }
-//            console.log(currencyFormat(detail[i].pricelist));
-//      $('#product').append('<div class="pull-left" style="width: 100px;"><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'" class="link-p" style="color:#fff;"><span class="badgeNi">New</span><img src="'+detail[i].imageurl[0]+'" class="" style="height:100px;"></a><p><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'">'+detail[i].name+'</a></p></div>')
     $('#product').append('<p><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'" class="link-p" style="color:#fff;"><span class="badgeNi">New</span><img src="'+detail[i].imageurl[0]+'" class="" style="height:100px;"></a><br><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'">'+namapotong+' </a><br> '+currencyFormat(detail[i].pricelist)+'</p>')
 
 }
-//detail.forEach(p){
-//
-//     product.append('<tr><td>'+p.m_product_id+'</td><td>')
-//}
+
 
 </script>
 
