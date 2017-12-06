@@ -1238,7 +1238,7 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
     $(document).ready(function() {
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
-        nav: true,
+        navigation: true,
         itemsDesktop : [1199,4],
         itemsDesktopSmall : [979,4]
       });
