@@ -19,6 +19,7 @@
 			border : 1px solid #ccc;
 			border-radius: 10px;
 			margin-bottom:10px;
+			font-family: "helvetica_neue";
 		}
 		.cart-list-right{
 			min-height: 400px;
@@ -141,6 +142,8 @@
 			width: 100%;
 			border : 1px solid #ccc;
 			border-radius: 10px;
+			font-family: "helvetica_neue";
+		  font-size: 13px;
 		}
 		.totalsub{
 			display: inline-block;
@@ -332,7 +335,7 @@
 		  	border-radius: 4px 0px 0px 4px;
 		  }
 		</style>
-    <div class="container">
+    <div class="container detail-page">
 
 			<div style='margin:0px auto; width:1000px; margin-top:30px;'>
 				<div class="number-container">

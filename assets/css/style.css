@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "helvetica_neue";
-  src: url('../../assets/fonts/HelveticaNeueMedium.ttf');
+  src: url('../../assets/fonts/HelveticaNeue.ttf');
   }
 
 @font-face {
@@ -28,9 +28,14 @@
 	background:#ffffff;
 	margin: 0px;
 	color: #111111;
-	font-family: verdana;
+	font-family: open sans, arial;
 	font-size: 11px;
   /*font-family: "MyriadPro";*/
+}
+
+.font2{
+  font-family: "helvetica_neue";
+  font-size: 12px;
 }
 
 .top-bg{
@@ -343,7 +348,8 @@
   margin-left:298px;
   margin-top:40px;
   position: absolute;
-  /*font-family: "Helvetica Neue";*/
+  font-family: "helvetica_neue";
+  font-size: 11px;
 }
 
 @media screen and (max-width: 1680px) {

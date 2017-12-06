@@ -143,7 +143,7 @@ a
 </style>
 
 
-<div class="container">
+<div class="container font2">
   <div style='margin:0px auto; width:1000px; margin-top:30px;  '>
     <div class="number-container">
       <div class="title-step"><p>Keranjang Belanja</p></div>

@@ -170,7 +170,7 @@
 }
 </style>
 
-<div class="container">
+<div class="container detail-page">
 
 
 	<div class="row" style='margin-top:20px; text-align:left'>
