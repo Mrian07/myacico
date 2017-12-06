@@ -130,7 +130,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         </tr>
         <tr>
           <td></td>
-          <td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih myacico courier bagi anda yang tinggal di jakarta </td>
+          <td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih Layanan ASAP bagi anda yang tinggal di jakarta </td>
         </tr>
         <!-- <tr>
           <td>Warna:</td>
