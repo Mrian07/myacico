@@ -435,9 +435,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <p class="link-nmp box-title" style="height:50px; word-wrap: normal; line-height: 16px;" ><a style="font-size:11px; text-align: justify; width: auto; font-weight: bold;" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 61);
+          $str2 = substr($str1, 0, 56);
           $str = strlen($str2);
-          if($str <= 60){
+          if($str <= 55){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
@@ -1229,10 +1229,10 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 
 }
 .owl-prev{
-    position :absolute; top: 50px; left:10px; border-radius:50px; height:30px; width: 33px;padding-top:7px;
+    position :absolute; top: 50px; left:10px; border-radius:50px; height:30px; width: 32px;padding-top:7px;
 }
 .owl-next{
-    position :absolute; right:8px; top: 48px; border-radius:50px; height:30px; width: 33px;padding-top:5px;
+    position :absolute; right:8px; top: 48px; border-radius:50px; height:30px; width: 32px;padding-top:5px;
 }
 
 </style>
