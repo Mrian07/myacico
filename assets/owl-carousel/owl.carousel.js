@@ -1474,7 +1474,7 @@ if (typeof Object.create !== "function") {
         stopOnHover : false,
 
         navigation : false,
-        navigationText : ["<i class='fa fa-chevron-left' aria-hidden='true'></i>", "<i class='fa fa-chevron-right' aria-hidden='true'></i>"],
+        navigationText : ["<i class='fa fa-chevron-left fa-2x' aria-hidden='true' style='padding-top:6px;'></i>", "<i class='fa fa-chevron-right fa-2x' aria-hidden='true' style='padding-top:6px;'></i>"],
         rewindNav : true,
         scrollPerPage : false,
 
