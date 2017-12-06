@@ -104,7 +104,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 					<div class='link-head'>
 						<a href='http://blog.myacico.co.id/' class='btn-nav-head' target='blank'>Blog</a>
 						<?php echo anchor('#',$lang_produck, array('class'=>'btn-nav-head')); ?>
-						<?php echo anchor('#',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('Pages/caraBerbelanja',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
 
            <?php echo anchor('customer/afterSales',$lang_after_sales, array('class'=>'btn-nav-head')); ?>
 					</div>

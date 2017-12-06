@@ -113,7 +113,7 @@
 			<div class="col-xs-3">
 				<h3><span><?php echo $lang_help; ?></span></h3>
 				<?php echo anchor('Pages/faq','FAQ', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#',$lang_carabeli, array('class'=>'my-info')); ?><br>
+				<?php echo anchor('Pages/caraBerbelanja',$lang_carabeli, array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Pages/Pengembalian',$lang_pengemba, array('class'=>'my-info')); ?><br>
 
 				<?php echo anchor('Pages/Jaminan',$lang_guara, array('class'=>'my-info')); ?><br>

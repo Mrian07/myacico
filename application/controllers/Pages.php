@@ -41,7 +41,17 @@ class Pages extends Web {
 		$this->load->view('frontend/footer',$this->data);
 	}
 
-	public function kebijakanPrivasi()
+	public function caraBerbelanja()
+	{
+		$home_domain = domain2();
+                $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+
+		$this->load->view('frontend/modules/pages/cara_berbelanja.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+        public function kebijakanPrivasi()
 	{
 		$home_domain = domain2();
                 $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
