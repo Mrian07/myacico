@@ -26,7 +26,8 @@ $lang['msg_online_payment'] = 'Sorry payment online payment has been interrupted
 // Finish
 $lang['finish'] = 'FINISH';
 $lang['thanks'] = 'THANK YOU';
-$lang['status_order'] = 'Your order has been process.';
+$lang['status_order'] = 'Your order has been process. Please make payment according to your transaction'
+        . '. For payment confirmation';
 $lang['detail_order'] = 'ORDER DETAIL';
 $lang['no_order'] = 'Order Number:';
 $lang['no_invoice'] = 'Invoice Number:';
@@ -38,4 +39,5 @@ $lang['reciever'] = 'RECIPIENT';
 $lang['cart_detail'] = 'CART DETAIL';
 $lang['total_payment'] = 'Total payment:';
 $lang['payment_confirm'] = 'Payment Confirmation';
+$lang['voucher_code'] = 'GOT A PROMO CODE';
 ?>

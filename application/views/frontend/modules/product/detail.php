@@ -432,7 +432,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <?php }else{
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title" style="height:50px; word-wrap: normal; line-height: 16px;" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+        <p class="link-nmp box-title" style="height:50px; word-wrap: normal; line-height: 16px;" ><a style="font-size:11px; font-weight: bold;" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
           $str2 = substr($str1, 0, 71);
@@ -1246,26 +1246,27 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
         navigation: true,
+        items : 10,
 //        float:left; margin-top: -150px; border-radius:50px; height:35px; width: 35px;padding-top:5px;
 //        float:right; margin-top: -150px; border-radius:50px; height:35px; width: 35px;padding-top:5px;
-        itemsDesktop : [1199,4],
-        itemsDesktopSmall : [979,4]
+        itemsDesktop : [1199,5],
+        itemsDesktopSmall : [979,5]
       });
 
       $("#owl-demo1").owlCarousel({
         autoPlay: 3000,
         navigation: true,
-        items : 8,
-        itemsDesktop : [1199,4],
-        itemsDesktopSmall : [979,4]
+        items : 10,
+        itemsDesktop : [1199,5],
+        itemsDesktopSmall : [979,5]
       });
 
       $("#owl-demo2").owlCarousel({
         autoPlay: 3000,  
         navigation: true,
-        items : 8,
-        itemsDesktop : [1199,4],
-        itemsDesktopSmall : [979,4]
+        items : 10,
+        itemsDesktop : [1199,5],
+        itemsDesktopSmall : [979,5]
       });
 
   });

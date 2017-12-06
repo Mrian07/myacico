@@ -339,9 +339,9 @@
 
 			<div style='margin:0px auto; width:1000px; margin-top:30px;'>
 				<div class="number-container">
-					<div class="title-step"><p>Keranjang Belanja</p></div>
-					<div class="title-step2"><p>Metode Pembayaran</p></div>
-					<div class="title-step3"><p>Konfirmasi Pembayaran</p></div>
+					<div class="title-step"><p><?=$lang_shoping_cart;?></p></div>
+					<div class="title-step2"><p><?=$lang_payment_method;?></p></div>
+					<div class="title-step3"><p><?=$lang_payment_confirm;?></p></div>
 				</div>
 			</div>
 			<div style='margin:0px auto; width:900px; margin-bottom:50px;'>
@@ -366,7 +366,7 @@
 			</div>
 			<div class="box-right">
 				<div class="cart-list-right">
-					<div class="right-title">Metode Pembayaran</div>
+					<div class="right-title"><?=$lang_payment_method;?></div>
 						<div align="left" class="method">
 							<p>Tranfer Bank</p>
 
@@ -413,7 +413,7 @@
 						</div>
 
 						<div align="left" class="method-kupon">
-							<b>PUNYA KODE PROMO ?</b><br>
+							<b><?=$lang_voucher_code;?> ?</b><br>
 							<div class="input-group">
 								<input type="text" id="email1" name="email1" class="my-field-kupon" name="x" placeholder="">
 								<span class="input-group-btn">
