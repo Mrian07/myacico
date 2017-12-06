@@ -152,12 +152,12 @@ var prod_detail =  localStorage.getItem('product_detail');
 								 <div class="col-xs-4" style='margin-top:5px; text-align: right'>
 									   <!-- <div class="buktiTrans"></div> -->
 										 <!-- <?php  echo " <img src='$myavatar' width='25' border='0'>"; ?> -->
-							<?php
-							if(isset($_COOKIE['x-auth'])){
-					  		   echo anchor('account/avatar', "<img src='$myavatar' width='25' border='0'>");
-				  		} else{ ?>
-							 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='25' border='0'>
-							<?php } ?>
+											<?php
+											if(isset($_COOKIE['x-auth'])){
+									  		   echo anchor('account/avatar', "<img src='$myavatar' width='25' border='0'>");
+								  		} else{ ?>
+											 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='25' border='0'>
+											<?php } ?>
 
 									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
 								 </div>
@@ -673,7 +673,15 @@ var prod_detail =  localStorage.getItem('product_detail');
   		({
   		url: "<?php echo site_url('cart/totalQtyToken'); ?>",
   		success:function(html){
-  				$(".totalCart").html(html);
+					var valNum = $.isNumeric(html);
+
+					if(valNum){
+						$(".totalCart").html(html);
+					}else{
+						//kalo data tidak berhasil diload kasih default nol
+						$(".totalCart").html('0');
+					}
+
   			}
   		});
 
