@@ -1228,6 +1228,13 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
   height: 150px;
 
 }
+.owl-prev{
+    position :absolute; top: 50px; left:10px; border-radius:50px; height:30px; width: 33px;padding-top:7px;
+}
+.owl-next{
+    position :absolute; right:8px; top: 48px; border-radius:50px; height:30px; width: 33px;padding-top:5px;
+}
+
 </style>
 
 
@@ -1238,20 +1245,24 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
     $(document).ready(function() {
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
-        nav: true,
+        navigation: true,
+//        float:left; margin-top: -150px; border-radius:50px; height:35px; width: 35px;padding-top:5px;
+//        float:right; margin-top: -150px; border-radius:50px; height:35px; width: 35px;padding-top:5px;
         itemsDesktop : [1199,4],
         itemsDesktopSmall : [979,4]
       });
 
       $("#owl-demo1").owlCarousel({
         autoPlay: 3000,
+        navigation: true,
         items : 8,
         itemsDesktop : [1199,4],
         itemsDesktopSmall : [979,4]
       });
 
       $("#owl-demo2").owlCarousel({
-        autoPlay: 3000,
+        autoPlay: 3000,  
+        navigation: true,
         items : 8,
         itemsDesktop : [1199,4],
         itemsDesktopSmall : [979,4]
