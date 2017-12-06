@@ -106,7 +106,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             echo "
               <tr>
                 <td>Harga:</td>
-                <td><span class='price-list'>Rp ".money($pricelist)."</span></td>
+                <td><span class='price-list'>Rp ".money($pricelist)."</span><span><img src=".base_url('images/general/asap.png')." style='height:20px; margin-left:5px;'></span></td>
               </tr>";
           }else{
             echo "
@@ -115,15 +115,18 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
               <td>
                 <span class='price-list'>Rp ".money($specialPrice)."</span>
                 <span class='discount'>".money($discount)."% OFF</span>
-                <span>Hemat: <span style='color: #8a0202; font-weight: bold'>Rp ".money($pricelist - $specialPrice)."</span></span>
+                <span>Hemat: <span style='color: #8a0202; font-weight: bold'>Rp ".money($pricelist - $specialPrice)."</span></span><span><img src=".base_url('images/general/asap.png')." style='height:20px; margin-left:5px;'></span>
               </td>
             </tr>
             <tr>
               <td>Harga Awal:</td>
-              <td><s>Rp ".money($pricelist)."</s></td>
+              <td><s>Rp ".money($pricelist)."</s>
+              </td>
             </tr>";
           }
         ?>
+                
+        
         <tr>
           <td>Status:</td>
           <td style="color: #4ba240">Tersedia.</td>
