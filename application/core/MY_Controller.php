@@ -155,6 +155,24 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
                 $this->data['lang_daftar_text'] = $this->lang->line('das_regis');
 		// akhir dari button daftar
 
+    //checkout field_atas
+      $this->data['lang_keranjangAtas'] = $this->lang->line('lang_keranjang');
+        $this->data['lang_ringkasan1'] = $this->lang->line('lang_ringkasan');
+          $this->data['lang_konrim'] = $this->lang->line('lang_konfrim');
+            $this->data['lang_tamb3'] = $this->lang->line('lang_tamb123');
+              $this->data['lang_another'] = $this->lang->line('Field_Another');
+              $this->data['lang_coursss'] = $this->lang->line('lang_courier');
+                $this->data['lang_paket'] = $this->lang->line('field_paket');
+                $this->data['lang_biaya'] = $this->lang->line('field_biaya');
+                $this->data['lang_ongk'] = $this->lang->line('field_ongk');
+                $this->data['lang_alamatTr'] = $this->lang->line('field_alamatTu');
+                $this->data['lang_cata'] = $this->lang->line('field_catatan');
+                $this->data['lang_byr1'] = $this->lang->line('field_byr1');
+                $this->data['lang_byr2'] = $this->lang->line('field_byr2');
+
+
+    //akhir checkout
+
 		//field di contact
 		$this->data['lang_field_ContAtas'] = $this->lang->line('field_atas');
 		$this->data['lang_field_ContNama'] = $this->lang->line('field_name');

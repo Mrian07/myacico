@@ -214,9 +214,9 @@ textarea#styled {
 <div class="container detail-page">
   <div style='margin:0px auto; width:1000px; margin-top:30px;'>
     <div class="number-container">
-      <div class="title-step"><p>Keranjang Belanja</p></div>
-      <div class="title-step2"><p>Metode Pembayaran</p></div>
-      <div class="title-step3"><p>Konfirmasi Pembayaran</p></div>
+      <div class="title-step"><p><?php echo $lang_keranjangAtas; ?></p></div>
+      <div class="title-step2"><p><?php echo $lang_ringkasan1; ?></p></div>
+      <div class="title-step3"><p><?php echo $lang_konrim; ?> </p></div>
     </div>
   </div>
   <div style='margin:0px auto; width:900px; margin-bottom:50px;'>
@@ -229,13 +229,13 @@ textarea#styled {
   </div>
 <!-- <br><p align='center'><img src="<?php //echo base_url('images/general/step1.jpg'); ?>" border="0"></p> -->
 
-    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1150px;margin-bottom:40px;'>KERANJANG BELANJA</div>
+    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1150px;margin-bottom:40px;'><?php echo $lang_keranjangAtas; ?></div>
     <div class='box-ship'>
 
-      <?php echo anchor('checkout/addressbook','Tambah Alamat Baru', array('class'=>'btn-add-adrs')); ?>
+      <?php echo anchor('checkout/addressbook',$lang_tamb3, array('class'=>'btn-add-adrs')); ?>
       <br><br>
       <div class='box-ship-info-adrs'>
-        Pilih Alamat Lain</br>
+        <?php echo $lang_another; ?></br>
         <select name='selectShip' id='selectShip' class="form-control" onchange="pilihAlamat(this);">
           <option value=''>-Pilih-</option>
           <?php foreach($hasil_ship as $dasa_ship){
@@ -250,7 +250,7 @@ textarea#styled {
         </select>
       </div>
       <div class='box-ship-info'>
-        Kurir Pengiriman</br>
+      <?php echo $lang_coursss; ?></br>
         <select name='kurir' id='kurir' onchange="pilihKurir(this);" class="form-control">
           <option value='kosong-kosong'>-Pilih-</option>
           <?php
@@ -273,7 +273,7 @@ textarea#styled {
         </select>
       </div>
       <div class='box-ship-info'>
-        Paket Pengiriman</br>
+        <?php echo $lang_paket; ?></br>
         <select id='pilihPaket' class="form-control paket">
           <option value=''>-Pilih-</option>
           <?php
@@ -293,11 +293,11 @@ textarea#styled {
         </select>
       </div>
       <div class='box-ship-info'>
-        Biaya Asuransi</br>
+        <?php echo $lang_biaya; ?></br>
         -
       </div>
       <div class='box-ship-info'>
-        Ongkos Kirim</br>Rp.<span class='amount'>-</span>
+      <?php echo $lang_ongk; ?></br>Rp.<span class='amount'>-</span>
       </div>
 
       <div class='box-ship-info' style='text-align:right'>
@@ -305,13 +305,13 @@ textarea#styled {
       </div>
       <div style='clear:both'></div>
       <div class='box-com'>
-        <font color='red'><b>Alamat Tujuan</b></font></br>
+        <font color='red'><b><?php echo $lang_alamatTr; ?></b></font></br>
         <div class="row" id='box-adrs'>
           <div class="col-xs-12 alamat" id='box-shadow'><?php  if(isset($alamat_shipping)){ echo$alamat_shipping; }else{echo"-";} ?></div>
         </div>
       </div>
       <div class='box-com2'>
-        Catatan</br>
+        <?php echo $lang_cata;?></br>
         <textarea id='styled'></textarea>
       </div>
 
@@ -325,7 +325,8 @@ textarea#styled {
     <div style='clear:both'></div>
   </div>
 
-  <button onclick='next()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b>BAYAR</b> SEKARANG</span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
+  <button onclick='next()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b><?php echo $lang_byr1; ?></b> <?php
+  echo $lang_byr2 ?></span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
   <div style='clear:both'></div>
 </div>
 
