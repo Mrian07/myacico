@@ -245,6 +245,43 @@
 
 <script type="text/javascript">
 
+function addAllCartToBackend(r){
+
+	<?php foreach ($this->cart->contents() as $items){?>
+
+
+	var m_product_id = <?php echo $items['id']; ?>;
+	var qty = <?php echo $items['qty']; ?>;
+	var pricelist = <?php echo $items['price']; ?>;
+	var weight = <?php echo $items['weight']; ?>;
+
+	var apiurl = api_base_url +'/order/cart/additem';
+
+	$.ajax
+  ({
+	type: 'POST',
+	contentType: 'application/json',
+  url: apiurl,
+	dataType: 'json',
+  data: JSON.stringify({
+		"productId":m_product_id,
+		"qty":qty,
+		"price":pricelist,
+		"weightPerItem":weight,
+	}),
+	headers:{"token":r.token},
+  success:function(html){
+		console.log(html);
+
+    }
+  });
+
+
+	<?php } ?>
+  //die();
+}
+
+
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 var wishlist ='<?php echo$this->uri->segment(3); ?>';
 
@@ -254,6 +291,8 @@ var success = function(r){
 	$('#spinner_img').hide();
 
 	$('#submit_btn').val('<?php echo $lang_btn_SignIn ?>').removeClass('disabled');
+
+	addAllCartToBackend(r);
 
 	//console.log('OK:', r);
 
@@ -266,31 +305,34 @@ var success = function(r){
 
 
 
-	var apiurl = api_base_url +'/order/cart/additem';
-	<?php
-	//Memasukan produk yang dibeli sebelum login ke api
+	// var apiurl = api_base_url +'/order/cart/additem';
+	// <?php
+	// //Memasukan produk yang dibeli sebelum login ke api
+  //
+	// 	foreach ($this->cart->contents() as $items):?>
+  //
+  //
+	// 	var m_product_id = <?php echo $items['id']; ?>;
+	// 	var qty = <?php echo $items['qty']; ?>;
+	// 	var pricelist = <?php echo $items['price']; ?>;
+	// 	var weight = <?php echo $items['weight']; ?>;
+  //
+  //
+	// 	$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
+	// 		{
+	// 			"productId":m_product_id,
+	// 			"qty":qty,
+	// 			"price":pricelist,
+	// 			"weightPerItem":weight,
+	// 		}
+	// 	) , url: apiurl, headers:{"token":r.token}, success: success });
+	// <?php
+	// endforeach;
+  //
+	// ?>
 
-		foreach ($this->cart->contents() as $items):?>
 
 
-		var m_product_id = <?php echo $items['id']; ?>;
-		var qty = <?php echo $items['qty']; ?>;
-		var pricelist = <?php echo $items['price']; ?>;
-		var weight = <?php echo $items['weight']; ?>;
-
-
-		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
-			{
-				"productId":m_product_id,
-				"qty":qty,
-				"price":pricelist,
-				"weightPerItem":weight,
-			}
-		) , url: apiurl, headers:{"token":r.token}, success: success });
-	<?php
-	endforeach;
-
-	?>
 
 	document.cookie='x-auth='+r.token+'; path='+base_path;
 	token = r.token;
