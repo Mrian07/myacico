@@ -435,9 +435,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <p class="link-nmp box-title" style="height:50px; word-wrap: normal; line-height: 16px;" ><a style="font-size:11px; font-weight: bold;" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 71);
+          $str2 = substr($str1, 0, 61);
           $str = strlen($str2);
-          if($str <= 70){
+          if($str <= 60){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
