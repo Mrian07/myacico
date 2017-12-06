@@ -135,7 +135,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             width: 55px;
           }
           </style>
-          <td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih Layanan <img src="<?php echo base_url('images/general/Artboard-72-8.png');?>" class="test01"> bagi anda yang tinggal di jakarta </td>
+          <td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih Layanan <a target="_blank" href="<?php echo base_url('customer/asap');?>"><img src="<?php echo base_url('images/general/asap.png');?>" class="test01"> </a>bagi anda yang tinggal di jakarta </td>
         </tr>
         <!-- <tr>
           <td>Warna:</td>

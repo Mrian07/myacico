@@ -90,4 +90,16 @@ $lang['btn_login'] = 'Kirim';
 //s: search
 $lang['field_all_src'] = 'Semua Kategori';
 //e: search
+// ASAP
+$lang['inf_asap'] = '<br><b>ASAP </b>(As Soon As Possible) merupakan layanan pengiriman dari myACICO Courier yang memberikan benefit tambahan bagi customer myACICO.co.id'
+        . '<br><b>Gratis Biaya Pengiriman</b>'
+        .'<br>Anda bisa mendapatkan layanan ASAP dari myACICO Courier secara cuma-cuma sehingga anda bisa menghemat biaya pengiriman untuk pembelanjaan berikutnya'
+        . '<br><b>2 Hari Sampai</b>'
+        . '<br>Dengan kurir yang profesional dan ditunjang dengan kecepatan serta akurasi dalam pengiriman, kami menjamin barang pesanan anda sampai tempat tujuan dalam waktu 2 hari.'
+        . '<br><b>Keamanan Terjamin</b>'
+        . '<br>ASAP menawarkan keamanan dalam pengiriman barang pesanan anda. Dengan sistem packaging yang komprehensif, ASAP memberikan perlindungan terbaik bagi barang pesanan anda dalam situasi apapun.'
+        . '<br><b>Bagaimana cara mendapatkan layanan ASAP?</b>'
+        . '<br>Saat ini, layanan ASAP mengjangkau customer di wilayah Jakarta. Anda bisa mendapatkan layanan ini dengan berbelanja di myACICO.co.id dan memilih myACICO Courrier sebagai jasa pengiriman saat check out.'
+        ;
+
 ?>
