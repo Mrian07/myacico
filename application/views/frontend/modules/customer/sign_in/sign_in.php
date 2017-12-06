@@ -245,48 +245,6 @@
 
 <script type="text/javascript">
 
-
-// function addAllCartToBackend(r){
-//
-// 	<?php foreach ($this->cart->contents() as $items){?>
-//
-//
-// 	var m_product_id = <?php echo $items['id']; ?>;
-// 	var qty = <?php echo $items['qty']; ?>;
-// 	var pricelist = <?php echo $items['price']; ?>;
-// 	var weight = <?php echo $items['weight']; ?>;
-//
-// 	var apiurl = api_base_url +'/order/cart/additem';
-//
-// 	$.ajax
-//   ({
-// 	type: 'POST',
-// 	contentType: 'application/json',
-//   url: apiurl,
-// 	dataType: 'json',
-//   data: JSON.stringify({
-// 		"productId":m_product_id,
-// 		"qty":qty,
-// 		"price":pricelist,
-// 		"weightPerItem":weight,
-// 	}),
-// 	headers:{"token":r.token},
-// 	// data: {
-// 	// 	"productId":m_product_id,
-// 	// 	"qty":qty,
-// 	// 	"price":pricelist,
-// 	// 	"weight":weight,
-// 	// },
-//   success:function(html){
-// 		console.log(html);
-//     }
-//   });
-//
-//
-// 	<?php } ?>
-//
-// }
-
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 var wishlist ='<?php echo$this->uri->segment(3); ?>';
 
@@ -306,7 +264,7 @@ var success = function(r){
 	if(!r.token) return false;
 	// var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
 
-	//addAllCartToBackend(r);
+
 
 	var apiurl = api_base_url +'/order/cart/additem';
 	<?php
@@ -326,7 +284,7 @@ var success = function(r){
 				"productId":m_product_id,
 				"qty":qty,
 				"price":pricelist,
-				"weight":weight,
+				"weightPerItem":weight,
 			}
 		) , url: apiurl, headers:{"token":r.token}, success: success });
 	<?php
