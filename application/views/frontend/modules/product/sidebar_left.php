@@ -1,5 +1,6 @@
 <div class='sidebar-left-desktop'>
-	<a href="https://myacico.co.id/">
+    
+	<a href="<?php echo base_url('product/category/1000510/Kamera');?>">
 	<img src="https://storage.googleapis.com/myacico/image/banner/Side-Banner-Artboard-15-100.jpg" class="img-responsive" style="padding-top:51px;"></a>
 	<?php /*
 	$this->data['pane'] = "pane2";

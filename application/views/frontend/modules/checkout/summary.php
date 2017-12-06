@@ -374,6 +374,17 @@
 				<div class="cart-list-right">
 					<div class="right-title"><?=$lang_payment_method;?></div>
 						<div align="left" class="method">
+							<p>Credit Card</p>
+							<div class="segmen">
+								<input type="radio" class='code' name="code" value='C-'>
+								</div>
+								<div class="segmen2">
+									<img class="imgs" src="https://myacico.co.id/images/general/p-visa-small.jpg">
+									<img class="imgs" src="https://myacico.co.id/images/general/ico_bank_02.png">
+								</div>
+						</div>
+
+						<div align="left" class="method">
 							<p>Tranfer Bank</p>
 
 							<?php
@@ -393,7 +404,7 @@
 							 ?>
 
 						</div>
-
+						<br>&nbsp;<br>
 						<!-- <div align="left" class="method">
 							<p>Online Payment</p>
 							<?php
@@ -407,16 +418,7 @@
 							<?php } ?>
 						</div> -->
 
-						<div align="left" class="method">
-							<p>Credit Card</p>
-							<div class="segmen">
-								<input type="radio" class='code' name="code" value='C-'>
-			  				</div>
-			  				<div class="segmen2">
-			  					<img class="imgs" src="https://myacico.co.id/images/general/p-visa-small.jpg">
-			  					<img class="imgs" src="https://myacico.co.id/images/general/ico_bank_02.png">
-			  				</div><br><br>
-						</div>
+
 
 						<div align="left" class="method-kupon">
 							<b><?=$lang_voucher_code;?> ?</b><br>

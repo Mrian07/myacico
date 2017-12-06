@@ -109,7 +109,15 @@ class Customer extends Web {
 		$this->load->view('frontend/modules/customer/contact/after_sales.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-
+ public function asap()
+	{
+                 $domain = domain();
+		$this->data['title_web'] = "Asap - ".$domain;
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/customer/contact/asap.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 	public function messageSent()
 	{
             $domain = domain();

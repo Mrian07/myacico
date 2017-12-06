@@ -102,11 +102,12 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     <table class="table table-detail-prod" border="0">
       <tbody>
         <?php
+        $asap = "<a style='height:20px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."' class='test01'> </a>";
           if($specialPrice == 0 ){
             echo "
               <tr>
                 <td>Harga:</td>
-                <td><span class='price-list'>Rp ".money($pricelist)."</span></td>
+                <td><span class='price-list'>Rp ".money($pricelist)."</span><span>".$asap."</span></td>
               </tr>";
           }else{
             echo "
@@ -115,15 +116,18 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
               <td>
                 <span class='price-list'>Rp ".money($specialPrice)."</span>
                 <span class='discount'>".money($discount)."% OFF</span>
-                <span>Hemat: <span style='color: #8a0202; font-weight: bold'>Rp ".money($pricelist - $specialPrice)."</span></span>
+                <span>Hemat: <span style='color: #8a0202; font-weight: bold'>Rp ".money($pricelist - $specialPrice)."</span></span><span>".$asap."</span>
               </td>
             </tr>
             <tr>
               <td>Harga Awal:</td>
-              <td><s>Rp ".money($pricelist)."</s></td>
+              <td><s>Rp ".money($pricelist)."</s>
+              </td>
             </tr>";
           }
         ?>
+                
+        
         <tr>
           <td>Status:</td>
           <td style="color: #4ba240">Tersedia.</td>
@@ -135,7 +139,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             width: 55px;
           }
           </style>
-          <td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih Layanan <img src="<?php echo base_url('images/general/Artboard-72-8.png');?>" class="test01"> bagi anda yang tinggal di jakarta </td>
+          <td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih Layanan <a target="_blank" href="<?php echo base_url('customer/asap');?>"><img src="<?php echo base_url('images/general/asap.png');?>" class="test01"> </a>bagi anda yang tinggal di jakarta </td>
         </tr>
         <!-- <tr>
           <td>Warna:</td>
