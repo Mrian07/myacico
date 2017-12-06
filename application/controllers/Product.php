@@ -46,17 +46,17 @@ class Product extends Web {
 
 		//product/productlist?category=".$id_cat."&show=productcount";
 		if($page){
-			$api = "product/productall/".$id."?itemperpage=10&page=".$page."&ob=".$short;
+			// $api = "product/productall/".$id."?itemperpage=10&page=".$page."&ob=".$short;
 			$api2 = "product/productall/".$id."?itemperpage=10&page=".$page."&show=productcount";
 		}elseif($short){
-			$api = "product/productall/".$id."?itemperpage=10&ob=".$short;
+			// $api = "product/productall/".$id."?itemperpage=10&ob=".$short;
 			$api2 = "product/productall/".$id."?itemperpage=10&page=1&show=productcount";
 		}else{
-			$api = "product/productall/".$id."?itemperpage=10";
+			// $api = "product/productall/".$id."?itemperpage=10";
 			$api2 = "product/productall/".$id."?itemperpage=10&page=1&show=productcount";
 		}
-		$url = api_base_url($api);
-		$konten = file_get_contents($url, false);
+		// $url = api_base_url($api);
+		// $konten = file_get_contents($url, false);
                 //ie(print_r($konten));
 
 		$url2 = api_base_url($api2);
@@ -81,7 +81,7 @@ class Product extends Web {
 		$this->data['alias'] = $this->uri->segment(4);
 		$this->data['title_web'] = "List Items - ".$domain.'-'.$id;
 
-		$this->data['hasil'] = json_decode($konten, true);
+		// $this->data['hasil'] = json_decode($konten, true);
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/product/product_all.php',$this->data);
