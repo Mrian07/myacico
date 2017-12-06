@@ -192,10 +192,6 @@ class Customer extends Web {
     {
 				$catId = $this->uri->segment(3);
 
-				//    die(); dpt nihid itemnya
-				//            if($catId){
-				//                echo $catId;
-				//            }
 				$domain = domain();
 				set_cookie('shipping_address_id','',time() + (86400 * 30));
 

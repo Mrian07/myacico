@@ -5,6 +5,10 @@
 		color:#111111;
 	}
 
+	/*.thumbnail img{
+		height:100px;
+	}*/
+
 	.thumbnail{
 		opacity:0.70;
 		-webkit-transition: all 0.5s;
@@ -58,6 +62,13 @@
 	font-weight:600;
 }
 
+.thumbnail a > img {
+    display: block;
+    height: 120px;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
 </style>
 <!-- Owl Carousel Assets slide image collection -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.carousel.css');?>" />

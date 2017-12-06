@@ -365,26 +365,26 @@ $home_domain = domain2();
 		 }
 
 
-		 
-	 
-         
+
+
+
 $i=0;
 foreach ($hasil['specification'] as $speck)
 {
- 
+
 
 	 //$this->data['img'][$i]=$gmb;
 	 if(isset($speck)){
         $this->data['specification'][$i] = $speck['attribute'];
         $this->data['value'][$i] = $speck['value'];
-        
+
 	 }else{
 			 $this->data['specification'][$i]='';
 	 }
 	//print_r($this->data['specification'][$i]);
         //print_r($this->data['value'][$i]);
 	 $i++;
-         
+
 }
 /*
 		 if(isset($hasil['specification'][0]['attribute'])){

@@ -263,13 +263,14 @@ var success = function(r){
 	});
 	if(!r.token) return false;
 	// var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
+
+
+
 	var apiurl = api_base_url +'/order/cart/additem';
-
-
 	<?php
 	//Memasukan produk yang dibeli sebelum login ke api
 
-	foreach ($this->cart->contents() as $items):?>
+		foreach ($this->cart->contents() as $items):?>
 
 
 		var m_product_id = <?php echo $items['id']; ?>;
@@ -277,17 +278,13 @@ var success = function(r){
 		var pricelist = <?php echo $items['price']; ?>;
 		var weight = <?php echo $items['weight']; ?>;
 
-		// var success = function(r){
-		//
-		// };
 
 		$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(
 			{
 				"productId":m_product_id,
 				"qty":qty,
 				"price":pricelist,
-				"weight":weight,
-
+				"weightPerItem":weight,
 			}
 		) , url: apiurl, headers:{"token":r.token}, success: success });
 	<?php
