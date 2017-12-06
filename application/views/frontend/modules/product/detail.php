@@ -491,7 +491,10 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           <?php echo "<div id='rateSejeniss".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
 
     </div>
-      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?>
+      <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+      </p>
+      
         <hr>
   </div>
   <?php $no++;$n++;  } ?>
@@ -559,7 +562,8 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           <?php echo "<div id='rateRekom".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
 
     </div>
-      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?>
+      <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'></p>
         <hr>
   </div>
   <?php $no++; $n++;  } ?>
@@ -634,7 +638,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           <?php echo "<div id='rateJenis".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
 
     </div>
-      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?>
+      <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+      </p>
         <hr>
   </div>
   <?php $no++;$n++;  } ?>
