@@ -28,6 +28,55 @@ class Product extends Web {
 
 	}
 
+	public function alllistItemCat()
+	{
+		$uri1=$this->uri->segment(3);
+		$uri2=$this->uri->segment(4);
+
+		$short=$this->uri->segment(5);
+  	$page=$this->uri->segment(6);
+
+		$api = "product/productlist/".$uri1."/".$uri2."/?itemperpage=10&page=1&show=productcount";
+
+
+		$url = api_base_url($api);
+		$konten = file_get_contents($url, false);
+		$hasil = json_decode($konten, true);
+		$jdata =count($hasil);
+		// echo"$url<p>";
+		// echo"<pre>"; print_r($hasil); die();
+
+
+		$batas = '10';
+		if(empty($page)){
+			$posisi = 0;
+			$page =1;
+		}else{
+			$posisi = ($page-1)*$batas;
+		}
+
+		// $this->data['page'] = $page;
+		$this->data['posisi'] = $posisi;
+		// $jdata =json_decode($konten)->productCount;
+			$this->data['jpage'] = ceil($jdata/$batas);
+		 $domain = domain();
+
+		$this->data['page'] =1;
+
+		$this->data['uri1'] = $uri1;
+		$this->data['uri2'] = $uri2;
+		$this->data['totalItem'] = $jdata;
+		$this->data['alias'] = $this->uri->segment(4);
+		$this->data['title_web'] = "Myacico.co.id: Belanja Online Murah, Gratis Pengiriman Area Jakarta.";
+
+		$this->data['hasil'] = json_decode($konten, true);
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/product/product_all_by_cat.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+
+	}
+
 	public function alllistItem()
 	{
 		$id=$this->uri->segment(3);
@@ -68,7 +117,7 @@ class Product extends Web {
 		$this->data['posisi'] = $posisi;
 		$jdata =json_decode($konten2)->productCount;
 		$this->data['jpage'] = ceil($jdata/$batas);
-$domain = domain();
+		$domain = domain();
 
 		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
