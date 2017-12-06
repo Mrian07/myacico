@@ -27,7 +27,8 @@ $lang['msg_online_payment'] = 'Maaf pembayaran online payment mengalami gangguan
 // Finish
 $lang['finish'] = 'SELESAI';
 $lang['thanks'] = 'TERIMA KASIH';
-$lang['status_order'] = 'Pesanan Anda telah berhasil diproses.';
+$lang['status_order'] = 'Pesanan Anda telah berhasil diproses. Silakan lakukan pembayaran sesuai dengan nilai transaksi Anda'
+        . '. Untuk melakukan konfirmasi pembayaran';
 $lang['detail_order'] = 'DETAIL PESANAN';
 $lang['no_order'] = 'Nomor Pesanan:';
 $lang['no_invoice'] = 'Nomor tagihan:';
@@ -39,4 +40,5 @@ $lang['reciever'] = 'ALAMAT PENGIRIMAN';
 $lang['cart_detail'] = 'Detail Keranjang';
 $lang['total_payment'] = 'Total Pembayaran:';
 $lang['payment_confirm'] = 'Konfirmasi Pembayaran';
+$lang['voucher_code'] = 'PUNYA KODE PROMO';
 ?>
