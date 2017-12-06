@@ -358,7 +358,8 @@ var prod_detail =  localStorage.getItem('product_detail');
 					if(cat=="all"){
 						location.href = base_url+'product/alllistItem/'+searchDesk;
 					}else{
-						location.href = base_url+'product/alllistItemCat/'+cat+'/'+searchDesk;
+						location.href = base_url+'product/alllistItem/'+searchDesk;
+						//location.href = base_url+'product/alllistItemCat/'+cat+'/'+searchDesk;
 					}
 
 
