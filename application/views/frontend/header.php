@@ -352,10 +352,17 @@ var prod_detail =  localStorage.getItem('product_detail');
 	}).keydown(function( event ) {
 	  	if ( event.which == 13 ) {
 	    	event.preventDefault();
-
+				var cat = $('#search_param').val();
 				var searchDesk = $('#searchDesk').val();
 				if(searchDesk){
-					location.href = base_url+'product/alllistItem/'+searchDesk;
+					if(cat=="all"){
+						location.href = base_url+'product/alllistItem/'+searchDesk;
+					}else{
+						location.href = base_url+'product/alllistItem/'+searchDesk;
+						//location.href = base_url+'product/alllistItemCat/'+cat+'/'+searchDesk;
+					}
+
+
 				}else{
 					$.alert({
 					title: 'Peringatan',

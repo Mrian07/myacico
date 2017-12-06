@@ -432,7 +432,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     <div id="owl-demo" class="owl-carousel">
       <?php
         $jmlslide2=count($dathome);
-      $n=1;
+      $n=1;$no=1;
       foreach($dathome as $key => $itemslide2){
         if($n=="$jmlslide2"){
           $active='active';
@@ -440,6 +440,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           $active='';
         }
         ?>
+
       <!-- <div class="item" align="center"> -->
     <div class="item" align="center">
 
@@ -466,14 +467,30 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             </p>
 
       </a>
+        <script>
+
+        $(function () {
+             var no = '<?php echo $no; ?>';
+                      var rateV = '<?php echo $itemslide2['rate']; ?>';
+                $("#rateSejeniss"+no).rateYo({
+                    rating: rateV,
+                    starWidth: "15px",
+                    readOnly: true,
+                    normalFill: "#dddddd"
+                });
+                console.log(rateV);
+              });
+
+        </script>
       <div class="ratting-container"  style="margin-top: -25px;">
-      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
+          <?php echo "<div id='rateSejeniss".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
+
     </div>
       <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
-  <?php $n++;  } ?>
-</div>
+  <?php $no++;$n++;  } ?>
+   </div>
 </div>
 
 <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
@@ -518,13 +535,29 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             </p>
 
       </a>
-       <div class="ratting-container"  style="margin-top: -25px;">
-      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
+         <script>
+
+        $(function () {
+             var no = '<?php echo $no; ?>';
+                      var rateR = '<?php echo $itemslide2['rate']; ?>';
+                $("#rateRekom"+no).rateYo({
+                    rating: rateR,
+                    starWidth: "15px",
+                    readOnly: true,
+                    normalFill: "#dddddd"
+                });
+                //console.log(rateV);
+              });
+
+        </script>
+        <div class="ratting-container"  style="margin-top: -25px;">
+          <?php echo "<div id='rateRekom".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
+
     </div>
       <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
-  <?php $n++;  } ?>
+  <?php $no++; $n++;  } ?>
 </div>
 </div>
 
@@ -571,13 +604,35 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
       </a>
 
+
        <div class="ratting-container"  style="margin-top: -25px;">
       <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
+
+    </div>
+
+     <script>
+
+        $(function () {
+             var no = '<?php echo $no; ?>';
+                      var rateR = '<?php echo $itemslide2['rate']; ?>';
+                $("#rateJenis"+no).rateYo({
+                    rating: rateR,
+                    starWidth: "15px",
+                    readOnly: true,
+                    normalFill: "#dddddd"
+                });
+                //console.log(rateV);
+              });
+
+        </script>
+        <div class="ratting-container"  style="margin-top: -25px;">
+          <?php echo "<div id='rateJenis".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
+
     </div>
       <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
         <hr>
   </div>
-  <?php $n++;  } ?>
+  <?php $no++;$n++;  } ?>
 </div>
 </div>
 <!--</div>-->
@@ -669,14 +724,7 @@ var retrievedObject = localStorage.getItem('product_detail');
         normalFill: "#dddddd"
     });
   });
-$(function () {
-    $(".rateSejenis").rateYo({
-        rating: rate,
-        starWidth: "15px",
-        readOnly: true,
-        normalFill: "#dddddd"
-    });
-  });
+
 
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;

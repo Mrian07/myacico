@@ -68,6 +68,7 @@ textarea#styled {
 	float: left;
 	margin: 8px;
 	padding: 10px;
+  font-size: 14px;
 }
 .btn-add-adrs{
   background:#ff0000;
