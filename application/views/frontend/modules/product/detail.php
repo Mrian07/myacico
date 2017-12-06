@@ -130,7 +130,12 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         </tr>
         <tr>
           <td></td>
-          <td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih Layanan ASAP bagi anda yang tinggal di jakarta </td>
+          <style>
+          .test01{
+            width: 55px;
+          }
+          </style>
+          <td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih Layanan <img src="<?php echo base_url('images/general/Artboard-72-8.png');?>" class="test01"> bagi anda yang tinggal di jakarta </td>
         </tr>
         <!-- <tr>
           <td>Warna:</td>
