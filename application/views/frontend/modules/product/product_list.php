@@ -95,12 +95,6 @@ input[type=number]::-webkit-outer-spin-button {
 					</select>
 				</div>
 			</form>
-		<!-- <div class="col-sm-6"> -->
-			<!-- <strong>Atur berdasarkan: </strong> -->
-		<!-- </div> -->
-			<!-- <div class="row my-sort-product">
-
-			</div> -->
 		</div>
 	</div>
 
@@ -109,8 +103,78 @@ input[type=number]::-webkit-outer-spin-button {
 	<div style="clear:both"></div>
 </div>
 
+<div id="product-list-unready">
+	<div class="row">
+		<div class="col-xs-3">
+			<div class="img-container-unready"></div>
+		</div>
 
-<div id="productlist" class='row'></div>
+		<div class="col-xs-6">
+			<span class="title-unready"></span>
+			<ul class="highlight-unready">
+				<li></li><li></li><li></li>
+			</ul>
+			<span class="readmore-unready"></span>
+		</div>
+
+		<div class="col-xs-3">
+			<span class="price-unready"></span>
+			<span class="stock-unready"></span>
+			<div class="margin-top-button-unready">
+				<span class="button-unready"></span>
+				<span class="button-unready"></span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-3">
+			<div class="img-container-unready"></div>
+		</div>
+
+		<div class="col-xs-6">
+			<span class="title-unready"></span>
+			<ul class="highlight-unready">
+				<li></li><li></li><li></li>
+			</ul>
+			<span class="readmore-unready"></span>
+		</div>
+
+		<div class="col-xs-3">
+			<span class="price-unready"></span>
+			<span class="stock-unready"></span>
+			<div class="margin-top-button-unready">
+				<span class="button-unready"></span>
+				<span class="button-unready"></span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-3">
+			<div class="img-container-unready"></div>
+		</div>
+
+		<div class="col-xs-6">
+			<span class="title-unready"></span>
+			<ul class="highlight-unready">
+				<li></li><li></li><li></li>
+			</ul>
+			<span class="readmore-unready"></span>
+		</div>
+
+		<div class="col-xs-3">
+			<span class="price-unready"></span>
+			<span class="stock-unready"></span>
+			<div class="margin-top-button-unready">
+				<span class="button-unready"></span>
+				<span class="button-unready"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="productlist" class='row'>
+	
+</div>
 
 <div style="clear:both"></div>
 
@@ -152,9 +216,6 @@ $(document).ready(function() {
 
 	var path = '<?php echo $_SERVER['REQUEST_URI']; ?>';
 	var arrPath = path.split('/');
-	//console.log(path);
-	//console.log(arrPath);
-	//console.log(arrPath[4]);
 	var cari = arrPath[3];
 	cari = cari.replace(/%20/g," ");
 

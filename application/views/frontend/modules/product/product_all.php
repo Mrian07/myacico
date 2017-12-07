@@ -1,14 +1,15 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.carousel.css');?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.theme.css');?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/product-list.css');?>">
 <div class="container">
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i>HASIL PENCARIAN UNTUK '<span id="search-key"></span>'
 	</div>
 	<div class="row">
-		<div id="sidebar-left-filter" style='width:230px; float:left; margin-right:10px;'>
-			<?php	$this->load->view('frontend/modules/product/sidebar_left',$this->data); ?>
+		<div id="sidebar-left-filter" class="col-xs-3">
+			<?php $this->load->view('frontend/modules/product/sidebar_left',$this->data); ?>
 		</div>
-		<div style='width:890px; float:left' id="product-list">
+		<div id="product-list" class="col-xs-9">
 				<?php $this->load->view('frontend/modules/product/product_list',$this->data); ?>
 			<?php
 		if($this->session->userdata('itemView')=='grid'){
@@ -33,6 +34,7 @@
 <script>
 
 	var filterUrl = '';
+	var body = $("html, body");
 
 	// $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	var ctrl= "<?php echo base_url('/product/detail')?>";
@@ -80,7 +82,7 @@ function buildPage(total, page) {
 	if (page == 1) $('.my-paging').append('<span class="my-paging-off"><i class="fa fa-angle-left" aria-hidden="true"></i></span>');
 	else $('.my-paging').append('<span onclick ="getListProduct(' + (page-1) + ')" class="my-paging-btn my-paging-list"><i class="fa fa-angle-left" aria-hidden="true"></i></span>');
 
-	if(total > limit){
+	// if(total > limit){
 
 		for (var i = 1; i <= totalPage; i++) {
 			if(((i < page + 3) && (i > page - 3)) || (i == 1) || (i == totalPage)) {
@@ -98,7 +100,7 @@ function buildPage(total, page) {
 			}
 			else if((i == page + 3) || (i == page - 3)) $('.my-paging').append(' ... ');
 		}
-	}
+	// }
 
 	if (page < totalPage){
 		$('.my-paging').append('<span onclick ="getListProduct(' + (page+1) + ')" class="my-paging-btn my-paging-list"><i class="fa fa-angle-right" aria-hidden="true"></i></span>');
@@ -119,6 +121,13 @@ function getListProduct(p) {
 	p = p || 1;
 	url += 'page=' + p + '&';
 
+	body.stop().animate({scrollTop:0}, 250, 'swing', function() {
+		
+	});
+
+	console.log("112312312");
+	$("#product-list-unready").fadeIn(500);
+	$('#productlist').hide();
 	$.get(url + 'show=productcount', function(res){
 		console.log('get total:', res);
 		total = res.productCount;
@@ -128,8 +137,12 @@ function getListProduct(p) {
 		// alert("finish");
 		console.log("konten:", res);
 		// console.log(res);
-		if (res.length == 0) return $('#productlist').html('<center>Maaf item yang Anda cari belum tersedia.</center>');
-		
+		if (res.length == 0) {
+			$("#product-list-unready").fadeOut(500);
+			$('#productlist').fadeIn(500);
+			$('.my-paging').empty();
+			return $('#productlist').html('<center>Maaf item yang Anda cari belum tersedia.</center>');
+		}
 		var i = 0;
 		res.forEach(function(data) {
 
@@ -137,18 +150,18 @@ function getListProduct(p) {
 			var addWishlistComponent = '';
 
 			if (data.specialPrice != 0 || data.specialPrice != '0') {
-				specialPriceComponent += '<span class="strike-throgh">Rp ' + data.pricelist + '</span>'
+				specialPriceComponent += '<span class="strike-throgh">Rp ' + formatMoney(data.pricelist) + '</span>'
 											+ '<span class="lead dark-red pricelist" style="font-size: 1.4em;">'
-												+ 'Rp ' + data.specialPrice
+												+ 'Rp ' + formatMoney(data.specialPrice)
 											+ '</span>'
 											+ '<div> Hemat'
 												+ '<span class="lead dark-red pricelist" style="font-size: 1.2em;">'
-													+ 'Rp ' +	data.pricelist - data.specialPrice + ' (' + data.discount + '%)'
+													+ 'Rp ' +	formatMoney(data.pricelist - data.specialPrice) + ' (' + data.discount + '%)'
 												+ '</span>'
 											+ '</div>';
 			} else {
 				specialPriceComponent += '<span class="lead dark-red pricelist">'
-									+ 'Rp ' + data.pricelist
+									+ 'Rp ' + formatMoney(data.pricelist)
 								+ '</span>';
 			}
 
@@ -201,49 +214,55 @@ function getListProduct(p) {
 			)
 			i++;
 		});
+		$("#product-list-unready").fadeOut(500);
+		$('#productlist').fadeIn(500);
 		buildPage(total, parseInt(p));
-		window.scrollTo(0,0);
 	});
-
-	// $.get(api_base_url + api2,function(res){
-	//	 console.log("konten2:", res);
-	// });
 }
 
 function getSidebar() {
 	var url = api_base_url + '/product/filter/<?php echo $pro ?>';
-		// console.log("url: ", url);
 	$.get(url,function(res){
-		console.log("result ajax list");
-		// console.log(res);
-		
-
+		$("#sidebar-left-filter").hide();
+		console.log('sidebar res: ', res);
 		res.forEach(function(m) {
-
-			var menu_body = '';
+			var menu_body = '', key = '', value = '';
 
 			m.data.forEach(function(d) {
-				menu_body += '<div class="checkbox">'
-					+ '<label>'
-						+ '<input name="checkbox-filter" type="checkbox" value="' + m.filterAlias + ' ~ ' + d.valueAlias + '" onclick="doFilter()">'
-						+ '<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>'
-						+ d.value
-						+ '(' + d.count + ')'
-					+ '</label>'
-				+ '</div>'
-			})
+				if (m.filterAlias != 'Price') {
+					if (typeof m.filterId == 'undefined') {
+						key = m.filterAlias;
+						value = d.valueId;
+					} else {
+						key = m.filterId;
+						value = d.valueAlias;
+					}
+
+					menu_body += '<div class="checkbox">'
+						+ '<label>'
+							+ '<input name="checkbox-filter" type="checkbox" value="' + key + '~' + value + '" onclick="doFilter()">'
+							+ d.value
+							+ ' (' + d.count + ')'
+						+ '</label>'
+					+ '</div>';
+				} else {
+
+				}
+			});
 
 			$('#sidebar-left-filter').append(
 				$(document.createElement('div')).attr({'id': m.filterAlias,'class': 'menu_list'}).append(
 					$(document.createElement('p')).text(m.filter).attr({'class': 'menu_head plus'}).click(function() {
 						console.log("clicked lhooo");
-						$(this).toggleClass("plus minus").next("div.menu_body").slideToggle(300);
+						$(this).toggleClass("plus minus").next("div.menu_body").slideToggle(250);
 					}),
 					// '<p class="menu_head plus">' +	+ '</p>' "#" + m.filterAlias + " > p.menu_head"
 					'<div class="menu_body">' + menu_body + '</div>'
 				)
 			)
 		});
+		$("#sidebar-animation-unready").fadeOut(250);
+		$("#sidebar-left-filter").fadeIn(500);
 	});
 }
 
@@ -252,12 +271,12 @@ function doFilter() {
     var objFilter = {}
     objFilter.Others = [];
 
-    var urlCategory = '';
-    var urlBrand = '';
+    var urlCategory = 'cat=(';
+    var urlBrand = 'brand=(';
     var urlPrice = '';
-    var urlInstance = '';
+    var urlInstance = 'instance=(';
+    var urlAttribute = 'attribute=(';
     var urlOthers = '';
-    var urlAttribute = '';
     
     $('#sidebar-left-filter input[name=checkbox-filter]:checked').each(function() {
         var valraw = $(this).val();
@@ -265,7 +284,6 @@ function doFilter() {
         var key = arrVal[0].trim();
         var val = arrVal[1].trim();
 
-        // console.log("1objFilter[key]: ", objFilter[key]);
         if (key == 'Category' || key == 'Brand') {
             if(typeof objFilter[key] == 'undefined') objFilter[key] = [];
             objFilter[key].push(val);
@@ -287,33 +305,62 @@ function doFilter() {
     console.log('objFilter: ', objFilter);
 
     if (objFilter.Category) {
-        objFilter.Category.forEach(function(item) {
-            urlCategory += 'cat=' + item + '&';
+        objFilter.Category.forEach(function(item, index) {
+            urlCategory += item;
+			urlCategory += (objFilter.Category.length == (index + 1)) ? '' : ',';
         });
-    }
+		urlCategory += ')&';
+    } else {
+		urlCategory = '';
+	}
     if (objFilter.Brand) {
-        objFilter.Brand.forEach(function(item) {
-            urlBrand += 'brand=' + item + '&';
+        objFilter.Brand.forEach(function(item, index) {
+			urlBrand += item;
+			urlBrand += (objFilter.Brand.length == (index + 1)) ? '' : ',';
         });
-    }
+		urlBrand += ')&';
+    } else {
+		urlBrand = '';
+	}
     if (objFilter.Others.length != 0) {
-        objFilter.Others.forEach(function(items) {
+        objFilter.Others.forEach(function(items, index) {
             for (var key in items) {
-                urlInstance += 'instance=' + key + '&'
-                
-                items[key].forEach(function(val) {
-                    urlAttribute += 'attribute=' + val + '&'
+				urlInstance += key + ',';
+
+                items[key].forEach(function(val, index) {
+                    urlAttribute += val + ',';
                 });
             }
+			urlInstance = urlInstance.slice(0, -1);
+			urlAttribute = urlAttribute.slice(0, -1);
+			urlInstance += ')&';
+			urlAttribute += ')&';
             urlOthers += urlInstance + urlAttribute;
         });
-    }
+    } else {
+		urlOthers = ''
+	}
+	console.log("urlOthers: ", urlOthers);
 
     filterUrl = urlCategory + urlBrand + urlPrice + urlOthers;
 
     console.log('filterUrl: ', filterUrl);
 
     getListProduct();
+}
+
+function formatMoney(num) {
+	var	number_string = num.toString(),
+	sisa 	= number_string.length % 3,
+	rupiah 	= number_string.substr(0, sisa),
+	ribuan 	= number_string.substr(sisa).match(/\d{3}/g);
+		
+	if (ribuan) {
+		separator = sisa ? '.' : '';
+		rupiah += separator + ribuan.join('.');
+	}
+
+	return rupiah;
 }
 </script>
 

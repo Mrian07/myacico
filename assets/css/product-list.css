@@ -1,0 +1,113 @@
+#sidebar-animation-unready .menu_list_unready {
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    background: linear-gradient(-45deg, #DDDDDD, #F1F1F1, #DDDDDD);
+    background-size: 300% 300%;
+    -webkit-animation: Gradient 0.8s ease infinite;
+    -moz-animation: Gradient 0.8s ease infinite;
+    animation: Gradient 0.8s ease infinite;
+}
+
+#product-list-unready .img-container-unready,
+#product-list-unready .title-unready,
+#product-list-unready .highlight-unready li,
+#product-list-unready .readmore-unready,
+#product-list-unready .price-unready,
+#product-list-unready .stock-unready,
+#product-list-unready .button-unready {
+    border-radius: 3px;
+    margin-bottom: 10px;
+    background: linear-gradient(-45deg, #DDDDDD, #F1F1F1, #DDDDDD);
+    background-size: 300% 300%;
+    -webkit-animation: Gradient 0.8s ease infinite;
+    -moz-animation: Gradient 0.8s ease infinite;
+    animation: Gradient 0.8s ease infinite;
+}
+
+#product-list-unready .img-container-unready {
+    width: 100%;
+    height: 200px;
+}
+
+#product-list-unready .title-unready {
+    width: 100%;
+    height: 25px;
+    display: block;
+}
+
+#product-list-unready .highlight-unready {
+    margin-top: 25px;
+    list-style: none;
+}
+
+#product-list-unready .highlight-unready li {
+    width: 300px;
+    height: 15px;
+}
+
+#product-list-unready .readmore-unready {
+    width: 100%;
+    height: 20px;
+    margin-top: 35px;
+    display: block;
+}
+
+#product-list-unready .price-unready {
+    width: 60%;
+    height: 25px;
+    display: block;
+}
+
+#product-list-unready .stock-unready {
+    width: 80%;
+    height: 20px;
+    display: block;
+}
+
+#product-list-unready .button-unready {
+    width: 100%;
+    height: 25px;
+    display: block;
+}
+
+.margin-top-button-unready {
+    margin-top: 55px;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
