@@ -337,7 +337,7 @@ class Account extends Web_private {
 		$this->data['hasil'] = json_decode($konten3, true);
 
 		$this->data['active_riwayatStatusPesanan'] = "class='active'";
-		$this->data['title_web'] = "Riwayat Status Pasaran - ".$domain;
+		$this->data['title_web'] = "Riwayat Status Pesanan - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);

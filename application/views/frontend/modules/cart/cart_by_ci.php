@@ -377,17 +377,35 @@ function pilihAlamat(id){
   $(".amount").html('-');
   var id = id.value;
   var url = '<?php echo site_url('checkout/pilihShip'); ?>'
+  if(id==''){
+    $(".alamat").html('');
+  }else{
+    $.ajax
+    ({
+    url: url+'/?id='+id,
+    success:function(html){
+        $(".alamat").html(html);
+        $(".amount").html('-');
+        getKurir(id);
+        $(".paket").html('<option value="">-Pilih-</option>');
+      }
+    });
+
+  }
+
+}
+
+function getAsap(id){
+
+  var url = '<?php echo site_url('cart/listCartToken'); ?>'
   $.ajax
   ({
   url: url+'/?id='+id,
   success:function(html){
-      $(".alamat").html(html);
-      $(".amount").html('-');
-      getKurir(id);
-      $(".paket").html('<option value="">-Pilih-</option>');
+      $("#asap").html(html);
+    //alert(html);
     }
   });
-
 }
 
 function getKurir(id){
