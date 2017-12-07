@@ -38,7 +38,8 @@ class Product extends Web {
 
 		if($short==''){$this->data['sort_id'] = '5'; }else{$this->data['sort_id'] =$short; }
 		$this->data['pro'] = $id;
-
+		$data = array('id_main_src' => $cat);
+		$this->session->set_userdata($data);
 
 		$apiTotPage = "product/productlist/".$cat."/".$id."?itemperpage=12&show=pagecount";
 		$urlTotPage = api_base_url($apiTotPage);
@@ -338,7 +339,7 @@ $home_domain = domain2();
 		$konten = file_get_contents($url, false, $context);
 
 		$this->data['hasil'] = json_decode($konten, true);
-              
+
 		//Slide slide_show
 		$api = "home/view";
 		$url = api_base_url($api);

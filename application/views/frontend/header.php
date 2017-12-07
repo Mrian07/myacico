@@ -252,19 +252,55 @@ var prod_detail =  localStorage.getItem('product_detail');
   					<div class="input-group-btn search-panel">
   						<button type="button" class="dropdown-toggle my-search" data-toggle="dropdown">
   							<span id="search_concept"><?php echo $lang_all_src; ?></span> <span class="caret"></span>
+
   						</button>
   						<ul class="dropdown-menu mycategory-search" role="menu">
-  							<li><a href='#all'><?php echo $lang_all_src; ?></a></li>
-  							<?php foreach($catsearch as $datacat){
-									if($lang=='en'){
-										$cat_name = $datacat['name_en'];
-									}else{
-										$cat_name = $datacat['name'];
-									}
-  								echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
+						<li id="search_concept2"  id="search_param"><a href='#all'>All Categories</a></li>
+
+  							<?php
+								// $this->session->unset_userdata('id_main_src');
+
+								 foreach($catsearch as $datacat){
+									 if($lang=='en'){
+ 										$cat_name = $datacat['name_en'];
+ 									}else{
+ 										$cat_name = $datacat['name'];
+ 									}
+									 if( $this->session->userdata('id_main_src') ==  $datacat['m_product_category_id']){
+	 									echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
+										$this->session->unset_userdata('id_main_src');
+										?>
+										<script>
+										$('#search_concept').html('<?php echo "$cat_name"; ?>')
+										$('#search_concept2').html('<a href="#all"><?php echo $lang_all_src; ?></a>')
+										</script>
+										<?php
+
+	 								}else{
+
+	 									echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
+
+	 								}
+
+
+
+									// if( $this->session->userdata('id_main_src')==$datacat['m_product_category_id']){
+									// 	echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
+									// }else{
+									// 	echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
+									// }
+
   							}?>
   						</ul>
   					</div>
+						<script>
+
+							$('#search_param').change(function() {
+								var paramss = $('#search_param').val()
+									console.log(paramss);
+							});
+						</script>
+						<!-- <input type="hidden" name="search_param" value="<?php // echo $this->session->userdata('id_main_src'); ?> " id="search_param"> -->
   					<input type="hidden" name="search_param" value="all" id="search_param">
   					<!-- <input type="text" name="searchID" id="searchID"> -->
   					<input type="text" name="search" id="searchDesk" autocomplete="off" class="my-search-field">
@@ -331,6 +367,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 	var doneTypingIntervalCat = 20000;
 
 	$("#searchDesk").keyup(function( event ) {
+
 		var key = $(this).val();
 		var cat = $('#search_param').val();
 		$('#title_list').hide();
@@ -354,14 +391,16 @@ var prod_detail =  localStorage.getItem('product_detail');
 	    	event.preventDefault();
 				var cat = $('#search_param').val();
 				var searchDesk = $('#searchDesk').val();
+
 				if(searchDesk){
 					if(cat=="all"){
+						location.href = base_url+'product/alllistItem/'+searchDesk;
+					}else if(cat == ''){
 						location.href = base_url+'product/alllistItem/'+searchDesk;
 					}else{
 						//location.href = base_url+'product/alllistItem/'+searchDesk;
 						location.href = base_url+'product/alllistItemCat/'+cat+'/'+searchDesk;
 					}
-
 
 				}else{
 					$.alert({
@@ -371,6 +410,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 				}
 
 	  	}
+
 
 	}).click(function() {
 
@@ -396,6 +436,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 	$('#title_top').hide();
 },500)
 })
+
 
 
 	function searchProduct(key){

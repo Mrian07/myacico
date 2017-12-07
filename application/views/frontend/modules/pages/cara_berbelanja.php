@@ -105,7 +105,7 @@ text-align: justify;
 	  <div class="col-sm-12">
               <br>
                 <center>
-                    <?php if($lang=='id'){?>
+
                     <img src="<?php echo base_url('images/general/caraMudah.jpg');?>" style='height:400px; width: 1000px;'><br>
 										<div class="kiri">
 											<center>
@@ -121,17 +121,6 @@ text-align: justify;
 
 								</align>
 
-
-
-                    <?php
-                    }
-                    else
-                    {
-                        ?>
-
-                   <?php
-                    }
-                    ?>
                 </center>
 
 	  </div>

@@ -45,6 +45,12 @@ class Web extends MY_Controller {
         $this->categorySearch();
         $this->navigation();
         $this->avatarCust();
+        $this->clearIdCat();
+    }
+
+    public function clearIdCat(){
+      $data = array('id_main_src' => '');
+  		$this->session->set_userdata($data);
     }
 
     public function avatarCust(){
@@ -389,7 +395,7 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_btn_update_receiver'] = $this->lang->line('btn_update_receiver');
     $this->data['lang_payment_confirm'] = $this->lang->line('payment_confirm');
     $this->data['lang_voucher_code'] = $this->lang->line('voucher_code');
-    
+
 //   ASAP
         $this->data['lang_inf_asap'] = $this->lang->line('inf_asap');
 

@@ -11,9 +11,8 @@
 .my-cart a:hover{
 	color: black;
 	font-size: 10px;
-
-
 }
+
 
 </style>
 <div class='my-cart-scroll'>
