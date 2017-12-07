@@ -217,12 +217,6 @@
 
 		}
 
-
-
-
-
-
-
   ?>
   </div>
 		</div>
@@ -265,23 +259,7 @@ function srcByDate(){
 
 		});
 
-	}else if(endDate==startDate){
-
-		$.dialog({
-			title: 'Alert!',
-			content: 'Tanggal awal dan tanggal akhir tidak boleh sama.',
-			autoClose: 'close|50000',
-			buttons: {
-				close: function () {
-					//$.alert('action is canceled');
-				}
-			},
-			closeIcon: true,
-			closeIconClass: 'fa fa-close'
-
-		});
-
-	}else if(endDate<=startDate){
+	}else if(endDate<startDate){
 
 		$.dialog({
 			title: 'Alert!',

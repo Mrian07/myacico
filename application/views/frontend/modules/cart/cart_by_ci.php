@@ -206,7 +206,8 @@ textarea#styled {
     position: absolute;
     height: 10px;
     z-index: -1;
-    width: 40%;
+    /*width: 40%;*/
+    width: 800px;
     margin-top: -25px;
     margin-left:5px;
   }
@@ -378,7 +379,7 @@ function pilihAlamat(id){
   $(".amount").html('-');
   var id = id.value;
   var url = '<?php echo site_url('checkout/pilihShip'); ?>'
-
+    
   if(id==''){
     $(".alamat").html('');
   }else{
@@ -387,10 +388,10 @@ function pilihAlamat(id){
     url: url+'/?id='+id,
     success:function(html){
         console.log(id)
+        getAsap(id);
         $(".alamat").html(html);
         $(".amount").html('-');
         getKurir(id);
-        getAsap(id);
         $(".paket").html('<option value="">-Pilih-</option>');
       }
     });
@@ -401,20 +402,20 @@ function pilihAlamat(id){
 
 function getAsap(id){
     var apiurl = api_base_url +'/freight/isdki?villageid='+id;
-    
+
      $.ajax({
         url: apiurl,
         success:function(res){
             console.log(res)
                  if(res.isDKI=='N'){
-        $("#asapGb").hide();
+        $(".asapGb").hide();
       }else{
-        $("#asapGb").show()
-      } 
-            
+        $(".asapGb").show()
+      }
+
         }
     })
-    
+
 //  var apiurl = api_base_url +'/afreight/isdki?villageid='+id;
 //  $.ajax({
 //    url: apiurl,
@@ -480,6 +481,7 @@ function pilihKurir(row){
 //     alert("The text has been changed.");
 // });
 $(document).ready(function() {
+var id_add ="<?php echo get_cookie('shipping_address_id');?>"
 
   $('#kurir').prop('selectedIndex',0);
 
@@ -491,6 +493,7 @@ $(document).ready(function() {
 		url: "<?php echo site_url('cart/listCartToken'); ?>",
 		success:function(html){
 				$(".listCart").html(html);
+                                getAsap(id_add)
 			}
 		});
 	}

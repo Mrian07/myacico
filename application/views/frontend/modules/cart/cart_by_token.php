@@ -53,27 +53,27 @@
 		</tr>
 	</thead>
 	<tbody>
-            
-	<?php 
-		$total = 0; 
+
+	<?php
+		$total = 0;    $a=0;
 		foreach($hasil as $items):
                     if($items['istodayshipping'] == 'Y')
                     {
-                        $asap = "<a id='asapGb' style='height:10px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."'style='height:20px;'> </a>";
-                       $asap_bawah ='*Pegiriman ASAP(Jaminan 2 hari sampai) saat ini hanya berlaku untuk daerah Jakarta';
-
+                        $asap = "<a class='asapGb' style='height:10px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."'style='height:20px;'> </a>";
+                      // $asap_bawah ='*Pegiriman ASAP(Jaminan 2 hari sampai) saat ini hanya berlaku untuk daerah Jakarta';
+                        $a=1;
                     }
                     else
                     {
                         $asap ='';
-                        $asap_bawah ='';
+
                     }
-                    
+
 				echo"<tr>
 						<td data-th='Product'>
 							<div class='row'>
 								<div class='col-sm-2 hidden-xs'><img src='".$items['imageurl']."' border='0' height='50' width='50'></div>
-                                                                   
+
 								<div class='col-sm-10'>
 									<b>".$items['name']."</b>
                                                                              ".$asap."
@@ -111,8 +111,17 @@
 				<td colspan='3'>
 
 					<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman
-				
-                                            <br><?php echo$asap_bawah;?>
+
+                                            <br><?php
+                                            if($a ==1)
+                                            {
+                                             echo '*Pegiriman ASAP(Jaminan 2 hari sampai) saat ini hanya berlaku untuk daerah Jakarta';
+
+                                            }else{
+                                                echo '';
+                                            }
+                                            echo '';
+                                            ?>
                                 </td>
 				<td class='text-center' colspan='2'>
 				<strong>Total Rp.<?php echo money($total); ?></strong></td>
@@ -154,6 +163,10 @@
 				success:function(html){
 						$(".listCart").html(html);
 						$('.totalCart').html(qtyTotal);
+
+            var kurir = $('#kurir').val();
+
+            pilihKurir2(kurir)
 					}
 				});
 
@@ -161,5 +174,37 @@
 		});
 
 	}
+
+
+
+  function pilihKurir2(row){
+    var result=row.split('-');
+    var id = result[0];
+    var amount = result[1];
+    var nameKur = result[2];
+    if(id=='kosong'){
+      $(".amount").html('-');
+    }else{
+
+      var url = '<?php echo site_url('checkout/pilihKurir'); ?>'
+      $.ajax
+      ({
+      url: url+'/?id='+id+'&amount='+amount+'&name='+nameKur,
+      success:function(html){
+          $(".amount").html(html);
+        }
+      });
+
+      var url = '<?php echo site_url('checkout/pilihPaket'); ?>'
+      $.ajax
+      ({
+      url: url+'/?id='+id+'&amount='+amount+'&name='+nameKur,
+      success:function(html){
+          $(".paket").html(html);
+        }
+      });
+
+    }
+  }
 
 </script>
