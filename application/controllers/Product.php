@@ -495,7 +495,7 @@ foreach ($hasil['specification'] as $speck)
 			$this->data['discount'] = $hasil['discount'];
 			$this->data['highlight'] = $hasil['highlight'];
 			$this->data['sku'] = $hasil['sku'];
-
+                        $this->data['asap_stat'] = $hasil['istodayshipping'];
 			$this->data['isWishList']=$hasil['isWishList'];
 			$this->data['category'] = $hasil['category'];
 			$this->data['m_product_id'] = $hasil['m_product_id'];

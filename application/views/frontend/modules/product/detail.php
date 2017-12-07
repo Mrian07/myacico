@@ -102,8 +102,18 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     <table class="table table-detail-prod" border="0">
       <tbody>
         <?php
+        if($asap_stat =='Y')
+        {
         $asap = "<a style='height:20px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."' class='test01'> </a>";
-          if($specialPrice == 0 ){
+        $asap_bawah= "Ingin barang anda sampai dalam <span style='color:red;'>2 hari</span>?<br>Pilih Layanan".$asap." bagi anda yang tinggal di jakarta ";
+
+        }
+        else
+        {
+            $asap ='';
+            $asap_bawah ='Belanja online murah, gratis pengiriman area Jakarta*';
+        }
+        if($specialPrice == 0 ){
             echo "
               <tr>
                 <td>Harga:</td>
@@ -139,8 +149,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             width: 55px;
           }
           </style>
-          <td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih Layanan <a target="_blank" href="<?php echo base_url('customer/asap');?>"><img src="<?php echo base_url('images/general/asap.png');?>" class="test01"> </a>bagi anda yang tinggal di jakarta </td>
-        </tr>
+          <!--<td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih Layanan <a target="_blank" href="<?php echo base_url('customer/asap');?>"><img src="<?php echo base_url('images/general/asap.png');?>" class="test01"> </a>bagi anda yang tinggal di jakarta </td>-->
+  <td> <?php echo$asap_bawah;?>    </td>
+    </tr>
         <!-- <tr>
           <td>Warna:</td>
           <td><div class="opt-color black"></div></td>
@@ -495,8 +506,13 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           <?php echo "<div id='rateSejeniss".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
 
     </div>
-      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?>
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); 
+      if($itemslide2['istodayshipping'] == 'Y'){
+      ?>
       <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+      <?php 
+      }
+      ?>
       </p>
       
         <hr>
@@ -566,8 +582,14 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           <?php echo "<div id='rateRekom".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
 
     </div>
-      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?>
-      <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'></p>
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); 
+      if($itemslide2['istodayshipping'] == 'Y'){
+      ?>
+      <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+      <?php 
+      }
+      ?>
+      </p>
         <hr>
   </div>
   <?php $no++; $n++;  } ?>
@@ -642,8 +664,13 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           <?php echo "<div id='rateJenis".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
 
     </div>
-      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?>
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); 
+      if($itemslide2['istodayshipping'] == 'Y'){
+      ?>
       <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+      <?php 
+      }
+      ?>
       </p>
         <hr>
   </div>
