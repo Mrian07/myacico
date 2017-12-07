@@ -1,3 +1,21 @@
+<style>
+.my-cart a{
+	color: black;
+	font-size: 10px;
+
+/*padding-top: -40px;*/
+
+
+}
+
+.my-cart a:hover{
+	color: black;
+	font-size: 10px;
+
+
+}
+
+</style>
 <div class='my-cart-scroll'>
 	<?php
 	$total = 0;
@@ -10,7 +28,9 @@
 			echo"<img src='".base_url('images/general/noimage.png')."' style='height:50px; width: auto' border='0'>";
 		}
 	echo"</div>
-	  <div class='col-sm-7'><b>".$items['name']."</b><br>Rp.".money($items['price'])." <i>(".$items['qty'].")Items</i><br></div>
+
+
+	  <div class='col-sm-7'><a href='".base_url('product/detail/'.$items['productId'].'/'. $items['alias'])."'><b>".$items['name']."</b><br>Rp.".money($items['price'])." <i>(".$items['qty'].")Items</a></i><br></div>
 	  <div class='col-sm-2'><a href='#' onClick=\"dellItemCartToken('".$items['productId']."','".$items['imageurl']."','".$items['name']."','".$items['itemCartId']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a></div>
 	</div>";
 	$total +=$items['subtotal'];
