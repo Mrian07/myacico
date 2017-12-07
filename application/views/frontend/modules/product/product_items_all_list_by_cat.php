@@ -134,7 +134,7 @@ input[type=number]::-webkit-outer-spin-button {
         <div class='row' style="padding-bottom: 15px">
             <div class="col-xs-3">
               <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>">
-                <img class="img-thumbnail clear-border" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" style="height:200px; width: auto;" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
+                <img class="img-thumbnail clear-border" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" style="height:auto; width: 150px;" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
               </a>
             </div>
             <div class="col-xs-6">
