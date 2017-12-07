@@ -252,7 +252,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 
 
 		 	<div class='my-hdr1'>
-				<div style='margin-top:-3px'>
+				<div style='margin-top:-10px; margin-left:20px'>
 					<?php echo anchor('/', '<img src="'.base_url('images/general/logocoid.gif').'" border="0" height="70">');?>
 				</div>
 			</div>
