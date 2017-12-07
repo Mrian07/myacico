@@ -301,7 +301,7 @@ h6{
   color: #8a0202;
   font-size: 12px;
   height:20px;
-
+  margin-bottom: 1px;
 }
 
 .section-box-six img{
@@ -777,8 +777,15 @@ ul.list-group:after {
             ?> <p class="box-title27">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
        <?php    } else{ ?>
            <p class="box-title2"><s>Rp.<?php echo money($itemslide2['pricelist']); ?></s></p><p><?php echo money($itemslide2['specialprice']); ?></p>
-        <?php } ?>
-
+        <?php }
+      
+if($itemslide2['istodayshipping'] == 'Y')
+                  {
+                  ?>
+                  <center>
+                    <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+                 </center>
+                  <?php }?>
 
 
             <hr>
@@ -824,9 +831,17 @@ ul.list-group:after {
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star-empty"></span>
                   </div>
+      <?php   
+if($itemslide3['istodayshipping'] == 'Y')
+                  {
+                  ?>
+                  <center>
+                    <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+                 </center>
+                  <?php }?>
       		</span>
     		</div>
-
+     
       <?php } ?>
 
   		<!-- END PRODUCTS -->
@@ -900,10 +915,14 @@ text.innerHTML = trimmedString
             echo "";
           } else { ?>
   <span class="badgeNi34" style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
-          <?php } ?>
-
-
-
+          <?php } 
+          if($itemslide0['istodayshipping'] == 'Y')
+                  {
+                  ?>
+                  <center>
+                    <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+                 </center>
+                  <?php }?>
       </div>
       <?php $n++;  } ?>
     </div>
@@ -966,7 +985,14 @@ text.innerHTML = trimmedString
               echo "";
               } else { ?>
               <span class="badgeNi34" style="color:white;">  <?php echo $itemslide1['discount']; ?> %</span>
-              <?php } ?>
+              <?php }
+              if($itemslide1['istodayshipping'] == 'Y')
+                  {
+                  ?>
+                  <center>
+                    <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+                 </center>
+                  <?php }?>
 
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
@@ -1038,8 +1064,14 @@ text.innerHTML = trimmedString
                   echo "";
                   } else { ?>
                   <span class="badgeNi34" style="color:white;">  <?php echo $itemslide2['discount']; ?> %</span>
-                  <?php } ?>
-
+                  <?php } 
+                  if($itemslide2['istodayshipping'] == 'Y')
+                  {
+                  ?>
+                  <center>
+                    <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+                 </center>
+                  <?php }?>
 
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
@@ -1097,7 +1129,7 @@ text.innerHTML = trimmedString
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:210px;'>
+      <div class="item" style='background:#ffffff; padding:10px; height:240px;'>
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
@@ -1113,6 +1145,13 @@ text.innerHTML = trimmedString
                       }
                       ?></p>
               <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+              <?php if($itemslide2['istodayshipping'] == 'Y')
+                  {
+                  ?>
+                  <center>
+                    <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+                 </center>
+                  <?php }?>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
@@ -1159,7 +1198,7 @@ text.innerHTML = trimmedString
           $active='';
         }
         ?>
-      <div class="item" style='background:#ffffff; padding:10px; height:210px'>
+      <div class="item" style='background:#ffffff; padding:10px; height:240px'>
 
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
@@ -1175,6 +1214,13 @@ text.innerHTML = trimmedString
                     }
                     ?></p>
             <p class="box-title3" style='color: #111111'>Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+            <?php if($itemslide2['istodayshipping'] == 'Y')
+                  {
+                  ?>
+                  <center>
+                    <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+                 </center>
+                  <?php }?>
             <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
