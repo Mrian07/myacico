@@ -133,7 +133,7 @@ class Product extends Web {
 
 		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
-		$this->data['title_web'] = "List Items - ".$domain.'-'.$id;
+		$this->data['title_web'] = $id.'-'.$domain;
 
 		$this->data['hasil'] = json_decode($konten, true);
 		$this->load->view('frontend/header',$this->data);
@@ -256,7 +256,7 @@ public function listItem()
 		$this->data['jpage'] = ceil($jdata/$batas);
 		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
-		$this->data['title_web'] = "List Items - ".$domain;
+		$this->data['title_web'] = $this->data['alias']."-".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
@@ -338,7 +338,7 @@ $home_domain = domain2();
 		$konten = file_get_contents($url, false, $context);
 
 		$this->data['hasil'] = json_decode($konten, true);
-
+              
 		//Slide slide_show
 		$api = "home/view";
 		$url = api_base_url($api);
@@ -348,7 +348,7 @@ $home_domain = domain2();
 
 
 		//$this->load->view('frontend/test',$this->data);
-		$this->data['title_web'] = "Myacico.co.id - ".$home_domain;
+		$this->data['title_web'] = $this->data['hasil']['subName']."-".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
@@ -571,7 +571,7 @@ foreach ($hasil['specification'] as $speck)
 
 
  		$home_domain = domain2();
-		$this->data['title_web'] = "Myacico.co.id - ".$home_domain;
+		$this->data['title_web'] = $this->data['name']."-".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		if($hasil['isActive']=='Y'){
