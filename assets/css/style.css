@@ -347,11 +347,12 @@
 .link-head{
   margin-left:298px;
   margin-top:40px;
-  position: absolute;
+  /*position: absolute;*/
   font-family: "helvetica_neue";
   font-size: 11px;
   height:35px;
   padding-top:15px;
+  margin-bottom:-16px;
 }
 
 @media screen and (max-width: 1680px) {
