@@ -444,17 +444,17 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
 
 <!--<div class="container">-->
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+  <div id='sld1' style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK SEJENIS
   </div>
 
   <div class="span12" style='background:#ffffff; padding:10px;'>
     <div id="owl-demo" class="owl-carousel">
       <?php
-        $jmlslide2=count($dathome);
+        $jmlslide1=count($dathome);
       $n=1;$no=1;
       foreach($dathome as $key => $itemslide2){
-        if($n=="$jmlslide2"){
+        if($n=="$jmlslide1"){
           $active='active';
         }else{
           $active='';
@@ -521,7 +521,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
    </div>
 </div>
 
-<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+<div id ="sld2" style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK REKOMENDASI
   </div>
 
@@ -596,17 +596,17 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 </div>
 </div>
 
-<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+<div id ="sld3" style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK PELENGKAP
   </div>
 
   <div class="span12" style='background:#ffffff; padding:10px;'>
     <div id="owl-demo2" class="owl-carousel">
       <?php
-        $jmlslide2=count($dathome);
+        $jmlslide3=count($dathome);
       $n=1;
       foreach($dathome as $key => $itemslide2){
-        if($n=="$jmlslide2"){
+        if($n=="$jmlslide3"){
           $active='active';
         }else{
           $active='';
@@ -708,12 +708,30 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <script src="jquery.rateyo.js"></script>
 
 <script>
+var jdata1 = "<?php echo$jmlslide1;?>";
+var jdata2 = "<?php echo$jmlslide2;?>";
+var jdata3 = "<?php echo$jmlslide3;?>";
 
    var rate = "<?php  echo $rate;?>";
    var star_rate = "<?php  echo $ik;?>";
     var idss = "<?php echo $local_strg;?>";
 
+
     console.log('asdasd',idss)
+
+if(jdata1<10)
+{
+    $('#sld1').hide();
+}
+if(jdata2<10)
+{
+    $('#sld2').hide();
+}
+if(jdata3<10)
+{
+    $('#sld3').hide();
+}s
+
   var detail = JSON.parse(localStorage.getItem('product_detail'))
 
    $.ajax({

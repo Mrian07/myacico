@@ -25,9 +25,6 @@ $lang['msg_online_payment'] = 'Sorry payment online payment has been interrupted
 
 
   // Keranjang belanja bagian pertama
-  $lang['lang_keranjang'] = 'Shopping cart';
-    $lang['lang_ringkasan'] = 'Payment Method';
-    $lang['lang_konfrim'] = 'Confirmation';
     $lang['lang_tamb123'] = 'Add New Address';
     $lang['Field_Another'] = 'Choose Address';
     $lang['lang_courier'] = 'Shipping Courier';

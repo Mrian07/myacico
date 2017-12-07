@@ -31,10 +31,7 @@
 	</div>
 </div>
 </div>
-<?php
-// cart di ci perlu di destroy setelah login
- //$this->cart->destroy();
-?>
+
 <script type="text/javascript">
 
 var link_url = '<?php echo base_url('account/editBukuAlamat') ?>';

@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<?php
+		header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+		header("Cache-Control: no-store, no-cache, must-revalidate"); // HTTP/1.1
+		header("Cache-Control: post-check=0, pre-check=0", false);
+		header("Pragma: no-cache"); // HTTP/1.0
+		header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+		?>
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="0">
 		<meta charset="utf-8">
+
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 		<title><?php echo $title_web; ?></title>
 
@@ -10,6 +21,7 @@
 			color:red;
 		}
 		</style>
+
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
 		<!-- Strat Bootstrap -->
@@ -96,7 +108,7 @@ var prod_detail =  localStorage.getItem('product_detail');
     </head>
 
 	<body style='font-weight: normal;' ng-app="myApp">
-			<div class="top-bg" onclick="location.href='<?php echo base_url('product/category/1000540/Peralatan-Dapur');?>'" style='cursor: pointer;'><img src='<?php echo base_url('images/general/bg-top_main.jpg');?>' border='0'></div>
+			<div class="top-bg" onclick="location.href='<?php echo base_url('product/category/1000540/Peralatan-Dapur');?>'" style='cursor: pointer;'><img src='<?php echo base_url('images/general/bg-top_main.png');?>' border='0'></div>
 			<div class='row'>
 				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
 
@@ -240,7 +252,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 
 
 		 	<div class='my-hdr1'>
-				<div style='margin-top:-3px'>
+				<div style='margin-top:-10px; margin-left:20px'>
 					<?php echo anchor('/', '<img src="'.base_url('images/general/logocoid.gif').'" border="0" height="70">');?>
 				</div>
 			</div>

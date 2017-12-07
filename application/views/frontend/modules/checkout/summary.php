@@ -314,14 +314,15 @@
 		    padding-top: 20px;
 		  }
 
-		  .barred{
-		    width: 90%;
-		    height: 10px;
-		    background-color: red;
-		    /*position: absolute;*/
-		    margin-top: -25px;
-		    z-index: -1;
-		  }
+			.barred{
+				background-color: red;
+				position: absolute;
+				height: 10px;
+				z-index: -1;
+				width: 40%;
+				margin-top: -25px;
+				margin-left:5px;
+			}
 
 			.my-btn-kupon{
 		      padding: 10px 10px;
@@ -458,8 +459,8 @@ if($("#txt_voucher").val() == '')
 {
      alert('Kode Voucher Tidak Boleh Kosong');
 }
-   
-}); 
+
+});
 
 function delItemCart(id,img,name,idcart){
 	var apiurl = api_base_url + '/order/cart/deleteitem?idcartitem='+idcart;

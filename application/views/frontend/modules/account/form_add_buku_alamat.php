@@ -102,9 +102,6 @@
 						<input type="text" id = "phone2"name="phone2" class="form-control"/>
 					</div>
 
-
-
-
 					<div class="clearfix"></div>
 						<input type="submit" id="submit_btn" class="btn btn-primary" value="Update"> <img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_img" style="display:none">
 				  </form>
