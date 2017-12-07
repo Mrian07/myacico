@@ -36,8 +36,27 @@ class Product extends Web {
 		$short=$this->uri->segment(5);
   	$page=$this->uri->segment(6);
 
+
+		$url = "https://api.myacico.co.id/myacico-service/category";
+		// $url = "http://192.168.0.109:8080/myacico-service/category";
+		$konten = file_get_contents($url);
+		$this->data['catsearch'] = json_decode($konten, true);
+		$catsearch = json_decode($konten, true);
+
+		foreach($catsearch as $data){
+			if($data ['m_product_category_id']== $cat){
+
+				$this->data['title_atas'] = $data['name'];
+			}
+		};
+
+
+
+
+
 		if($short==''){$this->data['sort_id'] = '5'; }else{$this->data['sort_id'] =$short; }
 		$this->data['pro'] = $id;
+
 		$data = array('id_main_src' => $cat);
 		$this->session->set_userdata($data);
 
@@ -431,6 +450,7 @@ $home_domain = domain2();
 
 
 
+
 $i=0;
 foreach ($hasil['specification'] as $speck)
 {
@@ -570,7 +590,7 @@ foreach ($hasil['specification'] as $speck)
 
 
  		$home_domain = domain2();
-		$this->data['title_web'] = $this->data['name']."-".$home_domain;
+		$this->data['title_web'] = "-Belanja Online Murah, gratis pengiriman area jakarta"."-".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		if($hasil['isActive']=='Y'){
