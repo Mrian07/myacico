@@ -103,7 +103,6 @@ class Cart extends Web {
 		$price = $this->input->post('pricelist');
 		$imageurl = $this->input->post('imageurl');
 		$weight = $this->input->post('weight');
-		$alias = $this->input->post('alias');
 		$stock = $this->input->post('stock');
 
 		$jmlQty=0;
@@ -124,7 +123,6 @@ class Cart extends Web {
 				'price'   => $price,
 				'image'    => $imageurl,
 				'weight'    => $weight,
-				'alias'    => $alias,
             );
 
 			if($this->cart->insert($data)){
