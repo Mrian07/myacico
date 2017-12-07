@@ -8,9 +8,9 @@
 		header("Pragma: no-cache"); // HTTP/1.0
 		header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 		?>
-		<!-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
 		<meta http-equiv="Pragma" content="no-cache">
-		<meta http-equiv="Expires" content="0"> -->
+		<meta http-equiv="Expires" content="0">
 		<meta charset="utf-8">
 
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->

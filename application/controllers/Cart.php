@@ -103,7 +103,7 @@ class Cart extends Web {
 		$price = $this->input->post('pricelist');
 		$imageurl = $this->input->post('imageurl');
 		$weight = $this->input->post('weight');
-
+		$alias = $this->input->post('alias');
 		$stock = $this->input->post('stock');
 
 		$jmlQty=0;
@@ -124,6 +124,7 @@ class Cart extends Web {
 				'price'   => $price,
 				'image'    => $imageurl,
 				'weight'    => $weight,
+				'alias'    => $alias,
             );
 
 			if($this->cart->insert($data)){
@@ -245,19 +246,18 @@ class Cart extends Web {
 		$jml=count($this->cart->contents());
 		if($jml)
 		{
-
 		echo"<div class='my-cart-scroll'>";
 		foreach ($this->cart->contents() as $items):
 		echo"<div class='row my-cart'>
-		  <div class='col-sm-3'>";
+		  <div class='col-sm-3' style='padding:0px'>";
 			if($items['image']){
 				echo"<img src='".$items['image']."' border='0' width='50'>";
 			}else{
 				echo"<img src='".base_url('images/general/noimage.png')."' style='height:50px; width: auto' border='0'>";
 			}
 		echo"</div>
-		  <div class='col-sm-7'><b>".$items['name']."</b><br>Rp.".money($items['price'])." <i>(".$items['qty'].")Items</i><br></div>
-		  <div class='col-sm-2'><a href='#' onClick=\"dellItemCart('".$items['id']."','".$items['rowid']."','".$items['image']."','".$items['name']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a></div>
+		  <div class='col-sm-7' style='padding:0px'><b>".$items['name']."</b><br>Rp.".money($items['price'])." <i>(".$items['qty'].")Items</i><br></div>
+		  <div class='col-sm-2' style='padding:0px'><a href='#' onClick=\"dellItemCart('".$items['id']."','".$items['rowid']."','".$items['image']."','".$items['name']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a></div>
 		</div>";
 		endforeach;
 		echo"
