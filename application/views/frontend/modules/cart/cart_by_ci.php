@@ -386,16 +386,49 @@ function pilihAlamat(id){
     ({
     url: url+'/?id='+id,
     success:function(html){
+        console.log(id)
         $(".alamat").html(html);
         $(".amount").html('-');
         getKurir(id);
+        getAsap(id);
         $(".paket").html('<option value="">-Pilih-</option>');
       }
     });
 
   }
+
 }
 
+function getAsap(id){
+    var apiurl = api_base_url +'/freight/isdki?villageid='+id;
+    
+     $.ajax({
+        url: apiurl,
+        success:function(res){
+            console.log(res)
+                 if(res.isDKI=='N'){
+        $("#asapGb").hide();
+      }else{
+        $("#asapGb").show()
+      } 
+            
+        }
+    })
+    
+//  var apiurl = api_base_url +'/afreight/isdki?villageid='+id;
+//  $.ajax({
+//    url: apiurl,
+//    success:function(res){
+//      if(res.isDKI=='N'){
+//        $("#asapGb").hide();
+//      }else{
+//        $("#asapGb").show()
+//      }
+//  }
+//     });
+//
+//}
+}
 function getKurir(id){
 
   var url = '<?php echo site_url('checkout/selectKurir'); ?>'
