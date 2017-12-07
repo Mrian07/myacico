@@ -715,6 +715,10 @@ var jdata3 = "<?php echo$jmlslide3;?>";
    var rate = "<?php  echo $rate;?>";
    var star_rate = "<?php  echo $ik;?>";
     var idss = "<?php echo $local_strg;?>";
+
+
+    console.log('asdasd',idss)
+
 if(jdata1<10)
 {
     $('#sld1').hide();
@@ -727,6 +731,7 @@ if(jdata3<10)
 {
     $('#sld3').hide();
 }s
+
   var detail = JSON.parse(localStorage.getItem('product_detail'))
 
    $.ajax({

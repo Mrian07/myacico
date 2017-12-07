@@ -46,7 +46,13 @@ class Web extends MY_Controller {
         $this->navigation();
         $this->avatarCust();
 
+        $this->clearIdCat();
         $this->pushCartToToken();
+    }
+
+    public function clearIdCat(){
+      $data = array('id_main_src' => '');
+  		$this->session->set_userdata($data);
     }
 
     public function pushCartToToken(){

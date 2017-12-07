@@ -314,12 +314,23 @@
 		    padding-top: 20px;
 		  }
 
-			.barred{
+			/*.barred{
 				background-color: red;
 				position: absolute;
 				height: 10px;
 				z-index: -1;
 				width: 40%;
+				margin-top: -25px;
+				margin-left:5px;
+			}*/
+
+			.barred{
+				background-color: red;
+				position: absolute;
+				height: 10px;
+				z-index: -1;
+				/*width: 40%;*/
+				width: 800px;
 				margin-top: -25px;
 				margin-left:5px;
 			}
