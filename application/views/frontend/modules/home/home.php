@@ -30,15 +30,16 @@
 
 a.badgeNi:hover,a.badgeNi:focus{color:#fff;text-decoration:none;cursor:pointer}
 .badgeNi {
+   
   background: #b20c0c;
   position: absolute;
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
-  line-height: 31px;
+  line-height: 30px;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
-  font-size: 10px;
+  font-size: 8px;
   border: 2px solid #FFF;
   box-shadow: 0 0 0 1px #b20c0c;
   top: -1px;

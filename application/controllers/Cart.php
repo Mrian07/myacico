@@ -227,9 +227,8 @@ class Cart extends Web {
 
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
-
 		$this->data['hasil'] = json_decode($konten, true);
-
+               
 		if($hasil = json_decode($konten, true)){
 			$this->load->view('frontend/modules/cart/cart_by_token.php',$this->data);
 		}else{
