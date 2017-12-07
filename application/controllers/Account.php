@@ -318,18 +318,7 @@ class Account extends Web_private {
 
     $context = stream_context_create($options);
     $konten2 = file_get_contents($url2, false, $context);
-		$getStatus = json_decode($konten2);
-
-		if(isset($getStatus->status)){
-			$this->data['getData'] = '0';
-		}else{
-			$this->data['getData'] = '1';
-		}
-
-
-	    $jdata =json_decode($konten2)->transactionCount;
-
-
+	 	$jdata =json_decode($konten2)->transactionCount;
 
 	     $batas = '5';
 			if(empty($page)){
