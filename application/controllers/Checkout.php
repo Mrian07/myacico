@@ -172,7 +172,7 @@ class Checkout extends Web_private {
 
 	public function cart()
 	{
-		
+
 		//Data Billing akan menjadi data shipping
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
