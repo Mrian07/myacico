@@ -257,8 +257,7 @@ function addAllCartToBackend(r){
 
 	var apiurl = api_base_url +'/order/cart/additem';
 
-	$.ajax
-  ({
+	$.ajax({
 	type: 'POST',
 	contentType: 'application/json',
   url: apiurl,
@@ -292,7 +291,7 @@ var success = function(r){
 
 	$('#submit_btn').val('<?php echo $lang_btn_SignIn ?>').removeClass('disabled');
 
-	addAllCartToBackend(r);
+	//addAllCartToBackend(r);
 
 	//console.log('OK:', r);
 
@@ -305,7 +304,7 @@ var success = function(r){
 
 
 
-	
+
 
 
 

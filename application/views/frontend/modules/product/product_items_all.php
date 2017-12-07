@@ -606,18 +606,6 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 			var success = function(r){
 				  $('.cartModal').modal('show');
-				// $.confirm({
-				// 	title: name,
-				// 	content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
-				// 	autoClose: 'close|3000',
-				// 	buttons: {
-				// 		close: function () {
-				// 			//$.alert('action is canceled');
-				// 		}
-				// 	},
-				// 	closeIcon: true,
-				// 	closeIconClass: 'fa fa-close'
-				// });
 
 				//Buat update cart, fungsi ini ada di file header.php
 				totalCart();

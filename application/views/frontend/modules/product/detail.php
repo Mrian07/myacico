@@ -136,8 +136,8 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             </tr>";
           }
         ?>
-                
-        
+
+
         <tr>
           <td>Status:</td>
           <td style="color: #4ba240">Tersedia.</td>
@@ -506,15 +506,15 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           <?php echo "<div id='rateSejeniss".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
 
     </div>
-      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); 
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']);
       if($itemslide2['istodayshipping'] == 'Y'){
       ?>
       <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
-      <?php 
+      <?php
       }
       ?>
       </p>
-      
+
         <hr>
   </div>
   <?php $no++;$n++;  } ?>
@@ -582,11 +582,11 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           <?php echo "<div id='rateRekom".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
 
     </div>
-      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); 
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']);
       if($itemslide2['istodayshipping'] == 'Y'){
       ?>
       <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
-      <?php 
+      <?php
       }
       ?>
       </p>
@@ -664,11 +664,11 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           <?php echo "<div id='rateJenis".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
 
     </div>
-      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); 
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']);
       if($itemslide2['istodayshipping'] == 'Y'){
       ?>
       <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
-      <?php 
+      <?php
       }
       ?>
       </p>
@@ -715,15 +715,15 @@ var jdata3 = "<?php echo$jmlslide3;?>";
    var rate = "<?php  echo $rate;?>";
    var star_rate = "<?php  echo $ik;?>";
     var idss = "<?php echo $local_strg;?>";
-if(jdata1<100)
+if(jdata1<10)
 {
     $('#sld1').hide();
 }
-if(jdata2<100)
+if(jdata2<10)
 {
     $('#sld2').hide();
 }
-if(jdata3<100)
+if(jdata3<10)
 {
     $('#sld3').hide();
 }s

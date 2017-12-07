@@ -45,10 +45,6 @@ class Checkout extends Web_private {
 		$this->data['billing_address_id'] = $items['id'];
 		}
 
-
-
-
-
 		$get_shipping = get_cookie('shipping_address_id');
 
 		if($get_shipping)
@@ -176,7 +172,7 @@ class Checkout extends Web_private {
 
 	public function cart()
 	{
-
+		
 		//Data Billing akan menjadi data shipping
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];

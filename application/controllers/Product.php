@@ -338,7 +338,7 @@ $home_domain = domain2();
 		$konten = file_get_contents($url, false, $context);
 
 		$this->data['hasil'] = json_decode($konten, true);
-              
+
 		//Slide slide_show
 		$api = "home/view";
 		$url = api_base_url($api);
@@ -359,18 +359,16 @@ $home_domain = domain2();
 
 	public function detail()
     {
-
-
 			$this->data['pro_id']=$this->uri->segment(3);
 			$pro_id=$this->uri->segment(3);
 			$api = "product/productlist/related/".$pro_id;
 			$url = api_base_url($api);
-                        $api_rekom="product/productlist/recomendation/".$pro_id;
-                        $url_rekom = api_base_url($api_rekom);
+      $api_rekom="product/productlist/recomendation/".$pro_id;
+      $url_rekom = api_base_url($api_rekom);
 			$konten21 = file_get_contents($url);
 
-	$this->data['dathome'] = json_decode($konten21, true);
-	  $hasil1 = json_decode($konten21, true);
+			$this->data['dathome'] = json_decode($konten21, true);
+	  	$hasil1 = json_decode($konten21, true);
 //die(print_r($this->data['dathome']));
 	if(isset($hasil1['imageurl'])){
 		$this->data['imageurl'] = $hasil1['imageurl'];
@@ -501,7 +499,7 @@ foreach ($hasil['specification'] as $speck)
 			$this->data['m_product_id'] = $hasil['m_product_id'];
 			$this->data['rate'] = $hasil['rate'];
 			$this->data['rating'] = $hasil['rating'];
-
+			$this->data['alias'] = $hasil['alias'];
 			$this->data['name'] = $hasil['name'];
 			$this->data['pricelist'] = $hasil['pricelist'];
 			//$this->data['sku'] = $hasil['sku'];

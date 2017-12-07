@@ -59,7 +59,7 @@
 		foreach($hasil as $items):
                     if($items['istodayshipping'] == 'Y')
                     {
-                        $asap = "<a style='height:10px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."'style='height:20px;'> </a>";
+                        $asap = "<a id='asapGb' style='height:10px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."'style='height:20px;'> </a>";
                        $asap_bawah ='*Pegiriman ASAP(Jaminan 2 hari sampai) saat ini hanya berlaku untuk daerah Jakarta';
 
                     }

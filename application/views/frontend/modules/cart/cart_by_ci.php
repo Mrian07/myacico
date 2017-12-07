@@ -202,25 +202,26 @@ textarea#styled {
   }
 
   .barred{
-    width: 90%;
-    height: 10px;
     background-color: red;
-    /*position: absolute;*/
-    margin-top: -25px;
+    position: absolute;
+    height: 10px;
     z-index: -1;
+    width: 40%;
+    margin-top: -25px;
+    margin-left:5px;
   }
 
 </style>
 
 <div class="container detail-page">
-  <div style='margin:0px auto; width:1000px; margin-top:30px;'>
+  <div style='margin:0px auto; width:1000px; margin-top:30px;  height:50px;'>
     <div class="number-container">
-      <div class="title-step"><p><?php echo $lang_keranjangAtas; ?></p></div>
-      <div class="title-step2"><p><?php echo $lang_ringkasan1; ?></p></div>
-      <div class="title-step3"><p><?php echo $lang_konrim; ?> </p></div>
+      <div class="title-step"><p><?=$lang_shoping_cart;?></p></div>
+      <div class="title-step2"><p><?=$lang_payment_method;?></p></div>
+      <div class="title-step3"><p><?=$lang_payment_confirm;?></p></div>
     </div>
   </div>
-  <div style='margin:0px auto; width:900px; margin-bottom:50px;'>
+  <div style='margin:0px auto; width:900px; margin-bottom:50px; height:50px;'>
     <div class="number-container">
       <div class="number"><p>1</p></div>
       <div class="number2"><p>2</p></div>
@@ -230,7 +231,7 @@ textarea#styled {
   </div>
 <!-- <br><p align='center'><img src="<?php //echo base_url('images/general/step1.jpg'); ?>" border="0"></p> -->
 
-    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1150px;margin-bottom:40px;'><?php echo $lang_keranjangAtas; ?></div>
+    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1150px;margin-bottom:40px;'><?php echo $lang_shoping_cart; ?></div>
     <div class='box-ship'>
 
       <?php echo anchor('checkout/addressbook',$lang_tamb3, array('class'=>'btn-add-adrs')); ?>
@@ -377,6 +378,7 @@ function pilihAlamat(id){
   $(".amount").html('-');
   var id = id.value;
   var url = '<?php echo site_url('checkout/pilihShip'); ?>'
+
   if(id==''){
     $(".alamat").html('');
   }else{
@@ -384,9 +386,11 @@ function pilihAlamat(id){
     ({
     url: url+'/?id='+id,
     success:function(html){
+        console.log(id)
         $(".alamat").html(html);
         $(".amount").html('-');
         getKurir(id);
+        getAsap(id);
         $(".paket").html('<option value="">-Pilih-</option>');
       }
     });
@@ -396,18 +400,35 @@ function pilihAlamat(id){
 }
 
 function getAsap(id){
-
-  var url = '<?php echo site_url('cart/listCartToken'); ?>'
-  $.ajax
-  ({
-  url: url+'/?id='+id,
-  success:function(html){
-      $("#asap").html(html);
-    //alert(html);
-    }
-  });
+    var apiurl = api_base_url +'/freight/isdki?villageid='+id;
+    
+     $.ajax({
+        url: apiurl,
+        success:function(res){
+            console.log(res)
+                 if(res.isDKI=='N'){
+        $("#asapGb").hide();
+      }else{
+        $("#asapGb").show()
+      } 
+            
+        }
+    })
+    
+//  var apiurl = api_base_url +'/afreight/isdki?villageid='+id;
+//  $.ajax({
+//    url: apiurl,
+//    success:function(res){
+//      if(res.isDKI=='N'){
+//        $("#asapGb").hide();
+//      }else{
+//        $("#asapGb").show()
+//      }
+//  }
+//     });
+//
+//}
 }
-
 function getKurir(id){
 
   var url = '<?php echo site_url('checkout/selectKurir'); ?>'

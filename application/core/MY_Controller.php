@@ -45,6 +45,67 @@ class Web extends MY_Controller {
         $this->categorySearch();
         $this->navigation();
         $this->avatarCust();
+
+        $this->pushCartToToken();
+    }
+
+    public function pushCartToToken(){
+      if(isset($_COOKIE['x-auth']))
+      {
+        $jmlCart = count($this->cart->contents());
+        if($jmlCart){
+          $token = $_COOKIE['x-auth'];
+          $api = "order/cart/additem";
+          $url = api_base_url($api);
+
+        //  echo $url; die();
+          $loop = 1;
+          foreach ($this->cart->contents() as $items){ ?>
+          <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
+          <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+          <script type="text/javascript">
+          var m_product_id = '<?php echo $items['id']; ?>';
+          var qty = '<?php echo $items['qty']; ?>';
+          var pricelist = '<?php echo $items['price']; ?>';
+          var weight = '<?php echo $items['weight']; ?>';
+          var jmlArr = '<?php echo $jmlCart; ?>';
+          var jmlLoop = '<?php echo $loop; ?>';
+        //  var apiurl = api_base_url +'/order/cart/additem';
+          var apiurl = '<?php echo $url; ?>';
+          $.ajax({
+          type: 'POST',
+          contentType: 'application/json',
+          url: apiurl,
+          dataType: 'json',
+          data: JSON.stringify({
+            "productId":m_product_id,
+            "qty":qty,
+            "price":pricelist,
+            "weightPerItem":weight,
+          }),
+          headers:{"token":"<?php echo $token; ?>"},
+          success:function(html){
+            // console.log(html);
+             if(jmlLoop==jmlArr){
+               location.reload();
+             }
+
+            }
+          });
+          </script>
+
+        <?php $loop++;
+          }
+
+           $this->cart->destroy();
+           die();
+        }
+
+
+      }else{
+
+      }
+
     }
 
     public function avatarCust(){
@@ -156,9 +217,7 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
 		// akhir dari button daftar
 
     //checkout field_atas
-      $this->data['lang_keranjangAtas'] = $this->lang->line('lang_keranjang');
-        $this->data['lang_ringkasan1'] = $this->lang->line('lang_ringkasan');
-          $this->data['lang_konrim'] = $this->lang->line('lang_konfrim');
+
             $this->data['lang_tamb3'] = $this->lang->line('lang_tamb123');
               $this->data['lang_another'] = $this->lang->line('Field_Another');
               $this->data['lang_coursss'] = $this->lang->line('lang_courier');
@@ -389,7 +448,7 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_btn_update_receiver'] = $this->lang->line('btn_update_receiver');
     $this->data['lang_payment_confirm'] = $this->lang->line('payment_confirm');
     $this->data['lang_voucher_code'] = $this->lang->line('voucher_code');
-    
+
 //   ASAP
         $this->data['lang_inf_asap'] = $this->lang->line('inf_asap');
 
