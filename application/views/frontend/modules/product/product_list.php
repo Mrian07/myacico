@@ -29,7 +29,7 @@
 	margin-bottom: 7px;
 	background-color: #c40202;
 	font-size: 8pt;
-	width: 100%;
+	width: 130px;
 }
 .btn-add-to-cart:hover {
 	background-color: #8a0202;
@@ -63,6 +63,53 @@ input[type=number]::-webkit-outer-spin-button {
 	appearance: none;
 	margin: 0;
 }
+.item-box, .item-1, .item-2, .item-3 {
+    box-sizing: border-box;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.item-box {
+    padding: 8px;
+    margin: 0 15px 10px;
+}
+.view-grid .item-box {
+	width: 25%;
+	float: left;
+	border: 1px solid #ddd;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.view-grid .item-box:hover {
+	box-shadow: 0 1px 8px rgba(99,99,99,.5);
+}
+.view-grid .product-detail {
+	display: none;
+}
+.item-3 {
+	text-align: center;
+}
+.view-list .item-box::after {
+    content: '';
+    clear: both;
+    display: block;
+    border-top: 1px solid #e30c0c;
+}
+.view-list .item-1, .view-list .item-3 {
+    float: left;
+    width: 25%;
+}
+.view-list .item-2 {
+    float: left;
+    width: 50%;
+}
+.toggle-view {
+	font-size:15px;
+	cursor: pointer;
+}
+.view-list .view-list-btn, .view-grid .view-grid-btn {
+	color:#e30c0c;
+	cursor: default;
+}
 </style>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/pop_cart.css');?>" />
 
@@ -73,42 +120,33 @@ input[type=number]::-webkit-outer-spin-button {
 				Items <span id="startItem"></span> to <span id="endItem"></span> of <span id="totalItem"> total</span>
 			</div>
 			<div class="col-sm-4">
-				Tampilan <span style='font-size:15px; color:#e30c0c'><i class="fa fa-list" aria-hidden="true"></i></span> <span style='font-size:15px'><a href='#' class='list-item' data-toggle="tooltip" title="Grid View" id='viewGrid'><i class="fa fa-th-large" aria-hidden="true" id='btn_list'>
-				</i></a><img src="<?php echo base_url('images/general/Spinner2.gif');?>" id="spinner_img" style="display:none">
-				</span>
+				Tampilan
+				<span class="toggle-view view-list-btn"><i class="fa fa-list" aria-hidden="true"></i></span>
+				<span class="toggle-view view-grid-btn"><i class="fa fa-th-large" aria-hidden="true"></i></span>
 			</div>
 		</div>
 	</div>
 
 	<div class="col-sm-6">
 		<div class="row">
-		<div class="col-sm-12 text-right">
-			<form class="form-inline">
-				<div class="form-group text-right">
-					<label for="atur">Atur berdasarkan:</label>
-					<select id="order_by" class="form-control" style="font-size: 8pt;height: 30px;width: 140px;">
-						<option value='5' <?php if($sort_id=='5'){echo"selected";}?>>Produk Terbaru</option>
-						<option value='1' <?php if($sort_id=='1'){echo"selected";}?>>Nama: A Ke Z</option>
-						<option value='2' <?php if($sort_id=='2'){echo"selected";}?>>Nama: Z Ke A</option>
-						<option value='3' <?php if($sort_id=='3'){echo"selected";}?>>Harga: Rendah Ke Tinggi</option>
-						<option value='4' <?php if($sort_id=='4'){echo"selected";}?>>Harga: Tinggi Ke Rendah</option>
-					</select>
-				</div>
-			</form>
-		<!-- <div class="col-sm-6"> -->
-			<!-- <strong>Atur berdasarkan: </strong> -->
-		<!-- </div> -->
-			<!-- <div class="row my-sort-product">
-
-			</div> -->
+			<div class="col-sm-12 text-right">
+				<form class="form-inline">
+					<div class="form-group text-right">
+						<label for="atur">Atur berdasarkan:</label>
+						<select id="order_by" class="form-control" style="font-size: 8pt;height: 30px;width: 140px;">
+							<option value='5' <?php if($sort_id=='5'){echo"selected";}?>>Produk Terbaru</option>
+							<option value='1' <?php if($sort_id=='1'){echo"selected";}?>>Nama: A Ke Z</option>
+							<option value='2' <?php if($sort_id=='2'){echo"selected";}?>>Nama: Z Ke A</option>
+							<option value='3' <?php if($sort_id=='3'){echo"selected";}?>>Harga: Rendah Ke Tinggi</option>
+							<option value='4' <?php if($sort_id=='4'){echo"selected";}?>>Harga: Tinggi Ke Rendah</option>
+						</select>
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
-
-
 	</div>
 	<div style="clear:both"></div>
 </div>
-
 
 <div id="productlist" class='row'></div>
 
@@ -130,6 +168,15 @@ input[type=number]::-webkit-outer-spin-button {
 <script type="text/javascript">
 
 $(document).ready(function() {
+	$('.view-list-btn').click(function(){
+		if($('#product-list').hasClass('view-list')) return false;
+		$('#product-list').addClass('view-list').removeClass('view-grid');
+	})
+	$('.view-grid-btn').click(function(){
+		if($('#product-list').hasClass('view-grid')) return false;
+		$('#product-list').addClass('view-grid').removeClass('view-list');
+	})
+
 	$('#list').click(function(){event.preventDefault();$('#products .item').addClass('list-group-item');});
 	$('#grid').click(function(){event.preventDefault();$('#products .item').removeClass('list-group-item');});
 	$('[data-toggle="tooltip"]').tooltip();

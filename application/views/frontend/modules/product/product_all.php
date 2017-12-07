@@ -8,7 +8,7 @@
 		<div id="sidebar-left-filter" style='width:230px; float:left; margin-right:10px;'>
 			<?php	$this->load->view('frontend/modules/product/sidebar_left',$this->data); ?>
 		</div>
-		<div style='width:890px; float:left' id="product-list">
+		<div style='width:890px; float:left' id="product-list" class="view-list">
 				<?php $this->load->view('frontend/modules/product/product_list',$this->data); ?>
 			<?php
 		if($this->session->userdata('itemView')=='grid'){
@@ -42,7 +42,7 @@
 		return	"Rp." +num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
 	}
 	var detail = JSON.parse(localStorage.getItem('product_detail'))
-	if(detail[0].name) $('#recentView').show();
+	if(detail.length > 0) $('#recentView').show();
 	//console.log(detail);
 	for(var i=0;i<detail.length;i++) {
 
@@ -105,7 +105,69 @@ function buildPage(total, page) {
 	}
 	else $('.my-paging').append('<span class="my-paging-off"><i class="fa fa-angle-right" aria-hidden="true"></i></span>');
 }
+function extract_list(data, i){
+	var specialPriceComponent = '';
+	var addWishlistComponent = '';
 
+	if (data.specialPrice != 0 || data.specialPrice != '0') {
+		specialPriceComponent += '<span class="strike-throgh">Rp ' + data.pricelist + '</span>'
+			+ '<span class="lead dark-red pricelist" style="font-size: 1.4em;">'
+				+ 'Rp ' + data.specialPrice
+			+ '</span>'
+			+ '<div> Hemat'
+				+ '<span class="lead dark-red pricelist" style="font-size: 1.2em;">'
+					+ 'Rp ' +	data.pricelist - data.specialPrice + ' (' + data.discount + '%)'
+				+ '</span>'
+			+ '</div>';
+	} else {
+		specialPriceComponent += '<span class="lead dark-red pricelist">'
+			+ 'Rp ' + data.pricelist
+		+ '</span>';
+	}
+
+	if (data.isWishList == 'Y') {
+		addWishlistComponent += '<a class="btn btn-warning btn-add-to-whishlist whishlist-active" onClick="addWishlist(' + data.m_product_id + ',' + data.name + ',' + data.imageurl + ')">'
+				+ '<i class="fa fa-heart"	style="font-size:15px;color:grey;"	aria-hidden="true"></i>Wishlist'
+			+ '</a>'
+	} else {
+		addWishlistComponent += '<a class="btn-add-to-whishlist" onClick="addWishlist(' + data.m_product_id + ',' + data.name + ',' + data.imageurl + ')">Add to Wishlist</a>'
+	}
+
+	$('#productlist').append(
+		'<div class="item-box">'
+			+ '<div class="item-1">'
+				+ '<a href="' + base_url + 'product/detail/' + data.m_product_id + '/' + data.alias + '">'
+				+ '<img class="img-thumbnail clear-border" src="' + data.imageurl + '" alt="' +	data.name + '" style="height:200px; width: auto;" onerror="this.onerror=null;this.src="' + base_url + '/images/general/noimage.png"/>'
+				+ '</a>'
+			+ '</div>'
+			+ '<div class="item-2">'
+				+ '<div class="highlight-list">'
+					+ '<a class="title-product" href="' + base_url + 'product/detail/' + data.m_product_id + '/' + data.alias + '">' + data.name + '</a>'
+					+ '<div class="product-detail highlight' + i + '">'
+						+ data.highlight
+						+ '<a href="' + base_url + 'product/detail/' + data.m_product_id + '/'	+ data.alias + '" style="color: #4b4b4b!important; font-weight: bold">SELENGKAPNYA</a>'
+					+ '</div>'
+				+ '</div>'
+			+ '</div>'
+			+ '<div class="item-3">'
+				+ specialPriceComponent
+				+ '<div class="yu1"><i class="fa fa-info-circle" aria-hidden="true"></i> Stock: Tersedia</div>'
+				+ '<div style="margin-top: 20px;">'
+					+ '<input type="hidden" class="form-control text-center" id="jmlItem' + data.m_product_id + '" style="width: 50px; font-size: 9pt; margin-bottom: 8px; height: 29px;" value="1" min="1">'
+
+					+ '<div>'
+						+ '<div>'
+							+ '<button type="button" class="btn btn-danger btn-add-to-cart" onClick="addToCart(' + data.m_product_id + ',' + data.pricelist + ',' + data.imageurl + ',' + data.name + ',' + data.stock + ',' + data.weight + ')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>'
+						+ '</div>'
+						+ '<div>'
+							+ addWishlistComponent
+						+ '</div>'
+					+ '</div>'
+				+ '</div>'
+			+ '</div>'
+		+ '</div>'
+	)
+}
 function getListProduct(p) {
 	$('#productlist').empty();
 	var url = api_base_url + '/product/productall/<?php echo $pro ?>?itemperpage=10&';
@@ -125,82 +187,10 @@ function getListProduct(p) {
 	});
 
 	$.get(encodeURI(url), function(res){
-		// alert("finish");
 		console.log("konten:", res);
-		// console.log(res);
 		if (res.length == 0) return $('#productlist').html('<center>Maaf item yang Anda cari belum tersedia.</center>');
 		
-		var i = 0;
-		res.forEach(function(data) {
-
-			var specialPriceComponent = '';
-			var addWishlistComponent = '';
-
-			if (data.specialPrice != 0 || data.specialPrice != '0') {
-				specialPriceComponent += '<span class="strike-throgh">Rp ' + data.pricelist + '</span>'
-											+ '<span class="lead dark-red pricelist" style="font-size: 1.4em;">'
-												+ 'Rp ' + data.specialPrice
-											+ '</span>'
-											+ '<div> Hemat'
-												+ '<span class="lead dark-red pricelist" style="font-size: 1.2em;">'
-													+ 'Rp ' +	data.pricelist - data.specialPrice + ' (' + data.discount + '%)'
-												+ '</span>'
-											+ '</div>';
-			} else {
-				specialPriceComponent += '<span class="lead dark-red pricelist">'
-									+ 'Rp ' + data.pricelist
-								+ '</span>';
-			}
-
-			if (data.isWishList == 'Y') {
-				addWishlistComponent += '<a class="btn btn-warning btn-add-to-whishlist whishlist-active" onClick="addWishlist(' + data.m_product_id + ',' + data.name + ',' + data.imageurl + ')">'
-						+ '<i class="fa fa-heart"	style="font-size:15px;color:grey;"	aria-hidden="true"></i>Wishlist'
-					+ '</a>'
-			} else {
-				addWishlistComponent += '<a class="btn-add-to-whishlist" onClick="addWishlist(' + data.m_product_id + ',' + data.name + ',' + data.imageurl + ')">Add to Wishlist</a>'
-			}
-
-			$('#productlist').append(
-				'<div class="col-xs-12" style="margin-bottom:10px;">'
-					+ '<div class="row" style="padding-bottom: 15px">'
-						+ '<div class="col-xs-3">'
-							+ '<a href="' + base_url + 'product/detail/' + data.m_product_id + '/' + data.alias + '">'
-							+ '<img class="img-thumbnail clear-border" src="' + data.imageurl + '" alt="' +	data.name + '" style="height:200px; width: auto;" onerror="this.onerror=null;this.src="' + base_url + '/images/general/noimage.png"/>'
-							+ '</a>'
-						+ '</div>'
-						+ '<div class="col-xs-6">'
-							+ '<div class="highlight-list" style="text-align:left;">'
-								+ '<a class="title-product" href="' + base_url + 'product/detail/' + data.m_product_id + '/' + data.alias + '">' + data.name + '</a>'
-									+ '<div class="highlight' + i + '">'
-										+ data.highlight
-									+ '</div>'
-									+ '<a href="' + base_url + 'product/detail/' + data.m_product_id + '/'	+ data.alias + '" style="color: #4b4b4b!important; font-weight: bold">SELENGKAPNYA</a>'
-							+ '</div>'
-						+ '</div>'
-						+ '<div class="col-xs-3">'
-							+ specialPriceComponent
-								+ '<div class="yu1"><i class="fa fa-info-circle" aria-hidden="true"></i> Stock: Tersedia</div>'
-								+ '<div class="text-left" style="margin-top: 20px;">'
-									+ '<input type="hidden" class="form-control text-center" id="jmlItem' + data.m_product_id + '" style="width: 50px; font-size: 9pt; margin-bottom: 8px; height: 29px;" value="1" min="1">'
-
-									+ '<div>'
-										+ '<div style="width: 130px;">'
-											+ '<button type="button" class="btn btn-danger btn-add-to-cart" onClick="addToCart(' + data.m_product_id + ',' + data.pricelist + ',' + data.imageurl + ',' + data.name + ',' + data.stock + ',' + data.weight + ')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>'
-										+ '</div>'
-										+ '<div class="text-center" style="width: 130px;">'
-											+ addWishlistComponent
-										+ '</div>'
-									+ '</div>'
-								+ '</div>'
-							+ '</center>'
-						+ '</div>'
-					+ '</div>'
-
-					+ '<div class="col-xs-12" style="border-top:1px solid #e30c0c"> </div>'
-				+ '</div>'
-			)
-			i++;
-		});
+		res.forEach(extract_list);
 		buildPage(total, parseInt(p));
 		window.scrollTo(0,0);
 	});
