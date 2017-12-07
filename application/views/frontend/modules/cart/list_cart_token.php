@@ -1,24 +1,4 @@
-<!-- <style>
-.my-cart a{
-	color: black;
-	font-size: 10px;
 
-/*padding-top: -40px;*/
-
-
-}
-
-.my-cart a:hover{
-	color: black;
-	font-size: 10px;
-}
-
-<<<<<<< HEAD
-
-</style>
-=======
-</style> -->
->>>>>>> 72a5b36003b68398f5513b99b6e5afcd56098a79
 <div class='my-cart-scroll'>
 	<?php
 	$total = 0;
