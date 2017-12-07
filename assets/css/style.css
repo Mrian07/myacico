@@ -1387,13 +1387,19 @@ margin-left: -11px;
 }
 
 .my-cart a{
-	color: #428bca;
-	font-size:16px;
+	color: #111111;
+	font-size:11px;
+
+  /*color: black;
+	font-size: 10px;*/
 }
 
 .my-cart a:hover{
 	background: #ffffff;
-	color: #afd7f9;
+	color: #dddddd;
+
+  /*color: black;
+	font-size: 10px;*/
 }
 
 .my-cart-scroll{

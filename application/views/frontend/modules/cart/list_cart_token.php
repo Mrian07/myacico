@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
 .my-cart a{
 	color: black;
 	font-size: 10px;
@@ -15,7 +15,7 @@
 
 }
 
-</style>
+</style> -->
 <div class='my-cart-scroll'>
 	<?php
 	$total = 0;
