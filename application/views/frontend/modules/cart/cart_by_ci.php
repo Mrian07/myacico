@@ -378,17 +378,22 @@ function pilihAlamat(id){
   $(".amount").html('-');
   var id = id.value;
   var url = '<?php echo site_url('checkout/pilihShip'); ?>'
-  $.ajax
-  ({
-  url: url+'/?id='+id,
-  success:function(html){
-      $(".alamat").html(html);
-      $(".amount").html('-');
-      getKurir(id);
-      $(".paket").html('<option value="">-Pilih-</option>');
-    }
-  });
 
+  if(id==''){
+    $(".alamat").html('');
+  }else{
+    $.ajax
+    ({
+    url: url+'/?id='+id,
+    success:function(html){
+        $(".alamat").html(html);
+        $(".amount").html('-');
+        getKurir(id);
+        $(".paket").html('<option value="">-Pilih-</option>');
+      }
+    });
+
+  }
 }
 
 function getKurir(id){

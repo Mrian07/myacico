@@ -284,7 +284,7 @@ class Account extends Web_private {
 
 	public function riwayatStatusPesanan()
   {
-            $domain = domain();
+    $domain = domain();
 		$page=$this->uri->segment(3);
 		$startDate=$this->uri->segment(4);
 		$endDate=$this->uri->segment(5);
@@ -318,8 +318,10 @@ class Account extends Web_private {
 
     $context = stream_context_create($options);
     $konten2 = file_get_contents($url2, false, $context);
-
+		$jmlData = count(json_decode($konten2));
     $jdata =json_decode($konten2)->transactionCount;
+
+
 
      $batas = '5';
 		if(empty($page)){
