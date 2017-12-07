@@ -206,7 +206,8 @@ textarea#styled {
     position: absolute;
     height: 10px;
     z-index: -1;
-    width: 40%;
+    /*width: 40%;*/
+    width: 800px;
     margin-top: -25px;
     margin-left:5px;
   }
@@ -401,7 +402,7 @@ function pilihAlamat(id){
 
 function getAsap(id){
     var apiurl = api_base_url +'/freight/isdki?villageid='+id;
-    
+
      $.ajax({
         url: apiurl,
         success:function(res){
@@ -410,11 +411,11 @@ function getAsap(id){
         $("#asapGb").hide();
       }else{
         $("#asapGb").show()
-      } 
-            
+      }
+
         }
     })
-    
+
 //  var apiurl = api_base_url +'/afreight/isdki?villageid='+id;
 //  $.ajax({
 //    url: apiurl,
