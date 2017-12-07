@@ -104,14 +104,18 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <?php
         if($asap_stat =='Y')
         {
-        $asap = "<a style='height:20px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."' class='test01'> </a>";
+        $asap = "<a style='height:20px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."'class='test01'></a>";
         $asap_bawah= "Ingin barang anda sampai dalam <span style='color:red;'>2 hari</span>?<br>Pilih Layanan".$asap." bagi anda yang tinggal di jakarta ";
 
         }
         else
         {
-            $asap ='';
-            $asap_bawah ='Belanja online murah, gratis pengiriman area Jakarta*';
+            $asap='';
+        $asap1 = "<a style='height:20px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."'class='test01'></a>";
+           $asap_bawah= "Belanja online murah, gratis pengiriman area Jakarta*<br>Pilih barang dengan layanan$asap1"
+                   ."Untuk pengiriman <span style='color:red;'>Pasti 2 hari</span>";
+
+//            $asap_bawah ='Belanja online murah, gratis pengiriman area Jakarta*';
         }
         if($specialPrice == 0 ){
             echo "
