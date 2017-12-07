@@ -93,7 +93,7 @@ class Customer extends Web {
 		// store the captcha word in a session
 		$this->session->set_userdata('mycaptcha', $cap['word']);
 
-		$this->data['title_web'] = " Create Account Business - ".$domain;
+		$this->data['title_web'] = " Hubungi Kami - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/contact/contact.php',$this->data);

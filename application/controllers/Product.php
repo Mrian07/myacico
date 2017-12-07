@@ -133,7 +133,7 @@ class Product extends Web {
 
 		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
-		$this->data['title_web'] = "List Items - ".$domain.'-'.$id;
+		$this->data['title_web'] = $id.'-'.$domain;
 
 		$this->data['hasil'] = json_decode($konten, true);
 		$this->load->view('frontend/header',$this->data);
@@ -256,7 +256,7 @@ public function listItem()
 		$this->data['jpage'] = ceil($jdata/$batas);
 		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
-		$this->data['title_web'] = "List Items - ".$domain;
+		$this->data['title_web'] = $this->data['alias']."-".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
@@ -338,7 +338,7 @@ $home_domain = domain2();
 		$konten = file_get_contents($url, false, $context);
 
 		$this->data['hasil'] = json_decode($konten, true);
-
+              
 		//Slide slide_show
 		$api = "home/view";
 		$url = api_base_url($api);
@@ -348,7 +348,7 @@ $home_domain = domain2();
 
 
 		//$this->load->view('frontend/test',$this->data);
-		$this->data['title_web'] = "Myacico.co.id - ".$home_domain;
+		$this->data['title_web'] = $this->data['hasil']['subName']."-".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
@@ -365,8 +365,8 @@ $home_domain = domain2();
 			$pro_id=$this->uri->segment(3);
 			$api = "product/productlist/related/".$pro_id;
 			$url = api_base_url($api);
-
-
+                        $api_rekom="product/productlist/recomendation/".$pro_id;
+                        $url_rekom = api_base_url($api_rekom);
 			$konten21 = file_get_contents($url);
 
 	$this->data['dathome'] = json_decode($konten21, true);
@@ -413,6 +413,9 @@ $home_domain = domain2();
 			$url_komen2 = api_base_url($api_komen2);
 			$context2 = stream_context_create($options2);
 			$konten2 = file_get_contents($url_komen2);
+//                        rekomendasi
+                        $konten_rekom = file_get_contents($url_rekom, false, $context);
+                        $this->data['rekom'] = json_decode($konten_rekom, true);
 			//e lalang
 
 			$this->data['komen']=$komen;
@@ -492,7 +495,7 @@ foreach ($hasil['specification'] as $speck)
 			$this->data['discount'] = $hasil['discount'];
 			$this->data['highlight'] = $hasil['highlight'];
 			$this->data['sku'] = $hasil['sku'];
-
+                        $this->data['asap_stat'] = $hasil['istodayshipping'];
 			$this->data['isWishList']=$hasil['isWishList'];
 			$this->data['category'] = $hasil['category'];
 			$this->data['m_product_id'] = $hasil['m_product_id'];
@@ -568,7 +571,7 @@ foreach ($hasil['specification'] as $speck)
 
 
  		$home_domain = domain2();
-		$this->data['title_web'] = "Myacico.co.id - ".$home_domain;
+		$this->data['title_web'] = $this->data['name']."-".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		if($hasil['isActive']=='Y'){
