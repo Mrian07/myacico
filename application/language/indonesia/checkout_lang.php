@@ -25,9 +25,6 @@ $lang['msg_online_payment'] = 'Maaf pembayaran online payment mengalami gangguan
 
 
 // checkout atas
-    $lang['lang_keranjang'] = 'Keranjang Belanja';
-      $lang['lang_ringkasan'] = 'Metode Pemabyaraan';
-        $lang['lang_konfrim'] = 'Konfrimasi';
           $lang['lang_tamb123'] = 'Tambah Alamat Baru';
           $lang['Field_Another'] = 'Pilih Alamat';
             $lang['lang_courier'] = 'Kurir Pengiriman';

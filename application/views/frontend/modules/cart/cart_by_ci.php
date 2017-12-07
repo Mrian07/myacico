@@ -201,7 +201,7 @@ textarea#styled {
     padding-top: 20px;
   }
 
-  .mybarred{
+  .barred{
     background-color: red;
     position: absolute;
     height: 10px;
@@ -216,9 +216,9 @@ textarea#styled {
 <div class="container detail-page">
   <div style='margin:0px auto; width:1000px; margin-top:30px;  height:50px;'>
     <div class="number-container">
-      <div class="title-step"><p><?php echo $lang_keranjangAtas; ?></p></div>
-      <div class="title-step2"><p><?php echo $lang_ringkasan1; ?></p></div>
-      <div class="title-step3"><p><?php echo $lang_konrim; ?> </p></div>
+      <div class="title-step"><p><?=$lang_shoping_cart;?></p></div>
+      <div class="title-step2"><p><?=$lang_payment_method;?></p></div>
+      <div class="title-step3"><p><?=$lang_payment_confirm;?></p></div>
     </div>
   </div>
   <div style='margin:0px auto; width:900px; margin-bottom:50px; height:50px;'>
@@ -226,12 +226,12 @@ textarea#styled {
       <div class="number"><p>1</p></div>
       <div class="number2"><p>2</p></div>
       <div class="number3"><p>3</p></div>
-      <div class="mybarred"></div>
+      <div class="barred"></div>
     </div>
   </div>
 <!-- <br><p align='center'><img src="<?php //echo base_url('images/general/step1.jpg'); ?>" border="0"></p> -->
 
-    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1150px;margin-bottom:40px;'><?php echo $lang_keranjangAtas; ?></div>
+    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1150px;margin-bottom:40px;'><?php echo $lang_shoping_cart; ?></div>
     <div class='box-ship'>
 
       <?php echo anchor('checkout/addressbook',$lang_tamb3, array('class'=>'btn-add-adrs')); ?>

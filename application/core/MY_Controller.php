@@ -96,12 +96,8 @@ class Web extends MY_Controller {
 
         <?php $loop++;
           }
-          // echo "$loop==$jmlCart";
-           $this->cart->destroy();
 
-           // if($loop==$jmlCart){
-           //    echo" <meta http-equiv='refresh' content='0'> ";
-           // }
+           $this->cart->destroy();
            die();
         }
 
@@ -221,9 +217,7 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
 		// akhir dari button daftar
 
     //checkout field_atas
-      $this->data['lang_keranjangAtas'] = $this->lang->line('lang_keranjang');
-        $this->data['lang_ringkasan1'] = $this->lang->line('lang_ringkasan');
-          $this->data['lang_konrim'] = $this->lang->line('lang_konfrim');
+
             $this->data['lang_tamb3'] = $this->lang->line('lang_tamb123');
               $this->data['lang_another'] = $this->lang->line('Field_Another');
               $this->data['lang_coursss'] = $this->lang->line('lang_courier');
