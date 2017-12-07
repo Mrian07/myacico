@@ -255,7 +255,7 @@ class Cart extends Web {
 			}
 		echo"</a></div>
 		  <div class='col-sm-7' style='padding:0px'><a href='".base_url('product/detail/'.$items['id'].'/'. $items['name'])."'><b>".$items['name']."</b><br>Rp.".money($items['price'])." <i>(".$items['qty'].")Items</i></a></div>
-		  <div class='col-sm-2' style='padding:0px'><a href='#' onClick=\"dellItemCart('".$items['id']."','".$items['rowid']."','".$items['image']."','".$items['name']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a></div>
+		  <div class='col-sm-2' style='padding:0px;'><a href='#' onClick=\"dellItemCart('".$items['id']."','".$items['rowid']."','".$items['image']."','".$items['name']."')\"><i class='fa fa-trash fa-2x' aria-hidden='true'></i></a></div>
 		</div>";
 		endforeach;
 		echo"

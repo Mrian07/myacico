@@ -31,7 +31,7 @@
 
 
 	  <div class='col-sm-7' style='padding:0px'><a href='".base_url('product/detail/'.$items['productId'].'/'. $items['alias'])."'><b>".$items['name']."</b><br>Rp.".money($items['price'])." <i>(".$items['qty'].")Items</a></i></div>
-	  <div class='col-sm-2' style='padding:0px'><a href='#' onClick=\"dellItemCartToken('".$items['productId']."','".$items['imageurl']."','".$items['name']."','".$items['itemCartId']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a></div>
+	  <div class='col-sm-2' style='padding:0px'><a href='#' onClick=\"dellItemCartToken('".$items['productId']."','".$items['imageurl']."','".$items['name']."','".$items['itemCartId']."')\"><i class='fa fa-trash fa-2x' aria-hidden='true'></i></a></div>
 	</div>";
 	$total +=$items['subtotal'];
 	endforeach;
