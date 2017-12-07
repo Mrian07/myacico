@@ -112,8 +112,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         {
             $asap='';
         $asap1 = "<a style='height:20px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."'class='test01'></a>";
-           $asap_bawah= "Belanja online murah, gratis pengiriman area Jakarta*<br>Pilih barang dengan layanan$asap1"
-                   ."Untuk pengiriman <span style='color:red;'>Pasti 2 hari</span>";
+           $asap_bawah= "Belanja online murah, gratis pengiriman area Jakarta*<br>Pilih barang dengan layanan" .$asap1."Untuk pengiriman <span style='color:red;'>Pasti 2 hari</span>";
 
 //            $asap_bawah ='Belanja online murah, gratis pengiriman area Jakarta*';
         }
@@ -721,7 +720,7 @@ var jdata3 = "<?php echo$jmlslide3;?>";
     var idss = "<?php echo $local_strg;?>";
 
 
-    console.log('asdasd',idss)
+    console.log('asdasd',rate)
 
 if(jdata1<10)
 {
@@ -734,7 +733,7 @@ if(jdata2<10)
 if(jdata3<10)
 {
     $('#sld3').hide();
-}s
+}
 
   var detail = JSON.parse(localStorage.getItem('product_detail'))
 
