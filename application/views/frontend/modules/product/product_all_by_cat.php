@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class='my-bg-title'>
 
-			<i class="fa fa-angle-right" aria-hidden="true"></i>HASIL PENCARIAN UNTUK '<b><?php echo$id; ?></b>'
+			<i class="fa fa-angle-right" aria-hidden="true"></i>HASIL PENCARIAN UNTUK '<b><?php echo $id; ?>  </b>' di <b><?php echo $title_atas; ?></b>
 
 		</div>
 	<div class="row">
