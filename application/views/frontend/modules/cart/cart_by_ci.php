@@ -408,9 +408,9 @@ function getAsap(id){
         success:function(res){
             console.log(res)
                  if(res.isDKI=='N'){
-        $("#asapGb").hide();
+        $(".asapGb").hide();
       }else{
-        $("#asapGb").show()
+        $(".asapGb").show()
       }
 
         }
