@@ -265,6 +265,38 @@ function srcByDate(){
 
 		});
 
+	}else if(endDate==startDate){
+
+		$.dialog({
+			title: 'Alert!',
+			content: 'Tanggal awal dan tanggal akhir tidak boleh sama.',
+			autoClose: 'close|50000',
+			buttons: {
+				close: function () {
+					//$.alert('action is canceled');
+				}
+			},
+			closeIcon: true,
+			closeIconClass: 'fa fa-close'
+
+		});
+
+	}else if(endDate<=startDate){
+
+		$.dialog({
+			title: 'Alert!',
+			content: 'Tanggal akhir tidak boleh lebih besar dari tanggal awal.',
+			autoClose: 'close|50000',
+			buttons: {
+				close: function () {
+					//$.alert('action is canceled');
+				}
+			},
+			closeIcon: true,
+			closeIconClass: 'fa fa-close'
+
+		});
+
 	}else{
 		location.href = base_url+'account/riwayatStatusPesanan/'+page+'/'+startDate+'/'+endDate;
 	}

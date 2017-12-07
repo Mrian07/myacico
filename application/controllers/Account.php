@@ -318,25 +318,34 @@ class Account extends Web_private {
 
     $context = stream_context_create($options);
     $konten2 = file_get_contents($url2, false, $context);
-		$jmlData = count(json_decode($konten2));
-    $jdata =json_decode($konten2)->transactionCount;
+		$getStatus = json_decode($konten2);
 
-
-
-     $batas = '5';
-		if(empty($page)){
-			$posisi = 0;
-			$page =1;
+		if(isset($getStatus->status)){
+			$this->data['getData'] = '0';
 		}else{
-			$posisi = ($page-1)*$batas;
+			$this->data['getData'] = '1';
 		}
-		$this->data['page'] = $page;
-		$this->data['total_list'] = $jdata;
-    $this->data['posisi'] = $posisi;
-    $this->data['jpage'] = ceil($jdata/$batas);
-    $konten3 = file_get_contents($url3, false, $context);
 
-		$this->data['hasil'] = json_decode($konten3, true);
+
+	    $jdata =json_decode($konten2)->transactionCount;
+
+
+
+	     $batas = '5';
+			if(empty($page)){
+				$posisi = 0;
+				$page =1;
+			}else{
+				$posisi = ($page-1)*$batas;
+			}
+			$this->data['page'] = $page;
+			$this->data['total_list'] = $jdata;
+	    $this->data['posisi'] = $posisi;
+	    $this->data['jpage'] = ceil($jdata/$batas);
+	    $konten3 = file_get_contents($url3, false, $context);
+
+			$this->data['hasil'] = json_decode($konten3, true);
+
 
 		$this->data['active_riwayatStatusPesanan'] = "class='active'";
 		$this->data['title_web'] = "Riwayat Status Pasaran - ".$domain;
