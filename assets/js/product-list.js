@@ -208,28 +208,23 @@ function getListProduct(p) {
 		
 	});
 
-	console.log("112312312");
 	$("#product-list-unready").fadeIn(500);
 	$('#productlist').hide();
-	$.get(list_url + 'show=productcount', function(res){
-		console.log('get total:', res);
-		total = res.productCount;
-	});
 
 	$.get(encodeURI(list_url), function(res){
 		console.log("konten:", res);
 
-		if (res.length == 0) {
+		if (res.productList.length == 0) {
 			$("#product-list-unready").fadeOut(500);
 			$('#productlist').fadeIn(500);
 			$('.my-paging').empty();
 			return $('#productlist').html('<center>Maaf item yang Anda cari belum tersedia.</center>');
 		}
 		
-		res.forEach(extract_list);
+		res.productList.forEach(extract_list);
 		$("#product-list-unready").fadeOut(500);
 		$('#productlist').fadeIn(500);
-		buildPage(total, parseInt(p));
+		buildPage(res.productCount, parseInt(p));
 	});
 }
 

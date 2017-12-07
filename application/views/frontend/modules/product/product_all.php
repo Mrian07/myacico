@@ -146,7 +146,7 @@
 <script src="<?php echo base_url('assets/owl-carousel/owl.carousel.js');?>"></script>
 <script type="text/javascript">
 var path = '<?php echo $_SERVER['REQUEST_URI']; ?>';
-var list_url = api_base_url + '/product/productall/<?php echo $pro ?>?itemperpage=10&';
+var list_url = api_base_url + '/product/listproduct/<?php echo $pro ?>?itemperpage=10&';
 var sidebar_url = api_base_url + '/product/filter/<?php echo $pro ?>';
 </script>
 <script src="<?php echo base_url('assets/js/product-list.js');?>"></script>
