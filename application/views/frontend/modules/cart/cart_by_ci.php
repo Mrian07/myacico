@@ -201,31 +201,32 @@ textarea#styled {
     padding-top: 20px;
   }
 
-  .barred{
-    width: 90%;
-    height: 10px;
+  .mybarred{
     background-color: red;
-    /*position: absolute;*/
-    margin-top: -25px;
+    position: absolute;
+    height: 10px;
     z-index: -1;
+    width: 40%;
+    margin-top: -25px;
+    margin-left:5px;
   }
 
 </style>
 
 <div class="container detail-page">
-  <div style='margin:0px auto; width:1000px; margin-top:30px;'>
+  <div style='margin:0px auto; width:1000px; margin-top:30px;  height:50px;'>
     <div class="number-container">
       <div class="title-step"><p><?php echo $lang_keranjangAtas; ?></p></div>
       <div class="title-step2"><p><?php echo $lang_ringkasan1; ?></p></div>
       <div class="title-step3"><p><?php echo $lang_konrim; ?> </p></div>
     </div>
   </div>
-  <div style='margin:0px auto; width:900px; margin-bottom:50px;'>
+  <div style='margin:0px auto; width:900px; margin-bottom:50px; height:50px;'>
     <div class="number-container">
       <div class="number"><p>1</p></div>
       <div class="number2"><p>2</p></div>
       <div class="number3"><p>3</p></div>
-      <div class="barred"></div>
+      <div class="mybarred"></div>
     </div>
   </div>
 <!-- <br><p align='center'><img src="<?php //echo base_url('images/general/step1.jpg'); ?>" border="0"></p> -->
