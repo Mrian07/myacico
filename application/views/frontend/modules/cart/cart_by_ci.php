@@ -379,7 +379,7 @@ function pilihAlamat(id){
   $(".amount").html('-');
   var id = id.value;
   var url = '<?php echo site_url('checkout/pilihShip'); ?>'
-
+    
   if(id==''){
     $(".alamat").html('');
   }else{
@@ -388,10 +388,10 @@ function pilihAlamat(id){
     url: url+'/?id='+id,
     success:function(html){
         console.log(id)
+        getAsap(id);
         $(".alamat").html(html);
         $(".amount").html('-');
         getKurir(id);
-        getAsap(id);
         $(".paket").html('<option value="">-Pilih-</option>');
       }
     });
@@ -481,6 +481,7 @@ function pilihKurir(row){
 //     alert("The text has been changed.");
 // });
 $(document).ready(function() {
+var id_add ="<?php echo get_cookie('shipping_address_id');?>"
 
   $('#kurir').prop('selectedIndex',0);
 
@@ -492,6 +493,7 @@ $(document).ready(function() {
 		url: "<?php echo site_url('cart/listCartToken'); ?>",
 		success:function(html){
 				$(".listCart").html(html);
+                                getAsap(id_add)
 			}
 		});
 	}
