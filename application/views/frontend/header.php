@@ -3,12 +3,22 @@
 <html lang="en">
 	<head>
 		<?php
-		header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
-		header("Cache-Control: no-store, no-cache, must-revalidate"); // HTTP/1.1
-		header("Cache-Control: post-check=0, pre-check=0", false);
-		header("Pragma: no-cache"); // HTTP/1.0
-		header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+		// header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+		// header("Cache-Control: no-store, no-cache, must-revalidate"); // HTTP/1.1
+		// header("Cache-Control: post-check=0, pre-check=0", false);
+		// header("Pragma: no-cache"); // HTTP/1.0
+		// header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 		?>
+
+		<?php
+		header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
+		header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+		header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+		header("Cache-Control: post-check=0, pre-check=0", false);
+		header("Pragma: no-cache");
+		?>
+
+
 		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
 		<meta http-equiv="Pragma" content="no-cache">
 
@@ -82,38 +92,35 @@
 					token = cookie[1].split(';').shift()
 				}
 			})()
-//                         deklarasi awal
-//var prod_detail = localStorage.setItem('product_detail', '[]');
-var prod_detail =  localStorage.getItem('product_detail');
-                if(!prod_detail)
-                {
-                     localStorage.setItem('product_detail', '[]');
-                }
+			//                         deklarasi awal
+			//var prod_detail = localStorage.setItem('product_detail', '[]');
+			var prod_detail =  localStorage.getItem('product_detail');
+			if(!prod_detail)
+			{
+			     localStorage.setItem('product_detail', '[]');
+			}
 		</script>
 
-        <!-- s: Chat -->
+    <!-- s: Chat -->
 		<script type="text/javascript" src="<?php echo base_url('assets/js/chat.js');?>"></script>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/chat.css');?>" />
-        <!-- e: Chat -->
+  	<!-- e: Chat -->
 
 		<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 
-		<!-- <link href="<?php echo base_url('assets/css/mynav.css');?>" rel="stylesheet">
-		<script src="<?php echo base_url('assets/js/mynav.js');?>"></script> -->
+		<!-- <link href="<?php //echo base_url('assets/css/mynav.css');?>" rel="stylesheet">
+		<script src="<?php //echo base_url('assets/js/mynav.js');?>"></script> -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css');?>" />
 
 		<!-- s: Datepicker-->
 		<link rel="stylesheet" href="<?php echo base_url('date_picker/bootstrap-datetimepicker.min.css');?>" type='text/css'>
 		<!-- e: Datepicker-->
 
-
     </head>
 
 	<body style='font-weight: normal;' ng-app="myApp">
 			<div class="top-bg" onclick="location.href='<?php echo base_url('product/category/1000540/Peralatan-Dapur');?>'" style='cursor: pointer;'><img src='<?php echo base_url('images/general/bg-top_main.png');?>' border='0'></div>
 			<div class='row'>
-				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
-
 				<div class="col-xs-7">
 					<div class='link-head'>
 						<a href='http://blog.myacico.co.id/' class='btn-nav-head' target='blank'>Blog</a>
@@ -125,9 +132,6 @@ var prod_detail =  localStorage.getItem('product_detail');
 				</div>
 
 				<div class="col-xs-5">
-					 <!-- <b>Belanja murah di myacico.co.id! Gratis pengiriman untuk area JAKARTA</b> -->
-
-
 					 <div class='row' style='padding-top:10px;'>
 
 						 <div style='margin-top:8px;  float:right; width:90px;'>
