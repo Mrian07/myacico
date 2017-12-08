@@ -288,7 +288,7 @@ public function listItem()
 	public function index()
     {
 		//$this->load->view('frontend/test',$this->data);
-$home_domain = domain2();
+		$home_domain = domain2();
     $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
