@@ -35,14 +35,9 @@
   </div>
 </div><br><br>
 <script type="text/javascript">
-// $(document).ready(function(){
-//   var token = document.cookie.split('x-auth=')[1].split(';').shift();
-//   console.log('token',token);
-// });
 function dellWishlist(id,name){
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-  console.log('token',token);
-	var apiurl = api_base_url + '/product/deletewishlist?item_id='+id;
+ 	var apiurl = api_base_url + '/product/deletewishlist?item_id='+id;
 
 	$.confirm({
 		title: 'Alert!',
@@ -60,13 +55,13 @@ function dellWishlist(id,name){
 					data: '{"item_id": "' + id+ '"}',
 					success:function(data){
             location.reload();
-						// $(".wishListItem").html(html);
+						
 					}
 				});
 
 			},
 			cancel: function () {
-				//$.alert('Canceled!');
+			
 			}
 		}
 

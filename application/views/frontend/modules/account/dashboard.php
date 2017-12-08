@@ -41,12 +41,10 @@ $(document).ready(function() {
 	console.log('aaa',token);
 	var api2 = api_base_url +'/newsletter/checkemail';
 
-	//$.get(api_base_url+'/aduser/getaddress?addresstype=isshipto',
-
 	$.ajax({
 	    type:"GET",
 	    headers:{"token":token},
-	    //beforeSend: getAdd(),
+
 	    success: function(data){
 
 	        var addressname = $('.addressname');

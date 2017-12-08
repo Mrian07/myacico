@@ -73,26 +73,19 @@ $(document).ready(function() {
 			var apiurl = baseApiUrl + '/aduser/updatenameuser?token='+token;
 			var data = $(this).serialize();
 
-			// success handling
+
 			var success = function(r){
 				$('#spinner_img').hide();
 				$('#submit_btn').val('Update').removeClass('disabled');
 				console.log('OK:', r);
-				//alert(r.message);
 
-				// $.alert({
-				// 	title: 'Alert!',
-				// 	content: 'Nama berhasil diubah',
-				// });
 
 				 document.cookie='x-auth='+r.newToken+'; path='+base_path;
-				 //window.location.replace(base_url+"/account/formAccount/1");
-				// $("#alertSubmit").show();
+
 				$('#alert').show('slow').delay(5000).hide('slow');
 
 			};
 
-			//$.post( apiurl, data, success, "json" );
 			$.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify({ "name":name}) , headers:{"token":token}, url: apiurl, success: success, error: error });
 
 		}

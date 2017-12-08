@@ -63,38 +63,4 @@
   </div>
 
 </div>
-<!-- <script type="text/javascript">
-console.log("data",);
-function dellBukuAlamat(id,address1){
-	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	var apiurl = api_base_url + '/aduser/deleteaddress';
 
-	$.confirm({
-		title: 'Alert!',
-		content: 'Alamat ('+address1+') akan dihapus?',
-		autoClose: 'cancel|10000',
-		closeIcon: true,
-		closeIconClass: 'fa fa-close',
-		buttons: {
-			confirm: function () {
-				//untuk cart yang di header
-				$.ajax
-				({	type: "POST",
-					url: apiurl,
-					headers:{ "token":token},
-					data: '{"id": "' + id+ '"}',
-					success:function(data){
-						$(".listBukuAlamat").html(html);
-					}
-				});
-
-			},
-			cancel: function () {
-				//$.alert('Canceled!');
-			}
-		}
-
-	});
-
-}
-</script> -->
