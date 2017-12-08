@@ -345,7 +345,7 @@ $home_domain = domain2();
 	public function category()
 	{
 		$this->data['cat_id']=$this->uri->segment(3);
-                $home_domain = domain2();
+    $home_domain = domain2();
 		$cat_id=$this->uri->segment(3);
 		$api = "category/listc3?c2id=".$cat_id;
 		$url = api_base_url($api);
@@ -436,7 +436,7 @@ $home_domain = domain2();
 //                        rekomendasi
                         $konten_rekom = file_get_contents($url_rekom, false, $context);
                         $this->data['rekom'] = json_decode($konten_rekom, true);
-//                        Suplement 
+//                        Suplement
                         $konten_sup = file_get_contents($url_sup, false, $context);
                         $this->data['sup'] = json_decode($konten_sup, true);
 			//e lalang
@@ -592,7 +592,7 @@ foreach ($hasil['specification'] as $speck)
 	$this->data['img3'] = $hasil['imageurl'][3];
        */
 		// akhir dari jika gambar tidak ada
-		
+
 
  		$home_domain = domain2();
 		$this->data['title_web'] = "-Belanja Online Murah, gratis pengiriman area jakarta"."-".$home_domain;

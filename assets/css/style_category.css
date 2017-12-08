@@ -1,0 +1,40 @@
+.thumbnail:hover{
+  box-shadow: 0px 0px 10px #ffffff;
+  color:#111111;
+}
+
+.thumbnail{
+  opacity:0.70;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  text-align:center;
+  color:#4d4d4d;
+  font-size: 20px;
+}
+.thumbnail a{
+  color:#111111;
+  text-decoration: none;
+}
+
+.thumbnail a:hover{
+  opacity:1.00;
+  color:#4d4d4d;
+  text-decoration:none;
+}
+
+span.thumbnail {
+  border: 1px solid #b2b2b2 !important;
+  border-radius: 0px !important;
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+  padding: 10px;
+}
+
+.thumbnail a > img {
+  display: block;
+  height: 120px;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}

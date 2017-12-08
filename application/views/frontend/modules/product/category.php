@@ -1,87 +1,9 @@
-
-<style>
-	.thumbnail:hover{
-		box-shadow: 0px 0px 10px #ffffff;
-		color:#111111;
-	}
-
-	/*.thumbnail img{
-		height:100px;
-	}*/
-
-	.thumbnail{
-		opacity:0.70;
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-		text-align:center;
-		color:#4d4d4d;
-		font-size: 20px;
-	}
-	.thumbnail a{
-		color:#111111;
-		text-decoration: none;
-	}
-
-	.thumbnail a:hover{
-		opacity:1.00;
-		/*box-shadow: 0px 0px 10px #4bc6ff;*/
-		color:#4d4d4d;
-		text-decoration:none;
-	}
-	/*.line{
-		margin-bottom: 5px;
-	}
-	@media screen and (max-width: 770px) {
-		.right{
-			float:left;
-			width: 100%;
-		}
-	}*/
-
-	span.thumbnail {
-        border: 1px solid #b2b2b2 !important;
-    border-radius: 0px !important;
-    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-	padding: 10px;
-}
-
-
-/*.container h4{margin-top:20px; margin-bottom:30px;}*/
-
-.right {
-    float: right;
-    border-bottom: 2px solid #0a5971;
-}
-.btn-info {
-    color: #fff;
-    background-color: #19b4e2;
-    border-color: #19b4e2;
-	font-size:13px;
-	font-weight:600;
-}
-
-.thumbnail a > img {
-    display: block;
-    height: 120px;
-    max-width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-}
-</style>
-<!-- Owl Carousel Assets slide image collection -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.carousel.css');?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.theme.css');?>" />
-
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_category.css');?>" />
 <div class="container">
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo strtoupper($hasil['subName']); ?>
 	</div>
-</div>
 
-
-<div class="container">
 	<div class="row">
 		<?php
 		foreach($hasil['subValue'] as $key => $data){
