@@ -28,6 +28,8 @@ for(var i=0;i<detail.length;i++) {
 // }
 
 $(document).ready(function() {
+	var isFilterPriceActive = false;
+
 	getListProduct();
 	getSidebar();
 	
@@ -91,6 +93,13 @@ $(document).ready(function() {
 	}
 });
 
+function filterSystem(minPrice, maxPrice) {
+	$("#computers div.system").hide().filter(function () {
+		var price = parseInt($(this).data("price"), 10);
+		return price >= minPrice && price <= maxPrice;
+	}).show();
+}
+
 function buildPage(total, page) {
 	// console.log('page: ', page);
 	var limit = 10;
@@ -109,25 +118,15 @@ function buildPage(total, page) {
 	if (page == 1) $('.my-paging').append('<span class="my-paging-off"><i class="fa fa-angle-left" aria-hidden="true"></i></span>');
 	else $('.my-paging').append('<span onclick ="getListProduct(' + (page-1) + ')" class="my-paging-btn my-paging-list"><i class="fa fa-angle-left" aria-hidden="true"></i></span>');
 
-	// if(total > limit){
-
-		for (var i = 1; i <= totalPage; i++) {
-			if(((i < page + 3) && (i > page - 3)) || (i == 1) || (i == totalPage)) {
-				if(i == page)
-					$('.my-paging').append(' <span class="my-paging-list-on">'+i+'</span>');
-				else
-					$('.my-paging').append('<span onclick ="getListProduct(' + i + ')" class="my-paging-btn my-paging-list">'+i+'</span>')/*.append(' ',
-						$(document.createElement('a')).attr({v:i, href:'#', 'class':'my-paging-list'})
-							.click(function (e) {
-								e.preventDefault();
-								getListProduct($(this).attr('v'));
-							})
-							.text(i)
-						)*/;
-			}
-			else if((i == page + 3) || (i == page - 3)) $('.my-paging').append(' ... ');
+	for (var i = 1; i <= totalPage; i++) {
+		if(((i < page + 3) && (i > page - 3)) || (i == 1) || (i == totalPage)) {
+			if(i == page)
+				$('.my-paging').append(' <span class="my-paging-list-on">'+i+'</span>');
+			else
+				$('.my-paging').append('<span onclick ="getListProduct(' + i + ')" class="my-paging-btn my-paging-list">'+i+'</span>');
 		}
-	// }
+		else if((i == page + 3) || (i == page - 3)) $('.my-paging').append(' ... ');
+	}
 
 	if (page < totalPage){
 		$('.my-paging').append('<span onclick ="getListProduct(' + (page+1) + ')" class="my-paging-btn my-paging-list"><i class="fa fa-angle-right" aria-hidden="true"></i></span>');
@@ -237,6 +236,8 @@ function getListProduct(p) {
 }
 
 function getSidebar() {
+	var priceMin = 0;
+	var priceMax = 999999;
 	$.get(sidebar_url,function(res){
 		$("#sidebar-left-filter").hide();
 		console.log('sidebar res: ', res);
@@ -261,7 +262,28 @@ function getSidebar() {
 						+ '</label>'
 					+ '</div>';
 				} else {
+					priceMin = d.min;
+					priceMax = d.max;
+					menu_body += `<div id="slider-container"></div>
+							<div class="row" style="margin-top: 5px">
+								<div class="col-xs-5">
+									<input name="contentMinAmount" id="priceMin" type="text" style="width: 100%">
+								</div>
 
+								<div class="col-xs-2 text-center">
+									-
+								</div>
+
+								<div class="col-xs-5">
+									<input name="contentMinAmount" id="priceMax" type="text" style="width: 100%">
+								</div>
+							</div>
+							
+							<div class="row" style="margin-top: 5px">
+								<div class="col-xs-12">
+									<button id="priceTrigger" type="button" class="btn btn-info btn-block" onclick="triggerPriceFilter()">Submit</button>
+								</div>
+							</div>`
 				}
 			});
 
@@ -278,21 +300,50 @@ function getSidebar() {
 		});
 		$("#sidebar-animation-unready").fadeOut(250);
 		$("#sidebar-left-filter").fadeIn(500);
+
+		$('#slider-container').slider({
+			range: true,
+			min: priceMin,
+			max: priceMax,
+			values: [priceMin, priceMax],
+			create: function() {
+				$("#priceMin").val(priceMin);
+				$("#priceMax").val(priceMax);
+			},
+			slide: function (event, ui) {
+				var mi = ui.values[0];
+				var mx = ui.values[1];
+				$("#priceMin").val(mi);
+				$("#priceMax").val(mx);
+				filterSystem(mi, mx);
+			}
+		})
 	});
 }
 
-function doFilter() {
+function triggerPriceFilter() {
+	isFilterPriceActive = true;
+	doFilter();
+}
 
+function doFilter() {
+	
     var objFilter = {}
     objFilter.Others = [];
 
     var urlCategory = 'cat=(';
     var urlBrand = 'brand=(';
-    var urlPrice = '';
     var urlInstance = 'instance=(';
-    var urlAttribute = 'attribute=(';
-    var urlOthers = '';
-    
+	var urlAttribute = 'attribute=(';
+	var urlPrice = '';
+	var urlOthers = '';
+
+	if (isFilterPriceActive) {
+		var from = $("#priceMin").val();
+		var to = $("#priceMax").val();
+		urlPrice = 'from=' + from + '&' + 'to=' + to + '&';
+	}
+
     $('#sidebar-left-filter input[name=checkbox-filter]:checked').each(function() {
         var valraw = $(this).val();
         var arrVal = valraw.split('~');
