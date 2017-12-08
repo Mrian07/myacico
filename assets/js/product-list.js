@@ -31,8 +31,8 @@ for(var i=0;i<detail.length;i++) {
 $(document).ready(function() {
 
 	getListProduct();
-	getSidebar();
-	
+	if (sidebar_url != '') getSidebar();
+
 	$('#order_by').change(function(){
 		getListProduct();
 	});
@@ -214,7 +214,7 @@ function getListProduct(p) {
 	temp_url += 'page=' + p + '&';
 
 	body.stop().animate({scrollTop:0}, 250, 'swing', function() {
-		
+
 	});
 
 	$("#product-list-unready").fadeIn(500);
@@ -229,7 +229,7 @@ function getListProduct(p) {
 			$('.my-paging').empty();
 			return $('#productlist').html('<center>Maaf item yang Anda cari belum tersedia.</center>');
 		}
-		
+
 		res.productList.forEach(extract_list);
 		$("#product-list-unready").fadeOut(500);
 		$('#productlist').fadeIn(500);
@@ -280,7 +280,7 @@ function getSidebar() {
 									<input name="contentMaxAmount" class="txtFilterPrice" id="priceMax" type="text">
 								</div>
 							</div>
-							
+
 							<div class="row" style="margin-top: 5px">
 								<div class="col-xs-12">
 									<button id="priceTrigger" type="button" class="btn btn-info btn-block" onclick="triggerPriceFilter()">Submit</button>
@@ -329,7 +329,7 @@ function triggerPriceFilter() {
 }
 
 function doFilter() {
-	
+
     var objFilter = {}
     objFilter.Others = [];
 
@@ -422,7 +422,7 @@ function formatMoney(num) {
 	sisa 	= number_string.length % 3,
 	rupiah 	= number_string.substr(0, sisa),
 	ribuan 	= number_string.substr(sisa).match(/\d{3}/g);
-		
+
 	if (ribuan) {
 		separator = sisa ? '.' : '';
 		rupiah += separator + ribuan.join('.');

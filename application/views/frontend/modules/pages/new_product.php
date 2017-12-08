@@ -8,7 +8,9 @@
 		</div>
 	<div class="row">
 	  <div style='width:230px; float:left; margin-right:10px;'>
-			<?php  $this->load->view('frontend/modules/product/sidebar_left',$this->data); ?>
+
+			<div style='width:230px; float:left; margin-right:10px;'><?php $this->load->view('frontend/modules/product/sidebar_left_filter',$this->data); ?></div>
+
 		</div>
 	  <div style='width:890px; float:left'>
 			<?php
