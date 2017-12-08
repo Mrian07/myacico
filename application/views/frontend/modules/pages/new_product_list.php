@@ -64,6 +64,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 </style>
+
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/pop_cart.css');?>" />
 
     <div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
@@ -113,7 +114,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 			$no = $posisi+1;
 			$i = -1;
-      foreach($dathome['level_2'] as $key => $data){
+      foreach($dathome['productList'] as $key => $data){
 				$i++;
         //die(print_r($data['imageurl']));
         if(isset($data['imageurl'])){
@@ -128,15 +129,15 @@ input[type=number]::-webkit-outer-spin-button {
       <div class="col-xs-12" style='margin-bottom:10px;'>
         <div class='row' style="padding-bottom: 15px">
             <div class="col-xs-3">
-              <a href="<?php echo base_url('product/detail/'.$data['product_id'].'/'.$data['alias']);?>">
+              <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>">
                 <img class="img-thumbnail clear-border" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" style="height:200px; width: auto;" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
               </a>
             </div>
             <div class="col-xs-6">
               <div class='highlight-list' style='text-align:left;'>
-              	<a class="title-product" href="<?php echo base_url('product/detail/'.$data['product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a>
+              	<a class="title-product" href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a>
 
-								<a href="<?php echo base_url('product/detail/'.$data['product_id'].'/'.$data['alias']);?>" style="color: #4b4b4b!important; font-weight: bold">SELENGKAPNYA</a>
+								<a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>" style="color: #4b4b4b!important; font-weight: bold">SELENGKAPNYA</a>
               </div>
             </div>
             <div class="col-xs-3">
@@ -151,11 +152,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 							?>
 							<div class="text-left" style="margin-top: 20px;">
-								<input type='hidden' class='form-control text-center' id='jmlItem<?php echo$data['product_id'];?>' style='width: 50px; font-size: 9pt; margin-bottom: 8px; height: 29px;' value='1' min='1'>
+								<input type='hidden' class='form-control text-center' id='jmlItem<?php echo$data['m_product_id'];?>' style='width: 50px; font-size: 9pt; margin-bottom: 8px; height: 29px;' value='1' min='1'>
 
 								<div>
 									<div style="width: 130px;">
-										<button type="button" class="btn btn-danger btn-add-to-cart" onClick="addToCart('<?php echo$data['product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+										<button type="button" class="btn btn-danger btn-add-to-cart" onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
 									</div>
 
 								</div>
@@ -174,8 +175,80 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 
-<div style="clear:both"></div>
 
+
+      <div style="clear:both"></div>
+      <?php
+      		$id_cat=$this->uri->segment(3);
+      $page=$page;
+
+
+       ?>
+      <div class='my-paging'>
+        <?php
+          if($page>1){
+            $previous=$page-1;
+
+                $first =  site_url('pages/newProduct/'.'1');
+                $prev =  site_url('pages/newProduct/'.$previous);
+
+            echo "<a href=$first class='my-paging-btn'><< First</a> ";
+            echo "<a href=$prev class='my-paging-btn'>< Previous</a> ";
+          }else{
+            echo"<< First < Previous ";
+          }
+
+          //angka awal
+          $angka = ($page > 3 ? "...":"");
+          for($i=$page-1;$i<$page;$i++){
+            if($i<1)
+              continue;
+              // $hal =  site_url('pages/newProduct/'.$i);
+              $hal =  site_url('pages/newProduct/'.$page.'/'.$i);
+              $angka .="<a href=$hal class='my-paging-list'>$i</a>";
+
+          }
+
+          //angka tengah
+          $angka.="<span class='my-paging-list-on'>$page</span>";
+          for($i=$page+1;$i<($page+3);$i++){
+            if($i>$jpage)
+              break;
+
+              $hal =  site_url('pages/newProduct/'.$i);
+              $angka .="<a href=$hal class='my-paging-list'>$i</a>";
+          }
+
+          //angka akhir
+              $hal =  site_url('pages/newProduct/'.$jpage);
+
+          $angka .=($page+2<$jpage ? "...<a href=$hal class='my-paging-list'>$jpage</a>":"");
+
+          //cetak semua angka
+          echo "$angka";
+
+          //next
+          if($page<$jpage){
+            $next = $page+1;
+            $next =  site_url('pages/newProduct/'.$next);
+            $last =  site_url('pages/newProduct/'.$jpage);
+
+            echo " <a href=$next class='my-paging-btn'>Next >></a>";
+            echo " <a href=$last class='my-paging-btn'>Last ></a>";
+          }else{
+            echo"Next >  Last >>";
+          }
+
+        ?>
+      </div>
+
+
+
+
+
+      <div class='my-paging'>
+
+      </div>
 
 
 <!-- Modal -->
@@ -242,7 +315,7 @@ $(document).ready(function() {
 });
 //
 // function filter(id){
-//   window.location.replace("<?php //echo site_url('product/alllistItemCat/'.$cat.'/'.$id.'/'); ?>"+id.value);
+//   window.location.replace("<?php //echo site_url('product/alllistItemCat/'.$page.'/'.$id.'/'); ?>"+id.value);
 // }
 
 var token = document.cookie.split('x-auth=')[1].split(';').shift();

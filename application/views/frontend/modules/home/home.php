@@ -30,7 +30,7 @@
 
 a.badgeNi:hover,a.badgeNi:focus{color:#fff;text-decoration:none;cursor:pointer}
 .badgeNi {
-   
+
   background: #b20c0c;
   position: absolute;
   height: 35px;
@@ -779,7 +779,7 @@ ul.list-group:after {
        <?php    } else{ ?>
            <p class="box-title2"><s>Rp.<?php echo money($itemslide2['pricelist']); ?></s></p><p><?php echo money($itemslide2['specialprice']); ?></p>
         <?php }
-      
+
 if($itemslide2['istodayshipping'] == 'Y')
                   {
                   ?>
@@ -832,7 +832,7 @@ if($itemslide2['istodayshipping'] == 'Y')
                       <span class="glyphicon glyphicon-star"></span>
                       <span class="glyphicon glyphicon-star-empty"></span>
                   </div>
-      <?php   
+      <?php
 if($itemslide3['istodayshipping'] == 'Y')
                   {
                   ?>
@@ -842,7 +842,7 @@ if($itemslide3['istodayshipping'] == 'Y')
                   <?php }?>
       		</span>
     		</div>
-     
+
       <?php } ?>
 
   		<!-- END PRODUCTS -->
@@ -916,7 +916,7 @@ text.innerHTML = trimmedString
             echo "";
           } else { ?>
   <span class="badgeNi34" style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
-          <?php } 
+          <?php }
           if($itemslide0['istodayshipping'] == 'Y')
                   {
                   ?>
@@ -1065,7 +1065,7 @@ text.innerHTML = trimmedString
                   echo "";
                   } else { ?>
                   <span class="badgeNi34" style="color:white;">  <?php echo $itemslide2['discount']; ?> %</span>
-                  <?php } 
+                  <?php }
                   if($itemslide2['istodayshipping'] == 'Y')
                   {
                   ?>
@@ -1244,7 +1244,7 @@ text.innerHTML = trimmedString
 <ul class="list-group" style="padding-left:0px;">
 
   <?php $bloop = 0; foreach($dathome['level_4'] as $datBrand){
-     
+
     if($bloop <20){
     ?>
     <a href="<?php echo base_url(''.$datBrand['imageurl2'].'');?>"/><li class="list-group-item img-responsive"><img src="<?php echo $datBrand['imageurl'];?>" class="asd1" alt="Smiley face" height="80%" width="75"></li>
