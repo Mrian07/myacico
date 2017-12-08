@@ -71,6 +71,7 @@
 		<script type="text/javascript">
 			var base_url = '<?php echo base_url();?>';
 			var base_path = base_url.split(location.host).pop();
+			var site_url = '<?php echo site_url();?>';
 
 			var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
 			var login1 = 'https://acc.myacico.co.id/myacico-account/';
