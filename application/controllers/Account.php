@@ -284,7 +284,7 @@ class Account extends Web_private {
 
 	public function riwayatStatusPesanan()
   {
-            $domain = domain();
+    $domain = domain();
 		$page=$this->uri->segment(3);
 		$startDate=$this->uri->segment(4);
 		$endDate=$this->uri->segment(5);
@@ -318,26 +318,26 @@ class Account extends Web_private {
 
     $context = stream_context_create($options);
     $konten2 = file_get_contents($url2, false, $context);
+	 	$jdata =json_decode($konten2)->transactionCount;
 
-    $jdata =json_decode($konten2)->transactionCount;
+	     $batas = '5';
+			if(empty($page)){
+				$posisi = 0;
+				$page =1;
+			}else{
+				$posisi = ($page-1)*$batas;
+			}
+			$this->data['page'] = $page;
+			$this->data['total_list'] = $jdata;
+	    $this->data['posisi'] = $posisi;
+	    $this->data['jpage'] = ceil($jdata/$batas);
+	    $konten3 = file_get_contents($url3, false, $context);
 
-     $batas = '5';
-		if(empty($page)){
-			$posisi = 0;
-			$page =1;
-		}else{
-			$posisi = ($page-1)*$batas;
-		}
-		$this->data['page'] = $page;
-		$this->data['total_list'] = $jdata;
-    $this->data['posisi'] = $posisi;
-    $this->data['jpage'] = ceil($jdata/$batas);
-    $konten3 = file_get_contents($url3, false, $context);
+			$this->data['hasil'] = json_decode($konten3, true);
 
-		$this->data['hasil'] = json_decode($konten3, true);
 
 		$this->data['active_riwayatStatusPesanan'] = "class='active'";
-		$this->data['title_web'] = "Riwayat Status Pasaran - ".$domain;
+		$this->data['title_web'] = "Riwayat Status Pesanan - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/riwayatStatusPesanan',$this->data);

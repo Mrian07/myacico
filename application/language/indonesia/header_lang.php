@@ -41,7 +41,7 @@ $lang['btn_kirim1'] = 'Masuk';
 //about us
 $lang['lang_pages_aboutUs'] ='Tentang Kami';
 $lang['lang_isiaboutUS'] ='
-myACICO.com adalah perusahaan ecommerce yang berdiri sejak Februari 2017 yang dapat memberikan terobosan baru dan juga merupakan salah satu anak perusahaan Alpha Cipta Computindo Indonesia. myACICO.com sebagai salah satu platform untuk B2B, B2C dan B2G yang berkembang dengan cepat';
+myACICO.co.id adalah perusahaan ecommerce yang berdiri sejak Februari 2017 yang dapat memberikan terobosan baru dan juga merupakan salah satu anak perusahaan Alpha Cipta Computindo Indonesia. myACICO.com sebagai salah satu platform untuk B2B, B2C dan B2G yang berkembang dengan cepat';
     $lang['lang_pages_history'] ='Sejarah';
 		$lang['lang_pages_acico'] ='sebagai induk perusahaan dari myACICO.com, Alpha Cipta Computindo grup mengkhususkan pelayanannya pada perdagangan internasional dan pengadaan barang yang sudah berpengalaman lebih dari 20 tahun. Memasuki pasar B2B sejak tahun 1995, pengalaman yang luas telah membawa ACICO grup sebagai salah satu layanan pengadaan barang yang berkembang pesat di negara ini';
 		$lang['lang_pages_vis'] ='Visi';
@@ -53,7 +53,7 @@ myACICO.com adalah perusahaan ecommerce yang berdiri sejak Februari 2017 yang da
 					$lang['lang_pages_peng'] ='Pengiriman 2 Hari Kerja';
 					$lang['lang_pages_alw'] ='Barang Selalu ada';
 					$lang['lang_pages_alw'] ='Harga termurah';
-					
+
 
 
 //pages tentang kami
@@ -90,4 +90,16 @@ $lang['btn_login'] = 'Kirim';
 //s: search
 $lang['field_all_src'] = 'Semua Kategori';
 //e: search
+// ASAP
+$lang['inf_asap'] = '<br><b>ASAP </b>(As Soon As Possible) merupakan layanan pengiriman dari myACICO Courier yang memberikan benefit tambahan bagi customer myACICO.co.id'
+        . '<br><b>Gratis Biaya Pengiriman</b>'
+        .'<br>Anda bisa mendapatkan layanan ASAP dari myACICO Courier secara cuma-cuma sehingga anda bisa menghemat biaya pengiriman untuk pembelanjaan berikutnya'
+        . '<br><b>2 Hari Sampai</b>'
+        . '<br>Dengan kurir yang profesional dan ditunjang dengan kecepatan serta akurasi dalam pengiriman, kami menjamin barang pesanan anda sampai tempat tujuan dalam waktu 2 hari.'
+        . '<br><b>Keamanan Terjamin</b>'
+        . '<br>ASAP menawarkan keamanan dalam pengiriman barang pesanan anda. Dengan sistem packaging yang komprehensif, ASAP memberikan perlindungan terbaik bagi barang pesanan anda dalam situasi apapun.'
+        . '<br><b>Bagaimana cara mendapatkan layanan ASAP?</b>'
+        . '<br>Saat ini, layanan ASAP mengjangkau customer di wilayah Jakarta. Anda bisa mendapatkan layanan ini dengan berbelanja di myACICO.co.id dan memilih myACICO Courrier sebagai jasa pengiriman saat check out.'
+        ;
+
 ?>

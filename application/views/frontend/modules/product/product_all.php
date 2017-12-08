@@ -32,24 +32,6 @@
   <div id="product" class="promo-front owl-carousel">
 
 
-<!--       <div id="product" align="center" ></div>
-      <div class="item" style='background:#ffffff; padding:10px; height:210px'>-->
-
-
-
-            <!-- <div class="ratings" style='text-align: center; color:#d98c13;'>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-            </div> -->
-<!--      </div>
-
-    </div>-->
-
-
-
 
 </div>
 

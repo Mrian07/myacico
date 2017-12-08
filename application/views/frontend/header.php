@@ -1,6 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html lang="en">
 	<head>
+		<?php
+		header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+		header("Cache-Control: no-store, no-cache, must-revalidate"); // HTTP/1.1
+		header("Cache-Control: post-check=0, pre-check=0", false);
+		header("Pragma: no-cache"); // HTTP/1.0
+		header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+		?>
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
+		<meta http-equiv="Pragma" content="no-cache">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" in matatag>
+		<meta http-equiv="Expires" content="0">
 		<meta charset="utf-8">
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 		<title><?php echo $title_web; ?></title>
@@ -10,6 +23,7 @@
 			color:red;
 		}
 		</style>
+
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
 		<!-- Strat Bootstrap -->
@@ -96,20 +110,15 @@ var prod_detail =  localStorage.getItem('product_detail');
     </head>
 
 	<body style='font-weight: normal;' ng-app="myApp">
-
-
-					<div class="top-bg"><img src='<?php echo base_url('images/general/bg-top_main.jpg');?>' border='0'></div>
-
-
-
+			<div class="top-bg" onclick="location.href='<?php echo base_url('product/category/1000540/Peralatan-Dapur');?>'" style='cursor: pointer;'><img src='<?php echo base_url('images/general/bg-top_main.png');?>' border='0'></div>
 			<div class='row'>
 				<!-- <div class="col-xs-7" style='display: flex;  align-items: flex-end;height: 60px;border: solid 0px red; text-align:right; background:#dddddd;'> -->
 
 				<div class="col-xs-7">
 					<div class='link-head'>
-						<?php echo anchor('#','Blog', array('class'=>'btn-nav-head')); ?>
-						<?php echo anchor('#',$lang_produck, array('class'=>'btn-nav-head')); ?>
-						<?php echo anchor('#',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
+						<a href='http://blog.myacico.co.id/' class='btn-nav-head' target='blank'>Blog</a>
+						<?php echo anchor('pages/newProduct',$lang_produck, array('class'=>'btn-nav-head')); ?>
+						<?php echo anchor('Pages/caraBerbelanja',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
 
            <?php echo anchor('customer/afterSales',$lang_after_sales, array('class'=>'btn-nav-head')); ?>
 					</div>
@@ -152,12 +161,12 @@ var prod_detail =  localStorage.getItem('product_detail');
 								 <div class="col-xs-4" style='margin-top:5px; text-align: right'>
 									   <!-- <div class="buktiTrans"></div> -->
 										 <!-- <?php  echo " <img src='$myavatar' width='25' border='0'>"; ?> -->
-							<?php
-							if(isset($_COOKIE['x-auth'])){
-					  		   echo anchor('account/avatar', "<img src='$myavatar' width='25' border='0'>");
-				  		} else{ ?>
-							 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='25' border='0'>
-							<?php } ?>
+											<?php
+											if(isset($_COOKIE['x-auth'])){
+									  		   echo anchor('account/avatar', "<img src='$myavatar' width='25' border='0'>");
+								  		} else{ ?>
+											 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='25' border='0'>
+											<?php } ?>
 
 									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
 								 </div>
@@ -245,7 +254,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 
 
 		 	<div class='my-hdr1'>
-				<div style='margin-top:-3px'>
+				<div style='margin-top:-10px; margin-left:20px'>
 					<?php echo anchor('/', '<img src="'.base_url('images/general/logocoid.gif').'" border="0" height="70">');?>
 				</div>
 			</div>
@@ -257,19 +266,55 @@ var prod_detail =  localStorage.getItem('product_detail');
   					<div class="input-group-btn search-panel">
   						<button type="button" class="dropdown-toggle my-search" data-toggle="dropdown">
   							<span id="search_concept"><?php echo $lang_all_src; ?></span> <span class="caret"></span>
+
   						</button>
   						<ul class="dropdown-menu mycategory-search" role="menu">
-  							<li><a href='#all'><?php echo $lang_all_src; ?></a></li>
-  							<?php foreach($catsearch as $datacat){
-									if($lang=='en'){
-										$cat_name = $datacat['name_en'];
-									}else{
-										$cat_name = $datacat['name'];
-									}
-  								echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
+						<li id="search_concept2"  id="search_param"><a href='#all'>All Categories</a></li>
+
+  							<?php
+								// $this->session->unset_userdata('id_main_src');
+
+								 foreach($catsearch as $datacat){
+									 if($lang=='en'){
+ 										$cat_name = $datacat['name_en'];
+ 									}else{
+ 										$cat_name = $datacat['name'];
+ 									}
+									 if( $this->session->userdata('id_main_src') ==  $datacat['m_product_category_id']){
+	 									echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
+										$this->session->unset_userdata('id_main_src');
+										?>
+										<script>
+										$('#search_concept').html('<?php echo "$cat_name"; ?>')
+										$('#search_concept2').html('<a href="#all"><?php echo $lang_all_src; ?></a>')
+										</script>
+										<?php
+
+	 								}else{
+
+	 									echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
+
+	 								}
+
+
+
+									// if( $this->session->userdata('id_main_src')==$datacat['m_product_category_id']){
+									// 	echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
+									// }else{
+									// 	echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
+									// }
+
   							}?>
   						</ul>
   					</div>
+						<script>
+
+							$('#search_param').change(function() {
+								var paramss = $('#search_param').val()
+									console.log(paramss);
+							});
+						</script>
+						<!-- <input type="hidden" name="search_param" value="<?php // echo $this->session->userdata('id_main_src'); ?> " id="search_param"> -->
   					<input type="hidden" name="search_param" value="all" id="search_param">
   					<!-- <input type="text" name="searchID" id="searchID"> -->
   					<input type="text" name="search" id="searchDesk" autocomplete="off" class="my-search-field">
@@ -336,6 +381,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 	var doneTypingIntervalCat = 20000;
 
 	$("#searchDesk").keyup(function( event ) {
+
 		var key = $(this).val();
 		var cat = $('#search_param').val();
 		$('#title_list').hide();
@@ -357,10 +403,19 @@ var prod_detail =  localStorage.getItem('product_detail');
 	}).keydown(function( event ) {
 	  	if ( event.which == 13 ) {
 	    	event.preventDefault();
-
+				var cat = $('#search_param').val();
 				var searchDesk = $('#searchDesk').val();
+
 				if(searchDesk){
-					location.href = base_url+'product/alllistItem/'+searchDesk;
+					if(cat=="all"){
+						location.href = base_url+'product/alllistItem/'+searchDesk;
+					}else if(cat == ''){
+						location.href = base_url+'product/alllistItem/'+searchDesk;
+					}else{
+						//location.href = base_url+'product/alllistItem/'+searchDesk;
+						location.href = base_url+'product/alllistItemCat/'+cat+'/'+searchDesk;
+					}
+
 				}else{
 					$.alert({
 					title: 'Peringatan',
@@ -369,6 +424,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 				}
 
 	  	}
+
 
 	}).click(function() {
 
@@ -394,6 +450,7 @@ var prod_detail =  localStorage.getItem('product_detail');
 	$('#title_top').hide();
 },500)
 })
+
 
 
 	function searchProduct(key){
@@ -673,7 +730,15 @@ var prod_detail =  localStorage.getItem('product_detail');
   		({
   		url: "<?php echo site_url('cart/totalQtyToken'); ?>",
   		success:function(html){
-  				$(".totalCart").html(html);
+					var valNum = $.isNumeric(html);
+
+					if(valNum){
+						$(".totalCart").html(html);
+					}else{
+						//kalo data tidak berhasil diload kasih default nol
+						$(".totalCart").html('0');
+					}
+
   			}
   		});
 

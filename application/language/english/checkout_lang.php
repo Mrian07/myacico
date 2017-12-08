@@ -23,10 +23,25 @@ $lang['msg_bca'] = 'Sorry payment online payment using BCA KlikPay experience in
 $lang['msg_cimb'] = 'Sorry payment online payment using CIMB Clicks is interrupted, try some more time.';
 $lang['msg_online_payment'] = 'Sorry payment online payment has been interrupted';
 
+
+  // Keranjang belanja bagian pertama
+    $lang['lang_tamb123'] = 'Add New Address';
+    $lang['Field_Another'] = 'Choose Address';
+    $lang['lang_courier'] = 'Shipping Courier';
+$lang['field_paket'] = 'Delivery Package';
+$lang['field_biaya'] = 'Insurance fee';
+$lang['field_ongk'] = 'Postal fee';
+$lang['field_alamatTu'] = 'Destination address';
+$lang['field_catatan'] = 'Note';
+$lang['field_byr1'] = 'Pay';
+$lang['field_byr2'] = 'Now';
+  //akhir dari keranjang bagian pertama
+
 // Finish
 $lang['finish'] = 'FINISH';
 $lang['thanks'] = 'THANK YOU';
-$lang['status_order'] = 'Your order has been process.';
+$lang['status_order'] = 'Your order has been process. Please make payment according to your transaction'
+        . '. For payment confirmation';
 $lang['detail_order'] = 'ORDER DETAIL';
 $lang['no_order'] = 'Order Number:';
 $lang['no_invoice'] = 'Invoice Number:';
@@ -38,4 +53,5 @@ $lang['reciever'] = 'RECIPIENT';
 $lang['cart_detail'] = 'CART DETAIL';
 $lang['total_payment'] = 'Total payment:';
 $lang['payment_confirm'] = 'Payment Confirmation';
+$lang['voucher_code'] = 'GOT A PROMO CODE';
 ?>

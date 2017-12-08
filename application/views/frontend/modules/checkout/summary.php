@@ -19,6 +19,7 @@
 			border : 1px solid #ccc;
 			border-radius: 10px;
 			margin-bottom:10px;
+			font-family: "helvetica_neue";
 		}
 		.cart-list-right{
 			min-height: 400px;
@@ -141,6 +142,8 @@
 			width: 100%;
 			border : 1px solid #ccc;
 			border-radius: 10px;
+			font-family: "helvetica_neue";
+		  font-size: 13px;
 		}
 		.totalsub{
 			display: inline-block;
@@ -256,6 +259,12 @@
 		    margin-top:0px;
 		    margin-bottom:-500px;
 		  }
+
+			.number:hover{
+		    background-color: #d31e1e;
+				cursor: pointer;
+		  }
+
 		  .number p{
 		    color: white;
 		    font-size: 20px;
@@ -305,14 +314,26 @@
 		    padding-top: 20px;
 		  }
 
-		  .barred{
-		    width: 90%;
-		    height: 10px;
-		    background-color: red;
-		    /*position: absolute;*/
-		    margin-top: -25px;
-		    z-index: -1;
-		  }
+			/*.barred{
+				background-color: red;
+				position: absolute;
+				height: 10px;
+				z-index: -1;
+				width: 40%;
+				margin-top: -25px;
+				margin-left:5px;
+			}*/
+
+			.barred{
+				background-color: red;
+				position: absolute;
+				height: 10px;
+				z-index: -1;
+				/*width: 40%;*/
+				width: 800px;
+				margin-top: -25px;
+				margin-left:5px;
+			}
 
 			.my-btn-kupon{
 		      padding: 10px 10px;
@@ -332,18 +353,18 @@
 		  	border-radius: 4px 0px 0px 4px;
 		  }
 		</style>
-    <div class="container">
+    <div class="container detail-page">
 
 			<div style='margin:0px auto; width:1000px; margin-top:30px;'>
 				<div class="number-container">
-					<div class="title-step"><p>Keranjang Belanja</p></div>
-					<div class="title-step2"><p>Metode Pembayaran</p></div>
-					<div class="title-step3"><p>Konfirmasi Pembayaran</p></div>
+					<div class="title-step"><p><?=$lang_shoping_cart;?></p></div>
+					<div class="title-step2"><p><?=$lang_payment_method;?></p></div>
+					<div class="title-step3"><p><?=$lang_payment_confirm;?></p></div>
 				</div>
 			</div>
 			<div style='margin:0px auto; width:900px; margin-bottom:50px;'>
 				<div class="number-container">
-					<div class="number"><p>1</p></div>
+					<div class="number" onclick="location.href='<?php echo base_url('/checkout/cart');?>'"><p>1</p></div>
 					<div class="number2"><p>2</p></div>
 					<div class="number3"><p>3</p></div>
 					<div class="barred"></div>
@@ -363,7 +384,18 @@
 			</div>
 			<div class="box-right">
 				<div class="cart-list-right">
-					<div class="right-title">Metode Pembayaran</div>
+					<div class="right-title"><?=$lang_payment_method;?></div>
+						<div align="left" class="method">
+							<p>Credit Card</p>
+							<div class="segmen">
+								<input type="radio" class='code' name="code" value='C-'>
+								</div>
+								<div class="segmen2">
+									<img class="imgs" src="https://myacico.co.id/images/general/p-visa-small.jpg">
+									<img class="imgs" src="https://myacico.co.id/images/general/ico_bank_02.png">
+								</div>
+						</div>
+
 						<div align="left" class="method">
 							<p>Tranfer Bank</p>
 
@@ -384,7 +416,7 @@
 							 ?>
 
 						</div>
-
+						<br>&nbsp;<br>
 						<!-- <div align="left" class="method">
 							<p>Online Payment</p>
 							<?php
@@ -398,23 +430,14 @@
 							<?php } ?>
 						</div> -->
 
-						<div align="left" class="method">
-							<p>Credit Card</p>
-							<div class="segmen">
-								<input type="radio" class='code' name="code" value='C-'>
-			  				</div>
-			  				<div class="segmen2">
-			  					<img class="imgs" src="https://myacico.co.id/images/general/p-visa-small.jpg">
-			  					<img class="imgs" src="https://myacico.co.id/images/general/ico_bank_02.png">
-			  				</div><br><br>
-						</div>
+
 
 						<div align="left" class="method-kupon">
-							<b>PUNYA KODE PROMO ?</b><br>
+							<b><?=$lang_voucher_code;?> ?</b><br>
 							<div class="input-group">
-								<input type="text" id="email1" name="email1" class="my-field-kupon" name="x" placeholder="">
+								<input type="text" id="txt_voucher" name="txt_voucher" class="my-field-kupon"  placeholder="">
 								<span class="input-group-btn">
-										<input type="button" id="submit_btn1" class="btn btn-default my-btn-kupon" value="GUNAKAN KODE">
+										<input type="button" id="btn_voucher" class="btn btn-default my-btn-kupon" value="GUNAKAN KODE">
 								</span>
 							</div>
 						</div>
@@ -440,6 +463,14 @@ $(document).ready(function() {
 			$(".listItem").html(html);
 		}
 	});
+});
+
+$('#btn_voucher').click(function(){
+if($("#txt_voucher").val() == '')
+{
+     alert('Kode Voucher Tidak Boleh Kosong');
+}
+
 });
 
 function delItemCart(id,img,name,idcart){

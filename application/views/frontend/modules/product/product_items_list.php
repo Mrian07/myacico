@@ -294,7 +294,7 @@ if($saw==Null)
           <div class='row'>
               <div class="col-xs-2">
                 <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>">
-                  <img class="group list-group-image" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" style="height:200px; width: auto;" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
+                  <img class="group list-group-image" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" style="height:auto; width: 150px;" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
                 </a>
               </div>
               <div class="col-xs-7">
@@ -304,7 +304,7 @@ if($saw==Null)
                   <div style="padding-left:30px">
                   <div class="ratting-container">
 
-                    <?php echo "<div id='rateYo".$test1."' class='detail-prod-rating'></div><span class='ratting-text'></span>" ?>
+                    <?php echo "<div id='rateYo".$test1."' class='detail-prod-rating' style='z-index:-1'></div><span class='ratting-text'></span>" ?>
 
                     (<?php echo $data['rate'];?>)
 

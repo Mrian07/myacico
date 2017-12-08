@@ -217,12 +217,6 @@
 
 		}
 
-
-
-
-
-
-
   ?>
   </div>
 		</div>
@@ -254,6 +248,22 @@ function srcByDate(){
 		$.dialog({
 			title: 'Alert!',
 			content: 'Masukan tanggal akhir dengan benar.',
+			autoClose: 'close|50000',
+			buttons: {
+				close: function () {
+					//$.alert('action is canceled');
+				}
+			},
+			closeIcon: true,
+			closeIconClass: 'fa fa-close'
+
+		});
+
+	}else if(endDate<startDate){
+
+		$.dialog({
+			title: 'Alert!',
+			content: 'Tanggal akhir tidak boleh lebih besar dari tanggal awal.',
 			autoClose: 'close|50000',
 			buttons: {
 				close: function () {

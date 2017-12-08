@@ -93,7 +93,7 @@ class Customer extends Web {
 		// store the captcha word in a session
 		$this->session->set_userdata('mycaptcha', $cap['word']);
 
-		$this->data['title_web'] = " Create Account Business - ".$domain;
+		$this->data['title_web'] = " Hubungi Kami - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/customer/contact/contact.php',$this->data);
@@ -109,7 +109,15 @@ class Customer extends Web {
 		$this->load->view('frontend/modules/customer/contact/after_sales.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-
+ public function asap()
+	{
+                 $domain = domain();
+		$this->data['title_web'] = "Asap - ".$domain;
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/customer/contact/asap.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
 	public function messageSent()
 	{
             $domain = domain();
@@ -192,10 +200,6 @@ class Customer extends Web {
     {
 				$catId = $this->uri->segment(3);
 
-				//    die(); dpt nihid itemnya
-				//            if($catId){
-				//                echo $catId;
-				//            }
 				$domain = domain();
 				set_cookie('shipping_address_id','',time() + (86400 * 30));
 

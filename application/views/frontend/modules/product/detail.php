@@ -1,4 +1,21 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/pop_cart.css');?>" />
+<style>
+    .melayang:hover {
+    color: hotpink;
+}
+.xzoom{
+  width: 278px;
+  /*top: -41.2038px;
+  left: 0px;
+  position: absolute;*/
+}
+.xzoom-source{
+  margin-left: 7px;
+
+}
+
+</style>
+        <!-- style="width: 100%!important position: absolute; width: 284px; top: -41.2038px; left: 0px;" -->
 <?php
 $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
@@ -29,7 +46,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/magnific-popup/js/magnific-popup.js');?>"></script>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-<div class="container">
+<div class="container font2">
 <div class='my-bg-title'>
     <i class="fa fa-angle-right" aria-hidden="true"></i> DETAIL PRODUCT
 </div>
@@ -42,10 +59,10 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <div class="row">
 
   <div class="col-sm-3">
-
+<!-- style="width: 100% position: absolute; width: 284px; top: -41.2038px; left: 0px;" -->
     <?php if (isset($img[0])) { ?>
       <img id="xzoom-magnific" class="xzoom"
-          style="width: 100%!important position: absolute; width: 284px; top: -41.2038px; left: 0px;"
+
           src="<?php echo $img[0]; ?>"
           onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"
           xoriginal="<?php echo $img[0]; ?>" />
@@ -85,11 +102,25 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     <table class="table table-detail-prod" border="0">
       <tbody>
         <?php
-          if($specialPrice == 0 ){
+        if($asap_stat =='Y')
+        {
+        $asap = "<a style='height:20px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."'class='test01'></a>";
+        $asap_bawah= "Ingin barang anda sampai dalam <span style='color:red;'>2 hari</span>?<br>Pilih Layanan".$asap." bagi anda yang tinggal di jakarta ";
+
+        }
+        else
+        {
+            $asap='';
+        $asap1 = "<a style='height:20px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."'class='test01'></a>";
+           $asap_bawah= "Belanja online murah, gratis pengiriman area Jakarta*<br>Pilih barang dengan layanan" .$asap1."Untuk pengiriman <span style='color:red;'>Pasti 2 hari</span>";
+
+//            $asap_bawah ='Belanja online murah, gratis pengiriman area Jakarta*';
+        }
+        if($specialPrice == 0 ){
             echo "
               <tr>
                 <td>Harga:</td>
-                <td><span class='price-list'>Rp ".money($pricelist)."</span></td>
+                <td><span class='price-list'>Rp ".money($pricelist)."</span><span>".$asap."</span></td>
               </tr>";
           }else{
             echo "
@@ -98,23 +129,32 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
               <td>
                 <span class='price-list'>Rp ".money($specialPrice)."</span>
                 <span class='discount'>".money($discount)."% OFF</span>
-                <span>Hemat: <span style='color: #8a0202; font-weight: bold'>Rp ".money($pricelist - $specialPrice)."</span></span>
+                <span>Hemat: <span style='color: #8a0202; font-weight: bold'>Rp ".money($pricelist - $specialPrice)."</span></span><span>".$asap."</span>
               </td>
             </tr>
             <tr>
               <td>Harga Awal:</td>
-              <td><s>Rp ".money($pricelist)."</s></td>
+              <td><s>Rp ".money($pricelist)."</s>
+              </td>
             </tr>";
           }
         ?>
+
+
         <tr>
           <td>Status:</td>
           <td style="color: #4ba240">Tersedia.</td>
         </tr>
         <tr>
           <td></td>
-          <td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih myacico courier bagi anda yang tinggal di jakarta </td>
-        </tr>
+          <style>
+          .test01{
+            width: 55px;
+          }
+          </style>
+          <!--<td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih Layanan <a target="_blank" href="<?php echo base_url('customer/asap');?>"><img src="<?php echo base_url('images/general/asap.png');?>" class="test01"> </a>bagi anda yang tinggal di jakarta </td>-->
+  <td> <?php echo$asap_bawah;?>    </td>
+    </tr>
         <!-- <tr>
           <td>Warna:</td>
           <td><div class="opt-color black"></div></td>
@@ -324,126 +364,29 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     </tr>
 
 
-    <tr>
+         <!-- -->
 
-      <th> <?php
-      if(!empty($specification)){
-            echo $specification;
+     <?php
+     $loop=0;
+        if (isset($specification[1])) {
+          foreach ($specification as $spek) {
+      ?>
+         <tr>
+          <th>
+      <?php echo $spek;?>
+        </th>
 
-      }else{
-      $specification = '';
-      }
-
-
-       ?>  </th>
-      <td><?php
-      if(!empty($value)){
-            echo $value;
-
-      }else{
-      $value = '';
-      }
-
-
-       ?></td>
-    </tr>
-    <tr>
-      <th> <?php
-      if(!empty($attribute)){
-            echo $attribute;
-
-      }else{
-      $attribute = '';
-      }
-
-
-       ?>  </th>
-      <td>
-
-        <?php
-        if(!empty($attribute3)){
-              echo $attribute3;
-
-        }else{
-        $attribute3 = '';
+        <td><?php echo $value[$loop].'</td>';
+        $loop++;
+        ?>
+            </tr>
+    <?php
         }
 
-
-         ?>  </th>
-        </td>
-    </tr>
-    <tr>
-      <th> <?php
-
-      if(!empty($attribute4)){
-            echo $attribute4;
-
-      }else{
-      $attribute4 = '';
-      }
+          }
+      ?>
 
 
-?>
-
-       </th>
-      <td> <?php
-      if(!empty($value1)){
-            echo $value1;
-
-      }else{
-      $value1 = '';
-      }
-
-       ?>
-
-
-      </td>
-    </tr>
-    <tr>
-      <th> <?php
-      if(!empty($attribute5)){
-            echo $attribute5;
-
-      }else{
-      $attribute5 = '';
-      }
-
-
-       ?>  </th>
-      <td>
-      <?php
-
-              if(!empty($value2)){
-                    echo $value2;
-
-              }else{
-          $value2 = '';
-              }
-       ?>
-      </td>
-    </tr>
-    <tr>
-      <th><?php
-
-      if(!empty($attribute6)){
-            echo $attribute6;
-
-      }else{
-  $attribute6 = '';
-      }
-
-
-       ?>  </th>
-      <td><?php
-
-              if(!empty($value3)){
-                    echo $value3;
-
-              }else{
-          $value3 = '';
-              }
-       ?></td>
-    </tr>
   </table>
 
   </div>
@@ -504,64 +447,93 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
 
 <!--<div class="container">-->
-  <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+  <div id='sld1' style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK SEJENIS
   </div>
 
   <div class="span12" style='background:#ffffff; padding:10px;'>
     <div id="owl-demo" class="owl-carousel">
       <?php
-        $jmlslide2=count($dathome);
-      $n=1;
+        $jmlslide1=count($dathome);
+      $n=1;$no=1;
       foreach($dathome as $key => $itemslide2){
-        if($n=="$jmlslide2"){
+        if($n=="$jmlslide1"){
           $active='active';
         }else{
           $active='';
         }
         ?>
+
       <!-- <div class="item" align="center"> -->
     <div class="item" align="center">
 
-      <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+      <a style="font-size:10px; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='#0066c0'" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
         <?php if($itemslide2['imageurl']){?>
-        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" style='height:100px;'>
+               <!--</a>-->
         <?php }else{
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title" style="height:50px; word-wrap: normal; line-height: 16px;" ><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+       <p style="height:50px; word-wrap: normal; line-height: 16px;">
+            <!--<a style="font-size:10px; text-align: justify; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='#c45500'" onMouseOut="this.style.color='#0066c0'" href="<?php // echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">-->
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 71);
+          $str2 = substr($str1, 0, 56);
           $str = strlen($str2);
-          if($str <= 70){
+          if($str <= 55){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
             echo $str2."....";
           }
           ?>
-      </a></p>
+            </p>
+
+      </a>
+        <script>
+
+        $(function () {
+             var no = '<?php echo $no; ?>';
+                      var rateV = '<?php echo $itemslide2['rate']; ?>';
+                $("#rateSejeniss"+no).rateYo({
+                    rating: rateV,
+                    starWidth: "15px",
+                    readOnly: true,
+                    normalFill: "#dddddd"
+                });
+                console.log(rateV);
+              });
+
+        </script>
       <div class="ratting-container"  style="margin-top: -25px;">
-      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
+          <?php echo "<div id='rateSejeniss".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
+
     </div>
-      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']);
+      if($itemslide2['istodayshipping'] == 'Y'){
+      ?>
+      <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+      <?php
+      }
+      ?>
+      </p>
+
         <hr>
   </div>
-  <?php $n++;  } ?>
-</div>
+  <?php $no++;$n++;  } ?>
+   </div>
 </div>
 
-<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+<div id ="sld2" style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK REKOMENDASI
   </div>
 
   <div class="span12" style='background:#ffffff; padding:10px;'>
     <div id="owl-demo1" class="owl-carousel">
       <?php
-        $jmlslide2=count($dathome);
+        $jmlslide2=count($rekom);
       $n=1;
-      foreach($dathome as $key => $itemslide2){
+      foreach($rekom as $key => $itemslide2){
         if($n=="$jmlslide2"){
           $active='active';
         }else{
@@ -571,46 +543,73 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       <!-- <div class="item" align="center"> -->
     <div class="item" align="center">
 
-      <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+      <a style="font-size:10px; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='#0066c0'" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
         <?php if($itemslide2['imageurl']){?>
-        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" style='height:100px;'>
+               <!--</a>-->
         <?php }else{
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title"  style="height:50px; word-wrap: normal; line-height: 16px;"><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+       <p style="height:50px; word-wrap: normal; line-height: 16px;">
+            <!--<a style="font-size:10px; text-align: justify; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='#c45500'" onMouseOut="this.style.color='#0066c0'" href="<?php // echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">-->
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 71);
+          $str2 = substr($str1, 0, 56);
           $str = strlen($str2);
-          if($str <= 70){
+          if($str <= 55){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
             echo $str2."....";
           }
           ?>
-      </a></p>
-       <div class="ratting-container"  style="margin-top: -25px;">
-      <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
+            </p>
+
+      </a>
+         <script>
+
+        $(function () {
+             var no = '<?php echo $no; ?>';
+                      var rateR = '<?php echo $itemslide2['rate']; ?>';
+                $("#rateRekom"+no).rateYo({
+                    rating: rateR,
+                    starWidth: "15px",
+                    readOnly: true,
+                    normalFill: "#dddddd"
+                });
+                //console.log(rateV);
+              });
+
+        </script>
+        <div class="ratting-container"  style="margin-top: -25px;">
+          <?php echo "<div id='rateRekom".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
+
     </div>
-      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']);
+      if($itemslide2['istodayshipping'] == 'Y'){
+      ?>
+      <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+      <?php
+      }
+      ?>
+      </p>
         <hr>
   </div>
-  <?php $n++;  } ?>
+  <?php $no++; $n++;  } ?>
 </div>
 </div>
 
-<div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
+<div id ="sld3" style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
     <i class="fa fa-dot-circle-o" aria-hidden="true"></i> PRODUK PELENGKAP
   </div>
 
   <div class="span12" style='background:#ffffff; padding:10px;'>
     <div id="owl-demo2" class="owl-carousel">
       <?php
-        $jmlslide2=count($dathome);
+        $jmlslide3=count($sup);
       $n=1;
-      foreach($dathome as $key => $itemslide2){
-        if($n=="$jmlslide2"){
+      foreach($sup as $key => $itemslide2){
+        if($n=="$jmlslide3"){
           $active='active';
         }else{
           $active='';
@@ -619,32 +618,66 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       <!-- <div class="item" align="center"> -->
     <div class="item" align="center">
 
-      <a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>" class='link-p'>
+      <a style="font-size:10px; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='#0066c0'" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
         <?php if($itemslide2['imageurl']){?>
-        <img src="<?php echo $itemslide2['imageurl']; ?>" class='' style='height:100px;'></a>
+        <img src="<?php echo $itemslide2['imageurl']; ?>" style='height:100px;'>
+               <!--</a>-->
         <?php }else{
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
-        <p class="link-nmp box-title"  style="height:50px; word-wrap: normal; line-height: 16px;"><a href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
+       <p style="height:50px; word-wrap: normal; line-height: 16px;">
+            <!--<a style="font-size:10px; text-align: justify; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='#c45500'" onMouseOut="this.style.color='#0066c0'" href="<?php // echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">-->
           <?php
           $str1 = $itemslide2['name'];
-          $str2 = substr($str1, 0, 71);
+          $str2 = substr($str1, 0, 56);
           $str = strlen($str2);
-          if($str <= 70){
+          if($str <= 55){
           echo $itemslide2['name'];
           }else{
             // $str = substr($str, 0, 49);
             echo $str2."....";
           }
           ?>
-      </a></p>
+            </p>
+
+      </a>
+
+
        <div class="ratting-container"  style="margin-top: -25px;">
       <div class="rateSejenis" class="detail-prod-rating"></div><span class="ratting-text"></span>
+
     </div>
-      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
+
+     <script>
+
+        $(function () {
+             var no = '<?php echo $no; ?>';
+                      var rateR = '<?php echo $itemslide2['rate']; ?>';
+                $("#rateJenis"+no).rateYo({
+                    rating: rateR,
+                    starWidth: "15px",
+                    readOnly: true,
+                    normalFill: "#dddddd"
+                });
+                //console.log(rateV);
+              });
+
+        </script>
+        <div class="ratting-container"  style="margin-top: -25px;">
+          <?php echo "<div id='rateJenis".$no."' class='detail-prod-rating'></div> <span class='ratting-text'></span>";?>
+
+    </div>
+      <p class="box-title2" style="color:red;margin-top: -5px;">Rp.<?php echo money($itemslide2['pricelist']);
+      if($itemslide2['istodayshipping'] == 'Y'){
+      ?>
+      <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
+      <?php
+      }
+      ?>
+      </p>
         <hr>
   </div>
-  <?php $n++;  } ?>
+  <?php $no++;$n++;  } ?>
 </div>
 </div>
 <!--</div>-->
@@ -678,10 +711,29 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <script src="jquery.rateyo.js"></script>
 
 <script>
+var jdata1 = "<?php echo$jmlslide1;?>";
+var jdata2 = "<?php echo$jmlslide2;?>";
+var jdata3 = "<?php echo$jmlslide3;?>";
 
    var rate = "<?php  echo $rate;?>";
    var star_rate = "<?php  echo $ik;?>";
     var idss = "<?php echo $local_strg;?>";
+
+
+    console.log('asdasd',rate)
+
+if(jdata1<10)
+{
+    $('#sld1').hide();
+}
+if(jdata2<10)
+{
+    $('#sld2').hide();
+}
+if(jdata3<10)
+{
+    $('#sld3').hide();
+}
 
   var detail = JSON.parse(localStorage.getItem('product_detail'))
 
@@ -736,14 +788,7 @@ var retrievedObject = localStorage.getItem('product_detail');
         normalFill: "#dddddd"
     });
   });
-$(function () {
-    $(".rateSejenis").rateYo({
-        rating: rate,
-        starWidth: "15px",
-        readOnly: true,
-        normalFill: "#dddddd"
-    });
-  });
+
 
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
@@ -1325,6 +1370,13 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
   height: 150px;
 
 }
+.owl-prev{
+    position :absolute; top: 50px; left:32px; border-radius:50px; height:38px; width: 38px;
+}
+.owl-next{
+    position :absolute; right:32px; top: 48px; border-radius:50px; height:38px; width: 38px;
+}
+
 </style>
 
 
@@ -1335,25 +1387,82 @@ $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
     $(document).ready(function() {
       $("#owl-demo").owlCarousel({
         autoPlay: 3000,
-        nav: true,
-        itemsDesktop : [1199,4],
-        itemsDesktopSmall : [979,4]
+        navigation: true,
+        items : 10,
+//        float:left; margin-top: -150px; border-radius:50px; height:35px; width: 35px;padding-top:5px;
+//        float:right; margin-top: -150px; border-radius:50px; height:35px; width: 35px;padding-top:5px;
+        itemsDesktop : [1199,5],
+        itemsDesktopSmall : [979,5]
       });
 
       $("#owl-demo1").owlCarousel({
         autoPlay: 3000,
-        items : 8,
-        itemsDesktop : [1199,4],
-        itemsDesktopSmall : [979,4]
+        navigation: true,
+        items : 10,
+        itemsDesktop : [1199,5],
+        itemsDesktopSmall : [979,5]
       });
 
       $("#owl-demo2").owlCarousel({
         autoPlay: 3000,
-        items : 8,
-        itemsDesktop : [1199,4],
-        itemsDesktopSmall : [979,4]
+        navigation: true,
+        items : 10,
+        itemsDesktop : [1199,5],
+        itemsDesktopSmall : [979,5]
       });
 
   });
+  $('.xzoom, .xzoom-gallery').xzoom({zoomWidth: 400, title: true, tint: '#333', Xoffset: 15});
 
+  //Integration with hammer.js
+  var isTouchSupported = 'ontouchstart' in window;
+
+  if (isTouchSupported) {
+      //If touch device
+      $('.xzoom').each(function(){
+          var xzoom = $(this).data('xzoom');
+          xzoom.eventunbind();
+      });
+
+      $('.xzoom').each(function() {
+          var xzoom = $(this).data('xzoom');
+          $(this).hammer().on("tap", function(event) {
+              event.pageX = event.gesture.center.pageX;
+              event.pageY = event.gesture.center.pageY;
+              var s = 1, ls;
+
+              xzoom.eventmove = function(element) {
+                  element.hammer().on('drag', function(event) {
+                      event.pageX = event.gesture.center.pageX;
+                      event.pageY = event.gesture.center.pageY;
+                      xzoom.movezoom(event);
+                      event.gesture.preventDefault();
+                  });
+              }
+
+              xzoom.eventleave = function(element) {
+                  element.hammer().on('tap', function(event) {
+                      xzoom.closezoom();
+                  });
+              }
+              xzoom.openzoom(event);
+          });
+      });
+
+  } else {
+      //If not touch device
+
+      //Integration with magnific popup plugin
+      $('#xzoom-magnific').bind('click', function(event) {
+          var xzoom = $(this).data('xzoom');
+          xzoom.closezoom();
+          var gallery = xzoom.gallery().cgallery;
+          var i, images = new Array();
+          for (i in gallery) {
+              images[i] = {src: gallery[i]};
+          }
+          $.magnificPopup.open({items: images, type:'image', gallery: {enabled: true}});
+          event.preventDefault();
+      });
+  }
   </script>

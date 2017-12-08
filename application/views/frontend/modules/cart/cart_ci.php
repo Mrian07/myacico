@@ -1,4 +1,4 @@
-<?php
+<?php 
 echo"<table id='cart' border='0' class='table table-hover table-condensed'>
 				<thead>
 					<tr>

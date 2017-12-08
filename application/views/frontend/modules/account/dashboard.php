@@ -15,7 +15,7 @@
 		<div class="col-sm-9 dashboard">
 
         <p>Hello <b><?php echo $user->name; ?></b>, <br><br><?php echo $lang_dar; ?></p>
-			
+
 		<hr>
 
 		<h4><?php echo $lang_acc; ?></h4>

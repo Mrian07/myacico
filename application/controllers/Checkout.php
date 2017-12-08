@@ -45,10 +45,6 @@ class Checkout extends Web_private {
 		$this->data['billing_address_id'] = $items['id'];
 		}
 
-
-
-
-
 		$get_shipping = get_cookie('shipping_address_id');
 
 		if($get_shipping)
@@ -292,17 +288,41 @@ class Checkout extends Web_private {
 		// $id_kurir = $this->uri->segment(3);
 		// $ongkos_kurir = $this->uri->segment(4);
 
+
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "order/cart/detail";
+		$url = api_base_url($api);
+
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+		$hasil = json_decode($konten, true);
+		$all = 0;
+		foreach($hasil as $data){
+				$all += $data['totalWeight'];
+		}
+
+
 		$id_kurir = $_GET['id'];
 		$ongkos_kurir = $_GET['amount'];
 		$name_kurir = $_GET['name'];
+
+		$total_ongkir = $ongkos_kurir * $all;
+
 		$data = array(
 			'id_kurir' => $id_kurir,
-			'ongkos_kurir' => $ongkos_kurir,
+			'ongkos_kurir' => $total_ongkir,
 			'name_kurir' => $name_kurir,
 		);
 		$this->session->set_userdata($data);
 		//ini diload pake ajak
-		if(isset($ongkos_kurir)){echo money($ongkos_kurir);}else{echo"0";}
+		if(isset($total_ongkir)){echo money($total_ongkir);}else{echo"0";}
 
 		//redirect('checkout/cart');
 	}

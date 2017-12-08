@@ -68,6 +68,7 @@ textarea#styled {
 	float: left;
 	margin: 8px;
 	padding: 10px;
+  font-size: 14px;
 }
 .btn-add-adrs{
   background:#ff0000;
@@ -201,25 +202,27 @@ textarea#styled {
   }
 
   .barred{
-    width: 90%;
-    height: 10px;
     background-color: red;
-    /*position: absolute;*/
-    margin-top: -25px;
+    position: absolute;
+    height: 10px;
     z-index: -1;
+    /*width: 40%;*/
+    width: 800px;
+    margin-top: -25px;
+    margin-left:5px;
   }
 
 </style>
 
-<div class="container">
-  <div style='margin:0px auto; width:1000px; margin-top:30px;'>
+<div class="container detail-page">
+  <div style='margin:0px auto; width:1000px; margin-top:30px;  height:50px;'>
     <div class="number-container">
-      <div class="title-step"><p>Keranjang Belanja</p></div>
-      <div class="title-step2"><p>Metode Pembayaran</p></div>
-      <div class="title-step3"><p>Konfirmasi Pembayaran</p></div>
+      <div class="title-step"><p><?=$lang_shoping_cart;?></p></div>
+      <div class="title-step2"><p><?=$lang_payment_method;?></p></div>
+      <div class="title-step3"><p><?=$lang_payment_confirm;?></p></div>
     </div>
   </div>
-  <div style='margin:0px auto; width:900px; margin-bottom:50px;'>
+  <div style='margin:0px auto; width:900px; margin-bottom:50px; height:50px;'>
     <div class="number-container">
       <div class="number"><p>1</p></div>
       <div class="number2"><p>2</p></div>
@@ -229,13 +232,13 @@ textarea#styled {
   </div>
 <!-- <br><p align='center'><img src="<?php //echo base_url('images/general/step1.jpg'); ?>" border="0"></p> -->
 
-    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1150px;margin-bottom:40px;'>KERANJANG BELANJA</div>
+    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1150px;margin-bottom:40px;'><?php echo $lang_shoping_cart; ?></div>
     <div class='box-ship'>
 
-      <?php echo anchor('checkout/addressbook','Tambah Alamat Baru', array('class'=>'btn-add-adrs')); ?>
+      <?php echo anchor('checkout/addressbook',$lang_tamb3, array('class'=>'btn-add-adrs')); ?>
       <br><br>
       <div class='box-ship-info-adrs'>
-        Pilih Alamat Lain</br>
+        <?php echo $lang_another; ?></br>
         <select name='selectShip' id='selectShip' class="form-control" onchange="pilihAlamat(this);">
           <option value=''>-Pilih-</option>
           <?php foreach($hasil_ship as $dasa_ship){
@@ -250,7 +253,7 @@ textarea#styled {
         </select>
       </div>
       <div class='box-ship-info'>
-        Kurir Pengiriman</br>
+      <?php echo $lang_coursss; ?></br>
         <select name='kurir' id='kurir' onchange="pilihKurir(this);" class="form-control">
           <option value='kosong-kosong'>-Pilih-</option>
           <?php
@@ -273,7 +276,7 @@ textarea#styled {
         </select>
       </div>
       <div class='box-ship-info'>
-        Paket Pengiriman</br>
+        <?php echo $lang_paket; ?></br>
         <select id='pilihPaket' class="form-control paket">
           <option value=''>-Pilih-</option>
           <?php
@@ -293,11 +296,11 @@ textarea#styled {
         </select>
       </div>
       <div class='box-ship-info'>
-        Biaya Asuransi</br>
+        <?php echo $lang_biaya; ?></br>
         -
       </div>
       <div class='box-ship-info'>
-        Ongkos Kirim</br>Rp.<span class='amount'>-</span>
+      <?php echo $lang_ongk; ?></br>Rp.<span class='amount'>-</span>
       </div>
 
       <div class='box-ship-info' style='text-align:right'>
@@ -305,13 +308,13 @@ textarea#styled {
       </div>
       <div style='clear:both'></div>
       <div class='box-com'>
-        <font color='red'><b>Alamat Tujuan</b></font></br>
+        <font color='red'><b><?php echo $lang_alamatTr; ?></b></font></br>
         <div class="row" id='box-adrs'>
           <div class="col-xs-12 alamat" id='box-shadow'><?php  if(isset($alamat_shipping)){ echo$alamat_shipping; }else{echo"-";} ?></div>
         </div>
       </div>
       <div class='box-com2'>
-        Catatan</br>
+        <?php echo $lang_cata;?></br>
         <textarea id='styled'></textarea>
       </div>
 
@@ -325,7 +328,8 @@ textarea#styled {
     <div style='clear:both'></div>
   </div>
 
-  <button onclick='next()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b>BAYAR</b> SEKARANG</span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
+  <button onclick='next()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b><?php echo $lang_byr1; ?></b> <?php
+  echo $lang_byr2 ?></span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
   <div style='clear:both'></div>
 </div>
 
@@ -375,19 +379,57 @@ function pilihAlamat(id){
   $(".amount").html('-');
   var id = id.value;
   var url = '<?php echo site_url('checkout/pilihShip'); ?>'
-  $.ajax
-  ({
-  url: url+'/?id='+id,
-  success:function(html){
-      $(".alamat").html(html);
-      $(".amount").html('-');
-      getKurir(id);
-      $(".paket").html('<option value="">-Pilih-</option>');
-    }
-  });
+    
+  if(id==''){
+    $(".alamat").html('');
+  }else{
+    $.ajax
+    ({
+    url: url+'/?id='+id,
+    success:function(html){
+        console.log(id)
+        getAsap(id);
+        $(".alamat").html(html);
+        $(".amount").html('-');
+        getKurir(id);
+        $(".paket").html('<option value="">-Pilih-</option>');
+      }
+    });
+
+  }
 
 }
 
+function getAsap(id){
+    var apiurl = api_base_url +'/freight/isdki?villageid='+id;
+
+     $.ajax({
+        url: apiurl,
+        success:function(res){
+            console.log(res)
+                 if(res.isDKI=='N'){
+        $(".asapGb").hide();
+      }else{
+        $(".asapGb").show()
+      }
+
+        }
+    })
+
+//  var apiurl = api_base_url +'/afreight/isdki?villageid='+id;
+//  $.ajax({
+//    url: apiurl,
+//    success:function(res){
+//      if(res.isDKI=='N'){
+//        $("#asapGb").hide();
+//      }else{
+//        $("#asapGb").show()
+//      }
+//  }
+//     });
+//
+//}
+}
 function getKurir(id){
 
   var url = '<?php echo site_url('checkout/selectKurir'); ?>'
@@ -439,6 +481,7 @@ function pilihKurir(row){
 //     alert("The text has been changed.");
 // });
 $(document).ready(function() {
+var id_add ="<?php echo get_cookie('shipping_address_id');?>"
 
   $('#kurir').prop('selectedIndex',0);
 
@@ -450,6 +493,7 @@ $(document).ready(function() {
 		url: "<?php echo site_url('cart/listCartToken'); ?>",
 		success:function(html){
 				$(".listCart").html(html);
+                                getAsap(id_add)
 			}
 		});
 	}

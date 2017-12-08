@@ -77,7 +77,7 @@
     </div>
     <div class="totalsub">
       <p>Total Ongkos Pengiriman</p>
-      <p class="red">Rp.<?php echo $this->session->userdata('ongkos_kurir');?></p>
+      <p class="red">Rp.<?php if($this->session->userdata('ongkos_kurir')){echo money($this->session->userdata('ongkos_kurir'));}else{echo"0";}?></p>
     </div>
     <div class="totalsub2">
       <p>Grand Total</p>

@@ -28,6 +28,87 @@ class Product extends Web {
 
 	}
 
+	public function alllistItemCat()
+	{
+
+		$cat=$this->uri->segment(3);
+		$id=$this->uri->segment(4);
+		$short=$this->uri->segment(5);
+  	$page=$this->uri->segment(6);
+
+
+		$url = "https://api.myacico.co.id/myacico-service/category";
+		// $url = "http://192.168.0.109:8080/myacico-service/category";
+		$konten = file_get_contents($url);
+		$this->data['catsearch'] = json_decode($konten, true);
+		$catsearch = json_decode($konten, true);
+
+		foreach($catsearch as $data){
+			if($data ['m_product_category_id']== $cat){
+
+				$this->data['title_atas'] = $data['name'];
+			}
+		};
+
+
+
+
+
+		if($short==''){$this->data['sort_id'] = '5'; }else{$this->data['sort_id'] =$short; }
+		$this->data['pro'] = $id;
+
+		$data = array('id_main_src' => $cat);
+		$this->session->set_userdata($data);
+
+		$apiTotPage = "product/productlist/".$cat."/".$id."?itemperpage=12&show=pagecount";
+		$urlTotPage = api_base_url($apiTotPage);
+		$kontenTotPage = file_get_contents($urlTotPage, false);
+		$jdata =json_decode($kontenTotPage)->pageCount;
+
+		if($page){
+			$api = "product/productlist/".$cat."/".$id."?itemperpage=12";
+		}elseif($short){
+
+			$api = "product/productlist/".$cat."/".$id."?itemperpage=12&ob=".$short;
+
+		}else{
+
+			$api ="product/productlist/".$cat."/".$id."?itemperpage=12";
+
+		}
+		$url = api_base_url($api);
+		$konten = file_get_contents($url, false);
+                //ie(print_r($konten));
+
+		$batas = '12';
+		if(empty($page)){
+			$posisi = 0;
+			$page =1;
+		}else{
+			$posisi = ($page-1)*$batas;
+		}
+		$this->data['page'] = $page;
+		$this->data['posisi'] = $posisi;
+
+		$this->data['jpage'] = ceil($jdata/$batas);
+		$domain = domain();
+
+		$this->data['cat'] = $cat;
+		$this->data['id'] = $id;
+
+		$this->data['totalItem'] = $jdata;
+		$this->data['alias'] = $this->uri->segment(4);
+		$this->data['title_web'] = "List Items - ".$domain.'-'.$id;
+
+		$this->data['hasil'] = json_decode($konten, true);
+
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/product/product_all_by_cat.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+
+	}
+
 	public function alllistItem()
 	{
 		$id=$this->uri->segment(3);
@@ -68,11 +149,11 @@ class Product extends Web {
 		$this->data['posisi'] = $posisi;
 		$jdata =json_decode($konten2)->productCount;
 		$this->data['jpage'] = ceil($jdata/$batas);
-$domain = domain();
+		$domain = domain();
 
 		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
-		$this->data['title_web'] = "List Items - ".$domain.'-'.$id;
+		$this->data['title_web'] = $id.'-'.$domain;
 
 		$this->data['hasil'] = json_decode($konten, true);
 		$this->load->view('frontend/header',$this->data);
@@ -195,7 +276,7 @@ public function listItem()
 		$this->data['jpage'] = ceil($jdata/$batas);
 		$this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
-		$this->data['title_web'] = "List Items - ".$domain;
+		$this->data['title_web'] = $this->data['alias']."-".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
@@ -287,7 +368,7 @@ $home_domain = domain2();
 
 
 		//$this->load->view('frontend/test',$this->data);
-		$this->data['title_web'] = "Myacico.co.id - ".$home_domain;
+		$this->data['title_web'] = $this->data['hasil']['subName']."-".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/slide_show.php',$this->data);
@@ -298,18 +379,16 @@ $home_domain = domain2();
 
 	public function detail()
     {
-
-
 			$this->data['pro_id']=$this->uri->segment(3);
 			$pro_id=$this->uri->segment(3);
 			$api = "product/productlist/related/".$pro_id;
 			$url = api_base_url($api);
-
-
+      $api_rekom="product/productlist/recomendation/".$pro_id;
+      $url_rekom = api_base_url($api_rekom);
 			$konten21 = file_get_contents($url);
 
-	$this->data['dathome'] = json_decode($konten21, true);
-	  $hasil1 = json_decode($konten21, true);
+			$this->data['dathome'] = json_decode($konten21, true);
+	  	$hasil1 = json_decode($konten21, true);
 //die(print_r($this->data['dathome']));
 	if(isset($hasil1['imageurl'])){
 		$this->data['imageurl'] = $hasil1['imageurl'];
@@ -352,6 +431,9 @@ $home_domain = domain2();
 			$url_komen2 = api_base_url($api_komen2);
 			$context2 = stream_context_create($options2);
 			$konten2 = file_get_contents($url_komen2);
+//                        rekomendasi
+                        $konten_rekom = file_get_contents($url_rekom, false, $context);
+                        $this->data['rekom'] = json_decode($konten_rekom, true);
 			//e lalang
 
 			$this->data['komen']=$komen;
@@ -365,22 +447,29 @@ $home_domain = domain2();
 		 }
 
 
-		 /*
-							echo '<pre>';
-die(print_r($hasil['specification']));
+
+
+
+
 $i=0;
 foreach ($hasil['specification'] as $speck)
 {
+
+
 	 //$this->data['img'][$i]=$gmb;
 	 if(isset($speck)){
-$this->data['img'][$i] = $speck;
-	 }else{
-			 $this->data['img'][$i]=false;
-	 }
-	//print_r($this->data['img'.$i]);
-	 $i++;
-}*/
+        $this->data['specification'][$i] = $speck['attribute'];
+        $this->data['value'][$i] = $speck['value'];
 
+	 }else{
+			 $this->data['specification'][$i]='';
+	 }
+	//print_r($this->data['specification'][$i]);
+        //print_r($this->data['value'][$i]);
+	 $i++;
+
+}
+/*
 		 if(isset($hasil['specification'][0]['attribute'])){
 				$this->data['specification'] = $hasil['specification'][0]['attribute'];
 				$this->data['value'] = $hasil['specification'][0]['value'];
@@ -417,7 +506,7 @@ $this->data['img'][$i] = $speck;
 				$hasil['specification'][4]['attribute'] ='';
 					$hasil['specification'][4]['value'] ='';
 			}
-
+*/
 
 			$this->data['description'] = $hasil['description'];
 
@@ -425,13 +514,13 @@ $this->data['img'][$i] = $speck;
 			$this->data['discount'] = $hasil['discount'];
 			$this->data['highlight'] = $hasil['highlight'];
 			$this->data['sku'] = $hasil['sku'];
-
+                        $this->data['asap_stat'] = $hasil['istodayshipping'];
 			$this->data['isWishList']=$hasil['isWishList'];
 			$this->data['category'] = $hasil['category'];
 			$this->data['m_product_id'] = $hasil['m_product_id'];
 			$this->data['rate'] = $hasil['rate'];
 			$this->data['rating'] = $hasil['rating'];
-
+			$this->data['alias'] = $hasil['alias'];
 			$this->data['name'] = $hasil['name'];
 			$this->data['pricelist'] = $hasil['pricelist'];
 			//$this->data['sku'] = $hasil['sku'];
@@ -498,10 +587,10 @@ $this->data['img'][$i] = $speck;
 	$this->data['img3'] = $hasil['imageurl'][3];
        */
 		// akhir dari jika gambar tidak ada
-
+		
 
  		$home_domain = domain2();
-		$this->data['title_web'] = "Myacico.co.id - ".$home_domain;
+		$this->data['title_web'] = "-Belanja Online Murah, gratis pengiriman area jakarta"."-".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		if($hasil['isActive']=='Y'){
