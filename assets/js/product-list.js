@@ -4,6 +4,7 @@ var body = $("html, body");
 // $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 var namapotong = '';
 var ctrl= base_url+'/product/detail';
+var isFilterPriceActive = false;
 function currencyFormat (num) {
 	// return "Rp." + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
 	return	"Rp." +num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
@@ -28,7 +29,6 @@ for(var i=0;i<detail.length;i++) {
 // }
 
 $(document).ready(function() {
-	var isFilterPriceActive = false;
 
 	getListProduct();
 	getSidebar();
@@ -93,12 +93,12 @@ $(document).ready(function() {
 	}
 });
 
-function filterSystem(minPrice, maxPrice) {
-	$("#computers div.system").hide().filter(function () {
-		var price = parseInt($(this).data("price"), 10);
-		return price >= minPrice && price <= maxPrice;
-	}).show();
-}
+// function filterSystem(minPrice, maxPrice) {
+// 	$("#computers div.system").hide().filter(function () {
+// 		var price = parseInt($(this).data("price"), 10);
+// 		return price >= minPrice && price <= maxPrice;
+// 	}).show();
+// }
 
 function buildPage(total, page) {
 	// console.log('page: ', page);
@@ -269,7 +269,7 @@ function getSidebar() {
 					menu_body += `<div id="slider-container"></div>
 							<div class="row" style="margin-top: 5px">
 								<div class="col-xs-5">
-									<input name="contentMinAmount" id="priceMin" type="text" style="width: 100%">
+									<input name="contentMinAmount" class="txtFilterPrice" id="priceMin" type="text">
 								</div>
 
 								<div class="col-xs-2 text-center">
@@ -277,7 +277,7 @@ function getSidebar() {
 								</div>
 
 								<div class="col-xs-5">
-									<input name="contentMinAmount" id="priceMax" type="text" style="width: 100%">
+									<input name="contentMaxAmount" class="txtFilterPrice" id="priceMax" type="text">
 								</div>
 							</div>
 							
@@ -309,15 +309,15 @@ function getSidebar() {
 			max: priceMax,
 			values: [priceMin, priceMax],
 			create: function() {
-				$("#priceMin").val(priceMin);
-				$("#priceMax").val(priceMax);
+				$("#priceMin").val(formatMoney(priceMin));
+				$("#priceMax").val(formatMoney(priceMax));
 			},
 			slide: function (event, ui) {
 				var mi = ui.values[0];
 				var mx = ui.values[1];
-				$("#priceMin").val(mi);
-				$("#priceMax").val(mx);
-				filterSystem(mi, mx);
+				$("#priceMin").val(formatMoney(mi));
+				$("#priceMax").val(formatMoney(mx));
+				// filterSystem(mi, mx);
 			}
 		})
 	});
@@ -341,8 +341,8 @@ function doFilter() {
 	var urlOthers = '';
 
 	if (isFilterPriceActive) {
-		var from = $("#priceMin").val();
-		var to = $("#priceMax").val();
+		var from = $("#priceMin").val().split('.').join("");
+		var to = $("#priceMax").val().split('.').join("");
 		urlPrice = 'from=' + from + '&' + 'to=' + to + '&';
 	}
 
