@@ -11,7 +11,7 @@
 			<?php $this->load->view('frontend/modules/product/sidebar_left',$this->data); ?>
 		</div>
 		<div id="product-list" class="col-xs-9 view-list">
-			<div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px; margin-bottom:20px;'>
+			<div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px;'>
 				<div class="col-sm-6">
 					<div class="row">
 						<div class="col-sm-8">

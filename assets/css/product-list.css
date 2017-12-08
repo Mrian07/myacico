@@ -62,23 +62,19 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0;
 }
-.item-box, .item-1, .item-2, .item-3 {
-    box-sizing: border-box;
-    padding-left: 15px;
-    padding-right: 15px;
-}
 .item-box {
-    padding: 8px;
-    margin: 0 15px 10px;
+    padding: 15px 15px 0;
 }
 .view-grid .item-box {
     width: 25%;
     float: left;
-    border: 1px solid #ddd;
     margin-bottom: 10px;
     text-align: center;
 }
-.view-grid .item-box:hover {
+.view-grid .item-card {
+    border: 1px solid #ddd;
+}
+.view-grid .item-card:hover {
     box-shadow: 0 1px 8px rgba(99,99,99,.5);
 }
 .view-grid .product-detail {
