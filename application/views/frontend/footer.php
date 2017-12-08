@@ -8,17 +8,6 @@
 	<div class="container" style='margin-bottom:20px;'>
 		<center><font size='3'><b><?php echo $lang_f_moto; ?></font></b></center>
 
-		<!-- <div class='garansi'>
-			<ul>
-				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' /><br><br><b>Gratis Pengiriman</b><br>Kami akan mengirimkan pesanan anda secara cuma-cuma untuk area Jakarta</li>
-				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon2.png');?>' border='0' /><br><br><b>Keamanan Pembayaran</b><br>
-				Kami akan memastikan kerahasiaan informasi pembayaran Anda.</li>
-
-				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon3.png');?>' border='0' /><br><br><b>Kemudahan Transaksi</b><br>Anda bisa melakukan transaksi dengan mudah melalui berbagai metode pembayaran</li>
-				<li style='border-right:1px solid #dddddd'><img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' /><br><br><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</li>
-				<li><img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' /><br><br><b>Garansi Produk Terpercaya</b><br>Produk yang Anda beli dapat diservice di berbagai outlet terpercaya</li>
-			</ul>
-		</div> -->
 		<div style='margin-bottom:20px; margin-top:10px' align="center">
 			<div class="footer-box">
 				<img src='<?php echo base_url('images/general/f-icon1.png');?>' border='0' />
@@ -32,11 +21,6 @@
 				<img src='<?php echo base_url('images/general/f-icon3.png');?>' border='0' />
 				<?php echo $lang_f_guarantee3; ?>
 			</div>
-			<!-- <div class="footer-box2" >
-				<img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' style="padding-top:10px;" />
-				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</p>
-			</div> -->
-
 			<div class="footer-box">
 				<img src='<?php echo base_url('images/general/f-icon5.png');?>' border='0' />
 				<?php echo $lang_f_guarantee4; ?>
@@ -45,58 +29,7 @@
 				<img src='<?php echo base_url('images/general/f-icon4.png');?>'/>
 				<?php echo $lang_f_guarantee5; ?>
 			</div>
-			<!-- <div class="footer-box2" >
-				<img src='<?php echo base_url('images/general/f-icon4.png');?>' border='0' style="padding-top:10px;" />
-				<p><b>Layanan cepat</b><br>Customer service kami akan selalu cepat dan tanggap dalam memberikan informasi yang Anda butuhkan.</p>
-			</div> -->
 		</div>
-
-		<!-- <div class="row">
-			<div class="col-xs-2">
-				<b>Informasi</b><br>
-				<?php echo anchor('Pages/AboutUs','Tentang Kami', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('blog.myACICO.co.id','Blog myACICO.co.id', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('Pages/SyaratDnKetentuan','Syarat & Ketentuan', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Karir', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('Pages/kebijakanPrivasi','Kebajikan Privasi', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('Pages/hakCipta','Kebijakan Hak Cipta', array('class'=>'my-info')); ?>
-			</div>
-			<div class="col-xs-2">
-				<b>Bantuan</b><br>
-				<?php echo anchor('Pages/faq','G/Jaminan','Garansi Dan Jaminan', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('#','Status Pesanan', array('class'=>'my-info')); ?><br>
-				<?php echo anchor('Customer/contact','Hubungi Kami', array('class'=>'my-info')); ?>
-
-			</div>
-			<div class="col-xs-2">
-				<b>Ikuti Kami</b><br>
-				<div class='sos'>
-					<ul>
-						<li><a href="https://www.youtube.com/channel/UCT6wkP8xyhEgDZzrbuWBQRg"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
-					  <li><a class="active" href="https://www.facebook.com/MyacicoID/?ref=aymt_homepage_panel"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					  <li><a href="https://twitter.com/myacicoid"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					  <li><a href="https://www.instagram.com/myacico.id/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-xs-2">
-				<b>Email Newsletter</b><br>
-				Berlangganan untuk mendapatkan penawaran spesial dan berita dari myACICO.co.id<br>
-				<div class="input-group">
-					<input type="text" class="my-sub-field" name="x" placeholder="Search term...">
-					<span class="input-group-btn">
-						<button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button>
-					</span>
-				</div>
-			</div>
-			<div class="col-xs-2">
-				<b>Metode Pembayaran</b>
-			</div>
-			<div class="col-xs-2">
-				<b>Jasa Perngiriman</b>
-			</div>
-		</div>
-		<br><br> -->
 
 		<div class="row">
 			<div class="col-xs-3">

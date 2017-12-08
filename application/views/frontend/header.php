@@ -506,129 +506,129 @@
   }
 
 
-  // var app = angular.module("myApp", []);
-  //
-  // app.factory('$mycart', function() {
-  // 	var data = [];
-  // 	var saved_cart = document.cookie.split('cart=');
-  // 	if(saved_cart.length > 1){
-  // 		data = JSON.parse(saved_cart[1].split(';').shift());
-  // 	}
-  // 	return {data:data};
-  // });
-  //
-  // app.factory('toMoney', function() {
-  // 	return function(x){
-  // 		return 'Rp. '+(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
-  // 	}
-  // });
-	// app.controller('home1', function($scope, $http, $rootScope) {
-	// 		$scope.home = 'test'
-	// 		var regData = {
-	// 				url : 'https://api.myacico.co.id/myacico-service/home/topproductcategory',
-	// 				method : 'GET',
-	// 				headers: {'token' : '5402854820542'}
-	// 		}
-	// 		$scope.load = 'true'
-	// 		$http(regData).then(function(res) {
-  //
-	// 				$scope.list = res.data
-	// 				$rootScope.testGlobal = 'textnya'
-	// 				$scope.input.data = 'lalalalala'
-	// 				$scope.load = 'false'
-	// 		})
-	// 		$scope.tombol = function(i){
-	// 				console.log(i)
-	// 				$scope.cedua = i
-	// 		}
-	// 		$scope.tombol2 = function(){
-	// 				console.log($scope.input.data)
-	// 				$scope.list[0].name = $scope.input.data
-	// 				window.alerter()
-  //
-	// 		}
-	// 		$scope.input = {}
-	// 		$scope.postData = function(){
-  //
-	// 				var name = $scope.input.data
-  //
-	// 				var regData = {
-	// 						url : 'https://api.myacico.co.id/myacico-service/category/list',
-	// 						method : 'POST',
-	// 						data : {
-	// 								name : name
-	// 						},
-	// 						headers: {'token' : '5402854820542'}
-	// 				}
-	// 				console.log(regData)
-	// 				$http(regData).then(function(res) {
-	// 						console.log(res)
-	// 				})
-	// 		}
-  //
-	// })
-	// app.controller('home', function($scope, $http, $rootScope) {
-	// 		$scope.home = 'test'
-	// 		var regData = {
-	// 				url : 'http://api.myacico.co.id/myacico-service/category/list',
-	// 				method : 'GET',
-	// 				headers: {'token' : '5402854820542'}
-	// 		}
-	// 		$scope.load = 'true'
-	// 		$http(regData).then(function(res) {
-	// 				console.log(res)
-	// 				$scope.list = res.data
-	// 				$rootScope.testGlobal = 'textnya'
-	// 				// $scope.list[0].name = 'YOsi'
-	// 				//scope.harga = '34934100000'
-	// 				$scope.input.data = 'lalalalala'
-	// 				$scope.load = 'false'
-	// 		})
-	// 		$scope.tombol = function(i){
-	// 				console.log(i)
-	// 				$scope.cedua = i
-	// 		}
-	// 		$scope.tombol2 = function(){
-	// 				console.log($scope.input.data)
-	// 				$scope.list[0].name = $scope.input.data
-	// 				window.alerter()
-  //
-	// 		}
-	// 		$scope.input = {}
-	// 		$scope.postData = function(){
-  //
-	// 				var name = $scope.input.data
-  //
-	// 				var regData = {
-	// 						url : 'https://api.myacico.co.id/myacico-service/category/list',
-	// 						method : 'POST',
-	// 						data : {
-	// 								name : name
-	// 						},
-	// 						headers: {'token' : '5402854820542'}
-	// 				}
-	// 				console.log(regData)
-	// 				$http(regData).then(function(res) {
-	// 						console.log(res)
-	// 				})
-	// 		}
-  //
-	// })
-  // app.controller('cartCnt', function($scope, $mycart, toMoney){
-  // 	$scope.mycart = $mycart.data;
-  // 	$scope.del = function(i){
-  // 		if(confirm('Sure? '))$scope.mycart.splice(i, 1);
-  // 	}
-  // 	$scope.toMoney = toMoney;
-  // 	$scope.get_total = function(){
-  // 		var total = 0;
-  // 		$scope.mycart.forEach(function(c){
-  // 			total+=(c.price*c.quantity);
-  // 		});
-  // 		document.cookie = 'cart='+JSON.stringify($scope.mycart)+'; path='+base_path;
-  // 		return toMoney(total);
-  // 	}
-  // });
+  var app = angular.module("myApp", []);
+
+  app.factory('$mycart', function() {
+  	var data = [];
+  	var saved_cart = document.cookie.split('cart=');
+  	if(saved_cart.length > 1){
+  		data = JSON.parse(saved_cart[1].split(';').shift());
+  	}
+  	return {data:data};
+  });
+
+  app.factory('toMoney', function() {
+  	return function(x){
+  		return 'Rp. '+(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+  	}
+  });
+	app.controller('home1', function($scope, $http, $rootScope) {
+			$scope.home = 'test'
+			var regData = {
+					url : 'https://api.myacico.co.id/myacico-service/home/topproductcategory',
+					method : 'GET',
+					headers: {'token' : '5402854820542'}
+			}
+			$scope.load = 'true'
+			$http(regData).then(function(res) {
+
+					$scope.list = res.data
+					$rootScope.testGlobal = 'textnya'
+					$scope.input.data = 'lalalalala'
+					$scope.load = 'false'
+			})
+			$scope.tombol = function(i){
+					console.log(i)
+					$scope.cedua = i
+			}
+			$scope.tombol2 = function(){
+					console.log($scope.input.data)
+					$scope.list[0].name = $scope.input.data
+					window.alerter()
+
+			}
+			$scope.input = {}
+			$scope.postData = function(){
+
+					var name = $scope.input.data
+
+					var regData = {
+							url : 'https://api.myacico.co.id/myacico-service/category/list',
+							method : 'POST',
+							data : {
+									name : name
+							},
+							headers: {'token' : '5402854820542'}
+					}
+					console.log(regData)
+					$http(regData).then(function(res) {
+							console.log(res)
+					})
+			}
+
+	})
+	app.controller('home', function($scope, $http, $rootScope) {
+			$scope.home = 'test'
+			var regData = {
+					url : 'http://api.myacico.co.id/myacico-service/category/list',
+					method : 'GET',
+					headers: {'token' : '5402854820542'}
+			}
+			$scope.load = 'true'
+			$http(regData).then(function(res) {
+					console.log(res)
+					$scope.list = res.data
+					$rootScope.testGlobal = 'textnya'
+					// $scope.list[0].name = 'YOsi'
+					//scope.harga = '34934100000'
+					$scope.input.data = 'lalalalala'
+					$scope.load = 'false'
+			})
+			$scope.tombol = function(i){
+					console.log(i)
+					$scope.cedua = i
+			}
+			$scope.tombol2 = function(){
+					console.log($scope.input.data)
+					$scope.list[0].name = $scope.input.data
+					window.alerter()
+
+			}
+			$scope.input = {}
+			$scope.postData = function(){
+
+					var name = $scope.input.data
+
+					var regData = {
+							url : 'https://api.myacico.co.id/myacico-service/category/list',
+							method : 'POST',
+							data : {
+									name : name
+							},
+							headers: {'token' : '5402854820542'}
+					}
+					console.log(regData)
+					$http(regData).then(function(res) {
+							console.log(res)
+					})
+			}
+
+	})
+  app.controller('cartCnt', function($scope, $mycart, toMoney){
+  	$scope.mycart = $mycart.data;
+  	$scope.del = function(i){
+  		if(confirm('Sure? '))$scope.mycart.splice(i, 1);
+  	}
+  	$scope.toMoney = toMoney;
+  	$scope.get_total = function(){
+  		var total = 0;
+  		$scope.mycart.forEach(function(c){
+  			total+=(c.price*c.quantity);
+  		});
+  		document.cookie = 'cart='+JSON.stringify($scope.mycart)+'; path='+base_path;
+  		return toMoney(total);
+  	}
+  });
 
 <?php if(isset($user->name)){ ?>
 
