@@ -379,7 +379,7 @@ function pilihAlamat(id){
   $(".amount").html('-');
   var id = id.value;
   var url = '<?php echo site_url('checkout/pilihShip'); ?>'
-    
+
   if(id==''){
     $(".alamat").html('');
   }else{

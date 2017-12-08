@@ -454,6 +454,7 @@
 
 		</div>
     </div>
+
 <script>
 $(document).ready(function() {
 	$.ajax
@@ -472,8 +473,22 @@ if($("#txt_voucher").val() == '')
 }
 
 });
+//
+// function getKurir(id){
+//
+//   var url = '<?php echo site_url('checkout/selectKurir'); ?>'
+//   $.ajax
+//   ({
+//   url: url+'/?id='+id,
+//   success:function(html){
+//       $("#kurir").html(html);
+//     }
+//   });
+// }
 
 function delItemCart(id,img,name,idcart){
+	var id_kurir = '<?php echo $this->session->userdata('id_kurir');?>';
+	var ongkos_kurir_ori = '<?php echo $this->session->userdata('ongkos_kurir_ori');?>';
 	var apiurl = api_base_url + '/order/cart/deleteitem?idcartitem='+idcart;
 	$.confirm({
 		title: name,
@@ -490,17 +505,16 @@ function delItemCart(id,img,name,idcart){
 					headers:{ "token":token},
 					success:function(data){
 						totalCart();
-						$(".listItem").html("<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>")
+
+						pilihKurir2(id_kurir,ongkos_kurir_ori);
+
+						$(".listItem").html("<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>");
+
+
 					}
 				});
 
-				$.ajax
-				({
-				url: "<?php echo site_url('checkout/summaryDetail'); ?>",
-				success:function(html){
-						$(".listItem").html(html);
-					}
-				});
+
 
 
 			},
@@ -510,6 +524,29 @@ function delItemCart(id,img,name,idcart){
 		}
 
 	});
+}
+
+function pilihKurir2(id,amount){
+	var id = id;
+	var amount = amount;
+
+	var url = '<?php echo site_url('checkout/pilihKurir2'); ?>'
+	$.ajax
+	({
+	url: url+'/?id='+id+'&amount='+amount,
+	success:function(html){
+			$.ajax
+			({
+			url: "<?php echo site_url('checkout/summaryDetail'); ?>",
+			success:function(html){
+					$(".listItem").html(html);
+				}
+			});
+
+		}
+	});
+
+
 }
 
 function finish(){
