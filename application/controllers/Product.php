@@ -587,7 +587,7 @@ foreach ($hasil['specification'] as $speck)
 	$this->data['img3'] = $hasil['imageurl'][3];
        */
 		// akhir dari jika gambar tidak ada
-
+		// aaaaa
 
  		$home_domain = domain2();
 		$this->data['title_web'] = "-Belanja Online Murah, gratis pengiriman area jakarta"."-".$home_domain;
