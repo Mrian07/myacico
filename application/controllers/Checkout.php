@@ -71,7 +71,6 @@ class Checkout extends Web_private {
 			redirect('checkout/cart');
 		}
 
-		//payment
 		//Transfer
 		$api = "payment/myacicoaccount";
 		$url = api_base_url($api);

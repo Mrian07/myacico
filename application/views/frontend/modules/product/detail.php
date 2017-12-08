@@ -15,22 +15,17 @@
 }
 
 </style>
-        <!-- style="width: 100%!important position: absolute; width: 284px; top: -41.2038px; left: 0px;" -->
+
 <?php
 $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-
-      //$text = str_replace("/[^A-Za-z0-9\-\']/", '', $url_share);
-        $string = str_replace('(', '_', $url_share);
-        $string = str_replace(')', '_', $string);
-        $string = str_replace('[', '_', $string);
-        $string = str_replace(']', '_', $string);
-     // die(print_r($string));
+$string = str_replace('(', '_', $url_share);
+$string = str_replace(')', '_', $string);
+$string = str_replace('[', '_', $string);
+$string = str_replace(']', '_', $string);
 ?>
 
-      <?php
-          $totalRate= $rating['star1']+$rating['star2']+$rating['star3']+$rating['star4']+$rating['star5'];
-      ?>
-      <!--Star-->
+<?php  $totalRate= $rating['star1']+$rating['star2']+$rating['star3']+$rating['star4']+$rating['star5']; ?>
+<!--Star-->
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 
@@ -51,15 +46,11 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     <i class="fa fa-angle-right" aria-hidden="true"></i> DETAIL PRODUCT
 </div>
 
-
-
-
 <div ng-controller="detailCnt">
 
 <div class="row">
 
   <div class="col-sm-3">
-<!-- style="width: 100% position: absolute; width: 284px; top: -41.2038px; left: 0px;" -->
     <?php if (isset($img[0])) { ?>
       <img id="xzoom-magnific" class="xzoom"
 
@@ -92,7 +83,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     <h5 style="margin-bottom: 0px;">
       <?php echo $name; ?>
     </h5>
-<!--    <span> Dijual Oleh : </span> <span style="color:red"> myACICO </span>-->
+
     <div class="ratting-container">
       <div id="rateYo" class="detail-prod-rating"></div><span class="ratting-text">(<?php echo$totalRate;?>) <a href=""><i class="fa fa-pencil" aria-hidden="true"></i> Tulis ulasan</a></span>
 
@@ -111,10 +102,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         else
         {
             $asap='';
-        $asap1 = "<a style='height:20px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."'class='test01'></a>";
-           $asap_bawah= "Belanja online murah, gratis pengiriman area Jakarta*<br>Pilih barang dengan layanan" .$asap1."Untuk pengiriman <span style='color:red;'>Pasti 2 hari</span>";
+            $asap1 = "<a style='height:20px; margin-left:5px;' target='_blank' href='".base_url('customer/asap')."'><img src='".base_url("images/general/asap.png")."'class='test01'></a>";
+            $asap_bawah= "Belanja online murah, gratis pengiriman area Jakarta*<br>Pilih barang dengan layanan" .$asap1."Untuk pengiriman <span style='color:red;'>Pasti 2 hari</span>";
 
-//            $asap_bawah ='Belanja online murah, gratis pengiriman area Jakarta*';
         }
         if($specialPrice == 0 ){
             echo "
@@ -152,17 +142,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             width: 55px;
           }
           </style>
-          <!--<td>Ingin barang anda sampai dalam <span style="color:red;">2 hari</span>?<br>Pilih Layanan <a target="_blank" href="<?php echo base_url('customer/asap');?>"><img src="<?php echo base_url('images/general/asap.png');?>" class="test01"> </a>bagi anda yang tinggal di jakarta </td>-->
+
   <td> <?php echo$asap_bawah;?>    </td>
     </tr>
-        <!-- <tr>
-          <td>Warna:</td>
-          <td><div class="opt-color black"></div></td>
-        </tr>
-        <tr>
-          <td>Kapasitas:</td>
-          <td><span class="capacity">128GB</span></td>
-        </tr> -->
         <tr>
           <td>Product Highlight:</td>
           <td class="hook-clear-ul"><?php echo $highlight;  ?></td>
@@ -181,13 +163,6 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       </tbody>
     </table>
 
-    <!-- <table>
-      <tr>
-        <td style="padding:0px;">
-          <font size="0"><b>Produk Highlight:</b> <?php echo $highlight;  ?></font>
-        </td>
-      </tr>
-    </table> -->
   </div>
 
   <div class="col-sm-3">
@@ -210,16 +185,6 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       <div style="text-align: left;">
         <b>Pengembalian: </b>jika barang yang dikirim mengalami kerusakan atau tidak sesuai deskripsi, Anda dapat mengembalikan barang tersebut kepada kami dalam jangka waktu 7 hari
       </div>
-<!--      <div>
-        <b>Cicilan: </b>Cicilan 0% mulai dari Rp 431,250 / bulan
-      </div>
-      <div>
-        <select name="" id="">
-          <option value="12">12</option>
-          <option value="24">24</option>
-        </select>
-        <a href="">3 bank</a>
-      </div>-->
       <div>
         <b>Pembayaran: </b><br>
         <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/p-visa-small.jpg">
@@ -240,7 +205,6 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           $nJml++; }?>
         </select>
 
-        <!-- <input type='number' class='form-control pull-left' id='jmlItem' style='width: 70px; margin-left: 5px; height: 30px;' value='1' min='1'/> -->
         <div class="clearfix"></div>
       </div>
 
@@ -285,39 +249,6 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
 
 <script src="jquery.js"></script>
-
-<!--			<div class="ratings" style='text-align: center; color:#d98c13;'>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star-empty"></span>
-    </div>-->
-
-                          <br>
-
-    <!-- <div class="row lead">
-       <center>
-
-      <div id="hearts-existing" class="starrr" data-rating='4'></div>
-
-      You gave a rating of <span id="count-existing">4</span> heart(s)
-      </center>
-
-    </div>
-
-  </div>
-  <div class="col-sm-3" style='font-size:20px; text-align: center;'>
-  Bagikan <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-pinterest" aria-hidden="true"></i>
-  <div class='detail-add-wishlist'>
-    <div class="btn-group">Quantity: <input type='number' class='form-control' id='jmlItem' style='width:70px' value='1' min='1'></div><br>
-    <div class="btnaddcart">
-      <button class="dropbtnaddcar" onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img;?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')">ADD TO CART</button>
-    </div>
-
-    </div> -->
-
-
 
 
   </div>
@@ -364,8 +295,6 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     </tr>
 
 
-         <!-- -->
-
      <?php
      $loop=0;
         if (isset($specification[1])) {
@@ -390,10 +319,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
   </table>
 
   </div>
-<!--          <div id="menu3" class="tab-pane fade">
 
-  <p><?php //echo $highlight;  ?></p>
-  </div>-->
            <div id="menu3" class="tab-pane fade">
 
   <p><?php $ik=0;
@@ -413,7 +339,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                       var no = '<?php echo $no; ?>'
                       var rateV = '<?php echo $coment_rate; ?>';
                       $('#rateKoms'+no).rateYo({
-                              // rating: $coment_rate,
+
          starWidth: "20px",											rating: rateV,
                               readOnly: true
                         });
@@ -464,7 +390,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         }
         ?>
 
-      <!-- <div class="item" align="center"> -->
+
     <div class="item" align="center">
 
       <a style="font-size:10px; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='#0066c0'" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
@@ -475,7 +401,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
        <p style="height:50px; word-wrap: normal; line-height: 16px;">
-            <!--<a style="font-size:10px; text-align: justify; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='#c45500'" onMouseOut="this.style.color='#0066c0'" href="<?php // echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">-->
+
           <?php
           $str1 = $itemslide2['name'];
           $str2 = substr($str1, 0, 56);
@@ -483,7 +409,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           if($str <= 55){
           echo $itemslide2['name'];
           }else{
-            // $str = substr($str, 0, 49);
+
             echo $str2."....";
           }
           ?>
@@ -540,18 +466,18 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           $active='';
         }
         ?>
-      <!-- <div class="item" align="center"> -->
+
     <div class="item" align="center">
 
       <a style="font-size:10px; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='#0066c0'" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
         <?php if($itemslide2['imageurl']){?>
         <img src="<?php echo $itemslide2['imageurl']; ?>" style='height:100px;'>
-               <!--</a>-->
+
         <?php }else{
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
        <p style="height:50px; word-wrap: normal; line-height: 16px;">
-            <!--<a style="font-size:10px; text-align: justify; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='#c45500'" onMouseOut="this.style.color='#0066c0'" href="<?php // echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">-->
+
           <?php
           $str1 = $itemslide2['name'];
           $str2 = substr($str1, 0, 56);
@@ -559,7 +485,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           if($str <= 55){
           echo $itemslide2['name'];
           }else{
-            // $str = substr($str, 0, 49);
+
             echo $str2."....";
           }
           ?>
@@ -577,7 +503,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                     readOnly: true,
                     normalFill: "#dddddd"
                 });
-                //console.log(rateV);
+
               });
 
         </script>
@@ -615,18 +541,18 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           $active='';
         }
         ?>
-      <!-- <div class="item" align="center"> -->
+
     <div class="item" align="center">
 
       <a style="font-size:10px; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='#0066c0'" href="<?php echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">
         <?php if($itemslide2['imageurl']){?>
         <img src="<?php echo $itemslide2['imageurl']; ?>" style='height:100px;'>
-               <!--</a>-->
+
         <?php }else{
           echo"<img src='".base_url('images/general/noimage.png')."' style='height:100px;' border='0'>";
         } ?>
        <p style="height:50px; word-wrap: normal; line-height: 16px;">
-            <!--<a style="font-size:10px; text-align: justify; width: auto; font-weight: bold; color: #0066c0;" onMouseOver="this.style.color='#c45500'" onMouseOut="this.style.color='#0066c0'" href="<?php // echo base_url('product/detail/'. $itemslide2['m_product_id'].'/'. $itemslide2['alias']);?>">-->
+
           <?php
           $str1 = $itemslide2['name'];
           $str2 = substr($str1, 0, 56);
@@ -634,7 +560,6 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
           if($str <= 55){
           echo $itemslide2['name'];
           }else{
-            // $str = substr($str, 0, 49);
             echo $str2."....";
           }
           ?>
@@ -659,7 +584,6 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                     readOnly: true,
                     normalFill: "#dddddd"
                 });
-                //console.log(rateV);
               });
 
         </script>
@@ -680,7 +604,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
   <?php $no++;$n++;  } ?>
 </div>
 </div>
-<!--</div>-->
+
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/foundation.min.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/productpopup/js/setup.js');?>"></script>
 
@@ -690,20 +614,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
     <!-- Modal content-->
     <div class="modal-content" style="width:680px">
-      <!-- <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div> -->
       <div class="modal-body" >
-
-
         <?php $this->load->view('frontend/modules/cart/modal_cart.php',$this->data); ?>
-
-
       </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div> -->
     </div>
 
   </div>
@@ -714,13 +627,9 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 var jdata1 = "<?php echo$jmlslide1;?>";
 var jdata2 = "<?php echo$jmlslide2;?>";
 var jdata3 = "<?php echo$jmlslide3;?>";
-
-   var rate = "<?php  echo $rate;?>";
-   var star_rate = "<?php  echo $ik;?>";
-    var idss = "<?php echo $local_strg;?>";
-
-
-    console.log('asdasd',rate)
+var rate = "<?php  echo $rate;?>";
+var star_rate = "<?php  echo $ik;?>";
+var idss = "<?php echo $local_strg;?>";
 
 if(jdata1<10)
 {
@@ -750,19 +659,9 @@ if(jdata3<1)
            var result = $.grep(detail, function(e){ return e.m_product_id == data['m_product_id']; });
            if (result.length == 0) {
                 detail.push(data)
-                // not found
               }
 
-     /* for(var i=0;i<detail.length;i++)
-{   console.log(detail[i].m_product_id);
-    console.log("testst",data['m_product_id']);
-    if(detail[i].m_product_id == data['m_product_id'])
-    {
-        console.log("masuk");
-         detail.push(data)
 
-    }
-}*/
        }
       localStorage.setItem('product_detail', JSON.stringify(detail));
 
@@ -770,15 +669,7 @@ if(jdata3<1)
 // Retrieve the object from storage m_product_id
 var retrievedObject = localStorage.getItem('product_detail');
 
-//console.log('retrievedObject: ', JSON.parse(retrievedObject));
-
   }})
-
-//localStorage.setItem('product_detail', JSON.stringify(testObject));
-// Retrieve the object from storage
-//var retrievedObject = localStorage.getItem('testObject');
-
-//console.log('retrievedObject: ', JSON.parse(testObject));
 
   $(function () {
     $("#rateYo").rateYo({
@@ -790,7 +681,6 @@ var retrievedObject = localStorage.getItem('product_detail');
   });
 
 
-// Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
 
 (function($, window) {
@@ -930,7 +820,7 @@ $.ajax
           autoClose: 'close|3000',
           buttons: {
             close: function () {
-              //$.alert('action is canceled');
+
             }
           },
           closeIcon: true,
@@ -943,7 +833,7 @@ $.ajax
           autoClose: 'close|3000',
           buttons: {
             close: function () {
-              //$.alert('action is canceled');
+
             }
           },
           closeIcon: true,
@@ -955,14 +845,14 @@ $.ajax
 
 }else{
 $.ajax({
-              type: "POST",
-  url: "<?php echo site_url('customer/signin'); ?>",
-  data: dataString,
-              success:function(data){
-                  console.log('oooo',data);
+      type: "POST",
+      url: "<?php echo site_url('customer/signin'); ?>",
+      data: dataString,
+      success:function(data){
+          console.log('oooo',data);
 
-               window.location.replace(base_url+"customer/signin/"+id);
-              }
+       window.location.replace(base_url+"customer/signin/"+id);
+      }
 
       });
 }
@@ -972,7 +862,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 var jmlItem = $('#jmlItem').val();
 var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
-// dsasdadas
+
 if(jmlItem<=0){
   $.dialog({
     title: 'Alert!',
@@ -980,7 +870,7 @@ if(jmlItem<=0){
     autoClose: 'close|3000',
     buttons: {
       close: function () {
-        //$.alert('action is canceled');
+
       }
     },
     closeIcon: true,

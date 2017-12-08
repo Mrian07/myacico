@@ -91,7 +91,7 @@
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
                     //display user data
-                    //console.log(response.status.email)
+
 
                     getFbUserData();
                 }
@@ -123,29 +123,23 @@
         function getFbUserData(){
             FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
             function (response) {
-                //console.log(response)
+
                 var umail=response.email;
                 var ufname=response.first_name;
                 var ulname=response.last_name;
                 var uname=ufname+" "+ulname;
-                //console.log(uname)
+
                 $("#email").val(umail);
                 $("#name").val(uname);
                 window.location.assign('#/app/login/'+response.email)
-                // document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
-                // document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
-                // document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
-                // document.getElementById('userData').innerHTML = '<p><b>FB ID:</b> '+response.id+'</p><p><b>Name:</b> '+response.first_name+' '+response.last_name+'</p><p><b>Email:</b> '+response.email+'</p><p><b>Gender:</b> '+response.gender+'</p><p><b>Locale:</b> '+response.locale+'</p><p><b>Picture:</b> <img src="'+response.picture.data.url+'"/></p><p><b>FB Profile:</b> <a target="_blank" href="'+response.link+'">click to view profile</a></p>';
+
             });
         }
 
         // Logout from facebook
         function fbLogout() {
             FB.logout(function() {
-                // document.getElementById('fbLink').setAttribute("onclick","fbLogin()");
-                // document.getElementById('fbLink').innerHTML = '<img src="fblogin.png"/>';
-                // document.getElementById('userData').innerHTML = '';
-                // document.getElementById('status').innerHTML = 'You have successfully logout from Facebook.';
+
             });
         }
         </script>
@@ -193,7 +187,7 @@ margin-top: -11px;
 		<?php echo $lang_daftar_info_point2?>
 	</p>
 	<p class="p1">
-	<?php echo $lang_daftar_info2;?>	
+	<?php echo $lang_daftar_info2;?>
 	</p>
 		</div>
 	  <div class="col-sm-6">
@@ -260,7 +254,7 @@ $(document).ready(function() {
     data.password = password;
 
 var apiurl = '<?php echo $baseApiUrl2; ?>'+'/create';
-		console.log('ini apa ya', apiurl)
+
 		function validateForm() {
 
 
@@ -304,9 +298,7 @@ if(name==''){
 		    var success = function(r){
       $('#spinner_img').hide();
       $('#submit_btn').val('Daftar').removeClass('disabled');
-      // console.log('OK:', r);
 			if(r.status == 0){
-         // alert(r.message);
           $.alert({
 				title: 'Alert!',
 				content: '<?php echo $lang_msg_regis2;?> '+r.message,
@@ -328,77 +320,5 @@ if(name==''){
 
   });
   });
-// var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
-
-// var apiurl = baseApiUrl + '/create';
-// var success = function(r){
-// 	console.log('OK:', r);
-// 	if(r.status == 1) return location.href = '<?php // echo base_url('customer/successCreate/'); ?>'+$("#email").val();
-// 	$('#spinner_img').hide();
-// 	$('#submit_btn').val('Kirim').removeClass('disabled');
-// 	$.alert({
-// 		title: 'Alert!',
-// 		content: r.message
-// 	});
-// };
-
-// var error = function(er){
-//   $('#spinner_img').hide();
-//   $('#submit_btn').val('Kirim').removeClass('disabled');
-//   console.log('OK:', er);
-//   $.alert({
-//     title: 'Alert!',
-//     content: 'koneksi tidak berhasil, silahkan coba lagi!',
-//   });
-// };
-
-
-// 	$("form").submit(function(e){
-// 	    e.preventDefault();
-// 		var apiurl = baseApiUrl + '/create';
-// 		var data = $(this).serialize();
-
-// 		var nama = $("#nama").val();
-// 		var email = $("#email").val();
-// 		var password = $("#password").val();
-// 		var password2 = $("#password2").val();
-
-
-// 		if(nama==''){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'nama tidak boleh kosong!',
-// 			});
-// 		}else
-// 		if(email==''){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'email tidak boleh kosong!',
-// 			});
-// 		}else
-// 		if(password.length < 7){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'password minimal 7 karakter!',
-// 			});
-// 		}else
-// 		if(password != password2){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'Password tidak sama!',
-// 			});
-// 		}else{
-// 			$('#spinner_img').show();
-// 			$('#submit_btn').val('loading...').addClass('disabled');
-// 			//$.post( apiurl, data, success, "json" );
-// 			//$.ajax({ type:"POST", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
-// 			 //$.ajax({ type:"POST", contentType: "application/json", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
-// 			  $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, timeout: 30000 });
-// 		}
-
-// 		console.log('data',data);
-
-// 	});
-
 
 </script>

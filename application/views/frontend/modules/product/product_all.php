@@ -6,7 +6,7 @@
 	<div class='my-bg-title'>
 		<?php
 			if(isset($pro)){
-				echo '<i class="fa fa-angle-right" aria-hidden="true"></i> HASIL PENCARIAN UNTUK <b>' . $pro . '</b>';
+				echo '<i class="fa fa-angle-right" aria-hidden="true"></i> HASIL PENCARIAN UNTUK <b>' . urldecode($pro) . '</b>';
 			}
 
 			if(isset($id_cat)){
