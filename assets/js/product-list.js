@@ -155,11 +155,11 @@ function extract_list(data, i){
 	}
 
 	if (data.isWishList == 'Y') {
-		addWishlistComponent += '<a class="btn btn-warning btn-add-to-whishlist whishlist-active" onClick="addWishlist(' + data.m_product_id + ',' + data.name + ',' + data.imageurl + ')">'
+		addWishlistComponent += '<a class="btn btn-warning btn-add-to-whishlist whishlist-active" onClick="addWishlist(\'' + data.m_product_id + '\',\'' + data.name + '\',\'' + data.imageurl + '\')">'
 				+ '<i class="fa fa-heart"	style="font-size:15px;color:grey;"	aria-hidden="true"></i>Wishlist'
 			+ '</a>'
 	} else {
-		addWishlistComponent += '<a class="btn-add-to-whishlist" onClick="addWishlist(' + data.m_product_id + ',' + data.name + ',' + data.imageurl + ')">Add to Wishlist</a>'
+		addWishlistComponent += '<a class="btn-add-to-whishlist" onClick="addWishlist(\'' + data.m_product_id + '\',\'' + data.name + '\',\'' + data.imageurl + '\')">Add to Wishlist</a>'
 	}
 
 	$('#productlist').append(
@@ -187,7 +187,7 @@ function extract_list(data, i){
 
 						+ '<div>'
 							+ '<div>'
-								+ '<button type="button" class="btn btn-danger btn-add-to-cart" onClick="addToCart(' + data.m_product_id + ',' + data.pricelist + ',' + data.imageurl + ',' + data.name + ',' + data.stock + ',' + data.weight + ')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>'
+								+ '<button type="button" class="btn btn-danger btn-add-to-cart" onclick="addToCart(\'' + data.m_product_id + '\',\'' + data.pricelist + '\',\'' + data.imageurl + '\',\'' + data.name + '\',\'' + data.stock + '\',\'' + data.weight + '\')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>'
 							+ '</div>'
 							+ '<div>'
 								+ addWishlistComponent
@@ -431,20 +431,17 @@ function formatMoney(num) {
 	return rupiah;
 }
 
-var token = document.cookie.split('x-auth=')[1].split(';').shift();
-
 function addWishlist(id,name,imageurl){
 	var dataString = 'id='+id;
 
 	if(token){
 
-	$.ajax
-		({
+	$.ajax({
 		type: "POST",
-		url: api_base_url +'/product/addWishlist',
+		url: site_url +'product/addWishlist',
 		data: dataString,
 		success:function(data){
-
+				console.log('data: ', data);
 				if(data==1){
 
 					$.confirm({
@@ -487,7 +484,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 	var jmlItem = $('#jmlItem'+m_product_id).val();
 	var dataString = 'm_product_id='+ m_product_id+'&pricelist='+ pricelist+'&imageurl='+ imageurl+'&name='+ name+'&stock='+stock+'&jmlItem='+jmlItem+'&weight='+weight;
-
+	console.log('dataString: ', dataString)
 	if(jmlItem<=0){
 		$.dialog({
 			title: 'Alert!',
@@ -503,9 +500,9 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 	}else{
 
-		var cookie = document.cookie.split('x-auth=');
-		if(cookie.length > 1){
-			var token = cookie[1].split(';').shift();
+		// var cookie = document.cookie.split('x-auth=');
+		if(token){
+			// var token = cookie[1].split(';').shift();
 			var apiurl = api_base_url +'/order/cart/additem';
 			var m_product_id = m_product_id;
 			var qty = jmlItem;
@@ -537,10 +534,9 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 		}else{
 
-			$.ajax
-			({
+			$.ajax({
 			type: "POST",
-			url: api_base_url +'/cart/addToCart',
+			url: site_url +'cart/addToCart',
 			data: dataString,
 			success:function(data){
 

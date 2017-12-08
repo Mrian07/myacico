@@ -122,6 +122,10 @@ input[type=number]::-webkit-outer-spin-button {
     animation: Gradient 0.8s ease infinite;
 }
 
+#product-list-unready {
+    margin-top: 20px;
+}
+
 #product-list-unready .img-container-unready,
 #product-list-unready .title-unready,
 #product-list-unready .highlight-unready li,
