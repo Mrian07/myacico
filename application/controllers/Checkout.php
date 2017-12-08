@@ -23,6 +23,12 @@ class Checkout extends Web_private {
 
 	public function summary()
 	{
+
+		if($this->session->userdata('name_kurir')==''){
+			redirect('checkout/cart');
+			die();
+		}
+
 		/*s: terbaru*/
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
@@ -41,12 +47,12 @@ class Checkout extends Web_private {
 		$hasil = json_decode($konten, true);
 
 		//Data Billing
+		$this->data['billing_address_id'] ='';
 		foreach($hasil as $items){
-		$this->data['billing_address_id'] = $items['id'];
+			$this->data['billing_address_id'] = $items['id'];
 		}
-
+		$this->data['shipping_address_id'] ='';
 		$get_shipping = get_cookie('shipping_address_id');
-
 		if($get_shipping)
 		{
 
@@ -172,7 +178,6 @@ class Checkout extends Web_private {
 
 	public function cart()
 	{
-
 		//Data Billing akan menjadi data shipping
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
@@ -196,7 +201,6 @@ class Checkout extends Web_private {
 		$this->data['hasil_ship'] = json_decode($kontenShip, true);
 
 		$hasil_ship = json_decode($kontenShip, true);
-//echo"<pre>"; print_r($hasil_ship);
     // Shipping Address
 		$get_shipping ='';
 		$get_shipping = get_cookie('shipping_address_id');
@@ -276,11 +280,8 @@ class Checkout extends Web_private {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/modules/cart/cart.php',$this->data);
-
 		$this->load->view('frontend/modules/cart/cart_by_ci.php',$this->data);
 		// $this->load->view('frontend/modules/cart/cart_by_token.php',$this->data);
-
-
 		$this->load->view('frontend/footer',$this->data);
 	}
 
@@ -317,6 +318,7 @@ class Checkout extends Web_private {
 
 		$data = array(
 			'id_kurir' => $id_kurir,
+			'ongkos_kurir_ori' => $ongkos_kurir,
 			'ongkos_kurir' => $total_ongkir,
 			'name_kurir' => $name_kurir,
 		);
@@ -327,12 +329,39 @@ class Checkout extends Web_private {
 		//redirect('checkout/cart');
 	}
 
+	public function pilihKurir2() {
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+		$api = "order/cart/detail";
+		$url = api_base_url($api);
+
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+
+		$context = stream_context_create($options);
+		$konten = file_get_contents($url, false, $context);
+		$hasil = json_decode($konten, true);
+		$all = 0;
+		foreach($hasil as $data){
+				$all += $data['totalWeight'];
+		}
+
+		$id_kurir = $_GET['id'];
+		$ongkos_kurir = $_GET['amount'];
+
+		$total_ongkir = $ongkos_kurir * $all;
+
+		$data = array(
+			'ongkos_kurir' => $total_ongkir,
+		);
+		$this->session->set_userdata($data);
+		if(isset($total_ongkir)){echo money($total_ongkir);}else{echo"0";}
+	}
+
 	public function pilihPaket() {
-		/*
-		myacico = 111
-		jne = 1000002
-		ninja = 1000003
-		*/
 		$id_kurir = $_GET['id'];
 		$ongkos_kurir = $_GET['amount'];
 		$name_kurir = $_GET['name'];
