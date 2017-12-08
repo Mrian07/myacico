@@ -95,8 +95,7 @@ $(document).ready(function() {
 
       var captcha = <?php echo  strtolower($this->session->userdata('mycaptcha'));?>;
       var secutity_code = $("#secutity_code").val();
-      console.log('asdasd',captcha);
-      console.log('testvar2', secutity_code);
+      
 		data.nama = nama;
     data.email = email;
     data.issue = issue;
@@ -182,129 +181,7 @@ $(document).ready(function() {
   });
 
   });
-// var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
-
-// var apiurl = baseApiUrl + '/create';
-// var success = function(r){
-// 	console.log('OK:', r);
-// 	if(r.status == 1) return location.href = '<?php echo base_url('customer/successCreate/'); ?>'+$("#email").val();
-// 	$('#spinner_img').hide();
-// 	$('#submit_btn').val('Kirim').removeClass('disabled');
-// 	$.alert({
-// 		title: 'Alert!',
-// 		content: r.message
-// 	});
-// };
-
-// var error = function(er){
-//   $('#spinner_img').hide();
-//   $('#submit_btn').val('Kirim').removeClass('disabled');
-//   console.log('OK:', er);
-//   $.alert({
-//     title: 'Alert!',
-//     content: 'koneksi tidak berhasil, silahkan coba lagi!',
-//   });
-// };
-
-
-// 	$("form").submit(function(e){
-// 	    e.preventDefault();
-// 		var apiurl = baseApiUrl + '/create';
-// 		var data = $(this).serialize();
-
-// 		var nama = $("#nama").val();
-// 		var email = $("#email").val();
-// 		var password = $("#password").val();
-// 		var password2 = $("#password2").val();
-
-
-// 		if(nama==''){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'nama tidak boleh kosong!',
-// 			});
-// 		}else
-// 		if(email==''){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'email tidak boleh kosong!',
-// 			});
-// 		}else
-// 		if(password.length < 7){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'password minimal 7 karakter!',
-// 			});
-// 		}else
-// 		if(password != password2){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'Password tidak sama!',
-// 			});
-// 		}else{
-// 			$('#spinner_img').show();
-// 			$('#submit_btn').val('loading...').addClass('disabled');
-// 			//$.post( apiurl, data, success, "json" );
-// 			//$.ajax({ type:"POST", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
-// 			 //$.ajax({ type:"POST", contentType: "application/json", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
-// 			  $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, timeout: 30000 });
-// 		}
-
-// 		console.log('data',data);
-
-// 	});
 
 
 </script>
 
-<!--
-<script type="text/javascript">
-
-$(document).ready(function() {
-
-	$("form").submit(function(e){
-		e.preventDefault();
-		// do validation
-		var form_ok = true;
-			$('.mandatory').each(function(){
-			if($(this).val()==''){
-			$.alert({title:'Alert', content: $(this).prev().text()+ ' tidak boleh kosong!'});
-			// onContentReady: function(){$(this).focus();}
-			//$(this).val().focus();
-			form_ok =false;
-			return false;
-			}
-		});
-		if(form_ok==false) return false;
-
-		$('#spinner_img').show();
-		$('#submit_btn').val('Loading...').addClass('disabled');
-
-		/*var nama=$('#nama').val();
-		var email=$('#email').val();
-		var keperluan=$('#keperluan').val();
-		var pesan=$('#pesan').val();*/
-		var data = $(this).serialize();
-		var url = "<?php //  echo site_url('customer/prosesContact'); ?>";
-		var success = function(html)
-		{
-			if(html=='gagal'){
-				$.alert({title:'Alert', content: ' Pesan gagal terkirim silakan coba kembali!'});
-				$('#spinner_img').hide();
-				$('#submit_btn').val('Kirim').removeClass('disabled');
-				$('.mandatory').prop('disabled', false);
-			}else if(html=='gagal_captcha'){
-				$.alert({title:'Alert', content: ' Security Code yang Anda masukan salah !'});
-				$('#spinner_img').hide();
-				$('#submit_btn').val('Kirim').removeClass('disabled');
-				$('.mandatory').prop('disabled', false);
-			}else{
-				location.href="<?php // echo site_url('customer/messageSent'); ?>";
-			}
-		}
-
-		$.post( url, data, success);
-		$('.mandatory').prop('disabled', true);
-  });
-});
-</script> -->
