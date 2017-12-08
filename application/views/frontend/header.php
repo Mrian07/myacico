@@ -79,9 +79,6 @@
 			// var login_base_url_api = 'acc.myacico.co.id/myacico-service';
 			var adduser = 'http://acc.myacico.co.id/myacico-account/account/';
 
-			//
-			//var api_base_url2 = <?php echo $baseApiUrl; ?>;
-			//var api_base_url = 'http://myacico.net:8080/myacico-service/api';
 			var api_base_url = "<?php echo $baseApiUrl; ?>";
 			var token;
 
@@ -163,8 +160,7 @@
 								 <div class="dropdown-profile">
 
 								 <div class="col-xs-4" style='margin-top:5px; text-align: right'>
-									   <!-- <div class="buktiTrans"></div> -->
-										 <!-- <?php  echo " <img src='$myavatar' width='25' border='0'>"; ?> -->
+
 											<?php
 											if(isset($_COOKIE['x-auth'])){
 									  		   echo anchor('account/avatar', "<img src='$myavatar' width='25' border='0'>");
@@ -172,7 +168,6 @@
 											 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='25' border='0'>
 											<?php } ?>
 
-									 <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
 								 </div>
 								 <div class="col-xs-8" style='font-size:10px; text-align: left; color:#4d4d4d; padding-left:0px;'>
 									  <?php if(isset($user)){ ?>
@@ -215,20 +210,6 @@
 											 <?php $this->load->view('frontend/modules/account/profile_menu.php'); ?>
 											</div>
 
-										 <!-- <?php if(isset($user)){ ?>
-
-					 								 	<b><font color='red'><?php echo anchor('account', 'Account & List', array('class'=>'btn-nav-red'));?></font></b>
-					 									 <div class="dropdown-profile-content" style='padding:10px;'>
-					 										<?php $this->load->view('frontend/modules/account/profile_menu.php'); ?>
-					 									 </div>
-
-
-										 <?php }else{ ?>
-
-
-
-											 <b><font color='red'><?php echo anchor('customer/signIn','Log in', array('class'=>'btn-nav-red')); ?></font></b> / <b><font color='red'><?php echo anchor('customer/create',$lang_sign, array('class'=>'btn-nav-black')); ?></font></b>
-										 <?php } ?> -->
 									 </div>
 								 </div>
 
@@ -265,7 +246,7 @@
 
       <div class='my-hdr2'>
   			<div class='myserach' ng-app="myApps" style='margin-top:8px'>
-  				<!-- <div ng-controller = "searchCtrl"> -->
+
 					<div class="input-group">
   					<div class="input-group-btn search-panel">
   						<button type="button" class="dropdown-toggle my-search" data-toggle="dropdown">
@@ -276,7 +257,6 @@
 						<li id="search_concept2"  id="search_param"><a href='#all'>All Categories</a></li>
 
   							<?php
-								// $this->session->unset_userdata('id_main_src');
 
 								 foreach($catsearch as $datacat){
 									 if($lang=='en'){
@@ -300,14 +280,6 @@
 
 	 								}
 
-
-
-									// if( $this->session->userdata('id_main_src')==$datacat['m_product_category_id']){
-									// 	echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
-									// }else{
-									// 	echo"<li><a href='#".$datacat['m_product_category_id']."'>".$cat_name."</a></li>";
-									// }
-
   							}?>
   						</ul>
   					</div>
@@ -318,12 +290,10 @@
 									console.log(paramss);
 							});
 						</script>
-						<!-- <input type="hidden" name="search_param" value="<?php // echo $this->session->userdata('id_main_src'); ?> " id="search_param"> -->
+
   					<input type="hidden" name="search_param" value="all" id="search_param">
-  					<!-- <input type="text" name="searchID" id="searchID"> -->
   					<input type="text" name="search" id="searchDesk" autocomplete="off" class="my-search-field">
 
-  					<!-- <div class="productSrc" style='diplay:none'></div> -->
 						<div class="" id="productSrc">
 							<p id='loading'><img src="<?php echo base_url('images/general/Spinner_search.gif'); ?>" border="0"> Loading...</p>
 							<div id="title_top">Popular Search</div>
@@ -337,12 +307,7 @@
   						<button class="my-search-button" type="button" onclick='btnSearchDesk()'><i class="fa fa-search" aria-hidden="true"></i></button>
   					</span>
 
-						<!-- <span class="input-group-btn">
-  						<button class="btn btn-default my-search-button" type="button" id="other"><i class="fa fa-search" aria-hidden="true"></i></button>
-  					</span> -->
   				</div>
-
-
       </div>
 
   </div>
@@ -438,12 +403,6 @@
 		$('#loading2').hide()
 		$('#list').empty();
 	})
-	//.blur(function(){
-		// $('#top').empty();
-		// $('#list').empty();
-		// $('#title_list').hide();
-		// $('#title_top').hide();
-	//})
 
 	.blur(function(){
 
@@ -458,8 +417,7 @@
 
 
 	function searchProduct(key){
-	//	$('#top').empty();
-		// $('#list').empty();
+
 		$.ajax({
 			url: api_base_url+'/product/productlist/'+key,
 			success: function(data) {
@@ -476,7 +434,7 @@
 	}
 
 	function topProduct(key){
-		// $('#top').empty();
+
 		$.ajax({
 			url: api_base_url+'/product/topsearch?keyword='+key,
 			success: function(data) {
@@ -492,13 +450,10 @@
 	}
 
 	function searchProductCat(cat,key){
-		// $('#list').empty();
+
 		$.ajax({
 			url: api_base_url+'/product/productlist/'+cat+'/'+key,
-		//	url: api_base_url+'/product/productlist/'+key,
-			// url: 'https://api.myacico.co.id/myacico-service/product/productlist/'+key,
 			success: function(data) {
-				// console.log(data);
 				$('#list').empty();
 				$('#loading2').hide()
 				if(data.length==0 || data.length==''){$('#title_list').hide();}else{$('#title_list').show();}
@@ -511,7 +466,6 @@
 		});
 	}
 
-	// function showData(name,id,alias)
 	function showData(id,alias)
 	{
 		var url = base_url+'product/detail/'+id+'/'+alias;
@@ -523,209 +477,11 @@
 	}
 	</script>
 
-	  <script type="text/javascript">
-	  	// $('body').click(function() {
-	  	// 	 $('.show_result').hide();
-			// 	 $('.ps').hide();
- 			// 	 $('.sr').hide();
-	  	// });
-
-
-
-
-
-
-
-  	// $('.show_result').on('mouseout',function(){
-  	// 	$('.show_result').hide();
-  	// });
-
-		// function topSearching(){
-		// 	 var productSrc = $('.productSrc');
-		// 	 $(".productSrc").show();
-    //
-    //
-		// 	productSrc.html('');
-		// 	$.ajax({
-		// 		url: api_base_url+'/product/topsearch?keyword=',
-		// 		success: function(data) {
-		// 			if(data.length!=0 || data.length!=''){
-		// 				productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold' class='ps'>Popular Search</div>");}
-		// 			data.forEach(function(p){
-		// 				if(p.image_thumbnail){
-		// 					var img = p.image_thumbnail;
-		// 				}else{
-		// 					var img = '<?php echo base_url('images/general/noimage.png'); ?>';
-		// 				}
-    //
-		// 				productSrc.append(
-		// 					"<div class=\"show_result\" onclick=\"showData('"+p.product_name+"','"+p.product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='30'></div><div class='col-xs-6'>"+p.product_name+"</div><div class='col-xs-5' style='text-align:right'><span style='padding:4px; background:#fbbd44;'>"+p.product_category+"</span></div></div></div>"
-		// 				);
-    //
-		// 			});
-    //
-		// 		}
-		// 	});
-		// }
-
-  	// $(document).ready(function() {
-    //
-    //
-		// 	function debounce(fn, delay) {
-		// 	  var timer = null;
-		// 	  return function () {
-		// 	    var context = this, args = arguments;
-		// 	    clearTimeout(timer);
-		// 	    timer = setTimeout(function () {
-		// 	      fn.apply(context, args);
-		// 	    }, delay);
-		// 	  };
-		// 	}
-		// 	$('#searchDesk').on('click',function(e){
-		// 		$('.ps').show();
-		// 		$('.sr').hide();
-		// 		topSearching();
-		// 	});
-    //
-		// 	$('#searchDesk').keypress(debounce(function (event) {
-		// 			var cat = $('#search_param').val();
-		// 			$(".productSrc").show();
-    //
-		// 			var search_value = $(this).val();
-		// 			var datas		 = 'search='+search_value;
-		// 			var productSrc = $('.productSrc');
-    //
-		// 			if(search_value==''){
-		// 				topSearching();
-		// 			}else{
-    //
-		// 			if ( search_value == '' ) {$(".productSrc").hide();}
-    //
-		// 			if(cat=='all'){
-		// 				productSrc.html('');
-		// 				$.ajax({
-		// 					url: api_base_url+'/product/topsearch?keyword='+search_value,
-		// 					//data: datas,
-		// 				//
-		// 					success: function(data) {
-		// 						$('#ps').show();
-		// 						if(data.length!=0 || data.length!=''){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold' class='ps'>Popular Search</div>");}
-		// 						data.forEach(function(p){
-		// 							if(p.image_thumbnail){
-		// 								var img = p.image_thumbnail;
-		// 							}else{
-		// 								var img = '<?php echo base_url('images/general/noimage.png'); ?>';
-		// 							}
-    //
-		// 							productSrc.append(
-		// 								"<div class=\"show_result\" onclick=\"showData('"+p.product_name+"','"+p.product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='30'></div><div class='col-xs-6'>"+p.product_name+"</div><div class='col-xs-5' style='text-align:right'><span style='padding:4px;'>"+p.product_category+"</span></div></div></div>"
-		// 							);
-    //
-		// 						});
-		// 						searching();
-		// 					}
-		// 				});
-    //
-		// 				function searching(){
-		// 					$('#sr').show();
-		// 					$.ajax({
-		// 						url: api_base_url+'/product/productlist/'+search_value,
-		// 						data: datas,
-		// 						success: function(data) {
-		// 							console.log(data);
-		// 							if(data.length!=0 || data.length!=''){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold' class='sr'>Search Result</div>");}
-		// 							data.forEach(function(p){
-    //
-		// 								if(p.imageurl){
-		// 									var img = p.imageurl;
-		// 								}else{
-		// 									var img = '<?php echo base_url('images/general/noimage.png'); ?>';
-		// 								}
-    //
-		// 								productSrc.append(
-		// 									"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='50'></div><div class='col-xs-6'>"+p.name+"<br> <span style='padding:5px;'>"+p.category+"</span></div><div class='col-xs-5' style='text-align:right'><font size='3'><b>"+money(p.pricelist)+"</b></font></div></div></div>"
-		// 								);
-    //
-		// 							});
-    //
-		// 						}
-		// 					});
-		// 				}
-    //
-		// 			}else{
-    //
-		// 				productSrc.html('');
-    //
-		// 				$.ajax({
-		// 					url: api_base_url+'/product/topsearch?keyword='+search_value,
-		// 					//data: datas,
-		// 				//
-		// 					success: function(data) {
-		// 						$('#ps').show();
-		// 						if(data.length!=0){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold' class='ps'>Popular Search</div>");}
-		// 						data.forEach(function(p){
-		// 							if(p.image_thumbnail){
-		// 								var img = p.image_thumbnail;
-		// 							}else{
-		// 								var img = '<?php echo base_url('images/general/noimage.png'); ?>';
-		// 							}
-    //
-		// 							productSrc.append(
-		// 								"<div class=\"show_result\" onclick=\"showData('"+p.product_name+"','"+p.product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='30'></div><div class='col-xs-6'>"+p.product_name+"</div><div class='col-xs-5' style='text-align:right'><span style='padding:4px; background:#fbbd44;'>"+p.product_category+"</span></div></div></div>"
-		// 							);
-    //
-		// 						});
-		// 						searching2();
-		// 					}
-		// 				});
-    //
-		// 				function searching2(){
-		// 					$.ajax({
-		// 						url: api_base_url+'/product/productlist/'+cat+'/'+search_value,
-		// 						data: datas,
-		// 						success: function(data) {
-		// 							$('#sr').show();
-		// 							if(data.length!=0){productSrc.append("<div style='background:#dddddd; padding:5px; font-weight:bold' class='sr'>Search Result</div>");}
-    //
-		// 								data.forEach(function(p){
-		// 									if(p.imageurl){
-		// 										var img = p.imageurl;
-		// 									}else{
-		// 										var img = '<?php echo base_url('images/general/noimage.png'); ?>';
-		// 									}
-		// 									productSrc.append(
-		// 										"<div class=\"show_result\" onclick=\"showData('"+p.name+"','"+p.m_product_id+"','"+p.alias+"');\"><div class='row'><div class='col-xs-1'><img src='"+img+"' height='50'></div><div class='col-xs-6'>"+p.name+"<br> <span style='padding:5px; background:#fbbd44;'>"+p.category+"</span></div><div class='col-xs-5' style='text-align:right'><font size='3'><b>"+money(p.pricelist)+"</b></font></div></div></div>"
-		// 									);
-    //
-		// 								});
-		// 							//$("#result").html(data).show();
-		// 						}
-		// 					});
-    //
-		// 			}
-		// 		}
-		// 			return false;
-		// 		}
-		// 	}, 250));
-    //
-  	// });
-
-
-
-
-  </script>
 
   <script>
   //Buat ngecek jumlah keranjang
-  /*
-  $(document).ready(function() {
-
-  	totalCart();
-
-  });*/
 
   function totalCart(){
-  	// var token = document.cookie.split('x-auth=')[1].split(';').shift();
   	var qty = 0;
 
   	if(window.token){
@@ -750,140 +506,129 @@
   }
 
 
-  var app = angular.module("myApp", []);
-
-  app.factory('$mycart', function() {
-  	var data = [];
-  	var saved_cart = document.cookie.split('cart=');
-  	if(saved_cart.length > 1){
-  		data = JSON.parse(saved_cart[1].split(';').shift());
-  		//console.log('cart on cookies found');
-  	}
-  	return {data:data};
-  });
-
-  app.factory('toMoney', function() {
-  	return function(x){
-  		return 'Rp. '+(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
-  	}
-  });
-	app.controller('home1', function($scope, $http, $rootScope) {
-			$scope.home = 'test'
-			var regData = {
-					url : 'https://api.myacico.co.id/myacico-service/home/topproductcategory',
-					method : 'GET',
-					headers: {'token' : '5402854820542'}
-			}
-			$scope.load = 'true'
-			$http(regData).then(function(res) {
-			//$http.get('http://api.myacico.co.id/myacico-service/category/list')
-			//.then(function(res){
-					console.log('test3',res)
-					$scope.list = res.data
-					$rootScope.testGlobal = 'textnya'
-					// $scope.list[0].name = 'YOsi'
-					//scope.harga = '34934100000'
-					$scope.input.data = 'lalalalala'
-					$scope.load = 'false'
-			})
-			$scope.tombol = function(i){
-					console.log(i)
-					$scope.cedua = i
-			}
-			$scope.tombol2 = function(){
-					console.log($scope.input.data)
-					$scope.list[0].name = $scope.input.data
-					window.alerter()
-
-			}
-			$scope.input = {}
-			$scope.postData = function(){
-
-					var name = $scope.input.data
-
-					var regData = {
-							url : 'https://api.myacico.co.id/myacico-service/category/list',
-							method : 'POST',
-							data : {
-									name : name
-							},
-							headers: {'token' : '5402854820542'}
-					}
-					console.log(regData)
-					$http(regData).then(function(res) {
-					//$http.get('http://api.myacico.co.id/myacico-service/category/list')
-					//.then(function(res){
-							console.log(res)
-					})
-			}
-
-	})
-	app.controller('home', function($scope, $http, $rootScope) {
-			$scope.home = 'test'
-			var regData = {
-					url : 'http://api.myacico.co.id/myacico-service/category/list',
-					method : 'GET',
-					headers: {'token' : '5402854820542'}
-			}
-			$scope.load = 'true'
-			$http(regData).then(function(res) {
-			//$http.get('http://api.myacico.co.id/myacico-service/category/list')
-			//.then(function(res){
-					console.log(res)
-					$scope.list = res.data
-					$rootScope.testGlobal = 'textnya'
-					// $scope.list[0].name = 'YOsi'
-					//scope.harga = '34934100000'
-					$scope.input.data = 'lalalalala'
-					$scope.load = 'false'
-			})
-			$scope.tombol = function(i){
-					console.log(i)
-					$scope.cedua = i
-			}
-			$scope.tombol2 = function(){
-					console.log($scope.input.data)
-					$scope.list[0].name = $scope.input.data
-					window.alerter()
-
-			}
-			$scope.input = {}
-			$scope.postData = function(){
-
-					var name = $scope.input.data
-
-					var regData = {
-							url : 'https://api.myacico.co.id/myacico-service/category/list',
-							method : 'POST',
-							data : {
-									name : name
-							},
-							headers: {'token' : '5402854820542'}
-					}
-					console.log(regData)
-					$http(regData).then(function(res) {
-					//$http.get('http://api.myacico.co.id/myacico-service/category/list')
-					//.then(function(res){
-							console.log(res)
-					})
-			}
-
-	})
-  app.controller('cartCnt', function($scope, $mycart, toMoney){
-  	$scope.mycart = $mycart.data;
-  	$scope.del = function(i){
-  		if(confirm('Sure? '))$scope.mycart.splice(i, 1);
-  	}
-  	$scope.toMoney = toMoney;
-  	$scope.get_total = function(){
-  		var total = 0;
-  		$scope.mycart.forEach(function(c){
-  			total+=(c.price*c.quantity);
-  		});
-  		document.cookie = 'cart='+JSON.stringify($scope.mycart)+'; path='+base_path;
-  		return toMoney(total);
-  	}
-  });
+  // var app = angular.module("myApp", []);
+  //
+  // app.factory('$mycart', function() {
+  // 	var data = [];
+  // 	var saved_cart = document.cookie.split('cart=');
+  // 	if(saved_cart.length > 1){
+  // 		data = JSON.parse(saved_cart[1].split(';').shift());
+  // 	}
+  // 	return {data:data};
+  // });
+  //
+  // app.factory('toMoney', function() {
+  // 	return function(x){
+  // 		return 'Rp. '+(x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+  // 	}
+  // });
+	// app.controller('home1', function($scope, $http, $rootScope) {
+	// 		$scope.home = 'test'
+	// 		var regData = {
+	// 				url : 'https://api.myacico.co.id/myacico-service/home/topproductcategory',
+	// 				method : 'GET',
+	// 				headers: {'token' : '5402854820542'}
+	// 		}
+	// 		$scope.load = 'true'
+	// 		$http(regData).then(function(res) {
+  //
+	// 				$scope.list = res.data
+	// 				$rootScope.testGlobal = 'textnya'
+	// 				$scope.input.data = 'lalalalala'
+	// 				$scope.load = 'false'
+	// 		})
+	// 		$scope.tombol = function(i){
+	// 				console.log(i)
+	// 				$scope.cedua = i
+	// 		}
+	// 		$scope.tombol2 = function(){
+	// 				console.log($scope.input.data)
+	// 				$scope.list[0].name = $scope.input.data
+	// 				window.alerter()
+  //
+	// 		}
+	// 		$scope.input = {}
+	// 		$scope.postData = function(){
+  //
+	// 				var name = $scope.input.data
+  //
+	// 				var regData = {
+	// 						url : 'https://api.myacico.co.id/myacico-service/category/list',
+	// 						method : 'POST',
+	// 						data : {
+	// 								name : name
+	// 						},
+	// 						headers: {'token' : '5402854820542'}
+	// 				}
+	// 				console.log(regData)
+	// 				$http(regData).then(function(res) {
+	// 						console.log(res)
+	// 				})
+	// 		}
+  //
+	// })
+	// app.controller('home', function($scope, $http, $rootScope) {
+	// 		$scope.home = 'test'
+	// 		var regData = {
+	// 				url : 'http://api.myacico.co.id/myacico-service/category/list',
+	// 				method : 'GET',
+	// 				headers: {'token' : '5402854820542'}
+	// 		}
+	// 		$scope.load = 'true'
+	// 		$http(regData).then(function(res) {
+	// 				console.log(res)
+	// 				$scope.list = res.data
+	// 				$rootScope.testGlobal = 'textnya'
+	// 				// $scope.list[0].name = 'YOsi'
+	// 				//scope.harga = '34934100000'
+	// 				$scope.input.data = 'lalalalala'
+	// 				$scope.load = 'false'
+	// 		})
+	// 		$scope.tombol = function(i){
+	// 				console.log(i)
+	// 				$scope.cedua = i
+	// 		}
+	// 		$scope.tombol2 = function(){
+	// 				console.log($scope.input.data)
+	// 				$scope.list[0].name = $scope.input.data
+	// 				window.alerter()
+  //
+	// 		}
+	// 		$scope.input = {}
+	// 		$scope.postData = function(){
+  //
+	// 				var name = $scope.input.data
+  //
+	// 				var regData = {
+	// 						url : 'https://api.myacico.co.id/myacico-service/category/list',
+	// 						method : 'POST',
+	// 						data : {
+	// 								name : name
+	// 						},
+	// 						headers: {'token' : '5402854820542'}
+	// 				}
+	// 				console.log(regData)
+	// 				$http(regData).then(function(res) {
+	// 						console.log(res)
+	// 				})
+	// 		}
+  //
+	// })
+  // app.controller('cartCnt', function($scope, $mycart, toMoney){
+  // 	$scope.mycart = $mycart.data;
+  // 	$scope.del = function(i){
+  // 		if(confirm('Sure? '))$scope.mycart.splice(i, 1);
+  // 	}
+  // 	$scope.toMoney = toMoney;
+  // 	$scope.get_total = function(){
+  // 		var total = 0;
+  // 		$scope.mycart.forEach(function(c){
+  // 			total+=(c.price*c.quantity);
+  // 		});
+  // 		document.cookie = 'cart='+JSON.stringify($scope.mycart)+'; path='+base_path;
+  // 		return toMoney(total);
+  // 	}
+  // });
 
 <?php if(isset($user->name)){ ?>
 
@@ -920,13 +665,8 @@ $(".logout").click(function(e){
 	$(".dropbtn-basket").mouseover(function(){
 		$('.dropdown-basket-content').html('<img src="<?php echo base_url('images/general/Spinner_search.gif'); ?>" border="0"> Loading...');
 
-		// var cookie = document.cookie.split('x-auth=');
 		if(window.token){
 
-		/*		$('.empty-item').hide();
-				listCartToken();
-
-	*/
 			$.ajax
 			({
 				url: "<?php echo site_url('cart/loadCartToken'); ?>",
@@ -947,73 +687,6 @@ $(".logout").click(function(e){
 
 		}
 	});
-
-	//Mobile
-	$(".dropbtn-basket-mobile").mouseover(function(){
-
-		// var cookie = document.cookie.split('x-auth=');
-		if(window.token){
-
-			$.ajax
-			({
-				url: "<?php echo site_url('cart/loadCartTokenMobile'); ?>",
-				success:function(html){
-					$('.dropdown-basket-mobile-content').html(html);
-				}
-			});
-
-		}else{
-
-			$.ajax
-			({
-				url: "<?php echo site_url('cart/loadCartMobile'); ?>",
-				success:function(html){
-					$('.dropdown-basket-mobile-content').html(html);
-				}
-			});
-
-		}
-	});
-	/*
-  function listCartToken(){
-  	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-  	var list = $('.list-item');
-  	var btn = $('.btn-chekout');
-  	var qty = 0;
-  	var totalBelanja = 0;
-  	list.html(
-  				''
-  			);
-  	$.get( api_base_url+"/order/cart/detail?token="+token,
-  	function(r){
-
-  		r.forEach(function(p){
-  			qty += p.qty;
-  			totalBelanja+=p.price;
-  			//alert(qty);
-  			list.append(
-  				'<div class="row my-cart" style="position:relative;"><div class="col-sm-3"><img src="'+p.imageurl+'" border="0" height="50" width="50"></div><div class="col-sm-7">'+p.name+'<br>Rp.'+p.price+' ('+p.qty+')Items<br></div><div class="col-sm-2"><a href="#" onClick="dellItemCartToken('+p.productId+',\''+p.imageurl+'\',\''+p.name+'\',\''+p.itemCartId+'\')"><i class="fa fa-trash" aria-hidden="true"></i></a></div></div>'
-  			);
-  		});
-  		//alert(qty);
-
-
-  		btn.html('');
-  		btn.append(
-  				'<div style="position:relative;"><div class="my-total-cart">TOTAL : <b>'+totalBelanja+'</b></div><a href="'+base_url+'cart" class="btn btn-success my-btn-chekout">My Cart & Checkout</a></div>'
-  			);
-
-
-  			if(totalBelanja==0){
-  				list.html(
-  					''
-  				);
-  				btn.html('<center>Keranjang masih kosong</center>');
-  			}
-
-  	  }, "json" );
-
-  }*/
 
   function dellItemCart(id,rowid,img,name){
 
@@ -1057,7 +730,6 @@ $(".logout").click(function(e){
 
 	function dellItemCartToken(id,img,name,idcart){
 
-		// var token = document.cookie.split('x-auth=')[1].split(';').shift();
 		var apiurl = api_base_url + '/order/cart/deleteitem?idcartitem='+idcart;
 
 		$.confirm({
@@ -1079,7 +751,6 @@ $(".logout").click(function(e){
 						}
 					});
 
-
 					//untuk cart yang di basket token
 					$.ajax
 					({
@@ -1098,17 +769,6 @@ $(".logout").click(function(e){
 		});
 
 
-		/*var success = function(r){
-		$('#spinner_img').hide();
-		$('#submit_btn').val('Kirim').removeClass('disabled');
-			 $.alert({
-			 title: 'Alert!',
-			 content: 'Item berhasil dihapus',
-			});
-			console.log('OK:', r.status);
-			window.location.replace(base_url+"/account/bukuAlamat");
-
-		};*/
 	}
 
 
