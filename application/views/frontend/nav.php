@@ -79,7 +79,7 @@ cursor:pointer;
                      }
                      ?>
 									<!-- <li class="dropdown megamenu-fw nav-show-desktop nav-garis"> -->
-                  <li class="dropdown megamenu-fw nav-show-desktop nav-garis" style="<?php echo $atur; ?> font-family: 'myriad_web_pro';">
+                  <li class="dropdown megamenu-fw nav-show-desktop nav-garis" style="<?php echo $atur; ?> font-family: 'myriad_web_pro'; background:#111111;">
 										<?php echo anchor('#', '<img src="'.$dataNav['iconurl'].'" border="0" height="15"> '.$nav_name, array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
                                                                             <ul  class="dropdown-menu megamenu-content" role="menu">
 											<li>

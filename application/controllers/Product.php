@@ -50,10 +50,6 @@ class Product extends Web {
 			}
 		};
 
-
-
-
-
 		if($short==''){$this->data['sort_id'] = '5'; }else{$this->data['sort_id'] =$short; }
 		$this->data['pro'] = $id;
 
@@ -292,7 +288,7 @@ public function listItem()
 	public function index()
     {
 		//$this->load->view('frontend/test',$this->data);
-$home_domain = domain2();
+		$home_domain = domain2();
     $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -349,7 +345,7 @@ $home_domain = domain2();
 	public function category()
 	{
 		$this->data['cat_id']=$this->uri->segment(3);
-                $home_domain = domain2();
+    $home_domain = domain2();
 		$cat_id=$this->uri->segment(3);
 		$api = "category/listc3?c2id=".$cat_id;
 		$url = api_base_url($api);

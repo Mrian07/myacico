@@ -202,8 +202,6 @@ if($saw==Null)
 }else{
     $sort_id = $saw;
 }
-//echo $data[1]["nama_lokasi"];
-
 ?>
 
 
@@ -478,9 +476,7 @@ $(document).ready(function() {
 
 
 function filter(id){
- //  console.log('sam',$('#sort_id').val(id.value));
   window.location.replace("<?php echo site_url('product/listItem/'.$pro.'/'.$alias.'/'); ?>"+id.value);
-
 }
 
 
@@ -533,14 +529,12 @@ function addWishlist(id,name,imageurl){
 
 
         $.ajax({
-                type: "POST",
-		url: "<?php echo site_url('customer/signin'); ?>",
-		data: dataString,
-                success:function(data){
-                    console.log('oooo',data);
-
-                 window.location.replace(base_url+"customer/signin/"+id);
-                }
+              type: "POST",
+              url: "<?php echo site_url('customer/signin'); ?>",
+              data: dataString,
+              success:function(data){
+              window.location.replace(base_url+"customer/signin/"+id);
+            }
 
         })
 	}
@@ -580,19 +574,6 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 			var success = function(r){
 
         $('.cartModal').modal('show');
-				// $.confirm({
-				// 	title: name,
-				// 	content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
-				// 	autoClose: 'close|3000',
-				// 	buttons: {
-				// 		close: function () {
-				// 			//$.alert('action is canceled');
-				// 		}
-				// 	},
-				// 	closeIcon: true,
-				// 	closeIconClass: 'fa fa-close'
-				// });
-
 				//Buat update cart, fungsi ini ada di file header.php
 				totalCart();
 
@@ -643,18 +624,7 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 						$(".totalCart").html(data);
             $('.cartModal').modal('show');
-						// $.confirm({
-						// 	title: name,
-						// 	content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
-						// 	autoClose: 'close|3000',
-						// 	buttons: {
-						// 		close: function () {
-						// 			//$.alert('action is canceled');
-						// 		}
-						// 	},
-						// 	closeIcon: true,
-						// 	closeIconClass: 'fa fa-close'
-						// });
+
 					}else{
 						$.dialog({
 							title: name,
@@ -676,9 +646,5 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 		}
 	}
 }
-
-
-
-
 
 </script>

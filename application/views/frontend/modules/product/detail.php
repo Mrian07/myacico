@@ -143,7 +143,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
         <tr>
           <td>Status:</td>
-          <td style="color: #4ba240">Tersedia.</td>
+          <td style="color: #4ba240">Tersedia</td>
         </tr>
         <tr>
           <td></td>
