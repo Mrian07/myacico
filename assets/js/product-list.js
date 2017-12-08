@@ -101,12 +101,19 @@ function filterSystem(minPrice, maxPrice) {
 }
 
 function buildPage(total, page) {
-	console.log('page: ', page);
-	page = parseInt(page);
-	if(!total) return false;
+	// console.log('page: ', page);
 	var limit = 10;
 	var totalPage = Math.ceil(total / limit);
+	var end = page * limit;
+
+	page = parseInt(page);
+
+	if(total < end) end = total;
+
 	$('.my-paging').empty();
+	$('#startItem').text(((page - 1) * limit) + 1);
+	$('#endItem').text(end);
+	$('#totalItem').text(total);
 
 	if (page == 1) $('.my-paging').append('<span class="my-paging-off"><i class="fa fa-angle-left" aria-hidden="true"></i></span>');
 	else $('.my-paging').append('<span onclick ="getListProduct(' + (page-1) + ')" class="my-paging-btn my-paging-list"><i class="fa fa-angle-left" aria-hidden="true"></i></span>');

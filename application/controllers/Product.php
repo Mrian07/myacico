@@ -32,20 +32,20 @@ class Product extends Web {
 	{
 		$id=$this->uri->segment(3);
 		// 		$this->data['pro']=$this->uri->segment(3);
-		$short=$this->uri->segment(4);
-  		$page=$this->uri->segment(5);
+		// $short=$this->uri->segment(4);
+  // 		$page=$this->uri->segment(5);
 
 		// if($short == ''){
 		// 	$this->data['sort_id'] = '';
 		// } else { 
-			$this->data['sort_id'] = $short;
+			// $this->data['sort_id'] = $short;
 		// }
 
 		$this->data['pro'] = $id;
-		$this->data['sort'] = $short;
+		// $this->data['sort'] = $short;
 
 		//product/productlist?category=".$id_cat."&show=productcount";
-		if($page){
+		/*if($page){
 			// $api = "product/productall/".$id."?itemperpage=10&page=".$page."&ob=".$short;
 			$api2 = "product/productall/".$id."?itemperpage=10&page=".$page."&show=productcount";
 		}elseif($short){
@@ -54,30 +54,30 @@ class Product extends Web {
 		}else{
 			// $api = "product/productall/".$id."?itemperpage=10";
 			$api2 = "product/productall/".$id."?itemperpage=10&page=1&show=productcount";
-		}
+		}*/
 		// $url = api_base_url($api);
 		// $konten = file_get_contents($url, false);
                 //ie(print_r($konten));
 
-		$url2 = api_base_url($api2);
-		$konten2 = file_get_contents($url2, false);
+		// $url2 = api_base_url($api2);
+		// $konten2 = file_get_contents($url2, false);
 
-		$batas = '10';
+		/*$batas = '10';
 		if(empty($page)){
 			$posisi = 0;
 			$page =1;
 		}else{
 			$posisi = ($page-1)*$batas;
-		}
-		$this->data['page'] = $page;
-		$this->data['posisi'] = $posisi;
-		$jdata =json_decode($konten2)->productCount;
+		}*/
+		// $this->data['page'] = $page;
+		// $this->data['posisi'] = $posisi;
+		// $jdata =json_decode($konten2)->productCount;
 				// die($konten);
 
-		$this->data['jpage'] = ceil($jdata/$batas);
+		// $this->data['jpage'] = ceil($jdata/$batas);
 		$domain = domain();
 
-		$this->data['totalItem'] = $jdata;
+		// $this->data['totalItem'] = $jdata;
 		$this->data['alias'] = $this->uri->segment(4);
 		$this->data['title_web'] = "List Items - ".$domain.'-'.$id;
 
