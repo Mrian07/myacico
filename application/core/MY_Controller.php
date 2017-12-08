@@ -30,6 +30,7 @@ class Web extends MY_Controller {
           $this->load->language('general','english');
           $this->load->language('body','english');
           $this->load->language('checkout','english');
+          $this->load->language('another','english');
         }else{
           $this->load->language('header','indonesia');
           $this->load->language('home','indonesia');
@@ -38,6 +39,7 @@ class Web extends MY_Controller {
           $this->load->language('general','indonesia');
           $this->load->language('body','indonesia');
            $this->load->language('checkout','indonesia');
+           $this->load->language('another','indonesia');
         }
         $this->maintan();
         $this->lang();
@@ -212,8 +214,19 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
                 $this->data['lang_msg_login4'] = $this->lang->line('msg_login4');
                 $this->data['lang_msg_regis'] = $this->lang->line('msg_regis');
                 $this->data['lang_msg_regis2'] = $this->lang->line('msg_regis2');
-
-
+// cara belanja
+                $this->data['lang_how_buy_tittle'] = $this->lang->line('how_buy_tittle');
+                $this->data['lang_how_buy_tittle2'] = $this->lang->line('how_buy_tittle2');
+                $this->data['lang_how_buy_tittle3'] = $this->lang->line('how_buy_tittle3');
+                $this->data['lang_how_buy_tittle4'] = $this->lang->line('how_buy_tittle4');
+                $this->data['lang_how_buy_tittle5'] = $this->lang->line('how_buy_tittle5');
+                $this->data['lang_how_buy1'] = $this->lang->line('how_buy1');
+                $this->data['lang_how_buy2'] = $this->lang->line('how_buy2');
+                $this->data['lang_how_buy3'] = $this->lang->line('how_buy3');
+                $this->data['lang_how_buy4'] = $this->lang->line('how_buy4');
+                $this->data['lang_how_buy5'] = $this->lang->line('how_buy5');
+                $this->data['lang_how_buy1_1'] = $this->lang->line('how_buy1_1');
+                
 		//button di daftar
 		$this->data['lang_btn_personal'] = $this->lang->line('btn_daftar');
 		$this->data['lang_btn_bisnis'] = $this->lang->line('btn_daftar_bisnis');
