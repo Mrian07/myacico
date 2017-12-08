@@ -30,6 +30,8 @@
   <div id="product" class="promo-front owl-carousel">
 
 </div>
+
+</div>
 <script>
 //    $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     var ctrl= "<?php echo base_url('/product/detail')?>";
@@ -96,7 +98,7 @@ for(var i=0;i<detail.length;i++)
 
     });
     </script>
-    
+
 
     <style>
     .promo-front .item{

@@ -50,10 +50,6 @@ class Product extends Web {
 			}
 		};
 
-
-
-
-
 		if($short==''){$this->data['sort_id'] = '5'; }else{$this->data['sort_id'] =$short; }
 		$this->data['pro'] = $id;
 
