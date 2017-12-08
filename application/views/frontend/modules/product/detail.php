@@ -4,13 +4,13 @@
     color: hotpink;
 }
 .xzoom{
-  width: 278px;
+  width: 279px;
   /*top: -41.2038px;
   left: 0px;
   position: absolute;*/
 }
 .xzoom-source{
-  margin-left: 7px;
+  margin-left: 8px;
 
 }
 

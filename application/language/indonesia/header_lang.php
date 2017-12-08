@@ -86,7 +86,7 @@ $lang['nama_penerima'] = 'Nama Penerima';
 $lang['btn_login'] = 'Kirim';
 
 //akhir dari bussines
-
+  $lang['lang_pages_ch'] ='Harga Termurah';
 //s: search
 $lang['field_all_src'] = 'Semua Kategori';
 //e: search
