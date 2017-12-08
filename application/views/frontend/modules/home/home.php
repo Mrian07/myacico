@@ -42,8 +42,8 @@ a.badgeNi:hover,a.badgeNi:focus{color:#fff;text-decoration:none;cursor:pointer}
   font-size: 8px;
   border: 2px solid #FFF;
   box-shadow: 0 0 0 1px #b20c0c;
-  top: -1px;
-  right: -1%;
+  top: 1px;
+  right: 2%;
 }
 .badgeNi3 {
   background: #b20c0c;
