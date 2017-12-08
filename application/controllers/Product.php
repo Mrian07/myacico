@@ -229,8 +229,12 @@ public function listItem()
 		$konten2 = file_get_contents($url2, false, $context);
 		$konten3 = file_get_contents($url3, false, $context);
     $konten4 = file_get_contents($url4, false, $context);
+		 $konten = file_get_contents($url, false, $context);
      //$konten5 = file_get_contents($url5, false, $context);
-		$konten = file_get_contents($url, false, $context);
+
+	
+
+
      //die(print_r("sam ".json_decode($konten2)->pageCount));
     $this->data['max_page'] =json_decode($konten2)->pageCount;
     $this->data['jdata'] =json_decode($konten3)->productCount;

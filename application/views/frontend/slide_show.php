@@ -106,8 +106,8 @@ h1, h2, h3 {
     </div>
     <div class="col-xs-5 padding-1">
 
-      <a href="https://myacico.co.id/product/detail/1058390/KIRIN-Emergency-Lamp-%5bKEL-2606%5d---White">
-      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/banner_kcl01.jpg');?>" width="100%" height="121"></div></a>
+      <a href="https://myacico.co.id/product/listItem/1000665/Telepon-Cerdas">
+      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/web-slider15.jpg');?>" width="100%" height="121"></div></a>
       <a href="https://myacico.co.id/product/detail/1058345/KIRIN-Oven-%5bKBO-190RA%5d---Black">
       <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/bnerkcl02.jpg');?>" width="100%" height="121"></div></a>
       <!-- <div style='margin-left:5px;'><img src="https://s1.postimg.org/6g8wm25b1r/ps4.png" width="100%" height="170"></div> -->

@@ -42,8 +42,8 @@ font-size: 16px;
 }
 .yu1{
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 10pt;
-  color: #4ba240;
+  font-size: 16px;
+  color: green;
 }
 .item.list-group-item
 {
