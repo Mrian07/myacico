@@ -16,12 +16,11 @@
 				<div class="panel-body">
 				  <form name="signup" method="post">
 
-<!--					<input type="hidden" id = "name" name="name"  value="<?php // echo $user->name;?>" />-->
 	          <input type="hidden" id = "id" name="id" />
-	          <input type="hidden" id="isbillto" name="isbillto" value="N" />
+	          <!-- <input type="hidden" id="isbillto" name="isbillto" value="N" />
 	          <input type="hidden" id="isshipto" name="isshipto" value="Y" />
 	          <input type="hidden" id="ispayfrom" name="ispayfrom" value="N" />
-	          <input type="hidden" id="isremitto" name="isremitto" value="N" />
+	          <input type="hidden" id="isremitto" name="isremitto" value="N" /> -->
 	          <input type="hidden" id="idAdd" name="idAdd" value="<?php echo $this->uri->segment(3);?>" />
 						<div class="form-group">
 							<label><?php echo $lang_nama_penerima;?>*</label>

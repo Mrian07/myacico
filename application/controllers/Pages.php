@@ -23,14 +23,24 @@ class Pages extends Web {
 	public function newProduct(){
 
 		$cat=$this->uri->segment(3);
+
+
 		$id=$this->uri->segment(4);
 		$short=$this->uri->segment(5);
   	$page=$this->uri->segment(6);
 
-		$api = "home/view";
+		$api_rec = "product/listproduct/all/new";
+
+
+		$api = "product/listproduct/all/new";
 		$url = api_base_url($api);
 		$konten = file_get_contents($url);
-
+		$url3 = api_base_url($api_rec);
+		$options = ["http" => [
+		      "method" => "GET",
+           "header" => [
+           "Content-Type: application/json"],
+		]];
 		$test = json_decode($konten, true);
 
 // echo"<pre>"; print_r($jdata); die();
@@ -40,26 +50,56 @@ class Pages extends Web {
 	foreach($dathome['level_2'] as $key => $itemslide2){
 		*/
 
+
 		if($short==''){$this->data['sort_id'] = '5'; }else{$this->data['sort_id'] =$short; }
 		$this->data['pro'] = $id;
 
-		$batas = '12';
-		if(empty($page)){
+		$batas = '10';
+		if(empty($cat)){
 			$posisi = 0;
-			$page =1;
+			$cat = 1;
 		}else{
-			$posisi = ($page-1)*$batas;
+			$posisi = ($cat-1)*$batas;
 		}
-		$this->data['page'] = $page;
+
+		$api2 = "product/listproduct/all/new?page=".$cat;
+
+	$url4 = api_base_url($api2);
+
+		$this->data['page'] = $cat;
 		$this->data['posisi'] = $posisi;
+		$this->data['pageCount'] = json_decode($konten, true);
+		$options = ["http" => [
+					"method" => "GET",
+					 "header" => [
+					 "Content-Type: application/json"],
+		]];
+			$context = stream_context_create($options);
+		$konten1 = $this->data['pageCount'];
+		$konten4 = file_get_contents($url4, false, $context);
+		$this->data['productList'] = json_decode($konten4, true);
+		$test = $this->data['productList'] = json_decode($konten4, true);
 
-		$jdata = count(json_decode($konten, true));
+
+
+
 		$dathome = json_decode($konten, true);
+	$konten3 = file_get_contents($url3, false, $context);
+	$this->data['jumlahMenu']= 0;
 
-		$jdata =count($dathome['level_2']);
+		$jdata =$dathome['pageCount'];
+		$jdata3 =$api2;
+		$this->data['jpage'] = ceil($jdata/$batas);
 		$this->data['jdata'] = $jdata;
+		$this->data['productList'] = json_decode($konten4, true);
+
 		$this->data['totalItem'] = $jdata;
-		$this->data['dathome'] = json_decode($konten, true);
+		if($cat == ''){
+			$this->data['dathome'] = json_decode($konten, true);
+		}else{
+			$this->data['dathome'] = json_decode($konten4, true);
+		}
+
 
 		$hasil = json_decode($konten, true);
 

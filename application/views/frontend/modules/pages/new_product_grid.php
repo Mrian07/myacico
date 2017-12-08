@@ -112,7 +112,7 @@
 
 	  $no = $posisi+1;
 	  $i = -1;
-      foreach($dathome['level_2'] as $key => $data){
+      foreach($dathome['productList'] as $key => $data){
 		$i++;
         //die(print_r($data['imageurl']));
         if(isset($data['imageurl'])){
@@ -127,11 +127,11 @@
         <!-- <div class="tmp-product"> -->
         <div class="col-xs-3">
           <div class='tmp-product'>
-            <a href="<?php echo base_url('product/detail/'.$data['product_id'].'/'.$data['alias']);?>">
+            <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>">
               <img class="img-thumbnail clear-border" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" style="width: 100%; min-height: 188px;" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
             </a>
           <div class='highlight-list text-center'>
-          <a class="title-product" href="<?php echo base_url('product/detail/'.$data['product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a><br>
+          <a class="title-product" href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a><br>
           </div>
 
           <?php
@@ -151,11 +151,11 @@
 
 			</div>
 
-          <input type='hidden' class='form-control' id='jmlItem<?php echo $data['product_id'];?>' style='width:70px' value='1' min='1'>
+          <input type='hidden' class='form-control' id='jmlItem<?php echo $data['m_product_id'];?>' style='width:70px' value='1' min='1'>
 
 
         <div class="btn-group">
-        <button type="button" style="border-radius: 25px; padding: 7px 34px; margin-bottom:7px;"  class="btn btn-danger"  onClick="addToCart('<?php echo$data['product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+        <button type="button" style="border-radius: 25px; padding: 7px 34px; margin-bottom:7px;"  class="btn btn-danger"  onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
 
 
 
@@ -167,7 +167,78 @@
       </div>
 
 
+			<div style="clear:both"></div>
+			<?php
+					$id_cat=$this->uri->segment(3);
+			$page=$page;
 
+
+			 ?>
+			<div class='my-paging'>
+				<?php
+					if($page>1){
+						$previous=$page-1;
+
+								$first =  site_url('pages/newProduct/'.'1');
+								$prev =  site_url('pages/newProduct/'.$previous);
+
+						echo "<a href=$first class='my-paging-btn'><< First</a> ";
+						echo "<a href=$prev class='my-paging-btn'>< Previous</a> ";
+					}else{
+						echo"<< First < Previous ";
+					}
+
+					//angka awal
+					$angka = ($page > 3 ? "...":"");
+					for($i=$page-1;$i<$page;$i++){
+						if($i<1)
+							continue;
+							// $hal =  site_url('pages/newProduct/'.$i);
+							$hal =  site_url('pages/newProduct/'.$page.'/'.$i);
+							$angka .="<a href=$hal class='my-paging-list'>$i</a>";
+
+					}
+
+					//angka tengah
+					$angka.="<span class='my-paging-list-on'>$page</span>";
+					for($i=$page+1;$i<($page+3);$i++){
+						if($i>$jpage)
+							break;
+
+							$hal =  site_url('pages/newProduct/'.$i);
+							$angka .="<a href=$hal class='my-paging-list'>$i</a>";
+					}
+
+					//angka akhir
+							$hal =  site_url('pages/newProduct/'.$jpage);
+
+					$angka .=($page+2<$jpage ? "...<a href=$hal class='my-paging-list'>$jpage</a>":"");
+
+					//cetak semua angka
+					echo "$angka";
+
+					//next
+					if($page<$jpage){
+						$next = $page+1;
+						$next =  site_url('pages/newProduct/'.$next);
+						$last =  site_url('pages/newProduct/'.$jpage);
+
+						echo " <a href=$next class='my-paging-btn'>Next >></a>";
+						echo " <a href=$last class='my-paging-btn'>Last ></a>";
+					}else{
+						echo"Next >  Last >>";
+					}
+
+				?>
+			</div>
+
+
+
+
+
+			<div class='my-paging'>
+
+			</div>
 
 
 <div style="clear:both"></div>

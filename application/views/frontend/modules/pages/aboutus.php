@@ -143,6 +143,7 @@ p {
   </div>
   <div class="document__content">
     <h3 style="color:black; margin:19px;"><?php echo $lang_isi_oru; ?></h3>
+  
     <center>
     <h3 style="background-color:#FFD181; border-radius: 25px;  color:white; margin-left:90px;" > •&nbsp<?php echo $lang_isi_harg; ?></h3>
 <h3 style="background-color:#FFD181; border-radius: 25px; color:white;" > •&nbsp<?php echo $lang_isi_peng; ?></h3>

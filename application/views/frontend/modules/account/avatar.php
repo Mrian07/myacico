@@ -116,49 +116,17 @@ $("#file").change(function() {
 });
 $(document).ready( function() {
   var token1 = document.cookie.split('x-auth=')[1].split(';').shift();
-
   var apiurl = api_base_url +'/aduser/upload/avatar';
-
-// $.ajaxSetup({
-//   error: function(){
-//     alert('Image Berhasil Di Upload');
-//   },
-//
-//   timeout: 10000/*, account/confirm/
-//   contentType: "application/json; charset=UTF-8"*/
-// });
 
 var data = {};
   $("form").submit(function(e){
   e.preventDefault();
- // var data = $(this).serialize();
-
-
-
-
       var file =  $("#file").val();
-
-
-
-  //var fl=document.signup;
-//    var data = $(this).serialize();
-//     return alert(data);die();
 data.file = file;
-//     var success = function(r){
-//       console.log('OK:', r);
-//       alert(r.message);
-//     };
-//
-
    var success = function(r){
            console.log('OK:', r);
            alert(r.message);
-     //     };
-//      $("#file").val(null);
-//      $("#transid").val(null);
-
-
-
+  
   };
   $('#spinner_img').show();
   $('#submit_btn').val('loading...').addClass('disabled');
@@ -176,7 +144,7 @@ data.file = file;
   success:success,
   contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
   processData: false, // NEEDED, DON'T OMIT THIS
-  // ... Other options like success and etc
+ 
 });
 
 });

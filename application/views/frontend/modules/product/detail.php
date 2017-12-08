@@ -4,13 +4,13 @@
     color: hotpink;
 }
 .xzoom{
-  width: 278px;
+  width: 279px;
   /*top: -41.2038px;
   left: 0px;
   position: absolute;*/
 }
 .xzoom-source{
-  margin-left: 7px;
+  margin-left: 8px;
 
 }
 
@@ -143,7 +143,7 @@ $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
         <tr>
           <td>Status:</td>
-          <td style="color: #4ba240">Tersedia.</td>
+          <td style="color: #4ba240">Tersedia</td>
         </tr>
         <tr>
           <td></td>
@@ -730,7 +730,7 @@ if(jdata2<10)
 {
     $('#sld2').hide();
 }
-if(jdata3<10)
+if(jdata3<1)
 {
     $('#sld3').hide();
 }
