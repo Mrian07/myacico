@@ -215,7 +215,6 @@ function getListProduct(p) {
 
 	$("#product-list-unready").fadeIn(500);
 	$('#productlist').hide();
-
 	$.get(encodeURI(temp_url), function(res){
 		console.log("konten:", res);
 
@@ -254,7 +253,7 @@ function getSidebar() {
 
 					menu_body += '<div class="checkbox">'
 						+ '<label>'
-							+ '<input name="checkbox-filter" type="checkbox" value="' + key + '~' + value + '" onclick="doFilter()">'
+							+ '<input name="checkbox-filter" type="checkbox" value="' + key + '|' + value + '" onclick="doFilter()">'
 							+ d.value
 							+ ' (' + d.count + ')'
 						+ '</label>'
@@ -344,7 +343,7 @@ function doFilter() {
 
     $('#sidebar-left-filter input[name=checkbox-filter]:checked').each(function() {
         var valraw = $(this).val();
-        var arrVal = valraw.split('~');
+        var arrVal = valraw.split('|');
         var key = arrVal[0].trim();
         var val = arrVal[1].trim();
 

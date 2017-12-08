@@ -160,7 +160,7 @@
 <script type="text/javascript">
 var path = '<?php echo $_SERVER['REQUEST_URI']; ?>';
 var list_url, sidebar_url;
-var keyword = '<?php if(isset($pro)) echo $pro ?>';
+var keyword = decodeURI('<?php if(isset($pro)) echo $pro ?>');
 var cat_id = '<?php if(isset($id_cat)) echo $id_cat ?>';
 var function_name = '<?php if(isset($function_name)) echo $function_name ?>';
 
