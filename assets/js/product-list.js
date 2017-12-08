@@ -15,9 +15,15 @@ if(detail.length > 0) $('#recentView').show();
 for(var i=0;i<detail.length;i++) {
 
 	var str = detail[i].name;
+	console.log('str', str);
 	// a = a.length;
-	if(str.length >20)namapotong = str.substring(0, 20)+' '+'...';
-	else namapotong = detail[i].name;
+	if (typeof str != 'undefined') {
+		if(str.length >20)namapotong = str.substring(0, 20)+' '+'...';
+		else namapotong = detail[i].name;
+	} else {
+		continue;
+	}
+
 	// console.log(currencyFormat(detail[i].pricelist));
 	// $('#product').append('<div class="pull-left" style="width: 100px;"><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'" class="link-p" style="color:#fff;"><span class="badgeNi">New</span><img src="'+detail[i].imageurl[0]+'" class="" style="height:100px;"></a><p><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'">'+detail[i].name+'</a></p></div>')
 	$('#product').append('<p><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'" class="link-p" style="color:#fff;"><span class="badgeNi">New</span><img src="'+detail[i].imageurl[0]+'" class="" style="height:100px;"></a><br><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'">'+namapotong+' </a><br> '+currencyFormat(detail[i].pricelist)+'</p>')
@@ -32,7 +38,7 @@ $(document).ready(function() {
 
 	getListProduct();
 	getSidebar();
-	
+
 	$('#order_by').change(function(){
 		getListProduct();
 	});
@@ -214,7 +220,7 @@ function getListProduct(p) {
 	temp_url += 'page=' + p + '&';
 
 	body.stop().animate({scrollTop:0}, 250, 'swing', function() {
-		
+
 	});
 
 	$("#product-list-unready").fadeIn(500);
@@ -229,7 +235,7 @@ function getListProduct(p) {
 			$('.my-paging').empty();
 			return $('#productlist').html('<center>Maaf item yang Anda cari belum tersedia.</center>');
 		}
-		
+
 		res.productList.forEach(extract_list);
 		$("#product-list-unready").fadeOut(500);
 		$('#productlist').fadeIn(500);
@@ -280,7 +286,7 @@ function getSidebar() {
 									<input name="contentMaxAmount" class="txtFilterPrice" id="priceMax" type="text">
 								</div>
 							</div>
-							
+
 							<div class="row" style="margin-top: 5px">
 								<div class="col-xs-12">
 									<button id="priceTrigger" type="button" class="btn btn-info btn-block" onclick="triggerPriceFilter()">Submit</button>
@@ -329,7 +335,7 @@ function triggerPriceFilter() {
 }
 
 function doFilter() {
-	
+
     var objFilter = {}
     objFilter.Others = [];
 
@@ -422,7 +428,7 @@ function formatMoney(num) {
 	sisa 	= number_string.length % 3,
 	rupiah 	= number_string.substr(0, sisa),
 	ribuan 	= number_string.substr(sisa).match(/\d{3}/g);
-		
+
 	if (ribuan) {
 		separator = sisa ? '.' : '';
 		rupiah += separator + ribuan.join('.');
