@@ -550,8 +550,7 @@ function pilihKurir2(id,amount){
 }
 
 function finish(){
-  $('#spinner_img').show();
-	$('.checkout-button').css("background", "#f9a8a8");
+
 	var itemKosong = $('#itemKosong').val();
 	var getPay = $("input[name='code']:checked").val()
 	var resultPay=getPay.split('-');
@@ -601,7 +600,8 @@ function finish(){
 		});
 	}else {
 // $('#spinner_img').show();
-
+		$('#spinner_img').show();
+		$('.checkout-button').css("background", "#f9a8a8");
  		$('#finish').addClass('disabled');
 		data.grandtotal = grandtotal;
 		data.paymentMethod = paymentMethod;

@@ -41,12 +41,12 @@ class Checkout extends Web_private {
 		$hasil = json_decode($konten, true);
 
 		//Data Billing
+		$this->data['billing_address_id'] ='';
 		foreach($hasil as $items){
-		$this->data['billing_address_id'] = $items['id'];
+			$this->data['billing_address_id'] = $items['id'];
 		}
-
+		$this->data['shipping_address_id'] ='';
 		$get_shipping = get_cookie('shipping_address_id');
-
 		if($get_shipping)
 		{
 
