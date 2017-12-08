@@ -278,21 +278,5 @@ function srcByDate(){
 	}else{
 		location.href = base_url+'account/riwayatStatusPesanan/'+page+'/'+startDate+'/'+endDate;
 	}
-
-
 }
 </script>
-
-<!-- <script>
-$(document).ready(function() {
-
-	$.ajax
-	({
-	url: "<?php // echo site_url('account/listRiwayatStatusPesanan'); ?>",
-	success:function(html){
-			$(".listRiwayatStatusPesanan").html(html);
-		}
-	});
-
-});
-</script> -->
