@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_home.css');?>" />
 
+
 <!-- Owl Carousel Assets slide image collection -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.carousel.css');?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.theme.css');?>" />
@@ -53,6 +54,7 @@
             ?> <p class="box-title27">Rp.<?php echo money($itemslide2['pricelist']); ?></p>
             <?php    } else{ ?>
            <p class="box-title2"><s>Rp.<?php echo money($itemslide2['pricelist']); ?></s></p><p><?php echo money($itemslide2['specialprice']); ?></p>
+
             <?php }
             if($itemslide2['istodayshipping'] == 'Y')
               {
@@ -61,6 +63,7 @@
               <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
               </center>
               <?php }?>
+
 
 
               <hr>
@@ -96,6 +99,7 @@
             <span class="badgeNi3" style="color:white;">  <?php echo $itemslide3['discount']; ?> %</span>
           <?php } ?>
 
+
           <div class="ratings" style='text-align: center; color:#d98c13;'>
               <span class="glyphicon glyphicon-star"></span>
               <span class="glyphicon glyphicon-star"></span>
@@ -115,6 +119,7 @@
         </div>
 
     <?php } ?>
+
 
   		<!-- END PRODUCTS -->
 	</div>
@@ -173,7 +178,9 @@
           <?php if($itemslide0['discount'] == 0){
             echo "";
           } else { ?>
+
             <span class="badgeNi34" style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
+
           <?php }
           if($itemslide0['istodayshipping'] == 'Y')
             {
@@ -295,6 +302,7 @@
         <center><a href="<?php echo base_url('product/detail/'. $itemslide2['product_id'].'/'. $itemslide2['alias']);?>"><img src="<?php echo $itemslide2['imageurl']; ?>"  style="height:120px; width: auto"></a>
         </center>
             <p class="box-title" style='color: #4b4b4b; height:35px'><?php
+
                 $str1 = $itemslide2['name'];
                 $str2 = substr($str1, 0, 41);
                 $str = strlen($str2);
@@ -321,6 +329,7 @@
                 <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
              </center>
               <?php }?>
+
 
       </div>
       <?php $n++;  } ?>
