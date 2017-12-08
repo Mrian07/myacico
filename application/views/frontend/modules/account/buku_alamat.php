@@ -116,18 +116,3 @@ function dellBukuAlamat(id,address1){
 
 }
 </script>
-
-
-<!-- <script>
-$(document).ready(function() {
-	$('#alertSubmit2').show('slow').delay(5000).hide('slow');
-	$.ajax
-	({
-	url: "<?php //echo site_url('account/listBukuAlamat'); ?>",
-	success:function(html){
-			$(".listBukuAlamat").html(html);
-		}
-	});
-
-});
-</script> -->
