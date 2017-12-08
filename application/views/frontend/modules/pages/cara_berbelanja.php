@@ -113,13 +113,11 @@ text-align: justify;
 										</div>
 									</center>
 									</div>
-									<p class="pp">Pilih Barang yang anda inginkan</p><br/><br/>
-									<align="left">
-									<p class="pp1"> Setelah anda masuk ke halaman www.myacico.co.id  memilih kategori yang anda inginkan  dengan memilih </p>
-									<p class="pp1"> langsung mengetikkan nama barang yang anda inginkan di kolom pencarian </p>
+									<p class="pp"><?php echo $lang_how_buy_tittle;?></p><br/><br/>
+									
+									<p class="pp1"> <?php echo $lang_how_buy1;?> </p>
+									<p class="pp1"> <?php echo $lang_how_buy1_1;?> </p>
 									<!-- anda inginkan dengan memilih kategori yang tersedia atau langsung mengetikkan nama barang yang anda inginkan di kolom pencaria -->
-
-								</align>
 
                 </center>
 
@@ -129,10 +127,9 @@ text-align: justify;
 <div class="numberCircle1 zxc1">2
 </div>
 	</center>
-	<p class="pp4">Masukkan ke shopping cart</p><br/><br/>
-	<p class="pp2"> Setelah anda mendapatkan barang yang anda cari, anda dapat langsung memasukkan barang anda ke shopping dengan </p>
-		<p class="pp2"> 	cara meng-klik tombol add to shopping cart yang  tersedia. Kemudian anda bisa melakukan pencarian barang </p><br/>
-	<p class="pp2"> kembali atau langsung beralih pada menu berikutnya.</p>
+	<p class="pp4"><?php echo $lang_how_buy_tittle2;?></p><br/><br/>
+	<p class="pp2"><?php echo $lang_how_buy2;?> </p>
+	
 
 </div>
 <img src="<?php echo base_url('images/general/dusmyacico.JPG');?>" style='height:auto; width: auto; float:left; padding-left:170px; padding-right:120px;'>
@@ -140,23 +137,21 @@ text-align: justify;
 </div>
 
 	</center>
-	<p class="pp4"> Review Barang di cart dan Tujuan Pengiriman Barang</p><br/><br/>
-	<p class="pp7"> Sebelum anda beralih pada menu pembayaran, review kembali barang yang sudah anda masukkan ke cart beserta </p>
-	<p class="pp7">  alamat yang telah anda masukkan beserta ekspedisi pengiriman (myACICO Courrier, Ninja Express, JNE). </p>
-	<p class="pp7">  Pastikan data tersebut valid agar barang yang anda pesan sampai tepat di tujuan. </p>
+	<p class="pp4"> <?php echo $lang_how_buy_tittle3;?></p><br/><br/>
+	<p class="pp7"> <?php echo $lang_how_buy3;?> </p>
+	
   <div class="col-sm-10">
-		<img src="<?php echo base_url('images/general/dompet.JPG');?>" style='height:auto; width: auto; float:left; padding-left:170px; padding-right:120px;'>
+		<img src="<?php echo base_url('images/general/dompet.JPG');?>" style='height:auto; width: auto; float:left; padding-left:170px; padding-right:99px;'>
 		<div class="numberCircle1 zxc1">4
 		</div>
-			<p class="pp4">Pembayaran dengan Berbagai Metode</p><br/><br/>
-			<p class="pp7">Setelah proses review selesai, anda dapat melakukan pemabayaran dengan berbagai metode pembayaran yang tersedia myACICO.co.id
-				menyediakan tiga jenis pembayaran yaitu Transfer Manual, Transfer Online dan Kartu Kredit.
+			<p class="pp4"><?php echo $lang_how_buy_tittle4;?></p><br/><br/>
+			<p class="pp7"><?php echo $lang_how_buy4;?>
 			</p>
-			<img src="<?php echo base_url('images/general/bisKa.JPG');?>" style='height:auto; width: auto; float:left; padding-left:170px; padding-right:120px;'>
+			<img src="<?php echo base_url('images/general/bisKa.JPG');?>" style='height:auto; width: auto; float:left; padding-left:170px; padding-right:99px;'>
 			<div class="numberCircle1 zxc1">5
 			</div>
-			<p class="pp4">Barang di antarkan ke tujuan</p><br/><br/>
-			<p class="pp7">Setelah semua proses telah anda lakukan. Tim kami akan segera memproses pesanan anda dan mengirimkannya ke tempat anda dengan estimasi pengiriman 2-7 Hari.
+			<p class="pp4"><?php echo $lang_how_buy_tittle5;?></p><br/><br/>
+			<p class="pp7"><?php echo $lang_how_buy5;?>
 			</p>
 	</div>
 

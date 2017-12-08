@@ -730,7 +730,7 @@ if(jdata2<10)
 {
     $('#sld2').hide();
 }
-if(jdata3<10)
+if(jdata3<1)
 {
     $('#sld3').hide();
 }
