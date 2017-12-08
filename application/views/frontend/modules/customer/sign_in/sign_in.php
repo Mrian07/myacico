@@ -48,7 +48,7 @@
 								str += "Email:" + email + "<br>";
 								var umail=email;
 								$("#email").val(umail);
-								console.log("sss",umail);
+								
 								if(ori == 1){
 										window.location.assign('#/app/login/'+email)
 								}else{
@@ -89,9 +89,7 @@
 						// Check whether the user already logged in
 						FB.getLoginStatus(function(response) {
 								if (response.status === 'connected') {
-										//display user data
-										//console.log(response.status.email)
-
+									
 										getFbUserData();
 								}
 						});
@@ -124,23 +122,16 @@
 						function (response) {
 								//console.log(response)
 								var umail=response.email;
-								console.log(umail)
+								
 								$("#email").val(umail);
-								window.location.assign('#/app/login/'+response.email)
-								// document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
-								// document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
-								// document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
-								// document.getElementById('userData').innerHTML = '<p><b>FB ID:</b> '+response.id+'</p><p><b>Name:</b> '+response.first_name+' '+response.last_name+'</p><p><b>Email:</b> '+response.email+'</p><p><b>Gender:</b> '+response.gender+'</p><p><b>Locale:</b> '+response.locale+'</p><p><b>Picture:</b> <img src="'+response.picture.data.url+'"/></p><p><b>FB Profile:</b> <a target="_blank" href="'+response.link+'">click to view profile</a></p>';
+								
 						});
 				}
 
 				// Logout from facebook
 				function fbLogout() {
 						FB.logout(function() {
-								// document.getElementById('fbLink').setAttribute("onclick","fbLogin()");
-								// document.getElementById('fbLink').innerHTML = '<img src="fblogin.png"/>';
-								// document.getElementById('userData').innerHTML = '';
-								// document.getElementById('status').innerHTML = 'You have successfully logout from Facebook.';
+								
 						});
 				}
 				</script>
@@ -270,7 +261,7 @@ function addAllCartToBackend(r){
 	}),
 	headers:{"token":r.token},
   success:function(html){
-		console.log(html);
+		
 
     }
   });
@@ -285,16 +276,13 @@ var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 var wishlist ='<?php echo$this->uri->segment(3); ?>';
 
 var success = function(r){
-	console.log(r);
+
 
 	$('#spinner_img').hide();
 
 	$('#submit_btn').val('<?php echo $lang_btn_SignIn ?>').removeClass('disabled');
 
-	//addAllCartToBackend(r);
-
-	//console.log('OK:', r);
-
+	
 	if(r.status==0) return $.alert({
 		title: 'Login fail!',
 		content: r.message
@@ -330,7 +318,7 @@ var success = function(r){
 var error = function(er){
 	$('#spinner_img').hide();
 	$('#submit_btn').val('Kirim').removeClass('disabled');
-	console.log('OK:', er);
+	
 	$.alert({
 		title: 'Alert!',
 		content: '<?php echo $lang_msg_login3;?>',

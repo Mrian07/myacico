@@ -44,7 +44,7 @@ if(detail[0].name)
 {
      $('#recentView').show();
 }
-console.log(detail);
+
 for(var i=0;i<detail.length;i++)
 {
 
