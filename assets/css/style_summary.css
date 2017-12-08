@@ -1,0 +1,342 @@
+
+	.cart-container {
+		width: 1200px;
+		padding: 10px;
+		font-family: 'arial';
+	}
+	.box-left{
+		float: left;
+		width: 75%;
+	}
+	.box-right{
+		float: right;
+		width: 22.5%;
+
+	}
+	.cart-list-left{
+		min-height: 100px;
+		border : 1px solid #ccc;
+		border-radius: 10px;
+		margin-bottom:10px;
+		font-family: "helvetica_neue";
+	}
+	.cart-list-right{
+		min-height: 400px;
+		padding: 10px;
+		border : 1px solid #ccc;
+		border-radius: 10px;
+	}
+	.table{
+
+		border-collapse: collapse;
+		width: 100%;
+		height: 150px;
+		border-radius: 5px;
+		padding: 10px;
+	}
+	.table .td{
+		border-right : 1px solid #ccc;
+		border-bottom : 1px solid #ccc;
+		min-height: 60px;
+		padding: 5px;
+	}
+	.table .ts{
+		border-bottom : 1px solid #ccc;
+		min-height: 60px;
+		padding: 5px;
+	}
+	.table .tc{
+		min-height: 60px;
+		padding: 5px;
+	}
+	.table .ta{
+		border-right : 1px solid #ccc;
+		min-height: 60px;
+		padding: 5px;
+	}
+	.img-cont{
+		height: 60px;
+		width: 60px;
+		border : 1px solid #ccc;
+		float: left;
+		overflow: hidden;
+	}
+	.prod-info{
+		float: left;
+		width: 400px;
+		height: 60px;
+		margin-left: 5px;
+		padding-top: 5px;
+	}
+	.prod-cont{
+		width: 160px;
+		min-height: 40px;
+		text-align: left;
+		font-size: 10px;
+		color: #666;
+	}
+	.other-info{
+		width: 160px;
+		height: 20px;
+		text-align: center;
+		font-weight: bold;
+		font-size: 11px;
+		color: #666;
+	}
+	.other-cont{
+		width: 160px;
+		min-height: 40px;
+		text-align: center;
+		font-size: 10px;
+		color: #666;
+	}
+	.other-cont2{
+		width: 80px;
+		height: 40px;
+		text-align: center;
+		font-size: 10px;
+		color: #666;
+	}
+	.other-info2{
+		width: 80px;
+		height: 20px;
+		text-align: center;
+		font-size: 10px;
+		font-weight: bold;
+		color: #666;
+	}
+	.other-info3{
+		width: 50%;
+		height: 25px;
+		text-align: left;
+		font-size: 12px;
+		color: #666;
+		float: left;
+		padding-top: 5px;
+	}
+	.other-info4{
+		width: 50%;
+		height: 25px;
+		text-align: right;
+		font-size: 12px;
+		color: #666;
+		float: right;
+		padding-top: 5px;
+		font-weight: bold;
+	}
+	.prodname{
+		font-size: 12px;
+		color: red;
+	}
+	.quantity{
+		font-size: 12px;
+		color: black;
+	}
+	.SKU{
+		font-size: 12px;
+		color: grey;
+	}
+	.totalfee{
+		margin-top: 10px;
+		width: 100%;
+		border : 1px solid #ccc;
+		border-radius: 10px;
+		font-family: "helvetica_neue";
+	  font-size: 13px;
+	}
+	.totalsub{
+		display: inline-block;
+		font-size: 12px;
+		color: #666;
+		width: 18%;
+		text-align: center;
+		font-weight: bold;
+	}
+	.totalsub2{
+		display: inline-block;
+		font-size: 14px;
+		color: #666;
+		margin-left: 10px;
+		border-left: 1px solid #ccc;
+		padding-left: 10px;
+		width: 18%;
+		font-weight: bold;
+	}
+	.red{
+		color: red;
+	}
+	.right-title{
+		font-weight: bold;
+		color: #666;
+	}
+	.method p{
+		font-weight: bold;
+		color: #666;
+	}
+	.method-kupon{
+		margin-top:40px;
+		color: #666;
+	}
+	.segmen{
+		float: left;
+		width: 10%;
+		height: 40px;
+		padding-top: 10px;
+	}
+	.segmen2{
+		float: left;
+		width: 90%;
+		height: 50px;
+	}
+	.checkout-button{
+		margin-top: 10px;
+		padding: 5px;
+		background-color: red;
+		border-radius: 10px;
+		color: white;
+    font-size:15px;
+    padding:10px;
+	}
+
+	.checkout-button:hover{
+	  background-color: #ca3833;
+	  color:#f1eeee;
+	}
+
+
+
+	.title-step{
+	    width: 200px;
+	    display: inline-block;
+	    margin-right: 0%;
+	    margin-top:0px;
+	    margin-bottom:0px;
+	  }
+	  .title-step p{
+	    color: red;
+	    font-size: 18px;
+	    font-weight: bold;
+	    text-align: center;
+	  }
+
+	  .title-step2{
+			width: 230px;
+	    display: inline-block;
+	    margin-top:0px;
+	    margin-bottom:0px;
+	    margin-left: 160px;
+	  }
+	  .title-step2 p{
+	    color: red;
+	    font-size: 18px;
+	    font-weight: bold;
+	    text-align: center;
+	  }
+
+	  .title-step3{
+			width: 250px;
+	    display: inline-block;
+	    margin-right: 0px;
+	    margin-left: 110px;
+	    margin-top:0px;
+	    margin-bottom:0px;
+	  }
+	  .title-step3 p{
+	    color: #9a9c9b;
+	    font-size: 18px;
+	    font-weight: bold;
+	    text-align: center;
+	  }
+
+	  .number{
+	    width: 60px;
+	    height: 60px;
+	    background-color: red;
+	    display: inline-block;
+	    border-radius: 50px;
+	    margin-right: 24%;
+	    margin-top:0px;
+	    margin-bottom:-500px;
+	  }
+
+		.number:hover{
+	    background-color: #d31e1e;
+			cursor: pointer;
+	  }
+
+	  .number p{
+	    color: white;
+	    font-size: 20px;
+	    font-weight: bold;
+	    text-align: center;
+	    padding-top: 20px;
+	  }
+
+	  .number2{
+	    width: 60px;
+	    height: 60px;
+	    background-color: red;
+	    display: inline-block;
+	    border-radius: 50px;
+	    margin-left: 110px;
+	    margin-top:0px;
+	    margin-bottom:-500px;
+	  }
+	  .number2 p{
+	    color: white;
+	    font-size: 20px;
+	    font-weight: bold;
+	    text-align: center;
+	    padding-top: 20px;
+	  }
+
+	  .number3{
+	    width: 60px;
+	    height: 60px;
+	    background-color: #9a9c9b;
+	    display: inline-block;
+	    border-radius: 50px;
+	    margin-right: 0px;
+	    margin-left: 300px;
+	    margin-top:0px;
+	    margin-bottom:-500px;
+	  }
+	  .number3 p{
+			color: #9a9c9b;
+	    font-size: 18px;
+	    font-weight: bold;
+	    text-align: center;
+	    color: white;
+	    font-size: 20px;
+	    font-weight: bold;
+	    text-align: center;
+	    padding-top: 20px;
+	  }
+
+		.barred{
+			background-color: red;
+			position: absolute;
+			height: 10px;
+			z-index: -1;
+			width: 800px;
+			margin-top: -25px;
+			margin-left:5px;
+		}
+
+		.my-btn-kupon{
+	      padding: 10px 10px;
+	      border: none;
+	      border-radius: 4px;
+	      background-color: #403a35;
+	  	  color:#ffffff;
+	  }
+
+	  .my-field-kupon{
+	  	width: 100%;
+	      padding: 6px 18px;
+	      margin: 8px 0;
+	      box-sizing: border-box;
+	  	background: #f2f1f1;
+	  	border:0px;
+	  	border-radius: 4px 0px 0px 4px;
+	  }
