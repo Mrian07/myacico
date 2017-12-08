@@ -191,7 +191,7 @@ class Web extends MY_Controller {
     $this->data['lang_password_msg3'] = $this->lang->line('lost_password_msg3');
     $this->data['lang_reset_password_msg'] = $this->lang->line('reset_password');
 
-     $this->data['lang_reset_password'] = $this->lang->line('reset_password_tittle');
+     $this->data['lang_reset_password1'] = $this->lang->line('reset_password_tittle');
     $this->data['lang_reset_password_txt'] = $this->lang->line('reset_password_text');
     $this->data['lang_reset_password_form1'] = $this->lang->line('reset_password_form1');
     $this->data['lang_reset_password_form2'] = $this->lang->line('reset_password_form2');
@@ -226,7 +226,7 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
                 $this->data['lang_how_buy4'] = $this->lang->line('how_buy4');
                 $this->data['lang_how_buy5'] = $this->lang->line('how_buy5');
                 $this->data['lang_how_buy1_1'] = $this->lang->line('how_buy1_1');
-                
+
 		//button di daftar
 		$this->data['lang_btn_personal'] = $this->lang->line('btn_daftar');
 		$this->data['lang_btn_bisnis'] = $this->lang->line('btn_daftar_bisnis');
