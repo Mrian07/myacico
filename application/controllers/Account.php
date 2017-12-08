@@ -155,7 +155,7 @@ class Account extends Web_private {
 
 	public function bukuAlamat()
   {
-            $domain = domain();
+    $domain = domain();
 		$lang = get_cookie('lang');
 		$flag = $this->uri->segment(3);
 		if($flag=='1'){
@@ -246,7 +246,7 @@ class Account extends Web_private {
 
 	public function editBukuAlamat()
     {
-            $domain = domain();
+    $domain = domain();
 		$this->data['id'] = $this->uri->segment(3);
     $idadd=$this->uri->segment(3);
     $token = $_COOKIE['x-auth'];

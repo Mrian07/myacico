@@ -379,7 +379,7 @@ function pilihAlamat(id){
   $(".amount").html('-');
   var id = id.value;
   var url = '<?php echo site_url('checkout/pilihShip'); ?>'
-    
+
   if(id==''){
     $(".alamat").html('');
   }else{
@@ -449,6 +449,7 @@ function pilihKurir(row){
   var nameKur = result[2];
   if(id=='kosong'){
     $(".amount").html('-');
+    $('#pilihPaket').html('-');
   }else{
 
     var url = '<?php echo site_url('checkout/pilihKurir'); ?>'

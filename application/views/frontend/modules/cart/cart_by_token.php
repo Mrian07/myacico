@@ -97,7 +97,7 @@
 						</td>
 						<td data-th='Subtotal' class='text-center'>Rp.".money($items['subtotal'])."</td>
 						<td class='actions' data-th=''>
-							<a href='#' onClick=\"dellItemCartToken('".$items['productId']."','".$items['imageurl']."','".$items['name']."','".$items['itemCartId']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a>
+							<a href='#' onClick=\"dellItem('".$items['productId']."','".$items['imageurl']."','".$items['name']."','".$items['itemCartId']."')\"><i class='fa fa-trash' aria-hidden='true'></i></a>
 						</td>
 
 					</tr>";
@@ -163,10 +163,8 @@
 				success:function(html){
 						$(".listCart").html(html);
 						$('.totalCart').html(qtyTotal);
-
             var kurir = $('#kurir').val();
-
-            pilihKurir2(kurir)
+            pilihKurir2(kurir);
 					}
 				});
 
@@ -206,5 +204,51 @@
 
     }
   }
+
+
+  function dellItem(id,img,name,idcart){
+
+		var apiurl = api_base_url + '/order/cart/deleteitem?idcartitem='+idcart;
+
+		$.confirm({
+			title: name,
+			content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
+			//content: '<p>Apakah item ini akan dihapus?</p>',
+			autoClose: 'cancel|10000',
+			closeIcon: true,
+			closeIconClass: 'fa fa-close',
+			buttons: {
+				confirm: function () {
+					//untuk cart yang di header
+					$.ajax
+					({	type: "POST",
+						url: apiurl,
+						headers:{ "token":token},
+						success:function(data){
+							totalCart();
+						}
+					});
+
+
+					//untuk cart yang di basket token
+					$.ajax
+					({
+					url: "<?php echo site_url('cart/listCartToken'); ?>",
+					success:function(html){
+							$(".listCart").html(html);
+              var kurir = $('#kurir').val();
+              pilihKurir2(kurir);
+						}
+					});
+
+				},
+				cancel: function () {
+					//$.alert('Canceled!');
+				}
+			}
+
+		});
+
+	}
 
 </script>
