@@ -40,9 +40,9 @@ font-size: 16px;
 
 }
 .yu1{
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 16px;
-  color: green;
+font-family: 'Roboto Condensed', sans-serif;
+font-size: 10pt;
+color: #4ba240;
 }
 .item.list-group-item
 {
@@ -339,7 +339,7 @@ if($saw==Null)
 					</div>
 				<?php } ?>
 
-                <?php echo "<div class='yu1'>Stock :  Tersedia</div>";
+                <?php echo "<div class='yu1'><i class='fa fa-info-circle' aria-hidden='true'></i> Stock: Tersedia</div>";
                 //validasi untuk cek stok jika tidak ada
                   // echo "ini ".$data['stock'];
                 // if($data['stock'] < 1){
