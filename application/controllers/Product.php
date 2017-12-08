@@ -50,10 +50,6 @@ class Product extends Web {
 			}
 		};
 
-
-
-
-
 		if($short==''){$this->data['sort_id'] = '5'; }else{$this->data['sort_id'] =$short; }
 		$this->data['pro'] = $id;
 
@@ -233,8 +229,12 @@ public function listItem()
 		$konten2 = file_get_contents($url2, false, $context);
 		$konten3 = file_get_contents($url3, false, $context);
     $konten4 = file_get_contents($url4, false, $context);
+		 $konten = file_get_contents($url, false, $context);
      //$konten5 = file_get_contents($url5, false, $context);
-		$konten = file_get_contents($url, false, $context);
+
+	
+
+
      //die(print_r("sam ".json_decode($konten2)->pageCount));
     $this->data['max_page'] =json_decode($konten2)->pageCount;
     $this->data['jdata'] =json_decode($konten3)->productCount;
@@ -288,7 +288,7 @@ public function listItem()
 	public function index()
     {
 		//$this->load->view('frontend/test',$this->data);
-$home_domain = domain2();
+		$home_domain = domain2();
     $this->data['title_web'] = "Myacico.co.id - ".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -345,7 +345,7 @@ $home_domain = domain2();
 	public function category()
 	{
 		$this->data['cat_id']=$this->uri->segment(3);
-                $home_domain = domain2();
+    $home_domain = domain2();
 		$cat_id=$this->uri->segment(3);
 		$api = "category/listc3?c2id=".$cat_id;
 		$url = api_base_url($api);
@@ -436,7 +436,7 @@ $home_domain = domain2();
 //                        rekomendasi
                         $konten_rekom = file_get_contents($url_rekom, false, $context);
                         $this->data['rekom'] = json_decode($konten_rekom, true);
-//                        Suplement 
+//                        Suplement
                         $konten_sup = file_get_contents($url_sup, false, $context);
                         $this->data['sup'] = json_decode($konten_sup, true);
 			//e lalang
