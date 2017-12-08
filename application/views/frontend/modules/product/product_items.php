@@ -189,8 +189,6 @@ if($saw==Null)
 }else{
     $sort_id = $saw;
 }
-//echo $data[1]["nama_lokasi"];
-
 ?>
 
 
@@ -287,14 +285,6 @@ if($saw==Null)
 
           <?php
           echo "<div class='yu1'><i class='fa fa-info-circle' aria-hidden='true'></i> Stock: Tersedia</div>";
-          //validasi untuk mengecek stock
-          // if($data['stock'] < 1)
-          // echo "<div class='yu'>Stock : Tidak Tersedia</div>";
-          // else{
-          // echo "<div class='yu1'>Stock :  Tersedia</div>";
-          // }
-          //akhir dari validasi
-
           ?>
           <p class="lead">
            <?php if ($data['specialPrice'] > 0) { ?>
@@ -549,19 +539,6 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
         $('.cartModal').modal('show');
 
-				// $.confirm({
-				// 	title: name,
-				// 	content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan<p>',
-				// 	autoClose: 'close|3000',
-				// 	buttons: {
-				// 		close: function () {
-				// 			//$.alert('action is canceled');
-				// 		}
-				// 	},
-				// 	closeIcon: true,
-				// 	closeIconClass: 'fa fa-close'
-				// });
-
 				//Buat update cart, fungsi ini ada di file header.php
 				totalCart();
 			};
@@ -611,19 +588,6 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 
 						$(".totalCart").html(data);
             $('.cartModal').modal('show');
-						// $.confirm({
-						// 	title: name,
-						// 	content: '<img src="'+imageurl+'" style="margin-bottom:10px">'+'<p>'+jmlItem+' Item berhasil ditambahkan kedalam keranjang<p>',
-						// 	autoClose: 'close|3000',
-						// 	buttons: {
-						// 		close: function () {
-						// 			//$.alert('action is canceled');
-						// 		}
-						// 	},
-						// 	closeIcon: true,
-						// 	closeIconClass: 'fa fa-close'
-						// });
-
 
 					}else{
 						$.dialog({
@@ -646,9 +610,4 @@ function addToCart(m_product_id,pricelist,imageurl,name,stock,weight){
 		}
 	}
 }
-
-
-
-
-
 </script>
