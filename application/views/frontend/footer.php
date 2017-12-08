@@ -48,16 +48,15 @@
 				<?php echo anchor('Pages/faq','FAQ', array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Pages/caraBerbelanja',$lang_carabeli, array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Pages/Pengembalian',$lang_pengemba, array('class'=>'my-info')); ?><br>
-
 				<?php echo anchor('Pages/Jaminan',$lang_guara, array('class'=>'my-info')); ?><br>
 				<?php echo anchor('#',$lang_orde, array('class'=>'my-info')); ?><br>
 				<?php echo anchor('Customer/contact',$lang_conta, array('class'=>'my-info')); ?><br>
-                                <?php echo anchor('Customer/afterSales',$lang_after_sales, array('class'=>'my-info')); ?>
+        <?php echo anchor('Customer/afterSales',$lang_after_sales, array('class'=>'my-info')); ?>
 			</div>
 
 
 
-<form name="myForm1" method="post">
+			<form name="myForm1" method="post">
 
 			<div class="col-xs-3">
 				<h3><span><?php echo $lang_folow; ?></span></h3>
@@ -74,7 +73,7 @@
 
       <div class="col-xs-3">
 				<h3><span>Email Newsletter</span></h3>
-      <?php echo $lang_belr; ?><br>
+      	<?php echo $lang_belr; ?><br>
 				<div class="input-group">
 					<input type="hidden" id="isSubscribe" name="isSubscribe" class="my-sub-field" name="x" value="Y">
 					<input type="text" id="email1" name="email1" class="my-sub-field" name="x" placeholder="Email...">
@@ -83,8 +82,8 @@
 						<!-- <button class="btn btn-default my-sub-button" onClick="javascript:window.location.href='http://localhost/myacicoweb/myacicoweb/subscribe'">SUBSCRIBE</button> -->
 					</span>
 				</div>
-			</form>
 			</div>
+			</form>
 		</div>
 		<br>
 		<div class="row">
@@ -120,58 +119,6 @@
 			</div>
 		</div>
 
-
-		<!-- <div class="row">
-
-			<div class="col-xs-3">
-
-				<h3><span>DELIVERY</span></h3>
-				2x24 hours delivery on weekdays for all areas of JABODETABEK and free delivery to all area in Indonesia.
-			</div>
-			<div class="col-xs-3">
-				<h3><span>RETURN</span></h3>
-				Damage to goods caused by errors from the manufacturer of goods, can be exchanged within 7 working days or money back within 2x24 hours.
-			</div>
-			<div class="col-xs-3">
-				<h3><span>EMAIL NEWSLETTER</span></h3>
-				All items in myACICO.co.id are guaranteed for 7 days, counted upon receipt of the goods.
-			</div>
-      <div class="col-xs-3">
-				<h3><span>Pembayaran</span></h3>
-        <div class='sos'>
-					<ul>
-            <li><a class="active" href="https://www.facebook.com/MyacicoID/?ref=aymt_homepage_panel"><img src="https://s1.postimg.org/76vagdbu33/bca_24px_1105429_easyicon.net.png"></a></li>
-          </ul>
-        </div>
-			</div>
-		</div> -->
-		<!-- <div class="row my-foot-box">
-			<div class="col-xs-3">
-				<h3><span>COMPANY</span></h3>
-				Tentang Kami Syarat & Ketentuan Kebijakan Privasi Kebijakan Hak Cipta.
-			</div>
-			<div class="col-xs-3">
-				<h3><span>BANTUAN</span></h3>
-				FAQ Pengembalian & Pembatalan Garansi & Jaminan Hubungi Kami.
-			</div>
-			<div class="col-xs-3">
-				<h3><span>IKUTI KAMI</span></h3>
-
-				<div class='sos'>
-				<ul>
-				  <li><a class="active" href="https://www.facebook.com/MyacicoID/?ref=aymt_homepage_panel"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				  <li><a href="https://twitter.com/myacicoid"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				  <li><a href="https://www.instagram.com/myacico.id/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				  <li><a href="https://www.youtube.com/channel/UCT6wkP8xyhEgDZzrbuWBQRg"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
-				</ul>
-				</div>
-			</div>
-			<div class="col-xs-3">
-				<h3><span>PENGIRIMAN</span></h3>
-				<img src='<?php //echo base_url('images/general/logo_kurir_kecil.png');?>' border='0'/>
-			</div>
-		</div> -->
-
 		<br><br>
 		<center>
 		<button data-toggle="collapse" data-target="#demo" class='my-btn-brand'><?php echo $lang_sea; ?> <span style='font-size:24px;'><i class="fa fa-angle-double-right" aria-hidden="true"></i></span></button>
@@ -188,35 +135,21 @@
 
 </body>
 
-<!-- START JAVASCRIPT -->
-<!-- Placed at the end of the document so the pages load faster -->
-<!--script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script-->
-
-
-<!-- bootstrap.min.js bentrok dengan drowpdown serach di header, sementara ditutup dulu->
-<!--<script src="<?php echo base_url('assets/nav/js/bootstrap.min.js');?>"></script>-->
-<!-- Bootsnavs -->
-
-<!--
-<script src="<?php //echo base_url('assets_adminlte/plugins/jQuery/jQuery-2.1.4.min.js') ?>"></script>-->
-
 <!-- s: date_picker -->
-	<script type="text/javascript" src="<?php echo base_url('date_picker/js/bootstrap-datetimepicker.js');?>" charset="UTF-8"></script>
-	<script type="text/javascript">
-	 $('.form_date').datetimepicker({
-			language:  'id',
-			weekStart: 1,
-			todayBtn:  1,
-			autoclose: 1,
-			todayHighlight: 1,
-			startView: 2,
-			minView: 2,
-			forceParse: 0
-		});
-	</script>
-	<!-- e: date_picker -->
-
-
+<script type="text/javascript" src="<?php echo base_url('date_picker/js/bootstrap-datetimepicker.js');?>" charset="UTF-8"></script>
+<script type="text/javascript">
+ $('.form_date').datetimepicker({
+		language:  'id',
+		weekStart: 1,
+		todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+	});
+</script>
+<!-- e: date_picker -->
 
 <script type="text/javascript">
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
@@ -245,12 +178,8 @@ $(document).ready(function() {
 
 		data.isSubscribe = isSubscribe;
     data.email = email1;
-
-
-
 		var apiurl = baseApiUrl + '/newsletter/save/genericsubscribe';
 		function validateForm() {
-
 
 }
 
@@ -275,18 +204,12 @@ if(email1==''){
 		    var success = function(r){
       $('#spinner_img').hide();
       $('#submit_btn').val('Kirim').removeClass('disabled');
-      console.log('OK:', r);
-      alert(r.message);
-
+      	alert(r.message);
 				 	if(r.message == "email anda belum terdaftar, silahkan registrasi terlebih dahulu"){
-       return false;
+       			return false;
 					}else
-
-					      	 location.reload();
-
-    };
-
-
+ 						location.reload();
+					};
 
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
@@ -294,82 +217,8 @@ if(email1==''){
 
   });
   });
-// var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
-
-// var apiurl = baseApiUrl + '/create';
-// var success = function(r){
-// 	console.log('OK:', r);
-// 	if(r.status == 1) return location.href = '<?php // echo base_url('customer/successCreate/'); ?>'+$("#email").val();
-// 	$('#spinner_img').hide();
-// 	$('#submit_btn').val('Kirim').removeClass('disabled');
-// 	$.alert({
-// 		title: 'Alert!',
-// 		content: r.message
-// 	});
-// };
-
-// var error = function(er){
-//   $('#spinner_img').hide();
-//   $('#submit_btn').val('Kirim').removeClass('disabled');
-//   console.log('OK:', er);
-//   $.alert({
-//     title: 'Alert!',
-//     content: 'koneksi tidak berhasil, silahkan coba lagi!',
-//   });
-// };
-
-
-// 	$("form").submit(function(e){
-// 	    e.preventDefault();
-// 		var apiurl = baseApiUrl + '/create';
-// 		var data = $(this).serialize();
-
-// 		var nama = $("#nama").val();
-// 		var email = $("#email").val();
-// 		var password = $("#password").val();
-// 		var password2 = $("#password2").val();
-
-
-// 		if(nama==''){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'nama tidak boleh kosong!',
-// 			});
-// 		}else
-// 		if(email==''){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'email tidak boleh kosong!',
-// 			});
-// 		}else
-// 		if(password.length < 7){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'password minimal 7 karakter!',
-// 			});
-// 		}else
-// 		if(password != password2){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'Password tidak sama!',
-// 			});
-// 		}else{
-// 			$('#spinner_img').show();
-// 			$('#submit_btn').val('loading...').addClass('disabled');
-// 			//$.post( apiurl, data, success, "json" );
-// 			//$.ajax({ type:"POST", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
-// 			 //$.ajax({ type:"POST", contentType: "application/json", dataType: "json", data:data, url: apiurl, success: success, error: error, timeout: 30000 });
-// 			  $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), dataType: "json", url: apiurl, success: success, timeout: 30000 });
-// 		}
-
-// 		console.log('data',data);
-
-// 	});
-
 
 </script>
-
-
 
 <script>
 	function langFunction($data){
@@ -396,9 +245,6 @@ $(document).ready(function() {
 </script>
 
 </html>
-
-
-
 
 <!-- Global site tag (gtag.js) - Google Analytics --> -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110142423-2"></script>
