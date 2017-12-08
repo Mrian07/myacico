@@ -31,10 +31,6 @@
             <option value="">--pilih--</option>
           </select>
         </div>
-<!--         <div class="form-group">
-      <label><?php echo $lang_comapnytype; ?>*</label>
-       <select name="bisnis" id="Bisnis_sel" class="form-control mandatory" >
-        </div> -->
         <div class="form-group">
           <label>Telephone*</label>
           <input type="text" name="phone" id="phone" class="form-control mandatory" />
@@ -266,49 +262,6 @@ var data = {};
     processData: false, dataType: "json", url: apiurl });
 
   });
- //  $("form").submit(function(e){
- //    e.preventDefault();
- //    var apiurl = api_base_url + '/account/create/b2b';
-
- //    var fl=document.signup;
- //    var data = $(this).serialize();
- //    // return alert(data);
-
- //    // success handling
- // var asd = 'asdasdasd';
- //    alert('asd');
- //    var success = function(r){
- //      alert(r.message);
- //      console.log('OK:', r.status);
- //    };
-
- //    // do validation
- //    var form_ok = true;
- //    $('.mandatory').each(function(){
- //      if($(this).val()==''){
- //        $.alert({title:'Alert', content: $(this).prev().text().slice(0,-1)+ ' is required!'});
- //        // onContentReady: function(){$(this).focus();}
- //        form_ok =false;
- //        return false;
- //      }
-
- //    });
- //    var success = function(r){
- //      $('#spinner_img').hide();
- //      $('#submit_btn').val('Kirim').removeClass('disabled');
- //      console.log('OK:', r);
- //      alert(r.message);
- //    };
-
- //    if(form_ok==false) return false;
- //    if(fl.password.value!=$('#password2').val())alert('password not match!!!');
-
- //    else {
- //      $('#spinner_img').show();
- //      $('#submit_btn').val('loading...').addClass('disabled');
- //      $.post( apiurl, data, success, "json" );
- //    }
- //  });
 
   $.get(api_base_url+"/ccountry/getlistccountry", function(r){
     console.log(r);

@@ -7,7 +7,6 @@
 		}
 		var ori = null
 		function login(w) {
-			 // console.log(w)
 				ori = w
 			var myParams = {
 				'clientid' : '879752343646-cunagke2s8vokdao51es112nlhrnults.apps.googleusercontent.com',
@@ -48,7 +47,7 @@
 								str += "Email:" + email + "<br>";
 								var umail=email;
 								$("#email").val(umail);
-								
+
 								if(ori == 1){
 										window.location.assign('#/app/login/'+email)
 								}else{
@@ -89,7 +88,7 @@
 						// Check whether the user already logged in
 						FB.getLoginStatus(function(response) {
 								if (response.status === 'connected') {
-									
+
 										getFbUserData();
 								}
 						});
@@ -122,16 +121,16 @@
 						function (response) {
 								//console.log(response)
 								var umail=response.email;
-								
+
 								$("#email").val(umail);
-								
+
 						});
 				}
 
 				// Logout from facebook
 				function fbLogout() {
 						FB.logout(function() {
-								
+
 						});
 				}
 				</script>
@@ -261,14 +260,14 @@ function addAllCartToBackend(r){
 	}),
 	headers:{"token":r.token},
   success:function(html){
-		
+
 
     }
   });
 
 
 	<?php } ?>
-  //die();
+
 }
 
 
@@ -282,20 +281,12 @@ var success = function(r){
 
 	$('#submit_btn').val('<?php echo $lang_btn_SignIn ?>').removeClass('disabled');
 
-	
+
 	if(r.status==0) return $.alert({
 		title: 'Login fail!',
 		content: r.message
 	});
 	if(!r.token) return false;
-	// var apiurl = api_base_url +'/order/cart/additem?token='+r.token;
-
-
-
-
-
-
-
 
 	document.cookie='x-auth='+r.token+'; path='+base_path;
 	token = r.token;
@@ -304,21 +295,20 @@ var success = function(r){
 	var cb = location.search.split('callback=');
 
 	//SAM
-	//alert(wishlist);
+
 	if(wishlist){
 		window.location.replace(base_url+"product/detail/"+wishlist);
 		die();
 	}
-	// alert('login OK');
+
 	if(cb.length > 1) location.href = cb[1].split(';').shift();
 	else location.href = '<?php echo base_url('account'); ?>';
 
-	// if(localStorage.chat_status == 'redirect') chat.connect();
 };
 var error = function(er){
 	$('#spinner_img').hide();
 	$('#submit_btn').val('Kirim').removeClass('disabled');
-	
+
 	$.alert({
 		title: 'Alert!',
 		content: '<?php echo $lang_msg_login3;?>',

@@ -7,41 +7,41 @@
 <div class="container">
 	 <div class="row">
 	  <div class="col-sm-4">
-		
+
 		<?php echo $lang_a_sales;?>
-		
+
 	  </div>
-	
+
    <br>
    <div class="col-sm-8">
    <div class="col-sm-5" style="padding-right: 0">
        <?php echo $lang_aftersale_baner;?>
   </div>
-    
+
 	  <div class="col-sm-7" style="padding-left: 0">
               <div id="sukses_after_sales" style="display: none;">
                    <div class="col-sm-8" style="text-align: justify;text-justify: inter-word;">
                        <center>
                            <h3><b>TERIMA KASIH</b></h3><br>
                        </center>
-                           
+
     Telah menghubungi kami. Customer service kami akan segera menghubungi Anda.
-	
+
 	  </div>
               </div>
 
      <div id="aftersale" style="display: block;background: #ffff;border: 1px solid;border-top-right-radius: 10px;padding: 10px;border-bottom-right-radius: 10px;border: 1px solid #ccc;border-left: 0;height: 460px;">
-         
+
          <div class="row">
   <div class="col-sm-12 text-center">
-      <b><?php echo $lang_aftersales_cont;?></b> 
+      <b><?php echo $lang_aftersales_cont;?></b>
   </div>
-      
+
 </div>
-         
+
     <form name="myForm" method="post">
 <div class="row" style="margin-bottom: 10px;">
-        
+
     <div class="col-sm-6">
         <input type="text" id="subject" name="subject" class="form-control mandatory" placeholder="<?php echo$lang_subjek;?>">
   </div>
@@ -76,21 +76,21 @@
     </div>
 </div>
         </form>
-        
+
          <div class="clearfix"></div>
           </div>
-               
+
          </div>
        <div class="row" style="margin-bottom: 10px;">
         <?php echo $lang_aftersale_bawah;?>
     </div>
 	</div>
-   
+
 </div>
-    
+
     </div>
 <script type="text/javascript">
-    
+
 var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
 var apiurl_comp = baseApiUrl + '/mail/aftersales';
@@ -101,17 +101,9 @@ $('#phone').on('input', function(event) {
     });
 $(document).ready(function() {
     
-//$("#ilang").load(function() {
-//            if (this.value == 'Kantor Cabang' || this.value == 'Kantor Pembantu' || this.value == 'Perwakilan') {
-//                $('#ilang').show();
-//            } else {
-//                $("#ilang").hide();
-//            }
-//        });
-
 
   $('form').submit(function(e){
-     
+
     e.preventDefault();
     var nama = $("#nama").val();
     var email = $("#email").val();
@@ -120,9 +112,9 @@ $(document).ready(function() {
     var phone = $("#phone").val();
     var company = $("#company").val();
     var id_order = $("#id_order").val();
-    
-      
-    
+
+
+
       if(subject ===''){
         $.alert({title:'Alert', content: ' Keperluan/subject tidak boleh kosong'});
         $('#spinner_img').hide();
@@ -130,7 +122,7 @@ $(document).ready(function() {
         $('.mandatory').prop('disabled', false);
         return false;
       }
-     
+
       if(email ===''){
         $.alert({title:'Alert', content: ' Email tidak boleh kosong'});
         $('#spinner_img').hide();
@@ -138,7 +130,7 @@ $(document).ready(function() {
         $('.mandatory').prop('disabled', false);
         return false;
       }
-      
+
        if(nama ===''){
         $.alert({title:'Alert', content: ' Nama tidak boleh kosong'});
         $('#spinner_img').hide();
@@ -183,13 +175,6 @@ $(document).ready(function() {
     data.company = company;
     data.orderID = id_order;
 
-// if(name==''){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'Nama tidak boleh kosong!',
-// 			});
-//       return false;
-// 		}
 		    var x = document.forms["myForm"]["email"].value;
     var atpos = x.indexOf("@");
     var dotpos = x.lastIndexOf(".");
@@ -206,10 +191,9 @@ $(document).ready(function() {
 		{
 
 			if(data.status==1){
-        // console.log('asdasd',data.status);
 
-                $('#aftersale').hide(); 
-                $('#sukses_after_sales').show(); 
+                $('#aftersale').hide();
+                $('#sukses_after_sales').show();
 				//
 			}else{
         $.alert({title:'Alert', content: ' pesan gagal dikirim silahkan coba kembali !'});

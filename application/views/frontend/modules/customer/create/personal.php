@@ -91,7 +91,7 @@
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
                     //display user data
-                    //console.log(response.status.email)
+
 
                     getFbUserData();
                 }
@@ -123,23 +123,23 @@
         function getFbUserData(){
             FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
             function (response) {
-                //console.log(response)
+
                 var umail=response.email;
                 var ufname=response.first_name;
                 var ulname=response.last_name;
                 var uname=ufname+" "+ulname;
-                //console.log(uname)
+
                 $("#email").val(umail);
                 $("#name").val(uname);
                 window.location.assign('#/app/login/'+response.email)
-               
+
             });
         }
 
         // Logout from facebook
         function fbLogout() {
             FB.logout(function() {
-               
+
             });
         }
         </script>
@@ -187,7 +187,7 @@ margin-top: -11px;
 		<?php echo $lang_daftar_info_point2?>
 	</p>
 	<p class="p1">
-	<?php echo $lang_daftar_info2;?>	
+	<?php echo $lang_daftar_info2;?>
 	</p>
 		</div>
 	  <div class="col-sm-6">
@@ -254,7 +254,7 @@ $(document).ready(function() {
     data.password = password;
 
 var apiurl = '<?php echo $baseApiUrl2; ?>'+'/create';
-		
+
 		function validateForm() {
 
 
@@ -298,9 +298,7 @@ if(name==''){
 		    var success = function(r){
       $('#spinner_img').hide();
       $('#submit_btn').val('Daftar').removeClass('disabled');
-      // console.log('OK:', r);
 			if(r.status == 0){
-         // alert(r.message);
           $.alert({
 				title: 'Alert!',
 				content: '<?php echo $lang_msg_regis2;?> '+r.message,

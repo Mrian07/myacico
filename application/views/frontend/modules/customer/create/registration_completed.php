@@ -39,22 +39,17 @@ $(document).ready(function() {
   $('form').submit(function(e){
       e.preventDefault();
       var apiurl3 = '<?php echo $baseApiUrl2; ?>';
-      // acc.myacico.co.id/myacico-account/account/resendemail
     var api2 = login1 +'account/resendemail';
     console.log('api2',api2)
-    //$.get(api_base_url+'/aduser/getaddress?addresstype=isshipto',
             var email = $("#email").val();
                   data.email = email;
     var success = function(r){
 
         $('#spinner_img').hide();
  $('#submit_btn').val('Kirim').removeClass('disabled');
-//         $.alert({
-//     title: 'Alert!',
-//     content: 'Alamat Baru Berhasil di tambahkan',
-//    });
+
      alert(r.message);
-     console.log('OK:', r.status);
+
 
 
 
@@ -62,8 +57,6 @@ $(document).ready(function() {
   $.ajax({ type:"POST", contentType: "application/json", data:JSON.stringify(data), url: api2, success: success});
 
 
-    console.log('da1',token);
-    console.log('asd',api2);
   });
 });
 

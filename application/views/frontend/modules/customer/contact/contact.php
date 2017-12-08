@@ -95,7 +95,7 @@ $(document).ready(function() {
 
       var captcha = <?php echo  strtolower($this->session->userdata('mycaptcha'));?>;
       var secutity_code = $("#secutity_code").val();
-      
+
 		data.nama = nama;
     data.email = email;
     data.issue = issue;
@@ -138,13 +138,6 @@ $(document).ready(function() {
         return false;
       }
 
-// if(name==''){
-// 			$.alert({
-// 				title: 'Alert!',
-// 				content: 'Nama tidak boleh kosong!',
-// 			});
-//       return false;
-// 		}
 		    var x = document.forms["myForm"]["email"].value;
     var atpos = x.indexOf("@");
     var dotpos = x.lastIndexOf(".");
@@ -153,16 +146,12 @@ $(document).ready(function() {
         return false;
     }
 
-
-
 		// comment baru
 
     var success = function(data)
 		{
 
 			if(data.status==1){
-        // console.log('asdasd',data.status);
-
 				location.href="<?php echo site_url('customer/messageSent'); ?>";
 			}else{
         $.alert({title:'Alert', content: ' pesan gagal dikirim silahkan coba kembali !'});
@@ -184,4 +173,3 @@ $(document).ready(function() {
 
 
 </script>
-
