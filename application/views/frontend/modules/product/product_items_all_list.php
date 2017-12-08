@@ -283,103 +283,10 @@ input[type=number]::-webkit-outer-spin-button {
     </div>
 
 
-    <div class='row'>
-      <?php
-      if($totalItem==0){
-        echo"<center>Maaf item yang Anda cari belum tersedia.</center>";
-      }else{
 
-			$no = $posisi+1;
-			$i = -1;
-      foreach($hasil as $data){
-				$i++;
-        //die(print_r($data['imageurl']));
-        if(isset($data['imageurl'])){
-        	$img_url= $data['imageurl'];
-        }
-        else{
-        	$img_url= null;
-        }
-      ?>
-
-
-      <div class="col-xs-12" style='margin-bottom:10px;'>
-        <div class='row' style="padding-bottom: 15px">
-            <div class="col-xs-3">
-              <a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>">
-                <img class="img-thumbnail clear-border" src="<?php echo $img_url; ?>" alt="<?php echo $data['name']; ?>" style="height:auto; width: 150px;" onerror="this.onerror=null;this.src='<?php echo base_url('images/general/noimage.png');?>';"/>
-              </a>
-            </div>
-            <div class="col-xs-6">
-              <div class='highlight-list' style='text-align:left;'>
-              	<a class="title-product" href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>"><?php echo $data['name']; ?></a>
-								<div class="highlight<?php echo $i ?>">
-									<?php echo $data['highlight'] ?>
-								</div>
-								<a href="<?php echo base_url('product/detail/'.$data['m_product_id'].'/'.$data['alias']);?>" style="color: #4b4b4b!important; font-weight: bold">SELENGKAPNYA</a>
-              </div>
-            </div>
-            <div class="col-xs-3">
-							<?php if ($data['specialPrice'] > 0) {?>
-								<span class="strike-throgh">Rp <?php echo money($data['pricelist']); ?></span>
-								<span class="lead dark-red pricelist" style="font-size: 1.4em;">
-									Rp <?php echo money(($data['specialPrice'])); ?>
-								</span>
-								<div>Hemat
-									<span class="lead dark-red pricelist" style="font-size: 1.2em;">
-										Rp <?php echo money($data['pricelist'] - ($data['specialPrice'])); ?>
-                                                                                (<?php echo $data['discount']; ?>%)
-
-
-									</span>
-								</div>
-							<?php } else { ?>
-								<span class="lead dark-red pricelist">
-									Rp <?php echo money($data['pricelist']); ?>
-								</span>
-							<?php } ?>
-
-
-							<?php
-								// if($data['stock'] < 1) {
-								// 	echo "<div class='yu'><i class='fa fa-info-circle' aria-hidden='true'></i> Stock: Tidak tersedia</div>";
-								// } else {
-									echo "<div class='yu1'><i class='fa fa-info-circle' aria-hidden='true'></i> Stock: Tersedia</div>";
-								// }
-							?>
-							<div class="text-left" style="margin-top: 20px;">
-								<input type='hidden' class='form-control text-center' id='jmlItem<?php echo$data['m_product_id'];?>' style='width: 50px; font-size: 9pt; margin-bottom: 8px; height: 29px;' value='1' min='1'>
-
-								<div>
-									<div style="width: 130px;">
-										<button type="button" class="btn btn-danger btn-add-to-cart" onClick="addToCart('<?php echo$data['m_product_id'];?>','<?php echo$data['pricelist'];?>','<?php echo$img_url;?>','<?php echo$data['name'];?>','<?php echo$data['stock'];?>','<?php echo$data['weight']; ?>')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
-									</div>
-									<div class="text-center" style="width: 130px;">
-										<?php
-										if($data['isWishList'] == 'Y')
-										{
-										?>
-
-										<a class="btn btn-warning btn-add-to-whishlist whishlist-active" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')"><i class="fa fa-heart"  style="font-size:15px;color:grey;"  aria-hidden="true"></i> Wishlist</button>
-										<?php }else{
-										?>
-
-										<a class="btn-add-to-whishlist" onClick="addWishlist('<?php echo$data['m_product_id'];?>','<?php echo$data['name'];?>','<?php echo$img_url;?>')">Add to Wishlist</a>
-
-										<?php }
-										?>
-									</div>
-								</div>
-							</div>
-            	</center>
-          </div>
-        </div>
-
-        <div class="col-xs-12" style='border-top:1px solid #e30c0c'>
-        </div>
-      </div>
-    <?php }} ?>
-      </div>
+    <div id="productlist" class='row'>
+      
+    </div>
 
 
 
@@ -497,11 +404,13 @@ $(document).ready(function() {
 					$('#startItem').html((arrPath[5] * 10) - 9);
 					$('#endItem').html((arrPath[5] * 10));
 				}
+
 			}
 		}
-		for (var i = 0; i < 10; i++) {
-			$('.highlight'+ i + ' ul li:gt(3)').hide();
-		}
+	}
+	for (var i = 0; i < 10; i++) {
+		$('.highlight'+ i + ' ul li:gt(3)').hide();
+	}
 });
 function filter(id){
   window.location.replace("<?php echo site_url('product/alllistItem/'.$pro.'/'); ?>"+id.value);
@@ -553,17 +462,17 @@ function addWishlist(id,name,imageurl){
 		});
 
 	}else{
-/*
-		$.dialog({
-			title: 'Alert!',
-			content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
-			autoClose: 'close|3000',
 
-			},
-			closeIcon: true,
-			closeIconClass: 'fa fa-close'
-		});
-*/
+		// $.dialog({
+		// 	title: 'Alert!',
+		// 	content: 'Untuk menambahkan item kedalam wishlist Anda wajib login terlebih dulu',
+		// 	autoClose: 'close|3000',
+
+		// 	},
+		// 	closeIcon: true,
+		// 	closeIconClass: 'fa fa-close'
+		// });
+
 
         $.ajax({
                 type: "POST",
