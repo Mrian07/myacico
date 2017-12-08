@@ -63,11 +63,9 @@
 		<!-- CSS -->
 
 		<!-- s: Alert -->
-		<!--<link rel="stylesheet" type="text/css" href="<?php //echo base_url('assets/alert/libs/bundled.css');?>" />-->
-		<!--script type="text/javascript" src="<?php //echo base_url('assets/alert/libs/bundled.js');?>"></script-->
 		<script type="text/javascript" src="<?php echo base_url('assets/alert/js/jquery-confirm.js');?>"></script>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/alert/css/jquery-confirm.css');?>" />
-        <!-- e: Alert -->
+    <!-- e: Alert -->
 
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jwt-decode.min.js');?>"></script>
 		<script type="text/javascript">
@@ -76,7 +74,6 @@
 
 			var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
 			var login1 = 'https://acc.myacico.co.id/myacico-account/';
-			// var login_base_url_api = 'acc.myacico.co.id/myacico-service';
 			var adduser = 'http://acc.myacico.co.id/myacico-account/account/';
 
 			var api_base_url = "<?php echo $baseApiUrl; ?>";
@@ -90,7 +87,7 @@
 				}
 			})()
 			//                         deklarasi awal
-			//var prod_detail = localStorage.setItem('product_detail', '[]');
+
 			var prod_detail =  localStorage.getItem('product_detail');
 			if(!prod_detail)
 			{
