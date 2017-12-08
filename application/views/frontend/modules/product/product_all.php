@@ -32,6 +32,7 @@
 								<div class="form-group text-right">
 									<label for="atur">Atur berdasarkan:</label>
 									<select id="order_by" class="form-control" style="font-size: 8pt;height: 30px;width: 140px;">
+										<option value='' <?php if($sort_id==''){echo"selected";}?>>Pemilihan Komprehensif</option>
 										<option value='5' <?php if($sort_id=='5'){echo"selected";}?>>Produk Terbaru</option>
 										<option value='1' <?php if($sort_id=='1'){echo"selected";}?>>Nama: A Ke Z</option>
 										<option value='2' <?php if($sort_id=='2'){echo"selected";}?>>Nama: Z Ke A</option>

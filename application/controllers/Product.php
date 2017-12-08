@@ -35,11 +35,11 @@ class Product extends Web {
 		$short=$this->uri->segment(4);
   		$page=$this->uri->segment(5);
 
-		if($short == ''){
-			$this->data['sort_id'] = '5';
-		} else { 
+		// if($short == ''){
+		// 	$this->data['sort_id'] = '';
+		// } else { 
 			$this->data['sort_id'] = $short;
-		}
+		// }
 
 		$this->data['pro'] = $id;
 		$this->data['sort'] = $short;

@@ -194,15 +194,16 @@ function extract_list(data, i){
 
 function getListProduct(p) {
 	$('#productlist').empty();
+	var temp_url = list_url;
 	var order = $('#order_by').val();
 	var total;
 
-	if(order) list_url += 'ob=' + order + '&';
+	if(order) temp_url += 'ob=' + order + '&';
 
-	if(filterUrl) list_url += filterUrl;
+	if(filterUrl) temp_url += filterUrl;
 
 	p = p || 1;
-	list_url += 'page=' + p + '&';
+	temp_url += 'page=' + p + '&';
 
 	body.stop().animate({scrollTop:0}, 250, 'swing', function() {
 		
@@ -211,7 +212,7 @@ function getListProduct(p) {
 	$("#product-list-unready").fadeIn(500);
 	$('#productlist').hide();
 
-	$.get(encodeURI(list_url), function(res){
+	$.get(encodeURI(temp_url), function(res){
 		console.log("konten:", res);
 
 		if (res.productList.length == 0) {
