@@ -592,10 +592,10 @@ foreach ($hasil['specification'] as $speck)
 	$this->data['img3'] = $hasil['imageurl'][3];
        */
 		// akhir dari jika gambar tidak ada
-
+		
 
  		$home_domain = domain2();
-		$this->data['title_web'] = $this->data['name']."-".$home_domain;
+		$this->data['title_web'] = "-Belanja Online Murah, gratis pengiriman area jakarta"."-".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		if($hasil['isActive']=='Y'){

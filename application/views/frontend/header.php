@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html lang="en">
 	<head>
 		<?php
@@ -10,9 +11,10 @@
 		?>
 		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
 		<meta http-equiv="Pragma" content="no-cache">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" in matatag>
 		<meta http-equiv="Expires" content="0">
 		<meta charset="utf-8">
-
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 		<title><?php echo $title_web; ?></title>
 
