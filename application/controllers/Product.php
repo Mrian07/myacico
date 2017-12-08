@@ -385,6 +385,8 @@ $home_domain = domain2();
 			$url = api_base_url($api);
       $api_rekom="product/productlist/recomendation/".$pro_id;
       $url_rekom = api_base_url($api_rekom);
+      $api_sup="product/productlist/suplement/".$pro_id;
+      $url_sup = api_base_url($api_sup);
 			$konten21 = file_get_contents($url);
 
 			$this->data['dathome'] = json_decode($konten21, true);
@@ -434,6 +436,9 @@ $home_domain = domain2();
 //                        rekomendasi
                         $konten_rekom = file_get_contents($url_rekom, false, $context);
                         $this->data['rekom'] = json_decode($konten_rekom, true);
+//                        Suplement 
+                        $konten_sup = file_get_contents($url_sup, false, $context);
+                        $this->data['sup'] = json_decode($konten_sup, true);
 			//e lalang
 
 			$this->data['komen']=$komen;
@@ -590,7 +595,7 @@ foreach ($hasil['specification'] as $speck)
 		// aaaaa
 
  		$home_domain = domain2();
-		$this->data['title_web'] = "-Belanja Online Murah, gratis pengiriman area jakarta"."-".$home_domain;
+		$this->data['title_web'] = $this->data['name']."-".$home_domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		if($hasil['isActive']=='Y'){
