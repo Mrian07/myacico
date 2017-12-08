@@ -48,7 +48,7 @@ myACICO.co.id adalah perusahaan ecommerce yang berdiri sejak Februari 2017 yang 
 		$lang['lang_pages_miss'] ='Misi';
 		$lang['lang_pagesisi_vis'] ='Untuk menjadi pusat pelayanan bagi pelanggan dan juga menjadi pempimpin global dalam IT dengan pasar untuk teknologi tinggi';
 
-		    $lang['lang_pagesisi_mis'] ='Menyediakan layanan yang berkualitas dan menetapkan standar yang tinggi di industri dengan menyediakan solusi bisnis yang sederhana namun efektif. dengan demikian dapat memberikan tingkat kepuasan yang tinggi kepada pelanggan dan pemakai.';
+		    $lang['lang_pagesisi_mis'] ='Menyediakan layanan yang berkualitas dan menetapkan standar yang tinggi di industri dengan menyediakan solusi bisnis yang sederhana namun efektif, dengan demikian dapat memberikan tingkat kepuasan yang tinggi kepada pelanggan dan pemakai.';
 				$lang['lang_pages_oru'] ='Keunggulan Kami';
 					$lang['lang_pages_peng'] ='Pengiriman 2 Hari Kerja';
 					$lang['lang_pages_alw'] ='Barang Selalu ada';
@@ -86,7 +86,7 @@ $lang['nama_penerima'] = 'Nama Penerima';
 $lang['btn_login'] = 'Kirim';
 
 //akhir dari bussines
-
+  $lang['lang_pages_ch'] ='Harga Termurah';
 //s: search
 $lang['field_all_src'] = 'Semua Kategori';
 //e: search
