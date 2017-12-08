@@ -14,6 +14,10 @@
 .clear-border {
     border: 0;
 }
+.view-grid .item-box .highlight-list {
+    height: 50px;
+    overflow: hidden;
+}
 .highlight-list {
     color: #4b4b4b!important;
 }
@@ -104,6 +108,11 @@ input[type=number]::-webkit-outer-spin-button {
 .view-list .view-list-btn, .view-grid .view-grid-btn {
     color:#e30c0c;
     cursor: default;
+}
+
+.txtFilterPrice {
+    width: 100%;
+    padding: 0 5px;
 }
 
 /**
