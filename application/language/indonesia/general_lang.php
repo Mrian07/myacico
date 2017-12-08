@@ -14,7 +14,7 @@ $lang['msg_regis2'] = 'Pendaftaran Gagal Karena,';
 // forgot password
 $lang['info_login'] = 'Masukan email dan password login Anda pada form dibawah ini.';
 $lang['lost_password_text'] = 'Masukkan alamat email Anda di bawah ini. Anda akan menerima link untuk mereset password Anda.';
-$lang['lost_password_tittle'] = 'LUPA PASSWORD';
+$lang['lost_password_tittle1'] = 'LUPA PASSWORD';
 $lang['lost_password_button'] = 'Kirim';
 $lang['lost_password_msg1'] = 'Email tidak boleh kosong!';
 $lang['lost_password_msg2'] = 'Email belum terdaftar';

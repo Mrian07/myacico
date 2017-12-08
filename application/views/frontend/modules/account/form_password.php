@@ -18,7 +18,7 @@
 				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none;'>
 				<span class="glyphicon glyphicon-ok"></span> Update password sukses.</div>
 			<?php } ?>
-			<p><?php echo $lang_password_tittle;?></p>
+			<p><?php echo $lang_reset_password1;?></p>
 			<section class="login_content">
 			  <form name="loginFm" method="post">
 

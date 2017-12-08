@@ -351,17 +351,6 @@ class Account extends Web_private {
 		$token = $_COOKIE['x-auth'];
 		 $api = "transaction/list";
 
-              /*  if($page){
-			$api = "product/productall/".$id."?itemperpage=8&page=".$page."&ob=".$short;
-			$api2 = "product/productall/".$id."?itemperpage=8&page=".$page."&show=productcount";
-		}elseif($short){
-			$api = "product/productall/".$id."?ob=".$short;
-			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
-		}else{
-			$api = "product/productall/".$id;
-			$api2 = "product/productall/".$id."?itemperpage=8&page=1&show=productcount";
-		}
-		*/
 		$url = api_base_url($api);
 
 
@@ -370,33 +359,11 @@ class Account extends Web_private {
 		"header" => ["token: " . $token,
 		"Content-Type: application/json"],
 		]];
-
-
-		$context = stream_context_create($options);
+                $context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
 
-
 		$this->data['hasil'] = json_decode($konten, true);
-		$hasil = json_decode($konten, true);
-                //die(print_r($hasil));
-//                $options2 = ["http" => [
-//		"method" => "GET",
-//		"headers" => ["token: " .$token,
-//		"Content-Type: image/png"],
-//		]];
-              /*
-                $idtrans= $hasil[0]['idTransaksi'];
-                $api2 = "transaction/file/".$idtrans;
-                $url2 = api_base_url($api2);
-                $context2 = stream_context_create($options2);
-		$konten2 = file_get_contents($url2, false, $context2);
-//                echo"<img class='group list-group-image' src='$konten2' alt='...' style:border='0' height='100'>";
-                $hasil2 = json_decode($konten2, true);
-            */
-
-//                die(print_r($konten2));
-//		echo"<pre>"; print_r($konten2); die();
-
+	
 		if($hasil = json_decode($konten, true)){
 			$this->load->view('frontend/modules/account/list_riwayat_status_pesanan',$this->data);
 		}else{
@@ -459,7 +426,6 @@ class Account extends Web_private {
 		        $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
-			// $this->load->view('frontend/footer',$this->data);
 	}
         public function review()
     {
