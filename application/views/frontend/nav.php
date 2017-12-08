@@ -1,4 +1,4 @@
-<style type="text/css">
+<!-- <style type="text/css">
 
 .productSrcMobile
 {
@@ -42,7 +42,7 @@ cursor:pointer;
     border-bottom: 1px solid #dddddd;
 }
 
-</style>
+</style> -->
 
 
 	<div class='my-nav'>
@@ -78,7 +78,7 @@ cursor:pointer;
                        $atur = "width:12%;";
                      }
                      ?>
-									<!-- <li class="dropdown megamenu-fw nav-show-desktop nav-garis"> -->
+
                   <li class="dropdown megamenu-fw nav-show-desktop nav-garis" style="<?php echo $atur; ?> font-family: 'myriad_web_pro';">
 										<?php echo anchor('#', '<img src="'.$dataNav['iconurl'].'" border="0" height="15"> '.$nav_name, array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'));?>
                                                                             <ul  class="dropdown-menu megamenu-content" role="menu">
@@ -128,7 +128,7 @@ cursor:pointer;
 	</div>
 
 
-
+<!--
 	<script type="text/javascript">
 	$('body').click(function() {
 		 $('.show_result_mobile').hide();
@@ -198,7 +198,7 @@ cursor:pointer;
 
 									);
 								});
-							//$("#result-mobile").html(data).show();
+
 						}
 					});
 
@@ -208,13 +208,10 @@ cursor:pointer;
 		});
 
 	});
+
 	function showDataMobile(name,id)
 	{
 		var url = base_url+'/product/detail/'+id+'/';
 		window.location.href = url;
-		// $("#search-mobile").val(name);
-		// $("#searchID-mobile").val(id);
-		// $("#result-mobile").hide();
-		// $(".productSrcMobile").hide();
 	}
-</script>
+</script> -->
