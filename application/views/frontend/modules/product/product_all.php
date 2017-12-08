@@ -147,7 +147,19 @@
 <script src="<?php echo base_url('assets/owl-carousel/owl.carousel.js');?>"></script>
 <script type="text/javascript">
 var path = '<?php echo $_SERVER['REQUEST_URI']; ?>';
-var list_url = api_base_url + '/product/listproduct/<?php echo $pro ?>?itemperpage=10&';
-var sidebar_url = api_base_url + '/product/filter/<?php echo $pro ?>';
+var list_url, sidebar_url;
+var keyword = '<?php if(isset($pro)) echo $pro ?>';
+var cat_id = '<?php if(isset($id_cat)) echo $id_cat ?>';
+
+if(keyword != ''){
+	list_url = api_base_url + '/product/listproduct/'+keyword+'?itemperpage=10&';
+	sidebar_url = api_base_url + '/product/filter/'+keyword;
+}
+
+if(cat_id != ''){
+	list_url = api_base_url + '/product/listproduct?category='+cat_id+'&itemperpage=10&';
+	sidebar_url = api_base_url + '/product/filter?category='+cat_id;
+}
+
 </script>
 <script src="<?php echo base_url('assets/js/product-list.js');?>"></script>
