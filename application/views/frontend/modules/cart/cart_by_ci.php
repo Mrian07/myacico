@@ -1,218 +1,4 @@
-<style>
-.box-ship{
-  border: 1px solid #dddddd;
-  padding:20px;
-  margin:10px 0px;
-  color: #4a4847;
-}
-
-.box-cart{
-  border: 1px solid #dddddd;
-  padding:20px;
-  margin:10px 0px;
-  color: #4a4847;
-  height: 350px;
-  overflow:auto;
-}
-
-.box-ship-info-adrs{
-  float:left;
-  width:350px;
-  height:auto;
-  margin-right:5px;
-}
-
-.box-ship-info{
-  float:left;
-  width:177px;
-  height:auto;
-  margin-right:5px;
-  /*text-align: center;*/
-
-}
-.box-com{
-  float:left;
-  padding-top:10px;
-  width:540px;
-  /*background:#e9e8e7;*/
-}
-
-.box-com2{
-  float:right;
-  padding-top:10px;
-  /*width:540px;*/
-  /*background:#e9e8e7;*/
-}
-
-textarea#styled {
-	width: 500px;
-	height: 120px;
-	border: 3px solid #cccccc;
-	padding: 5px;
-	font-family: Tahoma, sans-serif;
-	background-image: url(bg.gif);
-	background-position: bottom right;
-	background-repeat: no-repeat;
-}
-#box-adrs{
-  background: #e9e8e7;
-  height:120px;
-  margin-left:0px;
-}
-
-#box-shadow{
-	height: 100px;
-  width:540px;
-	box-shadow: 1px 1px 5px #888888;
-	background-color: #fff;
-	float: left;
-	margin: 8px;
-	padding: 10px;
-  font-size: 14px;
-}
-.btn-add-adrs{
-  background:#ff0000;
-  color:#ffffff;
-  padding:5px;
-  font-weight: bold;
-}
-.btn-add-adrs:hover{
-  background:#ff0000;
-  text-decoration: none;
-  color:#ffffff;
-  font-weight: bold;
-}
-.checkout-button{
-	/*width: 190px;*/
-	/*height: 30px;*/
-	float: right;
-	padding: 5px;
-	background-color: red;
-	border-radius: 10px;
-	color: white;
-  font-size:15px;
-  padding:10px;
-}
-
-.checkout-button:hover{
-  background-color: #ca3833;
-  color:#f1eeee;
-}
-</style>
-
-
-<style type="text/css">
-.title-step{
-    width: 200px;
-    display: inline-block;
-    margin-right: 0%;
-    margin-top:0px;
-    margin-bottom:0px;
-  }
-  .title-step p{
-    color: red;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .title-step2{
-    width: 230px;
-    display: inline-block;
-    margin-top:0px;
-    margin-bottom:0px;
-    margin-left: 160px;
-
-  }
-  .title-step2 p{
-    color: #9a9c9b;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .title-step3{
-    width: 250px;
-    display: inline-block;
-    margin-right: 0px;
-    margin-left: 110px;
-    margin-top:0px;
-    margin-bottom:0px;
-  }
-  .title-step3 p{
-    color: #9a9c9b;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .number{
-    width: 60px;
-    height: 60px;
-    background-color: red;
-    display: inline-block;
-    border-radius: 50px;
-    margin-right: 24%;
-    margin-top:0px;
-    margin-bottom:-500px;
-  }
-  .number p{
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 20px;
-  }
-
-  .number2{
-    width: 60px;
-    height: 60px;
-    background-color: #9a9c9b;
-    display: inline-block;
-    border-radius: 50px;
-    margin-left: 110px;
-    margin-top:0px;
-    margin-bottom:-500px;
-  }
-  .number2 p{
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 20px;
-  }
-
-  .number3{
-    width: 60px;
-    height: 60px;
-    background-color: #9a9c9b;
-    display: inline-block;
-    border-radius: 50px;
-    margin-right: 0px;
-    margin-left: 300px;
-    margin-top:0px;
-    margin-bottom:-500px;
-  }
-  .number3 p{
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 20px;
-  }
-
-  .barred{
-    background-color: red;
-    position: absolute;
-    height: 10px;
-    z-index: -1;
-    /*width: 40%;*/
-    width: 800px;
-    margin-top: -25px;
-    margin-left:5px;
-  }
-
-</style>
+<link href="<?php echo base_url('assets/css/style_cart_by_ci.css');?>" rel="stylesheet">
 
 <div class="container detail-page">
   <div style='margin:0px auto; width:1000px; margin-top:30px;  height:50px;'>
@@ -230,7 +16,6 @@ textarea#styled {
       <div class="barred"></div>
     </div>
   </div>
-<!-- <br><p align='center'><img src="<?php //echo base_url('images/general/step1.jpg'); ?>" border="0"></p> -->
 
     <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1150px;margin-bottom:40px;'><?php echo $lang_shoping_cart; ?></div>
     <div class='box-ship'>
@@ -336,8 +121,6 @@ textarea#styled {
 
 <script>
 function next(){
-
-  // alert('jalan');die();
   var kurir = $('#kurir').val();
   var itemKosong = $('#itemKosong').val();
   var selectShip = $('#selectShip').val();
@@ -370,8 +153,6 @@ function next(){
     $('.checkout-button').css("background", "#f9a8a8");
       window.location.replace("<?php echo base_url('checkout/summary');?>");
   }
-  // alert(kurir);
-  // alert(selectShip);
 }
 
 function pilihAlamat(id){
@@ -416,19 +197,6 @@ function getAsap(id){
         }
     })
 
-//  var apiurl = api_base_url +'/afreight/isdki?villageid='+id;
-//  $.ajax({
-//    url: apiurl,
-//    success:function(res){
-//      if(res.isDKI=='N'){
-//        $("#asapGb").hide();
-//      }else{
-//        $("#asapGb").show()
-//      }
-//  }
-//     });
-//
-//}
 }
 function getKurir(id){
 
@@ -472,15 +240,8 @@ function pilihKurir(row){
 
   }
 
-
-  //window.location.replace("<?php //echo site_url('checkout/pilihKurir/'); ?>"+id+'/'+amount);
 }
 
-// $("#pilihAlamat").change(function(){
-// //  window.location.replace("<?php //echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
-//   var id = this.value;
-//     alert("The text has been changed.");
-// });
 $(document).ready(function() {
 var id_add ="<?php echo get_cookie('shipping_address_id');?>"
 
