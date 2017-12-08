@@ -79,6 +79,12 @@
     margin-top:0px;
     margin-bottom:-500px;
   }
+
+  .number:hover{
+    background-color: #d31e1e;
+    cursor: pointer;
+  }
+
   .number p{
     color: white;
     font-size: 20px;
@@ -125,12 +131,14 @@
   }
 
   .barred{
-    width: 90%;
-    height: 10px;
     background-color: red;
-    /*position: absolute;*/
-    margin-top: -25px;
+    position: absolute;
+    height: 10px;
     z-index: -1;
+    /*width: 40%;*/
+    width: 800px;
+    margin-top: -25px;
+    margin-left:5px;
   }
 
 </style>
@@ -145,7 +153,7 @@
   </div>
   <div style='margin:0px auto; width:900px; margin-bottom:50px;'>
     <div class="number-container">
-      <div class="number"><p>1</p></div>
+      <div class="number" onclick="location.href='<?php echo base_url('/checkout/cart');?>'"><p>1</p></div>
       <div class="number2"><p>2</p></div>
       <div class="number3"><p>3</p></div>
       <div class="barred"></div>

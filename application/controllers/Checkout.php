@@ -23,6 +23,12 @@ class Checkout extends Web_private {
 
 	public function summary()
 	{
+
+		if($this->session->userdata('name_kurir')==''){
+			redirect('checkout/cart');
+			die();
+		}
+
 		/*s: terbaru*/
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
@@ -361,11 +367,6 @@ class Checkout extends Web_private {
 	}
 
 	public function pilihPaket() {
-		/*
-		myacico = 111
-		jne = 1000002
-		ninja = 1000003
-		*/
 		$id_kurir = $_GET['id'];
 		$ongkos_kurir = $_GET['amount'];
 		$name_kurir = $_GET['name'];
