@@ -202,8 +202,6 @@ if($saw==Null)
 }else{
     $sort_id = $saw;
 }
-//echo $data[1]["nama_lokasi"];
-
 ?>
 
 

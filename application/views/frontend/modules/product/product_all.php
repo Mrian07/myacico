@@ -36,11 +36,9 @@
 
 	</div>
 <script>
-//    $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     var ctrl= "<?php echo base_url('/product/detail')?>";
     var namapotong = '';
     function currencyFormat (num) {
-//    return "Rp." + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
     return  "Rp." +num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
 }
 var detail = JSON.parse(localStorage.getItem('product_detail'))
