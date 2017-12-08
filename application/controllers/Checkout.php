@@ -178,7 +178,6 @@ class Checkout extends Web_private {
 
 	public function cart()
 	{
-
 		//Data Billing akan menjadi data shipping
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
@@ -202,7 +201,6 @@ class Checkout extends Web_private {
 		$this->data['hasil_ship'] = json_decode($kontenShip, true);
 
 		$hasil_ship = json_decode($kontenShip, true);
-//echo"<pre>"; print_r($hasil_ship);
     // Shipping Address
 		$get_shipping ='';
 		$get_shipping = get_cookie('shipping_address_id');
@@ -282,11 +280,8 @@ class Checkout extends Web_private {
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/modules/cart/cart.php',$this->data);
-
 		$this->load->view('frontend/modules/cart/cart_by_ci.php',$this->data);
 		// $this->load->view('frontend/modules/cart/cart_by_token.php',$this->data);
-
-
 		$this->load->view('frontend/footer',$this->data);
 	}
 

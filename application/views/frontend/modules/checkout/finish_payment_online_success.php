@@ -132,13 +132,15 @@ a
   }
 
   .barred{
-    width: 90%;
-    height: 10px;
     background-color: red;
-    /*position: absolute;*/
-    margin-top: -25px;
+    position: absolute;
+    height: 10px;
     z-index: -1;
+    width: 800px;
+    margin-top: -25px;
+    margin-left:5px;
   }
+
 
 </style>
 

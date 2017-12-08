@@ -449,6 +449,7 @@ function pilihKurir(row){
   var nameKur = result[2];
   if(id=='kosong'){
     $(".amount").html('-');
+    $('#pilihPaket').html('-');
   }else{
 
     var url = '<?php echo site_url('checkout/pilihKurir'); ?>'
