@@ -71,7 +71,7 @@ $lang['f_aftersale_baner'] = '<img src="'.base_url("images/general/after_sale7.p
         . 'style=" text-align: left; background-position: top left;height: 460px; '
         . 'background-repeat: no-repeat; background-size: 0px; min-width: 100px;width: 100%">';
 $lang['f_aftersale_bawah'] = '<img src="'.base_url("images/general/after_sale5.png").'"'
-        . 'style=" text-align: left; background-position: top left;height: 750px; '
+        . 'style=" text-align: left; background-position: top left;height: auto; '
         . 'background-repeat: no-repeat; background-size: 0px; min-width: 100px;width: 100%">';
 $lang['f_aftersale_cont'] = 'Hubungi Layanan Purna Jual Kami';
 $lang['f_subjek'] = 'Subjek:';
