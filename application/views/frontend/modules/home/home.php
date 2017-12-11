@@ -883,6 +883,15 @@ function addWishlist(id,name,imageurl){
 	}
 }
 
+$(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    if (scroll > 100) {
+      $('#banner-left').css('top', '150px');
+    } else {
+      $('#banner-left').css('top', '300px');
+    }
+    console.log('scroll: ', scroll);
+});
 
 </script>
 
