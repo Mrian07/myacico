@@ -60,4 +60,5 @@ $lang['alert_cart_empty'] = 'Your cart empty. Your transaction cannot process.';
 $lang['alert_cart_shipping'] = 'Your shipping address cannot be empty.';
 $lang['alert_cart_kurir'] = 'Please choose your shipping courier.';
 $lang['alert_cart_paket'] = 'Please choose your shipping package.';
+$lang['alert_cart_hapus'] = 'Are you want to delete this item?';
 ?>

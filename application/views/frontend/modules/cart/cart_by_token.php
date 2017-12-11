@@ -212,7 +212,7 @@
 
 		$.confirm({
 			title: name,
-			content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
+			content: '<img src="'+img+'">'+'<br><br><?php echo$lang_alert_cart_hapus;?>',
 			//content: '<p>Apakah item ini akan dihapus?</p>',
 			autoClose: 'cancel|10000',
 			closeIcon: true,

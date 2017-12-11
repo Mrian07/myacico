@@ -138,7 +138,7 @@ function delItemCart(id,img,name,idcart){
 	var apiurl = api_base_url + '/order/cart/deleteitem?idcartitem='+idcart;
 	$.confirm({
 		title: name,
-		content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
+		content: '<img src="'+img+'">'+'<br><br><?php echo$lang_alert_cart_hapus;?>',
 		//content: '<p>Apakah item ini akan dihapus?</p>',
 		autoClose: 'cancel|10000',
 		closeIcon: true,
@@ -216,7 +216,7 @@ function finish(){
 	if(itemKosong=="1"){
 		$.alert({
 			title: 'Alert!',
-			content: 'Keranjang belanja kosong transaksi tidak bisa dilanjutkan.',
+			content: '<?php echo$lang_alert_cart_empty; ?>',
 		});
 	} else if(billing_address_id==''){
 		$.alert({

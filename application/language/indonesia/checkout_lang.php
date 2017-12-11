@@ -61,4 +61,5 @@ $lang['alert_cart_empty'] = 'Keranjang belanja kosong transaksi tidak bisa dilan
 $lang['alert_cart_shipping'] = 'Alamat tujuan tidak boleh kosong.';
 $lang['alert_cart_kurir'] = 'Silakan pilih kurir pengiriman.';
 $lang['alert_cart_paket'] = 'Silakan pilih paket pengiriman.';
+$lang['alert_cart_hapus'] = 'Apakah item ini akan dihapus?';
 ?>

@@ -533,6 +533,7 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_alert_cart_shipping'] = $this->lang->line('alert_cart_shipping');
     $this->data['lang_alert_cart_kurir'] = $this->lang->line('alert_cart_kurir');
     $this->data['lang_alert_cart_paket'] = $this->lang->line('alert_cart_paket');
+    $this->data['lang_alert_cart_hapus'] = $this->lang->line('alert_cart_hapus');
 	}
 
     public function navigation(){
