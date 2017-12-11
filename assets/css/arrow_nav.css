@@ -1,0 +1,6 @@
+.owl-prev{
+    position :absolute; top: 50px; left:32px; border-radius:50px; height:38px; width: 38px;
+}
+.owl-next{
+    position :absolute; right:32px; top: 48px; border-radius:50px; height:38px; width: 38px;
+}

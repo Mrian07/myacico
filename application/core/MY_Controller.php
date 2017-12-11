@@ -490,6 +490,13 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 
 //   ASAP
         $this->data['lang_inf_asap'] = $this->lang->line('inf_asap');
+        
+//  jaminan
+        $this->data['lang_jaminan_tittle'] = $this->lang->line('jaminan_tittle');
+        $this->data['lang_jaminan'] = $this->lang->line('jaminan');
+        $this->data['lang_isi_jaminan'] = $this->lang->line('isi_jaminan');
+        $this->data['lang_isi_jaminan2'] = $this->lang->line('isi_jaminan2');
+
 
     //btn tambah  informasi akun
       $this->data['btn_nih'] = $this->lang->line('btn_tambah');
