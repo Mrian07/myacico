@@ -62,4 +62,22 @@ $lang['alert_cart_shipping'] = 'Alamat tujuan tidak boleh kosong.';
 $lang['alert_cart_kurir'] = 'Silakan pilih kurir pengiriman.';
 $lang['alert_cart_paket'] = 'Silakan pilih paket pengiriman.';
 $lang['alert_cart_hapus'] = 'Apakah item ini akan dihapus?';
+
+
+//langsumary
+$lang['field_ringkasan'] = 'Ringkasan';
+$lang['field_harga'] = 'Harga Barang';
+$lang['field_catatan'] = 'Catatan';
+$lang['field_alamatTujuan'] = 'Alamat Tujuan';
+$lang['field_asuransi'] = 'Asuransi';
+$lang['field_total'] = 'Total Barang';
+$lang['field_asuransi'] = 'Biaya Asuransi';
+$lang['field_totalTagihan'] = 'Total tagihan';
+$lang['field_totalShippingGfee'] = 'Total Ongkos Pengiriman';
+$lang['field_mulaitest'] = 'mulai';
+
+
+
+
+//akhir dari langsumary
 ?>

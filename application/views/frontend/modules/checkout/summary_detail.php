@@ -14,27 +14,27 @@
 
     </td>
     <td class="td">
-      <div class="other-info">Harga Barang</div>
+      <div class="other-info"><?php echo $lang_hargaDi; ?></div>
       <div class="other-cont">Rp.<?php echo money($items['price']) ?></div>
     </td>
     <td class="ts" colspan="2">
-      <div class="other-info">Catatan</div>
+      <div class="other-info"><?php echo $lang_catatan; ?></div>
       <div class="other-cont">-</div>
     </td>
     <tr>
       <td class="td">
-        <div class="other-info">Alamat Tujuan</div>
+        <div class="other-info"><?php echo $lang_alamatTujuan; ?></div>
         <div class="prod-cont" align="left">
           <b><?php echo $name; ?></b><br>
             <?php echo $alamat_shipping; ?>
         </div>
       </td>
       <td class="td">
-        <div class="other-info">Asuransi</div>
+        <div class="other-info"><?php echo $lang_asuransi; ?></div>
         <div class="other-cont">-</div>
       </td>
       <td class="td">
-        <div class="other-info">Total Barang</div>
+        <div class="other-info"><?php echo $lang_ttaol; ?></div>
         <div class="other-cont"><?php echo $items['qty']; ?></div>
       </td>
       <td class="ta">
@@ -42,7 +42,7 @@
         <div class="other-cont">Rp.<?php echo money($items['subtotal']); ?></div>
       </td>
       <td class="ta">
-        <div class="other-info">Biaya Asuransi</div>
+        <div class="other-info"><?php echo $lang_asuransi; ?></div>
         <div class="other-cont">-</div>
       </td>
       <!-- <td class="tc">
@@ -52,7 +52,7 @@
     <tr>
       <td colspan="6" class="tc">
         <div class="other-info3"><a href='#' onclick="delItemCart('<?php echo $items['productId'];?>','<?php echo $items['imageurl'];?>','<?php echo $items['name'];?>','<?php echo$items['itemCartId'];?>')"><i class="fa fa-trash-o" aria-hidden="true"></i> Hapus</a></div>
-        <div class="other-info4">Total per Tagihan <span class="red">Rp.<?php echo money($items['subtotal']); ?></span></div>
+        <div class="other-info4"><?php echo $lang_tagihan; ?> : <span class="red">Rp.<?php echo money($items['subtotal']); ?></span></div>
       </td>
   </table>
   </div>
@@ -68,15 +68,15 @@
 
     </div>
     <div class="totalsub">
-      <p>Total Asuransi</p>
+      <p><?php echo $lang_asuransi; ?></p>
       <p class="red">-</p>
     </div>
     <div class="totalsub">
-      <p>Total Barang</p>
+      <p>Total</p>
       <p class="red">Rp.<?php echo money($allsubtotal); ?></p>
     </div>
     <div class="totalsub">
-      <p>Total Ongkos Pengiriman</p>
+      <p><?php echo $lang_totalShipping; ?></p>
       <p class="red">Rp.<?php if($this->session->userdata('ongkos_kurir')){echo money($this->session->userdata('ongkos_kurir'));}else{echo"0";}?></p>
     </div>
     <div class="totalsub2">

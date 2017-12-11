@@ -61,4 +61,19 @@ $lang['alert_cart_shipping'] = 'Your shipping address cannot be empty.';
 $lang['alert_cart_kurir'] = 'Please choose your shipping courier.';
 $lang['alert_cart_paket'] = 'Please choose your shipping package.';
 $lang['alert_cart_hapus'] = 'Are you want to delete this item?';
+
+//langsumary
+$lang['field_ringkasan'] = 'Summary';
+$lang['field_harga'] = 'Price';
+$lang['field_catatan'] = 'Note';
+$lang['field_alamatTujuan'] = 'Destination address';
+$lang['field_asuransi'] = 'Insurance';
+$lang['field_total'] = 'Total Items';
+$lang['field_asuransi'] = 'Insurance fee';
+$lang['field_totalTagihan'] = 'Total bill';
+$lang['field_totalShippingGfee'] = 'Shipping Fee';
+$lang['field_mulaitest'] = 'Start';
+
+
+//akhir dari langsumary
 ?>

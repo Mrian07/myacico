@@ -260,6 +260,21 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
 		$this->data['lang_btn_Kirim'] = $this->lang->line('btn_kirim');
 		//akkhir dari field di contact
 
+    //lang di summaryDetail
+    $this->data['lang_ringkasa'] = $this->lang->line('field_ringkasan');
+      $this->data['lang_hargaDi'] = $this->lang->line('field_harga');
+        $this->data['lang_catatan'] = $this->lang->line('field_catatan');
+        $this->data['lang_alamatTujuan'] = $this->lang->line('field_alamatTujuan');
+        $this->data['lang_asuransi'] = $this->lang->line('field_asuransi');
+        $this->data['lang_ttaol'] = $this->lang->line('field_total');
+          $this->data['lang_asuransi'] = $this->lang->line('field_asuransi');
+          $this->data['lang_tagihan'] = $this->lang->line('field_totalTagihan');
+          $this->data['lang_totalShipping'] = $this->lang->line('field_totalShippingGfee');
+          $this->data['lang_mulai'] = $this->lang->line('field_mulaitest');
+
+
+    //akhir dari summary
+
     //dashboard
     $this->data['lang_dar'] = $this->lang->line('das_welcome');
     $this->data['lang_acc'] = $this->lang->line('das_acc');

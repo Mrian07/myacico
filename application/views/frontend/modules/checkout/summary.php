@@ -20,7 +20,7 @@
 			<!-- <br><p align='center'><img src="<?php //echo base_url('images/general/step2.jpg'); ?>" border="0"></p> -->
 
 
-      <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'>RINGKASAN</div>
+      <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'><?php echo $lang_ringkasa; ?></div>
 
 		<div align="center" class="cart-container">
 			<div class="box-left">
@@ -93,7 +93,7 @@
 					<input type='hidden' value='<?php echo$this->session->userdata('ongkos_kurir');?>' id='courier_amount'>
 					<input type='hidden' value='<?php echo$billing_address_id;?>' id='billing_address_id'>
 					<input type='hidden' value='<?php echo$shipping_address_id;?>' id='shipping_address_id'>
-          <button id="finish" onclick='finish()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b>MULAI</b> CHECKOUT</span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
+          <button id="finish" onclick='finish()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b><?php echo $lang_mulai; ?></b> CHECKOUT</span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
 					<!-- <div class="checkout-button"><img src="https://myacico.co.id/images/general/cart.png"><span>MULAI CHECKOUT</span></div> -->
 				</div>
 			</div>
