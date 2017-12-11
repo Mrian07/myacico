@@ -44,7 +44,7 @@ $lang['thanks'] = 'THANK YOU';
 $lang['status_order'] = 'Your order has been process. Please make payment according to your transaction.'
         . '. For payment confirmation';
 $lang['detail_order'] = 'ORDER DETAIL';
-$lang['no_order'] = 'Order Number:';
+$lang['no_order'] = 'ORDER NUMBER';
 $lang['no_invoice'] = 'Invoice Number:';
 $lang['payment_method'] = 'Payment Method:';
 $lang['transaction_date'] = 'Transaction Date:';
@@ -74,7 +74,10 @@ $lang['field_asuransi'] = 'Insurance fee';
 $lang['field_totalTagihan'] = 'Total bill';
 $lang['field_totalShippingGfee'] = 'Shipping Fee';
 $lang['field_mulaitest'] = 'Start';
-
-
 //akhir dari langsumary
+
+//langPayment
+$lang['field_thx'] = 'Thank you';
+$lang['field_ongkos'] = 'Shipping Charges';
+//akhir dari langpayment
 ?>

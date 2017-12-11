@@ -18,7 +18,7 @@
   </div>
 
   <!-- <br><p align='center'><img src="<?php //echo base_url('images/general/step3.jpg'); ?>" border="0"></p> -->
-    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'>TERIMA KASIH</div>
+    <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'><?php echo $lang_thx; ?></div>
 
 
   <!-- <br>
@@ -130,13 +130,13 @@
 
       <form class="form-horizontal">
       <div class="form-group">
-      <label class="control-label col-sm-5" for="email">Ongkos Kirim:</label>
+      <label class="control-label col-sm-5" for="email"><?php echo $lang_onkas; ?></label>
       <div class="col-sm-7">
         <p class="form-control-static">Rp.<?php echo money($field->courier_amount); ?></p>
       </div>
       </div>
      <div class="form-group">
-      <label class="control-label col-sm-5" for="email">Total Pembayaran:</label>
+      <label class="control-label col-sm-5" for="email"><?php echo $lang_total_payment; ?></label>
       <div class="col-sm-7">
         <p class="form-control-static">Rp.<?php echo money($field->grandTotal); ?></p>
       </div>
