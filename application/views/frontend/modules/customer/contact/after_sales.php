@@ -22,10 +22,10 @@
               <div id="sukses_after_sales" style="display: none;">
                    <div class="col-sm-8" style="text-align: justify;text-justify: inter-word;">
                        <center>
-                           <h3><b>TERIMA KASIH</b></h3><br>
+                           <h3><b><?php echo$thanks;?></b></h3><br>
                        </center>
 
-    Telah menghubungi kami. Customer service kami akan segera menghubungi Anda.
+    <?php echo$lang_aftersale_keterangan;?>
 
 	  </div>
               </div>

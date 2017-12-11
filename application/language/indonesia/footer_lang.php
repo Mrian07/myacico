@@ -89,5 +89,5 @@ $lang['f_msg4'] = 'Pesan tidak boleh kosong';
 $lang['f_msg5'] = 'Telepon tidak boleh kosong';
 $lang['f_msg6'] = 'Perusahaan tidak boleh kosong';
 $lang['f_msg7'] = 'No Pesanan tidak boleh kosong';
-
+$lang['after_sale_keterangan']='Customer service kami akan segera menghubungi Anda.';
 ?>
