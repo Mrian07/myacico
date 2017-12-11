@@ -223,7 +223,7 @@
 								<?php if($lang=='en'){?><img src="<?php echo base_url('images/general/flag-en.png'); ?>" border="0" width="30"><?php }else{ ?><img src="<?php echo base_url('images/general/flag-id.png'); ?>" border="0" width="30"><?php } ?>
 								<div class="dropdown-lang-content">
 									<a href="#" onclick="langFunction('id')"><img src="<?php echo base_url('images/general/lang_bahasa.png'); ?>" border="0"> Indonesia </a>
-									<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> Inggris </a>
+									<a href="#" onclick="langFunction('en')"><img src="<?php echo base_url('images/general/lang_english.png'); ?>" border="0"> English </a>
 								</div>
 							</div>
 

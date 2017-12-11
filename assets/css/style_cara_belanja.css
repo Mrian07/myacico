@@ -1,0 +1,95 @@
+.kiri{
+	float: left;
+}
+.numberCircle {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+		font-size: 25px;
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+    background: #fff;
+    color: #fff;
+    text-align: center;
+		background-color: #ED1B24;
+
+	}
+	.numberCircle1 {
+	    border-radius: 50%;
+	    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+			font-size: 25px;
+	    width: 36px;
+	    height: 36px;
+	    padding: 5px;
+	    background: #fff;
+	    color: #fff;
+	    text-align: center;
+			background-color: #ED1B24;
+
+		}
+	.zxc{
+		float: right;
+	}
+	.zxc1{
+		float: left;
+	}
+	.pp{
+		color: black;
+
+		float: left;
+		padding-left: 10px;
+		padding-top: 5px;
+		font-size: 15px;
+font-family: 'Nunito', sans-serif;
+margin-bottom: 0px;
+	}
+	.pp4{
+		color: black;
+
+		float: left;
+		padding-left: 30px;
+		padding-top: 5px;
+		font-size: 15px;
+font-family: 'Nunito', sans-serif;
+margin-bottom: 20px;
+
+	}
+	.pp1{
+		color: black;
+		float: left;
+		padding-right: auto;
+		padding-top: 5px;
+		font-size: 12px;
+		font-weight: bold;
+font-family: 'Lato', sans-serif;
+padding-left:15px;
+margin-bottom: -7px;
+text-align: justify;
+
+	}
+	.pp2{
+		color: black;
+		float: left;
+		padding-right: auto;
+		padding-top: 5px;
+		font-size: 12px;
+		font-weight: bold;
+font-family: 'Lato', sans-serif;
+padding-left:15px;
+margin-bottom: -7px;
+text-align: justify;
+
+	}
+	.pp7{
+		color: black;
+
+		padding-right: auto;
+		padding-top: 5px;
+		font-size: 12px;
+		font-weight: bold;
+font-family: 'Lato', sans-serif;
+padding-left:15px;
+margin-bottom: -7px;
+text-align: justify;
+
+	}

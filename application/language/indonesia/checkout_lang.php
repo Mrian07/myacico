@@ -6,6 +6,7 @@ $lang['data_receiver'] = 'Data Penerima';
 $lang['payment_type'] = 'Pilih Tipe Pembayaran:';
 $lang['shiping_method'] = 'Metode Pengiriman';
 $lang['shoping_cart'] = 'Keranjang Belanja';
+$lang['shoping_method_cart'] = 'Metode Pembayaran';
 $lang['cart_note_text'] = 'Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman';
 $lang['cart_note'] = 'Catatan:';
 $lang['shiping_fare'] = 'Ongkos Kirim:';
@@ -25,16 +26,16 @@ $lang['msg_online_payment'] = 'Maaf pembayaran online payment mengalami gangguan
 
 
 // checkout atas
-          $lang['lang_tamb123'] = 'Tambah Alamat Baru';
-          $lang['Field_Another'] = 'Pilih Alamat';
-            $lang['lang_courier'] = 'Kurir Pengiriman';
-            $lang['field_paket'] = 'Paket Pengiriman';
-            $lang['field_biaya'] = 'Biaya Asuransi';
-            $lang['field_ongk'] = 'Ongkos Kirim';
-            $lang['field_alamatTu'] = 'Alamat Tujuan';
-            $lang['field_catatan'] = 'Catatan';
-            $lang['field_byr1'] = 'Bayar';
-            $lang['field_byr2'] = 'Sekarang';
+$lang['lang_tamb123'] = 'Tambah Alamat Baru';
+$lang['Field_Another'] = 'Pilih Alamat';
+$lang['lang_courier'] = 'Kurir Pengiriman';
+$lang['field_paket'] = 'Paket Pengiriman';
+$lang['field_biaya'] = 'Biaya Asuransi';
+$lang['field_ongk'] = 'Ongkos Kirim';
+$lang['field_alamatTu'] = 'Alamat Tujuan';
+$lang['field_catatan'] = 'Catatan';
+$lang['field_byr1'] = 'Bayar';
+$lang['field_byr2'] = 'Sekarang';
 
 // akhir dari atas
 
@@ -55,4 +56,28 @@ $lang['cart_detail'] = 'Detail Keranjang';
 $lang['total_payment'] = 'Total Pembayaran:';
 $lang['payment_confirm'] = 'Konfirmasi Pembayaran';
 $lang['voucher_code'] = 'PUNYA KODE PROMO';
+
+//Alert
+$lang['alert_cart_empty'] = 'Keranjang belanja kosong transaksi tidak bisa dilanjutkan.';
+$lang['alert_cart_shipping'] = 'Alamat tujuan tidak boleh kosong.';
+$lang['alert_cart_kurir'] = 'Silakan pilih kurir pengiriman.';
+$lang['alert_cart_paket'] = 'Silakan pilih paket pengiriman.';
+$lang['alert_cart_hapus'] = 'Apakah item ini akan dihapus?';
+
+//langsumary
+$lang['field_ringkasan'] = 'Ringkasan';
+$lang['field_harga'] = 'Harga Barang';
+$lang['field_catatan'] = 'Catatan';
+$lang['field_alamatTujuan'] = 'Alamat Tujuan';
+$lang['field_asuransi'] = 'Asuransi';
+$lang['field_total'] = 'Total Barang';
+$lang['field_asuransi'] = 'Biaya Asuransi';
+$lang['field_totalTagihan'] = 'Total tagihan';
+$lang['field_totalShippingGfee'] = 'Total Ongkos Pengiriman';
+$lang['field_mulaitest'] = 'mulai';
+
+
+
+
+//akhir dari langsumary
 ?>

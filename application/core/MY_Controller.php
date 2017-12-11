@@ -166,7 +166,7 @@ class Web extends MY_Controller {
 	public function lang(){
     //buttons
     $this->data['lang_btn_signin'] = $this->lang->line('btn_signin');
-
+    $this->data['lang_btn_delete'] = $this->lang->line('btn_delete');
     $this->data['lang_btn_update'] = $this->lang->line('btn_update');
 
 
@@ -259,6 +259,21 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
 		$this->data['lang_field_ContMessage'] = $this->lang->line('field_pesan');
 		$this->data['lang_btn_Kirim'] = $this->lang->line('btn_kirim');
 		//akkhir dari field di contact
+
+    //lang di summaryDetail
+    $this->data['lang_ringkasa'] = $this->lang->line('field_ringkasan');
+      $this->data['lang_hargaDi'] = $this->lang->line('field_harga');
+        $this->data['lang_catatan'] = $this->lang->line('field_catatan');
+        $this->data['lang_alamatTujuan'] = $this->lang->line('field_alamatTujuan');
+        $this->data['lang_asuransi'] = $this->lang->line('field_asuransi');
+        $this->data['lang_ttaol'] = $this->lang->line('field_total');
+          $this->data['lang_asuransi'] = $this->lang->line('field_asuransi');
+          $this->data['lang_tagihan'] = $this->lang->line('field_totalTagihan');
+          $this->data['lang_totalShipping'] = $this->lang->line('field_totalShippingGfee');
+          $this->data['lang_mulai'] = $this->lang->line('field_mulaitest');
+
+
+    //akhir dari summary
 
     //dashboard
     $this->data['lang_dar'] = $this->lang->line('das_welcome');
@@ -377,23 +392,23 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 		$this->data['lang_pesan'] = $this->lang->line('field_pesan2');
 		$this->data['btn_pesan_personal'] = $this->lang->line('btn_kirim_personal');
 		$this->data['field_sudahDaftar'] = $this->lang->line('field_daftar');
-                $this->data['lang_daftar_info_point1'] = $this->lang->line('daftar_info_point1');
-                $this->data['lang_daftar_info_point2'] = $this->lang->line('daftar_info_point2');
-                $this->data['lang_daftar_info'] = $this->lang->line('daftar_info');
-                $this->data['lang_daftar_info2'] = $this->lang->line('daftar_info2');
+    $this->data['lang_daftar_info_point1'] = $this->lang->line('daftar_info_point1');
+    $this->data['lang_daftar_info_point2'] = $this->lang->line('daftar_info_point2');
+    $this->data['lang_daftar_info'] = $this->lang->line('daftar_info');
+    $this->data['lang_daftar_info2'] = $this->lang->line('daftar_info2');
 //                Wishlist
-                $this->data['lang_ket_wishlist'] = $this->lang->line('ket_wishlist');
-                $this->data['lang_wishlist_name'] = $this->lang->line('wishlist_name');
-                $this->data['lang_wishlist_del'] = $this->lang->line('wishlist_del');
-                $this->data['lang_wishlist_tittle'] = $this->lang->line('wishlist_tittle');
-                 $this->data['lang_wishlist_pic'] = $this->lang->line('wishlist_pic');
+    $this->data['lang_ket_wishlist'] = $this->lang->line('ket_wishlist');
+    $this->data['lang_wishlist_name'] = $this->lang->line('wishlist_name');
+    $this->data['lang_wishlist_del'] = $this->lang->line('wishlist_del');
+    $this->data['lang_wishlist_tittle'] = $this->lang->line('wishlist_tittle');
+     $this->data['lang_wishlist_pic'] = $this->lang->line('wishlist_pic');
 //                 Avatar
-                $this->data['lang_avatar_tittle'] = $this->lang->line('avatar_tittle');
-                $this->data['lang_avatar_tittle2'] = $this->lang->line('avatar_tittle2');
-                $this->data['lang_avatar_tittle3'] = $this->lang->line('avatar_tittle3');
-                $this->data['lang_avatar_back'] = $this->lang->line('avatar_back');
-                $this->data['lang_avatar_button'] = $this->lang->line('avatar_button');
-                $this->data['lang_avatar_browse'] = $this->lang->line('avatar_browse');
+    $this->data['lang_avatar_tittle'] = $this->lang->line('avatar_tittle');
+    $this->data['lang_avatar_tittle2'] = $this->lang->line('avatar_tittle2');
+    $this->data['lang_avatar_tittle3'] = $this->lang->line('avatar_tittle3');
+    $this->data['lang_avatar_back'] = $this->lang->line('avatar_back');
+    $this->data['lang_avatar_button'] = $this->lang->line('avatar_button');
+    $this->data['lang_avatar_browse'] = $this->lang->line('avatar_browse');
 
 
 		//end of personal
@@ -421,9 +436,9 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 		$this->data['lang_PostCode'] = $this->lang->line('field_PostCode');
 		$this->data['lang_Passwpord'] = $this->lang->line('field_Passeword');
 		$this->data['lang_Passwpord2'] = $this->lang->line('field_Passeword2');
-                $this->data['lang_field_tittle'] = $this->lang->line('field_tittle');
-                $this->data['lang_txt_address'] = $this->lang->line('txt_address');
-                 $this->data['lang_nama_penerima'] = $this->lang->line('nama_penerima');
+    $this->data['lang_field_tittle'] = $this->lang->line('field_tittle');
+    $this->data['lang_txt_address'] = $this->lang->line('txt_address');
+    $this->data['lang_nama_penerima'] = $this->lang->line('nama_penerima');
 
 		$this->data['lang_BtnSend'] = $this->lang->line('btn_login');
 		//end of bussines
@@ -458,6 +473,7 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_payment_type'] = $this->lang->line('payment_type');
     $this->data['lang_shiping_method'] = $this->lang->line('shiping_method');
     $this->data['lang_shoping_cart'] = $this->lang->line('shoping_cart');
+    $this->data['lang_shoping_method_cart'] = $this->lang->line('shoping_method_cart');
     $this->data['lang_cart_note_text'] = $this->lang->line('cart_note_text');
     $this->data['lang_cart_note'] = $this->lang->line('cart_note');
     $this->data['lang_shiping_fare'] = $this->lang->line('shiping_fare');
@@ -528,6 +544,12 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     //e: footer
 		$this->data['title_web'] = "Myacico.com - Login Admin";
 
+    //alert CART
+    $this->data['lang_alert_cart_empty'] = $this->lang->line('alert_cart_empty');
+    $this->data['lang_alert_cart_shipping'] = $this->lang->line('alert_cart_shipping');
+    $this->data['lang_alert_cart_kurir'] = $this->lang->line('alert_cart_kurir');
+    $this->data['lang_alert_cart_paket'] = $this->lang->line('alert_cart_paket');
+    $this->data['lang_alert_cart_hapus'] = $this->lang->line('alert_cart_hapus');
 	}
 
     public function navigation(){

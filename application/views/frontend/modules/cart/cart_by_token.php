@@ -110,7 +110,7 @@
 			<tr>
 				<td colspan='3'>
 
-					<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman
+					<b><?php echo $lang_cart_note; ?></b> <?php echo $lang_cart_note_text; ?>
 
                                             <br><?php
                                             if($a ==1)
@@ -212,7 +212,7 @@
 
 		$.confirm({
 			title: name,
-			content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
+			content: '<img src="'+img+'">'+'<br><br><?php echo$lang_alert_cart_hapus;?>',
 			//content: '<p>Apakah item ini akan dihapus?</p>',
 			autoClose: 'cancel|10000',
 			closeIcon: true,

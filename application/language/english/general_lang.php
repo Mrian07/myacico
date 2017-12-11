@@ -1,6 +1,6 @@
 <?php
 $lang['btn_signin'] = 'Sign up';
-
+$lang['btn_delete'] = 'Delete';
 $lang['btn_update'] = 'Update';
 $lang['btn_tambah'] = 'Add';
 $lang['lang_new_reg'] = 'REGISTRATION';
@@ -35,7 +35,7 @@ $lang['reset_pswd_info'] = 'Your account activation is successful.';
 $lang['reset_pswd_info2'] = 'Sorry your account activation failed, please re-activate by entering your email in the form below.';
 $lang['reset_pswd_info3'] = '1.DELIVERY';
 //register
-$lang['daftar_info'] = '2x24 hours delivery on weekdays for all areas of JABODETABEK and free delivery to all area in Indonesia.';
+$lang['daftar_info'] = 'Free shipping for Jakarta area and our commitment to deliver the goods within 2x24 hours on weekdays.';
 $lang['daftar_info_point1'] = '1.DELIVERY';
 $lang['daftar_info_point2'] = '2. RETURN';
 $lang['daftar_info2'] = 'Damage to goods caused by errors from the manufacturer of goods, can be exchanged within 7 working days or money back within 2x24 hours.';

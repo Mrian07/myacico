@@ -88,7 +88,9 @@ class Checkout extends Web_private {
 		/*e: terbaru*/
 
 		$this->data['token'] = $_COOKIE['x-auth'];
-		$this->data['title_web'] = "Myacico.com";
+		$domain = domain();
+		$lang_shoping_method_cart = $this->lang->line('shoping_method_cart');
+		$this->data['title_web'] = $lang_shoping_method_cart." - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/checkout/summary.php',$this->data);
@@ -272,7 +274,8 @@ class Checkout extends Web_private {
 
 		//echo"<pre>"; print_r($hasil_kurir); die();
     $domain = domain();
-		$this->data['title_web'] = "Cart - ".$domain;
+		$lang_shoping_cart = $this->lang->line('shoping_cart');
+		$this->data['title_web'] = $lang_shoping_cart." - ".$domain;
 
 		}
 
@@ -826,8 +829,9 @@ class Checkout extends Web_private {
 
 		// $field = json_decode($konten);
 		// echo"<pre>"; print_r($field); die();
-
-		$this->data['title_web'] = "Checkout - ".$domain;
+		$lang_shoping_cart = $this->lang->line('shoping_cart');
+		$lang_payment_confirm = $this->lang->line('payment_confirm');
+		$this->data['title_web'] = $lang_payment_confirm." - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/checkout/finish.php',$this->data);

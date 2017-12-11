@@ -4,7 +4,7 @@
 			<div style='margin:0px auto; width:1000px; margin-top:30px;'>
 				<div class="number-container">
 					<div class="title-step"><p><?=$lang_shoping_cart;?></p></div>
-					<div class="title-step2"><p><?=$lang_payment_method;?></p></div>
+					<div class="title-step2"><p><?=$lang_shoping_method_cart;?></p></div>
 					<div class="title-step3"><p><?=$lang_payment_confirm;?></p></div>
 				</div>
 			</div>
@@ -20,7 +20,7 @@
 			<!-- <br><p align='center'><img src="<?php //echo base_url('images/general/step2.jpg'); ?>" border="0"></p> -->
 
 
-      <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'>RINGKASAN</div>
+      <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'><?php echo $lang_ringkasa; ?></div>
 
 		<div align="center" class="cart-container">
 			<div class="box-left">
@@ -93,7 +93,7 @@
 					<input type='hidden' value='<?php echo$this->session->userdata('ongkos_kurir');?>' id='courier_amount'>
 					<input type='hidden' value='<?php echo$billing_address_id;?>' id='billing_address_id'>
 					<input type='hidden' value='<?php echo$shipping_address_id;?>' id='shipping_address_id'>
-          <button id="finish" onclick='finish()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b>MULAI</b> CHECKOUT</span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
+          <button id="finish" onclick='finish()' class="checkout-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><b><?php echo $lang_mulai; ?></b> CHECKOUT</span> <img src="<?php echo base_url('images/general/Spinner_cart.gif');?>" id="spinner_img" style="display:none"></button>
 					<!-- <div class="checkout-button"><img src="https://myacico.co.id/images/general/cart.png"><span>MULAI CHECKOUT</span></div> -->
 				</div>
 			</div>
@@ -138,7 +138,7 @@ function delItemCart(id,img,name,idcart){
 	var apiurl = api_base_url + '/order/cart/deleteitem?idcartitem='+idcart;
 	$.confirm({
 		title: name,
-		content: '<img src="'+img+'">'+'<br><br>Apakah item ini akan dihapus?',
+		content: '<img src="'+img+'">'+'<br><br><?php echo$lang_alert_cart_hapus;?>',
 		//content: '<p>Apakah item ini akan dihapus?</p>',
 		autoClose: 'cancel|10000',
 		closeIcon: true,
@@ -216,7 +216,7 @@ function finish(){
 	if(itemKosong=="1"){
 		$.alert({
 			title: 'Alert!',
-			content: 'Keranjang belanja kosong transaksi tidak bisa dilanjutkan.',
+			content: '<?php echo$lang_alert_cart_empty; ?>',
 		});
 	} else if(billing_address_id==''){
 		$.alert({
