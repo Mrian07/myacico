@@ -25,9 +25,9 @@ $lang['msg_online_payment'] = 'Sorry payment online payment has been interrupted
 
 
   // Keranjang belanja bagian pertama
-    $lang['lang_tamb123'] = 'Add New Address';
-    $lang['Field_Another'] = 'Choose Address';
-    $lang['lang_courier'] = 'Shipping Courier';
+$lang['lang_tamb123'] = 'Add New Address';
+$lang['Field_Another'] = 'Choose Address';
+$lang['lang_courier'] = 'Shipping Courier';
 $lang['field_paket'] = 'Delivery Package';
 $lang['field_biaya'] = 'Insurance fee';
 $lang['field_ongk'] = 'Postal fee';
@@ -40,7 +40,7 @@ $lang['field_byr2'] = 'Now';
 // Finish
 $lang['finish'] = 'FINISH';
 $lang['thanks'] = 'THANK YOU';
-$lang['status_order'] = 'Your order has been process. Please make payment according to your transaction'
+$lang['status_order'] = 'Your order has been process. Please make payment according to your transaction.'
         . '. For payment confirmation';
 $lang['detail_order'] = 'ORDER DETAIL';
 $lang['no_order'] = 'Order Number:';
@@ -54,4 +54,10 @@ $lang['cart_detail'] = 'CART DETAIL';
 $lang['total_payment'] = 'Total payment:';
 $lang['payment_confirm'] = 'Payment Confirmation';
 $lang['voucher_code'] = 'GOT A PROMO CODE';
+
+//Alert
+$lang['alert_cart_empty'] = 'Your cart empty. Your transaction cannot process.';
+$lang['alert_cart_shipping'] = 'Your shipping address cannot be empty.';
+$lang['alert_cart_kurir'] = 'Please choose your shipping courier.';
+$lang['alert_cart_paket'] = 'Please choose your shipping package.';
 ?>

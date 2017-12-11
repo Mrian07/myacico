@@ -118,7 +118,6 @@
   <div style='clear:both'></div>
 </div>
 
-
 <script>
 function next(){
   var kurir = $('#kurir').val();
@@ -126,27 +125,26 @@ function next(){
   var selectShip = $('#selectShip').val();
   var pilihPaket = $('#pilihPaket').val();
 
-
     if(itemKosong=="1"){
       $.alert({
         title: 'Alert!',
-        content: 'Keranjang belanja kosong transaksi tidak bisa dilanjutkan.',
+        content: '<?php echo$lang_alert_cart_empty; ?>',
       });
     }
     else if(selectShip==""){
     $.alert({
       title: 'Alert!',
-      content: 'Alamat tujuan tidak boleh kosong',
+      content: '<?php echo$lang_alert_cart_shipping; ?>',
     });
   }else if(kurir=="kosong-kosong"){
     $.alert({
       title: 'Alert!',
-      content: 'Silakan pilih kurir pengiriman',
+      content: '<?php echo$lang_alert_cart_kurir; ?>',
     });
   }else if(pilihPaket==""){
     $.alert({
       title: 'Alert!',
-      content: 'Silakan pilih paket pengiriman',
+      content: '<?php echo$lang_alert_cart_paket; ?>',
     });
   }else{
     $('#spinner_img').show();

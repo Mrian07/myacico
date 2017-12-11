@@ -528,6 +528,11 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     //e: footer
 		$this->data['title_web'] = "Myacico.com - Login Admin";
 
+    //alert CART
+    $this->data['lang_alert_cart_empty'] = $this->lang->line('alert_cart_empty');
+    $this->data['lang_alert_cart_shipping'] = $this->lang->line('alert_cart_shipping');
+    $this->data['lang_alert_cart_kurir'] = $this->lang->line('alert_cart_kurir');
+    $this->data['lang_alert_cart_paket'] = $this->lang->line('alert_cart_paket');
 	}
 
     public function navigation(){
