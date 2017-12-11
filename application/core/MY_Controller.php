@@ -524,7 +524,7 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_komp'] = $this->lang->line('f_com');
     $this->data['lang_gad'] = $this->lang->line('f_gad');
     $this->data['lang_hob'] = $this->lang->line('f_hob');
-
+// After sales
     $this->data['lang_conta'] = $this->lang->line('f_contact');
     $this->data['lang_after_sales'] = $this->lang->line('f_after_sales');
     $this->data['lang_a_sales'] = $this->lang->line('f_a_sales');
@@ -539,7 +539,7 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_btn_send'] = $this->lang->line('f_btn_send');
     $this->data['lang_aftersale_baner'] = $this->lang->line('f_aftersale_baner');
     $this->data['lang_aftersale_bawah'] = $this->lang->line('f_aftersale_bawah');
-
+    $this->data['lang_aftersale_keterangan'] = $this->lang->line('after_sale_keterangan');
 
 
     $this->data['lang_footer_info'] = $this->lang->line('footer_info');
