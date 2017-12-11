@@ -804,7 +804,8 @@ ul.list-group:after {
     <div class="primary_header">
       <img src="topbanner.png" width="auto" height="auto" alt=""/>    </div>
 </header>
-<img src="<?php echo base_url('images/general/FBO.png');?>" width="100%" height="auto">
+<a href="https://myacico.co.id">
+<img src="<?php echo base_url('images/general/FBO.png');?>" width="100%" height="auto"></a>
 <br/>
 <br/>
  <div>
