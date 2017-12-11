@@ -18,5 +18,22 @@ $lang['how_buy4'] = 'After you finished reviewing you cart, you can choose one o
 //5
 $lang['how_buy_tittle5'] = 'Delivery of Goods';
 $lang['how_buy5'] = '<br>At Final Step, Our team will process your order and deliver it to you within 2-7 days.' ;
-
+// Jaminan
+$lang['jaminan']='myacico will return the goods with 1 year warranty, 
+please follow the steps needed to make sure your claim runs well
+myACICO.co.id offers 2 types of warranty, this can be seen on the product page
+The myACICO.co.id warranty, which is offered on imported products are without warranty,
+myACICO.co.id will return to you with 1 year warranty.
+Please read the terms and conditions below to see what is included and not covered under warranty.
+Product Warranty / Warranty Brand / Warranty Brand guarantee is allow you to claim warranty to ottorized dealer.
+MyACICO.com is not responsible for any defects in the product.
+MyACICO.co.id will only sell products at customer discretion';
+$lang['isi_jaminan']='Why this myACICO.co.id warranty does not cover
+<br>1. Any damage caused by errors caused by such customers
+<br>2. Any product damage resulting from unauthorized modification
+<br>3. Natural disasters
+<br>4. Theft and loss of products';
+$lang['isi_jaminan2']='What will myACICO.co.id do to fix the problem?
+<br>1. myACICO.co.id will repair the product, at no cost, if the product is under warranty.
+<br>2. If the product can not be repaired, we will exchange with new item, or give refund.';
 ?>

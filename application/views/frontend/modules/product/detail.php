@@ -275,24 +275,24 @@ $string = str_replace(']', '_', $string);
         <div id="menu2" class="tab-pane fade">
 
   <table class="table table-striped">
-    <tr>
+<!--    <tr>
       <th> Brand </th>
-      <td> <?php echo $name; ?> </td>
+      <td> <?php // echo $name; ?> </td>
 
 
     </tr>
     <tr>
       <th> Berat </th>
-      <td> <?php echo $weight; ?> </td>
+      <td> <?php // echo $weight; ?> </td>
     </tr>
     <tr>
       <th> Category </th>
-      <td> <?php echo $category; ?></td>
+      <td> <?php // echo $category; ?></td>
     </tr>
     <tr>
       <th>  Harga </th>
-      <td> Rp.<?php echo money($pricelist);  ?></td>
-    </tr>
+      <td> Rp.<?php // echo money($pricelist);  ?></td>
+    </tr>-->
 
 
      <?php
@@ -315,7 +315,10 @@ $string = str_replace(']', '_', $string);
           }
       ?>
 
-
+<tr>
+      <th> Berat </th>
+      <td> <?php echo $weight; ?> </td>
+    </tr>
   </table>
 
   </div>
