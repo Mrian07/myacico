@@ -45,7 +45,7 @@ $lang['thanks'] = 'TERIMA KASIH';
 $lang['status_order'] = 'Pesanan Anda telah berhasil diproses. Silakan lakukan pembayaran sesuai dengan nilai transaksi Anda'
         . '. Untuk melakukan konfirmasi pembayaran';
 $lang['detail_order'] = 'DETAIL PESANAN';
-$lang['no_order'] = 'Nomor Pesanan:';
+$lang['no_order'] = 'NOMOR PESANAN:';
 $lang['no_invoice'] = 'Nomor tagihan:';
 $lang['payment_method'] = 'Metode Pembayaran:';
 $lang['transaction_date'] = 'Tanggal Transaksi:';
@@ -75,9 +75,11 @@ $lang['field_asuransi'] = 'Biaya Asuransi';
 $lang['field_totalTagihan'] = 'Total tagihan';
 $lang['field_totalShippingGfee'] = 'Total Ongkos Pengiriman';
 $lang['field_mulaitest'] = 'mulai';
-
-
-
-
 //akhir dari langsumary
+
+//langPayment
+$lang['field_thx'] = 'Terimakasih';
+$lang['field_ongkos'] = 'Ongkos Kirim';
+//akhir dari langpayment
+
 ?>

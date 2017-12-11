@@ -271,9 +271,13 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
           $this->data['lang_tagihan'] = $this->lang->line('field_totalTagihan');
           $this->data['lang_totalShipping'] = $this->lang->line('field_totalShippingGfee');
           $this->data['lang_mulai'] = $this->lang->line('field_mulaitest');
-
-
     //akhir dari summary
+
+    //lang di PaymentCheckout
+    $this->data['lang_thx'] = $this->lang->line('field_thx');
+    $this->data['lang_onkas'] = $this->lang->line('field_ongkos');
+
+    //akhirdari lang paymentcheckout
 
     //dashboard
     $this->data['lang_dar'] = $this->lang->line('das_welcome');
