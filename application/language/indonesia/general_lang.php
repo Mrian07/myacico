@@ -3,6 +3,7 @@ $lang['btn_signin'] = 'Daftar';
 $lang['btn_delete'] = 'Hapus';
 $lang['btn_update'] = 'Ubah';
 $lang['btn_tambah'] = 'Tambah';
+$lang['btn_more'] = 'SELENGKAPNYA';
 $lang['lang_new_reg'] = 'PENDAFTARAN';
 
 

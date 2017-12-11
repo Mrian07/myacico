@@ -168,7 +168,7 @@ class Web extends MY_Controller {
     $this->data['lang_btn_signin'] = $this->lang->line('btn_signin');
     $this->data['lang_btn_delete'] = $this->lang->line('btn_delete');
     $this->data['lang_btn_update'] = $this->lang->line('btn_update');
-
+    $this->data['lang_btn_more'] = $this->lang->line('btn_more');
 
     //label
     $this->data['lang_lab_name'] = $this->lang->line('label_name');
@@ -556,37 +556,33 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_alert_cart_hapus'] = $this->lang->line('alert_cart_hapus');
 	}
 
-    public function navigation(){
+  public function urlApi(){
+    // $url = "https://api.myacico.co.id/myacico-service";
+    // $url = "http://192.168.0.109:8080/myacico-service";
+    $url = "https://api.myacico.co.id/dev";
+    return $url;
+  }
 
-      $url = "https://api.myacico.co.id/myacico-service/category/list";
-      // $url = "http://192.168.0.109:8080/myacico-service/category/list";
-  		$konten = file_get_contents($url, false);
-  		$hasilNav = json_decode($konten, true);
-      $this->data['hasilNav'] = $hasilNav;
+  public function navigation(){
+    $api = $this->urlApi();
+    $url = $api."/category/list";
+		$konten = file_get_contents($url, false);
+		$hasilNav = json_decode($konten, true);
+    $this->data['hasilNav'] = $hasilNav;
+  }
 
-    // echo"<pre>"; print_r($hasilNav); die();
-    }
-
-    public function asset(){
-
-
-		$this->data['baseApiUrl'] = "https://api.myacico.co.id/myacico-service";
-		$this->data['baseApiUrl2'] = "https://acc.myacico.co.id/myacico-account/account";
-
-    // $this->data['baseApiUrl'] = "http://192.168.0.109:8080/myacico-service";
-		// $this->data['baseApiUrl2'] = "https://acc.myacico.co.id/myacico-account/account";
-
-    }
+  public function asset(){
+    $api = $this->urlApi();
+    $this->data['baseApiUrl'] = $api;
+    $this->data['baseApiUrl2'] = $api."/account";
+  }
 
 
     public function maintan(){
-
-  		$url = "https://api.myacico.co.id/myacico-service/check/server";
-      // $url = "http://192.168.0.109:8080/myacico-service/category";
+      $api = $this->urlApi();
+      $url = $api."/check/server";
   		$konten = file_get_contents($url);
-  		// $this->data['catsearch'] = json_decode($konten, true);
       $hasil = json_decode($konten, true);
-
 
       if($hasil['status'] != '1'){
         redirect('maintenance');
@@ -594,7 +590,9 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 
     }
     public function categorySearch(){
-  		$url = "https://api.myacico.co.id/myacico-service/category";
+      $api = $this->urlApi();
+      $url = $api."/category";
+  		//$url = "https://api.myacico.co.id/myacico-service/category";
       // $url = "http://192.168.0.109:8080/myacico-service/category";
   		$konten = file_get_contents($url);
   		$this->data['catsearch'] = json_decode($konten, true);

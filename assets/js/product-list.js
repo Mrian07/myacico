@@ -171,7 +171,7 @@ function extract_list(data, i){
 						+ '<a class="title-product" href="' + base_url + 'product/detail/' + data.m_product_id + '/' + data.alias + '">' + data.name + '</a>'
 						+ '<div class="product-detail highlight' + i + '">'
 							+ data.highlight
-							+ '<a href="' + base_url + 'product/detail/' + data.m_product_id + '/'	+ data.alias + '" style="color: #4b4b4b!important; font-weight: bold">SELENGKAPNYA</a>'
+							+ '<a href="' + base_url + 'product/detail/' + data.m_product_id + '/'	+ data.alias + '" style="color: #4b4b4b!important; font-weight: bold">'+selengkapnya+'</a>'
 						+ '</div>'
 					+ '</div>'
 				+ '</div>'
