@@ -62,12 +62,10 @@
     $allsubtotal += $items['subtotal'];
   }
 
-  $grandTotal = $allsubtotal+$this->session->userdata('ongkos_kurir');
+  $getGrandTotal = $allsubtotal+$this->session->userdata('ongkos_kurir');
+  $grandTotal = $this->session->userdata('discVoucher')+$getGrandTotal;
   ?>
   <div class="totalfee">
-    <div class="totalsub">
-
-    </div>
     <div class="totalsub">
       <p><?php echo $lang_asuransi; ?></p>
       <p class="red">-</p>
@@ -80,9 +78,40 @@
       <p><?php echo $lang_totalShipping; ?></p>
       <p class="red">Rp.<?php if($this->session->userdata('ongkos_kurir')){echo money($this->session->userdata('ongkos_kurir'));}else{echo"0";}?></p>
     </div>
+    <div class="totalsub">
+      <p>Voucher</p>
+      <p class="red" id='voucher'><?php if($this->session->userdata('discVoucher')){echo'Rp.'. money($this->session->userdata('discVoucher')); }else{echo"-"; }?></p>
+    </div>
     <div class="totalsub2">
       <p>Grand Total</p>
       <p class="red">Rp.<?php echo money($grandTotal); ?></p>
+
     </div>
   </div>
-<input type='hidden' id='grandtotal' value='<?php echo $grandTotal; ?>'>
+
+
+
+
+<!-- <input type='hidden' id='valVoucher' value='<?php //echo $this->session->userdata('voucher'); ?>'> -->
+<!-- <input type='text' id='discVoucher' value=''>
+<input type='text' id='codeVoucher' value=''>
+<input type='text' id='isValidVoucher' value=''> -->
+<input type='hidden' id='grandtotal' value='<?php echo  $grandTotal; ?>'>
+
+
+<!-- <script>
+$(document).ready(function() {
+
+  var discVoucher = $('#discVoucher').val();
+
+  var grandTotal = '<?php //echo  $grandTotal; ?>';
+
+alert(grandTotal);
+
+  var bigGrandTotal = discVoucher+grandTotal;
+  $('#grandtotal').val(bigGrandTotal);
+  $('#vGrandtotal').val(bigGrandTotal);
+  // var grandTotal = '<?php //echo  $grandTotal; ?>';
+  // var grandTotal = '<?php //echo  $grandTotal; ?>';
+});
+</script> -->

@@ -87,6 +87,8 @@ class Checkout extends Web_private {
 
 		/*e: terbaru*/
 
+
+
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$domain = domain();
 		$lang_shoping_method_cart = $this->lang->line('shoping_method_cart');
@@ -285,6 +287,25 @@ class Checkout extends Web_private {
 		$this->load->view('frontend/modules/cart/cart_by_ci.php',$this->data);
 		// $this->load->view('frontend/modules/cart/cart_by_token.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function voucher() {
+		$token = $_COOKIE['x-auth'];
+		if($token){
+			$codeVoucher = $_POST['codeVoucher'];
+			$discVoucher = $_POST['discVoucher'];
+			$isValidVoucher = $_POST['isValidVoucher'];
+			$data = array(
+				'codeVoucher' => $codeVoucher,
+				'discVoucher' => $discVoucher,
+				'isValidVoucher' => $isValidVoucher,
+			);
+			$this->session->set_userdata($data);
+			if($voucher){ echo"berhasil"; }else{ echo"gagal"; }
+		}else{
+			echo"gagal";
+		}
+
 	}
 
 	public function pilihKurir() {
@@ -827,6 +848,13 @@ class Checkout extends Web_private {
 		$data = array('shipping_address_id' => '');
     $this->session->set_userdata($data);
 
+		$data = array(
+			'codeVoucher' => '',
+			'discVoucher' => '',
+			'isValidVoucher' => '',
+		);
+		$this->session->set_userdata($data);
+
 		// $field = json_decode($konten);
 		// echo"<pre>"; print_r($field); die();
 		$lang_shoping_cart = $this->lang->line('shoping_cart');
@@ -840,6 +868,13 @@ class Checkout extends Web_private {
 
 	public function paymentByCreditCard()
 	{
+		$data = array(
+			'codeVoucher' => '',
+			'discVoucher' => '',
+			'isValidVoucher' => '',
+		);
+		$this->session->set_userdata($data);
+
 		$this->data['id'] = $this->uri->segment(3);
 		$this->data['token'] = $this->uri->segment(4);
 		$this->load->view('frontend/modules/checkout/payment_credit.php',$this->data);
@@ -847,6 +882,12 @@ class Checkout extends Web_private {
 
   public function paymentByOnline()
 	{
+		$data = array(
+			'codeVoucher' => '',
+			'discVoucher' => '',
+			'isValidVoucher' => '',
+		);
+		$this->session->set_userdata($data);
 		$this->data['id'] = $this->uri->segment(3);
 		$this->data['token'] = $this->uri->segment(4);
 		$this->load->view('frontend/modules/checkout/payment_online.php',$this->data);
