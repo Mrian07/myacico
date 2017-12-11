@@ -16,7 +16,14 @@
 	</div>
 	<div class="row">
 		<div id="sidebar-left-filter" class="col-xs-3">
-			<?php $this->load->view('frontend/modules/product/sidebar_left_filter',$this->data); ?>
+			<?php
+
+				if($function_name == 'newProduct') {
+					$this->load->view('frontend/modules/product/sidebar_left',$this->data);
+				} else {
+					$this->load->view('frontend/modules/product/sidebar_left_filter',$this->data);
+				}
+			?>
 		</div>
 		<div id="product-list" class="col-xs-9 view-list">
 			<div style='border-bottom:3px solid #c40202; padding:10px 0px 10px 0px;'>
@@ -40,12 +47,9 @@
 								<div class="form-group text-right">
 									<label for="atur">Atur berdasarkan:</label>
 									<select id="order_by" class="form-control" style="font-size: 8pt;height: 30px;width: 140px;">
-										<option value=''>Pemilihan Komprehensif</option>
-										<option value='5'>Produk Terbaru</option>
-										<option value='1'>Nama: A Ke Z</option>
-										<option value='2'>Nama: Z Ke A</option>
-										<option value='3'>Harga: Rendah Ke Tinggi</option>
-										<option value='4'>Harga: Tinggi Ke Rendah</option>
+										<option value=''>Produk Terbaru</option>
+
+
 									</select>
 								</div>
 							</form>
@@ -156,17 +160,21 @@
 <script type="text/javascript">
 var path = '<?php echo $_SERVER['REQUEST_URI']; ?>';
 var list_url, sidebar_url;
-var keyword = '<?php if(isset($pro)) echo $pro ?>';
+var keyword = decodeURI('<?php if(isset($pro)) echo $pro ?>');
 var cat_id = '<?php if(isset($id_cat)) echo $id_cat ?>';
+var function_name = '<?php if(isset($function_name)) echo $function_name ?>';
 
 if(keyword != ''){
 	list_url = api_base_url + '/product/listproduct/'+keyword+'?itemperpage=10&';
 	sidebar_url = api_base_url + '/product/filter/'+keyword;
 }
-
 if(cat_id != ''){
 	list_url = api_base_url + '/product/listproduct?category='+cat_id+'&itemperpage=10&';
 	sidebar_url = api_base_url + '/product/filter?category='+cat_id;
+}
+if(function_name == 'newProduct') {
+	list_url = api_base_url + '/product/listproduct/all/new?&itemperpage=10&';
+	sidebar_url = '';
 }
 </script>
 <script src="<?php echo base_url('assets/js/product-list.js');?>"></script>

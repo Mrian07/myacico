@@ -1,22 +1,18 @@
 var filterUrl = '';
 var body = $("html, body");
 
-// $url_share="https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 var namapotong = '';
 var ctrl= base_url+'/product/detail';
 var isFilterPriceActive = false;
 function currencyFormat (num) {
-	// return "Rp." + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
 	return	"Rp." +num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
 }
 var detail = JSON.parse(localStorage.getItem('product_detail'))
 if(detail.length > 0) $('#recentView').show();
-//console.log(detail);
 for(var i=0;i<detail.length;i++) {
 
 	var str = detail[i].name;
 	console.log('str', str);
-	// a = a.length;
 	if (typeof str != 'undefined') {
 		if(str.length >20)namapotong = str.substring(0, 20)+' '+'...';
 		else namapotong = detail[i].name;
@@ -24,20 +20,14 @@ for(var i=0;i<detail.length;i++) {
 		continue;
 	}
 
-	// console.log(currencyFormat(detail[i].pricelist));
-	// $('#product').append('<div class="pull-left" style="width: 100px;"><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'" class="link-p" style="color:#fff;"><span class="badgeNi">New</span><img src="'+detail[i].imageurl[0]+'" class="" style="height:100px;"></a><p><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'">'+detail[i].name+'</a></p></div>')
 	$('#product').append('<p><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'" class="link-p" style="color:#fff;"><span class="badgeNi">New</span><img src="'+detail[i].imageurl[0]+'" class="" style="height:100px;"></a><br><a href="'+ctrl+'/'+detail[i].m_product_id+'/'+detail[i].alias+'">'+namapotong+' </a><br> '+currencyFormat(detail[i].pricelist)+'</p>')
 
 }
-// detail.forEach(p){
-
-// 	 product.append('<tr><td>'+p.m_product_id+'</td><td>')
-// }
 
 $(document).ready(function() {
 
 	getListProduct();
-	getSidebar();
+	if (sidebar_url != '') getSidebar();
 
 	$('#order_by').change(function(){
 		getListProduct();
@@ -225,7 +215,6 @@ function getListProduct(p) {
 
 	$("#product-list-unready").fadeIn(500);
 	$('#productlist').hide();
-
 	$.get(encodeURI(temp_url), function(res){
 		console.log("konten:", res);
 
@@ -264,7 +253,7 @@ function getSidebar() {
 
 					menu_body += '<div class="checkbox">'
 						+ '<label>'
-							+ '<input name="checkbox-filter" type="checkbox" value="' + key + '~' + value + '" onclick="doFilter()">'
+							+ '<input name="checkbox-filter" type="checkbox" value="' + key + '|' + value + '" onclick="doFilter()">'
 							+ d.value
 							+ ' (' + d.count + ')'
 						+ '</label>'
@@ -354,7 +343,7 @@ function doFilter() {
 
     $('#sidebar-left-filter input[name=checkbox-filter]:checked').each(function() {
         var valraw = $(this).val();
-        var arrVal = valraw.split('~');
+        var arrVal = valraw.split('|');
         var key = arrVal[0].trim();
         var val = arrVal[1].trim();
 

@@ -21,10 +21,11 @@ class Pages extends Web {
 	}
 
 	public function newProduct(){
-
+		$functionName = $this->uri->segment(2);
 		$cat=$this->uri->segment(3);
 
-
+		// die($functionName);
+		// echo $functionName;
 		$id=$this->uri->segment(4);
 		$short=$this->uri->segment(5);
   	$page=$this->uri->segment(6);
@@ -102,10 +103,10 @@ class Pages extends Web {
 
 
 		$hasil = json_decode($konten, true);
-
+		$this->data['function_name'] = $functionName;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/pages/new_product.php',$this->data);
+		$this->load->view('frontend/modules/product/product_all.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
 	}
