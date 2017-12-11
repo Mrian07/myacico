@@ -14,7 +14,7 @@ $this->data['lang'] = $lang;
                     <img src="<?php echo base_url('images/general/caraMudah.jpg');?>" style='height:400px; width: 1000px;'><br>
 										<div class="kiri">
 											<center>
-										<img src="<?php echo base_url('images/general/acicoCari.jpg');?>" style='height:400px; width: 520px;'><div class="numberCircle zxc">1
+										<img src="<?php echo base_url('images/general/acicoCari.JPG');?>" style='height:400px; width: 520px;'><div class="numberCircle zxc">1
 										</div>
 									</center>
 									</div>
