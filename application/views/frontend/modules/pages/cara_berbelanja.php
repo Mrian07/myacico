@@ -46,7 +46,7 @@ $this->data['lang'] = $lang;
 	<p class="pp7"> <?php echo $lang_how_buy3;?> </p>
 
   <div class="col-sm-10">
-		<img src="<?php echo base_url('images/general/dompet.JPG');?>" style='height:auto; width: auto; float:left; padding-left:170px; padding-right:99px;'>
+		<img src="<?php echo base_url('images/general/dompet.jpg');?>" style='height:auto; width: auto; float:left; padding-left:170px; padding-right:99px;'>
 		<div class="numberCircle1 zxc1">4
 		</div>
 			<p class="pp4"><?php echo $lang_how_buy_tittle4;?></p><br/><br/>
