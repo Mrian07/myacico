@@ -84,7 +84,7 @@ a.badgeNi:hover,a.badgeNi:focus{color:#fff;text-decoration:none;cursor:pointer}
   top: -1px;
   right: 20%;
 }
-.badgeNi34 {
+.  {
   background: #b20c0c;
   position: absolute;
   height: 40px;
@@ -902,7 +902,7 @@ if($id == 1){
               echo "";
             } else { ?>
 
-              <span class="badgeNi34" style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
+              <span class=" " style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
 
             <?php }
             if($itemslide0['istodayshipping'] == 'Y')
@@ -964,7 +964,7 @@ if($id == 1){
               echo "";
             } else { ?>
 
-              <span class="badgeNi34" style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
+              <span class=" " style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
 
             <?php }
             if($itemslide0['istodayshipping'] == 'Y')
@@ -1026,7 +1026,7 @@ if($id == 1){
               echo "";
             } else { ?>
 
-              <span class="badgeNi34" style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
+              <span class=" " style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
 
             <?php }
             if($itemslide0['istodayshipping'] == 'Y')
