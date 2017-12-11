@@ -115,8 +115,11 @@
                                             <br><?php
                                             if($a ==1)
                                             {
-                                             echo '*Pegiriman ASAP(Jaminan 2 hari sampai) saat ini hanya berlaku untuk daerah Jakarta';
-
+                                                if($lang=='en'){
+                                             echo '*ASAP Delivery (2 days guarantee) is currently valid only for Jakarta area';
+                                                }
+                                               else
+                                                   echo '*Pegiriman ASAP(Jaminan 2 hari sampai) saat ini hanya berlaku untuk daerah Jakarta';
                                             }else{
                                                 echo '';
                                             }
