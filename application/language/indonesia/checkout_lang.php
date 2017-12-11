@@ -6,6 +6,7 @@ $lang['data_receiver'] = 'Data Penerima';
 $lang['payment_type'] = 'Pilih Tipe Pembayaran:';
 $lang['shiping_method'] = 'Metode Pengiriman';
 $lang['shoping_cart'] = 'Keranjang Belanja';
+$lang['shoping_method_cart'] = 'Metode Pembayaran';
 $lang['cart_note_text'] = 'Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman';
 $lang['cart_note'] = 'Catatan:';
 $lang['shiping_fare'] = 'Ongkos Kirim:';
@@ -62,7 +63,6 @@ $lang['alert_cart_shipping'] = 'Alamat tujuan tidak boleh kosong.';
 $lang['alert_cart_kurir'] = 'Silakan pilih kurir pengiriman.';
 $lang['alert_cart_paket'] = 'Silakan pilih paket pengiriman.';
 $lang['alert_cart_hapus'] = 'Apakah item ini akan dihapus?';
-
 
 //langsumary
 $lang['field_ringkasan'] = 'Ringkasan';

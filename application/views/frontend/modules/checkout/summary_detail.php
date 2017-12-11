@@ -51,7 +51,8 @@
       </td> -->
     <tr>
       <td colspan="6" class="tc">
-        <div class="other-info3"><a href='#' onclick="delItemCart('<?php echo $items['productId'];?>','<?php echo $items['imageurl'];?>','<?php echo $items['name'];?>','<?php echo$items['itemCartId'];?>')"><i class="fa fa-trash-o" aria-hidden="true"></i> Hapus</a></div>
+        <div class="other-info3"><a href='#' onclick="delItemCart('<?php echo $items['productId'];?>','<?php echo $items['imageurl'];?>','<?php echo $items['name'];?>','<?php echo$items['itemCartId'];?>')">
+          <i class="fa fa-trash-o" aria-hidden="true"></i> <?php echo$lang_btn_delete; ?></a></div>
         <div class="other-info4"><?php echo $lang_tagihan; ?> : <span class="red">Rp.<?php echo money($items['subtotal']); ?></span></div>
       </td>
   </table>

@@ -4,7 +4,7 @@
   <div style='margin:0px auto; width:1000px; margin-top:30px;  height:50px;'>
     <div class="number-container">
       <div class="title-step"><p><?=$lang_shoping_cart;?></p></div>
-      <div class="title-step2"><p><?=$lang_payment_method;?></p></div>
+      <div class="title-step2"><p><?=$lang_shoping_method_cart;?></p></div>
       <div class="title-step3"><p><?=$lang_payment_confirm;?></p></div>
     </div>
   </div>

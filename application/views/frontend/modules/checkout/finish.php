@@ -4,8 +4,8 @@
   <div style='margin:0px auto; width:1000px; margin-top:30px;  '>
     <div class="number-container">
       <div class="title-step"><p><?=$lang_shoping_cart;?></p></div>
-      <div class="title-step2"><p>Ringkasan</p></div>
-      <div class="title-step3"><p>Konfirmasi Pembayaran</p></div>
+      <div class="title-step2"><p><?=$lang_shoping_method_cart;?></p></div>
+      <div class="title-step3"><p><?=$lang_payment_confirm;?></p></div>
     </div>
   </div>
   <div style='margin:0px auto; width:900px; margin-bottom:50px;'>

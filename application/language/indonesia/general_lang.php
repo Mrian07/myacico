@@ -1,6 +1,6 @@
 <?php
 $lang['btn_signin'] = 'Daftar';
-
+$lang['btn_delete'] = 'Hapus';
 $lang['btn_update'] = 'Ubah';
 $lang['btn_tambah'] = 'Tambah';
 $lang['lang_new_reg'] = 'PENDAFTARAN';

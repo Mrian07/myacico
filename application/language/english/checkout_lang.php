@@ -6,6 +6,7 @@ $lang['data_receiver'] = 'Receiver Data';
 $lang['payment_type'] = 'Choose Payment Type:';
 $lang['shiping_method'] = 'Shoping Method';
 $lang['shoping_cart'] = 'Shoping Cart';
+$lang['shoping_method_cart'] = 'Payment Method';
 $lang['cart_note_text'] = 'Pre-order items will be shipped separately according to inventory and estimated delivery times. There are additional charges for multiple shipments';
 $lang['cart_note'] = 'Notes:';
 $lang['shiping_fare'] = 'Shipping Charges:';
