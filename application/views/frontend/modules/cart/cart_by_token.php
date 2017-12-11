@@ -110,7 +110,7 @@
 			<tr>
 				<td colspan='3'>
 
-					<b>Catatan:</b> Barang pre-order akan dikirimkan secara terpisah sesuai dengan persediaan dan perkiraan waktu pengiriman. Ada biaya tambahan untuk beberapa pengiriman
+					<b><?php echo $lang_cart_note; ?></b> <?php echo $lang_cart_note_text; ?>
 
                                             <br><?php
                                             if($a ==1)
