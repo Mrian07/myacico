@@ -58,8 +58,10 @@ class Web extends MY_Controller {
     }
 
     public function pushCartToToken(){
+
       if(isset($_COOKIE['x-auth']))
       {
+
         $jmlCart = count($this->cart->contents());
         if($jmlCart){
           $token = $_COOKIE['x-auth'];
@@ -491,6 +493,13 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 //   ASAP
         $this->data['lang_inf_asap'] = $this->lang->line('inf_asap');
 
+//  jaminan
+        $this->data['lang_jaminan_tittle'] = $this->lang->line('jaminan_tittle');
+        $this->data['lang_jaminan'] = $this->lang->line('jaminan');
+        $this->data['lang_isi_jaminan'] = $this->lang->line('isi_jaminan');
+        $this->data['lang_isi_jaminan2'] = $this->lang->line('isi_jaminan2');
+
+
     //btn tambah  informasi akun
       $this->data['btn_nih'] = $this->lang->line('btn_tambah');
     //akhir dari btn tambah di informasi akun
@@ -540,7 +549,15 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_aftersale_baner'] = $this->lang->line('f_aftersale_baner');
     $this->data['lang_aftersale_bawah'] = $this->lang->line('f_aftersale_bawah');
     $this->data['lang_aftersale_keterangan'] = $this->lang->line('after_sale_keterangan');
-
+    $this->data['lang_msg1'] = $this->lang->line('f_msg1');
+    $this->data['lang_msg2'] = $this->lang->line('f_msg2');
+    $this->data['lang_msg3'] = $this->lang->line('f_msg3');
+    $this->data['lang_msg4'] = $this->lang->line('f_msg4');
+    $this->data['lang_msg5'] = $this->lang->line('f_msg5');
+    $this->data['lang_msg6'] = $this->lang->line('f_msg6');
+    $this->data['lang_msg7'] = $this->lang->line('f_msg7');
+    $this->data['lang_msg8'] = $this->lang->line('f_msg8');
+    $this->data['lang_msg9'] = $this->lang->line('f_msg9');
 
     $this->data['lang_footer_info'] = $this->lang->line('footer_info');
 

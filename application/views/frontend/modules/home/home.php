@@ -4,6 +4,7 @@
 <!-- Owl Carousel Assets slide image collection -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.carousel.css');?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/owl-carousel/owl.theme.css');?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/arrow_nav.css');?>" />
 <div>
 
 
@@ -891,6 +892,7 @@ function addWishlist(id,name,imageurl){
 $(document).ready(function() {
   $("#owl-demo").owlCarousel({
     autoPlay: 3000,
+    navigation: true,
     items : 6,
     itemsDesktop : [1199,3],
     itemsDesktopSmall : [979,3]

@@ -84,7 +84,7 @@
 						<td data-th='Quantity'>
 							<select id='qty' name='qty' onchange='getvaltoken(this);' class='form-control'>";
 								$val =1;
-								while($val<=100){
+								while($val<=3){
 									if($items['qty']==$val){
 										echo"<option value='".$val.'-'.$items['itemCartId']."' selected>".$val."</option>";
 									}else{

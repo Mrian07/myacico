@@ -20,18 +20,19 @@ $lang['how_buy4'] = 'Setelah proses pemeriksaan selesai, anda dapat melakukan pe
 $lang['how_buy_tittle5'] = 'Barang di antarkan ke tujuan';
 $lang['how_buy5'] = '<br>Setelah semua proses telah anda lakukan. Tim kami akan segera memproses pesanan anda dan mengirimkannya ke tempat anda dengan estimasi pengiriman 2-7 Hari.' ;
 // Jaminan
+$lang['jaminan_tittle']='Jaminan & Garansi';
 $lang['jaminan']='Kami mengembalikan produk dengan garansi 1 tahun, silahkan ikuti langkah-langkah yang dibutuhkan untuk memastikan klaim anda berjalan dengan baik. 
 Harap dicatat bahwa myACICO.co.id menawarkan 2 tipe garansi, ini dapat dilihat pada halam produk. 
 Garansi myACICO.co.id, yang ditawarkan pada produk yang diimpor adalah tanpa garansi, 
 myACICO.co.id akan mengembalikan ke anda dengan garansi 1 tahun. Silahkan melihat ketentuan dibawah untuk melihat apa yang termasuk dan tidak termasuk dalam garansi.
 Garansi Produk/Garansi Brand/Garansi Merek jamin, memberikan anda kapasitas untuk membawa produk anda ke otorisasi dealer lokal untuk mengklaim garansi. 
 MyACICO.co.id tidak bertanggung jawab atas cacat bawaan apapun pada produk. MyACICO.co.id hanya akan menjual produk dalam kebijaksanaan pelanggan';
-$lang['isi_jaminan']='Mengapa garansi myACICO.co.id ini tidak mencakup?
+$lang['isi_jaminan']='<b>Mengapa garansi myACICO.co.id ini tidak mencakup?</b>
 <br>1. Setiap kerusakan yang disebabkan oleh kesalahan yang disebabkan oleh pelanggan tersebut. 
 <br>2. Setiap kerusakan produk yang dihasilkan dari modifikasi tidak resmi. 
 <br>3. Bencana alam. 
 <br>4. Pencurian dan hilangnya produk. ';
-$lang['isi_jaminan2']='Apa yang akan myACICO.co.id lakukan untuk memperbaiki masalah? <br>
+$lang['isi_jaminan2']='<b>Apa yang akan myACICO.co.id lakukan untuk memperbaiki masalah? </b>
 <br>1. myACICO.co.id akan memperbaiki produk, tanpa biaya, jika produk masih dalam garansi. 
 <br>2. Jika produk tidak dapat diperbaiki, kami akan menukar dengan barang yang baru, atau memberikan pengembalian dana. ';
 ?>

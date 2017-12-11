@@ -72,7 +72,7 @@
 </div>
 <div class="row" style="margin-bottom: 10px;">
     <div class="col-sm-12 text-center">
-        <input type="submit" id="submit_btn" class="btn btn-danger btn-lg" style="border-radius: 5px;padding: 8px 0;margin-bottom: 7px;background-color: #c81423;width: 100%;" value="Kirim">
+        <input type="submit" id="submit_btn" class="btn btn-danger btn-lg" style="border-radius: 5px;padding: 8px 0;margin-bottom: 7px;background-color: #c81423;width: 100%;" value="<?php echo$lang_btn_Kirim;?>">
     </div>
 </div>
         </form>
@@ -116,57 +116,60 @@ $(document).ready(function() {
 
 
       if(subject ===''){
-        $.alert({title:'Alert', content: ' Keperluan/subject tidak boleh kosong'});
+        $.alert({title:'Alert', content: ' <?php echo$lang_msg1?>'});
         $('#spinner_img').hide();
-        $('#submit_btn').val('Kirim').removeClass('disabled');
+        $('#submit_btn').val('<?php echo$lang_btn_Kirim;?>').removeClass('disabled');
         $('.mandatory').prop('disabled', false);
         return false;
       }
 
       if(email ===''){
-        $.alert({title:'Alert', content: ' Email tidak boleh kosong'});
+        $.alert({title:'Alert', content: ' <?php echo$lang_msg2?>'});
         $('#spinner_img').hide();
-        $('#submit_btn').val('Kirim').removeClass('disabled');
+        $('#submit_btn').val('<?php echo$lang_btn_Kirim;?>').removeClass('disabled');
         $('.mandatory').prop('disabled', false);
         return false;
       }
 
        if(nama ===''){
-        $.alert({title:'Alert', content: ' Nama tidak boleh kosong'});
+        $.alert({title:'Alert', content: ' <?php echo$lang_msg3?>'});
         $('#spinner_img').hide();
-        $('#submit_btn').val('Kirim').removeClass('disabled');
+        $('#submit_btn').val('<?php echo$lang_btn_Kirim;?>').removeClass('disabled');
         $('.mandatory').prop('disabled', false);
         $("#nama").focus();
         return false;
       }
-      if(message ===''){
-        $.alert({title:'Alert', content: ' Pesan tidak boleh kosong'});
-        $('#spinner_img').hide();
-        $('#submit_btn').val('Kirim').removeClass('disabled');
-        $('.mandatory').prop('disabled', false);
-        return false;
-      }
       if(phone ===''){
-        $.alert({title:'Alert', content: ' Telepon tidak boleh kosong'});
+        $.alert({title:'Alert', content: ' <?php echo$lang_msg5?>'});
         $('#spinner_img').hide();
-        $('#submit_btn').val('Kirim').removeClass('disabled');
-        $('.mandatory').prop('disabled', false);
-        return false;
-      }
-       if(company ===''){
-        $.alert({title:'Alert', content: ' Perusahaan tidak boleh kosong'});
-        $('#spinner_img').hide();
-        $('#submit_btn').val('Kirim').removeClass('disabled');
+        $('#submit_btn').val('<?php echo$lang_btn_Kirim;?>').removeClass('disabled');
         $('.mandatory').prop('disabled', false);
         return false;
       }
       if(id_order ===''){
-        $.alert({title:'Alert', content: ' No Pesanan tidak boleh kosong'});
+        $.alert({title:'Alert', content: ' <?php echo$lang_msg7?>'});
         $('#spinner_img').hide();
-        $('#submit_btn').val('Kirim').removeClass('disabled');
+        $('#submit_btn').val('<?php echo$lang_btn_Kirim;?>').removeClass('disabled');
         $('.mandatory').prop('disabled', false);
         return false;
       }
+       if(company ===''){
+        $.alert({title:'Alert', content: ' <?php echo$lang_msg6?>'});
+        $('#spinner_img').hide();
+        $('#submit_btn').val('<?php echo$lang_btn_Kirim;?>').removeClass('disabled');
+        $('.mandatory').prop('disabled', false);
+        return false;
+      }
+      if(message ===''){
+        $.alert({title:'Alert', content: '<?php echo$lang_msg4?>'});
+        $('#spinner_img').hide();
+        $('#submit_btn').val('<?php echo$lang_btn_Kirim;?>').removeClass('disabled');
+        $('.mandatory').prop('disabled', false);
+        return false;
+      }
+      
+      
+      
       data.name = nama;
     data.email = email;
     data.subject = subject;
@@ -196,9 +199,9 @@ $(document).ready(function() {
                 $('#sukses_after_sales').show();
 				//
 			}else{
-        $.alert({title:'Alert', content: ' pesan gagal dikirim silahkan coba kembali !'});
+        $.alert({title:'Alert', content: ' <?php echo$lang_msg8?>'});
         $('#spinner_img').hide();
-        $('#submit_btn').val('Kirim').removeClass('disabled');
+        $('#submit_btn').val('<?php echo$lang_btn_Kirim;?>').removeClass('disabled');
         $('.mandatory').prop('disabled', false);
 			}
 

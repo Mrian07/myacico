@@ -63,23 +63,26 @@
 
 						</div>
 						<br>&nbsp;<br>
-						<!-- <div align="left" class="method">
-							<p>Online Payment</p>
+						<div align="left" class="method">
+
 							<?php
-							foreach($hasilOnline as $dataOl){?>
+							foreach($hasilOnline as $dataOl){
+                if($dataOl['value']){
+                ?>
+              <p>Online Payment</p>
 							<div class="segmen">
 								<input type="radio" class='code' name="code" value='O-<?php echo$dataOl['value']; ?>'>
 			  				</div>
 			  				<div class="segmen2">
 			  					<img src='https://storage.googleapis.com/myacico/image/onlinepayment/<?php echo$dataOl['value']; ?>.png' border='0'>
 			  				</div>
-							<?php } ?>
-						</div> -->
+							<?php } } ?>
+						</div>
 
 
-
+            <?php // if($this->session->userdata('voucher')==''){ ?>
 						<div align="left" class="method-kupon">
-							<b><?=$lang_voucher_code;?> ?</b><br>
+							<br><br><b><?=$lang_voucher_code;?> ?</b><br>
 							<div class="input-group">
 								<input type="text" id="txt_voucher" name="txt_voucher" class="my-field-kupon"  placeholder="">
 								<span class="input-group-btn">
@@ -87,6 +90,8 @@
 								</span>
 							</div>
 						</div>
+          <?php // } ?>
+            <div style='clear:both'></div>
 					</div>
 
 					<input type='hidden' value='<?php echo$this->session->userdata('name_kurir');?>' id='courier'>
@@ -113,9 +118,79 @@ $(document).ready(function() {
 });
 
 $('#btn_voucher').click(function(){
-if($("#txt_voucher").val() == '')
+var token= '<?php echo $token; ?>';
+var voucher = $("#txt_voucher").val();
+var itemKosong = $('#itemKosong').val();
+// voucher = 0;
+if(itemKosong=='1'){
+  $.alert({
+    title: 'Alert!',
+    content: 'Kode Voucher tidak bisa dimasukan jika keranjang belanja kosong',
+  });
+}else if(voucher == '')
 {
-     alert('Kode Voucher Tidak Boleh Kosong');
+  $.alert({
+    title: 'Alert!',
+    content: 'Kode Voucher Tidak Boleh Kosong',
+  });
+
+}else{
+
+
+  var urlApi ="<?php echo api_base_url('voucher/'); ?>"
+  $.ajax
+  ({
+  type: "GET",
+  headers:{"token":token},
+  url: urlApi+"checkvouchercode?vouchercode="+voucher,
+  success:function(hasil){
+
+    // voucher_val = '-10000';
+
+
+    // var grandTotal =  $('#grandtotal').val();
+     var discVoucher = hasil.voucherAmount;
+     var codeVoucher = voucher;
+  //   var getTotal = discVoucher+grandTotal;
+     if(hasil.status=='1'){
+       var isValidVoucher ='Y';
+     }else{
+       var isValidVoucher ='N';
+
+       $.alert({
+         title: 'Alert!',
+         content: 'Kode Voucher sudah digunakan',
+       });
+     }
+
+    $.ajax
+  	({
+    data: ({'codeVoucher': codeVoucher,'discVoucher': discVoucher,'isValidVoucher': isValidVoucher}),
+    type: "POST",
+  	url: "<?php echo site_url('checkout/voucher'); ?>",
+  	success:function(html){
+
+      if(html=='berhasil'){
+        // $(".method-kupon").hide();
+        $(".listItem").html("<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>");
+        $.ajax
+        ({
+        url: "<?php echo site_url('checkout/summaryDetail'); ?>",
+        success:function(html){
+            $(".listItem").html(html);
+          }
+        });
+
+        }
+  		}
+  	});
+
+  }
+
+  });
+
+
+
 }
 
 });
@@ -213,6 +288,14 @@ function finish(){
 	var data = {};
 	var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
+  // var discVoucher=$('#discVoucher').val();
+  // var codeVoucher=$('#codeVoucher;').val();
+  // var isValidVoucher=$('#isValidVoucher').val();
+
+  var discVoucher='<?php echo $this->session->userdata('discVoucher'); ?>';
+  var codeVoucher='<?php echo $this->session->userdata('codeVoucher'); ?>';
+  var isValidVoucher='<?php echo $this->session->userdata('isValidVoucher'); ?>';
+
 	if(itemKosong=="1"){
 		$.alert({
 			title: 'Alert!',
@@ -257,6 +340,10 @@ function finish(){
 		data.code = code;
 		data.courier = courier;
 		data.courier_amount = courier_amount;
+
+    data.discount_voucher = discVoucher;
+		data.voucher_code = codeVoucher;
+		data.isvalidvoucher = isValidVoucher;
 //                alert(code);
 // console.log("sad",data);die();
 		$.ajax
