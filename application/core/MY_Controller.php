@@ -58,8 +58,10 @@ class Web extends MY_Controller {
     }
 
     public function pushCartToToken(){
+
       if(isset($_COOKIE['x-auth']))
       {
+
         $jmlCart = count($this->cart->contents());
         if($jmlCart){
           $token = $_COOKIE['x-auth'];
@@ -490,7 +492,7 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 
 //   ASAP
         $this->data['lang_inf_asap'] = $this->lang->line('inf_asap');
-        
+
 //  jaminan
         $this->data['lang_jaminan_tittle'] = $this->lang->line('jaminan_tittle');
         $this->data['lang_jaminan'] = $this->lang->line('jaminan');
