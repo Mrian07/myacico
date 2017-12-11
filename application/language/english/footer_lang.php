@@ -88,10 +88,10 @@ $lang['f_a_sales'] = '<div style="text-align: justify;
         . '<br>4. Customer negligence either intentionally or unintentionally damaged such as modification, damage due to natural disaster, negligence due to usage (dropped, exposed to fluid, lost, etc.), electrical instability, virus attack, malfunction of device enhancement, minimization of device installation software / software, and elected elsewhere.'
         . '</div>'
 ;
-$lang['f_aftersale_baner'] = '<img src="'.base_url("images/general/after_sale7.png").'"'
+$lang['f_aftersale_baner'] = '<img src="'.base_url("images/general/after_sale_eng.png").'"'
         . 'style=" text-align: left; background-position: top left;height: 460px; '
         . 'background-repeat: no-repeat; background-size: 0px; min-width: 100px;width: 100%">';
-$lang['f_aftersale_bawah'] = '<img src="'.base_url("images/general/after_sale5.png").'"'
+$lang['f_aftersale_bawah'] = '<img src="'.base_url("images/general/after_sale_eng2.png").'"'
         . 'style=" text-align: left; background-position: top left;height: auto; '
         . 'background-repeat: no-repeat; background-size: 0px; min-width: 100px;width: 100%">';
 $lang['f_aftersale_cont'] = 'Please Contact Our After Sales Service';
@@ -104,4 +104,14 @@ $lang['f_company'] = 'Company:';
 $lang['f_msg'] = 'Message';
 $lang['f_btn_send'] = 'Send';
 $lang['after_sale_keterangan']='Our customer service will contact you soon.';
+// msg aftersale
+$lang['f_msg1'] = 'Requirement / subject can not be empty';
+$lang['f_msg2'] = 'Email can not be empty';
+$lang['f_msg3'] = 'Name can not be empty';
+$lang['f_msg4'] = 'Message can not be empty';
+$lang['f_msg5'] = 'Phone can not be empty';
+$lang['f_msg6'] = 'Company can not be empty';
+$lang['f_msg7'] = 'Order Number can not be empty';
+$lang['f_msg8'] = 'Message failed to send please try again!';
+//$lang['f_msg9'] = 'Wrong Email Format';
 ?>

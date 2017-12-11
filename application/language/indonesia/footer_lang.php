@@ -90,4 +90,14 @@ $lang['f_msg5'] = 'Telepon tidak boleh kosong';
 $lang['f_msg6'] = 'Perusahaan tidak boleh kosong';
 $lang['f_msg7'] = 'No Pesanan tidak boleh kosong';
 $lang['after_sale_keterangan']='Customer service kami akan segera menghubungi Anda.';
+// msg aftersale
+$lang['f_msg1'] = 'Keperluan/subject tidak boleh kosong';
+$lang['f_msg2'] = 'Email tidak boleh kosong';
+$lang['f_msg3'] = 'Nama tidak boleh kosong';
+$lang['f_msg4'] = 'Pesan tidak boleh kosong';
+$lang['f_msg5'] = 'No telepon tidak boleh kosong';
+$lang['f_msg6'] = 'Perusahaan tidak boleh kosong';
+$lang['f_msg7'] = 'No Pesanan tidak boleh kosong';
+$lang['f_msg8'] = 'Pesan gagal dikirim silahkan coba kembali !';
+//$lang['f_msg9'] = 'Format Email Tidak Benar';
 ?>
