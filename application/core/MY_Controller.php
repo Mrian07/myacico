@@ -168,7 +168,7 @@ class Web extends MY_Controller {
     $this->data['lang_btn_signin'] = $this->lang->line('btn_signin');
     $this->data['lang_btn_delete'] = $this->lang->line('btn_delete');
     $this->data['lang_btn_update'] = $this->lang->line('btn_update');
-
+    $this->data['lang_btn_more'] = $this->lang->line('btn_more');
 
     //label
     $this->data['lang_lab_name'] = $this->lang->line('label_name');

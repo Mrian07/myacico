@@ -163,6 +163,7 @@ var list_url, sidebar_url;
 var keyword = decodeURI('<?php if(isset($pro)) echo $pro ?>');
 var cat_id = '<?php if(isset($id_cat)) echo $id_cat ?>';
 var function_name = '<?php if(isset($function_name)) echo $function_name ?>';
+var selengkapnya = '<?php echo$lang_btn_more; ?>';
 
 if(keyword != ''){
 	list_url = api_base_url + '/product/listproduct/'+keyword+'?itemperpage=10&';
