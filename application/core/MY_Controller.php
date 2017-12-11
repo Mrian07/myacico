@@ -557,8 +557,8 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 	}
 
     public function navigation(){
-
-      $url = "https://api.myacico.co.id/myacico-service/category/list";
+      $url = "https://api.myacico.co.id/dev/category/list";
+    //  $url = "https://api.myacico.co.id/myacico-service/category/list";
       // $url = "http://192.168.0.109:8080/myacico-service/category/list";
   		$konten = file_get_contents($url, false);
   		$hasilNav = json_decode($konten, true);
@@ -569,9 +569,10 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 
     public function asset(){
 
-
-		$this->data['baseApiUrl'] = "https://api.myacico.co.id/myacico-service";
-		$this->data['baseApiUrl2'] = "https://acc.myacico.co.id/myacico-account/account";
+    $this->data['baseApiUrl'] = "https://api.myacico.co.id/dev";
+		//$this->data['baseApiUrl'] = "https://api.myacico.co.id/myacico-service";
+    $this->data['baseApiUrl2'] = "https://acc.myacico.co.id/dev/account";
+		//$this->data['baseApiUrl2'] = "https://acc.myacico.co.id/myacico-account/account";
 
     // $this->data['baseApiUrl'] = "http://192.168.0.109:8080/myacico-service";
 		// $this->data['baseApiUrl2'] = "https://acc.myacico.co.id/myacico-account/account";
@@ -581,7 +582,8 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 
     public function maintan(){
 
-  		$url = "https://api.myacico.co.id/myacico-service/check/server";
+      $url = "https://api.myacico.co.id/dev/check/server";
+  		//$url = "https://api.myacico.co.id/myacico-service/check/server";
       // $url = "http://192.168.0.109:8080/myacico-service/category";
   		$konten = file_get_contents($url);
   		// $this->data['catsearch'] = json_decode($konten, true);
@@ -594,7 +596,8 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 
     }
     public function categorySearch(){
-  		$url = "https://api.myacico.co.id/myacico-service/category";
+      $url = "https://api.myacico.co.id/dev/category";
+  		//$url = "https://api.myacico.co.id/myacico-service/category";
       // $url = "http://192.168.0.109:8080/myacico-service/category";
   		$konten = file_get_contents($url);
   		$this->data['catsearch'] = json_decode($konten, true);

@@ -73,9 +73,13 @@
 			var base_path = base_url.split(location.host).pop();
 			var site_url = '<?php echo site_url();?>';
 
-			var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
-			var login1 = 'https://acc.myacico.co.id/myacico-account/';
-			var adduser = 'http://acc.myacico.co.id/myacico-account/account/';
+			var login = 'http://acc.myacico.co.id/dev/account/masuk';
+			var login1 = 'https://acc.myacico.co.id/dev/';
+			var adduser = 'http://acc.myacico.co.id/dev/account/';
+
+			// var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
+			// var login1 = 'https://acc.myacico.co.id/myacico-account/';
+			// var adduser = 'http://acc.myacico.co.id/myacico-account/account/';
 
 			var api_base_url = "<?php echo $baseApiUrl; ?>";
 			var token;
@@ -523,7 +527,8 @@
 	app.controller('home1', function($scope, $http, $rootScope) {
 			$scope.home = 'test'
 			var regData = {
-					url : 'https://api.myacico.co.id/myacico-service/home/topproductcategory',
+					url : 'https://api.myacico.co.id/dev/home/topproductcategory',
+					// url : 'https://api.myacico.co.id/myacico-service/home/topproductcategory',
 					method : 'GET',
 					headers: {'token' : '5402854820542'}
 			}
@@ -551,7 +556,8 @@
 					var name = $scope.input.data
 
 					var regData = {
-							url : 'https://api.myacico.co.id/myacico-service/category/list',
+							url : 'https://api.myacico.co.id/dev/category/list',
+							// url : 'https://api.myacico.co.id/myacico-service/category/list',
 							method : 'POST',
 							data : {
 									name : name
@@ -568,7 +574,8 @@
 	app.controller('home', function($scope, $http, $rootScope) {
 			$scope.home = 'test'
 			var regData = {
-					url : 'http://api.myacico.co.id/myacico-service/category/list',
+					url : 'http://api.myacico.co.id/dev/category/list',
+					// url : 'http://api.myacico.co.id/myacico-service/category/list',
 					method : 'GET',
 					headers: {'token' : '5402854820542'}
 			}
@@ -598,7 +605,8 @@
 					var name = $scope.input.data
 
 					var regData = {
-							url : 'https://api.myacico.co.id/myacico-service/category/list',
+							url : 'https://api.myacico.co.id/dev/category/list',
+							// url : 'https://api.myacico.co.id/myacico-service/category/list',
 							method : 'POST',
 							data : {
 									name : name
