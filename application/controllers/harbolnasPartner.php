@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Harbolnaspartner extends Web {
+class HarbolnasPartner extends Web {
 
 	public function __construct()
     {
