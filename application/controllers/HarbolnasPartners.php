@@ -32,6 +32,11 @@ class HarbolnasPartners extends Web {
 
             $home_domain = domain2();
 		//Slide slide_show
+    $api7 = "home/topproductcategory";
+      $url7 = api_base_url($api7);
+	$konten7 = file_get_contents($url7);
+
+	$this->data['dathome7'] = json_decode($konten7, true);
 		$api = "https://api.myacico.co.id/myacico-service/product/listproduct/all/harbolnas";
 		$url = "https://api.myacico.co.id/myacico-service/product/listproduct/all/harbolnas";
 		$url3 = "https://api.myacico.co.id/myacico-service/product/listproduct/all/travelessential";
