@@ -834,7 +834,7 @@ height: 200px;
     </div>
     <br/>
     <div class="test">
-    <div class="pp" onclick="location.href='<?php echo base_url('harbolnaspartner/index/1');?>'" style='cursor: pointer;'>
+    <div class="pp" onclick="location.href='<?php echo base_url('HarbolnasPartner/index/1');?>'" style='cursor: pointer;'>
 
     <!-- <button type="button" class="btn btn-default pp" ></button> -->
   </div>
@@ -849,7 +849,7 @@ if($id == 1){
 ?>
 
   <div class="">
-  <button type="button" class="btn btn-default pp1" onclick="location.href='<?php echo base_url('harbolnasartner/index/2');?>'" style='cursor: pointer;'>></button>
+  <button type="button" class="btn btn-default pp1" onclick="location.href='<?php echo base_url('HarbolnasPartner/index/2');?>'" style='cursor: pointer;'>></button>
 </div>
 
 <div class="clearfix"></div>
