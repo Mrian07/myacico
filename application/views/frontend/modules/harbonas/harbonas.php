@@ -819,8 +819,8 @@ height: 200px;
   		<div id="demo" class="collapse asd" style='margin-top:20px; text-align:justify; border-radius:5px; padding:20px; color:#111111; '>
       A. Promo berlaku mulai tanggal 12 - 14 Desember 2017<br/>
       B. Untuk mendapatkan <b>Ekstra Diskon</b>, masukkan kode voucher yang diinginkan pada halaman Pengiriman & Pembayaran<br/>
-      C. 1 User ID dapat menggunakan kode voucher maksimum 1x (satu kali) dengan pembelian maksimum 3 pcs untuk setiap SKU (kode) produk per transaksi.<br/>
-      D. <b>1 User ID</b> dapat menggunakan <b>kode voucher maksimum 1x (satu kali)</b> dengan pembelian maksimum <b>3 pcs untuk setiap SKU (kode)</b> produk per transaksi.<br/>
+      C. <b>1 User ID</b> dapat menggunakan <b>kode voucher maksimum 1x (satu kali)</b> dengan pembelian maksimum <b>3 pcs untuk setiap SKU (kode)</b> produk per transaksi.<br/>
+			D. Promo ini tidak dapat digabungkan dengan promo lainnya.<br/>
       E. myACICO.co.id berhak mengubah syarat dan ketentuan sewaktu-waktu tanpa pemberitahuan sebelumnya<br/>
       F. myACICO.co.id berhak secara sepihak membatalkan pesanan apabila tidak sesuai dengan <b> Syarat & Ketentuan berlaku </b> dan/atau ditemukan <b> adanya indikasi kecurangan/pelanggaran</b> yang merugikan pihak myACICO.co.id, termasuk (namun tidak terbatas pada) pembuatan lebih dari 1 (satu) akun oleh 1 (satu) customer yang sama
   		</div>
