@@ -197,7 +197,7 @@ if(itemKosong=='1'){
 //
 // function getKurir(id){
 //
-//   var url = '<?php echo site_url('checkout/selectKurir'); ?>'
+//   var url = '<?php //echo site_url('checkout/selectKurir'); ?>'
 //   $.ajax
 //   ({
 //   url: url+'/?id='+id,
@@ -354,21 +354,23 @@ function finish(){
 		headers:{"token":token},
 		url: "<?php echo api_base_url('order/checkout'); ?>",
 		success:function(hasil){
-				// console.log(hasil); die();
+
 				if(hasil.status=='1' && paymentMethod=='R'){
 					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 				}
 
 
-				else if(hasil.token!='' && paymentMethod=='C'){
+				else if(hasil.token!='' && paymentMethod=='C' && hasil.status==1){
 					window.location.replace("<?php echo site_url('checkout/paymentByCreditCard/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
 
 					//window.location.replace("<?php // echo site_url('payment/creditcard.php/?c='); ?>"+hasil.token);
 				}else if(hasil.token!='' && paymentMethod=='O'){
           if(hasil.status==1){
   					window.location.replace("<?php echo site_url('checkout/paymentByOnline/'); ?>"+hasil.idTransaksi+"/"+hasil.token);
-          }else{ $('#spinner_img').hide();
-              $('#finish').removeClass('disabled');
+          }else{
+            $('#spinner_img').hide();
+            $('.checkout-button').css("background", "#ff0000");
+            $('#finish').removeClass('disabled');
             if(code=="1000000"){
               $.alert({
     						title: 'Alert!',
@@ -387,7 +389,10 @@ function finish(){
             }
           }
 				}else{
-					$('#finish').removeClass('disabled');
+          $('#spinner_img').hide();
+          $('.checkout-button').css("background", "#ff0000");
+          $('#finish').removeClass('disabled');
+
 					$.alert({
 						title: 'Alert!',
 						content: '<?php echo $lang_msg6_checkout;?>',
