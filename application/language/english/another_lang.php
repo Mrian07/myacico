@@ -37,4 +37,10 @@ $lang['isi_jaminan']='<b>Why this myACICO.co.id warranty does not cover?</b>
 $lang['isi_jaminan2']='<b>What will myACICO.co.id do to fix the problem?</b>
 <br>1. myACICO.co.id will repair the product, at no cost, if the product is under warranty.
 <br>2. If the product can not be repaired, we will exchange with new item, or give refund.';
+// Hakcipta
+
+$lang['hak_cipta']='Hak cipta';
+$lang['hakcipta_tittle']='Hak cipta © oleh Myacico';
+//$lang['hakcipta_tittle']='Seluruh hak cipta. Tidak ada bagian dari website ini yang dapat dipublikasikan ulang, digandakan atau disebarluaskan dalam segala hal. Termasuk menyalin dan memindahkan dalam bentuk apapun tanpa izin tertulis dari penerbit dan pemilik website, terkecuali penawaran dan foto yang diterbitkan dengan kredit yang diberikan, dan hanya digunakan sendiri dan non komersial, diizinkan oleh hukum hak cipta. Untuk permintaan izin tertulis, kepada penerbit dengan subjek yang jelas untuk penerbitan konten. Kami dapat mengubah persyaratan penggunaan kondisional dan pemeriksaan sebelum menggunakan kembali setiap konten dari website ini.';
+//$lang['hakcipta_tittle']='Hak cipta';
 ?>

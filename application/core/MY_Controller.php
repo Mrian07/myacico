@@ -558,7 +558,13 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_msg7'] = $this->lang->line('f_msg7');
     $this->data['lang_msg8'] = $this->lang->line('f_msg8');
     $this->data['lang_msg9'] = $this->lang->line('f_msg9');
-
+// Hak Cipta
+    /*
+    $this->data['lang_hakCip'] = $this->lang->line('f_hakCip');
+    $this->data['lang_hakCip'] = $this->lang->line('f_hakCip');
+    $this->data['lang_hakCip'] = $this->lang->line('f_hakCip');
+    */
+    
     $this->data['lang_footer_info'] = $this->lang->line('footer_info');
 
     $this->data['lang_all_src'] = $this->lang->line('field_all_src');
@@ -574,9 +580,10 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 	}
 
   public function urlApi(){
-//    $url = "https://api.myacico.co.id/myacico-service";
+    $url = "https://api.myacico.co.id/myacico-service";
     // $url = "http://192.168.0.109:8080/myacico-service";
-     $url = "https://api.myacico.co.id/myacico-service";
+//     $url = "https://api.myacico.co.id/dev";
+
     return $url;
   }
 

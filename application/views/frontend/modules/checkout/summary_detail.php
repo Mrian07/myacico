@@ -63,7 +63,8 @@
   }
 
   $getGrandTotal = $allsubtotal+$this->session->userdata('ongkos_kurir');
-  $grandTotal = $this->session->userdata('discVoucher')+$getGrandTotal;
+  if($this->session->userdata('discVoucher')){ $grandTotal = $this->session->userdata('discVoucher')+$getGrandTotal; }else{$grandTotal =$getGrandTotal;}
+
   ?>
   <div class="totalfee">
     <div class="totalsub">
