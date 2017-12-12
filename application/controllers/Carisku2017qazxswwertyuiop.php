@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Carisku2017qazxsw extends Web {
+class Carisku2017qazxswwertyuiop extends Web {
 
 	public function __construct()
     {

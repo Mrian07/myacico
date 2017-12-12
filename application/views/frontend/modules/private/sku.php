@@ -30,7 +30,7 @@ $("#sku").keydown(function( event ) {
         });
         $("#detailSku").html("");
       }else{
-        var url = '<?php echo site_url('Carisku2017qazxsw/listItem'); ?>'
+        var url = '<?php echo site_url('Carisku2017qazxswwertyuiop/listItem'); ?>'
         $.ajax
         ({
         url: url+'/'+sku,
@@ -55,7 +55,7 @@ function cari(){
     });
     $("#detailSku").html("");
   }else{
-    var url = '<?php echo site_url('Carisku2017qazxsw/listItem'); ?>'
+    var url = '<?php echo site_url('Carisku2017qazxswwertyuiop/listItem'); ?>'
     $.ajax
     ({
     url: url+'/'+sku,
