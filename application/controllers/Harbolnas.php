@@ -35,6 +35,10 @@ class Harbolnas extends Web {
 		$url = "https://api.myacico.co.id/myacico-service/product/listproduct/all/harbolnas";
 		$url3 = "https://api.myacico.co.id/myacico-service/product/listproduct/all/travelessential";
 
+		$url9 = "https://api.myacico.co.id/myacico-service/product/listproduct/all/pakethemat";
+		$konten9 = file_get_contents($url9);
+		$this->data['dathome9'] = json_decode($konten9, true);
+
 		$api2 = "product/listproduct/all/momsfavorite";
 		$url2 = "https://api.myacico.co.id/myacico-service/product/listproduct/all/momsfavorite";
 		$konten2 = file_get_contents($url2);

@@ -1,75 +1,6 @@
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/slider/sliderResponsive.css');?>" />
-<style>
-
-#slider2 {
-    max-width: 30%;
-    margin-right: 20px;
-}
-
-.row2Wrap {
-    display: flex;
-}
-
-.content {
-    padding: 50px;
-    margin-bottom: 100px;
-}
-
-html {
-    height: 100%;
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-h1, h2, h3 {
-    font-family: 'Crimson Text', sans-serif;
-    font-weight: 100;
-}
-/*body {
-    font: 15px 'Titillium Web', Arial, sans-serif;
-    height: 100%;
-    color: #aaa;
-    margin: 0;
-    padding: 0;
-}*/
-
-.content {
-    padding: 10px 15vw;
-}
-
-.padding-0{
-    padding-right:0;
-    padding-left:0;
-}
-.city {
-    width: 100px;
-    height: 100px;
-}
-
-/*.padding-1{
-    padding-right:0;
-    padding-left:0;
-}*/
-.image_full{
-   display:block;
-  }
-
- .image_mobile{
-  display:none;
- }
-
-/*@media (max-width: 640px) and (min-width: 320px){
-  .image_full{
-   display:none;
-  }
-
-  .image_mobile{
-   display:block;
-  }
-}*/
-</style>
+		<link rel="stylesheet" href="<?php echo base_url('assets/css/style_sidenav.css');?>">
 
 <!-- <div style='background:#dad8d8'> -->
 
@@ -81,19 +12,16 @@ h1, h2, h3 {
           <!-- Slides -->
 
           <?php
-          $jmlslode=count($dathomeLvl);
+          $jmlslode=count($dathome['level_1']);
           $n=1;
-          foreach($dathomeLvl as $itemslide){
+          foreach($dathome['level_1'] as $key => $itemslide){
             if($n=="$jmlslode"){
               $active='active';
             }else{
               $active='';
             }
             ?>
-            <div>
-                <!--<a href="<?php //echo base_url('product/detail/'. $itemslide['product_id'].'/'. $itemslide['alias']);?>"><img src='<?php //echo $itemslide['imageurl']; ?>'class="img-responsive">-->
-                  <a href="<?php echo $itemslide['link'];?>"><img src='<?php echo $itemslide['imageurl']; ?>'class="img-responsive">  
-                   </a> </div>
+            <div><a href="<?php echo base_url('product/detail/'. $itemslide['product_id'].'/'. $itemslide['alias']);?>"><img src='<?php echo $itemslide['imageurl']; ?>'class="img-responsive"></div></a>
               <!-- <div style="background-image:url(<?php // echo $itemslide['imageurl']; ?>)" class="img-responsive"></div></a> -->
             <?php $n++; } ?>
 
