@@ -7,7 +7,6 @@
     left: 0;
     top: 300px;
     transition: 0.3s;
-    z-index: 999999;
     display: none;
 }
 #banner-left img {
