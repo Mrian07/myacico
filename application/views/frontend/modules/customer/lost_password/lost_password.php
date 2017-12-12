@@ -68,6 +68,7 @@ var error = function(er){
 
 $(document).ready(function() {
 	var baseApiUrl = '<?php echo $baseApiUrl2; ?>';
+	console.log(baseApiUrl);
 
 	$('form').submit(function(e){
 		var email = $("#email").val();
