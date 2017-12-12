@@ -753,7 +753,7 @@ ul.list-group:after {
 }
 .pp{
 background-color: #A7B5BE !important;
-background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/f/fa/Bank_Mandiri_logo.svg/1024px-Bank_Mandiri_logo.svg.png');
+background-image: url('https://1.bp.blogspot.com/-pBKWWv4H0YY/V15O0ZSZO9I/AAAAAAAAAJE/Xps9eUzp6q8hLNuvYTCtm9CaiyAdiaoCACKgB/s1600/Bank-Mandiri-Logo-Vector-Image.png');
 color: white;
 width: 300px;
 height: 200px;
@@ -761,6 +761,7 @@ height: 200px;
   float: left;
   margin-left: 0px;
   background-size: 100%;
+	   background-position: center; 
   background-repeat: no-repeat
 }
 .pp1{
