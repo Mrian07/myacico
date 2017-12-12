@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Harbonas extends Web {
+class harbolnaspartner extends Web {
 
 	public function __construct()
     {
@@ -27,33 +27,6 @@ class Harbonas extends Web {
 	}
 
 	public function index()
-    {
-            $home_domain = domain2();
-		//Slide slide_show
-
-		$api = "https://api.myacico.co.id/myacico-service/product/listproduct/all/harbolnas";
-		$url = "https://api.myacico.co.id/myacico-service/product/listproduct/all/harbolnas";
-		$url3 = "https://api.myacico.co.id/myacico-service/product/listproduct/all/travelessential";
-
-		$api2 = "product/listproduct/all/momsfavorite";
-		$url2 = "https://api.myacico.co.id/myacico-service/product/listproduct/all/momsfavorite";
-		$konten2 = file_get_contents($url2);
-		$konten3 = file_get_contents($url3);
-		$konten = file_get_contents($url);
-
-
-		$this->data['dathome'] = json_decode($konten, true);
-	$this->data['dathome2'] = json_decode($konten2, true);
-	$this->data['dathome3'] = json_decode($konten3, true);
-		//$this->load->view('frontend/test',$this->data);
-		$this->data['title_web'] = "myacico.co.id - ".$home_domain;
-
-
-
-		$this->load->view('frontend/modules/harbonas/harbonas.php',$this->data);
-		$this->load->view('frontend/footer',$this->data);
-	}
-	public function HarbonasPartners()
     {
 				$this->data['id'] = $this->uri->segment(3);
 
