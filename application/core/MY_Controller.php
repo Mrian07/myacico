@@ -574,9 +574,9 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 	}
 
   public function urlApi(){
-    // $url = "https://api.myacico.co.id/myacico-service";
+    $url = "https://api.myacico.co.id/myacico-service";
     // $url = "http://192.168.0.109:8080/myacico-service";
-    $url = "https://api.myacico.co.id/dev";
+    // $url = "https://api.myacico.co.id/dev";
     return $url;
   }
 
