@@ -317,8 +317,8 @@
 	<div class='my-hdr3'>
 			<div class="row" style='margin:0px; padding:0px'>
 				<div class="col-xs-9" style='padding:5px; text-align:right'>
-						<div style='font-size:11px; margin-bottom:-5px; padding-right:20px'>Nantikan Hot Promo</div>
-						<div style='font-family: arial; font-size:14px; font-weight: bold; color:#ff0000; padding-right:50px '>12.12</div>
+						<div style='font-size:11px; margin-bottom:-5px; padding-right:20px'>Dapatkan Promo Menarik HARBOLNAS</div>
+						<div style='font-family: arial; font-size:14px; font-weight: bold; color:#ff0000; padding-right:50px '>HARI INI</div>
 				</div>
 				<div class="col-xs-3" align="left" style='margin:0px; padding:0px'>
 					<div style='margin-top:-7px;'>
