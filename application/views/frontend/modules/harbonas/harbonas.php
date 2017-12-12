@@ -114,6 +114,7 @@ if($id == 1){
         <?php
 
         $jmlslide0=count($dathome2['productList']);
+
         $n=1;
         foreach($dathome2['productList'] as $key => $itemslide0){
           if($n=="$jmlslide0"){
