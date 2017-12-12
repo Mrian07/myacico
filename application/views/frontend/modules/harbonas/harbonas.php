@@ -761,7 +761,7 @@ height: 200px;
   float: left;
   margin-left: 0px;
   background-size: 100%;
-	   background-position: center; 
+	   background-position: center;
   background-repeat: no-repeat
 }
 .pp1{
@@ -834,7 +834,7 @@ height: 200px;
     </div>
     <br/>
     <div class="test">
-    <div class="pp" onclick="location.href='<?php echo base_url('Harbonas/HarbonasPartners/1');?>'" style='cursor: pointer;'>
+    <div class="pp" onclick="location.href='<?php echo base_url('Harbolnas/HarbolnasPartners/1');?>'" style='cursor: pointer;'>
 
     <!-- <button type="button" class="btn btn-default pp" ></button> -->
   </div>

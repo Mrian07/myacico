@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Harbonas extends Web {
+class Harbolnas extends Web {
 
 	public function __construct()
     {
@@ -53,7 +53,7 @@ class Harbonas extends Web {
 		$this->load->view('frontend/modules/harbonas/harbonas.php',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
-	public function HarbonasPartners()
+	public function HarbolnasPartners()
     {
 				$this->data['id'] = $this->uri->segment(3);
 
