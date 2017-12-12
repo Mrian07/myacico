@@ -3,7 +3,7 @@
 			<div class="row">
 			  <div class="col-sm-12">
 
-				<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $lang_reset_password;?>
+				<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo "Reset password";?>
 
 			  </div>
 			</div>

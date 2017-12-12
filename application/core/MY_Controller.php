@@ -558,13 +558,11 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_msg7'] = $this->lang->line('f_msg7');
     $this->data['lang_msg8'] = $this->lang->line('f_msg8');
     $this->data['lang_msg9'] = $this->lang->line('f_msg9');
-// Hak Cipta
-    
+// Hak Cipta  
     $this->data['lang_hak_cipta'] = $this->lang->line('hak_cipta');
     $this->data['lang_hakcipta_tittle'] = $this->lang->line('hakcipta_tittle');
     $this->data['lang_hakcipta_text'] = $this->lang->line('hakcipta_text');
-    
-    
+
     $this->data['lang_footer_info'] = $this->lang->line('footer_info');
 
     $this->data['lang_all_src'] = $this->lang->line('field_all_src');
@@ -581,8 +579,14 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 
   public function urlApi(){
     $url = "https://api.myacico.co.id/myacico-service";
-    // $url = "http://192.168.0.109:8080/myacico-service";
-//     $url = "https://api.myacico.co.id/dev";
+;
+
+    return $url;
+  }
+  public function urlApi2(){
+
+    $url = "https://acc.myacico.co.id/myacico-account";
+
 
     return $url;
   }
@@ -597,8 +601,10 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 
   public function asset(){
     $api = $this->urlApi();
+      $api2 = $this->urlApi2();
     $this->data['baseApiUrl'] = $api;
-    $this->data['baseApiUrl2'] = $api."/account";
+
+    $this->data['baseApiUrl2'] = $api2."/account";
   }
 
 

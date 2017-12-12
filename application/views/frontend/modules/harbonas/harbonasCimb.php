@@ -106,7 +106,7 @@
         </ul>
         <br>
         <p><strong>Note:<br/></strong>
-         1. Potongan harga IDR 200,000 untuk pembelian Smartphone, Laptop, Kamera Mirrorless, Kamera DSLR & Game Konsol selain yang ada pada halaman <a href='https://www.myacico.co.id'> myACICO</a><br/>
+         1. Potongan harga IDR 100,000 untuk pembelian Smartphone, Laptop, Kamera Mirrorless, Kamera DSLR & Game Konsol selain yang ada pada halaman <a href='https://www.myacico.co.id'> myACICO</a><br/>
          2. Voucher hanya dapat digunakan oleh pelanggan yang membayar menggunakan Credit Card CIMB<br/>
          3. Voucher hanya berlaku untuk 1x transaksi<br/>
          4. Voucher hanya berlaku untuk pembelian barang dengan harga normal <br/>
