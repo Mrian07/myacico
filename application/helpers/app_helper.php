@@ -10,15 +10,11 @@ function domain(){
   }
 function api_base_url($param)
 {
-<<<<<<< HEAD
+
 //	$url = "http://myacico.net:8080/myacico-service/api/".$param;
 	$url = "https://api.myacico.co.id/myacico-service/".$param;
 //   $url = "https://api.myacico.co.id/dev/".$param;
-=======
-	//$url = "http://myacico.net:8080/myacico-service/api/".$param;
-	$url = "https://api.myacico.co.id/myacico-service/".$param;
-   //$url = "https://api.myacico.co.id/dev/".$param;
->>>>>>> abc9c2786b0cc1d1104b9b212a7890052d8a65d7
+
 	return $url;
 }
 
