@@ -81,16 +81,19 @@ h1, h2, h3 {
           <!-- Slides -->
 
           <?php
-          $jmlslode=count($dathome['level_1']);
+          $jmlslode=count($dathomeLvl);
           $n=1;
-          foreach($dathome['level_1'] as $key => $itemslide){
+          foreach($dathomeLvl as $itemslide){
             if($n=="$jmlslode"){
               $active='active';
             }else{
               $active='';
             }
             ?>
-            <div><a href="<?php echo base_url('product/detail/'. $itemslide['product_id'].'/'. $itemslide['alias']);?>"><img src='<?php echo $itemslide['imageurl']; ?>'class="img-responsive"></div></a>
+            <div>
+                <!--<a href="<?php //echo base_url('product/detail/'. $itemslide['product_id'].'/'. $itemslide['alias']);?>"><img src='<?php //echo $itemslide['imageurl']; ?>'class="img-responsive">-->
+                  <a href="<?php echo $itemslide['link'];?>"><img src='<?php echo $itemslide['imageurl']; ?>'class="img-responsive">  
+                   </a> </div>
               <!-- <div style="background-image:url(<?php // echo $itemslide['imageurl']; ?>)" class="img-responsive"></div></a> -->
             <?php $n++; } ?>
 
