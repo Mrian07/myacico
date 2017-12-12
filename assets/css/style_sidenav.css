@@ -1,0 +1,40 @@
+#mySidenav a {
+    position: fixed;
+    right: -10px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 60px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    background: #c81423;
+}
+
+#mySidenav a:hover {
+    right: 0;
+    background: #ef4554;
+}
+
+#youtube {
+    top: 300px;
+    background-color: #555;
+}
+
+#gplus {
+    top: 360px;
+    background-color: #555;
+}
+
+#ig {
+    top: 420px;
+    background-color: #555;
+}
+#fb {
+    top: 480px;
+    background-color: #555
+}
+#chat_btn {
+    top: 540px;
+    background-color: #555
+}
