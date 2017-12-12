@@ -849,7 +849,7 @@ if($id == 1){
 ?>
 
   <div class="">
-  <button type="button" class="btn btn-default pp1"></button>
+  <button type="button" class="btn btn-default pp1" onclick="location.href='<?php echo base_url('Harbolnas/HarbolnasPartners/2');?>'" style='cursor: pointer;'>></button>
 </div>
 
 <div class="clearfix"></div>
@@ -921,70 +921,13 @@ if($id == 1){
       <div style='clear:both;'></div>
 
     </div>
-    <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:0px; margin-bottom:10px;'>
-      <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo "HARBOLNAS"; ?>
-    </div>
-    <div style='clear:both'></div>
 
-    <div class="span12" style='background:#e9f6fe; padding:10px; margin-top:10px'>
-
-
-      <div class="promo-front owl-carousel" align="center">
-        <?php
-
-        $jmlslide0=count($dathome['productList']);
-        $n=1;
-        foreach($dathome['productList'] as $key => $itemslide0){
-          if($n=="$jmlslide0"){
-            $active='active';
-          }else{
-            $active='';
-          }
-          ?>
-
-        <div class="item" style='background:#ffffff; padding:10px; height:300px; width:175px; margin-left:5px;  margin-right:5px; text-align:center;float:left;'>
-
-            <a href="<?php echo ('https://myacico.co.id/product/detail/'. $itemslide0['m_product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: 120px"></center></a>
-
-                <p class="box-title" style='color: #4b4b4b; height:35px'><?php
-                $str1 = $itemslide0['name'];
-                $str2 = substr($str1, 0, 41);
-                $str = strlen($str2);
-                if($str <= 40){
-                 echo $itemslide0['name'];
-                }else{
-                  // $str = substr($str, 0, 49);
-                   echo $str2."....";
-                }
-                ?></span></p>
-                <?php if($itemslide0['specialPrice'] == 0){
-                ?>   <div class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide0['pricelist']); ?></div>
-              <?php  }else{  ?>
-                <p class="box-title2"><s >Rp.<?php echo money($itemslide0['pricelist']); ?></s></p><div class="box-title2" style='color: #8a0202; '><p >Rp.<?php echo money($itemslide0['specialPrice']); ?></p></div>
-            <?php } ?>
-            <?php if($itemslide0['discount'] == 0){
-              echo "";
-            } else { ?>
-
-              <span class=" " style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
-
-            <?php }
-            if($itemslide0['istodayshipping'] == 'Y')
-              {
-              ?>
-              <center>
-                <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
-             </center>
-              <?php }?>
-        </div>
-        <?php $n++;  } ?>
-      </div>
 
       <div style='clear:both;'></div>
 
     </div>
     <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:0px; margin-bottom:10px;'>
-      <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo "travelessential"; ?>
+      <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo "TRAVEL ESSENTIAL"; ?>
     </div>
     <div style='clear:both'></div>
 
