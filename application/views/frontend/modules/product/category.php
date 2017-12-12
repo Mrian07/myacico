@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_category.css');?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_category.css?v=1');?>" />
 <div class="container">
 	<div class='my-bg-title'>
 		<i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo strtoupper($hasil['subName']); ?>

@@ -109,7 +109,7 @@
 
 		<!-- <link href="<?php //echo base_url('assets/css/mynav.css');?>" rel="stylesheet">
 		<script src="<?php //echo base_url('assets/js/mynav.js');?>"></script> -->
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css');?>" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css?v=1');?>" />
 
 		<!-- s: Datepicker-->
 		<link rel="stylesheet" href="<?php echo base_url('date_picker/bootstrap-datetimepicker.min.css');?>" type='text/css'>
@@ -647,7 +647,7 @@ $(".logout").click(function(e){
 		title: 'Confirm!',
 		content: 'Anda yakin akan logout?',
 		buttons: {
-			confirm: function () {				
+			confirm: function () {
 				document.cookie='x-auth=; path='+base_path+';expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 				location.href='<?php echo base_url("customer/signIn");?>';
 				if(chat.soc){
