@@ -92,7 +92,7 @@ $string = str_replace(']', '_', $string);
 
     <table class="table table-detail-prod" border="0">
       <tbody>
-        <?php echo $sku; ?>
+        
         <?php
         if($asap_stat =='Y')
         {
