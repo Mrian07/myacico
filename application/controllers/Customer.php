@@ -198,6 +198,14 @@ class Customer extends Web {
 
 	public function signIn()
     {
+				//menghilangkan session voucher
+				$data = array(
+					'codeVoucher' => '',
+					'discVoucher' => '',
+					'isValidVoucher' => '',
+				);
+				$this->session->set_userdata($data);
+
 				$catId = $this->uri->segment(3);
 
 				$domain = domain();

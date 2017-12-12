@@ -73,13 +73,13 @@
 			var base_path = base_url.split(location.host).pop();
 			var site_url = '<?php echo site_url();?>';
 
-			var login = 'http://acc.myacico.co.id/dev/account/masuk';
-			var login1 = 'https://acc.myacico.co.id/dev/';
-			var adduser = 'http://acc.myacico.co.id/dev/account/';
+			// var login = 'http://acc.myacico.co.id/dev/account/masuk';
+			// var login1 = 'https://acc.myacico.co.id/dev/';
+			// var adduser = 'http://acc.myacico.co.id/dev/account/';
 
-			// var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
-			// var login1 = 'https://acc.myacico.co.id/myacico-account/';
-			// var adduser = 'http://acc.myacico.co.id/myacico-account/account/';
+			var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
+			var login1 = 'https://acc.myacico.co.id/myacico-account/';
+			var adduser = 'http://acc.myacico.co.id/myacico-account/account/';
 
 			var api_base_url = "<?php echo $baseApiUrl; ?>";
 			var token;
@@ -109,7 +109,7 @@
 
 		<!-- <link href="<?php //echo base_url('assets/css/mynav.css');?>" rel="stylesheet">
 		<script src="<?php //echo base_url('assets/js/mynav.js');?>"></script> -->
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css');?>" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css?v=1');?>" />
 
 		<!-- s: Datepicker-->
 		<link rel="stylesheet" href="<?php echo base_url('date_picker/bootstrap-datetimepicker.min.css');?>" type='text/css'>
