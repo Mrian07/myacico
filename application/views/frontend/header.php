@@ -322,6 +322,7 @@
 				</div>
 				<div class="col-xs-3" align="left" style='margin:0px; padding:0px'>
 					<div style='margin-top:-7px;'>
+						<!-- asdasdasd -->
 						<a href="<?php echo site_url('harbolnas'); ?>">
 						<img src="<?php echo base_url('images/general/HARBOLNAS_Logo.png'); ?>" border="0" height="55"></a>
 					</div>
