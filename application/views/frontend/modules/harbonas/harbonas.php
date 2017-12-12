@@ -783,6 +783,7 @@ height: 200px;
 }
 
 </style>
+<!-- asdasd -->
 
 <!doctype html>
 <html>
@@ -818,8 +819,8 @@ height: 200px;
   		<div id="demo" class="collapse asd" style='margin-top:20px; text-align:justify; border-radius:5px; padding:20px; color:#111111; '>
       A. Promo berlaku mulai tanggal 12 - 14 Desember 2017<br/>
       B. Untuk mendapatkan <b>Ekstra Diskon</b>, masukkan kode voucher yang diinginkan pada halaman Pengiriman & Pembayaran<br/>
-      C. 1 User ID dapat menggunakan kode voucher maksimum 1x (satu kali) dengan pembelian maksimum 3 pcs untuk setiap SKU (kode) produk per transaksi.
-      D. <b>1 User ID</b> dapat menggunakan <b>kode voucher maksimum 1x (satu kali)</b> dengan pembelian maksimum <b>3 pcs untuk setiap SKU (kode)</b> produk per transaksi.<br/>
+      C. <b>1 User ID</b> dapat menggunakan <b>kode voucher maksimum 1x (satu kali)</b> dengan pembelian maksimum <b>3 pcs untuk setiap SKU (kode)</b> produk per transaksi.<br/>
+			D. Promo ini tidak dapat digabungkan dengan promo lainnya.<br/>
       E. myACICO.co.id berhak mengubah syarat dan ketentuan sewaktu-waktu tanpa pemberitahuan sebelumnya<br/>
       F. myACICO.co.id berhak secara sepihak membatalkan pesanan apabila tidak sesuai dengan <b> Syarat & Ketentuan berlaku </b> dan/atau ditemukan <b> adanya indikasi kecurangan/pelanggaran</b> yang merugikan pihak myACICO.co.id, termasuk (namun tidak terbatas pada) pembuatan lebih dari 1 (satu) akun oleh 1 (satu) customer yang sama
   		</div>
@@ -833,8 +834,9 @@ height: 200px;
       <span> Promo Partner </span>
     </div>
     <br/>
+		<!-- asdasd -->
     <div class="test">
-    <div class="pp" onclick="location.href='<?php echo base_url('HarbolnasPartners/Index/1');?>'" style='cursor: pointer;'>
+    <div class="pp" onclick="location.href='<?php echo base_url('HarbolnasPartners/index/1');?>'" style='cursor: pointer;'>
 
     <!-- <button type="button" class="btn btn-default pp" ></button> -->
   </div>
@@ -849,7 +851,7 @@ if($id == 1){
 ?>
 
   <div class="">
-  <button type="button" class="btn btn-default pp1" onclick="location.href='<?php echo base_url('HarbolnasPartners/Index/2');?>'" style='cursor: pointer;'>></button>
+  <button type="button" class="btn btn-default pp1" onclick="location.href='<?php echo base_url('HarbolnasPartners/index/2');?>'" style='cursor: pointer;'>></button>
 </div>
 
 <div class="clearfix"></div>
@@ -882,8 +884,7 @@ if($id == 1){
 
         <div class="item" style='background:#ffffff; padding:10px; height:300px; width:175px; margin-left:5px;  margin-right:5px; text-align:center;float:left;'>
 
-            <a href="<?php echo ('https://myacico.co.id/product/detail/'. $itemslide0['m_product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: 120px"></center></a>
-
+            <a href="<?php echo base_url('product/detail/'. $itemslide0['m_product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: 120px"></center></a>
                 <p class="box-title" style='color: #4b4b4b; height:35px'><?php
                 $str1 = $itemslide0['name'];
                 $str2 = substr($str1, 0, 41);
@@ -949,7 +950,7 @@ if($id == 1){
 
         <div class="item" style='background:#ffffff; padding:10px; height:300px; width:175px; margin-left:5px;  margin-right:5px; text-align:center;float:left;'>
 
-            <a href="<?php echo ('https://myacico.co.id/product/detail/'. $itemslide0['m_product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: 120px"></center></a>
+            <a href="<?php echo base_url('product/detail/'. $itemslide0['m_product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: 120px"></center></a>
 
                 <p class="box-title" style='color: #4b4b4b; height:35px'><?php
                 $str1 = $itemslide0['name'];

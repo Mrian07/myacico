@@ -816,8 +816,8 @@ ul.list-group:after {
   		<div id="demo" class="collapse asd" style='margin-top:20px; text-align:justify; border-radius:5px; padding:20px; color:#111111; '>
       A. Promo berlaku mulai tanggal 12 - 14 Desember 2017<br/>
       B. Untuk mendapatkan <b>Ekstra Diskon</b>, masukkan kode voucher yang diinginkan pada halaman Pengiriman & Pembayaran<br/>
-      C. 1 User ID dapat menggunakan kode voucher maksimum 1x (satu kali) dengan pembelian maksimum 3 pcs untuk setiap SKU (kode) produk per transaksi.
-      D. <b>1 User ID</b> dapat menggunakan <b>kode voucher maksimum 1x (satu kali)</b> dengan pembelian maksimum <b>3 pcs untuk setiap SKU (kode)</b> produk per transaksi.<br/>
+      C. <b>1 User ID</b> dapat menggunakan <b>kode voucher maksimum 1x (satu kali)</b> dengan pembelian maksimum <b>3 pcs untuk setiap SKU (kode)</b> produk per transaksi.<br/>
+			D. Promo ini tidak dapat digabungkan dengan promo lainnya.<br/>
       E. myACICO.co.id berhak mengubah syarat dan ketentuan sewaktu-waktu tanpa pemberitahuan sebelumnya<br/>
       F. myACICO.co.id berhak secara sepihak membatalkan pesanan apabila tidak sesuai dengan <b> Syarat & Ketentuan berlaku </b> dan/atau ditemukan <b> adanya indikasi kecurangan/pelanggaran</b> yang merugikan pihak myACICO.co.id, termasuk (namun tidak terbatas pada) pembuatan lebih dari 1 (satu) akun oleh 1 (satu) customer yang sama
   		</div>
@@ -884,7 +884,7 @@ ul.list-group:after {
 
     <br>
     <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:0px; margin-bottom:10px;'>
-      <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo "MOM's FAVORITE"; ?>
+      <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo "SMARTPHONE"; ?>
     </div>
     <div style='clear:both'></div>
 
@@ -892,23 +892,25 @@ ul.list-group:after {
 
 
       <div class="promo-front owl-carousel" align="center">
-        <?php
+				<?php
 
-        $jmlslide0=count($dathome2['productList']);
-        $n=1;
-        foreach($dathome2['productList'] as $key => $itemslide0){
-          if($n=="$jmlslide0"){
-            $active='active';
-          }else{
-            $active='';
-          }
-          ?>
+				$jmlslide0=count($dathome7['topProduct'][1]['topProduct']);
+				$n=1;
+				foreach($dathome7['topProduct'][1]['topProduct'] as $key => $itemslide0){
+					if($n=="$jmlslide0"){
+						$active='active';
+					}else{
+						$active='';
+					}
+					?>
+
 
         <div class="item" style='background:#ffffff; padding:10px; height:300px; width:175px; margin-left:5px;  margin-right:5px; text-align:center;float:left;'>
 
-            <a href="<?php echo ('https://myacico.co.id/product/detail/'. $itemslide0['m_product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: 120px"></center></a>
+            <a href="<?php echo base_url('product/detail/'. $itemslide0['product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: 120px"></center></a>
 
-                <p class="box-title" style='color: #4b4b4b; height:35px'><?php
+                <p class="box-title" style='color: #4b4b4b; height:35px'>
+									<?php
                 $str1 = $itemslide0['name'];
                 $str2 = substr($str1, 0, 41);
                 $str = strlen($str2);
@@ -918,11 +920,12 @@ ul.list-group:after {
                   // $str = substr($str, 0, 49);
                    echo $str2."....";
                 }
-                ?></span></p>
-                <?php if($itemslide0['specialPrice'] == 0){
+                ?>
+							</span></p>
+                <?php if($itemslide0['specialprice'] == 0){
                 ?>   <div class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide0['pricelist']); ?></div>
               <?php  }else{  ?>
-                <p class="box-title2"><s >Rp.<?php echo money($itemslide0['pricelist']); ?></s></p><div class="box-title2" style='color: #8a0202; '><p >Rp.<?php echo money($itemslide0['specialPrice']); ?></p></div>
+                <p class="box-title2"><s >Rp.<?php echo money($itemslide0['pricelist']); ?></s></p><div class="box-title2" style='color: #8a0202; '><p >Rp.<?php echo money($itemslide0['specialprice']); ?></p></div>
             <?php } ?>
             <?php if($itemslide0['discount'] == 0){
               echo "";
@@ -952,68 +955,22 @@ ul.list-group:after {
     </div>
 
       <div style='clear:both;'></div>
-      <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151; margin-top:0px; margin-bottom:10px;'>
-        <i class="fa fa-dot-circle-o" aria-hidden="true"></i> <?php echo "TRAVEL ESSENTIAL"; ?>
-      </div>
-      <div style='clear:both'></div>
 
-      <div class="span12" style='background:#e9f6fe; padding:10px; margin-top:10px'>
-
-
-        <div class="promo-front owl-carousel" align="center">
-          <?php
-
-          $jmlslide0=count($dathome3['productList']);
-          $n=1;
-          foreach($dathome3['productList'] as $key => $itemslide0){
-            if($n=="$jmlslide0"){
-              $active='active';
-            }else{
-              $active='';
-            }
-            ?>
-
-          <div class="item" style='background:#ffffff; padding:10px; height:300px; width:175px; margin-left:5px;  margin-right:5px; text-align:center;float:left;'>
-
-              <a href="<?php echo ('https://myacico.co.id/product/detail/'. $itemslide0['m_product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: 120px"></center></a>
-
-                  <p class="box-title" style='color: #4b4b4b; height:35px'><?php
-                  $str1 = $itemslide0['name'];
-                  $str2 = substr($str1, 0, 41);
-                  $str = strlen($str2);
-                  if($str <= 40){
-                   echo $itemslide0['name'];
-                  }else{
-                    // $str = substr($str, 0, 49);
-                     echo $str2."....";
-                  }
-                  ?></span></p>
-                  <?php if($itemslide0['specialPrice'] == 0){
-                  ?>   <div class="box-title2" style='color: #8a0202'>Rp.<?php echo money($itemslide0['pricelist']); ?></div>
-                <?php  }else{  ?>
-                  <p class="box-title2"><s >Rp.<?php echo money($itemslide0['pricelist']); ?></s></p><div class="box-title2" style='color: #8a0202; '><p >Rp.<?php echo money($itemslide0['specialPrice']); ?></p></div>
-              <?php } ?>
-              <?php if($itemslide0['discount'] == 0){
-                echo "";
-              } else { ?>
-
-                <span class=" " style="color:white;">  <?php echo $itemslide0['discount']; ?> %</span>
-
-              <?php }
-              if($itemslide0['istodayshipping'] == 'Y')
-                {
-                ?>
-                <center>
-                  <img src="<?php echo base_url('images/general/asap.png');?>" style='height:20px; width: auto;'>
-               </center>
-                <?php }?>
-          </div>
-          <?php $n++;  } ?>
-        </div>
 
         <div style='clear:both;'></div>
 
       </div>
+			<div style='clear:both;'></div>
+
+				<div style='clear:both;'></div>
+				
+
+					<div style='clear:both;'></div>
+
+				</div>
+				<div style='clear:both;'></div>
+
+			</div>
     </div>
 
     <br><br>
