@@ -646,7 +646,7 @@ $(".logout").click(function(e){
 		title: 'Confirm!',
 		content: 'Anda yakin akan logout?',
 		buttons: {
-			confirm: function () {
+			confirm: function () {				
 				document.cookie='x-auth=; path='+base_path+';expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 				location.href='<?php echo base_url("customer/signIn");?>';
 				if(chat.soc){
