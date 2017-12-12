@@ -1097,7 +1097,7 @@ ul.list-group:after {
 
 						<div class="item" style='background:#ffffff; padding:10px; height:300px; width:175px; margin-left:5px;  margin-right:5px; text-align:center;float:left;'>
 
-								<a href="<?php echo ('https://myacico.co.id/product/detail/'. $itemslide0['m_product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: 120px"></center></a>
+								<a href="<?php echo base_url('product/detail/'. $itemslide0['m_product_id'].'/'. $itemslide0['alias']);?>"><center><img src="<?php echo $itemslide0['imageurl']; ?>"  style="height:120px; width: 120px"></center></a>
 
 										<p class="box-title" style='color: #4b4b4b; height:35px'><?php
 										$str1 = $itemslide0['name'];
