@@ -31,6 +31,9 @@ class Home extends Web {
             $home_domain = domain2();
 		//Slide slide_show
 		$api = "home/view";
+                $api_lvl1 ="product/banner";
+                $url_lvl1 =api_base_url($api_lvl1);
+                
 		$url = api_base_url($api);
 
 		$api2 = "home/topproductcategory";
@@ -39,12 +42,13 @@ class Home extends Web {
 		// echo $url2;
 		// die();
 		$konten = file_get_contents($url);
-
+                $konten_lvl1 = file_get_contents($url_lvl1);
 		$this->data['dathome'] = json_decode($konten, true);
 		$this->data['dathome2'] = json_decode($konten2, true);
-		// echo "<pre>";
-		// print_r($this->data['dathome2'] );
-		// die();
+                $this->data['dathomeLvl'] = json_decode($konten_lvl1, true);
+		 /*echo "<pre>";
+		 print_r($this->data['dathomeLvl'] );
+		 die();*/
 		//$dathome2 = json_decode($konten2, true);
 		//$this->data['dathome3'] = $dathome2['topProduct'][0]['topProduct']
 

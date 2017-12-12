@@ -20,13 +20,17 @@
 
 			<?php
 			$lang = get_cookie('lang');
-			if($lang=='en'){?>
+			if($lang=='en'){
+                            $msg_error='Connection Failed, Please try again!';
+                            ?>
 				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none;'>
 				<span class="glyphicon glyphicon-ok"></span> Please cek your email account for next proses.</div>
 
 				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertFailed" style='display:none;'>
 				<span class="glyphicon glyphicon-ok"></span> Sorry, your email no registering yet.</div>
-			<?php }else{ ?>
+			<?php }else{
+                                $msg_error='koneksi tidak berhasil, silahkan coba lagi!';
+                            ?>
 				<div class="alert alert-success alert-dismissible animated bounceInDown" id="alert" style='display:none;'>
 				<span class="glyphicon glyphicon-ok"></span> Silakan cek email Anda untuk proses selanjutnya.</div>
 
@@ -58,7 +62,7 @@ var error = function(er){
   console.log('OK:', er);
   $.alert({
     title: 'Alert!',
-    content: 'koneksi tidak berhasil, silahkan coba lagi!',
+    content: '<?php echo$msg_error;?>',
   });
 };
 
