@@ -78,7 +78,7 @@ $lang['field_mulaitest'] = 'mulai';
 //akhir dari langsumary
 
 //langPayment
-$lang['field_thx'] = 'Terimakasih';
+$lang['field_thx'] = 'Terima Kasih';
 $lang['field_ongkos'] = 'Ongkos Kirim';
 //akhir dari langpayment
 
