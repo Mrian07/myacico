@@ -40,7 +40,7 @@ $lang['isi_jaminan2']='<b>What will myACICO.co.id do to fix the problem?</b>
 // Hakcipta
 
 $lang['hak_cipta']='Hak cipta';
-$lang['hakcipta_tittle']='Hak cipta © oleh Myacico';
-//$lang['hakcipta_tittle']='Seluruh hak cipta. Tidak ada bagian dari website ini yang dapat dipublikasikan ulang, digandakan atau disebarluaskan dalam segala hal. Termasuk menyalin dan memindahkan dalam bentuk apapun tanpa izin tertulis dari penerbit dan pemilik website, terkecuali penawaran dan foto yang diterbitkan dengan kredit yang diberikan, dan hanya digunakan sendiri dan non komersial, diizinkan oleh hukum hak cipta. Untuk permintaan izin tertulis, kepada penerbit dengan subjek yang jelas untuk penerbitan konten. Kami dapat mengubah persyaratan penggunaan kondisional dan pemeriksaan sebelum menggunakan kembali setiap konten dari website ini.';
+$lang['hakcipta_tittle']='Copyright © By Myacico';
+$lang['hakcipta_text']='All rights reserved. No part of this website may be republished, reproduced or distributed in any way. Including copying and transfer in any form without the express written permission of the publisher and website owner, excluding offers and photographs issued with credits granted, and solely for your own use and non-commercial use, is permitted by copyright law. For a written permission request, to the publisher with a clear subject for the issuance of the content. We may modify conditional use and inspection requirements before reusing any content from this website.';
 //$lang['hakcipta_tittle']='Hak cipta';
 ?>

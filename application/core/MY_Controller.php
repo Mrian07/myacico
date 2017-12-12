@@ -559,11 +559,11 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_msg8'] = $this->lang->line('f_msg8');
     $this->data['lang_msg9'] = $this->lang->line('f_msg9');
 // Hak Cipta
-    /*
-    $this->data['lang_hakCip'] = $this->lang->line('f_hakCip');
-    $this->data['lang_hakCip'] = $this->lang->line('f_hakCip');
-    $this->data['lang_hakCip'] = $this->lang->line('f_hakCip');
-    */
+    
+    $this->data['lang_hak_cipta'] = $this->lang->line('hak_cipta');
+    $this->data['lang_hakcipta_tittle'] = $this->lang->line('hakcipta_tittle');
+    $this->data['lang_hakcipta_text'] = $this->lang->line('hakcipta_text');
+    
     
     $this->data['lang_footer_info'] = $this->lang->line('footer_info');
 
