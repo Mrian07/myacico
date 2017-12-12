@@ -92,7 +92,7 @@ if($id == 1){
 ?>
 
   <div class="">
-  <button type="button" class="btn btn-default pp1" onclick="location.href='<?php echo base_url('HarbolnasPartners/index/2');?>'" style='cursor: pointer;'>></button>
+  <button type="button" class="btn btn-default pp1" onclick="location.href='<?php echo base_url('HarbolnasPartners/index/2');?>'" style='cursor: pointer;'></button>
 </div>
 
 <div class="clearfix"></div>
