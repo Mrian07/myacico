@@ -159,7 +159,7 @@ if(itemKosong=='1'){
 
        $.alert({
          title: 'Alert!',
-         content: 'Kode Voucher sudah digunakan',
+         content: 'Kode Voucher tidak terdaftar atau sudah digunakan',
        });
      }
 
