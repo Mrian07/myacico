@@ -73,13 +73,13 @@
 			var base_path = base_url.split(location.host).pop();
 			var site_url = '<?php echo site_url();?>';
 
-			var login = 'http://acc.myacico.co.id/dev/account/masuk';
-			var login1 = 'https://acc.myacico.co.id/dev/';
-			var adduser = 'http://acc.myacico.co.id/dev/account/';
+			// var login = 'http://acc.myacico.co.id/dev/account/masuk';
+			// var login1 = 'https://acc.myacico.co.id/dev/';
+			// var adduser = 'http://acc.myacico.co.id/dev/account/';
 
-			// var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
-			// var login1 = 'https://acc.myacico.co.id/myacico-account/';
-			// var adduser = 'http://acc.myacico.co.id/myacico-account/account/';
+			var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
+			var login1 = 'https://acc.myacico.co.id/myacico-account/';
+			var adduser = 'http://acc.myacico.co.id/myacico-account/account/';
 
 			var api_base_url = "<?php echo $baseApiUrl; ?>";
 			var token;
