@@ -301,9 +301,13 @@ class Checkout extends Web_private {
 				'isValidVoucher' => $isValidVoucher,
 			);
 			$this->session->set_userdata($data);
-			if($codeVoucher){ echo"berhasil"; }else{ echo"gagal"; }
+			if($codeVoucher){
+				echo"1";
+			}else{
+				echo"0";
+			}
 		}else{
-			echo"gagal";
+			echo"0";
 		}
 
 	}

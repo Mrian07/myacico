@@ -145,14 +145,10 @@ if(itemKosong=='1'){
   url: urlApi+"checkvouchercode?vouchercode="+voucher,
   success:function(hasil){
 
-    // voucher_val = '-10000';
-
-
-    // var grandTotal =  $('#grandtotal').val();
      var discVoucher = hasil.voucherAmount;
      var codeVoucher = voucher;
-  //   var getTotal = discVoucher+grandTotal;
-     if(hasil.status=='1'){
+
+     if(hasil.status==1){
        var isValidVoucher ='Y';
      }else{
        var isValidVoucher ='N';
@@ -169,15 +165,17 @@ if(itemKosong=='1'){
     type: "POST",
   	url: "<?php echo site_url('checkout/voucher'); ?>",
   	success:function(html){
-      if(html=='berhasil'){
-        $(".listItem").html("<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>");
-        $.ajax
-        ({
-        url: "<?php echo site_url('checkout/summaryDetail'); ?>",
-        success:function(html){
-            $(".listItem").html(html);
-          }
-        });
+
+      if(html==1)
+      {
+          $(".listItem").html("<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>");
+          $.ajax
+          ({
+          url: "<?php echo site_url('checkout/summaryDetail'); ?>",
+          success:function(html){
+              $(".listItem").html(html);
+            }
+          });
 
         }
   		}
@@ -187,23 +185,10 @@ if(itemKosong=='1'){
 
   });
 
-
-
 }
 
 });
-//
-// function getKurir(id){
-//
-//   var url = '<?php //echo site_url('checkout/selectKurir'); ?>'
-//   $.ajax
-//   ({
-//   url: url+'/?id='+id,
-//   success:function(html){
-//       $("#kurir").html(html);
-//     }
-//   });
-// }
+
 
 function delItemCart(id,img,name,idcart){
 	var id_kurir = '<?php echo $this->session->userdata('id_kurir');?>';
@@ -229,12 +214,8 @@ function delItemCart(id,img,name,idcart){
 
 						$(".listItem").html("<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>");
 
-
 					}
 				});
-
-
-
 
 			},
 			cancel: function () {
@@ -294,6 +275,10 @@ function finish(){
   var discVoucher='<?php echo $this->session->userdata('discVoucher'); ?>';
   var isValidVoucher='<?php echo $this->session->userdata('isValidVoucher'); ?>';
 
+  data.discount_voucher = discVoucher;
+  data.voucher_code = codeVoucher;
+  data.isvalidvoucher = isValidVoucher;
+
 	if(itemKosong=="1"){
 		$.alert({
 			title: 'Alert!',
@@ -342,8 +327,7 @@ function finish(){
     data.discount_voucher = discVoucher;
 		data.voucher_code = codeVoucher;
 		data.isvalidvoucher = isValidVoucher;
-//                alert(code);
-// console.log("sad",data);die();
+
 		$.ajax
 		({
 		type: "POST",
