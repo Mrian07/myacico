@@ -290,8 +290,8 @@ function finish(){
   // var codeVoucher=$('#codeVoucher;').val();
   // var isValidVoucher=$('#isValidVoucher').val();
 
-  var discVoucher='<?php echo $this->session->userdata('discVoucher'); ?>';
   var codeVoucher='<?php echo $this->session->userdata('codeVoucher'); ?>';
+  var discVoucher='<?php echo $this->session->userdata('discVoucher'); ?>';
   var isValidVoucher='<?php echo $this->session->userdata('isValidVoucher'); ?>';
 
 	if(itemKosong=="1"){
