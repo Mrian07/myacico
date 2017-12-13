@@ -6,7 +6,7 @@
             <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
                 <div class="content">
                   <i class="fa fa-user-o fa-5x"></i>
-                    <h4 class="title"><?php echo anchor('Pages/AboutUs','Tentang Kami'); ?></h4>
+                    <h4 class="title"><?php echo anchor('Pages/AboutUs',$lang_tentangkami); ?></h4>
                     <!-- <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p> -->
                 </div>
             </div> <!-- end card -->
@@ -18,7 +18,7 @@
             <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
                 <div class="content">
                       <i class="fa fa-gift fa-5x"></i>
-                    <h4 class="title"><?php echo anchor('Pages/faqCus','Pengembalian'); ?></h4>
+                    <h4 class="title"><?php echo anchor('Pages/faqCus',$lang_f_balik); ?></h4>
                     <!-- <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p> -->
                 </div>
             </div> <!-- end card -->
@@ -30,7 +30,7 @@
             <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
                 <div class="content">
                   <i class="fa fa-money fa-5x"></i>
-                <h4 class="title"><?php echo anchor('Pages/konfrimasi','Konfrimasi'); ?></h4>
+                <h4 class="title"><?php echo anchor('Pages/konfrimasi',$lang_btn_confirm); ?></h4>
                     <!-- <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p> -->
                 </div>
             </div> <!-- end card -->
@@ -42,7 +42,7 @@
             <div class="card card-just-text" data-background="color" data-color="brown" data-radius="none">
                 <div class="content">
                   <i class="fa fa-heart fa-5x"></i>
-                      <h4 class="title"><?php echo anchor('Pages/Pemb','Garansi'); ?></h4>
+                      <h4 class="title"><?php echo anchor('Pages/Pemb',$lang_guara); ?></h4>
                     <!-- <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p> -->
                 </div>
             </div> <!-- end card -->

@@ -14,6 +14,7 @@ Bagi Anda yang membutuhkan produk-produk maknikal-elektrikal, Toko Online MyACIC
 <b>Garansi 7 Hari Pengembalian Barang</b><br> Toko Online myACICO.co.id sangat nyaman dan terpercaya. Online Shop myACICO.co.id mendukung Anda agar nyaman dalam belanja, dengan garansi 7 hari pengembalian barang di myACICO.co.id anda tidak perlu khawatir dengan kondisi barang yang anda pesan. Penggantian barang yang mengalami cacat produksi di tanggung oleh myACICO.co.id dengan gratis pengiriman produk pada saat pengembalian, Anda bisa hubungi kami melalui Customer Care (telepon, email, dan live chat) yang online 24 jam untuk membantu Anda';
 $lang['f_info'] = 'Informasi';
 $lang['f_ttangKami'] = 'Tentang Kami';
+$lang['f_balik'] = 'Pengembalian';
 $lang['f_syarat'] = 'Syarat & Ketentuan';
 $lang['f_karier'] = 'Karir';
 $lang['f_kebij'] = 'Kebijakan Privasi';
