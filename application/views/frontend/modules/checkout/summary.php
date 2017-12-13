@@ -169,9 +169,7 @@ if(itemKosong=='1'){
     type: "POST",
   	url: "<?php echo site_url('checkout/voucher'); ?>",
   	success:function(html){
-
       if(html=='berhasil'){
-        // $(".method-kupon").hide();
         $(".listItem").html("<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>");
         $.ajax
         ({
