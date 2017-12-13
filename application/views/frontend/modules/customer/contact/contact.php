@@ -38,7 +38,7 @@ function myMap() {
 		 <form name="myForm" method="post">
 			<div class="form-group">
 			<label><?php echo $lang_field_ContNama; ?></label>
-			<input type="text" id="nama" name="nama" class="form-control mandatory" />
+			<input type="text" id="name" name="name" class="form-control mandatory" />
 			</div>
 			<div class="form-group">
 			<label><?php echo $lang_field_ContEmail; ?></label>
@@ -88,7 +88,7 @@ $(document).ready(function() {
 
   $('form').submit(function(e){
     e.preventDefault();
-    var nama = $("#nama").val();
+    var name = $("#name").val();
 		var email = $("#email").val();
 		var issue = $("#issue").val();
     	var message = $("#message").val();
@@ -96,12 +96,12 @@ $(document).ready(function() {
       var captcha = <?php echo  strtolower($this->session->userdata('mycaptcha'));?>;
       var secutity_code = $("#secutity_code").val();
 
-		data.nama = nama;
+		data.name = name;
     data.email = email;
     data.issue = issue;
       data.message = message;
 
-      if(nama ===''){
+      if(name ===''){
         $.alert({title:'Alert', content: ' Nama tidak boleh kosong'});
         $('#spinner_img').hide();
         $('#submit_btn').val('Kirim').removeClass('disabled');
@@ -152,6 +152,7 @@ $(document).ready(function() {
 		{
 
 			if(data.status==1){
+  
 				location.href="<?php echo site_url('customer/messageSent'); ?>";
 			}else{
         $.alert({title:'Alert', content: ' pesan gagal dikirim silahkan coba kembali !'});

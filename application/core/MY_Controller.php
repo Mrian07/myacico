@@ -559,7 +559,7 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_msg7'] = $this->lang->line('f_msg7');
     $this->data['lang_msg8'] = $this->lang->line('f_msg8');
     $this->data['lang_msg9'] = $this->lang->line('f_msg9');
-// Hak Cipta  
+// Hak Cipta
     $this->data['lang_hak_cipta'] = $this->lang->line('hak_cipta');
     $this->data['lang_hakcipta_tittle'] = $this->lang->line('hakcipta_tittle');
     $this->data['lang_hakcipta_text'] = $this->lang->line('hakcipta_text');
@@ -680,11 +680,23 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 class Web_private extends web {
 
     public function __construct() {
-        parent::__construct();
+      parent::__construct();
 
-		if(!$this->logedin) redirect('customer/signIn?callback='.current_url());
+  		if(!$this->logedin) redirect('customer/signIn?callback='.current_url());
+
+      $this->cekTokenExpired();
     }
 
+
+    public function cekTokenExpired(){
+  		    $token = $_COOKIE['x-auth'];
+          $url = "https://acc.myacico.co.id/myacico-account/account/checktoken/".$token;
+          $konten = file_get_contents($url);
+          $hasil = json_decode($konten, true);
+          if($hasil['status']=='0'){
+            redirect('customer/signIn/');
+          }
+    }
 }
 
 /* End of file MY_Controller.php */

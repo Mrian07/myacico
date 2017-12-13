@@ -2,9 +2,7 @@
 
 <html lang="en">
 	<head>
-		<style>
 
-		</style>
 		<?php
 		// header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 		// header("Cache-Control: no-store, no-cache, must-revalidate"); // HTTP/1.1
@@ -31,11 +29,7 @@
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 		<title><?php echo $title_web; ?></title>
 
-		<style>
-		a{
-			color:red;
-		}
-		</style>
+
 
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 

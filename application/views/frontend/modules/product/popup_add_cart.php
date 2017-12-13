@@ -1,48 +1,4 @@
-<style>
-#line-green{
-  background:#e4eed0;
-  color:#655d56;
-  padding:3px;
-  font-family: arial;
-  border-bottom: 1px solid #cfdeb0;
-}
-
-#border-pop-buy{
-  border-top:5px solid #e4352b;
-  border-bottom:5px solid #e4352b;
-  height:65px;
-}
-#btn-pop-lanjut{
-  float: left;
-  background:#e95931;
-  margin:5px;
-  padding:10px;
-  color:#ffffff;
-  font-size:15px;
-  font-weight: bold;
-  font-family: arial;
-}
-
-#btn-pop-bayar{
-  float: right;
-  background:#e95931;
-  margin:5px;
-  padding:10px;
-  color:#ffffff;
-  font-size:15px;
-  font-weight: bold;
-  font-family: arial;
-}
-
-#pop-title{
-  font-size:25px;
-  font-family: tahoma;
-}
-
-#border-pop-list{
-  padding:10px;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_popup_add_cart.css');?>" />
 
 <div id='line-green'>
   <ul><li>Produk berhasil dimasukan ke keranjang Belanja</li></ul>

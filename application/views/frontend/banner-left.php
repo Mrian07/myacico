@@ -1,63 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-#banner-left {
-    position: fixed;
-    left: 0;
-    top: 300px;
-    transition: 0.3s;
-    display: none;
-}
-#banner-left img {
-    width: 140px;
-}
-
-@media only screen and (min-width: 1440px) {
-    #banner-left {
-        display: block;
-    }
-
-    #banner-left img {
-        width: 140px;
-    }
-}
-
-@media only screen and (min-width: 1600px) {
-    #banner-left {
-        display: block;
-    }
-
-    #banner-left img {
-        width: 210px;
-    }
-}
-
-@media only screen and (min-width: 2048px) {
-    #banner-left {
-        display: block;
-    }
-
-    #banner-left img {
-        width: 400px;
-    }
-}
-
-@media only screen and (min-width: 2560px) {
-    #banner-left {
-        display: block;
-    }
-
-    #banner-left img {
-        width: 440px;
-    }
-}
-</style>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style_banner_left.css');?>" />
 </head>
 <body>
 
 <div id="banner-left" class="banner-left">
-  <img src="<?php echo base_url("images/general/banner-left.jpg") ?>" alt="">
+  <img src="https://storage.googleapis.com/myacico/image/banner/banner%20samping%20web-100.jpg" alt="">
 </div>
 </body>
 <script>

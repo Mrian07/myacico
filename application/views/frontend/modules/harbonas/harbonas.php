@@ -92,7 +92,7 @@ if($id == 1){
 ?>
 
   <div class="">
-  <button type="button" class="btn btn-default pp1" onclick="location.href='<?php echo base_url('HarbolnasPartners/index/2');?>'" style='cursor: pointer;'>></button>
+  <button type="button" class="btn btn-default pp1" onclick="location.href='<?php echo base_url('HarbolnasPartners/index/2');?>'" style='cursor: pointer;'></button>
 </div>
 
 <div class="clearfix"></div>
@@ -114,6 +114,7 @@ if($id == 1){
         <?php
 
         $jmlslide0=count($dathome2['productList']);
+
         $n=1;
         foreach($dathome2['productList'] as $key => $itemslide0){
           if($n=="$jmlslide0"){
