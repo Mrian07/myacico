@@ -35,6 +35,7 @@ E-commerce myACICO.co.id is very comfortable and trusted. 7 Days Return Warranty
 ';
 $lang['f_info'] = 'Information';
 $lang['f_ttangKami'] = 'About Us';
+$lang['f_balik'] = 'Return';
 $lang['f_syarat'] = 'Terms and conditions';
 $lang['f_karier'] = 'Career';
 $lang['f_kebij'] = 'Privacy Policy';

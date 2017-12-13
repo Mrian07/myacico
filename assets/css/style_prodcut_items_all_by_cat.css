@@ -1,0 +1,68 @@
+
+.yu{
+	color: #c40202;
+	  font-family: 'Roboto Condensed', sans-serif;
+	  font-size: 10pt;
+  }
+  .yu1{
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 10pt;
+	color: #4ba240;
+  }
+  .dark-red {
+	  color: #8a0202;
+  }
+  .clear-border {
+	  border: 0;
+  }
+  .highlight-list {
+	  color: #4b4b4b!important;
+	  overflow: hidden;
+      height: 50px;
+  }
+  .highlight-list a.title-product {
+	  color: #4b4b4b!important;
+	  font-weight: bold;
+	  font-size: 1.22em;
+	  text-decoration: none!important;
+  }
+  .btn-add-to-cart {
+	  border-radius: 25px!important;
+	  padding: 7px 10px;
+	  margin-bottom: 7px;
+	  background-color: #c40202;
+	  font-size: 8pt;
+	  width: 100%;
+  }
+  .btn-add-to-cart:hover {
+	  background-color: #8a0202;
+  }
+
+  .btn-add-to-whishlist {
+	  border-radius: 25px!important;
+	  /* padding: 7px 10px; */
+	  margin-bottom: 7px;
+	  /* background-color: #006600; */
+	  font-size: 8pt;
+	  width: 100%;
+	  font-weight: bold;
+	  cursor: pointer;
+	  text-decoration: none!important;
+  }
+  .btn-add-to-whishlist.whishlist-active {
+	  background-color: #d9840c;
+  }
+  .pricelist {
+	  font-weight: bold;
+	  font-family: 'Open Sans', sans-serif !important;
+	  font-size: 1.6em;
+  }
+  .strike-throgh {
+	  text-decoration: line-through;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	  appearance: none;
+	margin: 0;
+  }

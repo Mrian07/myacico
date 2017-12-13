@@ -510,6 +510,7 @@ class Web extends MY_Controller {
     $this->data['lang_f_guarantee5'] = $this->lang->line('f_guarantee5');
     $this->data['lang_f_info'] = $this->lang->line('f_info');
     $this->data['lang_ttangkami'] = $this->lang->line('f_ttangKami');
+    $this->data['lang_f_balik'] = $this->lang->line('f_balik');
     $this->data['lang_Terms'] = $this->lang->line('f_syarat');
     $this->data['lang_karier'] = $this->lang->line('f_karier');
     $this->data['lang_kebj'] = $this->lang->line('f_kebij');
