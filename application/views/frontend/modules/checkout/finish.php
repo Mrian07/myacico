@@ -35,25 +35,25 @@
 		  <div class="panel-body">
 		  <form class="form-horizontal">
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email"><?php echo $lang_no_order;?></label>
+			<label class="control-label col-sm-4"><?php echo $lang_no_order;?></label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->orderNumber; ?></p>
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email"><?php echo $lang_no_invoice;?></label>
+			<label class="control-label col-sm-4"><?php echo $lang_no_invoice;?></label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->invoiceNumber; ?></p>
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email"><?php echo $lang_payment_method;?></label>
+			<label class="control-label col-sm-4"><?php echo $lang_payment_method;?></label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->paymentMethod; ?></p>
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email"><?php echo $lang_transaction_status;?></label>
+			<label class="control-label col-sm-4"><?php echo $lang_transaction_status;?></label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->paymentMethod; if($field->paymentMethod=='Bank Transfer'){
 				 echo"<br><i>".$field->accountNameTo;
@@ -63,13 +63,13 @@
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label class="control-label col-sm-4" for="email"><?php echo $lang_transaction_status;?></label>
+			<label class="control-label col-sm-4"><?php echo $lang_transaction_status;?></label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php echo $field->transactionStatus; ?></p>
 			</div>
 		  </div>
 		   <div class="form-group">
-			<label class="control-label col-sm-4" for="email"><?php echo $lang_transaction_date;?></label>
+			<label class="control-label col-sm-4"><?php echo $lang_transaction_date;?></label>
 			<div class="col-sm-8">
 			  <p class="form-control-static"><?php
 			  echo tanggal_time($field->waktuTransaksi);
@@ -108,6 +108,7 @@
 				</thead>
 				<tbody>
 					<?php
+          $getTotal = 0;
 					foreach($field->items as $key => $data):?>
 					<tr>
 						<td data-th="Product">
@@ -119,6 +120,7 @@
 						<td data-th="Subtotal" class="text-center">Rp.<?php echo money($data->subtotal); ?></td>
 					</tr>
 					<?php
+            $getTotal+=$data->subtotal;
 					endforeach; ?>
 				</tbody>
 			</table>
@@ -127,16 +129,24 @@
 		</div>
     <div class="panel panel-default">
     <h5>
-
+      <?php $valVoucher =$getTotal-$field->grandTotal; ?>
       <form class="form-horizontal">
+        <?php if($valVoucher){?>
+        <div class="form-group">
+        <label class="control-label col-sm-5">Voucher:</label>
+        <div class="col-sm-7">
+          <p class="form-control-static">Rp.<?php echo money($valVoucher); ?></p>
+        </div>
+        </div>
+      <?php } ?>
       <div class="form-group">
-      <label class="control-label col-sm-5" for="email"><?php echo $lang_onkas; ?></label>
+      <label class="control-label col-sm-5"><?php echo $lang_onkas; ?>:</label>
       <div class="col-sm-7">
         <p class="form-control-static">Rp.<?php echo money($field->courier_amount); ?></p>
       </div>
       </div>
      <div class="form-group">
-      <label class="control-label col-sm-5" for="email"><?php echo $lang_total_payment; ?></label>
+      <label class="control-label col-sm-5"><?php echo $lang_total_payment; ?></label>
       <div class="col-sm-7">
         <p class="form-control-static">Rp.<?php echo money($field->grandTotal); ?></p>
       </div>
