@@ -246,7 +246,7 @@ $(document).ready(function() {
 
 </html>
 
-<!-- Global site tag (gtag.js) - Google Analytics --> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110142423-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

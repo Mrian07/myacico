@@ -57,7 +57,7 @@
 <body>
 
 <div id="banner-left" class="banner-left">
-  <img src="<?php echo base_url("images/general/banner-left.jpg") ?>" alt="">
+  <img src="https://storage.googleapis.com/myacico/image/banner/banner%20samping%20web-100.jpg" alt="">
 </div>
 </body>
 <script>
