@@ -181,9 +181,6 @@ class Web extends MY_Controller {
     $this->data['lang_msg_pswd1'] = $this->lang->line('msg_pswd1');
     $this->data['lang_msg_pswd2'] = $this->lang->line('msg_pswd2');
 
-
-
-
 //    Forgot Password
     $this->data['lang_password_text'] = $this->lang->line('lost_password_text');
     $this->data['lang_password_tittle'] = $this->lang->line('lost_password_tittle');
@@ -199,56 +196,56 @@ class Web extends MY_Controller {
     $this->data['lang_reset_password_form2'] = $this->lang->line('reset_password_form2');
     $this->data['lang_reset_password_msg1'] = $this->lang->line('reset_password_msg1');
     $this->data['lang_reset_password_msg2'] = $this->lang->line('reset_password_msg2');
-$this->data['lang_reset_pswd_info'] = $this->lang->line('reset_pswd_info');
-$this->data['lang_reset_pswd_info2'] = $this->lang->line('reset_pswd_info2');
-$this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
+    $this->data['lang_reset_pswd_info'] = $this->lang->line('reset_pswd_info');
+    $this->data['lang_reset_pswd_info2'] = $this->lang->line('reset_pswd_info2');
+    $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
 
     //Lang
 		$this->data['lang_daftar'] = $this->lang->line('daftar');
 		$this->data['lang_masuk'] = $this->lang->line('masuk');
 		$this->data['lang_ket_daftar_personal'] = $this->lang->line('ket_daftar_personal');
 		$this->data['lang_ket_daftar_akunBisnis'] = $this->lang->line('ket_daftar_akunBisnis');
-                $this->data['lang_reg_text'] = $this->lang->line('lang_new_reg');
-                $this->data['lang_ket_daftar_gov'] = $this->lang->line('ket_daftar_akunGov');
-                $this->data['lang_msg_login1'] = $this->lang->line('msg_login1');
-                $this->data['lang_msg_login2'] = $this->lang->line('msg_login2');
-                $this->data['lang_msg_login3'] = $this->lang->line('msg_login3');
-                $this->data['lang_msg_login4'] = $this->lang->line('msg_login4');
-                $this->data['lang_msg_regis'] = $this->lang->line('msg_regis');
-                $this->data['lang_msg_regis2'] = $this->lang->line('msg_regis2');
+    $this->data['lang_reg_text'] = $this->lang->line('lang_new_reg');
+    $this->data['lang_ket_daftar_gov'] = $this->lang->line('ket_daftar_akunGov');
+    $this->data['lang_msg_login1'] = $this->lang->line('msg_login1');
+    $this->data['lang_msg_login2'] = $this->lang->line('msg_login2');
+    $this->data['lang_msg_login3'] = $this->lang->line('msg_login3');
+    $this->data['lang_msg_login4'] = $this->lang->line('msg_login4');
+    $this->data['lang_msg_regis'] = $this->lang->line('msg_regis');
+    $this->data['lang_msg_regis2'] = $this->lang->line('msg_regis2');
 // cara belanja
-                $this->data['lang_how_buy_tittle'] = $this->lang->line('how_buy_tittle');
-                $this->data['lang_how_buy_tittle2'] = $this->lang->line('how_buy_tittle2');
-                $this->data['lang_how_buy_tittle3'] = $this->lang->line('how_buy_tittle3');
-                $this->data['lang_how_buy_tittle4'] = $this->lang->line('how_buy_tittle4');
-                $this->data['lang_how_buy_tittle5'] = $this->lang->line('how_buy_tittle5');
-                $this->data['lang_how_buy1'] = $this->lang->line('how_buy1');
-                $this->data['lang_how_buy2'] = $this->lang->line('how_buy2');
-                $this->data['lang_how_buy3'] = $this->lang->line('how_buy3');
-                $this->data['lang_how_buy4'] = $this->lang->line('how_buy4');
-                $this->data['lang_how_buy5'] = $this->lang->line('how_buy5');
-                $this->data['lang_how_buy1_1'] = $this->lang->line('how_buy1_1');
+    $this->data['lang_how_buy_tittle'] = $this->lang->line('how_buy_tittle');
+    $this->data['lang_how_buy_tittle2'] = $this->lang->line('how_buy_tittle2');
+    $this->data['lang_how_buy_tittle3'] = $this->lang->line('how_buy_tittle3');
+    $this->data['lang_how_buy_tittle4'] = $this->lang->line('how_buy_tittle4');
+    $this->data['lang_how_buy_tittle5'] = $this->lang->line('how_buy_tittle5');
+    $this->data['lang_how_buy1'] = $this->lang->line('how_buy1');
+    $this->data['lang_how_buy2'] = $this->lang->line('how_buy2');
+    $this->data['lang_how_buy3'] = $this->lang->line('how_buy3');
+    $this->data['lang_how_buy4'] = $this->lang->line('how_buy4');
+    $this->data['lang_how_buy5'] = $this->lang->line('how_buy5');
+    $this->data['lang_how_buy1_1'] = $this->lang->line('how_buy1_1');
 
 		//button di daftar
 		$this->data['lang_btn_personal'] = $this->lang->line('btn_daftar');
 		$this->data['lang_btn_bisnis'] = $this->lang->line('btn_daftar_bisnis');
 		$this->data['lang_btn_pemerintah'] = $this->lang->line('btn_daftar_pemerintah');
 
-                $this->data['lang_daftar_text'] = $this->lang->line('das_regis');
+    $this->data['lang_daftar_text'] = $this->lang->line('das_regis');
 		// akhir dari button daftar
 
     //checkout field_atas
 
-            $this->data['lang_tamb3'] = $this->lang->line('lang_tamb123');
-              $this->data['lang_another'] = $this->lang->line('Field_Another');
-              $this->data['lang_coursss'] = $this->lang->line('lang_courier');
-                $this->data['lang_paket'] = $this->lang->line('field_paket');
-                $this->data['lang_biaya'] = $this->lang->line('field_biaya');
-                $this->data['lang_ongk'] = $this->lang->line('field_ongk');
-                $this->data['lang_alamatTr'] = $this->lang->line('field_alamatTu');
-                $this->data['lang_cata'] = $this->lang->line('field_catatan');
-                $this->data['lang_byr1'] = $this->lang->line('field_byr1');
-                $this->data['lang_byr2'] = $this->lang->line('field_byr2');
+    $this->data['lang_tamb3'] = $this->lang->line('lang_tamb123');
+    $this->data['lang_another'] = $this->lang->line('Field_Another');
+    $this->data['lang_coursss'] = $this->lang->line('lang_courier');
+    $this->data['lang_paket'] = $this->lang->line('field_paket');
+    $this->data['lang_biaya'] = $this->lang->line('field_biaya');
+    $this->data['lang_ongk'] = $this->lang->line('field_ongk');
+    $this->data['lang_alamatTr'] = $this->lang->line('field_alamatTu');
+    $this->data['lang_cata'] = $this->lang->line('field_catatan');
+    $this->data['lang_byr1'] = $this->lang->line('field_byr1');
+    $this->data['lang_byr2'] = $this->lang->line('field_byr2');
 
 
     //akhir checkout
@@ -264,15 +261,15 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
 
     //lang di summaryDetail
     $this->data['lang_ringkasa'] = $this->lang->line('field_ringkasan');
-      $this->data['lang_hargaDi'] = $this->lang->line('field_harga');
-        $this->data['lang_catatan'] = $this->lang->line('field_catatan');
-        $this->data['lang_alamatTujuan'] = $this->lang->line('field_alamatTujuan');
-        $this->data['lang_asuransi'] = $this->lang->line('field_asuransi');
-        $this->data['lang_ttaol'] = $this->lang->line('field_total');
-          $this->data['lang_asuransi'] = $this->lang->line('field_asuransi');
-          $this->data['lang_tagihan'] = $this->lang->line('field_totalTagihan');
-          $this->data['lang_totalShipping'] = $this->lang->line('field_totalShippingGfee');
-          $this->data['lang_mulai'] = $this->lang->line('field_mulaitest');
+    $this->data['lang_hargaDi'] = $this->lang->line('field_harga');
+    $this->data['lang_catatan'] = $this->lang->line('field_catatan');
+    $this->data['lang_alamatTujuan'] = $this->lang->line('field_alamatTujuan');
+    $this->data['lang_asuransi'] = $this->lang->line('field_asuransi');
+    $this->data['lang_ttaol'] = $this->lang->line('field_total');
+    $this->data['lang_asuransi'] = $this->lang->line('field_asuransi');
+    $this->data['lang_tagihan'] = $this->lang->line('field_totalTagihan');
+    $this->data['lang_totalShipping'] = $this->lang->line('field_totalShippingGfee');
+    $this->data['lang_mulai'] = $this->lang->line('field_mulaitest');
     //akhir dari summary
 
     //lang di PaymentCheckout
@@ -292,23 +289,23 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
     $this->data['lang_news2'] = $this->lang->line('das_news2');
     $this->data['lang_add'] = $this->lang->line('das_addres');
     $this->data['lang_confirm'] = $this->lang->line('das_pay');
-     $this->data['lang_history'] = $this->lang->line('das_history');
+    $this->data['lang_history'] = $this->lang->line('das_history');
     //akhhir dari dashboard
 
     //language di headers
-      $this->data['lang_tentangkami'] = $this->lang->line('lang_pages_aboutUs');
-      $this->data['lang_isinya'] = $this->lang->line('lang_isiaboutUS');
-        $this->data['lang_hist'] = $this->lang->line('lang_pages_history');
-          $this->data['lang_page'] = $this->lang->line('lang_pages_acico');
-            $this->data['lang_pages_vis'] = $this->lang->line('lang_pages_vis');
-              $this->data['lang_vis'] = $this->lang->line('lang_pages_vis');
-                $this->data['lang_mis'] = $this->lang->line('lang_pages_miss');
-                  $this->data['lang_isi_vis'] = $this->lang->line('lang_pagesisi_vis');
-                    $this->data['lang_isi_mis'] = $this->lang->line('lang_pagesisi_mis');
-                      $this->data['lang_isi_oru'] = $this->lang->line('lang_pages_oru');
-                      $this->data['lang_isi_peng'] = $this->lang->line('lang_pages_peng');
-                      $this->data['lang_isi_al'] = $this->lang->line('lang_pages_alw');
-                        $this->data['lang_isi_harg'] = $this->lang->line('lang_pages_ch');
+    $this->data['lang_tentangkami'] = $this->lang->line('lang_pages_aboutUs');
+    $this->data['lang_isinya'] = $this->lang->line('lang_isiaboutUS');
+    $this->data['lang_hist'] = $this->lang->line('lang_pages_history');
+    $this->data['lang_page'] = $this->lang->line('lang_pages_acico');
+    $this->data['lang_pages_vis'] = $this->lang->line('lang_pages_vis');
+    $this->data['lang_vis'] = $this->lang->line('lang_pages_vis');
+    $this->data['lang_mis'] = $this->lang->line('lang_pages_miss');
+    $this->data['lang_isi_vis'] = $this->lang->line('lang_pagesisi_vis');
+    $this->data['lang_isi_mis'] = $this->lang->line('lang_pagesisi_mis');
+    $this->data['lang_isi_oru'] = $this->lang->line('lang_pages_oru');
+    $this->data['lang_isi_peng'] = $this->lang->line('lang_pages_peng');
+    $this->data['lang_isi_al'] = $this->lang->line('lang_pages_alw');
+    $this->data['lang_isi_harg'] = $this->lang->line('lang_pages_ch');
 
 
     //akhir langauge di header
@@ -328,57 +325,57 @@ $this->data['lang_reset_pswd_info3'] = $this->lang->line('reset_pswd_info3');
 
     //label label yang ada di privacy police
     $this->data['lang_pri'] = $this->lang->line('label_privacy');
-      $this->data['lang_isiPri1'] = $this->lang->line('label_isi_pri1');
-        $this->data['lang_isiPri2'] = $this->lang->line('label_isi_pri2');
-          $this->data['lang_isiPri3'] = $this->lang->line('label_isi_pri3');
-              $this->data['lang_isiPri4'] = $this->lang->line('label_isi_pri4');
-              $this->data['lang_isiPri5'] = $this->lang->line('label_isi_pri5');
-              $this->data['lang_isiPri6'] = $this->lang->line('label_isi_pri6');
-                $this->data['lang_isiPri7'] = $this->lang->line('label_isi_pri7');
-                  $this->data['lang_isiPri8'] = $this->lang->line('label_isi_pri8');
-                  $this->data['lang_isiPri9'] = $this->lang->line('label_isi_pri9');
+    $this->data['lang_isiPri1'] = $this->lang->line('label_isi_pri1');
+    $this->data['lang_isiPri2'] = $this->lang->line('label_isi_pri2');
+    $this->data['lang_isiPri3'] = $this->lang->line('label_isi_pri3');
+    $this->data['lang_isiPri4'] = $this->lang->line('label_isi_pri4');
+    $this->data['lang_isiPri5'] = $this->lang->line('label_isi_pri5');
+    $this->data['lang_isiPri6'] = $this->lang->line('label_isi_pri6');
+    $this->data['lang_isiPri7'] = $this->lang->line('label_isi_pri7');
+    $this->data['lang_isiPri8'] = $this->lang->line('label_isi_pri8');
+    $this->data['lang_isiPri9'] = $this->lang->line('label_isi_pri9');
 
     //akhir dari label yang ada di privacy police
 
     //buku Alamat
-      $this->data['lang_addDres'] = $this->lang->line('add_info');
-      $this->data['lang_dibwh'] = $this->lang->line('add_dibawah');
-        $this->data['lang_Pen'] = $this->lang->line('add_rec');
-        $this->data['lang_alam'] = $this->lang->line('add_alamat');
-          $this->data['lang_pho'] = $this->lang->line('add_pho');
+    $this->data['lang_addDres'] = $this->lang->line('add_info');
+    $this->data['lang_dibwh'] = $this->lang->line('add_dibawah');
+    $this->data['lang_Pen'] = $this->lang->line('add_rec');
+    $this->data['lang_alam'] = $this->lang->line('add_alamat');
+    $this->data['lang_pho'] = $this->lang->line('add_pho');
 
-          //tambah buku Alamat
-            $this->data['field_back'] = $this->lang->line('field_kembali');
-            $this->data['field_lengkap'] = $this->lang->line('field_sila');
-            $this->data['field_name'] = $this->lang->line('field_name');
-            $this->data['field_atasnama'] = $this->lang->line('field_byname');
-            $this->data['field_save'] = $this->lang->line('field_save');
-            $this->data['field_alamatLain'] = $this->lang->line('field_alamat');
-            $this->data['field_kel'] = $this->lang->line('field_kel');
-            $this->data['field_telpon'] = $this->lang->line('field_telp');
-           // $this->data['lang_add_book'] = $this->lang->line('add_book');
-            $this->data['lang_add_edit'] = $this->lang->line('add_edit_button');
+    //tambah buku Alamat
+    $this->data['field_back'] = $this->lang->line('field_kembali');
+    $this->data['field_lengkap'] = $this->lang->line('field_sila');
+    $this->data['field_name'] = $this->lang->line('field_name');
+    $this->data['field_atasnama'] = $this->lang->line('field_byname');
+    $this->data['field_save'] = $this->lang->line('field_save');
+    $this->data['field_alamatLain'] = $this->lang->line('field_alamat');
+    $this->data['field_kel'] = $this->lang->line('field_kel');
+    $this->data['field_telpon'] = $this->lang->line('field_telp');
+    // $this->data['lang_add_book'] = $this->lang->line('add_book');
+    $this->data['lang_add_edit'] = $this->lang->line('add_edit_button');
 
-          //end of tambah
-          //riwayat PESANAN
-              $this->data['lang_riw'] = $this->lang->line('field_riwayyat');
-              $this->data['lang_tgl'] = $this->lang->line('field_tgl');
-              $this->data['lang_tota'] = $this->lang->line('field_total');
-                $this->data['lang_metod'] = $this->lang->line('field_metod');
-                        $this->data['lang_order_no'] = $this->lang->line('field_order');
-               $this->data['lang_to_date'] = $this->lang->line('field_to_date');
-$this->data['lang_start_date'] = $this->lang->line('field_start_date');
-$this->data['lang_btn_search'] = $this->lang->line('field_btn_search');
-$this->data['lang_field_confirmation'] = $this->lang->line('field_confirmation');
-$this->data['lang_btn_confirm'] = $this->lang->line('field_btn_confirm');
-$this->data['lang_gambar'] = $this->lang->line('field_gambar');
-$this->data['lang_nama_barang'] = $this->lang->line('field_nama_barang');
-$this->data['lang_invoice'] = $this->lang->line('field_invoice');
-$this->data['lang_detail_order'] = $this->lang->line('field_detail_pesanan');
-$this->data['lang_ket_konfirm'] = $this->lang->line('field_ket_konfirm');
-$this->data['lang_msg_upload'] = $this->lang->line('msg_upload');
-$this->data['lang_msg_upload2'] = $this->lang->line('msg_upload2');
-$this->data['lang_label_upload'] = $this->lang->line('label_upload');
+    //end of tambah
+    //riwayat PESANAN
+    $this->data['lang_riw'] = $this->lang->line('field_riwayyat');
+    $this->data['lang_tgl'] = $this->lang->line('field_tgl');
+    $this->data['lang_tota'] = $this->lang->line('field_total');
+    $this->data['lang_metod'] = $this->lang->line('field_metod');
+    $this->data['lang_order_no'] = $this->lang->line('field_order');
+    $this->data['lang_to_date'] = $this->lang->line('field_to_date');
+    $this->data['lang_start_date'] = $this->lang->line('field_start_date');
+    $this->data['lang_btn_search'] = $this->lang->line('field_btn_search');
+    $this->data['lang_field_confirmation'] = $this->lang->line('field_confirmation');
+    $this->data['lang_btn_confirm'] = $this->lang->line('field_btn_confirm');
+    $this->data['lang_gambar'] = $this->lang->line('field_gambar');
+    $this->data['lang_nama_barang'] = $this->lang->line('field_nama_barang');
+    $this->data['lang_invoice'] = $this->lang->line('field_invoice');
+    $this->data['lang_detail_order'] = $this->lang->line('field_detail_pesanan');
+    $this->data['lang_ket_konfirm'] = $this->lang->line('field_ket_konfirm');
+    $this->data['lang_msg_upload'] = $this->lang->line('msg_upload');
+    $this->data['lang_msg_upload2'] = $this->lang->line('msg_upload2');
+    $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 
 
           //end pesanan
@@ -491,13 +488,13 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
     $this->data['lang_voucher_code'] = $this->lang->line('voucher_code');
 
 //   ASAP
-        $this->data['lang_inf_asap'] = $this->lang->line('inf_asap');
+    $this->data['lang_inf_asap'] = $this->lang->line('inf_asap');
 
 //  jaminan
-        $this->data['lang_jaminan_tittle'] = $this->lang->line('jaminan_tittle');
-        $this->data['lang_jaminan'] = $this->lang->line('jaminan');
-        $this->data['lang_isi_jaminan'] = $this->lang->line('isi_jaminan');
-        $this->data['lang_isi_jaminan2'] = $this->lang->line('isi_jaminan2');
+    $this->data['lang_jaminan_tittle'] = $this->lang->line('jaminan_tittle');
+    $this->data['lang_jaminan'] = $this->lang->line('jaminan');
+    $this->data['lang_isi_jaminan'] = $this->lang->line('isi_jaminan');
+    $this->data['lang_isi_jaminan2'] = $this->lang->line('isi_jaminan2');
 
 
     //btn tambah  informasi akun
@@ -578,9 +575,8 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 	}
 
   public function urlApi(){
-    $url = "https://api.myacico.co.id/myacico-service";
-;
-
+  //  $url = "https://api.myacico.co.id/myacico-service";
+    $url = "https://api.myacico.co.id/dev";
     return $url;
   }
   public function urlApi2(){
