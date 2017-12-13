@@ -757,11 +757,22 @@ $(".logout").click(function(e){
 					});
 
 					//untuk cart yang di basket token
+					$(".listCart").html("<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>");
 					$.ajax
 					({
 					url: "<?php echo site_url('cart/listCartToken'); ?>",
 					success:function(html){
 							$(".listCart").html(html);
+						}
+					});
+
+					//untuk cart yang di ringkasan
+					$(".listItem").html("<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>");
+					$.ajax
+					({
+					url: "<?php echo site_url('checkout/summaryDetail'); ?>",
+					success:function(html){
+							$(".listItem").html(html);
 						}
 					});
 
