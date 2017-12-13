@@ -681,11 +681,20 @@ $this->data['lang_label_upload'] = $this->lang->line('label_upload');
 class Web_private extends web {
 
     public function __construct() {
-        parent::__construct();
+    parent::__construct();
 
 		if(!$this->logedin) redirect('customer/signIn?callback='.current_url());
     }
 
+    // public function cekTokenExpired(){
+    //   if(isset($_COOKIE['x-auth'])){
+  	// 	    $token = $_COOKIE['x-auth'];
+    //       if($token==''){
+    //
+    //         redirect('customer/signIn/');
+    //       }
+  	// 	}
+    // }
 }
 
 /* End of file MY_Controller.php */
