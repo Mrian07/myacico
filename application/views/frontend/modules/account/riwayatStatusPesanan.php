@@ -77,7 +77,7 @@
 			        				<td data-title="Konfirmasi/ Credit Card"><?php
 			                                       //if($items['productId'])
 			        					if($items['paymentMethod']=='Bank Transfer'){
-			        						if($items['transactionStatus']=='PAID'){
+			        						if($items['transactionStatus']=='PAID' || $items['transactionStatus']=='CANCELED'){
 			        							echo anchor('#', $lang_btn_confirm, array('class'=>'btn btn-warning disabled'));
 			        						}else{
 			        							echo anchor('account/confirm/'.$items['idTransaksi'], $lang_btn_confirm, array('class'=>'btn btn-warning'));
@@ -90,9 +90,12 @@
 			        						}
 			                                                }else{
 
-			        						if($items['transactionStatus']=='PAID'){
+			        						if($items['transactionStatus']=='PAID' ){
 			        							echo anchor('#', 'Paid', array('class'=>'btn btn-warning disabled'));
+			        						}elseif($items['transactionStatus']=='CANCELED' ){
+			        							echo anchor('#', 'Pay By Credit Card', array('class'=>'btn btn-warning disabled'));
 			        						}else{
+
 			        							echo anchor('checkout/paymentByCreditCard/'.$items['idTransaksi'].'/'.$items['token'], 'Pay By Credit Card', array('class'=>'btn btn-warning'));
 			        						}
 			        					}
