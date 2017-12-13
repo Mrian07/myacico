@@ -289,29 +289,6 @@ class Checkout extends Web_private {
 		$this->load->view('frontend/footer',$this->data);
 	}
 
-	public function voucher() {
-		$token = $_COOKIE['x-auth'];
-		if($token){
-			$codeVoucher = $_POST['codeVoucher'];
-			$discVoucher = $_POST['discVoucher'];
-			$isValidVoucher = $_POST['isValidVoucher'];
-			$data = array(
-				'codeVoucher' => $codeVoucher,
-				'discVoucher' => $discVoucher,
-				'isValidVoucher' => $isValidVoucher,
-			);
-			$this->session->set_userdata($data);
-			if($codeVoucher){
-				echo"1";
-			}else{
-				echo"0";
-			}
-		}else{
-			echo"0";
-		}
-
-	}
-
 	public function pilihKurir() {
 		// $id_kurir = $this->uri->segment(3);
 		// $ongkos_kurir = $this->uri->segment(4);

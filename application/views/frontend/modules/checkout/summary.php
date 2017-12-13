@@ -121,7 +121,7 @@ $('#btn_voucher').click(function(){
 var token= '<?php echo $token; ?>';
 var voucher = $("#txt_voucher").val();
 var itemKosong = $('#itemKosong').val();
-// voucher = 0;
+
 if(itemKosong=='1'){
   $.alert({
     title: 'Alert!',
@@ -145,11 +145,28 @@ if(itemKosong=='1'){
   url: urlApi+"checkvouchercode?vouchercode="+voucher,
   success:function(hasil){
 
-     var discVoucher = hasil.voucherAmount;
+     var discVoucher = Number(hasil.voucherAmount);
      var codeVoucher = voucher;
+     var grandtotal = Number($('.grandtotal').val());
+     var hasilGrand = discVoucher+grandtotal;
 
      if(hasil.status==1){
        var isValidVoucher ='Y';
+
+       $('.codeVoucher').val(codeVoucher);
+       $('.discVoucher').val(discVoucher);
+       $('.isValidVoucher').val(isValidVoucher);
+       $('#valVoucher').html('Rp.'+formatNumber(discVoucher));
+       $('#valGrandtotal').html(hasilGrand);
+       $('.bigGrandtotal').val(hasilGrand);
+
+       $('#realGrandtotal').html('Rp.'+formatNumber(hasilGrand));
+
+       function formatNumber(num) {
+          return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+      }
+
+
      }else{
        var isValidVoucher ='N';
 
@@ -158,28 +175,6 @@ if(itemKosong=='1'){
          content: 'Kode Voucher tidak terdaftar atau sudah digunakan',
        });
      }
-
-    $.ajax
-  	({
-    data: ({'codeVoucher': codeVoucher,'discVoucher': discVoucher,'isValidVoucher': isValidVoucher}),
-    type: "POST",
-  	url: "<?php echo site_url('checkout/voucher'); ?>",
-  	success:function(html){
-
-      if(html==1)
-      {
-          $(".listItem").html("<center><img src='<?php echo base_url('images/general/loading.gif');?>' border='0'></center>");
-          $.ajax
-          ({
-          url: "<?php echo site_url('checkout/summaryDetail'); ?>",
-          success:function(html){
-              $(".listItem").html(html);
-            }
-          });
-
-        }
-  		}
-  	});
 
   }
 
@@ -267,17 +262,18 @@ function finish(){
 	var data = {};
 	var baseApiUrl = '<?php echo $baseApiUrl; ?>';
 
-  // var discVoucher=$('#discVoucher').val();
-  // var codeVoucher=$('#codeVoucher;').val();
-  // var isValidVoucher=$('#isValidVoucher').val();
+  var bigGrandtotal=$('.bigGrandtotal').val();
 
-  var codeVoucher='<?php echo $this->session->userdata('codeVoucher'); ?>';
-  var discVoucher='<?php echo $this->session->userdata('discVoucher'); ?>';
-  var isValidVoucher='<?php echo $this->session->userdata('isValidVoucher'); ?>';
 
-  data.discount_voucher = discVoucher;
-  data.voucher_code = codeVoucher;
-  data.isvalidvoucher = isValidVoucher;
+  if(bigGrandtotal){
+    var grandtotal=bigGrandtotal;
+  }else{
+    var grandtotal=$('.grandtotal').val();
+  }
+  var discVoucher=$('.discVoucher').val();
+  var codeVoucher=$('.codeVoucher').val();
+
+  var isValidVoucher=$('.isValidVoucher').val();
 
 	if(itemKosong=="1"){
 		$.alert({
@@ -325,8 +321,10 @@ function finish(){
 		data.courier_amount = courier_amount;
 
     data.discount_voucher = discVoucher;
-		data.voucher_code = codeVoucher;
-		data.isvalidvoucher = isValidVoucher;
+    data.voucher_code = codeVoucher;
+    data.isvalidvoucher = isValidVoucher;
+
+    // console.log(data); die(); false;
 
 		$.ajax
 		({

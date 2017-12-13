@@ -62,8 +62,7 @@
     $allsubtotal += $items['subtotal'];
   }
 
-  $getGrandTotal = $allsubtotal+$this->session->userdata('ongkos_kurir');
-  if($this->session->userdata('discVoucher')){ $grandTotal = $this->session->userdata('discVoucher')+$getGrandTotal; }else{$grandTotal =$getGrandTotal;}
+  $grandTotal = $allsubtotal+$this->session->userdata('ongkos_kurir');
 
   ?>
   <div class="totalfee">
@@ -81,38 +80,35 @@
     </div>
     <div class="totalsub">
       <p>Voucher</p>
-      <p class="red" id='voucher'><?php if($this->session->userdata('discVoucher')){echo'Rp.'. money($this->session->userdata('discVoucher')); }else{echo"-"; }?></p>
+      <div class="red" id='valVoucher'>-</div>
     </div>
     <div class="totalsub2">
       <p>Grand Total</p>
-      <p class="red">Rp.<?php echo money($grandTotal); ?></p>
+      <p class="red" id='realGrandtotal'>Rp.<?php echo money($grandTotal); ?></p>
 
     </div>
   </div>
 
 
+<input type='hidden' class='discVoucher' value=''>
+<input type='hidden' class='codeVoucher' value=''>
+<input type='hidden' class='isValidVoucher' value=''>
+<input type='hidden' class='grandtotal' value='<?php echo  $grandTotal; ?>'>
+<input type='hidden' class='bigGrandtotal'>
 
+<script>
 
-<!-- <input type='hidden' id='valVoucher' value='<?php //echo $this->session->userdata('voucher'); ?>'> -->
-<!-- <input type='text' id='discVoucher' value=''>
-<input type='text' id='codeVoucher' value=''>
-<input type='text' id='isValidVoucher' value=''> -->
-<input type='hidden' id='grandtotal' value='<?php echo  $grandTotal; ?>'>
+$('.discVoucher').change(function() {
+  alert('Handler for .change() called.');
+});
 
-
-<!-- <script>
 $(document).ready(function() {
 
-  var discVoucher = $('#discVoucher').val();
+  var discVoucher = $('.discVoucher').val();
+  var grandtotal = $('.grandtotal').val();
+  var getTotal = discVoucher+grandtotal;
 
-  var grandTotal = '<?php //echo  $grandTotal; ?>';
+  $('.getTotal').html(getTotal);
 
-alert(grandTotal);
-
-  var bigGrandTotal = discVoucher+grandTotal;
-  $('#grandtotal').val(bigGrandTotal);
-  $('#vGrandtotal').val(bigGrandTotal);
-  // var grandTotal = '<?php //echo  $grandTotal; ?>';
-  // var grandTotal = '<?php //echo  $grandTotal; ?>';
 });
-</script> -->
+</script>

@@ -31,7 +31,7 @@ var c = '<?php echo$token; ?>';
   <div class="mids" id="mids"></div>
   <script type="text/javascript">
     function pay(){
-        console.log(c);
+        // console.log(c);
         var code = c;
         snap.pay(code, {
             onSuccess: function(result){
