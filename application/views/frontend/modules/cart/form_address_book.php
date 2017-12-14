@@ -426,13 +426,13 @@ $('#submit_btn').attr('disabled','disabled');
           return false;
         }
 
-        if(phone<='1'){
-          $.alert({title:'Alert', content: 'Silahkan masukan no telphone dengan benar'});
-          $('#spinner_img').hide();
-          $('#submit_btn').val('Kirim').removeClass('disabled');
-          $('.mandatory').prop('disabled', false);
-          return false;
-        }
+        // if(phone<='1'){
+        //   $.alert({title:'Alert', content: 'Silahkan masukan no telphone dengan benar'});
+        //   $('#spinner_img').hide();
+        //   $('#submit_btn').val('Kirim').removeClass('disabled');
+        //   $('.mandatory').prop('disabled', false);
+        //   return false;
+        // }
         // if(phone2 ===''){
         //   $.alert({title:'Alert', content: ' Telepon tidak boleh kosong'});
         //   $('#spinner_img').hide();
