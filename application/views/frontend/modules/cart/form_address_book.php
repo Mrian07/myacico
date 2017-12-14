@@ -253,11 +253,11 @@
          </div>
                 <div class="form-group">
                 <label>Handphone*</label>
-                  <input type="number" id = "phone"name="phone" maxlength="16" class="form-control mandatory" />
+                  <input type="tel" id = "phone" name="phone" maxlength="16" class="form-control mandatory" />
                 </div>
                 <div class="form-group">
                 <label>Telepon</label>
-                  <input type="tel" id = "phone2"name="phone2" maxlength="16" class="form-control"/>
+                  <input type="tel" id = "phone2" name="phone2" maxlength="16" class="form-control"/>
                 </div>
 
                 <div class="clearfix"></div>
