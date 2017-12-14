@@ -167,9 +167,9 @@ $(document).ready(function() {
         $('.mandatory').prop('disabled', false);
         return false;
       }
-      
-      
-      
+
+
+
       data.name = nama;
     data.email = email;
     data.subject = subject;
