@@ -55,7 +55,7 @@
 
 						<form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 						<span class="input-group-btn">
-						<input type="hidden" placeholder="placeholder" id="transid" class="input-xlarge" value="<?php echo $konf; ?>" name="transid">
+						<input type="hidden" id="transid" class="input-xlarge" value="<?php echo $konf; ?>" name="transid">
 						<span class="btn btn-info btn-file">
 						Browse…<input class="input-file" id="file" type="file" name="file" onchange="show(this)" style='height:10px'>
 						</span>
@@ -124,6 +124,7 @@ $(document).ready( function() {
   //    var data = $(this).serialize();
   //     return alert(data);die();
   data.file = file;
+
   data.transid = transid;
 
      var success = function(r){

@@ -393,7 +393,12 @@ class Account extends Web_private {
 			$this->data['hasil'] = json_decode($konten, true);
 			$hasil = json_decode($konten, true);
 
-			$this->data['konf'] = $this->uri->segment(3);
+			if(isset($_GET['key'])){
+				$this->data['konf'] = $_GET['key'];
+			}else{
+				$this->data['konf'] = $this->uri->segment(3);
+			}
+
 			$this->data['active_riwayatStatusPesanan'] = "class='active'";
 			$this->data['title_web'] = "Konfirmasi - ".$domain;
 			$this->load->view('frontend/header',$this->data);
