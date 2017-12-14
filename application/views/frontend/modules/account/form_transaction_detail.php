@@ -19,7 +19,7 @@
 								<?php foreach($hasil['items'] as $data){
 									?>
 								<tr><td><img class="group list-group-image" src="<?php echo $data['imageurl']; ?>" alt="..." style:border="0" height="100"><br>
-									<b>SKU: <?php echo $data['sku']; ?></b><br>
+									<span style='font-size:20px; font-weight:bold'>SKU: <?php echo $data['sku']; ?></span><br>
 									<?php echo $data['name']; ?></td><td><?php echo $hasil['invoiceNumber']; ?></td><td><?php echo $hasil['orderNumber']; ?></td><td>
 								<?php echo $hasil['paymentMethod']; ?></td><td>Qty(<?php echo $data['qty']; ?>)<br>Rp.<?php echo money($hasil['grandTotal']); ?>
 								</td></tr>
