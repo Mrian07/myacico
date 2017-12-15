@@ -37,24 +37,24 @@
         </div>
     </div>
 
-    <div class="col-md-4 col-sm-6 content-card">
+    <!-- <div class="col-md-4 col-sm-6 content-card">
         <div class="card-big-shadow">
             <div class="card card-just-text" data-background="color" data-color="brown" data-radius="none">
                 <div class="content">
                   <i class="fa fa-heart fa-5x"></i>
-                      <h4 class="title"><?php echo anchor('Pages/Pemb',$lang_guara); ?></h4>
-                    <!-- <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p> -->
+                      <h4 class="title"><?php // echo anchor('Pages/Pemb',$lang_guara); ?></h4>
+
                 </div>
-            </div> <!-- end card -->
+            </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="col-md-4 col-sm-6 content-card">
         <div class="card-big-shadow">
             <div class="card card-just-text" data-background="color" data-color="purple" data-radius="none">
                 <div class="content">
                             <i class="fa fa-phone fa-5x"></i>
-                    <h4 class="title"><?php echo anchor('Pages/Pemb','CallUs'); ?></h4>
+                    <h4 class="title"><?php echo anchor('Customer/contact','CallUs'); ?></h4>
                     <!-- <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p> -->
                 </div>
             </div> <!-- end card -->
