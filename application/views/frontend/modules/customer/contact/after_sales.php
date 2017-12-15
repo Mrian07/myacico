@@ -22,7 +22,7 @@
               <div id="sukses_after_sales" style="display: none;">
                    <div class="col-sm-8" style="text-align: justify;text-justify: inter-word;">
                        <center>
-                           <h3><b><?php echo$thanks;?></b></h3><br>
+                           <h3><b><?php echo$lang_thanks;?></b></h3><br>
                        </center>
 
     <?php echo$lang_aftersale_keterangan;?>
