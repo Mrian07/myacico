@@ -404,7 +404,7 @@ class Account extends Web_private {
 			$this->load->view('frontend/header',$this->data);
 			$this->load->view('frontend/nav.php',$this->data);
 			$this->load->view('frontend/modules/account/form_confirm.php',$this->data);
-                        $this->load->view('frontend/sidenav',$this->data);
+      $this->load->view('frontend/sidenav',$this->data);
 			$this->load->view('frontend/footer',$this->data);
 	}
 

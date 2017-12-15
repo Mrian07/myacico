@@ -53,7 +53,7 @@ $("#hapus").val(null);
 if(data.status == 1 ) {
 	rumah.append('<tr><td><?php echo $lang_news; ?></td></tr>');
 }else{
-	rumah.append('<tr><td><?php echo $lang_news; ?></td></tr>');
+	rumah.append('<tr><td><?php echo $lang_news2; ?></td></tr>');
 }
 	        },
 	    dataType: "json",
