@@ -829,13 +829,6 @@ class Checkout extends Web_private {
 		$data = array('shipping_address_id' => '');
     $this->session->set_userdata($data);
 
-		$data = array(
-			'codeVoucher' => '',
-			'discVoucher' => '',
-			'isValidVoucher' => '',
-		);
-		$this->session->set_userdata($data);
-
 		// $field = json_decode($konten);
 		// echo"<pre>"; print_r($field); die();
 		$lang_shoping_cart = $this->lang->line('shoping_cart');
@@ -849,13 +842,6 @@ class Checkout extends Web_private {
 
 	public function paymentByCreditCard()
 	{
-		$data = array(
-			'codeVoucher' => '',
-			'discVoucher' => '',
-			'isValidVoucher' => '',
-		);
-		$this->session->set_userdata($data);
-
 		$this->data['id'] = $this->uri->segment(3);
 		$this->data['token'] = $this->uri->segment(4);
 		$this->load->view('frontend/modules/checkout/payment_credit.php',$this->data);
@@ -863,12 +849,6 @@ class Checkout extends Web_private {
 
   public function paymentByOnline()
 	{
-		$data = array(
-			'codeVoucher' => '',
-			'discVoucher' => '',
-			'isValidVoucher' => '',
-		);
-		$this->session->set_userdata($data);
 		$this->data['id'] = $this->uri->segment(3);
 		$this->data['token'] = $this->uri->segment(4);
 		$this->load->view('frontend/modules/checkout/payment_online.php',$this->data);
