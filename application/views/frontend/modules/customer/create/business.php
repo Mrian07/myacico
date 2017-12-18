@@ -107,6 +107,9 @@
     </div>
   </div>
 </div>
+<!-- // asdasd -->
+<!-- asd -->
+<!-- asd -->
 
 <script type="text/javascript">
 $.ajaxSetup({
@@ -255,11 +258,26 @@ var data = {};
       return false;
     };
 
-    die();
+    var success = function(r){
+  $('#spinner_img').hide();
+  $('#submit_btn').val('Daftar').removeClass('disabled');
+  if(r.status == 0){
+      $.alert({
+    title: 'Alert!',
+    content: '<?php echo $lang_msg_regis2;?> '+r.message,
+  });
+      return false;
+  }else{
+
+    window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
+  }
+
+
+};
     $('#spinner_img').show();
     $('#submit_btn').val('loading...').addClass('disabled');
     $.ajax({ type:"POST", contentType: "application/json",data: formData, contentType: false,
-    processData: false, dataType: "json", url: apiurl });
+    processData: false, dataType: "json", url: apiurl,success:success });
 
   });
 
@@ -279,4 +297,4 @@ var data = {};
 
   }, "json" );
 });
-</script>a
+</script>

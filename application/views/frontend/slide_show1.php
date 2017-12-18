@@ -161,65 +161,28 @@ footer a,footer a:hover{
 
 
 <div class="container">
-    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+    <div class="col-md-4 col-sm-6 co-xs-12">
       <div class="box">
-        <a href="#" data-toggle="modal" data-target="#11">
-          <img src="https://s1.postimg.org/3w7m9jvoan/banner_top.png" class="img-responsive">
+        <a href="<?php echo base_url('product/alllistItem/samsung');?>">
+          <img src="<?php echo base_url('images/general/Artboard 1-100.jpg');?>">
         </a>
-        <div class="modal fade" id="11" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-              <div class="modal-body">
-                <img src="https://s1.postimg.org/3w7m9jvoan/banner_top.png">
-              </div>
-                <div class="col-md-12 description">
-                  <h4>This is the leventh one on my Gallery</h4>
-                </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
-    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+    <div class="col-md-4 col-sm-6 co-xs-12">
       <div class="box">
-        <a href="#" data-toggle="modal" data-target="#12">
-          <img src="https://s1.postimg.org/59huis1xzj/medium_bannerzz.png">
+        <a href="<?php echo base_url('product/alllistItem/electrolux');?>">
+          <img src="<?php echo base_url('images/general/Artboard 2-100.jpg');?>">
         </a>
-        <div class="modal fade" id="12" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-              <div class="modal-body">
-                <img src="https://s1.postimg.org/59huis1xzj/medium_bannerzz.png">
-              </div>
-                <div class="col-md-12 description">
-                  <h4>This is the 12th one on my Gallery</h4>
-                </div>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
-    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+    <div class="col-md-4 col-sm-6 co-xs-12">
       <div class="box">
-        <a href="#" data-toggle="modal" data-target="#13">
-          <img src="https://s1.postimg.org/7ledx3jdnj/123123.png">
+        <a href="<?php echo base_url('product/alllistItem/sony');?>">
+          <img src="<?php echo base_url('images/general/Artboard 3-100.jpg');?>">
         </a>
-        <div class="modal fade" id="13" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-              <div class="modal-body">
-                <img src="https://s1.postimg.org/7ledx3jdnj/123123.png">
-
-              </div>
-                <div class="col-md-12 description">
-                  <h4>This is the 13th one on my Gallery</h4>
-                </div>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
 
