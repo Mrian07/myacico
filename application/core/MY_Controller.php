@@ -159,39 +159,6 @@ class Web extends MY_Controller {
         $this->data['myavatar'] = '';
       }
 
-
-
-
-      // if($statusAva=='1'){
-      //
-      //   $token3 = null;
-    	// 	$adaToken3 =0;
-      //
-    	// 	if(isset($_COOKIE['x-auth'])){
-    	// 	    $token3 = $_COOKIE['x-auth'];
-    	// 	    $adaToken3 =1;
-    	// 	}
-      //
-      //   $api3 = "aduser/avatar/file?key=".$token3;
-      //
-      //   $url3 = api_base_url($api3);
-      //
-      //   $options3 = ["http" => [
-    	// 	      "method" => "GET",
-      //
-    	// 	]];
-      //   $context3 = stream_context_create($options3);
-      //
-    	// 	$konten3 = file_get_contents($url3, false, $context3);
-      //
-      //   // $this->data['myavatar'] = "halo nih";
-      //   $this->data['myavatar'] = $url3;
-      //
-      // }else{
-      //
-      // }
-
-
     }
 
     public function auth(){
