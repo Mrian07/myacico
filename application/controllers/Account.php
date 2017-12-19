@@ -143,8 +143,8 @@ class Account extends Web_private {
 		$this->load->view('frontend/footer',$this->data);
 	}
 	public function avatar()
-    {
-            $domain = domain();
+  {
+    $domain = domain();
 		$this->data['active_avatar'] = "class='active'";
 		$this->data['title_web'] = "Informasi Akun - ".$domain;
 		$this->load->view('frontend/header',$this->data);

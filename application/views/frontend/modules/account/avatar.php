@@ -126,13 +126,14 @@ data.file = file;
    var success = function(r){
            console.log('OK:', r);
            alert(r.message);
-  
+
   };
   $('#spinner_img').show();
   $('#submit_btn').val('loading...').addClass('disabled');
       var token1 = document.cookie.split('x-auth=')[1].split(';').shift();
   console.log('ini data',token1);
   var apiurl = api_base_url +'/aduser/upload/avatar';
+  console.log(apiurl);
   var form = $('form')[0]; // You need to use standard javascript object here
   var formData = new FormData(form);
 //$.ajax({ type:"POST",  data: formData,  processData: false, contentType: false,  headers:{"token":token}, url: apiurl });
@@ -144,7 +145,7 @@ data.file = file;
   success:success,
   contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
   processData: false, // NEEDED, DON'T OMIT THIS
- 
+
 });
 
 });
