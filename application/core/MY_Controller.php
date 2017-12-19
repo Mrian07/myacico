@@ -118,28 +118,47 @@ class Web extends MY_Controller {
 
     }
 
+    public function cekAvatarCust(){
+
+    }
+
     public function avatarCust(){
-      $token3 = null;
-  		$adaToken3 =0;
 
-  		if(isset($_COOKIE['x-auth'])){
-  		    $token3 = $_COOKIE['x-auth'];
-  		    $adaToken3 =1;
-  		}
+      //$statusAva = $this->cekAvatarCust();
 
-      $api3 = "aduser/avatar/file?key=".$token3;
+      if(isset($_COOKIE['x-auth'])){
+        $this->data['token'] = $_COOKIE['x-auth'];
+        $token = $_COOKIE['x-auth'];
+        $api = "aduser/checkimage?file=avatar";
+        $url = api_base_url($api);
 
-      $url3 = api_base_url($api3);
+        $options = ["http" => [
+        "method" => "GET",
+        "header" => ["token: " . $token,
+        "Content-Type: application/json"],
+        ]];
 
-      $options3 = ["http" => [
-  		      "method" => "GET",
+        $context = stream_context_create($options);
+        $konten = file_get_contents($url, false, $context);
+        $hasil = json_decode($konten, true);
 
-  		]];
-      $context3 = stream_context_create($options3);
+        if($hasil['status']){
+          $api3 = "aduser/avatar/file?key=".$token;
+          $url3 = api_base_url($api3);
+          $options3 = ["http" => [
+      		      "method" => "GET",
+      		]];
+          $context3 = stream_context_create($options3);
+      		$konten3 = file_get_contents($url3, false, $context3);
+          $this->data['myavatar'] = $url3;
 
-  		$konten3 = file_get_contents($url3, false, $context3);
-      // $this->data['myavatar'] = "halo nih";
-      $this->data['myavatar'] = $url3;
+        }else{
+          $this->data['myavatar'] = '';
+        }
+      }else{
+        $this->data['myavatar'] = '';
+      }
+
     }
 
     public function auth(){
@@ -573,11 +592,13 @@ class Web extends MY_Controller {
     $this->data['lang_alert_cart_kurir'] = $this->lang->line('alert_cart_kurir');
     $this->data['lang_alert_cart_paket'] = $this->lang->line('alert_cart_paket');
     $this->data['lang_alert_cart_hapus'] = $this->lang->line('alert_cart_hapus');
+
+    $this->data['lang_alert_upload_avatar'] = $this->lang->line('alert_upload_avatar');
 	}
 
   public function urlApi(){
-    $url = "https://api.myacico.co.id/myacico-service";
-    // $url = "https://api.myacico.co.id/dev";
+    //$url = "https://api.myacico.co.id/myacico-service";
+    $url = "https://api.myacico.co.id/dev";
     return $url;
   }
   public function urlApi2(){

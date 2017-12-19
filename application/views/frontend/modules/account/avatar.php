@@ -3,6 +3,7 @@
 .btn-file {
 position: relative;
 overflow: hidden;
+height:34px;
 }
 .btn-file input[type=file] {
 position: absolute;
@@ -40,9 +41,17 @@ width: 100%;
     <?php $this->load->view('frontend/modules/account/sidebar_menu'); ?>
   </div>
   <div class="col-sm-9">
+
     <p><?php echo anchor('account/riwayatStatusPesanan', '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'.$lang_avatar_button, array('class'=>'btn-back'));?></p>
                       <div class="buktiTrans"></div>
     <p><?php echo $lang_avatar_tittle2;?></p>
+
+    <!-- pesan start -->
+    <?php $flash_pesan = $this->session->flashdata('pesan')?>
+    <?php if (! empty($flash_pesan)) : ?>
+    <?php echo $flash_pesan; ?>
+    <?php endif ?>
+    <!-- pesan end -->
     <form method="POST" id="contact" name="13" class="form-horizontal wpc_contact" novalidate="novalidate" enctype="multipart/form-data">
 
     <div class="panel panel-default">
@@ -118,21 +127,61 @@ $(document).ready( function() {
   var token1 = document.cookie.split('x-auth=')[1].split(';').shift();
   var apiurl = api_base_url +'/aduser/upload/avatar';
 
-var data = {};
+  var data = {};
   $("form").submit(function(e){
   e.preventDefault();
-      var file =  $("#file").val();
-data.file = file;
-   var success = function(r){
-           console.log('OK:', r);
-           alert(r.message);
-  
-  };
+  var file =  $("#file").val();
+
+  if(file)
+    {
+
+    data.file = file;
+    var success = function(r){
+    // console.log('OK:', r);
+    //alert(r.message);
+    if(r.status==1){
+      location.href='<?php echo base_url("account/avatar/");?>'+r.status;
+    }else{
+      $.dialog({
+        title: 'Alert!',
+        content: r.message,
+        autoClose: 'close|3000',
+        buttons: {
+          close: function () {
+
+          }
+        },
+        closeIcon: true,
+        closeIconClass: 'fa fa-close'
+      });
+    }
+
+    };
+
+  }else{
+    var msg = '<?php echo $lang_alert_upload_avatar; ?>';
+    $.dialog({
+      title: 'Alert!',
+      content: msg,
+      autoClose: 'close|3000',
+      buttons: {
+        close: function () {
+
+        }
+      },
+      closeIcon: true,
+      closeIconClass: 'fa fa-close'
+    });
+
+    return false;
+  }
+
   $('#spinner_img').show();
   $('#submit_btn').val('loading...').addClass('disabled');
       var token1 = document.cookie.split('x-auth=')[1].split(';').shift();
-  console.log('ini data',token1);
+  // console.log('ini data',token1);
   var apiurl = api_base_url +'/aduser/upload/avatar';
+  // console.log(apiurl);
   var form = $('form')[0]; // You need to use standard javascript object here
   var formData = new FormData(form);
 //$.ajax({ type:"POST",  data: formData,  processData: false, contentType: false,  headers:{"token":token}, url: apiurl });
@@ -144,7 +193,7 @@ data.file = file;
   success:success,
   contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
   processData: false, // NEEDED, DON'T OMIT THIS
- 
+
 });
 
 });
