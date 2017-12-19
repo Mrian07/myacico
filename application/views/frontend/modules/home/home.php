@@ -12,15 +12,15 @@
 
   <a href="https://myacico.co.id/product/detail/1064093/VIVO-V5-Plus-%5b4/64GB%5d---Gold">
   <div style='float:left;width:376px; margin-right:5px'>
-    <img src='https://storage.googleapis.com/myacico/image/banner/banner-55.png' border='0' width='100%'>
+    <img src='https://storage.googleapis.com/myacico/image/banner/banner-55.jpg' border='0' width='100%'>
   </div></a>
   <a href="https://myacico.co.id/product/detail/1064001/BOSE-Headphone-QuietComfort-QC25-for-Samsung-or-Android-Devices-%5bHDPRA0117%5d---Black">
   <div style='float:left;width:376px; margin-right:5px'>
-    <img src='https://storage.googleapis.com/myacico/image/banner/banner-56.png' border='0' width='100%'>
+    <img src='https://storage.googleapis.com/myacico/image/banner/banner-56.jpg' border='0' width='100%'>
   </div></a>
   <a href="https://myacico.co.id/product/detail/1060256/MODENA-Washing-Machine-IMPERIAN-%5bWF620%5d">
   <div style='float:left;width:376px'>
-    <img src='https://storage.googleapis.com/myacico/image/banner/banner-57.png' border='0' width='100%'>
+    <img src='https://storage.googleapis.com/myacico/image/banner/banner-57.jpg' border='0' width='100%'>
   </div></a>
   <div style='clear:both'></div>
 
