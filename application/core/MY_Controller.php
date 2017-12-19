@@ -592,6 +592,8 @@ class Web extends MY_Controller {
     $this->data['lang_alert_cart_kurir'] = $this->lang->line('alert_cart_kurir');
     $this->data['lang_alert_cart_paket'] = $this->lang->line('alert_cart_paket');
     $this->data['lang_alert_cart_hapus'] = $this->lang->line('alert_cart_hapus');
+
+    $this->data['lang_alert_upload_avatar'] = $this->lang->line('alert_upload_avatar');
 	}
 
   public function urlApi(){

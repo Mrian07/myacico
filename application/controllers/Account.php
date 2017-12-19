@@ -144,6 +144,18 @@ class Account extends Web_private {
 	}
 	public function avatar()
   {
+		$lang = get_cookie('lang');
+		$flag = $this->uri->segment(3);
+		if($flag){
+			if($lang=='en'){
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Upload image success.</div>');
+			}else{
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
+				<span class="glyphicon glyphicon-ok"></span> Gambar berhasil diupload.</div>');
+			}
+		}
+
     $domain = domain();
 		$this->data['active_avatar'] = "class='active'";
 		$this->data['title_web'] = "Informasi Akun - ".$domain;
@@ -160,18 +172,18 @@ class Account extends Web_private {
 		$flag = $this->uri->segment(3);
 		if($flag=='1'){
 			if($lang=='en'){
-				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit2">
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
 				<span class="glyphicon glyphicon-ok"></span> Add address book success.</div>');
 			}else{
-				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit2">
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
 				<span class="glyphicon glyphicon-ok"></span> Tambah buku alamat sukses.</div>');
 			}
 		}elseif($flag=='2'){
 			if($lang=='en'){
-				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit2">
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
 				<span class="glyphicon glyphicon-ok"></span> Update address book success.</div>');
 			}else{
-				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit2">
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible animated bounceInDown" id="alertSubmit">
 				<span class="glyphicon glyphicon-ok"></span> Ubah buku alamat sukses.</div>');
 			}
 		}
