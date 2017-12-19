@@ -6,7 +6,8 @@
 <body>
 
 <div id="banner-left" class="banner-left">
-  <img src="https://storage.googleapis.com/myacico/image/banner/banner%20samping%20web-100.jpg" alt="">
+	<a href="https://www.myacico.co.id/product/category/1000535/Perlengkapan-Outdoor-&-Perjalanan">
+  <img src="https://storage.googleapis.com/myacico/image/banner/banner%20samping%20web-100.jpg" alt=""></a>
 </div>
 </body>
 <script>
