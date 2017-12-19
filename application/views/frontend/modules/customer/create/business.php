@@ -40,6 +40,10 @@
           <input type="text" id="tax_id" name="tax_id" class="form-control mandatory"/>
         </div>
         <div class="form-group">
+        <label>Upload Gambar NPWP*</label>
+         Browse…<input class="input-file" id="file" type="file" name="file">
+        </div>
+        <div class="form-group">
           <label><?php echo $lang_addres; ?>*</label>
           <input type="text" id="address" name="address" class="form-control mandatory" />
           <input type="text" id="address2" name="address2" class="form-control mandatory" />
@@ -77,7 +81,7 @@
         </div>
          <div class="form-group">
         <label><?php echo $lang_PostCode; ?>*</label>
-          <select type="text" name="postal" id="postal_id" class="form-control mandatory" ></select>
+          <input type="text" name="postal" id="postal_id" class="form-control mandatory" >
         </div>
         <div class="form-group">
               <label><?php echo $lang_Passwpord; ?>*</label>
@@ -87,10 +91,7 @@
                 <label><?php echo $lang_Passwpord2; ?>*</label>
           <input type="password" id="password2" name="password2" class="form-control" />
         </div>
-                <div class="form-group">
-                <label>Upload Gambar*</label>
-         Browse…<input class="input-file" id="file" type="file" name="file">
-        </div>
+
 
         <div class="row">
   			<div class="col-sm-6">
@@ -133,7 +134,7 @@ $('#village_id').change(function () {
           $("#village_id").append("<option value='"+o.c_village_id+"'>"+o.name+"</option>");
                 console.log('asdasd',o.c_village_id);
         });
-        $("#village_id").prop('disabled', false).change(get_postal);
+        $("#village_id").prop('disabled', false);
       }, "json" );
     }
 
@@ -175,21 +176,8 @@ function get_city(){
     $("#city_sel").prop('disabled', false).change(get_distric);
   }, "json" );
 }
-$('#postal_id').change(function () {
-        var end = this.value;
-      $('#submit_btn').removeAttr('disabled');
-    });
-        function get_postal(){
-      $("#postal_box").slideDown();
-      $("#postal_id").prop('disabled', true).html('<option value="">--pilih--</option>');
-      $.get(api_base_url+"/village/getlistvillagebyiddistrict/"+$("#district_id").val(), function(r){
-        r.forEach(function(o){
-          $("#postal_id").append("<option value='"+o.postal+"'>"+o.postal+"</option>");
-                console.log('23',o.postal);
-        });
-        $("#postal_id").prop('disabled', false);
-      }, "json" );
-    }
+
+
 
 
 
@@ -266,10 +254,15 @@ var data = {};
     title: 'Alert!',
     content: '<?php echo $lang_msg_regis2;?> '+r.message,
   });
+      location.reload();
       return false;
   }else{
+    $.alert({
+      title : 'alert!',
+      content: r.message,
 
-    window.location.replace("<?php echo site_url('customer/successCreate/'); ?>"+email);
+    });
+      location.reload();
   }
 
 
