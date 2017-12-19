@@ -161,7 +161,7 @@
 								 <div class="col-xs-4" style='margin-top:5px; text-align: right'>
 
 											<?php
-											if(isset($_COOKIE['x-auth'])){
+											if($myavatar){
 									  		   echo anchor('account/avatar', "<img src='$myavatar' width='25' border='0'>");
 								  		} else{ ?>
 											 <img src='<?php echo base_url('images/general/icon-man.png'); ?>' width='25' border='0'>
