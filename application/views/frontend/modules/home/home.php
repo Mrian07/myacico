@@ -10,15 +10,15 @@
 
 <div class="container">
 
-  <a href="https://myacico.co.id/product/detail/1064093/VIVO-V5-Plus-%5b4/64GB%5d---Gold">
+  <a href="https://www.myacico.co.id/product/alllistItem/asus">
   <div style='float:left;width:376px; margin-right:5px'>
     <img src='https://storage.googleapis.com/myacico/image/banner/banner-55.jpg' border='0' width='100%'>
   </div></a>
-  <a href="https://myacico.co.id/product/detail/1064001/BOSE-Headphone-QuietComfort-QC25-for-Samsung-or-Android-Devices-%5bHDPRA0117%5d---Black">
+  <a href="https://www.myacico.co.id/product/detail/1050435/RAZER-Kraken-Pro-2015-Gaming-Headphone---Green">
   <div style='float:left;width:376px; margin-right:5px'>
     <img src='https://storage.googleapis.com/myacico/image/banner/banner-56.jpg' border='0' width='100%'>
   </div></a>
-  <a href="https://myacico.co.id/product/detail/1060256/MODENA-Washing-Machine-IMPERIAN-%5bWF620%5d">
+  <a href="https://www.myacico.co.id/product/detail/1072067/ELECTROLUX-Clothes-Dryer-Front-Loading-[EDV-5001]---White">
   <div style='float:left;width:376px'>
     <img src='https://storage.googleapis.com/myacico/image/banner/banner-57.jpg' border='0' width='100%'>
   </div></a>
