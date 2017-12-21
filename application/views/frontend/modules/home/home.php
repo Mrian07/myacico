@@ -424,9 +424,9 @@
     <div class="promo-front owl-carousel">
       <?php
 
-      $jmlslide2=count($dathome2['topProduct'][3]['topProduct']);
+      $jmlslide2=count($dathome2['topProduct'][2]['topProduct']);
       $n=1;
-      foreach($dathome2['topProduct'][3]['topProduct'] as $key => $itemslide2){
+      foreach($dathome2['topProduct'][2]['topProduct'] as $key => $itemslide2){
         if($n=="$jmlslide2"){
           $active='active';
         }else{
