@@ -10,8 +10,8 @@ function domain(){
   }
 function api_base_url($param)
 {
-	//$url = "https://api.myacico.co.id/myacico-service/".$param;
-  $url = "https://api.myacico.co.id/dev/".$param;
+	$url = "https://api.myacico.co.id/myacico-service/".$param;
+  //$url = "https://api.myacico.co.id/dev/".$param;
 
 	return $url;
 }

@@ -597,8 +597,8 @@ class Web extends MY_Controller {
 	}
 
   public function urlApi(){
-    //$url = "https://api.myacico.co.id/myacico-service";
-    $url = "https://api.myacico.co.id/dev";
+    $url = "https://api.myacico.co.id/myacico-service";
+    //$url = "https://api.myacico.co.id/dev";
     return $url;
   }
   public function urlApi2(){
