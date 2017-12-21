@@ -698,8 +698,13 @@ class Web_private extends web {
 
     public function __construct() {
       parent::__construct();
+      // $url = current_url();
+      // if(isset($_GET['key'])){
+      //   $url.='/'.$_GET['key'];
+      // }
 
-  		if(!$this->logedin) redirect('customer/signIn?callback='.current_url());
+  		// if(!$this->logedin) redirect('customer/signIn?callback='.current_url());
+      if(!$this->logedin) redirect('customer/signIn?callback='.current_url().($_SERVER['QUERY_STRING']?'?'.$_SERVER['QUERY_STRING']:''));
 
       $this->cekTokenExpired();
     }

@@ -254,7 +254,7 @@ class Checkout extends Web_private {
 		 }
 
 		}
-
+// echo $id_kelurahan; die();
 		if(isset($id_kelurahan)){
 			$api = "freight/shipment/rates?to_village_id=".$id_kelurahan;
 			$url = api_base_url($api);
@@ -327,6 +327,7 @@ class Checkout extends Web_private {
 			'name_kurir' => $name_kurir,
 		);
 		$this->session->set_userdata($data);
+
 		//ini diload pake ajak
 		if(isset($total_ongkir)){echo money($total_ongkir);}else{echo"0";}
 

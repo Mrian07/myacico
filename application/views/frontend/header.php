@@ -122,7 +122,6 @@
 						<a href='http://blog.myacico.co.id/' class='btn-nav-head' target='blank'>Blog</a>
 						<?php echo anchor('pages/newProduct',$lang_produck, array('class'=>'btn-nav-head')); ?>
 						<?php echo anchor('Pages/caraBerbelanja',$lang_carabeli, array('class'=>'btn-nav-head')); ?>
-
            <?php echo anchor('customer/afterSales',$lang_after_sales, array('class'=>'btn-nav-head')); ?>
 					</div>
 				</div>
