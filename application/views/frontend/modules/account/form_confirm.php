@@ -57,7 +57,7 @@
 						<span class="input-group-btn">
 						<input type="hidden" id="transid" class="input-xlarge" value="<?php echo $konf; ?>" name="transid">
 						<span class="btn btn-info btn-file">
-						Browse…<input class="input-file" id="file" type="file" name="file" onchange="show(this)" style='height:10px'>
+						Browse…<input class="input-file" id="file" type="file" name="file"  accept="image/*" onchange="show(this)" style='height:10px'>
 						</span>
 						</span>
 						<input type="text" class="form-control" readonly>
@@ -78,7 +78,7 @@
 <script>
 function show(input) {
         debugger;
-        var validExtensions = ['jpg','png','jpeg']; //array of valid extensions
+        var validExtensions = ['jpg','png','jpeg','gif','ico','JPG','JPEG','PNG','GIF','ICO']; //array of valid extensions
         var fileName = input.files[0].name;
         var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
         if ($.inArray(fileNameExt, validExtensions) == -1) {
