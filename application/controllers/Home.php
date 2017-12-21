@@ -33,7 +33,7 @@ class Home extends Web {
 		$api = "home/view";
                 $api_lvl1 ="product/banner";
                 $url_lvl1 =api_base_url($api_lvl1);
-                
+
 		$url = api_base_url($api);
 
 		$api2 = "home/topproductcategory";
@@ -46,6 +46,7 @@ class Home extends Web {
 		$this->data['dathome'] = json_decode($konten, true);
 		$this->data['dathome2'] = json_decode($konten2, true);
                 $this->data['dathomeLvl'] = json_decode($konten_lvl1, true);
+
 		 /*echo "<pre>";
 		 print_r($this->data['dathomeLvl'] );
 		 die();*/
