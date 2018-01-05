@@ -1,6 +1,5 @@
 <div class="container">
-  <h2>Collapsible Panel</h2>
-  <p>Click on the collapsible panel to open and close it.</p>
+  <h2>FAQ myAcico</h2>
   <div class="panel-group">
     <div class="panel panel-default">
       <div class="panel-heading">
