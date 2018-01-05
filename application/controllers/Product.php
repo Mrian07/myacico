@@ -152,7 +152,7 @@ class Product extends Web {
 		$this->data['alias'] = $this->uri->segment(4);
 		$this->data['title_web'] = "List Items - ".$domain.'-'.$id_cat;
 		$this->data['function_name'] = $functionName;
-		
+
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/product/product_all.php',$this->data);

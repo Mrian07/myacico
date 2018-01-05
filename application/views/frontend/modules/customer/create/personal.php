@@ -219,15 +219,16 @@ margin-top: -11px;
 			<div class="col-sm-6" style='text-align: right'>
 				<?php echo $field_sudahDaftar; ?> <?php echo anchor('customer/signIn', 'Log In'); ?>
 			</div>
-		  </div><hr><?php echo$lang_daftar_text;?>
+		  </div>
+      <!-- <hr><?php // echo$lang_daftar_text;?>
       <div class="row">
         <div class="col-sm-4">
-          <a href="javascript:fbLogin();"><img src="<?php echo base_url('images/general/facebook.png');?>"></a>
+          <a href="javascript:fbLogin();"><img src="<?php //echo base_url('images/general/facebook.png');?>"></a>
         </div>
         <div class="col-sm-4">
-          <a href="javascript:login(1);"><img src="<?php echo base_url('images/general/google.png');?>"></a>
+          <a href="javascript:login(1);"><img src="<?php //echo base_url('images/general/google.png');?>"></a>
         </div>
-      </div>
+      </div> -->
 		</form>
 		</div>
 	  </div>
