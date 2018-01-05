@@ -23,7 +23,7 @@
             ?>
             <div style='height: 292px;'>
                 <!--<a href="<?php //echo base_url('product/detail/'. $itemslide['product_id'].'/'. $itemslide['alias']);?>"><img src='<?php //echo $itemslide['imageurl']; ?>'class="img-responsive">-->
-                  <a href="<?php echo $itemslide['link'];?>"><img src='<?php echo $itemslide['imageurl']; ?>' class="img-responsive" style="height:292px; width: 100%;">  
+                  <a href="<?php echo $itemslide['link'];?>"><img src='<?php echo $itemslide['imageurl']; ?>' class="img-responsive" style="height:292px; width: 100%;">
                    </a> </div>
               <!-- <div style="background-image:url(<?php // echo $itemslide['imageurl']; ?>)" class="img-responsive"></div></a> -->
             <?php $n++; } ?>
@@ -40,10 +40,10 @@
     </div>
     <div class="col-xs-5 padding-1">
 
-      <a href="https://myacico.co.id/product/detail/1058390/KIRIN-Emergency-Lamp-%5bKEL-2606%5d---White">
-      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/incase.jpg');?>" width="100%" height="auto"></div></a>
-      <a href="https://myacico.co.id/product/detail/1058345/KIRIN-Oven-%5bKBO-190RA%5d---Black">
-      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/itstime.jpg');?>" width="100%" height="auto"></div></a>
+      <a href="https://myacico.co.id/product/listItem/1000760/Pemotong-Rumput">
+      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/aArtboard_4.jpg');?>" width="100%" height="auto"></div></a>
+      <a href="https://myacico.co.id/product/alllistItem/prolink%20speaker">
+      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/cfxdArtboard_4.jpg');?>" width="100%" height="auto"></div></a>
       <!-- <div style='margin-left:5px;'><img src="https://s1.postimg.org/6g8wm25b1r/ps4.png" width="100%" height="170"></div> -->
 
 
