@@ -167,7 +167,7 @@
 
 		<div class="col-sm-6">
 		<h5>LOG IN</h5>
-		<div style='border: 1px #dddddd solid;padding:10px;margin-bottom:40px;height:350px'>
+		<div style='border: 1px #dddddd solid;padding:10px;margin-bottom:40px;height:300px'>
 				<p><?php echo$lang_info_login; ?></p>
 			<form name="myForm" method="post">
 				<div class="form-group">
@@ -189,15 +189,15 @@
 						</p>
 					</div>
 				</div>
-				<hr>
+				<!-- <hr>
 				<div class="row">
 					<div class="col-sm-4">
-<a href="javascript:fbLogin();"><img src="<?php echo base_url('images/general/facebook.png');?>"></a>
+<a href="javascript:fbLogin();"><img src="<?php //echo base_url('images/general/facebook.png');?>"></a>
 	</div>
 					<div class="col-sm-4">
-						<a href="javascript:login(1);"><img src="<?php echo base_url('images/general/google.png');?>"></a>
+						<a href="javascript:login(1);"><img src="<?php //echo base_url('images/general/google.png');?>"></a>
 					</div>
-				</div>
+				</div> -->
 			</form>
 
 		</div>
@@ -206,7 +206,7 @@
 		<div class="col-sm-6">
 
 				<h5><?php echo$lang_reg_text;?></h5>
-				<div style='border: 1px #dddddd solid;padding:10px;margin-bottom:40px;height:350px'>
+				<div style='border: 1px #dddddd solid;padding:10px;margin-bottom:40px;height:300px'>
 				<div class="row">
 					<div class="col-sm-12">
 						<?php echo $lang_ket_daftar_personal; ?>
