@@ -281,6 +281,11 @@ class Checkout extends Web_private {
 
 		}
 
+		$data = array(
+			'note' => '',
+		);
+		$this->session->set_userdata($data);
+
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		// $this->load->view('frontend/modules/cart/cart.php',$this->data);
@@ -989,5 +994,16 @@ class Checkout extends Web_private {
 			$this->load->view('frontend/modules/checkout/finish_credit_cart_error.php',$this->data);
 		}
 		$this->load->view('frontend/footer',$this->data);
+	}
+
+	function note(){
+		$note = $_GET['note'];
+		if($note){
+			$data = array(
+				'note' => $note,
+			);
+			$this->session->set_userdata($data);
+		}
+		echo $note;
 	}
 }

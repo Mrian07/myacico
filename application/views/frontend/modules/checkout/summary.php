@@ -93,7 +93,7 @@
           <?php // } ?>
             <div style='clear:both'></div>
 					</div>
-
+          <input type='hidden' value='<?php echo$this->session->userdata('note'); ?>' id='note'>
 					<input type='hidden' value='<?php echo$this->session->userdata('name_kurir');?>' id='courier'>
 					<input type='hidden' value='<?php echo$this->session->userdata('ongkos_kurir');?>' id='courier_amount'>
 					<input type='hidden' value='<?php echo$billing_address_id;?>' id='billing_address_id'>
@@ -246,6 +246,7 @@ function pilihKurir2(id,amount){
 
 function finish(){
 
+  var note = $('#note').val();
 	var itemKosong = $('#itemKosong').val();
 	var getPay = $("input[name='code']:checked").val()
 	var resultPay=getPay.split('-');
@@ -323,7 +324,7 @@ function finish(){
     data.discount_voucher = discVoucher;
     data.voucher_code = codeVoucher;
     data.isvalidvoucher = isValidVoucher;
-
+    data.note = note;
     // console.log(data); die(); false;
 
 		$.ajax

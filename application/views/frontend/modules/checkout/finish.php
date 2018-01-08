@@ -131,7 +131,7 @@
     <h5>
       <?php $valVoucher =$getTotal-$field->grandTotal; ?>
       <form class="form-horizontal">
-        <?php if($valVoucher){?>
+        <?php if($valVoucher>=1){?>
         <div class="form-group">
         <label class="control-label col-sm-5">Voucher:</label>
         <div class="col-sm-7">
