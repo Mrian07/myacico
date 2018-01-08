@@ -31,7 +31,7 @@
 	<div class="row">
 	  <div class="col-sm-6">
 		<div class="panel panel-default">
-		  <div class="panel-heading"><b><?php echo $lang_no_order;?></b></div>
+		  <div class="panel-heading"><b><?php echo $lang_detail_order;?></b></div>
 		  <div class="panel-body">
 		  <form class="form-horizontal">
 		  <div class="form-group">

@@ -505,6 +505,10 @@ class Web extends MY_Controller {
     $this->data['lang_btn_update_receiver'] = $this->lang->line('btn_update_receiver');
     $this->data['lang_payment_confirm'] = $this->lang->line('payment_confirm');
     $this->data['lang_voucher_code'] = $this->lang->line('voucher_code');
+    $this->data['lang_payment_failed'] = $this->lang->line('payment_failed');
+    $this->data['lang_payment_failed_info'] = $this->lang->line('payment_failed_info');
+    $this->data['lang_order_cart_success'] = $this->lang->line('order_cart_success');
+    $this->data['lang_btn_riwayat_pesanan'] = $this->lang->line('btn_riwayat_pesanan');
 
 //   ASAP
     $this->data['lang_inf_asap'] = $this->lang->line('inf_asap');
