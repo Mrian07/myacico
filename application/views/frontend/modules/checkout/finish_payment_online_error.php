@@ -19,7 +19,7 @@
 
   <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'><?=$lang_payment_failed;?></div>
 
-	<p><?php echo $lang_payment_failed_info; ?></p>
+	<p><?php echo $lang_online_pay_failed_info; ?></p>
 	<p>
 	<?php echo anchor('account/riwayatStatusPesanan', 'Click disini untuk melihat riwayat status pesanan', array('class'=>'btn btn-primary btn-sm'));?>
 	</p>

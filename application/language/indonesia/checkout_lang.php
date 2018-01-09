@@ -58,6 +58,7 @@ $lang['payment_confirm'] = 'Konfirmasi Pembayaran';
 $lang['voucher_code'] = 'PUNYA KODE PROMO';
 $lang['payment_failed'] = 'PEMBAYARAN GAGAL';
 $lang['payment_failed_info'] = 'Pembayaran menggunakan credit card telah digagalkan, Anda bisa mencoba melakukan pembayaran kembali untuk order anda menggunakan credit card melalui halaman <b>Riwayat Status Pesanan</b> pada Account Anda';
+$lang['online_pay_failed_info'] = 'Pembayaran menggunakan online payment telah digagalkan, Anda bisa mencoba melakukan pembayaran kembali untuk order anda menggunakan online payment melalui halaman <b>Riwayat Status Pesanan</b> pada Account Anda';
 $lang['order_cart_success'] = 'Pesanan Anda telah berhasil diproses.';
 $lang['btn_riwayat_pesanan'] = 'Click disini untuk melihat riwayat status pesanan.';
 
