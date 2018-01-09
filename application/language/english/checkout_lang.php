@@ -41,7 +41,7 @@ $lang['field_byr2'] = 'Now';
 // Finish
 $lang['finish'] = 'FINISH';
 $lang['thanks'] = 'THANK YOU';
-$lang['status_order'] = 'Your order has been process. Please make payment according to your transaction.'
+$lang['status_order'] = 'Your order has been process. Please make payment according to your transaction'
         . '. For payment confirmation';
 $lang['detail_order'] = 'ORDER DETAIL';
 $lang['no_order'] = 'ORDER NUMBER';
