@@ -13,7 +13,6 @@ class Checkout extends Web_private {
 		$this->load->helper('cookie');
 	//	$this->load->model('Login_model', 'login', TRUE);
 
-
 		$this->atribut();
 	}
 
@@ -181,6 +180,7 @@ class Checkout extends Web_private {
 
 	public function cart()
 	{
+
 		//Data Billing akan menjadi data shipping
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];

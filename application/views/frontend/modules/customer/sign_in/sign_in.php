@@ -220,13 +220,13 @@
 						<div class='my-btn-create'><?php echo anchor('customer/business/', $lang_btn_bisnis, array('class'=>'btn btn-primary'));?> </div>
 					</div>
 				</div>
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-sm-12">
 						<hr>
-						<?php echo$lang_ket_daftar_gov;?>
-						<div class='my-btn-create'><?php echo anchor('customer/government/', $lang_btn_pemerintah, array('class'=>'btn btn-primary'));?></div>
+						<?php //echo$lang_ket_daftar_gov;?>
+						<div class='my-btn-create'><?php //echo anchor('customer/government/', $lang_btn_pemerintah, array('class'=>'btn btn-primary'));?></div>
 					</div>
-				</div>
+				</div> -->
 
 			</div>
 		</div>
