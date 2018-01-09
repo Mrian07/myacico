@@ -599,6 +599,11 @@ class Web extends MY_Controller {
     $this->data['lang_alert_cart_hapus'] = $this->lang->line('alert_cart_hapus');
 
     $this->data['lang_alert_upload_avatar'] = $this->lang->line('alert_upload_avatar');
+
+    //Konfirmasi order sudah diterima
+    $this->data['lang_info_confirm_order_is_done'] = $this->lang->line('info_confirm_order_is_done');
+    $this->data['lang_btn_confirm_order_is_done'] = $this->lang->line('btn_confirm_order_is_done');
+    $this->data['lang_success_confirm_order_is_done'] = $this->lang->line('success_confirm_order_is_done');
 	}
 
   public function urlApi(){

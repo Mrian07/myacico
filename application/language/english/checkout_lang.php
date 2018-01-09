@@ -85,4 +85,9 @@ $lang['field_mulaitest'] = 'Start';
 $lang['field_thx'] = 'Thank you';
 $lang['field_ongkos'] = 'Shipping Charges';
 //akhir dari langpayment
+
+//Konfirmasi order sudah diterima
+$lang['info_confirm_order_is_done'] = 'Do confirmation after your order has been received.';
+$lang['btn_confirm_order_is_done'] = 'Order has been received';
+$lang['success_confirm_order_is_done'] = 'Thank you for your order confirmation.';
 ?>

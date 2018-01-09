@@ -26,7 +26,7 @@ class Account extends Web_private {
 
 	public function index()
     {
-             $domain = domain();
+    $domain = domain();
 		$this->data['active_dashboard'] = "class='active'";
 		$this->data['title_web'] = "Dashboard - ".$domain;
 		$this->load->view('frontend/header',$this->data);
@@ -35,6 +35,31 @@ class Account extends Web_private {
     $this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 
+	}
+
+	public function confirmationOrderIsDone()
+    {
+		$this->data['key'] = $_GET['key'];
+    $domain = domain();
+		$this->data['active_dashboard'] = "class='active'";
+		$this->data['title_web'] = "Dashboard - ".$domain;
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/confirmation_order_is_done.php',$this->data);
+    $this->load->view('frontend/sidenav',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function confirmationOrderIsDoneSuccess()
+    {
+    $domain = domain();
+		$this->data['active_dashboard'] = "class='active'";
+		$this->data['title_web'] = "Dashboard - ".$domain;
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/account/confirmation_order_is_done_success.php',$this->data);
+    $this->load->view('frontend/sidenav',$this->data);
+		$this->load->view('frontend/footer',$this->data);
 	}
 
 	// public function test()

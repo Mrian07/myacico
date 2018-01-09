@@ -87,4 +87,8 @@ $lang['field_thx'] = 'Terima Kasih';
 $lang['field_ongkos'] = 'Ongkos Kirim';
 //akhir dari langpayment
 
+//Konfirmasi order sudah diterima
+$lang['info_confirm_order_is_done'] = 'Konfirmasikan ke myacico.co.id jika order sudah Anda terima, klik tombol dibawah ini untuk konfirmasi.';
+$lang['btn_confirm_order_is_done'] = 'Order sudah saya terima';
+$lang['success_confirm_order_is_done'] = 'Terima kasih atas konfirmasi order yang sudah Anda terima.';
 ?>
