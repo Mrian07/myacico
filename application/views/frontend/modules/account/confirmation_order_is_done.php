@@ -14,13 +14,17 @@
 function confirm(){
 	var key = '<?php echo $key; ?>';
 	var token = document.cookie.split('x-auth=')[1].split(';').shift();
-	var api = api_base_url +'/order/confirmationorderisdone/?orderId='+key;
+	var api = api_base_url +'/order/confirmationorderisdone';
 
 	$.ajax({
+			url: api,
 			type:"POST",
 			headers:{"token":token},
+			//data:{"orderId":key},
+			data:JSON.stringify({"orderId":key}),
 			dataType: "json",
-			url: api,
+			contentType: "application/json",
+
 			success: function(data){
 						if(data.status == 1 ) {
 							window.location.replace(base_url+"account/confirmationOrderIsDoneSuccess/");
