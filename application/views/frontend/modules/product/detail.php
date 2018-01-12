@@ -92,7 +92,7 @@ $string = str_replace(']', '_', $string);
 
     <table class="table table-detail-prod" border="0">
       <tbody>
-        
+
         <?php
         if($asap_stat =='Y')
         {
@@ -261,19 +261,17 @@ $string = str_replace(']', '_', $string);
 
 <ul class="nav nav-tabs" style='font-size:17px; margin-bottom:20px; border-top:0px'>
 
-  <li class="active"><a data-toggle="tab" href="#menu1">Deskripsi</a></li>
-        <li><a data-toggle="tab" href="#menu2">Spesifikasi</a></li>
+
+  <li class="active"><a data-toggle="tab" href="#menu1">Spesifikasi</a></li>
+  <li><a data-toggle="tab" href="#menu2">Deskripsi</a></li>
   <li><a data-toggle="tab" href="#menu3">Ulasan</a></li>
 	<li><a data-toggle="tab" href="#menu4">Pertanyaan</a></li>
 
 </ul>
 
 <div class="tab-content">
-  <div id="menu1" class="tab-pane fade in active">
 
-  <p><?php echo $description;  ?></p>
-  </div>
-        <div id="menu2" class="tab-pane fade">
+  <div id="menu1" class="tab-pane fade fade in active">
 
   <table class="table table-striped">
 <!--    <tr>
@@ -322,6 +320,10 @@ $string = str_replace(']', '_', $string);
     </tr>
   </table>
 
+  </div>
+  <div id="menu2" class="tab-pane fade">
+
+  <p><?php echo $description;  ?></p>
   </div>
 
            <div id="menu3" class="tab-pane fade">
