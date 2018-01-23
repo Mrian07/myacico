@@ -119,7 +119,29 @@
 </div>
 
 <script>
+// var url = '<?php echo site_url('checkout/note'); ?>'
+// $("#styled").on("change keyup paste", function() {
+//     var noteVal = $(this).val();
+//
+//     $.ajax
+//     ({
+//         url: url+'/?note='+noteVal,
+//         success:function(html){
+//         console.log(html);
+//       }
+//     });
+//
+//     // if(currentVal == oldVal) {
+//     //     return; //check to prevent multiple simultaneous triggers
+//     // }
+//     //
+//     // oldVal = currentVal;
+//     // //action to be performed on textarea changed
+//     // alert(oldVal);
+// });
+
 function next(){
+  var noteVal = $('#styled').val();
   var kurir = $('#kurir').val();
   var itemKosong = $('#itemKosong').val();
   var selectShip = $('#selectShip').val();
@@ -149,7 +171,24 @@ function next(){
   }else{
     $('#spinner_img').show();
     $('.checkout-button').css("background", "#f9a8a8");
-      window.location.replace("<?php echo base_url('checkout/summary');?>");
+
+    if(noteVal){
+        var url = '<?php echo site_url('checkout/note'); ?>';
+        $.ajax
+        ({
+            url: url+'/?note='+noteVal,
+            success:function(html){
+            console.log(html);
+            if(html){
+              window.location.replace("<?php echo base_url('checkout/summary');?>");
+            }
+          }
+        });
+      }else{
+        window.location.replace("<?php echo base_url('checkout/summary');?>");
+      }
+
+
   }
 }
 

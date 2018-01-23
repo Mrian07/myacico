@@ -505,6 +505,11 @@ class Web extends MY_Controller {
     $this->data['lang_btn_update_receiver'] = $this->lang->line('btn_update_receiver');
     $this->data['lang_payment_confirm'] = $this->lang->line('payment_confirm');
     $this->data['lang_voucher_code'] = $this->lang->line('voucher_code');
+    $this->data['lang_payment_failed'] = $this->lang->line('payment_failed');
+    $this->data['lang_payment_failed_info'] = $this->lang->line('payment_failed_info');
+    $this->data['lang_online_pay_failed_info'] = $this->lang->line('online_pay_failed_info');
+    $this->data['lang_order_cart_success'] = $this->lang->line('order_cart_success');
+    $this->data['lang_btn_riwayat_pesanan'] = $this->lang->line('btn_riwayat_pesanan');
 
 //   ASAP
     $this->data['lang_inf_asap'] = $this->lang->line('inf_asap');
@@ -594,6 +599,11 @@ class Web extends MY_Controller {
     $this->data['lang_alert_cart_hapus'] = $this->lang->line('alert_cart_hapus');
 
     $this->data['lang_alert_upload_avatar'] = $this->lang->line('alert_upload_avatar');
+
+    //Konfirmasi order sudah diterima
+    $this->data['lang_info_confirm_order_is_done'] = $this->lang->line('info_confirm_order_is_done');
+    $this->data['lang_btn_confirm_order_is_done'] = $this->lang->line('btn_confirm_order_is_done');
+    $this->data['lang_success_confirm_order_is_done'] = $this->lang->line('success_confirm_order_is_done');
 	}
 
   public function urlApi(){

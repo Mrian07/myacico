@@ -17,10 +17,10 @@
       <div class="other-info"><?php echo $lang_hargaDi; ?></div>
       <div class="other-cont">Rp.<?php echo money($items['price']) ?></div>
     </td>
-    <td class="ts" colspan="2">
-      <div class="other-info"><?php echo $lang_catatan; ?></div>
+    <!-- <td class="ts" colspan="2">
+      <div class="other-info"><?php // echo $lang_catatan; ?></div>
       <div class="other-cont">-</div>
-    </td>
+    </td> -->
     <tr>
       <td class="td">
         <div class="other-info"><?php echo $lang_alamatTujuan; ?></div>
@@ -41,16 +41,16 @@
         <div class="other-info">Subtotal</div>
         <div class="other-cont">Rp.<?php echo money($items['subtotal']); ?></div>
       </td>
-      <td class="ta">
-        <div class="other-info"><?php echo $lang_asuransi; ?></div>
+      <!-- <td class="ta">
+        <div class="other-info"><?php //echo $lang_asuransi; ?></div>
         <div class="other-cont">-</div>
-      </td>
+      </td> -->
       <!-- <td class="tc">
         <div class="other-info2">Ongkos Kirim</div>
         <div class="other-cont2">Rp.<?php //echo money($this->session->userdata('ongkos_kurir')); ?></div>
       </td> -->
     <tr>
-      <td colspan="6" class="tc">
+      <td colspan="4" class="tc">
         <div class="other-info3"><a href='#' onclick="delItemCart('<?php echo $items['productId'];?>','<?php echo $items['imageurl'];?>','<?php echo $items['name'];?>','<?php echo$items['itemCartId'];?>')">
           <i class="fa fa-trash-o" aria-hidden="true"></i> <?php echo$lang_btn_delete; ?></a></div>
         <div class="other-info4"><?php echo $lang_tagihan; ?> : <span class="red">Rp.<?php echo money($items['subtotal']); ?></span></div>
@@ -65,6 +65,7 @@
   $grandTotal = $allsubtotal+$this->session->userdata('ongkos_kurir');
 
   ?>
+
   <div class="totalfee">
     <div class="totalsub">
       <p><?php echo $lang_asuransi; ?></p>

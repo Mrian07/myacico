@@ -41,7 +41,7 @@ $lang['field_byr2'] = 'Now';
 // Finish
 $lang['finish'] = 'FINISH';
 $lang['thanks'] = 'THANK YOU';
-$lang['status_order'] = 'Your order has been process. Please make payment according to your transaction.'
+$lang['status_order'] = 'Your order has been process. Please make payment according to your transaction'
         . '. For payment confirmation';
 $lang['detail_order'] = 'ORDER DETAIL';
 $lang['no_order'] = 'ORDER NUMBER';
@@ -55,6 +55,11 @@ $lang['cart_detail'] = 'CART DETAIL';
 $lang['total_payment'] = 'Total payment:';
 $lang['payment_confirm'] = 'Payment Confirmation';
 $lang['voucher_code'] = 'GOT A PROMO CODE';
+$lang['payment_failed'] = 'PAYMENT FAILED';
+$lang['payment_failed_info'] = 'Payment using credit card has been canceled, you can try payment back to your order using credit card through Order Status History page on your Account.';
+$lang['online_pay_failed_info'] = 'Payment using online payment has been canceled, you can try payment back to your order using online payment through Order Status History page on your Account.';
+$lang['order_cart_success'] = 'Your order has been successfully processed.';
+$lang['btn_riwayat_pesanan'] = 'Click here to view order status history.';
 
 //Alert
 $lang['alert_cart_empty'] = 'Your cart empty. Your transaction cannot process.';
@@ -80,4 +85,9 @@ $lang['field_mulaitest'] = 'Start';
 $lang['field_thx'] = 'Thank you';
 $lang['field_ongkos'] = 'Shipping Charges';
 //akhir dari langpayment
+
+//Konfirmasi order sudah diterima
+$lang['info_confirm_order_is_done'] = 'Do confirmation after your order has been received.';
+$lang['btn_confirm_order_is_done'] = 'Order has been received';
+$lang['success_confirm_order_is_done'] = 'Thank you for your order confirmation.';
 ?>

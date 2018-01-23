@@ -13,7 +13,6 @@ class Checkout extends Web_private {
 		$this->load->helper('cookie');
 	//	$this->load->model('Login_model', 'login', TRUE);
 
-
 		$this->atribut();
 	}
 
@@ -181,6 +180,7 @@ class Checkout extends Web_private {
 
 	public function cart()
 	{
+
 		//Data Billing akan menjadi data shipping
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
@@ -280,6 +280,11 @@ class Checkout extends Web_private {
 		$this->data['title_web'] = $lang_shoping_cart." - ".$domain;
 
 		}
+
+		$data = array(
+			'note' => '',
+		);
+		$this->session->set_userdata($data);
 
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
@@ -989,5 +994,16 @@ class Checkout extends Web_private {
 			$this->load->view('frontend/modules/checkout/finish_credit_cart_error.php',$this->data);
 		}
 		$this->load->view('frontend/footer',$this->data);
+	}
+
+	function note(){
+		$note = $_GET['note'];
+		if($note){
+			$data = array(
+				'note' => $note,
+			);
+			$this->session->set_userdata($data);
+		}
+		echo $note;
 	}
 }

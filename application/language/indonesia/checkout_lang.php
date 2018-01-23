@@ -45,17 +45,22 @@ $lang['thanks'] = 'TERIMA KASIH';
 $lang['status_order'] = 'Pesanan Anda telah berhasil diproses. Silakan lakukan pembayaran sesuai dengan nilai transaksi Anda'
         . '. Untuk melakukan konfirmasi pembayaran';
 $lang['detail_order'] = 'DETAIL PESANAN';
-$lang['no_order'] = 'NOMOR PESANAN:';
+$lang['no_order'] = 'Nomor Pesanan:';
 $lang['no_invoice'] = 'Nomor tagihan:';
 $lang['payment_method'] = 'Metode Pembayaran:';
 $lang['transaction_date'] = 'Tanggal Transaksi:';
 $lang['transaction_status'] = 'Status:';
 $lang['sender'] = 'ALAMAT PENAGIHAN';
 $lang['reciever'] = 'ALAMAT PENGIRIMAN';
-$lang['cart_detail'] = 'Detail Keranjang';
+$lang['cart_detail'] = 'DETAIL KERANJANG';
 $lang['total_payment'] = 'Total Pembayaran:';
 $lang['payment_confirm'] = 'Konfirmasi Pembayaran';
 $lang['voucher_code'] = 'PUNYA KODE PROMO';
+$lang['payment_failed'] = 'PEMBAYARAN GAGAL';
+$lang['payment_failed_info'] = 'Pembayaran menggunakan credit card telah digagalkan, Anda bisa mencoba melakukan pembayaran kembali untuk order anda menggunakan credit card melalui halaman <b>Riwayat Status Pesanan</b> pada Account Anda';
+$lang['online_pay_failed_info'] = 'Pembayaran menggunakan online payment telah digagalkan, Anda bisa mencoba melakukan pembayaran kembali untuk order anda menggunakan online payment melalui halaman <b>Riwayat Status Pesanan</b> pada Account Anda';
+$lang['order_cart_success'] = 'Pesanan Anda telah berhasil diproses.';
+$lang['btn_riwayat_pesanan'] = 'Click disini untuk melihat riwayat status pesanan.';
 
 //Alert
 $lang['alert_cart_empty'] = 'Keranjang belanja kosong transaksi tidak bisa dilanjutkan.';
@@ -82,4 +87,8 @@ $lang['field_thx'] = 'Terima Kasih';
 $lang['field_ongkos'] = 'Ongkos Kirim';
 //akhir dari langpayment
 
+//Konfirmasi order sudah diterima
+$lang['info_confirm_order_is_done'] = 'Konfirmasikan ke myacico.co.id jika order sudah Anda terima, klik tombol dibawah ini untuk konfirmasi.';
+$lang['btn_confirm_order_is_done'] = 'Order sudah saya terima';
+$lang['success_confirm_order_is_done'] = 'Terima kasih atas konfirmasi order yang sudah Anda terima.';
 ?>
