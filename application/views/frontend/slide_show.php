@@ -40,10 +40,10 @@
     </div>
     <div class="col-xs-5 padding-1">
 
-      <a href="https://myacico.co.id/product/listItem/1000760/Pemotong-Rumput">
-      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/aArtboard_4.jpg');?>" width="100%" height="auto"></div></a>
-      <a href="https://myacico.co.id/product/alllistItem/prolink%20speaker">
-      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/cfxdArtboard_4.jpg');?>" width="100%" height="auto"></div></a>
+      <a href="https://www.myacico.co.id/product/alllistItem/DELL%20Monitor">
+      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/demo/ini.jpg');?>" width="100%" height="auto"></div></a>
+      <a href="https://www.myacico.co.id/product/alllistItem/Printer%20BROTHER">
+      <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/demo/itu.jpg');?>" width="100%" height="auto"></div></a>
       <!-- <div style='margin-left:5px;'><img src="https://s1.postimg.org/6g8wm25b1r/ps4.png" width="100%" height="170"></div> -->
 
 
