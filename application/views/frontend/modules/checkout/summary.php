@@ -31,6 +31,7 @@
 			<div class="box-right">
 				<div class="cart-list-right">
 					<div class="right-title"><?=$lang_payment_method;?></div>
+            <?php if($user->role!='B2B'){ ?>
 						<div align="left" class="method">
 							<p>Credit Card</p>
 							<div class="segmen">
@@ -41,7 +42,7 @@
 									<img class="imgs" src="https://myacico.co.id/images/general/ico_bank_02.png">
 								</div>
 						</div>
-
+           <?php } ?>
 						<div align="left" class="method">
 							<p>Tranfer Bank</p>
 
@@ -63,6 +64,7 @@
 
 						</div>
 						<br>&nbsp;<br>
+            <?php if($user->role!='B2B'){ ?>
 						<div align="left" class="method">
 
 							<?php
@@ -78,7 +80,7 @@
 			  				</div>
 							<?php } } ?>
 						</div>
-
+            <?php } ?>
 
             <?php // if($this->session->userdata('voucher')==''){ ?>
 						<div align="left" class="method-kupon">
