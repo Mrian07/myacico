@@ -42,7 +42,7 @@
 									<img class="imgs" src="https://myacico.co.id/images/general/ico_bank_02.png">
 								</div>
 						</div>
-           <?php } ?>
+
 						<div align="left" class="method">
 							<p>Tranfer Bank</p>
 
@@ -64,7 +64,7 @@
 
 						</div>
 						<br>&nbsp;<br>
-            <?php if($user->role!='B2B'){ ?>
+
 						<div align="left" class="method">
 
 							<?php
@@ -81,6 +81,20 @@
 							<?php } } ?>
 						</div>
             <?php } ?>
+
+
+
+            <?php if($user->role=='B2B'){ ?>
+						<div align="left" class="method">
+							<div class="segmenPo">
+								<input type="radio" class='code' name="code" value='PO'>
+			  				</div>
+			  				<div class="po">
+			  					Purchase Order
+			  				</div>
+						</div>
+            <?php } ?>
+
 
             <?php // if($this->session->userdata('voucher')==''){ ?>
 						<div align="left" class="method-kupon">

@@ -21,7 +21,7 @@
 		font-family: "helvetica_neue";
 	}
 	.cart-list-right{
-		min-height: 400px;
+		/* min-height: 400px; */
 		padding: 10px;
 		border : 1px solid #ccc;
 		border-radius: 10px;
@@ -174,7 +174,7 @@
 		color: #666;
 	}
 	.method-kupon{
-		margin-top:40px;
+		margin-top:30px;
 		color: #666;
 	}
 	.segmen{
@@ -340,3 +340,17 @@
 	  	border:0px;
 	  	border-radius: 4px 0px 0px 4px;
 	  }
+
+		.po{
+			float: left;
+			width: 90%;
+			height: 20px;
+			margin-top:9px;
+		}
+
+		.segmenPo{
+			float: left;
+			width: 10%;
+			height: 20px;
+			padding-top: 10px;
+		}
