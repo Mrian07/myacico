@@ -352,7 +352,7 @@ function finish(){
 		url: "<?php echo api_base_url('order/checkout'); ?>",
 		success:function(hasil){
 
-				if(hasil.status=='1' && paymentMethod=='R'){
+				if(hasil.status=='1' && paymentMethod=='R' || hasil.status=='1' && paymentMethod=='PO' ){
 					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 				}
 
