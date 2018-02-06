@@ -31,6 +31,9 @@
     margin: 0 5px;
     text-align: right;
 }
+.message-head #chat-info {
+    float: left;
+}
 .message-head i, .message-info i {
     padding: 3px;
     cursor: pointer;
@@ -47,6 +50,7 @@
     margin: 5px 8px 0px 8px;
     color:#000000;
     border-radius:5px;
+    transition: scrollTop 800ms ease;
 }
 .footer-container {
     margin: 8px;
