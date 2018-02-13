@@ -31,6 +31,7 @@
 			<div class="box-right">
 				<div class="cart-list-right">
 					<div class="right-title"><?=$lang_payment_method;?></div>
+            <?php if($user->role!='B2B'){ ?>
 						<div align="left" class="method">
 							<p>Credit Card</p>
 							<div class="segmen">
@@ -63,6 +64,7 @@
 
 						</div>
 						<br>&nbsp;<br>
+
 						<div align="left" class="method">
 
 							<?php
@@ -78,6 +80,20 @@
 			  				</div>
 							<?php } } ?>
 						</div>
+            <?php } ?>
+
+
+
+            <?php if($user->role=='B2B'){ ?>
+						<div align="left" class="method">
+							<div class="segmenPo">
+								<input type="radio" class='code' name="code" value='PO'>
+			  				</div>
+			  				<div class="po">
+			  					Purchase Order
+			  				</div>
+						</div>
+            <?php } ?>
 
 
             <?php // if($this->session->userdata('voucher')==''){ ?>
@@ -336,7 +352,7 @@ function finish(){
 		url: "<?php echo api_base_url('order/checkout'); ?>",
 		success:function(hasil){
 
-				if(hasil.status=='1' && paymentMethod=='R'){
+				if(hasil.status=='1' && paymentMethod=='R' || hasil.status=='1' && paymentMethod=='PO' ){
 					window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 				}
 
