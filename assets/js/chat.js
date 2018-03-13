@@ -13,7 +13,8 @@ let chat = {
 			return location.href = base_path + 'customer/signIn';
 		}
 		this.user = jwt_decode(token);
-		if(this.soc) return console.log('already connected!');
+		if(this.soc && this.soc.connected) return console.log('chat already connected!', this.soc);
+
 		this.box.show(400);
 		this.showAnim();
 		this.soc = io.connect(this.uri+'/?token='+token);
@@ -63,6 +64,13 @@ let chat = {
 				chat.cs_cb(cs.name);
 				delete chat.cs_cb;
 			}
+		});
+		this.soc.on('close_chat', function(msg) {
+			$('.message-scroll').append(chat.addMsg(msg));
+			chat.soc.disconnect();
+			chat.box.hide(400);
+			$('#chat_btn').show();
+			localStorage.chat_status='off';
 		});
 	},
 	sndMsg: function(n){
@@ -123,7 +131,7 @@ let chat = {
 		var d = (new Date(msg.time)).toLocaleString().split(' ');
 		var t = d[1].slice(0,-3)+' '+d[2];
 		let sender = msg.from;
-		if(sender == chat.cs.email) sender = chat.cs.name;
+		if(chat.cs && sender == chat.cs.email) sender = chat.cs.name;
 		if(msg.txt.length == 0) return;
 		var div = $('<div class="chat-bubble"><div class="message-user">'+sender+'</div>'+msg.txt.replace(/\r?\n/g, '<br>')+'<span class="messages-time">'+t+'</span></div>');
 		var c = 'msg-left';
