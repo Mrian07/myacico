@@ -1,6 +1,11 @@
 if(!token)localStorage.chat_status=='offline';
-chat = {
-	uri: 'https://chat.myacico.co.id',
+let chat_url = 'https://chat.myacico.co.id';
+if(localStorage.chat_url) {
+	console.log('use local chat url');
+	chat_url = localStorage.chat_url;
+}
+let chat = {
+	uri: chat_url,
 	connect: function(){
 		if(!token){
 			localStorage.chat_status = 'redirect';
@@ -8,7 +13,8 @@ chat = {
 			return location.href = base_path + 'customer/signIn';
 		}
 		this.user = jwt_decode(token);
-		if(this.soc) return console.log('already connected!');
+		if(this.soc && this.soc.connected) return console.log('chat already connected!', this.soc);
+
 		this.box.show(400);
 		this.showAnim();
 		this.soc = io.connect(this.uri+'/?token='+token);
@@ -29,37 +35,63 @@ chat = {
 			$('#chat_btn').show();
 		});
 		this.soc.on('history', function(his){
-			console.log('his:', his);
+			// console.log('his:', his);
 			his.forEach(function(m){
 				$('.message-scroll').append(chat.addMsg(m));
-			})
+			});
+			chat.scrollToButtom();
 		});
 		this.soc.on('msg', function(msg){
 			$('.message-scroll').append(chat.addMsg(msg));
 			//console.log(msg.from, 'say:', msg.txt);
-			chat.box.removeClass('typing')
+			$('#chat-info').empty();
+			chat.scrollToButtom();
 		});
-		this.soc.on('typing', function(){
-			chat.box.addClass('typing');
-			setTimeout(function() {chat.box.removeClass('typing')}, 4000);
+		this.soc.on('typing', function(cs){
+			function info(name) {
+				$('#chat-info').html('<b>' + name + '</b> is typing...');
+				setTimeout(function() {$('#chat-info').empty()}, 4000);
+			}
+			if(!chat.cs || chat.cs.email != cs) {
+				chat.soc.emit('get_cs_detail', cs);
+				chat.cs_cb = info;
+			}
+			else info(chat.cs.name);
+		});
+		this.soc.on('cs_detail', function(cs) {
+			chat.cs = cs;
+			if(typeof chat.cs_cb == 'function') {
+				chat.cs_cb(cs.name);
+				delete chat.cs_cb;
+			}
+		});
+		this.soc.on('close_chat', function(msg) {
+			$('.message-scroll').append(chat.addMsg(msg));
+			chat.soc.disconnect();
+			chat.box.hide(400);
+			$('#chat_btn').show();
+			localStorage.chat_status='off';
 		});
 	},
-	sndMsg: function(){
+	sndMsg: function(n){
 		var txt = $('#msgInp').val();
-		var msg = {from: this.user.iss, txt: txt, time: new Date()};
+		var msg = {from: this.user.iss, txt: n ? txt.slice(0,n):txt, time: new Date()};
+		$('#msgInp').val('');
+		if(txt.length == 0 || txt == '\n') return;
 		console.log('sendMsg:', msg);
 		this.soc.emit('cln_msg', msg);
 		$('.message-scroll').append(chat.addMsg(msg));
-		$('#msgInp').val('');
+		this.scrollToButtom();
 	},
-	keyup: function(e){
-		if(e.keyCode==13) return this.sndMsg();
-		// console.log('key:', e.keyCode);
+	keydown: function(e) {
+		if(e.keyCode==16) this.shift_key = true;
+	},
+	keyup: function(e) {
+		if(e.keyCode==16) delete this.shift_key;
+		if(e.keyCode==13 && !this.shift_key) return this.sndMsg(-1);
 		if(this.ontyping) return false;
-		// console.log('send ontyping event');
 		this.ontyping = true;
-		var that = this;
-		setTimeout(function() {delete that.ontyping}, 5000);
+		setTimeout(function() {delete this.ontyping}.bind(this), 5000);
 		this.soc.emit('typing');
 	},
 	balon: $(document.createElement('div')).attr({'class':'message-info'}).append(
@@ -73,7 +105,7 @@ chat = {
 	),
 	box: $(document.createElement('div')).attr({'class':'message-box'}).append(
 		$(document.createElement('div')).attr({'class':'message-head'}).append(
-			'<span style="float:left;color:#ffffff"><b>Chatting</b></span>',
+			'<div id="chat-info"></div>',
 			$(document.createElement('i')).attr({'class':'fa fa-chevron-down'}).click(function(){
 				chat.box.hide(400);
 				chat.balon.show();
@@ -90,7 +122,7 @@ chat = {
 		),
 		$(document.createElement('div')).attr({'class':'message-scroll'}),
 		$(document.createElement('div')).attr({'class':"footer-container"}).append(
-			'<textarea class="text-area" id="msgInp" onkeyup="chat.keyup(event)" placeholder="your message here..."></textarea>',
+			'<textarea class="text-area" id="msgInp" onkeydown="chat.keydown(event)" onkeyup="chat.keyup(event)" placeholder="your message here..."></textarea>',
 			'<input type="button" class="btn-chat" value="send" onclick="chat.sndMsg()">'
 		),
 		'<div class="message-anim"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>'
@@ -98,8 +130,10 @@ chat = {
 	addMsg: function(msg){
 		var d = (new Date(msg.time)).toLocaleString().split(' ');
 		var t = d[1].slice(0,-3)+' '+d[2];
-		console.log(msg.txt);
-		var div = $('<div class="chat-bubble"><div class="message-user">'+msg.from+'</div>'+msg.txt.replace(/\r?\n/g, '<br>')+'<span class="messages-time">'+t+'</span></div>');
+		let sender = msg.from;
+		if(chat.cs && sender == chat.cs.email) sender = chat.cs.name;
+		if(msg.txt.length == 0) return;
+		var div = $('<div class="chat-bubble"><div class="message-user">'+sender+'</div>'+msg.txt.replace(/\r?\n/g, '<br>')+'<span class="messages-time">'+t+'</span></div>');
 		var c = 'msg-left';
 		if(this.user.iss == msg.from) c = 'msg-right';
 		if('sys' == msg.from) c = 'msg-sys';
@@ -111,6 +145,13 @@ chat = {
 	},
 	hideAnim: function(){
 		$('.message-anim').hide();
+	},
+	scrollToButtom: function() {
+		const el = document.getElementsByClassName('message-scroll')[0];
+		clearTimeout(this.scrollTimer);
+		this.scrollTimer = setTimeout(function(){
+			el.scrollTop = el.scrollHeight;
+		}, 800);
 	}
 }
 
