@@ -49,12 +49,17 @@
         </td>
       </tr>
       <tr>    
-        <td width="50%">Ongkos Kirim <span class="small-text-simulasi">(Terima asuransi)</span></td><td>
+        <td width="50%">Ongkos Kirim</td><td>
           <b><span id="tot_ongkir">Rp.0</span></b>
         </td>
       </tr>
+      <tr>    
+        <td width="50%">Asuransi</td><td>
+          <b><span id="tot_asuransi">Rp.0</span></b>
+        </td>
+      </tr>
       <tr>  
-        <td width="50%">Total Biaya <span class="small-text-simulasi">(Total harga produk + ongkos kirim)</span></td><td>
+        <td width="50%">Total Biaya <span class="small-text-simulasi">(Harga produk + Ongkos kirim + Asuransi)</span></td><td>
           <b><span id="tot_biaya">Rp.0</span></b>
         </td>
       </tr>
@@ -72,8 +77,6 @@
 <script>
 
 $(document).ready(function() {
-  // $("#tot_ongkir").html("Rp.0");
-  // $("#tot_biaya").html("Rp.0");
   var negara = "209";
   $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
     r.forEach(function(o){
@@ -96,6 +99,7 @@ $("#qty").on("change",function() {
 });
 
 function get_city(){
+  $("#tot_asuransi").html("Rp.0");
   $("#tot_ongkir").html("Rp.0");
   $("#tot_biaya").html("Rp.0");
   $("#city_box").slideDown();
@@ -109,13 +113,14 @@ function get_city(){
 }
 
 function get_courier(){
+  $("#tot_asuransi").html("Rp.0");
   $("#tot_ongkir").html("Rp.0");
   $("#tot_biaya").html("Rp.0");
   var sku = "<?php echo$sku; ?>";
   $("#ongkir_sel").prop('disabled', true).html('<option value="">-Pilih-</option>');
   $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku, function(r){
     r.courier.forEach(function(o){
-
+      console.log("iniloh: ", o);
       if(o.shipperName){
         $("#ongkir_sel").append("<option value='"+o.code+"'>"+o.shipperName+"</option>");
       }else{
@@ -128,6 +133,7 @@ function get_courier(){
 }
 
 function get_ongkir(){
+  $("#tot_asuransi").html("Rp.0");
   $("#tot_ongkir").html("Rp.0");
   $("#tot_biaya").html("Rp.0");
   var sku = "<?php echo$sku; ?>";
@@ -135,12 +141,14 @@ function get_ongkir(){
   $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku+"&quantity="+qty+"&courier="+$("#ongkir_sel").val(), function(r){
 
     $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
-    $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice));
+    $("#tot_asuransi").html("Rp."+formatNumber(r.totalAsuransi));
+    $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
 
   }, "json" );
 }
 
 function get_village(){
+  $("#tot_asuransi").html("Rp.0");
   $("#tot_ongkir").html("Rp.0");
   $("#tot_biaya").html("Rp.0");
 

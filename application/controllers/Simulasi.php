@@ -19,7 +19,15 @@ class Simulasi extends Web {
 
 	public function jasapengiriman()
     {	
-		$item = $this->uri->segment(3);
+		
+		if($this->uri->segment(3)){
+			$item = $this->uri->segment(3);
+		}else{
+			$item = "kosong";
+		}
+
+		
+		
 		$this->data['sku'] = $item;	
         $api = "freight/ro?sku=".$item;
 
