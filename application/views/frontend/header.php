@@ -115,7 +115,7 @@
     </head>
 
 	<body style='font-weight: normal;' ng-app="myApp">
-			<div class="top-bg" onclick="location.href='<?php echo base_url('product/category/1000553/Perlengkapan-Kantor');?>'" style='cursor: pointer;'><img src='<?php echo base_url('images/general/bg-top-main2a.png');?>' border='0'></div>
+			<div class="top-bg" onclick="location.href='<?php echo base_url('product/category/1000483/Laptop');?>'" style='cursor: pointer;'><img src='<?php echo base_url('images/general/bg-top-main3a.jpg');?>' border='0'></div>
 			<div class='row'>
 				<div class="col-xs-7">
 					<div class='link-head'>
