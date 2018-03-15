@@ -40,9 +40,9 @@
     </div>
     <div class="col-xs-5 padding-1">
 
-      <a href="https://www.myacico.co.id/product/detail/1056241/MASPION-Mastro-Grill-32-cm---Red">
+      <a href="https://www.myacico.co.id/product/detail/1079147/HP-Designjet-Removable-Hard-Disk">
       <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/GAMBAREMAS.jpg');?>" width="100%" height="auto"></div></a>
-      <a href="https://www.myacico.co.id/product/detail/1047794/CANON-Camera-PowerShot-G9X-Mark-II---Silver">
+      <a href="https://www.myacico.co.id/product/detail/1075843/HP-Z240-Tower">
       <div style='margin-bottom:5px; margin-left:-10px; paddig-left:0px'><img src="<?php echo base_url('images/general/GAMBAREMAS2.jpg');?>" width="100%" height="auto"></div></a>
       <!-- <div style='margin-left:5px;'><img src="https://s1.postimg.org/6g8wm25b1r/ps4.png" width="100%" height="170"></div> -->
 
