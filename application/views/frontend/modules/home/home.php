@@ -10,17 +10,17 @@
 
 <div class="container">
 
-  <a href="https://www.myacico.co.id/product/alllistItem/asus">
+  <a href="https://www.myacico.co.id/product/alllistItem/laptop%20hp">
   <div style='float:left;width:376px; margin-right:5px'>
-    <img src='https://storage.googleapis.com/myacico/image/banner/banner-55.jpg' border='0' width='100%'>
+    <img src='https://storage.googleapis.com/myacico/image/banner/baruuArtboard%2029%40300x-100.jpg' border='0' width='100%'>
   </div></a>
-  <a href="https://www.myacico.co.id/product/detail/1050435/RAZER-Kraken-Pro-2015-Gaming-Headphone---Green">
+  <a href="https://www.myacico.co.id/product/detail/1050740/DocuPrint-P455d---A4-Monochrome-Printer-(45-ppm)-Duplex,-Network">
   <div style='float:left;width:376px; margin-right:5px'>
-    <img src='https://storage.googleapis.com/myacico/image/banner/banner-56.jpg' border='0' width='100%'>
+    <img src='https://storage.googleapis.com/myacico/image/banner/3A.jpg' border='0' width='100%'>
   </div></a>
-  <a href="https://www.myacico.co.id/product/detail/1072067/ELECTROLUX-Clothes-Dryer-Front-Loading-[EDV-5001]---White">
+  <a href="https://www.myacico.co.id/product/alllistItem/asus%20zenfone">
   <div style='float:left;width:376px'>
-    <img src='https://storage.googleapis.com/myacico/image/banner/banner-57.jpg' border='0' width='100%'>
+    <img src='https://storage.googleapis.com/myacico/image/banner/1Artboard%2055.jpg' border='0' width='100%'>
   </div></a>
   <div style='clear:both'></div>
 
