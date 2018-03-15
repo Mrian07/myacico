@@ -18,19 +18,30 @@ class Simulasi extends Web {
     }
 
 	public function jasapengiriman()
-    {
+    {	
+		$item = $this->uri->segment(3);
+		$this->data['sku'] = $item;	
         // $home_domain = domain2();
-        // $api = "home/view";
+        $api = "freight/ro?sku=".$item;
         // $api_lvl1 ="product/banner";
         // $url_lvl1 =api_base_url($api_lvl1);
 
-		// $url = api_base_url($api);
-
+		$url = api_base_url($api);
 		// $api2 = "home/topproductcategory";
 		// $url2 = api_base_url($api2);
 		// $konten2 = file_get_contents($url2);
 
-		// $konten = file_get_contents($url);
+		$konten = file_get_contents($url);
+		$hasil = json_decode($konten, true);
+		
+
+		// echo"<pre>";
+		// print_r($hasil); 
+
+		foreach($hasil as $data){
+			$this->data['pricelist'] = money($hasil['product']['harga_pemerintah']);
+		}
+
         // $konten_lvl1 = file_get_contents($url_lvl1);
         // $this->data['dathome'] = json_decode($konten, true);
         // $this->data['dathome2'] = json_decode($konten2, true);

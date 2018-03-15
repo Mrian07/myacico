@@ -308,25 +308,25 @@ class Account extends Web_private {
 	}
 
 	public function TambahBukuAlamat()
-  {
-            $domain = domain();
+  	{
+        $domain = domain();
 		$this->data['active_bukuAlamat'] = "class='active'";
 		$this->data['title_web'] = "Buku Alamat - ".$domain;
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/account/form_add_buku_alamat',$this->data);
-    $this->load->view('frontend/sidenav',$this->data);
+    	$this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
 
 	public function riwayatStatusPesanan()
-  {
-    $domain = domain();
+  	{
+    	$domain = domain();
 		$page=$this->uri->segment(3);
 		$startDate=$this->uri->segment(4);
 		$endDate=$this->uri->segment(5);
 
-    $token = $_COOKIE['x-auth'];
+    	$token = $_COOKIE['x-auth'];
 		$this->data['startDate'] ='';
 		$this->data['endDate'] = '';
 
