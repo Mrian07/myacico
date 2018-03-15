@@ -33,19 +33,6 @@
 
     <div class="sub-title-simulasi">Simulasi Harga Pengiriman</div>
     <table border="0" width="100%">
-      <tr>
-        <td width="50%">Harga Produk <span class="small-text-simulasi">(Harga satuan produk yang dibeli)</span></td>
-        <td>
-          <div class="form-group row">
-            <div class="col-xs-6">
-              <div class="input-group">
-                <span class="input-group-addon">Rp.</span>
-                <input type="text" class="form-control" name="pricelist" readonly value="<?php echo $pricelist; ?>">
-              </div>
-            </div>
-          </div>
-        </td>
-      </tr>
       <tr>  
         <td width="50%">Kuantiti Produk <span class="small-text-simulasi">(Kuantiti produk yang dibeli)</span></td>
         <td>
@@ -55,11 +42,18 @@
             </div>
           </div>
         </td>
-      </tr><tr>    
+      </tr>
+      <tr>    
+        <td width="50%">Harga Produk <span class="small-text-simulasi">(Harga satuan produk yang dibeli)</span></td>
+          <td><b>Rp.<?php echo $pricelist; ?></b>
+        </td>
+      </tr>
+      <tr>    
         <td width="50%">Ongkos Kirim <span class="small-text-simulasi">(Terima asuransi)</span></td><td>
           <b><span id="tot_ongkir">Rp.0</span></b>
         </td>
-      </tr><tr>  
+      </tr>
+      <tr>  
         <td width="50%">Total Biaya <span class="small-text-simulasi">(Total harga produk + ongkos kirim)</span></td><td>
           <b><span id="tot_biaya">Rp.0</span></b>
         </td>
@@ -67,11 +61,11 @@
     </table>
 
     <div class="title-simulasi">SYARAT & KETENTUAN</div>
-    <p>1.Perhitungan biaya pengiriman berdasarkan berat x tarif per kilogram atau berdasarkan volume.</p>
-    <p>2.Untuk berat barang 1 (satu) koli (paket) = 75 kg atau di atasnya dikenakan surcharge 50%.</p>
-    <p>3.Tarif bisa berubah setiap saat tanpa pemberitahuan sebelumnya.</p>
-    <p>4.Resiko yang terjadi dalam perjalanan maupun keterlambatan pengiriman bukan menjadi tanggung jawab kami. Semua barang yang dikirim dengan JNE, TIKI, atau NCS akan diasuransikan untuk mengantisipasi kehilangan dan kerusakan dalam perjalanan. Proses klaim akan melibatkan pihak pelanggan dan kami untuk pembuktian.</p>
-    <p>5.Harga tarif ini hanya merupakan referensi. Segala perubahan dan beban tambahan yang terjadi sepenuhnya akan dibebankan pada pembeli.</p>
+    <p>1. Perhitungan biaya pengiriman berdasarkan berat x tarif per kilogram atau berdasarkan volume.<br>
+    2. Untuk berat barang 1 (satu) koli (paket) = 75 kg atau di atasnya dikenakan surcharge 50%.<br>
+    3. Tarif bisa berubah setiap saat tanpa pemberitahuan sebelumnya.<br>
+    4. Resiko yang terjadi dalam perjalanan maupun keterlambatan pengiriman bukan menjadi tanggung jawab kami. Semua barang yang dikirim dengan JNE, TIKI, atau NCS akan diasuransikan untuk mengantisipasi kehilangan dan kerusakan dalam perjalanan. Proses klaim akan melibatkan pihak pelanggan dan kami untuk pembuktian.<br>
+    5. Harga tarif ini hanya merupakan referensi. Segala perubahan dan beban tambahan yang terjadi sepenuhnya akan dibebankan pada pembeli.</p>
 
   </div>
 </div>
@@ -121,7 +115,13 @@ function get_courier(){
   $("#ongkir_sel").prop('disabled', true).html('<option value="">-Pilih-</option>');
   $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku, function(r){
     r.courier.forEach(function(o){
-      $("#ongkir_sel").append("<option value='"+o.code+"'>"+o.shipperName+"</option>");
+
+      if(o.shipperName){
+        $("#ongkir_sel").append("<option value='"+o.code+"'>"+o.shipperName+"</option>");
+      }else{
+        alert('Jasa Pengiriman Tidak Ada');
+      }
+
     });
     $("#ongkir_sel").prop('disabled', false).change(get_ongkir);
   }, "json" );
