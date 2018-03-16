@@ -313,14 +313,14 @@
 	<div class='my-hdr3'>
 			<div class="row" style='margin:0px; padding:0px'>
 				<div class="col-xs-9" style='padding:5px; text-align:right'>
-						<div style='font-size:10px; margin-bottom:-5px; padding-right:15px'>Lengkapi Perjalananmu dengan</div>
-						<div style='font-family: arial; font-size:10px; font-weight: bold; color:#ff0000; padding-right:15px '>Travel & Outdoor dari myAcico</div>
+						<div style='font-size:10px; margin-bottom:-5px;'>Lengkapi perlengkapan kantormu</div>
+						<div style='font-family: arial; font-size:10px; font-weight: bold; color:#ff0000; padding-right:15px '>dengan perangkat elektronik</div>
 				</div>
 				<div class="col-xs-3" align="left" style='margin:0px; padding:0px'>
 					<div style='margin-top:-5px;'>
 						<!-- asdasdasd -->
-						<a href="<?php echo base_url('product/category/1000535/Perlengkapan-Outdoor-&-Perjalanan');?>">
-                                                    <img src="<?php echo base_url('images/general/travel_Artboard 1.png'); ?>" border="0" height="55" width="75"></a>
+						<a href="<?php echo base_url('product/category/1000483/Laptop');?>">
+                                                    <img src="<?php echo base_url('images/general/kcl.png'); ?>" border="0" height="55" width="75"></a>
 					</div>
 				</div>
 			</div>
