@@ -50,6 +50,7 @@ class Web extends MY_Controller {
 
         $this->clearIdCat();
         $this->pushCartToToken();
+
     }
 
     public function clearIdCat(){
@@ -607,15 +608,16 @@ class Web extends MY_Controller {
 	}
 
   public function urlApi(){
-    $url = "https://api.myacico.co.id/myacico-service";
-    //$url = "https://api.myacico.co.id/dev";
+    if(getenv("SRV_ENV")=="prod"){
+      $url = "https://api.myacico.co.id/myacico-service";
+    }else{
+      $url = "https://api.myacico.co.id/dev";
+    }
     return $url;
   }
   public function urlApi2(){
 
     $url = "https://acc.myacico.co.id/myacico-account";
-
-
     return $url;
   }
 

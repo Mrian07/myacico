@@ -61,16 +61,4 @@ class Home extends Web {
 		delete_cookie('lang');
 	}
 
-	public function testserver() {
-		echo"Mengarah ke server: ";
-		echo getenv("SRV_ENV");
-		echo"<p>";
-		if(getenv("SRV_ENV")=="prod"){
-			$url = "https://api.myacico.co.id/myacico-service/";
-			echo $url;
-		}else{
-			$url = "https://api.myacico.co.id/dev/";
-			echo $url;
-		}
-	}
 }

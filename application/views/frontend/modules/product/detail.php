@@ -653,9 +653,9 @@ if(jdata3<1)
   var detail = JSON.parse(localStorage.getItem('product_detail'))
 
    $.ajax({
-  url: 'https://api.myacico.co.id/myacico-service/product/productlist/detail?id='+idss,
-  success: function(data) {
-      //if(data['m_product_id'])
+    // url: 'https://api.myacico.co.id/myacico-service/product/productlist/detail?id='+idss,
+    url: api_base_url+'/product/productlist/detail?id='+idss,
+    success: function(data) {
 
        if(detail.length == 0)
        {

@@ -10,8 +10,15 @@ function domain(){
   }
 function api_base_url($param)
 {
-	$url = "https://api.myacico.co.id/myacico-service/".$param;
-  	//$url = "https://api.myacico.co.id/dev/".$param;
+  
+	if(getenv("SRV_ENV")=="prod"){
+		$url = "https://api.myacico.co.id/myacico-service/".$param;
+	}else{
+		$url = "https://api.myacico.co.id/dev/".$param;
+	}
+
+    //$url = "https://api.myacico.co.id/myacico-service/".$param;
+    //$url = "https://api.myacico.co.id/dev/".$param;
 
 	return $url;
 }
