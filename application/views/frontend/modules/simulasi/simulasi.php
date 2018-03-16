@@ -38,7 +38,7 @@
         <td>
           <div class="row">
             <div class="col-xs-2">
-              <input type="text" class="form-control" id="qty" value="1">
+              <input type="number" class="form-control" id="qty" value="1">
             </div>
           </div>
         </td>
@@ -88,7 +88,18 @@ $(document).ready(function() {
 });
 
 $("#qty").on("change",function() {
-    var qty = this.value;
+  var qty = this.value;
+  if(qty<1){
+    $.alert({
+      title: 'Alert!',
+      content: 'Masukan kuantiti produk dengan benar',
+    });
+    $("#qty").val("");
+    $("#tot_asuransi").html("Rp.0");
+    $("#tot_ongkir").html("Rp.0");
+    $("#tot_biaya").html("Rp.0");
+  }else{
+
     var sku = "<?php echo$sku; ?>";
     $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku+"&quantity="+qty+"&courier="+$("#ongkir_sel").val(), function(r){
 
@@ -96,6 +107,8 @@ $("#qty").on("change",function() {
       $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice));
 
     }, "json" );
+
+  }
 });
 
 function get_city(){
