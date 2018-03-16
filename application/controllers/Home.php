@@ -98,6 +98,7 @@ class Home extends Web {
 
 			public function testserver() {
 				echo"testing:<p>";
+				echo getenv("SRV_ENV");
 				if(getenv("SRV_ENV")=="prod"){
 				  $url = "https://api.myacico.co.id/myacico-service/";
 					echo $url;
