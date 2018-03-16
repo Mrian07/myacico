@@ -95,4 +95,15 @@ class Home extends Web {
          delete_cookie('lang');
      //    redirect('cookie/display');
       }
+
+			public function testserver() {
+				echo"testing:<p>";
+				if(getenv("SRV_ENV")=="prod"){
+				  $url = "https://api.myacico.co.id/myacico-service/";
+					echo $url;
+				}else{
+				  $url = "https://api.myacico.co.id/dev/";
+					echo $url;
+				}
+			}
 }
