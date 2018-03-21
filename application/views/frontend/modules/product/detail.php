@@ -314,10 +314,6 @@ $string = str_replace(']', '_', $string);
           }
       ?>
 
-<tr>
-      <th> Berat </th>
-      <td> <?php echo $weight; ?> </td>
-    </tr>
   </table>
 
   </div>
