@@ -13,21 +13,21 @@
         </td>
       </tr>
       <tr>
-        <td width="50%">Kota</td><td>
+        <td width="50%">Kota</td><td><img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_city" style="display:none">
           <select name="city" id="city_sel" class="form-control mandatory">
             <option value="">-Pilih-</option>
           </select>
         </td>
       </tr>
       <tr>
-        <td width="50%">Kecamatan</td><td>
+        <td width="50%">Kecamatan</td><td><img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_kec" style="display:none">
           <select name="district_id" id="district_id" class="form-control mandatory">
             <option value="">-Pilih-</option>
           </select>
         </td>
       </tr>
       <tr>
-        <td width="50%">Jasa Pengiriman</td><td>
+        <td width="50%">Jasa Pengiriman</td><td><img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_ongkir" style="display:none">
           <select name="ongkir" id="ongkir_sel" class="form-control mandatory">
             <option value="">-Pilih-</option>
           </select>
@@ -119,6 +119,7 @@ $("#qty").on("change",function() {
 });
 
 function get_city(){
+  $('#spinner_city').show();
   $("#tot_asuransi").html("Rp.0");
   $("#tot_ongkir").html("Rp.0");
   $("#tot_biaya").html("Rp.0");
@@ -128,22 +129,26 @@ function get_city(){
     r.forEach(function(o){
       $("#city_sel").append("<option value='"+o.c_city_id+"'>"+o.name+"</option>");
     });
+    $('#spinner_city').hide();
     $("#city_sel").prop('disabled', false).change(get_distric);
   }, "json" );
 }
 
 function get_distric(){
+    $('#spinner_kec').show();
     $("#ditric_box").slideDown();
     $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_courier);
     $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
       r.forEach(function(o){
         $("#district_id").append("<option value='"+o.rajaongkirId+"'>"+o.name+"</option>");
       });
+      $('#spinner_kec').hide();
       $("#district_id").prop('disabled', false).change(get_courier);;
     }, "json" );
   }
 
 function get_courier(){
+  $('#spinner_ongkir').show();
   $("#tot_asuransi").html("Rp.0");
   $("#tot_ongkir").html("Rp.0");
   $("#tot_biaya").html("Rp.0");
@@ -151,7 +156,6 @@ function get_courier(){
   $("#ongkir_sel").prop('disabled', true).html('<option value="">-Pilih-</option>');
   $.get( api_base_url+"/freight/ro?destination="+$("#district_id").val()+"&sku="+sku, function(r){
     r.courier.forEach(function(o){
-      console.log("iniloh: ", o);
       if(o.shipperName){
         $("#ongkir_sel").append("<option value='"+o.code+"'>"+o.shipperName+"</option>");
       }else{
@@ -159,8 +163,11 @@ function get_courier(){
       }
 
     });
+    $('#spinner_ongkir').hide();
     $("#ongkir_sel").prop('disabled', false).change(get_ongkir);
   }, "json" );
+
+    $('#spinner_img').hide();
 }
 
 function get_ongkir(){
@@ -176,6 +183,7 @@ function get_ongkir(){
     $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
 
   }, "json" );
+
 }
 
 function get_village(){
@@ -191,6 +199,7 @@ function get_village(){
     });
       $("#village_id").prop('disabled', false).change(get_postal);
   }, "json" );
+
 }
 
 function formatNumber(num) {
