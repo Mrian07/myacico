@@ -12,21 +12,21 @@
           </select>
         </td>
       </tr>
-      <tr>  
+      <tr>
         <td width="50%">Kota</td><td>
           <select name="city" id="city_sel" class="form-control mandatory">
             <option value="">-Pilih-</option>
           </select>
         </td>
       </tr>
-      <tr>  
+      <tr>
         <td width="50%">Kecamatan</td><td>
           <select name="district_id" id="district_id" class="form-control mandatory">
             <option value="">-Pilih-</option>
           </select>
         </td>
       </tr>
-      <tr>  
+      <tr>
         <td width="50%">Jasa Pengiriman</td><td>
           <select name="ongkir" id="ongkir_sel" class="form-control mandatory">
             <option value="">-Pilih-</option>
@@ -40,7 +40,7 @@
 
     <div class="sub-title-simulasi">Simulasi Harga Pengiriman</div>
     <table border="0" width="100%">
-      <tr>  
+      <tr>
         <td width="50%">Kuantiti Produk <span class="small-text-simulasi">(Kuantiti produk yang dibeli)</span></td>
         <td>
           <div class="row">
@@ -50,22 +50,22 @@
           </div>
         </td>
       </tr>
-      <tr>    
+      <tr>
         <td width="50%">Harga Produk <span class="small-text-simulasi">(Harga satuan produk yang dibeli)</span></td>
           <td><b>Rp.<?php echo $pricelist; ?></b>
         </td>
       </tr>
-      <tr>    
+      <tr>
         <td width="50%">Ongkos Kirim</td><td>
           <b><span id="tot_ongkir">Rp.0</span></b>
         </td>
       </tr>
-      <tr>    
+      <tr>
         <td width="50%">Asuransi</td><td>
           <b><span id="tot_asuransi">Rp.0</span></b>
         </td>
       </tr>
-      <tr>  
+      <tr>
         <td width="50%">Total Biaya <span class="small-text-simulasi">(Harga produk + Ongkos kirim + Asuransi)</span></td><td>
           <b><span id="tot_biaya">Rp.0</span></b>
         </td>
@@ -126,7 +126,7 @@ function get_city(){
   $("#city_sel").prop('disabled', true).html('<option value="">-Pilih-</option>').unbind("change", get_distric);
   $.get( api_base_url+"/ccity/getlistccitybyidregion/"+$("#region_sel").val(), function(r){
     r.forEach(function(o){
-      $("#city_sel").append("<option value='"+o.rajaongkirId+"'>"+o.name+"</option>");
+      $("#city_sel").append("<option value='"+o.c_city_id+"'>"+o.name+"</option>");
     });
     $("#city_sel").prop('disabled', false).change(get_distric);
   }, "json" );
@@ -137,7 +137,7 @@ function get_distric(){
     $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_courier);
     $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
       r.forEach(function(o){
-        $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+        $("#district_id").append("<option value='"+o.rajaongkirId+"'>"+o.name+"</option>");
       });
       $("#district_id").prop('disabled', false).change(get_courier);;
     }, "json" );
