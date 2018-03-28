@@ -20,6 +20,13 @@
         </td>
       </tr>
       <tr>  
+        <td width="50%">Kecamatan</td><td>
+          <select name="district_id" id="district_id" class="form-control mandatory">
+            <option value="">-Pilih-</option>
+          </select>
+        </td>
+      </tr>
+      <tr>  
         <td width="50%">Jasa Pengiriman</td><td>
           <select name="ongkir" id="ongkir_sel" class="form-control mandatory">
             <option value="">-Pilih-</option>
@@ -116,14 +123,25 @@ function get_city(){
   $("#tot_ongkir").html("Rp.0");
   $("#tot_biaya").html("Rp.0");
   $("#city_box").slideDown();
-  $("#city_sel").prop('disabled', true).html('<option value="">-Pilih-</option>').unbind("change", get_courier);
+  $("#city_sel").prop('disabled', true).html('<option value="">-Pilih-</option>').unbind("change", get_distric);
   $.get( api_base_url+"/ccity/getlistccitybyidregion/"+$("#region_sel").val(), function(r){
     r.forEach(function(o){
       $("#city_sel").append("<option value='"+o.rajaongkirId+"'>"+o.name+"</option>");
     });
-    $("#city_sel").prop('disabled', false).change(get_courier);
+    $("#city_sel").prop('disabled', false).change(get_distric);
   }, "json" );
 }
+
+function get_distric(){
+    $("#ditric_box").slideDown();
+    $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_courier);
+    $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
+      r.forEach(function(o){
+        $("#district_id").append("<option value='"+o.c_district_id+"'>"+o.name+"</option>");
+      });
+      $("#district_id").prop('disabled', false).change(get_courier);;
+    }, "json" );
+  }
 
 function get_courier(){
   $("#tot_asuransi").html("Rp.0");
@@ -131,7 +149,7 @@ function get_courier(){
   $("#tot_biaya").html("Rp.0");
   var sku = "<?php echo$sku; ?>";
   $("#ongkir_sel").prop('disabled', true).html('<option value="">-Pilih-</option>');
-  $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku, function(r){
+  $.get( api_base_url+"/freight/ro?destination="+$("#district_id").val()+"&sku="+sku, function(r){
     r.courier.forEach(function(o){
       console.log("iniloh: ", o);
       if(o.shipperName){
