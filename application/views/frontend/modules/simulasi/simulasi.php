@@ -57,17 +57,17 @@
       </tr>
       <tr>
         <td width="50%">Ongkos Kirim</td><td>
-          <b><span id="tot_ongkir">Rp.0</span></b>
+          <b><span id="tot_ongkir">Rp.0</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
         </td>
       </tr>
       <tr>
         <td width="50%">Asuransi</td><td>
-          <b><span id="tot_asuransi">Rp.0</span></b>
+          <b><span id="tot_asuransi">Rp.0</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
         </td>
       </tr>
       <tr>
         <td width="50%">Total Biaya <span class="small-text-simulasi">(Harga produk + Ongkos kirim + Asuransi)</span></td><td>
-          <b><span id="tot_biaya">Rp.0</span></b>
+          <b><span id="tot_biaya">Rp.0</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
         </td>
       </tr>
     </table>
@@ -166,14 +166,13 @@ function get_courier(){
     $('#spinner_ongkir').hide();
     $("#ongkir_sel").prop('disabled', false).change(get_ongkir);
   }, "json" );
-
-    $('#spinner_img').hide();
 }
 
 function get_ongkir(){
   $("#tot_asuransi").html("Rp.0");
   $("#tot_ongkir").html("Rp.0");
   $("#tot_biaya").html("Rp.0");
+  $('.spinner_num').show();
   var sku = "<?php echo$sku; ?>";
   var qty = $("#qty").val();
   $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku+"&quantity="+qty+"&courier="+$("#ongkir_sel").val(), function(r){
@@ -181,9 +180,9 @@ function get_ongkir(){
     $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
     $("#tot_asuransi").html("Rp."+formatNumber(r.totalAsuransi));
     $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
-
+    $('.spinner_num').hide();
   }, "json" );
-
+  
 }
 
 function get_village(){
