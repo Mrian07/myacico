@@ -37,9 +37,11 @@ class Simulasi extends Web {
 		$hasil = json_decode($konten, true);
 		$status = $hasil['status'];
 		if($status){
+			$this->data['pricelistOri'] = $hasil['product']['harga_pemerintah'];
 			$this->data['pricelist'] = money($hasil['product']['harga_pemerintah']);	
 		}else{
 			$this->data['pricelist'] = 0;
+			$this->data['pricelistOri'] = 0;
 		}
 		
 		$this->data['title_web'] = "myacico.co.id - Simulasi Jasa Pengiriman";

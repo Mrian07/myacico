@@ -31,9 +31,6 @@
           <select name="ongkir" id="ongkir_sel" class="form-control mandatory">
             <option value="">-Pilih-</option>
           </select>
-          <!-- <select class="form-control">
-            <option>-Pilih-</option>
-          </select> -->
         </td>
       </tr>
     </table>
@@ -46,6 +43,7 @@
           <div class="row">
             <div class="col-xs-2">
               <input type="number" class="form-control" id="qty" value="1">
+              <input type="hidden" class="form-control" id="pricelist" value="<?php echo $pricelistOri; ?>">
             </div>
           </div>
         </td>
@@ -96,6 +94,8 @@ $(document).ready(function() {
 
 $("#qty").on("change",function() {
   var qty = this.value;
+  var pricelist = $("#pricelist").val();
+  $('.spinner_num').show();
 
   if(qty<1){
     $.alert({
@@ -106,15 +106,23 @@ $("#qty").on("change",function() {
     $("#tot_asuransi").html("Rp.0");
     $("#tot_ongkir").html("Rp.0");
     $("#tot_biaya").html("Rp.0");
+    $('.spinner_num').hide();
 
   }else{
 
     var sku = "<?php echo$sku; ?>";
     $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku+"&quantity="+qty+"&courier="+$("#ongkir_sel").val(), function(r){
 
-      $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
-      $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice));
+      // $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
+      // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice));
+      var total = parseInt(pricelist) + parseInt(r.courier[0].serviceCourier.amount) + parseInt(r.totalAsuransi);
 
+      $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
+      $("#tot_asuransi").html("Rp."+formatNumber(r.totalAsuransi));
+      // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
+      $("#tot_biaya").html("Rp."+formatNumber(total));
+      $('.spinner_num').hide();
+      
     }, "json" );
   }
 });
@@ -176,11 +184,16 @@ function get_ongkir(){
   $('.spinner_num').show();
   var sku = "<?php echo$sku; ?>";
   var qty = $("#qty").val();
+  var pricelist = $("#pricelist").val();
+  var pricelist = $("#pricelist").val();
   $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku+"&quantity="+qty+"&courier="+$("#ongkir_sel").val(), function(r){
+
+    var total = parseInt(pricelist) + parseInt(r.courier[0].serviceCourier.amount) + parseInt(r.totalAsuransi);
 
     $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
     $("#tot_asuransi").html("Rp."+formatNumber(r.totalAsuransi));
-    $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
+    // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
+    $("#tot_biaya").html("Rp."+formatNumber(total));
     $('.spinner_num').hide();
   }, "json" );
   
