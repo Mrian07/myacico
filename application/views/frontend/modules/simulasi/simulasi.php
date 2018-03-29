@@ -96,6 +96,7 @@ $(document).ready(function() {
 
 $("#qty").on("change",function() {
   var qty = this.value;
+
   if(qty<1){
     $.alert({
       title: 'Alert!',
@@ -105,6 +106,7 @@ $("#qty").on("change",function() {
     $("#tot_asuransi").html("Rp.0");
     $("#tot_ongkir").html("Rp.0");
     $("#tot_biaya").html("Rp.0");
+
   }else{
 
     var sku = "<?php echo$sku; ?>";
@@ -114,7 +116,6 @@ $("#qty").on("change",function() {
       $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice));
 
     }, "json" );
-
   }
 });
 
