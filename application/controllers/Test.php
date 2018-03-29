@@ -21,13 +21,15 @@ class Test extends CI_Controller {
 	}
 
 
-	public function shipping()
+	public function url()
 	{
-		$this->data['title_web'] = "Myacico.com";
-		$this->load->view('frontend/header',$this->data);
-	//	$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/cart/form_add_shipping.php',$this->data);
-		$this->load->view('frontend/footer',$this->data);
+		$url = api_base_url('test');
+		echo $url ;
+	// 	$this->data['title_web'] = "Myacico.com";
+	// 	$this->load->view('frontend/header',$this->data);
+	// //	$this->load->view('frontend/nav.php',$this->data);
+	// 	$this->load->view('frontend/modules/cart/form_add_shipping.php',$this->data);
+	// 	$this->load->view('frontend/footer',$this->data);
 	}
 
 }
