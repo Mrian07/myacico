@@ -115,10 +115,10 @@ $("#qty").on("change",function() {
 
       // $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
       // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice));
-      var total = parseInt(pricelist) + parseInt(r.courier[0].serviceCourier.amount) + parseInt(r.totalAsuransi);
+      var total = parseInt(pricelist) + parseInt(r.courier[0].serviceCourier.amount) + parseInt(r.product.asuransi);
 
       $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
-      $("#tot_asuransi").html("Rp."+formatNumber(r.totalAsuransi));
+      $("#tot_asuransi").html("Rp."+formatNumber(r.product.asuransi));
       // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
       $("#tot_biaya").html("Rp."+formatNumber(total));
       $('.spinner_num').hide();
@@ -188,10 +188,10 @@ function get_ongkir(){
   var pricelist = $("#pricelist").val();
   $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku+"&quantity="+qty+"&courier="+$("#ongkir_sel").val(), function(r){
 
-    var total = parseInt(pricelist) + parseInt(r.courier[0].serviceCourier.amount) + parseInt(r.totalAsuransi);
+    var total = parseInt(pricelist) + parseInt(r.courier[0].serviceCourier.amount) + parseInt(r.product.asuransi);
 
     $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
-    $("#tot_asuransi").html("Rp."+formatNumber(r.totalAsuransi));
+    $("#tot_asuransi").html("Rp."+formatNumber(r.product.asuransi));
     // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
     $("#tot_biaya").html("Rp."+formatNumber(total));
     $('.spinner_num').hide();
