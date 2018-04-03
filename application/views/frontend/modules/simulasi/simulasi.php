@@ -50,7 +50,7 @@
       </tr>
       <tr>
         <td width="50%">Harga Produk <span class="small-text-simulasi">(Harga satuan produk yang dibeli)</span></td>
-          <td><b>Rp.<?php echo $pricelist; ?></b>
+          <td><b><span id="price">Rp.0</span></b>
         </td>
       </tr>
       <tr>
@@ -83,6 +83,8 @@
 
 $(document).ready(function() {
   var negara = "209";
+  var price = "<?php echo $pricelistOri; ?>";
+  $("#price").html("Rp."+formatNumber(price));
   $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
     r.forEach(function(o){
       $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
@@ -94,7 +96,8 @@ $(document).ready(function() {
 
 $("#qty").on("change",function() {
   var qty = this.value;
-  var pricelist = $("#pricelist").val();
+  var pricelist = $("#pricelist").val()*qty;
+  $("#price").html("Rp."+formatNumber(pricelist));
   $('.spinner_num').show();
 
   if(qty<1){
@@ -115,10 +118,13 @@ $("#qty").on("change",function() {
 
       // $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
       // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice));
-      var total = parseInt(pricelist) + parseInt(r.courier[0].serviceCourier.amount) + parseInt(r.product.asuransi);
 
-      $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
-      $("#tot_asuransi").html("Rp."+formatNumber(r.product.asuransi));
+      var ongKir = parseInt(r.courier[0].serviceCourier.amount);
+      var asuransi = parseInt(r.product.asuransi)*qty;
+      var total = parseInt(pricelist) + parseInt(ongKir) + parseInt(asuransi);
+
+      $("#tot_ongkir").html("Rp."+formatNumber(ongKir));
+      $("#tot_asuransi").html("Rp."+formatNumber(asuransi));
       // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
       $("#tot_biaya").html("Rp."+formatNumber(total));
       $('.spinner_num').hide();
@@ -178,20 +184,31 @@ function get_courier(){
 }
 
 function get_ongkir(){
+  
+  var qty = $("#qty").val();
+  var pricelist = $("#pricelist").val()*qty;
+  $("#price").html("Rp."+formatNumber(pricelist));
+
   $("#tot_asuransi").html("Rp.0");
   $("#tot_ongkir").html("Rp.0");
   $("#tot_biaya").html("Rp.0");
   $('.spinner_num').show();
   var sku = "<?php echo$sku; ?>";
   var qty = $("#qty").val();
-  var pricelist = $("#pricelist").val();
-  var pricelist = $("#pricelist").val();
+
+  var ongkir_sel = $("#ongkir_sel").val();
+
+  if(ongkir_sel==""){ $('.spinner_num').hide(); }
+
   $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku+"&quantity="+qty+"&courier="+$("#ongkir_sel").val(), function(r){
+    var ongKir = parseInt(r.courier[0].serviceCourier.amount);
+    var asuransi = parseInt(r.product.asuransi)*qty;
+    var total = parseInt(pricelist) + parseInt(ongKir) + parseInt(asuransi);
 
-    var total = parseInt(pricelist) + parseInt(r.courier[0].serviceCourier.amount) + parseInt(r.product.asuransi);
+    // var total = parseInt(pricelist) + parseInt(r.courier[0].serviceCourier.amount) + parseInt(r.product.asuransi);
 
-    $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
-    $("#tot_asuransi").html("Rp."+formatNumber(r.product.asuransi));
+    $("#tot_ongkir").html("Rp."+formatNumber(ongKir));
+    $("#tot_asuransi").html("Rp."+formatNumber(asuransi));
     // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
     $("#tot_biaya").html("Rp."+formatNumber(total));
     $('.spinner_num').hide();
