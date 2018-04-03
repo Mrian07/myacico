@@ -115,7 +115,7 @@ $("#qty").on("change",function() {
 
     var sku = "<?php echo$sku; ?>";
     var ongkir_sel = $("#ongkir_sel").val();
-    if(ongkir_sel==""){ $('.spinner_num').hide(); }
+    if(ongkir_sel==""){ $('.spinner_num').hide(); return; }
     $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku+"&quantity="+qty+"&courier="+$("#ongkir_sel").val(), function(r){
 
       // $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
