@@ -208,11 +208,10 @@ $string = str_replace(']', '_', $string);
 
         <div class="clearfix"></div>
       </div>
-
       <button type="button"style="margin-bottom: 7px; margin-left:-8px; background: transparent;
-    border: 1px"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"<b style="font-size:15px;"><img src="https://s8.postimg.org/w01my4un9/Artboard_3-100.jpg"></button>
+    border: 1px"  onClick="addToCart('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"<b style="font-size:15px;"><img src="<?php echo base_url('images/general/Artboard 1-1002.jpg');?>"></button>
       <button type="button"style="margin-bottom: 7px; margin-left:-8px; background: transparent;
-    border: 1px"  onClick="addToCart1('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"<b style="font-size:15px;"><img src="https://s8.postimg.org/dx8k77wb9/Artboard_5-100.jpg"></button>
+    border: 1px"  onClick="addToCart1('<?php echo$m_product_id;?>','<?php echo$pricelist;?>','<?php echo$img[0];?>','<?php echo$name;?>','<?php echo$stock;?>','<?php echo$weight;?>')"<b style="font-size:15px;"><img src="<?php echo base_url('images/general/Artboard 5-100.jpg');?>"></button>
 
 
       <?php
