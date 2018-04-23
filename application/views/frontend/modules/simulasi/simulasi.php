@@ -12,55 +12,60 @@
           </select>
         </td>
       </tr>
-      <tr>  
-        <td width="50%">Kota</td><td>
+      <tr>
+        <td width="50%">Kota</td><td><img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_city" style="display:none">
           <select name="city" id="city_sel" class="form-control mandatory">
             <option value="">-Pilih-</option>
           </select>
         </td>
       </tr>
-      <tr>  
-        <td width="50%">Jasa Pengiriman</td><td>
+      <tr>
+        <td width="50%">Kecamatan</td><td><img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_kec" style="display:none">
+          <select name="district_id" id="district_id" class="form-control mandatory">
+            <option value="">-Pilih-</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">Jasa Pengiriman</td><td><img src="<?php echo base_url('images/general/Spinner.gif');?>" id="spinner_ongkir" style="display:none">
           <select name="ongkir" id="ongkir_sel" class="form-control mandatory">
             <option value="">-Pilih-</option>
           </select>
-          <!-- <select class="form-control">
-            <option>-Pilih-</option>
-          </select> -->
         </td>
       </tr>
     </table>
 
     <div class="sub-title-simulasi">Simulasi Harga Pengiriman</div>
     <table border="0" width="100%">
-      <tr>  
+      <tr>
         <td width="50%">Kuantiti Produk <span class="small-text-simulasi">(Kuantiti produk yang dibeli)</span></td>
         <td>
           <div class="row">
             <div class="col-xs-2">
               <input type="number" class="form-control" id="qty" value="1">
+              <input type="hidden" class="form-control" id="pricelist" value="<?php echo $pricelistOri; ?>">
             </div>
           </div>
         </td>
       </tr>
-      <tr>    
+      <tr>
         <td width="50%">Harga Produk <span class="small-text-simulasi">(Harga satuan produk yang dibeli)</span></td>
-          <td><b>Rp.<?php echo $pricelist; ?></b>
+          <td><b><span id="price">Rp.0</span></b>
         </td>
       </tr>
-      <tr>    
+      <tr>
         <td width="50%">Ongkos Kirim</td><td>
-          <b><span id="tot_ongkir">Rp.0</span></b>
+          <b><span id="tot_ongkir">Rp.0</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
         </td>
       </tr>
-      <tr>    
+      <tr>
         <td width="50%">Asuransi</td><td>
-          <b><span id="tot_asuransi">Rp.0</span></b>
+          <b><span id="tot_asuransi">Rp.0</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
         </td>
       </tr>
-      <tr>  
+      <tr>
         <td width="50%">Total Biaya <span class="small-text-simulasi">(Harga produk + Ongkos kirim + Asuransi)</span></td><td>
-          <b><span id="tot_biaya">Rp.0</span></b>
+          <b><span id="tot_biaya">Rp.0</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
         </td>
       </tr>
     </table>
@@ -78,6 +83,8 @@
 
 $(document).ready(function() {
   var negara = "209";
+  var price = "<?php echo $pricelistOri; ?>";
+  $("#price").html("Rp."+formatNumber(price));
   $.get( api_base_url+"/cregion/getlistcregionbyidccountry/"+negara, function(r){
     r.forEach(function(o){
       $("#region_sel").append("<option value='"+o.c_region_id+"'>"+o.name+"</option>");
@@ -89,6 +96,10 @@ $(document).ready(function() {
 
 $("#qty").on("change",function() {
   var qty = this.value;
+  var pricelist = $("#pricelist").val()*qty;
+  $("#price").html("Rp."+formatNumber(pricelist));
+  $('.spinner_num').show();
+
   if(qty<1){
     $.alert({
       title: 'Alert!',
@@ -98,42 +109,70 @@ $("#qty").on("change",function() {
     $("#tot_asuransi").html("Rp.0");
     $("#tot_ongkir").html("Rp.0");
     $("#tot_biaya").html("Rp.0");
+    $('.spinner_num').hide();
+
   }else{
 
     var sku = "<?php echo$sku; ?>";
+    var ongkir_sel = $("#ongkir_sel").val();
+    if(ongkir_sel==""){ $('.spinner_num').hide(); return; }
     $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku+"&quantity="+qty+"&courier="+$("#ongkir_sel").val(), function(r){
 
-      $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
-      $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice));
+      // $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
+      // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice));
 
+      var ongKir = parseInt(r.courier[0].serviceCourier.amount);
+      var asuransi = parseInt(r.product.asuransi)*qty;
+      var total = parseInt(pricelist) + parseInt(ongKir) + parseInt(asuransi);
+
+      $("#tot_ongkir").html("Rp."+formatNumber(ongKir));
+      $("#tot_asuransi").html("Rp."+formatNumber(asuransi));
+      // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
+      $("#tot_biaya").html("Rp."+formatNumber(total));
+      $('.spinner_num').hide();
+      
     }, "json" );
-
   }
 });
 
 function get_city(){
+  $('#spinner_city').show();
   $("#tot_asuransi").html("Rp.0");
   $("#tot_ongkir").html("Rp.0");
   $("#tot_biaya").html("Rp.0");
   $("#city_box").slideDown();
-  $("#city_sel").prop('disabled', true).html('<option value="">-Pilih-</option>').unbind("change", get_courier);
+  $("#city_sel").prop('disabled', true).html('<option value="">-Pilih-</option>').unbind("change", get_distric);
   $.get( api_base_url+"/ccity/getlistccitybyidregion/"+$("#region_sel").val(), function(r){
     r.forEach(function(o){
-      $("#city_sel").append("<option value='"+o.rajaongkirId+"'>"+o.name+"</option>");
+      $("#city_sel").append("<option value='"+o.c_city_id+"'>"+o.name+"</option>");
     });
-    $("#city_sel").prop('disabled', false).change(get_courier);
+    $('#spinner_city').hide();
+    $("#city_sel").prop('disabled', false).change(get_distric);
   }, "json" );
 }
 
+function get_distric(){
+    $('#spinner_kec').show();
+    $("#ditric_box").slideDown();
+    $("#district_id").prop('disabled', true).html('<option value="">--pilih--</option>').unbind("change", get_courier);
+    $.get(api_base_url+"/cdistrict/getlistdistrictbycityid/"+$("#city_sel").val(), function(r){
+      r.forEach(function(o){
+        $("#district_id").append("<option value='"+o.rajaongkirId+"'>"+o.name+"</option>");
+      });
+      $('#spinner_kec').hide();
+      $("#district_id").prop('disabled', false).change(get_courier);;
+    }, "json" );
+  }
+
 function get_courier(){
+  $('#spinner_ongkir').show();
   $("#tot_asuransi").html("Rp.0");
   $("#tot_ongkir").html("Rp.0");
   $("#tot_biaya").html("Rp.0");
   var sku = "<?php echo$sku; ?>";
   $("#ongkir_sel").prop('disabled', true).html('<option value="">-Pilih-</option>');
-  $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku, function(r){
+  $.get( api_base_url+"/freight/ro?destination="+$("#district_id").val()+"&sku="+sku, function(r){
     r.courier.forEach(function(o){
-      console.log("iniloh: ", o);
       if(o.shipperName){
         $("#ongkir_sel").append("<option value='"+o.code+"'>"+o.shipperName+"</option>");
       }else{
@@ -141,23 +180,41 @@ function get_courier(){
       }
 
     });
+    $('#spinner_ongkir').hide();
     $("#ongkir_sel").prop('disabled', false).change(get_ongkir);
   }, "json" );
 }
 
 function get_ongkir(){
+  
+  var qty = $("#qty").val();
+  var pricelist = $("#pricelist").val()*qty;
+  $("#price").html("Rp."+formatNumber(pricelist));
+
   $("#tot_asuransi").html("Rp.0");
   $("#tot_ongkir").html("Rp.0");
   $("#tot_biaya").html("Rp.0");
+  $('.spinner_num').show();
   var sku = "<?php echo$sku; ?>";
   var qty = $("#qty").val();
+
+  var ongkir_sel = $("#ongkir_sel").val();
+  if(ongkir_sel==""){ $('.spinner_num').hide(); }
+
   $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku+"&quantity="+qty+"&courier="+$("#ongkir_sel").val(), function(r){
+    var ongKir = parseInt(r.courier[0].serviceCourier.amount);
+    var asuransi = parseInt(r.product.asuransi)*qty;
+    var total = parseInt(pricelist) + parseInt(ongKir) + parseInt(asuransi);
 
-    $("#tot_ongkir").html("Rp."+formatNumber(r.courier[0].serviceCourier.amount));
-    $("#tot_asuransi").html("Rp."+formatNumber(r.totalAsuransi));
-    $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
+    // var total = parseInt(pricelist) + parseInt(r.courier[0].serviceCourier.amount) + parseInt(r.product.asuransi);
 
+    $("#tot_ongkir").html("Rp."+formatNumber(ongKir));
+    $("#tot_asuransi").html("Rp."+formatNumber(asuransi));
+    // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
+    $("#tot_biaya").html("Rp."+formatNumber(total));
+    $('.spinner_num').hide();
   }, "json" );
+  
 }
 
 function get_village(){
@@ -173,6 +230,7 @@ function get_village(){
     });
       $("#village_id").prop('disabled', false).change(get_postal);
   }, "json" );
+
 }
 
 function formatNumber(num) {
