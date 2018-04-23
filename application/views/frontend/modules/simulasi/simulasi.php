@@ -70,12 +70,12 @@
       </tr>
     </table>
 
-    <div class="title-simulasi">SYARAT & KETENTUAN</div>
+    <!-- <div class="title-simulasi">SYARAT & KETENTUAN</div>
     <p>1. Perhitungan biaya pengiriman berdasarkan berat x tarif per kilogram atau berdasarkan volume.<br>
     2. Untuk berat barang 1 (satu) koli (paket) = 75 kg atau di atasnya dikenakan surcharge 50%.<br>
     3. Tarif bisa berubah setiap saat tanpa pemberitahuan sebelumnya.<br>
     4. Resiko yang terjadi dalam perjalanan maupun keterlambatan pengiriman bukan menjadi tanggung jawab kami. Semua barang yang dikirim dengan JNE, TIKI, atau NCS akan diasuransikan untuk mengantisipasi kehilangan dan kerusakan dalam perjalanan. Proses klaim akan melibatkan pihak pelanggan dan kami untuk pembuktian.<br>
-    5. Harga tarif ini hanya merupakan referensi. Segala perubahan dan beban tambahan yang terjadi sepenuhnya akan dibebankan pada pembeli.</p>
+    5. Harga tarif ini hanya merupakan referensi. Segala perubahan dan beban tambahan yang terjadi sepenuhnya akan dibebankan pada pembeli.</p> -->
 
   </div>
 </div>
@@ -130,7 +130,7 @@ $("#qty").on("change",function() {
       // $("#tot_biaya").html("Rp."+formatNumber(r.totalPrice+r.totalAsuransi+r.courier[0].serviceCourier.amount));
       $("#tot_biaya").html("Rp."+formatNumber(total));
       $('.spinner_num').hide();
-      
+
     }, "json" );
   }
 });
@@ -186,7 +186,7 @@ function get_courier(){
 }
 
 function get_ongkir(){
-  
+
   var qty = $("#qty").val();
   var pricelist = $("#pricelist").val()*qty;
   $("#price").html("Rp."+formatNumber(pricelist));
@@ -214,7 +214,7 @@ function get_ongkir(){
     $("#tot_biaya").html("Rp."+formatNumber(total));
     $('.spinner_num').hide();
   }, "json" );
-  
+
 }
 
 function get_village(){
