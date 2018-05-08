@@ -1,8 +1,9 @@
 <html>
 <head>
-  <script type="text/javascript"
+  <!-- <script type="text/javascript"
   src="https://app.stg.midtrans.com/snap/snap.js"
-  data-client-key="VT-client-OzPyDJnNaJ2ou2zB"></script>
+  data-client-key="VT-client-OzPyDJnNaJ2ou2zB"></script> -->
+  <script type="text/javascript"  src="https://app.midtrans.com/snap/snap.js" data-client-key="VT-client-pB1L01rg-5vSIPCA"></script>
  <style type="text/css">
     .mids{
       text-align: center;

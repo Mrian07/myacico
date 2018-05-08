@@ -615,6 +615,7 @@ class Web extends MY_Controller {
     }
     return $url;
   }
+  
   public function urlApi2(){
 
     $url = "https://acc.myacico.co.id/myacico-account";

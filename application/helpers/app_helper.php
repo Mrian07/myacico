@@ -8,9 +8,10 @@ function domain(){
 
             return "Belanja online murah, gratis pengiriman area Jakarta*";
   }
+  
 function api_base_url($param)
 {
-  
+
 	if(getenv("SRV_ENV")=="prod"){
 		$url = "https://api.myacico.co.id/myacico-service/".$param;
 	}else{
