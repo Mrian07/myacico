@@ -69,8 +69,8 @@
         </td>
       </tr>
     </table>
-
-    <!-- <div class="title-simulasi">SYARAT & KETENTUAN</div>
+<!--
+    <div class="title-simulasi">SYARAT & KETENTUAN</div>
     <p>1. Perhitungan biaya pengiriman berdasarkan berat x tarif per kilogram atau berdasarkan volume.<br>
     2. Untuk berat barang 1 (satu) koli (paket) = 75 kg atau di atasnya dikenakan surcharge 50%.<br>
     3. Tarif bisa berubah setiap saat tanpa pemberitahuan sebelumnya.<br>
