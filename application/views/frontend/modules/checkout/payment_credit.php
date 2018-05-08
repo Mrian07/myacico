@@ -35,26 +35,26 @@ var c = '<?php echo$token; ?>';
         var code = c;
         snap.pay(code, {
             onSuccess: function(result){
-				window.location.replace("<?php echo site_url('checkout/finishByCreditCard/'.$id); ?>");
-				//window.location.replace("<?php echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
+        window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id);
+        echo site_url('checkout/paymentsuccess'); ?>");
+				//window.location.replace("<?php //echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 
               document.getElementById("mids").innerHTML = "Pembayaran Anda Berhasil, Terima Kasih"
               alert(result.status_message);},
             onPending: function(result){
-				window.location.replace("<?php echo site_url('checkout/finishByCreditCard/'.$id); ?>");
+        window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id);
+        echo site_url('checkout/paymentfailure');  ?>");
               document.getElementById("mids").innerHTML = "Pending"
-              console.log('pending');alert(result.status_message);},
+              alert(result.status_message);},
             onError: function(result){
-				window.location.replace("<?php echo site_url('checkout/finishByCreditCard/'.$id); ?>");
+        window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id); 
+        echo site_url('checkout/paymentfailure');?>");
               var fromMidtrans = result
               document.getElementById("mids").innerHTML = "Error"
-              console.log(fromMidtrans);
-             // alert(result.status_message);
             },
             onClose: function(){
-				window.location.replace("<?php echo site_url('checkout/finishByCreditCard/'.$id); ?>");
-              //document.getElementById("mids").innerHTML = JSON.stringify(result)
-             // document.getElementById("mids").innerHTML ='Anda membatalkan pembayaran, Anda bisa melanjutkan pembayaran dengan mengklik invoice di Riwayat & Status Pesanan'
+        window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id);
+         echo site_url('checkout/paymentfailure'); ?>");
             }
         })
     }

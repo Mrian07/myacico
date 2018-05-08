@@ -62,6 +62,9 @@ $lang['online_pay_failed_info'] = 'Pembayaran menggunakan online payment telah d
 $lang['order_cart_success'] = 'Pesanan Anda telah berhasil diproses.';
 $lang['btn_riwayat_pesanan'] = 'Click disini untuk melihat riwayat status pesanan.';
 
+$lang['pay_card_success'] = 'Pembayaran Anda telah berhasil diproses.';
+$lang['pay_card_error'] = 'Pembayaran telah digagalkan, Anda bisa mencoba melakukan pembayaran kembali untuk order anda melalui halaman <b>Riwayat Status Pesanan</b> pada Account Anda.';
+
 //Alert
 $lang['alert_cart_empty'] = 'Keranjang belanja kosong transaksi tidak bisa dilanjutkan.';
 $lang['alert_cart_shipping'] = 'Alamat tujuan tidak boleh kosong.';

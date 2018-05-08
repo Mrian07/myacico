@@ -61,6 +61,9 @@ $lang['online_pay_failed_info'] = 'Payment using online payment has been cancele
 $lang['order_cart_success'] = 'Your order has been successfully processed.';
 $lang['btn_riwayat_pesanan'] = 'Click here to view order status history.';
 
+$lang['pay_card_success'] = 'Your payment has been successfully processed.';
+$lang['pay_card_error'] = 'Payment has been canceled, you can try payment back to your order through Order Status History page on your Account.';
+
 //Alert
 $lang['alert_cart_empty'] = 'Your cart empty. Your transaction cannot process.';
 $lang['alert_cart_shipping'] = 'Your shipping address cannot be empty.';

@@ -512,6 +512,9 @@ class Web extends MY_Controller {
     $this->data['lang_order_cart_success'] = $this->lang->line('order_cart_success');
     $this->data['lang_btn_riwayat_pesanan'] = $this->lang->line('btn_riwayat_pesanan');
 
+    $this->data['lang_card_success'] = $this->lang->line('pay_card_success');
+    $this->data['lang_card_error'] = $this->lang->line('pay_card_error');
+
 //   ASAP
     $this->data['lang_inf_asap'] = $this->lang->line('inf_asap');
 

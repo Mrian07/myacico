@@ -847,9 +847,10 @@ class Checkout extends Web_private {
 	}
 
 	public function paymentByCreditCard()
-	{
+	{	
 		$this->data['id'] = $this->uri->segment(3);
 		$this->data['token'] = $this->uri->segment(4);
+		set_cookie('idTransaksi',$this->uri->segment(3),'3600');
 		$this->load->view('frontend/modules/checkout/payment_credit.php',$this->data);
 	}
 
@@ -857,6 +858,7 @@ class Checkout extends Web_private {
 	{
 		$this->data['id'] = $this->uri->segment(3);
 		$this->data['token'] = $this->uri->segment(4);
+		set_cookie('idTransaksi',$this->uri->segment(3),'3600');
 		$this->load->view('frontend/modules/checkout/payment_online.php',$this->data);
 	}
 
@@ -980,7 +982,7 @@ class Checkout extends Web_private {
 		$field = json_decode($konten);
 
 		$data = array('shipping_address_id' => '');
-  	$this->session->set_userdata($data);
+  		$this->session->set_userdata($data);
 		$domain = domain();
 		$this->data['title_web'] = "Checkout - ".$domain;
 		$this->load->view('frontend/header',$this->data);
@@ -1005,5 +1007,111 @@ class Checkout extends Web_private {
 			$this->session->set_userdata($data);
 		}
 		echo $note;
+	}
+
+
+	//----Perubahan finish credit card & online payment
+
+	public function finishByCard()
+	{
+		$id=$this->uri->segment(3);
+
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+
+		$context = stream_context_create($options);
+
+		$api = "transaction/list?id=".$id;
+		$url = api_base_url($api);
+
+		$konten = file_get_contents($url, false, $context);
+		$this->data['field'] = json_decode($konten);
+		$field = json_decode($konten);
+
+		$data = array('shipping_address_id' => '');
+  		$this->session->set_userdata($data);
+		$domain = domain();
+		$this->data['title_web'] = "Checkout - ".$domain;
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+
+		if($field->transactionStatus=='PAID'){
+			$this->load->view('frontend/modules/checkout/finish_by_card_success.php',$this->data);
+		}else{
+			$this->load->view('frontend/modules/checkout/finish_by_card_error.php',$this->data);
+		}
+		$this->load->view('frontend/footer',$this->data);
+	}
+
+	public function paymentsuccess()
+	{
+		// $id=$this->uri->segment(3);
+		$id = get_cookie('idTransaksi');
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+
+		$context = stream_context_create($options);
+
+		$api = "transaction/list?id=".$id;
+		$url = api_base_url($api);
+
+		$konten = file_get_contents($url, false, $context);
+		$this->data['field'] = json_decode($konten);
+		$field = json_decode($konten);
+
+		$data = array('shipping_address_id' => '');
+  		$this->session->set_userdata($data);
+		$domain = domain();
+		$this->data['title_web'] = "Checkout - ".$domain;
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/checkout/finish_by_card_success.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+		delete_cookie('idTransaksi');
+	}
+
+	public function paymentfailure()
+	{
+		// $id=$this->uri->segment(3);
+		$id = get_cookie('idTransaksi');
+		$this->data['token'] = $_COOKIE['x-auth'];
+		$token = $_COOKIE['x-auth'];
+
+		$options = ["http" => [
+		"method" => "GET",
+		"header" => ["token: " . $token,
+		"Content-Type: application/json"],
+		]];
+
+		$context = stream_context_create($options);
+
+		$api = "transaction/list?id=".$id;
+		$url = api_base_url($api);
+
+		$konten = file_get_contents($url, false, $context);
+		$this->data['field'] = json_decode($konten);
+		$field = json_decode($konten);
+
+		$data = array('shipping_address_id' => '');
+  		$this->session->set_userdata($data);
+		$domain = domain();
+		$this->data['title_web'] = "Checkout - ".$domain;
+		$this->load->view('frontend/header',$this->data);
+		$this->load->view('frontend/nav.php',$this->data);
+		$this->load->view('frontend/modules/checkout/finish_by_card_error.php',$this->data);
+		$this->load->view('frontend/footer',$this->data);
+		delete_cookie('idTransaksi');
 	}
 }
