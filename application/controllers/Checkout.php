@@ -545,76 +545,77 @@ class Checkout extends Web_private {
 
 	public function index()
 	{
-		$this->data['token'] = $_COOKIE['x-auth'];
-		$token = $_COOKIE['x-auth'];
-		$api = "aduser/getaddress?addresstype=isbillto";
-		$url = api_base_url($api);
+		redirect('checkout/cart');
+		// $this->data['token'] = $_COOKIE['x-auth'];
+		// $token = $_COOKIE['x-auth'];
+		// $api = "aduser/getaddress?addresstype=isbillto";
+		// $url = api_base_url($api);
 
-		$options = ["http" => [
-		"method" => "GET",
-		"header" => ["token: " . $token,
-		"Content-Type: application/json"],
-		]];
+		// $options = ["http" => [
+		// "method" => "GET",
+		// "header" => ["token: " . $token,
+		// "Content-Type: application/json"],
+		// ]];
 
-		$context = stream_context_create($options);
-		$konten = file_get_contents($url, false, $context);
-		$hasil = json_decode($konten, true);
+		// $context = stream_context_create($options);
+		// $konten = file_get_contents($url, false, $context);
+		// $hasil = json_decode($konten, true);
 
-		//Data Billing
-		foreach($hasil as $items){
-			$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['city_name']." ".$items['postal'];
-			$this->data['billing_address_id'] = $items['id'];
-		}
+		// //Data Billing
+		// foreach($hasil as $items){
+		// 	$this->data['alamat_billing'] =$items['address_name'].", ".$items['address1']." ".$items['city_name']." ".$items['postal'];
+		// 	$this->data['billing_address_id'] = $items['id'];
+		// }
 
-        // Shipping Address ~Samuel
-		//checkoutget_cookie('shipping_address_id')
-		$get_shipping = get_cookie('shipping_address_id');
-		if($get_shipping)
-		{
+        // // Shipping Address ~Samuel
+		// //checkoutget_cookie('shipping_address_id')
+		// $get_shipping = get_cookie('shipping_address_id');
+		// if($get_shipping)
+		// {
 
-		   $api = "aduser/getaddress?id=".$get_shipping;
-		   $url = api_base_url($api);
-
-
-		   $konten2 = file_get_contents($url, false, $context);
-		   $hasil_ship = json_decode($konten2, true);
-
-		   //Data Shipping
+		//    $api = "aduser/getaddress?id=".$get_shipping;
+		//    $url = api_base_url($api);
 
 
-				$this->data['alamat_shipping'] =$hasil_ship['address_name'].", ".$hasil_ship['address1']."  ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
+		//    $konten2 = file_get_contents($url, false, $context);
+		//    $hasil_ship = json_decode($konten2, true);
 
-				$this->data['alamat_shipping'] =$hasil_ship['name'].", ".$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
-
-				$this->data['id_kelurahan'] = $hasil_ship['village_id'];
-
-
-			   // $this->data['id_kelurahan'] = $hasil_ship['village_id'];
+		//    //Data Shipping
 
 
+		// 		$this->data['alamat_shipping'] =$hasil_ship['address_name'].", ".$hasil_ship['address1']."  ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
 
-				$this->data['shipping_address_id'] = $hasil_ship['id'];
-		//                   print_r($api); die();
-		}else{
-			foreach($hasil as $items){
-				$this->data['alamat_shipping'] =$items['name'].", ".$items['address_name'].", ".$items['address1']." ".$items['city_name']." ".$items['postal'];
-				$this->data['id_kelurahan'] = $items['village_id'];
-				$this->data['shipping_address_id'] = $items['id'];
-			}
-		}
+		// 		$this->data['alamat_shipping'] =$hasil_ship['name'].", ".$hasil_ship['address_name'].", ".$hasil_ship['address1']." ".$hasil_ship['city_name']." ".$hasil_ship['postal'];
 
-        //Metode Pembayaran
-		$apiMethod = "payment/method";
-		$urlMethod = api_base_url($apiMethod);
-		$kontenMethod = file_get_contents($urlMethod);
-		$this->data['hasilMethod'] = json_decode($kontenMethod, true);
-                $domain = domain();
-		$this->data['token'] = $_COOKIE['x-auth'];
-		$this->data['title_web'] = "Checkout - ".$domain;
-		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/checkout/checkout.php',$this->data);
-		$this->load->view('frontend/footer',$this->data);
+		// 		$this->data['id_kelurahan'] = $hasil_ship['village_id'];
+
+
+		// 	   // $this->data['id_kelurahan'] = $hasil_ship['village_id'];
+
+
+
+		// 		$this->data['shipping_address_id'] = $hasil_ship['id'];
+		// //                   print_r($api); die();
+		// }else{
+		// 	foreach($hasil as $items){
+		// 		$this->data['alamat_shipping'] =$items['name'].", ".$items['address_name'].", ".$items['address1']." ".$items['city_name']." ".$items['postal'];
+		// 		$this->data['id_kelurahan'] = $items['village_id'];
+		// 		$this->data['shipping_address_id'] = $items['id'];
+		// 	}
+		// }
+
+        // //Metode Pembayaran
+		// $apiMethod = "payment/method";
+		// $urlMethod = api_base_url($apiMethod);
+		// $kontenMethod = file_get_contents($urlMethod);
+		// $this->data['hasilMethod'] = json_decode($kontenMethod, true);
+        //         $domain = domain();
+		// $this->data['token'] = $_COOKIE['x-auth'];
+		// $this->data['title_web'] = "Checkout - ".$domain;
+		// $this->load->view('frontend/header',$this->data);
+		// $this->load->view('frontend/nav.php',$this->data);
+		// $this->load->view('frontend/modules/checkout/checkout.php',$this->data);
+		// $this->load->view('frontend/footer',$this->data);
 	}
 
 	public function test3()
