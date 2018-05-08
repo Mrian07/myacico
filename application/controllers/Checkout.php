@@ -1085,34 +1085,34 @@ class Checkout extends Web_private {
 
 	public function paymentfailure()
 	{
-		// $id=$this->uri->segment(3);
-		$id = get_cookie('idTransaksi');
-		$this->data['token'] = $_COOKIE['x-auth'];
-		$token = $_COOKIE['x-auth'];
+		echo"testing";
+		// $id = get_cookie('idTransaksi');
+		// $this->data['token'] = $_COOKIE['x-auth'];
+		// $token = $_COOKIE['x-auth'];
 
-		$options = ["http" => [
-		"method" => "GET",
-		"header" => ["token: " . $token,
-		"Content-Type: application/json"],
-		]];
+		// $options = ["http" => [
+		// "method" => "GET",
+		// "header" => ["token: " . $token,
+		// "Content-Type: application/json"],
+		// ]];
 
-		$context = stream_context_create($options);
+		// $context = stream_context_create($options);
 
-		$api = "transaction/list?id=".$id;
-		$url = api_base_url($api);
+		// $api = "transaction/list?id=".$id;
+		// $url = api_base_url($api);
 
-		$konten = file_get_contents($url, false, $context);
-		$this->data['field'] = json_decode($konten);
-		$field = json_decode($konten);
+		// $konten = file_get_contents($url, false, $context);
+		// $this->data['field'] = json_decode($konten);
+		// $field = json_decode($konten);
 
-		$data = array('shipping_address_id' => '');
-  		$this->session->set_userdata($data);
-		$domain = domain();
-		$this->data['title_web'] = "Checkout - ".$domain;
-		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/checkout/finish_by_card_error.php',$this->data);
-		$this->load->view('frontend/footer',$this->data);
-		delete_cookie('idTransaksi');
+		// $data = array('shipping_address_id' => '');
+  		// $this->session->set_userdata($data);
+		// $domain = domain();
+		// $this->data['title_web'] = "Checkout - ".$domain;
+		// $this->load->view('frontend/header',$this->data);
+		// $this->load->view('frontend/nav.php',$this->data);
+		// $this->load->view('frontend/modules/checkout/finish_by_card_error.php',$this->data);
+		// $this->load->view('frontend/footer',$this->data);
+		// delete_cookie('idTransaksi');
 	}
 }
