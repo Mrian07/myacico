@@ -1115,8 +1115,4 @@ class Checkout extends Web_private {
 		delete_cookie('idTransaksi');
 	}
 
-	public function kadal()
-	{
-		echo"testing";
-	}
 }
