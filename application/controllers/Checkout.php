@@ -849,6 +849,8 @@ class Checkout extends Web_private {
 
 	public function paymentByCreditCard()
 	{	
+		$this->data['urlCard'] = $this->urlCreditCard();
+		$this->data['keyCard'] = $this->keyCreditCard();
 		$this->data['id'] = $this->uri->segment(3);
 		$this->data['token'] = $this->uri->segment(4);
 		set_cookie('idTransaksi',$this->uri->segment(3),'3600');
@@ -856,7 +858,9 @@ class Checkout extends Web_private {
 	}
 
   public function paymentByOnline()
-	{
+	{	
+		$this->data['urlCard'] = $this->urlKlikPayBCA();
+		$this->data['keyCard'] = $this->keyKlikPayBCA();
 		$this->data['id'] = $this->uri->segment(3);
 		$this->data['token'] = $this->uri->segment(4);
 		set_cookie('idTransaksi',$this->uri->segment(3),'3600');

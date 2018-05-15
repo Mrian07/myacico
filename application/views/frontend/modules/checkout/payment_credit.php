@@ -9,7 +9,7 @@
   data-client-key="VT-client-Zg0dPXNpghjr1e6S"></script> -->
 
   <!-- prod -->
-  <script type="text/javascript" src="https://app.midtrans.com/snap/snap.js" data-client-key="VT-client-pB1L01rg-5vSIPCA"></script>
+  <script type="text/javascript" src="<?php echo $urlCard; ?>" data-client-key="<?php echo $keyCard; ?>"></script>
   <style type="text/css">
     .mids{
       text-align: center;

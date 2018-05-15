@@ -629,6 +629,52 @@ class Web extends MY_Controller {
     return $url;
   }
 
+  public function urlCreditCard(){
+
+    if(getenv("SRV_ENV")=="prod"){
+      $url = "https://app.midtrans.com/snap/snap.js";
+    }else{
+      //$url = "https://app.sandbox.midtrans.com/snap/snap.js";
+      $url = "https://app.midtrans.com/snap/snap.js";
+    }
+    
+    return $url;
+  }
+
+  public function urlKlikPayBCA(){
+    
+    if(getenv("SRV_ENV")=="prod"){
+      $url = "https://app.midtrans.com/snap/snap.js";
+    }else{
+      $url = "https://app.stg.midtrans.com/snap/snap.js";
+    }
+    
+    return $url;
+  }
+
+  public function keyCreditCard(){
+    
+    if(getenv("SRV_ENV")=="prod"){
+      $key = "VT-client-pB1L01rg-5vSIPCA";
+    }else{
+      //$key = "VT-client-Zg0dPXNpghjr1e6S";
+      $key = "VT-client-pB1L01rg-5vSIPCA";
+    }
+    
+    return $key;
+  }
+  
+
+  public function keyKlikPayBCA(){
+    
+    if(getenv("SRV_ENV")=="prod"){
+      $key = "VT-client-pB1L01rg-5vSIPCA";
+    }else{
+      $key = "VT-client-OzPyDJnNaJ2ou2zB";
+    }
+    return $key;
+  }
+
   public function navigation(){
     $api = $this->urlApi();
     $url = $api."/category/list";
