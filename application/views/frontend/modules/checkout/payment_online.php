@@ -35,7 +35,8 @@ var c = '<?php echo$token; ?>';
               //window.location.replace("<?php //echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 
               document.getElementById("mids").innerHTML = "Pembayaran Anda Berhasil, Terima Kasih"
-              alert(result.status_message);},
+              alert(result.status_message);
+              },
               onPending: function(result){
               window.location.replace("<?php //echo site_url('checkout/finishByOnlineFailed/'.$id); 
               //echo site_url('checkout/paymentfailure');
@@ -47,7 +48,7 @@ var c = '<?php echo$token; ?>';
               //echo site_url('checkout/paymentfailure');
               echo site_url('checkout/paymentCekResult'); ?>");
               var fromMidtrans = result
-              document.getElementById("mids").innerHTML = "Error"
+              document.getElementById("mids").innerHTML = "Mohon tunggu..."
               // alert(result.status_message);
             },
             onClose: function(){

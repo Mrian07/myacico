@@ -55,7 +55,7 @@ var c = '<?php echo$token; ?>';
             echo site_url('checkout/paymentCekResult');
             ?>");
             var fromMidtrans = result
-            document.getElementById("mids").innerHTML = "Error"
+            document.getElementById("mids").innerHTML = "Mohon tunggu..."
             },
             onClose: function(){
               window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id);
