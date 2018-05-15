@@ -73,7 +73,6 @@ class Web extends MY_Controller {
           $loop = 1;
           foreach ($this->cart->contents() as $items){ ?>
           <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
-          <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
           <script type="text/javascript">
           var m_product_id = '<?php echo $items['id']; ?>';
           var qty = '<?php echo $items['qty']; ?>';
@@ -140,7 +139,7 @@ class Web extends MY_Controller {
         ]];
 
         $context = stream_context_create($options);
-        $konten = file_get_contents($url, false, $context);
+        $konten = @file_get_contents($url, false, $context);
         $hasil = json_decode($konten, true);
 
         if($hasil['status']){
@@ -150,7 +149,7 @@ class Web extends MY_Controller {
       		      "method" => "GET",
       		]];
           $context3 = stream_context_create($options3);
-      		$konten3 = file_get_contents($url3, false, $context3);
+      		$konten3 = @file_get_contents($url3, false, $context3);
           $this->data['myavatar'] = $url3;
 
         }else{
@@ -620,15 +619,20 @@ class Web extends MY_Controller {
   }
   
   public function urlApi2(){
+    
+    if(getenv("SRV_ENV")=="prod"){
+      $url = "https://acc.myacico.co.id/myacico-account";
+    }else{
+      $url = "http://acc.myacico.co.id/dev";
+    }
 
-    $url = "https://acc.myacico.co.id/myacico-account";
     return $url;
   }
 
   public function navigation(){
     $api = $this->urlApi();
     $url = $api."/category/list";
-		$konten = file_get_contents($url, false);
+		$konten = @file_get_contents($url, false);
 		$hasilNav = json_decode($konten, true);
     $this->data['hasilNav'] = $hasilNav;
   }
@@ -645,7 +649,7 @@ class Web extends MY_Controller {
     public function maintan(){
       $api = $this->urlApi();
       $url = $api."/check/server";
-  		$konten = file_get_contents($url);
+  		$konten = @file_get_contents($url);
       $hasil = json_decode($konten, true);
 
       if($hasil['status'] != '1'){
@@ -658,7 +662,7 @@ class Web extends MY_Controller {
       $url = $api."/category";
   		//$url = "https://api.myacico.co.id/myacico-service/category";
       // $url = "http://192.168.0.109:8080/myacico-service/category";
-  		$konten = file_get_contents($url);
+  		$konten = @file_get_contents($url);
   		$this->data['catsearch'] = json_decode($konten, true);
       $catsearch = json_decode($konten, true);
       if($catsearch==''){
@@ -727,9 +731,10 @@ class Web_private extends web {
 
 
     public function cekTokenExpired(){
+          $geturl = $this->urlApi2();
   		    $token = $_COOKIE['x-auth'];
-          $url = "https://acc.myacico.co.id/myacico-account/account/checktoken/".$token;
-          $konten = file_get_contents($url);
+          $url = $geturl."/account/checktoken/".$token;
+          $konten = @file_get_contents($url);
           $hasil = json_decode($konten, true);
           if($hasil['status']=='0'){
             redirect('customer/signIn/');

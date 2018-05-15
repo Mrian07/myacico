@@ -35,26 +35,33 @@ var c = '<?php echo$token; ?>';
         var code = c;
         snap.pay(code, {
             onSuccess: function(result){
-        window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id);
-        echo site_url('checkout/paymentsuccess'); ?>");
-				//window.location.replace("<?php //echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
+            window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id);
+            //echo site_url('checkout/paymentsuccess');
+            echo site_url('checkout/paymentCekResult'); ?>");
+            //window.location.replace("<?php //echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 
-              document.getElementById("mids").innerHTML = "Pembayaran Anda Berhasil, Terima Kasih"
-              alert(result.status_message);},
+            document.getElementById("mids").innerHTML = "Pembayaran Anda Berhasil, Terima Kasih"
+            alert(result.status_message);},
             onPending: function(result){
-        window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id);
-        echo site_url('checkout/paymentfailure');  ?>");
-              document.getElementById("mids").innerHTML = "Pending"
-              alert(result.status_message);},
+            window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id);
+            //echo site_url('checkout/paymentfailure'); 
+            echo site_url('checkout/paymentCekResult');
+            ?>");
+            document.getElementById("mids").innerHTML = "Pending"
+            alert(result.status_message);},
             onError: function(result){
-        window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id); 
-        echo site_url('checkout/paymentfailure');?>");
-              var fromMidtrans = result
-              document.getElementById("mids").innerHTML = "Error"
+            window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id); 
+            //echo site_url('checkout/paymentfailure');
+            echo site_url('checkout/paymentCekResult');
+            ?>");
+            var fromMidtrans = result
+            document.getElementById("mids").innerHTML = "Error"
             },
             onClose: function(){
-        window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id);
-         echo site_url('checkout/paymentfailure'); ?>");
+              window.location.replace("<?php //echo site_url('checkout/finishByCreditCard/'.$id);
+              //echo site_url('checkout/paymentfailure');
+              echo site_url('checkout/paymentCekResult');
+              ?>");
             }
         })
     }

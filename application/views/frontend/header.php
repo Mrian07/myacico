@@ -65,18 +65,15 @@
     <!-- e: Alert -->
 
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jwt-decode.min.js');?>"></script>
+		
 		<script type="text/javascript">
 			var base_url = '<?php echo base_url();?>';
 			var base_path = base_url.split(location.host).pop();
 			var site_url = '<?php echo site_url();?>';
 
-			// var login = 'http://acc.myacico.co.id/dev/account/masuk';
-			// var login1 = 'https://acc.myacico.co.id/dev/';
-			// var adduser = 'http://acc.myacico.co.id/dev/account/';
-
-			var login = 'http://acc.myacico.co.id/myacico-account/account/masuk';
-			var login1 = 'https://acc.myacico.co.id/myacico-account/';
-			var adduser = 'http://acc.myacico.co.id/myacico-account/account/';
+			var login = "<?php echo $baseApiUrl; ?>/account/masuk";
+			var login1 = "<?php echo $baseApiUrl; ?>/";
+			var adduser = "<?php echo $baseApiUrl; ?>/account/";
 
 			var api_base_url = "<?php echo $baseApiUrl; ?>";
 			var token;
@@ -88,7 +85,7 @@
 					token = cookie[1].split(';').shift()
 				}
 			})()
-			//                         deklarasi awal
+
 
 			var prod_detail =  localStorage.getItem('product_detail');
 			if(!prod_detail)
@@ -101,8 +98,6 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/js/chat.js');?>"></script>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/chat.css');?>" />
   	<!-- e: Chat -->
-
-		<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 
 		<!-- <link href="<?php //echo base_url('assets/css/mynav.css');?>" rel="stylesheet">
 		<script src="<?php //echo base_url('assets/js/mynav.js');?>"></script> -->
@@ -216,7 +211,6 @@
 
 							 </div>
 						 </div>
-						 <!-- <div style='float:right; width: 80px; text-align: center; border-right:1px solid #4d4d4d; margin-top:8px;'> -->
 						<div style='float:right; width: 40px; text-align: center; margin-top:8px;'>
 
 							<div class="dropdown-lang" style='border:0px solid #aeaeab; padding:0px; right: 0; left: auto; text-align:left'>

@@ -29,29 +29,33 @@ var c = '<?php echo$token; ?>';
         var code = c;
         snap.pay(code, {
             onSuccess: function(result){
-        window.location.replace("<?php //echo site_url('checkout/finishByOnline/'.$id); 
-        echo site_url('checkout/paymentsuccess'); ?>");
-				//window.location.replace("<?php //echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
+              window.location.replace("<?php //echo site_url('checkout/finishByOnline/'.$id); 
+              //echo site_url('checkout/paymentsuccess');
+              echo site_url('checkout/paymentCekResult'); ?>");
+              //window.location.replace("<?php //echo site_url('checkout/finish/'); ?>"+hasil.idTransaksi);
 
               document.getElementById("mids").innerHTML = "Pembayaran Anda Berhasil, Terima Kasih"
               alert(result.status_message);},
-            onPending: function(result){
-        window.location.replace("<?php //echo site_url('checkout/finishByOnlineFailed/'.$id); 
-        echo site_url('checkout/paymentfailure');?>");
+              onPending: function(result){
+              window.location.replace("<?php //echo site_url('checkout/finishByOnlineFailed/'.$id); 
+              //echo site_url('checkout/paymentfailure');
+              echo site_url('checkout/paymentCekResult');?>");
               document.getElementById("mids").innerHTML = "Pending"
               alert(result.status_message);},
-            onError: function(result){
-        window.location.replace("<?php //echo site_url('checkout/finishByOnlineFailed/'.$id); 
-        echo site_url('checkout/paymentfailure'); ?>");
+              onError: function(result){
+              window.location.replace("<?php //echo site_url('checkout/finishByOnlineFailed/'.$id); 
+              //echo site_url('checkout/paymentfailure');
+              echo site_url('checkout/paymentCekResult'); ?>");
               var fromMidtrans = result
               document.getElementById("mids").innerHTML = "Error"
-             // alert(result.status_message);
+              // alert(result.status_message);
             },
             onClose: function(){
-        window.location.replace("<?php //echo site_url('checkout/finishByOnlineFailed/'.$id); 
-        echo site_url('checkout/paymentfailure');?>");
+              window.location.replace("<?php //echo site_url('checkout/finishByOnlineFailed/'.$id); 
+              //echo site_url('checkout/paymentfailure');
+              echo site_url('checkout/paymentCekResult');?>");
               //document.getElementById("mids").innerHTML = JSON.stringify(result)
-             // document.getElementById("mids").innerHTML ='Anda membatalkan pembayaran, Anda bisa melanjutkan pembayaran dengan mengklik invoice di Riwayat & Status Pesanan'
+              // document.getElementById("mids").innerHTML ='Anda membatalkan pembayaran, Anda bisa melanjutkan pembayaran dengan mengklik invoice di Riwayat & Status Pesanan'
             }
         })
     }
