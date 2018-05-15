@@ -2,182 +2,182 @@
 
 class MY_Controller extends CI_Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-    }
+  public function __construct()
+  {
+      parent::__construct();
+  }
 }
 
 
 class Web extends MY_Controller {
 
-    public function __construct() {
-        parent::__construct();
-        $this->load->helper('cookie');
-        $this->load->library('jwt');
-        $this->load->helper('app');
+  public function __construct() {
+      parent::__construct();
+      $this->load->helper('cookie');
+      $this->load->library('jwt');
+      $this->load->helper('app');
 
-        $this->logedin=false;
-        $this->auth();
+      $this->logedin=false;
+      $this->auth();
 
-        $lang = get_cookie('lang');
-        $this->data['lang'] = $lang;
-        if($lang=='en'){
-          $this->load->language('header','english');
-          $this->load->language('home','english');
-          $this->load->language('footer','english');
-          $this->load->language('dashboard','english');
-          $this->load->language('general','english');
-          $this->load->language('body','english');
-          $this->load->language('checkout','english');
-          $this->load->language('another','english');
-        }else{
-          $this->load->language('header','indonesia');
-          $this->load->language('home','indonesia');
-          $this->load->language('footer','indonesia');
-          $this->load->language('dashboard','indonesia');
-          $this->load->language('general','indonesia');
-          $this->load->language('body','indonesia');
-           $this->load->language('checkout','indonesia');
-           $this->load->language('another','indonesia');
-        }
-        $this->maintan();
-        $this->lang();
-        $this->asset();
-        $this->categorySearch();
-        $this->navigation();
-        $this->avatarCust();
-
-        $this->clearIdCat();
-        $this->pushCartToToken();
-
-    }
-
-    public function clearIdCat(){
-      $data = array('id_main_src' => '');
-  		$this->session->set_userdata($data);
-    }
-
-    public function pushCartToToken(){
-
-      if(isset($_COOKIE['x-auth']))
-      {
-
-        $jmlCart = count($this->cart->contents());
-        if($jmlCart){
-          $token = $_COOKIE['x-auth'];
-          $api = "order/cart/additem";
-          $url = api_base_url($api);
-
-        //  echo $url; die();
-          $loop = 1;
-          foreach ($this->cart->contents() as $items){ ?>
-          <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
-          <script type="text/javascript">
-          var m_product_id = '<?php echo $items['id']; ?>';
-          var qty = '<?php echo $items['qty']; ?>';
-          var pricelist = '<?php echo $items['price']; ?>';
-          var weight = '<?php echo $items['weight']; ?>';
-          var jmlArr = '<?php echo $jmlCart; ?>';
-          var jmlLoop = '<?php echo $loop; ?>';
-        //  var apiurl = api_base_url +'/order/cart/additem';
-          var apiurl = '<?php echo $url; ?>';
-          $.ajax({
-          type: 'POST',
-          contentType: 'application/json',
-          url: apiurl,
-          dataType: 'json',
-          data: JSON.stringify({
-            "productId":m_product_id,
-            "qty":qty,
-            "price":pricelist,
-            "weightPerItem":weight,
-          }),
-          headers:{"token":"<?php echo $token; ?>"},
-          success:function(html){
-            // console.log(html);
-             if(jmlLoop==jmlArr){
-               location.reload();
-             }
-
-            }
-          });
-          </script>
-
-        <?php $loop++;
-          }
-
-           $this->cart->destroy();
-           die();
-        }
-
-
+      $lang = get_cookie('lang');
+      $this->data['lang'] = $lang;
+      if($lang=='en'){
+        $this->load->language('header','english');
+        $this->load->language('home','english');
+        $this->load->language('footer','english');
+        $this->load->language('dashboard','english');
+        $this->load->language('general','english');
+        $this->load->language('body','english');
+        $this->load->language('checkout','english');
+        $this->load->language('another','english');
       }else{
-
+        $this->load->language('header','indonesia');
+        $this->load->language('home','indonesia');
+        $this->load->language('footer','indonesia');
+        $this->load->language('dashboard','indonesia');
+        $this->load->language('general','indonesia');
+        $this->load->language('body','indonesia');
+          $this->load->language('checkout','indonesia');
+          $this->load->language('another','indonesia');
       }
+      $this->maintan();
+      $this->lang();
+      $this->asset();
+      $this->categorySearch();
+      $this->navigation();
+      $this->avatarCust();
 
-    }
+      $this->clearIdCat();
+      $this->pushCartToToken();
 
-    public function cekAvatarCust(){
+  }
 
-    }
+  public function clearIdCat(){
+    $data = array('id_main_src' => '');
+    $this->session->set_userdata($data);
+  }
 
-    public function avatarCust(){
+  public function pushCartToToken(){
 
-      //$statusAva = $this->cekAvatarCust();
+    if(isset($_COOKIE['x-auth']))
+    {
 
-      if(isset($_COOKIE['x-auth'])){
-        $this->data['token'] = $_COOKIE['x-auth'];
+      $jmlCart = count($this->cart->contents());
+      if($jmlCart){
         $token = $_COOKIE['x-auth'];
-        $api = "aduser/checkimage?file=avatar";
+        $api = "order/cart/additem";
         $url = api_base_url($api);
 
-        $options = ["http" => [
-        "method" => "GET",
-        "header" => ["token: " . $token,
-        "Content-Type: application/json"],
-        ]];
+      //  echo $url; die();
+        $loop = 1;
+        foreach ($this->cart->contents() as $items){ ?>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
+        <script type="text/javascript">
+        var m_product_id = '<?php echo $items['id']; ?>';
+        var qty = '<?php echo $items['qty']; ?>';
+        var pricelist = '<?php echo $items['price']; ?>';
+        var weight = '<?php echo $items['weight']; ?>';
+        var jmlArr = '<?php echo $jmlCart; ?>';
+        var jmlLoop = '<?php echo $loop; ?>';
+      //  var apiurl = api_base_url +'/order/cart/additem';
+        var apiurl = '<?php echo $url; ?>';
+        $.ajax({
+        type: 'POST',
+        contentType: 'application/json',
+        url: apiurl,
+        dataType: 'json',
+        data: JSON.stringify({
+          "productId":m_product_id,
+          "qty":qty,
+          "price":pricelist,
+          "weightPerItem":weight,
+        }),
+        headers:{"token":"<?php echo $token; ?>"},
+        success:function(html){
+          // console.log(html);
+            if(jmlLoop==jmlArr){
+              location.reload();
+            }
 
-        $context = stream_context_create($options);
-        $konten = @file_get_contents($url, false, $context);
-        $hasil = json_decode($konten, true);
+          }
+        });
+        </script>
 
-        if($hasil['status']){
-          $api3 = "aduser/avatar/file?key=".$token;
-          $url3 = api_base_url($api3);
-          $options3 = ["http" => [
-      		      "method" => "GET",
-      		]];
-          $context3 = stream_context_create($options3);
-      		$konten3 = @file_get_contents($url3, false, $context3);
-          $this->data['myavatar'] = $url3;
-
-        }else{
-          $this->data['myavatar'] = '';
+      <?php $loop++;
         }
+
+          $this->cart->destroy();
+          die();
+      }
+
+
+    }else{
+
+    }
+
+  }
+
+  // public function cekAvatarCust(){
+
+  // }
+
+  public function avatarCust(){
+
+    //$statusAva = $this->cekAvatarCust();
+
+    if(isset($_COOKIE['x-auth'])){
+      $this->data['token'] = $_COOKIE['x-auth'];
+      $token = $_COOKIE['x-auth'];
+      $api = "aduser/checkimage?file=avatar";
+      $url = api_base_url($api);
+
+      $options = ["http" => [
+      "method" => "GET",
+      "header" => ["token: " . $token,
+      "Content-Type: application/json"],
+      ]];
+
+      $context = stream_context_create($options);
+      $konten = @file_get_contents($url, false, $context);
+      $hasil = json_decode($konten, true);
+
+      if($hasil['status']){
+        $api3 = "aduser/avatar/file?key=".$token;
+        $url3 = api_base_url($api3);
+        $options3 = ["http" => [
+              "method" => "GET",
+        ]];
+        $context3 = stream_context_create($options3);
+        $konten3 = @file_get_contents($url3, false, $context3);
+        $this->data['myavatar'] = $url3;
+
       }else{
         $this->data['myavatar'] = '';
       }
+    }else{
+      $this->data['myavatar'] = '';
+    }
+
+  }
+
+  public function auth(){
+
+    $secret = $this->config->config['jwt_secret'];
+    //die(strtr(base64_encode($secret), '+/=', '._-'));
+
+    if(isset($_COOKIE['x-auth']))
+    {
+      try {
+        $this->data['user'] = JWT::decode($_COOKIE['x-auth'], $secret)->UserData;
+            $this->logedin=true;
+      } catch (Exception $e) {
+        //redirect('customer/signIn/'.$e);
+      }
 
     }
 
-    public function auth(){
-
-		$secret = $this->config->config['jwt_secret'];
-		//die(strtr(base64_encode($secret), '+/=', '._-'));
-
-		if(isset($_COOKIE['x-auth']))
-		{
-			try {
-				$this->data['user'] = JWT::decode($_COOKIE['x-auth'], $secret)->UserData;
-		        $this->logedin=true;
-			} catch (Exception $e) {
-				//redirect('customer/signIn/'.$e);
-			}
-
-		}
-
-    }
+  }
 
 	public function typeLogin(){
 		$secret = $this->config->config['jwt_secret'];
@@ -623,7 +623,7 @@ class Web extends MY_Controller {
     if(getenv("SRV_ENV")=="prod"){
       $url = "https://acc.myacico.co.id/myacico-account";
     }else{
-      $url = "http://acc.myacico.co.id/dev";
+      $url = "https://acc.myacico.co.id/dev";
     }
 
     return $url;
@@ -646,68 +646,66 @@ class Web extends MY_Controller {
   }
 
 
-    public function maintan(){
-      $api = $this->urlApi();
-      $url = $api."/check/server";
-  		$konten = @file_get_contents($url);
-      $hasil = json_decode($konten, true);
+  public function maintan(){
+    $api = $this->urlApi();
+    $url = $api."/check/server";
+    $konten = @file_get_contents($url);
+    $hasil = json_decode($konten, true);
 
-      if($hasil['status'] != '1'){
-        redirect('maintenance');
-      }
-
+    if($hasil['status'] != '1'){
+      redirect('maintenance');
     }
-    public function categorySearch(){
-      $api = $this->urlApi();
-      $url = $api."/category";
-  		//$url = "https://api.myacico.co.id/myacico-service/category";
-      // $url = "http://192.168.0.109:8080/myacico-service/category";
-  		$konten = @file_get_contents($url);
-  		$this->data['catsearch'] = json_decode($konten, true);
-      $catsearch = json_decode($konten, true);
-      if($catsearch==''){
-        redirect('maintenance');
-      }
 
+  }
+  public function categorySearch(){
+    $api = $this->urlApi();
+    $url = $api."/category";
+    $konten = @file_get_contents($url);
+    $this->data['catsearch'] = json_decode($konten, true);
+    $catsearch = json_decode($konten, true);
+    if($catsearch==''){
+      redirect('maintenance');
     }
+
+  }
 
 	function sendMail($email_from,$nm_from,$email_to,$subject,$message){
 		// load library email
-        $this->load->library('PHPMailerAutoload');
+    $this->load->library('PHPMailerAutoload');
 
-        $mail = new PHPMailer();
+    $mail = new PHPMailer();
 
-		/*
-		$mail->SMTPDebug = 2; // enables SMTP debug information (for testing)
-		// 1 = errors and messages
-		// 2 = messages only
-		*/
-        $mail->SMTPDebug = 0;
-        $mail->Debugoutput = 'html';
+    /*
+    $mail->SMTPDebug = 2; // enables SMTP debug information (for testing)
+    // 1 = errors and messages
+    // 2 = messages only
+    */
+    $mail->SMTPDebug = 0;
+    $mail->Debugoutput = 'html';
 
-        // set smtp
-        $mail->isSMTP();
+    // set smtp
+    $mail->isSMTP();
 
-		$mail->SMTPSecure = 'tls';
-		$mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'tls';
+    $mail->SMTPAuth = true;
 
-        $mail->Host = 'sipau2-16.nexcess.net';
-        $mail->Port = '587';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'support@myacico.com';
-		$mail->Password = 'TotalShoppingExperiences5';
+    $mail->Host = 'sipau2-16.nexcess.net';
+    $mail->Port = '587';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'support@myacico.com';
+    $mail->Password = 'TotalShoppingExperiences5';
 
-        $mail->WordWrap = 50;
-        // set email content
-        $mail->setFrom($email_from, $nm_from);
-        $mail->addAddress($email_to);
-        $mail->Subject = $subject;
-        $mail->Body = $message;
-        if($mail->send()){
-			return true;
-		}else{
-			return false;
-		}
+    $mail->WordWrap = 50;
+    // set email content
+    $mail->setFrom($email_from, $nm_from);
+    $mail->addAddress($email_to);
+    $mail->Subject = $subject;
+    $mail->Body = $message;
+    if($mail->send()){
+      return true;
+    }else{
+      return false;
+    }
 
 
 	}
@@ -716,30 +714,30 @@ class Web extends MY_Controller {
 
 class Web_private extends web {
 
-    public function __construct() {
-      parent::__construct();
-      // $url = current_url();
-      // if(isset($_GET['key'])){
-      //   $url.='/'.$_GET['key'];
-      // }
+  public function __construct() {
+    parent::__construct();
+    // $url = current_url();
+    // if(isset($_GET['key'])){
+    //   $url.='/'.$_GET['key'];
+    // }
 
-  		// if(!$this->logedin) redirect('customer/signIn?callback='.current_url());
-      if(!$this->logedin) redirect('customer/signIn?callback='.current_url().($_SERVER['QUERY_STRING']?'?'.$_SERVER['QUERY_STRING']:''));
+    // if(!$this->logedin) redirect('customer/signIn?callback='.current_url());
+    if(!$this->logedin) redirect('customer/signIn?callback='.current_url().($_SERVER['QUERY_STRING']?'?'.$_SERVER['QUERY_STRING']:''));
 
-      $this->cekTokenExpired();
+    $this->cekTokenExpired();
+  }
+
+
+  public function cekTokenExpired(){
+    $geturl = $this->urlApi2();
+    $token = $_COOKIE['x-auth'];
+    $url = $geturl."/account/checktoken/".$token;
+    $konten = @file_get_contents($url);
+    $hasil = json_decode($konten, true);
+    if($hasil['status']=='0'){
+      redirect('customer/signIn/');
     }
-
-
-    public function cekTokenExpired(){
-          $geturl = $this->urlApi2();
-  		    $token = $_COOKIE['x-auth'];
-          $url = $geturl."/account/checktoken/".$token;
-          $konten = @file_get_contents($url);
-          $hasil = json_decode($konten, true);
-          if($hasil['status']=='0'){
-            redirect('customer/signIn/');
-          }
-    }
+  }
 }
 
 /* End of file MY_Controller.php */

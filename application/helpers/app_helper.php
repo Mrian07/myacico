@@ -27,7 +27,7 @@ function api_base_url2($param)
 	if(getenv("SRV_ENV")=="prod"){
 		$url = "https://acc.myacico.co.id/myacico-account/".$param;
 	}else{
-		$url = "http://acc.myacico.co.id/dev/".$param;
+		$url = "https://acc.myacico.co.id/dev/".$param;
 	}
 
 	return $url;

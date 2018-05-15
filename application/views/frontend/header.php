@@ -549,7 +549,6 @@
 
 					var regData = {
 							url : api_base_url+'/category/list',
-							// url : 'https://api.myacico.co.id/myacico-service/category/list',
 							method : 'POST',
 							data : {
 									name : name
@@ -567,7 +566,6 @@
 			$scope.home = 'test'
 			var regData = {
 					url : api_base_url+'/category/list',
-					// url : 'http://api.myacico.co.id/myacico-service/category/list',
 					method : 'GET',
 					headers: {'token' : '5402854820542'}
 			}
@@ -598,7 +596,6 @@
 
 					var regData = {
 							url : api_base_url+'/category/list',
-							// url : 'https://api.myacico.co.id/myacico-service/category/list',
 							method : 'POST',
 							data : {
 									name : name
