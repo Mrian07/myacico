@@ -854,6 +854,7 @@ class Checkout extends Web_private {
 		$this->data['id'] = $this->uri->segment(3);
 		$this->data['token'] = $this->uri->segment(4);
 		set_cookie('idTransaksi',$this->uri->segment(3),'3600');
+		set_cookie('idToken',$this->uri->segment(4),'3600');
 		$this->load->view('frontend/modules/checkout/payment_credit.php',$this->data);
 	}
 
@@ -864,13 +865,14 @@ class Checkout extends Web_private {
 		$this->data['id'] = $this->uri->segment(3);
 		$this->data['token'] = $this->uri->segment(4);
 		set_cookie('idTransaksi',$this->uri->segment(3),'3600');
+		set_cookie('idToken',$this->uri->segment(4),'3600');
 		$this->load->view('frontend/modules/checkout/payment_online.php',$this->data);
 	}
 
 	public function finishByOnlineFailed()
 	{
 		$id=$this->uri->segment(3);
-                $domain = domain();
+        $domain = domain();
 		$this->data['token'] = $_COOKIE['x-auth'];
 		$token = $_COOKIE['x-auth'];
 
@@ -1055,7 +1057,8 @@ class Checkout extends Web_private {
 	}
 
 	public function paymentCekResult(){
-		$id=$id = get_cookie('idTransaksi');
+
+		$idToken = get_cookie('idToken');
 		$options = ["http" => [
 		"method" => "GET",
 		"Content-Type: application/json"],
@@ -1063,14 +1066,13 @@ class Checkout extends Web_private {
 
 		$context = stream_context_create($options);
 
-		$api = "transaction/status/".$id;
+		$api = "transaction/status/".$idToken;
 		$url = api_base_url($api);
 
 		$konten = file_get_contents($url, false, $context);
 		$this->data['field'] = json_decode($konten);
 		$field = json_decode($konten);
-		echo"hasil status:". $field->status;
-		die();
+
 		if($field->status=='1'){
 			redirect('checkout/paymentsuccess');
 		}else{
@@ -1081,69 +1083,121 @@ class Checkout extends Web_private {
 
 	public function paymentsuccess()
 	{
-		$id=$id = get_cookie('idTransaksi');
-		$token = $_COOKIE['x-auth'];
 
-		$options2 = ["http" => [
-		"method" => "GET",
-		"header" => ["token: " . $token,
-		"Content-Type: application/json"],
-		]];
+		if(isset($_GET['id'])){
 
-		$context2 = stream_context_create($options2);
+			$options = ["http" => [
+			"method" => "GET",
+			"Content-Type: application/json"],
+			];
+	
+			$context = stream_context_create($options);
+	
+			$api = "transaction/status/".$_GET['id'];
+			$url = api_base_url($api);
+	
+			$konten = file_get_contents($url, false, $context);
+			$this->data['field'] = json_decode($konten);
+			$field = json_decode($konten);
+	
+			if($field->status=='1'){
+				redirect('checkout/paymentsuccess');
+			}else{
+				redirect('checkout/paymentfailure');
+			}
 
-		$api2 = "transaction/list?id=".$id;
-		$url2 = api_base_url($api2);
+		}else{
 
-		$konten2 = file_get_contents($url2, false, $context2);
-		$this->data['field'] = json_decode($konten2);
+			$idTransaksi = get_cookie('idTransaksi');
+			$token = $_COOKIE['x-auth'];
 
-		$data = array('shipping_address_id' => '');
-		$this->session->set_userdata($data);
+			$options2 = ["http" => [
+			"method" => "GET",
+			"header" => ["token: " . $token,
+			"Content-Type: application/json"],
+			]];
 
-		$domain = domain();
-		$this->data['title_web'] = "Checkout - ".$domain;
-		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/checkout/finish_by_card_success.php',$this->data);
-		$this->load->view('frontend/footer',$this->data);
+			$context2 = stream_context_create($options2);
+
+			$api2 = "transaction/list?id=".$idTransaksi;
+			$url2 = api_base_url($api2);
+
+			$konten2 = file_get_contents($url2, false, $context2);
+			$this->data['field'] = json_decode($konten2);
+
+			$data = array('shipping_address_id' => '');
+			$this->session->set_userdata($data);
+
+			$domain = domain();
+			$this->data['title_web'] = "Checkout - ".$domain;
+			$this->load->view('frontend/header',$this->data);
+			$this->load->view('frontend/nav.php',$this->data);
+			$this->load->view('frontend/modules/checkout/finish_by_card_success.php',$this->data);
+			$this->load->view('frontend/footer',$this->data);
+		}
 	}
 
 	public function paymentfailure()
 	{
-		$id=$id = get_cookie('idTransaksi');
 
-		$this->data['token'] = $_COOKIE['x-auth'];
-		$token = $_COOKIE['x-auth'];
+		if(isset($_GET['id'])){
+			
+			$options = ["http" => [
+			"method" => "GET",
+			"Content-Type: application/json"],
+			];
+	
+			$context = stream_context_create($options);
+	
+			$api = "transaction/status/".$_GET['id'];
+			$url = api_base_url($api);
+	
+			$konten = file_get_contents($url, false, $context);
+			$this->data['field'] = json_decode($konten);
+			$field = json_decode($konten);
+	
+			if($field->status=='1'){
+				redirect('checkout/paymentsuccess');
+			}else{
+				redirect('checkout/paymentfailure');
+			}
 
-		$options2 = ["http" => [
-		"method" => "GET",
-		"header" => ["token: " . $token,
-		"Content-Type: application/json"],
-		]];
+		}else{
 
-		$context2 = stream_context_create($options2);
+			$idTransaksi = get_cookie('idTransaksi');
+			$this->data['token'] = $_COOKIE['x-auth'];
+			$token = $_COOKIE['x-auth'];
 
-		$api = "transaction/list?id=".$id;
-		$url = api_base_url($api);
+			$options2 = ["http" => [
+			"method" => "GET",
+			"header" => ["token: " . $token,
+			"Content-Type: application/json"],
+			]];
 
-		$konten2 = file_get_contents($url, false, $context2);
-		$this->data['field'] = json_decode($konten2);
+			$context2 = stream_context_create($options2);
 
-		$data = array('shipping_address_id' => '');
-		$this->session->set_userdata($data);
+			$api = "transaction/list?id=".$idTransaksi;
+			$url = api_base_url($api);
 
-		$domain = domain();
-		$this->data['title_web'] = "Checkout - ".$domain;
-		$this->load->view('frontend/header',$this->data);
-		$this->load->view('frontend/nav.php',$this->data);
-		$this->load->view('frontend/modules/checkout/finish_by_card_error.php',$this->data);
-		$this->load->view('frontend/footer',$this->data);
+			$konten2 = file_get_contents($url, false, $context2);
+			$this->data['field'] = json_decode($konten2);
+
+			$data = array('shipping_address_id' => '');
+			$this->session->set_userdata($data);
+
+			$domain = domain();
+			$this->data['title_web'] = "Checkout - ".$domain;
+			$this->load->view('frontend/header',$this->data);
+			$this->load->view('frontend/nav.php',$this->data);
+			$this->load->view('frontend/modules/checkout/finish_by_card_error.php',$this->data);
+			$this->load->view('frontend/footer',$this->data);
+
+		}
 	}
 
 	// public function paymentsuccess()
 	// {
-	// 	$id=$id = get_cookie('idTransaksi');
+	// 	$id = get_cookie('idTransaksi');
 	// 	$options = ["http" => [
 	// 	"method" => "GET",
 	// 	"Content-Type: application/json"],
@@ -1196,7 +1250,7 @@ class Checkout extends Web_private {
 
 	// public function paymentfailure()
 	// {
-	// 	$id=$id = get_cookie('idTransaksi');
+	// 	$id = get_cookie('idTransaksi');
 	// 	$options = ["http" => [
 	// 	"method" => "GET",
 	// 	"Content-Type: application/json"],
