@@ -51,7 +51,8 @@ $string = str_replace(']', '_', $string);
 <div class="row">
 
   <div class="col-sm-3">
-    <?php if (isset($img[0])) { ?>
+    <?php
+    if (isset($img[0])) { ?>
       <img id="xzoom-magnific" class="xzoom"
 
           src="<?php echo $img[0]; ?>"

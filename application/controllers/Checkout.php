@@ -1072,10 +1072,10 @@ class Checkout extends Web_private {
 		$konten = file_get_contents($url, false, $context);
 		$this->data['field'] = json_decode($konten);
 		$field = json_decode($konten);
-
+			
 		if($field->status=='1'){
 			redirect('checkout/paymentsuccess');
-		}else{
+		}elseif($field->status=='0'){
 			redirect('checkout/paymentfailure');
 		}
 
