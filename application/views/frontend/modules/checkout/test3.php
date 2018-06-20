@@ -336,7 +336,7 @@
                    			<input type="radio" id='code' name="code" value='<?php echo$data['code']; ?>'>
                        </div>
                        <div class="segmen2">
-                   		    <img src='https://storage.googleapis.com/myacico/image/bank-new/<?php echo$data['code']; ?>.png' border='0'>
+                   		    <img src='https://cdn.myacico.co.id/myacico/image/bank-new/<?php echo$data['code']; ?>.png' border='0'>
                       </div>
 
                    <script>
@@ -365,7 +365,7 @@
                    			<input type="radio" id='code' name="code" value='<?php echo$data['value']; ?>'>
                    		</div>
                    		<div class="segmen2">
-                        <img src='https://storage.googleapis.com/myacico/image/onlinepayment/<?php echo$data['value']; ?>.png' border='0'>
+                        <img src='https://cdn.myacico.co.id/myacico/image/onlinepayment/<?php echo$data['value']; ?>.png' border='0'>
                       </div>
                     <?php } ?>
                 </div>
@@ -386,8 +386,8 @@
     								<input type="radio" name="gender" value="male" checked>
     			  				</div>
     			  				<div class="segmen2">
-    			  					<img class="imgs" src="https://storage.googleapis.com/myacico/image/kartukredit/visa.jpg">
-    			  					<img class="imgs" src="https://storage.googleapis.com/myacico/image/kartukredit/master-card.png">
+    			  					<img class="imgs" src="https://cdn.myacico.co.id/myacico/image/kartukredit/visa.jpg">
+    			  					<img class="imgs" src="https://cdn.myacico.co.id/myacico/image/kartukredit/master-card.png">
     			  				</div>
     						</div>
     					</div>
@@ -418,7 +418,7 @@
                    			<input type="radio" id="shipperId" name="shipperId" value='<?php echo$data['shipperId']; ?>'>
                    		</div>
                    		<div class="segmen3" style='text-align:left'>
-                   			<img src='https://storage.googleapis.com/myacico/image/kurir/<?php echo$data['shipperId']; ?>.png' border='0'>
+                   			<img src='https://cdn.myacico.co.id/myacico/image/kurir/<?php echo$data['shipperId']; ?>.png' border='0'>
                         <br>
                    			Penyedia Jasa : <?php echo$data['shipperName']; ?><br>
                    			Estimasi : +/- <?php echo$data['estimationDay']; ?> Hari kerja<br>

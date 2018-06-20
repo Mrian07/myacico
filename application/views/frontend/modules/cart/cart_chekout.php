@@ -203,8 +203,8 @@
 					<table class="table">
 						<td class="td" colspan="3">
 							<div class="img-cont">
-								<!-- <img class="img-cont" src="https://storage.googleapis.com/myacicoproductimg/APPLSMAR00002007354.jpg"> -->
-                <img class="img-cont" src="https://storage.googleapis.com/myacicoproductimg/samssmart0001000256.jpg">
+								<!-- <img class="img-cont" src="https://cdn.myacico.co.id/myacicoproductimg/APPLSMAR00002007354.jpg"> -->
+                <img class="img-cont" src="https://cdn.myacico.co.id/myacicoproductimg/samssmart0001000256.jpg">
 							</div>
 							<div class="prod-info">
 								<span class="prodname">SAMSUNG Galaxy S8 5.8 Inch 64GB/4GB [SM-G950] - Black </span><br>

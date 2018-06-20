@@ -3,7 +3,7 @@
   <table class="table">
     <td class="td" colspan="3">
       <div class="img-cont">
-        <!-- <img class="img-cont" src="https://storage.googleapis.com/myacicoproductimg/APPLSMAR00002007354.jpg"> -->
+        <!-- <img class="img-cont" src="https://cdn.myacico.co.id/myacicoproductimg/APPLSMAR00002007354.jpg"> -->
         <img class="img-cont" src="<?php echo$items['imageurl']?>">
       </div>
       <div class="prod-info">

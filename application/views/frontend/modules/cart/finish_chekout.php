@@ -114,8 +114,8 @@ a
 
 					<tr>
 						<td data-th="Product">
-              <img class="img-cont" src="https://storage.googleapis.com/myacicoproductimg/samssmart0001000256.jpg" class="img-responsive" width='100'>
-							<!-- <img class="gambar" src="https://storage.googleapis.com/myacicoproductimg/APPLSMAR00002007354.jpg" class="img-responsive" width='100'> -->
+              <img class="img-cont" src="https://cdn.myacico.co.id/myacicoproductimg/samssmart0001000256.jpg" class="img-responsive" width='100'>
+							<!-- <img class="gambar" src="https://cdn.myacico.co.id/myacicoproductimg/APPLSMAR00002007354.jpg" class="img-responsive" width='100'> -->
 						</td>
 						<td data-th="Qty" align='center'>
 							<span class="badge">1</span>
