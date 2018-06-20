@@ -390,7 +390,7 @@ p{
                                 kemasan luar agar terlihat oleh pihak jasa ekspedisi</p>
                                 <img src="https://s1.postimg.org/15fqfhyf7z/image.png">
                                 <p class="test3"> PERHATIAN : Pengembalian barang tidak akan diproses, jika kamu<br/>
-                                  tidak mengisi FORM pengembalian barang di www.myacico.co.id
+                                  tidak mengisi FORM pengembalian barang di myacico.co.id
                                  </p>
                               </div>
  <!--accordion end-->

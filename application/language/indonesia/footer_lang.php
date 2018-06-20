@@ -55,8 +55,8 @@ $lang['f_a_sales'] = '<div style="text-align: justify;
             <br><u>cs@myacico.co.id</u>
             '
         .'<br><b>IV. Ketentuan Layanan Purna jual</b>'
-        . '<br>1. Produk yang mendapatkan layanan purna jual dari Myacico.co.id adalah produk yang dibeli melalui website www.myacico.co.id '
-        . '<br>2. Registrasi layanan purna jual wajib melampirkan bukti transaksi dari website www.myacico.co.id'
+        . '<br>1. Produk yang mendapatkan layanan purna jual dari Myacico.co.id adalah produk yang dibeli melalui website myacico.co.id '
+        . '<br>2. Registrasi layanan purna jual wajib melampirkan bukti transaksi dari website myacico.co.id'
         . '<br>3. Produk yang mendapatkan layanan purna jual secara gratis adalah produk yang memiliki garansi resmi produk sesuai dengan yang tercantum pada keterangan/deskripsi produk dan masih mempunyai sisa waktu untuk melakukan klaim layanan purna jual'
         . '<br>4. Pihak Customer Service akan melakukan pendataan dan pengecekan awal untuk produk yang didaftarkan pelanggan untuk layanan purna jual'
         . '<br>5. Batas waktu untuk penyelesaian layanan purna jual tergantung dari banyaknya antrian sebelumnya dan juga tingkat kesulitan dari produk'
