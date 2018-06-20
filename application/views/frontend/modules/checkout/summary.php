@@ -56,7 +56,7 @@
 								<?php } ?>
 								</div>
 			  				<div class="segmen2">
-			  					<label><img src='https://storage.googleapis.com/myacico/image/bank/<?php echo$dataTrans['code']; ?>.png' border='0'></label>
+			  					<label><img src='https://cdn.myacico.co.id/myacico/image/bank/<?php echo$dataTrans['code']; ?>.png' border='0'></label>
 			  				</div>
 
 							<?php }
@@ -76,7 +76,7 @@
 								<input type="radio" class='code' name="code" value='O-<?php echo$dataOl['value']; ?>'>
 			  				</div>
 			  				<div class="segmen2">
-			  					<img src='https://storage.googleapis.com/myacico/image/onlinepayment/<?php echo$dataOl['value']; ?>.png' border='0'>
+			  					<img src='https://cdn.myacico.co.id/myacico/image/onlinepayment/<?php echo$dataOl['value']; ?>.png' border='0'>
 			  				</div>
 							<?php } } ?>
 						</div>

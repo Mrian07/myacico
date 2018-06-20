@@ -214,8 +214,8 @@
     <div style='border-top:2px solid #e4322b; padding-top:10px; font-size:20px; width:1200px;margin-bottom:40px;'>KERANJANG BELANJA</div>
   <div class="pop-container">
 		<div class="pop-left">
-			<!-- <img class="gambar" src="https://storage.googleapis.com/myacicoproductimg/APPLSMAR00002007354.jpg"> -->
-      <img class="gambar" src="https://storage.googleapis.com/myacicoproductimg/samssmart0001000256.jpg">
+			<!-- <img class="gambar" src="https://cdn.myacico.co.id/myacicoproductimg/APPLSMAR00002007354.jpg"> -->
+      <img class="gambar" src="https://cdn.myacico.co.id/myacicoproductimg/samssmart0001000256.jpg">
 
 
 			<div class="pop-title">SAMSUNG Galaxy S8 5.8 Inch 64GB/4GB [SM-G950] - Black </div>

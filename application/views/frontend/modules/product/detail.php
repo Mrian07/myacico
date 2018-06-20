@@ -51,7 +51,8 @@ $string = str_replace(']', '_', $string);
 <div class="row">
 
   <div class="col-sm-3">
-    <?php if (isset($img[0])) { ?>
+    <?php
+    if (isset($img[0])) { ?>
       <img id="xzoom-magnific" class="xzoom"
 
           src="<?php echo $img[0]; ?>"
@@ -188,12 +189,12 @@ $string = str_replace(']', '_', $string);
       </div>
       <div>
         <b>Pembayaran: </b><br>
-        <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/p-visa-small.jpg">
-        <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/ico_bank_02.png">
-        <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/ico_bank_03.png">
-        <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/ico_bank_04.png">
-        <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/ico_bank_06.png">
-        <img class="img-payment-method" src="https://dev.myacico.co.id/images/general/p-bcaklikpay.jpg">
+        <img class="img-payment-method" src="https://myacico.co.id/images/general/p-visa-small.jpg">
+        <img class="img-payment-method" src="https://myacico.co.id/images/general/ico_bank_02.png">
+        <img class="img-payment-method" src="https://myacico.co.id/images/general/ico_bank_03.png">
+        <img class="img-payment-method" src="https://myacico.co.id/images/general/ico_bank_04.png">
+        <img class="img-payment-method" src="https://myacico.co.id/images/general/ico_bank_06.png">
+        <img class="img-payment-method" src="https://myacico.co.id/images/general/p-bcaklikpay.jpg">
       </div>
       <div>
         <b>Garansi: </b>1 TAHUN GARANSI
@@ -227,15 +228,15 @@ $string = str_replace(']', '_', $string);
         <span> <b>Jasa Pengiriman</b> </span>
         <table class="table" border="0" style="margin: 0">
           <tr>
-            <td><img src="https://dev.myacico.co.id/images/general/s-myacicocourier.jpg"></td>
+            <td><img src="https://myacico.co.id/images/general/s-myacicocourier.jpg"></td>
             <td>Gratis pengiriman* untuk wilayah jakarta dan jaminan pengiriman dalam 2 hari</td>
           </tr>
           <tr>
-            <td><img src="https://dev.myacico.co.id/images/general/s-ninjaxpress.jpg"></td>
+            <td><img src="https://myacico.co.id/images/general/s-ninjaxpress.jpg"></td>
             <td>jaminan pengiriman dalam 3 hari</td>
           </tr>
           <tr>
-            <td><img src="https://dev.myacico.co.id/images/general/s-jne.jpg"></td>
+            <td><img src="https://myacico.co.id/images/general/s-jne.jpg"></td>
             <td>jaminan pengiriman dalam 2-5 hari</td>
           </tr>
         </table>

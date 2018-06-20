@@ -8,7 +8,7 @@ Mohon dilakukan pembayaran ke :<br>
 		<td valign='top'>
 			<input type="radio" id='code' name="code" value='<?php echo$data['value']; ?>'>
 		</td>
-		<td><img src='https://storage.googleapis.com/myacico/image/onlinepayment/<?php echo$data['value']; ?>.png' border='0'><br>
+		<td><img src='https://cdn.myacico.co.id/myacico/image/onlinepayment/<?php echo$data['value']; ?>.png' border='0'><br>
 			<?php echo$data['name']; ?>
 			<?php //echo$data['refId']; ?>
 			<?php //echo$data['value']; ?>

@@ -6,13 +6,14 @@ class Product extends Web {
 	public function __construct()
   {
 		parent::__construct();
-      $this->load->helper('form');
-			$this->load->helper('app');
-			$this->load->library('form_validation');
-			$this->load->library('session');
-			$this->load->library('cart');
-
-			$this->atribut();
+      	$this->load->helper('form');
+		
+		$this->load->library('form_validation');
+		$this->load->library('session');
+		$this->load->library('cart');
+		$this->load->library('image_lib');
+		$this->load->helper('app');
+		$this->atribut();
 	}
 
 	public function atribut(){
@@ -174,27 +175,6 @@ class Product extends Web {
 
 	public function test()
   {
-		// $this->session->userdata('username');
-		//  $stack = array(
-		// 	 'filterAlias2' =>'Kulkas',
-		// 	 'valueAlias2' =>'LG',
-		//  ) ;
-    //
-		// $data = array(
-		// 		'fctr' => array(
-		// 			'filterAlias1' =>'HP',
-		// 			'valueAlias1' =>'Samsung',
-		// 		)
-		// 	);
-		// 	array_push(
-		// 		'fctr' => array(
-		// 			$stack
-		// 			'filterAlias' =>'HP',
-		// 			'valueAlias' =>'Samsung',
-		// 		)
-    //
-		// 	print_r($data);
-		//$this->session->set_userdata($stack);
 
 		$array = array("size" => "XL", "color" => "gold");
 		print_r(array_values($array));
@@ -253,49 +233,43 @@ class Product extends Web {
 
 	public function detail()
     {
-			$this->data['pro_id']=$this->uri->segment(3);
-			$pro_id=$this->uri->segment(3);
-			$api = "product/productlist/related/".$pro_id;
-			$url = api_base_url($api);
-      $api_rekom="product/productlist/recomendation/".$pro_id;
-      $url_rekom = api_base_url($api_rekom);
-      $api_sup="product/productlist/suplement/".$pro_id;
-      $url_sup = api_base_url($api_sup);
-			$konten21 = file_get_contents($url);
+		$this->data['pro_id']=$this->uri->segment(3);
+		$pro_id=$this->uri->segment(3);
+		$api = "product/productlist/related/".$pro_id;
+		$url = api_base_url($api);
+		$api_rekom="product/productlist/recomendation/".$pro_id;
+		$url_rekom = api_base_url($api_rekom);
+		$api_sup="product/productlist/suplement/".$pro_id;
+		$url_sup = api_base_url($api_sup);
+		$konten21 = file_get_contents($url);
 
-			$this->data['dathome'] = json_decode($konten21, true);
+		$this->data['dathome'] = json_decode($konten21, true);
 	  	$hasil1 = json_decode($konten21, true);
-//die(print_r($this->data['dathome']));
-	if(isset($hasil1['imageurl'])){
-		$this->data['imageurl'] = $hasil1['imageurl'];
 
-	}else{
-		//$hasil['imageurl'] ='';
-                $this->data['imageurl']='';
-	}
+		if(isset($hasil1['imageurl'])){
+			$this->data['imageurl'] = $hasil1['imageurl'];
+
+		}else{
+			//$hasil['imageurl'] ='';
+			$this->data['imageurl']='';
+		}
 		$pro_id=$this->uri->segment(3);
 		$api = "product/productlist/detail?id=".$pro_id;
-                $url = api_base_url($api);
-//              KOMENG CUY ~Samuel  utk page &page=1&itemperpage=1
-                $api_komen = "product/listreview?productid=".$pro_id;
+		$url = api_base_url($api);
+		$api_komen = "product/listreview?productid=".$pro_id;
 		$url_komen = api_base_url($api_komen);
-
-
-			$options = ["http" => [
-			"method" => "GET",
-			]];
-
+		$options = ["http" => [
+		"method" => "GET",
+		]];
 		$context = stream_context_create($options);
 		$konten = file_get_contents($url, false, $context);
-    $hasil = json_decode($konten, true);
+    	$hasil = json_decode($konten, true);
 
 		if($hasil['isActive']=='Y'){
 
-			//Komen
 			$konten_komen = file_get_contents($url_komen, false, $context);
 			$komen = json_decode($konten_komen, true);
 
-			//s lalang
 			$getNama = $hasil['name'];
 			$options2 = ["http" => [
 			'protocol_version'=>'1.1',
@@ -307,93 +281,42 @@ class Product extends Web {
 			$url_komen2 = api_base_url($api_komen2);
 			$context2 = stream_context_create($options2);
 			$konten2 = file_get_contents($url_komen2);
-//                        rekomendasi
-                        $konten_rekom = file_get_contents($url_rekom, false, $context);
-                        $this->data['rekom'] = json_decode($konten_rekom, true);
-//                        Suplement
-                        $konten_sup = file_get_contents($url_sup, false, $context);
-                        $this->data['sup'] = json_decode($konten_sup, true);
-			//e lalang
+			$konten_rekom = file_get_contents($url_rekom, false, $context);
+			$this->data['rekom'] = json_decode($konten_rekom, true);
+			$konten_sup = file_get_contents($url_sup, false, $context);
+			$this->data['sup'] = json_decode($konten_sup, true);
+
 
 			$this->data['komen']=$komen;
 
-		 if(isset($hasil['sku'])){
-			 $this->data['sku'] = $hasil['sku'];
+			if(isset($hasil['sku'])){
+				$this->data['sku'] = $hasil['sku'];
 
-		 }else{
-			 $hasil['sku'] ='';
-
-		 }
-
-
-
-
-
-
-$i=0;
-foreach ($hasil['specification'] as $speck)
-{
-
-
-	 //$this->data['img'][$i]=$gmb;
-	 if(isset($speck)){
-        $this->data['specification'][$i] = $speck['attribute'];
-        $this->data['value'][$i] = $speck['value'];
-
-	 }else{
-			 $this->data['specification'][$i]='';
-	 }
-	//print_r($this->data['specification'][$i]);
-        //print_r($this->data['value'][$i]);
-	 $i++;
-
-}
-/*
-		 if(isset($hasil['specification'][0]['attribute'])){
-				$this->data['specification'] = $hasil['specification'][0]['attribute'];
-				$this->data['value'] = $hasil['specification'][0]['value'];
 			}else{
-				$hasil['specification'][0]['attribute'] ='';
-					$hasil['specification'][0]['value'] ='';
+				$hasil['sku'] ='';
+
 			}
 
-			if(isset($hasil['specification'][1]['attribute'])){
-				$this->data['attribute'] = $hasil['specification'][1]['attribute'];
-				$this->data['attribute3'] = $hasil['specification'][1]['value'];
-			}else{
-				$hasil['specification'][1]['attribute'] ='';
-					$hasil['specification'][1]['value'] ='';
+			$i=0;
+			foreach ($hasil['specification'] as $speck)
+			{
+				if(isset($speck)){
+					$this->data['specification'][$i] = $speck['attribute'];
+					$this->data['value'][$i] = $speck['value'];
+
+				}else{
+						$this->data['specification'][$i]='';
+				}
+				$i++;
+
 			}
-			if(isset($hasil['specification'][2]['attribute'])){
-				$this->data['attribute4'] = $hasil['specification'][2]['attribute'];
-				$this->data['value1'] = $hasil['specification'][2]['value'];
-			}else{
-				$hasil['specification'][2]['attribute'] ='';
-					$hasil['specification'][2]['value'] ='';
-			}
-			if(isset($hasil['specification'][3]['attribute'])){
-				$this->data['attribute5'] = $hasil['specification'][3]['attribute'];
-				$this->data['value2'] = $hasil['specification'][3]['value'];
-			}else{
-				$hasil['specification'][3]['attribute'] ='';
-					$hasil['specification'][3]['value'] ='';
-			}
-			if(isset($hasil['specification'][4]['attribute'])){
-				$this->data['attribute6'] = $hasil['specification'][4]['attribute'];
-				$this->data['value3'] = $hasil['specification'][4]['value'];
-			}else{
-				$hasil['specification'][4]['attribute'] ='';
-					$hasil['specification'][4]['value'] ='';
-			}
-*/
 
 			$this->data['description'] = $hasil['description'];
-
 			$this->data['specialPrice'] = $hasil['specialPrice'];
 			$this->data['discount'] = $hasil['discount'];
 			$this->data['highlight'] = $hasil['highlight'];
 			$this->data['sku'] = $hasil['sku'];
-                        $this->data['asap_stat'] = $hasil['istodayshipping'];
+            $this->data['asap_stat'] = $hasil['istodayshipping'];
 			$this->data['isWishList']=$hasil['isWishList'];
 			$this->data['category'] = $hasil['category'];
 			$this->data['m_product_id'] = $hasil['m_product_id'];
@@ -415,58 +338,15 @@ foreach ($hasil['specification'] as $speck)
 			 {
 			     //$this->data['img'][$i]=$gmb;
 			     if(isset($gmb)){
-				$this->data['img'][$i] = $gmb;
+					$this->data['img'][$i] = $gmb;
 			     }else{
 			         $this->data['img'][$i]=false;
 			     }
 			    //print_r($this->data['img'.$i]);
-			     $i++;
+				 $i++;
+				 
 			 }
 		}
-
-  /*
-  die();
-			if(isset($hasil['imageurl'][0])){
-					$this->data['img'] = $hasil['imageurl'][0];
-			}else{
-					$this->data['img'] = "";
-			}
-
-		 	if(isset($hasil['img1'][1]['imageurl'])){
-				$this->data['img1'] = $hasil['imageurl'][1];
-
-				}else{
-					$hasil['imageurl'][1] ='';
-
-				}
-		$this->data['img1'] = $hasil['imageurl'][1];
-			 	if(isset($hasil['img2'][2]['imageurl'])){
-				$this->data['img2'] = $hasil['imageurl'][2];
-
-				}else{
-					$hasil['imageurl'][2] ='';
-
-				}
-		$this->data['img2'] = $hasil['imageurl'][2];
-			if(isset($hasil['img1'][2]['imageurl'])){
-				$this->data['img1'] = $hasil['imageurl'][2];
-
-				}else{
-					$hasil['imageurl'][2] ='';
-
-				}
-
-		if(isset($hasil['img3'][3]['imageurl'])){
-				$this->data['img3'] = $hasil['imageurl'][3];
-
-				}else{
-					$hasil['imageurl'][3] ='';
-
-				}
-	$this->data['img3'] = $hasil['imageurl'][3];
-       */
-		// akhir dari jika gambar tidak ada
-
 
  		$home_domain = domain2();
 		$this->data['title_web'] = "-Belanja Online Murah, gratis pengiriman area jakarta"."-".$home_domain;
@@ -477,7 +357,6 @@ foreach ($hasil['specification'] as $speck)
 		}else{
 			$this->load->view('frontend/modules/product/empty_product.php',$this->data);
 		}
-
 		$this->load->view('frontend/sidenav',$this->data);
 		$this->load->view('frontend/footer',$this->data);
 	}
@@ -751,5 +630,104 @@ $this->load->view('frontend/sidenav',$this->data);
       public function deletecookie() {
          delete_cookie('lang');
      //    redirect('cookie/display');
-      }
+	  }
+	  
+	//   public function test3(){
+	// 	$path = 'images/general/test.jpg';
+    //     #$path = 'c:/xampp/htdocs/acomp_www/1/2.jpg';
+    //     #$this->load->library('image_lib');                    
+    //        #$this->image_lib->clear();
+    //     $imageinit['image_library']     = 'GD2';
+    //     $imageinit['quality']            = '100%';
+    //     $imageinit['dynamic_output']    = TRUE;
+    //     #$imageinit['create_thumb']    = FALSE;
+    //     $imageinit['source_image']         = $path;
+    //     #$imageinit['maintain_ratio']     = false;
+    //     $imageinit['width']             = '200';
+    //     $imageinit['height']             = '150';
+    
+    //     $imageinit['wm_type'] = 'overlay';
+    //     $imageinit['wm_overlay_path'] = 'images/general/watermark.png';
+    //     $imageinit['wm_padding'] = '0';
+    //     $imageinit['wm_hor_alignment'] = 'bottom';
+    //     $imageinit['wm_vrt_alignment'] = 'center';
+        
+    //     $this->image_lib->initialize($imageinit);
+    //     $this->image_lib->watermark();
+    //     #$this->image_lib->clear();
+    //     $this->image_lib->resize();
+    //     if(!$this->image_lib->resize() && !$this->image_lib->watermark()){
+    //     echo $this->image_lib->display_errors();
+	// 	} 
+		
+	// 	$img = $this->image_lib->watermark();
+	// 	echo"ini: $img";
+		
+	//   }
+
+	//   public function test4($img){
+
+	// 	// Load the stamp and the photo to apply the watermark to
+	// 	$stamp = imagecreatefrompng(base_url('images/general/watermark.png'));
+	// 	// $im = imagecreatefromjpeg(base_url('images/general/test.jpg'));
+	// 	$im = imagecreatefromjpeg($img);
+	// 	// Set the margins for the stamp and get the height/width of the stamp image
+	// 	$marge_right = 10;
+	// 	$marge_bottom = 10;
+	// 	$sx = imagesx($stamp);
+	// 	$sy = imagesy($stamp);
+		
+	// 	// Copy the stamp image onto our photo using the margin offsets and the photo 
+	// 	// width to calculate positioning of the stamp. 
+	// 	imagecopy($im, $stamp, imagesx($im) - $sx - $marge_right, imagesy($im) - $sy - $marge_bottom, 0, 0, imagesx($stamp), imagesy($stamp));
+		
+	// 	// Output and free memory
+	// 	header('Content-type: image/png');
+	// 	imagepng($im);
+	// 	//imagedestroy($im);
+
+	//   }
+
+	//   public function test5(){
+	// 	// $img = base_url('images/general/test.jpg');
+	// 	// // echo $img; die();
+	// 	// $this->data['img'] = $this->test4($img);
+	//   }
+
+	//   public function test2()
+	//   {
+	// 	  $path = 'images/general/test.jpg';
+	// 	  #$path = 'c:/xampp/htdocs/acomp_www/1/2.jpg';
+	// 	  #$this->load->library('image_lib');                    
+	// 		 #$this->image_lib->clear();
+	// 	  $imageinit['image_library']     = 'GD2';
+	// 	  $imageinit['quality']            = '100%';
+	// 	  $imageinit['dynamic_output']    = FALSE;
+	// 	  #$imageinit['create_thumb']    = FALSE;
+	// 	  $imageinit['source_image']         = $path;
+	// 	  #$imageinit['maintain_ratio']     = false;
+	// 	//   $imageinit['width']             = '200';
+	// 	//   $imageinit['height']             = '150';
+	  
+	// 	  $imageinit['wm_type'] = 'overlay';
+	// 	  $imageinit['wm_overlay_path'] = 'images/general/watermark.png';
+	// 	  $imageinit['wm_padding'] = '-50';
+	// 	  $imageinit['wm_hor_alignment'] = 'right';
+	// 	//   $imageinit['wm_vrt_alignment'] = 'center';
+		  
+	// 	  $this->image_lib->initialize($imageinit);
+	// 	  $this->image_lib->watermark();
+	// 	  #$this->image_lib->clear();
+	// 	  $this->image_lib->resize();
+	// 	  if(!$this->image_lib->resize() && !$this->image_lib->watermark()){
+	// 		 echo $this->image_lib->display_errors();
+	// 	  } 
+
+		  
+	// 	//   $img =  watermark($path  , $image_name);
+	// 	//   header("Content-type: image/jpeg");
+	// 	//   echo  ( $img );
+
+	// 	//  $this->load->view('frontend/modules/product/lalangtest.php',$this->data);
+	//   }
 }

@@ -12,20 +12,20 @@
 
   <a href="https://www.myacico.co.id/product/alllistItem/laptop%20hp">
   <div style='float:left;width:376px; margin-right:5px'>
-    <img src='https://storage.googleapis.com/myacico/image/banner/baruuArtboard%2029%40300x-100.jpg' border='0' width='100%'>
+    <img src='https://cdn.myacico.co.id/myacico/image/banner/baruuArtboard%2029%40300x-100.jpg' border='0' width='100%'>
   </div></a>
   <a href="https://www.myacico.co.id/product/detail/1050740/DocuPrint-P455d---A4-Monochrome-Printer-(45-ppm)-Duplex,-Network">
   <div style='float:left;width:376px; margin-right:5px'>
-    <img src='https://storage.googleapis.com/myacico/image/banner/3A.jpg' border='0' width='100%'>
+    <img src='https://cdn.myacico.co.id/myacico/image/banner/3A.jpg' border='0' width='100%'>
   </div></a>
   <a href="https://www.myacico.co.id/product/alllistItem/asus%20zenfone">
   <div style='float:left;width:376px'>
-    <img src='https://storage.googleapis.com/myacico/image/banner/1Artboard%2055.jpg' border='0' width='100%'>
+    <img src='https://cdn.myacico.co.id/myacico/image/banner/1Artboard%2055.jpg' border='0' width='100%'>
   </div></a>
   <div style='clear:both'></div>
 
   <div class="row" style='margin-top:5px; margin-bottom:10px'>
-    <div class="col-xs-12"><img src='https://storage.googleapis.com/myacico/image/banner/banner-58.png' border='0' width='100%'></div>
+    <div class="col-xs-12"><img src='https://cdn.myacico.co.id/myacico/image/banner/banner-58.png' border='0' width='100%'></div>
   </div>
 
   <div style='padding:15px; font-family:tahoma; font-size:20px; border-top: 3px solid #c40202; color:#535151'>
