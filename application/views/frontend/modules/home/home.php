@@ -10,15 +10,15 @@
 
 <div class="container">
 
-  <a href="https://www.myacico.co.id/product/alllistItem/laptop%20hp">
+  <a href="https://myacico.co.id/product/alllistItem/laptop%20hp">
   <div style='float:left;width:376px; margin-right:5px'>
     <img src='https://cdn.myacico.co.id/myacico/image/banner/baruuArtboard%2029%40300x-100.jpg' border='0' width='100%'>
   </div></a>
-  <a href="https://www.myacico.co.id/product/detail/1050740/DocuPrint-P455d---A4-Monochrome-Printer-(45-ppm)-Duplex,-Network">
+  <a href="https://myacico.co.id/product/detail/1050740/DocuPrint-P455d---A4-Monochrome-Printer-(45-ppm)-Duplex,-Network">
   <div style='float:left;width:376px; margin-right:5px'>
     <img src='https://cdn.myacico.co.id/myacico/image/banner/3A.jpg' border='0' width='100%'>
   </div></a>
-  <a href="https://www.myacico.co.id/product/alllistItem/asus%20zenfone">
+  <a href="https://myacico.co.id/product/alllistItem/asus%20zenfone">
   <div style='float:left;width:376px'>
     <img src='https://cdn.myacico.co.id/myacico/image/banner/1Artboard%2055.jpg' border='0' width='100%'>
   </div></a>

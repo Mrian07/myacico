@@ -6,7 +6,7 @@
 <body>
 
 <div id="banner-left" class="banner-left">
-	<a href="https://www.myacico.co.id/product/category/1000484/PC-Desktop">
+	<a href="https://myacico.co.id/product/category/1000484/PC-Desktop">
   <img src="https://cdn.myacico.co.id/myacico/image/banner/banner%20samping%20web-100.jpg" alt=""></a>
 </div>
 </body>

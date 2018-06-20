@@ -1,11 +1,11 @@
 <?php
 //English
 $lang['how_buy_tittle'] = 'Choose the Goods you want';
-$lang['how_buy1'] = 'Once you go to the page www.myacico.co.id <br>choose the goods that you want by selecting categories that available ';
+$lang['how_buy1'] = 'Once you go to the page myacico.co.id <br>choose the goods that you want by selecting categories that available ';
 $lang['how_buy1_1'] = 'or immediately type the name of the item that you want in the search field';
 //2
 $lang['how_buy_tittle2'] = 'Add to Shopping Cart';
-$lang['how_buy2'] = 'Once you go to the page www.myacico.co.id choose the category you want by choosing '
+$lang['how_buy2'] = 'Once you go to the page myacico.co.id choose the category you want by choosing '
         . '<br>Then you can search another items or go directly to the next menu';
 //3
 $lang['how_buy_tittle3'] = 'Review you cart and you shipping address';

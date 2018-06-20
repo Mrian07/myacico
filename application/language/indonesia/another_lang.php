@@ -1,7 +1,7 @@
 <?php
 //Indonesia
 $lang['how_buy_tittle'] = 'Pilih Barang yang anda inginkan';
-$lang['how_buy1'] = 'Setelah anda masuk ke halaman www.myacico.co.id<br> anda dapat memilih barang yang anda inginkan  dengan memilih'
+$lang['how_buy1'] = 'Setelah anda masuk ke halaman myacico.co.id<br> anda dapat memilih barang yang anda inginkan  dengan memilih'
         . ' kategori yang tersedia';
 $lang['how_buy1_1'] = 'atau langsung mengetikkan nama barang yang anda inginkan di kolom pencarian';
 //2
