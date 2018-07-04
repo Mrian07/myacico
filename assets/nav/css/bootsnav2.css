@@ -20,7 +20,7 @@ nav.bootsnav .container {
 }
 
 nav.bootsnav .megamenu-fw .dropdown-menu {
-    left: auto;
+    /* left: auto; */
 }
 
 nav.bootsnav .megamenu-content {

@@ -49,8 +49,9 @@
 		<link href="<?php echo base_url('assets/nav/css/animate.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/nav/css/bootsnav2.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/nav/css/style.css');?>" rel="stylesheet">
-		<script src="<?php echo base_url('assets/nav/js/bootsnav.js');?>"></script>
-
+		<!--s: Untuk membuat menu auto drop down -->
+		<!-- <script src="<?php //echo base_url('assets/nav/js/bootsnav.js');?>"></script> -->
+		<!--e: Untuk membuat menu auto drop down -->
 
 		<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css');?>" />-->
 		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('images/general/favicon.ico');?>">
@@ -65,7 +66,7 @@
     <!-- e: Alert -->
 
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jwt-decode.min.js');?>"></script>
-		
+
 		<script type="text/javascript">
 			var base_url = '<?php echo base_url();?>';
 			var base_path = base_url.split(location.host).pop();
