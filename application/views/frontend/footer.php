@@ -130,7 +130,6 @@
 	</div>
 	<div class='copyright'>
 		Copyright &copy; <?php echo date("Y"); ?> PT. MyAcico Global Indonesia. All Rights Reserved.
-		
 	</div>
 </div>
 
