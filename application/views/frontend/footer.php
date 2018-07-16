@@ -129,7 +129,7 @@
 
 	</div>
 	<div class='copyright'>
-		Copyright &copy; 2017 PT. MyAcico Global Indonesia. All Rights Reserved.
+		Copyright &copy; <?php echo date("Y"); ?> PT. MyAcico Global Indonesia. All Rights Reserved.
 	</div>
 </div>
 
