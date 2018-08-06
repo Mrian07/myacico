@@ -201,7 +201,7 @@ function get_ongkir(){
   var ongkir_sel = $("#ongkir_sel").val();
   if(ongkir_sel==""){ $('.spinner_num').hide(); }
 
-  $.get( api_base_url+"/freight/ro?destination="+$("#city_sel").val()+"&sku="+sku+"&quantity="+qty+"&courier="+$("#ongkir_sel").val(), function(r){
+  $.get( api_base_url+"/freight/ro?destination="+$("#district_id").val()+"&sku="+sku+"&quantity="+qty+"&courier="+$("#ongkir_sel").val(), function(r){
     var ongKir = parseInt(r.courier[0].serviceCourier.amount);
     var asuransi = parseInt(r.product.asuransi)*qty;
     var total = parseInt(pricelist) + parseInt(ongKir) + parseInt(asuransi);
