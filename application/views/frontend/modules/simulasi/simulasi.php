@@ -197,7 +197,6 @@ function get_ongkir(){
   $('.spinner_num').show();
   var sku = "<?php echo$sku; ?>";
   var qty = $("#qty").val();
-
   var ongkir_sel = $("#ongkir_sel").val();
   if(ongkir_sel==""){ $('.spinner_num').hide(); }
 
