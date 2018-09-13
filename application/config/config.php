@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].str_replace('/index.php','',$_SERVER['SCRIPT_NAME']);
-// $config['base_url'] = "http://localhost/myacico/";
+
 
 /*
 |--------------------------------------------------------------------------
