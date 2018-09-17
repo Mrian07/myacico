@@ -197,12 +197,12 @@ function pilihCity(id){
         $.get( api_base_url+"/freight/ro?sku="+ sku +"&quantity="+qty, function(r){
   
           var lastNum = response.list.length-1;  
-          var ongKir = parseInt(response.list[lastNum].price1st)*(parseInt(r.totalWeightIncludePacking)/1000)*qty;
+          var ongKir = parseInt(response.list[lastNum].price2nd)*(parseInt(r.totalWeightIncludePacking)/1000)*qty;
           var asuransi = parseInt(r.totalAsuransi);
           var berat = parseInt(r.totalWeightIncludePacking)/1000; 
           var total = parseInt(pricelist) + parseInt(ongKir) + parseInt(asuransi);
           
-          $("#ongKirOri").val(response.list[lastNum].price1st);  
+          $("#ongKirOri").val(response.list[lastNum].price2nd);  
           $("#tot_ongkir").html("Rp."+formatNumber(ongKir));
           $("#tot_asuransi").html("Rp."+formatNumber(asuransi));
           $("#tot_berat").html(formatNumber(berat) + " Kg");
