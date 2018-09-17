@@ -51,7 +51,7 @@ class Simulasi extends Web {
 		$konten = file_get_contents($url);
 		$this->data['hasil'] = json_decode($konten, true);
 		
-		$this->data['title_web'] = "myacico.co.id - EGD";
+		$this->data['title_web'] = "myacico.co.id - GED";
 		$this->load->view('frontend/header',$this->data);
 		$this->load->view('frontend/nav.php',$this->data);
 		$this->load->view('frontend/modules/ged/ged.php',$this->data);

@@ -83,6 +83,11 @@
         </td>
       </tr>
       <tr>
+        <td width="50%">Berat Satuan</td><td>
+          <b><span id="tot_berat">0 Kg</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
+        </td>
+      </tr>
+      <tr>
         <td width="50%">Total Biaya <span class="small-text-simulasi">(Harga produk + Ongkos kirim + Asuransi)</span></td><td>
           <b><span id="tot_biaya">Rp.0</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
         </td>
@@ -170,7 +175,7 @@ function pilihCity(id){
   var qty = $("#qty").val();
   var pricelist = $("#pricelist").val()*qty;
   $("#price").html("Rp."+formatNumber(pricelist));
-
+  $('.spinner_num').show();
   $.ajax({
       url: "https://netcr.myacico.co.id/api/apirequest",
       type:"POST",
@@ -194,11 +199,13 @@ function pilihCity(id){
           var lastNum = response.list.length-1;  
           var ongKir = parseInt(response.list[lastNum].price1st)*(parseInt(r.totalWeightIncludePacking)/1000)*qty;
           var asuransi = parseInt(r.totalAsuransi);
+          var berat = parseInt(r.totalWeightIncludePacking)/1000; 
           var total = parseInt(pricelist) + parseInt(ongKir) + parseInt(asuransi);
-
+          
           $("#ongKirOri").val(response.list[lastNum].price1st);  
           $("#tot_ongkir").html("Rp."+formatNumber(ongKir));
           $("#tot_asuransi").html("Rp."+formatNumber(asuransi));
+          $("#tot_berat").html(formatNumber(berat) + " Kg");
           $("#tot_biaya").html("Rp."+formatNumber(total));
           $('.spinner_num').hide();
 
@@ -247,9 +254,11 @@ $("#qty").on("change",function() {
 
       var ongKir = $("#ongKirOri").val()*(parseInt(r.totalWeightIncludePacking)/1000)*qty;;
       var asuransi = parseInt(r.totalAsuransi);
+      var berat = parseInt(r.totalWeightIncludePacking)/1000; 
       var total = parseInt(pricelist) + parseInt(ongKir) + parseInt(asuransi);
       
       $("#tot_ongkir").html("Rp."+formatNumber(ongKir));
+      $("#tot_berat").html(formatNumber(berat) + " Kg");
       $("#tot_asuransi").html("Rp."+formatNumber(asuransi));
       $("#tot_biaya").html("Rp."+formatNumber(total));
       $('.spinner_num').hide();
