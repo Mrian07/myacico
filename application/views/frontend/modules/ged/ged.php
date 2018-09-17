@@ -28,7 +28,7 @@
 
 
   <div class="b-simulasi">
-    <div class="title-simulasi">SIMULASI TARIF PENGIRIMAN</div>
+    <div class="title-simulasi">SIMULASI TARIF PENGIRIMAN GED (Garuda Express Delivery)</div>
     <div class="sub-title-simulasi">Simulasi Tarif Pengiriman ke:</div>
     <p><b>JENIS EKSPEDISI</b></p>
     <table border="0" width="100%">
