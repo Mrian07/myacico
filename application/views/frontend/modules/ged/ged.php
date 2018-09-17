@@ -35,20 +35,16 @@
     <tr>
         <td width="50%">Kota Asal</td>
         <td>
-          <input type="text" value="jakarta" class="form-control mandatory" readonly>
+          <input type="text" value="Jakarta" class="form-control mandatory" readonly>
         </td>
       </tr>
       <tr>
         <td width="50%" valign="top">Kota Tujuan</td>
         <td>
         <input type="text" id="city" class="form-control" readonly>
-          <!-- <select class="form-control mandatory" name="sities" id="load_data">
-            <option>Pilih</option>
-          </select> -->
         <button type='button' class='btn btn-warning' id="btnSrc" onClick="srcCity()">Cari Kota Tujuan</button>  
         <input type="text" id="formSrcCity" class="form-control" placeholder="Cari kota tujuan..." onKeyUp="sortCity()">
         <div id="load_data"></div>
-        <!-- <div id="load_data_message"></div> -->
         </td>
       </tr>
     </table>
