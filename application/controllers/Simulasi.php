@@ -44,8 +44,7 @@ class Simulasi extends Web {
 			// $this->data['tot_asuransi'] = 0;
 			$this->data['pricelistOri'] = 0;
 		}
-
-
+		$this->data['berat'] = "0";
 		$url = "https://netcr.myacico.co.id/api/geddestcities/1";
 
 		$konten = file_get_contents($url);

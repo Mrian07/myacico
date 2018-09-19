@@ -48,7 +48,7 @@
         </td>
       </tr>
     </table>
-
+ 
     <div class="sub-title-simulasi">Simulasi Harga Pengiriman</div>
     <table border="0" width="100%">
       <tr>
@@ -63,24 +63,33 @@
         </td>
       </tr>
       <tr>
-        <td width="50%">Harga Produk <span class="small-text-simulasi">(Harga satuan produk yang dibeli)</span></td>
+        <td width="50%">Harga Produk <span class="small-text-simulasi">(Harga satuan produk yang dibeli)</span></td>          
           <td><b><span id="price">Rp.0</span></b>
         </td>
       </tr>
       <tr>
-        <td width="50%">Ongkos Kirim</td><td>
+        <td width="50%">Ongkos Kirim</td>
+        <td>
           <input type="hidden" class="form-control" id="ongKirOri">
           <b><span id="tot_ongkir">Rp.0</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
         </td>
       </tr>
       <tr>
         <td width="50%">Asuransi</td><td>
+          <input type="hidden" class="form-control" id="asuransi">
           <b><span id="tot_asuransi">Rp.0</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
         </td>
       </tr>
       <tr>
         <td width="50%">Berat Satuan</td><td>
-          <b><span id="tot_berat">0 Kg</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
+          <div class="row">
+            <div class="col-xs-2">
+              <input type="number" class="form-control" id="tot_berat" value="<?php echo$berat; ?>">
+            </div>
+          </div>  
+          <!-- <b><span id="tot_berat">0 Kg</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
+
+          <b><span id="tot_berat">0 Kg</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none"> -->
         </td>
       </tr>
       <tr>
@@ -98,7 +107,7 @@ $(document).ready(function(){
   var base_url = '<?php echo base_url();?>';
   var price = "<?php echo $pricelistOri; ?>";
   $("#price").html("Rp."+formatNumber(price));
-  console.log('hallo', base_url);
+
   var limit = 50;
   var start = 1;
   var action = 'inactive';
@@ -171,6 +180,7 @@ function pilihCity(id){
   var qty = $("#qty").val();
   var pricelist = $("#pricelist").val()*qty;
   $("#price").html("Rp."+formatNumber(pricelist));
+  // $("#priceProduct").val(pricelist);
   $('.spinner_num').show();
   $.ajax({
       url: "https://netcr.myacico.co.id/api/apirequest",
@@ -197,11 +207,12 @@ function pilihCity(id){
           var asuransi = parseInt(r.totalAsuransi);
           var berat = parseInt(r.totalWeightIncludePacking)/1000; 
           var total = parseInt(pricelist) + parseInt(ongKir) + parseInt(asuransi);
-          
+
+          $("#asuransi").val(r.totalAsuransi);   
           $("#ongKirOri").val(response.list[lastNum].price1st);  
           $("#tot_ongkir").html("Rp."+formatNumber(ongKir));
           $("#tot_asuransi").html("Rp."+formatNumber(asuransi));
-          $("#tot_berat").html(formatNumber(berat) + " Kg");
+          $("#tot_berat").val(formatNumber(berat));
           $("#tot_biaya").html("Rp."+formatNumber(total));
           $('.spinner_num').hide();
 
@@ -220,6 +231,22 @@ function srcCity(){
   $('#load_data').css("display", "block");
   $('#formSrcCity').css("display", "block");
 }
+
+$("#tot_berat").on("change",function() {
+  var berat = parseInt(this.value);
+  var ongKir = $("#ongKirOri").val();
+  var asuransi = $("#asuransi").val();
+  $('.spinner_num').show();
+
+  $("#qty").val('1'); 
+  var totalOngkir =  parseInt($("#ongKirOri").val()) * berat;
+  $("#tot_ongkir").html("Rp."+formatNumber(totalOngkir));
+  var pricelist = $("#pricelist").val()*1;
+  var total = parseInt(pricelist) + parseInt(totalOngkir) + parseInt(asuransi);
+
+  $("#tot_biaya").html("Rp."+formatNumber(total));
+  $('.spinner_num').hide();
+});
 
 $("#qty").on("change",function() {
   var qty = this.value;
@@ -252,9 +279,10 @@ $("#qty").on("change",function() {
       var asuransi = parseInt(r.totalAsuransi);
       var berat = parseInt(r.totalWeightIncludePacking)/1000; 
       var total = parseInt(pricelist) + parseInt(ongKir) + parseInt(asuransi);
-      
+
+      $("#asuransi").val(r.totalAsuransi);   
       $("#tot_ongkir").html("Rp."+formatNumber(ongKir));
-      $("#tot_berat").html(formatNumber(berat) + " Kg");
+      $("#tot_berat").val(formatNumber(berat));
       $("#tot_asuransi").html("Rp."+formatNumber(asuransi));
       $("#tot_biaya").html("Rp."+formatNumber(total));
       $('.spinner_num').hide();
