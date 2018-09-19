@@ -83,8 +83,11 @@
       <tr>
         <td width="50%">Berat Satuan</td><td>
           <div class="row">
-            <div class="col-xs-2">
-              <input type="number" class="form-control" id="tot_berat" value="<?php echo$berat; ?>">
+            <div class="col-xs-3">
+              <div class='input-group'>
+                <input type="number" class="form-control" id="tot_berat" value="<?php echo$berat; ?>">
+                <div class='input-group-addon'>Kg</div>
+              </div>
             </div>
           </div>  
           <!-- <b><span id="tot_berat">0 Kg</span></b><img src="<?php echo base_url('images/general/Spinner.gif');?>" class="spinner_num" style="display:none">
